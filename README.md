@@ -1389,7 +1389,7 @@ Runs build and `changeset publish`. Requires `npm login` locally or `NPM_TOKEN` 
 
 ### CI automation
 
-`.github/workflows/release.yml` runs on push to `main` when Changesets are present. It opens a "Version Packages" PR or publishes when merged.
+`.github/workflows/release.yml` runs on push to `main` when Changesets are present. It versions packages, publishes to npm, and commits changelogs directly on `main` (no release PR required).
 
 #### `NPM_TOKEN` for GitHub Actions (required)
 
