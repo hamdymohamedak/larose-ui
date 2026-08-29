@@ -1349,7 +1349,7 @@ This monorepo publishes scoped packages under `@larose-ui/*` using [Changesets](
 3. Update repository URLs if needed:
 
 ```bash
-LAROSE_REPO_URL=https://github.com/YOUR_ORG/laRose.git node scripts/sync-publish-metadata.mjs
+LAROSE_REPO_URL=https://github.com/hamdymohamedak/larose-ui node scripts/sync-publish-metadata.mjs
 ```
 
 ### Verify readiness

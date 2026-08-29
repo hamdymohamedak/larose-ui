@@ -13,7 +13,8 @@
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
   "scripts": {
     "build": "tsup",
@@ -48,7 +49,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/larose-ui/larose.git",
+    "url": "git+https://github.com/hamdymohamedak/larose-ui.git",
     "directory": "packages/react"
   },
   "keywords": [
@@ -57,5 +58,9 @@
     "ui-platform",
     "design-system",
     "saas"
-  ]
+  ],
+  "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/react#readme",
+  "bugs": {
+    "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  }
 }

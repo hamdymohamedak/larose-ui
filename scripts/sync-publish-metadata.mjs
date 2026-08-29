@@ -19,9 +19,11 @@ for (const name of readdirSync(packagesDir)) {
 
   pkg.license = 'MIT';
   pkg.publishConfig = { access: 'public' };
+  pkg.homepage = `${REPO_URL}/blob/main/packages/${name}#readme`;
+  pkg.bugs = { url: `${REPO_URL}/issues` };
   pkg.repository = {
     type: 'git',
-    url: REPO_URL,
+    url: `git+${REPO_URL}.git`,
     directory: `packages/${name}`,
   };
   if (!pkg.keywords) {
