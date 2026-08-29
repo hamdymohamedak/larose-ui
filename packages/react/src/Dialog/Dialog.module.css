@@ -1,0 +1,11 @@
+.body {
+  font-size: var(--lr-font-size-sm);
+  line-height: var(--lr-line-height-normal);
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--lr-space-2);
+  margin-top: var(--lr-space-4);
+}

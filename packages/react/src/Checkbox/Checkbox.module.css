@@ -1,0 +1,55 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lr-space-1);
+}
+
+.row {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: var(--lr-space-2);
+  cursor: pointer;
+}
+
+.input {
+  margin-top: 0.15rem;
+  accent-color: var(--lr-color-primary);
+  cursor: pointer;
+}
+
+.input[data-size='sm'] {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.input[data-size='md'] {
+  width: 1rem;
+  height: 1rem;
+}
+
+.input[data-size='lg'] {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.input:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.label {
+  font-size: var(--lr-font-size-sm);
+  color: var(--lr-color-text);
+}
+
+.hint {
+  margin-left: calc(1rem + var(--lr-space-2));
+  font-size: var(--lr-font-size-xs);
+  color: var(--lr-color-text-muted);
+}
+
+.error {
+  margin-left: calc(1rem + var(--lr-space-2));
+  font-size: var(--lr-font-size-xs);
+  color: var(--lr-color-error);
+}

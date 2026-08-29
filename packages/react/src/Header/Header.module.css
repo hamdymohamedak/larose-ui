@@ -1,0 +1,31 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--lr-space-4);
+  padding: var(--lr-space-3) var(--lr-space-4);
+  border-bottom: 1px solid var(--lr-color-border);
+  background: var(--lr-color-surface-elevated);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--lr-font-family-sans);
+  font-size: var(--lr-font-size-lg);
+  font-weight: var(--lr-font-weight-semibold);
+  color: var(--lr-color-text);
+}
+
+.brand {
+  font-family: var(--lr-font-family-sans);
+  font-size: var(--lr-font-size-md);
+  font-weight: var(--lr-font-weight-bold);
+  color: var(--lr-color-primary);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--lr-space-2);
+  flex-wrap: wrap;
+}

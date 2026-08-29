@@ -1,0 +1,45 @@
+{
+  "name": "@larose/cli",
+  "version": "0.1.0",
+  "description": "CLI for laRose UI platform — doctor, migrate, generate",
+  "type": "module",
+  "bin": {
+    "larose": "./dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup src/cli.ts --format esm --watch",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@larose/accessibility": "workspace:*",
+    "@larose/contracts": "workspace:*",
+    "@larose/migration": "workspace:*"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/larose-ui/larose.git",
+    "directory": "packages/cli"
+  },
+  "keywords": [
+    "larose",
+    "react",
+    "ui-platform",
+    "design-system",
+    "saas"
+  ]
+}

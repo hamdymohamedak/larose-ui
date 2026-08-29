@@ -1,0 +1,70 @@
+.wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--lr-color-border);
+  border-radius: var(--lr-radius-md);
+  background: var(--lr-color-surface);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.caption {
+  caption-side: top;
+  padding: var(--lr-space-3) var(--lr-space-4);
+  text-align: start;
+  font-family: var(--lr-font-family-sans);
+  font-size: var(--lr-font-size-sm);
+  font-weight: var(--lr-font-weight-semibold);
+  color: var(--lr-color-text);
+}
+
+.headCell {
+  padding: var(--lr-space-3) var(--lr-space-4);
+  text-align: start;
+  border-bottom: 2px solid var(--lr-color-border);
+  font-family: var(--lr-font-family-sans);
+  font-size: var(--lr-font-size-xs);
+  font-weight: var(--lr-font-weight-semibold);
+  color: var(--lr-color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.cell {
+  padding: var(--lr-space-3) var(--lr-space-4);
+  border-bottom: 1px solid var(--lr-color-border);
+  font-family: var(--lr-font-family-sans);
+  font-size: var(--lr-font-size-sm);
+  color: var(--lr-color-text);
+}
+
+.row:last-child .cell {
+  border-bottom: none;
+}
+
+.row[data-striped='true']:nth-child(even) {
+  background: var(--lr-color-surface-elevated);
+}
+
+.row[data-state='loading'] .cell {
+  padding-block: var(--lr-space-2);
+}
+
+.empty {
+  padding: var(--lr-space-6);
+}
+
+.skeletonRow {
+  display: flex;
+  gap: var(--lr-space-3);
+  padding: var(--lr-space-3) var(--lr-space-4);
+  border-bottom: 1px solid var(--lr-color-border);
+}
+
+.skeletonRow:last-child {
+  border-bottom: none;
+}

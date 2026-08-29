@@ -1,0 +1,51 @@
+{
+  "name": "@larose/tokens",
+  "version": "0.1.0",
+  "description": "Runtime design tokens for laRose UI platform",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./styles.css": "./dist/styles.css",
+    "./legacy-aliases.css": "./dist/legacy-aliases.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --clean && cp src/styles.css dist/styles.css && cp src/legacy-aliases.css dist/legacy-aliases.css",
+    "dev": "tsup src/index.ts --format esm --dts --watch",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@larose/core": "workspace:*"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/larose-ui/larose.git",
+    "directory": "packages/tokens"
+  },
+  "keywords": [
+    "larose",
+    "react",
+    "ui-platform",
+    "design-system",
+    "saas"
+  ]
+}

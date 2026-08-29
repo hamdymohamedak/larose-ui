@@ -1,0 +1,21 @@
+/**
+ * Legacy v0 token aliases — map --ui-color-* to --lr-color-*.
+ * Import after @larose/tokens/styles.css during migration; removed in v2.
+ */
+:root {
+  --ui-color-primary: var(--lr-color-primary);
+  --ui-color-primary-hover: var(--lr-color-primary-hover);
+  --ui-color-primary-active: var(--lr-color-primary-active);
+  --ui-color-secondary: var(--lr-color-secondary);
+  --ui-color-success: var(--lr-color-success);
+  --ui-color-warning: var(--lr-color-warning);
+  --ui-color-error: var(--lr-color-error);
+  --ui-color-info: var(--lr-color-info);
+  --ui-color-background: var(--lr-color-background);
+  --ui-color-surface: var(--lr-color-surface);
+  --ui-color-surface-elevated: var(--lr-color-surface-elevated);
+  --ui-color-border: var(--lr-color-border);
+  --ui-color-text: var(--lr-color-text);
+  --ui-color-text-muted: var(--lr-color-text-muted);
+  --ui-color-text-inverse: var(--lr-color-text-inverse);
+}

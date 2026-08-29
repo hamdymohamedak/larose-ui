@@ -1,0 +1,21 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lr-space-4);
+}
+
+.promptRow {
+  display: flex;
+  gap: var(--lr-space-3);
+  align-items: flex-end;
+}
+
+.promptRow > :first-child {
+  flex: 1;
+}
+
+.explanation {
+  margin: 0;
+  font-size: var(--lr-font-size-sm);
+  color: var(--lr-color-text-muted);
+}

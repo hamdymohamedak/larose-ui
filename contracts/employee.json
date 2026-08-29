@@ -1,0 +1,18 @@
+{
+  "ui": {
+    "name": "Employee Form",
+    "fields": [
+      { "name": "name", "type": "string", "required": true },
+      { "name": "email", "type": "string", "required": true },
+      { "name": "department", "type": "string", "required": false }
+    ]
+  },
+  "api": {
+    "name": "Employee API",
+    "fields": [
+      { "name": "name", "type": "string", "required": true },
+      { "name": "email", "type": "string", "required": true },
+      { "name": "department", "type": "string", "required": false }
+    ]
+  }
+}

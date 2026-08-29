@@ -1,0 +1,96 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lr-space-1);
+}
+
+.label {
+  font-size: var(--lr-font-size-sm);
+  font-weight: var(--lr-font-weight-medium);
+  color: var(--lr-color-text);
+}
+
+.inputContainer {
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  font-family: var(--lr-font-family-sans);
+  color: var(--lr-color-text);
+  background-color: var(--lr-color-background);
+  border: 1px solid var(--lr-color-border);
+  border-radius: var(--lr-radius-md);
+  transition:
+    border-color var(--lr-duration-normal) var(--lr-easing-default),
+    box-shadow var(--lr-duration-normal) var(--lr-easing-default);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--lr-color-primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--lr-color-primary) 20%, transparent);
+}
+
+.input[data-size='sm'] {
+  padding: var(--lr-space-1) var(--lr-space-2);
+  font-size: var(--lr-font-size-sm);
+}
+
+.input[data-size='md'] {
+  padding: var(--lr-space-2) var(--lr-space-3);
+  font-size: var(--lr-font-size-md);
+}
+
+.input[data-size='lg'] {
+  padding: var(--lr-space-3) var(--lr-space-4);
+  font-size: var(--lr-font-size-lg);
+}
+
+.input[data-state='disabled'],
+.input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: var(--lr-color-surface);
+}
+
+.input[data-state='readonly'],
+.input:read-only {
+  background-color: var(--lr-color-surface);
+  cursor: default;
+}
+
+.input[data-state='error'] {
+  border-color: var(--lr-color-error);
+}
+
+.input[data-state='error']:focus {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--lr-color-error) 20%, transparent);
+}
+
+.range {
+  display: flex;
+  align-items: center;
+  gap: var(--lr-space-2);
+  flex-wrap: wrap;
+}
+
+.rangeField {
+  flex: 1 1 10rem;
+  min-width: 0;
+}
+
+.separator {
+  color: var(--lr-color-text-muted);
+  font-size: var(--lr-font-size-sm);
+}
+
+.hint {
+  font-size: var(--lr-font-size-xs);
+  color: var(--lr-color-text-muted);
+}
+
+.error {
+  font-size: var(--lr-font-size-xs);
+  color: var(--lr-color-error);
+}
