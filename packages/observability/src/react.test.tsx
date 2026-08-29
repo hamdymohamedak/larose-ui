@@ -72,4 +72,24 @@ describe('ObservabilityProvider', () => {
     collector.track({ type: 'interaction', component: 'btn' });
     expect(track).toHaveBeenCalled();
   });
+
+  it('resets collector when tenant or user scope changes', () => {
+    const collector = createEventCollector({ tenantId: 'tenant-a', userId: 'user-a' });
+    collector.track({ type: 'interaction', component: 'btn' });
+    expect(collector.getEvents()).toHaveLength(1);
+
+    const { rerender } = render(
+      <ObservabilityProvider collector={collector} tenantId="tenant-a" userId="user-a">
+        <span>app</span>
+      </ObservabilityProvider>,
+    );
+
+    rerender(
+      <ObservabilityProvider collector={collector} tenantId="tenant-b" userId="user-a">
+        <span>app</span>
+      </ObservabilityProvider>,
+    );
+
+    expect(collector.getEvents()).toHaveLength(0);
+  });
 });

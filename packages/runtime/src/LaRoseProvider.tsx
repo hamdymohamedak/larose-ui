@@ -33,6 +33,9 @@ import { RuntimeObservabilityBridge } from './observability/RuntimeObservability
 import type { RuntimeEvent } from './runtime/RuntimeContextProvider';
 import { resolveTenantConfig } from './tenant/resolveTenant';
 import { OptionalToastProvider } from './toast/OptionalToastProvider';
+import {
+  shouldSyncOfflineQueue,
+} from './runtime/sessionSecurity';
 
 export interface LaRoseProviderProps {
   children: ReactNode;
@@ -67,11 +70,18 @@ export interface LaRoseProviderProps {
   toastPlacement?: 'bottom-right' | 'bottom-left' | 'top-right' | 'top-left';
 }
 
-function AutoSync({ children }: { children: ReactNode }) {
+function AutoSync({
+  children,
+  session,
+}: {
+  children: ReactNode;
+  session?: SessionState;
+}) {
   const network = useNetwork();
   const offline = useOffline();
 
   useEffect(() => {
+    if (!shouldSyncOfflineQueue(session)) return;
     if (network.online && offline.queue.length > 0) {
       void offline.sync(async (request) => {
         const response = await fetch(request.url, {
@@ -87,7 +97,7 @@ function AutoSync({ children }: { children: ReactNode }) {
         }
       });
     }
-  }, [network.online, offline.queue.length, offline]);
+  }, [network.online, offline.queue.length, offline, session]);
 
   return <>{children}</>;
 }
@@ -181,7 +191,7 @@ export function LaRoseProvider({
                   <ResponsiveProvider>
                     <NetworkProvider>
                       <OfflineProvider scopeId={offlineScopeId}>
-                        <AutoSync>
+                        <AutoSync session={session}>
                           <RuntimeBridge
                             userId={userId}
                             user={user}

@@ -218,6 +218,19 @@ describe('Breadcrumb', () => {
     );
     expect(screen.getByText('Ahmed')).toHaveAttribute('aria-current', 'page');
   });
+
+  it('does not render javascript: href links', () => {
+    renderWithProvider(
+      <Breadcrumb
+        items={[
+          { label: 'Unsafe', href: 'javascript:alert(1)' },
+          { label: 'Current', current: true },
+        ]}
+      />,
+    );
+    expect(screen.queryByRole('link', { name: 'Unsafe' })).not.toBeInTheDocument();
+    expect(screen.getByText('Unsafe')).toBeInTheDocument();
+  });
 });
 
 describe('Accordion', () => {
@@ -301,6 +314,18 @@ describe('Sidebar', () => {
       </Sidebar>,
     );
     expect(screen.getByRole('button', { name: 'Dashboard' })).toHaveAttribute('aria-current', 'page');
+  });
+
+  it('falls back to button when href is unsafe', () => {
+    renderWithProvider(
+      <Sidebar>
+        <SidebarNav>
+          <SidebarItem href="javascript:alert(1)">Danger</SidebarItem>
+        </SidebarNav>
+      </Sidebar>,
+    );
+    expect(screen.queryByRole('link', { name: 'Danger' })).not.toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Danger' })).toBeInTheDocument();
   });
 });
 

@@ -78,10 +78,19 @@ export function ObservabilityProvider({
         debug,
       }),
   );
+  const scopeRef = useRef(`${tenantId ?? ''}:${userId ?? ''}:${sessionId ?? ''}`);
 
   useEffect(() => {
     if (adapter) collectorRef.current.setAdapter(adapter);
   }, [adapter]);
+
+  useEffect(() => {
+    const scope = `${tenantId ?? ''}:${userId ?? ''}:${sessionId ?? ''}`;
+    if (scopeRef.current !== scope) {
+      collectorRef.current.reset();
+      scopeRef.current = scope;
+    }
+  }, [tenantId, userId, sessionId]);
 
   const value = useMemo<ObservabilityContextValue>(
     () => ({

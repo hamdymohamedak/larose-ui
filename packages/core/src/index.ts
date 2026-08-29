@@ -256,3 +256,5 @@ export {
 } from './runtime/featureFlags';
 
 export { detectA11yPreferences, subscribeA11yPreferences } from './runtime/a11y';
+
+export { sanitizeNavigationUrl, isSafeRedirectPath } from './security/url';

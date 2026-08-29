@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState, type ReactNode } from 'react';
+import { isSafeRedirectPath } from '@larose-ui/core';
 import { Dialog } from '@larose-ui/react';
 
 export interface SessionGuardProps {
@@ -23,11 +24,13 @@ export function SessionGuard({
     return () => window.removeEventListener('larose:session-expired', handler);
   }, []);
 
+  const safeLoginUrl = isSafeRedirectPath(loginUrl) ? loginUrl : '/login';
+
   const handleRedirect = useCallback(() => {
     const returnUrl = window.location.pathname + window.location.search;
     onSessionExpired?.(returnUrl);
-    window.location.href = `${loginUrl}?returnUrl=${encodeURIComponent(returnUrl)}`;
-  }, [loginUrl, onSessionExpired]);
+    window.location.href = `${safeLoginUrl}?returnUrl=${encodeURIComponent(returnUrl)}`;
+  }, [safeLoginUrl, onSessionExpired]);
 
   return (
     <>

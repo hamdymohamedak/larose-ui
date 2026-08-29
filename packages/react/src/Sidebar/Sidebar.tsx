@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import styles from './Sidebar.module.css';
+import { sanitizeNavigationUrl } from '@larose-ui/core';
 
 export interface SidebarProps {
   children: ReactNode;
@@ -70,10 +71,11 @@ export function SidebarItem({
   onClick,
 }: SidebarItemProps) {
   const state = disabled ? 'disabled' : active ? 'active' : 'inactive';
+  const safeHref = sanitizeNavigationUrl(href);
 
-  if (href && !disabled) {
+  if (safeHref && !disabled) {
     return (
-      <a href={href} className={styles.item} data-state={state} aria-current={active ? 'page' : undefined}>
+      <a href={safeHref} className={styles.item} data-state={state} aria-current={active ? 'page' : undefined}>
         {children}
       </a>
     );

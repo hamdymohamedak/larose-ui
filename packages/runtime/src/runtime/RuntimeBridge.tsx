@@ -8,6 +8,9 @@ import { useOffline } from '../offline/OfflineProvider';
 import { useTheme } from '../theme/ThemeProvider';
 import type { FeatureState } from '../features/FeatureFlagProvider';
 import { useRuntimeStore } from './RuntimeContextProvider';
+import {
+  shouldClearOfflineQueueOnSession,
+} from './sessionSecurity';
 
 export interface RuntimeBridgeProps {
   userId?: string;
@@ -86,6 +89,12 @@ export function RuntimeBridge({
   useEffect(() => {
     if (session) setSession(session);
   }, [session, setSession]);
+
+  useEffect(() => {
+    if (shouldClearOfflineQueueOnSession(session)) {
+      offline.clear();
+    }
+  }, [session, offline]);
 
   useEffect(() => {
     if (lastNetworkRef.current !== network.condition) {
