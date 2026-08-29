@@ -1344,8 +1344,8 @@ This monorepo publishes scoped packages under `@larose-ui/*` using [Changesets](
 
 ### Prerequisites
 
-1. npm account with access to the `@larose-ui` scope
-2. `NPM_TOKEN` set in CI (GitHub secret) for automated releases
+1. npm organization **`larose-ui`** with access to the `@larose-ui` scope
+2. **`NPM_TOKEN` in GitHub Secrets** — must be an **Automation** token (see below)
 3. Update repository URLs if needed:
 
 ```bash
@@ -1390,6 +1390,25 @@ Runs build and `changeset publish`. Requires `npm login` locally or `NPM_TOKEN` 
 ### CI automation
 
 `.github/workflows/release.yml` runs on push to `main` when Changesets are present. It opens a "Version Packages" PR or publishes when merged.
+
+#### `NPM_TOKEN` for GitHub Actions (required)
+
+If publish fails with **`EOTP`** / *"requires a one-time password"*, your token is the **wrong type**. CI cannot enter 2FA codes from your phone.
+
+**Create the correct token on npm:**
+
+1. npm → **Access Tokens** → **Generate New Token**
+2. Choose **Granular Access Token** (recommended) or **Classic → Automation**
+3. Permissions:
+   - **Packages: Read and write**
+   - Organization: **`larose-ui`**
+   - Select all `@larose-ui/*` packages (or “All packages”)
+4. For Granular tokens: enable **Bypass two-factor authentication (2FA)** if shown — required for CI publish
+5. Copy the token → GitHub repo → **Settings → Secrets → Actions** → update **`NPM_TOKEN`**
+
+Do **not** use a Classic **Publish** token or a Granular token without 2FA bypass — those trigger `EOTP` in CI.
+
+Re-run the **Release** workflow after updating the secret.
 
 ### Package list
 
