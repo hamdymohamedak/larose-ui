@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { LaRoseProvider } from '@larose/runtime';
-import { SmartTable, SmartForm } from '@larose/ai';
+import { AIProvider, SmartTable, SmartForm } from '@larose/ai';
 import { Card } from '@larose/react';
 
 const employees = [
@@ -17,9 +17,9 @@ function SmartTableDemo() {
           data={employees}
           keyExtractor={(row) => row.id}
           columns={[
-            { key: 'name', header: 'Name', priority: 'high' },
-            { key: 'department', header: 'Department', priority: 'medium' },
-            { key: 'lateCount', header: 'Late (times)', priority: 'medium' },
+            { key: 'name', header: 'Name', render: (row) => row.name, priority: 'high' },
+            { key: 'department', header: 'Department', render: (row) => row.department, priority: 'medium' },
+            { key: 'lateCount', header: 'Late (times)', render: (row) => row.lateCount, priority: 'medium' },
           ]}
         />
       </Card>
@@ -36,6 +36,24 @@ export default meta;
 type Story = StoryObj<typeof SmartTableDemo>;
 
 export const NaturalLanguageFilter: Story = {};
+
+export const PermissionDenied: Story = {
+  render: () => (
+    <LaRoseProvider permissions={[]}>
+      <Card title="Smart Table (no permission)" padding="md">
+        <SmartTable
+          data={employees}
+          keyExtractor={(row) => row.id}
+          columns={[
+            { key: 'name', header: 'Name', render: (row) => row.name, priority: 'high' },
+            { key: 'department', header: 'Department', render: (row) => row.department, priority: 'medium' },
+            { key: 'lateCount', header: 'Late (times)', render: (row) => row.lateCount, priority: 'medium' },
+          ]}
+        />
+      </Card>
+    </LaRoseProvider>
+  ),
+};
 
 function SmartFormDemo() {
   const schema = {

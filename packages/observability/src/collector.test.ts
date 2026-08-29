@@ -42,6 +42,41 @@ describe('EventCollector', () => {
     const output = collector.exportPrometheus();
     expect(output).toContain('larose_interaction');
   });
+
+  it('builds journey trajectory and rage-click root causes', () => {
+    const collector = createEventCollector({ tenantId: 'acme' });
+    collector.setRuntimeContext({ session: 'authenticated', network: 'fast' });
+    collector.trackPageView('employees');
+    collector.track({
+      type: 'dead_button',
+      component: 'SaveButton',
+      metadata: { reason: 'disabled' },
+    });
+    collector.track({
+      type: 'rage_click',
+      component: 'SaveButton',
+      metadata: { clickCount: 3 },
+    });
+
+    expect(collector.getJourney().some((step) => step.kind === 'page.view')).toBe(true);
+    const analyses = collector.getRageClickAnalyses();
+    expect(analyses).toHaveLength(1);
+    expect(analyses[0]?.likelyCauses.some((cause) => cause.type === 'dead_button')).toBe(true);
+  });
+
+  it('ingests runtime events into the journey', () => {
+    const collector = createEventCollector();
+    collector.ingestRuntimeEvent(
+      {
+        type: 'network.transition',
+        timestamp: Date.now(),
+        metadata: { from: 'fast', to: 'failed' },
+      },
+      { network: 'failed' },
+    );
+
+    expect(collector.getJourney()[0]?.kind).toBe('runtime.network');
+  });
 });
 
 describe('adapters', () => {

@@ -51,7 +51,7 @@ function RageClickDemo() {
   );
 }
 
-function BrokenComponent() {
+function BrokenComponent(): never {
   throw new Error('Intentional render error for observability demo');
 }
 

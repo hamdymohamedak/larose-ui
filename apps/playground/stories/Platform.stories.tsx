@@ -41,7 +41,7 @@ function PlatformDemo() {
       permissions={['employees.read', 'employees.write', 'employees.delete', 'payroll.write']}
       tenantId="acme-corp"
       observabilityDebug
-      features={{ 'smart-table': { enabled: true } }}
+      features={{ 'smart-table': true }}
     >
       <VersionProvider frontend="1.0.0" backend="2.0.0" minBackend="2.0.0" showBanner={false}>
         <AuditProvider actor="Platform Demo User">
@@ -66,9 +66,9 @@ function PlatformDemo() {
                           data={employees}
                           keyExtractor={(e) => e.id}
                           columns={[
-                            { key: 'name', header: 'Name', priority: 'high' },
-                            { key: 'role', header: 'Role', priority: 'medium' },
-                            { key: 'department', header: 'Department', priority: 'medium' },
+                            { key: 'name', header: 'Name', render: (e) => e.name, priority: 'high' },
+                            { key: 'role', header: 'Role', render: (e) => e.role, priority: 'medium' },
+                            { key: 'department', header: 'Department', render: (e) => e.department, priority: 'medium' },
                           ]}
                         />
                       )}

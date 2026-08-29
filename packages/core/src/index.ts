@@ -38,10 +38,13 @@ export type Environment =
 
 export type NetworkCondition =
   | 'online'
+  | 'fast'
   | 'offline'
   | 'slow'
   | 'intermittent'
-  | 'high-latency';
+  | 'high-latency'
+  | 'failed'
+  | 'recovering';
 
 export type PermissionFallback =
   | 'visible'
@@ -216,3 +219,40 @@ export function createEventEmitter<T extends Record<string, unknown>>() {
 export const LAROSE_VERSION = '0.1.0';
 
 export { warnDeprecation, resetDeprecationWarnings } from './deprecation';
+
+export type {
+  SessionState,
+  UserContext,
+  TenantContext,
+  FeatureFlagResult,
+  A11yPreferences,
+  VersionMatrix,
+  NetworkSnapshot,
+  PermissionSnapshot,
+  FeatureFlagSnapshot,
+  OfflineSnapshot,
+  LocaleSnapshot,
+  ThemeSnapshot,
+  LaRoseRuntimeContext,
+} from './runtime/types';
+export { createDefaultRuntimeContext } from './runtime/types';
+
+export type { RuntimeEventType, RuntimeEvent, RuntimeEventBus } from './runtime/eventBus';
+export { createRuntimeEventBus } from './runtime/eventBus';
+
+export type { SessionEvent, SessionStateMachine } from './runtime/session';
+export { createSessionStateMachine } from './runtime/session';
+
+export type {
+  FeatureFlagEvaluationContext,
+  FeatureFlagEvaluator,
+  StaticFeatureFlagValue,
+  PercentageRolloutConfig,
+} from './runtime/featureFlags';
+export {
+  createStaticFeatureFlagEvaluator,
+  createPercentageRolloutEvaluator,
+  createCompositeFeatureFlagEvaluator,
+} from './runtime/featureFlags';
+
+export { detectA11yPreferences, subscribeA11yPreferences } from './runtime/a11y';

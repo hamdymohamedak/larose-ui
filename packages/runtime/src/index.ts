@@ -13,9 +13,6 @@ export type {
 export { LaRoseProvider } from './LaRoseProvider';
 export type { LaRoseProviderProps } from './LaRoseProvider';
 
-export { useToast, ToastProvider } from '@larose/react';
-export type { ToastInput, ToastProviderProps } from '@larose/react';
-
 export { ThemeProvider, useTheme, useLaRose } from './theme/ThemeProvider';
 export type { ThemeContextValue, ThemeProviderProps } from './theme/ThemeProvider';
 
@@ -29,7 +26,7 @@ export {
 } from './i18n/messages';
 export type { Locale, MessageKey, Messages } from './i18n/messages';
 
-export { NetworkProvider, useNetwork } from './network/NetworkProvider';
+export { NetworkProvider, useNetwork, useNetworkMonitor } from './network/NetworkProvider';
 export type { NetworkProviderProps } from './network/NetworkProvider';
 
 export { OfflineProvider, useOffline } from './offline/OfflineProvider';
@@ -56,8 +53,45 @@ export type {
 export { AdaptiveTable } from './responsive/AdaptiveTable';
 export type { AdaptiveTableProps, Column } from './responsive/AdaptiveTable';
 
+export {
+  RuntimeContextProvider,
+  useRuntimeStore,
+  useOptionalRuntimeStore,
+} from './runtime/RuntimeContextProvider';
+export type {
+  RuntimeContextProviderProps,
+  RuntimeContextStoreValue,
+} from './runtime/RuntimeContextProvider';
+
+export {
+  useRuntime,
+  useRuntimeSelector,
+  useRuntimeEvents,
+  useOptionalRuntime,
+  useOptionalRuntimeEvents,
+  useSession,
+} from './runtime/useRuntime';
+export type { SessionSlice } from './runtime/useRuntime';
+
+export { RuntimeBridge, SessionBridge } from './runtime/RuntimeBridge';
+export type { RuntimeBridgeProps } from './runtime/RuntimeBridge';
+export { RuntimeObservabilityBridge } from './observability/RuntimeObservabilityBridge';
+
 export type { NetworkState } from '@larose/network';
-export { createNetworkMonitor, isSlowNetwork, shouldUseSkeleton } from '@larose/network';
+export {
+  createNetworkMonitor,
+  isSlowNetwork,
+  isOnlineNetwork,
+  isDegradedNetwork,
+  shouldUseSkeleton,
+  normalizeNetworkCondition,
+} from '@larose/network';
+
+export { resolveTenantConfig } from './tenant/resolveTenant';
+export type {
+  TenantResolutionInput,
+  ResolvedTenantConfig,
+} from './tenant/resolveTenant';
 
 export type {
   QueuedRequest,

@@ -10,6 +10,10 @@
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
+    },
+    "./toast": {
+      "types": "./dist/toast/index.d.ts",
+      "import": "./dist/toast/index.js"
     }
   },
   "files": [
@@ -28,14 +32,21 @@
     "@larose/offline": "workspace:*",
     "@larose/permissions": "workspace:*",
     "@larose/observability": "workspace:*",
-    "@larose/react": "workspace:*",
+    "@larose/themes": "workspace:*",
     "@larose/tokens": "workspace:*"
   },
   "peerDependencies": {
+    "@larose/react": ">=0.1.0",
     "react": ">=18",
     "react-dom": ">=18"
   },
+  "peerDependenciesMeta": {
+    "@larose/react": {
+      "optional": true
+    }
+  },
   "devDependencies": {
+    "@larose/react": "workspace:*",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",
     "@vitejs/plugin-react": "^4.3.4",

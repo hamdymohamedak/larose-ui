@@ -15,4 +15,12 @@ describe('applyCodemods', () => {
     expect(result.content).toContain("@larose/runtime");
     expect(result.content).toContain('Button');
   });
+
+  it('moves useToast import to runtime toast subpath', () => {
+    const source = "import { LaRoseProvider, useToast } from '@larose/runtime';";
+    const result = applyCodemods(source);
+    expect(result.changed).toBe(true);
+    expect(result.content).toContain("@larose/runtime/toast");
+    expect(result.content).toContain('LaRoseProvider');
+  });
 });

@@ -170,6 +170,9 @@ importers:
       '@larose/forms':
         specifier: workspace:*
         version: link:../forms
+      '@larose/permissions':
+        specifier: workspace:*
+        version: link:../permissions
       '@larose/react':
         specifier: workspace:*
         version: link:../react
@@ -611,13 +614,16 @@ importers:
       '@larose/permissions':
         specifier: workspace:*
         version: link:../permissions
-      '@larose/react':
+      '@larose/themes':
         specifier: workspace:*
-        version: link:../react
+        version: link:../themes
       '@larose/tokens':
         specifier: workspace:*
         version: link:../tokens
     devDependencies:
+      '@larose/react':
+        specifier: workspace:*
+        version: link:../react
       '@testing-library/jest-dom':
         specifier: ^6.6.3
         version: 6.10.0(@testing-library/dom@10.4.0)
