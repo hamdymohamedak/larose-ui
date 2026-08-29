@@ -1,6 +1,6 @@
 import { render, type RenderOptions, type RenderResult } from '@testing-library/react';
 import type { ReactElement, ReactNode } from 'react';
-import type { Density, Environment, ThemeMode } from '@larose/core';
+import type { Density, Environment, SessionState, TenantContext, ThemeMode } from '@larose/core';
 import { LaRoseProvider } from '@larose/runtime';
 import type { FeatureState } from '@larose/runtime';
 
@@ -12,6 +12,9 @@ export interface LaRoseTestOptions extends Omit<RenderOptions, 'wrapper'> {
   permissions?: string[];
   features?: Record<string, FeatureState>;
   tenantId?: string;
+  tenant?: TenantContext;
+  session?: SessionState;
+  enableToasts?: boolean;
 }
 
 export function renderWithLaRose(
@@ -26,6 +29,9 @@ export function renderWithLaRose(
     permissions = [],
     features = {},
     tenantId,
+    tenant,
+    session,
+    enableToasts = false,
     ...renderOptions
   } = options;
 
@@ -39,6 +45,9 @@ export function renderWithLaRose(
         permissions={permissions}
         features={features}
         tenantId={tenantId}
+        tenant={tenant}
+        session={session}
+        enableToasts={enableToasts}
         observabilityDebug={false}
       >
         {children}

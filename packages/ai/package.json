@@ -23,10 +23,12 @@
   },
   "dependencies": {
     "@larose/forms": "workspace:*",
+    "@larose/permissions": "workspace:*",
     "@larose/react": "workspace:*",
     "@larose/runtime": "workspace:*"
   },
   "peerDependencies": {
+    "@larose/permissions": "workspace:*",
     "react": ">=18"
   },
   "devDependencies": {

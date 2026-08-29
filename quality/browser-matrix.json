@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "browsers": [
+    { "name": "chrome", "minVersion": 120, "engine": "Blink" },
+    { "name": "firefox", "minVersion": 121, "engine": "Gecko" },
+    { "name": "safari", "minVersion": 17, "engine": "WebKit" },
+    { "name": "edge", "minVersion": 120, "engine": "Blink" }
+  ],
+  "engines": {
+    "node": ">=20"
+  }
+}

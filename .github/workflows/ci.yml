@@ -2,8 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    branches: [dev]
   pull_request:
+    branches: [dev]
 
 jobs:
   quality:
@@ -17,6 +18,15 @@ jobs:
         with:
           node-version: 22
           cache: pnpm
+
+      - name: Turbo cache
+        uses: actions/cache@v4
+        with:
+          path: .turbo
+          key: turbo-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-${{ github.sha }}
+          restore-keys: |
+            turbo-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-
+            turbo-${{ runner.os }}-
 
       - name: Install
         run: pnpm install --frozen-lockfile
@@ -36,8 +46,14 @@ jobs:
       - name: Bundle budgets
         run: pnpm check-budgets
 
+      - name: Visual regression
+        run: pnpm visual-regression
+
       - name: laRose doctor
-        run: pnpm run doctor
+        run: pnpm run doctor:ci
+
+      - name: Doctor JSON report
+        run: pnpm run doctor:json > doctor-report.json
 
       - name: Verify npm publish readiness
         run: pnpm verify:publish

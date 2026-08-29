@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "stories": [
+    { "file": "AdaptiveTable.stories.tsx", "title": "Runtime/AdaptiveTable" },
+    { "file": "AI.stories.tsx", "title": "AI/SmartTable" },
+    { "file": "Alert.stories.tsx", "title": "Foundation/Alert" },
+    { "file": "AppShell.stories.tsx", "title": "Foundation/AppShell" },
+    { "file": "Button.stories.tsx", "title": "Foundation/Button" },
+    { "file": "Card.stories.tsx", "title": "Foundation/Card" },
+    { "file": "DataDisplay.stories.tsx", "title": "Foundation/DataDisplay" },
+    { "file": "DateTime.stories.tsx", "title": "Foundation/DateTime" },
+    { "file": "DevTools.stories.tsx", "title": "DevOps/DevTools" },
+    { "file": "Dialog.stories.tsx", "title": "Foundation/Dialog" },
+    { "file": "EmployeeCRUD.stories.tsx", "title": "Intelligence/Employee CRUD" },
+    { "file": "EmptyState.stories.tsx", "title": "Foundation/EmptyState" },
+    { "file": "Enterprise.stories.tsx", "title": "Enterprise/Audit" },
+    { "file": "EnterpriseSchema.stories.tsx", "title": "Enterprise/Schema" },
+    { "file": "FormControls.stories.tsx", "title": "Foundation/Form Controls" },
+    { "file": "Input.stories.tsx", "title": "Foundation/Input" },
+    { "file": "Navigation.stories.tsx", "title": "Foundation/Navigation" },
+    { "file": "Observability.stories.tsx", "title": "Observability/Demo" },
+    { "file": "Overlays.stories.tsx", "title": "Foundation/Overlays" },
+    { "file": "Platform.stories.tsx", "title": "Platform/Full Demo" },
+    { "file": "Skeleton.stories.tsx", "title": "Foundation/Skeleton" },
+    { "file": "Spinner.stories.tsx", "title": "Foundation/Spinner" }
+  ]
+}

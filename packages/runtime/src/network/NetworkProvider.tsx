@@ -13,14 +13,19 @@ import {
 } from '@larose/network';
 
 const defaultNetworkState: NetworkState = {
-  condition: 'online',
+  condition: 'fast',
   online: true,
 };
 
 const NetworkContext = createContext<NetworkState>(defaultNetworkState);
+const NetworkMonitorContext = createContext<NetworkMonitor | null>(null);
 
 export function useNetwork(): NetworkState {
   return useContext(NetworkContext);
+}
+
+export function useNetworkMonitor(): NetworkMonitor | null {
+  return useContext(NetworkMonitorContext);
 }
 
 export interface NetworkProviderProps {
@@ -46,7 +51,20 @@ export function NetworkProvider({ children, monitor }: NetworkProviderProps) {
     }
   }, [monitor, networkMonitor]);
 
+  useEffect(() => {
+    const onFailure = () => networkMonitor.reportFailure();
+    const onSuccess = () => networkMonitor.reportSuccess();
+    window.addEventListener('larose:network-failure', onFailure);
+    window.addEventListener('larose:network-success', onSuccess);
+    return () => {
+      window.removeEventListener('larose:network-failure', onFailure);
+      window.removeEventListener('larose:network-success', onSuccess);
+    };
+  }, [networkMonitor]);
+
   return (
-    <NetworkContext.Provider value={state}>{children}</NetworkContext.Provider>
+    <NetworkMonitorContext.Provider value={networkMonitor}>
+      <NetworkContext.Provider value={state}>{children}</NetworkContext.Provider>
+    </NetworkMonitorContext.Provider>
   );
 }

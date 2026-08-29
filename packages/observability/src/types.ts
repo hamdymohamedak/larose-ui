@@ -68,6 +68,65 @@ export interface ObservabilityConfig {
   criticalRenderThresholdMs?: number;
   rageClickThreshold?: number;
   rageClickWindowMs?: number;
+  /** Max journey steps retained in memory */
+  maxJourneySteps?: number;
+}
+
+export type JourneyStepKind =
+  | 'page.view'
+  | 'ui.interaction'
+  | 'ui.form'
+  | 'ui.error'
+  | 'ui.performance'
+  | 'ui.rage_click'
+  | 'runtime.network'
+  | 'runtime.session'
+  | 'runtime.api'
+  | 'runtime.error';
+
+export interface JourneyContextSnapshot {
+  network?: string;
+  session?: string;
+  tenant?: string;
+}
+
+export interface JourneyStep {
+  id: string;
+  kind: JourneyStepKind;
+  timestamp: number;
+  component?: string;
+  label: string;
+  metadata?: Record<string, unknown>;
+  context?: JourneyContextSnapshot;
+}
+
+export type RootCauseType =
+  | 'error'
+  | 'network'
+  | 'dead_button'
+  | 'permission.denied'
+  | 'slow_render'
+  | 'api_failure';
+
+export interface RootCauseHint {
+  type: RootCauseType;
+  label: string;
+  timestamp: number;
+  confidence: 'high' | 'medium' | 'low';
+}
+
+export interface RageClickAnalysis {
+  component: string;
+  timestamp: number;
+  clickCount: number;
+  likelyCauses: RootCauseHint[];
+}
+
+export interface CorrelatedFormFunnelMetrics extends FormFunnelMetrics {
+  /** Runtime context when the most recent form session opened */
+  lastOpenContext?: JourneyContextSnapshot;
+  /** Derived drop-off signals from correlated UX events */
+  dropOffSignals: string[];
 }
 
 export function classifyRenderTime(

@@ -19,12 +19,16 @@ export async function apiFetch<T>(
   const fullUrl = url.startsWith('http') ? url : `${baseUrl}${url}`;
 
   let response: Response;
+  const method = init.method ?? 'GET';
+  notifyApiRequest(fullUrl, method);
   try {
     response = await fetch(fullUrl, {
       headers: { 'Content-Type': 'application/json', ...init.headers },
       ...init,
     });
   } catch {
+    notifyNetworkFailure();
+    notifyApiResponse(fullUrl, method, 0, false);
     throw new ApiRequestError({
       code: 503,
       message: 'Network request failed. Check your connection.',
@@ -32,7 +36,10 @@ export async function apiFetch<T>(
     });
   }
 
+  notifyApiResponse(fullUrl, method, response.status, response.ok);
+
   if (!response.ok) {
+    notifyNetworkFailure();
     let message: string | undefined;
     try {
       const body = (await response.json()) as { message?: string };
@@ -50,10 +57,40 @@ export async function apiFetch<T>(
   }
 
   if (response.status === 204) {
+    notifyNetworkSuccess();
     return undefined as T;
   }
 
+  notifyNetworkSuccess();
   return response.json() as Promise<T>;
+}
+
+function notifyNetworkFailure(): void {
+  if (typeof window !== 'undefined') {
+    window.dispatchEvent(new CustomEvent('larose:network-failure'));
+  }
+}
+
+function notifyNetworkSuccess(): void {
+  if (typeof window !== 'undefined') {
+    window.dispatchEvent(new CustomEvent('larose:network-success'));
+  }
+}
+
+function notifyApiRequest(url: string, method: string): void {
+  if (typeof window !== 'undefined') {
+    window.dispatchEvent(
+      new CustomEvent('larose:api-request', { detail: { url, method } }),
+    );
+  }
+}
+
+function notifyApiResponse(url: string, method: string, status: number, ok: boolean): void {
+  if (typeof window !== 'undefined') {
+    window.dispatchEvent(
+      new CustomEvent('larose:api-response', { detail: { url, method, status, ok } }),
+    );
+  }
 }
 
 export function isApiError(error: unknown): error is ApiRequestError {

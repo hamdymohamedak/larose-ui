@@ -28,6 +28,13 @@ export const DEPRECATIONS: Deprecation[] = [
     replacement: "import { LaRoseProvider } from '@larose/runtime'",
     removedIn: '0.2.0',
   },
+  {
+    id: 'runtime-toast',
+    pattern: /import\s+\{([^}]*\buseToast\b[^}]*)\}\s+from\s+['"]@larose\/runtime['"]/g,
+    message: 'Import useToast from @larose/runtime/toast',
+    replacement: "import { useToast } from '@larose/runtime/toast'",
+    removedIn: '0.2.0',
+  },
 ];
 
 export interface DeprecationMatch {
@@ -118,3 +125,21 @@ export {
   type ApplyCodemodsFileResult,
   type CodemodResult,
 } from './codemods';
+
+export {
+  generateForm,
+  generatePage,
+  generateFeature,
+  runGenerator,
+  type GeneratorKind,
+  type GeneratorOptions,
+} from './generators';
+
+export {
+  analyzeRelease,
+  formatReleaseReport,
+  formatReleaseJson,
+  type ReleaseReport,
+  type PackageReleaseInfo,
+  type PackageManifestInput,
+} from './release';

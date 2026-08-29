@@ -4,6 +4,13 @@ export type {
   PerformanceThreshold,
   PerformanceEvent,
   FormFunnelMetrics,
+  CorrelatedFormFunnelMetrics,
+  JourneyStep,
+  JourneyStepKind,
+  JourneyContextSnapshot,
+  RageClickAnalysis,
+  RootCauseHint,
+  RootCauseType,
   ObservabilityAdapter,
   ObservabilityConfig,
 } from './types';
@@ -25,6 +32,10 @@ export {
 } from './adapters';
 export type { SentryAdapterOptions } from './adapters';
 
+export { analyzeRageClick, correlateFormFunnel } from './correlation';
+export { uiEventToJourneyStep, runtimeEventToJourneyStep, trackPageViewStep } from './journey';
+export { ingestRuntimeEvent, createApiRuntimeEvent } from './runtimeIngest';
+
 export {
   ObservabilityProvider,
   useObservability,
@@ -37,6 +48,7 @@ export {
   trackFormValidationFailed,
   useInteractionObserver,
   useOptionalObservability,
+  useJourneyPage,
   markFormSubmitted,
 } from './react';
 export type {

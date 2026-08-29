@@ -6,15 +6,19 @@ import { renderWithLaRose } from '@larose/testing';
 import { DevToolsPanel } from './DevToolsPanel';
 
 describe('DevToolsPanel', () => {
-  it('renders toggle and opens panel', async () => {
+  it('renders toggle and opens panel with runtime context', async () => {
     renderWithLaRose(<DevToolsPanel />, {
       permissions: ['employees.read'],
-      tenantId: 'acme',
+      tenant: { id: 'acme', name: 'ACME' },
+      session: 'authenticated',
     });
 
     expect(screen.getByRole('button', { name: /larose devtools/i })).toBeInTheDocument();
     await userEvent.click(screen.getByRole('button', { name: /larose devtools/i }));
-    expect(screen.getByText(/Theme/)).toBeInTheDocument();
+    expect(screen.getByText(/Session/)).toBeInTheDocument();
+    expect(screen.getByText(/authenticated/)).toBeInTheDocument();
     expect(screen.getByText(/employees.read/)).toBeInTheDocument();
+    await userEvent.click(screen.getByRole('button', { name: /Inspector/i }));
+    expect(screen.getByText(/Select mode/i)).toBeInTheDocument();
   });
 });

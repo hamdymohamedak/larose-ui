@@ -18,12 +18,19 @@ import type {
   ObservabilityConfig,
   UIEvent,
   UIEventType,
+  CorrelatedFormFunnelMetrics,
+  JourneyStep,
+  RageClickAnalysis,
 } from './types';
 
 export interface ObservabilityContextValue {
   collector: EventCollector;
   track: (event: Omit<UIEvent, 'timestamp'> & { timestamp?: number }) => UIEvent;
   getFormFunnelMetrics: (formName: string) => FormFunnelMetrics;
+  getCorrelatedFormFunnel: (formName: string) => CorrelatedFormFunnelMetrics;
+  getJourney: (limit?: number) => JourneyStep[];
+  getRageClickAnalyses: () => RageClickAnalysis[];
+  trackPageView: (pageName: string) => JourneyStep;
   exportMetrics: () => { counters: Record<string, number>; forms: Record<string, FormFunnelMetrics> };
   exportPrometheus: () => string;
 }
@@ -82,6 +89,11 @@ export function ObservabilityProvider({
       track: (event) => collectorRef.current.track(event),
       getFormFunnelMetrics: (formName) =>
         collectorRef.current.getFormFunnelMetrics(formName),
+      getCorrelatedFormFunnel: (formName) =>
+        collectorRef.current.getCorrelatedFormFunnel(formName),
+      getJourney: (limit) => collectorRef.current.getJourney(limit),
+      getRageClickAnalyses: () => collectorRef.current.getRageClickAnalyses(),
+      trackPageView: (pageName) => collectorRef.current.trackPageView(pageName),
       exportMetrics: () => collectorRef.current.exportMetrics(),
       exportPrometheus: () => collectorRef.current.exportPrometheus(),
     }),
@@ -317,6 +329,14 @@ export function useInteractionObserver(component: string) {
   }, [component, track]);
 
   return { onClick, trackDeadButton, trackRetry, trackRetrySuccess };
+}
+
+/** Record a page view in the user journey trajectory. */
+export function useJourneyPage(pageName: string): void {
+  const observability = useContext(ObservabilityContext);
+  useEffect(() => {
+    observability?.trackPageView(pageName);
+  }, [pageName, observability]);
 }
 
 export type { UIEvent, UIEventType, ObservabilityAdapter, FormFunnelMetrics };

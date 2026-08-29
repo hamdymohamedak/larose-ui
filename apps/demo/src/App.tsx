@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { LaRoseProvider, useToast } from '@larose/runtime';
+import { LaRoseProvider } from '@larose/runtime';
+import { useToast } from '@larose/runtime/toast';
 import { Can } from '@larose/permissions';
 import { DataView } from '@larose/data';
 import { Form } from '@larose/forms';

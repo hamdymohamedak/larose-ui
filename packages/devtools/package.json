@@ -22,6 +22,7 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
+    "@larose/core": "workspace:*",
     "@larose/observability": "workspace:*",
     "@larose/runtime": "workspace:*"
   },

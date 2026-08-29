@@ -1,10 +1,17 @@
 import type {
+  CorrelatedFormFunnelMetrics,
   FormFunnelMetrics,
+  JourneyContextSnapshot,
+  JourneyStep,
   ObservabilityAdapter,
   ObservabilityConfig,
+  RageClickAnalysis,
   UIEvent,
   UIEventType,
 } from './types';
+import { analyzeRageClick, correlateFormFunnel } from './correlation';
+import { runtimeEventToJourneyStep, trackPageViewStep, uiEventToJourneyStep } from './journey';
+import type { RuntimeEvent } from '@larose/core';
 
 type EventListener = (event: UIEvent) => void;
 
@@ -15,10 +22,13 @@ interface FormSession {
 
 export class EventCollector {
   private events: UIEvent[] = [];
+  private journey: JourneyStep[] = [];
+  private rageAnalyses: RageClickAnalysis[] = [];
   private listeners = new Set<EventListener>();
   private formSessions = new Map<string, FormSession>();
   private completionTimes = new Map<string, number[]>();
   private counters = new Map<string, number>();
+  private runtimeContext: JourneyContextSnapshot = {};
 
   constructor(
     private config: ObservabilityConfig = {},
@@ -43,9 +53,22 @@ export class EventCollector {
       sessionId: partial.sessionId ?? this.config.sessionId,
     };
 
+    const context = this.getContextSnapshot();
+    if (event.type.startsWith('form.') && event.metadata) {
+      event.metadata = { ...event.metadata, context };
+    }
+
     this.events.push(event);
+    this.appendJourney(uiEventToJourneyStep(event, context));
     this.incrementCounter(event.type);
     this.updateFormMetrics(event);
+
+    if (event.type === 'rage_click') {
+      const analysis = analyzeRageClick(event, this.events, this.journey);
+      this.rageAnalyses.push(analysis);
+      event.metadata = { ...event.metadata, rootCause: analysis.likelyCauses };
+    }
+
     this.adapter.track(event);
     this.listeners.forEach((l) => l(event));
 
@@ -54,6 +77,38 @@ export class EventCollector {
     }
 
     return event;
+  }
+
+  ingestRuntimeEvent(event: RuntimeEvent, context?: JourneyContextSnapshot): void {
+    if (context) {
+      this.runtimeContext = { ...this.runtimeContext, ...context };
+    }
+    const step = runtimeEventToJourneyStep(event, this.getContextSnapshot());
+    if (step) this.appendJourney(step);
+  }
+
+  trackPageView(pageName: string): JourneyStep {
+    const step = trackPageViewStep(pageName, this.getContextSnapshot());
+    this.appendJourney(step);
+    return step;
+  }
+
+  setRuntimeContext(context: JourneyContextSnapshot): void {
+    this.runtimeContext = { ...this.runtimeContext, ...context };
+  }
+
+  getJourney(limit?: number): JourneyStep[] {
+    if (limit === undefined) return [...this.journey];
+    return this.journey.slice(-limit);
+  }
+
+  getRageClickAnalyses(): RageClickAnalysis[] {
+    return [...this.rageAnalyses];
+  }
+
+  getCorrelatedFormFunnel(formName: string): CorrelatedFormFunnelMetrics {
+    const metrics = this.getFormFunnelMetrics(formName);
+    return correlateFormFunnel(formName, metrics, this.events, this.journey);
   }
 
   getEvents(filter?: { component?: string; type?: UIEventType }): UIEvent[] {
@@ -129,9 +184,28 @@ export class EventCollector {
 
   reset(): void {
     this.events = [];
+    this.journey = [];
+    this.rageAnalyses = [];
     this.counters.clear();
     this.formSessions.clear();
     this.completionTimes.clear();
+    this.runtimeContext = {};
+  }
+
+  private getContextSnapshot(): JourneyContextSnapshot {
+    return {
+      tenant: this.runtimeContext.tenant ?? this.config.tenantId,
+      session: this.runtimeContext.session ?? this.config.sessionId,
+      network: this.runtimeContext.network,
+    };
+  }
+
+  private appendJourney(step: JourneyStep): void {
+    const max = this.config.maxJourneySteps ?? 200;
+    this.journey.push(step);
+    if (this.journey.length > max) {
+      this.journey.shift();
+    }
   }
 
   private incrementCounter(type: UIEventType): void {
