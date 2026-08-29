@@ -38,10 +38,15 @@ export function useOffline(): OfflineContextValue {
 export interface OfflineProviderProps {
   children: ReactNode;
   queue?: OfflineQueue;
+  /** Isolates offline queue storage per user/tenant — pass from LaRoseProvider. */
+  scopeId?: string;
 }
 
-export function OfflineProvider({ children, queue }: OfflineProviderProps) {
-  const offlineQueue = useMemo(() => queue ?? createOfflineQueue(), [queue]);
+export function OfflineProvider({ children, queue, scopeId }: OfflineProviderProps) {
+  const offlineQueue = useMemo(
+    () => queue ?? createOfflineQueue(scopeId ? { scopeId } : undefined),
+    [queue, scopeId],
+  );
   const [requests, setRequests] = useState<QueuedRequest[]>([]);
   const [status, setStatus] = useState<OfflineSyncStatus>('idle');
 

@@ -11,6 +11,8 @@ export interface ReactComponentInfo {
 }
 
 const PROP_SKIP = new Set(['children', 'ref', 'key', 'dangerouslySetInnerHTML']);
+const SENSITIVE_PROP = /password|passwd|secret|token|authorization|auth|api[_-]?key|credential|cookie|bearer|ssn|private[_-]?key/i;
+const REDACTED = '[REDACTED]';
 const MAX_PROP_LEN = 80;
 
 export function getFiberKey(node: Element): string | undefined {
@@ -63,7 +65,7 @@ export function sanitizeFiberProps(props: Record<string, unknown> | undefined): 
   const out: Record<string, string> = {};
   for (const [key, value] of Object.entries(props)) {
     if (PROP_SKIP.has(key) || key.startsWith('__')) continue;
-    out[key] = formatPropValue(value);
+    out[key] = SENSITIVE_PROP.test(key) ? REDACTED : formatPropValue(value);
   }
   return out;
 }

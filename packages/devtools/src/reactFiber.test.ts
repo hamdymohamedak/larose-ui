@@ -37,6 +37,18 @@ describe('reactFiber', () => {
     expect(props.meta).toBe('{"nested":true}');
   });
 
+  it('redacts sensitive prop names', () => {
+    const props = sanitizeFiberProps({
+      apiKey: 'sk-live-secret',
+      accessToken: 'Bearer abc',
+      title: 'Employees',
+    });
+
+    expect(props.apiKey).toBe('[REDACTED]');
+    expect(props.accessToken).toBe('[REDACTED]');
+    expect(props.title).toBe('Employees');
+  });
+
   it('walks fiber tree to nearest component', () => {
     const componentFiber = {
       type: ObservedComponent,

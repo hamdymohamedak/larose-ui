@@ -1,4 +1,4 @@
-import { useEffect, type ReactNode } from 'react';
+import { useEffect, useMemo, type ReactNode } from 'react';
 import type {
   Density,
   Environment,
@@ -135,6 +135,11 @@ export function LaRoseProvider({
   });
 
   const resolvedTenantId = resolved.tenantId;
+  const resolvedUserId = userId ?? user?.id;
+  const offlineScopeId = useMemo(() => {
+    const parts = [resolvedTenantId, resolvedUserId].filter(Boolean);
+    return parts.length > 0 ? parts.join(':') : undefined;
+  }, [resolvedTenantId, resolvedUserId]);
   const resolvedVersion = {
     frontend: version?.frontend ?? LAROSE_VERSION,
     api: version?.api,
@@ -175,7 +180,7 @@ export function LaRoseProvider({
                 <EnvironmentProvider environment={environment}>
                   <ResponsiveProvider>
                     <NetworkProvider>
-                      <OfflineProvider>
+                      <OfflineProvider scopeId={offlineScopeId}>
                         <AutoSync>
                           <RuntimeBridge
                             userId={userId}
