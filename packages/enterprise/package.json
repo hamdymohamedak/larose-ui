@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/enterprise",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Enterprise features — audit trails, version compatibility, UI schema IaC, security patterns",
   "type": "module",
   "main": "./dist/index.js",

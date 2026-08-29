@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/network",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Network condition detection for laRose UI platform",
   "type": "module",
   "main": "./dist/index.js",

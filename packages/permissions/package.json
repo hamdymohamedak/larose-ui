@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/permissions",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Authorization-aware UI for laRose platform",
   "type": "module",
   "main": "./dist/index.js",
