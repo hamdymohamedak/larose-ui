@@ -1,6 +1,6 @@
 import { useCallback, useReducer, useRef, type ReactNode } from 'react';
-import type { Size, Variant } from '@larose/core';
-import { createAsyncStateMachine } from '@larose/core';
+import type { Size, Variant } from '@larose-ui/core';
+import { createAsyncStateMachine } from '@larose-ui/core';
 import { Button, type ButtonProps } from '../Button/Button';
 
 export interface AsyncButtonProps extends Omit<ButtonProps, 'onClick' | 'loading' | 'error'> {

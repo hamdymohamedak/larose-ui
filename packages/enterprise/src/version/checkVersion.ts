@@ -1,5 +1,5 @@
-import type { VersionInfo } from '@larose/core';
-import { LAROSE_VERSION } from '@larose/core';
+import type { VersionInfo } from '@larose-ui/core';
+import { LAROSE_VERSION } from '@larose-ui/core';
 
 function parseMajor(version: string): number {
   const match = version.match(/^(\d+)/);

@@ -1,6 +1,6 @@
-import type { Density, TenantContext, ThemeMode } from '@larose/core';
-import { getThemePreset, type ThemePresetId } from '@larose/themes';
-import type { ColorTokens } from '@larose/tokens';
+import type { Density, TenantContext, ThemeMode } from '@larose-ui/core';
+import { getThemePreset, type ThemePresetId } from '@larose-ui/themes';
+import type { ColorTokens } from '@larose-ui/tokens';
 import type { FeatureState } from '../features/FeatureFlagProvider';
 import type { Locale } from '../i18n/messages';
 

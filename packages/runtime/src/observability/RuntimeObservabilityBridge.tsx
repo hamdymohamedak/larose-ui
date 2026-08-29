@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { createApiRuntimeEvent, useObservability } from '@larose/observability';
+import { createApiRuntimeEvent, useObservability } from '@larose-ui/observability';
 import { useRuntime } from '../runtime/useRuntime';
 import { useRuntimeStore } from '../runtime/RuntimeContextProvider';
 

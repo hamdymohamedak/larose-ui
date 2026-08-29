@@ -32,7 +32,7 @@ function renameTokens(source: string): CodemodResult {
 
 function fixLaRoseProviderImport(source: string): CodemodResult {
   const importRegex =
-    /import\s+\{([^}]+)\}\s+from\s+['"]@larose\/react['"]\s*;?/g;
+    /import\s+\{([^}]+)\}\s+from\s+['"]@larose-ui\/react['"]\s*;?/g;
   let content = source;
   let changed = false;
   const transforms: string[] = [];
@@ -47,13 +47,13 @@ function fixLaRoseProviderImport(source: string): CodemodResult {
     const reactParts = parts.filter((p: string) => p !== 'LaRoseProvider');
 
     changed = true;
-    transforms.push('import:LaRoseProvider→@larose/runtime');
+    transforms.push('import:LaRoseProvider→@larose-ui/runtime');
 
-    const runtimeImport = "import { LaRoseProvider } from '@larose/runtime';";
+    const runtimeImport = "import { LaRoseProvider } from '@larose-ui/runtime';";
     if (reactParts.length === 0) {
       return runtimeImport;
     }
-    return `${runtimeImport}\nimport { ${reactParts.join(', ')} } from '@larose/react';`;
+    return `${runtimeImport}\nimport { ${reactParts.join(', ')} } from '@larose-ui/react';`;
   });
 
   return { content, changed, transforms };
@@ -61,22 +61,22 @@ function fixLaRoseProviderImport(source: string): CodemodResult {
 
 function fixToastImport(source: string): CodemodResult {
   const regex =
-    /import\s+\{([^}]*\buseToast\b[^}]*)\}\s+from\s+['"]@larose\/runtime['"]\s*;?/g;
+    /import\s+\{([^}]*\buseToast\b[^}]*)\}\s+from\s+['"]@larose-ui\/runtime['"]\s*;?/g;
   let content = source;
   let changed = false;
   const transforms: string[] = [];
 
   content = content.replace(regex, (_full, specifiers: string) => {
     changed = true;
-    transforms.push('import:useToast→@larose/runtime/toast');
+    transforms.push('import:useToast→@larose-ui/runtime/toast');
     const parts = specifiers
       .split(',')
       .map((s: string) => s.trim())
       .filter(Boolean);
     const toastParts = parts.filter((p: string) => p !== 'useToast');
-    const toastImport = "import { useToast } from '@larose/runtime/toast';";
+    const toastImport = "import { useToast } from '@larose-ui/runtime/toast';";
     if (toastParts.length === 0) return toastImport;
-    return `${toastImport}\nimport { ${toastParts.join(', ')} } from '@larose/runtime';`;
+    return `${toastImport}\nimport { ${toastParts.join(', ')} } from '@larose-ui/runtime';`;
   });
 
   return { content, changed, transforms };

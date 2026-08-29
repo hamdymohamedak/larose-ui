@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { AdaptiveTable, useI18n, useNetwork, useBreakpoint } from '@larose/runtime';
-import { Badge } from '@larose/react';
+import { AdaptiveTable, useI18n, useNetwork, useBreakpoint } from '@larose-ui/runtime';
+import { Badge } from '@larose-ui/react';
 
 interface Employee {
   id: string;

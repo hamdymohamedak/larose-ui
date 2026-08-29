@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useEffect, useState } from 'react';
-import { LaRoseProvider, AdaptiveTable, Feature } from '@larose/runtime';
-import { Can } from '@larose/permissions';
-import { DataView, useUndo, UndoToast } from '@larose/data';
-import { Form } from '@larose/forms';
-import { Button, Card, Dialog } from '@larose/react';
+import { LaRoseProvider, AdaptiveTable, Feature } from '@larose-ui/runtime';
+import { Can } from '@larose-ui/permissions';
+import { DataView, useUndo, UndoToast } from '@larose-ui/data';
+import { Form } from '@larose-ui/forms';
+import { Button, Card, Dialog } from '@larose-ui/react';
 import {
   installEmployeeMock,
   resetEmployees,

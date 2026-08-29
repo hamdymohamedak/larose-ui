@@ -1,5 +1,5 @@
 {
-  "name": "@larose/runtime",
+  "name": "@larose-ui/runtime",
   "version": "0.1.0",
   "description": "Runtime providers for laRose UI platform — theme, i18n, network, offline, responsive",
   "type": "module",
@@ -27,26 +27,26 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@larose/core": "workspace:*",
-    "@larose/network": "workspace:*",
-    "@larose/offline": "workspace:*",
-    "@larose/permissions": "workspace:*",
-    "@larose/observability": "workspace:*",
-    "@larose/themes": "workspace:*",
-    "@larose/tokens": "workspace:*"
+    "@larose-ui/core": "workspace:*",
+    "@larose-ui/network": "workspace:*",
+    "@larose-ui/offline": "workspace:*",
+    "@larose-ui/permissions": "workspace:*",
+    "@larose-ui/observability": "workspace:*",
+    "@larose-ui/themes": "workspace:*",
+    "@larose-ui/tokens": "workspace:*"
   },
   "peerDependencies": {
-    "@larose/react": ">=0.1.0",
+    "@larose-ui/react": ">=0.1.0",
     "react": ">=18",
     "react-dom": ">=18"
   },
   "peerDependenciesMeta": {
-    "@larose/react": {
+    "@larose-ui/react": {
       "optional": true
     }
   },
   "devDependencies": {
-    "@larose/react": "workspace:*",
+    "@larose-ui/react": "workspace:*",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",
     "@vitejs/plugin-react": "^4.3.4",

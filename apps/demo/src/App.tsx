@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import { LaRoseProvider } from '@larose/runtime';
-import { useToast } from '@larose/runtime/toast';
-import { Can } from '@larose/permissions';
-import { DataView } from '@larose/data';
-import { Form } from '@larose/forms';
+import { LaRoseProvider } from '@larose-ui/runtime';
+import { useToast } from '@larose-ui/runtime/toast';
+import { Can } from '@larose-ui/permissions';
+import { DataView } from '@larose-ui/data';
+import { Form } from '@larose-ui/forms';
 import {
   Breadcrumb,
   Button,
@@ -17,7 +17,7 @@ import {
   SidebarItem,
   SidebarNav,
   useCommandPaletteShortcut,
-} from '@larose/react';
+} from '@larose-ui/react';
 import { installEmployeeMock, resetEmployees, type Employee } from './employeeApi';
 
 function DemoContent() {

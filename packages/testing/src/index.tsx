@@ -1,8 +1,8 @@
 import { render, type RenderOptions, type RenderResult } from '@testing-library/react';
 import type { ReactElement, ReactNode } from 'react';
-import type { Density, Environment, SessionState, TenantContext, ThemeMode } from '@larose/core';
-import { LaRoseProvider } from '@larose/runtime';
-import type { FeatureState } from '@larose/runtime';
+import type { Density, Environment, SessionState, TenantContext, ThemeMode } from '@larose-ui/core';
+import { LaRoseProvider } from '@larose-ui/runtime';
+import type { FeatureState } from '@larose-ui/runtime';
 
 export interface LaRoseTestOptions extends Omit<RenderOptions, 'wrapper'> {
   theme?: ThemeMode;
@@ -95,7 +95,7 @@ export const defaultTestMatrix: TestMatrixCase[] = [
 export const VISUAL_REGRESSION_GUIDE = `
 # Visual Regression Architecture
 
-1. Build Storybook: \`pnpm --filter @larose/playground build\`
+1. Build Storybook: \`pnpm --filter @larose-ui/playground build\`
 2. Capture snapshots with Chromatic or Playwright:
    - Light / dark themes
    - All component states from stories

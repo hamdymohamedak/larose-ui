@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { LaRoseProvider } from '@larose/runtime';
-import { DevToolsProvider } from '@larose/devtools';
-import { Button, Card } from '@larose/react';
+import { LaRoseProvider } from '@larose-ui/runtime';
+import { DevToolsProvider } from '@larose-ui/devtools';
+import { Button, Card } from '@larose-ui/react';
 
 function DevToolsDemo() {
   return (

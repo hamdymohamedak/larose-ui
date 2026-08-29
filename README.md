@@ -49,22 +49,22 @@ laRose is a UI platform — not just components. This guide shows how to compose
 ### Install
 
 ```bash
-pnpm add @larose/runtime @larose/react @larose/tokens
+pnpm add @larose-ui/runtime @larose-ui/react @larose-ui/tokens
 ```
 
 For intelligence, observability, and enterprise features, add packages as needed:
 
 ```bash
-pnpm add @larose/data @larose/forms @larose/permissions
-pnpm add @larose/observability @larose/enterprise @larose/ai
+pnpm add @larose-ui/data @larose-ui/forms @larose-ui/permissions
+pnpm add @larose-ui/observability @larose-ui/enterprise @larose-ui/ai
 ```
 
 ### Minimal app
 
 ```tsx
-import { LaRoseProvider } from '@larose/runtime';
-import { Button, Card, Input } from '@larose/react';
-import '@larose/tokens/styles.css';
+import { LaRoseProvider } from '@larose-ui/runtime';
+import { Button, Card, Input } from '@larose-ui/react';
+import '@larose-ui/tokens/styles.css';
 
 export function App() {
   return (
@@ -78,11 +78,11 @@ export function App() {
 }
 ```
 
-`LaRoseProvider` includes optional toasts via lazy `@larose/react` when `enableToasts` is true. Import toast APIs from `@larose/runtime/toast` or `@larose/react`:
+`LaRoseProvider` includes optional toasts via lazy `@larose-ui/react` when `enableToasts` is true. Import toast APIs from `@larose-ui/runtime/toast` or `@larose-ui/react`:
 
 ```tsx
-import { LaRoseProvider } from '@larose/runtime';
-import { useToast } from '@larose/runtime/toast';
+import { LaRoseProvider } from '@larose-ui/runtime';
+import { useToast } from '@larose-ui/runtime/toast';
 
 function SaveButton() {
   const { toast } = useToast();
@@ -102,16 +102,16 @@ function SaveButton() {
 
 | Layer | Package | Key APIs |
 |-------|---------|----------|
-| Runtime | `@larose/runtime` | `LaRoseProvider`, theme, i18n, network, offline, `useRuntime` |
-| Runtime toasts | `@larose/runtime/toast` | `useToast`, `ToastProvider` |
-| Components | `@larose/react` | Button, Input, Modal, Dialog, Card, … |
-| Permissions | `@larose/permissions` | `<Can>`, `<Permission>`, `<Explainable>` |
-| Data | `@larose/data` | `useQuery`, `DataView`, `SelfHealingError`, `useUndo` |
-| Forms | `@larose/forms` | `<Form schema={...} />` |
-| Observability | `@larose/observability` | `ObservedForm`, funnel metrics, rage click detection |
-| Enterprise | `@larose/enterprise` | `AuditedInput`, `VersionProvider`, `SessionGuard` |
-| AI | `@larose/ai` | `SmartTable`, `SmartForm`, custom `AIAdapter` |
-| DevTools | `@larose/devtools` | `<DevToolsProvider />` (dev only) |
+| Runtime | `@larose-ui/runtime` | `LaRoseProvider`, theme, i18n, network, offline, `useRuntime` |
+| Runtime toasts | `@larose-ui/runtime/toast` | `useToast`, `ToastProvider` |
+| Components | `@larose-ui/react` | Button, Input, Modal, Dialog, Card, … |
+| Permissions | `@larose-ui/permissions` | `<Can>`, `<Permission>`, `<Explainable>` |
+| Data | `@larose-ui/data` | `useQuery`, `DataView`, `SelfHealingError`, `useUndo` |
+| Forms | `@larose-ui/forms` | `<Form schema={...} />` |
+| Observability | `@larose-ui/observability` | `ObservedForm`, funnel metrics, rage click detection |
+| Enterprise | `@larose-ui/enterprise` | `AuditedInput`, `VersionProvider`, `SessionGuard` |
+| AI | `@larose-ui/ai` | `SmartTable`, `SmartForm`, custom `AIAdapter` |
+| DevTools | `@larose-ui/devtools` | `<DevToolsProvider />` (dev only) |
 
 ### Employee CRUD pattern
 
@@ -146,38 +146,38 @@ Explore stories by layer: **Platform/Full Demo**, **Intelligence/**, **Enterpris
 
 | Package | Description |
 |---------|-------------|
-| `@larose/core` | Types, async state machines, error classification |
-| `@larose/tokens` | Runtime design tokens with density + theming |
-| `@larose/themes` | Named theme presets and tenant branding |
-| `@larose/react` | React components with production UI states |
-| `@larose/network` | Network condition detection (online/offline/slow) |
-| `@larose/offline` | Offline request queue with sync + conflict handling |
-| `@larose/runtime` | Full provider tree — theme, i18n, network, offline, responsive |
-| `@larose/permissions` | Can, Permission, RBAC/ABAC authorization UI |
-| `@larose/data` | useQuery, useMutation, DataView, self-healing errors, undo |
-| `@larose/forms` | Schema-driven forms with conditional fields |
-| `@larose/observability` | Event tracking, funnel metrics, rage click detection |
-| `@larose/contracts` | UI/API contract validation |
-| `@larose/migration` | Deprecation scanning and migration reports |
-| `@larose/testing` | `renderWithLaRose()`, test matrix utilities |
-| `@larose/cli` | `larose doctor`, `migrate`, `generate` |
-| `@larose/devtools` | In-app runtime inspector (dev only) |
-| `@larose/enterprise` | Audit trails, version compatibility, UI schema IaC, security |
-| `@larose/ai` | SmartTable, SmartForm, pluggable AI adapters |
-| `@larose/accessibility` | Component source a11y scanner |
-| `@larose/playground` | Storybook component playground (private) |
-| `@larose/demo` | Vite demo app — production-style integration (private) |
+| `@larose-ui/core` | Types, async state machines, error classification |
+| `@larose-ui/tokens` | Runtime design tokens with density + theming |
+| `@larose-ui/themes` | Named theme presets and tenant branding |
+| `@larose-ui/react` | React components with production UI states |
+| `@larose-ui/network` | Network condition detection (online/offline/slow) |
+| `@larose-ui/offline` | Offline request queue with sync + conflict handling |
+| `@larose-ui/runtime` | Full provider tree — theme, i18n, network, offline, responsive |
+| `@larose-ui/permissions` | Can, Permission, RBAC/ABAC authorization UI |
+| `@larose-ui/data` | useQuery, useMutation, DataView, self-healing errors, undo |
+| `@larose-ui/forms` | Schema-driven forms with conditional fields |
+| `@larose-ui/observability` | Event tracking, funnel metrics, rage click detection |
+| `@larose-ui/contracts` | UI/API contract validation |
+| `@larose-ui/migration` | Deprecation scanning and migration reports |
+| `@larose-ui/testing` | `renderWithLaRose()`, test matrix utilities |
+| `@larose-ui/cli` | `larose doctor`, `migrate`, `generate` |
+| `@larose-ui/devtools` | In-app runtime inspector (dev only) |
+| `@larose-ui/enterprise` | Audit trails, version compatibility, UI schema IaC, security |
+| `@larose-ui/ai` | SmartTable, SmartForm, pluggable AI adapters |
+| `@larose-ui/accessibility` | Component source a11y scanner |
+| `@larose-ui/playground` | Storybook component playground (private) |
+| `@larose-ui/demo` | Vite demo app — production-style integration (private) |
 
 ---
 
 ## Usage
 
 ```tsx
-import { LaRoseProvider } from '@larose/runtime';
-import { DataView } from '@larose/data';
-import { Can } from '@larose/permissions';
-import { Button, Card } from '@larose/react';
-import '@larose/tokens/styles.css';
+import { LaRoseProvider } from '@larose-ui/runtime';
+import { DataView } from '@larose-ui/data';
+import { Can } from '@larose-ui/permissions';
+import { Button, Card } from '@larose-ui/react';
+import '@larose-ui/tokens/styles.css';
 
 function App() {
   return (
@@ -250,7 +250,7 @@ Loading | Success | Error | Empty | Disabled | Read Only
 Unauthorized | Offline | Retry | Optimistic Update | Rollback
 ```
 
-Components are built on `@larose/core` primitives and styled via `@larose/tokens`.
+Components are built on `@larose-ui/core` primitives and styled via `@larose-ui/tokens`.
 
 #### Intelligence layer
 
@@ -302,10 +302,10 @@ idle → loading → success | error → retrying
 ```
 
 - Local UI state: React `useState` / `useReducer`
-- Async lifecycle: `@larose/core` state machine (`createAsyncStateMachine`)
-- Server state: `@larose/data` (Query/Mutation abstractions, TanStack Query compatible)
+- Async lifecycle: `@larose-ui/core` state machine (`createAsyncStateMachine`)
+- Server state: `@larose-ui/data` (Query/Mutation abstractions, TanStack Query compatible)
 - Global runtime: React Context providers (theme, permissions, network)
-- Offline queue: `@larose/offline` persistent queue with IndexedDB
+- Offline queue: `@larose-ui/offline` persistent queue with IndexedDB
 
 No global Redux store. Context + server-state library keeps boundaries clear.
 
@@ -317,27 +317,27 @@ Backend Contract → UI Contract → Component
 
 - HTTP client with automatic error classification (401, 403, 404, 409, 422, 429, 500)
 - Self-healing error messages with retry/backoff
-- Contract validation in CI via `@larose/contracts`
+- Contract validation in CI via `@larose-ui/contracts`
 - Pagination, empty, and unauthorized states handled by `<DataView />`
 
 ### Package dependency graph
 
 ```text
-@larose/tokens
-@larose/core
+@larose-ui/tokens
+@larose-ui/core
     ↓
-@larose/react ← @larose/accessibility
+@larose-ui/react ← @larose-ui/accessibility
     ↓
-@larose/runtime (theme, responsive, network, offline)
+@larose-ui/runtime (theme, responsive, network, offline)
     ↓
-@larose/data | @larose/permissions | @larose/forms
+@larose-ui/data | @larose-ui/permissions | @larose-ui/forms
     ↓
-@larose/observability | @larose/ai
+@larose-ui/observability | @larose-ui/ai
     ↓
-@larose/devtools | @larose/cli | @larose/migration
+@larose-ui/devtools | @larose-ui/cli | @larose-ui/migration
 ```
 
-Apps depend on `@larose/react` + selected intelligence packages. Tree-shakeable ESM.
+Apps depend on `@larose-ui/react` + selected intelligence packages. Tree-shakeable ESM.
 
 ### Runtime architecture
 
@@ -371,16 +371,16 @@ App Root
 
 ### Accessibility architecture
 
-Built into `@larose/accessibility`:
+Built into `@larose-ui/accessibility`:
 
 - Focus trap, focus restore, aria-labelledby/describedby for overlays
 - Keyboard navigation contracts for all interactive components
 - Reduced motion via token system
-- Development warnings + CI axe checks via `@larose/cli doctor`
+- Development warnings + CI axe checks via `@larose-ui/cli doctor`
 
 ### Theming / token architecture
 
-Runtime CSS custom properties injected by `@larose/tokens`:
+Runtime CSS custom properties injected by `@larose-ui/tokens`:
 
 ```text
 Global defaults → Brand → Organization → Tenant → User preference
@@ -398,7 +398,7 @@ No rebuild required for tenant rebrand. Density (compact/comfortable/spacious) s
 
 Supports: visible, hidden, disabled, read-only, forbidden, permission-loading.
 
-Never use `user.role === "admin"` as the primary pattern. Permissions are resource.action strings evaluated by `@larose/permissions`.
+Never use `user.role === "admin"` as the primary pattern. Permissions are resource.action strings evaluated by `@larose-ui/permissions`.
 
 ### Offline architecture
 
@@ -410,7 +410,7 @@ Conflict resolution with rollback. Optimistic updates with undo.
 
 ### AI integration architecture
 
-Pluggable AI adapters behind `@larose/ai`:
+Pluggable AI adapters behind `@larose-ui/ai`:
 
 - `<SmartTable />` — natural language filtering
 - `<SmartForm />` — natural language field population
@@ -419,7 +419,7 @@ Components expose stable APIs; AI is an optional intelligence layer, not a break
 
 ### DevTools architecture
 
-Browser extension + in-app panel (`@larose/devtools`):
+Browser extension + in-app panel (`@larose-ui/devtools`):
 
 - Component tree, permissions, network, feature flags, theme, tenant, performance, errors
 
@@ -433,15 +433,15 @@ larose generate  # scaffold pages/forms from schema
 
 ### Release / versioning strategy
 
-- Semver per package (`@larose/react@1.2.0`)
+- Semver per package (`@larose-ui/react@1.2.0`)
 - Changesets for changelog + coordinated releases
 - LTS branches for enterprise customers
 - Migration codemods ship with every major version
 
 ### Non-goals (remaining)
 
-- Browser DevTools extension (in-app `@larose/devtools` panel ships instead)
-- Rich calendar UI date pickers (foundation `@larose/react` ships token-styled native date/time inputs)
+- Browser DevTools extension (in-app `@larose-ui/devtools` panel ships instead)
+- Rich calendar UI date pickers (foundation `@larose-ui/react` ships token-styled native date/time inputs)
 - Hosted observability backend (adapters emit to your stack)
 - Public docs site / generated API reference (architecture docs in repo for now)
 
@@ -581,7 +581,7 @@ Every major component supports:
 
 ### Component catalog
 
-#### `@larose/react` (foundation)
+#### `@larose-ui/react` (foundation)
 
 - Button — variants, loading, disabled, error
 - Input, Textarea, Select — validation states, read-only, disabled
@@ -595,15 +595,15 @@ Every major component supports:
 
 #### Intelligence layer (separate packages)
 
-- `<Form />` — schema-driven forms (`@larose/forms`; uses `@larose/react` Textarea/Select)
-- `<DataView />`, `useQuery`, `useMutation` — `@larose/data`
-- `<Can />` — `@larose/permissions`
-- `<AdaptiveTable />` — responsive table layouts (`@larose/runtime`)
-- `<SmartTable />`, `<SmartForm />` — `@larose/ai`
+- `<Form />` — schema-driven forms (`@larose-ui/forms`; uses `@larose-ui/react` Textarea/Select)
+- `<DataView />`, `useQuery`, `useMutation` — `@larose-ui/data`
+- `<Can />` — `@larose-ui/permissions`
+- `<AdaptiveTable />` — responsive table layouts (`@larose-ui/runtime`)
+- `<SmartTable />`, `<SmartForm />` — `@larose-ui/ai`
 
 ### Responsive behavior
 
-Components use container-aware layouts where possible. `AdaptiveTable` in `@larose/runtime` switches table → cards → priority layout by breakpoint context.
+Components use container-aware layouts where possible. `AdaptiveTable` in `@larose-ui/runtime` switches table → cards → priority layout by breakpoint context.
 
 ### Internationalization
 
@@ -628,28 +628,28 @@ Components use container-aware layouts where possible. `AdaptiveTable` in `@laro
 ```text
 laRose/
 ├── packages/
-│   ├── core/              @larose/core
-│   ├── tokens/            @larose/tokens
-│   ├── react/             @larose/react
-│   ├── runtime/           @larose/runtime
-│   ├── network/           @larose/network
-│   ├── offline/           @larose/offline
-│   ├── data/              @larose/data
-│   ├── permissions/       @larose/permissions
-│   ├── forms/             @larose/forms
-│   ├── observability/     @larose/observability
-│   ├── accessibility/     @larose/accessibility
-│   ├── testing/           @larose/testing
-│   ├── contracts/         @larose/contracts
-│   ├── cli/               @larose/cli
-│   ├── devtools/          @larose/devtools
-│   ├── migration/         @larose/migration
-│   ├── ai/                @larose/ai
-│   ├── enterprise/        @larose/enterprise
-│   └── themes/            @larose/themes
+│   ├── core/              @larose-ui/core
+│   ├── tokens/            @larose-ui/tokens
+│   ├── react/             @larose-ui/react
+│   ├── runtime/           @larose-ui/runtime
+│   ├── network/           @larose-ui/network
+│   ├── offline/           @larose-ui/offline
+│   ├── data/              @larose-ui/data
+│   ├── permissions/       @larose-ui/permissions
+│   ├── forms/             @larose-ui/forms
+│   ├── observability/     @larose-ui/observability
+│   ├── accessibility/     @larose-ui/accessibility
+│   ├── testing/           @larose-ui/testing
+│   ├── contracts/         @larose-ui/contracts
+│   ├── cli/               @larose-ui/cli
+│   ├── devtools/          @larose-ui/devtools
+│   ├── migration/         @larose-ui/migration
+│   ├── ai/                @larose-ui/ai
+│   ├── enterprise/        @larose-ui/enterprise
+│   └── themes/            @larose-ui/themes
 ├── apps/
-│   ├── playground/        @larose/playground     Storybook
-│   └── demo/              @larose/demo           Vite integration demo
+│   ├── playground/        @larose-ui/playground     Storybook
+│   └── demo/              @larose-ui/demo           Vite integration demo
 ├── turbo.json
 ├── pnpm-workspace.yaml
 └── package.json
@@ -657,7 +657,7 @@ laRose/
 
 ### Package responsibilities
 
-#### `@larose/core`
+#### `@larose-ui/core`
 
 Framework-agnostic foundation:
 
@@ -669,7 +669,7 @@ Framework-agnostic foundation:
 **Dependencies:** none  
 **Dependents:** all packages
 
-#### `@larose/tokens`
+#### `@larose-ui/tokens`
 
 Runtime design token system:
 
@@ -678,10 +678,10 @@ Runtime design token system:
 - Theme presets (light, dark)
 - Density scaling
 
-**Dependencies:** `@larose/core`  
-**Dependents:** `@larose/react`, `@larose/runtime`, `@larose/themes`
+**Dependencies:** `@larose-ui/core`  
+**Dependents:** `@larose-ui/react`, `@larose-ui/runtime`, `@larose-ui/themes`
 
-#### `@larose/react`
+#### `@larose-ui/react`
 
 React component library:
 
@@ -689,20 +689,20 @@ React component library:
 - Re-exports token utilities for convenience
 - Peer dependency on React 18+
 
-**Dependencies:** `@larose/core`, `@larose/tokens`  
+**Dependencies:** `@larose-ui/core`, `@larose-ui/tokens`  
 **Dependents:** apps, intelligence packages
 
-#### `@larose/runtime`
+#### `@larose-ui/runtime`
 
 Composed provider tree:
 
 - `LaRoseProvider`
 - Theme, tenant, i18n, environment providers
 
-**Dependencies:** `@larose/core`, `@larose/tokens`, `@larose/react`  
+**Dependencies:** `@larose-ui/core`, `@larose-ui/tokens`, `@larose-ui/react`  
 **Dependents:** apps
 
-#### `@larose/data`
+#### `@larose-ui/data`
 
 Backend-aware UI:
 
@@ -710,10 +710,10 @@ Backend-aware UI:
 - HTTP client with error mapping
 - Pagination helpers
 
-**Dependencies:** `@larose/core`, `@larose/react`  
-**Dependents:** `@larose/forms`, demo apps
+**Dependencies:** `@larose-ui/core`, `@larose-ui/react`  
+**Dependents:** `@larose-ui/forms`, demo apps
 
-#### `@larose/permissions`
+#### `@larose-ui/permissions`
 
 Authorization-aware UI:
 
@@ -721,9 +721,9 @@ Authorization-aware UI:
 - RBAC/ABAC evaluators
 - Permission loading states
 
-**Dependencies:** `@larose/core`, `@larose/react`
+**Dependencies:** `@larose-ui/core`, `@larose-ui/react`
 
-#### `@larose/forms`
+#### `@larose-ui/forms`
 
 Schema-driven forms:
 
@@ -731,9 +731,9 @@ Schema-driven forms:
 - Conditional/dependent fields
 - Server validation integration
 
-**Dependencies:** `@larose/core`, `@larose/react`, `@larose/data`
+**Dependencies:** `@larose-ui/core`, `@larose-ui/react`, `@larose-ui/data`
 
-#### `@larose/observability`
+#### `@larose-ui/observability`
 
 UX telemetry:
 
@@ -741,20 +741,20 @@ UX telemetry:
 - Performance measurement
 - Metric exports
 
-**Dependencies:** `@larose/core`, `@larose/react`
+**Dependencies:** `@larose-ui/core`, `@larose-ui/react`
 
-#### `@larose/themes`
+#### `@larose-ui/themes`
 
 Named theme presets and tenant branding helpers:
 
 - Built-in presets (`default`, `ocean`, `forest`, `sunset`)
 - `applyThemePreset()` for runtime branding
-- Re-exports `createTenantTheme` from `@larose/tokens`
+- Re-exports `createTenantTheme` from `@larose-ui/tokens`
 
-**Dependencies:** `@larose/core`, `@larose/tokens`  
-**Dependents:** apps, `@larose/runtime` (optional)
+**Dependencies:** `@larose-ui/core`, `@larose-ui/tokens`  
+**Dependents:** apps, `@larose-ui/runtime` (optional)
 
-#### `@larose/accessibility`
+#### `@larose-ui/accessibility`
 
 A11y utilities and validators:
 
@@ -762,9 +762,9 @@ A11y utilities and validators:
 - Integrated with `larose doctor` and CI (`pnpm a11y`)
 - Recommended CSP export
 
-**Dependencies:** `@larose/core`
+**Dependencies:** `@larose-ui/core`
 
-#### `@larose/cli`
+#### `@larose-ui/cli`
 
 Developer tooling:
 
@@ -772,9 +772,9 @@ Developer tooling:
 - `larose migrate`
 - `larose generate`
 
-**Dependencies:** multiple `@larose/*` for validation
+**Dependencies:** multiple `@larose-ui/*` for validation
 
-#### `@larose/enterprise`
+#### `@larose-ui/enterprise`
 
 Enterprise patterns:
 
@@ -783,9 +783,9 @@ Enterprise patterns:
 - UI schema IaC (`SchemaRenderer`, `compileFormSchema`)
 - `SessionGuard`, `SensitiveAction`
 
-**Dependencies:** `@larose/core`, `@larose/forms`, `@larose/permissions`, `@larose/runtime`, `@larose/react`
+**Dependencies:** `@larose-ui/core`, `@larose-ui/forms`, `@larose-ui/permissions`, `@larose-ui/runtime`, `@larose-ui/react`
 
-#### `@larose/ai`
+#### `@larose-ui/ai`
 
 Pluggable AI intelligence layer:
 
@@ -793,19 +793,19 @@ Pluggable AI intelligence layer:
 - `SmartForm` — natural language field population
 - `AIAdapter` interface + mock adapter for demos
 
-**Dependencies:** `@larose/forms`, `@larose/runtime`, `@larose/react`
+**Dependencies:** `@larose-ui/forms`, `@larose-ui/runtime`, `@larose-ui/react`
 
-#### `@larose/playground`
+#### `@larose-ui/playground`
 
 Storybook app for component state matrix testing.
 
-**Dependencies:** `@larose/react`, `@larose/tokens`
+**Dependencies:** `@larose-ui/react`, `@larose-ui/tokens`
 
 ### Dependency rules
 
 1. **No circular dependencies** — enforced by Turborepo + manual review
 2. **Core has zero deps** — keeps primitives portable
-3. **React is peer dep** — only in `@larose/react` and above
+3. **React is peer dep** — only in `@larose-ui/react` and above
 4. **Intelligence packages don't depend on each other** — compose at app level
 5. **DevTools/CLI are leaf packages** — depend on others, nothing depends on them
 
@@ -827,12 +827,12 @@ Format: ESM only. `"type": "module"` throughout.
 Independent semver per package, coordinated via Changesets:
 
 ```text
-@larose/core@0.1.0
-@larose/tokens@0.1.0
-@larose/react@0.1.0
+@larose-ui/core@0.1.0
+@larose-ui/tokens@0.1.0
+@larose-ui/react@0.1.0
 ```
 
-Breaking changes in `@larose/core` trigger major bumps in dependent packages.
+Breaking changes in `@larose-ui/core` trigger major bumps in dependent packages.
 
 ---
 
@@ -905,7 +905,7 @@ interface UIEvent {
 ```text
 Component
     ↓
-@larose/observability (event collector)
+@larose-ui/observability (event collector)
     ↓
 Adapter (pluggable)
     ├── Console (development)
@@ -922,7 +922,7 @@ import {
   createSentryAdapter,
   createWebhookAdapter,
   createCompositeAdapter,
-} from '@larose/observability';
+} from '@larose-ui/observability';
 
 const adapter = createCompositeAdapter(
   createConsoleAdapter(),
@@ -1052,7 +1052,7 @@ Support UI patterns for:
 ### CSRF
 
 - Mutation requests include CSRF tokens when configured
-- `@larose/data` supports CSRF header injection
+- `@larose-ui/data` supports CSRF header injection
 
 ### Content Security Policy
 
@@ -1079,7 +1079,7 @@ img-src 'self' data: https:;
 
 - Automated dependency scanning in CI
 - Pin major versions in apps
-- Regular `@larose/*` security patches
+- Regular `@larose-ui/*` security patches
 
 ### Compliance considerations
 
@@ -1130,7 +1130,7 @@ Example: Employee Creation
 
 #### Unit tests (Vitest)
 
-- `@larose/core` state machines, error classifiers, utilities
+- `@larose-ui/core` state machines, error classifiers, utilities
 - Token generation and density scaling
 - Permission evaluators
 - Pure functions only — no DOM unless necessary
@@ -1152,7 +1152,7 @@ Example: Employee Creation
 #### Accessibility tests
 
 - axe-core in every component test suite
-- `@larose/accessibility` validation utilities
+- `@larose-ui/accessibility` validation utilities
 - CI gate: zero critical violations
 
 #### Visual regression
@@ -1169,7 +1169,7 @@ Example: Employee Creation
 
 #### Contract tests
 
-- `@larose/contracts` validates UI expectations against API schemas
+- `@larose-ui/contracts` validates UI expectations against API schemas
 - Runs in CI on schema changes
 
 ### Package test requirements
@@ -1190,12 +1190,12 @@ Example: Employee Creation
 lint → typecheck → unit → component → a11y → visual → perf budgets → contracts
 ```
 
-### Testing utilities (`@larose/testing`)
+### Testing utilities (`@larose-ui/testing`)
 
 Provides:
 
 ```tsx
-import { renderWithLaRose, mockPermissions, mockNetwork } from '@larose/testing';
+import { renderWithLaRose, mockPermissions, mockNetwork } from '@larose-ui/testing';
 
 renderWithLaRose(<EmployeeTable />, {
   permissions: ['employees.read'],
@@ -1207,8 +1207,8 @@ renderWithLaRose(<EmployeeTable />, {
 
 ### Coverage targets
 
-- `@larose/core`: 90%+ line coverage
-- `@larose/react` foundation components: 80%+ with state matrix
+- `@larose-ui/core`: 90%+ line coverage
+- `@larose-ui/react` foundation components: 80%+ with state matrix
 - Intelligence packages: 85%+ on public API paths
 
 ### What we don't test
@@ -1255,7 +1255,7 @@ Every important component/package must pass before merge:
 1. Changeset version bump
 2. Full test matrix
 3. Build all packages
-4. Publish to npm (@larose/*)
+4. Publish to npm (@larose-ui/*)
 5. Deploy Storybook to static hosting
 6. Generate migration report if major
 ```
@@ -1276,10 +1276,10 @@ Every important component/package must pass before merge:
 
 | Package | Max ESM Size (gzip) |
 |---------|---------------------|
-| @larose/core | 5 KB |
-| @larose/tokens | 3 KB |
-| @larose/react (tree-shaken Button) | 2 KB |
-| @larose/react (full) | 70 KB |
+| @larose-ui/core | 5 KB |
+| @larose-ui/tokens | 3 KB |
+| @larose-ui/react (tree-shaken Button) | 2 KB |
+| @larose-ui/react (full) | 70 KB |
 
 CI compares against baseline; >10% increase fails the build.
 
@@ -1340,11 +1340,11 @@ pnpm run doctor   # quality gates (budgets, deprecations, contracts, a11y)
 
 ## Publishing
 
-This monorepo publishes scoped packages under `@larose/*` using [Changesets](https://github.com/changesets/changesets).
+This monorepo publishes scoped packages under `@larose-ui/*` using [Changesets](https://github.com/changesets/changesets).
 
 ### Prerequisites
 
-1. npm account with access to the `@larose` scope
+1. npm account with access to the `@larose-ui` scope
 2. `NPM_TOKEN` set in CI (GitHub secret) for automated releases
 3. Update repository URLs if needed:
 
@@ -1395,14 +1395,14 @@ Runs build and `changeset publish`. Requires `npm login` locally or `NPM_TOKEN` 
 
 All packages in `packages/*` are published except private apps:
 
-- `@larose/playground` (Storybook)
-- `@larose/demo` (Vite integration demo)
+- `@larose-ui/playground` (Storybook)
+- `@larose-ui/demo` (Vite integration demo)
 
 ### First-time npm setup
 
 ```bash
 npm login
-npm access public @larose   # if scope is new
+npm access public @larose-ui   # if scope is new
 pnpm verify:publish
 pnpm release:publish
 ```
@@ -1412,7 +1412,7 @@ pnpm release:publish
 Consumers install with:
 
 ```bash
-pnpm add @larose/runtime @larose/react @larose/tokens
+pnpm add @larose-ui/runtime @larose-ui/react @larose-ui/tokens
 ```
 
 ---
@@ -1427,7 +1427,7 @@ Step-by-step upgrades between laRose versions.
 2. **One major cycle** — deprecated API still works
 3. **Next major** — removed with codemod provided
 
-Detection and fixes: `larose migrate`, `larose doctor`, and `@larose/migration` codemods. Token renames ship with `@larose/tokens/legacy-aliases.css` for one major cycle.
+Detection and fixes: `larose migrate`, `larose doctor`, and `@larose-ui/migration` codemods. Token renames ship with `@larose-ui/tokens/legacy-aliases.css` for one major cycle.
 
 ### Quick commands
 
@@ -1449,14 +1449,14 @@ pnpm run doctor
 **Before**
 
 ```tsx
-import { LaRoseProvider, Button } from '@larose/react';
+import { LaRoseProvider, Button } from '@larose-ui/react';
 ```
 
 **After**
 
 ```tsx
-import { LaRoseProvider } from '@larose/runtime';
-import { Button } from '@larose/react';
+import { LaRoseProvider } from '@larose-ui/runtime';
+import { Button } from '@larose-ui/react';
 ```
 
 **Automated:** yes (`larose migrate --apply`)
@@ -1486,8 +1486,8 @@ import { Button } from '@larose/react';
 **Transitional:** import legacy aliases while migrating:
 
 ```tsx
-import '@larose/tokens/styles.css';
-import '@larose/tokens/legacy-aliases.css'; // temporary — remove before v2
+import '@larose-ui/tokens/styles.css';
+import '@larose-ui/tokens/legacy-aliases.css'; // temporary — remove before v2
 ```
 
 **Automated:** yes (`larose migrate --apply` renames in source files)
@@ -1507,7 +1507,7 @@ if (user.role === 'admin') {
 **After**
 
 ```tsx
-import { Can } from '@larose/permissions';
+import { Can } from '@larose-ui/permissions';
 
 <Can permission="employees.delete">
   <DeleteButton />
@@ -1523,7 +1523,7 @@ import { Can } from '@larose/permissions';
 **Before**
 
 ```tsx
-import { useLaRose } from '@larose/runtime';
+import { useLaRose } from '@larose-ui/runtime';
 
 const { theme } = useLaRose();
 ```
@@ -1531,7 +1531,7 @@ const { theme } = useLaRose();
 **After**
 
 ```tsx
-import { useTheme } from '@larose/runtime';
+import { useTheme } from '@larose-ui/runtime';
 
 const { theme } = useTheme();
 ```
@@ -1550,7 +1550,7 @@ const { theme } = useTheme();
 
 | Change | Migration |
 |--------|-----------|
-| `LaRoseProvider` removed from `@larose/react` | Import from `@larose/runtime` |
+| `LaRoseProvider` removed from `@larose-ui/react` | Import from `@larose-ui/runtime` |
 | `--ui-color-*` tokens removed | Use `--lr-color-*` or legacy aliases temporarily |
 | Inline `user.role` checks | Use `<Can permission="...">` |
 | `useLaRose()` deprecated | Use `useTheme()` |
@@ -1567,10 +1567,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 #### Added
 
-- Automated codemods in `@larose/migration` (`applyCodemods`, token renames, provider import fixes)
+- Automated codemods in `@larose-ui/migration` (`applyCodemods`, token renames, provider import fixes)
 - `larose migrate --apply` CLI flag
-- Legacy token alias stylesheet `@larose/tokens/legacy-aliases.css`
-- Runtime deprecation warnings via `warnDeprecation()` in `@larose/core`
+- Legacy token alias stylesheet `@larose-ui/tokens/legacy-aliases.css`
+- Runtime deprecation warnings via `warnDeprecation()` in `@larose-ui/core`
 - Migration guide with before/after examples (see [Migration guide](#migration-guide))
 
 ### [0.1.0] - 2026-08-29
@@ -1580,29 +1580,29 @@ Initial public platform release.
 #### Added
 
 **Foundation**
-- `@larose/core`, `@larose/tokens`, `@larose/react`, `@larose/playground`
+- `@larose-ui/core`, `@larose-ui/tokens`, `@larose-ui/react`, `@larose-ui/playground`
 
 **Runtime**
-- `@larose/network`, `@larose/offline`, `@larose/runtime`
+- `@larose-ui/network`, `@larose-ui/offline`, `@larose-ui/runtime`
 - i18n (en, ar, de), RTL, AdaptiveTable, OfflineForm
 
 **Intelligence**
-- `@larose/permissions`, `@larose/data`, `@larose/forms`
+- `@larose-ui/permissions`, `@larose-ui/data`, `@larose-ui/forms`
 - Feature flags, undo UX, explainable UI
 
 **Observability**
-- `@larose/observability` — event collector, funnel metrics, rage click detection
+- `@larose-ui/observability` — event collector, funnel metrics, rage click detection
 
 **DevOps**
-- `@larose/contracts`, `@larose/migration`, `@larose/testing`, `@larose/cli`, `@larose/devtools`
+- `@larose-ui/contracts`, `@larose-ui/migration`, `@larose-ui/testing`, `@larose-ui/cli`, `@larose-ui/devtools`
 - CI pipeline, bundle budgets, `larose doctor`
 
 **Enterprise & AI**
-- `@larose/enterprise` — audit trails, version compatibility, UI schema IaC, security patterns
-- `@larose/ai` — SmartTable, SmartForm, pluggable adapters
+- `@larose-ui/enterprise` — audit trails, version compatibility, UI schema IaC, security patterns
+- `@larose-ui/ai` — SmartTable, SmartForm, pluggable adapters
 
 **Production readiness**
-- `@larose/accessibility` — component source scanner
+- `@larose-ui/accessibility` — component source scanner
 - Changesets release workflow
 
 [Unreleased]: https://github.com/hamdymohamedak/larose-ui/compare/v0.1.0...HEAD
@@ -1652,7 +1652,7 @@ laRose is a **pnpm + Turborepo** monorepo.
 
 ```text
 laRose/
-├── packages/          # Publishable @larose/* libraries
+├── packages/          # Publishable @larose-ui/* libraries
 ├── apps/
 │   └── playground/    # Storybook (private, not published)
 ├── contracts/         # Sample UI/API contract schemas
@@ -1673,8 +1673,8 @@ See [Package structure](#package-structure) and [Architecture](#architecture) fo
 #### Working on a single package
 
 ```bash
-pnpm --filter @larose/react test
-pnpm --filter @larose/runtime build
+pnpm --filter @larose-ui/react test
+pnpm --filter @larose-ui/runtime build
 ```
 
 Turbo caches builds across packages; run `pnpm build` at the root before testing packages that depend on others.
@@ -1690,21 +1690,21 @@ All pull requests must pass CI. Run these locally:
 | `pnpm build` | Build all packages |
 | `pnpm run doctor` | Bundle budgets, deprecations, contracts, a11y heuristics |
 | `pnpm check-budgets` | Fail on bundle size overages |
-| `pnpm a11y` | Accessibility scan of `@larose/react` sources |
+| `pnpm a11y` | Accessibility scan of `@larose-ui/react` sources |
 
 See [DevOps strategy](#devops-strategy) and [Testing strategy](#testing-strategy) for details.
 
 #### Testing conventions
 
 - Use **Vitest** for unit and component tests.
-- Wrap React components with `renderWithLaRose()` from `@larose/testing` when runtime context is required.
+- Wrap React components with `renderWithLaRose()` from `@larose-ui/testing` when runtime context is required.
 - Prefer testing behavior and accessibility over implementation details.
 
 #### Accessibility
 
 - Dialogs and modals must have accessible labels (`title`, `aria-labelledby`, or `aria-label`).
 - Interactive elements need visible text or an `aria-label`.
-- Run `pnpm a11y` after changing components in `@larose/react`.
+- Run `pnpm a11y` after changing components in `@larose-ui/react`.
 
 ### Pull request guidelines
 
@@ -1736,7 +1736,7 @@ Include:
 
 Published packages use [Changesets](https://github.com/changesets/changesets) for versioning and changelogs.
 
-When your change affects the public API or behavior of a published `@larose/*` package:
+When your change affects the public API or behavior of a published `@larose-ui/*` package:
 
 ```bash
 pnpm changeset
@@ -1752,12 +1752,12 @@ See [Publishing](#publishing) and [Migration guide](#migration-guide).
 
 Please respect these boundaries:
 
-1. **`@larose/core` has zero dependencies** — keep primitives framework-agnostic.
+1. **`@larose-ui/core` has zero dependencies** — keep primitives framework-agnostic.
 2. **No circular dependencies** between packages.
-3. **`LaRoseProvider` lives in `@larose/runtime`**, not `@larose/react`.
+3. **`LaRoseProvider` lives in `@larose-ui/runtime`**, not `@larose-ui/react`.
 4. **Permissions are resource.action strings** — avoid inline `user.role === "admin"` patterns.
 5. **UI is not the authorization layer** — backend must enforce access; UI reflects the model.
-6. **Intelligence packages compose at the app layer** — avoid cross-dependencies between `@larose/data`, `@larose/forms`, `@larose/permissions`, etc.
+6. **Intelligence packages compose at the app layer** — avoid cross-dependencies between `@larose-ui/data`, `@larose-ui/forms`, `@larose-ui/permissions`, etc.
 
 See [Security](#security) for security patterns.
 

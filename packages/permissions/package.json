@@ -1,5 +1,5 @@
 {
-  "name": "@larose/permissions",
+  "name": "@larose-ui/permissions",
   "version": "0.1.0",
   "description": "Authorization-aware UI for laRose platform",
   "type": "module",
@@ -23,7 +23,7 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@larose/core": "workspace:*"
+    "@larose-ui/core": "workspace:*"
   },
   "peerDependencies": {
     "react": ">=18"

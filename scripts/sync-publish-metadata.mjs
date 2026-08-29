@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Adds license, repository, and publishConfig to all publishable @larose/* packages.
+ * Adds license, repository, and publishConfig to all publishable @larose-ui/* packages.
  */
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';

@@ -11,9 +11,9 @@ function slug(name: string): string {
 
 export function generateForm(name: string, options: GeneratorOptions = {}): string {
   const id = options.resource ?? slug(name);
-  return `import { Form } from '@larose/forms';
-import { LaRoseProvider } from '@larose/runtime';
-import { Can } from '@larose/permissions';
+  return `import { Form } from '@larose-ui/forms';
+import { LaRoseProvider } from '@larose-ui/runtime';
+import { Can } from '@larose-ui/permissions';
 
 const ${name}Schema = {
   id: '${id}',
@@ -39,9 +39,9 @@ export function generatePage(name: string, options: GeneratorOptions = {}): stri
   const resource = options.resource ?? slug(name);
   const permission = options.permissionPrefix ?? resource;
 
-  return `import { LaRoseProvider } from '@larose/runtime';
-import { DataView } from '@larose/data';
-import { useJourneyPage } from '@larose/observability';
+  return `import { LaRoseProvider } from '@larose-ui/runtime';
+import { DataView } from '@larose-ui/data';
+import { useJourneyPage } from '@larose-ui/observability';
 
 export function ${name}Page() {
   useJourneyPage('${resource}');
@@ -62,13 +62,13 @@ export function generateFeature(name: string, options: GeneratorOptions = {}): s
   const permission = options.permissionPrefix ?? resource;
   const pascal = name.replace(/(^\w|-\w)/g, (m) => m.replace('-', '').toUpperCase());
 
-  return `import { LaRoseProvider } from '@larose/runtime';
-import { DataView } from '@larose/data';
-import { SmartTable } from '@larose/ai';
-import { DevToolsProvider } from '@larose/devtools';
-import { useJourneyPage } from '@larose/observability';
-import { Can } from '@larose/permissions';
-import { Card } from '@larose/react';
+  return `import { LaRoseProvider } from '@larose-ui/runtime';
+import { DataView } from '@larose-ui/data';
+import { SmartTable } from '@larose-ui/ai';
+import { DevToolsProvider } from '@larose-ui/devtools';
+import { useJourneyPage } from '@larose-ui/observability';
+import { Can } from '@larose-ui/permissions';
+import { Card } from '@larose-ui/react';
 
 interface ${pascal}Row {
   id: string;

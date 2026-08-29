@@ -1,5 +1,5 @@
 {
-  "name": "@larose/observability",
+  "name": "@larose-ui/observability",
   "version": "0.1.0",
   "description": "UX observability platform for laRose UI",
   "type": "module",
@@ -23,7 +23,7 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@larose/core": "workspace:*"
+    "@larose-ui/core": "workspace:*"
   },
   "peerDependencies": {
     "react": ">=18"

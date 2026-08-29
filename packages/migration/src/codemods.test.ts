@@ -9,18 +9,18 @@ describe('applyCodemods', () => {
   });
 
   it('splits LaRoseProvider import to runtime', () => {
-    const source = "import { LaRoseProvider, Button } from '@larose/react';";
+    const source = "import { LaRoseProvider, Button } from '@larose-ui/react';";
     const result = applyCodemods(source);
     expect(result.changed).toBe(true);
-    expect(result.content).toContain("@larose/runtime");
+    expect(result.content).toContain("@larose-ui/runtime");
     expect(result.content).toContain('Button');
   });
 
   it('moves useToast import to runtime toast subpath', () => {
-    const source = "import { LaRoseProvider, useToast } from '@larose/runtime';";
+    const source = "import { LaRoseProvider, useToast } from '@larose-ui/runtime';";
     const result = applyCodemods(source);
     expect(result.changed).toBe(true);
-    expect(result.content).toContain("@larose/runtime/toast");
+    expect(result.content).toContain("@larose-ui/runtime/toast");
     expect(result.content).toContain('LaRoseProvider');
   });
 });

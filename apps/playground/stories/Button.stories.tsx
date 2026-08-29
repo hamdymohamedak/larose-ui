@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button } from '@larose/react';
+import { Button } from '@larose-ui/react';
 
 const meta: Meta<typeof Button> = {
   title: 'Foundation/Button',

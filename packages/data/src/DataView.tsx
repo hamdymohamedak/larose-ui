@@ -1,5 +1,5 @@
 import { useEffect, useState, type ReactNode } from 'react';
-import type { ApiError } from '@larose/core';
+import type { ApiError } from '@larose-ui/core';
 import { getRetryDelay } from './client';
 import { useQuery, type UseQueryOptions } from './useQuery';
 

@@ -1,4 +1,4 @@
-import type { UIState } from '@larose/core';
+import type { UIState } from '@larose-ui/core';
 import styles from './Progress.module.css';
 
 export type ProgressVariant = 'default' | 'success' | 'error';

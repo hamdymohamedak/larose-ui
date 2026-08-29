@@ -1,6 +1,6 @@
 import { forwardRef, type ButtonHTMLAttributes, type ReactNode } from 'react';
-import type { Size, UIState, Variant } from '@larose/core';
-import { resolveUIState } from '@larose/core';
+import type { Size, UIState, Variant } from '@larose-ui/core';
+import { resolveUIState } from '@larose-ui/core';
 import { Spinner } from '../Spinner/Spinner';
 import styles from './Button.module.css';
 

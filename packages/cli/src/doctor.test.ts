@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { formatDoctorReport, runGenerate, formatDoctorJson } from './doctor';
-import { validateContract } from '@larose/contracts';
+import { validateContract } from '@larose-ui/contracts';
 
 describe('runGenerate', () => {
   it('generates form scaffold', () => {

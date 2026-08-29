@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Card, Button, Badge } from '@larose/react';
+import { Card, Button, Badge } from '@larose-ui/react';
 
 const meta: Meta<typeof Card> = {
   title: 'Foundation/Card',

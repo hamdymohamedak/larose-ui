@@ -2,7 +2,7 @@ import '@testing-library/jest-dom/vitest';
 import { describe, expect, it } from 'vitest';
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { renderWithLaRose } from '@larose/testing';
+import { renderWithLaRose } from '@larose-ui/testing';
 import { DevToolsPanel } from './DevToolsPanel';
 
 describe('DevToolsPanel', () => {

@@ -9,8 +9,8 @@ Safe automated transforms via `larose migrate --apply`:
 | Transform | Description |
 |-----------|-------------|
 | Token rename | `--ui-color-*` → `--lr-color-*` |
-| Provider import | `LaRoseProvider` from `@larose/react` → `@larose/runtime` |
-| Toast import | `useToast` from `@larose/runtime` → `@larose/runtime/toast` |
+| Provider import | `LaRoseProvider` from `@larose-ui/react` → `@larose-ui/runtime` |
+| Toast import | `useToast` from `@larose-ui/runtime` → `@larose-ui/runtime/toast` |
 
 ```bash
 pnpm migrate              # dry-run report
@@ -36,8 +36,8 @@ pnpm release:report
 larose release --json
 ```
 
-Reports version alignment across publishable `@larose/*` packages, publish metadata gaps, and release recommendations.
+Reports version alignment across publishable `@larose-ui/*` packages, publish metadata gaps, and release recommendations.
 
 ## Package
 
-All APIs live in `@larose/migration` and are re-exported through the `larose` CLI.
+All APIs live in `@larose-ui/migration` and are re-exported through the `larose` CLI.

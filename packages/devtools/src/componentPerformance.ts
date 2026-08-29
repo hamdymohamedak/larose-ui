@@ -1,4 +1,4 @@
-import type { UIEvent } from '@larose/observability';
+import type { UIEvent } from '@larose-ui/observability';
 
 export interface ComponentPerformanceSummary {
   renderCount: number;

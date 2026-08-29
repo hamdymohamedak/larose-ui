@@ -22,12 +22,12 @@ Inspect mode ignores clicks inside the DevTools panel (`data-lr-devtools`). Enab
 
 ### Fiber introspection (dev-only)
 
-When a selected element has a React fiber attached, the inspector resolves the nearest component `displayName` and sanitized props (functions redacted, values truncated). Performance metrics come from `@larose/observability` `performance` events when `ObservedComponent` wraps the target.
+When a selected element has a React fiber attached, the inspector resolves the nearest component `displayName` and sanitized props (functions redacted, values truncated). Performance metrics come from `@larose-ui/observability` `performance` events when `ObservedComponent` wraps the target.
 
 ## Integration
 
 ```tsx
-import { DevToolsProvider } from '@larose/devtools';
+import { DevToolsProvider } from '@larose-ui/devtools';
 
 <LaRoseProvider onRuntimeEvent={(e) => devtools.ingest(e)}>
   <DevToolsProvider />

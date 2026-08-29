@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { LaRoseProvider } from '@larose/runtime';
-import { AIProvider, SmartTable, SmartForm } from '@larose/ai';
-import { Card } from '@larose/react';
+import { LaRoseProvider } from '@larose-ui/runtime';
+import { AIProvider, SmartTable, SmartForm } from '@larose-ui/ai';
+import { Card } from '@larose-ui/react';
 
 const employees = [
   { id: '1', name: 'Sara Ali', department: 'Engineering', lateCount: 5 },

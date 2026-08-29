@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Breadcrumb, Button, Drawer, Popover } from '@larose/react';
+import { Breadcrumb, Button, Drawer, Popover } from '@larose-ui/react';
 import { useState } from 'react';
 
 const meta: Meta = {

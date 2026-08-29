@@ -1,5 +1,5 @@
 import { createContext, useContext, type ReactNode } from 'react';
-import type { Environment } from '@larose/core';
+import type { Environment } from '@larose-ui/core';
 
 const EnvironmentContext = createContext<Environment>('development');
 

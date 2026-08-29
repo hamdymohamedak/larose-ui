@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useReducer, useRef } from 'react';
-import type { ApiError } from '@larose/core';
-import { usePermissions } from '@larose/permissions';
+import type { ApiError } from '@larose-ui/core';
+import { usePermissions } from '@larose-ui/permissions';
 import { apiFetch, isApiError, type ApiFetchOptions } from './client';
 
 export type QueryStatus = 'idle' | 'loading' | 'success' | 'error' | 'unauthorized';

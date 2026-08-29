@@ -1,4 +1,4 @@
-import type { Density, ThemeMode } from '@larose/core';
+import type { Density, ThemeMode } from '@larose-ui/core';
 
 export interface ColorTokens {
   primary: string;

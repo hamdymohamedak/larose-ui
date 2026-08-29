@@ -1,4 +1,4 @@
-import type { RuntimeEvent } from '@larose/core';
+import type { RuntimeEvent } from '@larose-ui/core';
 import type { JourneyContextSnapshot, JourneyStep, JourneyStepKind, UIEvent } from './types';
 
 let stepCounter = 0;

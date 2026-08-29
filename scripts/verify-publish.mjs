@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Verify all @larose/* packages are ready for npm publish.
+ * Verify all @larose-ui/* packages are ready for npm publish.
  */
 import { readFileSync, statSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
@@ -17,7 +17,7 @@ for (const name of readdirSync(packagesDir)) {
     continue;
   }
 
-  const label = `@larose/${name}`;
+  const label = `@larose-ui/${name}`;
 
   if (!pkg.license) {
     console.error(`FAIL ${label}: missing license`);
@@ -50,18 +50,18 @@ for (const name of readdirSync(packagesDir)) {
 
 const playground = JSON.parse(readFileSync(join(process.cwd(), 'apps/playground/package.json'), 'utf-8'));
 if (!playground.private) {
-  console.error('FAIL @larose/playground must remain private');
+  console.error('FAIL @larose-ui/playground must remain private');
   failed = true;
 } else {
-  console.log('OK   @larose/playground is private');
+  console.log('OK   @larose-ui/playground is private');
 }
 
 const demo = JSON.parse(readFileSync(join(process.cwd(), 'apps/demo/package.json'), 'utf-8'));
 if (!demo.private) {
-  console.error('FAIL @larose/demo must remain private');
+  console.error('FAIL @larose-ui/demo must remain private');
   failed = true;
 } else {
-  console.log('OK   @larose/demo is private');
+  console.log('OK   @larose-ui/demo is private');
 }
 
 process.exit(failed ? 1 : 0);

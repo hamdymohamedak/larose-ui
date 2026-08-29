@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { applyThemePreset, getThemePreset, listThemePresets } from './index';
 
-describe('@larose/themes', () => {
+describe('@larose-ui/themes', () => {
   it('lists built-in presets', () => {
     expect(listThemePresets().map((p) => p.id)).toEqual([
       'default',

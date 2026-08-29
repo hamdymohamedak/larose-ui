@@ -142,7 +142,7 @@ export type { TimePickerProps } from './TimePicker/TimePicker';
 export { DateRangePicker } from './DateRangePicker/DateRangePicker';
 export type { DateRangePickerProps, DateRange } from './DateRangePicker/DateRangePicker';
 
-export { LAROSE_VERSION } from '@larose/core';
+export { LAROSE_VERSION } from '@larose-ui/core';
 export type {
   UIState,
   AsyncState,
@@ -153,7 +153,7 @@ export type {
   Size,
   ApiError,
   Permission,
-} from '@larose/core';
+} from '@larose-ui/core';
 
-export { applyTokensToElement, getTokens, tokensToCSSVariables } from '@larose/tokens';
-export type { ColorTokens, TokenSet } from '@larose/tokens';
+export { applyTokensToElement, getTokens, tokensToCSSVariables } from '@larose-ui/tokens';
+export type { ColorTokens, TokenSet } from '@larose-ui/tokens';

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { createDefaultRuntimeContext } from '@larose/core';
+import { createDefaultRuntimeContext } from '@larose-ui/core';
 import { buildInspectorReadout } from './ComponentInspector';
 
 describe('buildInspectorReadout', () => {

@@ -1,6 +1,6 @@
 import { useId } from 'react';
-import type { Size, UIState } from '@larose/core';
-import { resolveUIState } from '@larose/core';
+import type { Size, UIState } from '@larose-ui/core';
+import { resolveUIState } from '@larose-ui/core';
 import styles from '../DatePicker/datetime-field.module.css';
 
 export interface DateRange {

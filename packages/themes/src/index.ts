@@ -1,10 +1,10 @@
-import type { Density, ThemeMode } from '@larose/core';
+import type { Density, ThemeMode } from '@larose-ui/core';
 import {
   applyTokensToElement,
   createTenantTheme,
   getTokens,
   type ColorTokens,
-} from '@larose/tokens';
+} from '@larose-ui/tokens';
 
 export type ThemePresetId = 'default' | 'ocean' | 'forest' | 'sunset';
 

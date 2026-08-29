@@ -1,6 +1,6 @@
 import { forwardRef, type InputHTMLAttributes } from 'react';
-import type { Size, UIState } from '@larose/core';
-import { resolveUIState } from '@larose/core';
+import type { Size, UIState } from '@larose-ui/core';
+import { resolveUIState } from '@larose-ui/core';
 import styles from './Input.module.css';
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {

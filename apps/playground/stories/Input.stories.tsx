@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Input } from '@larose/react';
+import { Input } from '@larose-ui/react';
 
 const meta: Meta<typeof Input> = {
   title: 'Foundation/Input',

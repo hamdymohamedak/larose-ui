@@ -1,5 +1,5 @@
 {
-  "name": "@larose/tokens",
+  "name": "@larose-ui/tokens",
   "version": "0.1.0",
   "description": "Runtime design tokens for laRose UI platform",
   "type": "module",
@@ -25,7 +25,7 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@larose/core": "workspace:*"
+    "@larose-ui/core": "workspace:*"
   },
   "devDependencies": {
     "tsup": "^8.3.5",

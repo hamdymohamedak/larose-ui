@@ -1,6 +1,6 @@
 /**
  * Legacy v0 token aliases — map --ui-color-* to --lr-color-*.
- * Import after @larose/tokens/styles.css during migration; removed in v2.
+ * Import after @larose-ui/tokens/styles.css during migration; removed in v2.
  */
 :root {
   --ui-color-primary: var(--lr-color-primary);

@@ -10,7 +10,7 @@ import {
   createNetworkMonitor,
   type NetworkMonitor,
   type NetworkState,
-} from '@larose/network';
+} from '@larose-ui/network';
 
 const defaultNetworkState: NetworkState = {
   condition: 'fast',

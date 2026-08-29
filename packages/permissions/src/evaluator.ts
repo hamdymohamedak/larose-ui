@@ -1,4 +1,4 @@
-import type { Permission, PermissionFallback } from '@larose/core';
+import type { Permission, PermissionFallback } from '@larose-ui/core';
 
 export interface PermissionCheck {
   action: string;

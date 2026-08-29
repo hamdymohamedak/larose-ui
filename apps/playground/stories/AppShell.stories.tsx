@@ -14,7 +14,7 @@ import {
   SidebarItem,
   SidebarNav,
   useCommandPaletteShortcut,
-} from '@larose/react';
+} from '@larose-ui/react';
 
 const meta: Meta = {
   title: 'Foundation/AppShell',

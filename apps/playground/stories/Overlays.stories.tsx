@@ -9,7 +9,7 @@ import {
   ToastProvider,
   Tooltip,
   useToast,
-} from '@larose/react';
+} from '@larose-ui/react';
 
 const meta: Meta = {
   title: 'Foundation/Overlays',

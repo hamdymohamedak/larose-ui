@@ -1,4 +1,4 @@
-import type { NetworkCondition } from '@larose/core';
+import type { NetworkCondition } from '@larose-ui/core';
 
 export interface NetworkState {
   condition: NetworkCondition;

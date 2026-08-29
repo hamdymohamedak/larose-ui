@@ -1,5 +1,5 @@
 import { createContext, useContext, useMemo, type ReactNode } from 'react';
-import { usePermissions } from '@larose/permissions';
+import { usePermissions } from '@larose-ui/permissions';
 import type { AIAdapter } from './adapter';
 import { createMockAdapter } from './adapters/mockAdapter';
 import { createAIRuntime, type AIRuntime, type AIAuditEvent } from './runtime';

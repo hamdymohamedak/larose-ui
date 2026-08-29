@@ -1,4 +1,4 @@
-import type { RuntimeEvent } from '@larose/core';
+import type { RuntimeEvent } from '@larose-ui/core';
 import type { EventCollector } from './collector';
 import type { JourneyContextSnapshot } from './types';
 

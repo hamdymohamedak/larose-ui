@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
-import { LaRoseProvider } from '@larose/runtime';
+import { LaRoseProvider } from '@larose-ui/runtime';
 import {
   ObservedForm,
   ObservedComponent,
   ObservedErrorBoundary,
   useObservability,
   useInteractionObserver,
-} from '@larose/observability';
-import { Form } from '@larose/forms';
-import { Button, Card } from '@larose/react';
+} from '@larose-ui/observability';
+import { Form } from '@larose-ui/forms';
+import { Button, Card } from '@larose-ui/react';
 
 function MetricsPanel() {
   const { getFormFunnelMetrics, exportPrometheus } = useObservability();

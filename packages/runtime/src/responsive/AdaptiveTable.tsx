@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import { useBreakpoint } from './ResponsiveProvider';
 import { useI18n } from '../i18n/I18nProvider';
 import { useNetwork } from '../network/NetworkProvider';
-import { shouldUseSkeleton } from '@larose/network';
+import { shouldUseSkeleton } from '@larose-ui/network';
 
 export interface Column<T> {
   key: string;

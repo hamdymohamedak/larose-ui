@@ -1,5 +1,5 @@
 {
-  "name": "@larose/core",
+  "name": "@larose-ui/core",
   "version": "0.1.0",
   "description": "Core types, state machines, and utilities for laRose UI platform",
   "type": "module",
