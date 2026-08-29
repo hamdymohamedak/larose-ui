@@ -14,7 +14,7 @@ import {
   type QueuedRequest,
   type RequestExecutor,
   type SyncResult,
-} from '@larose/offline';
+} from '@larose-ui/offline';
 
 export interface OfflineContextValue {
   queue: QueuedRequest[];

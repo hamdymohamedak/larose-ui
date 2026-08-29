@@ -1,5 +1,5 @@
 import { forwardRef, type InputHTMLAttributes } from 'react';
-import type { Size } from '@larose/core';
+import type { Size } from '@larose-ui/core';
 import styles from './Radio.module.css';
 
 export interface RadioProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type' | 'size'> {

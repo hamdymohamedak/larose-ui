@@ -1,6 +1,6 @@
 # Runtime 2.0 Specification
 
-Phase 1 delivers a unified frontend operating environment via `@larose/runtime` and `@larose/core`.
+Phase 1 delivers a unified frontend operating environment via `@larose-ui/runtime` and `@larose-ui/core`.
 
 ## Goals
 
@@ -34,13 +34,13 @@ interface LaRoseRuntimeContext {
 
 | API | Package | Purpose |
 |-----|---------|---------|
-| `useRuntime()` | `@larose/runtime` | Full context snapshot |
-| `useRuntimeSelector(fn)` | `@larose/runtime` | Derived slice |
-| `useRuntimeEvents()` | `@larose/runtime` | Timeline + emit |
-| `useSession()` | `@larose/runtime` | Session state |
-| `createRuntimeEventBus()` | `@larose/core` | Event bus factory |
-| `createSessionStateMachine()` | `@larose/core` | Session transitions |
-| `createPercentageRolloutEvaluator()` | `@larose/core` | Feature rollout |
+| `useRuntime()` | `@larose-ui/runtime` | Full context snapshot |
+| `useRuntimeSelector(fn)` | `@larose-ui/runtime` | Derived slice |
+| `useRuntimeEvents()` | `@larose-ui/runtime` | Timeline + emit |
+| `useSession()` | `@larose-ui/runtime` | Session state |
+| `createRuntimeEventBus()` | `@larose-ui/core` | Event bus factory |
+| `createSessionStateMachine()` | `@larose-ui/core` | Session transitions |
+| `createPercentageRolloutEvaluator()` | `@larose-ui/core` | Feature rollout |
 
 ## Provider Tree
 
@@ -63,7 +63,7 @@ RuntimeContextProvider
 ## Feature Flags
 
 ```typescript
-import { createPercentageRolloutEvaluator } from '@larose/core';
+import { createPercentageRolloutEvaluator } from '@larose-ui/core';
 
 const evaluator = createPercentageRolloutEvaluator({
   'new-payroll': { enabled: true, percentage: 25 },

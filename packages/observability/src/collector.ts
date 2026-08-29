@@ -11,7 +11,7 @@ import type {
 } from './types';
 import { analyzeRageClick, correlateFormFunnel } from './correlation';
 import { runtimeEventToJourneyStep, trackPageViewStep, uiEventToJourneyStep } from './journey';
-import type { RuntimeEvent } from '@larose/core';
+import type { RuntimeEvent } from '@larose-ui/core';
 
 type EventListener = (event: UIEvent) => void;
 

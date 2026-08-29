@@ -1,5 +1,5 @@
 {
-  "name": "@larose/themes",
+  "name": "@larose-ui/themes",
   "version": "0.1.0",
   "description": "Named theme presets and tenant branding helpers for laRose",
   "type": "module",
@@ -22,8 +22,8 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@larose/core": "workspace:*",
-    "@larose/tokens": "workspace:*"
+    "@larose-ui/core": "workspace:*",
+    "@larose-ui/tokens": "workspace:*"
   },
   "devDependencies": {
     "tsup": "^8.3.5",

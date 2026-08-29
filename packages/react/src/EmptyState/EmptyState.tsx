@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import type { UIState } from '@larose/core';
+import type { UIState } from '@larose-ui/core';
 import { Button } from '../Button/Button';
 import styles from './EmptyState.module.css';
 

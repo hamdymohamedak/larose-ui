@@ -1,5 +1,5 @@
 {
-  "name": "@larose/cli",
+  "name": "@larose-ui/cli",
   "version": "0.1.0",
   "description": "CLI for laRose UI platform — doctor, migrate, generate",
   "type": "module",
@@ -17,9 +17,9 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@larose/accessibility": "workspace:*",
-    "@larose/contracts": "workspace:*",
-    "@larose/migration": "workspace:*"
+    "@larose-ui/accessibility": "workspace:*",
+    "@larose-ui/contracts": "workspace:*",
+    "@larose-ui/migration": "workspace:*"
   },
   "devDependencies": {
     "tsup": "^8.3.5",

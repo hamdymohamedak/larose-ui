@@ -1,4 +1,4 @@
-import type { FormFieldSchema, FormSchema } from '@larose/forms';
+import type { FormFieldSchema, FormSchema } from '@larose-ui/forms';
 
 export type UISchemaType = 'form' | 'page' | 'table';
 

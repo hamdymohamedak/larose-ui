@@ -7,5 +7,5 @@
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": ["@larose/playground", "@larose/demo"]
+  "ignore": ["@larose-ui/playground", "@larose-ui/demo"]
 }

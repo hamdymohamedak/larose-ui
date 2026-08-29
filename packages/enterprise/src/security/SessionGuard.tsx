@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState, type ReactNode } from 'react';
-import { Dialog } from '@larose/react';
+import { Dialog } from '@larose-ui/react';
 
 export interface SessionGuardProps {
   children: ReactNode;

@@ -4,7 +4,7 @@ import {
   useMemo,
   type ReactNode,
 } from 'react';
-import type { Permission } from '@larose/core';
+import type { Permission } from '@larose-ui/core';
 import { evaluateAbac, hasPermission, type AbacContext } from './evaluator';
 
 export interface PermissionContextValue {

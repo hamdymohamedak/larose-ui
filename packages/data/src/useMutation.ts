@@ -1,5 +1,5 @@
 import { useCallback, useReducer } from 'react';
-import type { ApiError, AsyncState } from '@larose/core';
+import type { ApiError, AsyncState } from '@larose-ui/core';
 import { apiFetch, isApiError, type ApiFetchOptions } from './client';
 
 export interface MutationState<TData, TVariables> {

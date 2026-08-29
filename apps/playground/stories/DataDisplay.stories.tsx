@@ -8,7 +8,7 @@ import {
   Badge,
   DataTable,
   Pagination,
-} from '@larose/react';
+} from '@larose-ui/react';
 
 const meta: Meta = {
   title: 'Foundation/DataDisplay',

@@ -1,5 +1,5 @@
 import { useContext, useMemo } from 'react';
-import type { LaRoseRuntimeContext, RuntimeEvent } from '@larose/core';
+import type { LaRoseRuntimeContext, RuntimeEvent } from '@larose-ui/core';
 import { RuntimeContext, useRuntimeStore } from './RuntimeContextProvider';
 
 export function useRuntime(): LaRoseRuntimeContext {

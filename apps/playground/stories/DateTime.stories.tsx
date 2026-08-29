@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
-import { DatePicker, DateRangePicker, TimePicker } from '@larose/react';
+import { DatePicker, DateRangePicker, TimePicker } from '@larose-ui/react';
 
 const meta: Meta = {
   title: 'Foundation/DateTime',

@@ -17,7 +17,7 @@ import {
   type RuntimeEvent,
   type RuntimeEventBus,
   type SessionState,
-} from '@larose/core';
+} from '@larose-ui/core';
 
 export interface RuntimeContextStoreValue {
   context: LaRoseRuntimeContext;

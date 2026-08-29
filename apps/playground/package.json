@@ -1,5 +1,5 @@
 {
-  "name": "@larose/playground",
+  "name": "@larose-ui/playground",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -10,16 +10,16 @@
     "clean": "rm -rf storybook-static"
   },
   "dependencies": {
-    "@larose/data": "workspace:*",
-    "@larose/forms": "workspace:*",
-    "@larose/observability": "workspace:*",
-    "@larose/permissions": "workspace:*",
-    "@larose/ai": "workspace:*",
-    "@larose/devtools": "workspace:*",
-    "@larose/enterprise": "workspace:*",
-    "@larose/react": "workspace:*",
-    "@larose/runtime": "workspace:*",
-    "@larose/tokens": "workspace:*",
+    "@larose-ui/data": "workspace:*",
+    "@larose-ui/forms": "workspace:*",
+    "@larose-ui/observability": "workspace:*",
+    "@larose-ui/permissions": "workspace:*",
+    "@larose-ui/ai": "workspace:*",
+    "@larose-ui/devtools": "workspace:*",
+    "@larose-ui/enterprise": "workspace:*",
+    "@larose-ui/react": "workspace:*",
+    "@larose-ui/runtime": "workspace:*",
+    "@larose-ui/tokens": "workspace:*",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

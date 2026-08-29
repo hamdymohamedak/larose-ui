@@ -1,5 +1,5 @@
 {
-  "name": "@larose/devtools",
+  "name": "@larose-ui/devtools",
   "version": "0.1.0",
   "description": "In-app DevTools inspector for laRose UI platform",
   "type": "module",
@@ -22,17 +22,17 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@larose/core": "workspace:*",
-    "@larose/observability": "workspace:*",
-    "@larose/runtime": "workspace:*"
+    "@larose-ui/core": "workspace:*",
+    "@larose-ui/observability": "workspace:*",
+    "@larose-ui/runtime": "workspace:*"
   },
   "peerDependencies": {
-    "@larose/permissions": "workspace:*",
+    "@larose-ui/permissions": "workspace:*",
     "react": ">=18"
   },
   "devDependencies": {
-    "@larose/permissions": "workspace:*",
-    "@larose/testing": "workspace:*",
+    "@larose-ui/permissions": "workspace:*",
+    "@larose-ui/testing": "workspace:*",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",
     "@testing-library/user-event": "^14.5.2",

@@ -1,14 +1,14 @@
 import { useCallback, useMemo, useState, type FormEvent } from 'react';
-import { Input, Button, Alert, Textarea, Select } from '@larose/react';
-import { useMutation } from '@larose/data';
+import { Input, Button, Alert, Textarea, Select } from '@larose-ui/react';
+import { useMutation } from '@larose-ui/data';
 import {
   useOptionalObservability,
   markFormSubmitted,
   trackFormSuccess,
   trackFormError,
   trackFormValidationFailed,
-} from '@larose/observability';
-import type { ApiError } from '@larose/core';
+} from '@larose-ui/observability';
+import type { ApiError } from '@larose-ui/core';
 import {
   getVisibleFields,
   validateForm,

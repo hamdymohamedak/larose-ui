@@ -1,20 +1,20 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useEffect } from 'react';
-import { LaRoseProvider, Feature } from '@larose/runtime';
-import { Can } from '@larose/permissions';
-import { DataView } from '@larose/data';
-import { Form } from '@larose/forms';
-import { SmartTable } from '@larose/ai';
+import { LaRoseProvider, Feature } from '@larose-ui/runtime';
+import { Can } from '@larose-ui/permissions';
+import { DataView } from '@larose-ui/data';
+import { Form } from '@larose-ui/forms';
+import { SmartTable } from '@larose-ui/ai';
 import {
   AuditProvider,
   AuditedInput,
   VersionProvider,
   SensitiveAction,
   SessionGuard,
-} from '@larose/enterprise';
-import { DevToolsProvider } from '@larose/devtools';
-import { useObservability } from '@larose/observability';
-import { Card, Badge } from '@larose/react';
+} from '@larose-ui/enterprise';
+import { DevToolsProvider } from '@larose-ui/devtools';
+import { useObservability } from '@larose-ui/observability';
+import { Card, Badge } from '@larose-ui/react';
 import {
   installEmployeeMock,
   resetEmployees,

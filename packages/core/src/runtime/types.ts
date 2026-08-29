@@ -27,7 +27,7 @@ export interface TenantContext {
   locale?: string;
   timezone?: string;
   theme?: ThemeMode;
-  /** Named preset from @larose/themes (e.g. ocean, forest) */
+  /** Named preset from @larose-ui/themes (e.g. ocean, forest) */
   themePreset?: string;
   brandColors?: Record<string, string>;
   permissions?: string[];

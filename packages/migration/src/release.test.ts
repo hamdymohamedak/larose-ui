@@ -5,21 +5,21 @@ describe('analyzeRelease', () => {
   it('detects version drift across publishable packages', () => {
     const report = analyzeRelease([
       {
-        name: '@larose/core',
+        name: '@larose-ui/core',
         version: '0.1.0',
         directory: 'packages/core',
         license: 'MIT',
         publishConfig: { access: 'public' },
       },
       {
-        name: '@larose/runtime',
+        name: '@larose-ui/runtime',
         version: '0.2.0',
         directory: 'packages/runtime',
         license: 'MIT',
         publishConfig: { access: 'public' },
       },
       {
-        name: '@larose/playground',
+        name: '@larose-ui/playground',
         version: '0.1.0',
         directory: 'apps/playground',
         private: true,
@@ -28,13 +28,13 @@ describe('analyzeRelease', () => {
 
     expect(report.aligned).toBe(false);
     expect(report.drift).toHaveLength(1);
-    expect(report.drift[0]?.name).toBe('@larose/runtime');
+    expect(report.drift[0]?.name).toBe('@larose-ui/runtime');
   });
 
   it('flags missing publish metadata', () => {
     const report = analyzeRelease([
       {
-        name: '@larose/core',
+        name: '@larose-ui/core',
         version: '0.1.0',
         directory: 'packages/core',
       },

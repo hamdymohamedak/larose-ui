@@ -1,6 +1,6 @@
 import { useState, type ChangeEvent } from 'react';
-import { Input, type InputProps } from '@larose/react';
-import { useOptionalObservability } from '@larose/observability';
+import { Input, type InputProps } from '@larose-ui/react';
+import { useOptionalObservability } from '@larose-ui/observability';
 import { useOptionalAudit } from './AuditProvider';
 import { AuditHistory } from './AuditHistory';
 import styles from './AuditedInput.module.css';

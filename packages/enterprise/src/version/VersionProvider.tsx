@@ -4,8 +4,8 @@ import {
   useMemo,
   type ReactNode,
 } from 'react';
-import type { VersionInfo } from '@larose/core';
-import { Alert } from '@larose/react';
+import type { VersionInfo } from '@larose-ui/core';
+import { Alert } from '@larose-ui/react';
 import { checkVersionCompatibility, type VersionCheckOptions } from './checkVersion';
 
 const VersionContext = createContext<VersionInfo | null>(null);

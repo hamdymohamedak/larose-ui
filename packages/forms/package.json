@@ -1,5 +1,5 @@
 {
-  "name": "@larose/forms",
+  "name": "@larose-ui/forms",
   "version": "0.1.0",
   "description": "Schema-driven forms for laRose UI platform",
   "type": "module",
@@ -23,10 +23,10 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@larose/core": "workspace:*",
-    "@larose/data": "workspace:*",
-    "@larose/observability": "workspace:*",
-    "@larose/react": "workspace:*"
+    "@larose-ui/core": "workspace:*",
+    "@larose-ui/data": "workspace:*",
+    "@larose-ui/observability": "workspace:*",
+    "@larose-ui/react": "workspace:*"
   },
   "peerDependencies": {
     "react": ">=18"

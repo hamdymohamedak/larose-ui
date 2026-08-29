@@ -7,16 +7,16 @@ import type {
   ThemeMode,
   UserContext,
   TenantContext,
-} from '@larose/core';
-import { LAROSE_VERSION } from '@larose/core';
-import type { ColorTokens } from '@larose/tokens';
-import { PermissionProvider } from '@larose/permissions';
+} from '@larose-ui/core';
+import { LAROSE_VERSION } from '@larose-ui/core';
+import type { ColorTokens } from '@larose-ui/tokens';
+import { PermissionProvider } from '@larose-ui/permissions';
 import {
   ObservabilityProvider,
   createConsoleAdapter,
   createNoopAdapter,
   type ObservabilityAdapter,
-} from '@larose/observability';
+} from '@larose-ui/observability';
 import type { Locale } from './i18n/messages';
 import { EnvironmentProvider } from './environment/EnvironmentProvider';
 import { FeatureFlagProvider, type FeatureState } from './features/FeatureFlagProvider';

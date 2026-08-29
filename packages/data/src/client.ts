@@ -1,4 +1,4 @@
-import { classifyHttpError, type ApiError } from '@larose/core';
+import { classifyHttpError, type ApiError } from '@larose-ui/core';
 
 export interface ApiFetchOptions extends RequestInit {
   baseUrl?: string;

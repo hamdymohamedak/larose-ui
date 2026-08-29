@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef } from 'react';
-import { usePermissions } from '@larose/permissions';
-import type { Environment, FeatureFlagEvaluator, SessionState } from '@larose/core';
+import { usePermissions } from '@larose-ui/permissions';
+import type { Environment, FeatureFlagEvaluator, SessionState } from '@larose-ui/core';
 import { useEnvironment } from '../environment/EnvironmentProvider';
 import { useI18n } from '../i18n/I18nProvider';
 import { useNetwork } from '../network/NetworkProvider';

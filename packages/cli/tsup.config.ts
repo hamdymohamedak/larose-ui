@@ -6,5 +6,5 @@ export default defineConfig({
   dts: true,
   clean: true,
   banner: { js: '#!/usr/bin/env node' },
-  noExternal: [/@larose\/.*/],
+  noExternal: [/@larose-ui\/.*/],
 });

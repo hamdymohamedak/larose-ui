@@ -1,7 +1,7 @@
 import { readdir, readFile, stat, writeFile } from 'node:fs/promises';
 import { join, relative } from 'node:path';
-import { validateContract, type ContractSchema } from '@larose/contracts';
-import { scanComponentSource } from '@larose/accessibility';
+import { validateContract, type ContractSchema } from '@larose-ui/contracts';
+import { scanComponentSource } from '@larose-ui/accessibility';
 import {
   generateMigrationReport,
   formatMigrationReport,
@@ -13,7 +13,7 @@ import {
   formatReleaseReport,
   formatReleaseJson,
   type GeneratorKind,
-} from '@larose/migration';
+} from '@larose-ui/migration';
 import {
   DEFAULT_BROWSER_MATRIX,
   validateBrowserMatrix,
@@ -62,25 +62,25 @@ export interface DoctorResult {
 }
 
 const BUNDLE_BUDGETS_KB: Record<string, number> = {
-  '@larose/core': 10,
-  '@larose/tokens': 5,
-  '@larose/network': 6,
-  '@larose/offline': 5,
-  '@larose/permissions': 8,
-  '@larose/data': 15,
-  '@larose/forms': 10,
-  '@larose/react': 70,
-  '@larose/runtime': 36,
-  '@larose/observability': 26,
-  '@larose/contracts': 5,
-  '@larose/migration': 14,
-  '@larose/testing': 10,
-  '@larose/cli': 50,
-  '@larose/devtools': 22,
-  '@larose/enterprise': 25,
-  '@larose/ai': 20,
-  '@larose/accessibility': 5,
-  '@larose/themes': 5,
+  '@larose-ui/core': 10,
+  '@larose-ui/tokens': 5,
+  '@larose-ui/network': 6,
+  '@larose-ui/offline': 5,
+  '@larose-ui/permissions': 8,
+  '@larose-ui/data': 15,
+  '@larose-ui/forms': 10,
+  '@larose-ui/react': 70,
+  '@larose-ui/runtime': 36,
+  '@larose-ui/observability': 26,
+  '@larose-ui/contracts': 5,
+  '@larose-ui/migration': 14,
+  '@larose-ui/testing': 10,
+  '@larose-ui/cli': 50,
+  '@larose-ui/devtools': 22,
+  '@larose-ui/enterprise': 25,
+  '@larose-ui/ai': 20,
+  '@larose-ui/accessibility': 5,
+  '@larose-ui/themes': 5,
 };
 
 async function walkDir(dir: string, ext: string[]): Promise<string[]> {
@@ -99,7 +99,7 @@ async function walkDir(dir: string, ext: string[]): Promise<string[]> {
 }
 
 const BUNDLE_ENTRY: Record<string, string> = {
-  '@larose/cli': 'dist/cli.js',
+  '@larose-ui/cli': 'dist/cli.js',
 };
 
 async function checkBundleBudgets(packagesDir: string): Promise<Diagnostic[]> {
@@ -108,7 +108,7 @@ async function checkBundleBudgets(packagesDir: string): Promise<Diagnostic[]> {
 
   for (const pkg of packages) {
     if (!pkg.isDirectory()) continue;
-    const pkgName = `@larose/${pkg.name}`;
+    const pkgName = `@larose-ui/${pkg.name}`;
     const budget = BUNDLE_BUDGETS_KB[pkgName];
     if (!budget) continue;
 

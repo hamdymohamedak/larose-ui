@@ -1,5 +1,5 @@
 import { useCallback, type ButtonHTMLAttributes } from 'react';
-import type { Size } from '@larose/core';
+import type { Size } from '@larose-ui/core';
 import styles from './Switch.module.css';
 
 export interface SwitchProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onChange'> {

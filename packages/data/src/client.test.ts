@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { classifyHttpError } from '@larose/core';
+import { classifyHttpError } from '@larose-ui/core';
 import { getRetryDelay, isApiError, ApiRequestError } from './client';
 
 describe('client helpers', () => {

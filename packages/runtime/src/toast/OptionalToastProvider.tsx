@@ -7,12 +7,12 @@ export interface OptionalToastProviderProps {
 }
 
 const LazyToastProvider = lazy(async () => {
-  const mod = await import('@larose/react');
+  const mod = await import('@larose-ui/react');
   return { default: mod.ToastProvider };
 });
 
 /**
- * Opt-in toast wrapper — keeps @larose/react out of the default runtime bundle.
+ * Opt-in toast wrapper — keeps @larose-ui/react out of the default runtime bundle.
  * Used internally by LaRoseProvider when enableToasts is true.
  */
 export function OptionalToastProvider({

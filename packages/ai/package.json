@@ -1,5 +1,5 @@
 {
-  "name": "@larose/ai",
+  "name": "@larose-ui/ai",
   "version": "0.1.0",
   "description": "AI-native UI adapters — SmartTable and SmartForm with pluggable intelligence",
   "type": "module",
@@ -22,13 +22,13 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@larose/forms": "workspace:*",
-    "@larose/permissions": "workspace:*",
-    "@larose/react": "workspace:*",
-    "@larose/runtime": "workspace:*"
+    "@larose-ui/forms": "workspace:*",
+    "@larose-ui/permissions": "workspace:*",
+    "@larose-ui/react": "workspace:*",
+    "@larose-ui/runtime": "workspace:*"
   },
   "peerDependencies": {
-    "@larose/permissions": "workspace:*",
+    "@larose-ui/permissions": "workspace:*",
     "react": ">=18"
   },
   "devDependencies": {

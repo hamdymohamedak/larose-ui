@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react';
-import { Dialog, Button } from '@larose/react';
-import { useEnvironment } from '@larose/runtime';
-import { useOptionalObservability } from '@larose/observability';
+import { Dialog, Button } from '@larose-ui/react';
+import { useEnvironment } from '@larose-ui/runtime';
+import { useOptionalObservability } from '@larose-ui/observability';
 
 export interface SensitiveActionProps {
   label: string;

@@ -5,9 +5,9 @@ import {
   useRef,
   type ReactNode,
 } from 'react';
-import type { Density, ThemeMode } from '@larose/core';
-import { warnDeprecation } from '@larose/core';
-import { applyTokensToElement, type ColorTokens } from '@larose/tokens';
+import type { Density, ThemeMode } from '@larose-ui/core';
+import { warnDeprecation } from '@larose-ui/core';
+import { applyTokensToElement, type ColorTokens } from '@larose-ui/tokens';
 
 export interface ThemeContextValue {
   theme: ThemeMode;
@@ -25,7 +25,7 @@ export function useTheme(): ThemeContextValue {
   return useContext(ThemeContext);
 }
 
-/** @deprecated Use useTheme() from @larose/runtime */
+/** @deprecated Use useTheme() from @larose-ui/runtime */
 export function useLaRose(): ThemeContextValue {
   warnDeprecation('useLaRose', 'useLaRose() is deprecated', 'useTheme()');
   return useTheme();

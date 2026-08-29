@@ -1,6 +1,6 @@
 import type { Preview } from '@storybook/react';
-import '@larose/tokens/styles.css';
-import { LaRoseProvider } from '@larose/runtime';
+import '@larose-ui/tokens/styles.css';
+import { LaRoseProvider } from '@larose-ui/runtime';
 import React from 'react';
 
 const preview: Preview = {

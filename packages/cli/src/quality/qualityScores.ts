@@ -40,7 +40,7 @@ export function computeQualityScores(
       (treatWarningsAsErrors && diagnostic.severity === 'warning');
 
     if (diagnostic.category === 'bundle') {
-      const pkgMatch = diagnostic.message.match(/^(@larose\/[^\s]+)/);
+      const pkgMatch = diagnostic.message.match(/^(@larose-ui\/[^\s]+)/);
       const pkg = pkgMatch?.[1] ?? 'unknown';
       const entry = packageMap.get(pkg) ?? {
         package: pkg,

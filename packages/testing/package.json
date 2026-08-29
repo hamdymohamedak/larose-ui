@@ -1,5 +1,5 @@
 {
-  "name": "@larose/testing",
+  "name": "@larose-ui/testing",
   "version": "0.1.0",
   "description": "Testing utilities and test matrix helpers for laRose",
   "type": "module",
@@ -22,8 +22,8 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@larose/core": "workspace:*",
-    "@larose/runtime": "workspace:*"
+    "@larose-ui/core": "workspace:*",
+    "@larose-ui/runtime": "workspace:*"
   },
   "peerDependencies": {
     "@testing-library/react": ">=16",

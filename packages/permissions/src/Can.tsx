@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import type { PermissionFallback } from '@larose/core';
+import type { PermissionFallback } from '@larose-ui/core';
 import { usePermission } from './PermissionProvider';
 import { resolvePermissionFallback } from './evaluator';
 import { Explainable } from './Explainable';

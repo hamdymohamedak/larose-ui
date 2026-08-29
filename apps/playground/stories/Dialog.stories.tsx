@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
-import { Button, Dialog } from '@larose/react';
+import { Button, Dialog } from '@larose-ui/react';
 
 const meta: Meta<typeof Dialog> = {
   title: 'Foundation/Dialog',

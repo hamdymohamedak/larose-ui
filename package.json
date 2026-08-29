@@ -23,13 +23,13 @@
     "release:publish": "pnpm build && changeset publish",
     "verify:publish": "node scripts/verify-publish.mjs",
     "sync:publish-metadata": "node scripts/sync-publish-metadata.mjs",
-    "demo": "pnpm --filter @larose/demo dev",
+    "demo": "pnpm --filter @larose-ui/demo dev",
     "clean": "turbo run clean && rm -rf node_modules"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.10",
-    "@larose/accessibility": "workspace:*",
-    "@larose/cli": "workspace:*",
+    "@larose-ui/accessibility": "workspace:*",
+    "@larose-ui/cli": "workspace:*",
     "@types/node": "^22.10.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",

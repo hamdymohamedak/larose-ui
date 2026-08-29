@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Bundle budget check — used by CI and local scripts.
- * Exits 1 when any @larose/* package exceeds its raw dist budget.
+ * Exits 1 when any @larose-ui/* package exceeds its raw dist budget.
  */
 import { stat } from 'node:fs/promises';
 import { join } from 'node:path';
@@ -39,13 +39,13 @@ for (const [pkg, { file, budget }] of Object.entries(BUDGETS)) {
     const info = await stat(distFile);
     const kb = info.size / 1024;
     if (kb > budget) {
-      console.error(`FAIL @larose/${pkg}: ${kb.toFixed(1)}KB > ${budget}KB`);
+      console.error(`FAIL @larose-ui/${pkg}: ${kb.toFixed(1)}KB > ${budget}KB`);
       failed = true;
     } else {
-      console.log(`OK   @larose/${pkg}: ${kb.toFixed(1)}KB / ${budget}KB`);
+      console.log(`OK   @larose-ui/${pkg}: ${kb.toFixed(1)}KB / ${budget}KB`);
     }
   } catch {
-    console.warn(`SKIP @larose/${pkg}: ${file} not found (run pnpm build)`);
+    console.warn(`SKIP @larose-ui/${pkg}: ${file} not found (run pnpm build)`);
   }
 }
 

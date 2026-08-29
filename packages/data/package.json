@@ -1,5 +1,5 @@
 {
-  "name": "@larose/data",
+  "name": "@larose-ui/data",
   "version": "0.1.0",
   "description": "Backend-aware data layer for laRose UI platform",
   "type": "module",
@@ -23,8 +23,8 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@larose/core": "workspace:*",
-    "@larose/permissions": "workspace:*"
+    "@larose-ui/core": "workspace:*",
+    "@larose-ui/permissions": "workspace:*"
   },
   "peerDependencies": {
     "react": ">=18"

@@ -11,15 +11,15 @@ laRose is a **UI Operating System** for modern SaaS applications — not a compo
         │                │                │
      UI Layer       Intelligence        Runtime
         │                │                │
-   @larose/react   @larose/data      @larose/runtime
-   Components      @larose/forms     Theme, Tenant, Session
-                   @larose/permissions Feature Flags, i18n
-                   @larose/ai         Network, Offline
+   @larose-ui/react   @larose-ui/data      @larose-ui/runtime
+   Components      @larose-ui/forms     Theme, Tenant, Session
+                   @larose-ui/permissions Feature Flags, i18n
+                   @larose-ui/ai         Network, Offline
         │                │                │
         └────────────────┼────────────────┘
                          │
                    Observability
-                   @larose/observability
+                   @larose-ui/observability
                          │
                     Quality Engine
               Doctor + CLI + Testing + A11y
@@ -27,7 +27,7 @@ laRose is a **UI Operating System** for modern SaaS applications — not a compo
 
 ## Package Rules
 
-1. `@larose/core` has zero dependencies — types, state machines, runtime contracts
+1. `@larose-ui/core` has zero dependencies — types, state machines, runtime contracts
 2. No circular dependencies between packages
 3. Intelligence packages compose at the app layer — not each other
 4. Runtime orchestrates; domain packages implement
@@ -47,8 +47,8 @@ See [RUNTIME_2.md](../runtime/RUNTIME_2.md) for Runtime 2.0 design.
 ### Basic
 
 ```tsx
-import { LaRoseProvider } from '@larose/runtime';
-import { Button } from '@larose/react';
+import { LaRoseProvider } from '@larose-ui/runtime';
+import { Button } from '@larose-ui/react';
 
 <LaRoseProvider locale="en" permissions={['app.read']}>
   <Button>Save</Button>

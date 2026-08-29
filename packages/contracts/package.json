@@ -1,5 +1,5 @@
 {
-  "name": "@larose/contracts",
+  "name": "@larose-ui/contracts",
   "version": "0.1.0",
   "description": "UI/API contract validation for laRose platform",
   "type": "module",
@@ -22,7 +22,7 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@larose/core": "workspace:*"
+    "@larose-ui/core": "workspace:*"
   },
   "devDependencies": {
     "tsup": "^8.3.5",

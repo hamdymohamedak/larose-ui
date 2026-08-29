@@ -1,5 +1,5 @@
 {
-  "name": "@larose/accessibility",
+  "name": "@larose-ui/accessibility",
   "version": "0.1.0",
   "description": "Accessibility utilities and source scanners for laRose",
   "type": "module",
@@ -22,7 +22,7 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@larose/core": "workspace:*"
+    "@larose-ui/core": "workspace:*"
   },
   "devDependencies": {
     "tsup": "^8.3.5",

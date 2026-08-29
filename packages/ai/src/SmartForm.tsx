@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Form, type FormProps } from '@larose/forms';
-import { Input, Button } from '@larose/react';
+import { Form, type FormProps } from '@larose-ui/forms';
+import { Input, Button } from '@larose-ui/react';
 import type { AIAdapter } from './adapter';
 import { createMockAdapter } from './adapters/mockAdapter';
 import styles from './SmartForm.module.css';

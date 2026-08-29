@@ -77,7 +77,7 @@ export { RuntimeBridge, SessionBridge } from './runtime/RuntimeBridge';
 export type { RuntimeBridgeProps } from './runtime/RuntimeBridge';
 export { RuntimeObservabilityBridge } from './observability/RuntimeObservabilityBridge';
 
-export type { NetworkState } from '@larose/network';
+export type { NetworkState } from '@larose-ui/network';
 export {
   createNetworkMonitor,
   isSlowNetwork,
@@ -85,7 +85,7 @@ export {
   isDegradedNetwork,
   shouldUseSkeleton,
   normalizeNetworkCondition,
-} from '@larose/network';
+} from '@larose-ui/network';
 
 export { resolveTenantConfig } from './tenant/resolveTenant';
 export type {
@@ -97,5 +97,5 @@ export type {
   QueuedRequest,
   OfflineSyncStatus,
   SyncResult,
-} from '@larose/offline';
-export { createOfflineQueue } from '@larose/offline';
+} from '@larose-ui/offline';
+export { createOfflineQueue } from '@larose-ui/offline';

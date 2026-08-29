@@ -5,7 +5,7 @@
  */
 import { readdir, readFile } from 'node:fs/promises';
 import { join, relative } from 'node:path';
-import { scanComponentSource, formatA11yReport } from '@larose/accessibility';
+import { scanComponentSource, formatA11yReport } from '@larose-ui/accessibility';
 
 const packagesDir = join(process.cwd(), 'packages');
 

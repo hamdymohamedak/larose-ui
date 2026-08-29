@@ -1,4 +1,4 @@
-import type { Size } from '@larose/core';
+import type { Size } from '@larose-ui/core';
 import styles from './Spinner.module.css';
 
 export interface SpinnerProps {

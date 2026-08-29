@@ -5,8 +5,8 @@ import {
   useRef,
   type ReactNode,
 } from 'react';
-import type { Density, ThemeMode } from '@larose/core';
-import { applyTokensToElement, type ColorTokens } from '@larose/tokens';
+import type { Density, ThemeMode } from '@larose-ui/core';
+import { applyTokensToElement, type ColorTokens } from '@larose-ui/tokens';
 
 export interface LaRoseConfig {
   theme?: ThemeMode;

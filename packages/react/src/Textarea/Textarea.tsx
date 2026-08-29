@@ -1,6 +1,6 @@
 import { forwardRef, type TextareaHTMLAttributes } from 'react';
-import type { Size, UIState } from '@larose/core';
-import { resolveUIState } from '@larose/core';
+import type { Size, UIState } from '@larose-ui/core';
+import { resolveUIState } from '@larose-ui/core';
 import styles from './Textarea.module.css';
 
 export interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {

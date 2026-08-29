@@ -7,10 +7,10 @@ import {
   useBreakpoint,
   useI18n,
   useEnvironment,
-} from '@larose/runtime';
-import { usePermissions } from '@larose/permissions';
-import { useOptionalObservability } from '@larose/observability';
-import type { RuntimeEvent } from '@larose/core';
+} from '@larose-ui/runtime';
+import { usePermissions } from '@larose-ui/permissions';
+import { useOptionalObservability } from '@larose-ui/observability';
+import type { RuntimeEvent } from '@larose-ui/core';
 import {
   buildInspectorReadout,
   InspectorOverlay,

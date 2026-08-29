@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Checkbox, Progress, Radio, Select, Switch, Textarea } from '@larose/react';
+import { Checkbox, Progress, Radio, Select, Switch, Textarea } from '@larose-ui/react';
 
 const meta: Meta = {
   title: 'Foundation/Form Controls',
