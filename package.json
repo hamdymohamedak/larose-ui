@@ -23,6 +23,7 @@
     "release:publish": "pnpm build && changeset publish",
     "verify:publish": "node scripts/verify-publish.mjs",
     "sync:publish-metadata": "node scripts/sync-publish-metadata.mjs",
+    "generate:readmes": "node scripts/generate-package-readmes.mjs",
     "demo": "pnpm --filter @larose-ui/demo dev",
     "clean": "turbo run clean && rm -rf node_modules"
   },
@@ -42,7 +43,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/larose-ui/larose.git"
+    "url": "https://github.com/hamdymohamedak/larose-ui.git"
   },
   "packageManager": "pnpm@9.15.0",
   "engines": {
