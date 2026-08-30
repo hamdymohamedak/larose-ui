@@ -64,6 +64,34 @@
   --lr-easing-sharp: cubic-bezier(0.4, 0, 1, 1);
   --lr-easing-spring: cubic-bezier(0.34, 1.2, 0.64, 1);
 
+  --lr-motion-duration-instant: 50ms;
+  --lr-motion-duration-fast: 120ms;
+  --lr-motion-duration-normal: 220ms;
+  --lr-motion-duration-slow: 320ms;
+  --lr-motion-duration-enter: 280ms;
+  --lr-motion-duration-exit: 200ms;
+  --lr-motion-duration-layout: 250ms;
+
+  --lr-motion-easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --lr-motion-easing-enter: cubic-bezier(0, 0, 0.2, 1);
+  --lr-motion-easing-exit: cubic-bezier(0.4, 0, 1, 1);
+  --lr-motion-easing-emphasized: cubic-bezier(0.2, 0, 0, 1);
+
+  --lr-motion-spring-snappy: cubic-bezier(0.34, 1.15, 0.64, 1);
+  --lr-motion-spring-smooth: cubic-bezier(0.25, 0.9, 0.35, 1);
+  --lr-motion-spring-gentle: cubic-bezier(0.22, 0.9, 0.36, 1);
+  --lr-motion-spring-responsive: cubic-bezier(0.34, 1.2, 0.64, 1);
+  --lr-motion-spring-bouncy: cubic-bezier(0.34, 1.45, 0.64, 1);
+
+  --lr-motion-distance-xs: 4px;
+  --lr-motion-distance-sm: 8px;
+  --lr-motion-distance-md: 16px;
+
+  --lr-motion-scale-enter: 0.96;
+  --lr-motion-scale-exit: 0.96;
+  --lr-motion-scale-press: 0.97;
+  --lr-motion-scale-modal-enter: 0.98;
+
   --lr-button-height-sm: 2rem;
   --lr-button-height-md: 2.75rem;
   --lr-button-height-lg: 3.25rem;
@@ -196,6 +224,75 @@
   --lr-toolbar-prominent-fg: #ffffff;
   --lr-toolbar-blur: 20px;
 
+  --lr-path-control-height: 1.5rem;
+  --lr-path-control-padding-x: 0.5rem;
+  --lr-path-control-item-gap: 0.125rem;
+  --lr-path-control-font-size: 0.8125rem;
+  --lr-path-control-separator: rgb(0 0 0 / 0.15);
+  --lr-path-control-bg: rgb(246 246 246 / 0.8);
+  --lr-path-control-fg: #1d1d1f;
+  --lr-path-control-item-hover: rgb(0 0 0 / 0.06);
+
+  --lr-search-field-height: 1.75rem;
+  --lr-search-field-radius: 0.5rem;
+  --lr-search-field-padding-x: 0.625rem;
+  --lr-search-field-font-size: 0.8125rem;
+  --lr-search-field-bg: rgb(118 118 128 / 0.12);
+  --lr-search-field-fg: #1d1d1f;
+  --lr-search-field-placeholder: rgb(60 60 67 / 0.6);
+  --lr-search-field-scope-height: 1.75rem;
+  --lr-search-field-token-radius: 0.375rem;
+  --lr-search-field-token-bg: rgb(0 113 227 / 0.12);
+
+  --lr-sidebar-width: 16rem;
+  --lr-sidebar-width-compact: 13rem;
+  --lr-sidebar-item-height: 1.75rem;
+  --lr-sidebar-item-radius: 0.4375rem;
+  --lr-sidebar-section-gap: 0.5rem;
+  --lr-sidebar-bg: rgb(255 255 255 / 0.72);
+  --lr-sidebar-fg: #1d1d1f;
+  --lr-sidebar-item-hover: rgb(0 0 0 / 0.06);
+  --lr-sidebar-item-active: rgb(0 113 227 / 0.12);
+  --lr-sidebar-group-label-size: 0.6875rem;
+
+  --lr-tab-bar-height: 3.125rem;
+  --lr-tab-bar-height-compact: 2.75rem;
+  --lr-tab-bar-item-padding: 0.375rem;
+  --lr-tab-bar-icon-size: 1.375rem;
+  --lr-tab-bar-label-size: 0.625rem;
+  --lr-tab-bar-radius: 1rem;
+  --lr-tab-bar-bg: rgb(255 255 255 / 0.72);
+  --lr-tab-bar-fg: #0071e3;
+  --lr-tab-bar-inactive-fg: #8e8e93;
+  --lr-tab-bar-badge-bg: #ff3b30;
+  --lr-tab-bar-badge-fg: #ffffff;
+
+  --lr-token-field-min-height: 2rem;
+  --lr-token-field-radius: 0.4375rem;
+  --lr-token-field-padding: 0.25rem 0.375rem;
+  --lr-token-field-token-radius: 0.3125rem;
+  --lr-token-field-token-bg: rgb(0 113 227 / 0.12);
+  --lr-token-field-token-fg: #1d1d1f;
+  --lr-token-field-font-size: 0.8125rem;
+  --lr-token-field-bg: #ffffff;
+  --lr-token-field-border: rgb(0 0 0 / 0.12);
+
+  --lr-alert-dialog-max-width: 16.875rem;
+  --lr-alert-dialog-wide-max-width: 26.25rem;
+  --lr-alert-dialog-radius: 0.875rem;
+  --lr-alert-dialog-content-padding: 1.1875rem 1rem 1rem;
+  --lr-alert-dialog-title-size: 1.0625rem;
+  --lr-alert-dialog-message-size: 0.8125rem;
+  --lr-alert-dialog-icon-size: 2.75rem;
+  --lr-alert-dialog-button-height: 2.75rem;
+  --lr-alert-dialog-shadow: 0 11px 34px rgb(0 0 0 / 0.18);
+  --lr-alert-dialog-bg: rgb(255 255 255 / 0.92);
+  --lr-alert-dialog-overlay: rgb(0 0 0 / 0.4);
+  --lr-alert-dialog-separator: rgb(60 60 67 / 0.29);
+  --lr-alert-dialog-backdrop-blur: 40px;
+  --lr-alert-dialog-accessory-max-height: 9.625rem;
+  --lr-alert-dialog-accessory-radius: 1rem;
+
   --lr-dnd-preview-opacity: 0.78;
   --lr-dnd-preview-shadow: 0 8px 24px rgb(0 0 0 / 0.16);
   --lr-dnd-zone-active-border: #0071e3;
@@ -208,8 +305,8 @@
 
   --lr-field-height-md: 2.75rem;
   --lr-field-radius: 0.625rem;
-  --lr-field-bg: rgb(118 118 128 / 0.12);
-  --lr-field-border: transparent;
+  --lr-field-bg: rgb(118 118 128 / 0.16);
+  --lr-field-border: rgb(0 0 0 / 0.06);
   --lr-field-border-focus: #0071e3;
   --lr-field-focus-ring: 0 0 0 3px rgb(0 113 227 / 0.25);
   --lr-field-error-border: #ff3b30;
@@ -437,6 +534,14 @@
     --lr-duration-fast: 0ms;
     --lr-duration-normal: 0ms;
     --lr-duration-slow: 0ms;
+
+    --lr-motion-duration-instant: 0ms;
+    --lr-motion-duration-fast: 0ms;
+    --lr-motion-duration-normal: 0ms;
+    --lr-motion-duration-slow: 0ms;
+    --lr-motion-duration-enter: 0ms;
+    --lr-motion-duration-exit: 0ms;
+    --lr-motion-duration-layout: 0ms;
   }
 }
 

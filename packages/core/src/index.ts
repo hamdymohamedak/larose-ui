@@ -271,4 +271,22 @@ export {
 
 export { detectA11yPreferences, subscribeA11yPreferences } from './runtime/a11y';
 
+export type {
+  SpringConfig,
+  SpringPresetName,
+  SpringState,
+  ReducedMotionPolicy,
+  MotionSemanticPreset,
+} from './motion';
+export {
+  SPRING_PRESETS,
+  getSpringPreset,
+  stepSpring,
+  isSpringSettled,
+  animateSpringToTarget,
+  springResponseTime,
+  resolveReducedMotion,
+  motionDuration,
+} from './motion';
+
 export { sanitizeNavigationUrl, isSafeRedirectPath } from './security/url';

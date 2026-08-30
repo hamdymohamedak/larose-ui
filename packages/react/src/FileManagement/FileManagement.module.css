@@ -301,6 +301,11 @@
   gap: var(--lr-space-2);
 }
 
+.launcherActions :global(.lr-Button-button) {
+  min-width: 10rem;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.08);
+}
+
 .launcherSheet {
   margin-top: auto;
 }

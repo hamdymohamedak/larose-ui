@@ -27,6 +27,13 @@ import { popUpButtonTokensToCSSVariables, getPopUpButtonTokens } from './popup-b
 import { pullDownButtonTokensToCSSVariables, getPullDownButtonTokens, MIN_PULLDOWN_ITEMS } from './pull-down-button-tokens';
 import { menuBarTokensToCSSVariables, getMenuBarTokens, STANDARD_MENU_BAR_ORDER } from './menu-bar-tokens';
 import { toolbarTokensToCSSVariables, getToolbarTokens, MAX_TOOLBAR_TITLE_LENGTH, MAX_TOOLBAR_GROUPS } from './toolbar-tokens';
+import { pathControlTokensToCSSVariables, getPathControlTokens } from './path-control-tokens';
+import { searchFieldTokensToCSSVariables, getSearchFieldTokens } from './search-field-tokens';
+import { sidebarTokensToCSSVariables, getSidebarTokens } from './sidebar-tokens';
+import { tabBarTokensToCSSVariables, getTabBarTokens, MAX_TAB_BAR_ITEMS } from './tab-bar-tokens';
+import { tokenFieldTokensToCSSVariables, getTokenFieldTokens, DEFAULT_TOKEN_DELIMITERS } from './token-field-tokens';
+import { alertDialogTokensToCSSVariables, getAlertDialogTokens, MAX_ALERT_BUTTONS } from './alert-dialog-tokens';
+import { motionTokensToCSSVariables, getMotionTokens } from './motion-tokens';
 import { sharingTokensToCSSVariables, getSharingTokens } from './sharing-tokens';
 import { getRefinedTokenOverrides } from './refined';
 import type {
@@ -129,6 +136,32 @@ export {
   MAX_TOOLBAR_GROUPS,
 } from './toolbar-tokens';
 export type { ToolbarTokens } from './toolbar-tokens';
+export { getPathControlTokens, pathControlTokensToCSSVariables } from './path-control-tokens';
+export type { PathControlTokens } from './path-control-tokens';
+export { getSearchFieldTokens, searchFieldTokensToCSSVariables } from './search-field-tokens';
+export type { SearchFieldTokens } from './search-field-tokens';
+export { getSidebarTokens, sidebarTokensToCSSVariables } from './sidebar-tokens';
+export type { SidebarTokens, SidebarSize } from './sidebar-tokens';
+export {
+  getTabBarTokens,
+  tabBarTokensToCSSVariables,
+  MAX_TAB_BAR_ITEMS,
+} from './tab-bar-tokens';
+export type { TabBarTokens } from './tab-bar-tokens';
+export {
+  getTokenFieldTokens,
+  tokenFieldTokensToCSSVariables,
+  DEFAULT_TOKEN_DELIMITERS,
+} from './token-field-tokens';
+export type { TokenFieldTokens } from './token-field-tokens';
+export {
+  getAlertDialogTokens,
+  alertDialogTokensToCSSVariables,
+  MAX_ALERT_BUTTONS,
+} from './alert-dialog-tokens';
+export type { AlertDialogTokens } from './alert-dialog-tokens';
+export { getMotionTokens, motionTokensToCSSVariables, MOTION_PRESET_EASING } from './motion-tokens';
+export type { MotionTokens, MotionPresetName } from './motion-tokens';
 
 const semanticColors = {
   success: '#34c759',
@@ -421,6 +454,13 @@ export function tokensToCSSVariables(
   Object.assign(vars, pullDownButtonTokensToCSSVariables(getPullDownButtonTokens(mode)));
   Object.assign(vars, menuBarTokensToCSSVariables(getMenuBarTokens(mode)));
   Object.assign(vars, toolbarTokensToCSSVariables(getToolbarTokens(mode)));
+  Object.assign(vars, pathControlTokensToCSSVariables(getPathControlTokens(mode)));
+  Object.assign(vars, searchFieldTokensToCSSVariables(getSearchFieldTokens(mode)));
+  Object.assign(vars, sidebarTokensToCSSVariables(getSidebarTokens(mode)));
+  Object.assign(vars, tabBarTokensToCSSVariables(getTabBarTokens(mode)));
+  Object.assign(vars, tokenFieldTokensToCSSVariables(getTokenFieldTokens(mode)));
+  Object.assign(vars, alertDialogTokensToCSSVariables(getAlertDialogTokens(mode)));
+  Object.assign(vars, motionTokensToCSSVariables(getMotionTokens(mode)));
 
   vars['--lr-density-multiplier'] = String(multiplier);
 

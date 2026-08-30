@@ -1,0 +1,456 @@
+/* Shared motion keyframes — compositor-friendly (transform + opacity). */
+
+@keyframes lr-fade-enter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes lr-fade-exit {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes lr-fade-scale-enter {
+  from {
+    opacity: 0;
+    transform: scale(var(--lr-motion-scale-enter));
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes lr-fade-scale-exit {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(var(--lr-motion-scale-exit));
+  }
+}
+
+@keyframes lr-modal-enter {
+  from {
+    opacity: 0;
+    transform: scale(var(--lr-motion-scale-modal-enter)) translateY(var(--lr-motion-distance-sm));
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes lr-modal-exit {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(var(--lr-motion-scale-modal-enter)) translateY(var(--lr-motion-distance-xs));
+  }
+}
+
+@keyframes lr-backdrop-enter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes lr-backdrop-exit {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Toast — placement-aware via descendant selectors on viewport */
+@keyframes lr-toast-enter-br {
+  from {
+    opacity: 0;
+    transform: translate(var(--lr-motion-distance-xs), var(--lr-motion-distance-sm))
+      scale(var(--lr-motion-scale-enter));
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes lr-toast-exit-br {
+  from {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(var(--lr-motion-distance-xs), var(--lr-motion-distance-sm))
+      scale(var(--lr-motion-scale-exit));
+  }
+}
+
+@keyframes lr-toast-enter-bl {
+  from {
+    opacity: 0;
+    transform: translate(calc(var(--lr-motion-distance-xs) * -1), var(--lr-motion-distance-sm))
+      scale(var(--lr-motion-scale-enter));
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes lr-toast-exit-bl {
+  from {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(calc(var(--lr-motion-distance-xs) * -1), var(--lr-motion-distance-sm))
+      scale(var(--lr-motion-scale-exit));
+  }
+}
+
+@keyframes lr-toast-enter-tr {
+  from {
+    opacity: 0;
+    transform: translate(var(--lr-motion-distance-xs), calc(var(--lr-motion-distance-sm) * -1))
+      scale(var(--lr-motion-scale-enter));
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes lr-toast-exit-tr {
+  from {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(var(--lr-motion-distance-xs), calc(var(--lr-motion-distance-sm) * -1))
+      scale(var(--lr-motion-scale-exit));
+  }
+}
+
+@keyframes lr-toast-enter-tl {
+  from {
+    opacity: 0;
+    transform: translate(calc(var(--lr-motion-distance-xs) * -1), calc(var(--lr-motion-distance-sm) * -1))
+      scale(var(--lr-motion-scale-enter));
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes lr-toast-exit-tl {
+  from {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(calc(var(--lr-motion-distance-xs) * -1), calc(var(--lr-motion-distance-sm) * -1))
+      scale(var(--lr-motion-scale-exit));
+  }
+}
+
+@keyframes lr-popover-enter-bottom {
+  from {
+    opacity: 0;
+    transform: translateY(calc(var(--lr-motion-distance-xs) * -1)) scale(var(--lr-motion-scale-enter));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes lr-popover-exit-bottom {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(calc(var(--lr-motion-distance-xs) * -1)) scale(var(--lr-motion-scale-exit));
+  }
+}
+
+@keyframes lr-popover-enter-top {
+  from {
+    opacity: 0;
+    transform: translateY(var(--lr-motion-distance-xs)) scale(var(--lr-motion-scale-enter));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes lr-popover-exit-top {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(var(--lr-motion-distance-xs)) scale(var(--lr-motion-scale-exit));
+  }
+}
+
+@keyframes lr-popover-enter-left {
+  from {
+    opacity: 0;
+    transform: translateX(var(--lr-motion-distance-xs)) scale(var(--lr-motion-scale-enter));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes lr-popover-exit-left {
+  from {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(var(--lr-motion-distance-xs)) scale(var(--lr-motion-scale-exit));
+  }
+}
+
+@keyframes lr-popover-enter-right {
+  from {
+    opacity: 0;
+    transform: translateX(calc(var(--lr-motion-distance-xs) * -1)) scale(var(--lr-motion-scale-enter));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes lr-popover-exit-right {
+  from {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(calc(var(--lr-motion-distance-xs) * -1)) scale(var(--lr-motion-scale-exit));
+  }
+}
+
+@keyframes lr-drawer-enter-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes lr-drawer-exit-right {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes lr-drawer-enter-left {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes lr-drawer-exit-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* Presence phase classes */
+.fade-entering {
+  animation: lr-fade-enter var(--lr-motion-duration-enter) var(--lr-motion-easing-enter) forwards;
+}
+
+.fade-exiting {
+  animation: lr-fade-exit var(--lr-motion-duration-exit) var(--lr-motion-easing-exit) forwards;
+}
+
+.fade-scale-entering {
+  animation: lr-fade-scale-enter var(--lr-motion-duration-enter) var(--lr-motion-spring-smooth) forwards;
+}
+
+.fade-scale-exiting {
+  animation: lr-fade-scale-exit var(--lr-motion-duration-exit) var(--lr-motion-easing-exit) forwards;
+}
+
+.modal-entering {
+  animation: lr-modal-enter var(--lr-motion-duration-enter) var(--lr-motion-spring-smooth) forwards;
+}
+
+.modal-exiting {
+  animation: lr-modal-exit var(--lr-motion-duration-exit) var(--lr-motion-easing-exit) forwards;
+}
+
+.backdrop-entering {
+  animation: lr-backdrop-enter var(--lr-motion-duration-normal) var(--lr-motion-easing-enter) forwards;
+}
+
+.backdrop-exiting {
+  animation: lr-backdrop-exit var(--lr-motion-duration-exit) var(--lr-motion-easing-exit) forwards;
+}
+
+/* Toast uses placement from data-placement on the element */
+.toast-entering[data-placement='bottom-right'] {
+  animation: lr-toast-enter-br var(--lr-motion-duration-enter) var(--lr-motion-spring-smooth) forwards;
+}
+
+.toast-exiting[data-placement='bottom-right'] {
+  animation: lr-toast-exit-br var(--lr-motion-duration-exit) var(--lr-motion-easing-exit) forwards;
+}
+
+.toast-entering[data-placement='bottom-left'] {
+  animation: lr-toast-enter-bl var(--lr-motion-duration-enter) var(--lr-motion-spring-smooth) forwards;
+}
+
+.toast-exiting[data-placement='bottom-left'] {
+  animation: lr-toast-exit-bl var(--lr-motion-duration-exit) var(--lr-motion-easing-exit) forwards;
+}
+
+.toast-entering[data-placement='top-right'] {
+  animation: lr-toast-enter-tr var(--lr-motion-duration-enter) var(--lr-motion-spring-smooth) forwards;
+}
+
+.toast-exiting[data-placement='top-right'] {
+  animation: lr-toast-exit-tr var(--lr-motion-duration-exit) var(--lr-motion-easing-exit) forwards;
+}
+
+.toast-entering[data-placement='top-left'] {
+  animation: lr-toast-enter-tl var(--lr-motion-duration-enter) var(--lr-motion-spring-smooth) forwards;
+}
+
+.toast-exiting[data-placement='top-left'] {
+  animation: lr-toast-exit-tl var(--lr-motion-duration-exit) var(--lr-motion-easing-exit) forwards;
+}
+
+.popover-entering[data-placement='bottom'],
+.popover-entering[data-side='bottom'] {
+  animation: lr-popover-enter-bottom var(--lr-motion-duration-fast) var(--lr-motion-spring-snappy) forwards;
+}
+
+.popover-exiting[data-placement='bottom'],
+.popover-exiting[data-side='bottom'] {
+  animation: lr-popover-exit-bottom var(--lr-motion-duration-exit) var(--lr-motion-easing-exit) forwards;
+}
+
+.popover-entering[data-placement='top'],
+.popover-entering[data-side='top'] {
+  animation: lr-popover-enter-top var(--lr-motion-duration-fast) var(--lr-motion-spring-snappy) forwards;
+}
+
+.popover-exiting[data-placement='top'],
+.popover-exiting[data-side='top'] {
+  animation: lr-popover-exit-top var(--lr-motion-duration-exit) var(--lr-motion-easing-exit) forwards;
+}
+
+.popover-entering[data-placement='left'],
+.popover-entering[data-side='left'] {
+  animation: lr-popover-enter-left var(--lr-motion-duration-fast) var(--lr-motion-spring-snappy) forwards;
+}
+
+.popover-exiting[data-placement='left'],
+.popover-exiting[data-side='left'] {
+  animation: lr-popover-exit-left var(--lr-motion-duration-exit) var(--lr-motion-easing-exit) forwards;
+}
+
+.popover-entering[data-placement='right'],
+.popover-entering[data-side='right'] {
+  animation: lr-popover-enter-right var(--lr-motion-duration-fast) var(--lr-motion-spring-snappy) forwards;
+}
+
+.popover-exiting[data-placement='right'],
+.popover-exiting[data-side='right'] {
+  animation: lr-popover-exit-right var(--lr-motion-duration-exit) var(--lr-motion-easing-exit) forwards;
+}
+
+.drawer-right-entering {
+  animation: lr-drawer-enter-right var(--lr-motion-duration-slow) var(--lr-motion-spring-gentle) forwards;
+}
+
+.drawer-right-exiting {
+  animation: lr-drawer-exit-right var(--lr-motion-duration-normal) var(--lr-motion-easing-exit) forwards;
+}
+
+.drawer-left-entering {
+  animation: lr-drawer-enter-left var(--lr-motion-duration-slow) var(--lr-motion-spring-gentle) forwards;
+}
+
+.drawer-left-exiting {
+  animation: lr-drawer-exit-left var(--lr-motion-duration-normal) var(--lr-motion-easing-exit) forwards;
+}
+
+/* Layout motion — toast stack reordering */
+.layoutItem {
+  transition:
+    transform var(--lr-motion-duration-layout) var(--lr-motion-spring-smooth),
+    opacity var(--lr-motion-duration-layout) var(--lr-motion-easing-standard);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-entering,
+  .fade-exiting,
+  .fade-scale-entering,
+  .fade-scale-exiting,
+  .modal-entering,
+  .modal-exiting,
+  .backdrop-entering,
+  .backdrop-exiting,
+  .toast-entering,
+  .toast-exiting,
+  .popover-entering,
+  .popover-exiting,
+  .drawer-right-entering,
+  .drawer-right-exiting,
+  .drawer-left-entering,
+  .drawer-left-exiting {
+    animation-duration: 0ms !important;
+  }
+
+  .layoutItem {
+    transition-duration: 0ms !important;
+  }
+}

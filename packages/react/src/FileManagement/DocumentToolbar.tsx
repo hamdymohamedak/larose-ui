@@ -30,7 +30,13 @@ export function DocumentToolbar({
   return (
     <div className={styles.toolbar} role="toolbar" aria-label="Document actions">
       {showAddButton && onNew && (
-        <Button size="md" leftIcon={<PlusIcon />} onClick={onNew} aria-label={newLabel}>
+        <Button
+          size="md"
+          leftIcon={<PlusIcon />}
+          onClick={onNew}
+          aria-label={newLabel}
+          shape="roundedRect"
+        >
           {newLabel}
         </Button>
       )}

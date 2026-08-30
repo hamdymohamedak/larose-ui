@@ -14,6 +14,11 @@ import { PullDownButton, MorePullDownButton } from './PullDownButton/PullDownBut
 import { MenuBar } from './MenuBar/MenuBar';
 import { Toolbar } from './Toolbar/Toolbar';
 import { ComposeIcon } from './Toolbar/icons';
+import { PathControl } from './PathControl/PathControl';
+import { SearchField } from './SearchField/SearchField';
+import { TabBar, TabBarList, TabBarItem } from './TabBar/TabBar';
+import { TokenField } from './TokenField/TokenField';
+import { AlertDialog } from './AlertDialog/AlertDialog';
 import { EditMenu, EditMenuSelection } from './EditMenu/EditMenu';
 import { Chart } from './Chart/Chart';
 import { Drawer } from './Drawer/Drawer';
@@ -459,6 +464,65 @@ describe('Toolbar', () => {
   });
 });
 
+describe('Navigation and search', () => {
+  it('renders a standard path control', () => {
+    renderWithProvider(
+      <PathControl
+        segments={[
+          { id: 'a', label: 'Macintosh HD' },
+          { id: 'b', label: 'Users' },
+          { id: 'c', label: 'Documents' },
+        ]}
+        variant="standard"
+      />,
+    );
+    expect(screen.getByRole('navigation', { name: 'Path' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Documents/ })).toBeInTheDocument();
+  });
+
+  it('searches with scope bar', async () => {
+    const onChange = vi.fn();
+    renderWithProvider(
+      <SearchField
+        defaultValue=""
+        onChange={onChange}
+        scope={{
+          value: 'all',
+          onChange: () => undefined,
+          options: [
+            { id: 'all', label: 'All' },
+            { id: 'current', label: 'Current' },
+          ],
+        }}
+      />,
+    );
+    await userEvent.type(screen.getByRole('searchbox', { name: 'Search' }), 'design');
+    expect(onChange).toHaveBeenCalled();
+    expect(screen.getByRole('tab', { name: 'All' })).toBeInTheDocument();
+  });
+
+  it('renders tab bar items including disabled tabs', () => {
+    renderWithProvider(
+      <TabBar defaultValue="home" platform="ios">
+        <TabBarList>
+          <TabBarItem value="home" label="Home" icon={<ComposeIcon />} />
+          <TabBarItem value="settings" label="Settings" disabled />
+        </TabBarList>
+      </TabBar>,
+    );
+    expect(screen.getByRole('tab', { name: 'Home' })).toHaveAttribute('aria-selected', 'true');
+    expect(screen.getByRole('tab', { name: 'Settings' })).toBeDisabled();
+  });
+
+  it('commits token field input on comma', async () => {
+    const onTokensChange = vi.fn();
+    renderWithProvider(<TokenField onTokensChange={onTokensChange} />);
+    const input = screen.getByRole('textbox', { name: 'Token input' });
+    await userEvent.type(input, 'Ada Lovelace,{Enter}');
+    expect(onTokensChange).toHaveBeenCalledWith([expect.objectContaining({ label: 'Ada Lovelace' })]);
+  });
+});
+
 describe('EditMenu', () => {
   it('opens context menu on secondary click', async () => {
     renderWithProvider(
@@ -551,6 +615,62 @@ describe('Alert', () => {
   it('renders with role alert', () => {
     renderWithProvider(<Alert variant="success">Saved successfully</Alert>);
     expect(screen.getByRole('alert')).toHaveTextContent('Saved successfully');
+  });
+});
+
+describe('AlertDialog', () => {
+  it('renders a modal alert with title and actions', () => {
+    renderWithProvider(
+      <AlertDialog
+        open
+        onOpenChange={() => undefined}
+        title="Delete this note?"
+        message="This action cannot be undone."
+        actions={[
+          { id: 'delete', label: 'Delete', role: 'destructive' },
+          { id: 'cancel', label: 'Cancel', role: 'cancel' },
+        ]}
+      />,
+    );
+    expect(screen.getByRole('alertdialog')).toBeInTheDocument();
+    expect(screen.getByText('Delete this note?')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Cancel' })).toBeInTheDocument();
+  });
+
+  it('invokes destructive action and closes', async () => {
+    const onOpenChange = vi.fn();
+    const onDelete = vi.fn();
+    renderWithProvider(
+      <AlertDialog
+        open
+        onOpenChange={onOpenChange}
+        title="Delete file?"
+        actions={[
+          { id: 'delete', label: 'Delete', role: 'destructive', onSelect: onDelete },
+          { id: 'cancel', label: 'Cancel', role: 'cancel' },
+        ]}
+      />,
+    );
+    await userEvent.click(screen.getByRole('button', { name: 'Delete' }));
+    expect(onDelete).toHaveBeenCalled();
+    expect(onOpenChange).toHaveBeenCalledWith(false);
+  });
+
+  it('supports secure text fields', () => {
+    renderWithProvider(
+      <AlertDialog
+        open
+        onOpenChange={() => undefined}
+        presentation="desktop"
+        title="Enter password"
+        textField={{ label: 'Password', secure: true }}
+        actions={[
+          { id: 'cancel', label: 'Cancel', role: 'cancel' },
+          { id: 'ok', label: 'Continue', role: 'default' },
+        ]}
+      />,
+    );
+    expect(screen.getByLabelText('Password')).toHaveAttribute('type', 'password');
   });
 });
 

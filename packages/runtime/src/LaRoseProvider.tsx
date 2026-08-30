@@ -10,6 +10,7 @@ import type {
 } from '@larose-ui/core';
 import { LAROSE_VERSION } from '@larose-ui/core';
 import type { ColorTokens } from '@larose-ui/tokens';
+import { MotionProvider, type MotionConfig } from '@larose-ui/react';
 import { getThemePreset, type ThemePresetId } from '@larose-ui/themes';
 import { PermissionProvider } from '@larose-ui/permissions';
 import {
@@ -73,6 +74,8 @@ export interface LaRoseProviderProps {
   onRuntimeEvent?: (event: RuntimeEvent) => void;
   enableToasts?: boolean;
   toastPlacement?: 'bottom-right' | 'bottom-left' | 'top-right' | 'top-left';
+  /** Global motion configuration for laRose UI components. */
+  motion?: MotionConfig;
 }
 
 function AutoSync({
@@ -134,6 +137,7 @@ export function LaRoseProvider({
   onRuntimeEvent,
   enableToasts = true,
   toastPlacement = 'bottom-right',
+  motion,
 }: LaRoseProviderProps) {
   const adapter =
     observabilityAdapter ??
@@ -240,11 +244,15 @@ export function LaRoseProvider({
     </RuntimeContextProvider>
   );
 
-  if (!enableToasts) return tree;
+  if (!enableToasts) {
+    return <MotionProvider {...motion}>{tree}</MotionProvider>;
+  }
 
   return (
-    <OptionalToastProvider enabled placement={toastPlacement}>
-      {tree}
-    </OptionalToastProvider>
+    <MotionProvider {...motion}>
+      <OptionalToastProvider enabled placement={toastPlacement}>
+        {tree}
+      </OptionalToastProvider>
+    </MotionProvider>
   );
 }

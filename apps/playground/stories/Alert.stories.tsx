@@ -2,9 +2,17 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Alert } from '@larose-ui/react';
 
 const meta: Meta<typeof Alert> = {
-  title: 'Foundation/Alert',
+  title: 'Foundation/Notice',
   component: Alert,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'Inline contextual notices for non-interruptive feedback. Modal **alerts** live under **Foundation/Alert**.',
+      },
+    },
+  },
 };
 
 export default meta;
@@ -45,7 +53,7 @@ export const Error: Story = {
 export const Dismissible: Story = {
   args: {
     variant: 'info',
-    children: 'This alert can be dismissed.',
+    children: 'This notice can be dismissed.',
     onDismiss: () => undefined,
   },
 };

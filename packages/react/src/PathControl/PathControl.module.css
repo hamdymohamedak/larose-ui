@@ -1,0 +1,90 @@
+.pathControl {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--lr-path-control-height, 1.5rem);
+  padding: 0 var(--lr-path-control-padding-x, 0.5rem);
+  background: var(--lr-path-control-bg, rgb(246 246 246 / 0.8));
+  color: var(--lr-path-control-fg, #1d1d1f);
+  font-size: var(--lr-path-control-font-size, 0.8125rem);
+  border-radius: 0.375rem;
+  user-select: none;
+}
+
+.standard {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--lr-path-control-item-gap, 0.125rem);
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+.segment {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  font: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.segment:hover:not(:disabled) {
+  background: var(--lr-path-control-item-hover, rgb(0 0 0 / 0.06));
+}
+
+.segment:disabled {
+  cursor: default;
+  opacity: 0.85;
+}
+
+.separator {
+  color: var(--lr-path-control-separator, rgb(0 0 0 / 0.15));
+  padding: 0 0.125rem;
+}
+
+.ellipsis {
+  padding: 0 0.25rem;
+  color: var(--lr-path-control-separator, rgb(0 0 0 / 0.15));
+}
+
+.popupTrigger {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.375rem;
+  font: inherit;
+  cursor: pointer;
+}
+
+.popupTrigger:hover:not(:disabled) {
+  background: var(--lr-path-control-item-hover, rgb(0 0 0 / 0.06));
+}
+
+.chevron {
+  width: 0.625rem;
+  height: 0.625rem;
+  opacity: 0.6;
+}
+
+.dropTarget {
+  outline: 2px dashed var(--lr-color-primary, #0071e3);
+  outline-offset: 2px;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+}

@@ -6,6 +6,7 @@ import {
   useState,
   type ReactNode,
 } from 'react';
+import { Presence } from '../Motion/Presence';
 import styles from './Popover.module.css';
 
 export type PopoverSide = 'top' | 'bottom' | 'left' | 'right';
@@ -73,7 +74,7 @@ export function Popover({
       >
         {trigger}
       </span>
-      {isOpen && (
+      <Presence present={isOpen} variant="popover" placement={side}>
         <div
           id={popoverId}
           role="dialog"
@@ -83,7 +84,7 @@ export function Popover({
         >
           {content}
         </div>
-      )}
+      </Presence>
     </span>
   );
 }

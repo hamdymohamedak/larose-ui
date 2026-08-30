@@ -5,6 +5,14 @@ import * as esbuild from 'esbuild';
 
 const CLASS_RE = /\.([a-zA-Z_][\w-]*)/g;
 
+/** @type {Map<string, string>} */
+const scopedCssByFile = new Map();
+
+/** @param {string} value */
+function escapeRegex(value) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
 /** @param {string} css */
 function extractClassNames(css) {
   const names = new Set();
@@ -12,6 +20,57 @@ function extractClassNames(css) {
     names.add(match[1]);
   }
   return [...names];
+}
+
+/** @param {string} filePath @param {string} className */
+function scopeClassName(filePath, className) {
+  const moduleName = basename(filePath, '.module.css');
+  return `lr-${moduleName}-${className}`;
+}
+
+/** Strip CSS Modules :global() wrappers for the concatenated stylesheet. */
+function flattenCssModulesForBundle(css) {
+  return css.replace(/:global\(([^)]+)\)/g, '$1');
+}
+
+/**
+ * @param {string} css
+ * @param {Record<string, string>} classMap
+ */
+function replaceClassSelectors(css, classMap) {
+  const names = Object.keys(classMap).sort((a, b) => b.length - a.length);
+  let result = flattenCssModulesForBundle(css);
+
+  for (const name of names) {
+    const scoped = classMap[name];
+    result = result.replace(
+      new RegExp(`\\.${escapeRegex(name)}(?=[\\s,.:#[>+~)|]|$)`, 'g'),
+      `.${scoped}`,
+    );
+  }
+
+  return result;
+}
+
+/**
+ * @param {string} filePath
+ * @returns {{ scoped: string; exports: Record<string, string> }}
+ */
+export function processModuleCssFile(filePath) {
+  const css = readFileSync(filePath, 'utf8');
+  const classNames = extractClassNames(css);
+  const classMap = Object.fromEntries(
+    classNames.map((name) => [name, scopeClassName(filePath, name)]),
+  );
+
+  const cached = scopedCssByFile.get(filePath);
+  if (cached) {
+    return { scoped: cached, exports: classMap };
+  }
+
+  const scoped = replaceClassSelectors(css, classMap);
+  scopedCssByFile.set(filePath, scoped);
+  return { scoped, exports: classMap };
 }
 
 /** @param {string} dir @returns {string[]} */
@@ -35,6 +94,10 @@ export function cssModulesPlugin(packageRoot) {
   return {
     name: 'larose-css-modules',
     setup(build) {
+      build.onStart(() => {
+        scopedCssByFile.clear();
+      });
+
       build.onResolve({ filter: /\.module\.css$/ }, (args) => {
         const resolvedPath = isAbsolute(args.path)
           ? args.path
@@ -47,9 +110,7 @@ export function cssModulesPlugin(packageRoot) {
       });
 
       build.onLoad({ filter: /.*/, namespace: 'larose-css-module' }, async (args) => {
-        const css = readFileSync(args.path, 'utf8');
-        const classNames = extractClassNames(css);
-        const exports = Object.fromEntries(classNames.map((name) => [name, name]));
+        const { exports } = processModuleCssFile(args.path);
 
         return {
           contents: `export default ${JSON.stringify(exports)};`,
@@ -66,20 +127,15 @@ export function cssModulesPlugin(packageRoot) {
   };
 }
 
-/** Strip CSS Modules :global() wrappers for the concatenated stylesheet. */
-function flattenCssModulesForBundle(css) {
-  return css.replace(/:global\(([^)]+)\)/g, '$1');
-}
-
 /** @param {string} packageRoot */
 export function writeBundledCss(packageRoot) {
   const srcDir = join(packageRoot, 'src');
   const files = findModuleCssFiles(srcDir).sort();
   const css = files
-    .map(
-      (file) =>
-        `/* ${basename(file)} */\n${flattenCssModulesForBundle(readFileSync(file, 'utf8'))}`,
-    )
+    .map((file) => {
+      const { scoped } = processModuleCssFile(file);
+      return `/* ${basename(file)} */\n${scoped}`;
+    })
     .join('\n\n');
   writeFileSync(join(packageRoot, 'dist/index.css'), css);
 }

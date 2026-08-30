@@ -4,6 +4,28 @@ export type { AsyncButtonProps } from './AsyncButton/AsyncButton';
 export { LaRoseProvider, useLaRose } from './provider/LaRoseProvider';
 export type { LaRoseConfig, LaRoseProviderProps } from './provider/LaRoseProvider';
 
+export {
+  MotionProvider,
+  useMotion,
+  useMotionEnabled,
+  useSkipMotion,
+  Presence,
+  usePresence,
+  Collapse,
+  useSpringAnimation,
+} from './Motion';
+export type {
+  MotionProviderProps,
+  MotionConfig,
+  PresenceProps,
+  UsePresenceOptions,
+  UsePresenceResult,
+  CollapseProps,
+  UseSpringAnimationOptions,
+  PresencePhase,
+  MotionVariant,
+} from './Motion';
+
 export { Button } from './Button/Button';
 export type { ButtonProps } from './Button/Button';
 export { HelpButton } from './Button/HelpButton';
@@ -56,6 +78,23 @@ export type { SpinnerProps } from './Spinner/Spinner';
 
 export { Alert } from './Alert/Alert';
 export type { AlertProps, AlertVariant } from './Alert/Alert';
+
+export { AlertDialog } from './AlertDialog/AlertDialog';
+export type {
+  AlertDialogProps,
+  AlertDialogAction,
+  AlertDialogPresentation,
+  AlertDialogTextField,
+  AlertDialogSuppression,
+} from './AlertDialog/types';
+export {
+  orderAlertActions,
+  validateAlertActions,
+  shouldStyleDestructive,
+  resolveCancelAction,
+  warnIfAlertTitleTooLong,
+  MAX_ALERT_BUTTONS,
+} from './AlertDialog/utils';
 
 export { Modal } from './Modal/Modal';
 export type { ModalProps } from './Modal/Modal';
@@ -545,6 +584,9 @@ export {
   SidebarNav,
   SidebarGroup,
   SidebarItem,
+  SidebarSearch,
+  SidebarDisclosureSection,
+  SidebarToggle,
 } from './Sidebar/Sidebar';
 export type {
   SidebarProps,
@@ -552,7 +594,72 @@ export type {
   SidebarNavProps,
   SidebarGroupProps,
   SidebarItemProps,
+  SidebarSearchProps,
+  SidebarDisclosureSectionProps,
+  SidebarPlatform,
+  SidebarSize,
 } from './Sidebar/Sidebar';
+
+export { PathControl } from './PathControl/PathControl';
+export type { PathControlProps, PathSegment, PathControlVariant } from './PathControl/types';
+export {
+  collapsePathSegments,
+  resolveSelectedSegment,
+  PATH_SEPARATOR,
+  warnIfPathControlInToolbar,
+} from './PathControl/utils';
+
+export {
+  SearchField,
+  SearchScopeBar,
+  SearchTokenChip,
+} from './SearchField/SearchField';
+export type {
+  SearchFieldProps,
+  SearchScopeBarProps,
+  SearchTokenChipProps,
+  SearchToken,
+  SearchScopeOption,
+  SearchFieldPlacement,
+  SearchFieldPlatform,
+} from './SearchField/types';
+export {
+  DEFAULT_SEARCH_PLACEHOLDER,
+  filterSuggestions,
+  resolveSearchFieldPlacement,
+  warnIfSearchPlacementMismatch,
+} from './SearchField/utils';
+
+export {
+  TabBar,
+  TabBarList,
+  TabBarItem,
+  TabBarPanel,
+} from './TabBar/TabBar';
+export type {
+  TabBarProps,
+  TabBarItemProps,
+  TabBarListProps,
+  TabBarPanelProps,
+  TabBarPlatform,
+  TabBarVariant,
+  TabBarSearchStyle,
+} from './TabBar/types';
+export {
+  MAX_TAB_BAR_ITEMS,
+  formatTabBarBadge,
+  warnIfTooManyTabs,
+  resolveTabBarPlacement,
+} from './TabBar/utils';
+
+export { TokenField } from './TokenField/TokenField';
+export type { TokenFieldProps, TokenFieldToken } from './TokenField/types';
+export {
+  DEFAULT_SUGGESTION_DELAY_MS,
+  filterTokenSuggestions,
+  mergeUniqueTokens,
+  tokenizeInput,
+} from './TokenField/utils';
 
 export {
   Header,

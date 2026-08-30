@@ -16,7 +16,8 @@ export function resolveButtonShape(options: {
 }): ButtonShape {
   if (options.shape) return options.shape;
   if (options.iconOnly || (options.hasIcon && !options.hasText)) return 'circle';
-  if (options.hasText && !options.hasIcon) return 'capsule';
+  if (options.hasText && options.hasIcon) return 'roundedRect';
+  if (options.hasText) return 'capsule';
   return 'capsule';
 }
 

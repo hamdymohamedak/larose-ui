@@ -17,6 +17,10 @@ describe('Button utils', () => {
     ).toBe('circle');
   });
 
+  it('resolves roundedRect shape for icon and text buttons', () => {
+    expect(resolveButtonShape({ hasText: true, hasIcon: true })).toBe('roundedRect');
+  });
+
   it('resolves capsule shape for text buttons', () => {
     expect(resolveButtonShape({ hasText: true, hasIcon: false })).toBe('capsule');
   });

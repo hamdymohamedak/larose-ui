@@ -46,15 +46,20 @@
   font-size: var(--lr-button-font-size-lg);
 }
 
-.button[data-shape='capsule'] {
-  border-radius: var(--lr-button-radius);
-}
-
 .button[data-shape='circle'] {
   border-radius: var(--lr-radius-full);
   min-width: var(--lr-button-min-hit-region);
   width: var(--lr-button-min-hit-region);
+  max-width: var(--lr-button-min-hit-region);
   padding-inline: 0;
+  flex-shrink: 0;
+}
+
+.button[data-shape='capsule'] {
+  border-radius: var(--lr-button-radius);
+  width: auto;
+  max-width: 100%;
+  align-self: center;
 }
 
 .button[data-shape='roundedRect'] {

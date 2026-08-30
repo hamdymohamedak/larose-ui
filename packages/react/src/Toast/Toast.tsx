@@ -8,6 +8,8 @@ import {
 } from 'react';
 import { createPortal } from 'react-dom';
 import type { AlertVariant } from '../Alert/Alert';
+import { Presence } from '../Motion/Presence';
+import motionStyles from '../Motion/motion.module.css';
 import styles from './Toast.module.css';
 
 export type ToastVariant = AlertVariant;
@@ -19,9 +21,19 @@ export interface ToastInput {
   duration?: number;
 }
 
-export interface ToastItem extends ToastInput {
+export type ToastPlacement =
+  | 'bottom-right'
+  | 'bottom-left'
+  | 'top-right'
+  | 'top-left';
+
+interface ToastRecord extends ToastInput {
   id: string;
+  exiting?: boolean;
 }
+
+/** @internal persisted toast shape */
+export type ToastItem = ToastRecord;
 
 interface ToastContextValue {
   toast: (input: ToastInput) => string;
@@ -32,17 +44,23 @@ const ToastContext = createContext<ToastContextValue | null>(null);
 
 export interface ToastProviderProps {
   children: ReactNode;
-  placement?: 'bottom-right' | 'bottom-left' | 'top-right' | 'top-left';
+  placement?: ToastPlacement;
 }
 
 export function ToastProvider({
   children,
   placement = 'bottom-right',
 }: ToastProviderProps) {
-  const [toasts, setToasts] = useState<ToastItem[]>([]);
+  const [toasts, setToasts] = useState<ToastRecord[]>([]);
+
+  const removeToast = useCallback((id: string) => {
+    setToasts((prev) => prev.filter((toast) => toast.id !== id));
+  }, []);
 
   const dismiss = useCallback((id: string) => {
-    setToasts((prev) => prev.filter((toast) => toast.id !== id));
+    setToasts((prev) =>
+      prev.map((toast) => (toast.id === id ? { ...toast, exiting: true } : toast)),
+    );
   }, []);
 
   const toast = useCallback(
@@ -68,7 +86,13 @@ export function ToastProvider({
           aria-relevant="additions"
         >
           {toasts.map((item) => (
-            <Toast key={item.id} item={item} onDismiss={() => dismiss(item.id)} />
+            <Toast
+              key={item.id}
+              item={item}
+              placement={placement}
+              onDismiss={() => dismiss(item.id)}
+              onExitComplete={() => removeToast(item.id)}
+            />
           ))}
         </div>,
         document.body,
@@ -86,26 +110,36 @@ export function useToast(): ToastContextValue {
 }
 
 interface ToastProps {
-  item: ToastItem;
+  item: ToastRecord;
+  placement: ToastPlacement;
   onDismiss: () => void;
+  onExitComplete: () => void;
 }
 
-function Toast({ item, onDismiss }: ToastProps) {
+function Toast({ item, placement, onDismiss, onExitComplete }: ToastProps) {
   const variant = item.variant ?? 'info';
 
   return (
-    <div
-      className={styles.toast}
-      data-variant={variant}
-      role={variant === 'error' ? 'alert' : 'status'}
+    <Presence
+      present={!item.exiting}
+      variant="toast"
+      placement={placement}
+      onExitComplete={onExitComplete}
     >
-      <div className={styles.content}>
-        {item.title && <strong className={styles.title}>{item.title}</strong>}
-        <span className={styles.message}>{item.message}</span>
+      <div
+        className={[styles.toast, motionStyles.layoutItem].filter(Boolean).join(' ')}
+        data-variant={variant}
+        data-placement={placement}
+        role={variant === 'error' ? 'alert' : 'status'}
+      >
+        <div className={styles.content}>
+          {item.title && <strong className={styles.title}>{item.title}</strong>}
+          <span className={styles.message}>{item.message}</span>
+        </div>
+        <button type="button" className={styles.dismiss} onClick={onDismiss} aria-label="Dismiss">
+          ×
+        </button>
       </div>
-      <button type="button" className={styles.dismiss} onClick={onDismiss} aria-label="Dismiss">
-        ×
-      </button>
-    </div>
+    </Presence>
   );
 }

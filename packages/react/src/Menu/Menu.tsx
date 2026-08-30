@@ -10,6 +10,8 @@ import {
   type ReactElement,
 } from 'react';
 import { createPortal } from 'react-dom';
+import { usePresence } from '../Motion/usePresence';
+import motionStyles from '../Motion/motion.module.css';
 import type { MenuEntry, MenuItemConfig, MenuLayout, MenuPosition } from './types';
 import {
   isMenuItem,
@@ -247,8 +249,10 @@ export function Menu({
       'aria-controls': isOpen ? menuId : undefined,
     });
 
+  const { shouldRender } = usePresence({ present: isOpen });
+
   const panel = (
-    <>
+    <MenuOverlay open={isOpen} placement={position.placement === 'above' ? 'top' : 'bottom'}>
       {dimBackground && <div className={styles.menuBackdrop} role="presentation" onClick={close} />}
       <MenuPanel
         menuId={menuId}
@@ -259,11 +263,11 @@ export function Menu({
         onSelect={handleSelect}
         onClose={close}
       />
-    </>
+    </MenuOverlay>
   );
 
   if (!children) {
-    return isOpen ? createPortal(panel, document.body) : null;
+    return shouldRender ? createPortal(panel, document.body) : null;
   }
 
   if (!isValidElement(children)) {
@@ -275,8 +279,34 @@ export function Menu({
       <span ref={triggerRef} className={styles.triggerWrap}>
         {bindTrigger(children as ReactElement<Record<string, unknown>>)}
       </span>
-      {isOpen && createPortal(panel, document.body)}
+      {shouldRender && createPortal(panel, document.body)}
     </>
+  );
+}
+
+function MenuOverlay({
+  open,
+  placement,
+  children,
+}: {
+  open: boolean;
+  placement: 'top' | 'bottom';
+  children: React.ReactNode;
+}) {
+  const { phase, shouldRender, onAnimationEnd } = usePresence({ present: open });
+  if (!shouldRender) return null;
+
+  const motionClass =
+    phase === 'entering' || phase === 'exiting'
+      ? motionStyles[`popover-${phase}` as keyof typeof motionStyles]
+      : undefined;
+
+  return (
+    <div data-presence={phase} data-side={placement} onAnimationEnd={onAnimationEnd}>
+      <div className={motionClass} data-presence={phase} data-side={placement}>
+        {children}
+      </div>
+    </div>
   );
 }
 

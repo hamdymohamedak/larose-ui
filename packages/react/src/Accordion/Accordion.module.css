@@ -62,7 +62,3 @@
   font-size: var(--lr-font-size-sm);
   color: var(--lr-color-text);
 }
-
-.content[data-state='closed'] {
-  display: none;
-}
