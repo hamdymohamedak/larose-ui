@@ -6,6 +6,8 @@
   text-align: center;
   padding: var(--lr-space-8) var(--lr-space-4);
   gap: var(--lr-space-3);
+  max-width: 28rem;
+  margin-inline: auto;
 }
 
 .empty[data-state='offline'] .title {
@@ -17,7 +19,14 @@
 }
 
 .icon {
-  font-size: var(--lr-font-size-2xl);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: var(--lr-radius-full);
+  background: var(--lr-button-secondary-bg);
+  font-size: var(--lr-font-size-xl);
   color: var(--lr-color-text-muted);
 }
 
@@ -25,6 +34,7 @@
   margin: 0;
   font-size: var(--lr-font-size-lg);
   font-weight: var(--lr-font-weight-semibold);
+  letter-spacing: -0.014em;
 }
 
 .description {
@@ -33,4 +43,8 @@
   color: var(--lr-color-text-muted);
   font-size: var(--lr-font-size-sm);
   line-height: var(--lr-line-height-relaxed);
+}
+
+.action {
+  margin-top: var(--lr-space-2);
 }

@@ -4,46 +4,48 @@
   gap: var(--lr-space-3);
   padding: var(--lr-space-3) var(--lr-space-4);
   border-radius: var(--lr-radius-md);
-  border: 1px solid transparent;
+  border: 0.55px solid var(--lr-color-border, rgb(0 0 0 / 0.08));
+  background: var(--lr-color-surface-elevated, rgb(255 255 255 / 0.92));
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
   font-size: var(--lr-font-size-sm);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.06);
 }
 
 .alert[data-variant='info'] {
-  background-color: color-mix(in srgb, var(--lr-color-info) 10%, var(--lr-color-surface));
-  border-color: color-mix(in srgb, var(--lr-color-info) 30%, transparent);
-  color: var(--lr-color-text);
+  border-color: color-mix(in srgb, var(--lr-color-info) 24%, var(--lr-color-border));
 }
 
 .alert[data-variant='success'] {
-  background-color: color-mix(in srgb, var(--lr-color-success) 10%, var(--lr-color-surface));
-  border-color: color-mix(in srgb, var(--lr-color-success) 30%, transparent);
-  color: var(--lr-color-text);
+  border-color: color-mix(in srgb, var(--lr-color-success) 24%, var(--lr-color-border));
 }
 
 .alert[data-variant='warning'] {
-  background-color: color-mix(in srgb, var(--lr-color-warning) 10%, var(--lr-color-surface));
-  border-color: color-mix(in srgb, var(--lr-color-warning) 30%, transparent);
-  color: var(--lr-color-text);
+  border-color: color-mix(in srgb, var(--lr-color-warning) 24%, var(--lr-color-border));
 }
 
 .alert[data-variant='error'] {
-  background-color: color-mix(in srgb, var(--lr-color-error) 10%, var(--lr-color-surface));
-  border-color: color-mix(in srgb, var(--lr-color-error) 30%, transparent);
-  color: var(--lr-color-text);
+  border-color: color-mix(in srgb, var(--lr-color-error) 24%, var(--lr-color-border));
 }
 
 .content {
   flex: 1;
+  min-width: 0;
 }
 
 .title {
   display: block;
   font-weight: var(--lr-font-weight-semibold);
+  font-size: var(--lr-font-size-sm);
+  letter-spacing: -0.006em;
   margin-bottom: var(--lr-space-1);
+  color: var(--lr-color-text);
 }
 
 .message {
   line-height: var(--lr-line-height-normal);
+  color: var(--lr-color-text-muted);
+  font-size: var(--lr-font-size-sm);
 }
 
 .dismiss {
@@ -56,14 +58,15 @@
   padding: 0;
   min-width: 1.5rem;
   min-height: 1.5rem;
+  border-radius: var(--lr-radius-sm);
 }
 
 .dismiss:hover {
   color: var(--lr-color-text);
+  background: rgb(118 118 128 / 0.08);
 }
 
 .dismiss:focus-visible {
   outline: 2px solid var(--lr-color-primary);
   outline-offset: 2px;
-  border-radius: var(--lr-radius-sm);
 }

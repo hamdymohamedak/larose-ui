@@ -1,0 +1,120 @@
+.tabBar {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.list {
+  display: flex;
+  align-items: stretch;
+  gap: 0.125rem;
+  margin: 0;
+  padding: 0.25rem 0.5rem;
+  list-style: none;
+  min-height: var(--lr-tab-bar-height, 3.125rem);
+  background: var(--lr-tab-bar-bg, rgb(255 255 255 / 0.72));
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-radius: var(--lr-tab-bar-radius, 1rem);
+}
+
+.list[data-platform='ios'] {
+  position: sticky;
+  bottom: 0;
+}
+
+.list[data-platform='ipados'] {
+  border-bottom: 1px solid rgb(0 0 0 / 0.08);
+  border-radius: 0;
+}
+
+.list[data-platform='visionos'] {
+  flex-direction: column;
+  width: 3.5rem;
+  min-height: auto;
+  padding: 0.5rem 0.25rem;
+  border-radius: 1rem;
+}
+
+.tab {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: var(--lr-tab-bar-inactive-fg, #8e8e93);
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.125rem;
+  padding: var(--lr-tab-bar-item-padding, 0.375rem);
+  border-radius: 0.625rem;
+  font-size: var(--lr-tab-bar-label-size, 0.625rem);
+  font-weight: 500;
+  cursor: pointer;
+  min-width: 0;
+  position: relative;
+}
+
+.list[data-platform='visionos'] .tab {
+  flex: 0;
+}
+
+.tab[data-selected='true'] {
+  color: var(--lr-tab-bar-fg, #0071e3);
+}
+
+.tab:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.icon {
+  width: var(--lr-tab-bar-icon-size, 1.375rem);
+  height: var(--lr-tab-bar-icon-size, 1.375rem);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge {
+  position: absolute;
+  top: 0.125rem;
+  inset-inline-end: calc(50% - 1.125rem);
+  min-width: 1rem;
+  height: 1rem;
+  padding: 0 0.25rem;
+  border-radius: 9999px;
+  background: var(--lr-tab-bar-badge-bg, #ff3b30);
+  color: var(--lr-tab-bar-badge-fg, #fff);
+  font-size: 0.625rem;
+  font-weight: 700;
+  line-height: 1rem;
+  text-align: center;
+}
+
+.searchTab[data-style='button'] {
+  flex: 0 0 auto;
+  margin-inline-start: auto;
+  border-radius: 9999px;
+  background: rgb(118 118 128 / 0.12);
+}
+
+.content {
+  flex: 1;
+  min-height: 0;
+}
+
+.panel {
+  height: 100%;
+}
+
+.layout {
+  display: flex;
+  min-height: 0;
+  flex: 1;
+}
+
+.layout[data-platform='visionos'] {
+  flex-direction: row;
+}

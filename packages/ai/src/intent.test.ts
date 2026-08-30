@@ -22,4 +22,8 @@ describe('parseIntent', () => {
     const intent = parseIntent('Create employee for Ahmed Mohamed');
     expect(intent.type).toBe('form.populate');
   });
+
+  it('strips inline event handlers from prompts', () => {
+    expect(sanitizePrompt('<img src=x onerror=alert(1)>')).not.toMatch(/onerror/i);
+  });
 });

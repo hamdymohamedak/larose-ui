@@ -10,6 +10,7 @@ import {
   runVisualRegressionCheck,
 } from './doctor.js';
 import { formatVisualRegressionReport } from './quality/visualManifest.js';
+import { resolveSafePath } from './pathSafety.js';
 
 const args = process.argv.slice(2);
 const command = args[0] ?? 'help';
@@ -55,8 +56,9 @@ async function main() {
       const output = args[3];
       const code = runGenerate(type, name);
       if (output) {
-        writeFileSync(output, code);
-        console.log(`Generated ${output}`);
+        const safeOutput = resolveSafePath(rootDir, output);
+        writeFileSync(safeOutput, code);
+        console.log(`Generated ${safeOutput}`);
       } else {
         console.log(code);
       }

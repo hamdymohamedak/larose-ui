@@ -38,10 +38,15 @@ export function useOffline(): OfflineContextValue {
 export interface OfflineProviderProps {
   children: ReactNode;
   queue?: OfflineQueue;
+  /** Isolates offline queue storage per user/tenant — pass from LaRoseProvider. */
+  scopeId?: string;
 }
 
-export function OfflineProvider({ children, queue }: OfflineProviderProps) {
-  const offlineQueue = useMemo(() => queue ?? createOfflineQueue(), [queue]);
+export function OfflineProvider({ children, queue, scopeId }: OfflineProviderProps) {
+  const offlineQueue = useMemo(
+    () => queue ?? createOfflineQueue(scopeId ? { scopeId } : undefined),
+    [queue, scopeId],
+  );
   const [requests, setRequests] = useState<QueuedRequest[]>([]);
   const [status, setStatus] = useState<OfflineSyncStatus>('idle');
 
@@ -57,14 +62,17 @@ export function OfflineProvider({ children, queue }: OfflineProviderProps) {
     [offlineQueue],
   );
 
-  const value: OfflineContextValue = {
-    queue: requests,
-    status,
-    enqueue: offlineQueue.enqueue.bind(offlineQueue),
-    sync,
-    remove: offlineQueue.remove.bind(offlineQueue),
-    clear: offlineQueue.clear.bind(offlineQueue),
-  };
+  const value = useMemo<OfflineContextValue>(
+    () => ({
+      queue: requests,
+      status,
+      enqueue: offlineQueue.enqueue.bind(offlineQueue),
+      sync,
+      remove: offlineQueue.remove.bind(offlineQueue),
+      clear: offlineQueue.clear.bind(offlineQueue),
+    }),
+    [offlineQueue, requests, status, sync],
+  );
 
   return (
     <OfflineContext.Provider value={value}>{children}</OfflineContext.Provider>

@@ -1,0 +1,112 @@
+.window {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--lr-radius-xl);
+  border: 1px solid var(--lr-color-border);
+  background: var(--lr-color-surface);
+  overflow: hidden;
+  min-height: 12rem;
+}
+
+.content {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+}
+
+.content[data-immersive='true'] {
+  overflow: hidden;
+}
+
+.ornamentLayer {
+  position: absolute;
+  z-index: var(--lr-ornament-z-index);
+  display: flex;
+  pointer-events: none;
+  padding: var(--lr-ornament-offset);
+}
+
+.ornamentLayer[data-edge='top'] {
+  top: 0;
+  left: 0;
+  right: 0;
+  justify-content: center;
+}
+
+.ornamentLayer[data-edge='bottom'] {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  justify-content: center;
+}
+
+.ornamentLayer[data-edge='leading'] {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ornamentLayer[data-edge='trailing'] {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ornamentLayer[data-alignment='leading'] {
+  justify-content: flex-start;
+}
+
+.ornamentLayer[data-alignment='trailing'] {
+  justify-content: flex-end;
+}
+
+.ornament {
+  pointer-events: auto;
+  max-width: calc(100% * var(--lr-ornament-max-width-ratio));
+  border-radius: var(--lr-ornament-radius);
+  padding: var(--lr-ornament-padding);
+  background: var(--lr-surface-glass-bg);
+  border: 1px solid var(--lr-surface-glass-border);
+  backdrop-filter: blur(var(--lr-surface-glass-blur)) saturate(var(--lr-surface-glass-saturation));
+  box-shadow: var(--lr-surface-glass-shadow);
+}
+
+.ornamentInner {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--lr-space-2);
+  flex-wrap: wrap;
+}
+
+.borderlessButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2rem;
+  padding: 0 var(--lr-space-3);
+  border: none;
+  border-radius: var(--lr-radius-md);
+  background: transparent;
+  color: var(--lr-color-text);
+  font-size: var(--lr-font-size-sm);
+  cursor: pointer;
+}
+
+.borderlessButton:hover {
+  background: rgb(118 118 128 / 0.12);
+}
+
+.borderlessButton[data-active='true'] {
+  background: rgb(118 118 128 / 0.18);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ornament {
+    transition: none;
+  }
+}

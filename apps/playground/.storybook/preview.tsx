@@ -1,41 +1,87 @@
-import type { Preview } from '@storybook/react';
+import type { Preview, StoryContext } from '@storybook/react';
+import { memo, type ComponentType } from 'react';
 import '@larose-ui/tokens/styles.css';
-import { LaRoseProvider } from '@larose-ui/runtime';
-import React from 'react';
+import '@larose-ui/react/styles.css';
+import { StorybookProvider, type StorybookLocale } from './StorybookProvider';
+
+const StoryFrame = memo(function StoryFrame({
+  children,
+  fullscreen,
+}: {
+  children: React.ReactNode;
+  fullscreen?: boolean;
+}) {
+  return (
+    <div
+      style={{
+        padding: fullscreen ? 0 : '2rem',
+        minWidth: 320,
+        width: fullscreen ? '100%' : undefined,
+      }}
+    >
+      {children}
+    </div>
+  );
+});
+
+function LaRoseDecorator({
+  Story,
+  context,
+}: {
+  Story: ComponentType;
+  context: StoryContext;
+}) {
+  const standalone = context.parameters.laRose?.standalone === true;
+  const useRuntime = context.parameters.laRose?.runtime === true;
+  const fullscreen = context.parameters.layout === 'fullscreen';
+
+  const storyContent = (
+    <StoryFrame fullscreen={fullscreen}>
+      <Story />
+    </StoryFrame>
+  );
+
+  if (standalone) {
+    return storyContent;
+  }
+
+  const theme = context.globals.theme as 'light' | 'dark' | undefined;
+  const density =
+    (context.globals.density as 'compact' | 'comfortable' | 'spacious') ?? 'comfortable';
+  const locale = (context.globals.locale as StorybookLocale) ?? 'en';
+  const environment =
+    (context.globals.environment as 'development' | 'staging' | 'demo' | 'readonly') ??
+    'development';
+
+  const providerOverrides = (context.parameters.laRose?.provider ?? {}) as Record<string, unknown>;
+
+  return (
+    <StorybookProvider
+      runtime={useRuntime}
+      theme={theme}
+      density={density}
+      locale={locale}
+      environment={environment}
+      providerOverrides={providerOverrides}
+    >
+      {storyContent}
+    </StorybookProvider>
+  );
+}
 
 const preview: Preview = {
   parameters: {
-    controls: { expanded: true },
-    layout: 'centered',
+    controls: { expanded: false },
+    docs: { autodocs: 'tag' },
+    actions: { argTypesRegex: '^on[A-Z].*' },
   },
-  decorators: [
-    (Story, context) => {
-      const theme = (context.globals.theme as 'light' | 'dark') ?? 'light';
-      const density =
-        (context.globals.density as 'compact' | 'comfortable' | 'spacious') ??
-        'comfortable';
-      const locale = (context.globals.locale as 'en' | 'ar' | 'de') ?? 'en';
-      const environment =
-        (context.globals.environment as
-          | 'development'
-          | 'staging'
-          | 'demo'
-          | 'readonly') ?? 'development';
-
-      return (
-        <LaRoseProvider
-          theme={theme}
-          density={density}
-          locale={locale}
-          environment={environment}
-        >
-          <div style={{ padding: '2rem', minWidth: 320 }}>
-            <Story />
-          </div>
-        </LaRoseProvider>
-      );
-    },
-  ],
+  initialGlobals: {
+    theme: 'light',
+    density: 'comfortable',
+    locale: 'en',
+    environment: 'development',
+  },
+  decorators: [(Story, context) => <LaRoseDecorator Story={Story} context={context} />],
   globalTypes: {
     theme: {
       description: 'Theme mode',

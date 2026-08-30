@@ -158,17 +158,18 @@ function EmployeeCrudDemo() {
 const meta: Meta = {
   title: 'Intelligence/Employee CRUD',
   component: EmployeeCrudDemo,
-  parameters: { layout: 'padded' },
-  decorators: [
-    (Story) => (
-      <LaRoseProvider
-        permissions={['employees.read', 'employees.create', 'employees.delete']}
-        features={{ 'new-employee-form': true }}
-      >
-        <Story />
-      </LaRoseProvider>
-    ),
-  ],
+  parameters: {
+    layout: 'padded',
+    laRose: {
+      runtime: true,
+      provider: {
+        permissions: ['employees.read', 'employees.create', 'employees.delete'],
+        features: { 'new-employee-form': true },
+        enableToasts: false,
+        observabilityDebug: false,
+      },
+    },
+  },
 };
 
 export default meta;
@@ -179,6 +180,7 @@ export const Default: Story = {
 };
 
 export const ReadOnly: Story = {
+  parameters: { laRose: { standalone: true } },
   decorators: [
     (Story) => (
       <LaRoseProvider permissions={['employees.read']}>
@@ -190,6 +192,7 @@ export const ReadOnly: Story = {
 };
 
 export const ServerError: Story = {
+  parameters: { laRose: { standalone: true } },
   render: () => (
     <LaRoseProvider permissions={['employees.read']}>
       <DataView url="/api/error" permission="employees.read">

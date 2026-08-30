@@ -1,0 +1,193 @@
+.chart {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lr-space-3);
+  width: 100%;
+  font-family: var(--lr-font-family-sans);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lr-space-1);
+}
+
+.title {
+  margin: 0;
+  font-size: var(--lr-font-size-md);
+  font-weight: var(--lr-font-weight-semibold);
+  line-height: var(--lr-line-height-tight);
+  color: var(--lr-color-text);
+}
+
+.subtitle {
+  margin: 0;
+  font-size: var(--lr-font-size-sm);
+  line-height: var(--lr-line-height-normal);
+  color: var(--lr-color-text-muted);
+}
+
+.annotation {
+  margin: 0;
+  font-size: var(--lr-chart-label-font-size);
+  color: var(--lr-chart-label);
+}
+
+.plotWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.plot {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  touch-action: none;
+}
+
+.plot[data-interactive='true'] {
+  cursor: crosshair;
+}
+
+.gridLine {
+  stroke: var(--lr-chart-grid);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.axisLine {
+  stroke: var(--lr-chart-axis);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.tick {
+  stroke: var(--lr-chart-tick);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.axisLabel {
+  fill: var(--lr-chart-label);
+  font-size: var(--lr-chart-label-font-size);
+  font-family: var(--lr-font-family-sans);
+}
+
+.bar {
+  transition: opacity var(--lr-duration-fast) var(--lr-easing-default);
+}
+
+.barSegment {
+  stroke: var(--lr-chart-mark-stroke);
+  stroke-width: 1;
+}
+
+.line {
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.point {
+  stroke: var(--lr-chart-mark-stroke);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.crosshair {
+  stroke: var(--lr-chart-crosshair);
+  stroke-width: 1;
+  stroke-dasharray: 4 3;
+  vector-effect: non-scaling-stroke;
+  pointer-events: none;
+}
+
+.focusRing {
+  fill: none;
+  stroke: var(--lr-color-primary);
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+  pointer-events: none;
+}
+
+.tooltip {
+  position: absolute;
+  top: 0;
+  transform: translate(-50%, -100%);
+  padding: var(--lr-space-1) var(--lr-space-2);
+  border-radius: var(--lr-radius-sm);
+  background: var(--lr-color-surface-elevated);
+  border: 1px solid var(--lr-color-border);
+  box-shadow: var(--lr-shadow-sm);
+  font-size: var(--lr-chart-label-font-size);
+  color: var(--lr-color-text);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--lr-space-3);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.legendItem {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--lr-space-2);
+  font-size: var(--lr-chart-label-font-size);
+  color: var(--lr-color-text-muted);
+}
+
+.legendSwatch {
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.legendSwatch[data-shape='circle'] {
+  border-radius: 50%;
+}
+
+.legendSwatch[data-shape='diamond'] {
+  border-radius: 1px;
+  transform: rotate(45deg);
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.liveRegion {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bar {
+    transition: none;
+  }
+}

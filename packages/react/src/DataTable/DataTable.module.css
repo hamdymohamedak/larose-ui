@@ -26,11 +26,10 @@
   text-align: start;
   border-bottom: 2px solid var(--lr-color-border);
   font-family: var(--lr-font-family-sans);
-  font-size: var(--lr-font-size-xs);
+  font-size: var(--lr-font-size-sm);
   font-weight: var(--lr-font-weight-semibold);
-  color: var(--lr-color-text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  color: var(--lr-color-text);
+  background: var(--lr-table-head-bg);
   white-space: nowrap;
 }
 
@@ -47,7 +46,7 @@
 }
 
 .row[data-striped='true']:nth-child(even) {
-  background: var(--lr-color-surface-elevated);
+  background: var(--lr-table-row-alt);
 }
 
 .row[data-state='loading'] .cell {

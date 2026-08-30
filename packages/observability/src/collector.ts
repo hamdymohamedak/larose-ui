@@ -11,6 +11,7 @@ import type {
 } from './types';
 import { analyzeRageClick, correlateFormFunnel } from './correlation';
 import { runtimeEventToJourneyStep, trackPageViewStep, uiEventToJourneyStep } from './journey';
+import { sanitizeMetadata, sanitizeUIEvent } from './sanitize';
 import type { RuntimeEvent } from '@larose-ui/core';
 
 type EventListener = (event: UIEvent) => void;
@@ -45,13 +46,14 @@ export class EventCollector {
   }
 
   track(partial: Omit<UIEvent, 'timestamp'> & { timestamp?: number }): UIEvent {
-    const event: UIEvent = {
+    const event: UIEvent = sanitizeUIEvent({
       ...partial,
       timestamp: partial.timestamp ?? Date.now(),
       tenant: partial.tenant ?? this.config.tenantId,
       user: partial.user ?? this.config.userId,
       sessionId: partial.sessionId ?? this.config.sessionId,
-    };
+      metadata: sanitizeMetadata(partial.metadata),
+    });
 
     const context = this.getContextSnapshot();
     if (event.type.startsWith('form.') && event.metadata) {

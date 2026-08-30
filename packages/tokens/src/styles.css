@@ -1,18 +1,18 @@
 :root {
-  --lr-color-primary: #2563eb;
-  --lr-color-primary-hover: #1d4ed8;
-  --lr-color-primary-active: #1e40af;
-  --lr-color-secondary: #64748b;
-  --lr-color-success: #16a34a;
-  --lr-color-warning: #ca8a04;
-  --lr-color-error: #dc2626;
-  --lr-color-info: #0891b2;
-  --lr-color-background: #ffffff;
-  --lr-color-surface: #f8fafc;
+  --lr-color-primary: #0071e3;
+  --lr-color-primary-hover: #0077ed;
+  --lr-color-primary-active: #006edb;
+  --lr-color-secondary: #6e6e73;
+  --lr-color-success: #34c759;
+  --lr-color-warning: #ff9f0a;
+  --lr-color-error: #ff3b30;
+  --lr-color-info: #5ac8fa;
+  --lr-color-background: #f5f5f7;
+  --lr-color-surface: #ffffff;
   --lr-color-surface-elevated: #ffffff;
-  --lr-color-border: #e2e8f0;
-  --lr-color-text: #0f172a;
-  --lr-color-text-muted: #64748b;
+  --lr-color-border: rgb(0 0 0 / 0.08);
+  --lr-color-text: #1d1d1f;
+  --lr-color-text-muted: #5c5c60;
   --lr-color-text-inverse: #ffffff;
 
   --lr-font-family-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -44,44 +44,515 @@
   --lr-space-10: 2.5rem;
   --lr-space-12: 3rem;
 
-  --lr-radius-sm: 0.25rem;
-  --lr-radius-md: 0.375rem;
-  --lr-radius-lg: 0.5rem;
+  --lr-radius-sm: 0.4375rem;
+  --lr-radius-md: 0.5625rem;
+  --lr-radius-lg: 0.6875rem;
+  --lr-radius-xl: 0.875rem;
   --lr-radius-full: 9999px;
 
-  --lr-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --lr-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-  --lr-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --lr-shadow-sm: 0 1px 2px rgb(0 0 0 / 0.04);
+  --lr-shadow-md: 0 4px 12px rgb(0 0 0 / 0.06);
+  --lr-shadow-lg: 0 12px 28px rgb(0 0 0 / 0.08);
 
-  --lr-duration-fast: 100ms;
-  --lr-duration-normal: 200ms;
-  --lr-duration-slow: 300ms;
+  --lr-duration-instant: 50ms;
+  --lr-duration-fast: 120ms;
+  --lr-duration-normal: 220ms;
+  --lr-duration-slow: 320ms;
 
   --lr-easing-default: cubic-bezier(0.4, 0, 0.2, 1);
   --lr-easing-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
   --lr-easing-sharp: cubic-bezier(0.4, 0, 1, 1);
+  --lr-easing-spring: cubic-bezier(0.34, 1.2, 0.64, 1);
+
+  --lr-motion-duration-instant: 50ms;
+  --lr-motion-duration-fast: 120ms;
+  --lr-motion-duration-normal: 220ms;
+  --lr-motion-duration-slow: 320ms;
+  --lr-motion-duration-enter: 280ms;
+  --lr-motion-duration-exit: 200ms;
+  --lr-motion-duration-layout: 250ms;
+
+  --lr-motion-easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --lr-motion-easing-enter: cubic-bezier(0, 0, 0.2, 1);
+  --lr-motion-easing-exit: cubic-bezier(0.4, 0, 1, 1);
+  --lr-motion-easing-emphasized: cubic-bezier(0.2, 0, 0, 1);
+
+  --lr-motion-spring-snappy: cubic-bezier(0.34, 1.15, 0.64, 1);
+  --lr-motion-spring-smooth: cubic-bezier(0.25, 0.9, 0.35, 1);
+  --lr-motion-spring-gentle: cubic-bezier(0.22, 0.9, 0.36, 1);
+  --lr-motion-spring-responsive: cubic-bezier(0.34, 1.2, 0.64, 1);
+  --lr-motion-spring-bouncy: cubic-bezier(0.34, 1.45, 0.64, 1);
+
+  --lr-motion-distance-xs: 4px;
+  --lr-motion-distance-sm: 8px;
+  --lr-motion-distance-md: 16px;
+
+  --lr-motion-scale-enter: 0.96;
+  --lr-motion-scale-exit: 0.96;
+  --lr-motion-scale-press: 0.97;
+  --lr-motion-scale-modal-enter: 0.98;
+
+  --lr-button-height-sm: 2rem;
+  --lr-button-height-md: 2.75rem;
+  --lr-button-height-lg: 3.25rem;
+  --lr-button-radius: 9999px;
+  --lr-button-padding-inline-sm: 0.75rem;
+  --lr-button-padding-inline-md: 1.25rem;
+  --lr-button-padding-inline-lg: 1.5rem;
+  --lr-button-font-size-sm: 0.8125rem;
+  --lr-button-font-size-md: 0.9375rem;
+  --lr-button-font-size-lg: 1.0625rem;
+  --lr-button-font-weight: 600;
+  --lr-button-destructive: #ff3b30;
+  --lr-button-destructive-hover: #ff6259;
+  --lr-button-destructive-active: #d70015;
+  --lr-button-secondary-bg: rgb(118 118 128 / 0.12);
+  --lr-button-secondary-border: transparent;
+  --lr-button-plain-color: #0071e3;
+
+  --lr-chart-grid: rgb(0 0 0 / 0.06);
+  --lr-chart-axis: rgb(0 0 0 / 0.12);
+  --lr-chart-tick: rgb(0 0 0 / 0.22);
+  --lr-chart-label: #6e6e73;
+  --lr-chart-crosshair: rgb(0 0 0 / 0.25);
+  --lr-chart-plot-bg: transparent;
+  --lr-chart-bar-radius: 4px;
+  --lr-chart-mark-stroke: #ffffff;
+  --lr-chart-series-1: #0071e3;
+  --lr-chart-series-2: #34c759;
+  --lr-chart-series-3: #ff9500;
+  --lr-chart-series-4: #ff2d55;
+  --lr-chart-series-5: #af52de;
+  --lr-chart-series-6: #5ac8fa;
+  --lr-chart-label-font-size: 0.6875rem;
+  --lr-chart-title-font-size: 0.8125rem;
+
+  --lr-sharing-sheet-radius: 0.875rem;
+  --lr-sharing-sheet-shadow: 0 12px 40px rgb(0 0 0 / 0.14);
+  --lr-sharing-avatar-size: 2rem;
+  --lr-sharing-avatar-overlap: -0.5rem;
+  --lr-sharing-permission-bg: rgb(118 118 128 / 0.12);
+  --lr-sharing-destination-hover: rgb(118 118 128 / 0.08);
+  --lr-sharing-section-divider: rgb(0 0 0 / 0.08);
+
+  --lr-activity-tile-size: 4.375rem;
+  --lr-activity-share-icon-size: 3.5rem;
+  --lr-activity-action-icon-size: 2.25rem;
+  --lr-activity-share-row-gap: 1rem;
+  --lr-activity-section-gap: 0.75rem;
+
+  --lr-context-menu-radius: 0.75rem;
+  --lr-context-menu-item-height: 2.25rem;
+  --lr-context-menu-destructive: #ff3b30;
+
+  --lr-dock-icon-size: 3.25rem;
+  --lr-dock-menu-offset: 0.5rem;
+  --lr-dock-height: 4.25rem;
+  --lr-dock-radius: 1rem;
+  --lr-quick-action-icon-size: 3.5rem;
+
+  --lr-edit-menu-compact-radius: 0.625rem;
+  --lr-edit-menu-compact-height: 2.375rem;
+  --lr-edit-menu-compact-shadow: 0 4px 16px rgb(0 0 0 / 0.14);
+  --lr-edit-menu-pointer-size: 0.625rem;
+  --lr-edit-menu-chevron-width: 2.25rem;
+
+  --lr-quick-action-row-height: 2.75rem;
+  --lr-quick-action-menu-min-width: 15rem;
+  --lr-quick-action-menu-radius: 0.875rem;
+  --lr-quick-action-menu-shadow: 0 12px 40px rgb(0 0 0 / 0.14);
+  --lr-quick-action-symbol-size: 1.375rem;
+
+  --lr-menu-radius: 0.75rem;
+  --lr-menu-shadow: 0 12px 32px rgb(0 0 0 / 0.16);
+  --lr-menu-min-width: 12rem;
+  --lr-menu-max-width: 20rem;
+  --lr-menu-item-height: 2.25rem;
+  --lr-menu-compact-tile-size: 2.75rem;
+  --lr-menu-separator: rgb(0 0 0 / 0.08);
+  --lr-menu-destructive: #ff3b30;
+  --lr-menu-checkmark-width: 1.125rem;
+
+  --lr-ornament-offset: 0.75rem;
+  --lr-ornament-radius: 1rem;
+  --lr-ornament-padding: 0.5rem 0.75rem;
+  --lr-ornament-max-width-ratio: 1;
+  --lr-ornament-z-index: 10;
+
+  --lr-popup-min-width: 8rem;
+  --lr-popup-height: 2.25rem;
+  --lr-popup-radius: 0.5rem;
+  --lr-popup-chevron-size: 0.75rem;
+
+  --lr-pulldown-min-width: 6rem;
+  --lr-pulldown-height: 2.25rem;
+  --lr-pulldown-radius: 0.5rem;
+  --lr-pulldown-more-size: 2.25rem;
+
+  --lr-menu-bar-height: 1.5rem;
+  --lr-menu-bar-padding-x: 0.5rem;
+  --lr-menu-bar-item-padding-x: 0.625rem;
+  --lr-menu-bar-font-size: 0.8125rem;
+  --lr-menu-bar-extra-size: 1rem;
+  --lr-menu-bar-bg: rgb(246 246 246 / 0.84);
+  --lr-menu-bar-fg: #1d1d1f;
+  --lr-menu-bar-item-hover: rgb(0 0 0 / 0.06);
+  --lr-menu-bar-item-active: rgb(0 0 0 / 0.1);
+  --lr-menu-bar-separator: rgb(0 0 0 / 0.08);
+  --lr-menu-bar-shadow: 0 1px 0 rgb(255 255 255 / 0.6);
+
+  --lr-toolbar-height: 2.75rem;
+  --lr-toolbar-height-large-title: 6rem;
+  --lr-toolbar-padding-x: 0.75rem;
+  --lr-toolbar-section-gap: 0.75rem;
+  --lr-toolbar-item-size: 2rem;
+  --lr-toolbar-item-radius: 0.4375rem;
+  --lr-toolbar-item-gap: 0.25rem;
+  --lr-toolbar-fixed-space: 0.75rem;
+  --lr-toolbar-title-max-width: 12rem;
+  --lr-toolbar-title-font-size: 0.9375rem;
+  --lr-toolbar-title-font-weight: 600;
+  --lr-toolbar-large-title-font-size: 2rem;
+  --lr-toolbar-search-min-width: 10rem;
+  --lr-toolbar-search-height: 1.75rem;
+  --lr-toolbar-bg: rgb(255 255 255 / 0.72);
+  --lr-toolbar-fg: #1d1d1f;
+  --lr-toolbar-item-hover: rgb(0 0 0 / 0.06);
+  --lr-toolbar-item-active: rgb(0 0 0 / 0.1);
+  --lr-toolbar-separator: rgb(0 0 0 / 0.08);
+  --lr-toolbar-prominent-bg: #0071e3;
+  --lr-toolbar-prominent-fg: #ffffff;
+  --lr-toolbar-blur: 20px;
+
+  --lr-path-control-height: 1.5rem;
+  --lr-path-control-padding-x: 0.5rem;
+  --lr-path-control-item-gap: 0.125rem;
+  --lr-path-control-font-size: 0.8125rem;
+  --lr-path-control-separator: rgb(0 0 0 / 0.15);
+  --lr-path-control-bg: rgb(246 246 246 / 0.8);
+  --lr-path-control-fg: #1d1d1f;
+  --lr-path-control-item-hover: rgb(0 0 0 / 0.06);
+
+  --lr-search-field-height: 1.75rem;
+  --lr-search-field-radius: 0.5rem;
+  --lr-search-field-padding-x: 0.625rem;
+  --lr-search-field-font-size: 0.8125rem;
+  --lr-search-field-bg: rgb(118 118 128 / 0.12);
+  --lr-search-field-fg: #1d1d1f;
+  --lr-search-field-placeholder: rgb(60 60 67 / 0.6);
+  --lr-search-field-scope-height: 1.75rem;
+  --lr-search-field-token-radius: 0.375rem;
+  --lr-search-field-token-bg: rgb(0 113 227 / 0.12);
+
+  --lr-sidebar-width: 16rem;
+  --lr-sidebar-width-compact: 13rem;
+  --lr-sidebar-item-height: 1.75rem;
+  --lr-sidebar-item-radius: 0.4375rem;
+  --lr-sidebar-section-gap: 0.5rem;
+  --lr-sidebar-bg: rgb(255 255 255 / 0.72);
+  --lr-sidebar-fg: #1d1d1f;
+  --lr-sidebar-item-hover: rgb(0 0 0 / 0.06);
+  --lr-sidebar-item-active: rgb(0 113 227 / 0.12);
+  --lr-sidebar-group-label-size: 0.6875rem;
+
+  --lr-tab-bar-height: 3.125rem;
+  --lr-tab-bar-height-compact: 2.75rem;
+  --lr-tab-bar-item-padding: 0.375rem;
+  --lr-tab-bar-icon-size: 1.375rem;
+  --lr-tab-bar-label-size: 0.625rem;
+  --lr-tab-bar-radius: 1rem;
+  --lr-tab-bar-bg: rgb(255 255 255 / 0.72);
+  --lr-tab-bar-fg: #0071e3;
+  --lr-tab-bar-inactive-fg: #8e8e93;
+  --lr-tab-bar-badge-bg: #ff3b30;
+  --lr-tab-bar-badge-fg: #ffffff;
+
+  --lr-token-field-min-height: 2rem;
+  --lr-token-field-radius: 0.4375rem;
+  --lr-token-field-padding: 0.25rem 0.375rem;
+  --lr-token-field-token-radius: 0.3125rem;
+  --lr-token-field-token-bg: rgb(0 113 227 / 0.12);
+  --lr-token-field-token-fg: #1d1d1f;
+  --lr-token-field-font-size: 0.8125rem;
+  --lr-token-field-bg: #ffffff;
+  --lr-token-field-border: rgb(0 0 0 / 0.12);
+
+  --lr-alert-dialog-max-width: 16.875rem;
+  --lr-alert-dialog-wide-max-width: 26.25rem;
+  --lr-alert-dialog-radius: 0.875rem;
+  --lr-alert-dialog-content-padding: 1.1875rem 1rem 1rem;
+  --lr-alert-dialog-title-size: 1.0625rem;
+  --lr-alert-dialog-message-size: 0.8125rem;
+  --lr-alert-dialog-icon-size: 2.75rem;
+  --lr-alert-dialog-button-height: 2.75rem;
+  --lr-alert-dialog-shadow: 0 11px 34px rgb(0 0 0 / 0.18);
+  --lr-alert-dialog-bg: rgb(255 255 255 / 0.92);
+  --lr-alert-dialog-overlay: rgb(0 0 0 / 0.4);
+  --lr-alert-dialog-separator: rgb(60 60 67 / 0.29);
+  --lr-alert-dialog-backdrop-blur: 40px;
+  --lr-alert-dialog-accessory-max-height: 9.625rem;
+  --lr-alert-dialog-accessory-radius: 1rem;
+
+  --lr-dnd-preview-opacity: 0.78;
+  --lr-dnd-preview-shadow: 0 8px 24px rgb(0 0 0 / 0.16);
+  --lr-dnd-zone-active-border: #0071e3;
+  --lr-dnd-zone-active-bg: rgb(0 113 227 / 0.08);
+  --lr-dnd-zone-invalid-border: #ff3b30;
+  --lr-dnd-zone-invalid-bg: rgb(255 59 48 / 0.08);
+  --lr-dnd-insertion-color: #0071e3;
+  --lr-dnd-badge-bg: #0071e3;
+  --lr-dnd-revert-duration: 220ms;
+
+  --lr-field-height-md: 2.75rem;
+  --lr-field-radius: 0.625rem;
+  --lr-field-bg: rgb(118 118 128 / 0.16);
+  --lr-field-border: rgb(0 0 0 / 0.06);
+  --lr-field-border-focus: #0071e3;
+  --lr-field-focus-ring: 0 0 0 3px rgb(0 113 227 / 0.25);
+  --lr-field-error-border: #ff3b30;
+  --lr-field-error-ring: 0 0 0 3px rgb(255 59 48 / 0.25);
+  --lr-field-label-weight: 600;
+  --lr-field-hint-size: 0.8125rem;
+  --lr-field-required-color: #ff3b30;
+
+  --lr-file-browser-sheet-radius: 0.875rem;
+  --lr-file-browser-sheet-shadow: 0 12px 40px rgb(0 0 0 / 0.14);
+  --lr-file-preview-radius: 0.75rem;
+  --lr-file-preview-bg: #f5f5f7;
+  --lr-file-row-hover: rgb(118 118 128 / 0.08);
+  --lr-file-row-selected: rgb(0 113 227 / 0.1);
+  --lr-file-sync-synced: #34c759;
+  --lr-file-sync-syncing: #0071e3;
+  --lr-file-sync-error: #ff3b30;
+  --lr-file-unsaved-dot: #ff3b30;
+  --lr-file-launcher-hero-min-height: 12rem;
+
+  --lr-image-radius: 0.625rem;
+  --lr-image-placeholder-bg: #e8e8ed;
+  --lr-image-overlay-scrim: linear-gradient(180deg, rgb(0 0 0 / 0) 35%, rgb(0 0 0 / 0.62) 100%);
+  --lr-image-overlay-text-shadow: 0 1px 6px rgb(0 0 0 / 0.45);
+  --lr-image-well-border: rgb(0 0 0 / 0.08);
+  --lr-image-well-bg: rgb(118 118 128 / 0.08);
+
+  --lr-text-view-min-height: 8rem;
+  --lr-text-view-padding: 0.875rem 1rem;
+  --lr-text-view-radius: 0.625rem;
+  --lr-text-view-bg: rgb(118 118 128 / 0.08);
+  --lr-text-view-border: transparent;
+  --lr-text-view-focus-ring: 0 0 0 3px rgb(0 113 227 / 0.25);
+  --lr-text-view-selection-bg: rgb(0 113 227 / 0.22);
+
+  --lr-web-view-radius: 0.625rem;
+  --lr-web-view-border: rgb(0 0 0 / 0.08);
+  --lr-web-view-toolbar-bg: #ffffff;
+  --lr-web-view-toolbar-border: rgb(0 0 0 / 0.08);
+  --lr-web-view-min-height: 16rem;
+
+  --lr-box-radius: 0.625rem;
+  --lr-box-secondary-bg: rgb(118 118 128 / 0.12);
+  --lr-box-tertiary-bg: rgb(118 118 128 / 0.08);
+  --lr-box-border: rgb(0 0 0 / 0.06);
+  --lr-box-title-size: 0.8125rem;
+  --lr-box-title-weight: 600;
+  --lr-box-max-width: 40rem;
+
+  --lr-collection-gap: 0.75rem;
+  --lr-collection-item-radius: 0.625rem;
+  --lr-collection-item-padding: 0.5rem;
+  --lr-collection-item-hover: rgb(118 118 128 / 0.08);
+  --lr-collection-item-selected: rgb(0 113 227 / 0.12);
+  --lr-collection-min-item-size: 5.5rem;
+
+  --lr-column-view-width: 14rem;
+  --lr-column-view-min-width: 10rem;
+  --lr-column-view-divider: rgb(0 0 0 / 0.08);
+  --lr-column-view-row-hover: rgb(118 118 128 / 0.08);
+  --lr-column-view-row-selected: rgb(0 113 227 / 0.12);
+  --lr-column-view-detail-bg: #f5f5f7;
+
+  --lr-split-divider-width: 1px;
+  --lr-split-divider-hit-area: 0.375rem;
+  --lr-split-pane-min-size: 7.5rem;
+  --lr-split-sidebar-ratio: 0.25;
+  --lr-split-detail-ratio: 0.75;
+  --lr-split-divider-color: rgb(0 0 0 / 0.1);
+  --lr-split-pane-bg: #ffffff;
+
+  --lr-tab-view-tab-height: 1.75rem;
+  --lr-tab-view-content-bg: #ffffff;
+  --lr-tab-view-inset-margin: 1rem;
+
+  --lr-disclosure-triangle-size: 0.625rem;
+  --lr-disclosure-button-size: 1.25rem;
+  --lr-disclosure-hit-region: 2.75rem;
+  --lr-disclosure-content-gap: 0.75rem;
+
+  --lr-label-primary: #000000;
+  --lr-label-secondary: rgb(60 60 67 / 0.6);
+  --lr-label-tertiary: rgb(60 60 67 / 0.3);
+  --lr-label-quaternary: rgb(60 60 67 / 0.18);
+  --lr-label-selection-bg: rgb(0 113 227 / 0.22);
+
+  --lr-list-radius: 0.625rem;
+  --lr-list-grouped-bg: #ffffff;
+  --lr-list-section-header-size: 0.8125rem;
+  --lr-list-row-min-height: 2.75rem;
+  --lr-list-row-padding: 0.75rem 1rem;
+  --lr-list-row-selected: rgb(0 113 227 / 0.12);
+  --lr-list-row-hover: rgb(118 118 128 / 0.08);
+  --lr-table-head-bg: #f5f5f7;
+  --lr-table-row-alt: rgb(118 118 128 / 0.06);
+  --lr-table-sort-indicator: #0071e3;
+
+  --lr-lockup-gap: 1.5rem;
+  --lr-lockup-focus-scale: 1.06;
+  --lr-lockup-focus-shadow: 0 12px 32px rgb(0 0 0 / 0.18);
+  --lr-lockup-focus-tilt: 3deg;
+  --lr-lockup-card-radius: 0.75rem;
+  --lr-lockup-monogram-size: 5rem;
+  --lr-lockup-poster-radius: 0.625rem;
+  --lr-lockup-caption-radius: 0.625rem;
+
+  --lr-picker-row-height: 2.25rem;
+  --lr-picker-wheel-height: 11.25rem;
+  --lr-picker-wheel-width: 5.5rem;
+  --lr-picker-selection-radius: 0.5rem;
+  --lr-picker-selection-bg: rgb(0 0 0 / 0.06);
+  --lr-picker-fade-height: 2.75rem;
+  --lr-picker-compact-min-width: 12rem;
+  --lr-picker-calendar-cell-size: 2.25rem;
 
   --lr-density-multiplier: 1;
 }
 
 [data-lr-theme="dark"] {
-  --lr-color-primary: #3b82f6;
-  --lr-color-primary-hover: #60a5fa;
-  --lr-color-primary-active: #2563eb;
-  --lr-color-background: #0f172a;
-  --lr-color-surface: #1e293b;
-  --lr-color-surface-elevated: #334155;
-  --lr-color-border: #334155;
-  --lr-color-text: #f8fafc;
-  --lr-color-text-muted: #94a3b8;
-  --lr-color-text-inverse: #0f172a;
+  --lr-color-primary: #0a84ff;
+  --lr-color-primary-hover: #409cff;
+  --lr-color-primary-active: #0077ed;
+  --lr-color-secondary: #98989d;
+  --lr-color-success: #30d158;
+  --lr-color-warning: #ffd60a;
+  --lr-color-error: #ff453a;
+  --lr-color-info: #64d2ff;
+  --lr-color-background: #1c1c1e;
+  --lr-color-surface: #2c2c2e;
+  --lr-color-surface-elevated: #3a3a3c;
+  --lr-color-border: rgb(255 255 255 / 0.12);
+  --lr-color-text: #f5f5f7;
+  --lr-color-text-muted: #98989d;
+  --lr-color-text-inverse: #1c1c1e;
+
+  --lr-button-destructive: #ff453a;
+  --lr-button-destructive-hover: #ff6961;
+  --lr-button-destructive-active: #d70015;
+  --lr-button-secondary-bg: rgb(118 118 128 / 0.24);
+  --lr-button-plain-color: #0a84ff;
+
+  --lr-chart-grid: rgb(255 255 255 / 0.08);
+  --lr-chart-axis: rgb(255 255 255 / 0.18);
+  --lr-chart-tick: rgb(255 255 255 / 0.35);
+  --lr-chart-label: #98989d;
+  --lr-chart-crosshair: rgb(255 255 255 / 0.45);
+  --lr-chart-mark-stroke: rgb(28 28 30 / 0.85);
+  --lr-chart-series-1: #0a84ff;
+  --lr-chart-series-2: #30d158;
+  --lr-chart-series-3: #ff9f0a;
+  --lr-chart-series-4: #ff375f;
+  --lr-chart-series-5: #bf5af2;
+  --lr-chart-series-6: #64d2ff;
+
+  --lr-sharing-permission-bg: rgb(118 118 128 / 0.24);
+  --lr-sharing-destination-hover: rgb(118 118 128 / 0.18);
+  --lr-sharing-section-divider: rgb(255 255 255 / 0.1);
+  --lr-sharing-sheet-shadow: 0 12px 40px rgb(0 0 0 / 0.45);
+
+  --lr-dnd-preview-opacity: 0.72;
+  --lr-dnd-zone-active-border: #0a84ff;
+  --lr-dnd-zone-active-bg: rgb(10 132 255 / 0.14);
+  --lr-dnd-zone-invalid-border: #ff453a;
+  --lr-dnd-zone-invalid-bg: rgb(255 69 58 / 0.1);
+  --lr-dnd-insertion-color: #0a84ff;
+  --lr-dnd-badge-bg: #0a84ff;
+
+  --lr-field-bg: rgb(118 118 128 / 0.24);
+  --lr-field-border-focus: #0a84ff;
+  --lr-field-focus-ring: 0 0 0 3px rgb(10 132 255 / 0.35);
+  --lr-field-error-border: #ff453a;
+  --lr-field-error-ring: 0 0 0 3px rgb(255 69 58 / 0.35);
+  --lr-field-required-color: #ff453a;
+
+  --lr-file-preview-bg: #1c1c1e;
+  --lr-file-row-hover: rgb(118 118 128 / 0.18);
+  --lr-file-row-selected: rgb(10 132 255 / 0.18);
+  --lr-file-sync-synced: #30d158;
+  --lr-file-sync-syncing: #0a84ff;
+  --lr-file-sync-error: #ff453a;
+  --lr-file-unsaved-dot: #ff453a;
+  --lr-file-browser-sheet-shadow: 0 12px 40px rgb(0 0 0 / 0.45);
+
+  --lr-image-placeholder-bg: #2c2c2e;
+  --lr-image-overlay-scrim: linear-gradient(180deg, rgb(0 0 0 / 0) 35%, rgb(0 0 0 / 0.72) 100%);
+  --lr-image-overlay-text-shadow: 0 1px 8px rgb(0 0 0 / 0.55);
+  --lr-image-well-border: rgb(255 255 255 / 0.12);
+  --lr-image-well-bg: rgb(118 118 128 / 0.18);
+
+  --lr-text-view-bg: rgb(118 118 128 / 0.18);
+  --lr-text-view-focus-ring: 0 0 0 3px rgb(10 132 255 / 0.35);
+  --lr-text-view-selection-bg: rgb(10 132 255 / 0.35);
+
+  --lr-web-view-border: rgb(255 255 255 / 0.12);
+  --lr-web-view-toolbar-bg: #2c2c2e;
+  --lr-web-view-toolbar-border: rgb(255 255 255 / 0.1);
+
+  --lr-box-secondary-bg: rgb(118 118 128 / 0.24);
+  --lr-box-tertiary-bg: rgb(118 118 128 / 0.16);
+  --lr-box-border: rgb(255 255 255 / 0.08);
+  --lr-collection-item-hover: rgb(118 118 128 / 0.18);
+  --lr-collection-item-selected: rgb(10 132 255 / 0.22);
+  --lr-column-view-divider: rgb(255 255 255 / 0.1);
+  --lr-column-view-row-hover: rgb(118 118 128 / 0.18);
+  --lr-column-view-row-selected: rgb(10 132 255 / 0.22);
+  --lr-column-view-detail-bg: #1c1c1e;
+
+  --lr-split-divider-color: rgb(255 255 255 / 0.12);
+  --lr-split-pane-bg: #1c1c1e;
+
+  --lr-tab-view-content-bg: #2c2c2e;
+
+  --lr-label-primary: #ffffff;
+  --lr-label-secondary: rgb(235 235 245 / 0.6);
+  --lr-label-tertiary: rgb(235 235 245 / 0.3);
+  --lr-label-quaternary: rgb(235 235 245 / 0.18);
+  --lr-label-selection-bg: rgb(10 132 255 / 0.35);
+
+  --lr-list-grouped-bg: #2c2c2e;
+  --lr-list-row-selected: rgb(10 132 255 / 0.22);
+  --lr-list-row-hover: rgb(118 118 128 / 0.18);
+  --lr-table-head-bg: #3a3a3c;
+  --lr-table-row-alt: rgb(118 118 128 / 0.12);
+  --lr-table-sort-indicator: #0a84ff;
+
+  --lr-lockup-focus-scale: 1.08;
+  --lr-lockup-focus-shadow: 0 16px 40px rgb(0 0 0 / 0.45);
+  --lr-lockup-focus-tilt: 4deg;
+
+  --lr-picker-selection-bg: rgb(255 255 255 / 0.1);
 }
 
 @media (prefers-reduced-motion: reduce) {
   :root {
+    --lr-duration-instant: 0ms;
     --lr-duration-fast: 0ms;
     --lr-duration-normal: 0ms;
     --lr-duration-slow: 0ms;
+
+    --lr-motion-duration-instant: 0ms;
+    --lr-motion-duration-fast: 0ms;
+    --lr-motion-duration-normal: 0ms;
+    --lr-motion-duration-slow: 0ms;
+    --lr-motion-duration-enter: 0ms;
+    --lr-motion-duration-exit: 0ms;
+    --lr-motion-duration-layout: 0ms;
   }
 }
 

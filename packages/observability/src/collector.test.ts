@@ -17,6 +17,22 @@ describe('EventCollector', () => {
     expect(collector.getCounter('form.opened')).toBe(1);
   });
 
+  it('redacts sensitive metadata before adapter export', () => {
+    const adapter = createNoopAdapter();
+    const track = vi.spyOn(adapter, 'track');
+    const collector = createEventCollector({ adapter });
+
+    collector.track({
+      type: 'form.error',
+      component: 'login',
+      metadata: { password: 'secret', field: 'email' },
+    });
+
+    const forwarded = track.mock.calls[0]?.[0];
+    expect(forwarded?.metadata?.password).toBe('[REDACTED]');
+    expect(forwarded?.metadata?.field).toBe('email');
+  });
+
   it('computes form funnel metrics', () => {
     const collector = createEventCollector();
 

@@ -97,6 +97,20 @@ export interface VersionInfo {
 export type Variant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'destructive';
 export type Size = 'sm' | 'md' | 'lg';
 
+/** Apple HIG button semantic roles — style, content, and role. */
+export type ButtonRole = 'normal' | 'primary' | 'cancel' | 'destructive';
+
+export type TypographyRole =
+  | 'display'
+  | 'largeTitle'
+  | 'title'
+  | 'headline'
+  | 'body'
+  | 'callout'
+  | 'subheadline'
+  | 'footnote'
+  | 'caption';
+
 export interface ComponentStateProps {
   state?: UIState;
   loading?: boolean;
@@ -256,3 +270,23 @@ export {
 } from './runtime/featureFlags';
 
 export { detectA11yPreferences, subscribeA11yPreferences } from './runtime/a11y';
+
+export type {
+  SpringConfig,
+  SpringPresetName,
+  SpringState,
+  ReducedMotionPolicy,
+  MotionSemanticPreset,
+} from './motion';
+export {
+  SPRING_PRESETS,
+  getSpringPreset,
+  stepSpring,
+  isSpringSettled,
+  animateSpringToTarget,
+  springResponseTime,
+  resolveReducedMotion,
+  motionDuration,
+} from './motion';
+
+export { sanitizeNavigationUrl, isSafeRedirectPath } from './security/url';

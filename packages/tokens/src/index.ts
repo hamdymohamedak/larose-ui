@@ -1,73 +1,186 @@
 import type { Density, ThemeMode } from '@larose-ui/core';
+import { buttonTokensToCSSVariables, getButtonTokens } from './button-tokens';
+import { chartTokensToCSSVariables, getChartTokens } from './chart-tokens';
+import { dragDropTokensToCSSVariables, getDragDropTokens } from './drag-drop-tokens';
+import { dataEntryTokensToCSSVariables, getDataEntryTokens } from './data-entry-tokens';
+import { fileManagementTokensToCSSVariables, getFileManagementTokens } from './file-management-tokens';
+import { imageViewTokensToCSSVariables, getImageViewTokens } from './image-view-tokens';
+import { textViewTokensToCSSVariables, getTextViewTokens } from './text-view-tokens';
+import { webViewTokensToCSSVariables, getWebViewTokens } from './web-view-tokens';
+import { boxTokensToCSSVariables, getBoxTokens } from './box-tokens';
+import { collectionTokensToCSSVariables, getCollectionTokens } from './collection-tokens';
+import { columnViewTokensToCSSVariables, getColumnViewTokens } from './column-view-tokens';
+import { splitViewTokensToCSSVariables, getSplitViewTokens } from './split-view-tokens';
+import { tabViewTokensToCSSVariables, getTabViewTokens } from './tab-view-tokens';
+import { disclosureTokensToCSSVariables, getDisclosureTokens } from './disclosure-tokens';
+import { labelTokensToCSSVariables, getLabelTokens } from './label-tokens';
+import { listTableTokensToCSSVariables, getListTableTokens } from './list-table-tokens';
+import { lockupTokensToCSSVariables, getLockupTokens } from './lockup-tokens';
+import { pickerTokensToCSSVariables, getPickerTokens } from './picker-tokens';
+import { activityViewTokensToCSSVariables, getActivityViewTokens } from './activity-view-tokens';
+import { contextMenuTokensToCSSVariables, getContextMenuTokens } from './context-menu-tokens';
+import { dockMenuTokensToCSSVariables, getDockMenuTokens } from './dock-menu-tokens';
+import { editMenuTokensToCSSVariables, getEditMenuTokens } from './edit-menu-tokens';
+import { quickActionsTokensToCSSVariables, getQuickActionsTokens } from './quick-actions-tokens';
+import { menuTokensToCSSVariables, getMenuTokens } from './menu-tokens';
+import { ornamentTokensToCSSVariables, getOrnamentTokens } from './ornament-tokens';
+import { popUpButtonTokensToCSSVariables, getPopUpButtonTokens } from './popup-button-tokens';
+import { pullDownButtonTokensToCSSVariables, getPullDownButtonTokens } from './pull-down-button-tokens';
+import { menuBarTokensToCSSVariables, getMenuBarTokens } from './menu-bar-tokens';
+import { toolbarTokensToCSSVariables, getToolbarTokens } from './toolbar-tokens';
+import { pathControlTokensToCSSVariables, getPathControlTokens } from './path-control-tokens';
+import { searchFieldTokensToCSSVariables, getSearchFieldTokens } from './search-field-tokens';
+import { sidebarTokensToCSSVariables, getSidebarTokens } from './sidebar-tokens';
+import { tabBarTokensToCSSVariables, getTabBarTokens } from './tab-bar-tokens';
+import { tokenFieldTokensToCSSVariables, getTokenFieldTokens } from './token-field-tokens';
+import { alertDialogTokensToCSSVariables, getAlertDialogTokens } from './alert-dialog-tokens';
+import { motionTokensToCSSVariables, getMotionTokens } from './motion-tokens';
+import { sharingTokensToCSSVariables, getSharingTokens } from './sharing-tokens';
+import { getRefinedTokenOverrides } from './refined';
+import type {
+  ColorTokens,
+  SurfaceTokens,
+  TokenOverrides,
+  TokenSet,
+  TypographyRoleName,
+  TypographyRoles,
+} from './token-types';
 
-export interface ColorTokens {
-  primary: string;
-  primaryHover: string;
-  primaryActive: string;
-  secondary: string;
-  success: string;
-  warning: string;
-  error: string;
-  info: string;
-  background: string;
-  surface: string;
-  surfaceElevated: string;
-  border: string;
-  text: string;
-  textMuted: string;
-  textInverse: string;
-}
+export type { ColorTokens, SurfaceTokens, TokenOverrides, TokenSet, TypographyRoles };
+export { getRefinedTokenOverrides } from './refined';
+export { getButtonTokens, buttonTokensToCSSVariables } from './button-tokens';
+export type { ButtonTokens } from './button-tokens';
+export {
+  getChartTokens,
+  chartTokensToCSSVariables,
+  CHART_SERIES_COLORS,
+} from './chart-tokens';
+export type { ChartTokens } from './chart-tokens';
+export { getSharingTokens, sharingTokensToCSSVariables } from './sharing-tokens';
+export type { SharingTokens } from './sharing-tokens';
+export {
+  getDragDropTokens,
+  dragDropTokensToCSSVariables,
+  DRAG_START_THRESHOLD_PX,
+} from './drag-drop-tokens';
+export type { DragDropTokens } from './drag-drop-tokens';
+export {
+  getDataEntryTokens,
+  dataEntryTokensToCSSVariables,
+} from './data-entry-tokens';
+export type { DataEntryTokens } from './data-entry-tokens';
+export {
+  getFileManagementTokens,
+  fileManagementTokensToCSSVariables,
+} from './file-management-tokens';
+export type { FileManagementTokens } from './file-management-tokens';
+export { getImageViewTokens, imageViewTokensToCSSVariables } from './image-view-tokens';
+export type { ImageViewTokens } from './image-view-tokens';
+export { getTextViewTokens, textViewTokensToCSSVariables } from './text-view-tokens';
+export type { TextViewTokens } from './text-view-tokens';
+export { getWebViewTokens, webViewTokensToCSSVariables } from './web-view-tokens';
+export type { WebViewTokens } from './web-view-tokens';
+export { getBoxTokens, boxTokensToCSSVariables } from './box-tokens';
+export type { BoxTokens } from './box-tokens';
+export { getCollectionTokens, collectionTokensToCSSVariables } from './collection-tokens';
+export type { CollectionTokens } from './collection-tokens';
+export { getColumnViewTokens, columnViewTokensToCSSVariables } from './column-view-tokens';
+export type { ColumnViewTokens } from './column-view-tokens';
+export { getSplitViewTokens, splitViewTokensToCSSVariables } from './split-view-tokens';
+export type { SplitViewTokens } from './split-view-tokens';
+export { getTabViewTokens, tabViewTokensToCSSVariables } from './tab-view-tokens';
+export type { TabViewTokens } from './tab-view-tokens';
+export { getDisclosureTokens, disclosureTokensToCSSVariables } from './disclosure-tokens';
+export type { DisclosureTokens } from './disclosure-tokens';
+export { getLabelTokens, labelTokensToCSSVariables } from './label-tokens';
+export type { LabelTokens } from './label-tokens';
+export { getListTableTokens, listTableTokensToCSSVariables } from './list-table-tokens';
+export type { ListTableTokens } from './list-table-tokens';
+export { getLockupTokens, lockupTokensToCSSVariables } from './lockup-tokens';
+export type { LockupTokens } from './lockup-tokens';
+export { getPickerTokens, pickerTokensToCSSVariables } from './picker-tokens';
+export type { PickerTokens } from './picker-tokens';
+export { getActivityViewTokens, activityViewTokensToCSSVariables } from './activity-view-tokens';
+export type { ActivityViewTokens } from './activity-view-tokens';
+export { getContextMenuTokens, contextMenuTokensToCSSVariables } from './context-menu-tokens';
+export type { ContextMenuTokens } from './context-menu-tokens';
+export { getDockMenuTokens, dockMenuTokensToCSSVariables } from './dock-menu-tokens';
+export type { DockMenuTokens } from './dock-menu-tokens';
+export { getEditMenuTokens, editMenuTokensToCSSVariables } from './edit-menu-tokens';
+export type { EditMenuTokens } from './edit-menu-tokens';
+export {
+  getQuickActionsTokens,
+  quickActionsTokensToCSSVariables,
+  MAX_HOME_SCREEN_QUICK_ACTIONS,
+} from './quick-actions-tokens';
+export type { QuickActionsTokens } from './quick-actions-tokens';
+export { getMenuTokens, menuTokensToCSSVariables } from './menu-tokens';
+export type { MenuTokens } from './menu-tokens';
+export { getOrnamentTokens, ornamentTokensToCSSVariables, MAX_ORNAMENTS } from './ornament-tokens';
+export type { OrnamentTokens } from './ornament-tokens';
+export { getPopUpButtonTokens, popUpButtonTokensToCSSVariables } from './popup-button-tokens';
+export type { PopUpButtonTokens } from './popup-button-tokens';
+export {
+  getPullDownButtonTokens,
+  pullDownButtonTokensToCSSVariables,
+  MIN_PULLDOWN_ITEMS,
+} from './pull-down-button-tokens';
+export type { PullDownButtonTokens } from './pull-down-button-tokens';
+export {
+  getMenuBarTokens,
+  menuBarTokensToCSSVariables,
+  STANDARD_MENU_BAR_ORDER,
+} from './menu-bar-tokens';
+export type { MenuBarTokens, StandardMenuBarSlot } from './menu-bar-tokens';
+export {
+  getToolbarTokens,
+  toolbarTokensToCSSVariables,
+  MAX_TOOLBAR_TITLE_LENGTH,
+  MAX_TOOLBAR_GROUPS,
+} from './toolbar-tokens';
+export type { ToolbarTokens } from './toolbar-tokens';
+export { getPathControlTokens, pathControlTokensToCSSVariables } from './path-control-tokens';
+export type { PathControlTokens } from './path-control-tokens';
+export { getSearchFieldTokens, searchFieldTokensToCSSVariables } from './search-field-tokens';
+export type { SearchFieldTokens } from './search-field-tokens';
+export { getSidebarTokens, sidebarTokensToCSSVariables } from './sidebar-tokens';
+export type { SidebarTokens, SidebarSize } from './sidebar-tokens';
+export {
+  getTabBarTokens,
+  tabBarTokensToCSSVariables,
+  MAX_TAB_BAR_ITEMS,
+} from './tab-bar-tokens';
+export type { TabBarTokens } from './tab-bar-tokens';
+export {
+  getTokenFieldTokens,
+  tokenFieldTokensToCSSVariables,
+  DEFAULT_TOKEN_DELIMITERS,
+} from './token-field-tokens';
+export type { TokenFieldTokens } from './token-field-tokens';
+export {
+  getAlertDialogTokens,
+  alertDialogTokensToCSSVariables,
+  MAX_ALERT_BUTTONS,
+} from './alert-dialog-tokens';
+export type { AlertDialogTokens } from './alert-dialog-tokens';
+export { getMotionTokens, motionTokensToCSSVariables, MOTION_PRESET_EASING } from './motion-tokens';
+export type { MotionTokens, MotionPresetName } from './motion-tokens';
 
-export interface TokenSet {
-  colors: ColorTokens;
-  fontFamily: { sans: string; mono: string };
-  fontSize: Record<'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl', string>;
-  fontWeight: Record<'normal' | 'medium' | 'semibold' | 'bold', string>;
-  lineHeight: Record<'tight' | 'normal' | 'relaxed', string>;
-  space: Record<'1' | '2' | '3' | '4' | '5' | '6' | '8' | '10' | '12', string>;
-  radius: Record<'sm' | 'md' | 'lg' | 'full', string>;
-  shadow: Record<'sm' | 'md' | 'lg', string>;
-  duration: Record<'fast' | 'normal' | 'slow', string>;
-  easing: Record<'default' | 'bounce' | 'sharp', string>;
-}
+const semanticColors = {
+  success: '#34c759',
+  warning: '#ff9f0a',
+  error: '#ff3b30',
+  info: '#5ac8fa',
+} as const;
 
-const lightColors: ColorTokens = {
-  primary: '#2563eb',
-  primaryHover: '#1d4ed8',
-  primaryActive: '#1e40af',
-  secondary: '#64748b',
-  success: '#16a34a',
-  warning: '#ca8a04',
-  error: '#dc2626',
-  info: '#0891b2',
-  background: '#ffffff',
-  surface: '#f8fafc',
-  surfaceElevated: '#ffffff',
-  border: '#e2e8f0',
-  text: '#0f172a',
-  textMuted: '#64748b',
-  textInverse: '#ffffff',
-};
+const darkSemanticColors = {
+  success: '#30d158',
+  warning: '#ffd60a',
+  error: '#ff453a',
+  info: '#64d2ff',
+} as const;
 
-const darkColors: ColorTokens = {
-  primary: '#3b82f6',
-  primaryHover: '#60a5fa',
-  primaryActive: '#2563eb',
-  secondary: '#94a3b8',
-  success: '#22c55e',
-  warning: '#eab308',
-  error: '#ef4444',
-  info: '#06b6d4',
-  background: '#0f172a',
-  surface: '#1e293b',
-  surfaceElevated: '#334155',
-  border: '#334155',
-  text: '#f8fafc',
-  textMuted: '#94a3b8',
-  textInverse: '#0f172a',
-};
-
-const baseTokens: Omit<TokenSet, 'colors'> = {
+const baseTokens: Omit<TokenSet, 'colors' | 'surfaces' | 'typography'> = {
   fontFamily: {
     sans: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
     mono: 'ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace',
@@ -103,27 +216,145 @@ const baseTokens: Omit<TokenSet, 'colors'> = {
     '12': '3rem',
   },
   radius: {
-    sm: '0.25rem',
-    md: '0.375rem',
-    lg: '0.5rem',
+    sm: '0.4375rem',
+    md: '0.5625rem',
+    lg: '0.6875rem',
+    xl: '0.875rem',
     full: '9999px',
   },
   shadow: {
-    sm: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
-    md: '0 4px 6px -1px rgb(0 0 0 / 0.1)',
-    lg: '0 10px 15px -3px rgb(0 0 0 / 0.1)',
+    none: 'none',
+    subtle: '0 1px 2px rgb(0 0 0 / 0.04)',
+    sm: '0 1px 2px rgb(0 0 0 / 0.04)',
+    md: '0 4px 12px rgb(0 0 0 / 0.06)',
+    lg: '0 12px 28px rgb(0 0 0 / 0.08)',
+    raised: '0 4px 12px rgb(0 0 0 / 0.06)',
+    floating: '0 12px 28px rgb(0 0 0 / 0.08)',
+    overlay: '0 24px 48px rgb(0 0 0 / 0.12)',
   },
   duration: {
-    fast: '100ms',
-    normal: '200ms',
-    slow: '300ms',
+    instant: '50ms',
+    fast: '120ms',
+    normal: '220ms',
+    slow: '320ms',
   },
   easing: {
     default: 'cubic-bezier(0.4, 0, 0.2, 1)',
     bounce: 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
     sharp: 'cubic-bezier(0.4, 0, 1, 1)',
+    spring: 'cubic-bezier(0.34, 1.2, 0.64, 1)',
   },
 };
+
+function mergeTokenOverrides(base: TokenSet, overrides?: TokenOverrides): TokenSet {
+  if (!overrides) return base;
+
+  const typography = { ...base.typography };
+  if (overrides.typography) {
+    for (const [role, spec] of Object.entries(overrides.typography)) {
+      if (spec) {
+        typography[role as TypographyRoleName] = {
+          ...typography[role as TypographyRoleName],
+          ...spec,
+        };
+      }
+    }
+  }
+
+  return {
+    ...base,
+    colors: { ...base.colors, ...overrides.colors },
+    surfaces: { ...base.surfaces, ...overrides.surfaces },
+    typography,
+    fontFamily: { ...base.fontFamily, ...overrides.fontFamily },
+    fontSize: { ...base.fontSize, ...overrides.fontSize },
+    fontWeight: { ...base.fontWeight, ...overrides.fontWeight },
+    lineHeight: { ...base.lineHeight, ...overrides.lineHeight },
+    space: { ...base.space, ...overrides.space },
+    radius: { ...base.radius, ...overrides.radius },
+    shadow: { ...base.shadow, ...overrides.shadow },
+    duration: { ...base.duration, ...overrides.duration },
+    easing: { ...base.easing, ...overrides.easing },
+  };
+}
+
+function defaultSurfaces(mode: ThemeMode, colors: ColorTokens): SurfaceTokens {
+  if (mode === 'dark') {
+    return {
+      base: '#2c2c2e',
+      secondary: '#1c1c1e',
+      elevated: '#3a3a3c',
+      floating: '#48484a',
+      overlay: 'rgb(0 0 0 / 0.55)',
+      glassBg: 'rgb(44 44 46 / 0.78)',
+      glassBorder: 'rgb(255 255 255 / 0.1)',
+      glassBlur: '24px',
+      glassSaturation: '180%',
+      glassShadow: '0 8px 32px rgb(0 0 0 / 0.35)',
+    };
+  }
+
+  return {
+    base: colors.surface,
+    secondary: colors.background,
+    elevated: colors.surfaceElevated,
+    floating: colors.surfaceElevated,
+    overlay: 'rgb(0 0 0 / 0.35)',
+    glassBg: 'rgb(255 255 255 / 0.72)',
+    glassBorder: 'rgb(0 0 0 / 0.06)',
+    glassBlur: '20px',
+    glassSaturation: '180%',
+    glassShadow: '0 8px 32px rgb(0 0 0 / 0.12)',
+  };
+}
+
+function createBaseTokenSet(mode: ThemeMode): TokenSet {
+  const refined = getRefinedTokenOverrides(mode);
+  const semantic = mode === 'dark' ? darkSemanticColors : semanticColors;
+
+  const colors: ColorTokens = {
+    primary: '#0071e3',
+    primaryHover: '#0077ed',
+    primaryActive: '#006edb',
+    secondary: '#6e6e73',
+    success: semantic.success,
+    warning: semantic.warning,
+    error: semantic.error,
+    info: semantic.info,
+    background: '#f5f5f7',
+    surface: '#ffffff',
+    surfaceElevated: '#ffffff',
+    border: 'rgb(0 0 0 / 0.08)',
+    text: '#1d1d1f',
+    textMuted: '#5c5c60',
+    textInverse: '#ffffff',
+    ...(mode === 'dark'
+      ? {
+          primary: '#0a84ff',
+          primaryHover: '#409cff',
+          primaryActive: '#0077ed',
+          secondary: '#98989d',
+          background: '#1c1c1e',
+          surface: '#2c2c2e',
+          surfaceElevated: '#3a3a3c',
+          border: 'rgb(255 255 255 / 0.12)',
+          text: '#f5f5f7',
+          textMuted: '#98989d',
+          textInverse: '#1c1c1e',
+        }
+      : {}),
+  };
+
+  return mergeTokenOverrides(
+    {
+      ...baseTokens,
+      colors,
+      surfaces: defaultSurfaces(mode, colors),
+      typography: refined.typography as TypographyRoles,
+    },
+    refined,
+  );
+}
 
 export const densityMultipliers: Record<Density, number> = {
   compact: 0.85,
@@ -132,15 +363,13 @@ export const densityMultipliers: Record<Density, number> = {
 };
 
 export function getTokens(mode: ThemeMode = 'light'): TokenSet {
-  return {
-    ...baseTokens,
-    colors: mode === 'dark' ? darkColors : lightColors,
-  };
+  return createBaseTokenSet(mode);
 }
 
 export function tokensToCSSVariables(
   tokens: TokenSet,
   density: Density = 'comfortable',
+  mode: ThemeMode = 'light',
 ): Record<string, string> {
   const multiplier = densityMultipliers[density];
   const vars: Record<string, string> = {};
@@ -148,6 +377,18 @@ export function tokensToCSSVariables(
   for (const [key, value] of Object.entries(tokens.colors)) {
     const cssKey = key.replace(/([A-Z])/g, '-$1').toLowerCase();
     vars[`--lr-color-${cssKey}`] = value;
+  }
+
+  for (const [key, value] of Object.entries(tokens.surfaces)) {
+    const cssKey = key.replace(/([A-Z])/g, '-$1').toLowerCase();
+    vars[`--lr-surface-${cssKey}`] = value;
+  }
+
+  for (const [role, spec] of Object.entries(tokens.typography)) {
+    vars[`--lr-type-${role}-size`] = spec.fontSize;
+    vars[`--lr-type-${role}-weight`] = spec.fontWeight;
+    vars[`--lr-type-${role}-line-height`] = spec.lineHeight;
+    vars[`--lr-type-${role}-letter-spacing`] = spec.letterSpacing;
   }
 
   vars['--lr-font-family-sans'] = tokens.fontFamily.sans;
@@ -187,6 +428,44 @@ export function tokensToCSSVariables(
     vars[`--lr-easing-${key}`] = value;
   }
 
+  Object.assign(vars, buttonTokensToCSSVariables(getButtonTokens(mode)));
+  Object.assign(vars, chartTokensToCSSVariables(getChartTokens(mode)));
+  Object.assign(vars, sharingTokensToCSSVariables(getSharingTokens(mode)));
+  Object.assign(vars, dragDropTokensToCSSVariables(getDragDropTokens(mode)));
+  Object.assign(vars, dataEntryTokensToCSSVariables(getDataEntryTokens(mode)));
+  Object.assign(vars, fileManagementTokensToCSSVariables(getFileManagementTokens(mode)));
+  Object.assign(vars, imageViewTokensToCSSVariables(getImageViewTokens(mode)));
+  Object.assign(vars, textViewTokensToCSSVariables(getTextViewTokens(mode)));
+  Object.assign(vars, webViewTokensToCSSVariables(getWebViewTokens(mode)));
+  Object.assign(vars, boxTokensToCSSVariables(getBoxTokens(mode)));
+  Object.assign(vars, collectionTokensToCSSVariables(getCollectionTokens(mode)));
+  Object.assign(vars, columnViewTokensToCSSVariables(getColumnViewTokens(mode)));
+  Object.assign(vars, splitViewTokensToCSSVariables(getSplitViewTokens(mode)));
+  Object.assign(vars, tabViewTokensToCSSVariables(getTabViewTokens(mode)));
+  Object.assign(vars, disclosureTokensToCSSVariables(getDisclosureTokens(mode)));
+  Object.assign(vars, labelTokensToCSSVariables(getLabelTokens(mode)));
+  Object.assign(vars, listTableTokensToCSSVariables(getListTableTokens(mode)));
+  Object.assign(vars, lockupTokensToCSSVariables(getLockupTokens(mode)));
+  Object.assign(vars, pickerTokensToCSSVariables(getPickerTokens(mode)));
+  Object.assign(vars, activityViewTokensToCSSVariables(getActivityViewTokens(mode)));
+  Object.assign(vars, contextMenuTokensToCSSVariables(getContextMenuTokens(mode)));
+  Object.assign(vars, dockMenuTokensToCSSVariables(getDockMenuTokens(mode)));
+  Object.assign(vars, editMenuTokensToCSSVariables(getEditMenuTokens(mode)));
+  Object.assign(vars, quickActionsTokensToCSSVariables(getQuickActionsTokens(mode)));
+  Object.assign(vars, menuTokensToCSSVariables(getMenuTokens(mode)));
+  Object.assign(vars, ornamentTokensToCSSVariables(getOrnamentTokens(mode)));
+  Object.assign(vars, popUpButtonTokensToCSSVariables(getPopUpButtonTokens(mode)));
+  Object.assign(vars, pullDownButtonTokensToCSSVariables(getPullDownButtonTokens(mode)));
+  Object.assign(vars, menuBarTokensToCSSVariables(getMenuBarTokens(mode)));
+  Object.assign(vars, toolbarTokensToCSSVariables(getToolbarTokens(mode)));
+  Object.assign(vars, pathControlTokensToCSSVariables(getPathControlTokens(mode)));
+  Object.assign(vars, searchFieldTokensToCSSVariables(getSearchFieldTokens(mode)));
+  Object.assign(vars, sidebarTokensToCSSVariables(getSidebarTokens(mode)));
+  Object.assign(vars, tabBarTokensToCSSVariables(getTabBarTokens(mode)));
+  Object.assign(vars, tokenFieldTokensToCSSVariables(getTokenFieldTokens(mode)));
+  Object.assign(vars, alertDialogTokensToCSSVariables(getAlertDialogTokens(mode)));
+  Object.assign(vars, motionTokensToCSSVariables(getMotionTokens(mode)));
+
   vars['--lr-density-multiplier'] = String(multiplier);
 
   return vars;
@@ -202,7 +481,7 @@ export function applyTokensToElement(
   if (brandOverrides) {
     tokens.colors = { ...tokens.colors, ...brandOverrides };
   }
-  const vars = tokensToCSSVariables(tokens, density);
+  const vars = tokensToCSSVariables(tokens, density, mode);
   for (const [key, value] of Object.entries(vars)) {
     element.style.setProperty(key, value);
   }

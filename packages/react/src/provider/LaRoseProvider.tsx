@@ -7,12 +7,14 @@ import {
 } from 'react';
 import type { Density, ThemeMode } from '@larose-ui/core';
 import { applyTokensToElement, type ColorTokens } from '@larose-ui/tokens';
+import { MotionProvider, type MotionConfig } from '../Motion/MotionContext';
 
 export interface LaRoseConfig {
   theme?: ThemeMode;
   density?: Density;
   tenantId?: string;
   brandColors?: Partial<ColorTokens>;
+  motion?: MotionConfig;
 }
 
 const LaRoseContext = createContext<LaRoseConfig>({
@@ -34,6 +36,7 @@ export function LaRoseProvider({
   density = 'comfortable',
   tenantId,
   brandColors,
+  motion,
 }: LaRoseProviderProps) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -47,10 +50,12 @@ export function LaRoseProvider({
   }, [theme, density, tenantId, brandColors]);
 
   return (
-    <LaRoseContext.Provider value={{ theme, density, tenantId, brandColors }}>
-      <div ref={ref} data-lr-provider style={{ minHeight: 'inherit' }}>
-        {children}
-      </div>
+    <LaRoseContext.Provider value={{ theme, density, tenantId, brandColors, motion }}>
+      <MotionProvider {...motion}>
+        <div ref={ref} data-lr-provider style={{ minHeight: 'inherit' }}>
+          {children}
+        </div>
+      </MotionProvider>
     </LaRoseContext.Provider>
   );
 }

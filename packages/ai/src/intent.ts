@@ -9,7 +9,7 @@ export interface AIIntent {
 }
 
 const MAX_PROMPT_LENGTH = 500;
-const UNSAFE_PATTERN = /<[^>]+>|javascript:|data:/i;
+const UNSAFE_PATTERN = /<[^>]+>|javascript:|data:|vbscript:|on\w+\s*=/i;
 
 export function sanitizePrompt(input: string, maxLength = MAX_PROMPT_LENGTH): string {
   const trimmed = input.trim().replace(/\s+/g, ' ');

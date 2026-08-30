@@ -1,4 +1,4 @@
-import { useEffect, type ReactNode } from 'react';
+import { useEffect, useMemo, type ReactNode } from 'react';
 import type {
   Density,
   Environment,
@@ -10,6 +10,8 @@ import type {
 } from '@larose-ui/core';
 import { LAROSE_VERSION } from '@larose-ui/core';
 import type { ColorTokens } from '@larose-ui/tokens';
+import { MotionProvider, type MotionConfig } from '@larose-ui/react';
+import { getThemePreset, type ThemePresetId } from '@larose-ui/themes';
 import { PermissionProvider } from '@larose-ui/permissions';
 import {
   ObservabilityProvider,
@@ -24,7 +26,7 @@ import { I18nProvider } from './i18n/I18nProvider';
 import { NetworkProvider } from './network/NetworkProvider';
 import { OfflineProvider } from './offline/OfflineProvider';
 import { ResponsiveProvider } from './responsive/ResponsiveProvider';
-import { ThemeProvider } from './theme/ThemeProvider';
+import { ThemeProvider, type Appearance } from './theme/ThemeProvider';
 import { useNetwork } from './network/NetworkProvider';
 import { useOffline } from './offline/OfflineProvider';
 import { RuntimeContextProvider } from './runtime/RuntimeContextProvider';
@@ -33,11 +35,18 @@ import { RuntimeObservabilityBridge } from './observability/RuntimeObservability
 import type { RuntimeEvent } from './runtime/RuntimeContextProvider';
 import { resolveTenantConfig } from './tenant/resolveTenant';
 import { OptionalToastProvider } from './toast/OptionalToastProvider';
+import {
+  shouldSyncOfflineQueue,
+} from './runtime/sessionSecurity';
 
 export interface LaRoseProviderProps {
   children: ReactNode;
   theme?: ThemeMode;
+  /** Resolves light/dark from system when set to `system`. Defaults to Apple-inspired tokens. */
+  appearance?: Appearance;
   density?: Density;
+  /** Brand color preset. `refined` (Apple-inspired) is the default token set. */
+  themePreset?: 'refined' | ThemePresetId;
   tenantId?: string;
   tenant?: TenantContext;
   brandColors?: Partial<ColorTokens>;
@@ -65,13 +74,22 @@ export interface LaRoseProviderProps {
   onRuntimeEvent?: (event: RuntimeEvent) => void;
   enableToasts?: boolean;
   toastPlacement?: 'bottom-right' | 'bottom-left' | 'top-right' | 'top-left';
+  /** Global motion configuration for laRose UI components. */
+  motion?: MotionConfig;
 }
 
-function AutoSync({ children }: { children: ReactNode }) {
+function AutoSync({
+  children,
+  session,
+}: {
+  children: ReactNode;
+  session?: SessionState;
+}) {
   const network = useNetwork();
   const offline = useOffline();
 
   useEffect(() => {
+    if (!shouldSyncOfflineQueue(session)) return;
     if (network.online && offline.queue.length > 0) {
       void offline.sync(async (request) => {
         const response = await fetch(request.url, {
@@ -87,18 +105,20 @@ function AutoSync({ children }: { children: ReactNode }) {
         }
       });
     }
-  }, [network.online, offline.queue.length, offline]);
+  }, [network.online, offline.queue.length, offline.sync, session]);
 
   return <>{children}</>;
 }
 
 export function LaRoseProvider({
   children,
-  theme = 'light',
+  theme,
+  appearance = 'system',
+  themePreset = 'refined',
   density = 'comfortable',
   tenantId,
   tenant,
-  brandColors,
+  brandColors: brandColorsProp,
   locale = 'en',
   timezone,
   environment = 'development',
@@ -117,10 +137,20 @@ export function LaRoseProvider({
   onRuntimeEvent,
   enableToasts = true,
   toastPlacement = 'bottom-right',
+  motion,
 }: LaRoseProviderProps) {
   const adapter =
     observabilityAdapter ??
     (observabilityDebug ? createConsoleAdapter() : createNoopAdapter());
+
+  const presetBrandColors =
+    themePreset !== 'refined' ? getThemePreset(themePreset).colors : undefined;
+
+  const brandColors = {
+    ...presetBrandColors,
+    ...brandColorsProp,
+    ...(tenant?.brandColors as Partial<ColorTokens> | undefined),
+  };
 
   const resolved = resolveTenantConfig({
     tenant,
@@ -135,6 +165,11 @@ export function LaRoseProvider({
   });
 
   const resolvedTenantId = resolved.tenantId;
+  const resolvedUserId = userId ?? user?.id;
+  const offlineScopeId = useMemo(() => {
+    const parts = [resolvedTenantId, resolvedUserId].filter(Boolean);
+    return parts.length > 0 ? parts.join(':') : undefined;
+  }, [resolvedTenantId, resolvedUserId]);
   const resolvedVersion = {
     frontend: version?.frontend ?? LAROSE_VERSION,
     api: version?.api,
@@ -155,6 +190,7 @@ export function LaRoseProvider({
     >
       <ThemeProvider
         theme={resolved.theme}
+        appearance={appearance}
         density={resolved.density}
         tenantId={resolvedTenantId}
         brandColors={resolved.brandColors}
@@ -175,8 +211,8 @@ export function LaRoseProvider({
                 <EnvironmentProvider environment={environment}>
                   <ResponsiveProvider>
                     <NetworkProvider>
-                      <OfflineProvider>
-                        <AutoSync>
+                      <OfflineProvider scopeId={offlineScopeId}>
+                        <AutoSync session={session}>
                           <RuntimeBridge
                             userId={userId}
                             user={user}
@@ -208,11 +244,15 @@ export function LaRoseProvider({
     </RuntimeContextProvider>
   );
 
-  if (!enableToasts) return tree;
+  if (!enableToasts) {
+    return <MotionProvider {...motion}>{tree}</MotionProvider>;
+  }
 
   return (
-    <OptionalToastProvider enabled placement={toastPlacement}>
-      {tree}
-    </OptionalToastProvider>
+    <MotionProvider {...motion}>
+      <OptionalToastProvider enabled placement={toastPlacement}>
+        {tree}
+      </OptionalToastProvider>
+    </MotionProvider>
   );
 }

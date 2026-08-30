@@ -19,6 +19,12 @@ describe('hasPermission', () => {
   it('grants namespace wildcard', () => {
     expect(hasPermission(['employees.*'], 'employees.delete').allowed).toBe(true);
   });
+
+  it('denies empty or whitespace-only actions', () => {
+    expect(hasPermission(['employees.read'], '').allowed).toBe(false);
+    expect(hasPermission(['employees.read'], '   ').allowed).toBe(false);
+    expect(hasPermission(['*'], '').allowed).toBe(false);
+  });
 });
 
 describe('evaluateAbac', () => {

@@ -1,0 +1,74 @@
+.field {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem;
+  min-height: var(--lr-token-field-min-height, 2rem);
+  padding: var(--lr-token-field-padding, 0.25rem 0.375rem);
+  border: 1px solid var(--lr-token-field-border, rgb(0 0 0 / 0.12));
+  border-radius: var(--lr-token-field-radius, 0.4375rem);
+  background: var(--lr-token-field-bg, #fff);
+  font-size: var(--lr-token-field-font-size, 0.8125rem);
+}
+
+.field:focus-within {
+  outline: 2px solid var(--lr-color-primary, #0071e3);
+  outline-offset: 1px;
+}
+
+.token {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.125rem 0.375rem;
+  border-radius: var(--lr-token-field-token-radius, 0.3125rem);
+  background: var(--lr-token-field-token-bg, rgb(0 113 227 / 0.12));
+  color: var(--lr-token-field-token-fg, #1d1d1f);
+  border: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+.tokenRemove {
+  opacity: 0.55;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.input {
+  flex: 1;
+  min-width: 6rem;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.suggestions {
+  margin: 0.25rem 0 0;
+  padding: 0.25rem 0;
+  list-style: none;
+  border-radius: 0.375rem;
+  background: var(--lr-color-surface, #fff);
+  box-shadow: var(--lr-shadow-md, 0 4px 12px rgb(0 0 0 / 0.06));
+}
+
+.suggestion {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.5rem;
+  cursor: pointer;
+  font-size: 0.8125rem;
+}
+
+.suggestion:hover {
+  background: rgb(118 118 128 / 0.08);
+}

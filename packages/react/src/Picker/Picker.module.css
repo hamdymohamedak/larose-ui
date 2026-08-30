@@ -1,0 +1,366 @@
+.picker {
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--lr-space-2);
+  color: var(--lr-color-text);
+  font-family: var(--lr-font-family-sans);
+}
+
+.compactField {
+  display: block;
+  width: min(100%, var(--lr-picker-compact-min-width));
+}
+
+.compactField > * {
+  display: block;
+  width: 100%;
+}
+
+.compactTrigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--lr-space-2);
+  width: 100%;
+  min-width: 0;
+  padding: var(--lr-space-2) var(--lr-space-3);
+  border: 1px solid var(--lr-color-border);
+  border-radius: var(--lr-radius-md);
+  background: var(--lr-color-surface);
+  color: var(--lr-color-primary);
+  font-size: var(--lr-font-size-md);
+  font-weight: var(--lr-font-weight-medium);
+  cursor: pointer;
+  text-align: start;
+}
+
+.compactTrigger:hover:not(:disabled) {
+  background: var(--lr-list-row-hover);
+}
+
+.compactTrigger:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.compactValue {
+  flex: 1;
+  min-width: 0;
+}
+
+.compactChevron {
+  color: var(--lr-color-text-muted);
+  font-size: 0.75rem;
+}
+
+.wheels {
+  display: inline-flex;
+  align-items: stretch;
+  border-radius: var(--lr-radius-lg);
+  background: var(--lr-color-surface-elevated);
+  border: 1px solid var(--lr-color-border);
+  box-shadow: var(--lr-shadow-md);
+  overflow: hidden;
+  position: relative;
+}
+
+.wheelsCompact {
+  display: flex;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.wheelMeasureProbe {
+  position: absolute;
+  visibility: hidden;
+  pointer-events: none;
+  height: 0;
+  overflow: hidden;
+  inset-inline-start: 0;
+  top: 0;
+}
+
+.wheelsInline {
+  border: none;
+  box-shadow: none;
+  background: transparent;
+}
+
+.wheelColumn {
+  position: relative;
+  min-width: var(--lr-picker-wheel-width);
+  flex: 1;
+}
+
+.wheelColumn + .wheelColumn {
+  border-inline-start: 1px solid var(--lr-color-border);
+}
+
+.wheelLabel {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.wheelViewport {
+  position: relative;
+  height: var(--lr-picker-wheel-height);
+  overflow: hidden;
+  cursor: grab;
+}
+
+.wheelViewport:active {
+  cursor: grabbing;
+}
+
+.wheelList {
+  position: relative;
+  z-index: 1;
+  will-change: transform;
+}
+
+.wheelListPadding {
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.wheelItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--lr-picker-row-height);
+  box-sizing: border-box;
+  overflow: hidden;
+  font-size: var(--lr-font-size-lg);
+  color: var(--lr-color-text-muted);
+  cursor: pointer;
+  user-select: none;
+}
+
+.wheelItemLabel {
+  display: block;
+  max-width: 100%;
+  padding-inline: var(--lr-space-1);
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transform-origin: center center;
+  transition: color 120ms var(--lr-motion-easing-standard);
+  will-change: transform;
+}
+
+.wheelItem[data-centered='true'] .wheelItemLabel {
+  color: var(--lr-color-text);
+  font-weight: var(--lr-font-weight-semibold);
+}
+
+.wheelItem[data-disabled='true'] {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.wheelSelection {
+  position: absolute;
+  left: var(--lr-space-2);
+  right: var(--lr-space-2);
+  top: 50%;
+  height: var(--lr-picker-row-height);
+  transform: translateY(-50%);
+  border-radius: var(--lr-picker-selection-radius);
+  background: var(--lr-picker-selection-bg);
+  pointer-events: none;
+  z-index: 0;
+  box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.04);
+}
+
+.wheelFadeTop,
+.wheelFadeBottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: var(--lr-picker-fade-height);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.wheelFadeTop {
+  top: 0;
+  background: linear-gradient(
+    to bottom,
+    var(--lr-color-surface-elevated) 0%,
+    color-mix(in srgb, var(--lr-color-surface-elevated) 70%, transparent) 55%,
+    transparent 100%
+  );
+}
+
+.wheelFadeBottom {
+  bottom: 0;
+  background: linear-gradient(
+    to top,
+    var(--lr-color-surface-elevated) 0%,
+    color-mix(in srgb, var(--lr-color-surface-elevated) 70%, transparent) 55%,
+    transparent 100%
+  );
+}
+
+.wheelsInline .wheelFadeTop {
+  background: linear-gradient(
+    to bottom,
+    var(--lr-color-background) 0%,
+    color-mix(in srgb, var(--lr-color-background) 70%, transparent) 55%,
+    transparent 100%
+  );
+}
+
+.wheelsInline .wheelFadeBottom {
+  background: linear-gradient(
+    to top,
+    var(--lr-color-background) 0%,
+    color-mix(in srgb, var(--lr-color-background) 70%, transparent) 55%,
+    transparent 100%
+  );
+}
+
+.popoverPanelWheels {
+  padding: 0;
+  min-width: 0;
+}
+
+.popoverPanelCalendar {
+  padding: var(--lr-space-3);
+  min-width: min(100vw - 2rem, 20rem);
+}
+
+.popoverPanelCountdown {
+  padding: 0 0 var(--lr-space-3);
+  min-width: 0;
+}
+
+.popoverPanelCountdown .wheelsCompact {
+  margin-bottom: 0;
+}
+
+.compactPopover {
+  padding: 0;
+  min-width: auto;
+  max-width: min(100vw - 2rem, 24rem);
+  overflow: hidden;
+}
+
+.wheelsCompact .wheelColumn {
+  min-width: 0;
+}
+
+.wheelsCompact .wheelColumn:only-child {
+  min-width: var(--lr-picker-compact-min-width);
+}
+
+.popoverPanel {
+  padding: var(--lr-space-3);
+  min-width: min(100vw - 2rem, 20rem);
+}
+
+.calendar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lr-space-2);
+}
+
+.calendarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--lr-space-2);
+}
+
+.calendarTitle {
+  font-size: var(--lr-font-size-md);
+  font-weight: var(--lr-font-weight-semibold);
+}
+
+.calendarNav {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: var(--lr-color-primary);
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--lr-radius-sm);
+  cursor: pointer;
+}
+
+.calendarNav:hover {
+  background: var(--lr-list-row-hover);
+}
+
+.weekdays,
+.week {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.125rem;
+}
+
+.weekday {
+  text-align: center;
+  font-size: var(--lr-font-size-xs);
+  color: var(--lr-color-text-muted);
+  padding-block: var(--lr-space-1);
+}
+
+.dayButton {
+  appearance: none;
+  border: none;
+  background: transparent;
+  width: var(--lr-picker-calendar-cell-size);
+  height: var(--lr-picker-calendar-cell-size);
+  margin: 0 auto;
+  border-radius: 999px;
+  font-size: var(--lr-font-size-sm);
+  color: var(--lr-color-text);
+  cursor: pointer;
+}
+
+.dayButton:hover {
+  background: var(--lr-list-row-hover);
+}
+
+.dayButton[data-selected='true'] {
+  background: var(--lr-color-primary);
+  color: var(--lr-color-text-inverse);
+}
+
+.dayButton[data-outside='true'] {
+  visibility: hidden;
+}
+
+.datetimePanel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lr-space-3);
+}
+
+.inlineLayout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lr-space-3);
+  width: min(100%, 22rem);
+}
+
+.popoverPanelCountdown .countdownHint {
+  padding-inline: var(--lr-space-3);
+}
+
+.countdownHint {
+  font-size: var(--lr-font-size-xs);
+  color: var(--lr-color-text-muted);
+  margin: 0;
+}

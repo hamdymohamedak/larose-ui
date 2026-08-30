@@ -40,7 +40,6 @@ function PlatformDemo() {
       environment="staging"
       permissions={['employees.read', 'employees.write', 'employees.delete', 'payroll.write']}
       tenantId="acme-corp"
-      observabilityDebug
       features={{ 'smart-table': true }}
     >
       <VersionProvider frontend="1.0.0" backend="2.0.0" minBackend="2.0.0" showBanner={false}>
@@ -128,7 +127,7 @@ function PlatformDemo() {
 const meta: Meta<typeof PlatformDemo> = {
   title: 'Platform/Full Demo',
   component: PlatformDemo,
-  parameters: { layout: 'padded' },
+  parameters: { layout: 'padded', laRose: { standalone: true } },
 };
 
 export default meta;

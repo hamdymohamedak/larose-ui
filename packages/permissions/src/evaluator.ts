@@ -10,12 +10,22 @@ export function hasPermission(
   action: string,
   resource?: string,
 ): Permission {
-  const fullAction = resource ? `${resource}.${action}` : action;
-  const normalized = action.includes('.') ? action : fullAction;
+  const trimmedAction = action.trim();
+  if (!trimmedAction) {
+    return {
+      action: trimmedAction,
+      resource,
+      allowed: false,
+      reason: 'Invalid permission: action must be non-empty',
+    };
+  }
+
+  const fullAction = resource ? `${resource}.${trimmedAction}` : trimmedAction;
+  const normalized = trimmedAction.includes('.') ? trimmedAction : fullAction;
 
   const allowed =
     granted.includes(normalized) ||
-    granted.includes(action) ||
+    granted.includes(trimmedAction) ||
     granted.includes('*') ||
     granted.some((p) => p.endsWith('.*') && normalized.startsWith(p.slice(0, -2)));
 

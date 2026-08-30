@@ -6,6 +6,7 @@ import {
   useState,
   type ReactNode,
 } from 'react';
+import { Presence } from '../Motion/Presence';
 import styles from './Popover.module.css';
 
 export type PopoverSide = 'top' | 'bottom' | 'left' | 'right';
@@ -17,6 +18,8 @@ export interface PopoverProps {
   defaultOpen?: boolean;
   onOpenChange?: (open: boolean) => void;
   side?: PopoverSide;
+  /** Extra class names for the floating panel element. */
+  panelClassName?: string;
   'aria-label'?: string;
 }
 
@@ -27,6 +30,7 @@ export function Popover({
   defaultOpen = false,
   onOpenChange,
   side = 'bottom',
+  panelClassName,
   'aria-label': ariaLabel = 'Popover',
 }: PopoverProps) {
   const [internalOpen, setInternalOpen] = useState(defaultOpen);
@@ -73,17 +77,17 @@ export function Popover({
       >
         {trigger}
       </span>
-      {isOpen && (
+      <Presence present={isOpen} variant="popover" placement={side}>
         <div
           id={popoverId}
           role="dialog"
           aria-label={ariaLabel}
-          className={styles.popover}
+          className={[styles.popover, panelClassName].filter(Boolean).join(' ')}
           data-side={side}
         >
           {content}
         </div>
-      )}
+      </Presence>
     </span>
   );
 }

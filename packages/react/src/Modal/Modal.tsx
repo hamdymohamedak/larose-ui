@@ -5,6 +5,8 @@ import {
   type ReactNode,
 } from 'react';
 import { createPortal } from 'react-dom';
+import { usePresence } from '../Motion/usePresence';
+import motionStyles from '../Motion/motion.module.css';
 import styles from './Modal.module.css';
 
 export interface ModalProps {
@@ -26,6 +28,7 @@ export function Modal({
 }: ModalProps) {
   const dialogRef = useRef<HTMLDivElement>(null);
   const previousFocus = useRef<HTMLElement | null>(null);
+  const { phase, shouldRender, onAnimationEnd } = usePresence({ present: open });
 
   useEffect(() => {
     if (!open) return;
@@ -50,25 +53,47 @@ export function Modal({
     };
   }, [open, onClose]);
 
-  if (!open) return null;
+  if (!shouldRender) return null;
 
   const handleOverlayClick = (e: MouseEvent) => {
     if (closeOnOverlay && e.target === e.currentTarget) onClose();
   };
 
+  const backdropClass = [
+    styles.overlay,
+    phase === 'entering' || phase === 'exiting'
+      ? motionStyles[`backdrop-${phase}` as keyof typeof motionStyles]
+      : undefined,
+  ]
+    .filter(Boolean)
+    .join(' ');
+
+  const modalClass = [
+    styles.modal,
+    phase === 'entering' || phase === 'exiting'
+      ? motionStyles[`modal-${phase}` as keyof typeof motionStyles]
+      : undefined,
+  ]
+    .filter(Boolean)
+    .join(' ');
+
   return createPortal(
     <div
-      className={styles.overlay}
+      className={backdropClass}
       onClick={handleOverlayClick}
       role="presentation"
+      data-presence={phase}
+      onAnimationEnd={onAnimationEnd}
     >
       <div
         ref={dialogRef}
-        className={styles.modal}
+        className={modalClass}
         role="dialog"
         aria-modal="true"
         aria-labelledby={title ? 'lr-modal-title' : undefined}
         aria-describedby={description ? 'lr-modal-desc' : undefined}
+        data-presence={phase}
+        onAnimationEnd={onAnimationEnd}
       >
         {title && (
           <h2 id="lr-modal-title" className={styles.title}>

@@ -28,13 +28,47 @@ export type QueueListener = (queue: QueuedRequest[]) => void;
 export type RequestExecutor = (request: QueuedRequest) => Promise<void>;
 
 export interface OfflineQueueOptions {
+  /** @deprecated Prefer `scopeId` — custom keys bypass tenant/user isolation. */
   storageKey?: string;
+  /** Scopes persisted queue to a user/tenant (e.g. `tenant-1:user-42`). */
+  scopeId?: string;
   maxRetries?: number;
   persist?: boolean;
 }
 
+const DEFAULT_STORAGE_BASE = 'larose-offline-queue';
+
+export function buildOfflineStorageKey(scopeId?: string, storageKey?: string): string {
+  if (storageKey) return storageKey;
+  if (scopeId) return `${DEFAULT_STORAGE_BASE}:${scopeId}`;
+  return DEFAULT_STORAGE_BASE;
+}
+
 function generateId(): string {
   return `lr-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
+}
+
+function isValidQueuedRequest(value: unknown): value is QueuedRequest {
+  if (!value || typeof value !== 'object') return false;
+  const entry = value as QueuedRequest;
+  return (
+    typeof entry.id === 'string' &&
+    typeof entry.url === 'string' &&
+    typeof entry.method === 'string' &&
+    typeof entry.createdAt === 'number' &&
+    typeof entry.retries === 'number' &&
+    typeof entry.status === 'string'
+  );
+}
+
+function parseStoredQueue(raw: string): QueuedRequest[] {
+  try {
+    const parsed: unknown = JSON.parse(raw);
+    if (!Array.isArray(parsed)) return [];
+    return parsed.filter(isValidQueuedRequest);
+  } catch {
+    return [];
+  }
 }
 
 export class OfflineQueue {
@@ -45,7 +79,7 @@ export class OfflineQueue {
   private readonly persist: boolean;
 
   constructor(options: OfflineQueueOptions = {}) {
-    this.storageKey = options.storageKey ?? 'larose-offline-queue';
+    this.storageKey = buildOfflineStorageKey(options.scopeId, options.storageKey);
     this.maxRetries = options.maxRetries ?? 3;
     this.persist = options.persist ?? true;
     this.load();
@@ -160,7 +194,7 @@ export class OfflineQueue {
     try {
       const raw = localStorage.getItem(this.storageKey);
       if (raw) {
-        this.queue = JSON.parse(raw) as QueuedRequest[];
+        this.queue = parseStoredQueue(raw);
       }
     } catch {
       this.queue = [];

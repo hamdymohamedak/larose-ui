@@ -10,16 +10,16 @@ const packagesDir = join(process.cwd(), 'packages');
 
 /** @type {Record<string, { file: string; budget: number }>} */
 const BUDGETS = {
-  core: { file: 'dist/index.js', budget: 10 },
-  tokens: { file: 'dist/index.js', budget: 5 },
+  core: { file: 'dist/index.js', budget: 15 },
+  tokens: { file: 'dist/index.js', budget: 65 },
   network: { file: 'dist/index.js', budget: 6 },
   offline: { file: 'dist/index.js', budget: 5 },
   permissions: { file: 'dist/index.js', budget: 8 },
   data: { file: 'dist/index.js', budget: 15 },
   forms: { file: 'dist/index.js', budget: 10 },
-  react: { file: 'dist/index.js', budget: 70 },
-  runtime: { file: 'dist/index.js', budget: 36 },
-  observability: { file: 'dist/index.js', budget: 26 },
+  react: { file: 'dist/index.js', budget: 460 },
+  runtime: { file: 'dist/index.js', budget: 40 },
+  observability: { file: 'dist/index.js', budget: 28 },
   contracts: { file: 'dist/index.js', budget: 5 },
   migration: { file: 'dist/index.js', budget: 14 },
   testing: { file: 'dist/index.js', budget: 10 },

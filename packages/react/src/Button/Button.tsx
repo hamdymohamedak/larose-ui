@@ -1,17 +1,35 @@
 import { forwardRef, type ButtonHTMLAttributes, type ReactNode } from 'react';
-import type { Size, UIState, Variant } from '@larose-ui/core';
+import type { ButtonRole, Size, UIState, Variant } from '@larose-ui/core';
 import { resolveUIState } from '@larose-ui/core';
 import { Spinner } from '../Spinner/Spinner';
+import { Tooltip } from '../Tooltip/Tooltip';
+import type { ButtonShape } from './types';
+import { formatButtonLabel, hasTextContent, resolveButtonShape } from './utils';
 import styles from './Button.module.css';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: Variant;
   size?: Size;
+  /** Apple HIG semantic role — affects appearance in alerts and sheets. */
+  buttonRole?: ButtonRole;
+  /** Capsule (default), circle (icon-only), or roundedRect (vertical stacks). */
+  shape?: ButtonShape;
   state?: UIState;
   loading?: boolean;
+  /** Alternative label shown while loading (Apple HIG activity indicator pattern). */
+  loadingLabel?: string;
   error?: string | null;
   leftIcon?: ReactNode;
   rightIcon?: ReactNode;
+  /** macOS: append trailing ellipsis when the button opens another view. */
+  opensAnotherView?: boolean;
+  /** macOS flexible-height push button for multi-line content. */
+  flexible?: boolean;
+  iconOnly?: boolean;
+  /** watchOS-style full-width primary actions. */
+  fullWidth?: boolean;
+  /** macOS / visionOS hover tooltip. */
+  tooltip?: string;
 }
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
@@ -19,12 +37,20 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     {
       variant = 'primary',
       size = 'md',
+      buttonRole = 'normal',
+      shape,
       state,
       loading = false,
+      loadingLabel,
       error = null,
       disabled,
       leftIcon,
       rightIcon,
+      opensAnotherView = false,
+      flexible = false,
+      iconOnly = false,
+      fullWidth = false,
+      tooltip,
       children,
       className,
       ...props
@@ -34,28 +60,57 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const uiState = resolveUIState({ state, loading, error, disabled });
     const isDisabled =
       disabled || uiState === 'loading' || uiState === 'disabled';
+    const isLoading = uiState === 'loading';
+    const hasText = hasTextContent(children);
+    const hasIcon = Boolean(leftIcon || rightIcon);
+    const resolvedShape = resolveButtonShape({
+      shape,
+      iconOnly,
+      hasText: hasText && !isLoading,
+      hasIcon,
+    });
 
-    return (
+    let label: ReactNode = children;
+    if (isLoading && loadingLabel) {
+      label = loadingLabel;
+    } else if (typeof children === 'string') {
+      label = formatButtonLabel(children, opensAnotherView);
+    }
+
+    const resolvedVariant =
+      buttonRole === 'primary' && variant !== 'destructive' ? 'primary' : variant;
+
+    const button = (
       <button
         ref={ref}
         type="button"
         className={[styles.button, className].filter(Boolean).join(' ')}
-        data-variant={variant}
+        data-variant={resolvedVariant}
         data-size={size}
+        data-shape={resolvedShape}
+        data-role={buttonRole !== 'normal' ? buttonRole : undefined}
         data-state={uiState}
+        data-flexible={flexible ? 'true' : undefined}
+        data-full-width={fullWidth ? 'true' : undefined}
         disabled={isDisabled}
-        aria-busy={uiState === 'loading'}
+        aria-busy={isLoading}
         aria-disabled={isDisabled}
         {...props}
       >
-        {uiState === 'loading' && (
+        {isLoading && (
           <span className={styles.spinner} aria-hidden="true">
             <Spinner size="sm" />
           </span>
         )}
-        {leftIcon && <span className={styles.icon}>{leftIcon}</span>}
-        <span className={styles.content}>{children}</span>
-        {rightIcon && <span className={styles.icon}>{rightIcon}</span>}
+        {!isLoading && leftIcon && (
+          <span className={styles.icon}>{leftIcon}</span>
+        )}
+        {(hasText || isLoading) && (
+          <span className={styles.content}>{label}</span>
+        )}
+        {!isLoading && rightIcon && (
+          <span className={styles.icon}>{rightIcon}</span>
+        )}
         {uiState === 'error' && error && (
           <span className={styles.errorMessage} role="alert">
             {error}
@@ -63,6 +118,12 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         )}
       </button>
     );
+
+    if (tooltip && !isDisabled) {
+      return <Tooltip content={tooltip}>{button}</Tooltip>;
+    }
+
+    return button;
   },
 );
 

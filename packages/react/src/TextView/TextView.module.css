@@ -1,0 +1,61 @@
+.view {
+  width: 100%;
+  min-height: var(--lr-text-view-min-height);
+  padding: var(--lr-text-view-padding);
+  border: 1px solid var(--lr-text-view-border);
+  border-radius: var(--lr-text-view-radius);
+  background: var(--lr-text-view-bg);
+  color: var(--lr-color-text);
+  font-family: var(--lr-font-family-sans);
+  font-size: var(--lr-type-body-size);
+  font-weight: var(--lr-type-body-weight);
+  line-height: var(--lr-type-body-line-height);
+  letter-spacing: var(--lr-type-body-letter-spacing);
+}
+
+.display {
+  overflow: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  text-align: start;
+}
+
+.display[data-selectable='true'] {
+  user-select: text;
+}
+
+.display[data-selectable='false'] {
+  user-select: none;
+}
+
+.display ::selection {
+  background: var(--lr-text-view-selection-bg);
+}
+
+.editable {
+  resize: vertical;
+  overflow: auto;
+  width: 100%;
+  min-height: var(--lr-text-view-min-height);
+  border: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+}
+
+.editable:focus {
+  outline: none;
+}
+
+.view:focus-within {
+  border-color: var(--lr-field-border-focus);
+  box-shadow: var(--lr-text-view-focus-ring);
+  background: var(--lr-color-surface);
+}
+
+.scrollable {
+  max-height: var(--lr-text-view-max-height, 24rem);
+  overflow: auto;
+}

@@ -5,6 +5,8 @@ import {
   type ReactNode,
 } from 'react';
 import { createPortal } from 'react-dom';
+import { usePresence } from '../Motion/usePresence';
+import motionStyles from '../Motion/motion.module.css';
 import styles from './Drawer.module.css';
 
 export type DrawerSide = 'left' | 'right';
@@ -30,6 +32,7 @@ export function Drawer({
 }: DrawerProps) {
   const panelRef = useRef<HTMLDivElement>(null);
   const previousFocus = useRef<HTMLElement | null>(null);
+  const { phase, shouldRender, onAnimationEnd } = usePresence({ present: open });
 
   useEffect(() => {
     if (!open) return;
@@ -51,23 +54,50 @@ export function Drawer({
     };
   }, [open, onClose]);
 
-  if (!open) return null;
+  if (!shouldRender) return null;
 
   const handleOverlayClick = (e: MouseEvent) => {
     if (closeOnOverlay && e.target === e.currentTarget) onClose();
   };
 
+  const backdropClass = [
+    styles.overlay,
+    phase === 'entering' || phase === 'exiting'
+      ? motionStyles[`backdrop-${phase}` as keyof typeof motionStyles]
+      : undefined,
+  ]
+    .filter(Boolean)
+    .join(' ');
+
+  const drawerVariant = side === 'right' ? 'drawer-right' : 'drawer-left';
+  const panelClass = [
+    styles.panel,
+    phase === 'entering' || phase === 'exiting'
+      ? motionStyles[`${drawerVariant}-${phase}` as keyof typeof motionStyles]
+      : undefined,
+  ]
+    .filter(Boolean)
+    .join(' ');
+
   return createPortal(
-    <div className={styles.overlay} onClick={handleOverlayClick} role="presentation">
+    <div
+      className={backdropClass}
+      onClick={handleOverlayClick}
+      role="presentation"
+      data-presence={phase}
+      onAnimationEnd={onAnimationEnd}
+    >
       <aside
         ref={panelRef}
-        className={styles.panel}
+        className={panelClass}
         data-side={side}
+        data-presence={phase}
         role="dialog"
         aria-modal="true"
         aria-labelledby={title ? 'lr-drawer-title' : undefined}
         aria-describedby={description ? 'lr-drawer-desc' : undefined}
         tabIndex={-1}
+        onAnimationEnd={onAnimationEnd}
       >
         {title && (
           <h2 id="lr-drawer-title" className={styles.title}>

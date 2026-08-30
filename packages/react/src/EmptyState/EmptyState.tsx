@@ -26,9 +26,11 @@ export function EmptyState({
       <h3 className={styles.title}>{title}</h3>
       {description && <p className={styles.description}>{description}</p>}
       {actionLabel && onAction && (
-        <Button variant="primary" onClick={onAction}>
-          {actionLabel}
-        </Button>
+        <div className={styles.action}>
+          <Button variant="primary" onClick={onAction}>
+            {actionLabel}
+          </Button>
+        </div>
       )}
     </div>
   );

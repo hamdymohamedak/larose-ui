@@ -7,6 +7,7 @@ import {
   useState,
   type ReactNode,
 } from 'react';
+import { Collapse } from '../Motion/Collapse';
 import styles from './Accordion.module.css';
 
 interface AccordionContextValue {
@@ -161,15 +162,16 @@ export function AccordionContent({ children }: AccordionContentProps) {
   const panelId = `${baseId}-panel-${itemValue}`;
 
   return (
-    <div
-      id={panelId}
-      role="region"
-      className={styles.content}
-      aria-labelledby={triggerId}
-      data-state={isOpen ? 'open' : 'closed'}
-      hidden={!isOpen}
-    >
-      {children}
-    </div>
+    <Collapse open={isOpen}>
+      <div
+        id={panelId}
+        role="region"
+        className={styles.content}
+        aria-labelledby={triggerId}
+        data-state={isOpen ? 'open' : 'closed'}
+      >
+        {children}
+      </div>
+    </Collapse>
   );
 }

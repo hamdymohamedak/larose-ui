@@ -28,7 +28,7 @@ export interface ResolvedTenantConfig {
   features: Record<string, FeatureState>;
 }
 
-const PRESET_IDS = new Set(['default', 'ocean', 'forest', 'sunset']);
+const PRESET_IDS = new Set(['default', 'refined', 'ocean', 'forest', 'sunset']);
 
 function isThemePresetId(value: string): value is ThemePresetId {
   return PRESET_IDS.has(value);

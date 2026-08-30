@@ -1,4 +1,5 @@
 import { useId, useState, type ReactNode } from 'react';
+import { Presence } from '../Motion/Presence';
 import styles from './Tooltip.module.css';
 
 export type TooltipSide = 'top' | 'bottom' | 'left' | 'right';
@@ -22,11 +23,11 @@ export function Tooltip({ content, children, side = 'top' }: TooltipProps) {
       onBlurCapture={() => setVisible(false)}
     >
       <span aria-describedby={visible ? tooltipId : undefined}>{children}</span>
-      {visible && (
+      <Presence present={visible} variant="popover" placement={side}>
         <span id={tooltipId} role="tooltip" className={styles.tooltip} data-side={side}>
           {content}
         </span>
-      )}
+      </Presence>
     </span>
   );
 }

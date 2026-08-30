@@ -28,6 +28,7 @@ function SchemaDemo() {
 const meta: Meta<typeof SchemaDemo> = {
   title: 'Enterprise/Schema',
   component: SchemaDemo,
+  parameters: { laRose: { standalone: true } },
 };
 
 export default meta;

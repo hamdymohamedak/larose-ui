@@ -141,7 +141,6 @@ export function App() {
       locale="en"
       permissions={['employees.read', 'employees.write']}
       tenantId="demo"
-      observabilityDebug
     >
       <DemoContent />
     </LaRoseProvider>
