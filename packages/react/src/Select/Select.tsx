@@ -2,6 +2,7 @@ import { forwardRef, type SelectHTMLAttributes } from 'react';
 import type { Size, UIState } from '@larose-ui/core';
 import { resolveUIState } from '@larose-ui/core';
 import { FieldShell } from '../DataEntry/FieldShell';
+import { Spinner } from '../Spinner/Spinner';
 import { fieldIdFromLabel } from '../DataEntry/utils';
 import styles from './Select.module.css';
 
@@ -78,7 +79,9 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
             ))}
           </select>
           {uiState === 'loading' && (
-            <span className={styles.loadingIndicator} aria-hidden="true" />
+            <span className={styles.loadingIndicator} aria-hidden="true">
+              <Spinner size="sm" />
+            </span>
           )}
         </div>
       </FieldShell>

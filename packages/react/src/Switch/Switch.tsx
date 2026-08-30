@@ -1,4 +1,4 @@
-import { useCallback, type ButtonHTMLAttributes } from 'react';
+import { useCallback, useState, type ButtonHTMLAttributes } from 'react';
 import type { Size } from '@larose-ui/core';
 import styles from './Switch.module.css';
 
@@ -25,13 +25,17 @@ export function Switch({
 }: SwitchProps) {
   const inputId = id ?? label.toLowerCase().replace(/\s+/g, '-');
   const isControlled = checked !== undefined;
-  const isOn = isControlled ? checked : defaultChecked ?? false;
+  const [uncontrolledChecked, setUncontrolledChecked] = useState(defaultChecked ?? false);
+  const isOn = isControlled ? checked : uncontrolledChecked;
 
   const handleClick = useCallback(() => {
     if (disabled) return;
-    const next = isControlled ? !checked : !isOn;
+    const next = !isOn;
+    if (!isControlled) {
+      setUncontrolledChecked(next);
+    }
     onCheckedChange?.(next);
-  }, [checked, disabled, isControlled, isOn, onCheckedChange]);
+  }, [disabled, isControlled, isOn, onCheckedChange]);
 
   return (
     <div className={styles.wrapper}>

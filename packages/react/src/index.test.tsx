@@ -605,6 +605,12 @@ describe('Input', () => {
     expect(screen.getByLabelText('Email')).toBeInTheDocument();
   });
 
+  it('shows loading spinner inside the field', () => {
+    renderWithProvider(<Input label="Department" loading placeholder="Loading..." />);
+    expect(screen.getByLabelText('Department')).toHaveAttribute('aria-busy', 'true');
+    expect(screen.getByRole('status', { hidden: true })).toBeInTheDocument();
+  });
+
   it('shows error message', () => {
     renderWithProvider(<Input label="Name" error="Required field" />);
     expect(screen.getByRole('alert')).toHaveTextContent('Required field');
@@ -917,8 +923,22 @@ describe('Switch', () => {
     renderWithProvider(
       <Switch label="Notifications" onCheckedChange={onCheckedChange} />,
     );
-    await userEvent.click(screen.getByRole('switch', { name: 'Notifications' }));
+    const toggle = screen.getByRole('switch', { name: 'Notifications' });
+    expect(toggle).toHaveAttribute('aria-checked', 'false');
+    await userEvent.click(toggle);
     expect(onCheckedChange).toHaveBeenCalledWith(true);
+    expect(toggle).toHaveAttribute('aria-checked', 'true');
+    await userEvent.click(toggle);
+    expect(onCheckedChange).toHaveBeenCalledWith(false);
+    expect(toggle).toHaveAttribute('aria-checked', 'false');
+  });
+
+  it('respects defaultChecked in uncontrolled mode', async () => {
+    renderWithProvider(<Switch label="Product updates" defaultChecked />);
+    const toggle = screen.getByRole('switch', { name: 'Product updates' });
+    expect(toggle).toHaveAttribute('aria-checked', 'true');
+    await userEvent.click(toggle);
+    expect(toggle).toHaveAttribute('aria-checked', 'false');
   });
 });
 

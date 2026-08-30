@@ -11,6 +11,7 @@ import {
 import type { Size, UIState } from '@larose-ui/core';
 import { resolveUIState } from '@larose-ui/core';
 import { FieldShell } from '../DataEntry/FieldShell';
+import { Spinner } from '../Spinner/Spinner';
 import type { FieldFormat, FieldValidator, FormatFieldOptions } from '../DataEntry/utils';
 import { fieldIdFromLabel, formatFieldValue } from '../DataEntry/utils';
 import styles from './Input.module.css';
@@ -204,38 +205,45 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         uiState={uiState}
       >
         <div className={styles.inputContainer}>
-          <input
-            ref={setRefs}
-            id={inputId}
-            type={type}
-            className={[styles.input, className].filter(Boolean).join(' ')}
+          <div
+            className={styles.inputShell}
             data-size={inputSize}
             data-state={uiState}
-            data-format={format}
-            disabled={disabled || uiState === 'disabled'}
-            readOnly={readOnly || uiState === 'readonly'}
-            required={required}
-            aria-invalid={uiState === 'error'}
-            aria-busy={uiState === 'loading'}
-            aria-describedby={
-              errorMessage ? `${inputId}-error` : hint ? `${inputId}-hint` : undefined
-            }
-            title={expansionTitle}
-            inputMode={inputMode}
-            value={value}
-            defaultValue={defaultValue}
-            onFocus={handleFocus}
-            onBlur={handleBlur}
-            onChange={handleChange}
-            onDragOver={handleDragOver}
-            onDrop={handleDrop}
-            onMouseEnter={updateExpansionTooltip}
             data-focused={focused ? 'true' : undefined}
-            {...props}
-          />
-          {uiState === 'loading' && (
-            <span className={styles.loadingIndicator} aria-hidden="true" />
-          )}
+          >
+            <input
+              ref={setRefs}
+              id={inputId}
+              type={type}
+              className={[styles.input, className].filter(Boolean).join(' ')}
+              data-size={inputSize}
+              data-format={format}
+              disabled={disabled || uiState === 'disabled'}
+              readOnly={readOnly || uiState === 'readonly'}
+              required={required}
+              aria-invalid={uiState === 'error'}
+              aria-busy={uiState === 'loading'}
+              aria-describedby={
+                errorMessage ? `${inputId}-error` : hint ? `${inputId}-hint` : undefined
+              }
+              title={expansionTitle}
+              inputMode={inputMode}
+              value={value}
+              defaultValue={defaultValue}
+              onFocus={handleFocus}
+              onBlur={handleBlur}
+              onChange={handleChange}
+              onDragOver={handleDragOver}
+              onDrop={handleDrop}
+              onMouseEnter={updateExpansionTooltip}
+              {...props}
+            />
+            {uiState === 'loading' && (
+              <span className={styles.loadingIndicator} aria-hidden="true">
+                <Spinner size="sm" />
+              </span>
+            )}
+          </div>
         </div>
       </FieldShell>
     );
