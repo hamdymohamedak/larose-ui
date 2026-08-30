@@ -39,6 +39,6 @@ describe('FileManagement utils', () => {
 
   it('detects previewable files', () => {
     expect(canPreviewFile({ url: '/a.png', type: 'image/png' })).toBe(true);
-    expect(canPreviewFile({ name: 'x.zip' })).toBe(false);
+    expect(canPreviewFile({ extension: 'zip' })).toBe(false);
   });
 });

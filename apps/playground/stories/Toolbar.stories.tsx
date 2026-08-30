@@ -86,11 +86,11 @@ export const MacNotesStyle: Story = {
           </Toolbar.Trailing>
         </Toolbar>
         <div style={{ padding: '1.5rem', display: 'grid', gap: '0.75rem' }}>
-          <Typography variant="body">
+          <Typography role="body">
             Resize the window to see center formatting controls collapse into the system overflow
             menu. Leading and trailing items remain visible.
           </Typography>
-          <Typography variant="caption">Last action: {lastAction}</Typography>
+          <Typography role="caption">Last action: {lastAction}</Typography>
         </div>
       </div>
     );

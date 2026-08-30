@@ -108,8 +108,13 @@ export const FinderStyle: Story = {
       return walk(data);
     }, [data, selectedId]);
 
-    const updateNode = (nodes: OutlineNode[], nodeId: string, columnKey: string, value: string) =>
-      nodes.map((node) => {
+    const updateNode = (
+      nodes: OutlineNode[],
+      nodeId: string,
+      columnKey: string,
+      value: string,
+    ): OutlineNode[] =>
+      nodes.map((node): OutlineNode => {
         if (node.id === nodeId) {
           if (columnKey === 'label') return { ...node, label: value };
           return { ...node, values: { ...node.values, [columnKey]: value } };

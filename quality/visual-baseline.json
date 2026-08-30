@@ -1,27 +1,213 @@
 {
   "version": 1,
   "stories": [
-    { "file": "AdaptiveTable.stories.tsx", "title": "Runtime/AdaptiveTable" },
-    { "file": "AI.stories.tsx", "title": "AI/SmartTable" },
-    { "file": "Alert.stories.tsx", "title": "Foundation/Alert" },
-    { "file": "AppShell.stories.tsx", "title": "Foundation/AppShell" },
-    { "file": "Button.stories.tsx", "title": "Foundation/Button" },
-    { "file": "Card.stories.tsx", "title": "Foundation/Card" },
-    { "file": "DataDisplay.stories.tsx", "title": "Foundation/DataDisplay" },
-    { "file": "DateTime.stories.tsx", "title": "Foundation/DateTime" },
-    { "file": "DevTools.stories.tsx", "title": "DevOps/DevTools" },
-    { "file": "Dialog.stories.tsx", "title": "Foundation/Dialog" },
-    { "file": "EmployeeCRUD.stories.tsx", "title": "Intelligence/Employee CRUD" },
-    { "file": "EmptyState.stories.tsx", "title": "Foundation/EmptyState" },
-    { "file": "Enterprise.stories.tsx", "title": "Enterprise/Audit" },
-    { "file": "EnterpriseSchema.stories.tsx", "title": "Enterprise/Schema" },
-    { "file": "FormControls.stories.tsx", "title": "Foundation/Form Controls" },
-    { "file": "Input.stories.tsx", "title": "Foundation/Input" },
-    { "file": "Navigation.stories.tsx", "title": "Foundation/Navigation" },
-    { "file": "Observability.stories.tsx", "title": "Observability/Demo" },
-    { "file": "Overlays.stories.tsx", "title": "Foundation/Overlays" },
-    { "file": "Platform.stories.tsx", "title": "Platform/Full Demo" },
-    { "file": "Skeleton.stories.tsx", "title": "Foundation/Skeleton" },
-    { "file": "Spinner.stories.tsx", "title": "Foundation/Spinner" }
+    {
+      "file": "ActivityView.stories.tsx",
+      "title": "Foundation/Activity Views"
+    },
+    {
+      "file": "AdaptiveTable.stories.tsx",
+      "title": "Runtime/AdaptiveTable"
+    },
+    {
+      "file": "AI.stories.tsx",
+      "title": "AI/SmartTable"
+    },
+    {
+      "file": "Alert.stories.tsx",
+      "title": "Foundation/Notice"
+    },
+    {
+      "file": "Alerts.stories.tsx",
+      "title": "Foundation/Alert"
+    },
+    {
+      "file": "AppShell.stories.tsx",
+      "title": "Foundation/AppShell"
+    },
+    {
+      "file": "Button.stories.tsx",
+      "title": "Foundation/Button"
+    },
+    {
+      "file": "Card.stories.tsx",
+      "title": "Foundation/Card"
+    },
+    {
+      "file": "Chart.stories.tsx",
+      "title": "Foundation/Chart"
+    },
+    {
+      "file": "ContextMenu.stories.tsx",
+      "title": "Foundation/Context Menus"
+    },
+    {
+      "file": "DataDisplay.stories.tsx",
+      "title": "Foundation/DataDisplay"
+    },
+    {
+      "file": "DataEntry.stories.tsx",
+      "title": "Foundation/Entering Data"
+    },
+    {
+      "file": "DateTime.stories.tsx",
+      "title": "Foundation/DateTime"
+    },
+    {
+      "file": "DesignSystem.stories.tsx",
+      "title": "Design System/Refined Theme"
+    },
+    {
+      "file": "DevTools.stories.tsx",
+      "title": "DevOps/DevTools"
+    },
+    {
+      "file": "Dialog.stories.tsx",
+      "title": "Foundation/Dialog"
+    },
+    {
+      "file": "Disclosure.stories.tsx",
+      "title": "Foundation/Disclosure & Labels"
+    },
+    {
+      "file": "DockMenu.stories.tsx",
+      "title": "Foundation/Dock Menus"
+    },
+    {
+      "file": "DragDrop.stories.tsx",
+      "title": "Foundation/Drag and Drop"
+    },
+    {
+      "file": "EditMenu.stories.tsx",
+      "title": "Foundation/Edit Menus"
+    },
+    {
+      "file": "EmployeeCRUD.stories.tsx",
+      "title": "Intelligence/Employee CRUD"
+    },
+    {
+      "file": "EmptyState.stories.tsx",
+      "title": "Foundation/EmptyState"
+    },
+    {
+      "file": "Enterprise.stories.tsx",
+      "title": "Enterprise/Audit"
+    },
+    {
+      "file": "EnterpriseSchema.stories.tsx",
+      "title": "Enterprise/Schema"
+    },
+    {
+      "file": "FileManagement.stories.tsx",
+      "title": "Foundation/File Management"
+    },
+    {
+      "file": "FormControls.stories.tsx",
+      "title": "Foundation/Form Controls"
+    },
+    {
+      "file": "ImageView.stories.tsx",
+      "title": "Foundation/Image Views"
+    },
+    {
+      "file": "Input.stories.tsx",
+      "title": "Foundation/Input"
+    },
+    {
+      "file": "Layout.stories.tsx",
+      "title": "Foundation/Layout"
+    },
+    {
+      "file": "ListTable.stories.tsx",
+      "title": "Foundation/Lists & Tables"
+    },
+    {
+      "file": "Lockup.stories.tsx",
+      "title": "Foundation/Lockups"
+    },
+    {
+      "file": "Menu.stories.tsx",
+      "title": "Foundation/Menus"
+    },
+    {
+      "file": "MenuBar.stories.tsx",
+      "title": "Foundation/Menu Bar"
+    },
+    {
+      "file": "Motion.stories.tsx",
+      "title": "Design System/Motion"
+    },
+    {
+      "file": "Navigation.stories.tsx",
+      "title": "Foundation/Navigation and Search"
+    },
+    {
+      "file": "Observability.stories.tsx",
+      "title": "Observability/Demo"
+    },
+    {
+      "file": "Ornament.stories.tsx",
+      "title": "Foundation/Ornaments"
+    },
+    {
+      "file": "OutlineView.stories.tsx",
+      "title": "Foundation/Outline Views"
+    },
+    {
+      "file": "Overlays.stories.tsx",
+      "title": "Foundation/Overlays"
+    },
+    {
+      "file": "Picker.stories.tsx",
+      "title": "Foundation/Pickers"
+    },
+    {
+      "file": "Platform.stories.tsx",
+      "title": "Platform/Full Demo"
+    },
+    {
+      "file": "PopUpButton.stories.tsx",
+      "title": "Foundation/Pop-up Buttons"
+    },
+    {
+      "file": "PullDownButton.stories.tsx",
+      "title": "Foundation/Pull-down Buttons"
+    },
+    {
+      "file": "QuickActions.stories.tsx",
+      "title": "Foundation/Home Screen Quick Actions"
+    },
+    {
+      "file": "Sharing.stories.tsx",
+      "title": "Foundation/Collaboration & Sharing"
+    },
+    {
+      "file": "Skeleton.stories.tsx",
+      "title": "Foundation/Skeleton"
+    },
+    {
+      "file": "Spinner.stories.tsx",
+      "title": "Foundation/Spinner"
+    },
+    {
+      "file": "SplitView.stories.tsx",
+      "title": "Foundation/Split Views"
+    },
+    {
+      "file": "TabView.stories.tsx",
+      "title": "Foundation/Tab Views"
+    },
+    {
+      "file": "TextView.stories.tsx",
+      "title": "Foundation/Text Views"
+    },
+    {
+      "file": "Toolbar.stories.tsx",
+      "title": "Foundation/Toolbars"
+    },
+    {
+      "file": "WebView.stories.tsx",
+      "title": "Foundation/Web Views"
+    }
   ]
 }

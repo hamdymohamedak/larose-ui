@@ -1,5 +1,6 @@
 import { renderHook, waitFor } from '@testing-library/react';
-import { describe, expect, it, vi, beforeEach, afterEach, type ReactNode } from 'vitest';
+import type { ReactNode } from 'react';
+import { describe, expect, it, vi, beforeEach, afterEach } from 'vitest';
 import { PermissionProvider } from '@larose-ui/permissions';
 import { useQuery } from './useQuery';
 

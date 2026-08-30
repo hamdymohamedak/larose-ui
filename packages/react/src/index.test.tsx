@@ -383,6 +383,7 @@ describe('MenuBar', () => {
         platform="macos"
         showAppleMenu={false}
         standardOptions={{
+          appName: 'Notes',
           context: { canUndo: false, hasSelection: false },
         }}
       />,
@@ -401,6 +402,7 @@ describe('MenuBar', () => {
         platform="macos"
         showAppleMenu={false}
         standardOptions={{
+          appName: 'Pages',
           context: { isDocumentOpen: true, isDirty: true },
           handlers: { save: () => undefined },
         }}

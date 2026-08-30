@@ -53,13 +53,13 @@ export const Overview: Story = {
         <Badge>Motion</Badge>
       </div>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
-        <Card surface="elevated" title="Elevated" description="Default card surface">
+        <Card title="Elevated" description="Default card surface">
           <Button variant="primary">Primary</Button>
         </Card>
-        <Card surface="solid" title="Solid" description="Base panel">
+        <Card title="Solid" description="Base panel">
           <Button variant="secondary">Secondary</Button>
         </Card>
-        <Card surface="floating" title="Floating" description="Raised layer">
+        <Card title="Floating" description="Raised layer">
           <Button variant="outline">Outline</Button>
         </Card>
       </div>
@@ -128,7 +128,7 @@ export const ThemeComparison: Story = {
         </Card>
       </LaRoseProvider>
       <LaRoseProvider themePreset="refined">
-        <Card title="Refined preset" padding="md" surface="elevated">
+        <Card title="Refined preset" padding="md">
           <Input label="Email" placeholder="you@company.com" />
           <div style={{ marginTop: '0.75rem' }}>
             <Button variant="primary">Save</Button>
@@ -159,7 +159,7 @@ export const DarkMode: Story = {
       <div style={{ padding: '2rem', minHeight: 280, background: 'var(--lr-color-background)' }}>
         <Typography role="largeTitle">Dark appearance</Typography>
         <Typography role="subheadline">Designed dark surfaces — not inverted light.</Typography>
-        <Card surface="elevated" title="Activity">
+        <Card title="Activity">
           <Typography role="body">3 new employees this week.</Typography>
         </Card>
       </div>

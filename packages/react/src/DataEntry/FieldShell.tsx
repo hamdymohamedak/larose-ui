@@ -18,7 +18,7 @@ export function FieldShell({
   error = null,
   required = false,
   htmlFor,
-  uiState = 'default',
+  uiState = 'idle',
   children,
 }: FieldShellProps) {
   const errorMessage = typeof error === 'string' ? error : null;

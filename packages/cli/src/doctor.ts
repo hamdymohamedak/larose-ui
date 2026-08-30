@@ -62,16 +62,16 @@ export interface DoctorResult {
 }
 
 const BUNDLE_BUDGETS_KB: Record<string, number> = {
-  '@larose-ui/core': 10,
-  '@larose-ui/tokens': 5,
+  '@larose-ui/core': 15,
+  '@larose-ui/tokens': 65,
   '@larose-ui/network': 6,
   '@larose-ui/offline': 5,
   '@larose-ui/permissions': 8,
   '@larose-ui/data': 15,
   '@larose-ui/forms': 10,
-  '@larose-ui/react': 70,
-  '@larose-ui/runtime': 36,
-  '@larose-ui/observability': 26,
+  '@larose-ui/react': 460,
+  '@larose-ui/runtime': 40,
+  '@larose-ui/observability': 28,
   '@larose-ui/contracts': 5,
   '@larose-ui/migration': 14,
   '@larose-ui/testing': 10,

@@ -7,6 +7,7 @@ import {
   Monogram,
   Poster,
   Typography,
+  type LockupProps,
 } from '@larose-ui/react';
 
 const cast = [
@@ -53,7 +54,7 @@ function FocusableRow({
   axis = 'horizontal',
   defaultFocusedIndex = 1,
 }: {
-  children: ReactElement | ReactElement[];
+  children: ReactElement<LockupProps> | ReactElement<LockupProps>[];
   itemWidth?: string;
   axis?: 'horizontal' | 'vertical' | 'grid';
   defaultFocusedIndex?: number;
@@ -64,7 +65,7 @@ function FocusableRow({
     <LockupRow itemWidth={itemWidth} axis={axis}>
       {Children.map(children, (child, index) =>
         isValidElement(child)
-          ? cloneElement(child, {
+          ? cloneElement(child as ReactElement<LockupProps>, {
               focused: index === focusedIndex,
               onFocus: () => setFocusedIndex(index),
             })

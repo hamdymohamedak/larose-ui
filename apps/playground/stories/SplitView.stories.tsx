@@ -197,7 +197,9 @@ export const DragBetweenPanes: Story = {
               <ul>
                 {inbox.map((name) => (
                   <li key={name}>
-                    <Draggable item={{ id: name, type: 'file', data: name }}>{name}</Draggable>
+                    <Draggable id={name} sourceId="inbox" type="file" data={name}>
+                      {name}
+                    </Draggable>
                   </li>
                 ))}
               </ul>
@@ -216,7 +218,9 @@ export const DragBetweenPanes: Story = {
               <ul>
                 {archive.map((name) => (
                   <li key={name}>
-                    <Draggable item={{ id: name, type: 'file', data: name }}>{name}</Draggable>
+                    <Draggable id={name} sourceId="archive" type="file" data={name}>
+                      {name}
+                    </Draggable>
                   </li>
                 ))}
               </ul>

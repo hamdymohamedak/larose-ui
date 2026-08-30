@@ -100,7 +100,7 @@ export const SearchFieldMail: Story = {
           tokens={[{ id: 'contact', label: 'Juan Chavez' }]}
           onTokenRemove={() => undefined}
         />
-        <Typography variant="caption">Query: {query || '(empty)'}</Typography>
+        <Typography role="caption">Query: {query || '(empty)'}</Typography>
       </div>
     );
   },

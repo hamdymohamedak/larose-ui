@@ -3,7 +3,7 @@ import { buildDockMenuEntries, resolveDockMenuPosition, windowToMenuEntry } from
 
 describe('DockMenu utils', () => {
   it('maps windows to menu entries', () => {
-    expect(windowToMenuEntry({ id: '1', title: 'Inbox' }).label).toBe('Inbox');
+    expect(windowToMenuEntry({ id: '1', title: 'Inbox' })).toMatchObject({ label: 'Inbox' });
   });
 
   it('builds running menu with windows then actions', () => {

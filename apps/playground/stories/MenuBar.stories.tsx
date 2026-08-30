@@ -64,6 +64,7 @@ export const MacOSStandard: Story = {
         <MenuBar
           appName="Safari"
           standardOptions={{
+            appName: 'Safari',
             context,
             handlers: {
               save: () => setLastAction('Saved document'),
@@ -110,11 +111,11 @@ export const MacOSStandard: Story = {
             margin: '0 auto',
           }}
         >
-          <Typography variant="body">
+          <Typography role="body">
             Hold <strong>Option</strong> while a menu is open to reveal dynamic items such as Close
             All, Minimize All, and Quit and Keep Windows.
           </Typography>
-          <Typography variant="caption">Last action: {lastAction}</Typography>
+          <Typography role="caption">Last action: {lastAction}</Typography>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
             <button type="button" onClick={() => setContext((c) => ({ ...c, canUndo: !c.canUndo }))}>
               Toggle undo
@@ -152,6 +153,7 @@ export const IPadOSHiddenUntilRevealed: Story = {
           onRevealChange={setRevealed}
           showAppleMenu={false}
           standardOptions={{
+            appName: 'Mail',
             context: { isDocumentOpen: true, hasSelection: true, canPaste: true },
           }}
           appSpecificMenus={[
@@ -174,7 +176,7 @@ export const IPadOSHiddenUntilRevealed: Story = {
             textAlign: 'center',
           }}
         >
-          <Typography variant="caption">
+          <Typography role="caption">
             The menu bar is revealed at the top. Open <strong>Edit</strong> and hover items such as{' '}
             <strong>Find</strong> or <strong>Speech</strong> to see nested submenus.
           </Typography>
@@ -196,6 +198,7 @@ export const DisabledNotHidden: Story = {
         platform="macos"
         showAppleMenu={false}
         standardOptions={{
+          appName: 'TextEdit',
           context: {
             isDocumentOpen: false,
             canUndo: false,
@@ -213,7 +216,7 @@ export const DisabledNotHidden: Story = {
           padding: '2rem',
         }}
       >
-        <Typography variant="caption" muted>
+        <Typography role="caption" muted>
           Unavailable commands remain visible but dimmed — open File or Edit to compare.
         </Typography>
       </div>

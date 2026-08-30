@@ -12,6 +12,7 @@ import {
   ShareToolbar,
   Typography,
   formatSharePermissionSummary,
+  type ShareSettings,
 } from '@larose-ui/react';
 
 const collaborators = [
@@ -42,9 +43,9 @@ export const ShareSheetStory: Story = {
   name: 'Share Sheet',
   render: function ShareSheetDemo() {
     const [open, setOpen] = useState(true);
-    const [settings, setSettings] = useState({
-      audience: 'invited' as const,
-      permission: 'edit' as const,
+    const [settings, setSettings] = useState<ShareSettings>({
+      audience: 'invited',
+      permission: 'edit',
     });
 
     return (
