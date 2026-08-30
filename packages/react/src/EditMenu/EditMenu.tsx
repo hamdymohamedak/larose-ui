@@ -12,7 +12,7 @@ import {
   type ReactElement,
   type ReactNode,
 } from 'react';
-import { createPortal } from 'react-dom';
+import { ContextualMenuPortal } from '../Motion/OverlayPortal';
 import type {
   EditMenuContext,
   EditMenuInputMode,
@@ -71,16 +71,14 @@ function EditMenuPointer({ placement }: { placement: EditMenuPosition['placement
   );
 }
 
-function CompactEditMenu({
+function CompactEditMenuContent({
   actions,
-  position,
   menuId,
   onSelect,
   onExpand,
   canExpand,
 }: {
   actions: EditMenuResolvedAction[];
-  position: EditMenuPosition;
   menuId: string;
   onSelect: (action: EditMenuResolvedAction) => void;
   onExpand: () => void;
@@ -89,19 +87,7 @@ function CompactEditMenu({
   const visible = actions.slice(0, compactVisibleCount(actions.length));
 
   return (
-    <div
-      className={styles.compactWrap}
-      data-placement={position.placement}
-      style={{
-        left: position.x,
-        top: position.y,
-        ['--lr-edit-menu-pointer-x' as string]: `${position.pointerOffset}px`,
-      }}
-      role="toolbar"
-      aria-label="Edit menu"
-    >
-      <EditMenuPointer placement={position.placement} />
-      <div id={menuId} className={styles.compactBar}>
+    <div id={menuId} className={styles.compactBar}>
         {visible.map((action, index) => (
           <span key={action.id} style={{ display: 'contents' }}>
             {index > 0 && <span className={styles.compactDivider} aria-hidden="true" />}
@@ -132,39 +118,26 @@ function CompactEditMenu({
           </>
         )}
       </div>
-    </div>
   );
 }
 
-function ContextEditMenu({
+function ContextEditMenuContent({
   actions,
-  position,
   menuId,
   onSelect,
 }: {
   actions: EditMenuResolvedAction[];
-  position: EditMenuPosition;
   menuId: string;
   onSelect: (action: EditMenuResolvedAction) => void;
 }) {
   return (
     <div
-      className={styles.contextWrap}
-      data-placement={position.placement}
-      style={{
-        left: position.x,
-        top: position.y,
-        ['--lr-edit-menu-pointer-x' as string]: `${position.pointerOffset}px`,
-      }}
+      id={menuId}
+      className={styles.contextMenu}
+      role="menu"
+      aria-label="Edit menu"
+      style={{ position: 'relative' }}
     >
-      <EditMenuPointer placement={position.placement} />
-      <div
-        id={menuId}
-        className={styles.contextMenu}
-        role="menu"
-        aria-label="Edit menu"
-        style={{ position: 'relative' }}
-      >
         <ul className={styles.list}>
           {actions.map((action, index) => {
             const prev = actions[index - 1];
@@ -191,7 +164,6 @@ function ContextEditMenu({
           })}
         </ul>
       </div>
-    </div>
   );
 }
 
@@ -354,40 +326,42 @@ export function EditMenu({
 
   const showCompact = resolvedVariant === 'compact' && !expanded;
   const showContext = resolvedVariant === 'context' || expanded;
+  const motionPlacement = position.placement === 'above' ? 'top' : 'bottom';
 
   return (
     <>
       <span ref={triggerRef} className={styles.triggerWrap}>
         {bindTrigger(children as ReactElement<Record<string, unknown>>)}
       </span>
-      {isOpen &&
-        actions.length > 0 &&
-        createPortal(
-          <>
-            {dimBackground && (
-              <div className={styles.menuBackdrop} role="presentation" onClick={close} />
-            )}
-            {showCompact && (
-              <CompactEditMenu
-                menuId={menuId}
-                actions={actions}
-                position={position}
-                onSelect={handleSelect}
-                onExpand={handleExpand}
-                canExpand={canExpandCompactMenu(actions.length)}
-              />
-            )}
-            {showContext && (
-              <ContextEditMenu
-                menuId={menuId}
-                actions={actions}
-                position={position}
-                onSelect={handleSelect}
-              />
-            )}
-          </>,
-          document.body,
+      <ContextualMenuPortal
+        open={isOpen && actions.length > 0}
+        onClose={close}
+        placement={motionPlacement}
+        showBackdrop={dimBackground}
+        backdropClassName={styles.menuBackdrop}
+        surfaceClassName={showCompact ? styles.compactWrap : styles.contextWrap}
+        surfaceRole={showCompact ? 'toolbar' : undefined}
+        aria-label="Edit menu"
+        data-placement={position.placement}
+        surfaceStyle={{
+          left: position.x,
+          top: position.y,
+          ['--lr-edit-menu-pointer-x' as string]: `${position.pointerOffset}px`,
+        }}
+      >
+        <EditMenuPointer placement={position.placement} />
+        {showCompact ? (
+          <CompactEditMenuContent
+            menuId={menuId}
+            actions={actions}
+            onSelect={handleSelect}
+            onExpand={handleExpand}
+            canExpand={canExpandCompactMenu(actions.length)}
+          />
+        ) : (
+          <ContextEditMenuContent menuId={menuId} actions={actions} onSelect={handleSelect} />
         )}
+      </ContextualMenuPortal>
     </>
   );
 }

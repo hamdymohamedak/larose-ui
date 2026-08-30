@@ -1,6 +1,26 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { useState } from 'react';
+import { useState, type ReactNode } from 'react';
 import { Button, Menu, Typography, type MenuEntry } from '@larose-ui/react';
+
+function CenteredCanvas({ children }: { children: ReactNode }) {
+  return (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '1rem',
+        width: '100%',
+        minHeight: '70vh',
+        padding: '2rem',
+        boxSizing: 'border-box',
+      }}
+    >
+      {children}
+    </div>
+  );
+}
 
 function BoldIcon() {
   return (
@@ -45,7 +65,14 @@ const formatEntries: MenuEntry[] = [
 
 const meta: Meta = {
   title: 'Foundation/Menus',
-  parameters: { layout: 'padded' },
+  parameters: { layout: 'fullscreen' },
+  decorators: [
+    (Story) => (
+      <CenteredCanvas>
+        <Story />
+      </CenteredCanvas>
+    ),
+  ],
 };
 
 export default meta;
@@ -57,7 +84,7 @@ export const LargeLayout: Story = {
     const [lastAction, setLastAction] = useState('Open the menu');
 
     return (
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+      <>
         <Typography role="body" muted>
           {lastAction}
         </Typography>
@@ -73,7 +100,7 @@ export const LargeLayout: Story = {
         >
           <Button variant="secondary">File</Button>
         </Menu>
-      </div>
+      </>
     );
   },
 };
@@ -111,10 +138,10 @@ export const SmallLayout: Story = {
 export const SubmenuAndToggles: Story = {
   name: 'Submenus and toggles',
   render: function SubmenuDemo() {
-    const [lastAction, setLastAction] = useState('Choose a sort order or toggle a style');
+    const [lastAction, setLastAction] = useState('Hover “Sort By” to reveal its submenu');
 
     return (
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+      <>
         <Typography role="body" muted>
           {lastAction}
         </Typography>
@@ -138,7 +165,7 @@ export const SubmenuAndToggles: Story = {
           ]}
           onEntrySelect={(entry) => setLastAction(entry.label)}
         />
-      </div>
+      </>
     );
   },
 };

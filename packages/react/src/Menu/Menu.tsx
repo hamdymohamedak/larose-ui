@@ -9,9 +9,7 @@ import {
   useState,
   type ReactElement,
 } from 'react';
-import { createPortal } from 'react-dom';
-import { usePresence } from '../Motion/usePresence';
-import motionStyles from '../Motion/motion.module.css';
+import { ContextualMenuPortal } from '../Motion/OverlayPortal';
 import type { MenuEntry, MenuItemConfig, MenuLayout, MenuPosition } from './types';
 import {
   isMenuItem,
@@ -69,7 +67,6 @@ function MenuPanel({
   entries,
   layout,
   title,
-  position,
   onSelect,
   onClose,
 }: {
@@ -77,12 +74,37 @@ function MenuPanel({
   entries: MenuEntry[];
   layout: MenuLayout;
   title?: string;
-  position: MenuPosition;
   onSelect: (entry: MenuItemConfig) => void;
   onClose: () => void;
 }) {
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
+  const [submenuSides, setSubmenuSides] = useState<Record<string, 'end' | 'start'>>({});
+  const submenuTriggerRefs = useRef<Record<string, HTMLButtonElement | null>>({});
   const { compact, list } = useMemo(() => splitCompactAndList(entries, layout), [entries, layout]);
+
+  const resolveSubmenuSide = useCallback((submenuId: string) => {
+    const trigger = submenuTriggerRefs.current[submenuId];
+    if (!trigger) return;
+
+    const rect = trigger.getBoundingClientRect();
+    const submenuWidth = 240;
+    const gap = 8;
+    const fitsEnd = rect.right + submenuWidth + gap <= window.innerWidth;
+    const fitsStart = rect.left - submenuWidth - gap >= 0;
+    const side: 'end' | 'start' = fitsEnd || !fitsStart ? 'end' : 'start';
+
+    setSubmenuSides((current) =>
+      current[submenuId] === side ? current : { ...current, [submenuId]: side },
+    );
+  }, []);
+
+  const openSubmenu = useCallback(
+    (submenuId: string) => {
+      setActiveSubmenu(submenuId);
+      requestAnimationFrame(() => resolveSubmenuSide(submenuId));
+    },
+    [resolveSubmenuSide],
+  );
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
@@ -93,14 +115,7 @@ function MenuPanel({
   }, [onClose]);
 
   return (
-    <div
-      id={menuId}
-      className={styles.menu}
-      role="menu"
-      aria-label="Menu"
-      style={{ left: position.x, top: position.y }}
-      onClick={(event) => event.stopPropagation()}
-    >
+    <>
       {title && <p className={styles.menuTitle}>{title}</p>}
       {compact.length > 0 && (
         <div className={styles.compactRow} role="group" aria-label="Primary actions">
@@ -132,16 +147,23 @@ function MenuPanel({
 
           if (isMenuSubmenu(entry)) {
             return (
-              <li key={entry.id} className={styles.submenuWrap}>
+              <li
+                key={entry.id}
+                className={styles.submenuWrap}
+                data-active={activeSubmenu === entry.id ? 'true' : undefined}
+              >
                 <button
+                  ref={(node) => {
+                    submenuTriggerRefs.current[entry.id] = node;
+                  }}
                   type="button"
                   className={styles.submenuTrigger}
                   role="menuitem"
                   aria-haspopup="menu"
                   aria-expanded={activeSubmenu === entry.id}
                   disabled={entry.disabled}
-                  onMouseEnter={() => setActiveSubmenu(entry.id)}
-                  onFocus={() => setActiveSubmenu(entry.id)}
+                  onMouseEnter={() => openSubmenu(entry.id)}
+                  onFocus={() => openSubmenu(entry.id)}
                 >
                   <span className={styles.checkmark} aria-hidden="true" />
                   {entry.icon && <span className={styles.icon}>{entry.icon}</span>}
@@ -152,7 +174,12 @@ function MenuPanel({
                   </span>
                 </button>
                 {activeSubmenu === entry.id && (
-                  <ul className={styles.submenu} role="menu" aria-label={entry.label}>
+                  <ul
+                    className={styles.submenu}
+                    role="menu"
+                    aria-label={entry.label}
+                    data-side={submenuSides[entry.id] === 'start' ? 'start' : 'end'}
+                  >
                     {entry.items.map((item) => (
                       <li key={item.id}>
                         <MenuItemRow item={item} onSelect={onSelect} />
@@ -175,7 +202,7 @@ function MenuPanel({
           return null;
         })}
       </ul>
-    </div>
+    </>
   );
 }
 
@@ -210,15 +237,33 @@ export function Menu({
     [isControlled, onOpenChange],
   );
 
+  const estimateMenuHeight = useCallback(() => {
+    return Math.min(420, 48 + preparedEntries.length * 36 + (layout !== 'large' ? 64 : 0));
+  }, [layout, preparedEntries.length]);
+
+  const estimateMenuWidth = useCallback(() => {
+    return layout === 'large' ? 240 : 280;
+  }, [layout]);
+
+  const centerMenuOnViewport = useCallback(() => {
+    const menuWidth = estimateMenuWidth();
+    const menuHeight = estimateMenuHeight();
+    setPosition({
+      x: Math.max(16, (window.innerWidth - menuWidth) / 2),
+      y: Math.max(16, (window.innerHeight - menuHeight) / 2),
+      placement: 'below',
+    });
+  }, [estimateMenuHeight, estimateMenuWidth]);
+
   const openFromTrigger = useCallback(() => {
     const rect =
       triggerRef.current?.getBoundingClientRect() ?? new DOMRect(100, 100, 120, 32);
-    const menuWidth = layout === 'large' ? 240 : 280;
-    const menuHeight = Math.min(420, 48 + preparedEntries.length * 36 + (layout !== 'large' ? 64 : 0));
+    const menuWidth = estimateMenuWidth();
+    const menuHeight = estimateMenuHeight();
     const resolved = resolveMenuPanelPosition(rect, menuWidth, menuHeight);
     setPosition(resolved);
     setOpen(true);
-  }, [layout, preparedEntries.length, setOpen]);
+  }, [estimateMenuHeight, estimateMenuWidth, setOpen]);
 
   const close = useCallback(() => setOpen(false), [setOpen]);
 
@@ -231,12 +276,27 @@ export function Menu({
   );
 
   useEffect(() => {
-    if (!isOpen || !children || open === undefined) return;
+    if (!isOpen) return;
+
+    if (!children) {
+      centerMenuOnViewport();
+      return;
+    }
+
+    if (open === undefined) return;
+
     const rect = triggerRef.current?.getBoundingClientRect() ?? new DOMRect(100, 100, 120, 32);
-    const menuWidth = layout === 'large' ? 240 : 280;
-    const menuHeight = Math.min(420, 48 + preparedEntries.length * 36 + (layout !== 'large' ? 64 : 0));
+    const menuWidth = estimateMenuWidth();
+    const menuHeight = estimateMenuHeight();
     setPosition(resolveMenuPanelPosition(rect, menuWidth, menuHeight));
-  }, [children, isOpen, layout, open, preparedEntries.length]);
+  }, [
+    centerMenuOnViewport,
+    children,
+    estimateMenuHeight,
+    estimateMenuWidth,
+    isOpen,
+    open,
+  ]);
 
   const bindTrigger = (child: ReactElement<Record<string, unknown>>) =>
     cloneElement(child, {
@@ -249,25 +309,33 @@ export function Menu({
       'aria-controls': isOpen ? menuId : undefined,
     });
 
-  const { shouldRender } = usePresence({ present: isOpen });
-
-  const panel = (
-    <MenuOverlay open={isOpen} placement={position.placement === 'above' ? 'top' : 'bottom'}>
-      {dimBackground && <div className={styles.menuBackdrop} role="presentation" onClick={close} />}
+  const menuPortal = (
+    <ContextualMenuPortal
+      open={isOpen}
+      onClose={close}
+      placement={position.placement === 'above' ? 'top' : 'bottom'}
+      showBackdrop={dimBackground}
+      backdropClassName={styles.menuBackdrop}
+      surfaceId={menuId}
+      surfaceClassName={styles.menu}
+      surfaceRole="menu"
+      aria-label="Menu"
+      surfaceStyle={{ left: position.x, top: position.y }}
+      onSurfaceClick={(event) => event.stopPropagation()}
+    >
       <MenuPanel
         menuId={menuId}
         entries={preparedEntries}
         layout={layout}
         title={title}
-        position={position}
         onSelect={handleSelect}
         onClose={close}
       />
-    </MenuOverlay>
+    </ContextualMenuPortal>
   );
 
   if (!children) {
-    return shouldRender ? createPortal(panel, document.body) : null;
+    return menuPortal;
   }
 
   if (!isValidElement(children)) {
@@ -279,34 +347,8 @@ export function Menu({
       <span ref={triggerRef} className={styles.triggerWrap}>
         {bindTrigger(children as ReactElement<Record<string, unknown>>)}
       </span>
-      {shouldRender && createPortal(panel, document.body)}
+      {menuPortal}
     </>
-  );
-}
-
-function MenuOverlay({
-  open,
-  placement,
-  children,
-}: {
-  open: boolean;
-  placement: 'top' | 'bottom';
-  children: React.ReactNode;
-}) {
-  const { phase, shouldRender, onAnimationEnd } = usePresence({ present: open });
-  if (!shouldRender) return null;
-
-  const motionClass =
-    phase === 'entering' || phase === 'exiting'
-      ? motionStyles[`popover-${phase}` as keyof typeof motionStyles]
-      : undefined;
-
-  return (
-    <div data-presence={phase} data-side={placement} onAnimationEnd={onAnimationEnd}>
-      <div className={motionClass} data-presence={phase} data-side={placement}>
-        {children}
-      </div>
-    </div>
   );
 }
 

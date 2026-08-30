@@ -41,7 +41,7 @@ const posters = [
 
 const meta: Meta = {
   title: 'Foundation/Lockups',
-  parameters: { layout: 'padded' },
+  parameters: { layout: 'centered' },
 };
 
 export default meta;

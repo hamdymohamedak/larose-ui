@@ -8,7 +8,7 @@ import {
   type MouseEvent as ReactMouseEvent,
   type ReactNode,
 } from 'react';
-import { createPortal } from 'react-dom';
+import { ContextualMenuPortal } from '../Motion/OverlayPortal';
 import type { ContextMenuEntry, ContextMenuItemConfig } from '../ContextMenu/types';
 import { canShowDisabledItem, isItem, LONG_PRESS_MS } from '../ContextMenu/utils';
 import type { DockMenuPosition, DockWindow } from './types';
@@ -56,57 +56,6 @@ function DockMenuItemRow({
       {item.icon && <span className={styles.icon}>{item.icon}</span>}
       <span className={styles.label}>{item.label}</span>
     </button>
-  );
-}
-
-function DockMenuPanel({
-  menuId,
-  appName,
-  entries,
-  position,
-  onSelect,
-  onClose,
-}: {
-  menuId: string;
-  appName: string;
-  entries: ContextMenuEntry[];
-  position: DockMenuPosition;
-  onSelect: (entry: ContextMenuItemConfig) => void;
-  onClose: () => void;
-}) {
-  useEffect(() => {
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') onClose();
-    };
-    document.addEventListener('keydown', onKeyDown);
-    return () => document.removeEventListener('keydown', onKeyDown);
-  }, [onClose]);
-
-  return (
-    <div
-      id={menuId}
-      className={styles.menu}
-      role="menu"
-      aria-label={`${appName} Dock menu`}
-      style={{ left: position.x, top: position.y }}
-      onClick={(event) => event.stopPropagation()}
-    >
-      <ul className={styles.list}>
-        {entries.map((entry, index) => {
-          if (entry.type === 'separator') {
-            return <li key={entry.id ?? `sep-${index}`} className={styles.separator} role="separator" />;
-          }
-          if (isItem(entry)) {
-            return (
-              <li key={entry.id}>
-                <DockMenuItemRow item={entry} onSelect={onSelect} />
-              </li>
-            );
-          }
-          return null;
-        })}
-      </ul>
-    </div>
   );
 }
 
@@ -180,6 +129,15 @@ export function DockMenu({
     [openAboveIcon],
   );
 
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') close();
+    };
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, [close, isOpen]);
+
   return (
     <>
       <button
@@ -196,21 +154,34 @@ export function DockMenu({
       >
         <span className={styles.iconImage}>{icon}</span>
       </button>
-      {isOpen &&
-        createPortal(
-          <>
-            <div className={styles.menuBackdrop} role="presentation" onClick={close} />
-            <DockMenuPanel
-              menuId={menuId}
-              appName={appName}
-              entries={preparedEntries}
-              position={position}
-              onSelect={handleSelect}
-              onClose={close}
-            />
-          </>,
-          document.body,
-        )}
+      <ContextualMenuPortal
+        open={isOpen}
+        onClose={close}
+        placement="top"
+        backdropClassName={styles.menuBackdrop}
+        surfaceId={menuId}
+        surfaceClassName={styles.menu}
+        surfaceRole="menu"
+        aria-label={`${appName} Dock menu`}
+        surfaceStyle={{ left: position.x, top: position.y }}
+        onSurfaceClick={(event) => event.stopPropagation()}
+      >
+        <ul className={styles.list}>
+          {preparedEntries.map((entry, index) => {
+            if (entry.type === 'separator') {
+              return <li key={entry.id ?? `sep-${index}`} className={styles.separator} role="separator" />;
+            }
+            if (isItem(entry)) {
+              return (
+                <li key={entry.id}>
+                  <DockMenuItemRow item={entry} onSelect={handleSelect} />
+                </li>
+              );
+            }
+            return null;
+          })}
+        </ul>
+      </ContextualMenuPortal>
     </>
   );
 }

@@ -78,6 +78,7 @@
   font-size: var(--lr-font-size-sm);
   text-align: start;
   cursor: pointer;
+  transition: background-color var(--lr-motion-duration-fast) var(--lr-motion-easing-standard);
 }
 
 .item:hover:not(:disabled) {

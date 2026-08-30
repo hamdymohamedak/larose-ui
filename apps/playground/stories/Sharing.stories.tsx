@@ -67,8 +67,18 @@ export const ShareSheetStory: Story = {
 
 export const CollaborationPopoverStory: Story = {
   name: 'Collaboration Popover',
+  parameters: { layout: 'centered' },
   render: () => (
-    <CollaborationPopover
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        padding: '2rem 1rem 24rem',
+        width: '100%',
+        boxSizing: 'border-box',
+      }}
+    >
+      <CollaborationPopover
       trigger={<CollaborationButton collaborators={collaborators} />}
       collaborators={collaborators}
       actions={[
@@ -87,7 +97,8 @@ export const CollaborationPopoverStory: Story = {
       onVideo={() => undefined}
       onManage={() => undefined}
       defaultOpen
-    />
+      />
+    </div>
   ),
 };
 

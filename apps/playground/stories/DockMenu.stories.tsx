@@ -26,7 +26,7 @@ const safariWindows: DockWindow[] = [
 
 const meta: Meta = {
   title: 'Foundation/Dock Menus',
-  parameters: { layout: 'padded' },
+  parameters: { layout: 'centered' },
 };
 
 export default meta;
@@ -123,10 +123,18 @@ export const AppNotRunning: Story = {
 export const HomeScreenQuickActionsStory: Story = {
   name: 'Home Screen quick actions',
   render: function QuickActionsDemo() {
-    const [lastAction, setLastAction] = useState('See Foundation/Home Screen Quick Actions for full demos');
+    const [lastAction, setLastAction] = useState('Touch and hold the Maps icon');
 
     return (
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '1.5rem',
+          paddingBottom: '20rem',
+        }}
+      >
         <Typography role="body" muted>
           {lastAction}
         </Typography>
@@ -136,6 +144,8 @@ export const HomeScreenQuickActionsStory: Story = {
           actions={[
             { id: 'directions', label: 'Directions Home' },
             { id: 'mark', label: 'Mark My Location' },
+            { id: 'remove', label: 'Remove App', destructive: true, system: true },
+            { id: 'edit', label: 'Edit Home Screen', system: true },
           ]}
           onActionSelect={(action) => setLastAction(action.label)}
         />

@@ -2,10 +2,12 @@ import {
   useCallback,
   useEffect,
   useId,
+  useLayoutEffect,
   useRef,
   useState,
   type ReactNode,
 } from 'react';
+import { Presence } from '../Motion/Presence';
 import type { CollaborationAction, Collaborator } from './types';
 import { collaboratorInitials } from './utils';
 import { MessageIcon, VideoIcon } from './icons';
@@ -45,6 +47,8 @@ export function CollaborationPopover({
   const isOpen = isControlled ? open : internalOpen;
   const popoverId = useId();
   const rootRef = useRef<HTMLSpanElement>(null);
+  const popoverRef = useRef<HTMLDivElement>(null);
+  const [align, setAlign] = useState<'start' | 'end'>('end');
 
   const setOpen = useCallback(
     (next: boolean) => {
@@ -75,6 +79,21 @@ export function CollaborationPopover({
     };
   }, [isOpen, setOpen]);
 
+  useLayoutEffect(() => {
+    if (!isOpen) return;
+
+    const root = rootRef.current;
+    const popover = popoverRef.current;
+    if (!root || !popover) return;
+
+    const triggerRect = root.getBoundingClientRect();
+    const popoverWidth = popover.offsetWidth;
+    const padding = 8;
+    const rightAlignedLeft = triggerRect.right - popoverWidth;
+
+    setAlign(rightAlignedLeft < padding ? 'start' : 'end');
+  }, [isOpen, collaborators.length, actions.length]);
+
   return (
     <span ref={rootRef} className={styles.wrapper}>
       <span
@@ -84,13 +103,15 @@ export function CollaborationPopover({
       >
         {trigger}
       </span>
-      {isOpen && (
+      <Presence present={isOpen} variant="popover" placement="bottom">
         <div
+          ref={popoverRef}
           id={popoverId}
           role="dialog"
           aria-label="Collaboration"
           className={styles.popover}
           data-side="bottom"
+          data-align={align}
         >
           <div className={styles.section}>
             {collaborators.map((person) => (
@@ -159,7 +180,7 @@ export function CollaborationPopover({
             </div>
           )}
         </div>
-      )}
+      </Presence>
     </span>
   );
 }

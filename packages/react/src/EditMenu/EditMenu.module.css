@@ -27,6 +27,7 @@
   font-size: var(--lr-font-size-sm);
   white-space: nowrap;
   cursor: pointer;
+  transition: background-color var(--lr-motion-duration-fast) var(--lr-motion-easing-standard);
 }
 
 .compactItem:hover:not(:disabled) {

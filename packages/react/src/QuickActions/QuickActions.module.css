@@ -56,6 +56,7 @@
   color: var(--lr-color-text);
   text-align: start;
   cursor: pointer;
+  transition: background-color var(--lr-motion-duration-fast) var(--lr-motion-easing-standard);
 }
 
 .row[data-icon-placement='trailing'] {

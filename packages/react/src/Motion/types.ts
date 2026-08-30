@@ -1,6 +1,6 @@
 import type { ReducedMotionPolicy, MotionSemanticPreset } from '@larose-ui/core';
 
-export type PresencePhase = 'entering' | 'entered' | 'exiting' | 'exited';
+export type PresencePhase = 'mounting' | 'entering' | 'entered' | 'exiting' | 'exited';
 
 export type MotionVariant =
   | 'fade'

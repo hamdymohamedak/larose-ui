@@ -1,6 +1,5 @@
 import type { Preview } from '@storybook/react';
 import '@larose-ui/tokens/styles.css';
-import '@larose-ui/react/styles.css';
 import { LaRoseProvider } from '@larose-ui/runtime';
 import React from 'react';
 
@@ -59,6 +58,7 @@ const preview: Preview = {
           density={density}
           locale={locale}
           environment={environment}
+          motion={{ reducedMotion: 'never' }}
           {...providerOverrides}
         >
           {storyContent}

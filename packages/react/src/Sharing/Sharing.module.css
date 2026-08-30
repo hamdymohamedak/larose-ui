@@ -239,7 +239,16 @@
 
 .popover[data-side='bottom'] {
   top: calc(100% + var(--lr-space-2));
+}
+
+.popover[data-side='bottom'][data-align='end'] {
   right: 0;
+  left: auto;
+}
+
+.popover[data-side='bottom'][data-align='start'] {
+  left: 0;
+  right: auto;
 }
 
 .section {

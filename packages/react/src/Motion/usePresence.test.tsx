@@ -9,7 +9,7 @@ function wrapper({ children }: { children: ReactNode }) {
 }
 
 describe('usePresence', () => {
-  it('mounts on present and unmounts after exit', () => {
+  it('mounts on present and unmounts after exit', async () => {
     const { result, rerender } = renderHook(
       ({ present }) => usePresence({ present }),
       { initialProps: { present: false }, wrapper },
@@ -20,14 +20,25 @@ describe('usePresence', () => {
 
     rerender({ present: true });
     expect(result.current.shouldRender).toBe(true);
+    expect(['mounting', 'entering']).toContain(result.current.phase);
+
+    await act(async () => {
+      await new Promise<void>((resolve) => {
+        requestAnimationFrame(() => requestAnimationFrame(() => resolve()));
+      });
+    });
+
     expect(result.current.phase).toBe('entering');
 
     act(() => {
+      const el = document.createElement('div');
       result.current.onAnimationEnd({
-        target: document.createElement('div'),
-        currentTarget: document.createElement('div'),
+        target: el,
+        currentTarget: el,
       } as unknown as React.AnimationEvent);
     });
+
+    expect(result.current.phase).toBe('entered');
 
     rerender({ present: false });
     expect(result.current.phase).toBe('exiting');

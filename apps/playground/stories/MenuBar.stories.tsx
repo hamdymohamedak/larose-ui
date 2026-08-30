@@ -60,7 +60,7 @@ export const MacOSStandard: Story = {
     ];
 
     return (
-      <div style={{ minHeight: '20rem' }}>
+      <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
         <MenuBar
           appName="Safari"
           standardOptions={{
@@ -97,7 +97,19 @@ export const MacOSStandard: Story = {
           platform="macos"
           onMenuAction={(menuId, entryId) => setLastAction(`${menuId} › ${entryId}`)}
         />
-        <div style={{ padding: '1.5rem', display: 'grid', gap: '1rem', maxWidth: '40rem' }}>
+        <div
+          style={{
+            flex: 1,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '2rem',
+            gap: '1rem',
+            maxWidth: '40rem',
+            margin: '0 auto',
+          }}
+        >
           <Typography variant="body">
             Hold <strong>Option</strong> while a menu is open to reveal dynamic items such as Close
             All, Minimize All, and Quit and Keep Windows.
@@ -129,13 +141,10 @@ export const MacOSStandard: Story = {
 export const IPadOSHiddenUntilRevealed: Story = {
   name: 'iPadOS reveal at top edge',
   render: function IPadOSMenuBarDemo() {
-    const [revealed, setRevealed] = useState(false);
+    const [revealed, setRevealed] = useState(true);
 
     return (
-      <div style={{ minHeight: '16rem', position: 'relative' }}>
-        <Typography variant="caption" style={{ padding: '1rem', display: 'block' }}>
-          Move the pointer to the top edge to reveal the centered menu bar.
-        </Typography>
+      <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
         <MenuBar
           appName="Mail"
           platform="ipados"
@@ -153,6 +162,26 @@ export const IPadOSHiddenUntilRevealed: Story = {
             },
           ]}
         />
+        <div
+          style={{
+            flex: 1,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '2rem',
+            gap: '1rem',
+            textAlign: 'center',
+          }}
+        >
+          <Typography variant="caption">
+            The menu bar is revealed at the top. Open <strong>Edit</strong> and hover items such as{' '}
+            <strong>Find</strong> or <strong>Speech</strong> to see nested submenus.
+          </Typography>
+          <button type="button" onClick={() => setRevealed((value) => !value)}>
+            {revealed ? 'Hide menu bar' : 'Show menu bar'}
+          </button>
+        </div>
       </div>
     );
   },
@@ -161,18 +190,33 @@ export const IPadOSHiddenUntilRevealed: Story = {
 export const DisabledNotHidden: Story = {
   name: 'Unavailable items stay visible',
   render: () => (
-    <MenuBar
-      appName="TextEdit"
-      platform="macos"
-      showAppleMenu={false}
-      standardOptions={{
-        context: {
-          isDocumentOpen: false,
-          canUndo: false,
-          hasSelection: false,
-          canPaste: false,
-        },
-      }}
-    />
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <MenuBar
+        appName="TextEdit"
+        platform="macos"
+        showAppleMenu={false}
+        standardOptions={{
+          context: {
+            isDocumentOpen: false,
+            canUndo: false,
+            hasSelection: false,
+            canPaste: false,
+          },
+        }}
+      />
+      <div
+        style={{
+          flex: 1,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '2rem',
+        }}
+      >
+        <Typography variant="caption" muted>
+          Unavailable commands remain visible but dimmed — open File or Edit to compare.
+        </Typography>
+      </div>
+    </div>
   ),
 };

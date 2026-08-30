@@ -11,7 +11,7 @@ import {
   type ReactElement,
   type ReactNode,
 } from 'react';
-import { createPortal } from 'react-dom';
+import { ContextualMenuPortal } from '../Motion/OverlayPortal';
 import type { ContextMenuEntry, ContextMenuItemConfig, ContextMenuPosition } from './types';
 import {
   canShowDisabledItem,
@@ -42,40 +42,18 @@ function ContextMenuPanel({
   title,
   preview,
   entries,
-  position,
   onSelect,
-  onClose,
 }: {
   menuId: string;
   title?: string;
   preview?: ReactNode;
   entries: ContextMenuEntry[];
-  position: ContextMenuPosition;
   onSelect: (entry: ContextMenuItemConfig) => void;
-  onClose: () => void;
 }) {
-  const menuRef = useRef<HTMLDivElement>(null);
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
 
-  useEffect(() => {
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') onClose();
-    };
-    document.addEventListener('keydown', onKeyDown);
-    return () => document.removeEventListener('keydown', onKeyDown);
-  }, [onClose]);
-
   return (
-    <div
-      ref={menuRef}
-      id={menuId}
-      className={styles.menu}
-      role="menu"
-      aria-label={title ?? 'Context menu'}
-      style={{ left: position.x, top: position.y }}
-      data-placement={position.placement}
-      onClick={(event) => event.stopPropagation()}
-    >
+    <>
       {title && <p className={styles.title}>{title}</p>}
       {preview && <div className={styles.preview}>{preview}</div>}
       <ul className={styles.list}>
@@ -125,7 +103,7 @@ function ContextMenuPanel({
           return null;
         })}
       </ul>
-    </div>
+    </>
   );
 }
 
@@ -257,6 +235,15 @@ export function ContextMenu({
       },
     });
 
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') close();
+    };
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, [close, isOpen]);
+
   if (!isValidElement(children)) {
     throw new Error('ContextMenu expects a single React element child.');
   }
@@ -264,24 +251,27 @@ export function ContextMenu({
   return (
     <>
       <span className={styles.triggerWrap}>{bindTrigger(children as ReactElement<Record<string, unknown>>)}</span>
-      {isOpen &&
-        createPortal(
-          <>
-            {dimBackground && (
-              <div className={styles.menuBackdrop} role="presentation" onClick={close} />
-            )}
-            <ContextMenuPanel
-              menuId={menuId}
-              title={title}
-              preview={preview}
-              entries={preparedEntries}
-              position={position}
-              onSelect={handleSelect}
-              onClose={close}
-            />
-          </>,
-          document.body,
-        )}
+      <ContextualMenuPortal
+        open={isOpen}
+        onClose={close}
+        placement={position.placement === 'above' ? 'top' : 'bottom'}
+        showBackdrop={dimBackground}
+        backdropClassName={styles.menuBackdrop}
+        surfaceId={menuId}
+        surfaceClassName={styles.menu}
+        surfaceRole="menu"
+        aria-label={title ?? 'Context menu'}
+        surfaceStyle={{ left: position.x, top: position.y }}
+        onSurfaceClick={(event) => event.stopPropagation()}
+      >
+        <ContextMenuPanel
+          menuId={menuId}
+          title={title}
+          preview={preview}
+          entries={preparedEntries}
+          onSelect={handleSelect}
+        />
+      </ContextualMenuPortal>
     </>
   );
 }

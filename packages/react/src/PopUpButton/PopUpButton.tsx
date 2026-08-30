@@ -6,7 +6,7 @@ import {
   useRef,
   useState,
 } from 'react';
-import { createPortal } from 'react-dom';
+import { ContextualMenuPortal } from '../Motion/OverlayPortal';
 import type { PopUpCustomOption, PopUpOption } from './types';
 import {
   buildPopUpMenuEntries,
@@ -87,7 +87,7 @@ export function PopUpButton({
     setOpen(true);
   }, []);
 
-  const close = useCallback(() => setOpen(false), []);
+  const close = useCallback(() => setOpen(false), [setOpen]);
 
   const handleSelect = useCallback(
     (entryId: string) => {
@@ -139,54 +139,51 @@ export function PopUpButton({
         <span className={styles.triggerLabel}>{displayLabel}</span>
         <ChevronDown />
       </button>
-      {open &&
-        createPortal(
-          <>
-            <div className={styles.menuBackdrop} role="presentation" onClick={close} />
-            <div
-              id={menuId}
-              className={styles.menuPanel}
-              role="listbox"
-              aria-label={label ?? 'Options'}
-              style={{ left: position.x, top: position.y }}
-              onClick={(event) => event.stopPropagation()}
-            >
-              <ul className={styles.list}>
-                {menuEntries.map((entry, index) => {
-                  if (entry.type === 'separator') {
-                    return (
-                      <li key={entry.id ?? `sep-${index}`} className={styles.separator} role="separator" />
-                    );
-                  }
-                  if (entry.type === 'submenu') return null;
-                  return (
-                    <li key={entry.id}>
-                      <button
-                        type="button"
-                        className={styles.item}
-                        role="option"
-                        aria-selected={entry.selected ? true : undefined}
-                        disabled={entry.disabled}
-                        onClick={() => handleSelect(entry.id)}
-                      >
-                        <span className={styles.checkmark} aria-hidden="true">
-                          {entry.selected ? '✓' : ''}
-                        </span>
-                        <span className={styles.itemLabel}>{entry.label}</span>
-                      </button>
-                    </li>
-                  );
-                })}
-              </ul>
-              {explanatoryText && open && (
-                <p className={styles.explanatory} style={{ padding: '0.5rem 0.75rem 0.25rem' }}>
-                  {explanatoryText}
-                </p>
-              )}
-            </div>
-          </>,
-          document.body,
+      <ContextualMenuPortal
+        open={open}
+        onClose={close}
+        placement="bottom"
+        backdropClassName={styles.menuBackdrop}
+        surfaceId={menuId}
+        surfaceClassName={styles.menuPanel}
+        surfaceRole="listbox"
+        aria-label={label ?? 'Options'}
+        surfaceStyle={{ left: position.x, top: position.y }}
+        onSurfaceClick={(event) => event.stopPropagation()}
+      >
+        <ul className={styles.list}>
+          {menuEntries.map((entry, index) => {
+            if (entry.type === 'separator') {
+              return (
+                <li key={entry.id ?? `sep-${index}`} className={styles.separator} role="separator" />
+              );
+            }
+            if (entry.type === 'submenu') return null;
+            return (
+              <li key={entry.id}>
+                <button
+                  type="button"
+                  className={styles.item}
+                  role="option"
+                  aria-selected={entry.selected ? true : undefined}
+                  disabled={entry.disabled}
+                  onClick={() => handleSelect(entry.id)}
+                >
+                  <span className={styles.checkmark} aria-hidden="true">
+                    {entry.selected ? '✓' : ''}
+                  </span>
+                  <span className={styles.itemLabel}>{entry.label}</span>
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+        {explanatoryText && open && (
+          <p className={styles.explanatory} style={{ padding: '0.5rem 0.75rem 0.25rem' }}>
+            {explanatoryText}
+          </p>
         )}
+      </ContextualMenuPortal>
     </div>
   );
 }

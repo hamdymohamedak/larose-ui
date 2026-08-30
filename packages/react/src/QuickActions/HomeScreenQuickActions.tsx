@@ -7,7 +7,7 @@ import {
   useState,
   type ReactNode,
 } from 'react';
-import { createPortal } from 'react-dom';
+import { ContextualMenuPortal } from '../Motion/OverlayPortal';
 import { LONG_PRESS_MS } from '../ContextMenu/utils';
 import type { QuickActionIconPlacement, QuickActionItem } from './types';
 import {
@@ -169,20 +169,32 @@ export function HomeScreenQuickActions({
         {icon}
       </div>
       <span className={styles.hint}>Touch and hold for quick actions</span>
-      {isOpen &&
-        createPortal(
-          <>
-            <div className={styles.menuBackdrop} role="presentation" onClick={close} />
-            <div
-              id={menuId}
-              className={styles.menu}
-              role="menu"
-              aria-label={`${appName} quick actions`}
-              style={{ left: position.x, top: position.y }}
-              onClick={(event) => event.stopPropagation()}
-            >
+      <ContextualMenuPortal
+        open={isOpen}
+        onClose={close}
+        placement="top"
+        backdropClassName={styles.menuBackdrop}
+        surfaceId={menuId}
+        surfaceClassName={styles.menu}
+        surfaceRole="menu"
+        aria-label={`${appName} quick actions`}
+        surfaceStyle={{ left: position.x, top: position.y }}
+        onSurfaceClick={(event) => event.stopPropagation()}
+      >
+        <ul className={styles.list}>
+          {appActions.map((action) => (
+            <li key={action.id}>
+              <QuickActionRow
+                action={action}
+                iconPlacement={iconPlacement}
+                onSelect={handleSelect}
+              />
+            </li>
+          ))}
+          {systemGroup.length > 0 && (
+            <li className={styles.systemGroup} role="presentation">
               <ul className={styles.list}>
-                {appActions.map((action) => (
+                {systemGroup.map((action) => (
                   <li key={action.id}>
                     <QuickActionRow
                       action={action}
@@ -191,26 +203,11 @@ export function HomeScreenQuickActions({
                     />
                   </li>
                 ))}
-                {systemGroup.length > 0 && (
-                  <li className={styles.systemGroup} role="presentation">
-                    <ul className={styles.list}>
-                      {systemGroup.map((action) => (
-                        <li key={action.id}>
-                          <QuickActionRow
-                            action={action}
-                            iconPlacement={iconPlacement}
-                            onSelect={handleSelect}
-                          />
-                        </li>
-                      ))}
-                    </ul>
-                  </li>
-                )}
               </ul>
-            </div>
-          </>,
-          document.body,
-        )}
+            </li>
+          )}
+        </ul>
+      </ContextualMenuPortal>
     </div>
   );
 }

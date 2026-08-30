@@ -423,6 +423,76 @@
   animation: lr-drawer-exit-left var(--lr-motion-duration-normal) var(--lr-motion-easing-exit) forwards;
 }
 
+/* Fixed-position menus (dock, context, edit, quick actions) */
+@keyframes lr-menu-enter-bottom {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(calc(var(--lr-motion-distance-xs) * -1));
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes lr-menu-exit-bottom {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.96) translateY(calc(var(--lr-motion-distance-xs) * -1));
+  }
+}
+
+@keyframes lr-menu-enter-top {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(var(--lr-motion-distance-xs));
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes lr-menu-exit-top {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.96) translateY(var(--lr-motion-distance-xs));
+  }
+}
+
+.menu-bottom-entering {
+  transform-origin: top center;
+  animation: lr-menu-enter-bottom var(--lr-motion-duration-fast) var(--lr-motion-spring-snappy) forwards;
+}
+
+.menu-bottom-exiting {
+  transform-origin: top center;
+  animation: lr-menu-exit-bottom var(--lr-motion-duration-exit) var(--lr-motion-easing-exit) forwards;
+}
+
+.menu-top-entering {
+  transform-origin: bottom center;
+  animation: lr-menu-enter-top var(--lr-motion-duration-fast) var(--lr-motion-spring-snappy) forwards;
+}
+
+.menu-top-exiting {
+  transform-origin: bottom center;
+  animation: lr-menu-exit-top var(--lr-motion-duration-exit) var(--lr-motion-easing-exit) forwards;
+}
+
+:global([data-presence='mounting']) {
+  opacity: 0;
+  pointer-events: none;
+}
+
 /* Layout motion — toast stack reordering */
 .layoutItem {
   transition:
@@ -446,7 +516,11 @@
   .drawer-right-entering,
   .drawer-right-exiting,
   .drawer-left-entering,
-  .drawer-left-exiting {
+  .drawer-left-exiting,
+  .menu-bottom-entering,
+  .menu-bottom-exiting,
+  .menu-top-entering,
+  .menu-top-exiting {
     animation-duration: 0ms !important;
   }
 

@@ -19,25 +19,25 @@ export function getLockupTokens(mode: ThemeMode): LockupTokens {
   if (mode === 'dark') {
     return {
       gap: '1.5rem',
-      focusScale: '1.08',
-      focusShadow: '0 16px 40px rgb(0 0 0 / 0.45)',
-      focusTilt: '4deg',
-      cardRadius: '0.75rem',
-      monogramSize: '5rem',
+      focusScale: '1.04',
+      focusShadow: '0 20px 48px rgb(0 0 0 / 0.5)',
+      focusTilt: '3deg',
+      cardRadius: '0.875rem',
+      monogramSize: '4.5rem',
       posterRadius: '0.625rem',
-      captionRadius: '0.625rem',
+      captionRadius: '0.75rem',
     };
   }
 
   return {
     gap: '1.5rem',
-    focusScale: '1.06',
-    focusShadow: '0 12px 32px rgb(0 0 0 / 0.18)',
+    focusScale: '1.04',
+    focusShadow: '0 20px 48px rgb(0 0 0 / 0.14)',
     focusTilt: '3deg',
-    cardRadius: '0.75rem',
-    monogramSize: '5rem',
+    cardRadius: '0.875rem',
+    monogramSize: '4.5rem',
     posterRadius: '0.625rem',
-    captionRadius: '0.625rem',
+    captionRadius: '0.75rem',
   };
 }
 
