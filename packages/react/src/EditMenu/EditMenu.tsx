@@ -325,7 +325,6 @@ export function EditMenu({
   }
 
   const showCompact = resolvedVariant === 'compact' && !expanded;
-  const showContext = resolvedVariant === 'context' || expanded;
   const motionPlacement = position.placement === 'above' ? 'top' : 'bottom';
 
   return (

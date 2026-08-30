@@ -51,7 +51,7 @@ export function SidebarHeader({ children }: SidebarHeaderProps) {
   return <div className={styles.header}>{children}</div>;
 }
 
-export interface SidebarSearchProps extends Omit<SearchFieldProps, 'placement'> {}
+export type SidebarSearchProps = Omit<SearchFieldProps, 'placement'>;
 
 export function SidebarSearch(props: SidebarSearchProps) {
   return (

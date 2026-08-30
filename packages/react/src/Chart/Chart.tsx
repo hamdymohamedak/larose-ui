@@ -422,7 +422,7 @@ export function Chart({
             y2={height - padding.bottom}
           />
 
-          {categories.map((cat, i) => {
+          {categories.map((cat) => {
             const x = xBandIndex(cat, categories, width, padding);
             return (
               <g key={String(cat)}>

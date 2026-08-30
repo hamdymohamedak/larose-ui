@@ -10,7 +10,6 @@ import {
   useMemo,
   useState,
   type ReactElement,
-  type ReactNode,
 } from 'react';
 import type { TabBarItemProps, TabBarListProps, TabBarPanelProps, TabBarProps } from './types';
 import { formatTabBarBadge, resolveTabBarPlacement, warnIfTooManyTabs } from './utils';

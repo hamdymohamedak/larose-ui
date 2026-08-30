@@ -10,7 +10,6 @@ import {
 import type {
   SearchFieldProps,
   SearchScopeBarProps,
-  SearchScopeOption,
   SearchTokenChipProps,
 } from './types';
 import {

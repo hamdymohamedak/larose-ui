@@ -38,7 +38,7 @@ export interface ContextMenuProps {
 }
 
 function ContextMenuPanel({
-  menuId,
+  menuId: _menuId,
   title,
   preview,
   entries,

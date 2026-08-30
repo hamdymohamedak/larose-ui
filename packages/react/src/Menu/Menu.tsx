@@ -63,7 +63,7 @@ function MenuItemRow({
 }
 
 function MenuPanel({
-  menuId,
+  menuId: _menuId,
   entries,
   layout,
   title,

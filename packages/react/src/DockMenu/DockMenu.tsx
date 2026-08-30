@@ -10,7 +10,7 @@ import {
 } from 'react';
 import { ContextualMenuPortal } from '../Motion/OverlayPortal';
 import type { ContextMenuEntry, ContextMenuItemConfig } from '../ContextMenu/types';
-import { canShowDisabledItem, isItem, LONG_PRESS_MS } from '../ContextMenu/utils';
+import { canShowDisabledItem, isItem } from '../ContextMenu/utils';
 import type { DockMenuPosition, DockWindow } from './types';
 import { buildDockMenuEntries, resolveDockMenuPosition } from './utils';
 import styles from './DockMenu.module.css';

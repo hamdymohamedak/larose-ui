@@ -88,7 +88,7 @@ export function DragDropProvider({ children }: DragDropProviderProps) {
       pointerId: number,
       x: number,
       y: number,
-      element: HTMLElement,
+      _element: HTMLElement,
     ) => {
       setRevertPreview(false);
       setSession({

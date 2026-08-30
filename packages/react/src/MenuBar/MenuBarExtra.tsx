@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useMemo } from 'react';
 import { Menu } from '../Menu/Menu';
 import { prepareMenuEntries } from '../Menu/utils';
 import type { MenuItemConfig } from '../Menu/types';

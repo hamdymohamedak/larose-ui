@@ -67,7 +67,6 @@ export function ThemeProvider({
   brandColors,
 }: ThemeProviderProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const resolvedTheme = theme ?? resolveAppearanceTheme(appearance);
   const [systemTheme, setSystemTheme] = useState<ThemeMode>(() =>
     resolveAppearanceTheme(appearance),
   );
