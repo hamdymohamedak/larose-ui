@@ -1,0 +1,107 @@
+.frame {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: var(--lr-image-radius);
+  background: var(--lr-image-placeholder-bg);
+}
+
+.frame[data-background='transparent'] {
+  background: transparent;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.overlay {
+  position: relative;
+  display: inline-flex;
+  overflow: hidden;
+  border-radius: var(--lr-image-radius);
+}
+
+.overlayImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlayScrim {
+  position: absolute;
+  inset: 0;
+  background: var(--lr-image-overlay-scrim);
+  pointer-events: none;
+}
+
+.overlayContent {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  padding: var(--lr-space-4);
+  color: var(--lr-color-text-inverse);
+  text-shadow: var(--lr-image-overlay-text-shadow);
+}
+
+.well {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 10rem;
+  border: 1px dashed var(--lr-image-well-border);
+  border-radius: var(--lr-image-radius);
+  background: var(--lr-image-well-bg);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.well[data-state='dragover'] {
+  border-color: var(--lr-color-primary);
+  background: var(--lr-file-row-selected);
+}
+
+.well:focus-visible {
+  outline: 2px solid var(--lr-color-primary);
+  outline-offset: 2px;
+}
+
+.wellInput {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.wellPlaceholder {
+  font-size: var(--lr-font-size-sm);
+  color: var(--lr-color-text-muted);
+  text-align: center;
+  padding: var(--lr-space-4);
+}
+
+.imageButton {
+  display: inline-flex;
+  padding: 0;
+  border: none;
+  background: transparent;
+  border-radius: var(--lr-image-radius);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.imageButton:focus-visible {
+  outline: 2px solid var(--lr-color-primary);
+  outline-offset: 2px;
+}
+
+.imageButtonImage {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}

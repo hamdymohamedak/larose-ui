@@ -128,7 +128,7 @@ function PlatformDemo() {
 const meta: Meta<typeof PlatformDemo> = {
   title: 'Platform/Full Demo',
   component: PlatformDemo,
-  parameters: { layout: 'padded' },
+  parameters: { layout: 'padded', laRose: { standalone: true } },
 };
 
 export default meta;

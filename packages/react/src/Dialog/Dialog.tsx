@@ -32,12 +32,13 @@ export function Dialog({
     <Modal open={open} onClose={onClose} title={title} description={description}>
       {children && <div className={styles.body}>{children}</div>}
       <div className={styles.actions}>
-        <Button variant="secondary" onClick={onClose} disabled={loading}>
+        <Button buttonRole="cancel" variant="secondary" onClick={onClose} disabled={loading}>
           {cancelLabel}
         </Button>
         {onConfirm && (
           <Button
-            variant={variant === 'destructive' ? 'destructive' : 'primary'}
+            variant={variant === 'destructive' ? 'ghost' : 'primary'}
+            buttonRole={variant === 'destructive' ? 'destructive' : 'primary'}
             onClick={onConfirm}
             loading={loading}
           >

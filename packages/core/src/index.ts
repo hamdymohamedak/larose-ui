@@ -97,6 +97,20 @@ export interface VersionInfo {
 export type Variant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'destructive';
 export type Size = 'sm' | 'md' | 'lg';
 
+/** Apple HIG button semantic roles — style, content, and role. */
+export type ButtonRole = 'normal' | 'primary' | 'cancel' | 'destructive';
+
+export type TypographyRole =
+  | 'display'
+  | 'largeTitle'
+  | 'title'
+  | 'headline'
+  | 'body'
+  | 'callout'
+  | 'subheadline'
+  | 'footnote'
+  | 'caption';
+
 export interface ComponentStateProps {
   state?: UIState;
   loading?: boolean;

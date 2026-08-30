@@ -1,6 +1,8 @@
 import { forwardRef, type TextareaHTMLAttributes } from 'react';
 import type { Size, UIState } from '@larose-ui/core';
 import { resolveUIState } from '@larose-ui/core';
+import { FieldShell } from '../DataEntry/FieldShell';
+import { fieldIdFromLabel } from '../DataEntry/utils';
 import styles from './Textarea.module.css';
 
 export interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
@@ -10,6 +12,7 @@ export interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElemen
   loading?: boolean;
   error?: string | null;
   inputSize?: Size;
+  required?: boolean;
 }
 
 export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
@@ -22,6 +25,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
       error = null,
       disabled,
       readOnly,
+      required = false,
       inputSize = 'md',
       className,
       id,
@@ -30,17 +34,19 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
     },
     ref,
   ) => {
-    const inputId = id ?? (label ? label.toLowerCase().replace(/\s+/g, '-') : undefined);
+    const inputId = id ?? (label ? fieldIdFromLabel(label) : undefined);
     const uiState = resolveUIState({ state, loading, error, disabled, readonly: readOnly });
     const errorMessage = typeof error === 'string' ? error : null;
 
     return (
-      <div className={styles.wrapper} data-state={uiState}>
-        {label && (
-          <label htmlFor={inputId} className={styles.label}>
-            {label}
-          </label>
-        )}
+      <FieldShell
+        label={label}
+        hint={hint}
+        error={errorMessage}
+        required={required}
+        htmlFor={inputId}
+        uiState={uiState}
+      >
         <div className={styles.inputContainer}>
           <textarea
             ref={ref}
@@ -51,6 +57,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
             data-state={uiState}
             disabled={disabled || uiState === 'disabled'}
             readOnly={readOnly || uiState === 'readonly'}
+            required={required}
             aria-invalid={uiState === 'error'}
             aria-busy={uiState === 'loading'}
             aria-describedby={
@@ -62,17 +69,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
             <span className={styles.loadingIndicator} aria-hidden="true" />
           )}
         </div>
-        {hint && !errorMessage && (
-          <span id={`${inputId}-hint`} className={styles.hint}>
-            {hint}
-          </span>
-        )}
-        {errorMessage && (
-          <span id={`${inputId}-error`} className={styles.error} role="alert">
-            {errorMessage}
-          </span>
-        )}
-      </div>
+      </FieldShell>
     );
   },
 );

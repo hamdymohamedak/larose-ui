@@ -6,7 +6,7 @@ import {
   type ColorTokens,
 } from '@larose-ui/tokens';
 
-export type ThemePresetId = 'default' | 'ocean' | 'forest' | 'sunset';
+export type ThemePresetId = 'default' | 'refined' | 'ocean' | 'forest' | 'sunset';
 
 export interface ThemePreset {
   id: ThemePresetId;
@@ -19,6 +19,12 @@ const presets: Record<ThemePresetId, ThemePreset> = {
   default: {
     id: 'default',
     label: 'Default',
+    mode: 'light',
+    colors: {},
+  },
+  refined: {
+    id: 'refined',
+    label: 'Refined (Apple-inspired)',
     mode: 'light',
     colors: {},
   },

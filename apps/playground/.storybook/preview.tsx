@@ -1,5 +1,6 @@
 import type { Preview } from '@storybook/react';
 import '@larose-ui/tokens/styles.css';
+import '@larose-ui/react/styles.css';
 import { LaRoseProvider } from '@larose-ui/runtime';
 import React from 'react';
 
@@ -8,9 +9,33 @@ const preview: Preview = {
     controls: { expanded: true },
     layout: 'centered',
   },
+  initialGlobals: {
+    theme: 'light',
+    density: 'comfortable',
+    locale: 'en',
+    environment: 'development',
+  },
   decorators: [
     (Story, context) => {
-      const theme = (context.globals.theme as 'light' | 'dark') ?? 'light';
+      const standalone = context.parameters.laRose?.standalone === true;
+
+      const storyContent = (
+        <div
+          style={{
+            padding: context.parameters.layout === 'fullscreen' ? 0 : '2rem',
+            minWidth: 320,
+            width: context.parameters.layout === 'fullscreen' ? '100%' : undefined,
+          }}
+        >
+          <Story />
+        </div>
+      );
+
+      if (standalone) {
+        return storyContent;
+      }
+
+      const theme = context.globals.theme as 'light' | 'dark' | undefined;
       const density =
         (context.globals.density as 'compact' | 'comfortable' | 'spacious') ??
         'comfortable';
@@ -22,16 +47,21 @@ const preview: Preview = {
           | 'demo'
           | 'readonly') ?? 'development';
 
+      const providerOverrides = (context.parameters.laRose?.provider ?? {}) as Record<
+        string,
+        unknown
+      >;
+
       return (
         <LaRoseProvider
           theme={theme}
+          appearance={theme ?? 'system'}
           density={density}
           locale={locale}
           environment={environment}
+          {...providerOverrides}
         >
-          <div style={{ padding: '2rem', minWidth: 320 }}>
-            <Story />
-          </div>
+          {storyContent}
         </LaRoseProvider>
       );
     },

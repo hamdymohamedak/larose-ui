@@ -1,0 +1,75 @@
+.root {
+  margin: 0;
+  font-family: var(--lr-font-family-sans);
+  color: var(--lr-color-text);
+}
+
+.root[data-lr-type='display'] {
+  font-size: var(--lr-type-display-size);
+  font-weight: var(--lr-type-display-weight);
+  line-height: var(--lr-type-display-line-height);
+  letter-spacing: var(--lr-type-display-letter-spacing);
+}
+
+.root[data-lr-type='largeTitle'] {
+  font-size: var(--lr-type-large-title-size);
+  font-weight: var(--lr-type-large-title-weight);
+  line-height: var(--lr-type-large-title-line-height);
+  letter-spacing: var(--lr-type-large-title-letter-spacing);
+}
+
+.root[data-lr-type='title'] {
+  font-size: var(--lr-type-title-size);
+  font-weight: var(--lr-type-title-weight);
+  line-height: var(--lr-type-title-line-height);
+  letter-spacing: var(--lr-type-title-letter-spacing);
+}
+
+.root[data-lr-type='headline'] {
+  font-size: var(--lr-type-headline-size);
+  font-weight: var(--lr-type-headline-weight);
+  line-height: var(--lr-type-headline-line-height);
+  letter-spacing: var(--lr-type-headline-letter-spacing);
+}
+
+.root[data-lr-type='body'] {
+  font-size: var(--lr-type-body-size);
+  font-weight: var(--lr-type-body-weight);
+  line-height: var(--lr-type-body-line-height);
+  letter-spacing: var(--lr-type-body-letter-spacing);
+}
+
+.root[data-lr-type='callout'] {
+  font-size: var(--lr-type-callout-size);
+  font-weight: var(--lr-type-callout-weight);
+  line-height: var(--lr-type-callout-line-height);
+  letter-spacing: var(--lr-type-callout-letter-spacing);
+}
+
+.root[data-lr-type='subheadline'],
+.root[data-lr-type='footnote'],
+.root[data-lr-type='caption'],
+.root[data-muted='true'] {
+  color: var(--lr-color-text-muted);
+}
+
+.root[data-lr-type='subheadline'] {
+  font-size: var(--lr-type-subheadline-size);
+  font-weight: var(--lr-type-subheadline-weight);
+  line-height: var(--lr-type-subheadline-line-height);
+  letter-spacing: var(--lr-type-subheadline-letter-spacing);
+}
+
+.root[data-lr-type='footnote'] {
+  font-size: var(--lr-type-footnote-size);
+  font-weight: var(--lr-type-footnote-weight);
+  line-height: var(--lr-type-footnote-line-height);
+  letter-spacing: var(--lr-type-footnote-letter-spacing);
+}
+
+.root[data-lr-type='caption'] {
+  font-size: var(--lr-type-caption-size);
+  font-weight: var(--lr-type-caption-weight);
+  line-height: var(--lr-type-caption-line-height);
+  letter-spacing: var(--lr-type-caption-letter-spacing);
+}

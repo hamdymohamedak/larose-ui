@@ -30,6 +30,7 @@ function SmartTableDemo() {
 const meta: Meta<typeof SmartTableDemo> = {
   title: 'AI/SmartTable',
   component: SmartTableDemo,
+  parameters: { laRose: { standalone: true } },
 };
 
 export default meta;

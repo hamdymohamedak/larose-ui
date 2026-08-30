@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
-import { LaRoseProvider } from '@larose-ui/runtime';
 import {
   ObservedForm,
   ObservedComponent,
@@ -106,14 +105,12 @@ function ObservabilityDemo() {
 const meta: Meta = {
   title: 'Observability/Demo',
   component: ObservabilityDemo,
-  parameters: { layout: 'padded' },
-  decorators: [
-    (Story) => (
-      <LaRoseProvider observabilityDebug permissions={['employees.create']}>
-        <Story />
-      </LaRoseProvider>
-    ),
-  ],
+  parameters: {
+    layout: 'padded',
+    laRose: {
+      provider: { observabilityDebug: true, permissions: ['employees.create'] },
+    },
+  },
 };
 
 export default meta;

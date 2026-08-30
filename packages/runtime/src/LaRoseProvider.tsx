@@ -10,6 +10,7 @@ import type {
 } from '@larose-ui/core';
 import { LAROSE_VERSION } from '@larose-ui/core';
 import type { ColorTokens } from '@larose-ui/tokens';
+import { getThemePreset, type ThemePresetId } from '@larose-ui/themes';
 import { PermissionProvider } from '@larose-ui/permissions';
 import {
   ObservabilityProvider,
@@ -24,7 +25,7 @@ import { I18nProvider } from './i18n/I18nProvider';
 import { NetworkProvider } from './network/NetworkProvider';
 import { OfflineProvider } from './offline/OfflineProvider';
 import { ResponsiveProvider } from './responsive/ResponsiveProvider';
-import { ThemeProvider } from './theme/ThemeProvider';
+import { ThemeProvider, type Appearance } from './theme/ThemeProvider';
 import { useNetwork } from './network/NetworkProvider';
 import { useOffline } from './offline/OfflineProvider';
 import { RuntimeContextProvider } from './runtime/RuntimeContextProvider';
@@ -40,7 +41,11 @@ import {
 export interface LaRoseProviderProps {
   children: ReactNode;
   theme?: ThemeMode;
+  /** Resolves light/dark from system when set to `system`. Defaults to Apple-inspired tokens. */
+  appearance?: Appearance;
   density?: Density;
+  /** Brand color preset. `refined` (Apple-inspired) is the default token set. */
+  themePreset?: 'refined' | ThemePresetId;
   tenantId?: string;
   tenant?: TenantContext;
   brandColors?: Partial<ColorTokens>;
@@ -104,11 +109,13 @@ function AutoSync({
 
 export function LaRoseProvider({
   children,
-  theme = 'light',
+  theme,
+  appearance = 'system',
+  themePreset = 'refined',
   density = 'comfortable',
   tenantId,
   tenant,
-  brandColors,
+  brandColors: brandColorsProp,
   locale = 'en',
   timezone,
   environment = 'development',
@@ -131,6 +138,15 @@ export function LaRoseProvider({
   const adapter =
     observabilityAdapter ??
     (observabilityDebug ? createConsoleAdapter() : createNoopAdapter());
+
+  const presetBrandColors =
+    themePreset !== 'refined' ? getThemePreset(themePreset).colors : undefined;
+
+  const brandColors = {
+    ...presetBrandColors,
+    ...brandColorsProp,
+    ...(tenant?.brandColors as Partial<ColorTokens> | undefined),
+  };
 
   const resolved = resolveTenantConfig({
     tenant,
@@ -170,6 +186,7 @@ export function LaRoseProvider({
     >
       <ThemeProvider
         theme={resolved.theme}
+        appearance={appearance}
         density={resolved.density}
         tenantId={resolvedTenantId}
         brandColors={resolved.brandColors}

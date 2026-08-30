@@ -25,6 +25,7 @@ function DevToolsDemo() {
 const meta: Meta<typeof DevToolsDemo> = {
   title: 'DevOps/DevTools',
   component: DevToolsDemo,
+  parameters: { laRose: { standalone: true } },
 };
 
 export default meta;

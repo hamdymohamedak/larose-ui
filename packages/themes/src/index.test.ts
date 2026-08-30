@@ -5,6 +5,7 @@ describe('@larose-ui/themes', () => {
   it('lists built-in presets', () => {
     expect(listThemePresets().map((p) => p.id)).toEqual([
       'default',
+      'refined',
       'ocean',
       'forest',
       'sunset',

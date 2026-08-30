@@ -1,5 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Input } from '@larose-ui/react';
+import {
+  Input,
+  SecureField,
+  combineValidators,
+  createEmailValidator,
+  createRequiredValidator,
+} from '@larose-ui/react';
 
 const meta: Meta<typeof Input> = {
   title: 'Foundation/Input',
@@ -17,9 +23,40 @@ export const Default: Story = {
 export const WithHint: Story = {
   args: {
     label: 'Email',
-    placeholder: 'name@company.com',
+    placeholder: 'username@company.com',
     hint: 'Work email address',
   },
+};
+
+export const Required: Story = {
+  args: {
+    label: 'Email',
+    placeholder: 'username@company.com',
+    required: true,
+  },
+};
+
+export const Validated: Story = {
+  args: {
+    label: 'Email',
+    placeholder: 'username@company.com',
+    required: true,
+    validate: combineValidators(createRequiredValidator(), createEmailValidator()),
+    validateOn: 'change',
+  },
+};
+
+export const CurrencyFormat: Story = {
+  args: {
+    label: 'Salary',
+    format: 'currency',
+    defaultValue: '85000',
+    hint: 'Formatted when the field loses focus',
+  },
+};
+
+export const Secure: Story = {
+  render: () => <SecureField label="Password" required hint="Never prepopulated" />,
 };
 
 export const Loading: Story = {

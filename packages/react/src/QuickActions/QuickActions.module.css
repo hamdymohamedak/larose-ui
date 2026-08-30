@@ -1,0 +1,120 @@
+.quickActionsWrap {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--lr-space-3);
+}
+
+.appIcon {
+  width: var(--lr-quick-action-icon-size);
+  height: var(--lr-quick-action-icon-size);
+  border-radius: var(--lr-radius-lg);
+  box-shadow: var(--lr-shadow-md);
+  cursor: pointer;
+}
+
+.hint {
+  font-size: var(--lr-font-size-xs);
+  color: var(--lr-color-text-muted);
+}
+
+.menuBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  background: rgb(0 0 0 / 0.12);
+}
+
+.menu {
+  position: fixed;
+  z-index: 121;
+  min-width: var(--lr-quick-action-menu-min-width);
+  max-width: 18rem;
+  border-radius: var(--lr-quick-action-menu-radius);
+  border: 1px solid var(--lr-color-border);
+  background: var(--lr-color-surface-elevated);
+  box-shadow: var(--lr-quick-action-menu-shadow);
+  overflow: hidden;
+  padding-block: var(--lr-space-1);
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--lr-space-3);
+  width: 100%;
+  min-height: var(--lr-quick-action-row-height);
+  padding: var(--lr-space-2) var(--lr-space-3);
+  border: none;
+  background: transparent;
+  color: var(--lr-color-text);
+  text-align: start;
+  cursor: pointer;
+}
+
+.row[data-icon-placement='trailing'] {
+  flex-direction: row-reverse;
+}
+
+.row:hover:not(:disabled) {
+  background: var(--lr-list-row-hover);
+}
+
+.row[data-destructive='true'] {
+  color: var(--lr-menu-destructive, #ff3b30);
+}
+
+.row:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.rowIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--lr-quick-action-symbol-size);
+  height: var(--lr-quick-action-symbol-size);
+  flex-shrink: 0;
+  color: var(--lr-color-text-muted);
+}
+
+.row[data-destructive='true'] .rowIcon {
+  color: inherit;
+}
+
+.textBlock {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.title {
+  font-size: var(--lr-font-size-sm);
+  font-weight: var(--lr-font-weight-medium);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.subtitle {
+  font-size: var(--lr-font-size-xs);
+  color: var(--lr-color-text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.systemGroup {
+  border-top: 1px solid var(--lr-menu-separator, rgb(0 0 0 / 0.08));
+  margin-top: var(--lr-space-1);
+  padding-top: var(--lr-space-1);
+}

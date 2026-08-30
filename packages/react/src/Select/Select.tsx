@@ -1,6 +1,8 @@
 import { forwardRef, type SelectHTMLAttributes } from 'react';
 import type { Size, UIState } from '@larose-ui/core';
 import { resolveUIState } from '@larose-ui/core';
+import { FieldShell } from '../DataEntry/FieldShell';
+import { fieldIdFromLabel } from '../DataEntry/utils';
 import styles from './Select.module.css';
 
 export interface SelectOption {
@@ -17,6 +19,7 @@ export interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
   loading?: boolean;
   error?: string | null;
   inputSize?: Size;
+  required?: boolean;
 }
 
 export const Select = forwardRef<HTMLSelectElement, SelectProps>(
@@ -30,6 +33,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
       loading = false,
       error = null,
       disabled,
+      required = false,
       inputSize = 'md',
       className,
       id,
@@ -37,17 +41,19 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
     },
     ref,
   ) => {
-    const inputId = id ?? (label ? label.toLowerCase().replace(/\s+/g, '-') : undefined);
+    const inputId = id ?? (label ? fieldIdFromLabel(label) : undefined);
     const uiState = resolveUIState({ state, loading, error, disabled });
     const errorMessage = typeof error === 'string' ? error : null;
 
     return (
-      <div className={styles.wrapper} data-state={uiState}>
-        {label && (
-          <label htmlFor={inputId} className={styles.label}>
-            {label}
-          </label>
-        )}
+      <FieldShell
+        label={label}
+        hint={hint}
+        error={errorMessage}
+        required={required}
+        htmlFor={inputId}
+        uiState={uiState}
+      >
         <div className={styles.inputContainer}>
           <select
             ref={ref}
@@ -56,6 +62,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
             data-size={inputSize}
             data-state={uiState}
             disabled={disabled || uiState === 'disabled' || uiState === 'loading'}
+            required={required}
             aria-invalid={uiState === 'error'}
             aria-busy={uiState === 'loading'}
             aria-describedby={
@@ -74,17 +81,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
             <span className={styles.loadingIndicator} aria-hidden="true" />
           )}
         </div>
-        {hint && !errorMessage && (
-          <span id={`${inputId}-hint`} className={styles.hint}>
-            {hint}
-          </span>
-        )}
-        {errorMessage && (
-          <span id={`${inputId}-error`} className={styles.error} role="alert">
-            {errorMessage}
-          </span>
-        )}
-      </div>
+      </FieldShell>
     );
   },
 );

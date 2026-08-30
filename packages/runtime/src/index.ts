@@ -14,7 +14,7 @@ export { LaRoseProvider } from './LaRoseProvider';
 export type { LaRoseProviderProps } from './LaRoseProvider';
 
 export { ThemeProvider, useTheme, useLaRose } from './theme/ThemeProvider';
-export type { ThemeContextValue, ThemeProviderProps } from './theme/ThemeProvider';
+export type { Appearance, ThemeContextValue, ThemeProviderProps } from './theme/ThemeProvider';
 
 export { I18nProvider, useI18n } from './i18n/I18nProvider';
 export type { I18nContextValue, I18nProviderProps } from './i18n/I18nProvider';

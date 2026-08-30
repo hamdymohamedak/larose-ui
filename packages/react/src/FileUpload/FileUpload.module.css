@@ -7,7 +7,7 @@
 .label {
   font-family: var(--lr-font-family-sans);
   font-size: var(--lr-font-size-sm);
-  font-weight: var(--lr-font-weight-medium);
+  font-weight: var(--lr-field-label-weight);
   color: var(--lr-color-text);
 }
 
@@ -19,8 +19,8 @@
   gap: var(--lr-space-2);
   padding: var(--lr-space-6);
   border: 1px dashed var(--lr-color-border);
-  border-radius: var(--lr-radius-md);
-  background: var(--lr-color-surface);
+  border-radius: var(--lr-file-preview-radius);
+  background: var(--lr-file-preview-bg);
   color: var(--lr-color-text-muted);
   font-family: var(--lr-font-family-sans);
   font-size: var(--lr-font-size-sm);
@@ -32,12 +32,12 @@
 
 .dropzone:hover:not([data-state='disabled']) {
   border-color: var(--lr-color-primary);
-  background: var(--lr-color-surface-elevated);
+  background: var(--lr-file-row-selected);
 }
 
 .dropzone[data-state='dragover'] {
   border-color: var(--lr-color-primary);
-  background: var(--lr-color-surface-elevated);
+  background: var(--lr-file-row-selected);
 }
 
 .dropzone[data-state='error'] {
@@ -82,11 +82,11 @@
 }
 
 .hint {
-  font-size: var(--lr-font-size-xs);
+  font-size: var(--lr-field-hint-size);
   color: var(--lr-color-text-muted);
 }
 
 .error {
-  font-size: var(--lr-font-size-xs);
+  font-size: var(--lr-field-hint-size);
   color: var(--lr-color-error);
 }

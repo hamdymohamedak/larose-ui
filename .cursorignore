@@ -1,0 +1,59 @@
+# =============================================================================
+# laRose — Cursor ignore rules
+# Keeps AI context focused on source code you edit day-to-day.
+# Syntax matches .gitignore (see https://cursor.com/docs/reference/ignore-file)
+# =============================================================================
+
+# --- Dependencies & package manager ------------------------------------------
+node_modules/
+.pnpm-store/
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# --- Build & cache outputs ---------------------------------------------------
+dist/
+build/
+out/
+.turbo/
+*.tsbuildinfo
+storybook-static/
+
+# --- Test & quality artifacts ------------------------------------------------
+coverage/
+quality/
+.nyc_output/
+
+# --- Logs & OS noise ---------------------------------------------------------
+*.log
+npm-debug.log*
+pnpm-debug.log*
+.DS_Store
+Thumbs.db
+
+# --- Git internals -----------------------------------------------------------
+.git/
+
+# --- Secrets & credentials (never send to AI) --------------------------------
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+**/credentials.json
+**/secrets.json
+**/*.pem
+**/*.key
+**/id_rsa
+**/id_rsa.pub
+
+# --- Release & changelog tooling (generated / low dev value) -----------------
+.changeset/
+**/CHANGELOG.md
+
+# --- Auto-generated package docs (see scripts/generate-package-readmes.mjs) --
+packages/**/README.md
+
+# --- Legal / metadata not needed while coding --------------------------------
+LICENSE

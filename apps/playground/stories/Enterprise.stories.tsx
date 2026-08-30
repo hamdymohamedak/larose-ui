@@ -18,6 +18,7 @@ function AuditDemo() {
 const meta: Meta<typeof AuditDemo> = {
   title: 'Enterprise/Audit',
   component: AuditDemo,
+  parameters: { laRose: { standalone: true } },
 };
 
 export default meta;
