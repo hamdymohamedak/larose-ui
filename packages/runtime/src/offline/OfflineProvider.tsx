@@ -62,14 +62,17 @@ export function OfflineProvider({ children, queue, scopeId }: OfflineProviderPro
     [offlineQueue],
   );
 
-  const value: OfflineContextValue = {
-    queue: requests,
-    status,
-    enqueue: offlineQueue.enqueue.bind(offlineQueue),
-    sync,
-    remove: offlineQueue.remove.bind(offlineQueue),
-    clear: offlineQueue.clear.bind(offlineQueue),
-  };
+  const value = useMemo<OfflineContextValue>(
+    () => ({
+      queue: requests,
+      status,
+      enqueue: offlineQueue.enqueue.bind(offlineQueue),
+      sync,
+      remove: offlineQueue.remove.bind(offlineQueue),
+      clear: offlineQueue.clear.bind(offlineQueue),
+    }),
+    [offlineQueue, requests, status, sync],
+  );
 
   return (
     <OfflineContext.Provider value={value}>{children}</OfflineContext.Provider>

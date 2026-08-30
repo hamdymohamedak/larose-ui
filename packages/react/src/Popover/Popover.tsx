@@ -18,6 +18,8 @@ export interface PopoverProps {
   defaultOpen?: boolean;
   onOpenChange?: (open: boolean) => void;
   side?: PopoverSide;
+  /** Extra class names for the floating panel element. */
+  panelClassName?: string;
   'aria-label'?: string;
 }
 
@@ -28,6 +30,7 @@ export function Popover({
   defaultOpen = false,
   onOpenChange,
   side = 'bottom',
+  panelClassName,
   'aria-label': ariaLabel = 'Popover',
 }: PopoverProps) {
   const [internalOpen, setInternalOpen] = useState(defaultOpen);
@@ -79,7 +82,7 @@ export function Popover({
           id={popoverId}
           role="dialog"
           aria-label={ariaLabel}
-          className={styles.popover}
+          className={[styles.popover, panelClassName].filter(Boolean).join(' ')}
           data-side={side}
         >
           {content}

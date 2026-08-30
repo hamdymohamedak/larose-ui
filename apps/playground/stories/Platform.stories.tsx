@@ -40,7 +40,6 @@ function PlatformDemo() {
       environment="staging"
       permissions={['employees.read', 'employees.write', 'employees.delete', 'payroll.write']}
       tenantId="acme-corp"
-      observabilityDebug
       features={{ 'smart-table': true }}
     >
       <VersionProvider frontend="1.0.0" backend="2.0.0" minBackend="2.0.0" showBanner={false}>

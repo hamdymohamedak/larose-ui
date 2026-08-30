@@ -55,7 +55,7 @@ export function useQuery<T>(
 ): UseQueryResult<T> {
   const { enabled = true, permission, resource, initialData, ...fetchOptions } = options;
   const { check } = usePermissions();
-  const perm = permission ? check(permission, resource) : { allowed: true };
+  const permissionAllowed = permission ? check(permission, resource).allowed : true;
 
   const [state, dispatch] = useReducer(queryReducer<T>, {
     status: 'idle',
@@ -69,7 +69,7 @@ export function useQuery<T>(
 
   const execute = useCallback(async () => {
     if (!url) return;
-    if (perm && !perm.allowed) {
+    if (!permissionAllowed) {
       dispatch({ type: 'UNAUTHORIZED' });
       return;
     }
@@ -92,7 +92,7 @@ export function useQuery<T>(
         });
       }
     }
-  }, [url, perm]);
+  }, [url, permissionAllowed]);
 
   useEffect(() => {
     if (enabled && url) void execute();

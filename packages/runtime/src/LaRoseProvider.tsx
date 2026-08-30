@@ -105,7 +105,7 @@ function AutoSync({
         }
       });
     }
-  }, [network.online, offline.queue.length, offline, session]);
+  }, [network.online, offline.queue.length, offline.sync, session]);
 
   return <>{children}</>;
 }

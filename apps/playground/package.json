@@ -4,7 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "predev": "pnpm --filter @larose-ui/tokens build && pnpm --filter @larose-ui/react build && rm -rf node_modules/.cache/storybook",
     "dev": "storybook dev -p 6006",
+    "prebuild": "pnpm --filter @larose-ui/tokens build && pnpm --filter @larose-ui/react build",
     "build": "storybook build",
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf storybook-static"

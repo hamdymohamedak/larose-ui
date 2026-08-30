@@ -108,6 +108,7 @@ const meta: Meta = {
   parameters: {
     layout: 'padded',
     laRose: {
+      runtime: true,
       provider: { observabilityDebug: true, permissions: ['employees.create'] },
     },
   },

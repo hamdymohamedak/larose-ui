@@ -1,28 +1,34 @@
-import { dirname, join } from 'node:path';
-import { fileURLToPath } from 'node:url';
 import type { StorybookConfig } from '@storybook/react-vite';
 import { mergeConfig } from 'vite';
 
-const storybookDir = dirname(fileURLToPath(import.meta.url));
-const repoRoot = join(storybookDir, '../../..');
-
 const config: StorybookConfig = {
   stories: ['../stories/**/*.stories.@(ts|tsx)'],
-  addons: ['@storybook/addon-essentials', '@storybook/addon-interactions'],
+  addons: ['@storybook/addon-essentials'],
   framework: {
     name: '@storybook/react-vite',
-    options: {},
+    options: {
+      strictMode: false,
+    },
   },
   staticDirs: [],
   async viteFinal(config) {
     return mergeConfig(config, {
       resolve: {
-        alias: {
-          '@larose-ui/react': join(repoRoot, 'packages/react/src/index.ts'),
-          '@larose-ui/runtime': join(repoRoot, 'packages/runtime/src/index.ts'),
-          '@larose-ui/core': join(repoRoot, 'packages/core/src/index.ts'),
-        },
         dedupe: ['react', 'react-dom'],
+      },
+      optimizeDeps: {
+        // Workspace packages are rebuilt often — exclude from prebundle to avoid stale SB cache.
+        exclude: ['@larose-ui/react', '@larose-ui/runtime', '@larose-ui/data'],
+        include: [
+          '@larose-ui/core',
+          '@larose-ui/tokens',
+          '@larose-ui/themes',
+          '@larose-ui/network',
+          '@larose-ui/offline',
+          '@larose-ui/permissions',
+          '@larose-ui/observability',
+          '@larose-ui/forms',
+        ],
       },
     });
   },

@@ -48,7 +48,7 @@ function RuntimeDemo() {
 const meta: Meta = {
   title: 'Runtime/AdaptiveTable',
   component: RuntimeDemo,
-  parameters: { layout: 'padded' },
+  parameters: { layout: 'padded', laRose: { runtime: true } },
 };
 
 export default meta;

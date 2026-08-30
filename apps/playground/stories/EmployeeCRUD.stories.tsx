@@ -161,9 +161,12 @@ const meta: Meta = {
   parameters: {
     layout: 'padded',
     laRose: {
+      runtime: true,
       provider: {
         permissions: ['employees.read', 'employees.create', 'employees.delete'],
         features: { 'new-employee-form': true },
+        enableToasts: false,
+        observabilityDebug: false,
       },
     },
   },

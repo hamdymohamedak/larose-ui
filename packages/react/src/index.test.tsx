@@ -44,6 +44,7 @@ import { CommandPalette } from './CommandPalette/CommandPalette';
 import { DatePicker } from './DatePicker/DatePicker';
 import { TimePicker } from './TimePicker/TimePicker';
 import { DateRangePicker } from './DateRangePicker/DateRangePicker';
+import { Picker, DateTimePicker } from './Picker';
 import { Input } from './Input/Input';
 import { Textarea } from './Textarea/Textarea';
 import { TextView } from './TextView/TextView';
@@ -1157,6 +1158,44 @@ describe('CommandPalette', () => {
     await userEvent.type(screen.getByRole('searchbox'), 'export');
     expect(screen.getByRole('option', { name: 'Export CSV' })).toBeInTheDocument();
     expect(screen.queryByRole('option', { name: 'Add employee' })).not.toBeInTheDocument();
+  });
+});
+
+describe('Picker', () => {
+  it('renders wheel columns for multipart selection', () => {
+    renderWithProvider(
+      <Picker
+        label="Country"
+        style="wheels"
+        columns={[
+          {
+            id: 'country',
+            label: 'Country',
+            options: [
+              { value: 'eg', label: 'Egypt' },
+              { value: 'de', label: 'Germany' },
+            ],
+          },
+        ]}
+        value={{ country: 'eg' }}
+        onChange={() => undefined}
+      />,
+    );
+    expect(screen.getByRole('listbox', { name: 'Country' })).toBeInTheDocument();
+    expect(screen.getByRole('option', { name: 'Egypt' })).toHaveAttribute('aria-selected', 'true');
+  });
+
+  it('renders compact date picker trigger', () => {
+    renderWithProvider(
+      <DateTimePicker
+        label="Due date"
+        mode="date"
+        style="compact"
+        value={{ date: '2026-08-31' }}
+        onChange={() => undefined}
+      />,
+    );
+    expect(screen.getByRole('button', { name: /Due date|Aug/i })).toBeInTheDocument();
   });
 });
 

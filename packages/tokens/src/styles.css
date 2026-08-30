@@ -413,6 +413,15 @@
   --lr-lockup-poster-radius: 0.625rem;
   --lr-lockup-caption-radius: 0.625rem;
 
+  --lr-picker-row-height: 2.25rem;
+  --lr-picker-wheel-height: 11.25rem;
+  --lr-picker-wheel-width: 5.5rem;
+  --lr-picker-selection-radius: 0.5rem;
+  --lr-picker-selection-bg: rgb(0 0 0 / 0.06);
+  --lr-picker-fade-height: 2.75rem;
+  --lr-picker-compact-min-width: 12rem;
+  --lr-picker-calendar-cell-size: 2.25rem;
+
   --lr-density-multiplier: 1;
 }
 
@@ -526,6 +535,8 @@
   --lr-lockup-focus-scale: 1.08;
   --lr-lockup-focus-shadow: 0 16px 40px rgb(0 0 0 / 0.45);
   --lr-lockup-focus-tilt: 4deg;
+
+  --lr-picker-selection-bg: rgb(255 255 255 / 0.1);
 }
 
 @media (prefers-reduced-motion: reduce) {
