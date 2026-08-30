@@ -34,11 +34,12 @@
     "@types/node": "^22.10.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
+    "esbuild": "^0.28.2",
     "eslint": "^9.16.0",
-    "typescript-eslint": "^8.18.0",
     "prettier": "^3.4.2",
     "turbo": "^2.3.3",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.18.0"
   },
   "license": "MIT",
   "repository": {
