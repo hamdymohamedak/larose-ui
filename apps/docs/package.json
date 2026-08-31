@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "pregenerate": "node ../../scripts/generate-docs-catalog.mjs",
-    "predev": "pnpm run pregenerate && pnpm --filter @larose-ui/tokens build && pnpm --filter @larose-ui/themes build && pnpm --filter @larose-ui/styles build && pnpm --filter @larose-ui/react build",
+    "predev": "pnpm run pregenerate && turbo run build --filter=@larose-ui/docs^...",
     "dev": "vite",
-    "prebuild": "pnpm run pregenerate && pnpm --filter @larose-ui/tokens build && pnpm --filter @larose-ui/themes build && pnpm --filter @larose-ui/styles build && pnpm --filter @larose-ui/react build",
+    "prebuild": "pnpm run pregenerate && turbo run build --filter=@larose-ui/docs^...",
     "build": "vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",

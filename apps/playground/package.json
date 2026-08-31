@@ -4,9 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "predev": "pnpm --filter @larose-ui/tokens build && pnpm --filter @larose-ui/themes build && pnpm --filter @larose-ui/styles build && pnpm --filter @larose-ui/primitives build && pnpm --filter @larose-ui/react build && rm -rf node_modules/.cache/storybook",
+    "predev": "turbo run build --filter=@larose-ui/playground^... && rm -rf node_modules/.cache/storybook",
     "dev": "storybook dev -p 6006",
-    "prebuild": "pnpm --filter @larose-ui/tokens build && pnpm --filter @larose-ui/themes build && pnpm --filter @larose-ui/styles build && pnpm --filter @larose-ui/primitives build && pnpm --filter @larose-ui/react build",
+    "prebuild": "turbo run build --filter=@larose-ui/playground^...",
     "build": "storybook build",
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf storybook-static"
