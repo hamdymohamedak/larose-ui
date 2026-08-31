@@ -202,18 +202,9 @@ Details: [`docs/ecosystem/MIGRATION.md`](docs/ecosystem/MIGRATION.md)
 
 ## Contributing
 
-Requires Node.js 20+ and pnpm 9.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for setup, branch workflow, quality checks, and the changeset release process.
 
-```bash
-git clone https://github.com/hamdymohamedak/larose-ui.git
-cd laRose
-pnpm install
-pnpm build
-pnpm test
-pnpm run doctor
-```
-
-Open a pull request with a clear summary and test plan. Published package changes need a changeset (`pnpm changeset`).
+Quick start: Node.js 20+, pnpm 9, then `pnpm install`, `pnpm build`, `make test-all`. Open PRs against **`dev`**; published package changes need a changeset (`pnpm changeset`).
 
 ## License
 
