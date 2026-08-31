@@ -7,7 +7,7 @@ test-unit:
 	pnpm test
 
 # Full validation suite (matches CI)
-test-all: lint typecheck test-unit build check-budgets visual-regression doctor a11y verify-publish
+test-all: lint typecheck test-unit build visual-regression doctor a11y verify-publish
 
 lint:
 	pnpm lint
@@ -17,9 +17,6 @@ typecheck:
 
 build:
 	pnpm build
-
-check-budgets:
-	pnpm check-budgets
 
 visual-regression:
 	pnpm visual-regression

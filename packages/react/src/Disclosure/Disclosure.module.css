@@ -24,6 +24,11 @@
   color: var(--lr-color-text-muted);
   cursor: pointer;
   flex-shrink: 0;
+  border-radius: var(--lr-radius-sm);
+}
+
+.triangleButton:hover:not(:disabled) {
+  background: var(--lr-sidebar-item-hover, rgb(0 0 0 / 0.06));
 }
 
 .triangleButton:focus-visible {

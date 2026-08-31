@@ -1,0 +1,55 @@
+{
+  "component": "Pagination",
+  "category": "Navigation",
+  "import": "import { Pagination } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "'aria-label'",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "nextLabel",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onPageChange",
+      "type": "(page: number) => void",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "page",
+      "type": "number",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "previousLabel",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "siblingCount",
+      "type": "number",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "totalPages",
+      "type": "number",
+      "required": true,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [
+    "Supports ARIA attributes via standard HTML element props."
+  ],
+  "anatomy": null,
+  "playground": null
+}

@@ -1,0 +1,74 @@
+{
+  "component": "CollaborationPopover",
+  "category": "Sharing",
+  "import": "import { CollaborationPopover } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "actions",
+      "type": "CollaborationAction[]",
+      "required": false,
+      "default": "[]",
+      "inherited": false
+    },
+    {
+      "name": "collaborators",
+      "type": "Collaborator[]",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "defaultOpen",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "inherited": false
+    },
+    {
+      "name": "manageLabel",
+      "type": "string",
+      "required": false,
+      "default": "'Manage Shared File'",
+      "inherited": false
+    },
+    {
+      "name": "onManage",
+      "type": "() => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onMessage",
+      "type": "() => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onOpenChange",
+      "type": "(open: boolean) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onVideo",
+      "type": "() => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "open",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "trigger",
+      "type": "ReactNode",
+      "required": true,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

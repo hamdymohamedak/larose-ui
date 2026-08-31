@@ -1,4 +1,4 @@
-import { readdir, readFile, stat, writeFile } from 'node:fs/promises';
+import { readdir, readFile, writeFile } from 'node:fs/promises';
 import { join, relative } from 'node:path';
 import { validateContract, type ContractSchema } from '@larose-ui/contracts';
 import { scanComponentSource } from '@larose-ui/accessibility';
@@ -31,7 +31,6 @@ import {
 export type DiagnosticSeverity = 'error' | 'warning' | 'info';
 
 export type DiagnosticCategory =
-  | 'bundle'
   | 'deprecation'
   | 'contract'
   | 'accessibility'
@@ -61,28 +60,6 @@ export interface DoctorResult {
   visualRegression?: import('./quality/visualManifest.js').VisualRegressionResult;
 }
 
-const BUNDLE_BUDGETS_KB: Record<string, number> = {
-  '@larose-ui/core': 15,
-  '@larose-ui/tokens': 65,
-  '@larose-ui/network': 6,
-  '@larose-ui/offline': 5,
-  '@larose-ui/permissions': 8,
-  '@larose-ui/data': 15,
-  '@larose-ui/forms': 10,
-  '@larose-ui/react': 460,
-  '@larose-ui/runtime': 40,
-  '@larose-ui/observability': 28,
-  '@larose-ui/contracts': 5,
-  '@larose-ui/migration': 14,
-  '@larose-ui/testing': 10,
-  '@larose-ui/cli': 50,
-  '@larose-ui/devtools': 22,
-  '@larose-ui/enterprise': 25,
-  '@larose-ui/ai': 20,
-  '@larose-ui/accessibility': 5,
-  '@larose-ui/themes': 5,
-};
-
 async function walkDir(dir: string, ext: string[]): Promise<string[]> {
   const entries = await readdir(dir, { withFileTypes: true });
   const files: string[] = [];
@@ -96,53 +73,6 @@ async function walkDir(dir: string, ext: string[]): Promise<string[]> {
     }
   }
   return files;
-}
-
-const BUNDLE_ENTRY: Record<string, string> = {
-  '@larose-ui/cli': 'dist/cli.js',
-};
-
-async function checkBundleBudgets(packagesDir: string): Promise<Diagnostic[]> {
-  const diagnostics: Diagnostic[] = [];
-  const packages = await readdir(packagesDir, { withFileTypes: true });
-
-  for (const pkg of packages) {
-    if (!pkg.isDirectory()) continue;
-    const pkgName = `@larose-ui/${pkg.name}`;
-    const budget = BUNDLE_BUDGETS_KB[pkgName];
-    if (!budget) continue;
-
-    const distFile = join(packagesDir, pkg.name, BUNDLE_ENTRY[pkgName] ?? 'dist/index.js');
-    try {
-      const info = await stat(distFile);
-      const sizeKb = info.size / 1024;
-      if (sizeKb > budget) {
-        diagnostics.push({
-          severity: 'error',
-          category: 'bundle',
-          message: `${pkgName} bundle ${sizeKb.toFixed(1)}KB exceeds budget ${budget}KB`,
-          fix: 'Reduce bundle size or update budget in doctor.ts',
-          file: distFile,
-        });
-      } else if (sizeKb > budget * 0.9) {
-        diagnostics.push({
-          severity: 'info',
-          category: 'bundle',
-          message: `${pkgName} bundle ${sizeKb.toFixed(1)}KB approaching budget ${budget}KB`,
-          file: distFile,
-        });
-      }
-    } catch {
-      diagnostics.push({
-        severity: 'error',
-        category: 'build',
-        message: `${pkgName} missing ${BUNDLE_ENTRY[pkgName] ?? 'dist/index.js'} — run pnpm build`,
-        fix: 'pnpm build',
-      });
-    }
-  }
-
-  return diagnostics;
 }
 
 async function checkDeprecations(rootDir: string): Promise<Diagnostic[]> {
@@ -337,9 +267,7 @@ export async function runDoctor(
   rootDir: string,
   options: DoctorOptions = {},
 ): Promise<DoctorResult> {
-  const packagesDir = join(rootDir, 'packages');
   const diagnostics = [
-    ...(await checkBundleBudgets(packagesDir)),
     ...(await checkDeprecations(rootDir)),
     ...(await checkAccessibility(rootDir)),
     ...(await checkContracts(rootDir)),

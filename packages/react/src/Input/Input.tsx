@@ -10,6 +10,7 @@ import {
 } from 'react';
 import type { Size, UIState } from '@larose-ui/core';
 import { resolveUIState } from '@larose-ui/core';
+import { useComponentDefaults } from '../theme/useComponentDefaults';
 import { FieldShell } from '../DataEntry/FieldShell';
 import { Spinner } from '../Spinner/Spinner';
 import type { FieldFormat, FieldValidator, FormatFieldOptions } from '../DataEntry/utils';
@@ -37,38 +38,36 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   acceptDrop?: boolean;
 }
 
-export const Input = forwardRef<HTMLInputElement, InputProps>(
-  (
-    {
-      label,
-      hint,
-      state,
-      loading = false,
-      error = null,
-      disabled,
-      readOnly,
-      required = false,
-      validate,
-      validateOn = 'blur',
-      format,
-      formatOptions,
-      expansionTooltip = false,
-      acceptDrop = false,
-      inputSize = 'md',
-      className,
-      id,
-      type = 'text',
-      onBlur,
-      onChange,
-      onFocus,
-      onDrop,
-      onDragOver,
-      value,
-      defaultValue,
-      ...props
-    },
-    ref,
-  ) => {
+export const Input = forwardRef<HTMLInputElement, InputProps>((incomingProps, ref) => {
+  const {
+    label,
+    hint,
+    state,
+    loading = false,
+    error = null,
+    disabled,
+    readOnly,
+    required = false,
+    validate,
+    validateOn = 'blur',
+    format,
+    formatOptions,
+    expansionTooltip = false,
+    acceptDrop = false,
+    inputSize = 'md',
+    className,
+    style,
+    id,
+    type = 'text',
+    onBlur,
+    onChange,
+    onFocus,
+    onDrop,
+    onDragOver,
+    value,
+    defaultValue,
+    ...props
+  } = useComponentDefaults('Input', incomingProps);
     const inputId = id ?? (label ? fieldIdFromLabel(label) : undefined);
     const innerRef = useRef<HTMLInputElement | null>(null);
     const [validationError, setValidationError] = useState<string | null>(null);
@@ -216,6 +215,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
               id={inputId}
               type={type}
               className={[styles.input, className].filter(Boolean).join(' ')}
+              style={style}
               data-size={inputSize}
               data-format={format}
               disabled={disabled || uiState === 'disabled'}
@@ -247,7 +247,6 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         </div>
       </FieldShell>
     );
-  },
-);
+});
 
 Input.displayName = 'Input';

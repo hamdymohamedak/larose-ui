@@ -1,0 +1,45 @@
+# Input
+
+Text inputs with labels, hints, validation, and accessible error states.
+
+## Examples
+
+<PreviewFrame title="Default">
+  <Input label="Employee name" placeholder="Enter name" />
+</PreviewFrame>
+
+<PreviewFrame title="With hint">
+  <Input
+    label="Email"
+    placeholder="username@company.com"
+    hint="Work email address"
+  />
+</PreviewFrame>
+
+<PreviewFrame title="Required">
+  <Input label="Email" placeholder="username@company.com" required />
+</PreviewFrame>
+
+## Usage
+
+```tsx
+import { Input } from '@larose-ui/react';
+
+<Input
+  label="Email"
+  placeholder="username@company.com"
+  required
+  hint="Work email address"
+/>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `label` | `string` | — | Visible field label |
+| `placeholder` | `string` | — | Placeholder text |
+| `hint` | `string` | — | Helper text below the field |
+| `required` | `boolean` | `false` | Marks field as required |
+| `disabled` | `boolean` | `false` | Disables the input |
+| `error` | `string` | — | Error message |

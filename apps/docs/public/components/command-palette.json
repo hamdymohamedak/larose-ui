@@ -1,0 +1,68 @@
+{
+  "component": "CommandPalette",
+  "category": "Overlay",
+  "import": "import { CommandPalette } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "'aria-label'",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "emptyMessage",
+      "type": "string",
+      "required": false,
+      "default": "'No commands found'",
+      "inherited": false
+    },
+    {
+      "name": "items",
+      "type": "CommandPaletteItem[]",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "onOpenChange",
+      "type": "(open: boolean) => void",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "open",
+      "type": "boolean",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "required": false,
+      "default": "'Search commands…'",
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [
+    "Supports ARIA attributes via standard HTML element props.",
+    "Focus is managed while open; Escape typically closes the overlay."
+  ],
+  "anatomy": {
+    "summary": "CommandPalette offers searchable command discovery with keyboard navigation.",
+    "structure": [
+      "CommandPalette",
+      "Search input",
+      "Results groups",
+      "Items"
+    ],
+    "composition": "Register commands with labels and onSelect handlers.",
+    "slots": [
+      "commands"
+    ],
+    "states": [
+      "closed",
+      "open"
+    ]
+  },
+  "playground": null
+}

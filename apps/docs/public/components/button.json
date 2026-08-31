@@ -1,0 +1,284 @@
+{
+  "component": "Button",
+  "category": "Actions",
+  "import": "import { Button } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "buttonRole",
+      "type": "ButtonRole",
+      "required": false,
+      "description": "Apple HIG semantic role — affects appearance in alerts and sheets.",
+      "inherited": false
+    },
+    {
+      "name": "error",
+      "type": "string | null",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "flexible",
+      "type": "boolean",
+      "required": false,
+      "description": "macOS flexible-height push button for multi-line content.",
+      "inherited": false
+    },
+    {
+      "name": "fullWidth",
+      "type": "boolean",
+      "required": false,
+      "description": "watchOS-style full-width primary actions.",
+      "inherited": false
+    },
+    {
+      "name": "iconOnly",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "leftIcon",
+      "type": "ReactNode",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "loading",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "loadingLabel",
+      "type": "string",
+      "required": false,
+      "description": "Alternative label shown while loading (Apple HIG activity indicator pattern).",
+      "inherited": false
+    },
+    {
+      "name": "opensAnotherView",
+      "type": "boolean",
+      "required": false,
+      "description": "macOS: append trailing ellipsis when the button opens another view.",
+      "inherited": false
+    },
+    {
+      "name": "rightIcon",
+      "type": "ReactNode",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "shape",
+      "type": "ButtonShape",
+      "required": false,
+      "description": "Capsule (default), circle (icon-only), or roundedRect (vertical stacks).",
+      "inherited": false
+    },
+    {
+      "name": "size",
+      "type": "Size",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "state",
+      "type": "UIState",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "tooltip",
+      "type": "string",
+      "required": false,
+      "description": "macOS / visionOS hover tooltip.",
+      "inherited": false
+    },
+    {
+      "name": "variant",
+      "type": "Variant",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [
+    {
+      "id": "Primary",
+      "title": "Primary",
+      "kind": "basic",
+      "props": {
+        "children": "Add to Cart', variant: 'primary"
+      },
+      "code": "<Button>Add to Cart', variant: 'primary</Button>"
+    },
+    {
+      "id": "Secondary",
+      "title": "Secondary",
+      "kind": "advanced",
+      "props": {
+        "children": "Cancel', variant: 'secondary', buttonRole: 'cancel"
+      },
+      "code": "<Button>Cancel', variant: 'secondary', buttonRole: 'cancel</Button>"
+    },
+    {
+      "id": "Loading",
+      "title": "Loading",
+      "kind": "loading",
+      "props": {
+        "children": "Checkout",
+        "loadingLabel": "Checking out…",
+        "loading": true
+      },
+      "code": "<Button\n  loadingLabel=\"Checking out…\"\n  loading\n>Checkout</Button>"
+    },
+    {
+      "id": "Disabled",
+      "title": "Disabled",
+      "kind": "disabled",
+      "props": {
+        "children": "'Unavailable', disabled: true"
+      },
+      "code": "<Button>'Unavailable', disabled: true</Button>"
+    },
+    {
+      "id": "DestructiveFilled",
+      "title": "Destructive Filled",
+      "kind": "destructive",
+      "props": {
+        "children": "Delete Employee', variant: 'destructive"
+      },
+      "code": "<Button>Delete Employee', variant: 'destructive</Button>"
+    },
+    {
+      "id": "DestructivePlain",
+      "title": "Destructive Plain",
+      "kind": "destructive",
+      "props": {
+        "children": "Delete Account",
+        "variant": "ghost",
+        "buttonRole": "destructive"
+      },
+      "code": "<Button\n  variant=\"ghost\"\n  buttonRole=\"destructive\"\n>Delete Account</Button>"
+    },
+    {
+      "id": "OpensAnotherView",
+      "title": "Opens another view (…)",
+      "kind": "advanced",
+      "props": {
+        "children": "Edit",
+        "variant": "secondary",
+        "opensAnotherView": true,
+        "tooltip": "Opens AutoFill settings"
+      },
+      "code": "<Button\n  variant=\"secondary\"\n  opensAnotherView\n  tooltip=\"Opens AutoFill settings\"\n>Edit</Button>"
+    },
+    {
+      "id": "IconOnly",
+      "title": "Icon Only",
+      "kind": "with-icon",
+      "props": {},
+      "code": "// See Storybook story \"IconOnly\" for composite layout example.",
+      "composite": true
+    },
+    {
+      "id": "StyleNotSize",
+      "title": "Style, not size",
+      "kind": "sizes",
+      "props": {},
+      "code": "// See Storybook story \"StyleNotSize\" for composite layout example.",
+      "composite": true
+    },
+    {
+      "id": "AlertActions",
+      "title": "Alert Actions",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"AlertActions\" for composite layout example.",
+      "composite": true
+    },
+    {
+      "id": "VisionOSStack",
+      "title": "visionOS vertical stack",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"VisionOSStack\" for composite layout example.",
+      "composite": true
+    },
+    {
+      "id": "WatchFullWidth",
+      "title": "watchOS full width",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"WatchFullWidth\" for composite layout example.",
+      "composite": true
+    }
+  ],
+  "accessibility": [
+    "Supports ARIA attributes via standard HTML element props.",
+    "Uses native or laRose-managed focus rings and disabled states.",
+    "Provide loadingLabel for accessible loading announcements."
+  ],
+  "anatomy": null,
+  "playground": {
+    "children": {
+      "control": "text",
+      "default": "Save changes",
+      "label": "Label"
+    },
+    "variant": {
+      "control": "select",
+      "options": [
+        "primary",
+        "secondary",
+        "outline",
+        "ghost",
+        "destructive"
+      ],
+      "default": "primary"
+    },
+    "size": {
+      "control": "select",
+      "options": [
+        "sm",
+        "md",
+        "lg"
+      ],
+      "default": "md"
+    },
+    "shape": {
+      "control": "select",
+      "options": [
+        "capsule",
+        "circle",
+        "roundedRect"
+      ],
+      "default": "capsule"
+    },
+    "buttonRole": {
+      "control": "select",
+      "options": [
+        "normal",
+        "primary",
+        "cancel",
+        "destructive"
+      ],
+      "default": "normal"
+    },
+    "disabled": {
+      "control": "boolean",
+      "default": false
+    },
+    "loading": {
+      "control": "boolean",
+      "default": false
+    },
+    "fullWidth": {
+      "control": "boolean",
+      "default": false
+    },
+    "iconOnly": {
+      "control": "boolean",
+      "default": false
+    }
+  }
+}

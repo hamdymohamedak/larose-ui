@@ -1,0 +1,45 @@
+{
+  "component": "AsyncButton",
+  "category": "Actions",
+  "import": "import { AsyncButton } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "action",
+      "type": "() => Promise<void>",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "onError",
+      "type": "(error: unknown) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onSuccess",
+      "type": "() => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "size",
+      "type": "Size",
+      "required": false,
+      "default": "'md'",
+      "inherited": false
+    },
+    {
+      "name": "variant",
+      "type": "Variant",
+      "required": false,
+      "default": "'primary'",
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [
+    "Supports ARIA attributes via standard HTML element props."
+  ],
+  "anatomy": null,
+  "playground": null
+}

@@ -1,0 +1,53 @@
+{
+  "component": "DocumentLauncher",
+  "category": "Files",
+  "import": "import { DocumentLauncher } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "accessories",
+      "type": "ReactNode",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "appTitle",
+      "type": "string",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "background",
+      "type": "ReactNode",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onPrimaryAction",
+      "type": "() => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onSecondaryAction",
+      "type": "() => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "primaryActionLabel",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "secondaryActionLabel",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

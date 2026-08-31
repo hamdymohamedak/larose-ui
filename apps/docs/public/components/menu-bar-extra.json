@@ -1,0 +1,35 @@
+{
+  "component": "MenuBarExtra",
+  "category": "Navigation",
+  "import": "import { MenuBarExtra } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "isOpen",
+      "type": "boolean",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "onAction",
+      "type": "(entry: MenuItemConfig) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onOpenChange",
+      "type": "(open: boolean) => void",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "optionKey",
+      "type": "boolean",
+      "required": true,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

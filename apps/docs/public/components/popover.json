@@ -1,0 +1,111 @@
+{
+  "component": "Popover",
+  "category": "Overlay",
+  "import": "import { Popover } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "'aria-label'",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "content",
+      "type": "ReactNode",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "defaultOpen",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "inherited": false
+    },
+    {
+      "name": "onOpenChange",
+      "type": "(open: boolean) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "open",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "panelClassName",
+      "type": "string",
+      "required": false,
+      "description": "Extra class names for the floating panel element.",
+      "inherited": false
+    },
+    {
+      "name": "side",
+      "type": "PopoverSide",
+      "required": false,
+      "default": "'bottom'",
+      "inherited": false
+    },
+    {
+      "name": "trigger",
+      "type": "ReactNode",
+      "required": true,
+      "inherited": false
+    }
+  ],
+  "examples": [
+    {
+      "id": "Default",
+      "title": "Default",
+      "kind": "advanced",
+      "props": {
+        "trigger": "<Button variant=\"outline\">Show info</Button>",
+        "content": "("
+      },
+      "code": "<Popover\n  trigger=\"<Button variant=\"outline\">Show info</Button>\"\n  content=\"(\"\n>Example</Popover>"
+    },
+    {
+      "id": "Top",
+      "title": "Top",
+      "kind": "advanced",
+      "props": {
+        "side": "top",
+        "trigger": "<Button variant=\"secondary\">Top popover</Button>",
+        "content": "<p style={{ margin: 0"
+      },
+      "code": "<Popover\n  side=\"top\"\n  trigger=\"<Button variant=\"secondary\">Top popover</Button>\"\n  content=\"<p style={{ margin: 0\"\n>Example</Popover>"
+    },
+    {
+      "id": "WithActions",
+      "title": "With Actions",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"WithActions\" for composite layout example.",
+      "composite": true
+    }
+  ],
+  "accessibility": [
+    "Supports ARIA attributes via standard HTML element props.",
+    "Focus is managed while open; Escape typically closes the overlay."
+  ],
+  "anatomy": {
+    "summary": "Popover anchors floating content to a trigger with collision handling.",
+    "structure": [
+      "Popover",
+      "Trigger",
+      "Content"
+    ],
+    "composition": "Keep content concise; prefer Tooltip for single-line hints.",
+    "slots": [
+      "trigger",
+      "children"
+    ],
+    "states": [
+      "closed",
+      "open"
+    ]
+  },
+  "playground": null
+}

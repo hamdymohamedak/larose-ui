@@ -1,0 +1,96 @@
+{
+  "component": "Radio",
+  "category": "Forms",
+  "import": "import { Radio } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "boxSize",
+      "type": "Size",
+      "required": false,
+      "default": "'md'",
+      "inherited": false
+    },
+    {
+      "name": "error",
+      "type": "string | null",
+      "required": false,
+      "default": "null",
+      "inherited": false
+    },
+    {
+      "name": "hint",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": true,
+      "inherited": false
+    }
+  ],
+  "examples": [
+    {
+      "id": "Default",
+      "title": "plan",
+      "kind": "advanced",
+      "props": {
+        "name": "plan",
+        "label": "Starter plan",
+        "value": "starter",
+        "defaultChecked": true
+      },
+      "code": "<Radio\n  name=\"plan\"\n  label=\"Starter plan\"\n  value=\"starter\"\n  defaultChecked\n>Example</Radio>"
+    },
+    {
+      "id": "WithHint",
+      "title": "plan",
+      "kind": "advanced",
+      "props": {
+        "name": "plan",
+        "label": "Pro plan",
+        "value": "pro",
+        "hint": "Includes advanced analytics"
+      },
+      "code": "<Radio\n  name=\"plan\"\n  label=\"Pro plan\"\n  value=\"pro\"\n  hint=\"Includes advanced analytics\"\n>Example</Radio>"
+    },
+    {
+      "id": "WithError",
+      "title": "plan",
+      "kind": "advanced",
+      "props": {
+        "name": "plan",
+        "label": "Enterprise plan",
+        "value": "enterprise",
+        "error": "Select a plan to continue"
+      },
+      "code": "<Radio\n  name=\"plan\"\n  label=\"Enterprise plan\"\n  value=\"enterprise\"\n  error=\"Select a plan to continue\"\n>Example</Radio>"
+    },
+    {
+      "id": "Disabled",
+      "title": "plan",
+      "kind": "disabled",
+      "props": {
+        "name": "plan",
+        "label": "Legacy plan",
+        "value": "legacy",
+        "disabled": true
+      },
+      "code": "<Radio\n  name=\"plan\"\n  label=\"Legacy plan\"\n  value=\"legacy\"\n  disabled\n>Example</Radio>"
+    },
+    {
+      "id": "Group",
+      "title": "Group",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"Group\" for composite layout example.",
+      "composite": true
+    }
+  ],
+  "accessibility": [
+    "Uses native or laRose-managed focus rings and disabled states."
+  ],
+  "anatomy": null,
+  "playground": null
+}

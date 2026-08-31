@@ -1,0 +1,49 @@
+{
+  "component": "Collection",
+  "category": "Layout",
+  "import": "import { Collection } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "ariaLabel",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "columns",
+      "type": "number",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "items",
+      "type": "CollectionItem[]",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "layout",
+      "type": "CollectionLayout",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onSelect",
+      "type": "(item: CollectionItem) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "selectedId",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [
+    "Supports ARIA attributes via standard HTML element props."
+  ],
+  "anatomy": null,
+  "playground": null
+}

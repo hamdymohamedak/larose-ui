@@ -1,0 +1,59 @@
+{
+  "component": "DocumentToolbar",
+  "category": "Files",
+  "import": "import { DocumentToolbar } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "canSave",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "newLabel",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onNew",
+      "type": "() => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onOpen",
+      "type": "() => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onSave",
+      "type": "() => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "openLabel",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "saveLabel",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "showAddButton",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

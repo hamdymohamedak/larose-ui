@@ -1,0 +1,40 @@
+{
+  "name": "@larose-ui/docs",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "pregenerate": "node ../../scripts/generate-docs-catalog.mjs",
+    "predev": "pnpm run pregenerate && pnpm --filter @larose-ui/tokens build && pnpm --filter @larose-ui/themes build && pnpm --filter @larose-ui/react build",
+    "dev": "vite",
+    "prebuild": "pnpm run pregenerate && pnpm --filter @larose-ui/tokens build && pnpm --filter @larose-ui/themes build && pnpm --filter @larose-ui/react build",
+    "build": "vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@larose-ui/core": "workspace:*",
+    "@larose-ui/react": "workspace:*",
+    "@larose-ui/themes": "workspace:*",
+    "@larose-ui/tokens": "workspace:*",
+    "@mdx-js/react": "^3.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-markdown": "^9.0.3",
+    "react-router-dom": "^7.1.1",
+    "react-syntax-highlighter": "^15.6.1",
+    "remark-gfm": "^4.0.0"
+  },
+  "devDependencies": {
+    "@mdx-js/rollup": "^3.1.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@types/react-syntax-highlighter": "^15.5.13",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.3",
+    "vitest": "^3.0.5"
+  }
+}

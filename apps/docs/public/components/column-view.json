@@ -1,0 +1,39 @@
+{
+  "component": "ColumnView",
+  "category": "Layout",
+  "import": "import { ColumnView } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "ariaLabel",
+      "type": "string",
+      "required": false,
+      "default": "'Column view'",
+      "inherited": false
+    },
+    {
+      "name": "data",
+      "type": "ColumnViewNode[]",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "initialPath",
+      "type": "string[]",
+      "required": false,
+      "default": "[]",
+      "inherited": false
+    },
+    {
+      "name": "onPathChange",
+      "type": "(path: string[]) => void",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [
+    "Supports ARIA attributes via standard HTML element props."
+  ],
+  "anatomy": null,
+  "playground": null
+}

@@ -21,6 +21,7 @@ pnpm install
 pnpm build
 pnpm dev          # Storybook at http://localhost:6006
 pnpm demo         # Vite demo app at http://localhost:5173
+pnpm webdocs      # Documentation site at http://localhost:5174
 pnpm test
 pnpm run doctor   # quality gates
 ```
@@ -162,11 +163,11 @@ function App() {
 |---------|---------|
 | `pnpm dev` | Storybook playground |
 | `pnpm demo` | Vite demo app |
+| `pnpm webdocs` | laRose UI documentation site (use `pnpm run webdocs`, not `pnpm docs`) |
 | `pnpm build` | Build all packages |
 | `pnpm test` | Run all tests |
 | `pnpm lint` | ESLint on packages and apps |
-| `pnpm run doctor` | Bundle budgets, deprecations, contracts, a11y |
-| `pnpm check-budgets` | Fail on bundle size overages |
+| `pnpm run doctor` | Deprecations, contracts, a11y |
 | `pnpm a11y` | Scan component sources for a11y issues |
 | `pnpm migrate` | Dry-run migration report |
 | `pnpm migrate:apply` | Apply safe codemods |

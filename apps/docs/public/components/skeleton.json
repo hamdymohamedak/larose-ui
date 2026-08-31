@@ -1,0 +1,41 @@
+{
+  "component": "Skeleton",
+  "category": "Feedback",
+  "import": "import { Skeleton } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "height",
+      "type": "string | number",
+      "required": false,
+      "default": "'1rem'",
+      "inherited": false
+    },
+    {
+      "name": "lines",
+      "type": "number",
+      "required": false,
+      "default": "1",
+      "inherited": false
+    },
+    {
+      "name": "variant",
+      "type": "'text' | 'circular' | 'rectangular'",
+      "required": false,
+      "default": "'text'",
+      "inherited": false
+    },
+    {
+      "name": "width",
+      "type": "string | number",
+      "required": false,
+      "default": "'100%'",
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [
+    "Supports ARIA attributes via standard HTML element props."
+  ],
+  "anatomy": null,
+  "playground": null
+}

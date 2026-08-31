@@ -1,34 +1,57 @@
 import {
   useEffect,
   useRef,
+  type CSSProperties,
+  type HTMLAttributes,
   type MouseEvent,
   type ReactNode,
 } from 'react';
 import { createPortal } from 'react-dom';
+import type { ComponentMotionOverride } from '@larose-ui/themes';
+import { useComponentDefaults } from '../theme/useComponentDefaults';
+import { useComponentMotion } from '../theme/useComponentMotion';
 import { usePresence } from '../Motion/usePresence';
 import motionStyles from '../Motion/motion.module.css';
 import styles from './Modal.module.css';
 
-export interface ModalProps {
+export interface ModalProps extends HTMLAttributes<HTMLDivElement> {
   open: boolean;
   onClose: () => void;
   children: ReactNode;
   title?: string;
   description?: string;
   closeOnOverlay?: boolean;
+  className?: string;
+  overlayClassName?: string;
+  contentClassName?: string;
+  style?: CSSProperties;
+  overlayStyle?: CSSProperties;
+  contentStyle?: CSSProperties;
+  motion?: ComponentMotionOverride;
 }
 
-export function Modal({
-  open,
-  onClose,
-  children,
-  title,
-  description,
-  closeOnOverlay = true,
-}: ModalProps) {
+export function Modal(incomingProps: ModalProps) {
+  const {
+    open,
+    onClose,
+    children,
+    title,
+    description,
+    closeOnOverlay = true,
+    className,
+    overlayClassName,
+    contentClassName,
+    style,
+    overlayStyle,
+    contentStyle,
+    motion,
+    ...props
+  } = useComponentDefaults('Modal', incomingProps);
+
   const dialogRef = useRef<HTMLDivElement>(null);
   const previousFocus = useRef<HTMLElement | null>(null);
   const { phase, shouldRender, onAnimationEnd } = usePresence({ present: open });
+  const { style: motionStyle } = useComponentMotion('Modal', motion);
 
   useEffect(() => {
     if (!open) return;
@@ -61,6 +84,7 @@ export function Modal({
 
   const backdropClass = [
     styles.overlay,
+    overlayClassName,
     phase === 'entering' || phase === 'exiting'
       ? motionStyles[`backdrop-${phase}` as keyof typeof motionStyles]
       : undefined,
@@ -70,6 +94,8 @@ export function Modal({
 
   const modalClass = [
     styles.modal,
+    contentClassName,
+    className,
     phase === 'entering' || phase === 'exiting'
       ? motionStyles[`modal-${phase}` as keyof typeof motionStyles]
       : undefined,
@@ -80,14 +106,17 @@ export function Modal({
   return createPortal(
     <div
       className={backdropClass}
+      style={{ ...motionStyle, ...overlayStyle, ...style }}
       onClick={handleOverlayClick}
       role="presentation"
       data-presence={phase}
       onAnimationEnd={onAnimationEnd}
+      {...props}
     >
       <div
         ref={dialogRef}
         className={modalClass}
+        style={{ ...motionStyle, ...contentStyle }}
         role="dialog"
         aria-modal="true"
         aria-labelledby={title ? 'lr-modal-title' : undefined}

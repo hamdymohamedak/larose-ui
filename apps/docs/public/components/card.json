@@ -1,0 +1,61 @@
+{
+  "component": "Card",
+  "category": "Layout",
+  "import": "import { Card } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "description",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "footer",
+      "type": "ReactNode",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "padding",
+      "type": "'none' | 'sm' | 'md' | 'lg'",
+      "required": false,
+      "default": "'md'",
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": {
+    "summary": "Card groups related content with optional title and padding tokens.",
+    "structure": [
+      "Card",
+      "Header/Title",
+      "Body",
+      "Footer actions"
+    ],
+    "composition": "Use padding tokens or Card defaultProps for density consistency.",
+    "slots": [
+      "children",
+      "title"
+    ],
+    "states": [
+      "default"
+    ]
+  },
+  "playground": {
+    "title": {
+      "control": "text",
+      "default": "Employee profile"
+    },
+    "padding": {
+      "control": "select",
+      "options": [
+        "none",
+        "sm",
+        "md",
+        "lg"
+      ],
+      "default": "md"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "component": "DisclosureTriangle",
+  "category": "Content",
+  "import": "import { DisclosureTriangle } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "defaultExpanded",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "inherited": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "inherited": false
+    },
+    {
+      "name": "expanded",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": true,
+      "description": "Describes what is disclosed, e.g. \"Advanced options\".",
+      "inherited": false
+    },
+    {
+      "name": "onExpandedChange",
+      "type": "(expanded: boolean) => void",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

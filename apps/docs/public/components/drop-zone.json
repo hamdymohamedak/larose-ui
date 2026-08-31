@@ -1,0 +1,57 @@
+{
+  "component": "DropZone",
+  "category": "DragDrop",
+  "import": "import { DropZone } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "accepts",
+      "type": "string | string[]",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "canDrop",
+      "type": "(items: DragItem<T>[]) => boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "inherited": false
+    },
+    {
+      "name": "onDrop",
+      "type": "(result: DropResult<T>) => void | Promise<void>",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "showInvalidIndicator",
+      "type": "boolean",
+      "required": false,
+      "default": "true",
+      "inherited": false
+    },
+    {
+      "name": "transferring",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "inherited": false
+    },
+    {
+      "name": "transferringLabel",
+      "type": "string",
+      "required": false,
+      "default": "'Transferring…'",
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

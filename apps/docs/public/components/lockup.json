@@ -1,0 +1,43 @@
+{
+  "component": "Lockup",
+  "category": "Layout",
+  "import": "import { Lockup } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "'aria-label'",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "axis",
+      "type": "LockupAxis",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "focused",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "footer",
+      "type": "ReactNode",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "header",
+      "type": "ReactNode",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [
+    "Supports ARIA attributes via standard HTML element props."
+  ],
+  "anatomy": null,
+  "playground": null
+}

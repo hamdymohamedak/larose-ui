@@ -1,0 +1,74 @@
+{
+  "component": "MenuBar",
+  "category": "Navigation",
+  "import": "import { MenuBar } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "appName",
+      "type": "string",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "appSpecificMenus",
+      "type": "MenuBarMenuConfig[]",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "extras",
+      "type": "MenuBarExtraConfig[]",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "menus",
+      "type": "MenuBarMenuConfig[]",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onMenuAction",
+      "type": "(menuId: string, entryId: string) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onRevealChange",
+      "type": "(revealed: boolean) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "platform",
+      "type": "MenuBarPlatform",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "revealed",
+      "type": "boolean",
+      "required": false,
+      "description": "iPadOS: bar hidden until revealed at the top edge.",
+      "inherited": false
+    },
+    {
+      "name": "showAppleMenu",
+      "type": "boolean",
+      "required": false,
+      "description": "macOS: show a read-only Apple menu stub (system-provided on real macOS).",
+      "inherited": false
+    },
+    {
+      "name": "standardOptions",
+      "type": "StandardMenuBarOptions",
+      "required": false,
+      "description": "Used when `menus` is omitted to build the standard HIG menu set.",
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

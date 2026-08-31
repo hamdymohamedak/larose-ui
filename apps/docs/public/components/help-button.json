@@ -1,0 +1,18 @@
+{
+  "component": "HelpButton",
+  "category": "Actions",
+  "import": "import { HelpButton } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "helpTopic",
+      "type": "string",
+      "required": false,
+      "description": "Brief phrase explaining what help covers (macOS / visionOS tooltip).",
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

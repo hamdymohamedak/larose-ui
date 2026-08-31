@@ -1,0 +1,102 @@
+{
+  "component": "Checkbox",
+  "category": "Forms",
+  "import": "import { Checkbox } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "boxSize",
+      "type": "Size",
+      "required": false,
+      "default": "'md'",
+      "inherited": false
+    },
+    {
+      "name": "error",
+      "type": "string | null",
+      "required": false,
+      "default": "null",
+      "inherited": false
+    },
+    {
+      "name": "hint",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": true,
+      "inherited": false
+    }
+  ],
+  "examples": [
+    {
+      "id": "Default",
+      "title": "Default",
+      "kind": "advanced",
+      "props": {
+        "label": "I agree to the terms"
+      },
+      "code": "<Checkbox\n  label=\"I agree to the terms\"\n>Example</Checkbox>"
+    },
+    {
+      "id": "Checked",
+      "title": "Checked",
+      "kind": "advanced",
+      "props": {
+        "label": "Subscribe to newsletter",
+        "defaultChecked": true
+      },
+      "code": "<Checkbox\n  label=\"Subscribe to newsletter\"\n  defaultChecked\n>Example</Checkbox>"
+    },
+    {
+      "id": "WithHint",
+      "title": "With Hint",
+      "kind": "advanced",
+      "props": {
+        "label": "Send me product updates",
+        "hint": "You can unsubscribe at any time"
+      },
+      "code": "<Checkbox\n  label=\"Send me product updates\"\n  hint=\"You can unsubscribe at any time\"\n>Example</Checkbox>"
+    },
+    {
+      "id": "WithError",
+      "title": "With Error",
+      "kind": "advanced",
+      "props": {
+        "label": "I agree to the terms",
+        "error": "You must accept the terms to continue"
+      },
+      "code": "<Checkbox\n  label=\"I agree to the terms\"\n  error=\"You must accept the terms to continue\"\n>Example</Checkbox>"
+    },
+    {
+      "id": "Disabled",
+      "title": "Disabled",
+      "kind": "disabled",
+      "props": {
+        "label": "Legacy feature access",
+        "disabled": true
+      },
+      "code": "<Checkbox\n  label=\"Legacy feature access\"\n  disabled\n>Example</Checkbox>"
+    }
+  ],
+  "accessibility": [
+    "Uses native or laRose-managed focus rings and disabled states."
+  ],
+  "anatomy": null,
+  "playground": {
+    "label": {
+      "control": "text",
+      "default": "Accept terms"
+    },
+    "checked": {
+      "control": "boolean",
+      "default": false
+    },
+    "disabled": {
+      "control": "boolean",
+      "default": false
+    }
+  }
+}

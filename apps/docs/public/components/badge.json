@@ -1,0 +1,90 @@
+{
+  "component": "Badge",
+  "category": "Feedback",
+  "import": "import { Badge } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "variant",
+      "type": "BadgeVariant",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [
+    {
+      "id": "Default",
+      "title": "Default",
+      "kind": "advanced",
+      "props": {
+        "children": "Draft"
+      },
+      "code": "<Badge>Draft</Badge>"
+    },
+    {
+      "id": "Info",
+      "title": "Info",
+      "kind": "advanced",
+      "props": {
+        "children": "Beta', variant: 'info"
+      },
+      "code": "<Badge>Beta', variant: 'info</Badge>"
+    },
+    {
+      "id": "Success",
+      "title": "Success",
+      "kind": "advanced",
+      "props": {
+        "children": "Active', variant: 'success"
+      },
+      "code": "<Badge>Active', variant: 'success</Badge>"
+    },
+    {
+      "id": "Warning",
+      "title": "Warning",
+      "kind": "advanced",
+      "props": {
+        "children": "Pending', variant: 'warning"
+      },
+      "code": "<Badge>Pending', variant: 'warning</Badge>"
+    },
+    {
+      "id": "Error",
+      "title": "Error",
+      "kind": "advanced",
+      "props": {
+        "children": "Suspended', variant: 'error"
+      },
+      "code": "<Badge>Suspended', variant: 'error</Badge>"
+    },
+    {
+      "id": "AllVariants",
+      "title": "All Variants",
+      "kind": "variants",
+      "props": {},
+      "code": "// See Storybook story \"AllVariants\" for composite layout example.",
+      "composite": true
+    }
+  ],
+  "accessibility": [
+    "Supports ARIA attributes via standard HTML element props."
+  ],
+  "anatomy": null,
+  "playground": {
+    "children": {
+      "control": "text",
+      "default": "Beta",
+      "label": "Label"
+    },
+    "variant": {
+      "control": "select",
+      "options": [
+        "default",
+        "info",
+        "success",
+        "warning",
+        "error"
+      ],
+      "default": "info"
+    }
+  }
+}

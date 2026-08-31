@@ -1,0 +1,47 @@
+{
+  "component": "Menu",
+  "category": "Navigation",
+  "import": "import { Menu } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "dimBackground",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "entries",
+      "type": "MenuEntry[]",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "layout",
+      "type": "MenuLayout",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onEntrySelect",
+      "type": "(entry: MenuItemConfig) => boolean | void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onOpenChange",
+      "type": "(open: boolean) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "open",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

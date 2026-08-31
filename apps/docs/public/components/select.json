@@ -1,0 +1,170 @@
+{
+  "component": "Select",
+  "category": "Forms",
+  "import": "import { Select } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "error",
+      "type": "string | null",
+      "required": false,
+      "default": "null",
+      "inherited": false
+    },
+    {
+      "name": "hint",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "inputSize",
+      "type": "Size",
+      "required": false,
+      "default": "'md'",
+      "inherited": false
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "loading",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "inherited": false
+    },
+    {
+      "name": "options",
+      "type": "SelectOption[]",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "required": false,
+      "default": "'Select...'",
+      "inherited": false
+    },
+    {
+      "name": "required",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "inherited": false
+    },
+    {
+      "name": "state",
+      "type": "UIState",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [
+    {
+      "id": "Default",
+      "title": "Default",
+      "kind": "advanced",
+      "props": {
+        "label": "Department",
+        "options": "departmentOptions",
+        "placeholder": "Choose a department"
+      },
+      "code": "<Select\n  label=\"Department\"\n  options=\"departmentOptions\"\n  placeholder=\"Choose a department\"\n>Example</Select>"
+    },
+    {
+      "id": "WithHint",
+      "title": "With Hint",
+      "kind": "advanced",
+      "props": {
+        "label": "Department",
+        "options": "departmentOptions",
+        "hint": "Used for org chart and permissions"
+      },
+      "code": "<Select\n  label=\"Department\"\n  options=\"departmentOptions\"\n  hint=\"Used for org chart and permissions\"\n>Example</Select>"
+    },
+    {
+      "id": "Required",
+      "title": "Required",
+      "kind": "advanced",
+      "props": {
+        "label": "Department",
+        "options": "departmentOptions",
+        "required": true
+      },
+      "code": "<Select\n  label=\"Department\"\n  options=\"departmentOptions\"\n  required\n>Example</Select>"
+    },
+    {
+      "id": "Loading",
+      "title": "Loading",
+      "kind": "loading",
+      "props": {
+        "label": "Department",
+        "options": "departmentOptions",
+        "loading": true
+      },
+      "code": "<Select\n  label=\"Department\"\n  options=\"departmentOptions\"\n  loading\n>Example</Select>"
+    },
+    {
+      "id": "WithError",
+      "title": "With Error",
+      "kind": "advanced",
+      "props": {
+        "label": "Department",
+        "options": "departmentOptions",
+        "error": "Department is required"
+      },
+      "code": "<Select\n  label=\"Department\"\n  options=\"departmentOptions\"\n  error=\"Department is required\"\n>Example</Select>"
+    },
+    {
+      "id": "Disabled",
+      "title": "Disabled",
+      "kind": "disabled",
+      "props": {
+        "label": "Department",
+        "options": "departmentOptions",
+        "disabled": true,
+        "defaultValue": "eng"
+      },
+      "code": "<Select\n  label=\"Department\"\n  options=\"departmentOptions\"\n  disabled\n  defaultValue=\"eng\"\n>Example</Select>"
+    }
+  ],
+  "accessibility": [
+    "Uses native or laRose-managed focus rings and disabled states."
+  ],
+  "anatomy": {
+    "summary": "Select provides a styled native-like picker with validation states.",
+    "structure": [
+      "Select",
+      "Label",
+      "Trigger",
+      "Options list"
+    ],
+    "composition": "Pass options array; pair with forms and validation messages.",
+    "slots": [
+      "label"
+    ],
+    "states": [
+      "default",
+      "disabled",
+      "error"
+    ]
+  },
+  "playground": {
+    "label": {
+      "control": "text",
+      "default": "Department"
+    },
+    "placeholder": {
+      "control": "text",
+      "default": "Choose department"
+    },
+    "disabled": {
+      "control": "boolean",
+      "default": false
+    }
+  }
+}

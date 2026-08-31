@@ -1,0 +1,18 @@
+{
+  "component": "ToastProvider",
+  "category": "Feedback",
+  "import": "import { ToastProvider } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "placement",
+      "type": "ToastPlacement",
+      "required": false,
+      "default": "'bottom-right'",
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

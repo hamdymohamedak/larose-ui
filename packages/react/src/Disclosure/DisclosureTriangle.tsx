@@ -3,8 +3,14 @@ import styles from './Disclosure.module.css';
 
 function TriangleIcon() {
   return (
-    <svg className={styles.triangleIcon} viewBox="0 0 10 10" fill="currentColor" aria-hidden="true">
-      <path d="M3 1.5 8 5 3 8.5V1.5Z" />
+    <svg className={styles.triangleIcon} viewBox="0 0 12 12" fill="none" aria-hidden="true">
+      <path
+        d="M4.5 3.25 7.5 6 4.5 8.75"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   );
 }

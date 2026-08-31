@@ -1,8 +1,8 @@
 .card {
-  background: var(--lr-color-surface-elevated);
-  border: 1px solid var(--lr-color-border);
-  border-radius: var(--lr-radius-lg);
-  box-shadow: var(--lr-shadow-sm);
+  background: var(--lr-card-background, var(--lr-color-surface-elevated));
+  border: 1px solid var(--lr-card-border, var(--lr-color-border));
+  border-radius: var(--lr-card-radius, var(--lr-radius-lg));
+  box-shadow: var(--lr-card-shadow, var(--lr-shadow-sm));
   overflow: hidden;
 }
 
@@ -36,18 +36,18 @@
 
 .title {
   margin: 0;
-  font-size: var(--lr-font-size-lg);
+  font-size: var(--lr-card-title-size, var(--lr-font-size-lg));
   font-weight: var(--lr-font-weight-semibold);
 }
 
 .description {
   margin: var(--lr-space-1) 0 0;
-  font-size: var(--lr-font-size-sm);
+  font-size: var(--lr-card-description-size, var(--lr-font-size-sm));
   color: var(--lr-color-text-muted);
 }
 
 .body {
-  font-size: var(--lr-font-size-sm);
+  font-size: var(--lr-card-body-size, var(--lr-font-size-sm));
 }
 
 .footer {

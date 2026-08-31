@@ -1,0 +1,61 @@
+{
+  "component": "WebView",
+  "category": "Content",
+  "import": "import { WebView } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "allowForms",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "inherited": false
+    },
+    {
+      "name": "allowScripts",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "inherited": false
+    },
+    {
+      "name": "embedded",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "description": "When true, omits outer frame styling (used inside ).",
+      "inherited": false
+    },
+    {
+      "name": "height",
+      "type": "string | number",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "html",
+      "type": "string",
+      "required": false,
+      "description": "Embedded HTML content, e.g. rich email bodies.",
+      "inherited": false
+    },
+    {
+      "name": "sandboxed",
+      "type": "boolean",
+      "required": false,
+      "default": "true",
+      "description": "Restrict iframe capabilities; enabled by default for untrusted content.",
+      "inherited": false
+    },
+    {
+      "name": "src",
+      "type": "string",
+      "required": false,
+      "description": "Remote URL to load — use for brief in-app website access, not a full browser replacement.",
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

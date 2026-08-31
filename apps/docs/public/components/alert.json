@@ -1,0 +1,41 @@
+{
+  "component": "Alert",
+  "category": "Feedback",
+  "import": "import { Alert } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "onDismiss",
+      "type": "() => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "variant",
+      "type": "AlertVariant",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [
+    "Supports ARIA attributes via standard HTML element props."
+  ],
+  "anatomy": null,
+  "playground": {
+    "children": {
+      "control": "text",
+      "default": "Your changes were saved.",
+      "label": "Message"
+    },
+    "variant": {
+      "control": "select",
+      "options": [
+        "info",
+        "success",
+        "warning",
+        "error"
+      ],
+      "default": "info"
+    }
+  }
+}

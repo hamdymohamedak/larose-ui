@@ -1,8 +1,22 @@
 export { AsyncButton } from './AsyncButton/AsyncButton';
 export type { AsyncButtonProps } from './AsyncButton/AsyncButton';
 
-export { LaRoseProvider, useLaRose } from './provider/LaRoseProvider';
-export type { LaRoseConfig, LaRoseProviderProps } from './provider/LaRoseProvider';
+export { LaRoseProvider, useLaRose, createTheme, normalizeThemeInput, resolveTheme } from './provider/LaRoseProvider';
+export type {
+  LaRoseConfig,
+  LaRoseProviderProps,
+  LaRoseTheme,
+  LaRoseThemeInput,
+  ComponentConfiguration,
+} from './provider/LaRoseProvider';
+
+export {
+  ThemeCustomizationContext,
+  useThemeCustomization,
+  useComponentDefaults,
+  useComponentMotion,
+} from './theme';
+export type { ResolvedComponentMotion, ThemeCustomizationContextValue } from './theme';
 
 export {
   MotionProvider,
@@ -170,7 +184,7 @@ export type {
 } from './DragDrop/types';
 
 export { Card } from './Card/Card';
-export type { CardProps } from './Card/Card';
+export type { CardProps, CardSectionProps } from './Card/Card';
 
 export { Box } from './Layout/Box';
 export type { BoxProps } from './Layout/Box';

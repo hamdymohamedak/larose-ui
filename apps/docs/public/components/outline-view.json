@@ -1,0 +1,144 @@
+{
+  "component": "OutlineView",
+  "category": "Data",
+  "import": "import { OutlineView } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "'aria-label'",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "alternatingRows",
+      "type": "boolean",
+      "required": false,
+      "default": "true",
+      "inherited": false
+    },
+    {
+      "name": "columns",
+      "type": "Array<string | OutlineColumn>",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "data",
+      "type": "OutlineNode[]",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "defaultExpandedIds",
+      "type": "string[]",
+      "required": false,
+      "default": "[]",
+      "inherited": false
+    },
+    {
+      "name": "defaultSortDirection",
+      "type": "SortDirection",
+      "required": false,
+      "default": "'asc'",
+      "inherited": false
+    },
+    {
+      "name": "defaultSortKey",
+      "type": "string",
+      "required": false,
+      "default": "PRIMARY_COLUMN_KEY",
+      "inherited": false
+    },
+    {
+      "name": "editableColumns",
+      "type": "string[]",
+      "required": false,
+      "default": "[]",
+      "inherited": false
+    },
+    {
+      "name": "expandedIds",
+      "type": "string[]",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onCellEdit",
+      "type": "(nodeId: string, columnKey: string, value: string) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onExpandedChange",
+      "type": "(expandedIds: string[]) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onRowDoubleClick",
+      "type": "(node: OutlineNode) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onSelect",
+      "type": "(node: OutlineNode) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "primaryColumnHeader",
+      "type": "string",
+      "required": false,
+      "default": "'Name'",
+      "inherited": false
+    },
+    {
+      "name": "resizableColumns",
+      "type": "boolean",
+      "required": false,
+      "default": "true",
+      "inherited": false
+    },
+    {
+      "name": "searchQuery",
+      "type": "string",
+      "required": false,
+      "default": "''",
+      "inherited": false
+    },
+    {
+      "name": "selectedId",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "sortable",
+      "type": "boolean",
+      "required": false,
+      "default": "true",
+      "inherited": false
+    },
+    {
+      "name": "storageKey",
+      "type": "string",
+      "required": false,
+      "description": "Persist expansion state across sessions (localStorage).",
+      "inherited": false
+    },
+    {
+      "name": "truncate",
+      "type": "'middle' | 'end'",
+      "required": false,
+      "default": "'end'",
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [
+    "Supports ARIA attributes via standard HTML element props."
+  ],
+  "anatomy": null,
+  "playground": null
+}

@@ -1,0 +1,10 @@
+{
+  "component": "EditMenuSelection",
+  "category": "Other",
+  "import": "import { EditMenuSelection } from '@larose-ui/react';",
+  "props": [],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

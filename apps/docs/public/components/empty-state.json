@@ -1,0 +1,41 @@
+{
+  "component": "EmptyState",
+  "category": "Feedback",
+  "import": "import { EmptyState } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "actionLabel",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "icon",
+      "type": "ReactNode",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onAction",
+      "type": "() => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "state",
+      "type": "UIState",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

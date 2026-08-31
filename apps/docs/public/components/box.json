@@ -1,0 +1,44 @@
+{
+  "component": "Box",
+  "category": "Layout",
+  "import": "import { Box } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "'aria-label'",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "padding",
+      "type": "'sm' | 'md' | 'lg'",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "settingsStyle",
+      "type": "boolean",
+      "required": false,
+      "description": "macOS settings panes append a colon to the title.",
+      "inherited": false
+    },
+    {
+      "name": "titlePosition",
+      "type": "BoxTitlePosition",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "variant",
+      "type": "BoxVariant",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [
+    "Supports ARIA attributes via standard HTML element props."
+  ],
+  "anatomy": null,
+  "playground": null
+}

@@ -1,0 +1,10 @@
+{
+  "component": "MorePullDownButton",
+  "category": "Navigation",
+  "import": "import { MorePullDownButton } from '@larose-ui/react';",
+  "props": [],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

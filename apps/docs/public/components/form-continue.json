@@ -1,0 +1,18 @@
+{
+  "component": "FormContinue",
+  "category": "Forms",
+  "import": "import { FormContinue } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "complete",
+      "type": "boolean",
+      "required": true,
+      "description": "When false, Continue stays disabled until required data is entered.",
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

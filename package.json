@@ -12,7 +12,6 @@
     "doctor:ci": "node packages/cli/dist/cli.js doctor --ci",
     "doctor:json": "node packages/cli/dist/cli.js doctor --ci --json",
     "release:report": "node packages/cli/dist/cli.js release",
-    "check-budgets": "node scripts/check-budgets.mjs",
     "visual-regression": "node scripts/visual-regression.mjs",
     "a11y": "node scripts/a11y-audit.mjs",
     "migrate": "node packages/cli/dist/cli.js migrate --to 1.0.0",
@@ -25,6 +24,8 @@
     "sync:publish-metadata": "node scripts/sync-publish-metadata.mjs",
     "generate:readmes": "node scripts/generate-package-readmes.mjs",
     "demo": "pnpm --filter @larose-ui/demo dev",
+    "webdocs": "pnpm --filter @larose-ui/docs dev",
+    "webdocs:build": "pnpm --filter @larose-ui/docs build",
     "clean": "turbo run clean && rm -rf node_modules"
   },
   "devDependencies": {

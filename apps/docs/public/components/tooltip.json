@@ -1,0 +1,54 @@
+{
+  "component": "Tooltip",
+  "category": "Feedback",
+  "import": "import { Tooltip } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "content",
+      "type": "ReactNode",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "side",
+      "type": "TooltipSide",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [
+    {
+      "id": "Default",
+      "title": "Default",
+      "kind": "advanced",
+      "props": {
+        "content": "Export employees as CSV",
+        "children": "<Button variant=\"outline\">Export</Button>"
+      },
+      "code": "<Tooltip\n  content=\"Export employees as CSV\"\n><Button variant=\"outline\">Export</Button></Tooltip>"
+    },
+    {
+      "id": "OnText",
+      "title": "On Text",
+      "kind": "advanced",
+      "props": {
+        "content": "Last updated 2 hours ago",
+        "children": "<span style={{ textDecoration: 'underline dotted'"
+      },
+      "code": "<Tooltip\n  content=\"Last updated 2 hours ago\"\n><span style={{ textDecoration: 'underline dotted'</Tooltip>"
+    },
+    {
+      "id": "LongContent",
+      "title": "Long Content",
+      "kind": "advanced",
+      "props": {
+        "content": "Keyboard shortcut: ⌘ + Shift + E",
+        "children": "<Button variant=\"secondary\">Quick export</Button>"
+      },
+      "code": "<Tooltip\n  content=\"Keyboard shortcut: ⌘ + Shift + E\"\n><Button variant=\"secondary\">Quick export</Button></Tooltip>"
+    }
+  ],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

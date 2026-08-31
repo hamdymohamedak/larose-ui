@@ -1,0 +1,127 @@
+{
+  "component": "Input",
+  "category": "Forms",
+  "import": "import { Input } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "acceptDrop",
+      "type": "boolean",
+      "required": false,
+      "description": "Accept plain-text drops into the field.",
+      "inherited": false
+    },
+    {
+      "name": "error",
+      "type": "string | null",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "expansionTooltip",
+      "type": "boolean",
+      "required": false,
+      "description": "macOS-style expansion tooltip when truncated text overflows the field.",
+      "inherited": false
+    },
+    {
+      "name": "format",
+      "type": "FieldFormat",
+      "required": false,
+      "description": "Formats numeric values on blur (currency, percent, number).",
+      "inherited": false
+    },
+    {
+      "name": "formatOptions",
+      "type": "FormatFieldOptions",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "hint",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "inputSize",
+      "type": "Size",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "loading",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "required",
+      "type": "boolean",
+      "required": false,
+      "description": "Shows a required indicator and sets the native required attribute.",
+      "inherited": false
+    },
+    {
+      "name": "state",
+      "type": "UIState",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "validate",
+      "type": "FieldValidator",
+      "required": false,
+      "description": "Validates on blur or change and surfaces inline feedback immediately.",
+      "inherited": false
+    },
+    {
+      "name": "validateOn",
+      "type": "'blur' | 'change'",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [
+    "Uses native or laRose-managed focus rings and disabled states."
+  ],
+  "anatomy": null,
+  "playground": {
+    "label": {
+      "control": "text",
+      "default": "Email",
+      "label": "Label"
+    },
+    "placeholder": {
+      "control": "text",
+      "default": "you@company.com"
+    },
+    "inputSize": {
+      "control": "select",
+      "options": [
+        "sm",
+        "md",
+        "lg"
+      ],
+      "default": "md"
+    },
+    "required": {
+      "control": "boolean",
+      "default": false
+    },
+    "disabled": {
+      "control": "boolean",
+      "default": false
+    },
+    "error": {
+      "control": "text",
+      "default": ""
+    }
+  }
+}

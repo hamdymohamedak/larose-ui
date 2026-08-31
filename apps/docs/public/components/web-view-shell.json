@@ -1,0 +1,23 @@
+{
+  "component": "WebViewShell",
+  "category": "Content",
+  "import": "import { WebViewShell } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "footer",
+      "type": "ReactNode",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "navigation",
+      "type": "WebViewNavigationProps",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

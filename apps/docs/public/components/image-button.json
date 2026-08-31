@@ -1,0 +1,29 @@
+{
+  "component": "ImageButton",
+  "category": "Content",
+  "import": "import { ImageButton } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "alt",
+      "type": "string",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "imageProps",
+      "type": "Omit<ImgHTMLAttributes<HTMLImageElement>, 'src' | 'alt'>",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "src",
+      "type": "string",
+      "required": true,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

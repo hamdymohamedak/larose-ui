@@ -1,0 +1,69 @@
+{
+  "component": "PopUpButton",
+  "category": "Navigation",
+  "import": "import { PopUpButton } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "customOption",
+      "type": "PopUpCustomOption",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "defaultValue",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "inherited": false
+    },
+    {
+      "name": "explanatoryText",
+      "type": "string",
+      "required": false,
+      "description": "Optional explanatory text below the control.",
+      "inherited": false
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false,
+      "description": "Introductory label describing the control (Calendar-style).",
+      "inherited": false
+    },
+    {
+      "name": "onValueChange",
+      "type": "(value: string) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "options",
+      "type": "PopUpOption[]",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "required": false,
+      "default": "'Select…'",
+      "inherited": false
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

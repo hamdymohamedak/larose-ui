@@ -1,0 +1,83 @@
+{
+  "component": "DataTable",
+  "category": "Data",
+  "import": "import { DataTable } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "'aria-label'",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "caption",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "columns",
+      "type": "DataTableColumn<T>[]",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "data",
+      "type": "T[]",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "emptyDescription",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "emptyMessage",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "emptyTitle",
+      "type": "string",
+      "required": false,
+      "default": "'No data'",
+      "inherited": false
+    },
+    {
+      "name": "keyExtractor",
+      "type": "(row: T) => string",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "loading",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "inherited": false
+    },
+    {
+      "name": "skeletonRows",
+      "type": "number",
+      "required": false,
+      "default": "3",
+      "inherited": false
+    },
+    {
+      "name": "striped",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [
+    "Supports ARIA attributes via standard HTML element props."
+  ],
+  "anatomy": null,
+  "playground": null
+}

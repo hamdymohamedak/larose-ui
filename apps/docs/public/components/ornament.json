@@ -1,0 +1,10 @@
+{
+  "component": "Ornament",
+  "category": "Layout",
+  "import": "import { Ornament } from '@larose-ui/react';",
+  "props": [],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

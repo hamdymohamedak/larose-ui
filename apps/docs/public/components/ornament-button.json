@@ -1,0 +1,17 @@
+{
+  "component": "OrnamentButton",
+  "category": "Layout",
+  "import": "import { OrnamentButton } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "active",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

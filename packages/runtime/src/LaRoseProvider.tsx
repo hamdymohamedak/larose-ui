@@ -10,8 +10,15 @@ import type {
 } from '@larose-ui/core';
 import { LAROSE_VERSION } from '@larose-ui/core';
 import type { ColorTokens } from '@larose-ui/tokens';
-import { MotionProvider, type MotionConfig } from '@larose-ui/react';
+import {
+  MotionProvider,
+  ThemeCustomizationContext,
+  type MotionConfig,
+  type ThemeCustomizationContextValue,
+} from '@larose-ui/react';
 import { getThemePreset, type ThemePresetId } from '@larose-ui/themes';
+import type { ComponentConfiguration, LaRoseTheme, LaRoseThemeInput } from '@larose-ui/themes';
+import { createTheme, resolveTheme } from '@larose-ui/themes';
 import { PermissionProvider } from '@larose-ui/permissions';
 import {
   ObservabilityProvider,
@@ -76,6 +83,10 @@ export interface LaRoseProviderProps {
   toastPlacement?: 'bottom-right' | 'bottom-left' | 'top-right' | 'top-left';
   /** Global motion configuration for laRose UI components. */
   motion?: MotionConfig;
+  /** Full theme configuration with token overrides. */
+  themeConfig?: LaRoseThemeInput | LaRoseTheme;
+  /** Per-component defaults, tokens, and motion overrides. */
+  components?: ComponentConfiguration;
 }
 
 function AutoSync({
@@ -138,6 +149,8 @@ export function LaRoseProvider({
   enableToasts = true,
   toastPlacement = 'bottom-right',
   motion,
+  themeConfig,
+  components = {},
 }: LaRoseProviderProps) {
   const adapter =
     observabilityAdapter ??
@@ -151,6 +164,36 @@ export function LaRoseProvider({
     ...brandColorsProp,
     ...(tenant?.brandColors as Partial<ColorTokens> | undefined),
   };
+
+  const normalizedTheme = useMemo(
+    () =>
+      themeConfig
+        ? 'tokens' in themeConfig && themeConfig.tokens
+          ? (themeConfig as LaRoseTheme)
+          : createTheme({ preset: themePreset, ...themeConfig })
+        : createTheme({ preset: themePreset }),
+    [themeConfig, themePreset],
+  );
+
+  const resolvedTheme = useMemo(
+    () =>
+      resolveTheme({
+        theme: normalizedTheme,
+        density,
+        brandColors,
+        components,
+      }),
+    [normalizedTheme, density, brandColors, components],
+  );
+
+  const customizationValue = useMemo<ThemeCustomizationContextValue>(
+    () => ({
+      theme: normalizedTheme,
+      resolved: resolvedTheme,
+      components,
+    }),
+    [normalizedTheme, resolvedTheme, components],
+  );
 
   const resolved = resolveTenantConfig({
     tenant,
@@ -179,7 +222,8 @@ export function LaRoseProvider({
   };
 
   const tree = (
-    <RuntimeContextProvider
+    <ThemeCustomizationContext.Provider value={customizationValue}>
+      <RuntimeContextProvider
       initialContext={{
         environment,
         session: session ?? (user || userId ? 'authenticated' : 'unauthenticated'),
@@ -194,6 +238,9 @@ export function LaRoseProvider({
         density={resolved.density}
         tenantId={resolvedTenantId}
         brandColors={resolved.brandColors}
+        themeConfig={normalizedTheme}
+        themePreset={themePreset}
+        components={components}
       >
         <ObservabilityProvider
           adapter={adapter}
@@ -242,6 +289,7 @@ export function LaRoseProvider({
         </ObservabilityProvider>
       </ThemeProvider>
     </RuntimeContextProvider>
+    </ThemeCustomizationContext.Provider>
   );
 
   if (!enableToasts) {

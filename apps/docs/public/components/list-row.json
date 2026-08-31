@@ -1,0 +1,59 @@
+{
+  "component": "ListRow",
+  "category": "Data",
+  "import": "import { ListRow } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "accessory",
+      "type": "ListAccessory",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "leading",
+      "type": "ReactNode",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onInfo",
+      "type": "(event: MouseEvent<HTMLButtonElement>) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onPress",
+      "type": "() => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "selected",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "subtitle",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "truncate",
+      "type": "'end' | 'middle'",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

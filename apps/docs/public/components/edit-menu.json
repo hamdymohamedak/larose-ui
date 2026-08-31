@@ -1,0 +1,88 @@
+{
+  "component": "EditMenu",
+  "category": "Navigation",
+  "import": "import { EditMenu } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "context",
+      "type": "EditMenuContext",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "customActions",
+      "type": "EditMenuItemConfig[]",
+      "required": false,
+      "description": "Custom commands listed near related system-provided ones.",
+      "inherited": false
+    },
+    {
+      "name": "dimBackground",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "includeStandardActions",
+      "type": "boolean",
+      "required": false,
+      "description": "Include standard Cut, Copy, Paste, etc. Defaults to true.",
+      "inherited": false
+    },
+    {
+      "name": "inputMode",
+      "type": "EditMenuInputMode",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "longPress",
+      "type": "boolean",
+      "required": false,
+      "description": "Touch-and-hold / long-press to reveal compact edit menu.",
+      "inherited": false
+    },
+    {
+      "name": "onAction",
+      "type": "(actionId: string) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onOpenChange",
+      "type": "(open: boolean) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onStandardAction",
+      "type": "(actionId: StandardEditActionId) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "open",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "placement",
+      "type": "'above' | 'below' | 'auto'",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "variant",
+      "type": "EditMenuVariant",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [
+    "Supports ARIA attributes via standard HTML element props."
+  ],
+  "anatomy": null,
+  "playground": null
+}

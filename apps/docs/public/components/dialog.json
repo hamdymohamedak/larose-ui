@@ -1,0 +1,79 @@
+{
+  "component": "Dialog",
+  "category": "Overlay",
+  "import": "import { Dialog } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "cancelLabel",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "confirmLabel",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "loading",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onClose",
+      "type": "() => void",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "onConfirm",
+      "type": "() => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "open",
+      "type": "boolean",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "variant",
+      "type": "'default' | 'destructive'",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [
+    "Supports ARIA attributes via standard HTML element props.",
+    "Focus is managed while open; Escape typically closes the overlay."
+  ],
+  "anatomy": {
+    "summary": "Dialog is a lightweight modal surface for confirmations and forms.",
+    "structure": [
+      "Dialog",
+      "Header",
+      "Title",
+      "Description",
+      "Actions"
+    ],
+    "composition": "Use for focused tasks smaller than full Modal layouts.",
+    "slots": [
+      "children"
+    ],
+    "states": [
+      "closed",
+      "open"
+    ]
+  },
+  "playground": null
+}

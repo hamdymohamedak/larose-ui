@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@larose-ui/core": "workspace:*",
+    "@larose-ui/themes": "workspace:*",
     "@larose-ui/tokens": "workspace:*"
   },
   "peerDependencies": {

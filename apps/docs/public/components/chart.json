@@ -1,0 +1,124 @@
+{
+  "component": "Chart",
+  "category": "Data",
+  "import": "import { Chart } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "accessibilitySummary",
+      "type": "string",
+      "required": false,
+      "description": "High-level summary for assistive technologies (Apple Audio Graphs pattern).",
+      "inherited": false
+    },
+    {
+      "name": "annotation",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "data",
+      "type": "ChartDataPoint[]",
+      "required": false,
+      "description": "Single-series shorthand.",
+      "inherited": false
+    },
+    {
+      "name": "height",
+      "type": "number",
+      "required": false,
+      "default": "220",
+      "description": "Plot height in CSS pixels.",
+      "inherited": false
+    },
+    {
+      "name": "interactive",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "description": "Enable plot-area scrubbing with crosshair.",
+      "inherited": false
+    },
+    {
+      "name": "mark",
+      "type": "ChartMark",
+      "required": false,
+      "default": "'bar'",
+      "description": "Chart mark type — bar, line, or point.",
+      "inherited": false
+    },
+    {
+      "name": "onPointFocus",
+      "type": "(point: ChartDataPoint, seriesId: string, index: number) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "series",
+      "type": "ChartSeries[]",
+      "required": false,
+      "description": "One or more data series.",
+      "inherited": false
+    },
+    {
+      "name": "showLegend",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "showPoints",
+      "type": "boolean",
+      "required": false,
+      "default": "mark === 'line'",
+      "description": "Combine line marks with point marks. Default true for line charts.",
+      "inherited": false
+    },
+    {
+      "name": "stacked",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "description": "Stack bar marks when multiple series are present.",
+      "inherited": false
+    },
+    {
+      "name": "stackGap",
+      "type": "number",
+      "required": false,
+      "default": "2",
+      "description": "Gap between stacked bar segments (Apple HIG visual separation).",
+      "inherited": false
+    },
+    {
+      "name": "subtitle",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "xAxis",
+      "type": "ChartAxisConfig",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "yAxis",
+      "type": "ChartAxisConfig",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "yAxisTrailing",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "description": "Y axis on trailing edge (right in LTR) for layout alignment.",
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

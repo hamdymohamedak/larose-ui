@@ -1,0 +1,23 @@
+{
+  "component": "Spinner",
+  "category": "Feedback",
+  "import": "import { Spinner } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "size",
+      "type": "Size",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

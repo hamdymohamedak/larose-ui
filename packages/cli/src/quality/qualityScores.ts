@@ -13,7 +13,6 @@ export interface ComponentQualityScore {
 export interface PackageQualityScore {
   package: string;
   score: number;
-  bundleKb?: number;
   issues: number;
 }
 
@@ -32,28 +31,11 @@ export function computeQualityScores(
 ): QualitySummary {
   const treatWarningsAsErrors = options.ci === true;
   const componentMap = new Map<string, ComponentQualityScore>();
-  const packageMap = new Map<string, PackageQualityScore>();
 
   for (const diagnostic of diagnostics) {
     const isError =
       diagnostic.severity === 'error' ||
       (treatWarningsAsErrors && diagnostic.severity === 'warning');
-
-    if (diagnostic.category === 'bundle') {
-      const pkgMatch = diagnostic.message.match(/^(@larose-ui\/[^\s]+)/);
-      const pkg = pkgMatch?.[1] ?? 'unknown';
-      const entry = packageMap.get(pkg) ?? {
-        package: pkg,
-        score: 100,
-        issues: 0,
-      };
-      entry.issues += 1;
-      entry.score -= isError ? ERROR_PENALTY : WARNING_PENALTY;
-      const sizeMatch = diagnostic.message.match(/bundle\s+([\d.]+)KB/);
-      if (sizeMatch?.[1]) entry.bundleKb = Number(sizeMatch[1]);
-      packageMap.set(pkg, entry);
-      continue;
-    }
 
     const componentId = diagnostic.file ?? 'unknown';
     const entry = componentMap.get(componentId) ?? {
@@ -77,18 +59,11 @@ export function computeQualityScores(
     .map((entry) => ({ ...entry, score: clampScore(entry.score) }))
     .sort((a, b) => a.score - b.score);
 
-  const packages = [...packageMap.values()]
-    .map((entry) => ({ ...entry, score: clampScore(entry.score) }))
-    .sort((a, b) => a.score - b.score);
-
   const overall = clampScore(
-    average([
-      ...components.map((entry) => entry.score),
-      ...packages.map((entry) => entry.score),
-    ]) ?? 100,
+    average(components.map((entry) => entry.score)) ?? 100,
   );
 
-  return { overall, components, packages };
+  return { overall, components, packages: [] };
 }
 
 function average(values: number[]): number | undefined {

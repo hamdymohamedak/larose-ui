@@ -1,0 +1,57 @@
+# Button
+
+Buttons trigger actions. laRose follows Apple HIG patterns for roles, sizing, and alert layouts.
+
+## Variants
+
+<PreviewFrame title="Variants">
+  <Button variant="primary">Primary</Button>
+  <Button variant="secondary">Secondary</Button>
+  <Button variant="outline">Outline</Button>
+  <Button variant="ghost">Plain</Button>
+  <Button variant="destructive">Destructive</Button>
+</PreviewFrame>
+
+## Sizes
+
+<PreviewFrame title="Sizes">
+  <Button size="sm">Small</Button>
+  <Button size="md">Regular</Button>
+  <Button size="lg">Large</Button>
+</PreviewFrame>
+
+## Button groups
+
+<PreviewFrame title="Alert actions">
+  <ButtonGroup orientation="vertical" aria-label="Alert actions">
+    <Button variant="primary" buttonRole="primary">
+      Keep Item
+    </Button>
+    <Button variant="ghost" buttonRole="destructive">
+      Delete
+    </Button>
+    <Button variant="secondary" buttonRole="cancel">
+      Cancel
+    </Button>
+  </ButtonGroup>
+</PreviewFrame>
+
+## Usage
+
+```tsx
+import { Button } from '@larose-ui/react';
+
+<Button variant="primary" onClick={() => save()}>
+  Save changes
+</Button>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `'primary' \| 'secondary' \| 'outline' \| 'ghost' \| 'destructive'` | `'primary'` | Visual style |
+| `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | Control size |
+| `buttonRole` | `'normal' \| 'primary' \| 'cancel' \| 'destructive'` | `'normal'` | Semantic role in alerts |
+| `loading` | `boolean` | `false` | Shows activity indicator |
+| `disabled` | `boolean` | `false` | Disables interaction |

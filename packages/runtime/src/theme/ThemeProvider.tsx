@@ -2,13 +2,21 @@ import {
   createContext,
   useContext,
   useEffect,
+  useMemo,
   useRef,
   useState,
   type ReactNode,
 } from 'react';
 import type { Density, ThemeMode } from '@larose-ui/core';
 import { warnDeprecation } from '@larose-ui/core';
-import { applyTokensToElement, type ColorTokens } from '@larose-ui/tokens';
+import { applyResolvedTheme, type ColorTokens } from '@larose-ui/tokens';
+import {
+  createTheme,
+  resolveTheme,
+  type ComponentConfiguration,
+  type LaRoseTheme,
+  type LaRoseThemeInput,
+} from '@larose-ui/themes';
 
 export type Appearance = 'light' | 'dark' | 'system';
 
@@ -18,6 +26,8 @@ export interface ThemeContextValue {
   tenantId?: string;
   brandColors?: Partial<ColorTokens>;
   appearance?: Appearance;
+  themeConfig?: LaRoseTheme;
+  components?: ComponentConfiguration;
 }
 
 const ThemeContext = createContext<ThemeContextValue>({
@@ -55,6 +65,9 @@ export interface ThemeProviderProps {
   density?: Density;
   tenantId?: string;
   brandColors?: Partial<ColorTokens>;
+  themeConfig?: LaRoseThemeInput | LaRoseTheme;
+  themePreset?: LaRoseThemeInput['preset'];
+  components?: ComponentConfiguration;
   children: ReactNode;
 }
 
@@ -65,6 +78,9 @@ export function ThemeProvider({
   density = 'comfortable',
   tenantId,
   brandColors,
+  themeConfig,
+  themePreset,
+  components = {},
 }: ThemeProviderProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [systemTheme, setSystemTheme] = useState<ThemeMode>(() =>
@@ -85,21 +101,59 @@ export function ThemeProvider({
   const activeTheme =
     theme ?? (appearance === 'system' ? systemTheme : resolveAppearanceTheme(appearance));
 
+  const normalizedTheme = useMemo(
+    () =>
+      themeConfig
+        ? 'tokens' in themeConfig && themeConfig.tokens
+          ? (themeConfig as LaRoseTheme)
+          : createTheme({ preset: themePreset ?? 'refined', ...themeConfig })
+        : createTheme({ preset: themePreset ?? 'refined' }),
+    [themeConfig, themePreset],
+  );
+
+  const resolved = useMemo(
+    () =>
+      resolveTheme({
+        theme: normalizedTheme,
+        density,
+        mode: activeTheme,
+        brandColors,
+        components,
+      }),
+    [normalizedTheme, density, activeTheme, brandColors, components],
+  );
+
   useEffect(() => {
-    if (ref.current) {
-      applyTokensToElement(ref.current, activeTheme, density, brandColors);
-      ref.current.dataset.lrTheme = activeTheme;
-      ref.current.dataset.lrDensity = density;
-      ref.current.dataset.lrAppearance = appearance;
-      if (tenantId) {
-        ref.current.dataset.lrTenant = tenantId;
-      }
+    if (!ref.current) return;
+
+    applyResolvedTheme(ref.current, {
+      mode: resolved.mode,
+      density: resolved.density,
+      tokenOverrides: resolved.tokenOverrides,
+      brandColors: resolved.brandColors,
+      componentTokenOverrides: resolved.componentTokenOverrides,
+      presetId: resolved.preset,
+    });
+
+    ref.current.dataset.lrTheme = activeTheme;
+    ref.current.dataset.lrDensity = density;
+    ref.current.dataset.lrAppearance = appearance;
+    if (tenantId) {
+      ref.current.dataset.lrTenant = tenantId;
     }
-  }, [activeTheme, density, tenantId, brandColors, appearance]);
+  }, [resolved, activeTheme, density, tenantId, appearance]);
 
   return (
     <ThemeContext.Provider
-      value={{ theme: activeTheme, density, tenantId, brandColors, appearance }}
+      value={{
+        theme: activeTheme,
+        density,
+        tenantId,
+        brandColors,
+        appearance,
+        themeConfig: normalizedTheme,
+        components,
+      }}
     >
       <div ref={ref} data-lr-provider style={{ minHeight: 'inherit' }}>
         {children}

@@ -1,0 +1,80 @@
+{
+  "component": "FileBrowser",
+  "category": "Files",
+  "import": "import { FileBrowser } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "acceptTypes",
+      "type": "string[]",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "activeTab",
+      "type": "FileBrowserTab",
+      "required": false,
+      "default": "'recents'",
+      "inherited": false
+    },
+    {
+      "name": "emptyLabel",
+      "type": "string",
+      "required": false,
+      "default": "'No documents in this location.'",
+      "inherited": false
+    },
+    {
+      "name": "files",
+      "type": "FileBrowserItem[]",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "onOpen",
+      "type": "(file: FileBrowserItem) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onSelect",
+      "type": "(file: FileBrowserItem) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onShowExtensionsChange",
+      "type": "(show: boolean) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onTabChange",
+      "type": "(tab: FileBrowserTab) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "selectedId",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "showExtensions",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "inherited": false
+    },
+    {
+      "name": "toolbar",
+      "type": "ReactNode",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

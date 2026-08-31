@@ -1,0 +1,66 @@
+{
+  "component": "HomeScreenQuickActions",
+  "category": "Platform",
+  "import": "import { HomeScreenQuickActions } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "actions",
+      "type": "QuickActionItem[]",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "appName",
+      "type": "string",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "icon",
+      "type": "ReactNode",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "iconPlacement",
+      "type": "QuickActionIconPlacement",
+      "required": false,
+      "description": "Icon appears on leading or trailing edge depending on Home Screen position.",
+      "inherited": false
+    },
+    {
+      "name": "includeSystemActions",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onActionSelect",
+      "type": "(action: QuickActionItem) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onOpenChange",
+      "type": "(open: boolean) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "open",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "systemActions",
+      "type": "QuickActionItem[]",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

@@ -1,0 +1,24 @@
+{
+  "component": "UnsavedIndicator",
+  "category": "Files",
+  "import": "import { UnsavedIndicator } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "autosaveEnabled",
+      "type": "boolean",
+      "required": false,
+      "description": "When false, show the unsaved dot (manual save mode).",
+      "inherited": false
+    },
+    {
+      "name": "edited",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

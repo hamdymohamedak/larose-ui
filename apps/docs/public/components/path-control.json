@@ -1,0 +1,62 @@
+{
+  "component": "PathControl",
+  "category": "Navigation",
+  "import": "import { PathControl } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "'aria-label'",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "editable",
+      "type": "boolean",
+      "required": false,
+      "description": "macOS: allow drag-and-drop to select a new path item.",
+      "inherited": false
+    },
+    {
+      "name": "onChoose",
+      "type": "() => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onDropPath",
+      "type": "(segments: PathSegment[]) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onSegmentSelect",
+      "type": "(segment: PathSegment) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "segments",
+      "type": "PathSegment[]",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "selectedId",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "variant",
+      "type": "PathControlVariant",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [
+    "Supports ARIA attributes via standard HTML element props."
+  ],
+  "anatomy": null,
+  "playground": null
+}

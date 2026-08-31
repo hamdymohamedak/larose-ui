@@ -1,0 +1,63 @@
+{
+  "component": "FileUpload",
+  "category": "Forms",
+  "import": "import { FileUpload } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "accept",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "buttonLabel",
+      "type": "string",
+      "required": false,
+      "default": "'Choose files or drag here'",
+      "inherited": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "inherited": false
+    },
+    {
+      "name": "error",
+      "type": "string | null",
+      "required": false,
+      "default": "null",
+      "inherited": false
+    },
+    {
+      "name": "hint",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "multiple",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "inherited": false
+    },
+    {
+      "name": "onFilesChange",
+      "type": "(files: File[]) => void",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}
