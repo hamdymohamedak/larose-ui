@@ -10,6 +10,114 @@ export interface DocsChangelogEntry {
 export const docsChangelog: DocsChangelogEntry[] = [
   {
     "package": "@larose-ui/accessibility",
+    "version": "0.1.2",
+    "heading": "0.1.2",
+    "body": "### Patch Changes\n\n- Updated dependencies [989ea15]\n  - @larose-ui/core@0.1.2"
+  },
+  {
+    "package": "@larose-ui/ai",
+    "version": "0.1.2",
+    "heading": "0.1.2",
+    "body": "### Patch Changes\n\n- Updated dependencies [989ea15]\n  - @larose-ui/runtime@0.1.2\n  - @larose-ui/react@0.1.2\n  - @larose-ui/forms@0.1.2\n  - @larose-ui/permissions@0.1.2"
+  },
+  {
+    "package": "@larose-ui/cli",
+    "version": "0.1.2",
+    "heading": "0.1.2",
+    "body": "### Patch Changes\n\n- @larose-ui/accessibility@0.1.2\n- @larose-ui/contracts@0.1.2"
+  },
+  {
+    "package": "@larose-ui/contracts",
+    "version": "0.1.2",
+    "heading": "0.1.2",
+    "body": "### Patch Changes\n\n- Updated dependencies [989ea15]\n  - @larose-ui/core@0.1.2"
+  },
+  {
+    "package": "@larose-ui/core",
+    "version": "0.1.2",
+    "heading": "0.1.2",
+    "body": "### Patch Changes\n\n- 989ea15: Major HIG-aligned expansion: new components (MenuBar, Toolbar, Picker, Sharing, DragDrop, SplitView, Motion, and more), motion system for overlays/menus, DateTimePicker/WheelPicker, Switch toggle fix, and Input loading spinner layout fix. Runtime: session security helpers and ThemeProvider updates."
+  },
+  {
+    "package": "@larose-ui/data",
+    "version": "0.1.2",
+    "heading": "0.1.2",
+    "body": "### Patch Changes\n\n- Updated dependencies [989ea15]\n  - @larose-ui/core@0.1.2\n  - @larose-ui/permissions@0.1.2"
+  },
+  {
+    "package": "@larose-ui/devtools",
+    "version": "0.1.2",
+    "heading": "0.1.2",
+    "body": "### Patch Changes\n\n- Updated dependencies [989ea15]\n  - @larose-ui/runtime@0.1.2\n  - @larose-ui/core@0.1.2\n  - @larose-ui/observability@0.1.2\n  - @larose-ui/permissions@0.1.2"
+  },
+  {
+    "package": "@larose-ui/enterprise",
+    "version": "0.1.2",
+    "heading": "0.1.2",
+    "body": "### Patch Changes\n\n- Updated dependencies [989ea15]\n  - @larose-ui/runtime@0.1.2\n  - @larose-ui/react@0.1.2\n  - @larose-ui/core@0.1.2\n  - @larose-ui/forms@0.1.2\n  - @larose-ui/observability@0.1.2\n  - @larose-ui/permissions@0.1.2"
+  },
+  {
+    "package": "@larose-ui/forms",
+    "version": "0.1.2",
+    "heading": "0.1.2",
+    "body": "### Patch Changes\n\n- Updated dependencies [989ea15]\n  - @larose-ui/react@0.1.2\n  - @larose-ui/core@0.1.2\n  - @larose-ui/data@0.1.2\n  - @larose-ui/observability@0.1.2"
+  },
+  {
+    "package": "@larose-ui/network",
+    "version": "0.1.2",
+    "heading": "0.1.2",
+    "body": "### Patch Changes\n\n- Updated dependencies [989ea15]\n  - @larose-ui/core@0.1.2"
+  },
+  {
+    "package": "@larose-ui/observability",
+    "version": "0.1.2",
+    "heading": "0.1.2",
+    "body": "### Patch Changes\n\n- Updated dependencies [989ea15]\n  - @larose-ui/core@0.1.2"
+  },
+  {
+    "package": "@larose-ui/offline",
+    "version": "0.1.2",
+    "heading": "0.1.2",
+    "body": "### Patch Changes\n\n- Updated dependencies [989ea15]\n  - @larose-ui/core@0.1.2"
+  },
+  {
+    "package": "@larose-ui/permissions",
+    "version": "0.1.2",
+    "heading": "0.1.2",
+    "body": "### Patch Changes\n\n- Updated dependencies [989ea15]\n  - @larose-ui/core@0.1.2"
+  },
+  {
+    "package": "@larose-ui/react",
+    "version": "0.1.2",
+    "heading": "0.1.2",
+    "body": "### Patch Changes\n\n- 989ea15: Major HIG-aligned expansion: new components (MenuBar, Toolbar, Picker, Sharing, DragDrop, SplitView, Motion, and more), motion system for overlays/menus, DateTimePicker/WheelPicker, Switch toggle fix, and Input loading spinner layout fix. Runtime: session security helpers and ThemeProvider updates.\n- Updated dependencies [989ea15]\n  - @larose-ui/tokens@0.1.2\n  - @larose-ui/core@0.1.2"
+  },
+  {
+    "package": "@larose-ui/runtime",
+    "version": "0.1.2",
+    "heading": "0.1.2",
+    "body": "### Patch Changes\n\n- 989ea15: Major HIG-aligned expansion: new components (MenuBar, Toolbar, Picker, Sharing, DragDrop, SplitView, Motion, and more), motion system for overlays/menus, DateTimePicker/WheelPicker, Switch toggle fix, and Input loading spinner layout fix. Runtime: session security helpers and ThemeProvider updates.\n- Updated dependencies [989ea15]\n  - @larose-ui/react@0.1.2\n  - @larose-ui/tokens@0.1.2\n  - @larose-ui/core@0.1.2\n  - @larose-ui/themes@0.1.2\n  - @larose-ui/network@0.1.2"
+  },
+  {
+    "package": "@larose-ui/testing",
+    "version": "0.1.2",
+    "heading": "0.1.2",
+    "body": "### Patch Changes\n\n- Updated dependencies [989ea15]\n  - @larose-ui/runtime@0.1.2\n  - @larose-ui/core@0.1.2"
+  },
+  {
+    "package": "@larose-ui/themes",
+    "version": "0.1.2",
+    "heading": "0.1.2",
+    "body": "### Patch Changes\n\n- Updated dependencies [989ea15]\n  - @larose-ui/tokens@0.1.2\n  - @larose-ui/core@0.1.2"
+  },
+  {
+    "package": "@larose-ui/tokens",
+    "version": "0.1.2",
+    "heading": "0.1.2",
+    "body": "### Patch Changes\n\n- 989ea15: Major HIG-aligned expansion: new components (MenuBar, Toolbar, Picker, Sharing, DragDrop, SplitView, Motion, and more), motion system for overlays/menus, DateTimePicker/WheelPicker, Switch toggle fix, and Input loading spinner layout fix. Runtime: session security helpers and ThemeProvider updates.\n- Updated dependencies [989ea15]\n  - @larose-ui/core@0.1.2"
+  },
+  {
+    "package": "@larose-ui/accessibility",
     "version": "0.1.1",
     "heading": "0.1.1",
     "body": "### Patch Changes\n\n- f1f64e6: Add package README files and fix repository/homepage links to point at hamdymohamedak/larose-ui.\n- Updated dependencies [f1f64e6]\n  - @larose-ui/core@0.1.1"

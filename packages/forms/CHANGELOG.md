@@ -1,5 +1,15 @@
 # @larose-ui/forms
 
+## 0.1.3
+
+### Patch Changes
+
+- Updated dependencies [e989652]
+  - @larose-ui/react@0.2.0
+  - @larose-ui/core@0.2.0
+  - @larose-ui/observability@0.2.0
+  - @larose-ui/data@0.2.0
+
 ## 0.1.2
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @larose-ui/ai
 
+## 1.0.0
+
+### Patch Changes
+
+- Updated dependencies [e989652]
+  - @larose-ui/react@0.2.0
+  - @larose-ui/runtime@1.0.0
+  - @larose-ui/permissions@0.2.0
+  - @larose-ui/forms@0.1.3
+
 ## 0.1.2
 
 ### Patch Changes

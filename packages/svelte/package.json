@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/svelte",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Svelte 5 components for laRose UI — thin adapter over shared styles and primitives",
   "type": "module",
   "svelte": "./dist/index.js",

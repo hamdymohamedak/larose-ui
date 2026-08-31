@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/tauri",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Tauri host adapter for laRose UI — native menus, accelerators, window chrome",
   "type": "module",
   "main": "./dist/index.js",

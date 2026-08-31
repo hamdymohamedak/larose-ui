@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/ai",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "AI-native UI adapters — SmartTable and SmartForm with pluggable intelligence",
   "type": "module",
   "main": "./dist/index.js",

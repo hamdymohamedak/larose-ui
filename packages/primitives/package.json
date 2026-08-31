@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/primitives",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Headless interactive behavior for laRose UI — menus, type-ahead, keyboard",
   "type": "module",
   "main": "./dist/index.js",
