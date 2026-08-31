@@ -1,6 +1,6 @@
 import { useMemo, type IframeHTMLAttributes } from 'react';
 import { buildSandboxAttribute } from './utils';
-import styles from './WebView.module.css';
+import styles from '@larose-ui/styles/components/WebView/WebView.module.css';
 
 export interface WebViewProps extends Omit<IframeHTMLAttributes<HTMLIFrameElement>, 'src' | 'srcDoc'> {
   /** Remote URL to load — use for brief in-app website access, not a full browser replacement. */

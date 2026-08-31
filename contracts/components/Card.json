@@ -1,0 +1,35 @@
+{
+  "name": "Card",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "description",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "footer",
+      "type": "ReactNode",
+      "required": false
+    },
+    {
+      "name": "padding",
+      "type": "'none' | 'sm' | 'md' | 'lg'",
+      "required": false,
+      "default": "'md'"
+    }
+  ],
+  "events": [],
+  "slots": [
+    "children",
+    "title"
+  ],
+  "states": [
+    "default"
+  ],
+  "defaults": {
+    "padding": "'md'"
+  },
+  "keyboard": {}
+}

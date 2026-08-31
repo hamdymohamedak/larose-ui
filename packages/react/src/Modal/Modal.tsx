@@ -11,8 +11,8 @@ import type { ComponentMotionOverride } from '@larose-ui/themes';
 import { useComponentDefaults } from '../theme/useComponentDefaults';
 import { useComponentMotion } from '../theme/useComponentMotion';
 import { usePresence } from '../Motion/usePresence';
-import motionStyles from '../Motion/motion.module.css';
-import styles from './Modal.module.css';
+import motionStyles from '@larose-ui/styles/components/Motion/motion.module.css';
+import styles from '@larose-ui/styles/components/Modal/Modal.module.css';
 
 export interface ModalProps extends HTMLAttributes<HTMLDivElement> {
   open: boolean;

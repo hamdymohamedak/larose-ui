@@ -14,7 +14,7 @@ import {
   mergeUniqueTokens,
   shouldCommitToken,
 } from './utils';
-import styles from './TokenField.module.css';
+import styles from '@larose-ui/styles/components/TokenField/TokenField.module.css';
 
 /**
  * macOS token field — converts text into selectable, draggable tokens.

@@ -1,0 +1,159 @@
+{
+  "name": "OutlineView",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "'aria-label'",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "alternatingRows",
+      "type": "boolean",
+      "required": false,
+      "default": "true"
+    },
+    {
+      "name": "columns",
+      "type": "Array<string | OutlineColumn>",
+      "required": false
+    },
+    {
+      "name": "data",
+      "type": "OutlineNode[]",
+      "required": true
+    },
+    {
+      "name": "defaultExpandedIds",
+      "type": "string[]",
+      "required": false,
+      "default": "[]"
+    },
+    {
+      "name": "defaultSortDirection",
+      "type": "SortDirection",
+      "required": false,
+      "default": "'asc'"
+    },
+    {
+      "name": "defaultSortKey",
+      "type": "string",
+      "required": false,
+      "default": "PRIMARY_COLUMN_KEY"
+    },
+    {
+      "name": "editableColumns",
+      "type": "string[]",
+      "required": false,
+      "default": "[]"
+    },
+    {
+      "name": "expandedIds",
+      "type": "string[]",
+      "required": false
+    },
+    {
+      "name": "onCellEdit",
+      "type": "(nodeId: string, columnKey: string, value: string) => void",
+      "required": false
+    },
+    {
+      "name": "onExpandedChange",
+      "type": "(expandedIds: string[]) => void",
+      "required": false
+    },
+    {
+      "name": "onRowDoubleClick",
+      "type": "(node: OutlineNode) => void",
+      "required": false
+    },
+    {
+      "name": "onSelect",
+      "type": "(node: OutlineNode) => void",
+      "required": false
+    },
+    {
+      "name": "primaryColumnHeader",
+      "type": "string",
+      "required": false,
+      "default": "'Name'"
+    },
+    {
+      "name": "resizableColumns",
+      "type": "boolean",
+      "required": false,
+      "default": "true"
+    },
+    {
+      "name": "searchQuery",
+      "type": "string",
+      "required": false,
+      "default": "''"
+    },
+    {
+      "name": "selectedId",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "sortable",
+      "type": "boolean",
+      "required": false,
+      "default": "true"
+    },
+    {
+      "name": "storageKey",
+      "type": "string",
+      "required": false,
+      "description": "Persist expansion state across sessions (localStorage)."
+    },
+    {
+      "name": "truncate",
+      "type": "'middle' | 'end'",
+      "required": false,
+      "default": "'end'"
+    }
+  ],
+  "events": [
+    {
+      "name": "onCellEdit",
+      "payload": "(nodeId: string, columnKey: string, value: string) => void"
+    },
+    {
+      "name": "onExpandedChange",
+      "payload": "(expandedIds: string[]) => void"
+    },
+    {
+      "name": "onRowDoubleClick",
+      "payload": "(node: OutlineNode) => void"
+    },
+    {
+      "name": "onSelect",
+      "payload": "(node: OutlineNode) => void"
+    }
+  ],
+  "defaults": {
+    "alternatingRows": "true",
+    "defaultExpandedIds": "[]",
+    "defaultSortDirection": "'asc'",
+    "defaultSortKey": "PRIMARY_COLUMN_KEY",
+    "editableColumns": "[]",
+    "primaryColumnHeader": "'Name'",
+    "resizableColumns": "true",
+    "searchQuery": "''",
+    "sortable": "true",
+    "truncate": "'end'"
+  },
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  }
+}

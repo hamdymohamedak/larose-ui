@@ -7,7 +7,7 @@ import {
   useState,
   type ReactNode,
 } from 'react';
-import styles from './Tabs.module.css';
+import styles from '@larose-ui/styles/components/Tabs/Tabs.module.css';
 
 interface TabsContextValue {
   value: string;

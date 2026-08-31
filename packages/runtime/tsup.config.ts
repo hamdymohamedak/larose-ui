@@ -5,5 +5,5 @@ export default defineConfig({
   format: ['esm'],
   dts: true,
   clean: true,
-  external: ['react', 'react-dom', '@larose-ui/react'],
+  external: ['react', 'react-dom', '@larose-ui/react', '@larose-ui/runtime-core'],
 });

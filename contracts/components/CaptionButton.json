@@ -1,0 +1,24 @@
+{
+  "name": "CaptionButton",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "imageUrl",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "subtitle",
+      "type": "string",
+      "required": false
+    }
+  ],
+  "events": [],
+  "keyboard": {}
+}

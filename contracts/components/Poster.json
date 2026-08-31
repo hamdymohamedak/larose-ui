@@ -1,0 +1,19 @@
+{
+  "name": "Poster",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "imageUrl",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "subtitle",
+      "type": "string",
+      "required": false
+    }
+  ],
+  "events": [],
+  "keyboard": {}
+}

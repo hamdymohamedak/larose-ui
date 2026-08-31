@@ -3,7 +3,7 @@ import { DragDropProvider } from './DragDropContext';
 import { Draggable } from './Draggable';
 import { DropZone } from './DropZone';
 import type { DropResult } from './types';
-import styles from './DragDrop.module.css';
+import styles from '@larose-ui/styles/components/DragDrop/DragDrop.module.css';
 
 export interface DragDropListItem {
   id: string;

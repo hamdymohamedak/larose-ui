@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState, type ReactNode } from 'react';
 import { Button, Menu, Typography, type MenuEntry } from '@larose-ui/react';
+import { DEMO_ACCELERATORS } from './demoAccelerators';
 
 function CenteredCanvas({ children }: { children: ReactNode }) {
   return (
@@ -81,19 +82,38 @@ type Story = StoryObj;
 export const LargeLayout: Story = {
   name: 'Large (default)',
   render: function LargeMenuDemo() {
-    const [lastAction, setLastAction] = useState('Open the menu');
+    const [lastAction, setLastAction] = useState('Open the menu, then try ⇧⌘N or ⇧⌘O');
 
     return (
       <>
         <Typography role="body" muted>
           {lastAction}
         </Typography>
+        <Typography role="caption" muted>
+          Storybook uses browser-safe shortcuts (Shift/Alt variants) so chords like ⌘N do not open a
+          new browser window.
+        </Typography>
         <Menu
           entries={[
-            { id: 'new', label: 'New Document', shortcut: '⌘N' },
-            { id: 'open', label: 'Open…', shortcut: '⌘O' },
+            {
+              id: 'new',
+              label: 'New Document',
+              accelerator: DEMO_ACCELERATORS.newDocument,
+              onSelect: () => setLastAction('New Document'),
+            },
+            {
+              id: 'open',
+              label: 'Open…',
+              accelerator: DEMO_ACCELERATORS.open,
+              onSelect: () => setLastAction('Open…'),
+            },
             { type: 'separator' },
-            { id: 'share', label: 'Share', shortcut: '⌘⇧S' },
+            {
+              id: 'share',
+              label: 'Share',
+              accelerator: DEMO_ACCELERATORS.share,
+              onSelect: () => setLastAction('Share'),
+            },
             { id: 'delete', label: 'Delete', destructive: true },
           ]}
           onEntrySelect={(entry) => setLastAction(entry.label)}
@@ -161,7 +181,12 @@ export const SubmenuAndToggles: Story = {
             },
             { type: 'separator' },
             { id: 'hdr', label: 'HDR On', selected: true },
-            { id: 'plain', label: 'Plain', shortcut: '⌘\\' },
+            {
+              id: 'plain',
+              label: 'Plain',
+              accelerator: DEMO_ACCELERATORS.plainText,
+              onSelect: () => setLastAction('Plain'),
+            },
           ]}
           onEntrySelect={(entry) => setLastAction(entry.label)}
         />
@@ -178,8 +203,17 @@ export const UnavailableItems: Story = {
         open
         onOpenChange={() => undefined}
         entries={[
-          { id: 'copy', label: 'Copy', shortcut: '⌘C', disabled: true },
-          { id: 'paste', label: 'Paste', shortcut: '⌘V' },
+          {
+            id: 'copy',
+            label: 'Copy',
+            accelerator: DEMO_ACCELERATORS.copy,
+            disabled: true,
+          },
+          {
+            id: 'paste',
+            label: 'Paste',
+            accelerator: DEMO_ACCELERATORS.paste,
+          },
           { id: 'delete', label: 'Delete', disabled: true, destructive: true },
         ]}
       />

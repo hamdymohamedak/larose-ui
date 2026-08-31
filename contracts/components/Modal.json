@@ -1,0 +1,85 @@
+{
+  "name": "Modal",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "closeOnOverlay",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "contentClassName",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "contentStyle",
+      "type": "CSSProperties",
+      "required": false
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "motion",
+      "type": "ComponentMotionOverride",
+      "required": false
+    },
+    {
+      "name": "onClose",
+      "type": "() => void",
+      "required": true
+    },
+    {
+      "name": "open",
+      "type": "boolean",
+      "required": true
+    },
+    {
+      "name": "overlayClassName",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "overlayStyle",
+      "type": "CSSProperties",
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "onClose",
+      "payload": "() => void"
+    }
+  ],
+  "slots": [
+    "children",
+    "overlay",
+    "content"
+  ],
+  "states": [
+    "closed",
+    "open",
+    "entering",
+    "leaving"
+  ],
+  "accessibility": {
+    "requirements": [
+      "Focus is managed while open; Escape typically closes the overlay."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "keys": [
+      "Escape"
+    ],
+    "behavior": [
+      "escape-close",
+      "focus-trap",
+      "restore-focus"
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "name": "ImageWell",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "accept",
+      "type": "string",
+      "required": false,
+      "default": "'image/*'"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false,
+      "default": "'Image'"
+    },
+    {
+      "name": "onImageChange",
+      "type": "(file: File | null, previewUrl: string | null) => void",
+      "required": false
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "required": false,
+      "default": "'Drop an image"
+    },
+    {
+      "name": "src",
+      "type": "string",
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "onImageChange",
+      "payload": "(file: File | null, previewUrl: string | null) => void"
+    }
+  ],
+  "defaults": {
+    "accept": "'image/*'",
+    "disabled": "false",
+    "label": "'Image'",
+    "placeholder": "'Drop an image"
+  },
+  "keyboard": {}
+}

@@ -1,0 +1,34 @@
+{
+  "name": "ToolbarDocumentMenu",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "entries",
+      "type": "MenuEntry[]",
+      "required": true
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "onAction",
+      "type": "(entryId: string) => void",
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "onAction",
+      "payload": "(entryId: string) => void"
+    }
+  ],
+  "keyboard": {}
+}

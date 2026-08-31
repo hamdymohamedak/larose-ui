@@ -1,0 +1,14 @@
+{
+  "name": "OrnamentButton",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "active",
+      "type": "boolean",
+      "required": false
+    }
+  ],
+  "events": [],
+  "keyboard": {}
+}

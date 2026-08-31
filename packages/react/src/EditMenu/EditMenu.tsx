@@ -31,7 +31,7 @@ import {
   resolveEditMenuPosition,
   resolveEditMenuVariant,
 } from './utils';
-import styles from './EditMenu.module.css';
+import styles from '@larose-ui/styles/components/EditMenu/EditMenu.module.css';
 
 export interface EditMenuProps {
   children: ReactElement;

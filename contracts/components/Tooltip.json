@@ -1,0 +1,19 @@
+{
+  "name": "Tooltip",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "content",
+      "type": "ReactNode",
+      "required": true
+    },
+    {
+      "name": "side",
+      "type": "TooltipSide",
+      "required": false
+    }
+  ],
+  "events": [],
+  "keyboard": {}
+}

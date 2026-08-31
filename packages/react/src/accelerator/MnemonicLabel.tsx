@@ -1,5 +1,5 @@
 import { parseMnemonicLabel, resolveMnemonicKey } from '@larose-ui/core';
-import styles from '../Menu/Menu.module.css';
+import styles from '@larose-ui/styles/components/Menu/Menu.module.css';
 
 export interface MnemonicLabelProps {
   label: string;

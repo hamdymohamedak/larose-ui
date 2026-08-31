@@ -1,0 +1,66 @@
+{
+  "name": "MenuBarExtra",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "enableMnemonics",
+      "type": "boolean",
+      "required": false,
+      "default": "true"
+    },
+    {
+      "name": "enableTypeAhead",
+      "type": "boolean",
+      "required": false,
+      "default": "true"
+    },
+    {
+      "name": "isOpen",
+      "type": "boolean",
+      "required": true
+    },
+    {
+      "name": "mnemonicVisible",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    },
+    {
+      "name": "onAction",
+      "type": "(entry: MenuItemConfig) => void",
+      "required": false
+    },
+    {
+      "name": "onOpenChange",
+      "type": "(open: boolean) => void",
+      "required": true
+    },
+    {
+      "name": "optionKey",
+      "type": "boolean",
+      "required": true
+    }
+  ],
+  "events": [
+    {
+      "name": "onAction",
+      "payload": "(entry: MenuItemConfig) => void"
+    },
+    {
+      "name": "onOpenChange",
+      "payload": "(open: boolean) => void"
+    }
+  ],
+  "defaults": {
+    "enableMnemonics": "true",
+    "enableTypeAhead": "true",
+    "mnemonicVisible": "false"
+  },
+  "keyboard": {
+    "behavior": [
+      "type-ahead",
+      "mnemonics"
+    ]
+  }
+}

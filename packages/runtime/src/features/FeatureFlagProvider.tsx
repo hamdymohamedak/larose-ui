@@ -5,7 +5,7 @@ import {
   type ReactNode,
 } from 'react';
 
-export type FeatureState = boolean | 'loading';
+export type FeatureState = import('@larose-ui/runtime-core').FeatureState;
 
 export interface FeatureFlagContextValue {
   features: Record<string, FeatureState>;

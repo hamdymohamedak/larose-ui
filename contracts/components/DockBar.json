@@ -1,0 +1,24 @@
+{
+  "name": "DockBar",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "'aria-label'",
+      "type": "string",
+      "required": false
+    }
+  ],
+  "events": [],
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  }
+}

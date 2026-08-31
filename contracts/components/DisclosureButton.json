@@ -1,0 +1,67 @@
+{
+  "name": "DisclosureButton",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "'aria-label'",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "defaultExpanded",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    },
+    {
+      "name": "detail",
+      "type": "ReactNode",
+      "required": false,
+      "description": "Content revealed when expanded. Use only one disclosure button per view."
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    },
+    {
+      "name": "expanded",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false,
+      "description": "Visible label for the adjacent control region."
+    },
+    {
+      "name": "onExpandedChange",
+      "type": "(expanded: boolean) => void",
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "onExpandedChange",
+      "payload": "(expanded: boolean) => void"
+    }
+  ],
+  "defaults": {
+    "defaultExpanded": "false",
+    "disabled": "false"
+  },
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  }
+}

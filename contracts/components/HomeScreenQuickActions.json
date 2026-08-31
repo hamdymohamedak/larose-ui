@@ -1,0 +1,67 @@
+{
+  "name": "HomeScreenQuickActions",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "actions",
+      "type": "QuickActionItem[]",
+      "required": true
+    },
+    {
+      "name": "appName",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "icon",
+      "type": "ReactNode",
+      "required": true
+    },
+    {
+      "name": "iconPlacement",
+      "type": "QuickActionIconPlacement",
+      "required": false,
+      "description": "Icon appears on leading or trailing edge depending on Home Screen position."
+    },
+    {
+      "name": "includeSystemActions",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "onActionSelect",
+      "type": "(action: QuickActionItem) => void",
+      "required": false
+    },
+    {
+      "name": "onOpenChange",
+      "type": "(open: boolean) => void",
+      "required": false
+    },
+    {
+      "name": "open",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "systemActions",
+      "type": "QuickActionItem[]",
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "onActionSelect",
+      "payload": "(action: QuickActionItem) => void"
+    },
+    {
+      "name": "onOpenChange",
+      "payload": "(open: boolean) => void"
+    }
+  ],
+  "keyboard": {},
+  "controlled": [
+    "open"
+  ]
+}

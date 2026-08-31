@@ -1,7 +1,7 @@
 import { forwardRef, type InputHTMLAttributes } from 'react';
 import type { Size, UIState } from '@larose-ui/core';
 import { resolveUIState } from '@larose-ui/core';
-import styles from './datetime-field.module.css';
+import styles from '@larose-ui/styles/components/DatePicker/datetime-field.module.css';
 
 export interface DatePickerProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type' | 'value' | 'onChange'> {

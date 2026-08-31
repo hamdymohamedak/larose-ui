@@ -1,0 +1,82 @@
+{
+  "name": "CommandPalette",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "'aria-label'",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "emptyMessage",
+      "type": "string",
+      "required": false,
+      "default": "'No commands found'"
+    },
+    {
+      "name": "items",
+      "type": "CommandPaletteItem[]",
+      "required": true
+    },
+    {
+      "name": "onOpenChange",
+      "type": "(open: boolean) => void",
+      "required": true
+    },
+    {
+      "name": "open",
+      "type": "boolean",
+      "required": true
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "required": false,
+      "default": "'Search commands…'"
+    }
+  ],
+  "events": [
+    {
+      "name": "onOpenChange",
+      "payload": "(open: boolean) => void"
+    }
+  ],
+  "slots": [
+    "commands"
+  ],
+  "states": [
+    "closed",
+    "open"
+  ],
+  "defaults": {
+    "emptyMessage": "'No commands found'",
+    "placeholder": "'Search commands…'"
+  },
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props.",
+      "Focus is managed while open; Escape typically closes the overlay."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "keys": [
+      "Escape",
+      "Enter",
+      "ArrowUp",
+      "ArrowDown",
+      "ArrowLeft",
+      "ArrowRight"
+    ],
+    "behavior": [
+      "arrow-navigation",
+      "type-ahead",
+      "escape-close",
+      "enter-activation"
+    ]
+  },
+  "controlled": [
+    "open"
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "name": "DockMenu",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "appName",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "closedEntries",
+      "type": "ContextMenuEntry[]",
+      "required": false,
+      "description": "Actions when the app is not running (e.g. Open)."
+    },
+    {
+      "name": "icon",
+      "type": "ReactNode",
+      "required": true
+    },
+    {
+      "name": "isRunning",
+      "type": "boolean",
+      "required": false,
+      "description": "Whether the app is currently running (shows window list + running actions)."
+    },
+    {
+      "name": "onEntrySelect",
+      "type": "(entry: ContextMenuItemConfig) => void",
+      "required": false
+    },
+    {
+      "name": "onOpenChange",
+      "type": "(open: boolean) => void",
+      "required": false
+    },
+    {
+      "name": "onWindowSelect",
+      "type": "(window: DockWindow) => void",
+      "required": false
+    },
+    {
+      "name": "open",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "openWindows",
+      "type": "DockWindow[]",
+      "required": false
+    },
+    {
+      "name": "runningEntries",
+      "type": "ContextMenuEntry[]",
+      "required": false,
+      "description": "High-value actions when the app is running (e.g. New Window, Get New Mail)."
+    }
+  ],
+  "events": [
+    {
+      "name": "onEntrySelect",
+      "payload": "(entry: ContextMenuItemConfig) => void"
+    },
+    {
+      "name": "onOpenChange",
+      "payload": "(open: boolean) => void"
+    },
+    {
+      "name": "onWindowSelect",
+      "payload": "(window: DockWindow) => void"
+    }
+  ],
+  "keyboard": {},
+  "controlled": [
+    "open"
+  ]
+}

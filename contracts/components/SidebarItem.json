@@ -1,0 +1,45 @@
+{
+  "name": "SidebarItem",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "accentColor",
+      "type": "string",
+      "required": false,
+      "description": "Fixed accent color for special icons (e.g. VIP in Mail). Use sparingly."
+    },
+    {
+      "name": "active",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "badge",
+      "type": "number | '!'",
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "href",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "icon",
+      "type": "ReactNode",
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "onClick",
+      "payload": "() => void"
+    }
+  ],
+  "keyboard": {}
+}

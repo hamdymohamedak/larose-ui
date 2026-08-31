@@ -9,7 +9,7 @@ import { DRAG_START_THRESHOLD_PX } from '@larose-ui/tokens';
 import { useDragDropContext } from './DragDropContext';
 import type { DragItem } from './types';
 import { distance } from './utils';
-import styles from './DragDrop.module.css';
+import styles from '@larose-ui/styles/components/DragDrop/DragDrop.module.css';
 
 export interface DraggableProps<T = unknown> {
   id: string;

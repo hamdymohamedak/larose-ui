@@ -25,7 +25,7 @@ import {
   resolveMenuPanelPosition,
   splitCompactAndList,
 } from './utils';
-import styles from './Menu.module.css';
+import styles from '@larose-ui/styles/components/Menu/Menu.module.css';
 
 export interface MenuProps {
   children?: ReactElement;

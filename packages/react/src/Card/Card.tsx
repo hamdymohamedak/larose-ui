@@ -6,7 +6,7 @@ import {
   type ReactNode,
 } from 'react';
 import { useComponentDefaults } from '../theme/useComponentDefaults';
-import styles from './Card.module.css';
+import styles from '@larose-ui/styles/components/Card/Card.module.css';
 
 export interface CardProps extends HTMLAttributes<HTMLElement> {
   title?: string;

@@ -1,7 +1,7 @@
 import { useEffect, useState, type CSSProperties, type ImgHTMLAttributes } from 'react';
 import type { ImageBackground, ImageFit, ImageFrameSequence } from './types';
 import { nextFrameIndex, sequenceInterval } from './utils';
-import styles from './ImageView.module.css';
+import styles from '@larose-ui/styles/components/ImageView/ImageView.module.css';
 
 export interface ImageViewProps extends Omit<ImgHTMLAttributes<HTMLImageElement>, 'src'> {
   src?: string;

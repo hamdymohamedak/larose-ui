@@ -23,8 +23,8 @@ export {
   defaultMessages,
   isRtlLocale,
   rtlLocales,
-} from './i18n/messages';
-export type { Locale, MessageKey, Messages } from './i18n/messages';
+} from '@larose-ui/runtime-core';
+export type { Locale, MessageKey, Messages } from '@larose-ui/runtime-core';
 
 export { NetworkProvider, useNetwork, useNetworkMonitor } from './network/NetworkProvider';
 export type { NetworkProviderProps } from './network/NetworkProvider';
@@ -87,11 +87,11 @@ export {
   normalizeNetworkCondition,
 } from '@larose-ui/network';
 
-export { resolveTenantConfig } from './tenant/resolveTenant';
+export { resolveTenantConfig } from '@larose-ui/runtime-core';
 export type {
   TenantResolutionInput,
   ResolvedTenantConfig,
-} from './tenant/resolveTenant';
+} from '@larose-ui/runtime-core';
 
 export type {
   QueuedRequest,
@@ -99,3 +99,15 @@ export type {
   SyncResult,
 } from '@larose-ui/offline';
 export { createOfflineQueue } from '@larose-ui/offline';
+export {
+  shouldClearOfflineQueueOnSession,
+  shouldSyncOfflineQueue,
+  createRuntimeStore,
+  buildRuntimeContextPatch,
+  detectHostEnvironment,
+} from '@larose-ui/runtime-core';
+export type {
+  RuntimeStore,
+  HostEnvironment,
+  HostPlatform,
+} from '@larose-ui/runtime-core';

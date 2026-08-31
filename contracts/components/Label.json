@@ -1,0 +1,31 @@
+{
+  "name": "Label",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "as",
+      "type": "ElementType",
+      "required": false
+    },
+    {
+      "name": "importance",
+      "type": "LabelImportance",
+      "required": false,
+      "description": "System label color indicating relative importance."
+    },
+    {
+      "name": "mono",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "selectable",
+      "type": "boolean",
+      "required": false,
+      "description": "Allow selecting/copying useful static text."
+    }
+  ],
+  "events": [],
+  "keyboard": {}
+}

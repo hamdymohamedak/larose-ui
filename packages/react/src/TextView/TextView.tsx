@@ -5,7 +5,7 @@ import {
   type TextareaHTMLAttributes,
 } from 'react';
 import type { TypographyRole } from '@larose-ui/core';
-import styles from './TextView.module.css';
+import styles from '@larose-ui/styles/components/TextView/TextView.module.css';
 
 export interface TextViewProps extends Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, 'readOnly'> {
   /** When true, shows a keyboard-capable editor. */

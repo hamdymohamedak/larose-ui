@@ -1,7 +1,7 @@
 import { createPortal } from 'react-dom';
 import type { CSSProperties, ReactNode } from 'react';
 import { usePresence } from './usePresence';
-import motionStyles from './motion.module.css';
+import motionStyles from '@larose-ui/styles/components/Motion/motion.module.css';
 
 export type OverlayPlacement = 'top' | 'bottom';
 

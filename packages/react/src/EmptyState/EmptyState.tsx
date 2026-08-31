@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import type { UIState } from '@larose-ui/core';
 import { Button } from '../Button/Button';
-import styles from './EmptyState.module.css';
+import styles from '@larose-ui/styles/components/EmptyState/EmptyState.module.css';
 
 export interface EmptyStateProps {
   title: string;

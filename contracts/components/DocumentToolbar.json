@@ -1,0 +1,62 @@
+{
+  "name": "DocumentToolbar",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "canSave",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "newLabel",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "onNew",
+      "type": "() => void",
+      "required": false
+    },
+    {
+      "name": "onOpen",
+      "type": "() => void",
+      "required": false
+    },
+    {
+      "name": "onSave",
+      "type": "() => void",
+      "required": false
+    },
+    {
+      "name": "openLabel",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "saveLabel",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "showAddButton",
+      "type": "boolean",
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "onNew",
+      "payload": "() => void"
+    },
+    {
+      "name": "onOpen",
+      "payload": "() => void"
+    },
+    {
+      "name": "onSave",
+      "payload": "() => void"
+    }
+  ],
+  "keyboard": {}
+}

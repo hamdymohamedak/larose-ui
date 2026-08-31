@@ -20,7 +20,8 @@
   "dependencies": {
     "@larose-ui/accessibility": "workspace:*",
     "@larose-ui/contracts": "workspace:*",
-    "@larose-ui/migration": "workspace:*"
+    "@larose-ui/migration": "workspace:*",
+    "@larose-ui/quality-core": "workspace:*"
   },
   "devDependencies": {
     "tsup": "^8.3.5",

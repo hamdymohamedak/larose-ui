@@ -15,7 +15,7 @@ import {
   defaultDestructiveConfirmation,
   warnIfTooFewPullDownItems,
 } from './utils';
-import styles from './PullDownButton.module.css';
+import styles from '@larose-ui/styles/components/PullDownButton/PullDownButton.module.css';
 
 export type PullDownEntry = MenuEntry;
 

@@ -1,0 +1,48 @@
+{
+  "name": "WebViewNavigation",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "backLabel",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "canGoBack",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "canGoForward",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "forwardLabel",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "onBack",
+      "type": "() => void",
+      "required": false
+    },
+    {
+      "name": "onForward",
+      "type": "() => void",
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "onBack",
+      "payload": "() => void"
+    },
+    {
+      "name": "onForward",
+      "payload": "() => void"
+    }
+  ],
+  "keyboard": {}
+}

@@ -13,7 +13,7 @@ import {
 } from 'react';
 import type { TabViewVariant } from './types';
 import { formatTabLabel, warnIfTooManyTabs } from './utils';
-import styles from './TabView.module.css';
+import styles from '@larose-ui/styles/components/TabView/TabView.module.css';
 
 interface TabViewContextValue {
   value: string;

@@ -1,6 +1,6 @@
 import type { ElementType, ReactNode } from 'react';
 import type { LabelImportance } from './types';
-import styles from './Label.module.css';
+import styles from '@larose-ui/styles/components/Label/Label.module.css';
 
 export interface LabelProps {
   /** System label color indicating relative importance. */

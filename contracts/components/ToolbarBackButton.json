@@ -1,0 +1,25 @@
+{
+  "name": "ToolbarBackButton",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "companionLabel",
+      "type": "string",
+      "required": false,
+      "description": "visionOS reveals label on look — optional visible companion text."
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "onClick",
+      "payload": "() => void"
+    }
+  ],
+  "keyboard": {}
+}

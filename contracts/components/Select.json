@@ -1,0 +1,93 @@
+{
+  "name": "Select",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "error",
+      "type": "string | null",
+      "required": false,
+      "default": "null"
+    },
+    {
+      "name": "hint",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "inputSize",
+      "type": "Size",
+      "required": false,
+      "default": "'md'"
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "loading",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    },
+    {
+      "name": "options",
+      "type": "SelectOption[]",
+      "required": true
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "required": false,
+      "default": "'Select...'"
+    },
+    {
+      "name": "required",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    },
+    {
+      "name": "state",
+      "type": "UIState",
+      "required": false
+    }
+  ],
+  "events": [],
+  "slots": [
+    "label"
+  ],
+  "states": [
+    "default",
+    "disabled",
+    "error"
+  ],
+  "defaults": {
+    "error": "null",
+    "inputSize": "'md'",
+    "loading": "false",
+    "placeholder": "'Select...'",
+    "required": "false"
+  },
+  "accessibility": {
+    "requirements": [
+      "Uses native or laRose-managed focus rings and disabled states."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "keys": [
+      "Enter",
+      "ArrowUp",
+      "ArrowDown",
+      "ArrowLeft",
+      "ArrowRight"
+    ],
+    "behavior": [
+      "arrow-navigation",
+      "type-ahead",
+      "enter-activation"
+    ]
+  }
+}

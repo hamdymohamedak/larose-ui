@@ -1,0 +1,71 @@
+{
+  "name": "@larose-ui/svelte",
+  "version": "0.1.1",
+  "description": "Svelte 5 components for laRose UI — thin adapter over shared styles and primitives",
+  "type": "module",
+  "svelte": "./dist/index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "svelte": "./dist/index.js",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch",
+    "test": "vitest run",
+    "typecheck": "svelte-check --tsconfig ./tsconfig.svelte-check.json",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@larose-ui/core": "workspace:*",
+    "@larose-ui/primitives": "workspace:*",
+    "@larose-ui/runtime-core": "workspace:*",
+    "@larose-ui/styles": "workspace:*",
+    "@larose-ui/themes": "workspace:*",
+    "@larose-ui/tokens": "workspace:*"
+  },
+  "peerDependencies": {
+    "svelte": "^5.0.0"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^5.0.3",
+    "@testing-library/svelte": "^5.2.6",
+    "@tsconfig/svelte": "^5.0.4",
+    "jsdom": "^25.0.1",
+    "svelte": "^5.19.0",
+    "svelte-check": "^4.1.1",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.3",
+    "vite-plugin-dts": "^4.3.0",
+    "vitest": "^2.1.8"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hamdymohamedak/larose-ui.git",
+    "directory": "packages/svelte"
+  },
+  "keywords": [
+    "larose",
+    "svelte",
+    "svelte5",
+    "ui-platform",
+    "design-system"
+  ],
+  "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/svelte#readme",
+  "bugs": {
+    "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  }
+}

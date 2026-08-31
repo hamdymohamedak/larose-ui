@@ -1,0 +1,123 @@
+{
+  "name": "SearchField",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "'aria-label'",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "autoFocus",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "defaultValue",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "immediate",
+      "type": "boolean",
+      "required": false,
+      "description": "Search while typing (default true)."
+    },
+    {
+      "name": "onSearch",
+      "type": "(value: string) => void",
+      "required": false
+    },
+    {
+      "name": "onTokenRemove",
+      "type": "(tokenId: string) => void",
+      "required": false
+    },
+    {
+      "name": "onTokenSelect",
+      "type": "(tokenId: string) => void",
+      "required": false
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "placement",
+      "type": "SearchFieldPlacement",
+      "required": false
+    },
+    {
+      "name": "platform",
+      "type": "SearchFieldPlatform",
+      "required": false
+    },
+    {
+      "name": "recentSearches",
+      "type": "string[]",
+      "required": false
+    },
+    {
+      "name": "scope",
+      "type": "{ options: SearchScopeOption[]; value: string; onChange: (scopeId: string) => void; }",
+      "required": false
+    },
+    {
+      "name": "showDictation",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "suggestions",
+      "type": "string[]",
+      "required": false
+    },
+    {
+      "name": "tokens",
+      "type": "SearchToken[]",
+      "required": false
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "onSearch",
+      "payload": "(value: string) => void"
+    },
+    {
+      "name": "onTokenRemove",
+      "payload": "(tokenId: string) => void"
+    },
+    {
+      "name": "onTokenSelect",
+      "payload": "(tokenId: string) => void"
+    },
+    {
+      "name": "onChange",
+      "payload": "(value: string) => void"
+    }
+  ],
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  },
+  "controlled": [
+    "value"
+  ],
+  "uncontrolled": [
+    "value"
+  ]
+}

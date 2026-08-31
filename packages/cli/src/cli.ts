@@ -9,7 +9,7 @@ import {
   runRelease,
   runVisualRegressionCheck,
 } from './doctor.js';
-import { formatVisualRegressionReport } from './quality/visualManifest.js';
+import { formatVisualRegressionReport } from '@larose-ui/quality-core';
 import { resolveSafePath } from './pathSafety.js';
 
 const args = process.argv.slice(2);

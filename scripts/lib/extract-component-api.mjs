@@ -1,6 +1,7 @@
 import { readFileSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import ts from 'typescript';
+import { toComponentContract } from './component-contract.mjs';
 
 const DOM_BASE_PROPS = new Set([
   'className',
@@ -79,6 +80,30 @@ export function extractComponentApi(root, componentNames) {
 }
 
 /**
+ * Extract framework-neutral component contracts from the React implementation.
+ * @param {string} root
+ * @param {string[]} componentNames
+ * @param {Record<string, { slots?: string[]; states?: string[] }>} [anatomy]
+ * @param {'react' | 'vue' | 'svelte' | 'neutral'} [framework]
+ */
+export function extractComponentContracts(root, componentNames, anatomy = {}, framework = 'react') {
+  const api = extractComponentApi(root, componentNames);
+  /** @type {Record<string, import('../../packages/contracts/src/types.ts').ComponentContract>} */
+  const contracts = {};
+
+  for (const name of componentNames) {
+    contracts[name] = toComponentContract(
+      name,
+      api[name] ?? { props: [], events: [], accessibility: [] },
+      anatomy,
+      framework,
+    );
+  }
+
+  return contracts;
+}
+
+/**
  * @param {string} indexPath
  * @param {string} reactRoot
  */
@@ -129,6 +154,17 @@ function parsePropsExports(indexPath) {
   }
 
   return map;
+}
+
+/**
+ * @param {string} root
+ * @returns {string[]}
+ */
+export function listComponentNames(root) {
+  const reactRoot = join(root, 'packages/react');
+  const indexPath = join(reactRoot, 'src/index.ts');
+  const propsMap = parsePropsExports(indexPath);
+  return [...propsMap.keys()].sort((a, b) => a.localeCompare(b));
 }
 
 /**

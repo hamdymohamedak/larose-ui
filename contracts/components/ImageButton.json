@@ -1,0 +1,24 @@
+{
+  "name": "ImageButton",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "alt",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "imageProps",
+      "type": "Omit<ImgHTMLAttributes<HTMLImageElement>, 'src' | 'alt'>",
+      "required": false
+    },
+    {
+      "name": "src",
+      "type": "string",
+      "required": true
+    }
+  ],
+  "events": [],
+  "keyboard": {}
+}

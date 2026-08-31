@@ -1,0 +1,18 @@
+{
+  "name": "ShareButton",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "required": false,
+      "default": "'Share'"
+    }
+  ],
+  "events": [],
+  "defaults": {
+    "label": "'Share'"
+  },
+  "keyboard": {}
+}

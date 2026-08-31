@@ -5,7 +5,7 @@ import {
   type ReactNode,
 } from 'react';
 import type { Permission } from '@larose-ui/core';
-import { evaluateAbac, hasPermission, type AbacContext } from './evaluator';
+import { evaluateAbac, hasPermission, type AbacContext } from '@larose-ui/permissions-core';
 
 export interface PermissionContextValue {
   permissions: string[];

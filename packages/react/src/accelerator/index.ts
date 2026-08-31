@@ -44,5 +44,18 @@ export {
 } from './resolveMenuShortcut';
 export type { ResolvedMenuShortcut, ResolveMenuShortcutOptions } from './resolveMenuShortcut';
 
+export {
+  createInitialMenuKeyboardState,
+  handleMenuKeyboard,
+  resetMenuKeyboardState,
+} from '@larose-ui/primitives';
+export type {
+  MenuKeyboardEvent,
+  MenuKeyboardContext,
+  MenuKeyboardState,
+  MenuKeyboardAction,
+  MenuKeyboardResult,
+} from '@larose-ui/primitives';
+
 export { useMenuKeyboardShortcuts } from './useMenuKeyboardShortcuts';
 export type { UseMenuKeyboardShortcutsOptions } from './useMenuKeyboardShortcuts';

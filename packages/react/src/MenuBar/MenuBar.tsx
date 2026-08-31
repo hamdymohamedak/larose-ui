@@ -15,7 +15,7 @@ import {
   createAppleMenuStub,
   resolveDynamicMenuEntries,
 } from './utils';
-import styles from './MenuBar.module.css';
+import styles from '@larose-ui/styles/components/MenuBar/MenuBar.module.css';
 
 function MenuBarMenuItem({
   menu,

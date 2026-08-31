@@ -1,5 +1,5 @@
 import { useCallback, useId, useRef, useState, type DragEvent } from 'react';
-import styles from './FileUpload.module.css';
+import styles from '@larose-ui/styles/components/FileUpload/FileUpload.module.css';
 
 export interface FileUploadProps {
   label?: string;

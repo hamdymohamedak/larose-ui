@@ -15,7 +15,7 @@ import {
   prepareQuickActions,
   resolveQuickActionMenuPosition,
 } from './utils';
-import styles from './QuickActions.module.css';
+import styles from '@larose-ui/styles/components/QuickActions/QuickActions.module.css';
 
 export interface HomeScreenQuickActionsProps {
   appName: string;

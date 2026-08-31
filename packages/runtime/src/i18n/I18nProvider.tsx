@@ -6,7 +6,7 @@ import {
   type Locale,
   type MessageKey,
   type Messages,
-} from './messages';
+} from '@larose-ui/runtime-core';
 
 export interface I18nContextValue {
   locale: Locale;

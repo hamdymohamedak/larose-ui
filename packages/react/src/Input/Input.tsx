@@ -15,7 +15,7 @@ import { FieldShell } from '../DataEntry/FieldShell';
 import { Spinner } from '../Spinner/Spinner';
 import type { FieldFormat, FieldValidator, FormatFieldOptions } from '../DataEntry/utils';
 import { fieldIdFromLabel, formatFieldValue } from '../DataEntry/utils';
-import styles from './Input.module.css';
+import styles from '@larose-ui/styles/components/Input/Input.module.css';
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;

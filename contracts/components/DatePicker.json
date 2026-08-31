@@ -1,0 +1,62 @@
+{
+  "name": "DatePicker",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "error",
+      "type": "string | null",
+      "required": false,
+      "default": "null"
+    },
+    {
+      "name": "hint",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "inputSize",
+      "type": "Size",
+      "required": false,
+      "default": "'md'"
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "loading",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    },
+    {
+      "name": "state",
+      "type": "UIState",
+      "required": false
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "required": false,
+      "default": "''"
+    }
+  ],
+  "events": [
+    {
+      "name": "onChange",
+      "payload": "(value: string) => void"
+    }
+  ],
+  "defaults": {
+    "error": "null",
+    "inputSize": "'md'",
+    "loading": "false",
+    "value": "''"
+  },
+  "keyboard": {},
+  "controlled": [
+    "value"
+  ]
+}

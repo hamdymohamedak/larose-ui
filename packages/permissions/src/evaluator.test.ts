@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { hasPermission, evaluateAbac } from './evaluator';
+import { hasPermission, evaluateAbac } from '@larose-ui/permissions-core';
 
 describe('hasPermission', () => {
   it('grants exact permission', () => {

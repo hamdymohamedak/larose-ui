@@ -1,0 +1,19 @@
+{
+  "name": "LockupRow",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "axis",
+      "type": "LockupAxis",
+      "required": false
+    },
+    {
+      "name": "itemWidth",
+      "type": "string",
+      "required": false
+    }
+  ],
+  "events": [],
+  "keyboard": {}
+}

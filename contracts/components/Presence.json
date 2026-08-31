@@ -1,0 +1,8 @@
+{
+  "name": "Presence",
+  "version": "1",
+  "framework": "react",
+  "props": [],
+  "events": [],
+  "keyboard": {}
+}

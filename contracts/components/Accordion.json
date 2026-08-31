@@ -1,0 +1,50 @@
+{
+  "name": "Accordion",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "collapsible",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    },
+    {
+      "name": "defaultValue",
+      "type": "string[]",
+      "required": false,
+      "default": "[]"
+    },
+    {
+      "name": "onValueChange",
+      "type": "(value: string[]) => void",
+      "required": false
+    },
+    {
+      "name": "type",
+      "type": "'single' | 'multiple'",
+      "required": false,
+      "default": "== 'single') {"
+    },
+    {
+      "name": "value",
+      "type": "string[]",
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "onValueChange",
+      "payload": "(value: string[]) => void"
+    }
+  ],
+  "defaults": {
+    "collapsible": "false",
+    "defaultValue": "[]",
+    "type": "== 'single') {"
+  },
+  "keyboard": {},
+  "uncontrolled": [
+    "value"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "name": "Toolbar",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "'aria-label'",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "largeTitle",
+      "type": "boolean",
+      "required": false,
+      "description": "iOS large title that collapses when scrolling."
+    },
+    {
+      "name": "placement",
+      "type": "ToolbarPlacement",
+      "required": false,
+      "description": "visionOS and watchOS placement."
+    },
+    {
+      "name": "platform",
+      "type": "ToolbarPlatform",
+      "required": false
+    }
+  ],
+  "events": [],
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  }
+}

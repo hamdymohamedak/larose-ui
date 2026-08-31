@@ -1,0 +1,89 @@
+{
+  "name": "Input",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "acceptDrop",
+      "type": "boolean",
+      "required": false,
+      "description": "Accept plain-text drops into the field."
+    },
+    {
+      "name": "error",
+      "type": "string | null",
+      "required": false
+    },
+    {
+      "name": "expansionTooltip",
+      "type": "boolean",
+      "required": false,
+      "description": "macOS-style expansion tooltip when truncated text overflows the field."
+    },
+    {
+      "name": "format",
+      "type": "FieldFormat",
+      "required": false,
+      "description": "Formats numeric values on blur (currency, percent, number)."
+    },
+    {
+      "name": "formatOptions",
+      "type": "FormatFieldOptions",
+      "required": false
+    },
+    {
+      "name": "hint",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "inputSize",
+      "type": "Size",
+      "required": false
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "loading",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "required",
+      "type": "boolean",
+      "required": false,
+      "description": "Shows a required indicator and sets the native required attribute."
+    },
+    {
+      "name": "state",
+      "type": "UIState",
+      "required": false
+    },
+    {
+      "name": "validate",
+      "type": "FieldValidator",
+      "required": false,
+      "description": "Validates on blur or change and surfaces inline feedback immediately."
+    },
+    {
+      "name": "validateOn",
+      "type": "'blur' | 'change'",
+      "required": false
+    }
+  ],
+  "events": [],
+  "accessibility": {
+    "requirements": [
+      "Uses native or laRose-managed focus rings and disabled states."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  }
+}

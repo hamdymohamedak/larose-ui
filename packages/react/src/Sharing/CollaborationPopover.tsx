@@ -11,7 +11,7 @@ import { Presence } from '../Motion/Presence';
 import type { CollaborationAction, Collaborator } from './types';
 import { collaboratorInitials } from './utils';
 import { MessageIcon, VideoIcon } from './icons';
-import styles from './Sharing.module.css';
+import styles from '@larose-ui/styles/components/Sharing/Sharing.module.css';
 
 export interface CollaborationPopoverProps {
   trigger: ReactNode;

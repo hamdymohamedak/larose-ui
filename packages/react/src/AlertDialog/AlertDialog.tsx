@@ -7,7 +7,7 @@ import {
 } from 'react';
 import { createPortal } from 'react-dom';
 import { usePresence } from '../Motion/usePresence';
-import motionStyles from '../Motion/motion.module.css';
+import motionStyles from '@larose-ui/styles/components/Motion/motion.module.css';
 import type { AlertDialogAction, AlertDialogProps } from './types';
 import {
   formatAlertTitle,
@@ -17,7 +17,7 @@ import {
   validateAlertActions,
   warnIfAlertTitleTooLong,
 } from './utils';
-import styles from './AlertDialog.module.css';
+import styles from '@larose-ui/styles/components/AlertDialog/AlertDialog.module.css';
 
 function CautionIcon() {
   return (

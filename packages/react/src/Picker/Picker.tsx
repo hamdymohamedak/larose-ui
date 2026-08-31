@@ -6,7 +6,7 @@ import { fieldIdFromLabel } from '../DataEntry/utils';
 import { Popover } from '../Popover/Popover';
 import type { PickerColumn, PickerStyle, PickerValue } from './types';
 import { WheelPicker } from './WheelPicker';
-import styles from './Picker.module.css';
+import styles from '@larose-ui/styles/components/Picker/Picker.module.css';
 
 export interface PickerProps {
   columns: PickerColumn[];

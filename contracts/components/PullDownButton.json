@@ -1,0 +1,80 @@
+{
+  "name": "PullDownButton",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "destructiveConfirmation",
+      "type": "PullDownDestructiveConfirmation",
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    },
+    {
+      "name": "entries",
+      "type": "PullDownEntry[]",
+      "required": true
+    },
+    {
+      "name": "icon",
+      "type": "ReactNode",
+      "required": false
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false,
+      "description": "Button label (required unless variant is \"more\")."
+    },
+    {
+      "name": "longPress",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "description": "Safari-style touch-and-hold to reveal the menu."
+    },
+    {
+      "name": "menuTitle",
+      "type": "string",
+      "required": false,
+      "description": "Optional menu title — use only when it adds meaning."
+    },
+    {
+      "name": "onAction",
+      "type": "(entry: MenuItemConfig) => void",
+      "required": false
+    },
+    {
+      "name": "variant",
+      "type": "PullDownButtonVariant",
+      "required": false,
+      "default": "'default'"
+    }
+  ],
+  "events": [
+    {
+      "name": "onAction",
+      "payload": "(entry: MenuItemConfig) => void"
+    }
+  ],
+  "defaults": {
+    "disabled": "false",
+    "longPress": "false",
+    "variant": "'default'"
+  },
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  }
+}

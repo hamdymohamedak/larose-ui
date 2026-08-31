@@ -1,0 +1,64 @@
+{
+  "name": "FileUpload",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "accept",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "buttonLabel",
+      "type": "string",
+      "required": false,
+      "default": "'Choose files or drag here'"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    },
+    {
+      "name": "error",
+      "type": "string | null",
+      "required": false,
+      "default": "null"
+    },
+    {
+      "name": "hint",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "multiple",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    },
+    {
+      "name": "onFilesChange",
+      "type": "(files: File[]) => void",
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "onFilesChange",
+      "payload": "(files: File[]) => void"
+    }
+  ],
+  "defaults": {
+    "buttonLabel": "'Choose files or drag here'",
+    "disabled": "false",
+    "error": "null",
+    "multiple": "false"
+  },
+  "keyboard": {}
+}

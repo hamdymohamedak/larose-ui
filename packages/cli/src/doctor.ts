@@ -1,6 +1,10 @@
 import { readdir, readFile, writeFile } from 'node:fs/promises';
 import { join, relative } from 'node:path';
-import { validateContract, type ContractSchema } from '@larose-ui/contracts';
+import {
+  validateContract,
+  isDataContract,
+  type ContractSchema,
+} from '@larose-ui/contracts';
 import { scanComponentSource } from '@larose-ui/accessibility';
 import {
   generateMigrationReport,
@@ -17,33 +21,30 @@ import {
 import {
   DEFAULT_BROWSER_MATRIX,
   validateBrowserMatrix,
-  type BrowserMatrix,
-  type BrowserMatrixCheck,
-} from './quality/browserMatrix.js';
-import { computeQualityScores, qualityPassed } from './quality/qualityScores.js';
-import {
+  computeQualityScores,
+  qualityPassed,
   compareVisualBaseline,
   scanStoryManifest,
+  resolveLaRoseConfig,
+  type BrowserMatrix,
+  type BrowserMatrixCheck,
+  type Diagnostic,
+  type DiagnosticCategory,
+  type DiagnosticSeverity,
+  type LaRoseQualityConfig,
   type VisualBaseline,
   type VisualRegressionResult,
-} from './quality/visualManifest.js';
+} from '@larose-ui/quality-core';
 
-export type DiagnosticSeverity = 'error' | 'warning' | 'info';
+export type { Diagnostic, DiagnosticCategory, DiagnosticSeverity };
 
-export type DiagnosticCategory =
-  | 'deprecation'
-  | 'contract'
-  | 'accessibility'
-  | 'build'
-  | 'browser'
-  | 'visual';
-
-export interface Diagnostic {
-  severity: DiagnosticSeverity;
-  category: DiagnosticCategory;
-  message: string;
-  fix?: string;
-  file?: string;
+async function loadLaRoseConfig(rootDir: string): Promise<LaRoseQualityConfig> {
+  try {
+    const raw = await readFile(join(rootDir, 'larose.config.json'), 'utf-8');
+    return resolveLaRoseConfig(JSON.parse(raw) as Partial<LaRoseQualityConfig>);
+  } catch {
+    return resolveLaRoseConfig();
+  }
 }
 
 export interface DoctorOptions {
@@ -55,9 +56,9 @@ export interface DoctorOptions {
 export interface DoctorResult {
   passed: boolean;
   diagnostics: Diagnostic[];
-  quality: import('./quality/qualityScores.js').QualitySummary;
-  browserMatrix?: import('./quality/browserMatrix.js').BrowserMatrixCheck;
-  visualRegression?: import('./quality/visualManifest.js').VisualRegressionResult;
+  quality: import('@larose-ui/quality-core').QualitySummary;
+  browserMatrix?: BrowserMatrixCheck;
+  visualRegression?: VisualRegressionResult;
 }
 
 async function walkDir(dir: string, ext: string[]): Promise<string[]> {
@@ -100,24 +101,38 @@ async function checkDeprecations(rootDir: string): Promise<Diagnostic[]> {
   return diagnostics;
 }
 
-async function checkAccessibility(rootDir: string): Promise<Diagnostic[]> {
+async function checkAccessibility(
+  rootDir: string,
+  config: LaRoseQualityConfig,
+): Promise<Diagnostic[]> {
   const diagnostics: Diagnostic[] = [];
-  const reactFiles = await walkDir(join(rootDir, 'packages/react/src'), ['.tsx']);
 
-  for (const file of reactFiles) {
-    if (file.includes('.test.')) continue;
-    const content = await readFile(file, 'utf-8');
-    const rel = relative(rootDir, file);
-    const result = scanComponentSource(content, rel);
+  for (const framework of config.frameworks) {
+    const extensions = framework.componentExtensions ?? ['.tsx'];
+    const componentRoot = join(rootDir, framework.componentsRoot);
 
-    for (const v of result.violations) {
-      diagnostics.push({
-        severity: v.severity,
-        category: 'accessibility',
-        message: v.message,
-        fix: v.fix,
-        file: v.file,
-      });
+    let reactFiles: string[] = [];
+    try {
+      reactFiles = await walkDir(componentRoot, extensions);
+    } catch {
+      continue;
+    }
+
+    for (const file of reactFiles) {
+      if (file.includes('.test.')) continue;
+      const content = await readFile(file, 'utf-8');
+      const rel = relative(rootDir, file);
+      const result = scanComponentSource(content, rel);
+
+      for (const v of result.violations) {
+        diagnostics.push({
+          severity: v.severity,
+          category: 'accessibility',
+          message: `[${framework.id}] ${v.message}`,
+          fix: v.fix,
+          file: v.file,
+        });
+      }
     }
   }
 
@@ -133,9 +148,13 @@ async function checkContracts(rootDir: string): Promise<Diagnostic[]> {
     for (const file of files) {
       if (!file.endsWith('.json')) continue;
       const raw = await readFile(join(contractsDir, file), 'utf-8');
-      const data = JSON.parse(raw) as { ui?: ContractSchema; api?: ContractSchema };
-      if (data.ui && data.api) {
-        const result = validateContract(data.ui, data.api);
+      const data = JSON.parse(raw) as Record<string, unknown>;
+
+      if (isDataContract(data)) {
+        const result = validateContract(
+          (data as { ui: ContractSchema }).ui,
+          (data as { api: ContractSchema }).api,
+        );
         if (!result.valid) {
           for (const m of result.mismatches.filter((x) => x.severity === 'error')) {
             diagnostics.push({
@@ -150,6 +169,66 @@ async function checkContracts(rootDir: string): Promise<Diagnostic[]> {
     }
   } catch {
     // no contracts dir — ok
+  }
+
+  diagnostics.push(...(await checkComponentContracts(rootDir)));
+
+  return diagnostics;
+}
+
+async function checkComponentContracts(rootDir: string): Promise<Diagnostic[]> {
+  const diagnostics: Diagnostic[] = [];
+  const componentsDir = join(rootDir, 'contracts/components');
+
+  try {
+    await readdir(componentsDir);
+  } catch {
+    return diagnostics;
+  }
+
+  try {
+    const { spawnSync } = await import('node:child_process');
+    const scriptPath = join(rootDir, 'scripts/check-component-contracts.mjs');
+    const result = spawnSync(process.execPath, [scriptPath], {
+      cwd: rootDir,
+      encoding: 'utf-8',
+    });
+
+    if (result.status !== 0) {
+      diagnostics.push({
+        severity: 'warning',
+        category: 'contract',
+        message: `Component contract parity check failed: ${result.stderr || result.stdout || 'unknown error'}`,
+        fix: 'Run pnpm generate:contracts after building @larose-ui/contracts',
+      });
+      return diagnostics;
+    }
+
+    const payload = JSON.parse(result.stdout || '{"diagnostics":[]}') as {
+      diagnostics: Array<{
+        severity: DiagnosticSeverity;
+        message: string;
+        file?: string;
+        fix?: string;
+      }>;
+    };
+
+    for (const item of payload.diagnostics) {
+      diagnostics.push({
+        severity: item.severity,
+        category: 'contract',
+        message: item.message,
+        file: item.file,
+        fix: item.fix,
+      });
+    }
+  } catch (error) {
+    diagnostics.push({
+      severity: 'warning',
+      category: 'contract',
+      message: `Could not run component contract parity check: ${error instanceof Error ? error.message : String(error)}`,
+      fix: 'Run pnpm generate:contracts',
+    });
   }
 
   return diagnostics;
@@ -191,13 +270,19 @@ async function checkBrowserMatrix(rootDir: string): Promise<{
   return { diagnostics, check };
 }
 
-async function checkVisualRegression(rootDir: string): Promise<{
+async function checkVisualRegression(
+  rootDir: string,
+  config: LaRoseQualityConfig,
+): Promise<{
   diagnostics: Diagnostic[];
   result: VisualRegressionResult;
 }> {
   const diagnostics: Diagnostic[] = [];
-  const storiesDir = join(rootDir, 'apps/playground/stories');
-  const current = await scanStoryManifest(storiesDir);
+  const framework = config.frameworks[0];
+  const storiesDir = join(rootDir, framework?.storiesDir ?? 'apps/playground/stories');
+  const current = await scanStoryManifest(storiesDir, {
+    storySuffix: framework?.storySuffix,
+  });
 
   let baseline: VisualBaseline = { version: 1, stories: [] };
   try {
@@ -259,7 +344,8 @@ async function checkVisualRegression(rootDir: string): Promise<{
 }
 
 export async function runVisualRegressionCheck(rootDir: string): Promise<VisualRegressionResult> {
-  const { result } = await checkVisualRegression(rootDir);
+  const config = await loadLaRoseConfig(rootDir);
+  const { result } = await checkVisualRegression(rootDir, config);
   return result;
 }
 
@@ -267,9 +353,10 @@ export async function runDoctor(
   rootDir: string,
   options: DoctorOptions = {},
 ): Promise<DoctorResult> {
+  const config = await loadLaRoseConfig(rootDir);
   const diagnostics = [
     ...(await checkDeprecations(rootDir)),
-    ...(await checkAccessibility(rootDir)),
+    ...(await checkAccessibility(rootDir, config)),
     ...(await checkContracts(rootDir)),
   ];
 
@@ -282,7 +369,7 @@ export async function runDoctor(
 
   let visualRegression: VisualRegressionResult | undefined;
   if (!options.skipVisual) {
-    const visual = await checkVisualRegression(rootDir);
+    const visual = await checkVisualRegression(rootDir, config);
     diagnostics.push(...visual.diagnostics);
     visualRegression = visual.result;
   }

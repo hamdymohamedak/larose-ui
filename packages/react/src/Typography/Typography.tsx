@@ -1,6 +1,6 @@
 import type { ElementType, ReactNode } from 'react';
 import type { TypographyRole } from '@larose-ui/core';
-import styles from './Typography.module.css';
+import styles from '@larose-ui/styles/components/Typography/Typography.module.css';
 
 const defaultElement: Record<TypographyRole, ElementType> = {
   display: 'h1',

@@ -1,0 +1,68 @@
+{
+  "name": "@larose-ui/vue",
+  "version": "0.1.1",
+  "description": "Vue 3 components for laRose UI — thin adapter over shared styles and primitives",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch",
+    "test": "vitest run",
+    "typecheck": "vue-tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@larose-ui/core": "workspace:*",
+    "@larose-ui/primitives": "workspace:*",
+    "@larose-ui/runtime-core": "workspace:*",
+    "@larose-ui/styles": "workspace:*",
+    "@larose-ui/themes": "workspace:*",
+    "@larose-ui/tokens": "workspace:*"
+  },
+  "peerDependencies": {
+    "vue": "^3.5.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vue/test-utils": "^2.4.6",
+    "jsdom": "^25.0.1",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.3",
+    "vite-plugin-dts": "^4.3.0",
+    "vitest": "^2.1.8",
+    "vue": "^3.5.13",
+    "vue-tsc": "^2.2.0"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hamdymohamedak/larose-ui.git",
+    "directory": "packages/vue"
+  },
+  "keywords": [
+    "larose",
+    "vue",
+    "vue3",
+    "ui-platform",
+    "design-system"
+  ],
+  "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/vue#readme",
+  "bugs": {
+    "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  }
+}

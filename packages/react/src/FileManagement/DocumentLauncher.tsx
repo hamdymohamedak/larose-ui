@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { Button } from '../Button/Button';
 import { FileBrowser, type FileBrowserProps } from './FileBrowser';
-import styles from './FileManagement.module.css';
+import styles from '@larose-ui/styles/components/FileManagement/FileManagement.module.css';
 
 export interface DocumentLauncherProps extends Omit<FileBrowserProps, 'toolbar'> {
   appTitle: string;

@@ -1,0 +1,47 @@
+{
+  "name": "Tabs",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "defaultValue",
+      "type": "string",
+      "required": false,
+      "default": "''"
+    },
+    {
+      "name": "onValueChange",
+      "type": "(value: string) => void",
+      "required": false
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "onValueChange",
+      "payload": "(value: string) => void"
+    }
+  ],
+  "defaults": {
+    "defaultValue": "''"
+  },
+  "keyboard": {
+    "keys": [
+      "ArrowUp",
+      "ArrowDown",
+      "ArrowLeft",
+      "ArrowRight"
+    ],
+    "behavior": [
+      "arrow-navigation",
+      "roving-focus"
+    ]
+  },
+  "uncontrolled": [
+    "value"
+  ]
+}

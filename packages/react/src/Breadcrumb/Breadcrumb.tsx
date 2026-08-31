@@ -1,4 +1,4 @@
-import styles from './Breadcrumb.module.css';
+import styles from '@larose-ui/styles/components/Breadcrumb/Breadcrumb.module.css';
 import { sanitizeNavigationUrl } from '@larose-ui/core';
 
 export interface BreadcrumbItem {

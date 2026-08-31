@@ -1,0 +1,54 @@
+{
+  "name": "Collection",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "ariaLabel",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "columns",
+      "type": "number",
+      "required": false
+    },
+    {
+      "name": "items",
+      "type": "CollectionItem[]",
+      "required": true
+    },
+    {
+      "name": "layout",
+      "type": "CollectionLayout",
+      "required": false
+    },
+    {
+      "name": "onSelect",
+      "type": "(item: CollectionItem) => void",
+      "required": false
+    },
+    {
+      "name": "selectedId",
+      "type": "string",
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "onSelect",
+      "payload": "(item: CollectionItem) => void"
+    }
+  ],
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  }
+}

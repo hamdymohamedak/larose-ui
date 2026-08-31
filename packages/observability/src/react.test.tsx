@@ -6,8 +6,7 @@ import {
   ObservedForm,
   ObservedComponent,
 } from './react';
-import { createNoopAdapter } from './adapters';
-import { createEventCollector } from './collector';
+import { createNoopAdapter, createEventCollector } from '@larose-ui/observability-core';
 
 describe('ObservedForm', () => {
   it('tracks form opened on mount', async () => {

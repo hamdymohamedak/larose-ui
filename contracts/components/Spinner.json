@@ -1,0 +1,19 @@
+{
+  "name": "Spinner",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "size",
+      "type": "Size",
+      "required": false
+    }
+  ],
+  "events": [],
+  "keyboard": {}
+}

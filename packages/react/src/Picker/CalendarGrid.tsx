@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { monthMatrix, parseISODate, toISODate, weekdayLabels } from './utils';
-import styles from './Picker.module.css';
+import styles from '@larose-ui/styles/components/Picker/Picker.module.css';
 
 export interface CalendarGridProps {
   value?: string;

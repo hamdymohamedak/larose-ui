@@ -1,6 +1,6 @@
 import { createPortal } from 'react-dom';
 import type { DragSession } from './types';
-import styles from './DragDrop.module.css';
+import styles from '@larose-ui/styles/components/DragDrop/DragDrop.module.css';
 
 export function DragPreviewLayer({
   session,

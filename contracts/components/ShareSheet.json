@@ -1,0 +1,59 @@
+{
+  "name": "ShareSheet",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "destinations",
+      "type": "ShareDestination[]",
+      "required": false,
+      "default": "defaultDestinations"
+    },
+    {
+      "name": "footer",
+      "type": "ReactNode",
+      "required": false
+    },
+    {
+      "name": "onClose",
+      "type": "() => void",
+      "required": true
+    },
+    {
+      "name": "onSettingsChange",
+      "type": "(settings: ShareSettings) => void",
+      "required": false
+    },
+    {
+      "name": "open",
+      "type": "boolean",
+      "required": true
+    },
+    {
+      "name": "permissionOptions",
+      "type": "SharePermissionOption[]",
+      "required": false,
+      "default": "defaultPermissionOptions"
+    },
+    {
+      "name": "settings",
+      "type": "ShareSettings",
+      "required": true
+    }
+  ],
+  "events": [
+    {
+      "name": "onClose",
+      "payload": "() => void"
+    },
+    {
+      "name": "onSettingsChange",
+      "payload": "(settings: ShareSettings) => void"
+    }
+  ],
+  "defaults": {
+    "destinations": "defaultDestinations",
+    "permissionOptions": "defaultPermissionOptions"
+  },
+  "keyboard": {}
+}

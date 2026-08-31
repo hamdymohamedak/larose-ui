@@ -1,0 +1,94 @@
+{
+  "name": "Popover",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "'aria-label'",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "content",
+      "type": "ReactNode",
+      "required": true
+    },
+    {
+      "name": "defaultOpen",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    },
+    {
+      "name": "onOpenChange",
+      "type": "(open: boolean) => void",
+      "required": false
+    },
+    {
+      "name": "open",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "panelClassName",
+      "type": "string",
+      "required": false,
+      "description": "Extra class names for the floating panel element."
+    },
+    {
+      "name": "side",
+      "type": "PopoverSide",
+      "required": false,
+      "default": "'bottom'"
+    },
+    {
+      "name": "trigger",
+      "type": "ReactNode",
+      "required": true
+    }
+  ],
+  "events": [
+    {
+      "name": "onOpenChange",
+      "payload": "(open: boolean) => void"
+    }
+  ],
+  "slots": [
+    "trigger",
+    "children"
+  ],
+  "states": [
+    "closed",
+    "open"
+  ],
+  "defaults": {
+    "defaultOpen": "false",
+    "side": "'bottom'"
+  },
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props.",
+      "Focus is managed while open; Escape typically closes the overlay."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "keys": [
+      "Escape",
+      "ArrowUp",
+      "ArrowDown",
+      "ArrowLeft",
+      "ArrowRight"
+    ],
+    "behavior": [
+      "escape-close",
+      "arrow-navigation"
+    ]
+  },
+  "controlled": [
+    "open"
+  ],
+  "uncontrolled": [
+    "open"
+  ]
+}

@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { STANDARD_ACCELERATORS } from '@larose-ui/core';
 import { useAccelerator } from '../accelerator';
-import styles from './CommandPalette.module.css';
+import styles from '@larose-ui/styles/components/CommandPalette/CommandPalette.module.css';
 
 export interface CommandPaletteItem {
   id: string;

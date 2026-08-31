@@ -1,6 +1,6 @@
 import { forwardRef, type ButtonHTMLAttributes, type ReactNode } from 'react';
 import { Tooltip } from '../Tooltip/Tooltip';
-import styles from './Button.module.css';
+import styles from '@larose-ui/styles/components/Button/Button.module.css';
 
 export interface SquareButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   /** Symbol or icon — square buttons use icons, not text labels. */

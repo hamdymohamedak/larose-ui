@@ -1,0 +1,19 @@
+{
+  "name": "SidebarDisclosureSection",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "defaultExpanded",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": true
+    }
+  ],
+  "events": [],
+  "keyboard": {}
+}

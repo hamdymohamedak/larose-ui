@@ -1,4 +1,4 @@
-import styles from './ListTable.module.css';
+import styles from '@larose-ui/styles/components/ListTable/ListTable.module.css';
 
 export interface OutlineViewToolbarProps {
   searchQuery: string;

@@ -8,7 +8,7 @@ import {
   PATH_SEPARATOR,
   resolveSelectedSegment,
 } from './utils';
-import styles from './PathControl.module.css';
+import styles from '@larose-ui/styles/components/PathControl/PathControl.module.css';
 
 function FolderIcon() {
   return (

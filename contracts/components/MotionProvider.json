@@ -1,0 +1,8 @@
+{
+  "name": "MotionProvider",
+  "version": "1",
+  "framework": "react",
+  "props": [],
+  "events": [],
+  "keyboard": {}
+}

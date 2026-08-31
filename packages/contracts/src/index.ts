@@ -1,90 +1,25 @@
-export interface ContractField {
-  name: string;
-  type?: string;
-  required?: boolean;
-}
+export type {
+  ContractField,
+  ContractSchema,
+  ContractMismatch,
+  ContractValidationResult,
+  ComponentContract,
+  ComponentContractProp,
+  ComponentContractEvent,
+  ComponentContractAccessibility,
+  ComponentContractKeyboard,
+  ComponentContractIssue,
+  ComponentContractMismatch,
+  ComponentContractValidationResult,
+} from './types';
 
-export interface ContractSchema {
-  name: string;
-  fields: ContractField[];
-}
+export { validateContract, formatContractReport } from './apiContract';
 
-export interface ContractMismatch {
-  field: string;
-  issue: 'missing_in_api' | 'missing_in_ui' | 'type_mismatch' | 'required_mismatch';
-  message: string;
-  severity: 'error' | 'warning';
-}
-
-export interface ContractValidationResult {
-  valid: boolean;
-  mismatches: ContractMismatch[];
-}
-
-export function validateContract(
-  ui: ContractSchema,
-  api: ContractSchema,
-): ContractValidationResult {
-  const mismatches: ContractMismatch[] = [];
-  const apiFields = new Map(api.fields.map((f) => [f.name, f]));
-  const uiFields = new Map(ui.fields.map((f) => [f.name, f]));
-
-  for (const uiField of ui.fields) {
-    const apiField = apiFields.get(uiField.name);
-    if (!apiField) {
-      mismatches.push({
-        field: uiField.name,
-        issue: 'missing_in_api',
-        message: `UI expects "${uiField.name}" but API schema does not include it`,
-        severity: uiField.required ? 'error' : 'warning',
-      });
-      continue;
-    }
-    if (uiField.type && apiField.type && uiField.type !== apiField.type) {
-      mismatches.push({
-        field: uiField.name,
-        issue: 'type_mismatch',
-        message: `Type mismatch for "${uiField.name}": UI=${uiField.type}, API=${apiField.type}`,
-        severity: 'error',
-      });
-    }
-    if (uiField.required && !apiField.required) {
-      mismatches.push({
-        field: uiField.name,
-        issue: 'required_mismatch',
-        message: `"${uiField.name}" is required in UI but optional in API`,
-        severity: 'warning',
-      });
-    }
-  }
-
-  for (const apiField of api.fields) {
-    if (!uiFields.has(apiField.name) && apiField.required) {
-      mismatches.push({
-        field: apiField.name,
-        issue: 'missing_in_ui',
-        message: `API requires "${apiField.name}" but UI schema does not include it`,
-        severity: 'error',
-      });
-    }
-  }
-
-  return {
-    valid: mismatches.filter((m) => m.severity === 'error').length === 0,
-    mismatches,
-  };
-}
-
-export function formatContractReport(result: ContractValidationResult): string {
-  if (result.valid && result.mismatches.length === 0) {
-    return 'Contract validation passed.';
-  }
-
-  const lines = ['Contract validation report:', ''];
-  for (const m of result.mismatches) {
-    lines.push(`[${m.severity.toUpperCase()}] ${m.field}: ${m.message}`);
-  }
-  lines.push('');
-  lines.push(result.valid ? 'Result: PASS (warnings only)' : 'Result: FAIL');
-  return lines.join('\n');
-}
+export {
+  isComponentContract,
+  isDataContract,
+  validateComponentContractSchema,
+  compareComponentContracts,
+  formatComponentContractReport,
+} from './componentContract';
+export type { CompareComponentContractsOptions } from './componentContract';

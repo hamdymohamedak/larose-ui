@@ -1,0 +1,94 @@
+{
+  "name": "AlertDialog",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "accessory",
+      "type": "ReactNode",
+      "required": false
+    },
+    {
+      "name": "actions",
+      "type": "AlertDialogAction[]",
+      "required": true
+    },
+    {
+      "name": "defaultActionId",
+      "type": "string",
+      "required": false,
+      "description": "When unset, no button receives default keyboard focus styling."
+    },
+    {
+      "name": "helpUrl",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "icon",
+      "type": "ReactNode",
+      "required": false
+    },
+    {
+      "name": "message",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "onOpenChange",
+      "type": "(open: boolean) => void",
+      "required": true
+    },
+    {
+      "name": "open",
+      "type": "boolean",
+      "required": true
+    },
+    {
+      "name": "presentation",
+      "type": "AlertDialogPresentation",
+      "required": false
+    },
+    {
+      "name": "showCautionIcon",
+      "type": "boolean",
+      "required": false,
+      "description": "Use sparingly for unexpected data loss."
+    },
+    {
+      "name": "suppression",
+      "type": "AlertDialogSuppression",
+      "required": false
+    },
+    {
+      "name": "textField",
+      "type": "AlertDialogTextField",
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "onOpenChange",
+      "payload": "(open: boolean) => void"
+    }
+  ],
+  "accessibility": {
+    "requirements": [
+      "Focus is managed while open; Escape typically closes the overlay."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "keys": [
+      "Escape"
+    ],
+    "behavior": [
+      "escape-close",
+      "focus-trap",
+      "restore-focus"
+    ]
+  },
+  "controlled": [
+    "open"
+  ]
+}

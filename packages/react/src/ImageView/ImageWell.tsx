@@ -8,7 +8,7 @@ import {
   type KeyboardEvent,
 } from 'react';
 import { ImageView } from './ImageView';
-import styles from './ImageView.module.css';
+import styles from '@larose-ui/styles/components/ImageView/ImageView.module.css';
 
 export interface ImageWellProps {
   label?: string;

@@ -11,7 +11,7 @@ import { useMotion } from '../Motion/MotionContext';
 import type { PickerOption } from './types';
 import { getWheelItemVisual, useWheelPhysics } from './useWheelPhysics';
 import { useWheelPickerRowHeight } from './WheelPickerContext';
-import styles from './Picker.module.css';
+import styles from '@larose-ui/styles/components/Picker/Picker.module.css';
 
 export interface WheelColumnProps {
   id: string;

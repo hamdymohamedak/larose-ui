@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import type { ListVariant } from './types';
-import styles from './ListTable.module.css';
+import styles from '@larose-ui/styles/components/ListTable/ListTable.module.css';
 
 export interface ListProps {
   variant?: ListVariant;

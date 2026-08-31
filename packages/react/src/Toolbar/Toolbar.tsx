@@ -33,7 +33,7 @@ import {
   warnIfToolbarTitleTooLong,
   warnIfTooManyToolbarGroups,
 } from './utils';
-import styles from './Toolbar.module.css';
+import styles from '@larose-ui/styles/components/Toolbar/Toolbar.module.css';
 
 const ToolbarPlatformContext = createContext<ToolbarPlatform>('macos');
 

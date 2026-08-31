@@ -1,0 +1,96 @@
+{
+  "name": "Menu",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "dimBackground",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "enableMnemonics",
+      "type": "boolean",
+      "required": false,
+      "description": "Enable Alt+key mnemonics while open. Defaults to true."
+    },
+    {
+      "name": "enableShortcuts",
+      "type": "boolean",
+      "required": false,
+      "description": "When true, keyboard shortcuts activate menu items while open. Defaults to true."
+    },
+    {
+      "name": "enableTypeAhead",
+      "type": "boolean",
+      "required": false,
+      "description": "Enable type-ahead letter matching while open. Defaults to true."
+    },
+    {
+      "name": "entries",
+      "type": "MenuEntry[]",
+      "required": true
+    },
+    {
+      "name": "layout",
+      "type": "MenuLayout",
+      "required": false
+    },
+    {
+      "name": "mnemonicVisible",
+      "type": "boolean",
+      "required": false,
+      "description": "When true, underline mnemonic access keys in labels."
+    },
+    {
+      "name": "onEntrySelect",
+      "type": "(entry: MenuItemConfig) => boolean | void",
+      "required": false
+    },
+    {
+      "name": "onOpenChange",
+      "type": "(open: boolean) => void",
+      "required": false
+    },
+    {
+      "name": "open",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "optionKey",
+      "type": "boolean",
+      "required": false,
+      "description": "Passed from MenuBar for Option-key alternate accelerators."
+    }
+  ],
+  "events": [
+    {
+      "name": "onEntrySelect",
+      "payload": "(entry: MenuItemConfig) => boolean | void"
+    },
+    {
+      "name": "onOpenChange",
+      "payload": "(open: boolean) => void"
+    }
+  ],
+  "keyboard": {
+    "keys": [
+      "Escape",
+      "ArrowUp",
+      "ArrowDown",
+      "ArrowLeft",
+      "ArrowRight"
+    ],
+    "behavior": [
+      "arrow-navigation",
+      "type-ahead",
+      "mnemonics",
+      "accelerators",
+      "escape-close"
+    ]
+  },
+  "controlled": [
+    "open"
+  ]
+}

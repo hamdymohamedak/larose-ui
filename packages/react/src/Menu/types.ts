@@ -1,49 +1,24 @@
 import type { ReactNode } from 'react';
-import type { Accelerator } from '@larose-ui/core';
+import type {
+  MenuLayout,
+  MenuPosition,
+  MenuSeparatorConfig,
+} from '@larose-ui/primitives';
+import type { MenuItemConfig as PrimitiveMenuItemConfig } from '@larose-ui/primitives';
+import type { MenuSubmenuConfig as PrimitiveMenuSubmenuConfig } from '@larose-ui/primitives';
 
-export type MenuLayout = 'small' | 'medium' | 'large';
+export type { MenuLayout, MenuPosition, MenuSeparatorConfig };
 
-export interface MenuItemConfig {
-  type?: 'item';
-  id: string;
-  label: string;
+export interface MenuItemConfig extends PrimitiveMenuItemConfig {
   icon?: ReactNode;
-  /** Display label for the keyboard shortcut. Overrides automatic formatting. */
-  shortcut?: string;
-  /** Machine-readable accelerator for keyboard activation. */
-  accelerator?: Accelerator;
-  /** Label shown when Option (Alt) is held — dynamic menu bar item. */
-  alternateLabel?: string;
-  alternateShortcut?: string;
-  /** Alternate accelerator when Option (Alt) is held. */
-  alternateAccelerator?: Accelerator;
-  destructive?: boolean;
-  hidden?: boolean;
-  disabled?: boolean;
-  /** Shows a checkmark for toggled/selected state. */
-  selected?: boolean;
-  /** Access key for mnemonic activation (Windows/Linux). Parsed from `&` in label when omitted. */
-  mnemonic?: string;
-  onSelect?: () => void;
 }
 
-export interface MenuSubmenuConfig {
-  type: 'submenu';
-  id: string;
-  label: string;
+export interface MenuSubmenuConfig extends Omit<PrimitiveMenuSubmenuConfig, 'items'> {
   icon?: ReactNode;
-  shortcut?: string;
-  disabled?: boolean;
-  hidden?: boolean;
   items: MenuItemConfig[];
 }
 
-export type MenuSeparatorConfig = { type: 'separator'; id?: string };
-
-export type MenuEntry = MenuItemConfig | MenuSubmenuConfig | MenuSeparatorConfig;
-
-export interface MenuPosition {
-  x: number;
-  y: number;
-  placement: 'above' | 'below';
-}
+export type MenuEntry =
+  | MenuItemConfig
+  | MenuSubmenuConfig
+  | MenuSeparatorConfig;

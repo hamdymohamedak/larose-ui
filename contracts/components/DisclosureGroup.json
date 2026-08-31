@@ -1,0 +1,39 @@
+{
+  "name": "DisclosureGroup",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "defaultExpanded",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "expanded",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "onExpandedChange",
+      "type": "(expanded: boolean) => void",
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "onExpandedChange",
+      "payload": "(expanded: boolean) => void"
+    }
+  ],
+  "keyboard": {}
+}

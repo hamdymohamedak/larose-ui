@@ -8,7 +8,7 @@ import {
   type ReactNode,
 } from 'react';
 import { Collapse } from '../Motion/Collapse';
-import styles from './Accordion.module.css';
+import styles from '@larose-ui/styles/components/Accordion/Accordion.module.css';
 
 interface AccordionContextValue {
   type: 'single' | 'multiple';

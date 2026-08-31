@@ -11,7 +11,7 @@ import {
 import {
   createEventCollector,
   type EventCollector,
-} from './collector';
+} from '@larose-ui/observability-core';
 import type {
   FormFunnelMetrics,
   ObservabilityAdapter,
@@ -21,7 +21,7 @@ import type {
   CorrelatedFormFunnelMetrics,
   JourneyStep,
   RageClickAnalysis,
-} from './types';
+} from '@larose-ui/observability-core';
 
 export interface ObservabilityContextValue {
   collector: EventCollector;

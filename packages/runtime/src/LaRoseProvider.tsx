@@ -13,6 +13,7 @@ import type { ColorTokens } from '@larose-ui/tokens';
 import {
   MotionProvider,
   ThemeCustomizationContext,
+  AcceleratorProvider,
   type MotionConfig,
   type ThemeCustomizationContextValue,
 } from '@larose-ui/react';
@@ -26,7 +27,7 @@ import {
   createNoopAdapter,
   type ObservabilityAdapter,
 } from '@larose-ui/observability';
-import type { Locale } from './i18n/messages';
+import type { Locale } from '@larose-ui/runtime-core';
 import { EnvironmentProvider } from './environment/EnvironmentProvider';
 import { FeatureFlagProvider, type FeatureState } from './features/FeatureFlagProvider';
 import { I18nProvider } from './i18n/I18nProvider';
@@ -40,11 +41,8 @@ import { RuntimeContextProvider } from './runtime/RuntimeContextProvider';
 import { RuntimeBridge, SessionBridge } from './runtime/RuntimeBridge';
 import { RuntimeObservabilityBridge } from './observability/RuntimeObservabilityBridge';
 import type { RuntimeEvent } from './runtime/RuntimeContextProvider';
-import { resolveTenantConfig } from './tenant/resolveTenant';
+import { resolveTenantConfig, shouldSyncOfflineQueue } from '@larose-ui/runtime-core';
 import { OptionalToastProvider } from './toast/OptionalToastProvider';
-import {
-  shouldSyncOfflineQueue,
-} from './runtime/sessionSecurity';
 
 export interface LaRoseProviderProps {
   children: ReactNode;
@@ -293,14 +291,20 @@ export function LaRoseProvider({
   );
 
   if (!enableToasts) {
-    return <MotionProvider {...motion}>{tree}</MotionProvider>;
+    return (
+      <MotionProvider {...motion}>
+        <AcceleratorProvider>{tree}</AcceleratorProvider>
+      </MotionProvider>
+    );
   }
 
   return (
     <MotionProvider {...motion}>
-      <OptionalToastProvider enabled placement={toastPlacement}>
-        {tree}
-      </OptionalToastProvider>
+      <AcceleratorProvider>
+        <OptionalToastProvider enabled placement={toastPlacement}>
+          {tree}
+        </OptionalToastProvider>
+      </AcceleratorProvider>
     </MotionProvider>
   );
 }

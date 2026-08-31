@@ -1,0 +1,98 @@
+{
+  "name": "EditMenu",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "context",
+      "type": "EditMenuContext",
+      "required": true
+    },
+    {
+      "name": "customActions",
+      "type": "EditMenuItemConfig[]",
+      "required": false,
+      "description": "Custom commands listed near related system-provided ones."
+    },
+    {
+      "name": "dimBackground",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "includeStandardActions",
+      "type": "boolean",
+      "required": false,
+      "description": "Include standard Cut, Copy, Paste, etc. Defaults to true."
+    },
+    {
+      "name": "inputMode",
+      "type": "EditMenuInputMode",
+      "required": false
+    },
+    {
+      "name": "longPress",
+      "type": "boolean",
+      "required": false,
+      "description": "Touch-and-hold / long-press to reveal compact edit menu."
+    },
+    {
+      "name": "onAction",
+      "type": "(actionId: string) => void",
+      "required": false
+    },
+    {
+      "name": "onOpenChange",
+      "type": "(open: boolean) => void",
+      "required": false
+    },
+    {
+      "name": "onStandardAction",
+      "type": "(actionId: StandardEditActionId) => void",
+      "required": false
+    },
+    {
+      "name": "open",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "placement",
+      "type": "'above' | 'below' | 'auto'",
+      "required": false
+    },
+    {
+      "name": "variant",
+      "type": "EditMenuVariant",
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "onAction",
+      "payload": "(actionId: string) => void"
+    },
+    {
+      "name": "onOpenChange",
+      "payload": "(open: boolean) => void"
+    },
+    {
+      "name": "onStandardAction",
+      "payload": "(actionId: StandardEditActionId) => void"
+    }
+  ],
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  },
+  "controlled": [
+    "open"
+  ]
+}

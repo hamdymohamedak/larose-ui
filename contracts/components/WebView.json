@@ -1,0 +1,58 @@
+{
+  "name": "WebView",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "allowForms",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    },
+    {
+      "name": "allowScripts",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    },
+    {
+      "name": "embedded",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "description": "When true, omits outer frame styling (used inside )."
+    },
+    {
+      "name": "height",
+      "type": "string | number",
+      "required": false
+    },
+    {
+      "name": "html",
+      "type": "string",
+      "required": false,
+      "description": "Embedded HTML content, e.g. rich email bodies."
+    },
+    {
+      "name": "sandboxed",
+      "type": "boolean",
+      "required": false,
+      "default": "true",
+      "description": "Restrict iframe capabilities; enabled by default for untrusted content."
+    },
+    {
+      "name": "src",
+      "type": "string",
+      "required": false,
+      "description": "Remote URL to load — use for brief in-app website access, not a full browser replacement."
+    }
+  ],
+  "events": [],
+  "defaults": {
+    "allowForms": "false",
+    "allowScripts": "false",
+    "embedded": "false",
+    "sandboxed": "true"
+  },
+  "keyboard": {}
+}

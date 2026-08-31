@@ -1,0 +1,90 @@
+{
+  "name": "CollaborationPopover",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "actions",
+      "type": "CollaborationAction[]",
+      "required": false,
+      "default": "[]"
+    },
+    {
+      "name": "collaborators",
+      "type": "Collaborator[]",
+      "required": true
+    },
+    {
+      "name": "defaultOpen",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    },
+    {
+      "name": "manageLabel",
+      "type": "string",
+      "required": false,
+      "default": "'Manage Shared File'"
+    },
+    {
+      "name": "onManage",
+      "type": "() => void",
+      "required": false
+    },
+    {
+      "name": "onMessage",
+      "type": "() => void",
+      "required": false
+    },
+    {
+      "name": "onOpenChange",
+      "type": "(open: boolean) => void",
+      "required": false
+    },
+    {
+      "name": "onVideo",
+      "type": "() => void",
+      "required": false
+    },
+    {
+      "name": "open",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "trigger",
+      "type": "ReactNode",
+      "required": true
+    }
+  ],
+  "events": [
+    {
+      "name": "onManage",
+      "payload": "() => void"
+    },
+    {
+      "name": "onMessage",
+      "payload": "() => void"
+    },
+    {
+      "name": "onOpenChange",
+      "payload": "(open: boolean) => void"
+    },
+    {
+      "name": "onVideo",
+      "payload": "() => void"
+    }
+  ],
+  "defaults": {
+    "actions": "[]",
+    "defaultOpen": "false",
+    "manageLabel": "'Manage Shared File'"
+  },
+  "keyboard": {},
+  "controlled": [
+    "open"
+  ],
+  "uncontrolled": [
+    "open"
+  ]
+}

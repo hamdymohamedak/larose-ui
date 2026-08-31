@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import type { PermissionFallback } from '@larose-ui/core';
 import { usePermission, usePermissions } from './PermissionProvider';
-import { resolvePermissionFallback } from './evaluator';
+import { resolvePermissionFallback } from '@larose-ui/permissions-core';
 import { Explainable } from './Explainable';
 
 export interface PermissionProps {

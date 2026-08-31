@@ -1,0 +1,8 @@
+{
+  "name": "LaRoseProvider",
+  "version": "1",
+  "framework": "react",
+  "props": [],
+  "events": [],
+  "keyboard": {}
+}

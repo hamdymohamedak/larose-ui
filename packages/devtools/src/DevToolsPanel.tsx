@@ -16,7 +16,7 @@ import {
   InspectorOverlay,
   useComponentInspector,
 } from './ComponentInspector';
-import { getComponentPerformance } from './componentPerformance';
+import { getComponentPerformance } from '@larose-ui/devtools-core';
 
 export interface DevToolsPanelProps {
   defaultOpen?: boolean;

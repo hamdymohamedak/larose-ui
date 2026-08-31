@@ -1,6 +1,6 @@
 import { forwardRef, type ButtonHTMLAttributes } from 'react';
 import { Tooltip } from '../Tooltip/Tooltip';
-import styles from './Button.module.css';
+import styles from '@larose-ui/styles/components/Button/Button.module.css';
 
 export interface HelpButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   /** Brief phrase explaining what help covers (macOS / visionOS tooltip). */

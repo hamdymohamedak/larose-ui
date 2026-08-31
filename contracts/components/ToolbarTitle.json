@@ -1,0 +1,14 @@
+{
+  "name": "ToolbarTitle",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "large",
+      "type": "boolean",
+      "required": false
+    }
+  ],
+  "events": [],
+  "keyboard": {}
+}

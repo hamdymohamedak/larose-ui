@@ -1,0 +1,33 @@
+{
+  "name": "SearchTokenChip",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "onRemove",
+      "type": "() => void",
+      "required": false
+    },
+    {
+      "name": "onSelect",
+      "type": "() => void",
+      "required": false
+    },
+    {
+      "name": "token",
+      "type": "SearchToken",
+      "required": true
+    }
+  ],
+  "events": [
+    {
+      "name": "onRemove",
+      "payload": "() => void"
+    },
+    {
+      "name": "onSelect",
+      "payload": "() => void"
+    }
+  ],
+  "keyboard": {}
+}

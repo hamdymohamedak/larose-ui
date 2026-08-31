@@ -1,0 +1,8 @@
+{
+  "name": "AccordionTrigger",
+  "version": "1",
+  "framework": "react",
+  "props": [],
+  "events": [],
+  "keyboard": {}
+}

@@ -5,25 +5,18 @@ import {
   useEffect,
   useMemo,
   useRef,
-  useState,
+  useSyncExternalStore,
   type ReactNode,
 } from 'react';
-import {
-  createDefaultRuntimeContext,
-  createRuntimeEventBus,
-  detectA11yPreferences,
-  subscribeA11yPreferences,
-  type LaRoseRuntimeContext,
-  type RuntimeEvent,
-  type RuntimeEventBus,
-  type SessionState,
-} from '@larose-ui/core';
+import { createRuntimeStore, type RuntimeStore } from '@larose-ui/runtime-core';
+import type { LaRoseRuntimeContext, RuntimeEvent, SessionState } from '@larose-ui/core';
 
 export interface RuntimeContextStoreValue {
   context: LaRoseRuntimeContext;
-  eventBus: RuntimeEventBus;
+  store: RuntimeStore;
   setContext: (patch: Partial<LaRoseRuntimeContext>) => void;
   setSession: (session: SessionState) => void;
+  eventBus: RuntimeStore['eventBus'];
 }
 
 export const RuntimeContext = createContext<RuntimeContextStoreValue | null>(null);
@@ -31,71 +24,64 @@ export const RuntimeContext = createContext<RuntimeContextStoreValue | null>(nul
 export interface RuntimeContextProviderProps {
   children: ReactNode;
   initialContext?: Partial<LaRoseRuntimeContext>;
-  eventBus?: RuntimeEventBus;
+  eventBus?: RuntimeStore['eventBus'];
   onEvent?: (event: RuntimeEvent) => void;
 }
 
 export function RuntimeContextProvider({
   children,
   initialContext,
-  eventBus: externalBus,
+  eventBus,
   onEvent,
 }: RuntimeContextProviderProps) {
-  const eventBusRef = useRef(externalBus ?? createRuntimeEventBus());
+  const storeRef = useRef<RuntimeStore>(
+    createRuntimeStore({ initialContext, eventBus }),
+  );
+  const store = storeRef.current;
 
-  const [context, setContextState] = useState<LaRoseRuntimeContext>(() =>
-    createDefaultRuntimeContext({
-      accessibility: detectA11yPreferences(),
-      ...initialContext,
-    }),
+  const context = useSyncExternalStore(
+    (onStoreChange) => store.subscribe(() => onStoreChange()),
+    () => store.getContext(),
+    () => store.getContext(),
   );
 
   useEffect(() => {
-    return subscribeA11yPreferences((accessibility) => {
-      setContextState((prev) => ({ ...prev, accessibility }));
-    });
-  }, []);
+    return store.bindA11yPreferences();
+  }, [store]);
 
   useEffect(() => {
     if (!onEvent) return;
-    return eventBusRef.current.subscribe(onEvent);
-  }, [onEvent]);
+    return store.eventBus.subscribe(onEvent);
+  }, [onEvent, store]);
 
-  const setContext = useCallback((patch: Partial<LaRoseRuntimeContext>) => {
-    setContextState((prev) => {
-      const next = { ...prev, ...patch };
-      eventBusRef.current.emit({
-        type: 'runtime.updated',
-        metadata: { keys: Object.keys(patch) },
-      });
-      return next;
-    });
-  }, []);
+  const setContext = useCallback(
+    (patch: Partial<LaRoseRuntimeContext>) => {
+      store.setContext(patch);
+    },
+    [store],
+  );
 
-  const setSession = useCallback((session: SessionState) => {
-    setContextState((prev) => {
-      if (prev.session === session) return prev;
-      eventBusRef.current.emit({
-        type: 'session.transition',
-        metadata: { from: prev.session, to: session },
-      });
-      return { ...prev, session };
-    });
-  }, []);
+  const setSession = useCallback(
+    (session: SessionState) => {
+      store.setSession(session);
+    },
+    [store],
+  );
 
   const value = useMemo<RuntimeContextStoreValue>(
     () => ({
       context,
-      eventBus: eventBusRef.current,
+      store,
       setContext,
       setSession,
+      eventBus: store.eventBus,
     }),
-    [context, setContext, setSession],
+    [context, store, setContext, setSession],
   );
 
   useEffect(() => {
-    eventBusRef.current.emit({ type: 'runtime.mounted' });
-  }, []);
+    store.mount();
+  }, [store]);
 
   return (
     <RuntimeContext.Provider value={value}>{children}</RuntimeContext.Provider>

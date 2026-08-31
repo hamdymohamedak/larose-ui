@@ -11,7 +11,7 @@ import type {
   ShareSettings,
 } from './types';
 import { CopyIcon, LinkIcon, MessageIcon } from './icons';
-import styles from './Sharing.module.css';
+import styles from '@larose-ui/styles/components/Sharing/Sharing.module.css';
 
 export interface ShareToolbarProps {
   /** Document or item title shown in the share sheet. */

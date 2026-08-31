@@ -1,0 +1,29 @@
+{
+  "name": "FilePreview",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "closeLabel",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "onClose",
+      "type": "() => void",
+      "required": false
+    },
+    {
+      "name": "source",
+      "type": "FilePreviewSource",
+      "required": true
+    }
+  ],
+  "events": [
+    {
+      "name": "onClose",
+      "payload": "() => void"
+    }
+  ],
+  "keyboard": {}
+}

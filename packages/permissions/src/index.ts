@@ -1,5 +1,9 @@
-export { hasPermission, evaluateAbac, resolvePermissionFallback } from './evaluator';
-export type { PermissionCheck, AbacContext } from './evaluator';
+export {
+  hasPermission,
+  evaluateAbac,
+  resolvePermissionFallback,
+} from '@larose-ui/permissions-core';
+export type { PermissionCheck, AbacContext } from '@larose-ui/permissions-core';
 
 export {
   PermissionProvider,

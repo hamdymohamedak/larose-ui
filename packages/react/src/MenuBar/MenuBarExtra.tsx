@@ -4,7 +4,7 @@ import { prepareMenuEntries } from '../Menu/utils';
 import type { MenuItemConfig } from '../Menu/types';
 import { resolveDynamicMenuEntries } from './utils';
 import type { MenuBarExtraConfig } from './types';
-import styles from './MenuBar.module.css';
+import styles from '@larose-ui/styles/components/MenuBar/MenuBar.module.css';
 
 export interface MenuBarExtraProps extends MenuBarExtraConfig {
   isOpen: boolean;

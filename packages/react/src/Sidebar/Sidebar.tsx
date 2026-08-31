@@ -1,7 +1,7 @@
 import { useCallback, useId, useState, type CSSProperties, type ReactNode } from 'react';
 import { sanitizeNavigationUrl } from '@larose-ui/core';
 import { SearchField, type SearchFieldProps } from '../SearchField/SearchField';
-import styles from './Sidebar.module.css';
+import styles from '@larose-ui/styles/components/Sidebar/Sidebar.module.css';
 
 function SidebarDisclosureChevron({ expanded }: { expanded: boolean }) {
   return (

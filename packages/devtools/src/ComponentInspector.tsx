@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState, type CSSProperties } from 'react';
 import type { LaRoseRuntimeContext } from '@larose-ui/core';
-import type { ComponentPerformanceSummary } from './componentPerformance';
+import type { ComponentPerformanceSummary } from '@larose-ui/devtools-core';
 import { resolveReactComponentInfo, type ReactComponentInfo } from './reactFiber';
 
 export interface InspectedElement {

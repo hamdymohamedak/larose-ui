@@ -2,7 +2,7 @@ import { Button } from '../Button/Button';
 import type { FilePreviewSource } from './types';
 import { canPreviewFile } from './utils';
 import { PreviewIcon } from './icons';
-import styles from './FileManagement.module.css';
+import styles from '@larose-ui/styles/components/FileManagement/FileManagement.module.css';
 
 export interface FilePreviewProps {
   source: FilePreviewSource;

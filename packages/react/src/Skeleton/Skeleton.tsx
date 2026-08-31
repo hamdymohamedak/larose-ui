@@ -1,4 +1,4 @@
-import styles from './Skeleton.module.css';
+import styles from '@larose-ui/styles/components/Skeleton/Skeleton.module.css';
 
 export interface SkeletonProps {
   width?: string | number;

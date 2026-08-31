@@ -24,7 +24,8 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@larose-ui/core": "workspace:*"
+    "@larose-ui/core": "workspace:*",
+    "@larose-ui/permissions-core": "workspace:*"
   },
   "peerDependencies": {
     "react": ">=18"

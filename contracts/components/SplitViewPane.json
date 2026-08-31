@@ -1,0 +1,69 @@
+{
+  "name": "SplitViewPane",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "'aria-label'",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "collapsible",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "defaultSize",
+      "type": "number",
+      "required": false
+    },
+    {
+      "name": "defaultVisible",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "maxSize",
+      "type": "number",
+      "required": false
+    },
+    {
+      "name": "minSize",
+      "type": "number",
+      "required": false
+    },
+    {
+      "name": "onVisibleChange",
+      "type": "(visible: boolean) => void",
+      "required": false
+    },
+    {
+      "name": "visible",
+      "type": "boolean",
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "onVisibleChange",
+      "payload": "(visible: boolean) => void"
+    }
+  ],
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  }
+}

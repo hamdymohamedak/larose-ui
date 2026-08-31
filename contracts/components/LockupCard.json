@@ -1,0 +1,19 @@
+{
+  "name": "LockupCard",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "rating",
+      "type": "number",
+      "required": true
+    },
+    {
+      "name": "review",
+      "type": "string",
+      "required": true
+    }
+  ],
+  "events": [],
+  "keyboard": {}
+}

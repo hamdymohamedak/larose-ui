@@ -1,5 +1,5 @@
 import type { ButtonHTMLAttributes, ImgHTMLAttributes } from 'react';
-import styles from './ImageView.module.css';
+import styles from '@larose-ui/styles/components/ImageView/ImageView.module.css';
 
 export interface ImageButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   src: string;

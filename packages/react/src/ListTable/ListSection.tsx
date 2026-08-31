@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import styles from './ListTable.module.css';
+import styles from '@larose-ui/styles/components/ListTable/ListTable.module.css';
 
 export interface ListSectionProps {
   header?: string;

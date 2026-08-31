@@ -6,7 +6,7 @@ import { Spinner } from '../Spinner/Spinner';
 import { Tooltip } from '../Tooltip/Tooltip';
 import type { ButtonShape } from './types';
 import { formatButtonLabel, hasTextContent, resolveButtonShape } from './utils';
-import styles from './Button.module.css';
+import styles from '@larose-ui/styles/components/Button/Button.module.css';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: Variant;

@@ -1,0 +1,60 @@
+{
+  "name": "SplitView",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "'aria-label'",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "compactMode",
+      "type": "SplitCompactMode",
+      "required": false,
+      "default": "'side-by-side'"
+    },
+    {
+      "name": "onSizesChange",
+      "type": "(sizes: number[]) => void",
+      "required": false
+    },
+    {
+      "name": "orientation",
+      "type": "SplitOrientation",
+      "required": false,
+      "default": "'horizontal'"
+    },
+    {
+      "name": "storageKey",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "toolbar",
+      "type": "ReactNode",
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "onSizesChange",
+      "payload": "(sizes: number[]) => void"
+    }
+  ],
+  "defaults": {
+    "compactMode": "'side-by-side'",
+    "orientation": "'horizontal'"
+  },
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  }
+}

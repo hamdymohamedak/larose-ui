@@ -1,8 +1,10 @@
 import { useCallback } from 'react';
-import { matchKeyboardEvent, shouldHandleShortcut } from '@larose-ui/core';
+import {
+  handleMenuKeyboard,
+  createInitialMenuKeyboardState,
+  resolveAcceleratorPlatform,
+} from '@larose-ui/primitives';
 import type { MenuEntry, MenuItemConfig } from '../Menu/types';
-import { collectMenuAccelerators } from './collectMenuAccelerators';
-import { resolveAcceleratorPlatform } from './resolveMenuShortcut';
 
 export interface UseMenuKeyboardShortcutsOptions {
   entries: MenuEntry[];
@@ -29,30 +31,36 @@ export function useMenuKeyboardShortcuts({
 
   return useCallback(
     (event: KeyboardEvent): boolean => {
-      if (event.key === 'Escape') {
+      const result = handleMenuKeyboard(
+        event,
+        createInitialMenuKeyboardState(),
+        {
+          entries,
+          activeSubmenuId,
+          optionKey,
+          platform: resolvedPlatform,
+          enableTypeAhead: false,
+          enableMnemonics: false,
+        },
+      );
+
+      if (result.action.type === 'close') {
         onClose();
         return false;
       }
 
-      if (!shouldHandleShortcut({ target: event.target })) {
-        return false;
+      if (result.preventDefault) {
+        event.preventDefault();
+        event.stopPropagation();
       }
 
-      const bindings = collectMenuAccelerators(entries, activeSubmenuId, { optionKey });
-
-      for (const binding of bindings) {
-        if (matchKeyboardEvent(event, binding.accelerator, { platform: resolvedPlatform })) {
-          event.preventDefault();
-          event.stopPropagation();
-          if (!binding.item.disabled) {
-            binding.item.onSelect?.();
-            onSelect(binding.item);
-          }
-          return true;
-        }
+      if (result.action.type === 'select') {
+        result.action.item.onSelect?.();
+        onSelect(result.action.item);
+        return true;
       }
 
-      return false;
+      return result.preventDefault;
     },
     [activeSubmenuId, entries, onClose, onSelect, optionKey, resolvedPlatform],
   );

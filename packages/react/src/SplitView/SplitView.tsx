@@ -19,7 +19,7 @@ import {
   redistributeHiddenPane,
   resizeAdjacentSizes,
 } from './utils';
-import styles from './SplitView.module.css';
+import styles from '@larose-ui/styles/components/SplitView/SplitView.module.css';
 
 const STORAGE_PREFIX = 'larose-split-view';
 

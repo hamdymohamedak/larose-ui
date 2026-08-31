@@ -2,7 +2,7 @@ import { Children, type CSSProperties, type ReactNode } from 'react';
 import { Lockup, type LockupProps } from './Lockup';
 import type { LockupAxis } from './types';
 import { formatRating, getInitials } from './utils';
-import styles from './Lockup.module.css';
+import styles from '@larose-ui/styles/components/Lockup/Lockup.module.css';
 
 export interface LockupCardProps extends Omit<LockupProps, 'children'> {
   rating: number;

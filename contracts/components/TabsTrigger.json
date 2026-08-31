@@ -1,0 +1,19 @@
+{
+  "name": "TabsTrigger",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "required": true
+    }
+  ],
+  "events": [],
+  "keyboard": {}
+}

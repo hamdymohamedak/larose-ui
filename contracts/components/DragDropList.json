@@ -1,0 +1,38 @@
+{
+  "name": "DragDropList",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "items",
+      "type": "DragDropListItem[]",
+      "required": true
+    },
+    {
+      "name": "onReorder",
+      "type": "(items: DragDropListItem[]) => void",
+      "required": true
+    },
+    {
+      "name": "renderItem",
+      "type": "(item: DragDropListItem) => ReactNode",
+      "required": false
+    },
+    {
+      "name": "zoneId",
+      "type": "string",
+      "required": false,
+      "default": "'list'"
+    }
+  ],
+  "events": [
+    {
+      "name": "onReorder",
+      "payload": "(items: DragDropListItem[]) => void"
+    }
+  ],
+  "defaults": {
+    "zoneId": "'list'"
+  },
+  "keyboard": {}
+}
