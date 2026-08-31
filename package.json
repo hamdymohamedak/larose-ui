@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "turbo run build",
-    "dev": "turbo run dev",
+    "dev": "pnpm --filter @larose-ui/playground dev",
     "test": "turbo run test",
     "lint": "eslint packages/*/src apps/*/src --max-warnings 0",
     "typecheck": "turbo run typecheck",

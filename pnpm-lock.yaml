@@ -154,6 +154,9 @@ importers:
       '@larose-ui/ai':
         specifier: workspace:*
         version: link:../../packages/ai
+      '@larose-ui/core':
+        specifier: workspace:*
+        version: link:../../packages/core
       '@larose-ui/data':
         specifier: workspace:*
         version: link:../../packages/data
@@ -178,15 +181,30 @@ importers:
       '@larose-ui/runtime':
         specifier: workspace:*
         version: link:../../packages/runtime
+      '@larose-ui/styles':
+        specifier: workspace:*
+        version: link:../../packages/styles
+      '@larose-ui/svelte':
+        specifier: workspace:*
+        version: link:../../packages/svelte
       '@larose-ui/tokens':
         specifier: workspace:*
         version: link:../../packages/tokens
+      '@larose-ui/vue':
+        specifier: workspace:*
+        version: link:../../packages/vue
       react:
         specifier: ^19.0.0
         version: 19.2.8
       react-dom:
         specifier: ^19.0.0
         version: 19.2.8(react@19.2.8)
+      svelte:
+        specifier: ^5.19.0
+        version: 5.57.0(@typescript-eslint/types@8.68.0)
+      vue:
+        specifier: ^3.5.13
+        version: 3.5.42(typescript@5.9.3)
     devDependencies:
       '@storybook/addon-essentials':
         specifier: ^8.4.7
@@ -203,6 +221,12 @@ importers:
       '@storybook/test':
         specifier: ^8.4.7
         version: 8.6.15(storybook@8.6.18(prettier@3.9.6))
+      '@sveltejs/vite-plugin-svelte':
+        specifier: ^5.0.3
+        version: 5.1.1(svelte@5.57.0(@typescript-eslint/types@8.68.0))(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
+      '@vitejs/plugin-vue':
+        specifier: ^5.2.1
+        version: 5.2.4(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vue@3.5.42(typescript@5.9.3))
       storybook:
         specifier: ^8.4.7
         version: 8.6.18(prettier@3.9.6)

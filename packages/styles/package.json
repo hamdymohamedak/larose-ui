@@ -3,7 +3,14 @@
   "version": "0.1.1",
   "description": "Shared component styles for laRose UI — framework-agnostic CSS from the design system",
   "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
     "./styles.css": "./dist/styles.css",
     "./components/*": "./src/components/*"
   },
