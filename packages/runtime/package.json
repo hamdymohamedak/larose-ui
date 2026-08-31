@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/runtime",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Runtime providers for laRose UI platform — theme, i18n, network, offline, responsive",
   "type": "module",
   "main": "./dist/index.js",
@@ -37,7 +37,7 @@
     "@larose-ui/tokens": "workspace:*"
   },
   "peerDependencies": {
-    "@larose-ui/react": ">=0.1.1",
+    "@larose-ui/react": ">=0.1.2",
     "react": ">=18",
     "react-dom": ">=18"
   },

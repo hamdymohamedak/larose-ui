@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/accessibility",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Accessibility utilities and source scanners for laRose",
   "type": "module",
   "main": "./dist/index.js",
