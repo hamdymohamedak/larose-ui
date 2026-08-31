@@ -6,9 +6,9 @@ import {
   ButtonGroup,
   Card,
   Input,
-  LaRoseProvider,
   Typography,
 } from '@larose-ui/react';
+import { LaRoseProvider } from '@larose-ui/runtime';
 import { CodeBlock } from '@/components/CodeBlock';
 import { ModalPreview } from '@/previews/interactivePreviews';
 import { PreviewFrame } from '@/components/PreviewFrame';
@@ -33,7 +33,7 @@ export const mdxComponents: MDXComponents = {
   Input,
   LaRoseProvider,
   Typography,
-  pre: ({ children }) => <>{children}</>,
+  pre: ({ children }: { children?: ReactNode }) => <>{children}</>,
   code: MdxCode,
 };
 
