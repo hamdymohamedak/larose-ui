@@ -1,5 +1,12 @@
 # @larose-ui/cli
 
+## 0.1.2
+
+### Patch Changes
+
+- @larose-ui/accessibility@0.1.2
+- @larose-ui/contracts@0.1.2
+
 ## 0.1.1
 
 ### Patch Changes
