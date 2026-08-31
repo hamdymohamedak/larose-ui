@@ -34,7 +34,42 @@
       "inherited": false
     }
   ],
-  "examples": [],
+  "examples": [
+    {
+      "id": "NoEmployees",
+      "title": "No Employees",
+      "kind": "advanced",
+      "props": {
+        "title": "No employees found",
+        "description": "Get started by creating your first employee record.",
+        "actionLabel": "Add Employee"
+      },
+      "code": "<EmptyState\n  title=\"No employees found\"\n  description=\"Get started by creating your first employee record.\"\n  actionLabel=\"Add Employee\"\n>Example</EmptyState>"
+    },
+    {
+      "id": "Offline",
+      "title": "Offline",
+      "kind": "advanced",
+      "props": {
+        "title": "You are offline",
+        "description": "Changes will sync when you reconnect.",
+        "state": "offline"
+      },
+      "code": "<EmptyState\n  title=\"You are offline\"\n  description=\"Changes will sync when you reconnect.\"\n  state=\"offline\"\n>Example</EmptyState>"
+    },
+    {
+      "id": "Unauthorized",
+      "title": "Unauthorized",
+      "kind": "advanced",
+      "props": {
+        "title": "Access denied",
+        "description": "You don't have permission to view this resource.",
+        "state": "unauthorized",
+        "actionLabel": "Go back"
+      },
+      "code": "<EmptyState\n  title=\"Access denied\"\n  description=\"You don't have permission to view this resource.\"\n  state=\"unauthorized\"\n  actionLabel=\"Go back\"\n>Example</EmptyState>"
+    }
+  ],
   "accessibility": [],
   "anatomy": null,
   "playground": null

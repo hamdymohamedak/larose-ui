@@ -42,15 +42,31 @@
   ],
   "examples": [
     {
+      "id": "ProgressDefault",
+      "title": "Progress Default",
+      "kind": "basic",
+      "props": {},
+      "code": "<Progress value={65} label=\"Profile completion\" showValue />",
+      "composite": true
+    },
+    {
+      "id": "ProgressSuccess",
+      "title": "Progress Success",
+      "kind": "advanced",
+      "props": {},
+      "code": "<Progress value={100} label=\"Upload complete\" variant=\"success\" showValue />",
+      "composite": true
+    },
+    {
       "id": "Default",
       "title": "Default",
-      "kind": "advanced",
+      "kind": "basic",
       "props": {
         "value": 65,
         "label": "Profile completion",
         "showValue": true
       },
-      "code": "<Progress\n  value={65}\n  label=\"Profile completion\"\n  showValue\n>Example</Progress>"
+      "code": "<Progress\n  value={65}\n  label=\"Profile completion\"\n  showValue\n/>"
     },
     {
       "id": "Success",
@@ -62,19 +78,19 @@
         "variant": "success",
         "showValue": true
       },
-      "code": "<Progress\n  value={100}\n  label=\"Upload complete\"\n  variant=\"success\"\n  showValue\n>Example</Progress>"
+      "code": "<Progress\n  value={100}\n  label=\"Upload complete\"\n  variant=\"success\"\n  showValue\n/>"
     },
     {
       "id": "Error",
       "title": "Error",
-      "kind": "advanced",
+      "kind": "error",
       "props": {
         "value": 35,
         "label": "Sync failed",
         "variant": "error",
         "showValue": true
       },
-      "code": "<Progress\n  value={35}\n  label=\"Sync failed\"\n  variant=\"error\"\n  showValue\n>Example</Progress>"
+      "code": "<Progress\n  value={35}\n  label=\"Sync failed\"\n  variant=\"error\"\n  showValue\n/>"
     },
     {
       "id": "Loading",
@@ -86,7 +102,7 @@
         "showValue": true,
         "state": "loading"
       },
-      "code": "<Progress\n  value={45}\n  label=\"Importing employees\"\n  showValue\n  state=\"loading\"\n>Example</Progress>"
+      "code": "<Progress\n  value={45}\n  label=\"Importing employees\"\n  showValue\n  state=\"loading\"\n/>"
     }
   ],
   "accessibility": [

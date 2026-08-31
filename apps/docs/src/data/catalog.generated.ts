@@ -89,6 +89,16 @@ export const docsPackages: DocsPackageEntry[] = [
     ]
   },
   {
+    "id": "desktop-core",
+    "name": "@larose-ui/desktop-core",
+    "tagline": "Desktop host utilities — native menus, accelerators, window chrome.",
+    "example": "import { registerHost, mapMenuBarToNative } from '@larose-ui/desktop-core';",
+    "features": [
+      "Electron/Tauri host registration",
+      "Native menu mapping"
+    ]
+  },
+  {
     "id": "devtools",
     "name": "@larose-ui/devtools",
     "tagline": "In-app runtime inspector for development.",
@@ -98,6 +108,17 @@ export const docsPackages: DocsPackageEntry[] = [
       "Runtime context panel",
       "Event timeline",
       "Component inspector"
+    ]
+  },
+  {
+    "id": "electron",
+    "name": "@larose-ui/electron",
+    "tagline": "Electron adapter for laRose desktop apps.",
+    "peer": "electron >=28, react >=18",
+    "example": "import { LaRoseElectronRoot } from '@larose-ui/electron/client';",
+    "features": [
+      "Host bootstrap",
+      "Native menu templates"
     ]
   },
   {
@@ -146,6 +167,30 @@ export const docsPackages: DocsPackageEntry[] = [
     ]
   },
   {
+    "id": "next",
+    "name": "@larose-ui/next",
+    "tagline": "Next.js integration — SSR theme script and LaRoseRoot boundary.",
+    "peer": "next >=14, react >=18",
+    "example": "import { LaRoseRoot, createLaRoseThemeScriptContent } from '@larose-ui/next';",
+    "features": [
+      "SSR-safe providers",
+      "Theme bootstrap script",
+      "CSS path helpers"
+    ]
+  },
+  {
+    "id": "nuxt",
+    "name": "@larose-ui/nuxt",
+    "tagline": "Nuxt module for CSS injection, theme script, and Vue providers.",
+    "peer": "nuxt >=3.10",
+    "example": "export default defineNuxtConfig({ modules: ['@larose-ui/nuxt'] });",
+    "features": [
+      "Auto-imports",
+      "SSR theme script",
+      "LaRoseApp shell"
+    ]
+  },
+  {
     "id": "observability",
     "name": "@larose-ui/observability",
     "tagline": "UX observability — journeys, funnels, and rage-click analysis.",
@@ -180,11 +225,22 @@ export const docsPackages: DocsPackageEntry[] = [
     ]
   },
   {
+    "id": "primitives",
+    "name": "@larose-ui/primitives",
+    "tagline": "Headless menu keyboard, type-ahead, and accelerator behavior.",
+    "example": "import { handleMenuKeyboard } from '@larose-ui/primitives';",
+    "features": [
+      "Menu keyboard navigation",
+      "Type-ahead",
+      "Mnemonic bindings"
+    ]
+  },
+  {
     "id": "react",
     "name": "@larose-ui/react",
     "tagline": "Production-ready React components with built-in UI states.",
     "peer": "react >=18",
-    "example": "import { Button, Card, Input } from '@larose-ui/react';\nimport '@larose-ui/tokens/styles.css';\nimport '@larose-ui/react/styles.css';",
+    "example": "import { Button, Card, Input } from '@larose-ui/react';\nimport '@larose-ui/tokens/styles.css';\nimport '@larose-ui/styles/styles.css';\nimport '@larose-ui/react/styles.css';",
     "features": [
       "Form controls, overlays, navigation, data display",
       "Token-driven styling",
@@ -201,6 +257,50 @@ export const docsPackages: DocsPackageEntry[] = [
       "LaRoseProvider composes runtime contexts",
       "useRuntime, useSession, useTheme",
       "Toast subpath"
+    ]
+  },
+  {
+    "id": "runtime-core",
+    "name": "@larose-ui/runtime-core",
+    "tagline": "Framework-agnostic runtime store, host detection, and i18n.",
+    "example": "import { createRuntimeStore, detectHostEnvironment } from '@larose-ui/runtime-core';",
+    "features": [
+      "Runtime store",
+      "Host capabilities",
+      "Tenant and session bridges"
+    ]
+  },
+  {
+    "id": "styles",
+    "name": "@larose-ui/styles",
+    "tagline": "Framework-agnostic component CSS from the design system.",
+    "example": "import '@larose-ui/tokens/styles.css';\nimport '@larose-ui/styles/styles.css';",
+    "features": [
+      "CSS modules consumed by React, Vue, and Svelte",
+      "Single visual language"
+    ]
+  },
+  {
+    "id": "svelte",
+    "name": "@larose-ui/svelte",
+    "tagline": "Svelte 5 components with runes and shared laRose styles.",
+    "peer": "svelte >=5",
+    "example": "import { LaRoseProvider, Button } from '@larose-ui/svelte';\nimport '@larose-ui/tokens/styles.css';\nimport '@larose-ui/styles/styles.css';",
+    "features": [
+      "Svelte 5 runes",
+      "Shared design tokens",
+      "Foundation parity components"
+    ]
+  },
+  {
+    "id": "tauri",
+    "name": "@larose-ui/tauri",
+    "tagline": "Tauri adapter for laRose desktop webviews.",
+    "peer": "react >=18",
+    "example": "import { LaRoseTauriRoot } from '@larose-ui/tauri/client';",
+    "features": [
+      "Host bootstrap",
+      "Tauri menu helpers"
     ]
   },
   {
@@ -235,6 +335,18 @@ export const docsPackages: DocsPackageEntry[] = [
       "Density scaling",
       "Runtime CSS variables",
       "Tenant brand overrides"
+    ]
+  },
+  {
+    "id": "vue",
+    "name": "@larose-ui/vue",
+    "tagline": "Vue 3 components — thin adapter over shared styles and runtime-core.",
+    "peer": "vue >=3.5",
+    "example": "import { LaRoseProvider, Button, Input } from '@larose-ui/vue';\nimport '@larose-ui/tokens/styles.css';\nimport '@larose-ui/styles/styles.css';",
+    "features": [
+      "Foundation parity set with React",
+      "Composition API providers",
+      "Shared CSS modules"
     ]
   }
 ];
@@ -692,6 +804,31 @@ export const docsGuides: DocsGuideEntry[] = [
     "id": "architecture",
     "title": "Architecture",
     "file": "docs/architecture/ARCHITECTURE.md"
+  },
+  {
+    "id": "vue",
+    "title": "Vue 3",
+    "file": "docs/ecosystem/VUE.md"
+  },
+  {
+    "id": "svelte",
+    "title": "Svelte 5",
+    "file": "docs/ecosystem/SVELTE.md"
+  },
+  {
+    "id": "nextjs",
+    "title": "Next.js",
+    "file": "docs/ecosystem/NEXTJS.md"
+  },
+  {
+    "id": "nuxt",
+    "title": "Nuxt",
+    "file": "docs/ecosystem/NUXT.md"
+  },
+  {
+    "id": "desktop",
+    "title": "Desktop integration",
+    "file": "docs/ecosystem/DESKTOP.md"
   },
   {
     "id": "runtime",

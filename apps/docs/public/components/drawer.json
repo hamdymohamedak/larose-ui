@@ -70,7 +70,7 @@
       "title": "Right",
       "kind": "advanced",
       "props": {},
-      "code": "// See Storybook story \"Right\" for composite layout example.",
+      "code": "// See Storybook story \"Right\" for full example.",
       "composite": true
     },
     {
@@ -78,7 +78,15 @@
       "title": "Left",
       "kind": "advanced",
       "props": {},
-      "code": "// See Storybook story \"Left\" for composite layout example.",
+      "code": "// See Storybook story \"Left\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "DrawerMotion",
+      "title": "Drawer Motion",
+      "kind": "advanced",
+      "props": {},
+      "code": "<>\n        <Button onClick={() => setOpen(true)}>Open drawer</Button>\n        <Drawer open={open} onClose={() => setOpen(false)} title=\"Drawer\" side=\"right\">\n          <p>Slides in with gentle spring easing. Exit reverses naturally.</p>\n        </Drawer>\n      </>",
       "composite": true
     }
   ],

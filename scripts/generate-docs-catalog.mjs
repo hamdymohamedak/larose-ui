@@ -2,8 +2,8 @@ import { readFileSync, writeFileSync, mkdirSync, readdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { extractComponentApi } from './lib/extract-component-api.mjs';
-import { PLAYGROUND_CONTROLS, COMPONENT_ANATOMY, STORY_COMPONENT_MAP } from './lib/docs-metadata.mjs';
-import { parseStoryExamples } from './lib/parse-story-examples.mjs';
+import { PLAYGROUND_CONTROLS, COMPONENT_ANATOMY } from './lib/docs-metadata.mjs';
+import { buildStoryExamplesIndex } from './lib/parse-story-examples.mjs';
 import { buildSearchIndex, extractTokenSearchEntries } from './lib/build-search-index.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -43,8 +43,70 @@ const theme = createTheme({ preset: 'refined', colors: { primary: '#6C5CE7' } })
     peer: 'react >=18',
     example: `import { Button, Card, Input } from '@larose-ui/react';
 import '@larose-ui/tokens/styles.css';
+import '@larose-ui/styles/styles.css';
 import '@larose-ui/react/styles.css';`,
     features: ['Form controls, overlays, navigation, data display', 'Token-driven styling', 'Customization hooks'],
+  },
+  vue: {
+    tagline: 'Vue 3 components — thin adapter over shared styles and runtime-core.',
+    peer: 'vue >=3.5',
+    example: `import { LaRoseProvider, Button, Input } from '@larose-ui/vue';
+import '@larose-ui/tokens/styles.css';
+import '@larose-ui/styles/styles.css';`,
+    features: ['Foundation parity set with React', 'Composition API providers', 'Shared CSS modules'],
+  },
+  svelte: {
+    tagline: 'Svelte 5 components with runes and shared laRose styles.',
+    peer: 'svelte >=5',
+    example: `import { LaRoseProvider, Button } from '@larose-ui/svelte';
+import '@larose-ui/tokens/styles.css';
+import '@larose-ui/styles/styles.css';`,
+    features: ['Svelte 5 runes', 'Shared design tokens', 'Foundation parity components'],
+  },
+  styles: {
+    tagline: 'Framework-agnostic component CSS from the design system.',
+    example: `import '@larose-ui/tokens/styles.css';
+import '@larose-ui/styles/styles.css';`,
+    features: ['CSS modules consumed by React, Vue, and Svelte', 'Single visual language'],
+  },
+  'runtime-core': {
+    tagline: 'Framework-agnostic runtime store, host detection, and i18n.',
+    example: `import { createRuntimeStore, detectHostEnvironment } from '@larose-ui/runtime-core';`,
+    features: ['Runtime store', 'Host capabilities', 'Tenant and session bridges'],
+  },
+  primitives: {
+    tagline: 'Headless menu keyboard, type-ahead, and accelerator behavior.',
+    example: `import { handleMenuKeyboard } from '@larose-ui/primitives';`,
+    features: ['Menu keyboard navigation', 'Type-ahead', 'Mnemonic bindings'],
+  },
+  next: {
+    tagline: 'Next.js integration — SSR theme script and LaRoseRoot boundary.',
+    peer: 'next >=14, react >=18',
+    example: `import { LaRoseRoot, createLaRoseThemeScriptContent } from '@larose-ui/next';`,
+    features: ['SSR-safe providers', 'Theme bootstrap script', 'CSS path helpers'],
+  },
+  nuxt: {
+    tagline: 'Nuxt module for CSS injection, theme script, and Vue providers.',
+    peer: 'nuxt >=3.10',
+    example: `export default defineNuxtConfig({ modules: ['@larose-ui/nuxt'] });`,
+    features: ['Auto-imports', 'SSR theme script', 'LaRoseApp shell'],
+  },
+  'desktop-core': {
+    tagline: 'Desktop host utilities — native menus, accelerators, window chrome.',
+    example: `import { registerHost, mapMenuBarToNative } from '@larose-ui/desktop-core';`,
+    features: ['Electron/Tauri host registration', 'Native menu mapping'],
+  },
+  electron: {
+    tagline: 'Electron adapter for laRose desktop apps.',
+    peer: 'electron >=28, react >=18',
+    example: `import { LaRoseElectronRoot } from '@larose-ui/electron/client';`,
+    features: ['Host bootstrap', 'Native menu templates'],
+  },
+  tauri: {
+    tagline: 'Tauri adapter for laRose desktop webviews.',
+    peer: 'react >=18',
+    example: `import { LaRoseTauriRoot } from '@larose-ui/tauri/client';`,
+    features: ['Host bootstrap', 'Tauri menu helpers'],
   },
   network: {
     tagline: 'Network condition detection for adaptive UI.',
@@ -155,6 +217,11 @@ renderWithLaRose(<App />, { permissions: ['app.read'] });`,
 
 const GUIDES = [
   { id: 'architecture', title: 'Architecture', file: 'docs/architecture/ARCHITECTURE.md' },
+  { id: 'vue', title: 'Vue 3', file: 'docs/ecosystem/VUE.md' },
+  { id: 'svelte', title: 'Svelte 5', file: 'docs/ecosystem/SVELTE.md' },
+  { id: 'nextjs', title: 'Next.js', file: 'docs/ecosystem/NEXTJS.md' },
+  { id: 'nuxt', title: 'Nuxt', file: 'docs/ecosystem/NUXT.md' },
+  { id: 'desktop', title: 'Desktop integration', file: 'docs/ecosystem/DESKTOP.md' },
   { id: 'runtime', title: 'Runtime', file: 'docs/runtime/RUNTIME_2.md' },
   { id: 'customization', title: 'Customization', file: 'docs/design/CUSTOMIZATION.md' },
   { id: 'motion', title: 'Motion system', file: 'docs/design/MOTION_SYSTEM.md' },
@@ -239,13 +306,10 @@ const componentNameList = components.map((component) => component.name);
 const api = extractComponentApi(root, componentNameList);
 
 /** @type {Record<string, import('./lib/docs-types.mjs').DocsExampleEntry[]>} */
-const examples = {};
+const examples = buildStoryExamplesIndex(root, componentNameList);
 for (const name of Object.keys(PLAYGROUND_CONTROLS)) {
-  examples[name] = parseStoryExamples(root, name);
-}
-for (const name of Object.keys(STORY_COMPONENT_MAP)) {
   if (!examples[name]?.length) {
-    examples[name] = parseStoryExamples(root, name);
+    examples[name] = buildStoryExamplesIndex(root, [name])[name] ?? [];
   }
 }
 
@@ -399,6 +463,7 @@ export interface DocsExampleEntry {
   props: Record<string, string | number | boolean>;
   code: string;
   composite?: boolean;
+  component?: string;
 }
 
 export const docsExamples: Record<string, DocsExampleEntry[]> = ${JSON.stringify(examples, null, 2)};
@@ -422,7 +487,7 @@ export interface DocsSearchEntry {
   excerpt: string;
 }
 
-export const docsSearchIndex: DocsSearchEntry[] = ${JSON.stringify(searchIndex, null, 2)};
+export const docsSearchIndex = ${JSON.stringify(searchIndex, null, 2)} as unknown as DocsSearchEntry[];
 
 export interface TokenSearchEntry {
   name: string;

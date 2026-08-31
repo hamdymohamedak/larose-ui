@@ -57,14 +57,22 @@
   ],
   "examples": [
     {
+      "id": "PopoverAndTooltip",
+      "title": "Popover And Tooltip",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"PopoverAndTooltip\" for full example.",
+      "composite": true
+    },
+    {
       "id": "Default",
       "title": "Default",
-      "kind": "advanced",
+      "kind": "basic",
       "props": {
-        "trigger": "<Button variant=\"outline\">Show info</Button>",
-        "content": "("
+        "margin": 0,
+        "maxWidth": 220
       },
-      "code": "<Popover\n  trigger=\"<Button variant=\"outline\">Show info</Button>\"\n  content=\"(\"\n>Example</Popover>"
+      "code": "<Popover\n  margin={0}\n  maxWidth={220}\n>Example</Popover>"
     },
     {
       "id": "Top",
@@ -72,17 +80,16 @@
       "kind": "advanced",
       "props": {
         "side": "top",
-        "trigger": "<Button variant=\"secondary\">Top popover</Button>",
-        "content": "<p style={{ margin: 0"
+        "margin": 0
       },
-      "code": "<Popover\n  side=\"top\"\n  trigger=\"<Button variant=\"secondary\">Top popover</Button>\"\n  content=\"<p style={{ margin: 0\"\n>Example</Popover>"
+      "code": "<Popover\n  side=\"top\"\n  margin={0}\n>Example</Popover>"
     },
     {
       "id": "WithActions",
       "title": "With Actions",
       "kind": "advanced",
       "props": {},
-      "code": "// See Storybook story \"WithActions\" for composite layout example.",
+      "code": "// See Storybook story \"WithActions\" for full example.",
       "composite": true
     }
   ],

@@ -30,7 +30,16 @@
       "inherited": false
     }
   ],
-  "examples": [],
+  "examples": [
+    {
+      "id": "ColumnViewBrowser",
+      "title": "Column View Browser",
+      "kind": "advanced",
+      "props": {},
+      "code": "<ColumnView data={hierarchy} initialPath={['icloud', 'design']} />",
+      "composite": true
+    }
+  ],
   "accessibility": [
     "Supports ARIA attributes via standard HTML element props."
   ],

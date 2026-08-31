@@ -120,7 +120,7 @@ export function App() {
           <Card title="Live preview" padding="md">
             <Typography muted>Apple-inspired by default. Fully customizable by architecture.</Typography>
             <Input label="Workspace name" defaultValue="Acme HR" />
-            <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.75rem' }}>
+            <div className="docs-action-row">
               <Button>Primary action</Button>
               <Button variant="secondary">Secondary</Button>
             </div>

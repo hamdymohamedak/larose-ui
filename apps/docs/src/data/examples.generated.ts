@@ -7,27 +7,169 @@ export interface DocsExampleEntry {
   props: Record<string, string | number | boolean>;
   code: string;
   composite?: boolean;
+  component?: string;
 }
 
 export const docsExamples: Record<string, DocsExampleEntry[]> = {
+  "ActivityShareButton": [],
+  "ActivityView": [],
+  "Alert": [
+    {
+      "id": "Info",
+      "title": "Info",
+      "kind": "advanced",
+      "props": {
+        "variant": "info",
+        "title": "Information",
+        "children": "Payroll period closes in 3 days."
+      },
+      "code": "<Alert\n  variant=\"info\"\n  title=\"Information\"\n>Payroll period closes in 3 days.</Alert>"
+    },
+    {
+      "id": "Success",
+      "title": "Success",
+      "kind": "advanced",
+      "props": {
+        "variant": "success",
+        "title": "Saved",
+        "children": "Employee record updated successfully."
+      },
+      "code": "<Alert\n  variant=\"success\"\n  title=\"Saved\"\n>Employee record updated successfully.</Alert>"
+    },
+    {
+      "id": "Warning",
+      "title": "Warning",
+      "kind": "advanced",
+      "props": {
+        "variant": "warning",
+        "title": "Warning",
+        "children": "This action affects 12 employees."
+      },
+      "code": "<Alert\n  variant=\"warning\"\n  title=\"Warning\"\n>This action affects 12 employees.</Alert>"
+    },
+    {
+      "id": "Error",
+      "title": "Error",
+      "kind": "error",
+      "props": {
+        "variant": "error",
+        "title": "Error",
+        "children": "Unable to connect to payroll service."
+      },
+      "code": "<Alert\n  variant=\"error\"\n  title=\"Error\"\n>Unable to connect to payroll service.</Alert>"
+    },
+    {
+      "id": "Dismissible",
+      "title": "Dismissible",
+      "kind": "advanced",
+      "props": {
+        "variant": "info",
+        "children": "This notice can be dismissed."
+      },
+      "code": "<Alert\n  variant=\"info\"\n>This notice can be dismissed.</Alert>"
+    }
+  ],
+  "AlertDialog": [],
+  "AsyncButton": [],
+  "Badge": [
+    {
+      "id": "Default",
+      "title": "Default",
+      "kind": "basic",
+      "props": {
+        "children": "Draft"
+      },
+      "code": "<Badge>Draft</Badge>"
+    },
+    {
+      "id": "Info",
+      "title": "Info",
+      "kind": "advanced",
+      "props": {
+        "children": "Beta",
+        "variant": "info"
+      },
+      "code": "<Badge\n  variant=\"info\"\n>Beta</Badge>"
+    },
+    {
+      "id": "Success",
+      "title": "Success",
+      "kind": "advanced",
+      "props": {
+        "children": "Active",
+        "variant": "success"
+      },
+      "code": "<Badge\n  variant=\"success\"\n>Active</Badge>"
+    },
+    {
+      "id": "Warning",
+      "title": "Warning",
+      "kind": "advanced",
+      "props": {
+        "children": "Pending",
+        "variant": "warning"
+      },
+      "code": "<Badge\n  variant=\"warning\"\n>Pending</Badge>"
+    },
+    {
+      "id": "Error",
+      "title": "Error",
+      "kind": "error",
+      "props": {
+        "children": "Suspended",
+        "variant": "error"
+      },
+      "code": "<Badge\n  variant=\"error\"\n>Suspended</Badge>"
+    },
+    {
+      "id": "AllVariants",
+      "title": "All Variants",
+      "kind": "variants",
+      "props": {},
+      "code": "// See Storybook story \"AllVariants\" for full example.",
+      "composite": true
+    }
+  ],
+  "Box": [
+    {
+      "id": "BoxSecondary",
+      "title": "Box Secondary",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"BoxSecondary\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "BoxSettingsStyle",
+      "title": "Box Settings Style",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"BoxSettingsStyle\" for full example.",
+      "composite": true
+    }
+  ],
+  "Breadcrumb": [],
   "Button": [
     {
       "id": "Primary",
       "title": "Primary",
       "kind": "basic",
       "props": {
-        "children": "Add to Cart', variant: 'primary"
+        "children": "Add to Cart",
+        "variant": "primary"
       },
-      "code": "<Button>Add to Cart', variant: 'primary</Button>"
+      "code": "<Button\n  variant=\"primary\"\n>Add to Cart</Button>"
     },
     {
       "id": "Secondary",
       "title": "Secondary",
       "kind": "advanced",
       "props": {
-        "children": "Cancel', variant: 'secondary', buttonRole: 'cancel"
+        "children": "Cancel",
+        "variant": "secondary",
+        "buttonRole": "cancel"
       },
-      "code": "<Button>Cancel', variant: 'secondary', buttonRole: 'cancel</Button>"
+      "code": "<Button\n  variant=\"secondary\"\n  buttonRole=\"cancel\"\n>Cancel</Button>"
     },
     {
       "id": "Loading",
@@ -45,18 +187,20 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "title": "Disabled",
       "kind": "disabled",
       "props": {
-        "children": "'Unavailable', disabled: true"
+        "children": "Unavailable",
+        "disabled": true
       },
-      "code": "<Button>'Unavailable', disabled: true</Button>"
+      "code": "<Button\n  disabled\n>Unavailable</Button>"
     },
     {
       "id": "DestructiveFilled",
       "title": "Destructive Filled",
       "kind": "destructive",
       "props": {
-        "children": "Delete Employee', variant: 'destructive"
+        "children": "Delete Employee",
+        "variant": "destructive"
       },
-      "code": "<Button>Delete Employee', variant: 'destructive</Button>"
+      "code": "<Button\n  variant=\"destructive\"\n>Delete Employee</Button>"
     },
     {
       "id": "DestructivePlain",
@@ -86,7 +230,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "title": "Icon Only",
       "kind": "with-icon",
       "props": {},
-      "code": "// See Storybook story \"IconOnly\" for composite layout example.",
+      "code": "// See Storybook story \"IconOnly\" for full example.",
       "composite": true
     },
     {
@@ -94,7 +238,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "title": "Style, not size",
       "kind": "sizes",
       "props": {},
-      "code": "// See Storybook story \"StyleNotSize\" for composite layout example.",
+      "code": "// See Storybook story \"StyleNotSize\" for full example.",
       "composite": true
     },
     {
@@ -102,7 +246,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "title": "Alert Actions",
       "kind": "advanced",
       "props": {},
-      "code": "// See Storybook story \"AlertActions\" for composite layout example.",
+      "code": "// See Storybook story \"AlertActions\" for full example.",
       "composite": true
     },
     {
@@ -110,7 +254,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "title": "visionOS vertical stack",
       "kind": "advanced",
       "props": {},
-      "code": "// See Storybook story \"VisionOSStack\" for composite layout example.",
+      "code": "// See Storybook story \"VisionOSStack\" for full example.",
       "composite": true
     },
     {
@@ -118,71 +262,119 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "title": "watchOS full width",
       "kind": "advanced",
       "props": {},
-      "code": "// See Storybook story \"WatchFullWidth\" for composite layout example.",
+      "code": "// See Storybook story \"WatchFullWidth\" for full example.",
       "composite": true
-    }
-  ],
-  "Input": [],
-  "Badge": [
-    {
-      "id": "Default",
-      "title": "Default",
-      "kind": "advanced",
-      "props": {
-        "children": "Draft"
-      },
-      "code": "<Badge>Draft</Badge>"
     },
     {
-      "id": "Info",
-      "title": "Info",
+      "id": "SquareButtons",
+      "title": "Square buttons (in-view)",
       "kind": "advanced",
-      "props": {
-        "children": "Beta', variant: 'info"
-      },
-      "code": "<Badge>Beta', variant: 'info</Badge>"
-    },
-    {
-      "id": "Success",
-      "title": "Success",
-      "kind": "advanced",
-      "props": {
-        "children": "Active', variant: 'success"
-      },
-      "code": "<Badge>Active', variant: 'success</Badge>"
-    },
-    {
-      "id": "Warning",
-      "title": "Warning",
-      "kind": "advanced",
-      "props": {
-        "children": "Pending', variant: 'warning"
-      },
-      "code": "<Badge>Pending', variant: 'warning</Badge>"
-    },
-    {
-      "id": "Error",
-      "title": "Error",
-      "kind": "advanced",
-      "props": {
-        "children": "Suspended', variant: 'error"
-      },
-      "code": "<Badge>Suspended', variant: 'error</Badge>"
+      "props": {},
+      "code": "// See Storybook story \"SquareButtons\" for full example.",
+      "composite": true
     },
     {
       "id": "AllVariants",
       "title": "All Variants",
       "kind": "variants",
       "props": {},
-      "code": "// See Storybook story \"AllVariants\" for composite layout example.",
+      "code": "// See Storybook story \"AllVariants\" for full example.",
       "composite": true
+    },
+    {
+      "id": "Sizes",
+      "title": "Sizes",
+      "kind": "sizes",
+      "props": {},
+      "code": "// See Storybook story \"Sizes\" for full example.",
+      "composite": true
+    }
+  ],
+  "ButtonGroup": [],
+  "Card": [
+    {
+      "id": "Default",
+      "title": "Default",
+      "kind": "basic",
+      "props": {
+        "title": "Employee Profile",
+        "description": "Manage employee information",
+        "children": "Ahmed Mohamed — Software Engineer"
+      },
+      "code": "<Card\n  title=\"Employee Profile\"\n  description=\"Manage employee information\"\n>Ahmed Mohamed — Software Engineer</Card>"
+    },
+    {
+      "id": "WithBadge",
+      "title": "With Badge",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"WithBadge\" for full example.",
+      "composite": true
+    }
+  ],
+  "Chart": [
+    {
+      "id": "BarChart",
+      "title": "Bar Chart",
+      "kind": "advanced",
+      "props": {
+        "mark": "bar",
+        "title": "Steps",
+        "subtitle": "You averaged 8,102 steps per day this week.",
+        "accessibilitySummary": "Bar chart showing daily steps for seven days. Highest on Thursday with 11,200 steps.",
+        "min": 0,
+        "tickCount": 4
+      },
+      "code": "<Chart\n  mark=\"bar\"\n  title=\"Steps\"\n  subtitle=\"You averaged 8,102 steps per day this week.\"\n  accessibilitySummary=\"Bar chart showing daily steps for seven days. Highest on Thursday with 11,200 steps.\"\n  min={0}\n  tickCount={4}\n>Example</Chart>"
+    },
+    {
+      "id": "LineChart",
+      "title": "Line Chart",
+      "kind": "advanced",
+      "props": {
+        "mark": "line",
+        "title": "Stock performance",
+        "subtitle": "Five-year trend for AAPL.",
+        "showPoints": true,
+        "interactive": true
+      },
+      "code": "<Chart\n  mark=\"line\"\n  title=\"Stock performance\"\n  subtitle=\"Five-year trend for AAPL.\"\n  showPoints\n  interactive\n>Example</Chart>"
+    },
+    {
+      "id": "PointChart",
+      "title": "Point Chart",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"PointChart\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "StackedBar",
+      "title": "Stacked Bar",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"StackedBar\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "FixedRange",
+      "title": "Fixed Range",
+      "kind": "advanced",
+      "props": {
+        "mark": "line",
+        "title": "Battery",
+        "subtitle": "Charge level over the last 24 hours.",
+        "x": "12a",
+        "y": 88
+      },
+      "code": "<Chart\n  mark=\"line\"\n  title=\"Battery\"\n  subtitle=\"Charge level over the last 24 hours.\"\n  x=\"12a\"\n  y={88}\n>Example</Chart>"
     }
   ],
   "Checkbox": [
     {
       "id": "Default",
       "title": "Default",
-      "kind": "advanced",
+      "kind": "basic",
       "props": {
         "label": "I agree to the terms"
       },
@@ -211,7 +403,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
     {
       "id": "WithError",
       "title": "With Error",
-      "kind": "advanced",
+      "kind": "error",
       "props": {
         "label": "I agree to the terms",
         "error": "You must accept the terms to continue"
@@ -227,13 +419,890 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "disabled": true
       },
       "code": "<Checkbox\n  label=\"Legacy feature access\"\n  disabled\n>Example</Checkbox>"
+    },
+    {
+      "id": "CheckboxDefault",
+      "title": "Checkbox Default",
+      "kind": "basic",
+      "props": {},
+      "code": "<Checkbox label=\"I agree to the terms\" hint=\"Required before submitting\" />",
+      "composite": true
     }
   ],
-  "Switch": [
+  "CollaborationButton": [
+    {
+      "id": "CollaborationButtonStory",
+      "title": "Collaboration Button",
+      "kind": "advanced",
+      "props": {},
+      "code": "<CollaborationButton collaborators={collaborators} />",
+      "composite": true
+    }
+  ],
+  "CollaborationPopover": [
+    {
+      "id": "CollaborationPopoverStory",
+      "title": "Collaboration Popover",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"CollaborationPopoverStory\" for full example.",
+      "composite": true
+    }
+  ],
+  "Collection": [
+    {
+      "id": "CollectionGrid",
+      "title": "Collection Grid",
+      "kind": "advanced",
+      "props": {},
+      "code": "<Collection items={photos} layout=\"grid\" columns={4} selectedId={selectedId} onSelect={(item) => setSelectedId(item.id)} />",
+      "composite": true
+    },
+    {
+      "id": "CollectionRow",
+      "title": "Collection Row",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"CollectionRow\" for full example.",
+      "composite": true
+    }
+  ],
+  "ColumnView": [
+    {
+      "id": "ColumnViewBrowser",
+      "title": "Column View Browser",
+      "kind": "advanced",
+      "props": {},
+      "code": "<ColumnView data={hierarchy} initialPath={['icloud', 'design']} />",
+      "composite": true
+    }
+  ],
+  "CommandPalette": [
+    {
+      "id": "CommandPaletteDefault",
+      "title": "Command Palette Default",
+      "kind": "basic",
+      "props": {},
+      "code": "<CommandPaletteDemo />",
+      "composite": true
+    }
+  ],
+  "ContextMenu": [],
+  "DataTable": [
+    {
+      "id": "DataTableDefault",
+      "title": "Data Table Default",
+      "kind": "basic",
+      "props": {},
+      "code": "// See Storybook story \"DataTableDefault\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "DataTableLoading",
+      "title": "Data Table Loading",
+      "kind": "loading",
+      "props": {},
+      "code": "// See Storybook story \"DataTableLoading\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "DataTableEmpty",
+      "title": "Data Table Empty",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"DataTableEmpty\" for full example.",
+      "composite": true
+    }
+  ],
+  "DatePicker": [
+    {
+      "id": "DatePickerDefault",
+      "title": "Date Picker Default",
+      "kind": "basic",
+      "props": {},
+      "code": "// See Storybook story \"DatePickerDefault\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "DatePickerError",
+      "title": "Date Picker Error",
+      "kind": "error",
+      "props": {},
+      "code": "// See Storybook story \"DatePickerError\" for full example.",
+      "composite": true
+    }
+  ],
+  "DateRangePicker": [
+    {
+      "id": "DateRangePickerDefault",
+      "title": "Date Range Picker Default",
+      "kind": "basic",
+      "props": {},
+      "code": "<DateRangeDemo />",
+      "composite": true
+    }
+  ],
+  "Dialog": [
+    {
+      "id": "ConfirmDelete",
+      "title": "Confirm Delete",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"ConfirmDelete\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "Loading",
+      "title": "Loading",
+      "kind": "loading",
+      "props": {
+        "open": true,
+        "title": "Saving Changes",
+        "description": "Please wait while we save your changes.",
+        "confirmLabel": "Save",
+        "loading": true
+      },
+      "code": "<Dialog\n  open\n  title=\"Saving Changes\"\n  description=\"Please wait while we save your changes.\"\n  confirmLabel=\"Save\"\n  loading\n>Example</Dialog>"
+    },
+    {
+      "id": "DialogMotion",
+      "title": "Dialog Motion",
+      "kind": "advanced",
+      "props": {},
+      "code": "<>\n        <Button onClick={() => setOpen(true)}>Open dialog</Button>\n        <Modal open={open} onClose={() => setOpen(false)} title=\"Motion dialog\">\n          <p style={{ margin: 0 }}>Subtle scale, fade, and vertical movement on enter and exit.</p>\n        </Modal>\n      </>",
+      "composite": true
+    }
+  ],
+  "DisclosureButton": [
+    {
+      "id": "DisclosureButtonStory",
+      "title": "Disclosure button",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"DisclosureButtonStory\" for full example.",
+      "composite": true
+    }
+  ],
+  "DisclosureTriangle": [
+    {
+      "id": "DisclosureTriangleStory",
+      "title": "Disclosure triangle",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"DisclosureTriangleStory\" for full example.",
+      "composite": true
+    }
+  ],
+  "DockBar": [],
+  "DockMenu": [],
+  "DocumentLauncher": [
+    {
+      "id": "DocumentLauncherStory",
+      "title": "Document Launcher Story",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"DocumentLauncherStory\" for full example.",
+      "composite": true
+    }
+  ],
+  "DocumentToolbar": [
+    {
+      "id": "DocumentToolbarStory",
+      "title": "Create & Open",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"DocumentToolbarStory\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "DocumentToolbar",
+      "title": "Document Toolbar",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"DocumentToolbar\" for full example.",
+      "composite": true
+    }
+  ],
+  "DragDropList": [],
+  "Draggable": [],
+  "Drawer": [
+    {
+      "id": "Right",
+      "title": "Right",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"Right\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "Left",
+      "title": "Left",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"Left\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "DrawerMotion",
+      "title": "Drawer Motion",
+      "kind": "advanced",
+      "props": {},
+      "code": "<>\n        <Button onClick={() => setOpen(true)}>Open drawer</Button>\n        <Drawer open={open} onClose={() => setOpen(false)} title=\"Drawer\" side=\"right\">\n          <p>Slides in with gentle spring easing. Exit reverses naturally.</p>\n        </Drawer>\n      </>",
+      "composite": true
+    }
+  ],
+  "DropZone": [],
+  "EditMenu": [],
+  "EditMenuSelection": [],
+  "EmptyState": [
+    {
+      "id": "NoEmployees",
+      "title": "No Employees",
+      "kind": "advanced",
+      "props": {
+        "title": "No employees found",
+        "description": "Get started by creating your first employee record.",
+        "actionLabel": "Add Employee"
+      },
+      "code": "<EmptyState\n  title=\"No employees found\"\n  description=\"Get started by creating your first employee record.\"\n  actionLabel=\"Add Employee\"\n>Example</EmptyState>"
+    },
+    {
+      "id": "Offline",
+      "title": "Offline",
+      "kind": "advanced",
+      "props": {
+        "title": "You are offline",
+        "description": "Changes will sync when you reconnect.",
+        "state": "offline"
+      },
+      "code": "<EmptyState\n  title=\"You are offline\"\n  description=\"Changes will sync when you reconnect.\"\n  state=\"offline\"\n>Example</EmptyState>"
+    },
+    {
+      "id": "Unauthorized",
+      "title": "Unauthorized",
+      "kind": "advanced",
+      "props": {
+        "title": "Access denied",
+        "description": "You don't have permission to view this resource.",
+        "state": "unauthorized",
+        "actionLabel": "Go back"
+      },
+      "code": "<EmptyState\n  title=\"Access denied\"\n  description=\"You don't have permission to view this resource.\"\n  state=\"unauthorized\"\n  actionLabel=\"Go back\"\n>Example</EmptyState>"
+    }
+  ],
+  "FileBrowser": [
+    {
+      "id": "FileBrowserStory",
+      "title": "File Browser Story",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"FileBrowserStory\" for full example.",
+      "composite": true
+    }
+  ],
+  "FilePreview": [],
+  "FileUpload": [
+    {
+      "id": "FileUploadDefault",
+      "title": "File Upload Default",
+      "kind": "basic",
+      "props": {},
+      "code": "// See Storybook story \"FileUploadDefault\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "ImportWithFileUpload",
+      "title": "Import With File Upload",
+      "kind": "loading",
+      "props": {},
+      "code": "// See Storybook story \"ImportWithFileUpload\" for full example.",
+      "composite": true
+    }
+  ],
+  "FormContinue": [],
+  "HelpButton": [],
+  "HomeScreenQuickActions": [
+    {
+      "id": "HomeScreenQuickActionsStory",
+      "title": "Home Screen quick actions",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"HomeScreenQuickActionsStory\" for full example.",
+      "composite": true
+    }
+  ],
+  "ImageButton": [
+    {
+      "id": "ImageButtonStory",
+      "title": "Image Button",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"ImageButtonStory\" for full example.",
+      "composite": true
+    }
+  ],
+  "ImageOverlay": [],
+  "ImageView": [],
+  "ImageWell": [
+    {
+      "id": "ImageWellStory",
+      "title": "Image Well",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"ImageWellStory\" for full example.",
+      "composite": true
+    }
+  ],
+  "Input": [
     {
       "id": "Default",
       "title": "Default",
+      "kind": "basic",
+      "props": {
+        "label": "Employee Name",
+        "placeholder": "Enter name"
+      },
+      "code": "<Input\n  label=\"Employee Name\"\n  placeholder=\"Enter name\"\n>Example</Input>"
+    },
+    {
+      "id": "WithHint",
+      "title": "With Hint",
       "kind": "advanced",
+      "props": {
+        "label": "Email",
+        "placeholder": "username@company.com",
+        "hint": "Work email address"
+      },
+      "code": "<Input\n  label=\"Email\"\n  placeholder=\"username@company.com\"\n  hint=\"Work email address\"\n>Example</Input>"
+    },
+    {
+      "id": "Required",
+      "title": "Required",
+      "kind": "advanced",
+      "props": {
+        "label": "Email",
+        "placeholder": "username@company.com",
+        "required": true
+      },
+      "code": "<Input\n  label=\"Email\"\n  placeholder=\"username@company.com\"\n  required\n>Example</Input>"
+    },
+    {
+      "id": "Validated",
+      "title": "Validated",
+      "kind": "advanced",
+      "props": {
+        "label": "Email",
+        "placeholder": "username@company.com",
+        "required": true,
+        "validateOn": "change"
+      },
+      "code": "<Input\n  label=\"Email\"\n  placeholder=\"username@company.com\"\n  required\n  validateOn=\"change\"\n>Example</Input>"
+    },
+    {
+      "id": "CurrencyFormat",
+      "title": "Currency Format",
+      "kind": "advanced",
+      "props": {
+        "label": "Salary",
+        "format": "currency",
+        "defaultValue": "85000",
+        "hint": "Formatted when the field loses focus"
+      },
+      "code": "<Input\n  label=\"Salary\"\n  format=\"currency\"\n  defaultValue=\"85000\"\n  hint=\"Formatted when the field loses focus\"\n>Example</Input>"
+    },
+    {
+      "id": "Secure",
+      "title": "Secure",
+      "kind": "advanced",
+      "props": {},
+      "code": "<SecureField label=\"Password\" required hint=\"Never prepopulated\" />",
+      "composite": true
+    },
+    {
+      "id": "Loading",
+      "title": "Loading",
+      "kind": "loading",
+      "props": {
+        "label": "Department",
+        "loading": true,
+        "placeholder": "Loading..."
+      },
+      "code": "<Input\n  label=\"Department\"\n  loading\n  placeholder=\"Loading...\"\n>Example</Input>"
+    },
+    {
+      "id": "Error",
+      "title": "Error",
+      "kind": "error",
+      "props": {
+        "label": "Salary",
+        "error": "Must be a positive number",
+        "defaultValue": "-100"
+      },
+      "code": "<Input\n  label=\"Salary\"\n  error=\"Must be a positive number\"\n  defaultValue=\"-100\"\n>Example</Input>"
+    },
+    {
+      "id": "Disabled",
+      "title": "Disabled",
+      "kind": "disabled",
+      "props": {
+        "label": "Employee ID",
+        "disabled": true,
+        "defaultValue": "EMP-001"
+      },
+      "code": "<Input\n  label=\"Employee ID\"\n  disabled\n  defaultValue=\"EMP-001\"\n>Example</Input>"
+    },
+    {
+      "id": "ReadOnly",
+      "title": "Read Only",
+      "kind": "advanced",
+      "props": {
+        "label": "Created At",
+        "readOnly": true,
+        "defaultValue": "2026-08-29"
+      },
+      "code": "<Input\n  label=\"Created At\"\n  readOnly\n  defaultValue=\"2026-08-29\"\n>Example</Input>"
+    }
+  ],
+  "Label": [
+    {
+      "id": "LabelImportance",
+      "title": "Label Importance",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"LabelImportance\" for full example.",
+      "composite": true
+    }
+  ],
+  "LaRoseProvider": [],
+  "List": [
+    {
+      "id": "FinderStyleList",
+      "title": "Finder Style List",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"FinderStyleList\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "ReorderableList",
+      "title": "Reorderable List",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"ReorderableList\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "GroupedList",
+      "title": "Grouped List",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"GroupedList\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "ListAccessories",
+      "title": "List Accessories",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"ListAccessories\" for full example.",
+      "composite": true
+    }
+  ],
+  "ListRow": [],
+  "ListSection": [],
+  "Lockup": [],
+  "Menu": [
+    {
+      "id": "MenuAlwaysOpen",
+      "title": "Menu (always open)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"MenuAlwaysOpen\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "AddMenu",
+      "title": "Add",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"AddMenu\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "SortMenu",
+      "title": "Sort",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"SortMenu\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "MoreMenu",
+      "title": "More (Notes)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"MoreMenu\" for full example.",
+      "composite": true
+    }
+  ],
+  "MenuBar": [
+    {
+      "id": "MenuBarGlobalShortcuts",
+      "title": "Menu bar (global shortcuts)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"MenuBarGlobalShortcuts\" for full example.",
+      "composite": true
+    }
+  ],
+  "MenuBarExtra": [],
+  "Modal": [
+    {
+      "id": "Default",
+      "title": "Default",
+      "kind": "basic",
+      "props": {},
+      "code": "// See Storybook story \"Default\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "WithoutDescription",
+      "title": "Without Description",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"WithoutDescription\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "NoOverlayClose",
+      "title": "No Overlay Close",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"NoOverlayClose\" for full example.",
+      "composite": true
+    }
+  ],
+  "MorePullDownButton": [],
+  "Ornament": [],
+  "OrnamentButton": [],
+  "OrnamentWindow": [],
+  "OutlineView": [
+    {
+      "id": "OutlineViewStory",
+      "title": "Outline view (legacy)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"OutlineViewStory\" for full example.",
+      "composite": true
+    }
+  ],
+  "OutlineViewToolbar": [],
+  "Pagination": [
+    {
+      "id": "PaginationDefault",
+      "title": "Pagination Default",
+      "kind": "basic",
+      "props": {},
+      "code": "<PaginationDemo />",
+      "composite": true
+    }
+  ],
+  "PathControl": [
+    {
+      "id": "PathControlStandard",
+      "title": "Path control (standard)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"PathControlStandard\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "PathControlPopup",
+      "title": "Path control (pop-up)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"PathControlPopup\" for full example.",
+      "composite": true
+    }
+  ],
+  "Popover": [
+    {
+      "id": "PopoverAndTooltip",
+      "title": "Popover And Tooltip",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"PopoverAndTooltip\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "Default",
+      "title": "Default",
+      "kind": "basic",
+      "props": {
+        "margin": 0,
+        "maxWidth": 220
+      },
+      "code": "<Popover\n  margin={0}\n  maxWidth={220}\n>Example</Popover>"
+    },
+    {
+      "id": "Top",
+      "title": "Top",
+      "kind": "advanced",
+      "props": {
+        "side": "top",
+        "margin": 0
+      },
+      "code": "<Popover\n  side=\"top\"\n  margin={0}\n>Example</Popover>"
+    },
+    {
+      "id": "WithActions",
+      "title": "With Actions",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"WithActions\" for full example.",
+      "composite": true
+    }
+  ],
+  "PopUpButton": [],
+  "Progress": [
+    {
+      "id": "ProgressDefault",
+      "title": "Progress Default",
+      "kind": "basic",
+      "props": {},
+      "code": "<Progress value={65} label=\"Profile completion\" showValue />",
+      "composite": true
+    },
+    {
+      "id": "ProgressSuccess",
+      "title": "Progress Success",
+      "kind": "advanced",
+      "props": {},
+      "code": "<Progress value={100} label=\"Upload complete\" variant=\"success\" showValue />",
+      "composite": true
+    },
+    {
+      "id": "Default",
+      "title": "Default",
+      "kind": "basic",
+      "props": {
+        "value": 65,
+        "label": "Profile completion",
+        "showValue": true
+      },
+      "code": "<Progress\n  value={65}\n  label=\"Profile completion\"\n  showValue\n/>"
+    },
+    {
+      "id": "Success",
+      "title": "Success",
+      "kind": "advanced",
+      "props": {
+        "value": 100,
+        "label": "Upload complete",
+        "variant": "success",
+        "showValue": true
+      },
+      "code": "<Progress\n  value={100}\n  label=\"Upload complete\"\n  variant=\"success\"\n  showValue\n/>"
+    },
+    {
+      "id": "Error",
+      "title": "Error",
+      "kind": "error",
+      "props": {
+        "value": 35,
+        "label": "Sync failed",
+        "variant": "error",
+        "showValue": true
+      },
+      "code": "<Progress\n  value={35}\n  label=\"Sync failed\"\n  variant=\"error\"\n  showValue\n/>"
+    },
+    {
+      "id": "Loading",
+      "title": "Loading",
+      "kind": "loading",
+      "props": {
+        "value": 45,
+        "label": "Importing employees",
+        "showValue": true,
+        "state": "loading"
+      },
+      "code": "<Progress\n  value={45}\n  label=\"Importing employees\"\n  showValue\n  state=\"loading\"\n/>"
+    }
+  ],
+  "PullDownButton": [],
+  "Radio": [
+    {
+      "id": "RadioGroup",
+      "title": "Radio Group",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"RadioGroup\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "Default",
+      "title": "plan",
+      "kind": "basic",
+      "props": {
+        "name": "plan",
+        "label": "Starter plan",
+        "value": "starter",
+        "defaultChecked": true
+      },
+      "code": "<Radio\n  name=\"plan\"\n  label=\"Starter plan\"\n  value=\"starter\"\n  defaultChecked\n>Example</Radio>"
+    },
+    {
+      "id": "WithHint",
+      "title": "plan",
+      "kind": "advanced",
+      "props": {
+        "name": "plan",
+        "label": "Pro plan",
+        "value": "pro",
+        "hint": "Includes advanced analytics"
+      },
+      "code": "<Radio\n  name=\"plan\"\n  label=\"Pro plan\"\n  value=\"pro\"\n  hint=\"Includes advanced analytics\"\n>Example</Radio>"
+    },
+    {
+      "id": "WithError",
+      "title": "plan",
+      "kind": "error",
+      "props": {
+        "name": "plan",
+        "label": "Enterprise plan",
+        "value": "enterprise",
+        "error": "Select a plan to continue"
+      },
+      "code": "<Radio\n  name=\"plan\"\n  label=\"Enterprise plan\"\n  value=\"enterprise\"\n  error=\"Select a plan to continue\"\n>Example</Radio>"
+    },
+    {
+      "id": "Disabled",
+      "title": "plan",
+      "kind": "disabled",
+      "props": {
+        "name": "plan",
+        "label": "Legacy plan",
+        "value": "legacy",
+        "disabled": true
+      },
+      "code": "<Radio\n  name=\"plan\"\n  label=\"Legacy plan\"\n  value=\"legacy\"\n  disabled\n>Example</Radio>"
+    },
+    {
+      "id": "Group",
+      "title": "Group",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"Group\" for full example.",
+      "composite": true
+    }
+  ],
+  "SecureField": [],
+  "Select": [
+    {
+      "id": "SelectableLabel",
+      "title": "Selectable Label",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"SelectableLabel\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "SelectDefault",
+      "title": "Select Default",
+      "kind": "basic",
+      "props": {},
+      "code": "// See Storybook story \"SelectDefault\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "Default",
+      "title": "Default",
+      "kind": "basic",
+      "props": {
+        "label": "Department",
+        "placeholder": "Choose a department"
+      },
+      "code": "<Select\n  label=\"Department\"\n  placeholder=\"Choose a department\"\n>Example</Select>"
+    },
+    {
+      "id": "WithHint",
+      "title": "With Hint",
+      "kind": "advanced",
+      "props": {
+        "label": "Department",
+        "hint": "Used for org chart and permissions"
+      },
+      "code": "<Select\n  label=\"Department\"\n  hint=\"Used for org chart and permissions\"\n>Example</Select>"
+    },
+    {
+      "id": "Required",
+      "title": "Required",
+      "kind": "advanced",
+      "props": {
+        "label": "Department",
+        "required": true
+      },
+      "code": "<Select\n  label=\"Department\"\n  required\n>Example</Select>"
+    },
+    {
+      "id": "Loading",
+      "title": "Loading",
+      "kind": "loading",
+      "props": {
+        "label": "Department",
+        "loading": true
+      },
+      "code": "<Select\n  label=\"Department\"\n  loading\n>Example</Select>"
+    },
+    {
+      "id": "WithError",
+      "title": "With Error",
+      "kind": "error",
+      "props": {
+        "label": "Department",
+        "error": "Department is required"
+      },
+      "code": "<Select\n  label=\"Department\"\n  error=\"Department is required\"\n>Example</Select>"
+    },
+    {
+      "id": "Disabled",
+      "title": "Disabled",
+      "kind": "disabled",
+      "props": {
+        "label": "Department",
+        "disabled": true,
+        "defaultValue": "eng"
+      },
+      "code": "<Select\n  label=\"Department\"\n  disabled\n  defaultValue=\"eng\"\n>Example</Select>"
+    }
+  ],
+  "Skeleton": [
+    {
+      "id": "Text",
+      "title": "Text",
+      "kind": "advanced",
+      "props": {
+        "width": 200
+      },
+      "code": "<Skeleton\n  width={200}\n/>"
+    }
+  ],
+  "Spinner": [],
+  "SplitViewToolbar": [],
+  "SquareButton": [],
+  "Switch": [
+    {
+      "id": "SwitchDefault",
+      "title": "Switch Default",
+      "kind": "basic",
+      "props": {},
+      "code": "<Switch label=\"Email notifications\" defaultChecked hint=\"Receive product updates\" />",
+      "composite": true
+    },
+    {
+      "id": "Default",
+      "title": "Default",
+      "kind": "basic",
       "props": {
         "label": "Email notifications"
       },
@@ -274,243 +1343,33 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "title": "Settings Style",
       "kind": "advanced",
       "props": {},
-      "code": "// See Storybook story \"SettingsStyle\" for composite layout example.",
+      "code": "// See Storybook story \"SettingsStyle\" for full example.",
       "composite": true
     }
   ],
-  "Progress": [
+  "Table": [
     {
-      "id": "Default",
-      "title": "Default",
-      "kind": "advanced",
-      "props": {
-        "value": 65,
-        "label": "Profile completion",
-        "showValue": true
-      },
-      "code": "<Progress\n  value={65}\n  label=\"Profile completion\"\n  showValue\n>Example</Progress>"
-    },
-    {
-      "id": "Success",
-      "title": "Success",
-      "kind": "advanced",
-      "props": {
-        "value": 100,
-        "label": "Upload complete",
-        "variant": "success",
-        "showValue": true
-      },
-      "code": "<Progress\n  value={100}\n  label=\"Upload complete\"\n  variant=\"success\"\n  showValue\n>Example</Progress>"
-    },
-    {
-      "id": "Error",
-      "title": "Error",
-      "kind": "advanced",
-      "props": {
-        "value": 35,
-        "label": "Sync failed",
-        "variant": "error",
-        "showValue": true
-      },
-      "code": "<Progress\n  value={35}\n  label=\"Sync failed\"\n  variant=\"error\"\n  showValue\n>Example</Progress>"
-    },
-    {
-      "id": "Loading",
-      "title": "Loading",
-      "kind": "loading",
-      "props": {
-        "value": 45,
-        "label": "Importing employees",
-        "showValue": true,
-        "state": "loading"
-      },
-      "code": "<Progress\n  value={45}\n  label=\"Importing employees\"\n  showValue\n  state=\"loading\"\n>Example</Progress>"
-    }
-  ],
-  "Alert": [],
-  "Card": [],
-  "Select": [
-    {
-      "id": "Default",
-      "title": "Default",
-      "kind": "advanced",
-      "props": {
-        "label": "Department",
-        "options": "departmentOptions",
-        "placeholder": "Choose a department"
-      },
-      "code": "<Select\n  label=\"Department\"\n  options=\"departmentOptions\"\n  placeholder=\"Choose a department\"\n>Example</Select>"
-    },
-    {
-      "id": "WithHint",
-      "title": "With Hint",
-      "kind": "advanced",
-      "props": {
-        "label": "Department",
-        "options": "departmentOptions",
-        "hint": "Used for org chart and permissions"
-      },
-      "code": "<Select\n  label=\"Department\"\n  options=\"departmentOptions\"\n  hint=\"Used for org chart and permissions\"\n>Example</Select>"
-    },
-    {
-      "id": "Required",
-      "title": "Required",
-      "kind": "advanced",
-      "props": {
-        "label": "Department",
-        "options": "departmentOptions",
-        "required": true
-      },
-      "code": "<Select\n  label=\"Department\"\n  options=\"departmentOptions\"\n  required\n>Example</Select>"
-    },
-    {
-      "id": "Loading",
-      "title": "Loading",
-      "kind": "loading",
-      "props": {
-        "label": "Department",
-        "options": "departmentOptions",
-        "loading": true
-      },
-      "code": "<Select\n  label=\"Department\"\n  options=\"departmentOptions\"\n  loading\n>Example</Select>"
-    },
-    {
-      "id": "WithError",
-      "title": "With Error",
-      "kind": "advanced",
-      "props": {
-        "label": "Department",
-        "options": "departmentOptions",
-        "error": "Department is required"
-      },
-      "code": "<Select\n  label=\"Department\"\n  options=\"departmentOptions\"\n  error=\"Department is required\"\n>Example</Select>"
-    },
-    {
-      "id": "Disabled",
-      "title": "Disabled",
-      "kind": "disabled",
-      "props": {
-        "label": "Department",
-        "options": "departmentOptions",
-        "disabled": true,
-        "defaultValue": "eng"
-      },
-      "code": "<Select\n  label=\"Department\"\n  options=\"departmentOptions\"\n  disabled\n  defaultValue=\"eng\"\n>Example</Select>"
-    }
-  ],
-  "Typography": [],
-  "Modal": [
-    {
-      "id": "Default",
-      "title": "Default",
+      "id": "SortableTable",
+      "title": "Sortable Table",
       "kind": "advanced",
       "props": {},
-      "code": "// See Storybook story \"Default\" for composite layout example.",
+      "code": "// See Storybook story \"SortableTable\" for full example.",
       "composite": true
-    },
-    {
-      "id": "WithoutDescription",
-      "title": "Without Description",
-      "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"WithoutDescription\" for composite layout example.",
-      "composite": true
-    },
-    {
-      "id": "NoOverlayClose",
-      "title": "No Overlay Close",
-      "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"NoOverlayClose\" for composite layout example.",
-      "composite": true
-    }
-  ],
-  "Drawer": [
-    {
-      "id": "Right",
-      "title": "Right",
-      "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"Right\" for composite layout example.",
-      "composite": true
-    },
-    {
-      "id": "Left",
-      "title": "Left",
-      "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"Left\" for composite layout example.",
-      "composite": true
-    }
-  ],
-  "Popover": [
-    {
-      "id": "Default",
-      "title": "Default",
-      "kind": "advanced",
-      "props": {
-        "trigger": "<Button variant=\"outline\">Show info</Button>",
-        "content": "("
-      },
-      "code": "<Popover\n  trigger=\"<Button variant=\"outline\">Show info</Button>\"\n  content=\"(\"\n>Example</Popover>"
-    },
-    {
-      "id": "Top",
-      "title": "Top",
-      "kind": "advanced",
-      "props": {
-        "side": "top",
-        "trigger": "<Button variant=\"secondary\">Top popover</Button>",
-        "content": "<p style={{ margin: 0"
-      },
-      "code": "<Popover\n  side=\"top\"\n  trigger=\"<Button variant=\"secondary\">Top popover</Button>\"\n  content=\"<p style={{ margin: 0\"\n>Example</Popover>"
-    },
-    {
-      "id": "WithActions",
-      "title": "With Actions",
-      "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"WithActions\" for composite layout example.",
-      "composite": true
-    }
-  ],
-  "Tooltip": [
-    {
-      "id": "Default",
-      "title": "Default",
-      "kind": "advanced",
-      "props": {
-        "content": "Export employees as CSV",
-        "children": "<Button variant=\"outline\">Export</Button>"
-      },
-      "code": "<Tooltip\n  content=\"Export employees as CSV\"\n><Button variant=\"outline\">Export</Button></Tooltip>"
-    },
-    {
-      "id": "OnText",
-      "title": "On Text",
-      "kind": "advanced",
-      "props": {
-        "content": "Last updated 2 hours ago",
-        "children": "<span style={{ textDecoration: 'underline dotted'"
-      },
-      "code": "<Tooltip\n  content=\"Last updated 2 hours ago\"\n><span style={{ textDecoration: 'underline dotted'</Tooltip>"
-    },
-    {
-      "id": "LongContent",
-      "title": "Long Content",
-      "kind": "advanced",
-      "props": {
-        "content": "Keyboard shortcut: ⌘ + Shift + E",
-        "children": "<Button variant=\"secondary\">Quick export</Button>"
-      },
-      "code": "<Tooltip\n  content=\"Keyboard shortcut: ⌘ + Shift + E\"\n><Button variant=\"secondary\">Quick export</Button></Tooltip>"
     }
   ],
   "Textarea": [
     {
+      "id": "TextareaDefault",
+      "title": "Textarea Default",
+      "kind": "basic",
+      "props": {},
+      "code": "<Textarea label=\"Description\" placeholder=\"Enter details...\" />",
+      "composite": true
+    },
+    {
       "id": "Default",
       "title": "Default",
-      "kind": "advanced",
+      "kind": "basic",
       "props": {
         "label": "Description",
         "placeholder": "Enter details..."
@@ -542,7 +1401,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
     {
       "id": "WithError",
       "title": "With Error",
-      "kind": "advanced",
+      "kind": "error",
       "props": {
         "label": "Description",
         "defaultValue": "Too short",
@@ -562,64 +1421,88 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "code": "<Textarea\n  label=\"Archived notes\"\n  defaultValue=\"This record is read-only.\"\n  disabled\n>Example</Textarea>"
     }
   ],
-  "Radio": [
+  "TextView": [],
+  "TimePicker": [
     {
-      "id": "Default",
-      "title": "plan",
-      "kind": "advanced",
-      "props": {
-        "name": "plan",
-        "label": "Starter plan",
-        "value": "starter",
-        "defaultChecked": true
-      },
-      "code": "<Radio\n  name=\"plan\"\n  label=\"Starter plan\"\n  value=\"starter\"\n  defaultChecked\n>Example</Radio>"
-    },
-    {
-      "id": "WithHint",
-      "title": "plan",
-      "kind": "advanced",
-      "props": {
-        "name": "plan",
-        "label": "Pro plan",
-        "value": "pro",
-        "hint": "Includes advanced analytics"
-      },
-      "code": "<Radio\n  name=\"plan\"\n  label=\"Pro plan\"\n  value=\"pro\"\n  hint=\"Includes advanced analytics\"\n>Example</Radio>"
-    },
-    {
-      "id": "WithError",
-      "title": "plan",
-      "kind": "advanced",
-      "props": {
-        "name": "plan",
-        "label": "Enterprise plan",
-        "value": "enterprise",
-        "error": "Select a plan to continue"
-      },
-      "code": "<Radio\n  name=\"plan\"\n  label=\"Enterprise plan\"\n  value=\"enterprise\"\n  error=\"Select a plan to continue\"\n>Example</Radio>"
-    },
-    {
-      "id": "Disabled",
-      "title": "plan",
-      "kind": "disabled",
-      "props": {
-        "name": "plan",
-        "label": "Legacy plan",
-        "value": "legacy",
-        "disabled": true
-      },
-      "code": "<Radio\n  name=\"plan\"\n  label=\"Legacy plan\"\n  value=\"legacy\"\n  disabled\n>Example</Radio>"
-    },
-    {
-      "id": "Group",
-      "title": "Group",
-      "kind": "advanced",
+      "id": "TimePickerDefault",
+      "title": "Time Picker Default",
+      "kind": "basic",
       "props": {},
-      "code": "// See Storybook story \"Group\" for composite layout example.",
+      "code": "<TimePicker label=\"Meeting time\" value=\"09:30\" />",
       "composite": true
     }
-  ]
+  ],
+  "ToastProvider": [],
+  "TokenField": [
+    {
+      "id": "TokenFieldMail",
+      "title": "Token field (macOS Mail)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"TokenFieldMail\" for full example.",
+      "composite": true
+    }
+  ],
+  "Tooltip": [
+    {
+      "id": "ExpansionTooltip",
+      "title": "Expansion Tooltip",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"ExpansionTooltip\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "TooltipDefault",
+      "title": "Tooltip Default",
+      "kind": "basic",
+      "props": {},
+      "code": "// See Storybook story \"TooltipDefault\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "Default",
+      "title": "Default",
+      "kind": "basic",
+      "props": {
+        "content": "Export employees as CSV"
+      },
+      "code": "<Tooltip\n  content=\"Export employees as CSV\"\n>Example</Tooltip>"
+    },
+    {
+      "id": "OnText",
+      "title": "On Text",
+      "kind": "advanced",
+      "props": {
+        "content": "Last updated 2 hours ago",
+        "textDecoration": "underline dotted"
+      },
+      "code": "<Tooltip\n  content=\"Last updated 2 hours ago\"\n  textDecoration=\"underline dotted\"\n>Example</Tooltip>"
+    },
+    {
+      "id": "LongContent",
+      "title": "Long Content",
+      "kind": "advanced",
+      "props": {
+        "content": "Keyboard shortcut: ⌘ + Shift + E"
+      },
+      "code": "<Tooltip\n  content=\"Keyboard shortcut: ⌘ + Shift + E\"\n>Example</Tooltip>"
+    }
+  ],
+  "Typography": [
+    {
+      "id": "TypographyScale",
+      "title": "Typography Scale",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"TypographyScale\" for full example.",
+      "composite": true
+    }
+  ],
+  "UnsavedIndicator": [],
+  "WebView": [],
+  "WebViewNavigation": [],
+  "WebViewShell": []
 };
 
 export function getComponentExamples(name: string): DocsExampleEntry[] {

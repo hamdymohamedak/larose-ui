@@ -46,7 +46,16 @@
       "inherited": false
     }
   ],
-  "examples": [],
+  "examples": [
+    {
+      "id": "PaginationDefault",
+      "title": "Pagination Default",
+      "kind": "basic",
+      "props": {},
+      "code": "<PaginationDemo />",
+      "composite": true
+    }
+  ],
   "accessibility": [
     "Supports ARIA attributes via standard HTML element props."
   ],

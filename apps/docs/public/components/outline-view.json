@@ -135,7 +135,16 @@
       "inherited": false
     }
   ],
-  "examples": [],
+  "examples": [
+    {
+      "id": "OutlineViewStory",
+      "title": "Outline view (legacy)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"OutlineViewStory\" for full example.",
+      "composite": true
+    }
+  ],
   "accessibility": [
     "Supports ARIA attributes via standard HTML element props."
   ],

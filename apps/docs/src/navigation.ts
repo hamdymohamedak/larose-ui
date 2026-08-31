@@ -16,61 +16,73 @@ export interface DocsNavSection {
   collapsible?: boolean;
 }
 
+// Framework guides that are hand-crafted — deduplicated from the catalog list
+const BUILTIN_GUIDE_IDS = new Set(['vue', 'svelte', 'nextjs', 'nuxt', 'desktop']);
+
 export const docsNavigation: DocsNavSection[] = [
+  // ── 1. Start here — visible, short, welcoming ──
   {
-    label: 'Introduction',
+    label: 'Start here',
     items: [
       { label: 'Overview', path: '/' },
       { label: 'Getting started', path: '/docs/getting-started' },
     ],
   },
+
+  // ── 2. Guides — frameworks + any catalog guides merged ──
   {
     label: 'Guides',
-    items: docsGuides.map((guide) => ({
-      label: guide.title,
-      path: `/docs/guides/${guide.id}`,
-    })),
+    items: [
+      { label: 'React', path: '/docs/getting-started' },
+      { label: 'Vue 3', path: '/docs/guides/vue' },
+      { label: 'Svelte 5', path: '/docs/guides/svelte' },
+      { label: 'Next.js', path: '/docs/guides/nextjs' },
+      { label: 'Nuxt', path: '/docs/guides/nuxt' },
+      { label: 'Desktop (Electron / Tauri)', path: '/docs/guides/desktop' },
+      ...docsGuides
+        .filter((g) => !BUILTIN_GUIDE_IDS.has(g.id))
+        .map((guide) => ({ label: guide.title, path: `/docs/guides/${guide.id}` })),
+    ],
   },
+
+  // ── 3. Design system ──
   {
     label: 'Design system',
     items: [
       { label: 'Theme builder', path: '/docs/design/theme-builder' },
       { label: 'Design tokens', path: '/docs/design/tokens' },
-      { label: 'Motion playground', path: '/docs/design/motion' },
-      { label: 'Playground', path: '/docs/playground' },
+      { label: 'Motion', path: '/docs/design/motion' },
     ],
   },
+
+  // ── 4. Components — collapsed, big list ──
   {
-    label: 'Platform',
+    label: 'Components',
     items: [
-      { label: 'Architecture', path: '/docs/architecture' },
-      { label: 'Accessibility', path: '/docs/accessibility' },
-      { label: 'Migration', path: '/docs/migration' },
-      { label: 'Changelog', path: '/changelog' },
+      { label: 'All components', path: '/docs/components' },
+      ...docsComponentCategories.flatMap((category) =>
+        docsComponents
+          .filter((entry) => entry.category === category)
+          .map((item) => ({ label: item.name, path: `/docs/components/${item.id}` })),
+      ),
     ],
+    collapsible: true,
   },
+
+  // ── 5. Reference — collapsed, for advanced / infrequent use ──
   {
-    label: 'Packages',
+    label: 'Reference',
     items: [
       { label: 'All packages', path: '/docs/packages' },
       ...docsPackages.map((pkg) => ({
         label: pkg.name.replace('@larose-ui/', ''),
         path: `/docs/packages/${pkg.id}`,
       })),
-    ],
-    collapsible: true,
-  },
-  {
-    label: 'Components',
-    items: [
-      { label: 'All components', path: '/docs/components' },
-      ...docsComponentCategories.flatMap((category) => {
-        const items = docsComponents.filter((entry) => entry.category === category);
-        return items.map((item) => ({
-          label: item.name,
-          path: `/docs/components/${item.id}`,
-        }));
-      }),
+      { label: 'Architecture', path: '/docs/architecture' },
+      { label: 'Accessibility', path: '/docs/accessibility' },
+      { label: 'Playground', path: '/docs/playground' },
+      { label: 'Migration', path: '/docs/migration' },
+      { label: 'Changelog', path: '/changelog' },
     ],
     collapsible: true,
   },

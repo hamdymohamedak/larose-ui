@@ -52,7 +52,37 @@
       "inherited": false
     }
   ],
-  "examples": [],
+  "examples": [
+    {
+      "id": "ConfirmDelete",
+      "title": "Confirm Delete",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"ConfirmDelete\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "Loading",
+      "title": "Loading",
+      "kind": "loading",
+      "props": {
+        "open": true,
+        "title": "Saving Changes",
+        "description": "Please wait while we save your changes.",
+        "confirmLabel": "Save",
+        "loading": true
+      },
+      "code": "<Dialog\n  open\n  title=\"Saving Changes\"\n  description=\"Please wait while we save your changes.\"\n  confirmLabel=\"Save\"\n  loading\n>Example</Dialog>"
+    },
+    {
+      "id": "DialogMotion",
+      "title": "Dialog Motion",
+      "kind": "advanced",
+      "props": {},
+      "code": "<>\n        <Button onClick={() => setOpen(true)}>Open dialog</Button>\n        <Modal open={open} onClose={() => setOpen(false)} title=\"Motion dialog\">\n          <p style={{ margin: 0 }}>Subtle scale, fade, and vertical movement on enter and exit.</p>\n        </Modal>\n      </>",
+      "composite": true
+    }
+  ],
   "accessibility": [
     "Supports ARIA attributes via standard HTML element props.",
     "Focus is managed while open; Escape typically closes the overlay."

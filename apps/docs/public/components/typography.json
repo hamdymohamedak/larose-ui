@@ -16,7 +16,16 @@
       "inherited": false
     }
   ],
-  "examples": [],
+  "examples": [
+    {
+      "id": "TypographyScale",
+      "title": "Typography Scale",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"TypographyScale\" for full example.",
+      "composite": true
+    }
+  ],
   "accessibility": [],
   "anatomy": null,
   "playground": {

@@ -24,7 +24,16 @@
       "inherited": false
     }
   ],
-  "examples": [],
+  "examples": [
+    {
+      "id": "CollaborationButtonStory",
+      "title": "Collaboration Button",
+      "kind": "advanced",
+      "props": {},
+      "code": "<CollaborationButton collaborators={collaborators} />",
+      "composite": true
+    }
+  ],
   "accessibility": [],
   "anatomy": null,
   "playground": null

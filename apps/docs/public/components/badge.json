@@ -14,7 +14,7 @@
     {
       "id": "Default",
       "title": "Default",
-      "kind": "advanced",
+      "kind": "basic",
       "props": {
         "children": "Draft"
       },
@@ -25,43 +25,47 @@
       "title": "Info",
       "kind": "advanced",
       "props": {
-        "children": "Beta', variant: 'info"
+        "children": "Beta",
+        "variant": "info"
       },
-      "code": "<Badge>Beta', variant: 'info</Badge>"
+      "code": "<Badge\n  variant=\"info\"\n>Beta</Badge>"
     },
     {
       "id": "Success",
       "title": "Success",
       "kind": "advanced",
       "props": {
-        "children": "Active', variant: 'success"
+        "children": "Active",
+        "variant": "success"
       },
-      "code": "<Badge>Active', variant: 'success</Badge>"
+      "code": "<Badge\n  variant=\"success\"\n>Active</Badge>"
     },
     {
       "id": "Warning",
       "title": "Warning",
       "kind": "advanced",
       "props": {
-        "children": "Pending', variant: 'warning"
+        "children": "Pending",
+        "variant": "warning"
       },
-      "code": "<Badge>Pending', variant: 'warning</Badge>"
+      "code": "<Badge\n  variant=\"warning\"\n>Pending</Badge>"
     },
     {
       "id": "Error",
       "title": "Error",
-      "kind": "advanced",
+      "kind": "error",
       "props": {
-        "children": "Suspended', variant: 'error"
+        "children": "Suspended",
+        "variant": "error"
       },
-      "code": "<Badge>Suspended', variant: 'error</Badge>"
+      "code": "<Badge\n  variant=\"error\"\n>Suspended</Badge>"
     },
     {
       "id": "AllVariants",
       "title": "All Variants",
       "kind": "variants",
       "props": {},
-      "code": "// See Storybook story \"AllVariants\" for composite layout example.",
+      "code": "// See Storybook story \"AllVariants\" for full example.",
       "composite": true
     }
   ],

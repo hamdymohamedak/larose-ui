@@ -50,7 +50,16 @@
       "inherited": false
     }
   ],
-  "examples": [],
+  "examples": [
+    {
+      "id": "TimePickerDefault",
+      "title": "Time Picker Default",
+      "kind": "basic",
+      "props": {},
+      "code": "<TimePicker label=\"Meeting time\" value=\"09:30\" />",
+      "composite": true
+    }
+  ],
   "accessibility": [],
   "anatomy": null,
   "playground": null

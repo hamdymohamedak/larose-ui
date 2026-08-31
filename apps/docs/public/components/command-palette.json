@@ -42,7 +42,16 @@
       "inherited": false
     }
   ],
-  "examples": [],
+  "examples": [
+    {
+      "id": "CommandPaletteDefault",
+      "title": "Command Palette Default",
+      "kind": "basic",
+      "props": {},
+      "code": "<CommandPaletteDemo />",
+      "composite": true
+    }
+  ],
   "accessibility": [
     "Supports ARIA attributes via standard HTML element props.",
     "Focus is managed while open; Escape typically closes the overlay."

@@ -56,7 +56,24 @@
       "inherited": false
     }
   ],
-  "examples": [],
+  "examples": [
+    {
+      "id": "FileUploadDefault",
+      "title": "File Upload Default",
+      "kind": "basic",
+      "props": {},
+      "code": "// See Storybook story \"FileUploadDefault\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "ImportWithFileUpload",
+      "title": "Import With File Upload",
+      "kind": "loading",
+      "props": {},
+      "code": "// See Storybook story \"ImportWithFileUpload\" for full example.",
+      "composite": true
+    }
+  ],
   "accessibility": [],
   "anatomy": null,
   "playground": null

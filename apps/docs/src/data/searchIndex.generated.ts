@@ -9,7 +9,7 @@ export interface DocsSearchEntry {
   excerpt: string;
 }
 
-export const docsSearchIndex: DocsSearchEntry[] = [
+export const docsSearchIndex = [
   {
     "id": "package:accessibility",
     "title": "@larose-ui/accessibility",
@@ -59,12 +59,28 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "excerpt": "Backend-aware data fetching with self-healing errors."
   },
   {
+    "id": "package:desktop-core",
+    "title": "@larose-ui/desktop-core",
+    "type": "package",
+    "path": "/docs/packages/desktop-core",
+    "keywords": "@larose-ui/desktop-core Desktop host utilities — native menus, accelerators, window chrome. Electron/Tauri host registration Native menu mapping",
+    "excerpt": "Desktop host utilities — native menus, accelerators, window chrome."
+  },
+  {
     "id": "package:devtools",
     "title": "@larose-ui/devtools",
     "type": "package",
     "path": "/docs/packages/devtools",
     "keywords": "@larose-ui/devtools In-app runtime inspector for development. Runtime context panel Event timeline Component inspector",
     "excerpt": "In-app runtime inspector for development."
+  },
+  {
+    "id": "package:electron",
+    "title": "@larose-ui/electron",
+    "type": "package",
+    "path": "/docs/packages/electron",
+    "keywords": "@larose-ui/electron Electron adapter for laRose desktop apps. Host bootstrap Native menu templates",
+    "excerpt": "Electron adapter for laRose desktop apps."
   },
   {
     "id": "package:enterprise",
@@ -99,6 +115,22 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "excerpt": "Network condition detection for adaptive UI."
   },
   {
+    "id": "package:next",
+    "title": "@larose-ui/next",
+    "type": "package",
+    "path": "/docs/packages/next",
+    "keywords": "@larose-ui/next Next.js integration — SSR theme script and LaRoseRoot boundary. SSR-safe providers Theme bootstrap script CSS path helpers",
+    "excerpt": "Next.js integration — SSR theme script and LaRoseRoot boundary."
+  },
+  {
+    "id": "package:nuxt",
+    "title": "@larose-ui/nuxt",
+    "type": "package",
+    "path": "/docs/packages/nuxt",
+    "keywords": "@larose-ui/nuxt Nuxt module for CSS injection, theme script, and Vue providers. Auto-imports SSR theme script LaRoseApp shell",
+    "excerpt": "Nuxt module for CSS injection, theme script, and Vue providers."
+  },
+  {
     "id": "package:observability",
     "title": "@larose-ui/observability",
     "type": "package",
@@ -123,6 +155,14 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "excerpt": "Authorization-aware UI with RBAC/ABAC patterns."
   },
   {
+    "id": "package:primitives",
+    "title": "@larose-ui/primitives",
+    "type": "package",
+    "path": "/docs/packages/primitives",
+    "keywords": "@larose-ui/primitives Headless menu keyboard, type-ahead, and accelerator behavior. Menu keyboard navigation Type-ahead Mnemonic bindings",
+    "excerpt": "Headless menu keyboard, type-ahead, and accelerator behavior."
+  },
+  {
     "id": "package:react",
     "title": "@larose-ui/react",
     "type": "package",
@@ -137,6 +177,38 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "path": "/docs/packages/runtime",
     "keywords": "@larose-ui/runtime Unified runtime — theme, i18n, permissions, network, and session. LaRoseProvider composes runtime contexts useRuntime, useSession, useTheme Toast subpath",
     "excerpt": "Unified runtime — theme, i18n, permissions, network, and session."
+  },
+  {
+    "id": "package:runtime-core",
+    "title": "@larose-ui/runtime-core",
+    "type": "package",
+    "path": "/docs/packages/runtime-core",
+    "keywords": "@larose-ui/runtime-core Framework-agnostic runtime store, host detection, and i18n. Runtime store Host capabilities Tenant and session bridges",
+    "excerpt": "Framework-agnostic runtime store, host detection, and i18n."
+  },
+  {
+    "id": "package:styles",
+    "title": "@larose-ui/styles",
+    "type": "package",
+    "path": "/docs/packages/styles",
+    "keywords": "@larose-ui/styles Framework-agnostic component CSS from the design system. CSS modules consumed by React, Vue, and Svelte Single visual language",
+    "excerpt": "Framework-agnostic component CSS from the design system."
+  },
+  {
+    "id": "package:svelte",
+    "title": "@larose-ui/svelte",
+    "type": "package",
+    "path": "/docs/packages/svelte",
+    "keywords": "@larose-ui/svelte Svelte 5 components with runes and shared laRose styles. Svelte 5 runes Shared design tokens Foundation parity components",
+    "excerpt": "Svelte 5 components with runes and shared laRose styles."
+  },
+  {
+    "id": "package:tauri",
+    "title": "@larose-ui/tauri",
+    "type": "package",
+    "path": "/docs/packages/tauri",
+    "keywords": "@larose-ui/tauri Tauri adapter for laRose desktop webviews. Host bootstrap Tauri menu helpers",
+    "excerpt": "Tauri adapter for laRose desktop webviews."
   },
   {
     "id": "package:testing",
@@ -161,6 +233,14 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "path": "/docs/packages/tokens",
     "keywords": "@larose-ui/tokens Runtime design tokens as CSS custom properties. Light and dark palettes Density scaling Runtime CSS variables Tenant brand overrides",
     "excerpt": "Runtime design tokens as CSS custom properties."
+  },
+  {
+    "id": "package:vue",
+    "title": "@larose-ui/vue",
+    "type": "package",
+    "path": "/docs/packages/vue",
+    "keywords": "@larose-ui/vue Vue 3 components — thin adapter over shared styles and runtime-core. Foundation parity set with React Composition API providers Shared CSS modules",
+    "excerpt": "Vue 3 components — thin adapter over shared styles and runtime-core."
   },
   {
     "id": "component:activity-share-button",
@@ -305,6 +385,46 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "path": "/docs/components/alert#api",
     "keywords": "Alert variant AlertVariant ",
     "excerpt": "AlertVariant"
+  },
+  {
+    "id": "example:alert:Info",
+    "title": "Alert — Info",
+    "type": "example",
+    "path": "/docs/components/alert#examples",
+    "keywords": "Alert Info advanced {\"variant\":\"info\",\"title\":\"Information\",\"children\":\"Payroll period closes in 3 days.\"}",
+    "excerpt": "<Alert\n  variant=\"info\"\n  title=\"Information\"\n>Payroll period closes in 3 days.</Alert>"
+  },
+  {
+    "id": "example:alert:Success",
+    "title": "Alert — Success",
+    "type": "example",
+    "path": "/docs/components/alert#examples",
+    "keywords": "Alert Success advanced {\"variant\":\"success\",\"title\":\"Saved\",\"children\":\"Employee record updated successfully.\"}",
+    "excerpt": "<Alert\n  variant=\"success\"\n  title=\"Saved\"\n>Employee record updated successfully.</Alert>"
+  },
+  {
+    "id": "example:alert:Warning",
+    "title": "Alert — Warning",
+    "type": "example",
+    "path": "/docs/components/alert#examples",
+    "keywords": "Alert Warning advanced {\"variant\":\"warning\",\"title\":\"Warning\",\"children\":\"This action affects 12 employees.\"}",
+    "excerpt": "<Alert\n  variant=\"warning\"\n  title=\"Warning\"\n>This action affects 12 employees.</Alert>"
+  },
+  {
+    "id": "example:alert:Error",
+    "title": "Alert — Error",
+    "type": "example",
+    "path": "/docs/components/alert#examples",
+    "keywords": "Alert Error error {\"variant\":\"error\",\"title\":\"Error\",\"children\":\"Unable to connect to payroll service.\"}",
+    "excerpt": "<Alert\n  variant=\"error\"\n  title=\"Error\"\n>Unable to connect to payroll service.</Alert>"
+  },
+  {
+    "id": "example:alert:Dismissible",
+    "title": "Alert — Dismissible",
+    "type": "example",
+    "path": "/docs/components/alert#examples",
+    "keywords": "Alert Dismissible advanced {\"variant\":\"info\",\"children\":\"This notice can be dismissed.\"}",
+    "excerpt": "<Alert\n  variant=\"info\"\n>This notice can be dismissed.</Alert>"
   },
   {
     "id": "component:alert-dialog",
@@ -479,7 +599,7 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "title": "Badge — Default",
     "type": "example",
     "path": "/docs/components/badge#examples",
-    "keywords": "Badge Default advanced {\"children\":\"Draft\"}",
+    "keywords": "Badge Default basic {\"children\":\"Draft\"}",
     "excerpt": "<Badge>Draft</Badge>"
   },
   {
@@ -487,32 +607,32 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "title": "Badge — Info",
     "type": "example",
     "path": "/docs/components/badge#examples",
-    "keywords": "Badge Info advanced {\"children\":\"Beta', variant: 'info\"}",
-    "excerpt": "<Badge>Beta', variant: 'info</Badge>"
+    "keywords": "Badge Info advanced {\"children\":\"Beta\",\"variant\":\"info\"}",
+    "excerpt": "<Badge\n  variant=\"info\"\n>Beta</Badge>"
   },
   {
     "id": "example:badge:Success",
     "title": "Badge — Success",
     "type": "example",
     "path": "/docs/components/badge#examples",
-    "keywords": "Badge Success advanced {\"children\":\"Active', variant: 'success\"}",
-    "excerpt": "<Badge>Active', variant: 'success</Badge>"
+    "keywords": "Badge Success advanced {\"children\":\"Active\",\"variant\":\"success\"}",
+    "excerpt": "<Badge\n  variant=\"success\"\n>Active</Badge>"
   },
   {
     "id": "example:badge:Warning",
     "title": "Badge — Warning",
     "type": "example",
     "path": "/docs/components/badge#examples",
-    "keywords": "Badge Warning advanced {\"children\":\"Pending', variant: 'warning\"}",
-    "excerpt": "<Badge>Pending', variant: 'warning</Badge>"
+    "keywords": "Badge Warning advanced {\"children\":\"Pending\",\"variant\":\"warning\"}",
+    "excerpt": "<Badge\n  variant=\"warning\"\n>Pending</Badge>"
   },
   {
     "id": "example:badge:Error",
     "title": "Badge — Error",
     "type": "example",
     "path": "/docs/components/badge#examples",
-    "keywords": "Badge Error advanced {\"children\":\"Suspended', variant: 'error\"}",
-    "excerpt": "<Badge>Suspended', variant: 'error</Badge>"
+    "keywords": "Badge Error error {\"children\":\"Suspended\",\"variant\":\"error\"}",
+    "excerpt": "<Badge\n  variant=\"error\"\n>Suspended</Badge>"
   },
   {
     "id": "example:badge:AllVariants",
@@ -520,7 +640,7 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "type": "example",
     "path": "/docs/components/badge#examples",
     "keywords": "Badge All Variants variants {}",
-    "excerpt": "// See Storybook story \"AllVariants\" for composite layout example."
+    "excerpt": "// See Storybook story \"AllVariants\" for full example."
   },
   {
     "id": "component:box",
@@ -569,6 +689,22 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "path": "/docs/components/box#api",
     "keywords": "Box variant BoxVariant ",
     "excerpt": "BoxVariant"
+  },
+  {
+    "id": "example:box:BoxSecondary",
+    "title": "Box — Box Secondary",
+    "type": "example",
+    "path": "/docs/components/box#examples",
+    "keywords": "Box Box Secondary advanced {}",
+    "excerpt": "// See Storybook story \"BoxSecondary\" for full example."
+  },
+  {
+    "id": "example:box:BoxSettingsStyle",
+    "title": "Box — Box Settings Style",
+    "type": "example",
+    "path": "/docs/components/box#examples",
+    "keywords": "Box Box Settings Style advanced {}",
+    "excerpt": "// See Storybook story \"BoxSettingsStyle\" for full example."
   },
   {
     "id": "component:breadcrumb",
@@ -727,16 +863,16 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "title": "Button — Primary",
     "type": "example",
     "path": "/docs/components/button#examples",
-    "keywords": "Button Primary basic {\"children\":\"Add to Cart', variant: 'primary\"}",
-    "excerpt": "<Button>Add to Cart', variant: 'primary</Button>"
+    "keywords": "Button Primary basic {\"children\":\"Add to Cart\",\"variant\":\"primary\"}",
+    "excerpt": "<Button\n  variant=\"primary\"\n>Add to Cart</Button>"
   },
   {
     "id": "example:button:Secondary",
     "title": "Button — Secondary",
     "type": "example",
     "path": "/docs/components/button#examples",
-    "keywords": "Button Secondary advanced {\"children\":\"Cancel', variant: 'secondary', buttonRole: 'cancel\"}",
-    "excerpt": "<Button>Cancel', variant: 'secondary', buttonRole: 'cancel</Button>"
+    "keywords": "Button Secondary advanced {\"children\":\"Cancel\",\"variant\":\"secondary\",\"buttonRole\":\"cancel\"}",
+    "excerpt": "<Button\n  variant=\"secondary\"\n  buttonRole=\"cancel\"\n>Cancel</Button>"
   },
   {
     "id": "example:button:Loading",
@@ -751,16 +887,16 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "title": "Button — Disabled",
     "type": "example",
     "path": "/docs/components/button#examples",
-    "keywords": "Button Disabled disabled {\"children\":\"'Unavailable', disabled: true\"}",
-    "excerpt": "<Button>'Unavailable', disabled: true</Button>"
+    "keywords": "Button Disabled disabled {\"children\":\"Unavailable\",\"disabled\":true}",
+    "excerpt": "<Button\n  disabled\n>Unavailable</Button>"
   },
   {
     "id": "example:button:DestructiveFilled",
     "title": "Button — Destructive Filled",
     "type": "example",
     "path": "/docs/components/button#examples",
-    "keywords": "Button Destructive Filled destructive {\"children\":\"Delete Employee', variant: 'destructive\"}",
-    "excerpt": "<Button>Delete Employee', variant: 'destructive</Button>"
+    "keywords": "Button Destructive Filled destructive {\"children\":\"Delete Employee\",\"variant\":\"destructive\"}",
+    "excerpt": "<Button\n  variant=\"destructive\"\n>Delete Employee</Button>"
   },
   {
     "id": "example:button:DestructivePlain",
@@ -784,7 +920,7 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "type": "example",
     "path": "/docs/components/button#examples",
     "keywords": "Button Icon Only with-icon {}",
-    "excerpt": "// See Storybook story \"IconOnly\" for composite layout example."
+    "excerpt": "// See Storybook story \"IconOnly\" for full example."
   },
   {
     "id": "example:button:StyleNotSize",
@@ -792,7 +928,7 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "type": "example",
     "path": "/docs/components/button#examples",
     "keywords": "Button Style, not size sizes {}",
-    "excerpt": "// See Storybook story \"StyleNotSize\" for composite layout example."
+    "excerpt": "// See Storybook story \"StyleNotSize\" for full example."
   },
   {
     "id": "example:button:AlertActions",
@@ -800,7 +936,7 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "type": "example",
     "path": "/docs/components/button#examples",
     "keywords": "Button Alert Actions advanced {}",
-    "excerpt": "// See Storybook story \"AlertActions\" for composite layout example."
+    "excerpt": "// See Storybook story \"AlertActions\" for full example."
   },
   {
     "id": "example:button:VisionOSStack",
@@ -808,7 +944,7 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "type": "example",
     "path": "/docs/components/button#examples",
     "keywords": "Button visionOS vertical stack advanced {}",
-    "excerpt": "// See Storybook story \"VisionOSStack\" for composite layout example."
+    "excerpt": "// See Storybook story \"VisionOSStack\" for full example."
   },
   {
     "id": "example:button:WatchFullWidth",
@@ -816,7 +952,31 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "type": "example",
     "path": "/docs/components/button#examples",
     "keywords": "Button watchOS full width advanced {}",
-    "excerpt": "// See Storybook story \"WatchFullWidth\" for composite layout example."
+    "excerpt": "// See Storybook story \"WatchFullWidth\" for full example."
+  },
+  {
+    "id": "example:button:SquareButtons",
+    "title": "Button — Square buttons (in-view)",
+    "type": "example",
+    "path": "/docs/components/button#examples",
+    "keywords": "Button Square buttons (in-view) advanced {}",
+    "excerpt": "// See Storybook story \"SquareButtons\" for full example."
+  },
+  {
+    "id": "example:button:AllVariants",
+    "title": "Button — All Variants",
+    "type": "example",
+    "path": "/docs/components/button#examples",
+    "keywords": "Button All Variants variants {}",
+    "excerpt": "// See Storybook story \"AllVariants\" for full example."
+  },
+  {
+    "id": "example:button:Sizes",
+    "title": "Button — Sizes",
+    "type": "example",
+    "path": "/docs/components/button#examples",
+    "keywords": "Button Sizes sizes {}",
+    "excerpt": "// See Storybook story \"Sizes\" for full example."
   },
   {
     "id": "component:button-group",
@@ -881,6 +1041,22 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "path": "/docs/components/card#api",
     "keywords": "Card padding 'none' | 'sm' | 'md' | 'lg' ",
     "excerpt": "'none' | 'sm' | 'md' | 'lg'"
+  },
+  {
+    "id": "example:card:Default",
+    "title": "Card — Default",
+    "type": "example",
+    "path": "/docs/components/card#examples",
+    "keywords": "Card Default basic {\"title\":\"Employee Profile\",\"description\":\"Manage employee information\",\"children\":\"Ahmed Mohamed — Software Engineer\"}",
+    "excerpt": "<Card\n  title=\"Employee Profile\"\n  description=\"Manage employee information\"\n>Ahmed Mohamed — Software Engineer</Card>"
+  },
+  {
+    "id": "example:card:WithBadge",
+    "title": "Card — With Badge",
+    "type": "example",
+    "path": "/docs/components/card#examples",
+    "keywords": "Card With Badge advanced {}",
+    "excerpt": "// See Storybook story \"WithBadge\" for full example."
   },
   {
     "id": "component:chart",
@@ -1019,6 +1195,46 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "excerpt": "Y axis on trailing edge (right in LTR) for layout alignment."
   },
   {
+    "id": "example:chart:BarChart",
+    "title": "Chart — Bar Chart",
+    "type": "example",
+    "path": "/docs/components/chart#examples",
+    "keywords": "Chart Bar Chart advanced {\"mark\":\"bar\",\"title\":\"Steps\",\"subtitle\":\"You averaged 8,102 steps per day this week.\",\"accessibilitySummary\":\"Bar chart showing daily steps for seven days. Highest on Thursday with 11,200 steps.\",\"min\":0,\"tickCount\":4}",
+    "excerpt": "<Chart\n  mark=\"bar\"\n  title=\"Steps\"\n  subtitle=\"You averaged 8,102 steps per day this week.\"\n  accessibilitySummary=\"Bar"
+  },
+  {
+    "id": "example:chart:LineChart",
+    "title": "Chart — Line Chart",
+    "type": "example",
+    "path": "/docs/components/chart#examples",
+    "keywords": "Chart Line Chart advanced {\"mark\":\"line\",\"title\":\"Stock performance\",\"subtitle\":\"Five-year trend for AAPL.\",\"showPoints\":true,\"interactive\":true}",
+    "excerpt": "<Chart\n  mark=\"line\"\n  title=\"Stock performance\"\n  subtitle=\"Five-year trend for AAPL.\"\n  showPoints\n  interactive\n>Exam"
+  },
+  {
+    "id": "example:chart:PointChart",
+    "title": "Chart — Point Chart",
+    "type": "example",
+    "path": "/docs/components/chart#examples",
+    "keywords": "Chart Point Chart advanced {}",
+    "excerpt": "// See Storybook story \"PointChart\" for full example."
+  },
+  {
+    "id": "example:chart:StackedBar",
+    "title": "Chart — Stacked Bar",
+    "type": "example",
+    "path": "/docs/components/chart#examples",
+    "keywords": "Chart Stacked Bar advanced {}",
+    "excerpt": "// See Storybook story \"StackedBar\" for full example."
+  },
+  {
+    "id": "example:chart:FixedRange",
+    "title": "Chart — Fixed Range",
+    "type": "example",
+    "path": "/docs/components/chart#examples",
+    "keywords": "Chart Fixed Range advanced {\"mark\":\"line\",\"title\":\"Battery\",\"subtitle\":\"Charge level over the last 24 hours.\",\"x\":\"12a\",\"y\":88}",
+    "excerpt": "<Chart\n  mark=\"line\"\n  title=\"Battery\"\n  subtitle=\"Charge level over the last 24 hours.\"\n  x=\"12a\"\n  y={88}\n>Example</Ch"
+  },
+  {
     "id": "component:checkbox",
     "title": "Checkbox",
     "type": "component",
@@ -1063,7 +1279,7 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "title": "Checkbox — Default",
     "type": "example",
     "path": "/docs/components/checkbox#examples",
-    "keywords": "Checkbox Default advanced {\"label\":\"I agree to the terms\"}",
+    "keywords": "Checkbox Default basic {\"label\":\"I agree to the terms\"}",
     "excerpt": "<Checkbox\n  label=\"I agree to the terms\"\n>Example</Checkbox>"
   },
   {
@@ -1087,7 +1303,7 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "title": "Checkbox — With Error",
     "type": "example",
     "path": "/docs/components/checkbox#examples",
-    "keywords": "Checkbox With Error advanced {\"label\":\"I agree to the terms\",\"error\":\"You must accept the terms to continue\"}",
+    "keywords": "Checkbox With Error error {\"label\":\"I agree to the terms\",\"error\":\"You must accept the terms to continue\"}",
     "excerpt": "<Checkbox\n  label=\"I agree to the terms\"\n  error=\"You must accept the terms to continue\"\n>Example</Checkbox>"
   },
   {
@@ -1097,6 +1313,14 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "path": "/docs/components/checkbox#examples",
     "keywords": "Checkbox Disabled disabled {\"label\":\"Legacy feature access\",\"disabled\":true}",
     "excerpt": "<Checkbox\n  label=\"Legacy feature access\"\n  disabled\n>Example</Checkbox>"
+  },
+  {
+    "id": "example:checkbox:CheckboxDefault",
+    "title": "Checkbox — Checkbox Default",
+    "type": "example",
+    "path": "/docs/components/checkbox#examples",
+    "keywords": "Checkbox Checkbox Default basic {}",
+    "excerpt": "<Checkbox label=\"I agree to the terms\" hint=\"Required before submitting\" />"
   },
   {
     "id": "component:collaboration-button",
@@ -1129,6 +1353,14 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "path": "/docs/components/collaboration-button#api",
     "keywords": "CollaborationButton maxVisible number ",
     "excerpt": "number"
+  },
+  {
+    "id": "example:collaboration-button:CollaborationButtonStory",
+    "title": "CollaborationButton — Collaboration Button",
+    "type": "example",
+    "path": "/docs/components/collaboration-button#examples",
+    "keywords": "CollaborationButton Collaboration Button advanced {}",
+    "excerpt": "<CollaborationButton collaborators={collaborators} />"
   },
   {
     "id": "component:collaboration-popover",
@@ -1219,6 +1451,14 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "excerpt": "ReactNode (required)"
   },
   {
+    "id": "example:collaboration-popover:CollaborationPopoverStory",
+    "title": "CollaborationPopover — Collaboration Popover",
+    "type": "example",
+    "path": "/docs/components/collaboration-popover#examples",
+    "keywords": "CollaborationPopover Collaboration Popover advanced {}",
+    "excerpt": "// See Storybook story \"CollaborationPopoverStory\" for full example."
+  },
+  {
     "id": "component:collection",
     "title": "Collection",
     "type": "component",
@@ -1275,6 +1515,22 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "excerpt": "string"
   },
   {
+    "id": "example:collection:CollectionGrid",
+    "title": "Collection — Collection Grid",
+    "type": "example",
+    "path": "/docs/components/collection#examples",
+    "keywords": "Collection Collection Grid advanced {}",
+    "excerpt": "<Collection items={photos} layout=\"grid\" columns={4} selectedId={selectedId} onSelect={(item) => setSelectedId(item.id)}"
+  },
+  {
+    "id": "example:collection:CollectionRow",
+    "title": "Collection — Collection Row",
+    "type": "example",
+    "path": "/docs/components/collection#examples",
+    "keywords": "Collection Collection Row advanced {}",
+    "excerpt": "// See Storybook story \"CollectionRow\" for full example."
+  },
+  {
     "id": "component:column-view",
     "title": "ColumnView",
     "type": "component",
@@ -1313,6 +1569,14 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "path": "/docs/components/column-view#api",
     "keywords": "ColumnView onPathChange (path: string[]) => void ",
     "excerpt": "(path: string[]) => void"
+  },
+  {
+    "id": "example:column-view:ColumnViewBrowser",
+    "title": "ColumnView — Column View Browser",
+    "type": "example",
+    "path": "/docs/components/column-view#examples",
+    "keywords": "ColumnView Column View Browser advanced {}",
+    "excerpt": "<ColumnView data={hierarchy} initialPath={['icloud', 'design']} />"
   },
   {
     "id": "component:command-palette",
@@ -1369,6 +1633,14 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "path": "/docs/components/command-palette#api",
     "keywords": "CommandPalette placeholder string ",
     "excerpt": "string"
+  },
+  {
+    "id": "example:command-palette:CommandPaletteDefault",
+    "title": "CommandPalette — Command Palette Default",
+    "type": "example",
+    "path": "/docs/components/command-palette#examples",
+    "keywords": "CommandPalette Command Palette Default basic {}",
+    "excerpt": "<CommandPaletteDemo />"
   },
   {
     "id": "component:context-menu",
@@ -1531,6 +1803,30 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "excerpt": "boolean"
   },
   {
+    "id": "example:data-table:DataTableDefault",
+    "title": "DataTable — Data Table Default",
+    "type": "example",
+    "path": "/docs/components/data-table#examples",
+    "keywords": "DataTable Data Table Default basic {}",
+    "excerpt": "// See Storybook story \"DataTableDefault\" for full example."
+  },
+  {
+    "id": "example:data-table:DataTableLoading",
+    "title": "DataTable — Data Table Loading",
+    "type": "example",
+    "path": "/docs/components/data-table#examples",
+    "keywords": "DataTable Data Table Loading loading {}",
+    "excerpt": "// See Storybook story \"DataTableLoading\" for full example."
+  },
+  {
+    "id": "example:data-table:DataTableEmpty",
+    "title": "DataTable — Data Table Empty",
+    "type": "example",
+    "path": "/docs/components/data-table#examples",
+    "keywords": "DataTable Data Table Empty advanced {}",
+    "excerpt": "// See Storybook story \"DataTableEmpty\" for full example."
+  },
+  {
     "id": "component:date-picker",
     "title": "DatePicker",
     "type": "component",
@@ -1593,6 +1889,22 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "path": "/docs/components/date-picker#api",
     "keywords": "DatePicker value string ",
     "excerpt": "string"
+  },
+  {
+    "id": "example:date-picker:DatePickerDefault",
+    "title": "DatePicker — Date Picker Default",
+    "type": "example",
+    "path": "/docs/components/date-picker#examples",
+    "keywords": "DatePicker Date Picker Default basic {}",
+    "excerpt": "// See Storybook story \"DatePickerDefault\" for full example."
+  },
+  {
+    "id": "example:date-picker:DatePickerError",
+    "title": "DatePicker — Date Picker Error",
+    "type": "example",
+    "path": "/docs/components/date-picker#examples",
+    "keywords": "DatePicker Date Picker Error error {}",
+    "excerpt": "// See Storybook story \"DatePickerError\" for full example."
   },
   {
     "id": "component:date-range-picker",
@@ -1707,6 +2019,14 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "excerpt": "DateRange"
   },
   {
+    "id": "example:date-range-picker:DateRangePickerDefault",
+    "title": "DateRangePicker — Date Range Picker Default",
+    "type": "example",
+    "path": "/docs/components/date-range-picker#examples",
+    "keywords": "DateRangePicker Date Range Picker Default basic {}",
+    "excerpt": "<DateRangeDemo />"
+  },
+  {
     "id": "component:dialog",
     "title": "Dialog",
     "type": "component",
@@ -1779,6 +2099,30 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "excerpt": "'default' | 'destructive'"
   },
   {
+    "id": "example:dialog:ConfirmDelete",
+    "title": "Dialog — Confirm Delete",
+    "type": "example",
+    "path": "/docs/components/dialog#examples",
+    "keywords": "Dialog Confirm Delete advanced {}",
+    "excerpt": "// See Storybook story \"ConfirmDelete\" for full example."
+  },
+  {
+    "id": "example:dialog:Loading",
+    "title": "Dialog — Loading",
+    "type": "example",
+    "path": "/docs/components/dialog#examples",
+    "keywords": "Dialog Loading loading {\"open\":true,\"title\":\"Saving Changes\",\"description\":\"Please wait while we save your changes.\",\"confirmLabel\":\"Save\",\"loading\":true}",
+    "excerpt": "<Dialog\n  open\n  title=\"Saving Changes\"\n  description=\"Please wait while we save your changes.\"\n  confirmLabel=\"Save\"\n  "
+  },
+  {
+    "id": "example:dialog:DialogMotion",
+    "title": "Dialog — Dialog Motion",
+    "type": "example",
+    "path": "/docs/components/dialog#examples",
+    "keywords": "Dialog Dialog Motion advanced {}",
+    "excerpt": "<>\n        <Button onClick={() => setOpen(true)}>Open dialog</Button>\n        <Modal open={open} onClose={() => setOpen("
+  },
+  {
     "id": "component:disclosure-button",
     "title": "DisclosureButton",
     "type": "component",
@@ -1843,6 +2187,14 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "excerpt": "(expanded: boolean) => void"
   },
   {
+    "id": "example:disclosure-button:DisclosureButtonStory",
+    "title": "DisclosureButton — Disclosure button",
+    "type": "example",
+    "path": "/docs/components/disclosure-button#examples",
+    "keywords": "DisclosureButton Disclosure button advanced {}",
+    "excerpt": "// See Storybook story \"DisclosureButtonStory\" for full example."
+  },
+  {
     "id": "component:disclosure-triangle",
     "title": "DisclosureTriangle",
     "type": "component",
@@ -1889,6 +2241,14 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "path": "/docs/components/disclosure-triangle#api",
     "keywords": "DisclosureTriangle onExpandedChange (expanded: boolean) => void ",
     "excerpt": "(expanded: boolean) => void"
+  },
+  {
+    "id": "example:disclosure-triangle:DisclosureTriangleStory",
+    "title": "DisclosureTriangle — Disclosure triangle",
+    "type": "example",
+    "path": "/docs/components/disclosure-triangle#examples",
+    "keywords": "DisclosureTriangle Disclosure triangle advanced {}",
+    "excerpt": "// See Storybook story \"DisclosureTriangleStory\" for full example."
   },
   {
     "id": "component:dock-bar",
@@ -2059,6 +2419,14 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "excerpt": "string"
   },
   {
+    "id": "example:document-launcher:DocumentLauncherStory",
+    "title": "DocumentLauncher — Document Launcher Story",
+    "type": "example",
+    "path": "/docs/components/document-launcher#examples",
+    "keywords": "DocumentLauncher Document Launcher Story advanced {}",
+    "excerpt": "// See Storybook story \"DocumentLauncherStory\" for full example."
+  },
+  {
     "id": "component:document-toolbar",
     "title": "DocumentToolbar",
     "type": "component",
@@ -2129,6 +2497,22 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "path": "/docs/components/document-toolbar#api",
     "keywords": "DocumentToolbar showAddButton boolean ",
     "excerpt": "boolean"
+  },
+  {
+    "id": "example:document-toolbar:DocumentToolbarStory",
+    "title": "DocumentToolbar — Create & Open",
+    "type": "example",
+    "path": "/docs/components/document-toolbar#examples",
+    "keywords": "DocumentToolbar Create & Open advanced {}",
+    "excerpt": "// See Storybook story \"DocumentToolbarStory\" for full example."
+  },
+  {
+    "id": "example:document-toolbar:DocumentToolbar",
+    "title": "DocumentToolbar — Document Toolbar",
+    "type": "example",
+    "path": "/docs/components/document-toolbar#examples",
+    "keywords": "DocumentToolbar Document Toolbar advanced {}",
+    "excerpt": "// See Storybook story \"DocumentToolbar\" for full example."
   },
   {
     "id": "component:drag-drop-list",
@@ -2320,7 +2704,7 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "type": "example",
     "path": "/docs/components/drawer#examples",
     "keywords": "Drawer Right advanced {}",
-    "excerpt": "// See Storybook story \"Right\" for composite layout example."
+    "excerpt": "// See Storybook story \"Right\" for full example."
   },
   {
     "id": "example:drawer:Left",
@@ -2328,7 +2712,15 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "type": "example",
     "path": "/docs/components/drawer#examples",
     "keywords": "Drawer Left advanced {}",
-    "excerpt": "// See Storybook story \"Left\" for composite layout example."
+    "excerpt": "// See Storybook story \"Left\" for full example."
+  },
+  {
+    "id": "example:drawer:DrawerMotion",
+    "title": "Drawer — Drawer Motion",
+    "type": "example",
+    "path": "/docs/components/drawer#examples",
+    "keywords": "Drawer Drawer Motion advanced {}",
+    "excerpt": "<>\n        <Button onClick={() => setOpen(true)}>Open drawer</Button>\n        <Drawer open={open} onClose={() => setOpen"
   },
   {
     "id": "component:drop-zone",
@@ -2555,6 +2947,30 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "excerpt": "UIState"
   },
   {
+    "id": "example:empty-state:NoEmployees",
+    "title": "EmptyState — No Employees",
+    "type": "example",
+    "path": "/docs/components/empty-state#examples",
+    "keywords": "EmptyState No Employees advanced {\"title\":\"No employees found\",\"description\":\"Get started by creating your first employee record.\",\"actionLabel\":\"Add Employee\"}",
+    "excerpt": "<EmptyState\n  title=\"No employees found\"\n  description=\"Get started by creating your first employee record.\"\n  actionLab"
+  },
+  {
+    "id": "example:empty-state:Offline",
+    "title": "EmptyState — Offline",
+    "type": "example",
+    "path": "/docs/components/empty-state#examples",
+    "keywords": "EmptyState Offline advanced {\"title\":\"You are offline\",\"description\":\"Changes will sync when you reconnect.\",\"state\":\"offline\"}",
+    "excerpt": "<EmptyState\n  title=\"You are offline\"\n  description=\"Changes will sync when you reconnect.\"\n  state=\"offline\"\n>Example</"
+  },
+  {
+    "id": "example:empty-state:Unauthorized",
+    "title": "EmptyState — Unauthorized",
+    "type": "example",
+    "path": "/docs/components/empty-state#examples",
+    "keywords": "EmptyState Unauthorized advanced {\"title\":\"Access denied\",\"description\":\"You don't have permission to view this resource.\",\"state\":\"unauthorized\",\"actionLabel\":\"Go back\"}",
+    "excerpt": "<EmptyState\n  title=\"Access denied\"\n  description=\"You don't have permission to view this resource.\"\n  state=\"unauthoriz"
+  },
+  {
     "id": "component:file-browser",
     "title": "FileBrowser",
     "type": "component",
@@ -2649,6 +3065,14 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "path": "/docs/components/file-browser#api",
     "keywords": "FileBrowser toolbar ReactNode ",
     "excerpt": "ReactNode"
+  },
+  {
+    "id": "example:file-browser:FileBrowserStory",
+    "title": "FileBrowser — File Browser Story",
+    "type": "example",
+    "path": "/docs/components/file-browser#examples",
+    "keywords": "FileBrowser File Browser Story advanced {}",
+    "excerpt": "// See Storybook story \"FileBrowserStory\" for full example."
   },
   {
     "id": "component:file-preview",
@@ -2753,6 +3177,22 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "path": "/docs/components/file-upload#api",
     "keywords": "FileUpload onFilesChange (files: File[]) => void ",
     "excerpt": "(files: File[]) => void"
+  },
+  {
+    "id": "example:file-upload:FileUploadDefault",
+    "title": "FileUpload — File Upload Default",
+    "type": "example",
+    "path": "/docs/components/file-upload#examples",
+    "keywords": "FileUpload File Upload Default basic {}",
+    "excerpt": "// See Storybook story \"FileUploadDefault\" for full example."
+  },
+  {
+    "id": "example:file-upload:ImportWithFileUpload",
+    "title": "FileUpload — Import With File Upload",
+    "type": "example",
+    "path": "/docs/components/file-upload#examples",
+    "keywords": "FileUpload Import With File Upload loading {}",
+    "excerpt": "// See Storybook story \"ImportWithFileUpload\" for full example."
   },
   {
     "id": "component:form-continue",
@@ -2867,6 +3307,14 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "excerpt": "QuickActionItem[]"
   },
   {
+    "id": "example:home-screen-quick-actions:HomeScreenQuickActionsStory",
+    "title": "HomeScreenQuickActions — Home Screen quick actions",
+    "type": "example",
+    "path": "/docs/components/home-screen-quick-actions#examples",
+    "keywords": "HomeScreenQuickActions Home Screen quick actions advanced {}",
+    "excerpt": "// See Storybook story \"HomeScreenQuickActionsStory\" for full example."
+  },
+  {
     "id": "component:image-button",
     "title": "ImageButton",
     "type": "component",
@@ -2897,6 +3345,14 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "path": "/docs/components/image-button#api",
     "keywords": "ImageButton src string ",
     "excerpt": "string (required)"
+  },
+  {
+    "id": "example:image-button:ImageButtonStory",
+    "title": "ImageButton — Image Button",
+    "type": "example",
+    "path": "/docs/components/image-button#examples",
+    "keywords": "ImageButton Image Button advanced {}",
+    "excerpt": "// See Storybook story \"ImageButtonStory\" for full example."
   },
   {
     "id": "component:image-overlay",
@@ -3043,6 +3499,14 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "excerpt": "string"
   },
   {
+    "id": "example:image-well:ImageWellStory",
+    "title": "ImageWell — Image Well",
+    "type": "example",
+    "path": "/docs/components/image-well#examples",
+    "keywords": "ImageWell Image Well advanced {}",
+    "excerpt": "// See Storybook story \"ImageWellStory\" for full example."
+  },
+  {
     "id": "component:input",
     "title": "Input",
     "type": "component",
@@ -3155,6 +3619,86 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "excerpt": "'blur' | 'change'"
   },
   {
+    "id": "example:input:Default",
+    "title": "Input — Default",
+    "type": "example",
+    "path": "/docs/components/input#examples",
+    "keywords": "Input Default basic {\"label\":\"Employee Name\",\"placeholder\":\"Enter name\"}",
+    "excerpt": "<Input\n  label=\"Employee Name\"\n  placeholder=\"Enter name\"\n>Example</Input>"
+  },
+  {
+    "id": "example:input:WithHint",
+    "title": "Input — With Hint",
+    "type": "example",
+    "path": "/docs/components/input#examples",
+    "keywords": "Input With Hint advanced {\"label\":\"Email\",\"placeholder\":\"username@company.com\",\"hint\":\"Work email address\"}",
+    "excerpt": "<Input\n  label=\"Email\"\n  placeholder=\"username@company.com\"\n  hint=\"Work email address\"\n>Example</Input>"
+  },
+  {
+    "id": "example:input:Required",
+    "title": "Input — Required",
+    "type": "example",
+    "path": "/docs/components/input#examples",
+    "keywords": "Input Required advanced {\"label\":\"Email\",\"placeholder\":\"username@company.com\",\"required\":true}",
+    "excerpt": "<Input\n  label=\"Email\"\n  placeholder=\"username@company.com\"\n  required\n>Example</Input>"
+  },
+  {
+    "id": "example:input:Validated",
+    "title": "Input — Validated",
+    "type": "example",
+    "path": "/docs/components/input#examples",
+    "keywords": "Input Validated advanced {\"label\":\"Email\",\"placeholder\":\"username@company.com\",\"required\":true,\"validateOn\":\"change\"}",
+    "excerpt": "<Input\n  label=\"Email\"\n  placeholder=\"username@company.com\"\n  required\n  validateOn=\"change\"\n>Example</Input>"
+  },
+  {
+    "id": "example:input:CurrencyFormat",
+    "title": "Input — Currency Format",
+    "type": "example",
+    "path": "/docs/components/input#examples",
+    "keywords": "Input Currency Format advanced {\"label\":\"Salary\",\"format\":\"currency\",\"defaultValue\":\"85000\",\"hint\":\"Formatted when the field loses focus\"}",
+    "excerpt": "<Input\n  label=\"Salary\"\n  format=\"currency\"\n  defaultValue=\"85000\"\n  hint=\"Formatted when the field loses focus\"\n>Exampl"
+  },
+  {
+    "id": "example:input:Secure",
+    "title": "Input — Secure",
+    "type": "example",
+    "path": "/docs/components/input#examples",
+    "keywords": "Input Secure advanced {}",
+    "excerpt": "<SecureField label=\"Password\" required hint=\"Never prepopulated\" />"
+  },
+  {
+    "id": "example:input:Loading",
+    "title": "Input — Loading",
+    "type": "example",
+    "path": "/docs/components/input#examples",
+    "keywords": "Input Loading loading {\"label\":\"Department\",\"loading\":true,\"placeholder\":\"Loading...\"}",
+    "excerpt": "<Input\n  label=\"Department\"\n  loading\n  placeholder=\"Loading...\"\n>Example</Input>"
+  },
+  {
+    "id": "example:input:Error",
+    "title": "Input — Error",
+    "type": "example",
+    "path": "/docs/components/input#examples",
+    "keywords": "Input Error error {\"label\":\"Salary\",\"error\":\"Must be a positive number\",\"defaultValue\":\"-100\"}",
+    "excerpt": "<Input\n  label=\"Salary\"\n  error=\"Must be a positive number\"\n  defaultValue=\"-100\"\n>Example</Input>"
+  },
+  {
+    "id": "example:input:Disabled",
+    "title": "Input — Disabled",
+    "type": "example",
+    "path": "/docs/components/input#examples",
+    "keywords": "Input Disabled disabled {\"label\":\"Employee ID\",\"disabled\":true,\"defaultValue\":\"EMP-001\"}",
+    "excerpt": "<Input\n  label=\"Employee ID\"\n  disabled\n  defaultValue=\"EMP-001\"\n>Example</Input>"
+  },
+  {
+    "id": "example:input:ReadOnly",
+    "title": "Input — Read Only",
+    "type": "example",
+    "path": "/docs/components/input#examples",
+    "keywords": "Input Read Only advanced {\"label\":\"Created At\",\"readOnly\":true,\"defaultValue\":\"2026-08-29\"}",
+    "excerpt": "<Input\n  label=\"Created At\"\n  readOnly\n  defaultValue=\"2026-08-29\"\n>Example</Input>"
+  },
+  {
     "id": "component:label",
     "title": "Label",
     "type": "component",
@@ -3195,6 +3739,14 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "excerpt": "Allow selecting/copying useful static text."
   },
   {
+    "id": "example:label:LabelImportance",
+    "title": "Label — Label Importance",
+    "type": "example",
+    "path": "/docs/components/label#examples",
+    "keywords": "Label Label Importance advanced {}",
+    "excerpt": "// See Storybook story \"LabelImportance\" for full example."
+  },
+  {
     "id": "component:la-rose-provider",
     "title": "LaRoseProvider",
     "type": "component",
@@ -3225,6 +3777,38 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "path": "/docs/components/list#api",
     "keywords": "List variant ListVariant ",
     "excerpt": "ListVariant"
+  },
+  {
+    "id": "example:list:FinderStyleList",
+    "title": "List — Finder Style List",
+    "type": "example",
+    "path": "/docs/components/list#examples",
+    "keywords": "List Finder Style List advanced {}",
+    "excerpt": "// See Storybook story \"FinderStyleList\" for full example."
+  },
+  {
+    "id": "example:list:ReorderableList",
+    "title": "List — Reorderable List",
+    "type": "example",
+    "path": "/docs/components/list#examples",
+    "keywords": "List Reorderable List advanced {}",
+    "excerpt": "// See Storybook story \"ReorderableList\" for full example."
+  },
+  {
+    "id": "example:list:GroupedList",
+    "title": "List — Grouped List",
+    "type": "example",
+    "path": "/docs/components/list#examples",
+    "keywords": "List Grouped List advanced {}",
+    "excerpt": "// See Storybook story \"GroupedList\" for full example."
+  },
+  {
+    "id": "example:list:ListAccessories",
+    "title": "List — List Accessories",
+    "type": "example",
+    "path": "/docs/components/list#examples",
+    "keywords": "List List Accessories advanced {}",
+    "excerpt": "// See Storybook story \"ListAccessories\" for full example."
   },
   {
     "id": "component:list-row",
@@ -3375,7 +3959,7 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "title": "Menu",
     "type": "component",
     "path": "/docs/components/menu",
-    "keywords": "Menu Navigation Menu.dimBackground boolean Menu.entries MenuEntry[] Menu.layout MenuLayout Menu.onEntrySelect (entry: MenuItemConfig) => boolean | void Menu.onOpenChange (open: boolean) => void Menu.open boolean Menu.children ReactElement Menu.title string",
+    "keywords": "Menu Navigation Menu.dimBackground boolean Menu.enableMnemonics boolean Menu.enableShortcuts boolean Menu.enableTypeAhead boolean Menu.entries MenuEntry[] Menu.layout MenuLayout Menu.mnemonicVisible boolean Menu.onEntrySelect (entry: MenuItemConfig) => boolean | void Menu.onOpenChange (open: boolean) => void Menu.open boolean Menu.optionKey boolean Menu.children ReactElement Menu.title string",
     "excerpt": "Navigation component from @larose-ui/react"
   },
   {
@@ -3385,6 +3969,30 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "path": "/docs/components/menu#api",
     "keywords": "Menu dimBackground boolean ",
     "excerpt": "boolean"
+  },
+  {
+    "id": "prop:menu:enableMnemonics",
+    "title": "Menu.enableMnemonics",
+    "type": "prop",
+    "path": "/docs/components/menu#api",
+    "keywords": "Menu enableMnemonics boolean Enable Alt+key mnemonics while open. Defaults to true.",
+    "excerpt": "Enable Alt+key mnemonics while open. Defaults to true."
+  },
+  {
+    "id": "prop:menu:enableShortcuts",
+    "title": "Menu.enableShortcuts",
+    "type": "prop",
+    "path": "/docs/components/menu#api",
+    "keywords": "Menu enableShortcuts boolean When true, keyboard shortcuts activate menu items while open. Defaults to true.",
+    "excerpt": "When true, keyboard shortcuts activate menu items while open. Defaults to true."
+  },
+  {
+    "id": "prop:menu:enableTypeAhead",
+    "title": "Menu.enableTypeAhead",
+    "type": "prop",
+    "path": "/docs/components/menu#api",
+    "keywords": "Menu enableTypeAhead boolean Enable type-ahead letter matching while open. Defaults to true.",
+    "excerpt": "Enable type-ahead letter matching while open. Defaults to true."
   },
   {
     "id": "prop:menu:entries",
@@ -3401,6 +4009,14 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "path": "/docs/components/menu#api",
     "keywords": "Menu layout MenuLayout ",
     "excerpt": "MenuLayout"
+  },
+  {
+    "id": "prop:menu:mnemonicVisible",
+    "title": "Menu.mnemonicVisible",
+    "type": "prop",
+    "path": "/docs/components/menu#api",
+    "keywords": "Menu mnemonicVisible boolean When true, underline mnemonic access keys in labels.",
+    "excerpt": "When true, underline mnemonic access keys in labels."
   },
   {
     "id": "prop:menu:onEntrySelect",
@@ -3427,11 +4043,51 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "excerpt": "boolean"
   },
   {
+    "id": "prop:menu:optionKey",
+    "title": "Menu.optionKey",
+    "type": "prop",
+    "path": "/docs/components/menu#api",
+    "keywords": "Menu optionKey boolean Passed from MenuBar for Option-key alternate accelerators.",
+    "excerpt": "Passed from MenuBar for Option-key alternate accelerators."
+  },
+  {
+    "id": "example:menu:MenuAlwaysOpen",
+    "title": "Menu — Menu (always open)",
+    "type": "example",
+    "path": "/docs/components/menu#examples",
+    "keywords": "Menu Menu (always open) advanced {}",
+    "excerpt": "// See Storybook story \"MenuAlwaysOpen\" for full example."
+  },
+  {
+    "id": "example:menu:AddMenu",
+    "title": "Menu — Add",
+    "type": "example",
+    "path": "/docs/components/menu#examples",
+    "keywords": "Menu Add advanced {}",
+    "excerpt": "// See Storybook story \"AddMenu\" for full example."
+  },
+  {
+    "id": "example:menu:SortMenu",
+    "title": "Menu — Sort",
+    "type": "example",
+    "path": "/docs/components/menu#examples",
+    "keywords": "Menu Sort advanced {}",
+    "excerpt": "// See Storybook story \"SortMenu\" for full example."
+  },
+  {
+    "id": "example:menu:MoreMenu",
+    "title": "Menu — More (Notes)",
+    "type": "example",
+    "path": "/docs/components/menu#examples",
+    "keywords": "Menu More (Notes) advanced {}",
+    "excerpt": "// See Storybook story \"MoreMenu\" for full example."
+  },
+  {
     "id": "component:menu-bar",
     "title": "MenuBar",
     "type": "component",
     "path": "/docs/components/menu-bar",
-    "keywords": "MenuBar Navigation MenuBar.appName string MenuBar.appSpecificMenus MenuBarMenuConfig[] MenuBar.extras MenuBarExtraConfig[] MenuBar.menus MenuBarMenuConfig[] MenuBar.onMenuAction (menuId: string, entryId: string) => void MenuBar.onRevealChange (revealed: boolean) => void MenuBar.platform MenuBarPlatform MenuBar.revealed boolean MenuBar.showAppleMenu boolean MenuBar.standardOptions StandardMenuBarOptions MenuBar.className string",
+    "keywords": "MenuBar Navigation MenuBar.appName string MenuBar.appSpecificMenus MenuBarMenuConfig[] MenuBar.enableGlobalShortcuts boolean MenuBar.enableMnemonics boolean MenuBar.enableTypeAhead boolean MenuBar.extras MenuBarExtraConfig[] MenuBar.menus MenuBarMenuConfig[] MenuBar.onMenuAction (menuId: string, entryId: string) => void MenuBar.onRevealChange (revealed: boolean) => void MenuBar.platform MenuBarPlatform MenuBar.revealed boolean MenuBar.showAppleMenu boolean MenuBar.standardOptions StandardMenuBarOptions MenuBar.className string",
     "excerpt": "Navigation component from @larose-ui/react"
   },
   {
@@ -3449,6 +4105,30 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "path": "/docs/components/menu-bar#api",
     "keywords": "MenuBar appSpecificMenus MenuBarMenuConfig[] ",
     "excerpt": "MenuBarMenuConfig[]"
+  },
+  {
+    "id": "prop:menu-bar:enableGlobalShortcuts",
+    "title": "MenuBar.enableGlobalShortcuts",
+    "type": "prop",
+    "path": "/docs/components/menu-bar#api",
+    "keywords": "MenuBar enableGlobalShortcuts boolean Register top-level menu accelerators globally. Defaults to true.",
+    "excerpt": "Register top-level menu accelerators globally. Defaults to true."
+  },
+  {
+    "id": "prop:menu-bar:enableMnemonics",
+    "title": "MenuBar.enableMnemonics",
+    "type": "prop",
+    "path": "/docs/components/menu-bar#api",
+    "keywords": "MenuBar enableMnemonics boolean Enable Alt+key mnemonics on Windows/Linux. Defaults to true on non-macOS.",
+    "excerpt": "Enable Alt+key mnemonics on Windows/Linux. Defaults to true on non-macOS."
+  },
+  {
+    "id": "prop:menu-bar:enableTypeAhead",
+    "title": "MenuBar.enableTypeAhead",
+    "type": "prop",
+    "path": "/docs/components/menu-bar#api",
+    "keywords": "MenuBar enableTypeAhead boolean Enable type-ahead letter matching in open menus. Defaults to true.",
+    "excerpt": "Enable type-ahead letter matching in open menus. Defaults to true."
   },
   {
     "id": "prop:menu-bar:extras",
@@ -3515,12 +4195,36 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "excerpt": "Used when `menus` is omitted to build the standard HIG menu set."
   },
   {
+    "id": "example:menu-bar:MenuBarGlobalShortcuts",
+    "title": "MenuBar — Menu bar (global shortcuts)",
+    "type": "example",
+    "path": "/docs/components/menu-bar#examples",
+    "keywords": "MenuBar Menu bar (global shortcuts) advanced {}",
+    "excerpt": "// See Storybook story \"MenuBarGlobalShortcuts\" for full example."
+  },
+  {
     "id": "component:menu-bar-extra",
     "title": "MenuBarExtra",
     "type": "component",
     "path": "/docs/components/menu-bar-extra",
-    "keywords": "MenuBarExtra Navigation MenuBarExtra.isOpen boolean MenuBarExtra.onAction (entry: MenuItemConfig) => void MenuBarExtra.onOpenChange (open: boolean) => void MenuBarExtra.optionKey boolean",
+    "keywords": "MenuBarExtra Navigation MenuBarExtra.enableMnemonics boolean MenuBarExtra.enableTypeAhead boolean MenuBarExtra.isOpen boolean MenuBarExtra.mnemonicVisible boolean MenuBarExtra.onAction (entry: MenuItemConfig) => void MenuBarExtra.onOpenChange (open: boolean) => void MenuBarExtra.optionKey boolean",
     "excerpt": "Navigation component from @larose-ui/react"
+  },
+  {
+    "id": "prop:menu-bar-extra:enableMnemonics",
+    "title": "MenuBarExtra.enableMnemonics",
+    "type": "prop",
+    "path": "/docs/components/menu-bar-extra#api",
+    "keywords": "MenuBarExtra enableMnemonics boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "prop:menu-bar-extra:enableTypeAhead",
+    "title": "MenuBarExtra.enableTypeAhead",
+    "type": "prop",
+    "path": "/docs/components/menu-bar-extra#api",
+    "keywords": "MenuBarExtra enableTypeAhead boolean ",
+    "excerpt": "boolean"
   },
   {
     "id": "prop:menu-bar-extra:isOpen",
@@ -3529,6 +4233,14 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "path": "/docs/components/menu-bar-extra#api",
     "keywords": "MenuBarExtra isOpen boolean ",
     "excerpt": "boolean (required)"
+  },
+  {
+    "id": "prop:menu-bar-extra:mnemonicVisible",
+    "title": "MenuBarExtra.mnemonicVisible",
+    "type": "prop",
+    "path": "/docs/components/menu-bar-extra#api",
+    "keywords": "MenuBarExtra mnemonicVisible boolean ",
+    "excerpt": "boolean"
   },
   {
     "id": "prop:menu-bar-extra:onAction",
@@ -3639,8 +4351,8 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "title": "Modal — Default",
     "type": "example",
     "path": "/docs/components/modal#examples",
-    "keywords": "Modal Default advanced {}",
-    "excerpt": "// See Storybook story \"Default\" for composite layout example."
+    "keywords": "Modal Default basic {}",
+    "excerpt": "// See Storybook story \"Default\" for full example."
   },
   {
     "id": "example:modal:WithoutDescription",
@@ -3648,7 +4360,7 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "type": "example",
     "path": "/docs/components/modal#examples",
     "keywords": "Modal Without Description advanced {}",
-    "excerpt": "// See Storybook story \"WithoutDescription\" for composite layout example."
+    "excerpt": "// See Storybook story \"WithoutDescription\" for full example."
   },
   {
     "id": "example:modal:NoOverlayClose",
@@ -3656,7 +4368,7 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "type": "example",
     "path": "/docs/components/modal#examples",
     "keywords": "Modal No Overlay Close advanced {}",
-    "excerpt": "// See Storybook story \"NoOverlayClose\" for composite layout example."
+    "excerpt": "// See Storybook story \"NoOverlayClose\" for full example."
   },
   {
     "id": "component:more-pull-down-button",
@@ -3923,6 +4635,14 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "excerpt": "'middle' | 'end'"
   },
   {
+    "id": "example:outline-view:OutlineViewStory",
+    "title": "OutlineView — Outline view (legacy)",
+    "type": "example",
+    "path": "/docs/components/outline-view#examples",
+    "keywords": "OutlineView Outline view (legacy) advanced {}",
+    "excerpt": "// See Storybook story \"OutlineViewStory\" for full example."
+  },
+  {
     "id": "component:outline-view-toolbar",
     "title": "OutlineViewToolbar",
     "type": "component",
@@ -4027,6 +4747,14 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "excerpt": "number (required)"
   },
   {
+    "id": "example:pagination:PaginationDefault",
+    "title": "Pagination — Pagination Default",
+    "type": "example",
+    "path": "/docs/components/pagination#examples",
+    "keywords": "Pagination Pagination Default basic {}",
+    "excerpt": "<PaginationDemo />"
+  },
+  {
     "id": "component:path-control",
     "title": "PathControl",
     "type": "component",
@@ -4097,6 +4825,22 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "path": "/docs/components/path-control#api",
     "keywords": "PathControl variant PathControlVariant ",
     "excerpt": "PathControlVariant"
+  },
+  {
+    "id": "example:path-control:PathControlStandard",
+    "title": "PathControl — Path control (standard)",
+    "type": "example",
+    "path": "/docs/components/path-control#examples",
+    "keywords": "PathControl Path control (standard) advanced {}",
+    "excerpt": "// See Storybook story \"PathControlStandard\" for full example."
+  },
+  {
+    "id": "example:path-control:PathControlPopup",
+    "title": "PathControl — Path control (pop-up)",
+    "type": "example",
+    "path": "/docs/components/path-control#examples",
+    "keywords": "PathControl Path control (pop-up) advanced {}",
+    "excerpt": "// See Storybook story \"PathControlPopup\" for full example."
   },
   {
     "id": "component:popover",
@@ -4171,20 +4915,28 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "excerpt": "ReactNode (required)"
   },
   {
+    "id": "example:popover:PopoverAndTooltip",
+    "title": "Popover — Popover And Tooltip",
+    "type": "example",
+    "path": "/docs/components/popover#examples",
+    "keywords": "Popover Popover And Tooltip advanced {}",
+    "excerpt": "// See Storybook story \"PopoverAndTooltip\" for full example."
+  },
+  {
     "id": "example:popover:Default",
     "title": "Popover — Default",
     "type": "example",
     "path": "/docs/components/popover#examples",
-    "keywords": "Popover Default advanced {\"trigger\":\"<Button variant=\\\"outline\\\">Show info</Button>\",\"content\":\"(\"}",
-    "excerpt": "<Popover\n  trigger=\"<Button variant=\"outline\">Show info</Button>\"\n  content=\"(\"\n>Example</Popover>"
+    "keywords": "Popover Default basic {\"margin\":0,\"maxWidth\":220}",
+    "excerpt": "<Popover\n  margin={0}\n  maxWidth={220}\n>Example</Popover>"
   },
   {
     "id": "example:popover:Top",
     "title": "Popover — Top",
     "type": "example",
     "path": "/docs/components/popover#examples",
-    "keywords": "Popover Top advanced {\"side\":\"top\",\"trigger\":\"<Button variant=\\\"secondary\\\">Top popover</Button>\",\"content\":\"<p style={{ margin: 0\"}",
-    "excerpt": "<Popover\n  side=\"top\"\n  trigger=\"<Button variant=\"secondary\">Top popover</Button>\"\n  content=\"<p style={{ margin: 0\"\n>Ex"
+    "keywords": "Popover Top advanced {\"side\":\"top\",\"margin\":0}",
+    "excerpt": "<Popover\n  side=\"top\"\n  margin={0}\n>Example</Popover>"
   },
   {
     "id": "example:popover:WithActions",
@@ -4192,7 +4944,7 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "type": "example",
     "path": "/docs/components/popover#examples",
     "keywords": "Popover With Actions advanced {}",
-    "excerpt": "// See Storybook story \"WithActions\" for composite layout example."
+    "excerpt": "// See Storybook story \"WithActions\" for full example."
   },
   {
     "id": "component:pop-up-button",
@@ -4331,12 +5083,28 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "excerpt": "ProgressVariant"
   },
   {
+    "id": "example:progress:ProgressDefault",
+    "title": "Progress — Progress Default",
+    "type": "example",
+    "path": "/docs/components/progress#examples",
+    "keywords": "Progress Progress Default basic {}",
+    "excerpt": "<Progress value={65} label=\"Profile completion\" showValue />"
+  },
+  {
+    "id": "example:progress:ProgressSuccess",
+    "title": "Progress — Progress Success",
+    "type": "example",
+    "path": "/docs/components/progress#examples",
+    "keywords": "Progress Progress Success advanced {}",
+    "excerpt": "<Progress value={100} label=\"Upload complete\" variant=\"success\" showValue />"
+  },
+  {
     "id": "example:progress:Default",
     "title": "Progress — Default",
     "type": "example",
     "path": "/docs/components/progress#examples",
-    "keywords": "Progress Default advanced {\"value\":65,\"label\":\"Profile completion\",\"showValue\":true}",
-    "excerpt": "<Progress\n  value={65}\n  label=\"Profile completion\"\n  showValue\n>Example</Progress>"
+    "keywords": "Progress Default basic {\"value\":65,\"label\":\"Profile completion\",\"showValue\":true}",
+    "excerpt": "<Progress\n  value={65}\n  label=\"Profile completion\"\n  showValue\n/>"
   },
   {
     "id": "example:progress:Success",
@@ -4344,15 +5112,15 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "type": "example",
     "path": "/docs/components/progress#examples",
     "keywords": "Progress Success advanced {\"value\":100,\"label\":\"Upload complete\",\"variant\":\"success\",\"showValue\":true}",
-    "excerpt": "<Progress\n  value={100}\n  label=\"Upload complete\"\n  variant=\"success\"\n  showValue\n>Example</Progress>"
+    "excerpt": "<Progress\n  value={100}\n  label=\"Upload complete\"\n  variant=\"success\"\n  showValue\n/>"
   },
   {
     "id": "example:progress:Error",
     "title": "Progress — Error",
     "type": "example",
     "path": "/docs/components/progress#examples",
-    "keywords": "Progress Error advanced {\"value\":35,\"label\":\"Sync failed\",\"variant\":\"error\",\"showValue\":true}",
-    "excerpt": "<Progress\n  value={35}\n  label=\"Sync failed\"\n  variant=\"error\"\n  showValue\n>Example</Progress>"
+    "keywords": "Progress Error error {\"value\":35,\"label\":\"Sync failed\",\"variant\":\"error\",\"showValue\":true}",
+    "excerpt": "<Progress\n  value={35}\n  label=\"Sync failed\"\n  variant=\"error\"\n  showValue\n/>"
   },
   {
     "id": "example:progress:Loading",
@@ -4360,7 +5128,7 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "type": "example",
     "path": "/docs/components/progress#examples",
     "keywords": "Progress Loading loading {\"value\":45,\"label\":\"Importing employees\",\"showValue\":true,\"state\":\"loading\"}",
-    "excerpt": "<Progress\n  value={45}\n  label=\"Importing employees\"\n  showValue\n  state=\"loading\"\n>Example</Progress>"
+    "excerpt": "<Progress\n  value={45}\n  label=\"Importing employees\"\n  showValue\n  state=\"loading\"\n/>"
   },
   {
     "id": "component:pull-down-button",
@@ -4483,11 +5251,19 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "excerpt": "string (required)"
   },
   {
+    "id": "example:radio:RadioGroup",
+    "title": "Radio — Radio Group",
+    "type": "example",
+    "path": "/docs/components/radio#examples",
+    "keywords": "Radio Radio Group advanced {}",
+    "excerpt": "// See Storybook story \"RadioGroup\" for full example."
+  },
+  {
     "id": "example:radio:Default",
     "title": "Radio — plan",
     "type": "example",
     "path": "/docs/components/radio#examples",
-    "keywords": "Radio plan advanced {\"name\":\"plan\",\"label\":\"Starter plan\",\"value\":\"starter\",\"defaultChecked\":true}",
+    "keywords": "Radio plan basic {\"name\":\"plan\",\"label\":\"Starter plan\",\"value\":\"starter\",\"defaultChecked\":true}",
     "excerpt": "<Radio\n  name=\"plan\"\n  label=\"Starter plan\"\n  value=\"starter\"\n  defaultChecked\n>Example</Radio>"
   },
   {
@@ -4503,7 +5279,7 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "title": "Radio — plan",
     "type": "example",
     "path": "/docs/components/radio#examples",
-    "keywords": "Radio plan advanced {\"name\":\"plan\",\"label\":\"Enterprise plan\",\"value\":\"enterprise\",\"error\":\"Select a plan to continue\"}",
+    "keywords": "Radio plan error {\"name\":\"plan\",\"label\":\"Enterprise plan\",\"value\":\"enterprise\",\"error\":\"Select a plan to continue\"}",
     "excerpt": "<Radio\n  name=\"plan\"\n  label=\"Enterprise plan\"\n  value=\"enterprise\"\n  error=\"Select a plan to continue\"\n>Example</Radio>"
   },
   {
@@ -4520,7 +5296,7 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "type": "example",
     "path": "/docs/components/radio#examples",
     "keywords": "Radio Group advanced {}",
-    "excerpt": "// See Storybook story \"Group\" for composite layout example."
+    "excerpt": "// See Storybook story \"Group\" for full example."
   },
   {
     "id": "component:secure-field",
@@ -4611,52 +5387,68 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "excerpt": "UIState"
   },
   {
+    "id": "example:select:SelectableLabel",
+    "title": "Select — Selectable Label",
+    "type": "example",
+    "path": "/docs/components/select#examples",
+    "keywords": "Select Selectable Label advanced {}",
+    "excerpt": "// See Storybook story \"SelectableLabel\" for full example."
+  },
+  {
+    "id": "example:select:SelectDefault",
+    "title": "Select — Select Default",
+    "type": "example",
+    "path": "/docs/components/select#examples",
+    "keywords": "Select Select Default basic {}",
+    "excerpt": "// See Storybook story \"SelectDefault\" for full example."
+  },
+  {
     "id": "example:select:Default",
     "title": "Select — Default",
     "type": "example",
     "path": "/docs/components/select#examples",
-    "keywords": "Select Default advanced {\"label\":\"Department\",\"options\":\"departmentOptions\",\"placeholder\":\"Choose a department\"}",
-    "excerpt": "<Select\n  label=\"Department\"\n  options=\"departmentOptions\"\n  placeholder=\"Choose a department\"\n>Example</Select>"
+    "keywords": "Select Default basic {\"label\":\"Department\",\"placeholder\":\"Choose a department\"}",
+    "excerpt": "<Select\n  label=\"Department\"\n  placeholder=\"Choose a department\"\n>Example</Select>"
   },
   {
     "id": "example:select:WithHint",
     "title": "Select — With Hint",
     "type": "example",
     "path": "/docs/components/select#examples",
-    "keywords": "Select With Hint advanced {\"label\":\"Department\",\"options\":\"departmentOptions\",\"hint\":\"Used for org chart and permissions\"}",
-    "excerpt": "<Select\n  label=\"Department\"\n  options=\"departmentOptions\"\n  hint=\"Used for org chart and permissions\"\n>Example</Select>"
+    "keywords": "Select With Hint advanced {\"label\":\"Department\",\"hint\":\"Used for org chart and permissions\"}",
+    "excerpt": "<Select\n  label=\"Department\"\n  hint=\"Used for org chart and permissions\"\n>Example</Select>"
   },
   {
     "id": "example:select:Required",
     "title": "Select — Required",
     "type": "example",
     "path": "/docs/components/select#examples",
-    "keywords": "Select Required advanced {\"label\":\"Department\",\"options\":\"departmentOptions\",\"required\":true}",
-    "excerpt": "<Select\n  label=\"Department\"\n  options=\"departmentOptions\"\n  required\n>Example</Select>"
+    "keywords": "Select Required advanced {\"label\":\"Department\",\"required\":true}",
+    "excerpt": "<Select\n  label=\"Department\"\n  required\n>Example</Select>"
   },
   {
     "id": "example:select:Loading",
     "title": "Select — Loading",
     "type": "example",
     "path": "/docs/components/select#examples",
-    "keywords": "Select Loading loading {\"label\":\"Department\",\"options\":\"departmentOptions\",\"loading\":true}",
-    "excerpt": "<Select\n  label=\"Department\"\n  options=\"departmentOptions\"\n  loading\n>Example</Select>"
+    "keywords": "Select Loading loading {\"label\":\"Department\",\"loading\":true}",
+    "excerpt": "<Select\n  label=\"Department\"\n  loading\n>Example</Select>"
   },
   {
     "id": "example:select:WithError",
     "title": "Select — With Error",
     "type": "example",
     "path": "/docs/components/select#examples",
-    "keywords": "Select With Error advanced {\"label\":\"Department\",\"options\":\"departmentOptions\",\"error\":\"Department is required\"}",
-    "excerpt": "<Select\n  label=\"Department\"\n  options=\"departmentOptions\"\n  error=\"Department is required\"\n>Example</Select>"
+    "keywords": "Select With Error error {\"label\":\"Department\",\"error\":\"Department is required\"}",
+    "excerpt": "<Select\n  label=\"Department\"\n  error=\"Department is required\"\n>Example</Select>"
   },
   {
     "id": "example:select:Disabled",
     "title": "Select — Disabled",
     "type": "example",
     "path": "/docs/components/select#examples",
-    "keywords": "Select Disabled disabled {\"label\":\"Department\",\"options\":\"departmentOptions\",\"disabled\":true,\"defaultValue\":\"eng\"}",
-    "excerpt": "<Select\n  label=\"Department\"\n  options=\"departmentOptions\"\n  disabled\n  defaultValue=\"eng\"\n>Example</Select>"
+    "keywords": "Select Disabled disabled {\"label\":\"Department\",\"disabled\":true,\"defaultValue\":\"eng\"}",
+    "excerpt": "<Select\n  label=\"Department\"\n  disabled\n  defaultValue=\"eng\"\n>Example</Select>"
   },
   {
     "id": "component:skeleton",
@@ -4697,6 +5489,14 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "path": "/docs/components/skeleton#api",
     "keywords": "Skeleton width string | number ",
     "excerpt": "string | number"
+  },
+  {
+    "id": "example:skeleton:Text",
+    "title": "Skeleton — Text",
+    "type": "example",
+    "path": "/docs/components/skeleton#examples",
+    "keywords": "Skeleton Text advanced {\"width\":200}",
+    "excerpt": "<Skeleton\n  width={200}\n/>"
   },
   {
     "id": "component:spinner",
@@ -4827,11 +5627,19 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "excerpt": "Size"
   },
   {
+    "id": "example:switch:SwitchDefault",
+    "title": "Switch — Switch Default",
+    "type": "example",
+    "path": "/docs/components/switch#examples",
+    "keywords": "Switch Switch Default basic {}",
+    "excerpt": "<Switch label=\"Email notifications\" defaultChecked hint=\"Receive product updates\" />"
+  },
+  {
     "id": "example:switch:Default",
     "title": "Switch — Default",
     "type": "example",
     "path": "/docs/components/switch#examples",
-    "keywords": "Switch Default advanced {\"label\":\"Email notifications\"}",
+    "keywords": "Switch Default basic {\"label\":\"Email notifications\"}",
     "excerpt": "<Switch\n  label=\"Email notifications\"\n>Example</Switch>"
   },
   {
@@ -4864,7 +5672,7 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "type": "example",
     "path": "/docs/components/switch#examples",
     "keywords": "Switch Settings Style advanced {}",
-    "excerpt": "// See Storybook story \"SettingsStyle\" for composite layout example."
+    "excerpt": "// See Storybook story \"SettingsStyle\" for full example."
   },
   {
     "id": "component:table",
@@ -4971,6 +5779,14 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "excerpt": "TableSelectionMode"
   },
   {
+    "id": "example:table:SortableTable",
+    "title": "Table — Sortable Table",
+    "type": "example",
+    "path": "/docs/components/table#examples",
+    "keywords": "Table Sortable Table advanced {}",
+    "excerpt": "// See Storybook story \"SortableTable\" for full example."
+  },
+  {
     "id": "component:textarea",
     "title": "Textarea",
     "type": "component",
@@ -5035,11 +5851,19 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "excerpt": "UIState"
   },
   {
+    "id": "example:textarea:TextareaDefault",
+    "title": "Textarea — Textarea Default",
+    "type": "example",
+    "path": "/docs/components/textarea#examples",
+    "keywords": "Textarea Textarea Default basic {}",
+    "excerpt": "<Textarea label=\"Description\" placeholder=\"Enter details...\" />"
+  },
+  {
     "id": "example:textarea:Default",
     "title": "Textarea — Default",
     "type": "example",
     "path": "/docs/components/textarea#examples",
-    "keywords": "Textarea Default advanced {\"label\":\"Description\",\"placeholder\":\"Enter details...\"}",
+    "keywords": "Textarea Default basic {\"label\":\"Description\",\"placeholder\":\"Enter details...\"}",
     "excerpt": "<Textarea\n  label=\"Description\"\n  placeholder=\"Enter details...\"\n>Example</Textarea>"
   },
   {
@@ -5063,7 +5887,7 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "title": "Textarea — With Error",
     "type": "example",
     "path": "/docs/components/textarea#examples",
-    "keywords": "Textarea With Error advanced {\"label\":\"Description\",\"defaultValue\":\"Too short\",\"error\":\"Description must be at least 20 characters\"}",
+    "keywords": "Textarea With Error error {\"label\":\"Description\",\"defaultValue\":\"Too short\",\"error\":\"Description must be at least 20 characters\"}",
     "excerpt": "<Textarea\n  label=\"Description\"\n  defaultValue=\"Too short\"\n  error=\"Description must be at least 20 characters\"\n>Example"
   },
   {
@@ -5179,6 +6003,14 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "excerpt": "string"
   },
   {
+    "id": "example:time-picker:TimePickerDefault",
+    "title": "TimePicker — Time Picker Default",
+    "type": "example",
+    "path": "/docs/components/time-picker#examples",
+    "keywords": "TimePicker Time Picker Default basic {}",
+    "excerpt": "<TimePicker label=\"Meeting time\" value=\"09:30\" />"
+  },
+  {
     "id": "component:toast-provider",
     "title": "ToastProvider",
     "type": "component",
@@ -5275,6 +6107,14 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "excerpt": "TokenFieldToken[]"
   },
   {
+    "id": "example:token-field:TokenFieldMail",
+    "title": "TokenField — Token field (macOS Mail)",
+    "type": "example",
+    "path": "/docs/components/token-field#examples",
+    "keywords": "TokenField Token field (macOS Mail) advanced {}",
+    "excerpt": "// See Storybook story \"TokenFieldMail\" for full example."
+  },
+  {
     "id": "component:tooltip",
     "title": "Tooltip",
     "type": "component",
@@ -5299,28 +6139,44 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "excerpt": "TooltipSide"
   },
   {
+    "id": "example:tooltip:ExpansionTooltip",
+    "title": "Tooltip — Expansion Tooltip",
+    "type": "example",
+    "path": "/docs/components/tooltip#examples",
+    "keywords": "Tooltip Expansion Tooltip advanced {}",
+    "excerpt": "// See Storybook story \"ExpansionTooltip\" for full example."
+  },
+  {
+    "id": "example:tooltip:TooltipDefault",
+    "title": "Tooltip — Tooltip Default",
+    "type": "example",
+    "path": "/docs/components/tooltip#examples",
+    "keywords": "Tooltip Tooltip Default basic {}",
+    "excerpt": "// See Storybook story \"TooltipDefault\" for full example."
+  },
+  {
     "id": "example:tooltip:Default",
     "title": "Tooltip — Default",
     "type": "example",
     "path": "/docs/components/tooltip#examples",
-    "keywords": "Tooltip Default advanced {\"content\":\"Export employees as CSV\",\"children\":\"<Button variant=\\\"outline\\\">Export</Button>\"}",
-    "excerpt": "<Tooltip\n  content=\"Export employees as CSV\"\n><Button variant=\"outline\">Export</Button></Tooltip>"
+    "keywords": "Tooltip Default basic {\"content\":\"Export employees as CSV\"}",
+    "excerpt": "<Tooltip\n  content=\"Export employees as CSV\"\n>Example</Tooltip>"
   },
   {
     "id": "example:tooltip:OnText",
     "title": "Tooltip — On Text",
     "type": "example",
     "path": "/docs/components/tooltip#examples",
-    "keywords": "Tooltip On Text advanced {\"content\":\"Last updated 2 hours ago\",\"children\":\"<span style={{ textDecoration: 'underline dotted'\"}",
-    "excerpt": "<Tooltip\n  content=\"Last updated 2 hours ago\"\n><span style={{ textDecoration: 'underline dotted'</Tooltip>"
+    "keywords": "Tooltip On Text advanced {\"content\":\"Last updated 2 hours ago\",\"textDecoration\":\"underline dotted\"}",
+    "excerpt": "<Tooltip\n  content=\"Last updated 2 hours ago\"\n  textDecoration=\"underline dotted\"\n>Example</Tooltip>"
   },
   {
     "id": "example:tooltip:LongContent",
     "title": "Tooltip — Long Content",
     "type": "example",
     "path": "/docs/components/tooltip#examples",
-    "keywords": "Tooltip Long Content advanced {\"content\":\"Keyboard shortcut: ⌘ + Shift + E\",\"children\":\"<Button variant=\\\"secondary\\\">Quick export</Button>\"}",
-    "excerpt": "<Tooltip\n  content=\"Keyboard shortcut: ⌘ + Shift + E\"\n><Button variant=\"secondary\">Quick export</Button></Tooltip>"
+    "keywords": "Tooltip Long Content advanced {\"content\":\"Keyboard shortcut: ⌘ + Shift + E\"}",
+    "excerpt": "<Tooltip\n  content=\"Keyboard shortcut: ⌘ + Shift + E\"\n>Example</Tooltip>"
   },
   {
     "id": "component:typography",
@@ -5345,6 +6201,14 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "path": "/docs/components/typography#api",
     "keywords": "Typography muted boolean ",
     "excerpt": "boolean"
+  },
+  {
+    "id": "example:typography:TypographyScale",
+    "title": "Typography — Typography Scale",
+    "type": "example",
+    "path": "/docs/components/typography#examples",
+    "keywords": "Typography Typography Scale advanced {}",
+    "excerpt": "// See Storybook story \"TypographyScale\" for full example."
   },
   {
     "id": "component:unsaved-indicator",
@@ -5519,8 +6383,48 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "title": "Architecture",
     "type": "guide",
     "path": "/docs/guides/architecture",
-    "keywords": "Architecture # laRose Architecture\n\nlaRose is a **UI Operating System** for modern SaaS applications — not a component library.\n\n## Layer Model\n\n```text\n                    laRose UI OS\n                         │\n        ┌────────────────┼────────────────┐\n        │                │                │\n     UI Layer       Intelligence        Runtime\n        │                │                │\n   @larose-ui/react   @larose-ui/data      @larose-ui/runtime\n   Components      @larose-ui/forms     Theme, Tenant, Session\n                   @larose-ui/permissions Feature Flags, i18n\n                   @larose-ui/ai         Network, Offline\n        │                │                │\n        └────────────────┼────────────────┘\n                         │\n                   Observability\n                   @larose-ui/observability\n                         │\n                    Quality Engine\n              Doctor + CLI + Testing + A11y\n```\n\n## Package Rules\n\n1. `@larose-ui/core` has zero dependencies — types, state machines, runtime contracts\n2. No circular dependencies between packages\n3. Intelligence packages compose at the app layer — not each other\n4. Runtime orchestrates; domain packages implement\n5. DevTools and CLI are leaf packages\n\n## Runtime ↔ DevTools ↔ Doctor Triad\n\nEvery metric captured in **Runtime** must be inspectable in **DevTools**.\nEvery detectable issue must be auditable by **Doctor** in CI.\n\n## Dependency Graph\n\nSee [RUNTIME_2.md](../runtime/RUNTIME_2.md) for Runtime 2.0 design.\n\n## Examples\n\n### Basic\n\n```tsx\nimport { LaRoseProvider } from '@larose-ui/runtime';\nimport { Button } from '@larose-ui/react';\n\n<LaRoseProvider locale=\"en\" permissions={['app.read']}>\n  <Button>Save</Button>\n</LaRoseProvider>\n```\n\n### Enterprise\n\n```tsx\n<LaRoseProvider\n  tenant={{ id: 'acme', timezone: 'Africa/Cairo' }}\n  user={{ id: 'ahmed', roles: ['hr-manager'] }}\n  session=\"authenticated\"\n  featureFlagEvaluator={rolloutEvaluator}\n  version={{ frontend: '3.2.0', api: 'v4' }}\n>\n  <App />\n</LaRo",
+    "keywords": "Architecture # laRose Architecture\n\nlaRose is a **UI Operating System** for modern SaaS applications — not a component library.\n\n## Layer Model\n\n```text\n                    laRose UI OS\n                         │\n        ┌────────────────┼────────────────┐\n        │                │                │\n     UI Layer       Intelligence        Runtime\n        │                │                │\n   @larose-ui/react   @larose-ui/data      @larose-ui/runtime\n   Components      @larose-ui/forms     Theme, Tenant, Session\n   @larose-ui/styles @larose-ui/permissions Feature Flags, i18n\n        │           @larose-ui/ai         Network, Offline\n        │                │                │\n        └────────────────┼────────────────┘\n                         │\n                   Observability\n                   @larose-ui/observability\n                         │\n                    Quality Engine\n              Doctor + CLI + Testing + A11y\n```\n\n## Shared styles\n\nComponent CSS lives in `@larose-ui/styles` (framework-agnostic). Import tokens first, then shared component styles:\n\n```ts\nimport '@larose-ui/tokens/styles.css';\nimport '@larose-ui/styles/styles.css';\n```\n\n`@larose-ui/react/styles.css` remains available for backward compatibility.\n\n## Runtime core\n\nFramework-independent runtime logic lives in `@larose-ui/runtime-core` (store, bridges, tenant, i18n, host detection). `@larose-ui/runtime` is the React adapter (`LaRoseProvider`, hooks) and mounts `AcceleratorProvider` from `@larose-ui/react`.\n\nThe lightweight `LaRoseProvider` in `@larose-ui/react` remains for theme/motion-only setups without the full runtime stack.\n\n## Component contracts\n\nCanonical component APIs live in `contracts/components/*.json`, validated by `@larose-ui/contracts` and `larose doctor`. Regenerate from React with:\n\n```bash\npnpm generate:contracts\n```\n\n## Headless primitives\n\nInteractive behavior lives in `@larose-ui/primitives` (menu type-ahead, keyboard, mnemonics). `@larose-ui/react` is a thin rendering adapter.\n\n##",
     "excerpt": "laRose Architecture\n\nlaRose is a **UI Operating System** for modern SaaS applications — not a component library.\n\nLayer Model\n\n```text\n                    laRos"
+  },
+  {
+    "id": "guide:vue",
+    "title": "Vue 3",
+    "type": "guide",
+    "path": "/docs/guides/vue",
+    "keywords": "Vue 3 # Vue 3 Integration\n\n`@larose-ui/vue` provides Vue 3 bindings over the same framework-agnostic platform as React:\n\n```text\n@larose-ui/core\n@larose-ui/tokens\n@larose-ui/styles\n@larose-ui/primitives\n@larose-ui/themes\n@larose-ui/runtime-core\n        ↓\n@larose-ui/vue\n```\n\nComponents reuse **shared CSS modules** from `@larose-ui/styles` — one visual language, no duplicated design system.\n\n## Install\n\n```bash\npnpm add @larose-ui/vue @larose-ui/tokens\n```\n\n## Setup\n\n```ts\n// main.ts\nimport { createApp } from 'vue';\nimport App from './App.vue';\nimport '@larose-ui/tokens/styles.css';\nimport '@larose-ui/styles/styles.css';\n\ncreateApp(App).mount('#app');\n```\n\n```vue\n<!-- App.vue -->\n<script setup lang=\"ts\">\nimport { LaRoseProvider, Button } from '@larose-ui/vue';\n</script>\n\n<template>\n  <LaRoseProvider theme=\"light\">\n    <Button variant=\"primary\">Save</Button>\n  </LaRoseProvider>\n</template>\n```\n\n## Runtime\n\nFor tenant, locale, permissions, and runtime context:\n\n```vue\n<script setup lang=\"ts\">\nimport { LaRoseProvider, RuntimeProvider } from '@larose-ui/vue';\n</script>\n\n<template>\n  <LaRoseProvider>\n    <RuntimeProvider :initial-context=\"{ locale: 'en' }\">\n      <RouterView />\n    </RuntimeProvider>\n  </LaRoseProvider>\n</template>\n```\n\nUse `useRuntimeContext()` inside setup functions to read or patch runtime state.\n\n## Initial component set\n\nFoundation components available in v0.1.1:\n\n- **Actions:** Button\n- **Forms:** Input, Textarea, Select, Checkbox, Radio, Switch, FieldShell\n- **Feedback:** Alert, Progress, Spinner, Badge, Label\n- **Layout:** Card, Modal, Dialog\n\nMenu, Tabs, Tooltip, and CommandPalette will follow the same adapter pattern using `@larose-ui/primitives`.\n\n## v-model\n\nForm controls support Vue `v-model` / `modelValue`:\n\n```vue\n<Input v-model=\"email\" label=\"Email\" />\n<Switch v-model=\"enabled\" label=\"Notifications\" />\n```\n\n## Nuxt\n\nUse `@larose-ui/nuxt` for SSR-specific wiring — CSS injection, theme bootstrap script, and `LaRoseApp` shell. See [NUXT.md](../ecosy",
+    "excerpt": "Vue 3 Integration\n\n`@larose-ui/vue` provides Vue 3 bindings over the same framework-agnostic platform as React:\n\n```text\n@larose-ui/core\n@larose-ui/tokens\n@laro"
+  },
+  {
+    "id": "guide:svelte",
+    "title": "Svelte 5",
+    "type": "guide",
+    "path": "/docs/guides/svelte",
+    "keywords": "Svelte 5 # Svelte Integration\n\n`@larose-ui/svelte` provides Svelte 5 bindings over the shared laRose platform.\n\n```text\n@larose-ui/core → tokens → styles → themes → primitives → runtime-core\n                              ↓\n                      @larose-ui/svelte\n```\n\n## Install\n\n```bash\npnpm add @larose-ui/svelte @larose-ui/tokens\n```\n\n## Setup\n\n```ts\n// main.ts\nimport '@larose-ui/tokens/styles.css';\nimport '@larose-ui/styles/styles.css';\nimport { mount } from 'svelte';\nimport App from './App.svelte';\n\nmount(App, { target: document.getElementById('app')! });\n```\n\n```svelte\n<!-- App.svelte -->\n<script lang=\"ts\">\n  import { LaRoseProvider, Button } from '@larose-ui/svelte';\n</script>\n\n<LaRoseProvider theme=\"light\">\n  <Button variant=\"primary\">Save</Button>\n</LaRoseProvider>\n```\n\n## Runtime\n\n```svelte\n<script lang=\"ts\">\n  import { LaRoseProvider, RuntimeProvider } from '@larose-ui/svelte';\n</script>\n\n<LaRoseProvider>\n  <RuntimeProvider initialContext={{ locale: 'en' }}>\n    {@render children()}\n  </RuntimeProvider>\n</LaRoseProvider>\n```\n\nUse `getRuntimeContext()` in child components to read or patch runtime state.\n\n## Components\n\nFoundation set (mirrors `@larose-ui/vue`):\n\nButton, Input, Textarea, Select, Checkbox, Radio, Switch, Badge, Label, Spinner, Progress, Alert, Card, Modal, Dialog, FieldShell\n\n## Bindings\n\nForm controls use `$bindable` props:\n\n```svelte\n<script lang=\"ts\">\n  let email = $state('');\n</script>\n\n<Input bind:value={email} label=\"Email\" />\n<Switch bind:checked={enabled} label=\"Notifications\" />\n```\n\n## Snippets\n\nPass content with Svelte 5 snippets:\n\n```svelte\n<Button variant=\"primary\">\n  {#snippet children()}Save{/snippet}\n</Button>\n```\n\nOr as default slot content between tags when supported by your bundler.\n\nSee also [VUE.md](./VUE.md) for shared platform concepts.\n",
+    "excerpt": "Svelte Integration\n\n`@larose-ui/svelte` provides Svelte 5 bindings over the shared laRose platform.\n\n```text\n@larose-ui/core → tokens → styles → themes → primit"
+  },
+  {
+    "id": "guide:nextjs",
+    "title": "Next.js",
+    "type": "guide",
+    "path": "/docs/guides/nextjs",
+    "keywords": "Next.js # Next.js Integration\n\nlaRose UI ships as React components with shared CSS. `@larose-ui/next` is a thin integration layer — it does not duplicate components.\n\n## Install\n\n```bash\npnpm add @larose-ui/next @larose-ui/react @larose-ui/runtime @larose-ui/tokens\n```\n\n## App Router (recommended)\n\n### 1. Root layout — CSS (Server Component)\n\n```tsx\n// app/layout.tsx\nimport '@larose-ui/tokens/styles.css';\nimport '@larose-ui/react/styles.css';\nimport { LaRoseThemeScript } from '@larose-ui/next/client';\nimport { Providers } from './providers';\n\nexport default function RootLayout({ children }: { children: React.ReactNode }) {\n  return (\n    <html lang=\"en\" suppressHydrationWarning>\n      <body>\n        <LaRoseThemeScript appearance=\"system\" />\n        <Providers>{children}</Providers>\n      </body>\n    </html>\n  );\n}\n```\n\nUse `suppressHydrationWarning` on `<html>` when using system appearance — the pre-hydration script may set `data-lr-theme` before React mounts.\n\n### 2. Providers — client boundary\n\n```tsx\n// app/providers.tsx\n'use client';\n\nimport { LaRoseRoot } from '@larose-ui/next/client';\n\nexport function Providers({ children }: { children: React.ReactNode }) {\n  return (\n    <LaRoseRoot locale=\"en\" permissions={['app.read']} appearance=\"system\">\n      {children}\n    </LaRoseRoot>\n  );\n}\n```\n\n`LaRoseRoot` wraps `@larose-ui/runtime` `LaRoseProvider` (theme, i18n, permissions, network, offline, accelerators).\n\nFor theme/motion-only apps without the runtime stack:\n\n```tsx\nimport { LaRoseRootLight } from '@larose-ui/next/client';\n\n<LaRoseRootLight theme=\"light\">{children}</LaRoseRootLight>\n```\n\n### 3. Interactive components\n\nImport laRose components in Client Components:\n\n```tsx\n'use client';\n\nimport { Button, Dialog } from '@larose-ui/react';\n```\n\nServer Components can render static markup, but interactive laRose components require `'use client'`.\n\n## Pages Router\n\n```tsx\n// pages/_app.tsx\nimport '@larose-ui/tokens/styles.css';\nimport '@larose-ui/react/styles.css';\nimport ty",
+    "excerpt": "Next.js Integration\n\nlaRose UI ships as React components with shared CSS. `@larose-ui/next` is a thin integration layer — it does not duplicate components.\n\nIns"
+  },
+  {
+    "id": "guide:nuxt",
+    "title": "Nuxt",
+    "type": "guide",
+    "path": "/docs/guides/nuxt",
+    "keywords": "Nuxt # Nuxt Integration\n\n`@larose-ui/nuxt` is a thin Nuxt module over `@larose-ui/vue`. It does not duplicate components.\n\n## Install\n\n```bash\npnpm add @larose-ui/nuxt @larose-ui/vue\n```\n\n## Configure\n\n```ts\n// nuxt.config.ts\nexport default defineNuxtConfig({\n  modules: ['@larose-ui/nuxt'],\n  laRose: {\n    theme: 'light',\n    density: 'comfortable',\n    appearance: 'system',\n    themeScript: true,\n    css: true,\n    runtime: { locale: 'en' },\n  },\n});\n```\n\nModule options (`laRose` key):\n\n| Option | Default | Description |\n|--------|---------|-------------|\n| `css` | `true` | Adds tokens + shared component CSS |\n| `themeScript` | `true` | Pre-hydration theme bootstrap script |\n| `appearance` | `system` | `light` / `dark` / `system` for theme script |\n| `theme` | `light` | Passed to `LaRoseProvider` |\n| `density` | `comfortable` | UI density |\n| `tenantId` | — | Optional tenant marker |\n| `runtime` | `false` | `true` or initial context object for `RuntimeProvider` |\n| `transpile` | `true` | Transpile `@larose-ui/vue` for SSR |\n\n## App shell\n\nWrap your app once in `app.vue`:\n\n```vue\n<template>\n  <LaRoseApp>\n    <NuxtPage />\n  </LaRoseApp>\n</template>\n```\n\n`LaRoseApp` is auto-registered globally and reads `runtimeConfig.public.laRose`.\n\n## Components\n\nImport from `@larose-ui/vue` (auto-imports also register provider composables):\n\n```vue\n<script setup lang=\"ts\">\nimport { Button, Input } from '@larose-ui/vue';\n\nconst email = ref('');\n</script>\n\n<template>\n  <Input v-model=\"email\" label=\"Email\" />\n  <Button variant=\"primary\">Save</Button>\n</template>\n```\n\n## SSR notes\n\n1. Keep interactive laRose components in client-only islands when they rely on `window` (rare for foundation components).\n2. The theme bootstrap script runs in `<head>` before Vue hydrates.\n3. Permission checks remain UX-only — enforce authorization on the server.\n\nSee also [VUE.md](./VUE.md).\n",
+    "excerpt": "Nuxt Integration\n\n`@larose-ui/nuxt` is a thin Nuxt module over `@larose-ui/vue`. It does not duplicate components.\n\nInstall\n\n```bash\npnpm add @larose-ui/nuxt @l"
+  },
+  {
+    "id": "guide:desktop",
+    "title": "Desktop integration",
+    "type": "guide",
+    "path": "/docs/guides/desktop",
+    "keywords": "Desktop integration # Desktop Host Integration\n\nlaRose treats **Electron** and **Tauri** as host adapters — not separate UI libraries. Shared components, styles, tokens, and runtime remain in the framework packages (`@larose-ui/react`, `@larose-ui/vue`, etc.).\n\n## Architecture\n\n```text\n@larose-ui/core (accelerators, STANDARD_ACCELERATORS)\n        ↓\n@larose-ui/runtime-core (host detection, capabilities)\n        ↓\n@larose-ui/desktop-core (native menus, window chrome)\n        ↓\n@larose-ui/electron  |  @larose-ui/tauri\n```\n\n## Host registration\n\nDesktop hosts must register before laRose runtime boot:\n\n```ts\nimport { registerHost } from '@larose-ui/desktop-core';\n\nregisterHost('electron'); // or 'tauri'\n```\n\nOr use the bootstrap helpers:\n\n```ts\nimport { bootstrapLaRoseElectron } from '@larose-ui/electron';\nbootstrapLaRoseElectron({ windowChrome: { titlebarHeight: 32 } });\n```\n\nThe runtime reads `globalThis.__LAROSE_HOST__` and exposes desktop capabilities (`nativeMenus`, `globalShortcuts`, `windowControls`, `vibrancy`).\n\n## React (Electron)\n\n```tsx\nimport '@larose-ui/tokens/styles.css';\nimport '@larose-ui/styles/styles.css';\nimport { LaRoseElectronRoot } from '@larose-ui/electron/client';\nimport { Button } from '@larose-ui/react';\n\nexport function App() {\n  return (\n    <LaRoseElectronRoot theme=\"system\" locale=\"en\">\n      <Button variant=\"primary\">Save</Button>\n    </LaRoseElectronRoot>\n  );\n}\n```\n\n## Native menus\n\nMap laRose menu entries to native templates without duplicating behavior:\n\n```ts\nimport { buildElectronMenuFromMenuBar, STANDARD_ACCELERATORS } from '@larose-ui/electron';\n\nconst template = buildElectronMenuFromMenuBar([\n  {\n    id: 'file',\n    title: 'File',\n    entries: [\n      { id: 'save', label: 'Save', accelerator: STANDARD_ACCELERATORS.save },\n      { id: 'quit', label: 'Quit', accelerator: STANDARD_ACCELERATORS.quit },\n    ],\n  },\n]);\n\n// Pass template to Electron Menu.buildFromTemplate(template)\n```\n\nTauri uses the same menu config via `@larose-ui/tauri`:\n\n```ts\nimport ",
+    "excerpt": "Desktop Host Integration\n\nlaRose treats **Electron** and **Tauri** as host adapters — not separate UI libraries. Shared components, styles, tokens, and runtime"
   },
   {
     "id": "guide:runtime",
@@ -5745,6 +6649,14 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "path": "/docs/design/tokens",
     "keywords": "split.divider.color --lr-split-divider-color Colors Design token exposed as --lr-split-divider-color",
     "excerpt": "--lr-split-divider-color = rgb(0 0 0 / 0.1)"
+  },
+  {
+    "id": "token:--lr-menu-shortcut-color",
+    "title": "menu.shortcut.color",
+    "type": "token",
+    "path": "/docs/design/tokens",
+    "keywords": "menu.shortcut.color --lr-menu-shortcut-color Colors Design token exposed as --lr-menu-shortcut-color",
+    "excerpt": "--lr-menu-shortcut-color = rgb(0 0 0 / 0.45)"
   },
   {
     "id": "token:--lr-font-family-sans",
@@ -6017,6 +6929,14 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "path": "/docs/design/tokens",
     "keywords": "context.menu.separator --lr-context-menu-separator Typography Design token exposed as --lr-context-menu-separator",
     "excerpt": "--lr-context-menu-separator = rgb(0 0 0 / 0.08)"
+  },
+  {
+    "id": "token:--lr-menu-shortcut-font-size",
+    "title": "menu.shortcut.font.size",
+    "type": "token",
+    "path": "/docs/design/tokens",
+    "keywords": "menu.shortcut.font.size --lr-menu-shortcut-font-size Typography Design token exposed as --lr-menu-shortcut-font-size",
+    "excerpt": "--lr-menu-shortcut-font-size = 0.75rem"
   },
   {
     "id": "token:--lr-menu-bar-font-size",
@@ -8499,6 +9419,14 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "excerpt": "--lr-menu-checkmark-width = 1.125rem"
   },
   {
+    "id": "token:--lr-menu-shortcut-spacing",
+    "title": "menu.shortcut.spacing",
+    "type": "token",
+    "path": "/docs/design/tokens",
+    "keywords": "menu.shortcut.spacing --lr-menu-shortcut-spacing Other Design token exposed as --lr-menu-shortcut-spacing",
+    "excerpt": "--lr-menu-shortcut-spacing = 1.5rem"
+  },
+  {
     "id": "token:--lr-ornament-offset",
     "title": "ornament.offset",
     "type": "token",
@@ -9370,7 +10298,7 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "keywords": "density.multiplier --lr-density-multiplier Other Design token exposed as --lr-density-multiplier",
     "excerpt": "--lr-density-multiplier = 1"
   }
-];
+] as unknown as DocsSearchEntry[];
 
 export interface TokenSearchEntry {
   name: string;
@@ -9540,6 +10468,14 @@ export const docsTokenGroups: Record<string, TokenSearchEntry[]> = {
       "value": "rgb(0 0 0 / 0.1)",
       "category": "Colors",
       "description": "Design token exposed as --lr-split-divider-color",
+      "relatedComponents": []
+    },
+    {
+      "name": "menu.shortcut.color",
+      "cssVariable": "--lr-menu-shortcut-color",
+      "value": "rgb(0 0 0 / 0.45)",
+      "category": "Colors",
+      "description": "Design token exposed as --lr-menu-shortcut-color",
       "relatedComponents": []
     }
   ],
@@ -9826,6 +10762,14 @@ export const docsTokenGroups: Record<string, TokenSearchEntry[]> = {
       "value": "rgb(0 0 0 / 0.08)",
       "category": "Typography",
       "description": "Design token exposed as --lr-context-menu-separator",
+      "relatedComponents": []
+    },
+    {
+      "name": "menu.shortcut.font.size",
+      "cssVariable": "--lr-menu-shortcut-font-size",
+      "value": "0.75rem",
+      "category": "Typography",
+      "description": "Design token exposed as --lr-menu-shortcut-font-size",
       "relatedComponents": []
     },
     {
@@ -12448,6 +13392,14 @@ export const docsTokenGroups: Record<string, TokenSearchEntry[]> = {
       "value": "1.125rem",
       "category": "Other",
       "description": "Design token exposed as --lr-menu-checkmark-width",
+      "relatedComponents": []
+    },
+    {
+      "name": "menu.shortcut.spacing",
+      "cssVariable": "--lr-menu-shortcut-spacing",
+      "value": "1.5rem",
+      "category": "Other",
+      "description": "Design token exposed as --lr-menu-shortcut-spacing",
       "relatedComponents": []
     },
     {

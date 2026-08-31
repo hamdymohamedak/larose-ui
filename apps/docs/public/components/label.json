@@ -30,7 +30,16 @@
       "inherited": false
     }
   ],
-  "examples": [],
+  "examples": [
+    {
+      "id": "LabelImportance",
+      "title": "Label Importance",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"LabelImportance\" for full example.",
+      "composite": true
+    }
+  ],
   "accessibility": [],
   "anatomy": null,
   "playground": null

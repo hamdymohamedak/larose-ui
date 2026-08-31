@@ -5,7 +5,9 @@ import { CodeBlock } from '@/components/CodeBlock';
 import { ComponentAnatomySection } from '@/components/ComponentAnatomySection';
 import { ComponentExamples } from '@/components/ComponentExamples';
 import { ComponentPreview } from '@/components/ComponentPreview';
-import { CopyButton } from '@/components/CopyButton';
+import { FrameworkCodeTabs } from '@/components/FrameworkCodeTabs';
+import { FrameworkSelector } from '@/components/FrameworkSelector';
+import { StoryCanvas } from '@/components/StoryCanvas';
 import { MarkdownContent } from '@/components/MarkdownContent';
 import { PropsPlayground } from '@/components/PropsPlayground';
 import { guideSources } from '@/content/guides';
@@ -20,6 +22,13 @@ import {
   findGuide,
   findPackage,
 } from '@/data/catalog.generated';
+import {
+  getImportCode,
+  getInstallCommand,
+  getSupportedFrameworks,
+  getUsageCode,
+  PARITY_COMPONENTS,
+} from '@/lib/frameworks';
 
 export function GuidePage() {
   const { guideId } = useParams();
@@ -118,12 +127,21 @@ export function PackagesIndexPage() {
   );
 }
 
-function basicUsage(name: string): string {
-  const voidElements = new Set(['Spinner', 'Skeleton']);
-  if (voidElements.has(name)) {
-    return `<${name} />`;
-  }
-  return `<${name}>Example</${name}>`;
+
+function buildUsageSnippets(name: string) {
+  return {
+    react: getUsageCode(name, 'react'),
+    vue: getUsageCode(name, 'vue'),
+    svelte: getUsageCode(name, 'svelte'),
+  };
+}
+
+function buildImportSnippets(name: string) {
+  return {
+    react: getImportCode(name, 'react'),
+    vue: getImportCode(name, 'vue'),
+    svelte: getImportCode(name, 'svelte'),
+  };
 }
 
 export function ComponentDocPage() {
@@ -138,61 +156,90 @@ export function ComponentDocPage() {
   const examples = getComponentExamples(component.name);
   const controls = playgroundControls[component.name];
   const anatomy = componentAnatomy[component.name];
-  const importCode = `import { ${component.name} } from '@larose-ui/react';`;
-  const usageCode = basicUsage(component.name);
+  const supported = getSupportedFrameworks(component.name);
+  const isParity = PARITY_COMPONENTS.has(component.name);
 
   return (
-    <div className="docs-content docs-component-page">
-      <Badge variant="info">{component.category}</Badge>
-      <h1>{component.name}</h1>
-      <p>
-        React component from <code>@larose-ui/react</code> with generated API reference, interactive
-        controls, and live preview.
-      </p>
+    <div className="docs-content docs-component-page docs-sb-page">
+      <header className="docs-sb-page__header">
+        <div className="docs-sb-page__meta">
+          <Badge variant="info">{component.category}</Badge>
+          {isParity ? <Badge variant="success">React · Vue · Svelte</Badge> : null}
+        </div>
+        <h1>{component.name}</h1>
+        <p className="docs-sb-page__lede">
+          {isParity
+            ? 'Foundation component with shared API across React, Vue 3, and Svelte 5.'
+            : 'React component from @larose-ui/react with live preview and Storybook-aligned examples.'}
+        </p>
+        <FrameworkSelector supported={supported} />
+      </header>
 
-      <ComponentPreview slug={component.id} />
-
-      {controls ? <PropsPlayground componentName={component.name} controls={controls} /> : null}
-
-      <section id="installation">
-        <h2>Installation</h2>
-        <CodeBlock code="pnpm add @larose-ui/react @larose-ui/tokens" language="bash" title="Install" />
+      <section className="docs-sb-page__primary">
+        <h2 className="docs-sb-page__section-label">Preview</h2>
+        {controls ? (
+          <PropsPlayground componentName={component.name} controls={controls} />
+        ) : (
+          <StoryCanvas storyName="Default" padded centered>
+            <ComponentPreview slug={component.id} />
+          </StoryCanvas>
+        )}
       </section>
 
-      <section id="import">
-        <h2>Import</h2>
-        <div className="docs-code-toolbar">
-          <span />
-          <CopyButton value={importCode} />
-        </div>
-        <CodeBlock code={importCode} language="tsx" title="Import" />
+      <section className="docs-sb-page__usage">
+        <h2 className="docs-sb-page__section-label">Usage</h2>
+        <FrameworkCodeTabs
+          componentName={component.name}
+          snippets={buildUsageSnippets(component.name)}
+          title="Quick usage"
+          showSelector={false}
+        />
       </section>
 
       <ComponentExamples componentName={component.name} examples={examples} />
 
-      {api ? <ApiReference api={api} componentName={component.name} /> : null}
-
-      {anatomy ? <ComponentAnatomySection anatomy={anatomy} /> : null}
-
-      <section id="usage">
-        <h2>Basic usage</h2>
-        <div className="docs-code-toolbar">
-          <span />
-          <CopyButton value={usageCode} />
+      <details className="docs-sb-page__details">
+        <summary>Installation &amp; import</summary>
+        <div className="docs-sb-page__details-body">
+          <h3>Install</h3>
+          <FrameworkCodeTabs
+            showSelector={false}
+            snippets={{
+              react: getInstallCommand('react'),
+              vue: getInstallCommand('vue'),
+              svelte: getInstallCommand('svelte'),
+            }}
+            title="Install"
+          />
+          <h3>Import</h3>
+          <FrameworkCodeTabs
+            componentName={component.name}
+            snippets={buildImportSnippets(component.name)}
+            showSelector={false}
+          />
         </div>
-        <CodeBlock code={usageCode} language="tsx" title="Basic usage" />
-      </section>
+      </details>
+
+      {api ? <ApiReference api={api} componentName={component.name} /> : null}
+      {anatomy ? <ComponentAnatomySection anatomy={anatomy} /> : null}
     </div>
   );
 }
 
 export function ComponentsIndexPage() {
   return (
-    <div className="docs-content">
-      <h1>Components</h1>
-      <p>
-        {docsComponents.length} exported React components from <code>@larose-ui/react</code>.
-      </p>
+    <div className="docs-content docs-sb-page">
+      <header className="docs-sb-page__header">
+        <h1>Components</h1>
+        <p className="docs-sb-page__lede">
+          {docsComponents.length} components from the laRose catalog — each page mirrors Storybook
+          with live preview, usage code, and story variants.{' '}
+          <strong>{PARITY_COMPONENTS.size}</strong> foundation components ship for React, Vue, and
+          Svelte.
+        </p>
+        <FrameworkSelector />
+      </header>
+
       {docsComponentCategories.map((category) => {
         const items = docsComponents.filter((entry) => entry.category === category);
         if (items.length === 0) return null;
@@ -203,6 +250,9 @@ export function ComponentsIndexPage() {
               {items.map((item) => (
                 <Link key={item.id} className="docs-link-chip" to={`/docs/components/${item.id}`}>
                   {item.name}
+                  {PARITY_COMPONENTS.has(item.name) ? (
+                    <span className="docs-link-chip__badge">3 frameworks</span>
+                  ) : null}
                 </Link>
               ))}
             </div>

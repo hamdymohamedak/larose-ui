@@ -1,87 +1,62 @@
-import { useMemo, useState } from 'react';
-import { Button, Typography } from '@larose-ui/react';
-import { CodeBlock } from '@/components/CodeBlock';
-import { CopyButton } from '@/components/CopyButton';
-import { PreviewFrame } from '@/components/PreviewFrame';
+import { useMemo } from 'react';
+import { Typography } from '@larose-ui/react';
+import { FrameworkCodeTabs } from '@/components/FrameworkCodeTabs';
+import { StorySection } from '@/components/StoryCanvas';
 import type { DocsExampleEntry } from '@/data/examples.generated';
+import { getComponentPreview } from '@/previews';
 import { renderPlaygroundComponent } from '@/previews/playgroundRegistry';
 import { playgroundControls } from '@/data/playground.generated';
+import { getUsageCode } from '@/lib/frameworks';
 
 interface ComponentExamplesProps {
   componentName: string;
   examples: DocsExampleEntry[];
 }
 
-export function ComponentExamples({ componentName, examples }: ComponentExamplesProps) {
-  const [activeId, setActiveId] = useState(examples[0]?.id ?? 'basic');
-  const active = examples.find((example) => example.id === activeId) ?? examples[0];
+function renderExamplePreview(componentName: string, example: DocsExampleEntry) {
+  if (!example.composite && playgroundControls[componentName]) {
+    const preview = renderPlaygroundComponent(componentName, example.props);
+    if (preview) return preview;
+  }
 
-  const fallbackExamples = useMemo(() => {
+  return getComponentPreview(componentName);
+}
+
+export function ComponentExamples({ componentName, examples }: ComponentExamplesProps) {
+  const items = useMemo(() => {
     if (examples.length > 0) return examples;
     return [
       {
-        id: 'basic',
-        title: 'Basic',
+        id: 'default',
+        title: 'Default',
         kind: 'basic',
-        props: playgroundControls[componentName]
-          ? Object.fromEntries(
-              Object.entries(playgroundControls[componentName]).map(([key, control]) => [
-                key,
-                control.default ?? '',
-              ]),
-            )
-          : {},
-        code: `<${componentName}>Example</${componentName}>`,
+        props: {},
+        code: getUsageCode(componentName, 'react'),
       },
     ] satisfies DocsExampleEntry[];
   }, [componentName, examples]);
 
-  const items = fallbackExamples;
-  const current = active ?? items[0];
-
-  if (!current) {
-    return null;
-  }
+  if (items.length === 0) return null;
 
   return (
-    <section id="examples" className="docs-examples">
-      <h2>Examples</h2>
-      <div className="docs-examples-tabs" role="tablist" aria-label={`${componentName} examples`}>
-        {items.map((example) => (
-          <Button
-            key={example.id}
-            role="tab"
-            aria-selected={current.id === example.id}
-            size="sm"
-            variant={current.id === example.id ? 'primary' : 'outline'}
-            onClick={() => setActiveId(example.id)}
-          >
-            {example.title}
-          </Button>
-        ))}
+    <section id="stories" className="docs-sb-stories">
+      <div className="docs-sb-stories__header">
+        <h2>Stories</h2>
+        <Typography muted className="docs-sb-stories__lede">
+          Every variant from Storybook — preview, then show code to copy into your app.
+        </Typography>
       </div>
 
-      {current ? (
-        <>
-          {!current.composite && playgroundControls[componentName] ? (
-            <PreviewFrame title={current.title}>
-              {renderPlaygroundComponent(componentName, current.props)}
-            </PreviewFrame>
-          ) : (
-            <Typography muted className="docs-card-copy">
-              Composite example — see generated code and Storybook for full layout.
-            </Typography>
-          )}
-
-          <div className="docs-code-toolbar">
-            <Typography as="h3" role="title">
-              Code
-            </Typography>
-            <CopyButton value={current.code} />
-          </div>
-          <CodeBlock code={current.code} language="tsx" title={current.title} />
-        </>
-      ) : null}
+      <div className="docs-sb-stories__list">
+        {items.map((example) => (
+          <StorySection
+            key={example.id}
+            title={example.title}
+            preview={renderExamplePreview(componentName, example)}
+            code={example.code}
+          />
+        ))}
+      </div>
     </section>
   );
 }

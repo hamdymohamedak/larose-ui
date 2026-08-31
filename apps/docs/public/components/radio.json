@@ -32,9 +32,17 @@
   ],
   "examples": [
     {
+      "id": "RadioGroup",
+      "title": "Radio Group",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"RadioGroup\" for full example.",
+      "composite": true
+    },
+    {
       "id": "Default",
       "title": "plan",
-      "kind": "advanced",
+      "kind": "basic",
       "props": {
         "name": "plan",
         "label": "Starter plan",
@@ -58,7 +66,7 @@
     {
       "id": "WithError",
       "title": "plan",
-      "kind": "advanced",
+      "kind": "error",
       "props": {
         "name": "plan",
         "label": "Enterprise plan",
@@ -84,7 +92,7 @@
       "title": "Group",
       "kind": "advanced",
       "props": {},
-      "code": "// See Storybook story \"Group\" for composite layout example.",
+      "code": "// See Storybook story \"Group\" for full example.",
       "composite": true
     }
   ],
@@ -92,5 +100,18 @@
     "Uses native or laRose-managed focus rings and disabled states."
   ],
   "anatomy": null,
-  "playground": null
+  "playground": {
+    "label": {
+      "control": "text",
+      "default": "Starter plan"
+    },
+    "checked": {
+      "control": "boolean",
+      "default": true
+    },
+    "disabled": {
+      "control": "boolean",
+      "default": false
+    }
+  }
 }

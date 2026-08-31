@@ -52,7 +52,24 @@
       "inherited": false
     }
   ],
-  "examples": [],
+  "examples": [
+    {
+      "id": "DocumentToolbarStory",
+      "title": "Create & Open",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"DocumentToolbarStory\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "DocumentToolbar",
+      "title": "Document Toolbar",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"DocumentToolbar\" for full example.",
+      "composite": true
+    }
+  ],
   "accessibility": [],
   "anatomy": null,
   "playground": null

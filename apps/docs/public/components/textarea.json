@@ -52,9 +52,17 @@
   ],
   "examples": [
     {
+      "id": "TextareaDefault",
+      "title": "Textarea Default",
+      "kind": "basic",
+      "props": {},
+      "code": "<Textarea label=\"Description\" placeholder=\"Enter details...\" />",
+      "composite": true
+    },
+    {
       "id": "Default",
       "title": "Default",
-      "kind": "advanced",
+      "kind": "basic",
       "props": {
         "label": "Description",
         "placeholder": "Enter details..."
@@ -86,7 +94,7 @@
     {
       "id": "WithError",
       "title": "With Error",
-      "kind": "advanced",
+      "kind": "error",
       "props": {
         "label": "Description",
         "defaultValue": "Too short",
@@ -108,5 +116,18 @@
   ],
   "accessibility": [],
   "anatomy": null,
-  "playground": null
+  "playground": {
+    "label": {
+      "control": "text",
+      "default": "Description"
+    },
+    "placeholder": {
+      "control": "text",
+      "default": "Enter details..."
+    },
+    "disabled": {
+      "control": "boolean",
+      "default": false
+    }
+  }
 }

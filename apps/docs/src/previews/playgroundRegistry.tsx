@@ -6,8 +6,11 @@ import {
   Checkbox,
   Input,
   Progress,
+  Radio,
   Select,
+  Spinner,
   Switch,
+  Textarea,
   Typography,
 } from '@larose-ui/react';
 import type { ComponentType, ReactNode } from 'react';
@@ -17,11 +20,14 @@ export const PLAYGROUND_COMPONENTS: Record<string, ComponentType<any>> = {
   Input,
   Badge,
   Checkbox,
+  Radio,
   Switch,
   Progress,
   Alert,
   Card,
   Select,
+  Textarea,
+  Spinner,
   Typography,
 };
 
@@ -53,6 +59,38 @@ export function renderPlaygroundComponent(
         key={String(props.checked)}
         label={String(props.label ?? 'Notifications')}
         defaultChecked={Boolean(props.checked)}
+      />
+    );
+  }
+
+  if (componentName === 'Checkbox') {
+    return (
+      <Checkbox
+        label={String(props.label ?? 'Accept terms')}
+        defaultChecked={Boolean(props.checked)}
+        disabled={Boolean(props.disabled)}
+      />
+    );
+  }
+
+  if (componentName === 'Radio') {
+    return (
+      <Radio
+        name="docs-radio"
+        label={String(props.label ?? 'Option')}
+        value="option"
+        defaultChecked={Boolean(props.checked)}
+        disabled={Boolean(props.disabled)}
+      />
+    );
+  }
+
+  if (componentName === 'Textarea') {
+    return (
+      <Textarea
+        label={String(props.label ?? 'Description')}
+        placeholder={String(props.placeholder ?? 'Enter details...')}
+        disabled={Boolean(props.disabled)}
       />
     );
   }

@@ -16,7 +16,40 @@
       "inherited": false
     }
   ],
-  "examples": [],
+  "examples": [
+    {
+      "id": "FinderStyleList",
+      "title": "Finder Style List",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"FinderStyleList\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "ReorderableList",
+      "title": "Reorderable List",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"ReorderableList\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "GroupedList",
+      "title": "Grouped List",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"GroupedList\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "ListAccessories",
+      "title": "List Accessories",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"ListAccessories\" for full example.",
+      "composite": true
+    }
+  ],
   "accessibility": [
     "Supports ARIA attributes via standard HTML element props."
   ],

@@ -19,5 +19,19 @@
   "examples": [],
   "accessibility": [],
   "anatomy": null,
-  "playground": null
+  "playground": {
+    "label": {
+      "control": "text",
+      "default": "Loading"
+    },
+    "size": {
+      "control": "select",
+      "options": [
+        "sm",
+        "md",
+        "lg"
+      ],
+      "default": "md"
+    }
+  }
 }

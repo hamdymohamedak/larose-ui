@@ -75,6 +75,20 @@ export const PLAYGROUND_CONTROLS = {
     },
     muted: { control: 'boolean', default: false },
   },
+  Textarea: {
+    label: { control: 'text', default: 'Description' },
+    placeholder: { control: 'text', default: 'Enter details...' },
+    disabled: { control: 'boolean', default: false },
+  },
+  Radio: {
+    label: { control: 'text', default: 'Starter plan' },
+    checked: { control: 'boolean', default: true },
+    disabled: { control: 'boolean', default: false },
+  },
+  Spinner: {
+    label: { control: 'text', default: 'Loading' },
+    size: { control: 'select', options: ['sm', 'md', 'lg'], default: 'md' },
+  },
 };
 
 /** Component anatomy for complex components. */

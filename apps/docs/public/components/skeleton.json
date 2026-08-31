@@ -32,7 +32,17 @@
       "inherited": false
     }
   ],
-  "examples": [],
+  "examples": [
+    {
+      "id": "Text",
+      "title": "Text",
+      "kind": "advanced",
+      "props": {
+        "width": 200
+      },
+      "code": "<Skeleton\n  width={200}\n/>"
+    }
+  ],
   "accessibility": [
     "Supports ARIA attributes via standard HTML element props."
   ],

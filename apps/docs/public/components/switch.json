@@ -43,9 +43,17 @@
   ],
   "examples": [
     {
+      "id": "SwitchDefault",
+      "title": "Switch Default",
+      "kind": "basic",
+      "props": {},
+      "code": "<Switch label=\"Email notifications\" defaultChecked hint=\"Receive product updates\" />",
+      "composite": true
+    },
+    {
       "id": "Default",
       "title": "Default",
-      "kind": "advanced",
+      "kind": "basic",
       "props": {
         "label": "Email notifications"
       },
@@ -86,7 +94,7 @@
       "title": "Settings Style",
       "kind": "advanced",
       "props": {},
-      "code": "// See Storybook story \"SettingsStyle\" for composite layout example.",
+      "code": "// See Storybook story \"SettingsStyle\" for full example.",
       "composite": true
     }
   ],

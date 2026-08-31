@@ -3113,6 +3113,27 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "inherited": false
       },
       {
+        "name": "enableMnemonics",
+        "type": "boolean",
+        "required": false,
+        "description": "Enable Alt+key mnemonics while open. Defaults to true.",
+        "inherited": false
+      },
+      {
+        "name": "enableShortcuts",
+        "type": "boolean",
+        "required": false,
+        "description": "When true, keyboard shortcuts activate menu items while open. Defaults to true.",
+        "inherited": false
+      },
+      {
+        "name": "enableTypeAhead",
+        "type": "boolean",
+        "required": false,
+        "description": "Enable type-ahead letter matching while open. Defaults to true.",
+        "inherited": false
+      },
+      {
         "name": "entries",
         "type": "MenuEntry[]",
         "required": true,
@@ -3122,6 +3143,13 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "layout",
         "type": "MenuLayout",
         "required": false,
+        "inherited": false
+      },
+      {
+        "name": "mnemonicVisible",
+        "type": "boolean",
+        "required": false,
+        "description": "When true, underline mnemonic access keys in labels.",
         "inherited": false
       },
       {
@@ -3140,6 +3168,13 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "open",
         "type": "boolean",
         "required": false,
+        "inherited": false
+      },
+      {
+        "name": "optionKey",
+        "type": "boolean",
+        "required": false,
+        "description": "Passed from MenuBar for Option-key alternate accelerators.",
         "inherited": false
       },
       {
@@ -3183,6 +3218,27 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "appSpecificMenus",
         "type": "MenuBarMenuConfig[]",
         "required": false,
+        "inherited": false
+      },
+      {
+        "name": "enableGlobalShortcuts",
+        "type": "boolean",
+        "required": false,
+        "description": "Register top-level menu accelerators globally. Defaults to true.",
+        "inherited": false
+      },
+      {
+        "name": "enableMnemonics",
+        "type": "boolean",
+        "required": false,
+        "description": "Enable Alt+key mnemonics on Windows/Linux. Defaults to true on non-macOS.",
+        "inherited": false
+      },
+      {
+        "name": "enableTypeAhead",
+        "type": "boolean",
+        "required": false,
+        "description": "Enable type-ahead letter matching in open menus. Defaults to true.",
         "inherited": false
       },
       {
@@ -3262,9 +3318,30 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
   "MenuBarExtra": {
     "props": [
       {
+        "name": "enableMnemonics",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "inherited": false
+      },
+      {
+        "name": "enableTypeAhead",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "inherited": false
+      },
+      {
         "name": "isOpen",
         "type": "boolean",
         "required": true,
+        "inherited": false
+      },
+      {
+        "name": "mnemonicVisible",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
         "inherited": false
       },
       {

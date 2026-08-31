@@ -10,6 +10,27 @@
       "inherited": false
     },
     {
+      "name": "enableMnemonics",
+      "type": "boolean",
+      "required": false,
+      "description": "Enable Alt+key mnemonics while open. Defaults to true.",
+      "inherited": false
+    },
+    {
+      "name": "enableShortcuts",
+      "type": "boolean",
+      "required": false,
+      "description": "When true, keyboard shortcuts activate menu items while open. Defaults to true.",
+      "inherited": false
+    },
+    {
+      "name": "enableTypeAhead",
+      "type": "boolean",
+      "required": false,
+      "description": "Enable type-ahead letter matching while open. Defaults to true.",
+      "inherited": false
+    },
+    {
       "name": "entries",
       "type": "MenuEntry[]",
       "required": true,
@@ -19,6 +40,13 @@
       "name": "layout",
       "type": "MenuLayout",
       "required": false,
+      "inherited": false
+    },
+    {
+      "name": "mnemonicVisible",
+      "type": "boolean",
+      "required": false,
+      "description": "When true, underline mnemonic access keys in labels.",
       "inherited": false
     },
     {
@@ -38,9 +66,49 @@
       "type": "boolean",
       "required": false,
       "inherited": false
+    },
+    {
+      "name": "optionKey",
+      "type": "boolean",
+      "required": false,
+      "description": "Passed from MenuBar for Option-key alternate accelerators.",
+      "inherited": false
     }
   ],
-  "examples": [],
+  "examples": [
+    {
+      "id": "MenuAlwaysOpen",
+      "title": "Menu (always open)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"MenuAlwaysOpen\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "AddMenu",
+      "title": "Add",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"AddMenu\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "SortMenu",
+      "title": "Sort",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"SortMenu\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "MoreMenu",
+      "title": "More (Notes)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"MoreMenu\" for full example.",
+      "composite": true
+    }
+  ],
   "accessibility": [],
   "anatomy": null,
   "playground": null

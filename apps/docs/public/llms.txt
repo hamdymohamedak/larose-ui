@@ -9,19 +9,29 @@ Apple-inspired by default. Fully customizable by architecture.
 - @larose-ui/contracts: Validate UI schemas against API contracts in CI.
 - @larose-ui/core: Framework-agnostic types, state machines, and runtime contracts.
 - @larose-ui/data: Backend-aware data fetching with self-healing errors.
+- @larose-ui/desktop-core: Desktop host utilities — native menus, accelerators, window chrome.
 - @larose-ui/devtools: In-app runtime inspector for development.
+- @larose-ui/electron: Electron adapter for laRose desktop apps.
 - @larose-ui/enterprise: Enterprise patterns — audit trails, session guards, schema IaC.
 - @larose-ui/forms: Schema-driven forms with validation and conditional fields.
 - @larose-ui/migration: Codemods, generators, and release intelligence.
 - @larose-ui/network: Network condition detection for adaptive UI.
+- @larose-ui/next: Next.js integration — SSR theme script and LaRoseRoot boundary.
+- @larose-ui/nuxt: Nuxt module for CSS injection, theme script, and Vue providers.
 - @larose-ui/observability: UX observability — journeys, funnels, and rage-click analysis.
 - @larose-ui/offline: Offline request queue with sync and conflict handling.
 - @larose-ui/permissions: Authorization-aware UI with RBAC/ABAC patterns.
+- @larose-ui/primitives: Headless menu keyboard, type-ahead, and accelerator behavior.
 - @larose-ui/react: Production-ready React components with built-in UI states.
 - @larose-ui/runtime: Unified runtime — theme, i18n, permissions, network, and session.
+- @larose-ui/runtime-core: Framework-agnostic runtime store, host detection, and i18n.
+- @larose-ui/styles: Framework-agnostic component CSS from the design system.
+- @larose-ui/svelte: Svelte 5 components with runes and shared laRose styles.
+- @larose-ui/tauri: Tauri adapter for laRose desktop webviews.
 - @larose-ui/testing: Test utilities with full laRose runtime context.
 - @larose-ui/themes: Named theme presets and tenant branding helpers.
 - @larose-ui/tokens: Runtime design tokens as CSS custom properties.
+- @larose-ui/vue: Vue 3 components — thin adapter over shared styles and runtime-core.
 
 ## Components
 - ActivityShareButton (Actions) — 5 documented props
@@ -77,9 +87,9 @@ Apple-inspired by default. Fully customizable by architecture.
 - ListRow (Data) — 8 documented props
 - ListSection (Data) — 2 documented props
 - Lockup (Layout) — 5 documented props
-- Menu (Navigation) — 6 documented props
-- MenuBar (Navigation) — 10 documented props
-- MenuBarExtra (Navigation) — 4 documented props
+- Menu (Navigation) — 11 documented props
+- MenuBar (Navigation) — 13 documented props
+- MenuBarExtra (Navigation) — 7 documented props
 - Modal (Overlay) — 9 documented props
 - MorePullDownButton (Navigation) — 0 documented props
 - Ornament (Layout) — 0 documented props
@@ -116,6 +126,11 @@ Apple-inspired by default. Fully customizable by architecture.
 
 ## Guides
 - Architecture: /docs/guides/architecture
+- Vue 3: /docs/guides/vue
+- Svelte 5: /docs/guides/svelte
+- Next.js: /docs/guides/nextjs
+- Nuxt: /docs/guides/nuxt
+- Desktop integration: /docs/guides/desktop
 - Runtime: /docs/guides/runtime
 - Customization: /docs/guides/customization
 - Motion system: /docs/guides/motion

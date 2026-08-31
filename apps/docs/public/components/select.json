@@ -65,15 +65,30 @@
   ],
   "examples": [
     {
+      "id": "SelectableLabel",
+      "title": "Selectable Label",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"SelectableLabel\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "SelectDefault",
+      "title": "Select Default",
+      "kind": "basic",
+      "props": {},
+      "code": "// See Storybook story \"SelectDefault\" for full example.",
+      "composite": true
+    },
+    {
       "id": "Default",
       "title": "Default",
-      "kind": "advanced",
+      "kind": "basic",
       "props": {
         "label": "Department",
-        "options": "departmentOptions",
         "placeholder": "Choose a department"
       },
-      "code": "<Select\n  label=\"Department\"\n  options=\"departmentOptions\"\n  placeholder=\"Choose a department\"\n>Example</Select>"
+      "code": "<Select\n  label=\"Department\"\n  placeholder=\"Choose a department\"\n>Example</Select>"
     },
     {
       "id": "WithHint",
@@ -81,10 +96,9 @@
       "kind": "advanced",
       "props": {
         "label": "Department",
-        "options": "departmentOptions",
         "hint": "Used for org chart and permissions"
       },
-      "code": "<Select\n  label=\"Department\"\n  options=\"departmentOptions\"\n  hint=\"Used for org chart and permissions\"\n>Example</Select>"
+      "code": "<Select\n  label=\"Department\"\n  hint=\"Used for org chart and permissions\"\n>Example</Select>"
     },
     {
       "id": "Required",
@@ -92,10 +106,9 @@
       "kind": "advanced",
       "props": {
         "label": "Department",
-        "options": "departmentOptions",
         "required": true
       },
-      "code": "<Select\n  label=\"Department\"\n  options=\"departmentOptions\"\n  required\n>Example</Select>"
+      "code": "<Select\n  label=\"Department\"\n  required\n>Example</Select>"
     },
     {
       "id": "Loading",
@@ -103,21 +116,19 @@
       "kind": "loading",
       "props": {
         "label": "Department",
-        "options": "departmentOptions",
         "loading": true
       },
-      "code": "<Select\n  label=\"Department\"\n  options=\"departmentOptions\"\n  loading\n>Example</Select>"
+      "code": "<Select\n  label=\"Department\"\n  loading\n>Example</Select>"
     },
     {
       "id": "WithError",
       "title": "With Error",
-      "kind": "advanced",
+      "kind": "error",
       "props": {
         "label": "Department",
-        "options": "departmentOptions",
         "error": "Department is required"
       },
-      "code": "<Select\n  label=\"Department\"\n  options=\"departmentOptions\"\n  error=\"Department is required\"\n>Example</Select>"
+      "code": "<Select\n  label=\"Department\"\n  error=\"Department is required\"\n>Example</Select>"
     },
     {
       "id": "Disabled",
@@ -125,11 +136,10 @@
       "kind": "disabled",
       "props": {
         "label": "Department",
-        "options": "departmentOptions",
         "disabled": true,
         "defaultValue": "eng"
       },
-      "code": "<Select\n  label=\"Department\"\n  options=\"departmentOptions\"\n  disabled\n  defaultValue=\"eng\"\n>Example</Select>"
+      "code": "<Select\n  label=\"Department\"\n  disabled\n  defaultValue=\"eng\"\n>Example</Select>"
     }
   ],
   "accessibility": [

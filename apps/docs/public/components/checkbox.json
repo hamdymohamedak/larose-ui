@@ -34,7 +34,7 @@
     {
       "id": "Default",
       "title": "Default",
-      "kind": "advanced",
+      "kind": "basic",
       "props": {
         "label": "I agree to the terms"
       },
@@ -63,7 +63,7 @@
     {
       "id": "WithError",
       "title": "With Error",
-      "kind": "advanced",
+      "kind": "error",
       "props": {
         "label": "I agree to the terms",
         "error": "You must accept the terms to continue"
@@ -79,6 +79,14 @@
         "disabled": true
       },
       "code": "<Checkbox\n  label=\"Legacy feature access\"\n  disabled\n>Example</Checkbox>"
+    },
+    {
+      "id": "CheckboxDefault",
+      "title": "Checkbox Default",
+      "kind": "basic",
+      "props": {},
+      "code": "<Checkbox label=\"I agree to the terms\" hint=\"Required before submitting\" />",
+      "composite": true
     }
   ],
   "accessibility": [

@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 import { Button, Checkbox, Input, Select, Switch, Typography } from '@larose-ui/react';
 import { CodeBlock } from '@/components/CodeBlock';
 import { CopyButton } from '@/components/CopyButton';
+import { StoryCanvas } from '@/components/StoryCanvas';
 import {
   PreviewToolbar,
   PreviewViewportFrame,
@@ -11,7 +12,6 @@ import {
 } from '@/components/PreviewToolbar';
 import type { PlaygroundControl } from '@/data/playground.generated';
 import { renderPlaygroundComponent } from '@/previews/playgroundRegistry';
-import { PreviewFrame } from '@/components/PreviewFrame';
 
 interface PropsPlaygroundProps {
   componentName: string;
@@ -57,8 +57,7 @@ export function PropsPlayground({ componentName, controls }: PropsPlaygroundProp
   const code = useMemo(() => generateComponentCode(componentName, values), [componentName, values]);
 
   return (
-    <section id="playground" className="docs-playground">
-      <h2>Interactive playground</h2>
+    <section id="playground" className="docs-playground docs-sb-playground">
       <PreviewToolbar
         viewport={viewport}
         direction={direction}
@@ -69,11 +68,11 @@ export function PropsPlayground({ componentName, controls }: PropsPlaygroundProp
       />
 
       <div className="docs-playground-grid">
-        <PreviewFrame title="Live preview">
+        <StoryCanvas storyName="Interactive" showToolbar={false} padded centered>
           <PreviewViewportFrame viewport={viewport} direction={direction} appearance={appearance}>
             {renderPlaygroundComponent(componentName, values)}
           </PreviewViewportFrame>
-        </PreviewFrame>
+        </StoryCanvas>
 
         <div className="docs-playground-controls">
           <div className="docs-playground-controls-header">

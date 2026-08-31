@@ -58,8 +58,10 @@ function suspense(element: React.ReactNode) {
 }
 
 export function App() {
+  const basename = import.meta.env.BASE_URL.replace(/\/$/, '') || undefined;
+
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <Routes>
         <Route element={<DocsShell />}>
           <Route index element={suspense(<HomePage />)} />

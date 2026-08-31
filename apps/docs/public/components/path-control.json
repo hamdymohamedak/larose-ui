@@ -53,7 +53,24 @@
       "inherited": false
     }
   ],
-  "examples": [],
+  "examples": [
+    {
+      "id": "PathControlStandard",
+      "title": "Path control (standard)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"PathControlStandard\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "PathControlPopup",
+      "title": "Path control (pop-up)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"PathControlPopup\" for full example.",
+      "composite": true
+    }
+  ],
   "accessibility": [
     "Supports ARIA attributes via standard HTML element props."
   ],

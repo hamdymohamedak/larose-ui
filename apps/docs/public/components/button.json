@@ -107,18 +107,21 @@
       "title": "Primary",
       "kind": "basic",
       "props": {
-        "children": "Add to Cart', variant: 'primary"
+        "children": "Add to Cart",
+        "variant": "primary"
       },
-      "code": "<Button>Add to Cart', variant: 'primary</Button>"
+      "code": "<Button\n  variant=\"primary\"\n>Add to Cart</Button>"
     },
     {
       "id": "Secondary",
       "title": "Secondary",
       "kind": "advanced",
       "props": {
-        "children": "Cancel', variant: 'secondary', buttonRole: 'cancel"
+        "children": "Cancel",
+        "variant": "secondary",
+        "buttonRole": "cancel"
       },
-      "code": "<Button>Cancel', variant: 'secondary', buttonRole: 'cancel</Button>"
+      "code": "<Button\n  variant=\"secondary\"\n  buttonRole=\"cancel\"\n>Cancel</Button>"
     },
     {
       "id": "Loading",
@@ -136,18 +139,20 @@
       "title": "Disabled",
       "kind": "disabled",
       "props": {
-        "children": "'Unavailable', disabled: true"
+        "children": "Unavailable",
+        "disabled": true
       },
-      "code": "<Button>'Unavailable', disabled: true</Button>"
+      "code": "<Button\n  disabled\n>Unavailable</Button>"
     },
     {
       "id": "DestructiveFilled",
       "title": "Destructive Filled",
       "kind": "destructive",
       "props": {
-        "children": "Delete Employee', variant: 'destructive"
+        "children": "Delete Employee",
+        "variant": "destructive"
       },
-      "code": "<Button>Delete Employee', variant: 'destructive</Button>"
+      "code": "<Button\n  variant=\"destructive\"\n>Delete Employee</Button>"
     },
     {
       "id": "DestructivePlain",
@@ -177,7 +182,7 @@
       "title": "Icon Only",
       "kind": "with-icon",
       "props": {},
-      "code": "// See Storybook story \"IconOnly\" for composite layout example.",
+      "code": "// See Storybook story \"IconOnly\" for full example.",
       "composite": true
     },
     {
@@ -185,7 +190,7 @@
       "title": "Style, not size",
       "kind": "sizes",
       "props": {},
-      "code": "// See Storybook story \"StyleNotSize\" for composite layout example.",
+      "code": "// See Storybook story \"StyleNotSize\" for full example.",
       "composite": true
     },
     {
@@ -193,7 +198,7 @@
       "title": "Alert Actions",
       "kind": "advanced",
       "props": {},
-      "code": "// See Storybook story \"AlertActions\" for composite layout example.",
+      "code": "// See Storybook story \"AlertActions\" for full example.",
       "composite": true
     },
     {
@@ -201,7 +206,7 @@
       "title": "visionOS vertical stack",
       "kind": "advanced",
       "props": {},
-      "code": "// See Storybook story \"VisionOSStack\" for composite layout example.",
+      "code": "// See Storybook story \"VisionOSStack\" for full example.",
       "composite": true
     },
     {
@@ -209,7 +214,31 @@
       "title": "watchOS full width",
       "kind": "advanced",
       "props": {},
-      "code": "// See Storybook story \"WatchFullWidth\" for composite layout example.",
+      "code": "// See Storybook story \"WatchFullWidth\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "SquareButtons",
+      "title": "Square buttons (in-view)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"SquareButtons\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "AllVariants",
+      "title": "All Variants",
+      "kind": "variants",
+      "props": {},
+      "code": "// See Storybook story \"AllVariants\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "Sizes",
+      "title": "Sizes",
+      "kind": "sizes",
+      "props": {},
+      "code": "// See Storybook story \"Sizes\" for full example.",
       "composite": true
     }
   ],

@@ -35,7 +35,24 @@
       "inherited": false
     }
   ],
-  "examples": [],
+  "examples": [
+    {
+      "id": "BoxSecondary",
+      "title": "Box Secondary",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"BoxSecondary\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "BoxSettingsStyle",
+      "title": "Box Settings Style",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"BoxSettingsStyle\" for full example.",
+      "composite": true
+    }
+  ],
   "accessibility": [
     "Supports ARIA attributes via standard HTML element props."
   ],

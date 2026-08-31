@@ -50,7 +50,16 @@
       "inherited": false
     }
   ],
-  "examples": [],
+  "examples": [
+    {
+      "id": "DisclosureButtonStory",
+      "title": "Disclosure button",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"DisclosureButtonStory\" for full example.",
+      "composite": true
+    }
+  ],
   "accessibility": [
     "Supports ARIA attributes via standard HTML element props."
   ],

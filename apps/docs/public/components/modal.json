@@ -62,9 +62,9 @@
     {
       "id": "Default",
       "title": "Default",
-      "kind": "advanced",
+      "kind": "basic",
       "props": {},
-      "code": "// See Storybook story \"Default\" for composite layout example.",
+      "code": "// See Storybook story \"Default\" for full example.",
       "composite": true
     },
     {
@@ -72,7 +72,7 @@
       "title": "Without Description",
       "kind": "advanced",
       "props": {},
-      "code": "// See Storybook story \"WithoutDescription\" for composite layout example.",
+      "code": "// See Storybook story \"WithoutDescription\" for full example.",
       "composite": true
     },
     {
@@ -80,7 +80,7 @@
       "title": "No Overlay Close",
       "kind": "advanced",
       "props": {},
-      "code": "// See Storybook story \"NoOverlayClose\" for composite layout example.",
+      "code": "// See Storybook story \"NoOverlayClose\" for full example.",
       "composite": true
     }
   ],

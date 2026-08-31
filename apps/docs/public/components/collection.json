@@ -40,7 +40,24 @@
       "inherited": false
     }
   ],
-  "examples": [],
+  "examples": [
+    {
+      "id": "CollectionGrid",
+      "title": "Collection Grid",
+      "kind": "advanced",
+      "props": {},
+      "code": "<Collection items={photos} layout=\"grid\" columns={4} selectedId={selectedId} onSelect={(item) => setSelectedId(item.id)} />",
+      "composite": true
+    },
+    {
+      "id": "CollectionRow",
+      "title": "Collection Row",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"CollectionRow\" for full example.",
+      "composite": true
+    }
+  ],
   "accessibility": [
     "Supports ARIA attributes via standard HTML element props."
   ],

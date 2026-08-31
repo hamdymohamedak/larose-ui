@@ -59,7 +59,16 @@
       "inherited": false
     }
   ],
-  "examples": [],
+  "examples": [
+    {
+      "id": "TokenFieldMail",
+      "title": "Token field (macOS Mail)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"TokenFieldMail\" for full example.",
+      "composite": true
+    }
+  ],
   "accessibility": [
     "Supports ARIA attributes via standard HTML element props."
   ],

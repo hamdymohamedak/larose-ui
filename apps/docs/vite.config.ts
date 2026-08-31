@@ -7,7 +7,11 @@ import { defineConfig } from 'vite';
 
 const rootDir = path.dirname(fileURLToPath(import.meta.url));
 
+/** GitHub Pages project site: https://<user>.github.io/<repo>/ */
+const base = process.env.VITE_BASE_PATH || '/';
+
 export default defineConfig({
+  base,
   plugins: [
     {
       enforce: 'pre',

@@ -80,7 +80,16 @@
       "inherited": false
     }
   ],
-  "examples": [],
+  "examples": [
+    {
+      "id": "SortableTable",
+      "title": "Sortable Table",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"SortableTable\" for full example.",
+      "composite": true
+    }
+  ],
   "accessibility": [
     "Supports ARIA attributes via standard HTML element props."
   ],
