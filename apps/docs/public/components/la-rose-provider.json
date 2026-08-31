@@ -1,0 +1,10 @@
+{
+  "component": "LaRoseProvider",
+  "category": "Other",
+  "import": "import { LaRoseProvider } from '@larose-ui/react';",
+  "props": [],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

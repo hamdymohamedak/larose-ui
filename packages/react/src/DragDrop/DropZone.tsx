@@ -1,7 +1,7 @@
 import { useEffect, useState, type ReactNode } from 'react';
 import { useDragDropContext } from './DragDropContext';
 import type { DragItem, DropResult } from './types';
-import styles from './DragDrop.module.css';
+import styles from '@larose-ui/styles/components/DragDrop/DragDrop.module.css';
 
 export interface DropZoneProps<T = unknown> {
   id: string;

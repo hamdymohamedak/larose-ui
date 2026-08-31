@@ -1,0 +1,146 @@
+# laRose UI Documentation
+
+Apple-inspired by default. Fully customizable by architecture.
+
+## Packages
+- @larose-ui/accessibility: Accessibility utilities and component source scanners.
+- @larose-ui/ai: Permission-bound AI for SmartTable and SmartForm.
+- @larose-ui/cli: CLI for quality gates, migration, and code generation.
+- @larose-ui/contracts: Validate UI schemas against API contracts in CI.
+- @larose-ui/core: Framework-agnostic types, state machines, and runtime contracts.
+- @larose-ui/data: Backend-aware data fetching with self-healing errors.
+- @larose-ui/desktop-core: Desktop host utilities — native menus, accelerators, window chrome.
+- @larose-ui/devtools: In-app runtime inspector for development.
+- @larose-ui/electron: Electron adapter for laRose desktop apps.
+- @larose-ui/enterprise: Enterprise patterns — audit trails, session guards, schema IaC.
+- @larose-ui/forms: Schema-driven forms with validation and conditional fields.
+- @larose-ui/migration: Codemods, generators, and release intelligence.
+- @larose-ui/network: Network condition detection for adaptive UI.
+- @larose-ui/next: Next.js integration — SSR theme script and LaRoseRoot boundary.
+- @larose-ui/nuxt: Nuxt module for CSS injection, theme script, and Vue providers.
+- @larose-ui/observability: UX observability — journeys, funnels, and rage-click analysis.
+- @larose-ui/offline: Offline request queue with sync and conflict handling.
+- @larose-ui/permissions: Authorization-aware UI with RBAC/ABAC patterns.
+- @larose-ui/primitives: Headless menu keyboard, type-ahead, and accelerator behavior.
+- @larose-ui/react: Production-ready React components with built-in UI states.
+- @larose-ui/runtime: Unified runtime — theme, i18n, permissions, network, and session.
+- @larose-ui/runtime-core: Framework-agnostic runtime store, host detection, and i18n.
+- @larose-ui/styles: Framework-agnostic component CSS from the design system.
+- @larose-ui/svelte: Svelte 5 components with runes and shared laRose styles.
+- @larose-ui/tauri: Tauri adapter for laRose desktop webviews.
+- @larose-ui/testing: Test utilities with full laRose runtime context.
+- @larose-ui/themes: Named theme presets and tenant branding helpers.
+- @larose-ui/tokens: Runtime design tokens as CSS custom properties.
+- @larose-ui/vue: Vue 3 components — thin adapter over shared styles and runtime-core.
+
+## Components
+- ActivityShareButton (Actions) — 5 documented props
+- ActivityView (Sharing) — 8 documented props
+- Alert (Feedback) — 2 documented props
+- AlertDialog (Feedback) — 12 documented props
+- AsyncButton (Actions) — 5 documented props
+- Badge (Feedback) — 1 documented props
+- Box (Layout) — 5 documented props
+- Breadcrumb (Navigation) — 2 documented props
+- Button (Actions) — 15 documented props
+- ButtonGroup (Actions) — 3 documented props
+- Card (Layout) — 3 documented props
+- Chart (Data) — 16 documented props
+- Checkbox (Forms) — 4 documented props
+- CollaborationButton (Actions) — 3 documented props
+- CollaborationPopover (Sharing) — 10 documented props
+- Collection (Layout) — 6 documented props
+- ColumnView (Layout) — 4 documented props
+- CommandPalette (Overlay) — 6 documented props
+- ContextMenu (Overlay) — 7 documented props
+- DataTable (Data) — 11 documented props
+- DatePicker (Forms) — 7 documented props
+- DateRangePicker (Forms) — 13 documented props
+- Dialog (Overlay) — 8 documented props
+- DisclosureButton (Content) — 7 documented props
+- DisclosureTriangle (Content) — 5 documented props
+- DockBar (Navigation) — 1 documented props
+- DockMenu (Navigation) — 10 documented props
+- DocumentLauncher (Files) — 7 documented props
+- DocumentToolbar (Files) — 8 documented props
+- DragDropList (DragDrop) — 4 documented props
+- Draggable (DragDrop) — 6 documented props
+- Drawer (Overlay) — 10 documented props
+- DropZone (DragDrop) — 7 documented props
+- EditMenu (Navigation) — 12 documented props
+- EditMenuSelection (Other) — 0 documented props
+- EmptyState (Feedback) — 5 documented props
+- FileBrowser (Files) — 11 documented props
+- FilePreview (Files) — 3 documented props
+- FileUpload (Forms) — 8 documented props
+- FormContinue (Forms) — 1 documented props
+- HelpButton (Actions) — 1 documented props
+- HomeScreenQuickActions (Platform) — 9 documented props
+- ImageButton (Content) — 3 documented props
+- ImageOverlay (Content) — 1 documented props
+- ImageView (Content) — 8 documented props
+- ImageWell (Content) — 6 documented props
+- Input (Forms) — 13 documented props
+- Label (Content) — 4 documented props
+- LaRoseProvider (Other) — 0 documented props
+- List (Data) — 2 documented props
+- ListRow (Data) — 8 documented props
+- ListSection (Data) — 2 documented props
+- Lockup (Layout) — 5 documented props
+- Menu (Navigation) — 11 documented props
+- MenuBar (Navigation) — 13 documented props
+- MenuBarExtra (Navigation) — 7 documented props
+- Modal (Overlay) — 9 documented props
+- MorePullDownButton (Navigation) — 0 documented props
+- Ornament (Layout) — 0 documented props
+- OrnamentButton (Layout) — 1 documented props
+- OrnamentWindow (Layout) — 7 documented props
+- OutlineView (Data) — 20 documented props
+- OutlineViewToolbar (Data) — 4 documented props
+- Pagination (Navigation) — 7 documented props
+- PathControl (Navigation) — 8 documented props
+- Popover (Overlay) — 8 documented props
+- PopUpButton (Navigation) — 9 documented props
+- Progress (Feedback) — 6 documented props
+- PullDownButton (Navigation) — 9 documented props
+- Radio (Forms) — 4 documented props
+- SecureField (Forms) — 0 documented props
+- Select (Forms) — 9 documented props
+- Skeleton (Feedback) — 4 documented props
+- Spinner (Feedback) — 2 documented props
+- SplitViewToolbar (Layout) — 1 documented props
+- SquareButton (Actions) — 3 documented props
+- Switch (Forms) — 6 documented props
+- Table (Data) — 12 documented props
+- Textarea (Forms) — 7 documented props
+- TextView (Content) — 4 documented props
+- TimePicker (Forms) — 7 documented props
+- ToastProvider (Feedback) — 1 documented props
+- TokenField (Forms) — 9 documented props
+- Tooltip (Feedback) — 2 documented props
+- Typography (Content) — 2 documented props
+- UnsavedIndicator (Files) — 2 documented props
+- WebView (Content) — 7 documented props
+- WebViewNavigation (Content) — 6 documented props
+- WebViewShell (Content) — 2 documented props
+
+## Guides
+- Architecture: /docs/guides/architecture
+- Vue 3: /docs/guides/vue
+- Svelte 5: /docs/guides/svelte
+- Next.js: /docs/guides/nextjs
+- Nuxt: /docs/guides/nuxt
+- Desktop integration: /docs/guides/desktop
+- Runtime: /docs/guides/runtime
+- Customization: /docs/guides/customization
+- Motion system: /docs/guides/motion
+- Refined design language: /docs/guides/design-language
+- Observability: /docs/guides/observability
+- DevTools: /docs/guides/devtools
+- AI runtime: /docs/guides/ai
+- Migration & CLI: /docs/guides/migration
+- Roadmap: /docs/guides/roadmap
+
+## Machine-readable metadata
+- Component JSON: /components/{slug}.json
+

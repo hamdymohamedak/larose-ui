@@ -1,0 +1,59 @@
+{
+  "name": "AsyncButton",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "action",
+      "type": "() => Promise<void>",
+      "required": true
+    },
+    {
+      "name": "onError",
+      "type": "(error: unknown) => void",
+      "required": false
+    },
+    {
+      "name": "onSuccess",
+      "type": "() => void",
+      "required": false
+    },
+    {
+      "name": "size",
+      "type": "Size",
+      "required": false,
+      "default": "'md'"
+    },
+    {
+      "name": "variant",
+      "type": "Variant",
+      "required": false,
+      "default": "'primary'"
+    }
+  ],
+  "events": [
+    {
+      "name": "onError",
+      "payload": "(error: unknown) => void"
+    },
+    {
+      "name": "onSuccess",
+      "payload": "() => void"
+    }
+  ],
+  "defaults": {
+    "size": "'md'",
+    "variant": "'primary'"
+  },
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "component": "Label",
+  "category": "Content",
+  "import": "import { Label } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "as",
+      "type": "ElementType",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "importance",
+      "type": "LabelImportance",
+      "required": false,
+      "description": "System label color indicating relative importance.",
+      "inherited": false
+    },
+    {
+      "name": "mono",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "selectable",
+      "type": "boolean",
+      "required": false,
+      "description": "Allow selecting/copying useful static text.",
+      "inherited": false
+    }
+  ],
+  "examples": [
+    {
+      "id": "LabelImportance",
+      "title": "Label Importance",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"LabelImportance\" for full example.",
+      "composite": true
+    }
+  ],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

@@ -1,0 +1,50 @@
+{
+  "name": "ColumnView",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "ariaLabel",
+      "type": "string",
+      "required": false,
+      "default": "'Column view'"
+    },
+    {
+      "name": "data",
+      "type": "ColumnViewNode[]",
+      "required": true
+    },
+    {
+      "name": "initialPath",
+      "type": "string[]",
+      "required": false,
+      "default": "[]"
+    },
+    {
+      "name": "onPathChange",
+      "type": "(path: string[]) => void",
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "onPathChange",
+      "payload": "(path: string[]) => void"
+    }
+  ],
+  "defaults": {
+    "ariaLabel": "'Column view'",
+    "initialPath": "[]"
+  },
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  }
+}

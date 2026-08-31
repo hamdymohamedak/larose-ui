@@ -1,0 +1,27 @@
+{
+  "name": "SearchScopeBar",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "options",
+      "type": "SearchScopeOption[]",
+      "required": true
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "required": true
+    }
+  ],
+  "events": [
+    {
+      "name": "onChange",
+      "payload": "(scopeId: string) => void"
+    }
+  ],
+  "keyboard": {},
+  "controlled": [
+    "value"
+  ]
+}

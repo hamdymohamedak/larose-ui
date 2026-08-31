@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@larose-ui/core": "workspace:*",
+    "@larose-ui/devtools-core": "workspace:*",
     "@larose-ui/observability": "workspace:*",
     "@larose-ui/runtime": "workspace:*"
   },

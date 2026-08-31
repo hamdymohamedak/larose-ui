@@ -1,0 +1,59 @@
+{
+  "name": "DropZone",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "accepts",
+      "type": "string | string[]",
+      "required": false
+    },
+    {
+      "name": "canDrop",
+      "type": "(items: DragItem<T>[]) => boolean",
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    },
+    {
+      "name": "onDrop",
+      "type": "(result: DropResult<T>) => void | Promise<void>",
+      "required": true
+    },
+    {
+      "name": "showInvalidIndicator",
+      "type": "boolean",
+      "required": false,
+      "default": "true"
+    },
+    {
+      "name": "transferring",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    },
+    {
+      "name": "transferringLabel",
+      "type": "string",
+      "required": false,
+      "default": "'Transferring…'"
+    }
+  ],
+  "events": [
+    {
+      "name": "onDrop",
+      "payload": "(result: DropResult<T>) => void | Promise<void>"
+    }
+  ],
+  "defaults": {
+    "disabled": "false",
+    "showInvalidIndicator": "true",
+    "transferring": "false",
+    "transferringLabel": "'Transferring…'"
+  },
+  "keyboard": {}
+}

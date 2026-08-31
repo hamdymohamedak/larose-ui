@@ -6,6 +6,7 @@ import {
   type MenuBarDocumentContext,
   type MenuBarExtraConfig,
 } from '@larose-ui/react';
+import { DEMO_ACCELERATORS } from './demoAccelerators';
 
 function WifiIcon() {
   return (
@@ -79,8 +80,18 @@ export const MacOSStandard: Story = {
               id: 'history',
               title: 'History',
               entries: [
-                { id: 'back', label: 'Back', shortcut: '⌘[' },
-                { id: 'forward', label: 'Forward', shortcut: '⌘]' },
+                {
+                  id: 'back',
+                  label: 'Back',
+                  accelerator: DEMO_ACCELERATORS.back,
+                  onSelect: () => setLastAction('History › back'),
+                },
+                {
+                  id: 'forward',
+                  label: 'Forward',
+                  accelerator: DEMO_ACCELERATORS.forward,
+                  onSelect: () => setLastAction('History › forward'),
+                },
                 { type: 'separator' },
                 { id: 'clear', label: 'Clear History…', destructive: true },
               ],
@@ -89,7 +100,12 @@ export const MacOSStandard: Story = {
               id: 'bookmarks',
               title: 'Bookmarks',
               entries: [
-                { id: 'add', label: 'Add Bookmark…', shortcut: '⌘D' },
+                {
+                  id: 'add',
+                  label: 'Add Bookmark…',
+                  accelerator: DEMO_ACCELERATORS.addBookmark,
+                  onSelect: () => setLastAction('Bookmarks › add'),
+                },
                 { id: 'show', label: 'Show Bookmarks' },
               ],
             },
@@ -113,7 +129,8 @@ export const MacOSStandard: Story = {
         >
           <Typography role="body">
             Hold <strong>Option</strong> while a menu is open to reveal dynamic items such as Close
-            All, Minimize All, and Quit and Keep Windows.
+            All, Minimize All, and Quit and Keep Windows. Custom History/Bookmarks items use
+            browser-safe accelerators; standard File/Edit labels still follow macOS HIG.
           </Typography>
           <Typography role="caption">Last action: {lastAction}</Typography>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>

@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import styles from './Pagination.module.css';
+import styles from '@larose-ui/styles/components/Pagination/Pagination.module.css';
 
 type PageItem = number | 'ellipsis';
 

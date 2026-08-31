@@ -1,0 +1,62 @@
+{
+  "name": "Sidebar",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "'aria-label'",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "glass",
+      "type": "boolean",
+      "required": false,
+      "description": "Allow content to extend beneath the sidebar (Liquid Glass)."
+    },
+    {
+      "name": "height",
+      "type": "string",
+      "required": false,
+      "description": "Override `--lr-sidebar-height` (default `100dvh`)."
+    },
+    {
+      "name": "maxHeight",
+      "type": "string",
+      "required": false,
+      "description": "Override `--lr-sidebar-max-height` (default `100dvh`)."
+    },
+    {
+      "name": "onHiddenChange",
+      "type": "(hidden: boolean) => void",
+      "required": false
+    },
+    {
+      "name": "platform",
+      "type": "SidebarPlatform",
+      "required": false
+    },
+    {
+      "name": "size",
+      "type": "SidebarSize",
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "onHiddenChange",
+      "payload": "(hidden: boolean) => void"
+    }
+  ],
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  }
+}

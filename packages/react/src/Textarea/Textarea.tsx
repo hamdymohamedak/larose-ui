@@ -3,7 +3,7 @@ import type { Size, UIState } from '@larose-ui/core';
 import { resolveUIState } from '@larose-ui/core';
 import { FieldShell } from '../DataEntry/FieldShell';
 import { fieldIdFromLabel } from '../DataEntry/utils';
-import styles from './Textarea.module.css';
+import styles from '@larose-ui/styles/components/Textarea/Textarea.module.css';
 
 export interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   label?: string;

@@ -1,0 +1,18 @@
+{
+  "component": "SplitViewToolbar",
+  "category": "Layout",
+  "import": "import { SplitViewToolbar } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "actions",
+      "type": "ReactNode",
+      "required": false,
+      "description": "Optional actions rendered before pane restore buttons.",
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

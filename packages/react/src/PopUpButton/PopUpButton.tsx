@@ -13,7 +13,7 @@ import {
   resolveDefaultValue,
   resolvePopUpLabel,
 } from './utils';
-import styles from './PopUpButton.module.css';
+import styles from '@larose-ui/styles/components/PopUpButton/PopUpButton.module.css';
 
 export interface PopUpButtonProps {
   /** Introductory label describing the control (Calendar-style). */

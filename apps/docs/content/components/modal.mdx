@@ -1,0 +1,45 @@
+# Modal
+
+Modals focus attention on a task or confirmation. They trap focus, support Escape to close, and animate with the laRose motion system.
+
+## Example
+
+<PreviewFrame title="Interactive modal">
+  <ModalPreview />
+</PreviewFrame>
+
+## Usage
+
+```tsx
+import { useState } from 'react';
+import { Button, Input, Modal } from '@larose-ui/react';
+
+function EditProfile() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <Button onClick={() => setOpen(true)}>Edit profile</Button>
+      <Modal
+        open={open}
+        onClose={() => setOpen(false)}
+        title="Edit employee"
+        description="Update profile details."
+      >
+        <Input label="Full name" />
+        <Button onClick={() => setOpen(false)}>Save</Button>
+      </Modal>
+    </>
+  );
+}
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `open` | `boolean` | — | Controls visibility |
+| `onClose` | `() => void` | — | Called when modal should close |
+| `title` | `string` | — | Dialog title |
+| `description` | `string` | — | Optional description |
+| `closeOnOverlay` | `boolean` | `true` | Close when clicking backdrop |

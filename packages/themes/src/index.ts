@@ -1,80 +1,28 @@
-import type { Density, ThemeMode } from '@larose-ui/core';
+import type { Density } from '@larose-ui/core';
 import {
+  applyResolvedTheme,
   applyTokensToElement,
   createTenantTheme,
   getTokens,
-  type ColorTokens,
 } from '@larose-ui/tokens';
+import { getThemePreset, type ThemePreset, type ThemePresetId } from './presets';
+import { resolveTheme } from './resolveTheme';
 
-export type ThemePresetId = 'default' | 'refined' | 'ocean' | 'forest' | 'sunset';
-
-export interface ThemePreset {
-  id: ThemePresetId;
-  label: string;
-  mode: ThemeMode;
-  colors: Partial<ColorTokens>;
-}
-
-const presets: Record<ThemePresetId, ThemePreset> = {
-  default: {
-    id: 'default',
-    label: 'Default',
-    mode: 'light',
-    colors: {},
-  },
-  refined: {
-    id: 'refined',
-    label: 'Refined (Apple-inspired)',
-    mode: 'light',
-    colors: {},
-  },
-  ocean: {
-    id: 'ocean',
-    label: 'Ocean',
-    mode: 'light',
-    colors: {
-      primary: '#0284c7',
-      primaryHover: '#0369a1',
-      primaryActive: '#075985',
-      secondary: '#0e7490',
-    },
-  },
-  forest: {
-    id: 'forest',
-    label: 'Forest',
-    mode: 'light',
-    colors: {
-      primary: '#15803d',
-      primaryHover: '#166534',
-      primaryActive: '#14532d',
-      secondary: '#4d7c0f',
-    },
-  },
-  sunset: {
-    id: 'sunset',
-    label: 'Sunset',
-    mode: 'dark',
-    colors: {
-      primary: '#f97316',
-      primaryHover: '#ea580c',
-      primaryActive: '#c2410c',
-      background: '#1c1917',
-      surface: '#292524',
-      surfaceElevated: '#44403c',
-      border: '#57534e',
-      text: '#fafaf9',
-      textMuted: '#a8a29e',
-    },
-  },
-};
-
-export function listThemePresets(): ThemePreset[] {
-  return Object.values(presets);
-}
-
-export function getThemePreset(id: ThemePresetId): ThemePreset {
-  return presets[id];
-}
+export { createTheme } from './createTheme';
+export { resolveTheme, mergeThemeInput } from './resolveTheme';
+export { normalizeThemeInput, isLaRoseTheme, resolvePresetId } from './normalizeTheme';
+export { getThemePreset, listThemePresets, type ThemePreset, type ThemePresetId } from './presets';
+export type {
+  LaRoseTheme,
+  LaRoseThemeInput,
+  LaRoseThemeMotionConfig,
+  LaRoseThemeTypographyInput,
+  ComponentConfiguration,
+  ComponentDefaultPropsMap,
+  ComponentMotionOverride,
+  ResolvedLaRoseTheme,
+  ResolveThemeInput,
+} from './types';
 
 export function applyThemePreset(
   element: HTMLElement,
@@ -82,14 +30,24 @@ export function applyThemePreset(
   density: Density = 'comfortable',
 ): ThemePreset {
   const preset = getThemePreset(presetId);
-  const base = getTokens(preset.mode);
-  applyTokensToElement(element, preset.mode, density, {
-    ...base.colors,
-    ...preset.colors,
+  const resolved = resolveTheme({
+    theme: { preset: presetId },
+    density,
+    mode: preset.mode,
   });
-  element.dataset.lrThemePreset = presetId;
+
+  applyResolvedTheme(element, {
+    mode: resolved.mode,
+    density: resolved.density,
+    tokenOverrides: resolved.tokenOverrides,
+    brandColors: resolved.brandColors,
+    componentTokenOverrides: resolved.componentTokenOverrides,
+    presetId,
+  });
+
   return preset;
 }
 
-export { createTenantTheme, applyTokensToElement, getTokens };
-export type { ColorTokens, ThemeMode, Density };
+export { createTenantTheme, applyTokensToElement, applyResolvedTheme, getTokens };
+export type { ColorTokens } from '@larose-ui/tokens';
+export type { ThemeMode, Density } from '@larose-ui/core';

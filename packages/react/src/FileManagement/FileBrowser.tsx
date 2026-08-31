@@ -8,7 +8,7 @@ import {
   filterFilesByType,
 } from './utils';
 import { DocumentIcon } from './icons';
-import styles from './FileManagement.module.css';
+import styles from '@larose-ui/styles/components/FileManagement/FileManagement.module.css';
 
 export interface FileBrowserProps {
   files: FileBrowserItem[];

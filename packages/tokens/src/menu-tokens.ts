@@ -10,6 +10,9 @@ export interface MenuTokens {
   separatorColor: string;
   destructiveColor: string;
   checkmarkWidth: string;
+  shortcutColor: string;
+  shortcutFontSize: string;
+  shortcutSpacing: string;
 }
 
 /**
@@ -28,6 +31,9 @@ export function getMenuTokens(mode: ThemeMode): MenuTokens {
       separatorColor: 'rgb(255 255 255 / 0.1)',
       destructiveColor: '#ff453a',
       checkmarkWidth: '1.125rem',
+      shortcutColor: 'rgb(255 255 255 / 0.45)',
+      shortcutFontSize: '0.75rem',
+      shortcutSpacing: '1.5rem',
     };
   }
 
@@ -41,6 +47,9 @@ export function getMenuTokens(mode: ThemeMode): MenuTokens {
     separatorColor: 'rgb(0 0 0 / 0.08)',
     destructiveColor: '#ff3b30',
     checkmarkWidth: '1.125rem',
+    shortcutColor: 'rgb(0 0 0 / 0.45)',
+    shortcutFontSize: '0.75rem',
+    shortcutSpacing: '1.5rem',
   };
 }
 
@@ -55,5 +64,8 @@ export function menuTokensToCSSVariables(tokens: MenuTokens): Record<string, str
     '--lr-menu-separator': tokens.separatorColor,
     '--lr-menu-destructive': tokens.destructiveColor,
     '--lr-menu-checkmark-width': tokens.checkmarkWidth,
+    '--lr-menu-shortcut-color': tokens.shortcutColor,
+    '--lr-menu-shortcut-font-size': tokens.shortcutFontSize,
+    '--lr-menu-shortcut-spacing': tokens.shortcutSpacing,
   };
 }

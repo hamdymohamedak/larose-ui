@@ -1,0 +1,236 @@
+{
+  "component": "Input",
+  "category": "Forms",
+  "import": "import { Input } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "acceptDrop",
+      "type": "boolean",
+      "required": false,
+      "description": "Accept plain-text drops into the field.",
+      "inherited": false
+    },
+    {
+      "name": "error",
+      "type": "string | null",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "expansionTooltip",
+      "type": "boolean",
+      "required": false,
+      "description": "macOS-style expansion tooltip when truncated text overflows the field.",
+      "inherited": false
+    },
+    {
+      "name": "format",
+      "type": "FieldFormat",
+      "required": false,
+      "description": "Formats numeric values on blur (currency, percent, number).",
+      "inherited": false
+    },
+    {
+      "name": "formatOptions",
+      "type": "FormatFieldOptions",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "hint",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "inputSize",
+      "type": "Size",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "loading",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "required",
+      "type": "boolean",
+      "required": false,
+      "description": "Shows a required indicator and sets the native required attribute.",
+      "inherited": false
+    },
+    {
+      "name": "state",
+      "type": "UIState",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "validate",
+      "type": "FieldValidator",
+      "required": false,
+      "description": "Validates on blur or change and surfaces inline feedback immediately.",
+      "inherited": false
+    },
+    {
+      "name": "validateOn",
+      "type": "'blur' | 'change'",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [
+    {
+      "id": "Default",
+      "title": "Default",
+      "kind": "basic",
+      "props": {
+        "label": "Employee Name",
+        "placeholder": "Enter name"
+      },
+      "code": "<Input\n  label=\"Employee Name\"\n  placeholder=\"Enter name\"\n>Example</Input>"
+    },
+    {
+      "id": "WithHint",
+      "title": "With Hint",
+      "kind": "advanced",
+      "props": {
+        "label": "Email",
+        "placeholder": "username@company.com",
+        "hint": "Work email address"
+      },
+      "code": "<Input\n  label=\"Email\"\n  placeholder=\"username@company.com\"\n  hint=\"Work email address\"\n>Example</Input>"
+    },
+    {
+      "id": "Required",
+      "title": "Required",
+      "kind": "advanced",
+      "props": {
+        "label": "Email",
+        "placeholder": "username@company.com",
+        "required": true
+      },
+      "code": "<Input\n  label=\"Email\"\n  placeholder=\"username@company.com\"\n  required\n>Example</Input>"
+    },
+    {
+      "id": "Validated",
+      "title": "Validated",
+      "kind": "advanced",
+      "props": {
+        "label": "Email",
+        "placeholder": "username@company.com",
+        "required": true,
+        "validateOn": "change"
+      },
+      "code": "<Input\n  label=\"Email\"\n  placeholder=\"username@company.com\"\n  required\n  validateOn=\"change\"\n>Example</Input>"
+    },
+    {
+      "id": "CurrencyFormat",
+      "title": "Currency Format",
+      "kind": "advanced",
+      "props": {
+        "label": "Salary",
+        "format": "currency",
+        "defaultValue": "85000",
+        "hint": "Formatted when the field loses focus"
+      },
+      "code": "<Input\n  label=\"Salary\"\n  format=\"currency\"\n  defaultValue=\"85000\"\n  hint=\"Formatted when the field loses focus\"\n>Example</Input>"
+    },
+    {
+      "id": "Secure",
+      "title": "Secure",
+      "kind": "advanced",
+      "props": {},
+      "code": "<SecureField label=\"Password\" required hint=\"Never prepopulated\" />",
+      "composite": true
+    },
+    {
+      "id": "Loading",
+      "title": "Loading",
+      "kind": "loading",
+      "props": {
+        "label": "Department",
+        "loading": true,
+        "placeholder": "Loading..."
+      },
+      "code": "<Input\n  label=\"Department\"\n  loading\n  placeholder=\"Loading...\"\n>Example</Input>"
+    },
+    {
+      "id": "Error",
+      "title": "Error",
+      "kind": "error",
+      "props": {
+        "label": "Salary",
+        "error": "Must be a positive number",
+        "defaultValue": "-100"
+      },
+      "code": "<Input\n  label=\"Salary\"\n  error=\"Must be a positive number\"\n  defaultValue=\"-100\"\n>Example</Input>"
+    },
+    {
+      "id": "Disabled",
+      "title": "Disabled",
+      "kind": "disabled",
+      "props": {
+        "label": "Employee ID",
+        "disabled": true,
+        "defaultValue": "EMP-001"
+      },
+      "code": "<Input\n  label=\"Employee ID\"\n  disabled\n  defaultValue=\"EMP-001\"\n>Example</Input>"
+    },
+    {
+      "id": "ReadOnly",
+      "title": "Read Only",
+      "kind": "advanced",
+      "props": {
+        "label": "Created At",
+        "readOnly": true,
+        "defaultValue": "2026-08-29"
+      },
+      "code": "<Input\n  label=\"Created At\"\n  readOnly\n  defaultValue=\"2026-08-29\"\n>Example</Input>"
+    }
+  ],
+  "accessibility": [
+    "Uses native or laRose-managed focus rings and disabled states."
+  ],
+  "anatomy": null,
+  "playground": {
+    "label": {
+      "control": "text",
+      "default": "Email",
+      "label": "Label"
+    },
+    "placeholder": {
+      "control": "text",
+      "default": "you@company.com"
+    },
+    "inputSize": {
+      "control": "select",
+      "options": [
+        "sm",
+        "md",
+        "lg"
+      ],
+      "default": "md"
+    },
+    "required": {
+      "control": "boolean",
+      "default": false
+    },
+    "disabled": {
+      "control": "boolean",
+      "default": false
+    },
+    "error": {
+      "control": "text",
+      "default": ""
+    }
+  }
+}

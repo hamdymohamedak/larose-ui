@@ -1,0 +1,14 @@
+{
+  "name": "TabBarPanel",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "value",
+      "type": "string",
+      "required": true
+    }
+  ],
+  "events": [],
+  "keyboard": {}
+}

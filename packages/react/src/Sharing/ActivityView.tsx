@@ -2,7 +2,7 @@ import { useEffect, useId, useMemo, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import type { ActivityItem, ActivityPresentation } from './types';
 import { partitionActivities, prepareActivities } from './activityUtils';
-import styles from './Sharing.module.css';
+import styles from '@larose-ui/styles/components/Sharing/Sharing.module.css';
 
 export interface ActivityViewProps {
   open: boolean;

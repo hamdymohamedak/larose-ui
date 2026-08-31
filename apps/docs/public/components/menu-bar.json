@@ -1,0 +1,104 @@
+{
+  "component": "MenuBar",
+  "category": "Navigation",
+  "import": "import { MenuBar } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "appName",
+      "type": "string",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "appSpecificMenus",
+      "type": "MenuBarMenuConfig[]",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "enableGlobalShortcuts",
+      "type": "boolean",
+      "required": false,
+      "description": "Register top-level menu accelerators globally. Defaults to true.",
+      "inherited": false
+    },
+    {
+      "name": "enableMnemonics",
+      "type": "boolean",
+      "required": false,
+      "description": "Enable Alt+key mnemonics on Windows/Linux. Defaults to true on non-macOS.",
+      "inherited": false
+    },
+    {
+      "name": "enableTypeAhead",
+      "type": "boolean",
+      "required": false,
+      "description": "Enable type-ahead letter matching in open menus. Defaults to true.",
+      "inherited": false
+    },
+    {
+      "name": "extras",
+      "type": "MenuBarExtraConfig[]",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "menus",
+      "type": "MenuBarMenuConfig[]",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onMenuAction",
+      "type": "(menuId: string, entryId: string) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onRevealChange",
+      "type": "(revealed: boolean) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "platform",
+      "type": "MenuBarPlatform",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "revealed",
+      "type": "boolean",
+      "required": false,
+      "description": "iPadOS: bar hidden until revealed at the top edge.",
+      "inherited": false
+    },
+    {
+      "name": "showAppleMenu",
+      "type": "boolean",
+      "required": false,
+      "description": "macOS: show a read-only Apple menu stub (system-provided on real macOS).",
+      "inherited": false
+    },
+    {
+      "name": "standardOptions",
+      "type": "StandardMenuBarOptions",
+      "required": false,
+      "description": "Used when `menus` is omitted to build the standard HIG menu set.",
+      "inherited": false
+    }
+  ],
+  "examples": [
+    {
+      "id": "MenuBarGlobalShortcuts",
+      "title": "Menu bar (global shortcuts)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"MenuBarGlobalShortcuts\" for full example.",
+      "composite": true
+    }
+  ],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

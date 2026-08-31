@@ -17,7 +17,7 @@ import {
   filterSuggestions,
   resolveSearchFieldPlacement,
 } from './utils';
-import styles from './SearchField.module.css';
+import styles from '@larose-ui/styles/components/SearchField/SearchField.module.css';
 
 function SearchIcon() {
   return (

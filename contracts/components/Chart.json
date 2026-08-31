@@ -1,0 +1,120 @@
+{
+  "name": "Chart",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "accessibilitySummary",
+      "type": "string",
+      "required": false,
+      "description": "High-level summary for assistive technologies (Apple Audio Graphs pattern)."
+    },
+    {
+      "name": "annotation",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "data",
+      "type": "ChartDataPoint[]",
+      "required": false,
+      "description": "Single-series shorthand."
+    },
+    {
+      "name": "height",
+      "type": "number",
+      "required": false,
+      "default": "220",
+      "description": "Plot height in CSS pixels."
+    },
+    {
+      "name": "interactive",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "description": "Enable plot-area scrubbing with crosshair."
+    },
+    {
+      "name": "mark",
+      "type": "ChartMark",
+      "required": false,
+      "default": "'bar'",
+      "description": "Chart mark type — bar, line, or point."
+    },
+    {
+      "name": "onPointFocus",
+      "type": "(point: ChartDataPoint, seriesId: string, index: number) => void",
+      "required": false
+    },
+    {
+      "name": "series",
+      "type": "ChartSeries[]",
+      "required": false,
+      "description": "One or more data series."
+    },
+    {
+      "name": "showLegend",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "showPoints",
+      "type": "boolean",
+      "required": false,
+      "default": "mark === 'line'",
+      "description": "Combine line marks with point marks. Default true for line charts."
+    },
+    {
+      "name": "stacked",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "description": "Stack bar marks when multiple series are present."
+    },
+    {
+      "name": "stackGap",
+      "type": "number",
+      "required": false,
+      "default": "2",
+      "description": "Gap between stacked bar segments (Apple HIG visual separation)."
+    },
+    {
+      "name": "subtitle",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "xAxis",
+      "type": "ChartAxisConfig",
+      "required": false
+    },
+    {
+      "name": "yAxis",
+      "type": "ChartAxisConfig",
+      "required": false
+    },
+    {
+      "name": "yAxisTrailing",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "description": "Y axis on trailing edge (right in LTR) for layout alignment."
+    }
+  ],
+  "events": [
+    {
+      "name": "onPointFocus",
+      "payload": "(point: ChartDataPoint, seriesId: string, index: number) => void"
+    }
+  ],
+  "defaults": {
+    "height": "220",
+    "interactive": "false",
+    "mark": "'bar'",
+    "showPoints": "mark === 'line'",
+    "stacked": "false",
+    "stackGap": "2",
+    "yAxisTrailing": "false"
+  },
+  "keyboard": {}
+}

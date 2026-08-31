@@ -9,7 +9,7 @@ import {
 import type { MotionVariant } from './types';
 import { usePresence } from './usePresence';
 import { useSkipMotion } from './MotionContext';
-import styles from './motion.module.css';
+import styles from '@larose-ui/styles/components/Motion/motion.module.css';
 
 export interface PresenceProps {
   present: boolean;

@@ -1,0 +1,14 @@
+{
+  "name": "ImageOverlay",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "overlay",
+      "type": "ReactNode",
+      "required": true
+    }
+  ],
+  "events": [],
+  "keyboard": {}
+}

@@ -13,8 +13,8 @@ laRose is a **UI Operating System** for modern SaaS applications — not a compo
         │                │                │
    @larose-ui/react   @larose-ui/data      @larose-ui/runtime
    Components      @larose-ui/forms     Theme, Tenant, Session
-                   @larose-ui/permissions Feature Flags, i18n
-                   @larose-ui/ai         Network, Offline
+   @larose-ui/styles @larose-ui/permissions Feature Flags, i18n
+        │           @larose-ui/ai         Network, Offline
         │                │                │
         └────────────────┼────────────────┘
                          │
@@ -25,6 +25,63 @@ laRose is a **UI Operating System** for modern SaaS applications — not a compo
               Doctor + CLI + Testing + A11y
 ```
 
+## Shared styles
+
+Component CSS lives in `@larose-ui/styles` (framework-agnostic). Import tokens first, then shared component styles:
+
+```ts
+import '@larose-ui/tokens/styles.css';
+import '@larose-ui/styles/styles.css';
+```
+
+`@larose-ui/react/styles.css` remains available for backward compatibility.
+
+## Runtime core
+
+Framework-independent runtime logic lives in `@larose-ui/runtime-core` (store, bridges, tenant, i18n, host detection). `@larose-ui/runtime` is the React adapter (`LaRoseProvider`, hooks) and mounts `AcceleratorProvider` from `@larose-ui/react`.
+
+The lightweight `LaRoseProvider` in `@larose-ui/react` remains for theme/motion-only setups without the full runtime stack.
+
+## Component contracts
+
+Canonical component APIs live in `contracts/components/*.json`, validated by `@larose-ui/contracts` and `larose doctor`. Regenerate from React with:
+
+```bash
+pnpm generate:contracts
+```
+
+## Headless primitives
+
+Interactive behavior lives in `@larose-ui/primitives` (menu type-ahead, keyboard, mnemonics). `@larose-ui/react` is a thin rendering adapter.
+
+## Intelligence core adapters
+
+Framework-independent quality and telemetry logic lives in `-core` packages. React adapters re-export for backward compatibility:
+
+| Core | React adapter |
+|------|----------------|
+| `@larose-ui/observability-core` | `@larose-ui/observability` |
+| `@larose-ui/permissions-core` | `@larose-ui/permissions` |
+| `@larose-ui/devtools-core` | `@larose-ui/devtools` |
+| `@larose-ui/quality-core` | `@larose-ui/cli` (doctor runner) |
+
+Doctor reads `larose.config.json` for framework-specific component and story paths. Add Vue/Svelte targets there when those bindings exist.
+
+## Meta-framework adapters
+
+| Package | Role |
+|---------|------|
+| `@larose-ui/next` | Next.js / SSR helpers — CSS paths, theme bootstrap script, `LaRoseRoot` client boundary |
+| `@larose-ui/vue` | Vue 3 components + `LaRoseProvider` + `RuntimeProvider` |
+| `@larose-ui/nuxt` | Nuxt module — CSS, theme script, `LaRoseApp`, auto-imports |
+| `@larose-ui/svelte` | Svelte 5 components + `LaRoseProvider` + `RuntimeProvider` |
+| `@larose-ui/desktop-core` | Host registration, native menu mapping, window chrome tokens |
+| `@larose-ui/electron` | Electron bootstrap, native menu templates, `LaRoseElectronRoot` |
+| `@larose-ui/tauri` | Tauri bootstrap, native menu templates, `LaRoseTauriRoot` |
+| TanStack Start | Same React packages; see [TANSTACK_START.md](../ecosystem/TANSTACK_START.md) |
+
+See [VUE.md](../ecosystem/VUE.md), [NEXTJS.md](../ecosystem/NEXTJS.md), [SVELTE.md](../ecosystem/SVELTE.md), and [DESKTOP.md](../ecosystem/DESKTOP.md). Framework packages do not duplicate components — they consume shared styles, tokens, primitives, and runtime-core.
+
 ## Package Rules
 
 1. `@larose-ui/core` has zero dependencies — types, state machines, runtime contracts
@@ -32,6 +89,7 @@ laRose is a **UI Operating System** for modern SaaS applications — not a compo
 3. Intelligence packages compose at the app layer — not each other
 4. Runtime orchestrates; domain packages implement
 5. DevTools and CLI are leaf packages
+6. `-core` packages must not depend on React, Vue, or Svelte
 
 ## Runtime ↔ DevTools ↔ Doctor Triad
 

@@ -1,0 +1,47 @@
+{
+  "component": "WebViewNavigation",
+  "category": "Content",
+  "import": "import { WebViewNavigation } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "backLabel",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "canGoBack",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "canGoForward",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "forwardLabel",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onBack",
+      "type": "() => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onForward",
+      "type": "() => void",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

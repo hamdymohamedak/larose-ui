@@ -4,7 +4,7 @@ import { resolveUIState } from '@larose-ui/core';
 import { FieldShell } from '../DataEntry/FieldShell';
 import { Spinner } from '../Spinner/Spinner';
 import { fieldIdFromLabel } from '../DataEntry/utils';
-import styles from './Select.module.css';
+import styles from '@larose-ui/styles/components/Select/Select.module.css';
 
 export interface SelectOption {
   label: string;

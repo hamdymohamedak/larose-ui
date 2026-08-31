@@ -1,0 +1,53 @@
+{
+  "name": "DocumentLauncher",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "accessories",
+      "type": "ReactNode",
+      "required": false
+    },
+    {
+      "name": "appTitle",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "background",
+      "type": "ReactNode",
+      "required": false
+    },
+    {
+      "name": "onPrimaryAction",
+      "type": "() => void",
+      "required": false
+    },
+    {
+      "name": "onSecondaryAction",
+      "type": "() => void",
+      "required": false
+    },
+    {
+      "name": "primaryActionLabel",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "secondaryActionLabel",
+      "type": "string",
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "onPrimaryAction",
+      "payload": "() => void"
+    },
+    {
+      "name": "onSecondaryAction",
+      "payload": "() => void"
+    }
+  ],
+  "keyboard": {}
+}

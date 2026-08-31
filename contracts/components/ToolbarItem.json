@@ -1,0 +1,44 @@
+{
+  "name": "ToolbarItem",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "collapsible",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "icon",
+      "type": "ReactNode",
+      "required": false
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "prominent",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "showLabel",
+      "type": "boolean",
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "onClick",
+      "payload": "() => void"
+    }
+  ],
+  "keyboard": {}
+}

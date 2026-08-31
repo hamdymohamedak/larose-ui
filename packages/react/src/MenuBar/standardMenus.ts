@@ -1,24 +1,8 @@
 import type { MenuEntry } from '../Menu/types';
 import type { MenuBarDocumentContext, MenuBarPlatform } from './types';
+import { STANDARD_SHORTCUTS } from '@larose-ui/core';
 
-export const STANDARD_SHORTCUTS = {
-  new: '⌘N',
-  open: '⌘O',
-  close: '⌘W',
-  save: '⌘S',
-  saveAll: '⇧⌘S',
-  undo: '⌘Z',
-  redo: '⇧⌘Z',
-  cut: '⌘X',
-  copy: '⌘C',
-  paste: '⌘V',
-  selectAll: '⌘A',
-  find: '⌘F',
-  settings: '⌘,',
-  quit: '⌘Q',
-  minimize: '⌘M',
-  help: '⌘?',
-} as const;
+export { STANDARD_SHORTCUTS };
 
 export function createAppMenu(
   appName: string,

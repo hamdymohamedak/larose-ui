@@ -1,0 +1,57 @@
+{
+  "name": "@larose-ui/primitives",
+  "version": "0.1.1",
+  "description": "Headless interactive behavior for laRose UI — menus, type-ahead, keyboard",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./menu": {
+      "types": "./dist/menu/index.d.ts",
+      "import": "./dist/menu/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts src/menu/index.ts --format esm --dts --clean",
+    "dev": "tsup src/index.ts src/menu/index.ts --format esm --dts --watch",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@larose-ui/core": "workspace:*"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hamdymohamedak/larose-ui.git",
+    "directory": "packages/primitives"
+  },
+  "keywords": [
+    "larose",
+    "ui-platform",
+    "headless",
+    "primitives"
+  ],
+  "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/primitives#readme",
+  "bugs": {
+    "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  }
+}

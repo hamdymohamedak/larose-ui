@@ -1,0 +1,56 @@
+{
+  "component": "MenuBarExtra",
+  "category": "Navigation",
+  "import": "import { MenuBarExtra } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "enableMnemonics",
+      "type": "boolean",
+      "required": false,
+      "default": "true",
+      "inherited": false
+    },
+    {
+      "name": "enableTypeAhead",
+      "type": "boolean",
+      "required": false,
+      "default": "true",
+      "inherited": false
+    },
+    {
+      "name": "isOpen",
+      "type": "boolean",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "mnemonicVisible",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "inherited": false
+    },
+    {
+      "name": "onAction",
+      "type": "(entry: MenuItemConfig) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onOpenChange",
+      "type": "(open: boolean) => void",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "optionKey",
+      "type": "boolean",
+      "required": true,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

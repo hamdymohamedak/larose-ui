@@ -1,0 +1,21 @@
+{
+  "frameworks": [
+    {
+      "id": "react",
+      "componentsRoot": "packages/react/src",
+      "storiesDir": "apps/playground/stories",
+      "storySuffix": ".stories.tsx",
+      "componentExtensions": [".tsx"]
+    },
+    {
+      "id": "vue",
+      "componentsRoot": "packages/vue/src",
+      "componentExtensions": [".vue"]
+    },
+    {
+      "id": "svelte",
+      "componentsRoot": "packages/svelte/src/lib",
+      "componentExtensions": [".svelte"]
+    }
+  ]
+}

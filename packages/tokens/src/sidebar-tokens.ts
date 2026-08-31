@@ -3,6 +3,10 @@ import type { ThemeMode } from '@larose-ui/core';
 export interface SidebarTokens {
   width: string;
   widthCompact: string;
+  height: string;
+  maxHeight: string;
+  overflow: string;
+  navOverflowY: string;
   itemHeight: string;
   itemRadius: string;
   sectionGap: string;
@@ -11,6 +15,7 @@ export interface SidebarTokens {
   itemHover: string;
   itemActive: string;
   groupLabelSize: string;
+  disclosureChevronSize: string;
 }
 
 /** @see https://developer.apple.com/design/human-interface-guidelines/sidebars */
@@ -19,6 +24,10 @@ export function getSidebarTokens(mode: ThemeMode): SidebarTokens {
     return {
       width: '16rem',
       widthCompact: '13rem',
+      height: '100dvh',
+      maxHeight: '100dvh',
+      overflow: 'hidden',
+      navOverflowY: 'auto',
       itemHeight: '1.75rem',
       itemRadius: '0.4375rem',
       sectionGap: '0.5rem',
@@ -27,11 +36,16 @@ export function getSidebarTokens(mode: ThemeMode): SidebarTokens {
       itemHover: 'rgb(255 255 255 / 0.08)',
       itemActive: 'rgb(10 132 255 / 0.22)',
       groupLabelSize: '0.6875rem',
+      disclosureChevronSize: '0.625rem',
     };
   }
   return {
     width: '16rem',
     widthCompact: '13rem',
+    height: '100dvh',
+    maxHeight: '100dvh',
+    overflow: 'hidden',
+    navOverflowY: 'auto',
     itemHeight: '1.75rem',
     itemRadius: '0.4375rem',
     sectionGap: '0.5rem',
@@ -40,6 +54,7 @@ export function getSidebarTokens(mode: ThemeMode): SidebarTokens {
     itemHover: 'rgb(0 0 0 / 0.06)',
     itemActive: 'rgb(0 113 227 / 0.12)',
     groupLabelSize: '0.6875rem',
+    disclosureChevronSize: '0.625rem',
   };
 }
 
@@ -47,6 +62,10 @@ export function sidebarTokensToCSSVariables(tokens: SidebarTokens): Record<strin
   return {
     '--lr-sidebar-width': tokens.width,
     '--lr-sidebar-width-compact': tokens.widthCompact,
+    '--lr-sidebar-height': tokens.height,
+    '--lr-sidebar-max-height': tokens.maxHeight,
+    '--lr-sidebar-overflow': tokens.overflow,
+    '--lr-sidebar-nav-overflow-y': tokens.navOverflowY,
     '--lr-sidebar-item-height': tokens.itemHeight,
     '--lr-sidebar-item-radius': tokens.itemRadius,
     '--lr-sidebar-section-gap': tokens.sectionGap,
@@ -55,6 +74,7 @@ export function sidebarTokensToCSSVariables(tokens: SidebarTokens): Record<strin
     '--lr-sidebar-item-hover': tokens.itemHover,
     '--lr-sidebar-item-active': tokens.itemActive,
     '--lr-sidebar-group-label-size': tokens.groupLabelSize,
+    '--lr-sidebar-disclosure-chevron-size': tokens.disclosureChevronSize,
   };
 }
 

@@ -1,0 +1,23 @@
+{
+  "component": "ListSection",
+  "category": "Data",
+  "import": "import { ListSection } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "footer",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "header",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

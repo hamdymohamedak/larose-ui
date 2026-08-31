@@ -1,7 +1,7 @@
 import { useMemo, useState, type CSSProperties } from 'react';
 import type { ColumnViewNode } from './types';
 import { findNodeByPath, getNodesAtPath, hasChildren } from './utils';
-import styles from './Layout.module.css';
+import styles from '@larose-ui/styles/components/Layout/Layout.module.css';
 
 export interface ColumnViewProps {
   data: ColumnViewNode[];

@@ -1,6 +1,6 @@
 import { forwardRef, type ButtonHTMLAttributes } from 'react';
 import { ShareIcon } from './icons';
-import styles from './Sharing.module.css';
+import styles from '@larose-ui/styles/components/Sharing/Sharing.module.css';
 
 export interface ShareButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   label?: string;

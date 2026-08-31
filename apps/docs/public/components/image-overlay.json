@@ -1,0 +1,17 @@
+{
+  "component": "ImageOverlay",
+  "category": "Content",
+  "import": "import { ImageOverlay } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "overlay",
+      "type": "ReactNode",
+      "required": true,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

@@ -23,7 +23,8 @@ export const DEPRECATIONS: Deprecation[] = [
   },
   {
     id: 'react-provider',
-    pattern: /from\s+['"]@larose-ui\/react['"].*LaRoseProvider/g,
+    pattern:
+      /import\s+\{[^}]*\bLaRoseProvider\b[^}]*\}\s+from\s+['"]@larose-ui\/react['"]/g,
     message: 'Import LaRoseProvider from @larose-ui/runtime instead',
     replacement: "import { LaRoseProvider } from '@larose-ui/runtime'",
     removedIn: '0.2.0',

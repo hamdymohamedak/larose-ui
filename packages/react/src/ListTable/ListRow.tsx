@@ -1,7 +1,7 @@
 import type { MouseEvent, ReactNode } from 'react';
 import type { ListAccessory } from './types';
 import { truncateMiddle } from './utils';
-import styles from './ListTable.module.css';
+import styles from '@larose-ui/styles/components/ListTable/ListTable.module.css';
 
 export interface ListRowProps {
   title: string;

@@ -1,0 +1,130 @@
+{
+  "component": "Progress",
+  "category": "Feedback",
+  "import": "import { Progress } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "max",
+      "type": "number",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "showValue",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "state",
+      "type": "UIState",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "value",
+      "type": "number",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "variant",
+      "type": "ProgressVariant",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [
+    {
+      "id": "ProgressDefault",
+      "title": "Progress Default",
+      "kind": "basic",
+      "props": {},
+      "code": "<Progress value={65} label=\"Profile completion\" showValue />",
+      "composite": true
+    },
+    {
+      "id": "ProgressSuccess",
+      "title": "Progress Success",
+      "kind": "advanced",
+      "props": {},
+      "code": "<Progress value={100} label=\"Upload complete\" variant=\"success\" showValue />",
+      "composite": true
+    },
+    {
+      "id": "Default",
+      "title": "Default",
+      "kind": "basic",
+      "props": {
+        "value": 65,
+        "label": "Profile completion",
+        "showValue": true
+      },
+      "code": "<Progress\n  value={65}\n  label=\"Profile completion\"\n  showValue\n/>"
+    },
+    {
+      "id": "Success",
+      "title": "Success",
+      "kind": "advanced",
+      "props": {
+        "value": 100,
+        "label": "Upload complete",
+        "variant": "success",
+        "showValue": true
+      },
+      "code": "<Progress\n  value={100}\n  label=\"Upload complete\"\n  variant=\"success\"\n  showValue\n/>"
+    },
+    {
+      "id": "Error",
+      "title": "Error",
+      "kind": "error",
+      "props": {
+        "value": 35,
+        "label": "Sync failed",
+        "variant": "error",
+        "showValue": true
+      },
+      "code": "<Progress\n  value={35}\n  label=\"Sync failed\"\n  variant=\"error\"\n  showValue\n/>"
+    },
+    {
+      "id": "Loading",
+      "title": "Loading",
+      "kind": "loading",
+      "props": {
+        "value": 45,
+        "label": "Importing employees",
+        "showValue": true,
+        "state": "loading"
+      },
+      "code": "<Progress\n  value={45}\n  label=\"Importing employees\"\n  showValue\n  state=\"loading\"\n/>"
+    }
+  ],
+  "accessibility": [
+    "Supports ARIA attributes via standard HTML element props."
+  ],
+  "anatomy": null,
+  "playground": {
+    "value": {
+      "control": "number",
+      "default": 65,
+      "min": 0,
+      "max": 100
+    },
+    "variant": {
+      "control": "select",
+      "options": [
+        "default",
+        "success",
+        "warning",
+        "error"
+      ],
+      "default": "default"
+    }
+  }
+}

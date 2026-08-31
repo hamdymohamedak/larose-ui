@@ -26,7 +26,7 @@ import {
   toISODate,
   toTime24,
 } from './utils';
-import styles from './Picker.module.css';
+import styles from '@larose-ui/styles/components/Picker/Picker.module.css';
 
 export interface DateTimePickerProps {
   value?: DateTimeValue;

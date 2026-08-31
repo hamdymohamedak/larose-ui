@@ -1,0 +1,103 @@
+{
+  "name": "MenuBar",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "appName",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "appSpecificMenus",
+      "type": "MenuBarMenuConfig[]",
+      "required": false
+    },
+    {
+      "name": "enableGlobalShortcuts",
+      "type": "boolean",
+      "required": false,
+      "description": "Register top-level menu accelerators globally. Defaults to true."
+    },
+    {
+      "name": "enableMnemonics",
+      "type": "boolean",
+      "required": false,
+      "description": "Enable Alt+key mnemonics on Windows/Linux. Defaults to true on non-macOS."
+    },
+    {
+      "name": "enableTypeAhead",
+      "type": "boolean",
+      "required": false,
+      "description": "Enable type-ahead letter matching in open menus. Defaults to true."
+    },
+    {
+      "name": "extras",
+      "type": "MenuBarExtraConfig[]",
+      "required": false
+    },
+    {
+      "name": "menus",
+      "type": "MenuBarMenuConfig[]",
+      "required": false
+    },
+    {
+      "name": "onMenuAction",
+      "type": "(menuId: string, entryId: string) => void",
+      "required": false
+    },
+    {
+      "name": "onRevealChange",
+      "type": "(revealed: boolean) => void",
+      "required": false
+    },
+    {
+      "name": "platform",
+      "type": "MenuBarPlatform",
+      "required": false
+    },
+    {
+      "name": "revealed",
+      "type": "boolean",
+      "required": false,
+      "description": "iPadOS: bar hidden until revealed at the top edge."
+    },
+    {
+      "name": "showAppleMenu",
+      "type": "boolean",
+      "required": false,
+      "description": "macOS: show a read-only Apple menu stub (system-provided on real macOS)."
+    },
+    {
+      "name": "standardOptions",
+      "type": "StandardMenuBarOptions",
+      "required": false,
+      "description": "Used when `menus` is omitted to build the standard HIG menu set."
+    }
+  ],
+  "events": [
+    {
+      "name": "onMenuAction",
+      "payload": "(menuId: string, entryId: string) => void"
+    },
+    {
+      "name": "onRevealChange",
+      "payload": "(revealed: boolean) => void"
+    }
+  ],
+  "keyboard": {
+    "keys": [
+      "ArrowUp",
+      "ArrowDown",
+      "ArrowLeft",
+      "ArrowRight"
+    ],
+    "behavior": [
+      "arrow-navigation",
+      "mnemonics",
+      "accelerators",
+      "submenu-scoping",
+      "type-ahead"
+    ]
+  }
+}

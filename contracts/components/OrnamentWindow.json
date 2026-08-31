@@ -1,0 +1,66 @@
+{
+  "name": "OrnamentWindow",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "'aria-label'",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "alignment",
+      "type": "OrnamentContentAlignment",
+      "required": false,
+      "default": "'center'"
+    },
+    {
+      "name": "edge",
+      "type": "OrnamentEdge",
+      "required": false,
+      "default": "'bottom'"
+    },
+    {
+      "name": "immersive",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "description": "When true, automatic visibility hides ornaments (e.g. full-screen media)."
+    },
+    {
+      "name": "ornament",
+      "type": "ReactNode",
+      "required": false,
+      "description": "Single ornament content (shortcut for one bottom ornament)."
+    },
+    {
+      "name": "ornaments",
+      "type": "OrnamentConfig[]",
+      "required": false
+    },
+    {
+      "name": "visibility",
+      "type": "OrnamentVisibility",
+      "required": false,
+      "default": "'visible'"
+    }
+  ],
+  "events": [],
+  "defaults": {
+    "alignment": "'center'",
+    "edge": "'bottom'",
+    "immersive": "false",
+    "visibility": "'visible'"
+  },
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  }
+}

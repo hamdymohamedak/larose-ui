@@ -1,0 +1,133 @@
+{
+  "component": "Textarea",
+  "category": "Forms",
+  "import": "import { Textarea } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "error",
+      "type": "string | null",
+      "required": false,
+      "default": "null",
+      "inherited": false
+    },
+    {
+      "name": "hint",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "inputSize",
+      "type": "Size",
+      "required": false,
+      "default": "'md'",
+      "inherited": false
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "loading",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "inherited": false
+    },
+    {
+      "name": "required",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "inherited": false
+    },
+    {
+      "name": "state",
+      "type": "UIState",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [
+    {
+      "id": "TextareaDefault",
+      "title": "Textarea Default",
+      "kind": "basic",
+      "props": {},
+      "code": "<Textarea label=\"Description\" placeholder=\"Enter details...\" />",
+      "composite": true
+    },
+    {
+      "id": "Default",
+      "title": "Default",
+      "kind": "basic",
+      "props": {
+        "label": "Description",
+        "placeholder": "Enter details..."
+      },
+      "code": "<Textarea\n  label=\"Description\"\n  placeholder=\"Enter details...\"\n>Example</Textarea>"
+    },
+    {
+      "id": "WithHint",
+      "title": "With Hint",
+      "kind": "advanced",
+      "props": {
+        "label": "Notes",
+        "placeholder": "Add internal notes",
+        "hint": "Visible to admins only"
+      },
+      "code": "<Textarea\n  label=\"Notes\"\n  placeholder=\"Add internal notes\"\n  hint=\"Visible to admins only\"\n>Example</Textarea>"
+    },
+    {
+      "id": "Required",
+      "title": "Required",
+      "kind": "advanced",
+      "props": {
+        "label": "Feedback",
+        "placeholder": "Tell us what you think",
+        "required": true
+      },
+      "code": "<Textarea\n  label=\"Feedback\"\n  placeholder=\"Tell us what you think\"\n  required\n>Example</Textarea>"
+    },
+    {
+      "id": "WithError",
+      "title": "With Error",
+      "kind": "error",
+      "props": {
+        "label": "Description",
+        "defaultValue": "Too short",
+        "error": "Description must be at least 20 characters"
+      },
+      "code": "<Textarea\n  label=\"Description\"\n  defaultValue=\"Too short\"\n  error=\"Description must be at least 20 characters\"\n>Example</Textarea>"
+    },
+    {
+      "id": "Disabled",
+      "title": "Disabled",
+      "kind": "disabled",
+      "props": {
+        "label": "Archived notes",
+        "defaultValue": "This record is read-only.",
+        "disabled": true
+      },
+      "code": "<Textarea\n  label=\"Archived notes\"\n  defaultValue=\"This record is read-only.\"\n  disabled\n>Example</Textarea>"
+    }
+  ],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": {
+    "label": {
+      "control": "text",
+      "default": "Description"
+    },
+    "placeholder": {
+      "control": "text",
+      "default": "Enter details..."
+    },
+    "disabled": {
+      "control": "boolean",
+      "default": false
+    }
+  }
+}

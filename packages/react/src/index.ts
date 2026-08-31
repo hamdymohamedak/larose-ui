@@ -1,8 +1,22 @@
 export { AsyncButton } from './AsyncButton/AsyncButton';
 export type { AsyncButtonProps } from './AsyncButton/AsyncButton';
 
-export { LaRoseProvider, useLaRose } from './provider/LaRoseProvider';
-export type { LaRoseConfig, LaRoseProviderProps } from './provider/LaRoseProvider';
+export { LaRoseProvider, useLaRose, createTheme, normalizeThemeInput, resolveTheme } from './provider/LaRoseProvider';
+export type {
+  LaRoseConfig,
+  LaRoseProviderProps,
+  LaRoseTheme,
+  LaRoseThemeInput,
+  ComponentConfiguration,
+} from './provider/LaRoseProvider';
+
+export {
+  ThemeCustomizationContext,
+  useThemeCustomization,
+  useComponentDefaults,
+  useComponentMotion,
+} from './theme';
+export type { ResolvedComponentMotion, ThemeCustomizationContextValue } from './theme';
 
 export {
   MotionProvider,
@@ -170,7 +184,7 @@ export type {
 } from './DragDrop/types';
 
 export { Card } from './Card/Card';
-export type { CardProps } from './Card/Card';
+export type { CardProps, CardSectionProps } from './Card/Card';
 
 export { Box } from './Layout/Box';
 export type { BoxProps } from './Layout/Box';
@@ -676,6 +690,52 @@ export type {
 
 export { CommandPalette, useCommandPaletteShortcut } from './CommandPalette/CommandPalette';
 export type { CommandPaletteProps, CommandPaletteItem } from './CommandPalette/CommandPalette';
+
+export {
+  AcceleratorProvider,
+  useAccelerator,
+  useAcceleratorContext,
+  useMenuAcceleratorRegistration,
+  useMenuBarAccelerators,
+  useCombinedMenuKeyboard,
+  MnemonicLabel,
+  resolveMenuShortcut,
+  resolveAcceleratorPlatform,
+  collectMenuAccelerators,
+  collectGlobalMenuAccelerators,
+  useMenuKeyboardShortcuts,
+} from './accelerator';
+export type {
+  AcceleratorProviderProps,
+  AcceleratorRegistrationOptions,
+  MenuAcceleratorBinding,
+  ResolvedMenuShortcut,
+  ResolveMenuShortcutOptions,
+  UseMenuKeyboardShortcutsOptions,
+  UseMenuBarAcceleratorsOptions,
+  UseCombinedMenuKeyboardOptions,
+  CombinedMenuKeyboardResult,
+  MnemonicLabelProps,
+} from './accelerator';
+
+export {
+  STANDARD_ACCELERATORS,
+  formatAccelerator,
+  formatAriaKeyshortcuts,
+  matchKeyboardEvent,
+  parseAccelerator,
+  parseMnemonicLabel,
+  resolveMnemonicKey,
+  normalizeAccelerator,
+  detectPlatform,
+} from '@larose-ui/core';
+export type {
+  Accelerator,
+  AcceleratorFormatOptions,
+  AcceleratorPlatform,
+  ParsedMnemonic,
+  StandardAcceleratorId,
+} from '@larose-ui/core';
 
 export { DatePicker } from './DatePicker/DatePicker';
 export type { DatePickerProps } from './DatePicker/DatePicker';

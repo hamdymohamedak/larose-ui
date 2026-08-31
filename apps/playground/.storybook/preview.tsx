@@ -1,7 +1,12 @@
 import type { Preview, StoryContext } from '@storybook/react';
 import { memo, type ComponentType } from 'react';
 import '@larose-ui/tokens/styles.css';
+import '@larose-ui/styles/styles.css';
 import '@larose-ui/react/styles.css';
+import {
+  renderCrossFrameworkStory,
+  renderReactOnlyFrameworkGuard,
+} from './crossFramework/CrossFrameworkStory';
 import { StorybookProvider, type StorybookLocale } from './StorybookProvider';
 
 const StoryFrame = memo(function StoryFrame({
@@ -31,9 +36,17 @@ function LaRoseDecorator({
   Story: ComponentType;
   context: StoryContext;
 }) {
+  const crossFrameworkId = context.parameters.laRose?.crossFramework as string | undefined;
   const standalone = context.parameters.laRose?.standalone === true;
   const useRuntime = context.parameters.laRose?.runtime === true;
   const fullscreen = context.parameters.layout === 'fullscreen';
+
+  if (crossFrameworkId) {
+    const crossFrameworkStory = renderCrossFrameworkStory(context);
+    if (crossFrameworkStory) {
+      return <StoryFrame fullscreen={fullscreen}>{crossFrameworkStory}</StoryFrame>;
+    }
+  }
 
   const storyContent = (
     <StoryFrame fullscreen={fullscreen}>
@@ -41,8 +54,10 @@ function LaRoseDecorator({
     </StoryFrame>
   );
 
+  const wrappedStory = renderReactOnlyFrameworkGuard(context, storyContent);
+
   if (standalone) {
-    return storyContent;
+    return wrappedStory;
   }
 
   const theme = context.globals.theme as 'light' | 'dark' | undefined;
@@ -64,7 +79,7 @@ function LaRoseDecorator({
       environment={environment}
       providerOverrides={providerOverrides}
     >
-      {storyContent}
+      {wrappedStory}
     </StorybookProvider>
   );
 }
@@ -76,6 +91,7 @@ const preview: Preview = {
     actions: { argTypesRegex: '^on[A-Z].*' },
   },
   initialGlobals: {
+    framework: 'react',
     theme: 'light',
     density: 'comfortable',
     locale: 'en',
@@ -83,6 +99,19 @@ const preview: Preview = {
   },
   decorators: [(Story, context) => <LaRoseDecorator Story={Story} context={context} />],
   globalTypes: {
+    framework: {
+      description: 'Component implementation framework (Parity stories)',
+      toolbar: {
+        title: 'Framework',
+        icon: 'batchaccept',
+        items: [
+          { value: 'react', title: 'React' },
+          { value: 'vue', title: 'Vue 3' },
+          { value: 'svelte', title: 'Svelte 5' },
+        ],
+        dynamicTitle: true,
+      },
+    },
     theme: {
       description: 'Theme mode',
       toolbar: {

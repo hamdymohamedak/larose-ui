@@ -1,0 +1,37 @@
+{
+  "component": "OutlineViewToolbar",
+  "category": "Data",
+  "import": "import { OutlineViewToolbar } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "'aria-label'",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onSearchChange",
+      "type": "(query: string) => void",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "searchQuery",
+      "type": "string",
+      "required": true,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [
+    "Supports ARIA attributes via standard HTML element props."
+  ],
+  "anatomy": null,
+  "playground": null
+}

@@ -1,6 +1,6 @@
 import { forwardRef, type InputHTMLAttributes } from 'react';
 import type { Size } from '@larose-ui/core';
-import styles from './Checkbox.module.css';
+import styles from '@larose-ui/styles/components/Checkbox/Checkbox.module.css';
 
 export interface CheckboxProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type' | 'size'> {
   label: string;

@@ -1,7 +1,7 @@
 {
   "name": "@larose-ui/contracts",
-  "version": "0.1.2",
-  "description": "UI/API contract validation for laRose platform",
+  "version": "0.1.1",
+  "description": "UI/API and component contract validation for laRose platform",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",

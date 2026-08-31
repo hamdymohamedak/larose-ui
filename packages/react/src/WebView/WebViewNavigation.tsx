@@ -1,4 +1,4 @@
-import styles from './WebView.module.css';
+import styles from '@larose-ui/styles/components/WebView/WebView.module.css';
 
 export interface WebViewNavigationProps {
   canGoBack?: boolean;

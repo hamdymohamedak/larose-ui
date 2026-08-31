@@ -1,7 +1,7 @@
 import { useCallback, useMemo, useState, type ReactNode } from 'react';
 import type { SortDirection, TableSelectionMode } from './types';
 import { formatColumnHeader, nextSortDirection, sortRows } from './utils';
-import styles from './ListTable.module.css';
+import styles from '@larose-ui/styles/components/ListTable/ListTable.module.css';
 
 export interface TableColumn<T> {
   key: string;

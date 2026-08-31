@@ -1,0 +1,57 @@
+{
+  "name": "ContextMenu",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "dimBackground",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "entries",
+      "type": "ContextMenuEntry[]",
+      "required": true
+    },
+    {
+      "name": "longPress",
+      "type": "boolean",
+      "required": false,
+      "description": "Enable long-press / touch-and-hold in addition to secondary click."
+    },
+    {
+      "name": "onEntrySelect",
+      "type": "(entry: ContextMenuItemConfig) => void",
+      "required": false
+    },
+    {
+      "name": "onOpenChange",
+      "type": "(open: boolean) => void",
+      "required": false
+    },
+    {
+      "name": "open",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "preview",
+      "type": "ReactNode",
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "onEntrySelect",
+      "payload": "(entry: ContextMenuItemConfig) => void"
+    },
+    {
+      "name": "onOpenChange",
+      "payload": "(open: boolean) => void"
+    }
+  ],
+  "keyboard": {},
+  "controlled": [
+    "open"
+  ]
+}

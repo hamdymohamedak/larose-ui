@@ -1,0 +1,81 @@
+{
+  "name": "Dialog",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "cancelLabel",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "confirmLabel",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "loading",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "onClose",
+      "type": "() => void",
+      "required": true
+    },
+    {
+      "name": "onConfirm",
+      "type": "() => void",
+      "required": false
+    },
+    {
+      "name": "open",
+      "type": "boolean",
+      "required": true
+    },
+    {
+      "name": "variant",
+      "type": "'default' | 'destructive'",
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "onClose",
+      "payload": "() => void"
+    },
+    {
+      "name": "onConfirm",
+      "payload": "() => void"
+    }
+  ],
+  "slots": [
+    "children"
+  ],
+  "states": [
+    "closed",
+    "open"
+  ],
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props.",
+      "Focus is managed while open; Escape typically closes the overlay."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "keys": [
+      "Escape"
+    ],
+    "behavior": [
+      "escape-close",
+      "focus-trap",
+      "restore-focus"
+    ]
+  }
+}

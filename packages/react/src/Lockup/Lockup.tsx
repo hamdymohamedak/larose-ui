@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import type { LockupAxis } from './types';
-import styles from './Lockup.module.css';
+import styles from '@larose-ui/styles/components/Lockup/Lockup.module.css';
 
 export interface LockupProps {
   header?: ReactNode;

@@ -35,6 +35,7 @@ import { DataTable } from './DataTable/DataTable';
 import { FileUpload } from './FileUpload/FileUpload';
 import {
   Sidebar,
+  SidebarDisclosureSection,
   SidebarHeader,
   SidebarNav,
   SidebarItem,
@@ -1146,6 +1147,36 @@ describe('Sidebar', () => {
     );
     expect(screen.queryByRole('link', { name: 'Danger' })).not.toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Danger' })).toBeInTheDocument();
+  });
+
+  it('uses viewport height and scrollable navigation region', () => {
+    renderWithProvider(
+      <Sidebar>
+        <SidebarHeader>laRose</SidebarHeader>
+        <SidebarNav>
+          <SidebarItem>Dashboard</SidebarItem>
+        </SidebarNav>
+      </Sidebar>,
+    );
+    const sidebar = screen.getByLabelText('Sidebar');
+    expect(sidebar.tagName).toBe('ASIDE');
+    expect(sidebar.className).toMatch(/sidebar/);
+    expect(screen.getByRole('navigation', { name: 'Sidebar navigation' })).toBeInTheDocument();
+  });
+
+  it('toggles disclosure sections with sidebar chevrons', async () => {
+    renderWithProvider(
+      <Sidebar>
+        <SidebarNav>
+          <SidebarDisclosureSection label="Packages" defaultExpanded={false}>
+            <SidebarItem>React</SidebarItem>
+          </SidebarDisclosureSection>
+        </SidebarNav>
+      </Sidebar>,
+    );
+    expect(screen.queryByRole('button', { name: 'React' })).not.toBeInTheDocument();
+    await userEvent.click(screen.getByRole('button', { name: 'Packages' }));
+    expect(screen.getByRole('button', { name: 'React' })).toBeInTheDocument();
   });
 });
 

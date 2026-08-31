@@ -1,0 +1,34 @@
+{
+  "name": "Alert",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "onDismiss",
+      "type": "() => void",
+      "required": false
+    },
+    {
+      "name": "variant",
+      "type": "AlertVariant",
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "onDismiss",
+      "payload": "() => void"
+    }
+  ],
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  }
+}

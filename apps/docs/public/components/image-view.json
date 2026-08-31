@@ -1,0 +1,63 @@
+{
+  "component": "ImageView",
+  "category": "Content",
+  "import": "import { ImageView } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "alt",
+      "type": "string",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "background",
+      "type": "ImageBackground",
+      "required": false,
+      "default": "'opaque'",
+      "inherited": false
+    },
+    {
+      "name": "fit",
+      "type": "ImageFit",
+      "required": false,
+      "default": "'contain'",
+      "inherited": false
+    },
+    {
+      "name": "frameClassName",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "frameStyle",
+      "type": "CSSProperties",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "objectPosition",
+      "type": "string",
+      "required": false,
+      "default": "'center'",
+      "inherited": false
+    },
+    {
+      "name": "sequence",
+      "type": "ImageFrameSequence",
+      "required": false,
+      "description": "Animated image sequence — frames should share dimensions when possible.",
+      "inherited": false
+    },
+    {
+      "name": "src",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

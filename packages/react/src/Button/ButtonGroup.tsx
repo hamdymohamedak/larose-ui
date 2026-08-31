@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import styles from './Button.module.css';
+import styles from '@larose-ui/styles/components/Button/Button.module.css';
 
 export interface ButtonGroupProps {
   children: ReactNode;

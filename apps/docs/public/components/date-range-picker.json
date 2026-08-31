@@ -1,0 +1,104 @@
+{
+  "component": "DateRangePicker",
+  "category": "Forms",
+  "import": "import { DateRangePicker } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "endLabel",
+      "type": "string",
+      "required": false,
+      "default": "'End date'",
+      "inherited": false
+    },
+    {
+      "name": "error",
+      "type": "string | null",
+      "required": false,
+      "default": "null",
+      "inherited": false
+    },
+    {
+      "name": "hint",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "inputSize",
+      "type": "Size",
+      "required": false,
+      "default": "'md'",
+      "inherited": false
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "loading",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "inherited": false
+    },
+    {
+      "name": "max",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "min",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "readOnly",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "startLabel",
+      "type": "string",
+      "required": false,
+      "default": "'Start date'",
+      "inherited": false
+    },
+    {
+      "name": "state",
+      "type": "UIState",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "value",
+      "type": "DateRange",
+      "required": false,
+      "default": "{ startDate: ''",
+      "inherited": false
+    }
+  ],
+  "examples": [
+    {
+      "id": "DateRangePickerDefault",
+      "title": "Date Range Picker Default",
+      "kind": "basic",
+      "props": {},
+      "code": "<DateRangeDemo />",
+      "composite": true
+    }
+  ],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

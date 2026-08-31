@@ -1,0 +1,43 @@
+{
+  "name": "Draggable",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "data",
+      "type": "T",
+      "required": true
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "preview",
+      "type": "ReactNode",
+      "required": false
+    },
+    {
+      "name": "sourceId",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "type",
+      "type": "string",
+      "required": false
+    }
+  ],
+  "events": [],
+  "defaults": {
+    "disabled": "false"
+  },
+  "keyboard": {}
+}

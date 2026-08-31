@@ -1,0 +1,60 @@
+{
+  "component": "ActivityView",
+  "category": "Sharing",
+  "import": "import { ActivityView } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "activities",
+      "type": "ActivityItem[]",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "anchorRef",
+      "type": "React.RefObject<HTMLElement | null>",
+      "required": false,
+      "description": "Used for popover positioning when presentation is popover.",
+      "inherited": false
+    },
+    {
+      "name": "excludedActivityIds",
+      "type": "string[]",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "footer",
+      "type": "ReactNode",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onActivitySelect",
+      "type": "(activity: ActivityItem) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onClose",
+      "type": "() => void",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "open",
+      "type": "boolean",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "presentation",
+      "type": "ActivityPresentation",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

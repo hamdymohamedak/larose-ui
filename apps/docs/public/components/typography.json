@@ -1,0 +1,54 @@
+{
+  "component": "Typography",
+  "category": "Content",
+  "import": "import { Typography } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "as",
+      "type": "ElementType",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "muted",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [
+    {
+      "id": "TypographyScale",
+      "title": "Typography Scale",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"TypographyScale\" for full example.",
+      "composite": true
+    }
+  ],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": {
+    "children": {
+      "control": "text",
+      "default": "Refined typography",
+      "label": "Text"
+    },
+    "role": {
+      "control": "select",
+      "options": [
+        "body",
+        "headline",
+        "title",
+        "subheadline",
+        "footnote",
+        "caption"
+      ],
+      "default": "body"
+    },
+    "muted": {
+      "control": "boolean",
+      "default": false
+    }
+  }
+}

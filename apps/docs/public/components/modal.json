@@ -1,0 +1,114 @@
+{
+  "component": "Modal",
+  "category": "Overlay",
+  "import": "import { Modal } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "closeOnOverlay",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "contentClassName",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "contentStyle",
+      "type": "CSSProperties",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "motion",
+      "type": "ComponentMotionOverride",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onClose",
+      "type": "() => void",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "open",
+      "type": "boolean",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "overlayClassName",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "overlayStyle",
+      "type": "CSSProperties",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [
+    {
+      "id": "Default",
+      "title": "Default",
+      "kind": "basic",
+      "props": {},
+      "code": "// See Storybook story \"Default\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "WithoutDescription",
+      "title": "Without Description",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"WithoutDescription\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "NoOverlayClose",
+      "title": "No Overlay Close",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"NoOverlayClose\" for full example.",
+      "composite": true
+    }
+  ],
+  "accessibility": [
+    "Focus is managed while open; Escape typically closes the overlay."
+  ],
+  "anatomy": {
+    "summary": "Modal renders a portal overlay with focus trap and optional title/description.",
+    "structure": [
+      "Modal (root portal)",
+      "Overlay",
+      "Content",
+      "Title",
+      "Description",
+      "Body (children)"
+    ],
+    "composition": "Control open state externally. Provide title and description for accessible naming.",
+    "slots": [
+      "children",
+      "overlay",
+      "content"
+    ],
+    "states": [
+      "closed",
+      "open",
+      "entering",
+      "leaving"
+    ]
+  },
+  "playground": null
+}

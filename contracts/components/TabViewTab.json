@@ -1,0 +1,24 @@
+{
+  "name": "TabViewTab",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "required": true
+    }
+  ],
+  "events": [],
+  "keyboard": {}
+}

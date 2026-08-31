@@ -1,0 +1,66 @@
+{
+  "component": "Collection",
+  "category": "Layout",
+  "import": "import { Collection } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "ariaLabel",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "columns",
+      "type": "number",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "items",
+      "type": "CollectionItem[]",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "layout",
+      "type": "CollectionLayout",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onSelect",
+      "type": "(item: CollectionItem) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "selectedId",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [
+    {
+      "id": "CollectionGrid",
+      "title": "Collection Grid",
+      "kind": "advanced",
+      "props": {},
+      "code": "<Collection items={photos} layout=\"grid\" columns={4} selectedId={selectedId} onSelect={(item) => setSelectedId(item.id)} />",
+      "composite": true
+    },
+    {
+      "id": "CollectionRow",
+      "title": "Collection Row",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"CollectionRow\" for full example.",
+      "composite": true
+    }
+  ],
+  "accessibility": [
+    "Supports ARIA attributes via standard HTML element props."
+  ],
+  "anatomy": null,
+  "playground": null
+}

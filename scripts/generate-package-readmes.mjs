@@ -211,7 +211,7 @@ larose doctor --ci
 larose migrate --to 1.0.0 --apply
 larose generate feature EmployeeList ./EmployeeList.tsx`,
     features: [
-      '`larose doctor` — budgets, a11y, contracts, quality scores',
+      '`larose doctor` — a11y, contracts, quality scores',
       '`larose migrate` — deprecation scan and codemods',
       '`larose generate` — form, page, and feature scaffolds',
       '`larose release` — monorepo release intelligence',

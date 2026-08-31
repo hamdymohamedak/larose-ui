@@ -16,7 +16,7 @@ import {
   sortOutlineNodes,
   truncateMiddle,
 } from './utils';
-import styles from './ListTable.module.css';
+import styles from '@larose-ui/styles/components/ListTable/ListTable.module.css';
 
 const PRIMARY_COLUMN_KEY = 'label';
 const STORAGE_PREFIX = 'larose-outline-expanded';

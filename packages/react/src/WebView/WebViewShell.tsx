@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { WebView, type WebViewProps } from './WebView';
 import { WebViewNavigation, type WebViewNavigationProps } from './WebViewNavigation';
-import styles from './WebView.module.css';
+import styles from '@larose-ui/styles/components/WebView/WebView.module.css';
 
 export interface WebViewShellProps extends WebViewProps {
   navigation?: WebViewNavigationProps;

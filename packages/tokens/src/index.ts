@@ -36,6 +36,14 @@ import { tokenFieldTokensToCSSVariables, getTokenFieldTokens } from './token-fie
 import { alertDialogTokensToCSSVariables, getAlertDialogTokens } from './alert-dialog-tokens';
 import { motionTokensToCSSVariables, getMotionTokens } from './motion-tokens';
 import { sharingTokensToCSSVariables, getSharingTokens } from './sharing-tokens';
+import { cardTokensToCSSVariables, getCardTokens } from './card-tokens';
+import { modalTokensToCSSVariables, getModalTokens } from './modal-tokens';
+import { drawerTokensToCSSVariables, getDrawerTokens } from './drawer-tokens';
+import { popoverTokensToCSSVariables, getPopoverTokens } from './popover-tokens';
+import {
+  resolveComponentTokenCSSVariables,
+  type ComponentTokenOverrides,
+} from './component-registry';
 import { getRefinedTokenOverrides } from './refined';
 import type {
   ColorTokens,
@@ -48,6 +56,21 @@ import type {
 
 export type { ColorTokens, SurfaceTokens, TokenOverrides, TokenSet, TypographyRoles };
 export { getRefinedTokenOverrides } from './refined';
+export {
+  COMPONENT_TOKEN_REGISTRY,
+  resolveComponentTokenCSSVariables,
+  type ComponentTokenOverrides,
+  type ComponentTokenMap,
+  type CustomizableComponentName,
+} from './component-registry';
+export { getCardTokens, cardTokensToCSSVariables } from './card-tokens';
+export type { CardTokens } from './card-tokens';
+export { getModalTokens, modalTokensToCSSVariables } from './modal-tokens';
+export type { ModalTokens } from './modal-tokens';
+export { getDrawerTokens, drawerTokensToCSSVariables } from './drawer-tokens';
+export type { DrawerTokens } from './drawer-tokens';
+export { getPopoverTokens, popoverTokensToCSSVariables } from './popover-tokens';
+export type { PopoverTokens } from './popover-tokens';
 export { getButtonTokens, buttonTokensToCSSVariables } from './button-tokens';
 export type { ButtonTokens } from './button-tokens';
 export {
@@ -246,7 +269,7 @@ const baseTokens: Omit<TokenSet, 'colors' | 'surfaces' | 'typography'> = {
   },
 };
 
-function mergeTokenOverrides(base: TokenSet, overrides?: TokenOverrides): TokenSet {
+export function mergeTokenOverrides(base: TokenSet, overrides?: TokenOverrides): TokenSet {
   if (!overrides) return base;
 
   const typography = { ...base.typography };
@@ -366,10 +389,15 @@ export function getTokens(mode: ThemeMode = 'light'): TokenSet {
   return createBaseTokenSet(mode);
 }
 
+export interface TokensToCSSVariablesOptions {
+  componentTokenOverrides?: ComponentTokenOverrides;
+}
+
 export function tokensToCSSVariables(
   tokens: TokenSet,
   density: Density = 'comfortable',
   mode: ThemeMode = 'light',
+  options?: TokensToCSSVariablesOptions,
 ): Record<string, string> {
   const multiplier = densityMultipliers[density];
   const vars: Record<string, string> = {};
@@ -465,10 +493,66 @@ export function tokensToCSSVariables(
   Object.assign(vars, tokenFieldTokensToCSSVariables(getTokenFieldTokens(mode)));
   Object.assign(vars, alertDialogTokensToCSSVariables(getAlertDialogTokens(mode)));
   Object.assign(vars, motionTokensToCSSVariables(getMotionTokens(mode)));
+  Object.assign(vars, cardTokensToCSSVariables(getCardTokens(mode)));
+  Object.assign(vars, modalTokensToCSSVariables(getModalTokens(mode)));
+  Object.assign(vars, drawerTokensToCSSVariables(getDrawerTokens(mode)));
+  Object.assign(vars, popoverTokensToCSSVariables(getPopoverTokens(mode)));
+
+  if (options?.componentTokenOverrides) {
+    Object.assign(
+      vars,
+      resolveComponentTokenCSSVariables(mode, options.componentTokenOverrides),
+    );
+  }
 
   vars['--lr-density-multiplier'] = String(multiplier);
 
   return vars;
+}
+
+export interface ApplyThemeOptions {
+  mode: ThemeMode;
+  density?: Density;
+  tokenOverrides?: TokenOverrides;
+  brandColors?: Partial<ColorTokens>;
+  componentTokenOverrides?: ComponentTokenOverrides;
+  presetId?: string;
+}
+
+export function resolveThemeCSSVariables(options: ApplyThemeOptions): Record<string, string> {
+  const density = options.density ?? 'comfortable';
+  let tokens = getTokens(options.mode);
+
+  if (options.tokenOverrides) {
+    tokens = mergeTokenOverrides(tokens, options.tokenOverrides);
+  }
+
+  if (options.brandColors) {
+    tokens = {
+      ...tokens,
+      colors: { ...tokens.colors, ...options.brandColors },
+    };
+  }
+
+  return tokensToCSSVariables(tokens, density, options.mode, {
+    componentTokenOverrides: options.componentTokenOverrides,
+  });
+}
+
+export function applyResolvedTheme(element: HTMLElement, options: ApplyThemeOptions): void {
+  const density = options.density ?? 'comfortable';
+  const vars = resolveThemeCSSVariables(options);
+
+  for (const [key, value] of Object.entries(vars)) {
+    element.style.setProperty(key, value);
+  }
+
+  element.dataset.lrTheme = options.mode;
+  element.dataset.lrDensity = density;
+
+  if (options.presetId) {
+    element.dataset.lrThemePreset = options.presetId;
+  }
 }
 
 export function applyTokensToElement(
@@ -477,16 +561,11 @@ export function applyTokensToElement(
   density: Density = 'comfortable',
   brandOverrides?: Partial<ColorTokens>,
 ): void {
-  const tokens = getTokens(mode);
-  if (brandOverrides) {
-    tokens.colors = { ...tokens.colors, ...brandOverrides };
-  }
-  const vars = tokensToCSSVariables(tokens, density, mode);
-  for (const [key, value] of Object.entries(vars)) {
-    element.style.setProperty(key, value);
-  }
-  element.dataset.lrTheme = mode;
-  element.dataset.lrDensity = density;
+  applyResolvedTheme(element, {
+    mode,
+    density,
+    brandColors: brandOverrides,
+  });
 }
 
 export function createTenantTheme(

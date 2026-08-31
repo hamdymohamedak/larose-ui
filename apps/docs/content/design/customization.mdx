@@ -1,0 +1,93 @@
+# Customization
+
+laRose is **beautiful by default** and **customizable by design**. The default experience uses the Apple-inspired **Refined** preset — no configuration required.
+
+## Hierarchy
+
+```text
+Library defaults
+  → Theme preset
+  → Global theme tokens
+  → Component tokens
+  → Component defaults
+  → Instance props
+  → Resolved CSS variables
+```
+
+Higher layers win over lower layers. Instance props always override component defaults.
+
+## Default experience
+
+```tsx
+import { LaRoseProvider } from '@larose-ui/runtime';
+
+<LaRoseProvider>
+  <App />
+</LaRoseProvider>
+```
+
+## Small overrides
+
+```tsx
+<LaRoseProvider
+  themeConfig={{
+    colors: { primary: '#6C5CE7' },
+    radius: { md: '10px' },
+  }}
+>
+  <App />
+</LaRoseProvider>
+```
+
+## Custom themes
+
+```tsx
+import { LaRoseProvider } from '@larose-ui/runtime';
+import { createTheme } from '@larose-ui/themes';
+
+const customTheme = createTheme({
+  base: 'refined',
+  colors: {
+    primary: '#6C5CE7',
+    secondary: '#00CEC9',
+  },
+  motion: {
+    preset: 'snappy',
+    duration: { normal: '180ms' },
+  },
+});
+
+<LaRoseProvider themeConfig={customTheme}>
+  <App />
+</LaRoseProvider>
+```
+
+## Per-component defaults
+
+Configure defaults globally without repeating props on every instance:
+
+```tsx
+<LaRoseProvider
+  components={{
+    Button: { defaults: { size: 'sm', variant: 'outline' } },
+    Card: { tokens: { padding: 'lg' } },
+  }}
+>
+  <App />
+</LaRoseProvider>
+```
+
+## Live preview
+
+<PreviewFrame title="Brand override">
+  <LaRoseProvider
+    themeConfig={{
+      colors: { primary: '#6C5CE7' },
+    }}
+  >
+    <Button>Branded action</Button>
+    <Button variant="outline">Secondary</Button>
+  </LaRoseProvider>
+</PreviewFrame>
+
+> Full reference: see `docs/design/CUSTOMIZATION.md` in the repository.

@@ -13,7 +13,7 @@ import {
 } from 'react';
 import type { TabBarItemProps, TabBarListProps, TabBarPanelProps, TabBarProps } from './types';
 import { formatTabBarBadge, resolveTabBarPlacement, warnIfTooManyTabs } from './utils';
-import styles from './TabBar.module.css';
+import styles from '@larose-ui/styles/components/TabBar/TabBar.module.css';
 
 interface TabBarContextValue {
   value: string;

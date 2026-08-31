@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import styles from './Alert.module.css';
+import styles from '@larose-ui/styles/components/Alert/Alert.module.css';
 
 export type AlertVariant = 'info' | 'success' | 'warning' | 'error';
 

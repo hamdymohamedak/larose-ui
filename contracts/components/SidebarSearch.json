@@ -1,0 +1,8 @@
+{
+  "name": "SidebarSearch",
+  "version": "1",
+  "framework": "react",
+  "props": [],
+  "events": [],
+  "keyboard": {}
+}

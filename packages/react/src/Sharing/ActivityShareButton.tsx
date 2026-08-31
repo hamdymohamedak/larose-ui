@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import { ActivityView } from './ActivityView';
 import { ShareButton } from './ShareButton';
 import type { ActivityItem } from './types';
-import styles from './Sharing.module.css';
+import styles from '@larose-ui/styles/components/Sharing/Sharing.module.css';
 
 export interface ActivityShareButtonProps {
   activities: ActivityItem[];

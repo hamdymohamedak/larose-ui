@@ -1,0 +1,59 @@
+{
+  "name": "ActivityView",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "activities",
+      "type": "ActivityItem[]",
+      "required": true
+    },
+    {
+      "name": "anchorRef",
+      "type": "React.RefObject<HTMLElement | null>",
+      "required": false,
+      "description": "Used for popover positioning when presentation is popover."
+    },
+    {
+      "name": "excludedActivityIds",
+      "type": "string[]",
+      "required": false
+    },
+    {
+      "name": "footer",
+      "type": "ReactNode",
+      "required": false
+    },
+    {
+      "name": "onActivitySelect",
+      "type": "(activity: ActivityItem) => void",
+      "required": false
+    },
+    {
+      "name": "onClose",
+      "type": "() => void",
+      "required": true
+    },
+    {
+      "name": "open",
+      "type": "boolean",
+      "required": true
+    },
+    {
+      "name": "presentation",
+      "type": "ActivityPresentation",
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "onActivitySelect",
+      "payload": "(activity: ActivityItem) => void"
+    },
+    {
+      "name": "onClose",
+      "payload": "() => void"
+    }
+  ],
+  "keyboard": {}
+}

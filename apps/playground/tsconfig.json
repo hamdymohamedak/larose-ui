@@ -3,5 +3,5 @@
   "compilerOptions": {
     "noEmit": true
   },
-  "include": [".storybook", "stories"]
+  "include": [".storybook", "stories", "cross-framework", "env.d.ts"]
 }

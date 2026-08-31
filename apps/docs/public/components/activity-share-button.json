@@ -1,0 +1,42 @@
+{
+  "component": "ActivityShareButton",
+  "category": "Actions",
+  "import": "import { ActivityShareButton } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "activities",
+      "type": "ActivityItem[]",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "excludedActivityIds",
+      "type": "string[]",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onActivitySelect",
+      "type": "(activity: ActivityItem) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "presentation",
+      "type": "'sheet' | 'popover' | 'auto'",
+      "required": false,
+      "description": "Uses popover on wide viewports and sheet on compact widths when auto.",
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

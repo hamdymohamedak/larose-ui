@@ -1,0 +1,59 @@
+{
+  "name": "Pagination",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "'aria-label'",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "nextLabel",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "onPageChange",
+      "type": "(page: number) => void",
+      "required": true
+    },
+    {
+      "name": "page",
+      "type": "number",
+      "required": true
+    },
+    {
+      "name": "previousLabel",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "siblingCount",
+      "type": "number",
+      "required": false
+    },
+    {
+      "name": "totalPages",
+      "type": "number",
+      "required": true
+    }
+  ],
+  "events": [
+    {
+      "name": "onPageChange",
+      "payload": "(page: number) => void"
+    }
+  ],
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  }
+}

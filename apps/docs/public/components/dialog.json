@@ -1,0 +1,109 @@
+{
+  "component": "Dialog",
+  "category": "Overlay",
+  "import": "import { Dialog } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "cancelLabel",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "confirmLabel",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "loading",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onClose",
+      "type": "() => void",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "onConfirm",
+      "type": "() => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "open",
+      "type": "boolean",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "variant",
+      "type": "'default' | 'destructive'",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [
+    {
+      "id": "ConfirmDelete",
+      "title": "Confirm Delete",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"ConfirmDelete\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "Loading",
+      "title": "Loading",
+      "kind": "loading",
+      "props": {
+        "open": true,
+        "title": "Saving Changes",
+        "description": "Please wait while we save your changes.",
+        "confirmLabel": "Save",
+        "loading": true
+      },
+      "code": "<Dialog\n  open\n  title=\"Saving Changes\"\n  description=\"Please wait while we save your changes.\"\n  confirmLabel=\"Save\"\n  loading\n>Example</Dialog>"
+    },
+    {
+      "id": "DialogMotion",
+      "title": "Dialog Motion",
+      "kind": "advanced",
+      "props": {},
+      "code": "<>\n        <Button onClick={() => setOpen(true)}>Open dialog</Button>\n        <Modal open={open} onClose={() => setOpen(false)} title=\"Motion dialog\">\n          <p style={{ margin: 0 }}>Subtle scale, fade, and vertical movement on enter and exit.</p>\n        </Modal>\n      </>",
+      "composite": true
+    }
+  ],
+  "accessibility": [
+    "Supports ARIA attributes via standard HTML element props.",
+    "Focus is managed while open; Escape typically closes the overlay."
+  ],
+  "anatomy": {
+    "summary": "Dialog is a lightweight modal surface for confirmations and forms.",
+    "structure": [
+      "Dialog",
+      "Header",
+      "Title",
+      "Description",
+      "Actions"
+    ],
+    "composition": "Use for focused tasks smaller than full Modal layouts.",
+    "slots": [
+      "children"
+    ],
+    "states": [
+      "closed",
+      "open"
+    ]
+  },
+  "playground": null
+}

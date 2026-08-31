@@ -1,0 +1,181 @@
+{
+  "component": "Chart",
+  "category": "Data",
+  "import": "import { Chart } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "accessibilitySummary",
+      "type": "string",
+      "required": false,
+      "description": "High-level summary for assistive technologies (Apple Audio Graphs pattern).",
+      "inherited": false
+    },
+    {
+      "name": "annotation",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "data",
+      "type": "ChartDataPoint[]",
+      "required": false,
+      "description": "Single-series shorthand.",
+      "inherited": false
+    },
+    {
+      "name": "height",
+      "type": "number",
+      "required": false,
+      "default": "220",
+      "description": "Plot height in CSS pixels.",
+      "inherited": false
+    },
+    {
+      "name": "interactive",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "description": "Enable plot-area scrubbing with crosshair.",
+      "inherited": false
+    },
+    {
+      "name": "mark",
+      "type": "ChartMark",
+      "required": false,
+      "default": "'bar'",
+      "description": "Chart mark type — bar, line, or point.",
+      "inherited": false
+    },
+    {
+      "name": "onPointFocus",
+      "type": "(point: ChartDataPoint, seriesId: string, index: number) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "series",
+      "type": "ChartSeries[]",
+      "required": false,
+      "description": "One or more data series.",
+      "inherited": false
+    },
+    {
+      "name": "showLegend",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "showPoints",
+      "type": "boolean",
+      "required": false,
+      "default": "mark === 'line'",
+      "description": "Combine line marks with point marks. Default true for line charts.",
+      "inherited": false
+    },
+    {
+      "name": "stacked",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "description": "Stack bar marks when multiple series are present.",
+      "inherited": false
+    },
+    {
+      "name": "stackGap",
+      "type": "number",
+      "required": false,
+      "default": "2",
+      "description": "Gap between stacked bar segments (Apple HIG visual separation).",
+      "inherited": false
+    },
+    {
+      "name": "subtitle",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "xAxis",
+      "type": "ChartAxisConfig",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "yAxis",
+      "type": "ChartAxisConfig",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "yAxisTrailing",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "description": "Y axis on trailing edge (right in LTR) for layout alignment.",
+      "inherited": false
+    }
+  ],
+  "examples": [
+    {
+      "id": "BarChart",
+      "title": "Bar Chart",
+      "kind": "advanced",
+      "props": {
+        "mark": "bar",
+        "title": "Steps",
+        "subtitle": "You averaged 8,102 steps per day this week.",
+        "accessibilitySummary": "Bar chart showing daily steps for seven days. Highest on Thursday with 11,200 steps.",
+        "min": 0,
+        "tickCount": 4
+      },
+      "code": "<Chart\n  mark=\"bar\"\n  title=\"Steps\"\n  subtitle=\"You averaged 8,102 steps per day this week.\"\n  accessibilitySummary=\"Bar chart showing daily steps for seven days. Highest on Thursday with 11,200 steps.\"\n  min={0}\n  tickCount={4}\n>Example</Chart>"
+    },
+    {
+      "id": "LineChart",
+      "title": "Line Chart",
+      "kind": "advanced",
+      "props": {
+        "mark": "line",
+        "title": "Stock performance",
+        "subtitle": "Five-year trend for AAPL.",
+        "showPoints": true,
+        "interactive": true
+      },
+      "code": "<Chart\n  mark=\"line\"\n  title=\"Stock performance\"\n  subtitle=\"Five-year trend for AAPL.\"\n  showPoints\n  interactive\n>Example</Chart>"
+    },
+    {
+      "id": "PointChart",
+      "title": "Point Chart",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"PointChart\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "StackedBar",
+      "title": "Stacked Bar",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"StackedBar\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "FixedRange",
+      "title": "Fixed Range",
+      "kind": "advanced",
+      "props": {
+        "mark": "line",
+        "title": "Battery",
+        "subtitle": "Charge level over the last 24 hours.",
+        "x": "12a",
+        "y": 88
+      },
+      "code": "<Chart\n  mark=\"line\"\n  title=\"Battery\"\n  subtitle=\"Charge level over the last 24 hours.\"\n  x=\"12a\"\n  y={88}\n>Example</Chart>"
+    }
+  ],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

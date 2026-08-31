@@ -1,0 +1,60 @@
+{
+  "component": "ImageWell",
+  "category": "Content",
+  "import": "import { ImageWell } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "accept",
+      "type": "string",
+      "required": false,
+      "default": "'image/*'",
+      "inherited": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "inherited": false
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false,
+      "default": "'Image'",
+      "inherited": false
+    },
+    {
+      "name": "onImageChange",
+      "type": "(file: File | null, previewUrl: string | null) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "required": false,
+      "default": "'Drop an image",
+      "inherited": false
+    },
+    {
+      "name": "src",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [
+    {
+      "id": "ImageWellStory",
+      "title": "Image Well",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"ImageWellStory\" for full example.",
+      "composite": true
+    }
+  ],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

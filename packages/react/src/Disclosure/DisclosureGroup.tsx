@@ -1,6 +1,6 @@
 import { useCallback, useId, useState, type ReactNode } from 'react';
 import { DisclosureTriangle } from './DisclosureTriangle';
-import styles from './Disclosure.module.css';
+import styles from '@larose-ui/styles/components/Disclosure/Disclosure.module.css';
 
 export interface DisclosureGroupProps {
   label: string;

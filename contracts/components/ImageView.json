@@ -1,0 +1,58 @@
+{
+  "name": "ImageView",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "alt",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "background",
+      "type": "ImageBackground",
+      "required": false,
+      "default": "'opaque'"
+    },
+    {
+      "name": "fit",
+      "type": "ImageFit",
+      "required": false,
+      "default": "'contain'"
+    },
+    {
+      "name": "frameClassName",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "frameStyle",
+      "type": "CSSProperties",
+      "required": false
+    },
+    {
+      "name": "objectPosition",
+      "type": "string",
+      "required": false,
+      "default": "'center'"
+    },
+    {
+      "name": "sequence",
+      "type": "ImageFrameSequence",
+      "required": false,
+      "description": "Animated image sequence — frames should share dimensions when possible."
+    },
+    {
+      "name": "src",
+      "type": "string",
+      "required": false
+    }
+  ],
+  "events": [],
+  "defaults": {
+    "background": "'opaque'",
+    "fit": "'contain'",
+    "objectPosition": "'center'"
+  },
+  "keyboard": {}
+}

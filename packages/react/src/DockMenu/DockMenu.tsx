@@ -13,7 +13,7 @@ import type { ContextMenuEntry, ContextMenuItemConfig } from '../ContextMenu/typ
 import { canShowDisabledItem, isItem } from '../ContextMenu/utils';
 import type { DockMenuPosition, DockWindow } from './types';
 import { buildDockMenuEntries, resolveDockMenuPosition } from './utils';
-import styles from './DockMenu.module.css';
+import styles from '@larose-ui/styles/components/DockMenu/DockMenu.module.css';
 
 export interface DockMenuProps {
   appName: string;

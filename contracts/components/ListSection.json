@@ -1,0 +1,19 @@
+{
+  "name": "ListSection",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "footer",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "header",
+      "type": "string",
+      "required": false
+    }
+  ],
+  "events": [],
+  "keyboard": {}
+}

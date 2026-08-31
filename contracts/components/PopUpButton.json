@@ -1,0 +1,70 @@
+{
+  "name": "PopUpButton",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "customOption",
+      "type": "PopUpCustomOption",
+      "required": false
+    },
+    {
+      "name": "defaultValue",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    },
+    {
+      "name": "explanatoryText",
+      "type": "string",
+      "required": false,
+      "description": "Optional explanatory text below the control."
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false,
+      "description": "Introductory label describing the control (Calendar-style)."
+    },
+    {
+      "name": "onValueChange",
+      "type": "(value: string) => void",
+      "required": false
+    },
+    {
+      "name": "options",
+      "type": "PopUpOption[]",
+      "required": true
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "required": false,
+      "default": "'Select…'"
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "onValueChange",
+      "payload": "(value: string) => void"
+    }
+  ],
+  "defaults": {
+    "disabled": "false",
+    "placeholder": "'Select…'"
+  },
+  "keyboard": {},
+  "uncontrolled": [
+    "value"
+  ]
+}

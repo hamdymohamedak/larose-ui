@@ -246,6 +246,10 @@
 
   --lr-sidebar-width: 16rem;
   --lr-sidebar-width-compact: 13rem;
+  --lr-sidebar-height: 100dvh;
+  --lr-sidebar-max-height: 100dvh;
+  --lr-sidebar-overflow: hidden;
+  --lr-sidebar-nav-overflow-y: auto;
   --lr-sidebar-item-height: 1.75rem;
   --lr-sidebar-item-radius: 0.4375rem;
   --lr-sidebar-section-gap: 0.5rem;
@@ -254,6 +258,7 @@
   --lr-sidebar-item-hover: rgb(0 0 0 / 0.06);
   --lr-sidebar-item-active: rgb(0 113 227 / 0.12);
   --lr-sidebar-group-label-size: 0.6875rem;
+  --lr-sidebar-disclosure-chevron-size: 0.625rem;
 
   --lr-tab-bar-height: 3.125rem;
   --lr-tab-bar-height-compact: 2.75rem;

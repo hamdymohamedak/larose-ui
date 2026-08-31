@@ -1,0 +1,20 @@
+{
+  "name": "ToolbarSection",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "collapsible",
+      "type": "boolean",
+      "required": false,
+      "description": "Center items collapse into the system overflow menu when space is tight."
+    },
+    {
+      "name": "placement",
+      "type": "ToolbarSectionPlacement",
+      "required": true
+    }
+  ],
+  "events": [],
+  "keyboard": {}
+}

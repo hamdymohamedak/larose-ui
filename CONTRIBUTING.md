@@ -26,7 +26,7 @@ Useful commands during development:
 | `pnpm test` | Run all package tests |
 | `pnpm lint` | ESLint |
 | `pnpm typecheck` | TypeScript across the monorepo |
-| `pnpm run doctor` | Quality gates (budgets, contracts, a11y) |
+| `pnpm run doctor` | Quality gates (deprecations, contracts, a11y) |
 | `make test-all` | Full CI suite locally |
 
 ## Branch workflow
@@ -120,7 +120,6 @@ Maintainers must configure the **`NPM_TOKEN`** repository secret for npm publish
 - typecheck
 - tests
 - build
-- bundle budgets (`pnpm check-budgets`)
 - visual regression manifest
 - doctor (CI mode)
 - a11y audit

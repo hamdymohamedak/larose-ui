@@ -1,0 +1,115 @@
+{
+  "component": "Drawer",
+  "category": "Overlay",
+  "import": "import { Drawer } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "closeOnOverlay",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "motion",
+      "type": "ComponentMotionOverride",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onClose",
+      "type": "() => void",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "open",
+      "type": "boolean",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "overlayClassName",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "overlayStyle",
+      "type": "CSSProperties",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "panelClassName",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "panelStyle",
+      "type": "CSSProperties",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "side",
+      "type": "DrawerSide",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [
+    {
+      "id": "Right",
+      "title": "Right",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"Right\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "Left",
+      "title": "Left",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"Left\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "DrawerMotion",
+      "title": "Drawer Motion",
+      "kind": "advanced",
+      "props": {},
+      "code": "<>\n        <Button onClick={() => setOpen(true)}>Open drawer</Button>\n        <Drawer open={open} onClose={() => setOpen(false)} title=\"Drawer\" side=\"right\">\n          <p>Slides in with gentle spring easing. Exit reverses naturally.</p>\n        </Drawer>\n      </>",
+      "composite": true
+    }
+  ],
+  "accessibility": [
+    "Focus is managed while open; Escape typically closes the overlay."
+  ],
+  "anatomy": {
+    "summary": "Drawer slides in from the left or right edge with overlay dismissal.",
+    "structure": [
+      "Drawer (root)",
+      "Overlay",
+      "Panel",
+      "Header",
+      "Body (children)"
+    ],
+    "composition": "Pair with Button triggers. Configure side via defaultProps or prop.",
+    "slots": [
+      "children"
+    ],
+    "states": [
+      "closed",
+      "open"
+    ]
+  },
+  "playground": null
+}

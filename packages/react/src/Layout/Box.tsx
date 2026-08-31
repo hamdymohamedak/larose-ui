@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { formatBoxTitle } from './utils';
 import type { BoxTitlePosition, BoxVariant } from './types';
-import styles from './Layout.module.css';
+import styles from '@larose-ui/styles/components/Layout/Layout.module.css';
 
 export interface BoxProps {
   title?: string;

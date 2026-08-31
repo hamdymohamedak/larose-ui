@@ -1,0 +1,40 @@
+{
+  "component": "CollaborationButton",
+  "category": "Actions",
+  "import": "import { CollaborationButton } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "collaborators",
+      "type": "Collaborator[]",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false,
+      "default": "'Collaboration'",
+      "inherited": false
+    },
+    {
+      "name": "maxVisible",
+      "type": "number",
+      "required": false,
+      "default": "3",
+      "inherited": false
+    }
+  ],
+  "examples": [
+    {
+      "id": "CollaborationButtonStory",
+      "title": "Collaboration Button",
+      "kind": "advanced",
+      "props": {},
+      "code": "<CollaborationButton collaborators={collaborators} />",
+      "composite": true
+    }
+  ],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

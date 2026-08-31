@@ -1,0 +1,10 @@
+{
+  "component": "SecureField",
+  "category": "Forms",
+  "import": "import { SecureField } from '@larose-ui/react';",
+  "props": [],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

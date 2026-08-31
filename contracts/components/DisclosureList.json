@@ -1,0 +1,19 @@
+{
+  "name": "DisclosureList",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "defaultExpandedIds",
+      "type": "string[]",
+      "required": false
+    },
+    {
+      "name": "items",
+      "type": "DisclosureListItem[]",
+      "required": true
+    }
+  ],
+  "events": [],
+  "keyboard": {}
+}

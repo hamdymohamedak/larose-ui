@@ -1,6 +1,6 @@
 import { useSplitView } from './SplitView';
 import type { ReactNode } from 'react';
-import styles from './SplitView.module.css';
+import styles from '@larose-ui/styles/components/SplitView/SplitView.module.css';
 
 export interface SplitViewToolbarProps {
   /** Optional actions rendered before pane restore buttons. */

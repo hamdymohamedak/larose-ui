@@ -29,7 +29,7 @@ import {
   xBandIndex,
   yToPixel,
 } from './utils';
-import styles from './Chart.module.css';
+import styles from '@larose-ui/styles/components/Chart/Chart.module.css';
 
 export interface ChartProps {
   /** Chart mark type — bar, line, or point. */

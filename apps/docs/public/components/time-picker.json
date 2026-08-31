@@ -1,0 +1,66 @@
+{
+  "component": "TimePicker",
+  "category": "Forms",
+  "import": "import { TimePicker } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "error",
+      "type": "string | null",
+      "required": false,
+      "default": "null",
+      "inherited": false
+    },
+    {
+      "name": "hint",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "inputSize",
+      "type": "Size",
+      "required": false,
+      "default": "'md'",
+      "inherited": false
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "loading",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "inherited": false
+    },
+    {
+      "name": "state",
+      "type": "UIState",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "required": false,
+      "default": "''",
+      "inherited": false
+    }
+  ],
+  "examples": [
+    {
+      "id": "TimePickerDefault",
+      "title": "Time Picker Default",
+      "kind": "basic",
+      "props": {},
+      "code": "<TimePicker label=\"Meeting time\" value=\"09:30\" />",
+      "composite": true
+    }
+  ],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

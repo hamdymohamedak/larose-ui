@@ -1,7 +1,9 @@
 import { readFileSync, readdirSync, rmSync, writeFileSync, existsSync } from 'node:fs';
 import { basename, join, isAbsolute } from 'node:path';
 import { spawnSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
 import * as esbuild from 'esbuild';
+import { resolveStylesModuleImport, syncReactStylesCss } from './styles-package.mjs';
 
 const CLASS_RE = /\.([a-zA-Z_][\w-]*)/g;
 
@@ -99,9 +101,10 @@ export function cssModulesPlugin(packageRoot) {
       });
 
       build.onResolve({ filter: /\.module\.css$/ }, (args) => {
-        const resolvedPath = isAbsolute(args.path)
-          ? args.path
-          : join(args.resolveDir, args.path);
+        const fromStyles = resolveStylesModuleImport(args.path);
+        const resolvedPath =
+          fromStyles ??
+          (isAbsolute(args.path) ? args.path : join(args.resolveDir, args.path));
 
         return {
           path: resolvedPath,
@@ -120,7 +123,7 @@ export function cssModulesPlugin(packageRoot) {
 
       if (packageRoot) {
         build.onEnd(() => {
-          writeBundledCss(packageRoot);
+          syncReactStylesCss(packageRoot);
         });
       }
     },
@@ -182,27 +185,28 @@ export async function buildCssPackage(packageRoot, options = {}) {
     target: 'es2022',
     plugins: [cssModulesPlugin(packageRoot)],
     external,
-    banner: { js: "import './index.css';" },
+    banner: { js: "import '@larose-ui/styles/styles.css';" },
     logLevel: 'info',
   };
 
   if (options.watch) {
     const ctx = await esbuild.context(buildOptions);
     await ctx.watch();
-    writeBundledCss(packageRoot);
+    syncReactStylesCss(packageRoot);
     emitDeclarationFiles(packageRoot);
     console.log('[larose] watching for changes…');
     return;
   }
 
   await esbuild.build(buildOptions);
-  writeBundledCss(packageRoot);
+  syncReactStylesCss(packageRoot);
   emitDeclarationFiles(packageRoot);
 }
 
+const isDirectRun = process.argv[1] === fileURLToPath(import.meta.url);
 const packageRoot = process.argv[2];
 const watch = process.argv.includes('--watch');
 
-if (packageRoot) {
+if (isDirectRun && packageRoot) {
   await buildCssPackage(packageRoot, { watch });
 }

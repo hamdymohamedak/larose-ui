@@ -1,0 +1,103 @@
+{
+  "name": "Button",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "buttonRole",
+      "type": "ButtonRole",
+      "required": false,
+      "description": "Apple HIG semantic role — affects appearance in alerts and sheets."
+    },
+    {
+      "name": "error",
+      "type": "string | null",
+      "required": false
+    },
+    {
+      "name": "flexible",
+      "type": "boolean",
+      "required": false,
+      "description": "macOS flexible-height push button for multi-line content."
+    },
+    {
+      "name": "fullWidth",
+      "type": "boolean",
+      "required": false,
+      "description": "watchOS-style full-width primary actions."
+    },
+    {
+      "name": "iconOnly",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "leftIcon",
+      "type": "ReactNode",
+      "required": false
+    },
+    {
+      "name": "loading",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "loadingLabel",
+      "type": "string",
+      "required": false,
+      "description": "Alternative label shown while loading (Apple HIG activity indicator pattern)."
+    },
+    {
+      "name": "opensAnotherView",
+      "type": "boolean",
+      "required": false,
+      "description": "macOS: append trailing ellipsis when the button opens another view."
+    },
+    {
+      "name": "rightIcon",
+      "type": "ReactNode",
+      "required": false
+    },
+    {
+      "name": "shape",
+      "type": "ButtonShape",
+      "required": false,
+      "description": "Capsule (default), circle (icon-only), or roundedRect (vertical stacks)."
+    },
+    {
+      "name": "size",
+      "type": "Size",
+      "required": false
+    },
+    {
+      "name": "state",
+      "type": "UIState",
+      "required": false
+    },
+    {
+      "name": "tooltip",
+      "type": "string",
+      "required": false,
+      "description": "macOS / visionOS hover tooltip."
+    },
+    {
+      "name": "variant",
+      "type": "Variant",
+      "required": false
+    }
+  ],
+  "events": [],
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props.",
+      "Uses native or laRose-managed focus rings and disabled states.",
+      "Provide loadingLabel for accessible loading announcements."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  }
+}

@@ -7,7 +7,7 @@ import {
   type ReactNode,
 } from 'react';
 import { Presence } from '../Motion/Presence';
-import styles from './Popover.module.css';
+import styles from '@larose-ui/styles/components/Popover/Popover.module.css';
 
 export type PopoverSide = 'top' | 'bottom' | 'left' | 'right';
 

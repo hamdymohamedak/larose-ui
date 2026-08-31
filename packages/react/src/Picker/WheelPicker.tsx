@@ -3,7 +3,7 @@ import type { PickerColumn, PickerValue } from './types';
 import { columnsFromValues } from './utils';
 import { WheelColumn } from './WheelColumn';
 import { WheelPickerRowHeightProvider } from './WheelPickerContext';
-import styles from './Picker.module.css';
+import styles from '@larose-ui/styles/components/Picker/Picker.module.css';
 
 export interface WheelPickerProps {
   columns: PickerColumn[];

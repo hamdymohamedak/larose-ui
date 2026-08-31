@@ -1,0 +1,15 @@
+{
+  "name": "HelpButton",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "helpTopic",
+      "type": "string",
+      "required": false,
+      "description": "Brief phrase explaining what help covers (macOS / visionOS tooltip)."
+    }
+  ],
+  "events": [],
+  "keyboard": {}
+}

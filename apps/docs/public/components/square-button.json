@@ -1,0 +1,32 @@
+{
+  "component": "SquareButton",
+  "category": "Actions",
+  "import": "import { SquareButton } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "icon",
+      "type": "ReactNode",
+      "required": true,
+      "description": "Symbol or icon — square buttons use icons, not text labels.",
+      "inherited": false
+    },
+    {
+      "name": "pressed",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "description": "Toggle or pop-up behavior is handled by the parent; appearance only.",
+      "inherited": false
+    },
+    {
+      "name": "tooltip",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

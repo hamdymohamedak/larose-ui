@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import styles from './Header.module.css';
+import styles from '@larose-ui/styles/components/Header/Header.module.css';
 
 export interface HeaderProps {
   children: ReactNode;

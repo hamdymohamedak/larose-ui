@@ -22,7 +22,7 @@ import {
   resolveMenuPosition,
   warnIfTooManyGroups,
 } from './utils';
-import styles from './ContextMenu.module.css';
+import styles from '@larose-ui/styles/components/ContextMenu/ContextMenu.module.css';
 
 export interface ContextMenuProps {
   children: ReactElement;

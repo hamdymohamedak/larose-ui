@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { createTranslator, isRtlLocale } from './i18n/messages';
+import { createTranslator, isRtlLocale } from '@larose-ui/runtime-core';
 
 describe('i18n', () => {
   it('translates English keys', () => {

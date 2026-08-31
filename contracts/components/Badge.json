@@ -1,0 +1,24 @@
+{
+  "name": "Badge",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "variant",
+      "type": "BadgeVariant",
+      "required": false
+    }
+  ],
+  "events": [],
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "SidebarGroup",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "required": true
+    }
+  ],
+  "events": [],
+  "keyboard": {}
+}

@@ -1,0 +1,119 @@
+{
+  "component": "Switch",
+  "category": "Forms",
+  "import": "import { Switch } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "checked",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "defaultChecked",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "hint",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "onCheckedChange",
+      "type": "(checked: boolean) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "switchSize",
+      "type": "Size",
+      "required": false,
+      "default": "'md'",
+      "inherited": false
+    }
+  ],
+  "examples": [
+    {
+      "id": "SwitchDefault",
+      "title": "Switch Default",
+      "kind": "basic",
+      "props": {},
+      "code": "<Switch label=\"Email notifications\" defaultChecked hint=\"Receive product updates\" />",
+      "composite": true
+    },
+    {
+      "id": "Default",
+      "title": "Default",
+      "kind": "basic",
+      "props": {
+        "label": "Email notifications"
+      },
+      "code": "<Switch\n  label=\"Email notifications\"\n>Example</Switch>"
+    },
+    {
+      "id": "Checked",
+      "title": "Checked",
+      "kind": "advanced",
+      "props": {
+        "label": "Push notifications",
+        "defaultChecked": true
+      },
+      "code": "<Switch\n  label=\"Push notifications\"\n  defaultChecked\n>Example</Switch>"
+    },
+    {
+      "id": "WithHint",
+      "title": "With Hint",
+      "kind": "advanced",
+      "props": {
+        "label": "Marketing emails",
+        "hint": "Receive occasional product announcements"
+      },
+      "code": "<Switch\n  label=\"Marketing emails\"\n  hint=\"Receive occasional product announcements\"\n>Example</Switch>"
+    },
+    {
+      "id": "Disabled",
+      "title": "Disabled",
+      "kind": "disabled",
+      "props": {
+        "label": "Beta features",
+        "disabled": true
+      },
+      "code": "<Switch\n  label=\"Beta features\"\n  disabled\n>Example</Switch>"
+    },
+    {
+      "id": "SettingsStyle",
+      "title": "Settings Style",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"SettingsStyle\" for full example.",
+      "composite": true
+    }
+  ],
+  "accessibility": [
+    "Uses native or laRose-managed focus rings and disabled states."
+  ],
+  "anatomy": null,
+  "playground": {
+    "label": {
+      "control": "text",
+      "default": "Notifications"
+    },
+    "checked": {
+      "control": "boolean",
+      "default": true
+    },
+    "disabled": {
+      "control": "boolean",
+      "default": false
+    }
+  }
+}

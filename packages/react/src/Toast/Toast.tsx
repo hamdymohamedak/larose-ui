@@ -9,8 +9,8 @@ import {
 import { createPortal } from 'react-dom';
 import type { AlertVariant } from '../Alert/Alert';
 import { Presence } from '../Motion/Presence';
-import motionStyles from '../Motion/motion.module.css';
-import styles from './Toast.module.css';
+import motionStyles from '@larose-ui/styles/components/Motion/motion.module.css';
+import styles from '@larose-ui/styles/components/Toast/Toast.module.css';
 
 export type ToastVariant = AlertVariant;
 

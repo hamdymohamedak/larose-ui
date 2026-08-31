@@ -1,0 +1,15 @@
+{
+  "name": "FormContinue",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "complete",
+      "type": "boolean",
+      "required": true,
+      "description": "When false, Continue stays disabled until required data is entered."
+    }
+  ],
+  "events": [],
+  "keyboard": {}
+}

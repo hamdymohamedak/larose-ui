@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import type { UIState } from '@larose-ui/core';
-import styles from './FieldShell.module.css';
+import styles from '@larose-ui/styles/components/DataEntry/FieldShell.module.css';
 
 export interface FieldShellProps {
   label?: string;

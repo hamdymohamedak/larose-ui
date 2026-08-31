@@ -1,0 +1,61 @@
+{
+  "name": "Switch",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "checked",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "defaultChecked",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "hint",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "onCheckedChange",
+      "type": "(checked: boolean) => void",
+      "required": false
+    },
+    {
+      "name": "switchSize",
+      "type": "Size",
+      "required": false,
+      "default": "'md'"
+    }
+  ],
+  "events": [
+    {
+      "name": "onCheckedChange",
+      "payload": "(checked: boolean) => void"
+    }
+  ],
+  "defaults": {
+    "switchSize": "'md'"
+  },
+  "accessibility": {
+    "requirements": [
+      "Uses native or laRose-managed focus rings and disabled states."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  },
+  "uncontrolled": [
+    "checked"
+  ]
+}

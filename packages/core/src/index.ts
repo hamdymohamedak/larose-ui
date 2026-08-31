@@ -290,3 +290,46 @@ export {
 } from './motion';
 
 export { sanitizeNavigationUrl, isSafeRedirectPath } from './security/url';
+
+export type {
+  Accelerator,
+  AcceleratorConflict,
+  AcceleratorFormatOptions,
+  AcceleratorHandler,
+  AcceleratorMatchOptions,
+  AcceleratorPlatform,
+  AcceleratorScope,
+  HandleAcceleratorEventOptions,
+  RegisteredAccelerator,
+  ShouldHandleShortcutOptions,
+  StandardAcceleratorId,
+} from './accelerator';
+export {
+  AcceleratorRegistry,
+  STANDARD_ACCELERATORS,
+  STANDARD_SHORTCUTS,
+  acceleratorsEqual,
+  acceleratorToId,
+  createAcceleratorRegistry,
+  detectPlatform,
+  formatAccelerator,
+  formatAriaKeyshortcuts,
+  isAltMnemonicEvent,
+  isEditableTarget,
+  isModPressed,
+  isValidAccelerator,
+  looksLikeShortcutLabel,
+  matchKeyboardEvent,
+  matchTypeAheadPrefix,
+  matchesMnemonicKey,
+  normalizeAccelerator,
+  normalizeEventKey,
+  normalizeKey,
+  parseAccelerator,
+  parseMnemonicLabel,
+  resolveMnemonicKey,
+  resolveModRequirement,
+  shouldHandleShortcut,
+  stripMnemonicMarker,
+} from './accelerator';
+export type { ParsedMnemonic } from './accelerator';

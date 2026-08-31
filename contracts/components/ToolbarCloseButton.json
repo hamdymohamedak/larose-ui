@@ -1,0 +1,19 @@
+{
+  "name": "ToolbarCloseButton",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "onClick",
+      "payload": "() => void"
+    }
+  ],
+  "keyboard": {}
+}

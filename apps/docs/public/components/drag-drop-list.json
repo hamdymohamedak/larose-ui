@@ -1,0 +1,36 @@
+{
+  "component": "DragDropList",
+  "category": "DragDrop",
+  "import": "import { DragDropList } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "items",
+      "type": "DragDropListItem[]",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "onReorder",
+      "type": "(items: DragDropListItem[]) => void",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "renderItem",
+      "type": "(item: DragDropListItem) => ReactNode",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "zoneId",
+      "type": "string",
+      "required": false,
+      "default": "'list'",
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

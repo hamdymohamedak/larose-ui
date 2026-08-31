@@ -1,0 +1,19 @@
+{
+  "name": "Monogram",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "imageUrl",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "required": true
+    }
+  ],
+  "events": [],
+  "keyboard": {}
+}

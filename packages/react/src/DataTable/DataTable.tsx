@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { EmptyState } from '../EmptyState/EmptyState';
 import { Skeleton } from '../Skeleton/Skeleton';
-import styles from './DataTable.module.css';
+import styles from '@larose-ui/styles/components/DataTable/DataTable.module.css';
 
 export interface DataTableColumn<T> {
   key: string;

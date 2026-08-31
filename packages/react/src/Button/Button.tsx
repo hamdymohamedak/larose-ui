@@ -1,11 +1,12 @@
 import { forwardRef, type ButtonHTMLAttributes, type ReactNode } from 'react';
 import type { ButtonRole, Size, UIState, Variant } from '@larose-ui/core';
 import { resolveUIState } from '@larose-ui/core';
+import { useComponentDefaults } from '../theme/useComponentDefaults';
 import { Spinner } from '../Spinner/Spinner';
 import { Tooltip } from '../Tooltip/Tooltip';
 import type { ButtonShape } from './types';
 import { formatButtonLabel, hasTextContent, resolveButtonShape } from './utils';
-import styles from './Button.module.css';
+import styles from '@larose-ui/styles/components/Button/Button.module.css';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: Variant;
@@ -32,31 +33,29 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   tooltip?: string;
 }
 
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  (
-    {
-      variant = 'primary',
-      size = 'md',
-      buttonRole = 'normal',
-      shape,
-      state,
-      loading = false,
-      loadingLabel,
-      error = null,
-      disabled,
-      leftIcon,
-      rightIcon,
-      opensAnotherView = false,
-      flexible = false,
-      iconOnly = false,
-      fullWidth = false,
-      tooltip,
-      children,
-      className,
-      ...props
-    },
-    ref,
-  ) => {
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>((incomingProps, ref) => {
+  const {
+    variant = 'primary',
+    size = 'md',
+    buttonRole = 'normal',
+    shape,
+    state,
+    loading = false,
+    loadingLabel,
+    error = null,
+    disabled,
+    leftIcon,
+    rightIcon,
+    opensAnotherView = false,
+    flexible = false,
+    iconOnly = false,
+    fullWidth = false,
+    tooltip,
+    children,
+    className,
+    style,
+    ...props
+  } = useComponentDefaults('Button', incomingProps);
     const uiState = resolveUIState({ state, loading, error, disabled });
     const isDisabled =
       disabled || uiState === 'loading' || uiState === 'disabled';
@@ -85,6 +84,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         type="button"
         className={[styles.button, className].filter(Boolean).join(' ')}
+        style={style}
         data-variant={resolvedVariant}
         data-size={size}
         data-shape={resolvedShape}
@@ -124,7 +124,6 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     }
 
     return button;
-  },
-);
+});
 
 Button.displayName = 'Button';

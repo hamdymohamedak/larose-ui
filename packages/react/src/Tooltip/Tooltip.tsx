@@ -1,6 +1,6 @@
 import { useId, useState, type ReactNode } from 'react';
 import { Presence } from '../Motion/Presence';
-import styles from './Tooltip.module.css';
+import styles from '@larose-ui/styles/components/Tooltip/Tooltip.module.css';
 
 export type TooltipSide = 'top' | 'bottom' | 'left' | 'right';
 

@@ -1,0 +1,30 @@
+{
+  "name": "CollaborationButton",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "collaborators",
+      "type": "Collaborator[]",
+      "required": true
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false,
+      "default": "'Collaboration'"
+    },
+    {
+      "name": "maxVisible",
+      "type": "number",
+      "required": false,
+      "default": "3"
+    }
+  ],
+  "events": [],
+  "defaults": {
+    "label": "'Collaboration'",
+    "maxVisible": "3"
+  },
+  "keyboard": {}
+}

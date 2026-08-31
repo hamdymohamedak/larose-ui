@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { UIEvent } from '@larose-ui/observability';
-import { getComponentPerformance } from './componentPerformance';
+import { getComponentPerformance } from '@larose-ui/devtools-core';
 
 describe('getComponentPerformance', () => {
   it('aggregates render metrics for a component', () => {

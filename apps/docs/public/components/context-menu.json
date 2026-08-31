@@ -1,0 +1,54 @@
+{
+  "component": "ContextMenu",
+  "category": "Overlay",
+  "import": "import { ContextMenu } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "dimBackground",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "entries",
+      "type": "ContextMenuEntry[]",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "longPress",
+      "type": "boolean",
+      "required": false,
+      "description": "Enable long-press / touch-and-hold in addition to secondary click.",
+      "inherited": false
+    },
+    {
+      "name": "onEntrySelect",
+      "type": "(entry: ContextMenuItemConfig) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onOpenChange",
+      "type": "(open: boolean) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "open",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "preview",
+      "type": "ReactNode",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

@@ -1,0 +1,45 @@
+{
+  "name": "Checkbox",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "boxSize",
+      "type": "Size",
+      "required": false,
+      "default": "'md'"
+    },
+    {
+      "name": "error",
+      "type": "string | null",
+      "required": false,
+      "default": "null"
+    },
+    {
+      "name": "hint",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": true
+    }
+  ],
+  "events": [],
+  "defaults": {
+    "boxSize": "'md'",
+    "error": "null"
+  },
+  "accessibility": {
+    "requirements": [
+      "Uses native or laRose-managed focus rings and disabled states."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  }
+}

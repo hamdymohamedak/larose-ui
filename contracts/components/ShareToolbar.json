@@ -1,0 +1,93 @@
+{
+  "name": "ShareToolbar",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "collaborating",
+      "type": "boolean",
+      "required": false,
+      "description": "When true, shows the Collaboration button beside Share."
+    },
+    {
+      "name": "collaborationActions",
+      "type": "CollaborationAction[]",
+      "required": false
+    },
+    {
+      "name": "collaborators",
+      "type": "Collaborator[]",
+      "required": false
+    },
+    {
+      "name": "destinations",
+      "type": "ShareDestination[]",
+      "required": false
+    },
+    {
+      "name": "manageLabel",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "onManageSharedFile",
+      "type": "() => void",
+      "required": false
+    },
+    {
+      "name": "onMessage",
+      "type": "() => void",
+      "required": false
+    },
+    {
+      "name": "onShareSettingsChange",
+      "type": "(settings: ShareSettings) => void",
+      "required": false
+    },
+    {
+      "name": "onVideo",
+      "type": "() => void",
+      "required": false
+    },
+    {
+      "name": "permissionOptions",
+      "type": "SharePermissionOption[]",
+      "required": false
+    },
+    {
+      "name": "shareSettings",
+      "type": "ShareSettings",
+      "required": false
+    },
+    {
+      "name": "shareTitle",
+      "type": "string",
+      "required": false,
+      "description": "Document or item title shown in the share sheet."
+    },
+    {
+      "name": "trailing",
+      "type": "ReactNode",
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "onManageSharedFile",
+      "payload": "() => void"
+    },
+    {
+      "name": "onMessage",
+      "payload": "() => void"
+    },
+    {
+      "name": "onShareSettingsChange",
+      "payload": "(settings: ShareSettings) => void"
+    },
+    {
+      "name": "onVideo",
+      "payload": "() => void"
+    }
+  ],
+  "keyboard": {}
+}

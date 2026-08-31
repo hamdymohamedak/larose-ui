@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { Button } from '../Button/Button';
 import { Modal } from '../Modal/Modal';
-import styles from './Dialog.module.css';
+import styles from '@larose-ui/styles/components/Dialog/Dialog.module.css';
 
 export interface DialogProps {
   open: boolean;

@@ -1,0 +1,40 @@
+{
+  "component": "TextView",
+  "category": "Content",
+  "import": "import { TextView } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "editable",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "description": "When true, shows a keyboard-capable editor.",
+      "inherited": false
+    },
+    {
+      "name": "maxHeight",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "selectable",
+      "type": "boolean",
+      "required": false,
+      "default": "true",
+      "description": "Allows selecting/copying useful text in read-only mode.",
+      "inherited": false
+    },
+    {
+      "name": "typographyRole",
+      "type": "TypographyRole",
+      "required": false,
+      "default": "'body'",
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

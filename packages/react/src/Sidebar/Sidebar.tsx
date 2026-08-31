@@ -1,8 +1,27 @@
-import type { ReactNode } from 'react';
+import { useCallback, useId, useState, type CSSProperties, type ReactNode } from 'react';
 import { sanitizeNavigationUrl } from '@larose-ui/core';
 import { SearchField, type SearchFieldProps } from '../SearchField/SearchField';
-import { DisclosureGroup } from '../Disclosure/DisclosureGroup';
-import styles from './Sidebar.module.css';
+import styles from '@larose-ui/styles/components/Sidebar/Sidebar.module.css';
+
+function SidebarDisclosureChevron({ expanded }: { expanded: boolean }) {
+  return (
+    <svg
+      className={styles.disclosureChevron}
+      data-expanded={expanded ? 'true' : 'false'}
+      viewBox="0 0 12 12"
+      fill="none"
+      aria-hidden="true"
+    >
+      <path
+        d="M4.5 3.25 7.5 6 4.5 8.75"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
 
 export type SidebarPlatform = 'ios' | 'ipados' | 'macos' | 'visionos';
 export type SidebarSize = 'small' | 'medium' | 'large';
@@ -15,8 +34,13 @@ export interface SidebarProps {
   onHiddenChange?: (hidden: boolean) => void;
   /** Allow content to extend beneath the sidebar (Liquid Glass). */
   glass?: boolean;
+  /** Override `--lr-sidebar-height` (default `100dvh`). */
+  height?: string;
+  /** Override `--lr-sidebar-max-height` (default `100dvh`). */
+  maxHeight?: string;
   'aria-label'?: string;
   className?: string;
+  style?: CSSProperties;
 }
 
 export function Sidebar({
@@ -25,10 +49,19 @@ export function Sidebar({
   size = 'medium',
   hidden = false,
   glass = true,
+  height,
+  maxHeight,
   'aria-label': ariaLabel = 'Sidebar',
   className,
+  style,
 }: SidebarProps) {
   if (hidden) return null;
+
+  const sidebarStyle = {
+    ...style,
+    ...(height ? { '--lr-sidebar-height': height } : undefined),
+    ...(maxHeight ? { '--lr-sidebar-max-height': maxHeight } : undefined),
+  } as CSSProperties;
 
   return (
     <aside
@@ -37,6 +70,7 @@ export function Sidebar({
       data-platform={platform}
       data-size={size}
       data-glass={glass ? 'true' : undefined}
+      style={sidebarStyle}
     >
       {children}
     </aside>
@@ -99,11 +133,29 @@ export function SidebarDisclosureSection({
   defaultExpanded = true,
   children,
 }: SidebarDisclosureSectionProps) {
+  const panelId = useId();
+  const [expanded, setExpanded] = useState(defaultExpanded);
+  const toggle = useCallback(() => {
+    setExpanded((current) => !current);
+  }, []);
+
   return (
     <div className={styles.disclosureSection}>
-      <DisclosureGroup label={label} defaultExpanded={defaultExpanded}>
-        <div className={styles.disclosureContent}>{children}</div>
-      </DisclosureGroup>
+      <button
+        type="button"
+        className={styles.disclosureTrigger}
+        aria-expanded={expanded}
+        aria-controls={panelId}
+        onClick={toggle}
+      >
+        <SidebarDisclosureChevron expanded={expanded} />
+        <span className={styles.disclosureLabel}>{label}</span>
+      </button>
+      {expanded ? (
+        <div id={panelId} className={styles.disclosureContent} role="group" aria-label={label}>
+          {children}
+        </div>
+      ) : null}
     </div>
   );
 }

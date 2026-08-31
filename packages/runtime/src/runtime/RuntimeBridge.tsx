@@ -1,16 +1,21 @@
-import { useEffect, useMemo, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { usePermissions } from '@larose-ui/permissions';
-import type { Environment, FeatureFlagEvaluator, SessionState } from '@larose-ui/core';
+import type { SessionState } from '@larose-ui/core';
+import {
+  buildRuntimeContextPatch,
+  createNetworkTransitionEvent,
+  serializeRuntimePatch,
+  sessionStateFromHttpCode,
+  shouldClearOfflineQueueOnSession,
+  type FeatureState,
+  type RuntimeDomainInput,
+} from '@larose-ui/runtime-core';
 import { useEnvironment } from '../environment/EnvironmentProvider';
 import { useI18n } from '../i18n/I18nProvider';
 import { useNetwork } from '../network/NetworkProvider';
 import { useOffline } from '../offline/OfflineProvider';
 import { useTheme } from '../theme/ThemeProvider';
-import type { FeatureState } from '../features/FeatureFlagProvider';
 import { useRuntimeStore } from './RuntimeContextProvider';
-import {
-  shouldClearOfflineQueueOnSession,
-} from './sessionSecurity';
 
 export interface RuntimeBridgeProps {
   userId?: string;
@@ -21,14 +26,8 @@ export interface RuntimeBridgeProps {
   session?: SessionState;
   features?: Record<string, FeatureState>;
   featuresLoading?: boolean;
-  version?: {
-    frontend: string;
-    api?: string;
-    feature?: string;
-    compatible?: boolean;
-    warnings?: string[];
-  };
-  featureFlagEvaluator?: FeatureFlagEvaluator;
+  version?: RuntimeDomainInput['version'];
+  featureFlagEvaluator?: RuntimeDomainInput['featureFlagEvaluator'];
   featureNames?: string[];
 }
 
@@ -59,33 +58,6 @@ export function RuntimeBridge({
   const lastPatchRef = useRef('');
   const lastNetworkRef = useRef(network.condition);
 
-  const resolvedTenantId = tenant?.id ?? tenantId ?? theme.tenantId;
-  const resolvedTimezone =
-    timezone ?? tenant?.timezone ?? Intl.DateTimeFormat().resolvedOptions().timeZone;
-
-  const featureSnapshot = useMemo(
-    () =>
-      buildFeatureSnapshot(
-        features,
-        featuresLoading,
-        featureFlagEvaluator,
-        featureNames,
-        userId ?? user?.id,
-        resolvedTenantId,
-        environment,
-      ),
-    [
-      features,
-      featuresLoading,
-      featureFlagEvaluator,
-      featureNames,
-      userId,
-      user?.id,
-      resolvedTenantId,
-      environment,
-    ],
-  );
-
   useEffect(() => {
     if (session) setSession(session);
   }, [session, setSession]);
@@ -97,32 +69,22 @@ export function RuntimeBridge({
   }, [session, offline]);
 
   useEffect(() => {
-    if (lastNetworkRef.current !== network.condition) {
-      eventBus.emit({
-        type: 'network.transition',
-        metadata: { from: lastNetworkRef.current, to: network.condition, rtt: network.rtt },
-      });
+    const transition = createNetworkTransitionEvent(
+      lastNetworkRef.current,
+      network.condition,
+      network.rtt,
+    );
+    if (transition) {
+      eventBus.emit(transition);
       lastNetworkRef.current = network.condition;
     }
   }, [network.condition, network.rtt, eventBus]);
 
   useEffect(() => {
-    const resolvedUser = user ?? (userId ? { id: userId } : null);
-    const resolvedTenant = resolvedTenantId
-      ? {
-          id: resolvedTenantId,
-          name: tenant?.name,
-          locale: tenant?.locale,
-          timezone: tenant?.timezone,
-        }
-      : null;
-
-    const patch = {
+    const patch = buildRuntimeContextPatch({
       environment,
-      tenant: resolvedTenant,
-      user: resolvedUser,
-      permissions: { granted: permissions, loading: permissionsLoading },
-      features: featureSnapshot,
+      locale,
+      dir,
       network: {
         condition: network.condition,
         online: network.online,
@@ -130,27 +92,22 @@ export function RuntimeBridge({
         rtt: network.rtt,
       },
       offline: { status: offline.status, queueLength: offline.queue.length },
-      locale: { locale, dir },
-      timezone: resolvedTimezone,
-      theme: {
-        mode: theme.theme,
-        density: theme.density,
-        tenantId: resolvedTenantId,
-      },
-      ...(version
-        ? {
-            version: {
-              frontend: version.frontend,
-              api: version.api,
-              feature: version.feature,
-              compatible: version.compatible ?? true,
-              warnings: version.warnings ?? [],
-            },
-          }
-        : {}),
-    };
+      permissions,
+      permissionsLoading,
+      theme: { mode: theme.theme, density: theme.density, tenantId: theme.tenantId },
+      userId,
+      user,
+      tenant,
+      tenantId,
+      timezone,
+      features,
+      featuresLoading,
+      version,
+      featureFlagEvaluator,
+      featureNames,
+    });
 
-    const serialized = JSON.stringify(patch);
+    const serialized = serializeRuntimePatch(patch);
     if (lastPatchRef.current === serialized) return;
     lastPatchRef.current = serialized;
     setContext(patch);
@@ -168,51 +125,21 @@ export function RuntimeBridge({
     permissionsLoading,
     theme.theme,
     theme.density,
+    theme.tenantId,
     userId,
     user,
     tenant,
-    resolvedTenantId,
-    resolvedTimezone,
+    tenantId,
+    timezone,
     version,
-    featureSnapshot,
+    features,
+    featuresLoading,
+    featureFlagEvaluator,
+    featureNames,
     setContext,
   ]);
 
   return null;
-}
-
-function buildFeatureSnapshot(
-  features: Record<string, FeatureState>,
-  featuresLoading: boolean,
-  evaluator: FeatureFlagEvaluator | undefined,
-  names: string[],
-  userId: string | undefined,
-  tenantId: string | undefined,
-  environment: Environment,
-) {
-  const staticFlags = Object.fromEntries(
-    Object.entries(features).map(([name, value]) => [
-      name,
-      {
-        enabled: value === true,
-        loading: featuresLoading || value === 'loading',
-        reason: value === true ? undefined : 'disabled',
-      },
-    ]),
-  );
-
-  if (!evaluator || names.length === 0) {
-    return { flags: staticFlags, loading: featuresLoading };
-  }
-
-  const evaluated = Object.fromEntries(
-    names.map((name) => [
-      name,
-      evaluator.evaluate(name, { userId, tenantId, environment }),
-    ]),
-  );
-
-  return { flags: { ...staticFlags, ...evaluated }, loading: featuresLoading };
 }
 
 /** Wire apiFetch session events into runtime session state. */
@@ -222,8 +149,8 @@ export function SessionBridge() {
   useEffect(() => {
     const handler = (event: Event) => {
       const detail = (event as CustomEvent<{ code?: number }>).detail;
-      if (detail?.code === 401) setSession('expired');
-      else if (detail?.code === 403) setSession('unauthorized');
+      const next = sessionStateFromHttpCode(detail?.code);
+      if (next) setSession(next);
     };
     window.addEventListener('larose:session-expired', handler);
     return () => window.removeEventListener('larose:session-expired', handler);

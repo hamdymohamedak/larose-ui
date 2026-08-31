@@ -1,0 +1,77 @@
+{
+  "component": "TokenField",
+  "category": "Forms",
+  "import": "import { TokenField } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "'aria-label'",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "defaultTokens",
+      "type": "TokenFieldToken[]",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "delimiters",
+      "type": "string[]",
+      "required": false,
+      "description": "Keys that convert current text into a token (default: comma).",
+      "inherited": false
+    },
+    {
+      "name": "onContextMenuEntries",
+      "type": "(token: TokenFieldToken) => MenuEntry[]",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onTokensChange",
+      "type": "(tokens: TokenFieldToken[]) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "suggestionDelayMs",
+      "type": "number",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "suggestions",
+      "type": "TokenFieldToken[]",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "tokens",
+      "type": "TokenFieldToken[]",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [
+    {
+      "id": "TokenFieldMail",
+      "title": "Token field (macOS Mail)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"TokenFieldMail\" for full example.",
+      "composite": true
+    }
+  ],
+  "accessibility": [
+    "Supports ARIA attributes via standard HTML element props."
+  ],
+  "anatomy": null,
+  "playground": null
+}

@@ -1,6 +1,6 @@
 import type { CSSProperties } from 'react';
 import type { CollectionItem, CollectionLayout } from './types';
-import styles from './Layout.module.css';
+import styles from '@larose-ui/styles/components/Layout/Layout.module.css';
 
 export interface CollectionProps {
   items: CollectionItem[];

@@ -1,0 +1,29 @@
+{
+  "component": "FilePreview",
+  "category": "Files",
+  "import": "import { FilePreview } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "closeLabel",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onClose",
+      "type": "() => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "source",
+      "type": "FilePreviewSource",
+      "required": true,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

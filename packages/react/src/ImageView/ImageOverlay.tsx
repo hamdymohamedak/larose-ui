@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import { ImageView, type ImageViewProps } from './ImageView';
-import styles from './ImageView.module.css';
+import styles from '@larose-ui/styles/components/ImageView/ImageView.module.css';
 
 export interface ImageOverlayProps extends Omit<ImageViewProps, 'children'> {
   overlay: ReactNode;

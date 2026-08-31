@@ -9,7 +9,7 @@ import type {
 } from './types';
 import { formatSharePermissionSummary } from './utils';
 import { ChevronRightIcon } from './icons';
-import styles from './Sharing.module.css';
+import styles from '@larose-ui/styles/components/Sharing/Sharing.module.css';
 
 export interface ShareSheetProps {
   open: boolean;

@@ -1,0 +1,39 @@
+{
+  "name": "EmptyState",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "actionLabel",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "icon",
+      "type": "ReactNode",
+      "required": false
+    },
+    {
+      "name": "onAction",
+      "type": "() => void",
+      "required": false
+    },
+    {
+      "name": "state",
+      "type": "UIState",
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "onAction",
+      "payload": "() => void"
+    }
+  ],
+  "keyboard": {}
+}

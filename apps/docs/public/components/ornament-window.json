@@ -1,0 +1,61 @@
+{
+  "component": "OrnamentWindow",
+  "category": "Layout",
+  "import": "import { OrnamentWindow } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "'aria-label'",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "alignment",
+      "type": "OrnamentContentAlignment",
+      "required": false,
+      "default": "'center'",
+      "inherited": false
+    },
+    {
+      "name": "edge",
+      "type": "OrnamentEdge",
+      "required": false,
+      "default": "'bottom'",
+      "inherited": false
+    },
+    {
+      "name": "immersive",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "description": "When true, automatic visibility hides ornaments (e.g. full-screen media).",
+      "inherited": false
+    },
+    {
+      "name": "ornament",
+      "type": "ReactNode",
+      "required": false,
+      "description": "Single ornament content (shortcut for one bottom ornament).",
+      "inherited": false
+    },
+    {
+      "name": "ornaments",
+      "type": "OrnamentConfig[]",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "visibility",
+      "type": "OrnamentVisibility",
+      "required": false,
+      "default": "'visible'",
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [
+    "Supports ARIA attributes via standard HTML element props."
+  ],
+  "anatomy": null,
+  "playground": null
+}

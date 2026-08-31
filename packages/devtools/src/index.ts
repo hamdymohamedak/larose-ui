@@ -12,4 +12,4 @@ export {
 export {
   getComponentPerformance,
   type ComponentPerformanceSummary,
-} from './componentPerformance';
+} from '@larose-ui/devtools-core';

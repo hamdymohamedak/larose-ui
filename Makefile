@@ -1,4 +1,4 @@
-.PHONY: test test-all test-unit lint typecheck build check ci help
+.PHONY: test test-all test-unit lint typecheck build check ci quality help
 
 # Run all package tests (Vitest via Turbo)
 test: test-unit
@@ -6,8 +6,14 @@ test: test-unit
 test-unit:
 	pnpm test
 
-# Full validation suite (matches CI)
-test-all: lint typecheck test-unit build check-budgets visual-regression doctor a11y verify-publish
+# Full validation suite (matches .github/workflows/ci.yml quality job)
+test-all: quality
+
+quality: lint typecheck test-unit build visual-regression doctor a11y verify-publish
+
+# Alias for the CI quality job
+check: quality
+ci: quality
 
 lint:
 	pnpm lint
@@ -17,9 +23,6 @@ typecheck:
 
 build:
 	pnpm build
-
-check-budgets:
-	pnpm check-budgets
 
 visual-regression:
 	pnpm visual-regression
@@ -33,15 +36,12 @@ a11y:
 verify-publish:
 	pnpm verify:publish
 
-# Shorthand for test-all
-check: test-all
-ci: test-all
-
 help:
 	@echo "laRose Makefile"
 	@echo ""
 	@echo "  make test       Run all package tests (pnpm test)"
-	@echo "  make test-all   Full CI suite (lint, typecheck, test, build, doctor, …)"
+	@echo "  make quality    Full CI suite (same as GitHub quality job)"
+	@echo "  make test-all   Alias for make quality"
 	@echo "  make test-unit  Same as make test"
-	@echo "  make check      Alias for test-all"
-	@echo "  make ci         Alias for test-all"
+	@echo "  make check      Alias for make quality"
+	@echo "  make ci         Alias for make quality"

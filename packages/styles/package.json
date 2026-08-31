@@ -1,0 +1,57 @@
+{
+  "name": "@larose-ui/styles",
+  "version": "0.1.1",
+  "description": "Shared component styles for laRose UI — framework-agnostic CSS from the design system",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./styles.css": "./dist/styles.css",
+    "./components/*": "./src/components/*"
+  },
+  "files": [
+    "dist",
+    "src/components",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "node ../../scripts/build-styles-package.mjs .",
+    "dev": "node ../../scripts/build-styles-package.mjs . --watch",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@larose-ui/tokens": "workspace:*"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hamdymohamedak/larose-ui.git",
+    "directory": "packages/styles"
+  },
+  "keywords": [
+    "larose",
+    "ui-platform",
+    "design-system",
+    "css",
+    "styles"
+  ],
+  "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/styles#readme",
+  "bugs": {
+    "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  }
+}

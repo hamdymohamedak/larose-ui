@@ -33,6 +33,7 @@
     "@larose-ui/offline": "workspace:*",
     "@larose-ui/permissions": "workspace:*",
     "@larose-ui/observability": "workspace:*",
+    "@larose-ui/runtime-core": "workspace:*",
     "@larose-ui/themes": "workspace:*",
     "@larose-ui/tokens": "workspace:*"
   },

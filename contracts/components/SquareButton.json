@@ -1,0 +1,30 @@
+{
+  "name": "SquareButton",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "icon",
+      "type": "ReactNode",
+      "required": true,
+      "description": "Symbol or icon — square buttons use icons, not text labels."
+    },
+    {
+      "name": "pressed",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "description": "Toggle or pop-up behavior is handled by the parent; appearance only."
+    },
+    {
+      "name": "tooltip",
+      "type": "string",
+      "required": false
+    }
+  ],
+  "events": [],
+  "defaults": {
+    "pressed": "false"
+  },
+  "keyboard": {}
+}

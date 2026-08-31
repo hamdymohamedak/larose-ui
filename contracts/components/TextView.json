@@ -1,0 +1,39 @@
+{
+  "name": "TextView",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "editable",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "description": "When true, shows a keyboard-capable editor."
+    },
+    {
+      "name": "maxHeight",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "selectable",
+      "type": "boolean",
+      "required": false,
+      "default": "true",
+      "description": "Allows selecting/copying useful text in read-only mode."
+    },
+    {
+      "name": "typographyRole",
+      "type": "TypographyRole",
+      "required": false,
+      "default": "'body'"
+    }
+  ],
+  "events": [],
+  "defaults": {
+    "editable": "false",
+    "selectable": "true",
+    "typographyRole": "'body'"
+  },
+  "keyboard": {}
+}

@@ -1,0 +1,44 @@
+{
+  "name": "ToolbarMoreButton",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "'aria-label'",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "entries",
+      "type": "MenuEntry[]",
+      "required": true
+    },
+    {
+      "name": "onAction",
+      "type": "(entryId: string) => void",
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "onAction",
+      "payload": "(entryId: string) => void"
+    }
+  ],
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  }
+}

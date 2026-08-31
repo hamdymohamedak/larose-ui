@@ -2,6 +2,10 @@
   "version": 1,
   "stories": [
     {
+      "file": "Accelerators.stories.tsx",
+      "title": "Foundation/Accelerators"
+    },
+    {
       "file": "ActivityView.stories.tsx",
       "title": "Foundation/Activity Views"
     },
@@ -26,6 +30,10 @@
       "title": "Foundation/AppShell"
     },
     {
+      "file": "Badge.stories.tsx",
+      "title": "Foundation/Badge"
+    },
+    {
       "file": "Button.stories.tsx",
       "title": "Foundation/Button"
     },
@@ -38,8 +46,16 @@
       "title": "Foundation/Chart"
     },
     {
+      "file": "Checkbox.stories.tsx",
+      "title": "Foundation/Checkbox"
+    },
+    {
       "file": "ContextMenu.stories.tsx",
       "title": "Foundation/Context Menus"
+    },
+    {
+      "file": "Customization.stories.tsx",
+      "title": "Design System/Customization"
     },
     {
       "file": "DataDisplay.stories.tsx",
@@ -76,6 +92,10 @@
     {
       "file": "DragDrop.stories.tsx",
       "title": "Foundation/Drag and Drop"
+    },
+    {
+      "file": "Drawer.stories.tsx",
+      "title": "Foundation/Drawer"
     },
     {
       "file": "EditMenu.stories.tsx",
@@ -134,6 +154,10 @@
       "title": "Foundation/Menu Bar"
     },
     {
+      "file": "Modal.stories.tsx",
+      "title": "Foundation/Modal"
+    },
+    {
       "file": "Motion.stories.tsx",
       "title": "Design System/Motion"
     },
@@ -166,8 +190,16 @@
       "title": "Platform/Full Demo"
     },
     {
+      "file": "Popover.stories.tsx",
+      "title": "Foundation/Popover"
+    },
+    {
       "file": "PopUpButton.stories.tsx",
       "title": "Foundation/Pop-up Buttons"
+    },
+    {
+      "file": "Progress.stories.tsx",
+      "title": "Foundation/Progress"
     },
     {
       "file": "PullDownButton.stories.tsx",
@@ -176,6 +208,14 @@
     {
       "file": "QuickActions.stories.tsx",
       "title": "Foundation/Home Screen Quick Actions"
+    },
+    {
+      "file": "Radio.stories.tsx",
+      "title": "Foundation/Radio"
+    },
+    {
+      "file": "Select.stories.tsx",
+      "title": "Foundation/Select"
     },
     {
       "file": "Sharing.stories.tsx",
@@ -194,8 +234,16 @@
       "title": "Foundation/Split Views"
     },
     {
+      "file": "Switch.stories.tsx",
+      "title": "Foundation/Switch"
+    },
+    {
       "file": "TabView.stories.tsx",
       "title": "Foundation/Tab Views"
+    },
+    {
+      "file": "Textarea.stories.tsx",
+      "title": "Foundation/Textarea"
     },
     {
       "file": "TextView.stories.tsx",
@@ -204,6 +252,10 @@
     {
       "file": "Toolbar.stories.tsx",
       "title": "Foundation/Toolbars"
+    },
+    {
+      "file": "Tooltip.stories.tsx",
+      "title": "Foundation/Tooltip"
     },
     {
       "file": "WebView.stories.tsx",

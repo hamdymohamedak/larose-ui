@@ -10,8 +10,16 @@ import type {
 } from '@larose-ui/core';
 import { LAROSE_VERSION } from '@larose-ui/core';
 import type { ColorTokens } from '@larose-ui/tokens';
-import { MotionProvider, type MotionConfig } from '@larose-ui/react';
+import {
+  MotionProvider,
+  ThemeCustomizationContext,
+  AcceleratorProvider,
+  type MotionConfig,
+  type ThemeCustomizationContextValue,
+} from '@larose-ui/react';
 import { getThemePreset, type ThemePresetId } from '@larose-ui/themes';
+import type { ComponentConfiguration, LaRoseTheme, LaRoseThemeInput } from '@larose-ui/themes';
+import { createTheme, resolveTheme } from '@larose-ui/themes';
 import { PermissionProvider } from '@larose-ui/permissions';
 import {
   ObservabilityProvider,
@@ -19,7 +27,7 @@ import {
   createNoopAdapter,
   type ObservabilityAdapter,
 } from '@larose-ui/observability';
-import type { Locale } from './i18n/messages';
+import type { Locale } from '@larose-ui/runtime-core';
 import { EnvironmentProvider } from './environment/EnvironmentProvider';
 import { FeatureFlagProvider, type FeatureState } from './features/FeatureFlagProvider';
 import { I18nProvider } from './i18n/I18nProvider';
@@ -33,11 +41,8 @@ import { RuntimeContextProvider } from './runtime/RuntimeContextProvider';
 import { RuntimeBridge, SessionBridge } from './runtime/RuntimeBridge';
 import { RuntimeObservabilityBridge } from './observability/RuntimeObservabilityBridge';
 import type { RuntimeEvent } from './runtime/RuntimeContextProvider';
-import { resolveTenantConfig } from './tenant/resolveTenant';
+import { resolveTenantConfig, shouldSyncOfflineQueue } from '@larose-ui/runtime-core';
 import { OptionalToastProvider } from './toast/OptionalToastProvider';
-import {
-  shouldSyncOfflineQueue,
-} from './runtime/sessionSecurity';
 
 export interface LaRoseProviderProps {
   children: ReactNode;
@@ -76,6 +81,10 @@ export interface LaRoseProviderProps {
   toastPlacement?: 'bottom-right' | 'bottom-left' | 'top-right' | 'top-left';
   /** Global motion configuration for laRose UI components. */
   motion?: MotionConfig;
+  /** Full theme configuration with token overrides. */
+  themeConfig?: LaRoseThemeInput | LaRoseTheme;
+  /** Per-component defaults, tokens, and motion overrides. */
+  components?: ComponentConfiguration;
 }
 
 function AutoSync({
@@ -138,6 +147,8 @@ export function LaRoseProvider({
   enableToasts = true,
   toastPlacement = 'bottom-right',
   motion,
+  themeConfig,
+  components = {},
 }: LaRoseProviderProps) {
   const adapter =
     observabilityAdapter ??
@@ -151,6 +162,36 @@ export function LaRoseProvider({
     ...brandColorsProp,
     ...(tenant?.brandColors as Partial<ColorTokens> | undefined),
   };
+
+  const normalizedTheme = useMemo(
+    () =>
+      themeConfig
+        ? 'tokens' in themeConfig && themeConfig.tokens
+          ? (themeConfig as LaRoseTheme)
+          : createTheme({ preset: themePreset, ...themeConfig })
+        : createTheme({ preset: themePreset }),
+    [themeConfig, themePreset],
+  );
+
+  const resolvedTheme = useMemo(
+    () =>
+      resolveTheme({
+        theme: normalizedTheme,
+        density,
+        brandColors,
+        components,
+      }),
+    [normalizedTheme, density, brandColors, components],
+  );
+
+  const customizationValue = useMemo<ThemeCustomizationContextValue>(
+    () => ({
+      theme: normalizedTheme,
+      resolved: resolvedTheme,
+      components,
+    }),
+    [normalizedTheme, resolvedTheme, components],
+  );
 
   const resolved = resolveTenantConfig({
     tenant,
@@ -179,7 +220,8 @@ export function LaRoseProvider({
   };
 
   const tree = (
-    <RuntimeContextProvider
+    <ThemeCustomizationContext.Provider value={customizationValue}>
+      <RuntimeContextProvider
       initialContext={{
         environment,
         session: session ?? (user || userId ? 'authenticated' : 'unauthenticated'),
@@ -194,6 +236,9 @@ export function LaRoseProvider({
         density={resolved.density}
         tenantId={resolvedTenantId}
         brandColors={resolved.brandColors}
+        themeConfig={normalizedTheme}
+        themePreset={themePreset}
+        components={components}
       >
         <ObservabilityProvider
           adapter={adapter}
@@ -242,17 +287,24 @@ export function LaRoseProvider({
         </ObservabilityProvider>
       </ThemeProvider>
     </RuntimeContextProvider>
+    </ThemeCustomizationContext.Provider>
   );
 
   if (!enableToasts) {
-    return <MotionProvider {...motion}>{tree}</MotionProvider>;
+    return (
+      <MotionProvider {...motion}>
+        <AcceleratorProvider>{tree}</AcceleratorProvider>
+      </MotionProvider>
+    );
   }
 
   return (
     <MotionProvider {...motion}>
-      <OptionalToastProvider enabled placement={toastPlacement}>
-        {tree}
-      </OptionalToastProvider>
+      <AcceleratorProvider>
+        <OptionalToastProvider enabled placement={toastPlacement}>
+          {tree}
+        </OptionalToastProvider>
+      </AcceleratorProvider>
     </MotionProvider>
   );
 }

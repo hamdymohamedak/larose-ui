@@ -1,7 +1,7 @@
 import { useEffect, useMemo, type ReactNode } from 'react';
 import type { OrnamentConfig, OrnamentContentAlignment, OrnamentEdge, OrnamentVisibility } from './types';
 import { alignmentToFlex, resolveOrnamentVisibility, warnIfTooManyOrnaments } from './utils';
-import styles from './Ornament.module.css';
+import styles from '@larose-ui/styles/components/Ornament/Ornament.module.css';
 
 export interface OrnamentWindowProps {
   children: ReactNode;

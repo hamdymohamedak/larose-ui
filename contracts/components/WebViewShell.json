@@ -1,0 +1,19 @@
+{
+  "name": "WebViewShell",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "footer",
+      "type": "ReactNode",
+      "required": false
+    },
+    {
+      "name": "navigation",
+      "type": "WebViewNavigationProps",
+      "required": false
+    }
+  ],
+  "events": [],
+  "keyboard": {}
+}

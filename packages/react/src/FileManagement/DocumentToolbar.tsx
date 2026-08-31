@@ -1,6 +1,6 @@
 import { Button } from '../Button/Button';
 import { PlusIcon } from './icons';
-import styles from './FileManagement.module.css';
+import styles from '@larose-ui/styles/components/FileManagement/FileManagement.module.css';
 
 export interface DocumentToolbarProps {
   onNew?: () => void;

@@ -1,0 +1,74 @@
+{
+  "component": "DockMenu",
+  "category": "Navigation",
+  "import": "import { DockMenu } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "appName",
+      "type": "string",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "closedEntries",
+      "type": "ContextMenuEntry[]",
+      "required": false,
+      "description": "Actions when the app is not running (e.g. Open).",
+      "inherited": false
+    },
+    {
+      "name": "icon",
+      "type": "ReactNode",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "isRunning",
+      "type": "boolean",
+      "required": false,
+      "description": "Whether the app is currently running (shows window list + running actions).",
+      "inherited": false
+    },
+    {
+      "name": "onEntrySelect",
+      "type": "(entry: ContextMenuItemConfig) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onOpenChange",
+      "type": "(open: boolean) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onWindowSelect",
+      "type": "(window: DockWindow) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "open",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "openWindows",
+      "type": "DockWindow[]",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "runningEntries",
+      "type": "ContextMenuEntry[]",
+      "required": false,
+      "description": "High-value actions when the app is running (e.g. New Window, Get New Mail).",
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}
