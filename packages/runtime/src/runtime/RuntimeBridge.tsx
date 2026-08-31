@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { usePermissions } from '@larose-ui/permissions';
 import type { SessionState } from '@larose-ui/core';
 import {

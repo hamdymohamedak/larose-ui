@@ -17,7 +17,7 @@ import {
 
 export type { Breakpoint, BreakpointConfig };
 
-export interface ResponsiveContextValue extends ResponsiveSnapshot {}
+export type ResponsiveContextValue = ResponsiveSnapshot;
 
 const ResponsiveContext = createContext<ResponsiveContextValue>({
   breakpoint: 'desktop',

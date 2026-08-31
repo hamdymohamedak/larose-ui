@@ -1,4 +1,4 @@
-import { getContext, setContext } from 'svelte';
+import { getContext } from 'svelte';
 import { createTheme } from '@larose-ui/themes';
 import type { ComponentConfiguration, LaRoseTheme, ResolvedLaRoseTheme } from '@larose-ui/themes';
 import type { ComponentDefaultPropsMap } from '@larose-ui/themes';

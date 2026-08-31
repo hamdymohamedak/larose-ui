@@ -11,7 +11,7 @@ describe('Can', () => {
         </Can>
       </PermissionProvider>,
     );
-    expect(screen.getByRole('button', { name: 'Delete' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Delete' })).toBeTruthy();
   });
 
   it('hides when not permitted', () => {
@@ -22,7 +22,7 @@ describe('Can', () => {
         </Can>
       </PermissionProvider>,
     );
-    expect(screen.queryByRole('button', { name: 'Delete' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Delete' })).toBeNull();
   });
 
   it('shows explainable message when disabled fallback', () => {
@@ -33,6 +33,6 @@ describe('Can', () => {
         </Can>
       </PermissionProvider>,
     );
-    expect(screen.getByRole('note')).toHaveTextContent('Missing permission');
+    expect(screen.getByRole('note').textContent).toContain('Missing permission');
   });
 });

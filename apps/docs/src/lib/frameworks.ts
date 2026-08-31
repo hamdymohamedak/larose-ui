@@ -94,7 +94,7 @@ createApp(App).mount('#app');`;
   return `${styles}
 import '@larose-ui/react/styles.css';
 
-import { LaRoseProvider } from '@larose-ui/react';
+import { LaRoseProvider } from '@larose-ui/runtime';
 
 <LaRoseProvider theme="light" density="comfortable">
   <App />
@@ -169,7 +169,8 @@ import { LaRoseProvider, Button, Card, Input } from '@larose-ui/vue';
 </LaRoseProvider>`;
   }
 
-  return `import { LaRoseProvider, Button, Card, Input } from '@larose-ui/react';
+  return `import { LaRoseProvider } from '@larose-ui/runtime';
+import { Button, Card, Input } from '@larose-ui/react';
 import '@larose-ui/tokens/styles.css';
 import '@larose-ui/react/styles.css';
 

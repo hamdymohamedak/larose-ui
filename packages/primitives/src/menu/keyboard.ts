@@ -69,7 +69,7 @@ export function createInitialMenuKeyboardState(): MenuKeyboardState {
   };
 }
 
-export function resetMenuKeyboardState(state: MenuKeyboardState): MenuKeyboardState {
+export function resetMenuKeyboardState(_state: MenuKeyboardState): MenuKeyboardState {
   return createInitialMenuKeyboardState();
 }
 

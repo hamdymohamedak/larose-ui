@@ -1,6 +1,6 @@
 import type { MenuEntry } from '@larose-ui/primitives';
 import { isMenuItem } from '@larose-ui/primitives';
-import { resolveMenuShortcut, resolveAcceleratorPlatform } from '@larose-ui/primitives';
+import { resolveMenuShortcut } from '@larose-ui/primitives';
 import type { HostOS } from '@larose-ui/runtime-core';
 import { acceleratorToElectron, acceleratorToTauri } from './acceleratorNative';
 

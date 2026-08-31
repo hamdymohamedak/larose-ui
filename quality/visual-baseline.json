@@ -2,6 +2,10 @@
   "version": 1,
   "stories": [
     {
+      "file": "Accelerators.stories.tsx",
+      "title": "Foundation/Accelerators"
+    },
+    {
       "file": "ActivityView.stories.tsx",
       "title": "Foundation/Activity Views"
     },

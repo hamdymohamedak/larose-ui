@@ -1,6 +1,6 @@
-import type { Accelerator, AcceleratorConflict, AcceleratorScope, RegisteredAccelerator } from './types';
+import type { Accelerator, AcceleratorConflict, AcceleratorScope } from './types';
 import { matchKeyboardEvent, detectPlatform } from './match';
-import { acceleratorToId, normalizeAccelerator } from './normalize';
+import { acceleratorToId } from './normalize';
 import { shouldHandleShortcut } from './input';
 
 export interface AcceleratorHandler {

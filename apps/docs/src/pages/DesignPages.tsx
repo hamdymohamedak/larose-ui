@@ -5,10 +5,10 @@ import {
   Button,
   Card,
   Input,
-  LaRoseProvider,
   Select,
   Typography,
 } from '@larose-ui/react';
+import { LaRoseProvider } from '@larose-ui/runtime';
 import { CodeBlock } from '@/components/CodeBlock';
 import { CopyButton } from '@/components/CopyButton';
 import { PropsPlayground } from '@/components/PropsPlayground';
@@ -43,7 +43,8 @@ export function ThemeBuilderPage() {
   );
 
   const exportCode = `import { createTheme } from '@larose-ui/themes';
-import { LaRoseProvider, Button, Card, Input } from '@larose-ui/react';
+import { LaRoseProvider } from '@larose-ui/runtime';
+import { Button, Card, Input } from '@larose-ui/react';
 
 const theme = createTheme({
   preset: 'refined',

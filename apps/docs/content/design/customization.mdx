@@ -19,7 +19,7 @@ Higher layers win over lower layers. Instance props always override component de
 ## Default experience
 
 ```tsx
-import { LaRoseProvider } from '@larose-ui/react';
+import { LaRoseProvider } from '@larose-ui/runtime';
 
 <LaRoseProvider>
   <App />
@@ -42,7 +42,8 @@ import { LaRoseProvider } from '@larose-ui/react';
 ## Custom themes
 
 ```tsx
-import { createTheme, LaRoseProvider } from '@larose-ui/react';
+import { LaRoseProvider } from '@larose-ui/runtime';
+import { createTheme } from '@larose-ui/themes';
 
 const customTheme = createTheme({
   base: 'refined',

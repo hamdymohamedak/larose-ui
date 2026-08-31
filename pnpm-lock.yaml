@@ -96,6 +96,9 @@ importers:
       '@larose-ui/react':
         specifier: workspace:*
         version: link:../../packages/react
+      '@larose-ui/runtime':
+        specifier: workspace:*
+        version: link:../../packages/runtime
       '@larose-ui/styles':
         specifier: workspace:*
         version: link:../../packages/styles

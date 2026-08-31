@@ -21,7 +21,6 @@ describe('createLaRoseThemeScriptContent', () => {
   it('is valid immediately-invoked function syntax', () => {
     const script = createLaRoseThemeScriptContent();
     expect(() => {
-      // eslint-disable-next-line no-new-func
       new Function(script);
     }).not.toThrow();
   });

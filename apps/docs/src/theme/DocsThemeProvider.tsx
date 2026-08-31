@@ -7,8 +7,8 @@ import {
   useState,
   type ReactNode,
 } from 'react';
-import type { ThemeMode } from '@larose-ui/react';
-import { LaRoseProvider } from '@larose-ui/react';
+import type { ThemeMode } from '@larose-ui/core';
+import { LaRoseProvider } from '@larose-ui/runtime';
 
 const STORAGE_KEY = 'larose-docs-theme';
 

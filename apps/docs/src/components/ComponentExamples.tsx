@@ -1,6 +1,5 @@
 import { useMemo } from 'react';
 import { Typography } from '@larose-ui/react';
-import { FrameworkCodeTabs } from '@/components/FrameworkCodeTabs';
 import { StorySection } from '@/components/StoryCanvas';
 import type { DocsExampleEntry } from '@/data/examples.generated';
 import { getComponentPreview } from '@/previews';
