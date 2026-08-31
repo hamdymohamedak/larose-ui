@@ -7,19 +7,20 @@ import {
 import { isMenuItem } from '../Menu/utils';
 
 describe('MenuBar utils', () => {
-  it('resolves alternate labels when Option is held', () => {
+  it('swaps alternate labels and shortcuts when Option is held', () => {
     const resolved = resolveDynamicMenuEntries(
       [
         {
           id: 'close',
           label: 'Close',
           alternateLabel: 'Close All',
+          alternateShortcut: '⌥⌘W',
         },
       ],
       { optionKey: true },
     );
 
-    expect(resolved[0]).toMatchObject({ label: 'Close All' });
+    expect(resolved[0]).toMatchObject({ label: 'Close All', shortcut: '⌥⌘W' });
   });
 
   it('keeps primary label when Option is not held', () => {

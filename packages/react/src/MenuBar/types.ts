@@ -13,6 +13,8 @@ export interface MenuBarMenuConfig {
   trigger?: ReactNode;
   /** Accessible name when `trigger` replaces visible title text. */
   ariaLabel?: string;
+  /** Access key for Alt+key menu activation. Defaults to first letter of `title`. */
+  mnemonic?: string;
 }
 
 export interface MenuBarExtraConfig {
@@ -86,4 +88,10 @@ export interface MenuBarProps {
   showAppleMenu?: boolean;
   className?: string;
   onMenuAction?: (menuId: string, entryId: string) => void;
+  /** Register top-level menu accelerators globally. Defaults to true. */
+  enableGlobalShortcuts?: boolean;
+  /** Enable type-ahead letter matching in open menus. Defaults to true. */
+  enableTypeAhead?: boolean;
+  /** Enable Alt+key mnemonics on Windows/Linux. Defaults to true on non-macOS. */
+  enableMnemonics?: boolean;
 }

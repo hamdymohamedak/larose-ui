@@ -691,6 +691,52 @@ export type {
 export { CommandPalette, useCommandPaletteShortcut } from './CommandPalette/CommandPalette';
 export type { CommandPaletteProps, CommandPaletteItem } from './CommandPalette/CommandPalette';
 
+export {
+  AcceleratorProvider,
+  useAccelerator,
+  useAcceleratorContext,
+  useMenuAcceleratorRegistration,
+  useMenuBarAccelerators,
+  useCombinedMenuKeyboard,
+  MnemonicLabel,
+  resolveMenuShortcut,
+  resolveAcceleratorPlatform,
+  collectMenuAccelerators,
+  collectGlobalMenuAccelerators,
+  useMenuKeyboardShortcuts,
+} from './accelerator';
+export type {
+  AcceleratorProviderProps,
+  AcceleratorRegistrationOptions,
+  MenuAcceleratorBinding,
+  ResolvedMenuShortcut,
+  ResolveMenuShortcutOptions,
+  UseMenuKeyboardShortcutsOptions,
+  UseMenuBarAcceleratorsOptions,
+  UseCombinedMenuKeyboardOptions,
+  CombinedMenuKeyboardResult,
+  MnemonicLabelProps,
+} from './accelerator';
+
+export {
+  STANDARD_ACCELERATORS,
+  formatAccelerator,
+  formatAriaKeyshortcuts,
+  matchKeyboardEvent,
+  parseAccelerator,
+  parseMnemonicLabel,
+  resolveMnemonicKey,
+  normalizeAccelerator,
+  detectPlatform,
+} from '@larose-ui/core';
+export type {
+  Accelerator,
+  AcceleratorFormatOptions,
+  AcceleratorPlatform,
+  ParsedMnemonic,
+  StandardAcceleratorId,
+} from '@larose-ui/core';
+
 export { DatePicker } from './DatePicker/DatePicker';
 export type { DatePickerProps } from './DatePicker/DatePicker';
 

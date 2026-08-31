@@ -10,6 +10,13 @@ import {
   type ReactElement,
 } from 'react';
 import { ContextualMenuPortal } from '../Motion/OverlayPortal';
+import {
+  resolveMenuShortcut,
+  useAcceleratorContext,
+  useCombinedMenuKeyboard,
+  useMenuAcceleratorRegistration,
+  MnemonicLabel,
+} from '../accelerator';
 import type { MenuEntry, MenuItemConfig, MenuLayout, MenuPosition } from './types';
 import {
   isMenuItem,
@@ -29,23 +36,44 @@ export interface MenuProps {
   onOpenChange?: (open: boolean) => void;
   onEntrySelect?: (entry: MenuItemConfig) => boolean | void;
   dimBackground?: boolean;
+  /** When true, keyboard shortcuts activate menu items while open. Defaults to true. */
+  enableShortcuts?: boolean;
+  /** Passed from MenuBar for Option-key alternate accelerators. */
+  optionKey?: boolean;
+  /** Enable type-ahead letter matching while open. Defaults to true. */
+  enableTypeAhead?: boolean;
+  /** Enable Alt+key mnemonics while open. Defaults to true. */
+  enableMnemonics?: boolean;
+  /** When true, underline mnemonic access keys in labels. */
+  mnemonicVisible?: boolean;
 }
 
 function MenuItemRow({
   item,
   onSelect,
+  optionKey,
+  mnemonicVisible,
+  typeAheadHighlightId,
 }: {
   item: MenuItemConfig;
   onSelect: (entry: MenuItemConfig) => void;
+  optionKey?: boolean;
+  mnemonicVisible?: boolean;
+  typeAheadHighlightId?: string | null;
 }) {
+  const resolved = resolveMenuShortcut(item, { optionKey });
+  const isHighlighted = typeAheadHighlightId === item.id;
+
   return (
     <button
       type="button"
       className={styles.item}
       role="menuitem"
       data-destructive={item.destructive ? 'true' : undefined}
+      data-typeahead-match={isHighlighted ? 'true' : undefined}
       disabled={item.disabled}
       aria-checked={item.selected ? true : undefined}
+      aria-keyshortcuts={resolved.ariaKeyshortcuts}
       onClick={() => {
         if (item.disabled) return;
         item.onSelect?.();
@@ -56,19 +84,34 @@ function MenuItemRow({
         {item.selected ? '✓' : ''}
       </span>
       {item.icon && <span className={styles.icon}>{item.icon}</span>}
-      <span className={styles.label}>{item.label}</span>
-      {item.shortcut && <span className={styles.shortcut}>{item.shortcut}</span>}
+      <MnemonicLabel
+        label={item.label}
+        mnemonic={item.mnemonic}
+        showAccessKey={mnemonicVisible}
+        className={styles.label}
+      />
+      {resolved.display && (
+        <span className={styles.shortcut} dir="ltr">
+          {resolved.display}
+        </span>
+      )}
     </button>
   );
 }
 
 function MenuPanel({
-  menuId: _menuId,
+  menuId,
   entries,
   layout,
   title,
   onSelect,
   onClose,
+  enableShortcuts,
+  optionKey,
+  enableTypeAhead = true,
+  enableMnemonics = true,
+  mnemonicVisible = false,
+  isOpen,
 }: {
   menuId: string;
   entries: MenuEntry[];
@@ -76,6 +119,12 @@ function MenuPanel({
   title?: string;
   onSelect: (entry: MenuItemConfig) => void;
   onClose: () => void;
+  enableShortcuts: boolean;
+  optionKey?: boolean;
+  enableTypeAhead?: boolean;
+  enableMnemonics?: boolean;
+  mnemonicVisible?: boolean;
+  isOpen: boolean;
 }) {
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
   const [submenuSides, setSubmenuSides] = useState<Record<string, 'end' | 'start'>>({});
@@ -106,13 +155,46 @@ function MenuPanel({
     [resolveSubmenuSide],
   );
 
+  const { handler: handleKeyboard, typeAheadHighlightId, resetTypeAhead } =
+    useCombinedMenuKeyboard({
+      entries,
+      activeSubmenuId: activeSubmenu,
+      optionKey,
+      onSelect,
+      onClose,
+      enableTypeAhead: enableShortcuts && enableTypeAhead,
+      enableMnemonics: enableShortcuts && enableMnemonics,
+      mnemonicActive: mnemonicVisible,
+    });
+
+  const acceleratorContext = useAcceleratorContext();
+  useMenuAcceleratorRegistration(menuId, handleKeyboard, isOpen && enableShortcuts);
+
   useEffect(() => {
+    if (!isOpen) resetTypeAhead();
+  }, [isOpen, resetTypeAhead]);
+
+  // Fallback local listener when no AcceleratorProvider wraps the tree
+  useEffect(() => {
+    if (!isOpen || !enableShortcuts || acceleratorContext) return;
+
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') onClose();
+      handleKeyboard(event);
     };
-    document.addEventListener('keydown', onKeyDown);
-    return () => document.removeEventListener('keydown', onKeyDown);
-  }, [onClose]);
+    document.addEventListener('keydown', onKeyDown, true);
+    return () => document.removeEventListener('keydown', onKeyDown, true);
+  }, [acceleratorContext, enableShortcuts, handleKeyboard, isOpen]);
+
+  useEffect(() => {
+    if (!enableShortcuts || acceleratorContext) {
+      const onKeyDown = (event: KeyboardEvent) => {
+        if (event.key === 'Escape') onClose();
+      };
+      document.addEventListener('keydown', onKeyDown);
+      return () => document.removeEventListener('keydown', onKeyDown);
+    }
+    return undefined;
+  }, [acceleratorContext, enableShortcuts, onClose]);
 
   return (
     <>
@@ -146,6 +228,7 @@ function MenuPanel({
           }
 
           if (isMenuSubmenu(entry)) {
+            const submenuResolved = resolveMenuShortcut(entry, { optionKey });
             return (
               <li
                 key={entry.id}
@@ -167,8 +250,16 @@ function MenuPanel({
                 >
                   <span className={styles.checkmark} aria-hidden="true" />
                   {entry.icon && <span className={styles.icon}>{entry.icon}</span>}
-                  <span className={styles.label}>{entry.label}</span>
-                  {entry.shortcut && <span className={styles.shortcut}>{entry.shortcut}</span>}
+                  <MnemonicLabel
+                    label={entry.label}
+                    showAccessKey={mnemonicVisible}
+                    className={styles.label}
+                  />
+                  {submenuResolved.display && (
+                    <span className={styles.shortcut} dir="ltr">
+                      {submenuResolved.display}
+                    </span>
+                  )}
                   <span className={styles.submenuChevron} aria-hidden="true">
                     ›
                   </span>
@@ -182,7 +273,13 @@ function MenuPanel({
                   >
                     {entry.items.map((item) => (
                       <li key={item.id}>
-                        <MenuItemRow item={item} onSelect={onSelect} />
+                        <MenuItemRow
+                          item={item}
+                          onSelect={onSelect}
+                          optionKey={optionKey}
+                          mnemonicVisible={mnemonicVisible}
+                          typeAheadHighlightId={typeAheadHighlightId}
+                        />
                       </li>
                     ))}
                   </ul>
@@ -194,7 +291,13 @@ function MenuPanel({
           if (isMenuItem(entry)) {
             return (
               <li key={entry.id}>
-                <MenuItemRow item={entry} onSelect={onSelect} />
+                <MenuItemRow
+                  item={entry}
+                  onSelect={onSelect}
+                  optionKey={optionKey}
+                  mnemonicVisible={mnemonicVisible}
+                  typeAheadHighlightId={typeAheadHighlightId}
+                />
               </li>
             );
           }
@@ -219,6 +322,11 @@ export function Menu({
   onOpenChange,
   onEntrySelect,
   dimBackground = true,
+  enableShortcuts = true,
+  optionKey,
+  enableTypeAhead = true,
+  enableMnemonics = true,
+  mnemonicVisible = false,
 }: MenuProps) {
   const menuId = useId();
   const triggerRef = useRef<HTMLSpanElement>(null);
@@ -330,6 +438,12 @@ export function Menu({
         title={title}
         onSelect={handleSelect}
         onClose={close}
+        enableShortcuts={enableShortcuts}
+        optionKey={optionKey}
+        enableTypeAhead={enableTypeAhead}
+        enableMnemonics={enableMnemonics}
+        mnemonicVisible={mnemonicVisible}
+        isOpen={isOpen}
       />
     </ContextualMenuPortal>
   );

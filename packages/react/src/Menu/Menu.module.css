@@ -99,6 +99,15 @@
   background: var(--lr-list-row-hover);
 }
 
+.item[data-typeahead-match='true'] {
+  background: var(--lr-list-row-hover, rgb(0 0 0 / 0.06));
+}
+
+.mnemonicChar {
+  text-decoration: underline;
+  text-underline-offset: 0.125em;
+}
+
 .item[data-destructive='true'] {
   color: var(--lr-menu-destructive);
 }
@@ -134,9 +143,9 @@
 }
 
 .shortcut {
-  margin-inline-start: auto;
-  font-size: var(--lr-font-size-xs);
-  color: var(--lr-color-text-muted);
+  margin-inline-start: var(--lr-menu-shortcut-spacing, auto);
+  font-size: var(--lr-menu-shortcut-font-size, var(--lr-font-size-xs));
+  color: var(--lr-menu-shortcut-color, var(--lr-color-text-muted));
   font-variant-numeric: tabular-nums;
 }
 

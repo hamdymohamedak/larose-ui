@@ -1,4 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { STANDARD_ACCELERATORS } from '@larose-ui/core';
+import { useAccelerator } from '../accelerator';
 import styles from './CommandPalette.module.css';
 
 export interface CommandPaletteItem {
@@ -180,17 +182,9 @@ export function CommandPalette({
 }
 
 export function useCommandPaletteShortcut(onOpen: () => void, enabled = true) {
-  useEffect(() => {
-    if (!enabled) return;
-
-    const onKeyDown = (event: KeyboardEvent) => {
-      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') {
-        event.preventDefault();
-        onOpen();
-      }
-    };
-
-    window.addEventListener('keydown', onKeyDown);
-    return () => window.removeEventListener('keydown', onKeyDown);
-  }, [enabled, onOpen]);
+  useAccelerator(STANDARD_ACCELERATORS.commandPalette, onOpen, {
+    allowInEditable: true,
+    enabled,
+    id: 'larose-command-palette',
+  });
 }

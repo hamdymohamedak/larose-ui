@@ -16,6 +16,7 @@ import {
   type LaRoseTheme,
   type LaRoseThemeInput,
 } from '@larose-ui/themes';
+import { AcceleratorProvider } from '../accelerator/AcceleratorProvider';
 import { MotionProvider, type MotionConfig } from '../Motion/MotionContext';
 import {
   ThemeCustomizationContext,
@@ -132,9 +133,11 @@ export function LaRoseProvider({
     <LaRoseContext.Provider value={providerConfig}>
       <ThemeCustomizationContext.Provider value={customizationValue}>
         <MotionProvider {...motionConfig}>
-          <div ref={ref} data-lr-provider style={{ minHeight: 'inherit' }}>
-            {children}
-          </div>
+          <AcceleratorProvider>
+            <div ref={ref} data-lr-provider style={{ minHeight: 'inherit' }}>
+              {children}
+            </div>
+          </AcceleratorProvider>
         </MotionProvider>
       </ThemeCustomizationContext.Provider>
     </LaRoseContext.Provider>

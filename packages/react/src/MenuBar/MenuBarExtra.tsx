@@ -2,14 +2,17 @@ import { useCallback, useMemo } from 'react';
 import { Menu } from '../Menu/Menu';
 import { prepareMenuEntries } from '../Menu/utils';
 import type { MenuItemConfig } from '../Menu/types';
-import type { MenuBarExtraConfig } from './types';
 import { resolveDynamicMenuEntries } from './utils';
+import type { MenuBarExtraConfig } from './types';
 import styles from './MenuBar.module.css';
 
 export interface MenuBarExtraProps extends MenuBarExtraConfig {
   isOpen: boolean;
   onOpenChange: (open: boolean) => void;
   optionKey: boolean;
+  mnemonicVisible?: boolean;
+  enableTypeAhead?: boolean;
+  enableMnemonics?: boolean;
   onAction?: (entry: MenuItemConfig) => void;
 }
 
@@ -25,6 +28,9 @@ export function MenuBarExtra({
   isOpen,
   onOpenChange,
   optionKey,
+  mnemonicVisible = false,
+  enableTypeAhead = true,
+  enableMnemonics = true,
   onAction,
 }: MenuBarExtraProps) {
   const prepared = useMemo(
@@ -47,6 +53,10 @@ export function MenuBarExtra({
       dimBackground={false}
       layout="large"
       onEntrySelect={handleSelect}
+      optionKey={optionKey}
+      enableTypeAhead={enableTypeAhead}
+      enableMnemonics={enableMnemonics}
+      mnemonicVisible={mnemonicVisible}
     >
       <button
         type="button"

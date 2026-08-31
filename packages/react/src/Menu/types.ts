@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import type { Accelerator } from '@larose-ui/core';
 
 export type MenuLayout = 'small' | 'medium' | 'large';
 
@@ -7,15 +8,22 @@ export interface MenuItemConfig {
   id: string;
   label: string;
   icon?: ReactNode;
+  /** Display label for the keyboard shortcut. Overrides automatic formatting. */
   shortcut?: string;
+  /** Machine-readable accelerator for keyboard activation. */
+  accelerator?: Accelerator;
   /** Label shown when Option (Alt) is held — dynamic menu bar item. */
   alternateLabel?: string;
   alternateShortcut?: string;
+  /** Alternate accelerator when Option (Alt) is held. */
+  alternateAccelerator?: Accelerator;
   destructive?: boolean;
   hidden?: boolean;
   disabled?: boolean;
   /** Shows a checkmark for toggled/selected state. */
   selected?: boolean;
+  /** Access key for mnemonic activation (Windows/Linux). Parsed from `&` in label when omitted. */
+  mnemonic?: string;
   onSelect?: () => void;
 }
 

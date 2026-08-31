@@ -8891,6 +8891,38 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "excerpt": "--lr-sidebar-width-compact = 13rem"
   },
   {
+    "id": "token:--lr-sidebar-height",
+    "title": "sidebar.height",
+    "type": "token",
+    "path": "/docs/design/tokens",
+    "keywords": "sidebar.height --lr-sidebar-height Other Design token exposed as --lr-sidebar-height",
+    "excerpt": "--lr-sidebar-height = 100dvh"
+  },
+  {
+    "id": "token:--lr-sidebar-max-height",
+    "title": "sidebar.max.height",
+    "type": "token",
+    "path": "/docs/design/tokens",
+    "keywords": "sidebar.max.height --lr-sidebar-max-height Other Design token exposed as --lr-sidebar-max-height",
+    "excerpt": "--lr-sidebar-max-height = 100dvh"
+  },
+  {
+    "id": "token:--lr-sidebar-overflow",
+    "title": "sidebar.overflow",
+    "type": "token",
+    "path": "/docs/design/tokens",
+    "keywords": "sidebar.overflow --lr-sidebar-overflow Other Design token exposed as --lr-sidebar-overflow",
+    "excerpt": "--lr-sidebar-overflow = hidden"
+  },
+  {
+    "id": "token:--lr-sidebar-nav-overflow-y",
+    "title": "sidebar.nav.overflow.y",
+    "type": "token",
+    "path": "/docs/design/tokens",
+    "keywords": "sidebar.nav.overflow.y --lr-sidebar-nav-overflow-y Other Design token exposed as --lr-sidebar-nav-overflow-y",
+    "excerpt": "--lr-sidebar-nav-overflow-y = auto"
+  },
+  {
     "id": "token:--lr-sidebar-item-height",
     "title": "sidebar.item.height",
     "type": "token",
@@ -8937,6 +8969,14 @@ export const docsSearchIndex: DocsSearchEntry[] = [
     "path": "/docs/design/tokens",
     "keywords": "sidebar.group.label.size --lr-sidebar-group-label-size Other Design token exposed as --lr-sidebar-group-label-size",
     "excerpt": "--lr-sidebar-group-label-size = 0.6875rem"
+  },
+  {
+    "id": "token:--lr-sidebar-disclosure-chevron-size",
+    "title": "sidebar.disclosure.chevron.size",
+    "type": "token",
+    "path": "/docs/design/tokens",
+    "keywords": "sidebar.disclosure.chevron.size --lr-sidebar-disclosure-chevron-size Other Design token exposed as --lr-sidebar-disclosure-chevron-size",
+    "excerpt": "--lr-sidebar-disclosure-chevron-size = 0.625rem"
   },
   {
     "id": "token:--lr-tab-bar-height",
@@ -12831,6 +12871,38 @@ export const docsTokenGroups: Record<string, TokenSearchEntry[]> = {
       "relatedComponents": []
     },
     {
+      "name": "sidebar.height",
+      "cssVariable": "--lr-sidebar-height",
+      "value": "100dvh",
+      "category": "Other",
+      "description": "Design token exposed as --lr-sidebar-height",
+      "relatedComponents": []
+    },
+    {
+      "name": "sidebar.max.height",
+      "cssVariable": "--lr-sidebar-max-height",
+      "value": "100dvh",
+      "category": "Other",
+      "description": "Design token exposed as --lr-sidebar-max-height",
+      "relatedComponents": []
+    },
+    {
+      "name": "sidebar.overflow",
+      "cssVariable": "--lr-sidebar-overflow",
+      "value": "hidden",
+      "category": "Other",
+      "description": "Design token exposed as --lr-sidebar-overflow",
+      "relatedComponents": []
+    },
+    {
+      "name": "sidebar.nav.overflow.y",
+      "cssVariable": "--lr-sidebar-nav-overflow-y",
+      "value": "auto",
+      "category": "Other",
+      "description": "Design token exposed as --lr-sidebar-nav-overflow-y",
+      "relatedComponents": []
+    },
+    {
       "name": "sidebar.item.height",
       "cssVariable": "--lr-sidebar-item-height",
       "value": "1.75rem",
@@ -12876,6 +12948,14 @@ export const docsTokenGroups: Record<string, TokenSearchEntry[]> = {
       "value": "0.6875rem",
       "category": "Other",
       "description": "Design token exposed as --lr-sidebar-group-label-size",
+      "relatedComponents": []
+    },
+    {
+      "name": "sidebar.disclosure.chevron.size",
+      "cssVariable": "--lr-sidebar-disclosure-chevron-size",
+      "value": "0.625rem",
+      "category": "Other",
+      "description": "Design token exposed as --lr-sidebar-disclosure-chevron-size",
       "relatedComponents": []
     },
     {
