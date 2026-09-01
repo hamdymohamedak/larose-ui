@@ -67,6 +67,8 @@ export {
   supportsSVGGlass,
   supportsBackdropGlassRefraction,
   supportsBackdropSvgDisplacement,
+  supportsContentSvgDisplacement,
+  selectRefractionMode,
   supportsWebGLGlass,
   supportsCanvasGlass,
   supportsVideoGlass,

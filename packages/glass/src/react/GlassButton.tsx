@@ -7,6 +7,7 @@ import type { GlassLens } from '../types';
 export interface GlassButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   lens?: Partial<GlassLens>;
+  refract?: ReactNode;
 }
 
 const defaultLens = LENS_PRESETS.button(140, 48, 24);
@@ -14,6 +15,7 @@ const defaultLens = LENS_PRESETS.button(140, 48, 24);
 export function GlassButton({
   children,
   lens,
+  refract,
   className,
   style,
   disabled,
@@ -70,7 +72,7 @@ export function GlassButton({
   }
 
   return (
-    <Glass lens={resolvedLens} className={className} style={style as CSSProperties}>
+    <Glass lens={resolvedLens} refract={refract} className={className} style={style as CSSProperties}>
       {buttonInner}
     </Glass>
   );

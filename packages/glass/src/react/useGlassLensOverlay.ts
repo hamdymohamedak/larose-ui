@@ -1,9 +1,13 @@
 import { useCallback, useEffect, useRef, type RefObject } from 'react';
 import { detectA11yPreferences } from '@larose-ui/core';
 import { resolveLens } from '../lens/defaults';
-import { supportsBackdropSvgDisplacement } from '../capabilities/detect';
+import {
+  selectRefractionMode,
+  supportsBackdropGlassRefraction,
+} from '../capabilities/detect';
 import { GlassEngine } from '../engine/glass-engine';
 import type { GlassLens } from '../types';
+import { glassRuntimeLog } from '../debug/runtime-log';
 
 export interface LensBounds {
   x: number;
@@ -21,6 +25,7 @@ export interface UseGlassLensOverlayOptions {
 export interface UseGlassLensOverlayResult {
   lensRef: RefObject<HTMLDivElement | null>;
   engineActive: boolean;
+  refractionMode: ReturnType<typeof selectRefractionMode>;
   setBounds: (bounds: LensBounds) => void;
   updateLens: (lens: GlassLens) => void;
 }
@@ -29,6 +34,7 @@ function applyCssLensFallback(el: HTMLElement, bounds: LensBounds, lens: GlassLe
   const resolved = resolveLens(lens);
   const h = resolved.edgeHighlight;
   const angle = resolved.specularAngle;
+  const blurPx = resolved.blur > 0 ? resolved.blur : 8;
   Object.assign(el.style, {
     position: 'absolute',
     left: `${bounds.x}px`,
@@ -36,28 +42,29 @@ function applyCssLensFallback(el: HTMLElement, bounds: LensBounds, lens: GlassLe
     width: `${bounds.width}px`,
     height: `${bounds.height}px`,
     borderRadius: `${resolved.borderRadius}px`,
-    zIndex: '2',
+    zIndex: '0',
     pointerEvents: 'none',
+    overflow: 'hidden',
     background: `linear-gradient(
       ${angle}deg,
-      rgb(255 255 255 / ${0.55 + h * 0.25}) 0%,
-      rgb(255 255 255 / ${0.28 + h * 0.12}) 55%,
-      rgb(255 255 255 / 0.12) 100%
+      rgb(255 255 255 / ${0.06 + h * 0.1}) 0%,
+      rgb(255 255 255 / ${0.02 + h * 0.04}) 55%,
+      transparent 100%
     )`,
-    border: `1px solid rgb(255 255 255 / ${0.45 + h * 0.35})`,
+    border: `1px solid rgb(255 255 255 / ${0.28 + h * 0.2})`,
     boxShadow: [
-      resolved.glow > 0 ? `0 8px 28px rgb(100 80 200 / ${resolved.glow * 0.28})` : null,
-      `inset 0 1.5px 0 rgb(255 255 255 / ${0.75 + h * 0.2})`,
-      'inset 0 -0.5px 0 rgb(0 0 0 / 0.05)',
+      resolved.glow > 0 ? `0 8px 28px rgb(100 80 200 / ${resolved.glow * 0.18})` : null,
+      `inset 0 1px 0 rgb(255 255 255 / ${0.35 + h * 0.15})`,
+      'inset 0 -0.5px 0 rgb(0 0 0 / 0.04)',
     ]
       .filter(Boolean)
       .join(', '),
-    backdropFilter: resolved.blur > 0
-      ? `blur(${resolved.blur}px) saturate(1.35)`
-      : 'blur(10px) saturate(1.4)',
-    WebkitBackdropFilter: resolved.blur > 0
-      ? `blur(${resolved.blur}px) saturate(1.35)`
-      : 'blur(10px) saturate(1.4)',
+    backdropFilter: supportsBackdropGlassRefraction()
+      ? `blur(${blurPx}px) saturate(1.15)`
+      : 'none',
+    WebkitBackdropFilter: supportsBackdropGlassRefraction()
+      ? `blur(${blurPx}px) saturate(1.15)`
+      : 'none',
   });
 }
 
@@ -79,12 +86,28 @@ export function useGlassLensOverlay({
   const lensRef_latest = useRef(lens);
   lensRef_latest.current = lens;
   const reducedMotion = detectA11yPreferences().reducedMotion;
-  const engineActive = supportsBackdropSvgDisplacement() && !reducedMotion;
+  const refractionMode = selectRefractionMode('overlay');
+  const engineActive = refractionMode === 'backdrop' && !reducedMotion;
   const effectKey = lensEffectKey(lens);
 
   useEffect(() => {
     const el = lensRef.current;
     if (!el) return undefined;
+
+    // #region agent log
+    glassRuntimeLog(
+      'useGlassLensOverlay.ts:init',
+      'lens overlay init',
+      {
+        refractionMode,
+        engineActive,
+        reducedMotion,
+        hasInitialBounds: Boolean(initialBounds),
+      },
+      'A',
+      'SourceGraphic-fix',
+    );
+    // #endregion
 
     if (!engineActive) {
       if (initialBounds) {
@@ -112,7 +135,7 @@ export function useGlassLensOverlay({
       engine.destroy();
       engineRef.current = null;
     };
-  }, [engineActive, effectKey, initialBounds]);
+  }, [engineActive, effectKey, initialBounds, refractionMode]);
 
   useEffect(() => {
     engineRef.current?.setLens(lens);
@@ -131,5 +154,5 @@ export function useGlassLensOverlay({
     engineRef.current?.setLens(next);
   }, []);
 
-  return { lensRef, engineActive, setBounds, updateLens };
+  return { lensRef, engineActive, refractionMode, setBounds, updateLens };
 }

@@ -13,11 +13,41 @@ function hasBackdropFilterSupport(): boolean {
   );
 }
 
-/** WebKit without Chromium — Safari supports backdrop-filter: url(#svg). */
-function isSafariEngine(): boolean {
+/** Chromium desktop Blink — backdrop-filter: url(#svg) refracts live page content. */
+function isBlinkEngine(): boolean {
   if (typeof navigator === 'undefined') return false;
   const ua = navigator.userAgent;
-  return /AppleWebKit/i.test(ua) && !/Chrome|Chromium|CriOS|Edg|OPR|SamsungBrowser/i.test(ua);
+  const hasUAData =
+    (navigator as Navigator & { userAgentData?: unknown }).userAgentData != null;
+  if (hasUAData) {
+    return (
+      /\b(?:Chrome|Chromium|Edg)\//.test(ua) &&
+      !/\b(?:CriOS|EdgiOS|FxiOS|OPiOS)\b/.test(ua) &&
+      !/iPhone|iPad|iPod/.test(ua)
+    );
+  }
+  return (
+    /\b(?:Chrome|Chromium|Edg)\//.test(ua) &&
+    !/\b(?:CriOS|EdgiOS|FxiOS|OPiOS)\b/.test(ua) &&
+    !/iPhone|iPad|iPod/.test(ua) &&
+    !/Firefox/i.test(ua)
+  );
+}
+
+export type RefractionMode = 'backdrop' | 'content' | 'css';
+export type GlassRefractionSurface = 'overlay' | 'shell';
+
+/**
+ * Blink: backdrop-filter url() bends live DOM behind the lens.
+ * WebKit shell: filter url() on a neutral frosted layer (no rainbow).
+ * Overlays on WebKit: CSS frost only.
+ */
+export function selectRefractionMode(surface: GlassRefractionSurface = 'overlay'): RefractionMode {
+  if (!hasDocument()) return 'css';
+  if (!supportsSVGGlass()) return 'css';
+  if (isBlinkEngine() && hasBackdropFilterSupport()) return 'backdrop';
+  if (surface === 'shell') return 'content';
+  return 'css';
 }
 
 /** Detect SVG feDisplacementMap support. */
@@ -43,8 +73,8 @@ export function supportsBackdropGlassRefraction(): boolean {
 }
 
 /**
- * True when SVG displacement can refract painted backdrop content (Safari).
- * Chromium ignores or mishandles backdrop-filter: url(#svg-filter).
+ * True when SVG displacement can refract painted backdrop content.
+ * Chromium supports backdrop-filter: url(#svg-filter) on live DOM (see liquid-glass BROWSERS.md).
  */
 export function supportsBackdropSvgDisplacement(): boolean {
   if (backdropSvgDisplacementSupport !== null) return backdropSvgDisplacementSupport;
@@ -53,9 +83,13 @@ export function supportsBackdropSvgDisplacement(): boolean {
     return false;
   }
 
-  backdropSvgDisplacementSupport =
-    isSafariEngine() && supportsSVGGlass() && hasBackdropFilterSupport();
+  backdropSvgDisplacementSupport = selectRefractionMode() === 'backdrop';
   return backdropSvgDisplacementSupport;
+}
+
+/** True when SVG displacement can run via filter: url() (Safari, Firefox, Chromium). */
+export function supportsContentSvgDisplacement(): boolean {
+  return supportsSVGGlass();
 }
 
 /** Detect WebGL1 context availability. */

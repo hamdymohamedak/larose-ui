@@ -9,11 +9,12 @@ export interface GlassCardProps {
   className?: string;
   style?: CSSProperties;
   lens?: Partial<GlassLens>;
+  refract?: ReactNode;
 }
 
 const defaultLens = LENS_PRESETS.card(320, 180, 20);
 
-export function GlassCard({ children, className, style, lens }: GlassCardProps) {
+export function GlassCard({ children, className, style, lens, refract }: GlassCardProps) {
   const reducedMotion = detectA11yPreferences().reducedMotion;
   const resolvedLens = { ...defaultLens, ...lens };
 
@@ -35,7 +36,7 @@ export function GlassCard({ children, className, style, lens }: GlassCardProps) 
   }
 
   return (
-    <Glass lens={resolvedLens} className={className} style={style}>
+    <Glass lens={resolvedLens} refract={refract} className={className} style={style}>
       <div style={{ position: 'relative', zIndex: 1, padding: '1.25rem', width: '100%', boxSizing: 'border-box' }}>
         {children}
       </div>

@@ -3,6 +3,7 @@ import {
   supportsSVGGlass,
   supportsBackdropGlassRefraction,
   supportsBackdropSvgDisplacement,
+  selectRefractionMode,
   supportsWebGLGlass,
   resetCapabilityCache,
 } from '../capabilities/detect';
@@ -21,10 +22,9 @@ describe('capabilities', () => {
     expect(typeof supportsBackdropGlassRefraction()).toBe('boolean');
   });
 
-  it('restricts SVG backdrop displacement to Safari engine', () => {
-    expect(typeof supportsBackdropSvgDisplacement()).toBe('boolean');
-    // jsdom UA is not Safari
-    expect(supportsBackdropSvgDisplacement()).toBe(false);
+  it('selects shell content mode in jsdom (non-blink)', () => {
+    expect(selectRefractionMode('shell')).toBe('content');
+    expect(selectRefractionMode('overlay')).toBe('css');
   });
 
   it('detects WebGL support in jsdom', () => {

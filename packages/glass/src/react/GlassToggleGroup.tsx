@@ -196,7 +196,7 @@ export function GlassToggleGroup({
             onClick={() => handleSelect(option.value)}
             style={{
               position: 'relative',
-              zIndex: 1,
+              zIndex: 2,
               display: 'inline-flex',
               alignItems: 'center',
               gap: '0.35rem',

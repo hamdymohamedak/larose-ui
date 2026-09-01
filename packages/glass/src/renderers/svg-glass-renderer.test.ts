@@ -6,7 +6,7 @@ describe('displacementScale', () => {
   it('produces sensible pixel values for default lens', () => {
     const scale = displacementScale(resolveLens({ width: 100, height: 50, borderRadius: 25 }));
     expect(scale).toBeGreaterThan(5);
-    expect(scale).toBeLessThanOrEqual(52);
+    expect(scale).toBeLessThanOrEqual(36);
   });
 
   it('caps at 52px maximum', () => {
@@ -20,6 +20,6 @@ describe('displacementScale', () => {
         scale: 2,
       }),
     );
-    expect(scale).toBeLessThanOrEqual(52);
+    expect(scale).toBeLessThanOrEqual(36);
   });
 });

@@ -2,6 +2,7 @@ import type { GlassRenderer, GlassRendererContext } from '../types';
 import { resolveLens } from '../lens/defaults';
 import { filterRegionMarkupAttrs } from '../lens/filter-region';
 import { renderLensBoundsOutline } from '../debug/glass-debug';
+import { glassRuntimeLog } from '../debug/runtime-log';
 
 const SVG_NS = 'http://www.w3.org/2000/svg';
 const DEFS_ID = 'larose-glass-defs';
@@ -43,8 +44,24 @@ function parseSvgFilter(markup: string): SVGFilterElement | null {
 /** Displacement scale in pixels — maps optical props to SVG feDisplacementMap scale. */
 export function displacementScale(lens: ReturnType<typeof resolveLens>): number {
   const scaleMul = Math.max(0.05, lens.scale);
-  const base = lens.depth * (lens.curvature / 100) * scaleMul * 14;
-  return Math.min(base, 52);
+  const base = lens.depth * (lens.curvature / 100) * scaleMul * 10;
+  return Math.min(base, 36);
+}
+
+function filterPadding(lens: ReturnType<typeof resolveLens>): number {
+  return Math.ceil(displacementScale(lens) * 0.5 + 12);
+}
+
+function displacementMapPrimitives(
+  mapHref: string,
+  region: ReturnType<typeof filterRegionMarkupAttrs>,
+): string {
+  return `
+      <feFlood flood-color="rgb(128,128,128)" flood-opacity="1" result="neutralMap"/>
+      <feImage href="${mapHref}" xlink:href="${mapHref}"
+        x="${region.x}" y="${region.y}" width="${region.width}" height="${region.height}"
+        preserveAspectRatio="none" result="rawMap"/>
+      <feComposite in="rawMap" in2="neutralMap" operator="over" result="displacementMap"/>`;
 }
 
 function buildContentFilterMarkup(
@@ -56,12 +73,7 @@ function buildContentFilterMarkup(
   const mapHref = context.displacementMap.dataUrl;
   if (!mapHref) return '';
 
-  const region = filterRegionMarkupAttrs(lens);
-  const blur = lens.blur > 0 ? lens.blur : 0;
-  const blurPass = blur > 0
-    ? `<feGaussianBlur in="refracted" stdDeviation="${blur}" result="blurred"/>`
-    : '';
-  const mergeIn = blur > 0 ? 'blurred' : 'refracted';
+  const region = filterRegionMarkupAttrs(lens, filterPadding(lens));
 
   return `
     <filter id="${filterId}"
@@ -69,20 +81,16 @@ function buildContentFilterMarkup(
       primitiveUnits="${region.primitiveUnits}"
       x="${region.x}" y="${region.y}" width="${region.width}" height="${region.height}"
       color-interpolation-filters="sRGB">
-      <feImage href="${mapHref}" xlink:href="${mapHref}"
-        x="0" y="0" width="${lens.width}" height="${lens.height}"
-        preserveAspectRatio="none" result="displacementMap"/>
+      ${displacementMapPrimitives(mapHref, region)}
       <feDisplacementMap in="SourceGraphic" in2="displacementMap"
         scale="${scale}" xChannelSelector="R" yChannelSelector="G" result="refracted"/>
-      ${blurPass}
-      <feMerge><feMergeNode in="${mergeIn}"/></feMerge>
+      <feMerge><feMergeNode in="refracted"/></feMerge>
     </filter>
   `;
 }
 
 /**
- * Backdrop filter — refracts live painted content behind the lens element.
- * Works in Safari; Chrome may fall back to CSS glass material in the hook layer.
+ * Backdrop filter — SourceGraphic is the backdrop when used via backdrop-filter (liquid-glass).
  */
 function buildBackdropFilterMarkup(
   filterId: string,
@@ -93,20 +101,7 @@ function buildBackdropFilterMarkup(
   const mapHref = context.displacementMap.dataUrl;
   if (!mapHref) return '';
 
-  const region = filterRegionMarkupAttrs(lens);
-  const chroma = lens.chroma;
-  const chromaPass = chroma > 0
-    ? `<feDisplacementMap in="refracted" in2="displacementMap"
-         scale="${(scale * chroma * 0.35).toFixed(2)}"
-         xChannelSelector="B" yChannelSelector="G" result="chroma"/>
-       <feBlend in="refracted" in2="chroma" mode="screen" result="final"/>`
-    : '';
-
-  const blur = lens.blur > 0 ? lens.blur : 0;
-  const mergeIn = blur > 0 ? 'blurred' : chroma > 0 ? 'final' : 'refracted';
-  const blurPass = blur > 0
-    ? `<feGaussianBlur in="${chroma > 0 ? 'final' : 'refracted'}" stdDeviation="${blur}" result="blurred"/>`
-    : '';
+  const region = filterRegionMarkupAttrs(lens, filterPadding(lens));
 
   return `
     <filter id="${filterId}"
@@ -114,14 +109,10 @@ function buildBackdropFilterMarkup(
       primitiveUnits="${region.primitiveUnits}"
       x="${region.x}" y="${region.y}" width="${region.width}" height="${region.height}"
       color-interpolation-filters="sRGB">
-      <feImage href="${mapHref}" xlink:href="${mapHref}"
-        x="0" y="0" width="${lens.width}" height="${lens.height}"
-        preserveAspectRatio="none" result="displacementMap"/>
-      <feDisplacementMap in="BackgroundImage" in2="displacementMap"
+      ${displacementMapPrimitives(mapHref, region)}
+      <feDisplacementMap in="SourceGraphic" in2="displacementMap"
         scale="${scale}" xChannelSelector="R" yChannelSelector="G" result="refracted"/>
-      ${chromaPass}
-      ${blurPass}
-      <feMerge><feMergeNode in="${mergeIn}"/></feMerge>
+      <feMerge><feMergeNode in="refracted"/></feMerge>
     </filter>
   `;
 }
@@ -133,7 +124,6 @@ export function applyLensSurfaceStyles(
 ): void {
   const h = lens.edgeHighlight;
   const glow = lens.glow;
-  const angle = lens.specularAngle;
 
   const base = {
     border: `1px solid rgb(255 255 255 / ${0.35 + h * 0.3})`,
@@ -148,23 +138,15 @@ export function applyLensSurfaceStyles(
 
   if (mode === 'backdrop') {
     Object.assign(element.style, base, {
-      background: `linear-gradient(
-        ${angle}deg,
-        rgb(255 255 255 / ${0.1 + h * 0.22}) 0%,
-        rgb(255 255 255 / ${0.03 + h * 0.04}) 42%,
-        rgb(255 255 255 / 0.01) 100%
-      )`,
+      background: 'transparent',
     });
     return;
   }
 
-  Object.assign(element.style, base, {
-    background: `linear-gradient(
-      ${angle}deg,
-      rgb(255 255 255 / 0.2) 0%,
-      rgb(255 255 255 / 0.05) 60%,
-      transparent 100%
-    )`,
+  Object.assign(element.style, {
+    border: base.border,
+    boxShadow: base.boxShadow,
+    background: 'transparent',
   });
 }
 
@@ -205,10 +187,34 @@ export class SVGGlassRenderer implements GlassRenderer {
       ? buildBackdropFilterMarkup(this.filterId, context)
       : buildContentFilterMarkup(this.filterId, context);
 
-    if (!markup) return;
+    if (!markup) {
+      // #region agent log
+      glassRuntimeLog(
+        'svg-glass-renderer.ts:update',
+        'empty filter markup',
+        {
+          mode: this.mode,
+          dataUrlLen: context.displacementMap.dataUrl?.length ?? 0,
+          mapVersion: context.version,
+        },
+        'B',
+      );
+      // #endregion
+      return;
+    }
 
     const filter = parseSvgFilter(markup);
-    if (!filter) return;
+    if (!filter) {
+      // #region agent log
+      glassRuntimeLog(
+        'svg-glass-renderer.ts:update',
+        'filter parse failed',
+        { mode: this.mode, filterId: this.filterId },
+        'B',
+      );
+      // #endregion
+      return;
+    }
 
     defs.appendChild(filter);
     this.filterElement = filter;
@@ -218,6 +224,33 @@ export class SVGGlassRenderer implements GlassRenderer {
 
     this.applyFilterToElement(context.root, resolved, context.position);
     applyLensSurfaceStyles(context.root, resolved, this.mode);
+
+    // #region agent log
+    const root = context.root;
+    const scale = displacementScale(resolved);
+    requestAnimationFrame(() => {
+      const cs = getComputedStyle(root);
+      const parent = root.parentElement;
+      const parentIsolation = parent ? getComputedStyle(parent).isolation : 'none';
+      glassRuntimeLog(
+        'svg-glass-renderer.ts:applied',
+        'filter styles applied',
+        {
+          mode: this.mode,
+          filterId: this.filterId,
+          displacementScale: scale,
+          backdropFilter: cs.backdropFilter,
+          filter: cs.filter,
+          zIndex: cs.zIndex,
+          overflow: cs.overflow,
+          parentIsolation,
+        },
+        'C',
+        'SourceGraphic-fix',
+      );
+    });
+    // #endregion
+
     if (context.debug) {
       renderLensBoundsOutline(context.root, true);
     }
@@ -231,6 +264,8 @@ export class SVGGlassRenderer implements GlassRenderer {
     const filterUrl = `url(#${this.filterId})`;
 
     if (this.mode === 'backdrop') {
+      const blurPx = resolved.blur > 0 ? resolved.blur : 6;
+      const frost = `blur(${blurPx}px) saturate(1.15)`;
       Object.assign(el.style, {
         position: 'absolute',
         left: `${position.x}px`,
@@ -238,23 +273,26 @@ export class SVGGlassRenderer implements GlassRenderer {
         width: `${resolved.width}px`,
         height: `${resolved.height}px`,
         borderRadius: `${resolved.borderRadius}px`,
-        zIndex: '2',
+        zIndex: '0',
         pointerEvents: 'none',
         overflow: 'hidden',
         willChange: 'left, top, width',
       });
-      // SVG displacement refraction (Safari) — avoid extra CSS blur that masks refraction
-      el.style.backdropFilter = filterUrl;
-      el.style.setProperty('-webkit-backdrop-filter', filterUrl);
+      el.style.backdropFilter = `${frost} ${filterUrl}`;
+      el.style.setProperty('-webkit-backdrop-filter', `${frost} ${filterUrl}`);
       el.style.filter = '';
       el.style.removeProperty('WebkitFilter');
     } else {
       Object.assign(el.style, {
-        position: 'relative',
+        position: 'absolute',
+        left: `${position.x}px`,
+        top: `${position.y}px`,
         width: `${resolved.width}px`,
         height: `${resolved.height}px`,
         borderRadius: `${resolved.borderRadius}px`,
         overflow: 'hidden',
+        zIndex: '0',
+        pointerEvents: 'none',
         filter: filterUrl,
         WebkitFilter: filterUrl,
       });
@@ -265,7 +303,7 @@ export class SVGGlassRenderer implements GlassRenderer {
 
   /** Move lens without regenerating displacement map. */
   setPosition(position: GlassRendererContext['position']): void {
-    if (!this.targetElement || this.mode !== 'backdrop') return;
+    if (!this.targetElement) return;
     this.targetElement.style.left = `${position.x}px`;
     this.targetElement.style.top = `${position.y}px`;
   }
@@ -275,7 +313,7 @@ export class SVGGlassRenderer implements GlassRenderer {
    * The existing map stretches via objectBoundingBox filter units.
    */
   setBounds(bounds: LensBounds): void {
-    if (!this.targetElement || this.mode !== 'backdrop') return;
+    if (!this.targetElement) return;
     const el = this.targetElement;
     el.style.left = `${bounds.x}px`;
     el.style.top = `${bounds.y}px`;
