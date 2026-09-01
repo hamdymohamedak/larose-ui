@@ -19,6 +19,12 @@
       "required": false
     },
     {
+      "name": "liquidGlass",
+      "type": "boolean",
+      "required": false,
+      "description": "Floating Liquid Glass material with a morphing selection pill on the active tab."
+    },
+    {
       "name": "platform",
       "type": "TabBarPlatform",
       "required": false

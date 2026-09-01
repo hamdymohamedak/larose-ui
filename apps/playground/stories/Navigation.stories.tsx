@@ -9,10 +9,6 @@ import {
   SidebarItem,
   SidebarNav,
   SidebarSearch,
-  TabBar,
-  TabBarItem,
-  TabBarList,
-  TabBarPanel,
   TokenField,
   Typography,
 } from '@larose-ui/react';
@@ -130,28 +126,6 @@ export const SidebarMail: Story = {
       <div style={{ flex: 1, padding: '1rem' }}>Message list</div>
     </div>
   ),
-};
-
-export const TabBarIOS: Story = {
-  name: 'Tab bar (iOS)',
-  render: function TabBarDemo() {
-    const [tab, setTab] = useState('inbox');
-    return (
-      <div style={{ minHeight: '16rem', display: 'flex', flexDirection: 'column' }}>
-        <TabBar value={tab} onValueChange={setTab} platform="ios" searchTab={{ style: 'button' }}>
-          <TabBarList>
-            <TabBarItem value="inbox" label="Inbox" icon={<InboxIcon />} badge={3} />
-            <TabBarItem value="sent" label="Sent" icon={<FolderIcon />} />
-            <TabBarItem value="drafts" label="Drafts" icon={<FolderIcon />} disabled />
-          </TabBarList>
-          <TabBarPanel value="inbox">Inbox content</TabBarPanel>
-          <TabBarPanel value="sent">Sent content</TabBarPanel>
-          <TabBarPanel value="drafts">Drafts (disabled tab stays visible)</TabBarPanel>
-          <TabBarPanel value="__search__">Search landing page</TabBarPanel>
-        </TabBar>
-      </div>
-    );
-  },
 };
 
 export const TokenFieldMail: Story = {

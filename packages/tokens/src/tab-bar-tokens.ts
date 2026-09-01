@@ -32,9 +32,9 @@ export function getTabBarTokens(mode: ThemeMode): TabBarTokens {
       inactiveFg: '#8e8e93',
       badgeBg: '#ff453a',
       badgeFg: '#ffffff',
-      liquidGlassBg: 'rgb(44 44 46 / 0.55)',
-      liquidGlassActiveBg: 'rgb(72 72 74 / 0.82)',
-      liquidGlassGlow: '0 4px 20px rgb(255 105 180 / 0.18)',
+      liquidGlassBg: 'rgb(44 44 46 / 0.38)',
+      liquidGlassActiveBg: 'rgb(90 90 96 / 0.88)',
+      liquidGlassGlow: '0 6px 24px rgb(255 105 180 / 0.24)',
     };
   }
   return {
@@ -49,9 +49,9 @@ export function getTabBarTokens(mode: ThemeMode): TabBarTokens {
     inactiveFg: '#8e8e93',
     badgeBg: '#ff3b30',
     badgeFg: '#ffffff',
-    liquidGlassBg: 'rgb(255 255 255 / 0.45)',
-    liquidGlassActiveBg: 'rgb(255 255 255 / 0.78)',
-    liquidGlassGlow: '0 4px 20px rgb(236 72 153 / 0.14)',
+    liquidGlassBg: 'rgb(255 255 255 / 0.28)',
+    liquidGlassActiveBg: 'rgb(255 255 255 / 0.92)',
+    liquidGlassGlow: '0 6px 24px rgb(236 72 153 / 0.22)',
   };
 }
 

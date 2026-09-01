@@ -1,4 +1,4 @@
-import { writeFileSync, existsSync, mkdirSync, readdirSync } from 'node:fs';
+import { writeFileSync, existsSync, mkdirSync, readdirSync, readFileSync, cpSync } from 'node:fs';
 import { join } from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
@@ -57,6 +57,19 @@ export async function buildStylesPackage(packageRoot, options = {}) {
   }
 
   writeStylesBundle(packageRoot);
+
+  const distDir = join(packageRoot, 'dist');
+  const cssModulesTypes = join(packageRoot, 'src/css-modules.d.ts');
+  if (existsSync(cssModulesTypes)) {
+    cpSync(cssModulesTypes, join(distDir, 'css-modules.d.ts'));
+    const indexDts = join(distDir, 'index.d.ts');
+    if (existsSync(indexDts)) {
+      const contents = readFileSync(indexDts, 'utf8');
+      if (!contents.includes('css-modules.d.ts')) {
+        writeFileSync(indexDts, `/// <reference path="./css-modules.d.ts" />\n${contents}`);
+      }
+    }
+  }
 
   if (options.watch) {
     console.log('[larose] @larose-ui/styles CSS bundle written.');

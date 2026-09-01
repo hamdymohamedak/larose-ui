@@ -45,67 +45,69 @@ function SearchTabIcon() {
 }
 
 function useLiquidGlassIndicator(
-  listRef: RefObject<HTMLUListElement | null>,
+  shellRef: RefObject<HTMLDivElement | null>,
   activeValue: string,
   liquidGlass: boolean,
 ) {
   const [indicatorStyle, setIndicatorStyle] = useState<CSSProperties>({ opacity: 0 });
 
   const updateIndicator = useCallback(() => {
-    const list = listRef.current;
-    if (!list || !liquidGlass) return;
+    const shell = shellRef.current;
+    if (!shell || !liquidGlass) return;
 
-    const activeTab = list.querySelector<HTMLElement>(`[data-tab-value="${activeValue}"]`);
+    const activeTab = shell.querySelector<HTMLElement>(`[data-tab-value="${activeValue}"]`);
     if (!activeTab) {
       setIndicatorStyle({ opacity: 0 });
       return;
     }
 
-    const listRect = list.getBoundingClientRect();
+    const shellRect = shell.getBoundingClientRect();
     const tabRect = activeTab.getBoundingClientRect();
 
     setIndicatorStyle({
       opacity: 1,
       width: tabRect.width,
-      transform: `translateX(${tabRect.left - listRect.left}px)`,
+      height: tabRect.height,
+      transform: `translate(${tabRect.left - shellRect.left}px, ${tabRect.top - shellRect.top}px)`,
     });
-  }, [activeValue, liquidGlass, listRef]);
+  }, [activeValue, liquidGlass, shellRef]);
 
   useLayoutEffect(() => {
     updateIndicator();
+    const frame = requestAnimationFrame(updateIndicator);
+    return () => cancelAnimationFrame(frame);
   }, [updateIndicator]);
 
   useEffect(() => {
-    if (!liquidGlass) return undefined;
+    if (!liquidGlass || typeof ResizeObserver === 'undefined') return undefined;
 
-    const list = listRef.current;
-    if (!list) return undefined;
+    const shell = shellRef.current;
+    if (!shell) return undefined;
 
     const observer = new ResizeObserver(updateIndicator);
-    observer.observe(list);
+    observer.observe(shell);
     window.addEventListener('resize', updateIndicator);
 
     return () => {
       observer.disconnect();
       window.removeEventListener('resize', updateIndicator);
     };
-  }, [liquidGlass, listRef, updateIndicator]);
+  }, [liquidGlass, shellRef, updateIndicator]);
 
   return indicatorStyle;
 }
 
 export function TabBarList({ children }: TabBarListProps) {
   const { platform, liquidGlass, value } = useTabBarContext('TabBarList');
-  const listRef = useRef<HTMLUListElement>(null);
-  const indicatorStyle = useLiquidGlassIndicator(listRef, value, liquidGlass);
+  const shellRef = useRef<HTMLDivElement>(null);
+  const indicatorStyle = useLiquidGlassIndicator(shellRef, value, liquidGlass);
 
   return (
-    <ul
-      ref={listRef}
-      className={styles.list}
-      role="tablist"
-      data-platform={platform}
+    <div
+      ref={shellRef}
+      className={styles.listShell}
       data-liquid-glass={liquidGlass ? 'true' : undefined}
+      data-platform={platform}
     >
       {liquidGlass && (
         <span
@@ -114,8 +116,15 @@ export function TabBarList({ children }: TabBarListProps) {
           aria-hidden="true"
         />
       )}
-      {children}
-    </ul>
+      <ul
+        className={styles.list}
+        role="tablist"
+        data-platform={platform}
+        data-liquid-glass={liquidGlass ? 'true' : undefined}
+      >
+        {children}
+      </ul>
+    </div>
   );
 }
 

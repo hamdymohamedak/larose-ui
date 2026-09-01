@@ -518,6 +518,20 @@ describe('Navigation and search', () => {
     expect(screen.getByRole('tab', { name: 'Settings' })).toBeDisabled();
   });
 
+  it('renders liquid glass tab bar with selection indicator', () => {
+    const { container } = renderWithProvider(
+      <TabBar defaultValue="home" platform="ios" liquidGlass>
+        <TabBarList>
+          <TabBarItem value="home" label="Home" icon={<ComposeIcon />} />
+          <TabBarItem value="settings" label="Settings" />
+        </TabBarList>
+      </TabBar>,
+    );
+    expect(container.querySelector('[data-liquid-glass="true"]')).toBeTruthy();
+    expect(container.querySelector('[class*="listShell"]')).toBeTruthy();
+    expect(container.querySelector('[class*="liquidGlassIndicator"]')).toBeTruthy();
+  });
+
   it('commits token field input on comma', async () => {
     const onTokensChange = vi.fn();
     renderWithProvider(<TokenField onTokensChange={onTokensChange} />);
