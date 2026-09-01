@@ -7,9 +7,13 @@ import {
   useContext,
   useEffect,
   useId,
+  useLayoutEffect,
   useMemo,
+  useRef,
   useState,
+  type CSSProperties,
   type ReactElement,
+  type RefObject,
 } from 'react';
 import type { TabBarItemProps, TabBarListProps, TabBarPanelProps, TabBarProps } from './types';
 import { formatTabBarBadge, resolveTabBarPlacement, warnIfTooManyTabs } from './utils';
@@ -20,6 +24,7 @@ interface TabBarContextValue {
   onValueChange: (value: string) => void;
   baseId: string;
   platform: NonNullable<TabBarProps['platform']>;
+  liquidGlass: boolean;
 }
 
 const TabBarContext = createContext<TabBarContextValue | null>(null);
@@ -39,10 +44,76 @@ function SearchTabIcon() {
   );
 }
 
+function useLiquidGlassIndicator(
+  listRef: RefObject<HTMLUListElement | null>,
+  activeValue: string,
+  liquidGlass: boolean,
+) {
+  const [indicatorStyle, setIndicatorStyle] = useState<CSSProperties>({ opacity: 0 });
+
+  const updateIndicator = useCallback(() => {
+    const list = listRef.current;
+    if (!list || !liquidGlass) return;
+
+    const activeTab = list.querySelector<HTMLElement>(`[data-tab-value="${activeValue}"]`);
+    if (!activeTab) {
+      setIndicatorStyle({ opacity: 0 });
+      return;
+    }
+
+    const listRect = list.getBoundingClientRect();
+    const tabRect = activeTab.getBoundingClientRect();
+
+    setIndicatorStyle({
+      opacity: 1,
+      width: tabRect.width,
+      transform: `translateX(${tabRect.left - listRect.left}px)`,
+    });
+  }, [activeValue, liquidGlass, listRef]);
+
+  useLayoutEffect(() => {
+    updateIndicator();
+  }, [updateIndicator]);
+
+  useEffect(() => {
+    if (!liquidGlass) return undefined;
+
+    const list = listRef.current;
+    if (!list) return undefined;
+
+    const observer = new ResizeObserver(updateIndicator);
+    observer.observe(list);
+    window.addEventListener('resize', updateIndicator);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('resize', updateIndicator);
+    };
+  }, [liquidGlass, listRef, updateIndicator]);
+
+  return indicatorStyle;
+}
+
 export function TabBarList({ children }: TabBarListProps) {
-  const { platform } = useTabBarContext('TabBarList');
+  const { platform, liquidGlass, value } = useTabBarContext('TabBarList');
+  const listRef = useRef<HTMLUListElement>(null);
+  const indicatorStyle = useLiquidGlassIndicator(listRef, value, liquidGlass);
+
   return (
-    <ul className={styles.list} role="tablist" data-platform={platform}>
+    <ul
+      ref={listRef}
+      className={styles.list}
+      role="tablist"
+      data-platform={platform}
+      data-liquid-glass={liquidGlass ? 'true' : undefined}
+    >
+      {liquidGlass && (
+        <span
+          className={styles.liquidGlassIndicator}
+          style={indicatorStyle}
+          aria-hidden="true"
+        />
+      )}
       {children}
     </ul>
   );
@@ -62,6 +133,7 @@ export function TabBarItem({ value, label, icon, badge, disabled }: TabBarItemPr
         id={tabId}
         role="tab"
         className={styles.tab}
+        data-tab-value={value}
         data-selected={selected ? 'true' : undefined}
         aria-selected={selected}
         aria-controls={panelId}
@@ -105,6 +177,7 @@ export function TabBar({
   onValueChange,
   platform = 'ios',
   variant = 'tabBarOnly',
+  liquidGlass = false,
   searchTab,
   className,
   children,
@@ -139,8 +212,8 @@ export function TabBar({
   );
 
   const context = useMemo(
-    () => ({ value: current, onValueChange: handleChange, baseId, platform }),
-    [baseId, current, handleChange, platform],
+    () => ({ value: current, onValueChange: handleChange, baseId, platform, liquidGlass }),
+    [baseId, current, handleChange, liquidGlass, platform],
   );
 
   return (
@@ -150,9 +223,10 @@ export function TabBar({
         data-platform={platform}
         data-variant={variant}
         data-placement={placement}
+        data-liquid-glass={liquidGlass ? 'true' : undefined}
         aria-label={ariaLabel}
       >
-        <div className={styles.layout} data-platform={platform}>
+        <div className={styles.layout} data-platform={platform} data-liquid-glass={liquidGlass ? 'true' : undefined}>
           {list &&
             cloneElement(
               list,

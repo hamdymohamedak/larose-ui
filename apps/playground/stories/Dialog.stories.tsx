@@ -6,13 +6,14 @@ const meta: Meta<typeof Dialog> = {
   title: 'Foundation/Dialog',
   component: Dialog,
   tags: ['autodocs'],
+  parameters: { layout: 'centered' },
 };
 
 export default meta;
 type Story = StoryObj<typeof Dialog>;
 
 export const ConfirmDelete: Story = {
-  render: () => {
+  render: function ConfirmDeleteDialog() {
     const [open, setOpen] = useState(false);
     return (
       <>
@@ -35,13 +36,17 @@ export const ConfirmDelete: Story = {
 };
 
 export const Loading: Story = {
-  args: {
-    open: true,
-    onClose: () => undefined,
-    title: 'Saving Changes',
-    description: 'Please wait while we save your changes.',
-    confirmLabel: 'Save',
-    onConfirm: () => undefined,
-    loading: true,
+  render: function LoadingDialog() {
+    return (
+      <Dialog
+        open
+        onClose={() => undefined}
+        title="Saving Changes"
+        description="Please wait while we save your changes."
+        confirmLabel="Save"
+        onConfirm={() => undefined}
+        loading
+      />
+    );
   },
 };

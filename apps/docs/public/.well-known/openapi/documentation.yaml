@@ -1,0 +1,34 @@
+openapi: 3.1.0
+info:
+  title: laRose UI Documentation Index API
+  version: 1.0.0
+  description: Machine-readable documentation index and page exports for agents.
+servers:
+  - url: https://hamdymohamedak.github.io/larose-ui
+paths:
+  /llms.txt:
+    get:
+      operationId: getLlmsIndex
+      summary: Get the LLM-oriented documentation index
+      responses:
+        '200':
+          description: Plain-text documentation index
+          content:
+            text/plain:
+              schema:
+                type: string
+  /agent/routes.json:
+    get:
+      operationId: listMarkdownRoutes
+      summary: List routes with markdown exports
+      responses:
+        '200':
+          description: Route manifest
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  pages:
+                    type: array
+                    items: { type: string }

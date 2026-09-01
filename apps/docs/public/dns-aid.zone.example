@@ -1,0 +1,14 @@
+; DNS for AI Discovery (DNS-AID) example for hamdymohamedak.github.io
+; Publish these records in your public DNS zone and sign with DNSSEC.
+; See: https://datatracker.ietf.org/doc/draft-mozleywilliams-dnsop-dnsaid/
+
+_index._agents.hamdymohamedak.github.io. 3600 IN SVCB 1 hamdymohamedak.github.io. \
+  alpn="h3,h2" port=443 mandatory=alpn,port \
+  key65328="https://hamdymohamedak.github.io/larose-ui/.well-known/api-catalog"
+
+_a2a._agents.hamdymohamedak.github.io. 3600 IN SVCB 1 hamdymohamedak.github.io. \
+  alpn="h3,h2" port=443 mandatory=alpn,port \
+  key65328="https://hamdymohamedak.github.io/larose-ui/llms.txt"
+
+; ARD / AI Catalog discovery (optional DNS pointer)
+_catalog._agents.hamdymohamedak.github.io. 3600 IN TXT "url=https://hamdymohamedak.github.io/larose-ui/.well-known/ai-catalog.json"

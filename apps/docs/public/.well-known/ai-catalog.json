@@ -1,0 +1,75 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "laRose UI Documentation",
+    "identifier": "did:web:hamdymohamedak.github.io"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:hamdymohamedak.github.io:mcp:larose-ui-docs",
+      "displayName": "laRose UI Documentation MCP",
+      "type": "application/mcp-server-card+json",
+      "url": "https://hamdymohamedak.github.io/larose-ui/.well-known/mcp/server-card.json",
+      "representativeQueries": [
+        "search laRose UI component documentation with MCP",
+        "connect to the laRose UI documentation MCP server",
+        "what tools does the laRose docs MCP server expose"
+      ]
+    },
+    {
+      "identifier": "urn:air:hamdymohamedak.github.io:api:component-metadata",
+      "displayName": "Component Metadata OpenAPI",
+      "type": "application/yaml",
+      "url": "https://hamdymohamedak.github.io/larose-ui/.well-known/openapi/component-metadata.yaml",
+      "representativeQueries": [
+        "what props does the Button component support in laRose UI",
+        "OpenAPI schema for laRose component metadata JSON",
+        "fetch machine-readable props for a React component"
+      ]
+    },
+    {
+      "identifier": "urn:air:hamdymohamedak.github.io:catalog:api",
+      "displayName": "laRose UI API Catalog",
+      "type": "application/linkset+json",
+      "url": "https://hamdymohamedak.github.io/larose-ui/.well-known/api-catalog",
+      "representativeQueries": [
+        "discover laRose UI API endpoints and documentation links",
+        "find health check and OpenAPI resources for laRose UI",
+        "RFC 9727 API catalog for laRose documentation APIs"
+      ]
+    },
+    {
+      "identifier": "urn:air:hamdymohamedak.github.io:skill:larose-ui-docs",
+      "displayName": "laRose UI Docs Agent Skill",
+      "type": "text/markdown",
+      "url": "https://hamdymohamedak.github.io/larose-ui/.well-known/agent-skills/larose-ui-docs/SKILL.md",
+      "representativeQueries": [
+        "how do I get started with laRose UI",
+        "find Vue Svelte and Next.js integration guides",
+        "navigate laRose UI documentation for beginners"
+      ]
+    },
+    {
+      "identifier": "urn:air:hamdymohamedak.github.io:skill:larose-ui-components",
+      "displayName": "laRose UI Components Agent Skill",
+      "type": "text/markdown",
+      "url": "https://hamdymohamedak.github.io/larose-ui/.well-known/agent-skills/larose-ui-components/SKILL.md",
+      "representativeQueries": [
+        "look up Button component props and examples",
+        "component JSON metadata for laRose UI React components",
+        "accessibility notes for a laRose UI component"
+      ]
+    },
+    {
+      "identifier": "urn:air:hamdymohamedak.github.io:auth:protected-resource",
+      "displayName": "laRose UI OAuth Protected Resource",
+      "type": "application/json",
+      "url": "https://hamdymohamedak.github.io/larose-ui/.well-known/oauth-protected-resource",
+      "representativeQueries": [
+        "how do agents authenticate with laRose UI APIs",
+        "OAuth scopes supported by laRose documentation APIs",
+        "protected resource metadata for laRose UI docs"
+      ]
+    }
+  ]
+}

@@ -30,14 +30,27 @@ const config: StorybookConfig = {
       resolve: {
         dedupe: ['react', 'react-dom'],
         conditions: ['browser', 'svelte'],
-        alias: {
-          '@larose-ui/vue': join(repoRoot, 'packages/vue/src/index.ts'),
-          '@larose-ui/svelte': join(repoRoot, 'packages/svelte/src/lib/index.ts'),
-        },
+        alias: [
+          {
+            find: '@larose-ui/react/styles.css',
+            replacement: join(repoRoot, 'packages/react/dist/index.css'),
+          },
+          {
+            find: '@larose-ui/react',
+            replacement: join(repoRoot, 'packages/react/dist/index.js'),
+          },
+          {
+            find: '@larose-ui/vue',
+            replacement: join(repoRoot, 'packages/vue/src/index.ts'),
+          },
+          {
+            find: '@larose-ui/svelte',
+            replacement: join(repoRoot, 'packages/svelte/src/lib/index.ts'),
+          },
+        ],
       },
       optimizeDeps: {
         exclude: [
-          '@larose-ui/react',
           '@larose-ui/runtime',
           '@larose-ui/vue',
           '@larose-ui/svelte',
@@ -53,7 +66,7 @@ const config: StorybookConfig = {
           '@larose-ui/permissions',
           '@larose-ui/observability',
         ],
-        include: ['vue', 'svelte'],
+        include: ['vue', 'svelte', '@larose-ui/react'],
       },
     });
   },

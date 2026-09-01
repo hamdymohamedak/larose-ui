@@ -4,8 +4,8 @@
 
 ### Patch Changes
 
-- Updated dependencies [989ea15]
-  - @larose-ui/core@0.1.2
+- Updated dependencies [e989652]
+  - @larose-ui/core@0.2.0
 
 ## 0.1.1
 

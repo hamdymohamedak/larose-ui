@@ -2111,8 +2111,8 @@ export const docsSearchIndex = [
     "title": "Dialog — Loading",
     "type": "example",
     "path": "/docs/components/dialog#examples",
-    "keywords": "Dialog Loading loading {\"open\":true,\"title\":\"Saving Changes\",\"description\":\"Please wait while we save your changes.\",\"confirmLabel\":\"Save\",\"loading\":true}",
-    "excerpt": "<Dialog\n  open\n  title=\"Saving Changes\"\n  description=\"Please wait while we save your changes.\"\n  confirmLabel=\"Save\"\n  "
+    "keywords": "Dialog Loading loading {}",
+    "excerpt": "<Dialog\n        open\n        onClose={() => undefined}\n        title=\"Saving Changes\"\n        description=\"Please wait w"
   },
   {
     "id": "example:dialog:DialogMotion",

@@ -5,6 +5,29 @@ import { extractComponentApi } from './lib/extract-component-api.mjs';
 import { PLAYGROUND_CONTROLS, COMPONENT_ANATOMY } from './lib/docs-metadata.mjs';
 import { buildStoryExamplesIndex } from './lib/parse-story-examples.mjs';
 import { buildSearchIndex, extractTokenSearchEntries } from './lib/build-search-index.mjs';
+import {
+  buildApiCatalogLinkset,
+  buildCloudflareHeaders,
+  buildComponentMetadataOpenApi,
+  buildAgentAuth,
+  buildAgentSkillsIndex,
+  buildAiCatalog,
+  buildAuthMd,
+  collectAgentSkillEntries,
+  buildDnsAidZoneExample,
+  buildDocumentationOpenApi,
+  buildDocsSitemapEntries,
+  buildHealthCheck,
+  buildJwks,
+  buildMcpServerCard,
+  buildOAuthAuthorizationServer,
+  buildOAuthProtectedResource,
+  buildOpenIdConfiguration,
+  buildPackagesOpenApi,
+  buildPageMarkdownMap,
+  buildRobotsTxt,
+  buildSitemapXml,
+} from './lib/agent-ready.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -518,6 +541,97 @@ export const docsChangelog: DocsChangelogEntry[] = ${JSON.stringify(changelogEnt
 );
 
 writeFileSync(join(publicDir, 'llms.txt'), llmsTxt);
+
+/** GitHub Pages project site: https://hamdymohamedak.github.io/larose-ui/ */
+const DEFAULT_BASE_PATH = '/larose-ui/';
+const DEFAULT_SITE_URL = 'https://hamdymohamedak.github.io/larose-ui';
+
+const basePath = process.env.VITE_BASE_PATH || DEFAULT_BASE_PATH;
+const siteUrl =
+  process.env.DOCS_SITE_URL ||
+  (basePath === '/'
+    ? 'http://localhost:5174'
+    : `https://hamdymohamedak.github.io${basePath.replace(/\/$/, '')}`);
+
+const sitemapEntries = buildDocsSitemapEntries({ guides: GUIDES, packages, components });
+const agentMarkdownDir = join(publicDir, 'agent', 'markdown');
+const wellKnownDir = join(publicDir, '.well-known');
+const mcpDir = join(wellKnownDir, 'mcp');
+const agentSkillsDir = join(wellKnownDir, 'agent-skills');
+const openApiDir = join(wellKnownDir, 'openapi');
+mkdirSync(wellKnownDir, { recursive: true });
+mkdirSync(mcpDir, { recursive: true });
+mkdirSync(agentSkillsDir, { recursive: true });
+mkdirSync(openApiDir, { recursive: true });
+mkdirSync(agentMarkdownDir, { recursive: true });
+
+writeFileSync(join(publicDir, 'robots.txt'), buildRobotsTxt(siteUrl, basePath));
+writeFileSync(join(publicDir, 'sitemap.xml'), buildSitemapXml(siteUrl, basePath, sitemapEntries));
+writeFileSync(
+  join(wellKnownDir, 'api-catalog'),
+  `${JSON.stringify(buildApiCatalogLinkset(siteUrl, basePath), null, 2)}\n`,
+);
+writeFileSync(
+  join(wellKnownDir, 'health'),
+  `${JSON.stringify(buildHealthCheck(siteUrl), null, 2)}\n`,
+);
+writeFileSync(
+  join(wellKnownDir, 'openid-configuration'),
+  `${JSON.stringify(buildOpenIdConfiguration(siteUrl, basePath), null, 2)}\n`,
+);
+writeFileSync(
+  join(wellKnownDir, 'oauth-authorization-server'),
+  `${JSON.stringify(buildOAuthAuthorizationServer(siteUrl, basePath), null, 2)}\n`,
+);
+writeFileSync(
+  join(wellKnownDir, 'oauth-protected-resource'),
+  `${JSON.stringify(buildOAuthProtectedResource(siteUrl, basePath), null, 2)}\n`,
+);
+writeFileSync(join(wellKnownDir, 'jwks.json'), `${JSON.stringify(buildJwks(), null, 2)}\n`);
+writeFileSync(join(publicDir, 'auth.md'), buildAuthMd(siteUrl, basePath));
+const docsPackageVersion = JSON.parse(
+  readFileSync(join(root, 'apps/docs/package.json'), 'utf8'),
+).version;
+writeFileSync(
+  join(mcpDir, 'server-card.json'),
+  `${JSON.stringify(buildMcpServerCard(siteUrl, basePath, docsPackageVersion), null, 2)}\n`,
+);
+const agentSkillEntries = collectAgentSkillEntries(agentSkillsDir);
+writeFileSync(
+  join(agentSkillsDir, 'index.json'),
+  `${JSON.stringify(buildAgentSkillsIndex(siteUrl, basePath, agentSkillEntries), null, 2)}\n`,
+);
+writeFileSync(
+  join(wellKnownDir, 'ai-catalog.json'),
+  `${JSON.stringify(buildAiCatalog(siteUrl, basePath), null, 2)}\n`,
+);
+writeFileSync(
+  join(openApiDir, 'component-metadata.yaml'),
+  buildComponentMetadataOpenApi(siteUrl, components),
+);
+writeFileSync(join(openApiDir, 'documentation.yaml'), buildDocumentationOpenApi(siteUrl));
+writeFileSync(join(openApiDir, 'packages.yaml'), buildPackagesOpenApi(siteUrl, packages));
+writeFileSync(join(publicDir, '_headers'), buildCloudflareHeaders(siteUrl, basePath));
+writeFileSync(join(publicDir, 'dns-aid.zone.example'), buildDnsAidZoneExample(siteUrl));
+
+  const pageMarkdown = buildPageMarkdownMap({
+    entries: sitemapEntries,
+    llmsTxt,
+    guideContent,
+    guides: GUIDES,
+    packages,
+    components,
+    api,
+    gettingStartedMdx: readFileSync(join(root, 'apps/docs/content/getting-started.mdx'), 'utf8'),
+  });
+for (const [pathname, markdown] of Object.entries(pageMarkdown)) {
+  const fileName = pathname === '/' ? 'index' : pathname.replace(/^\//, '').replace(/\//g, '__');
+  writeFileSync(join(agentMarkdownDir, `${fileName}.md`), `${markdown.trim()}\n`);
+}
+writeFileSync(
+  join(publicDir, 'agent', 'routes.json'),
+  `${JSON.stringify({ pages: Object.keys(pageMarkdown).sort() }, null, 2)}\n`,
+);
 
 for (const component of components) {
   const metadata = {

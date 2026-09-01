@@ -555,14 +555,9 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "Loading",
       "title": "Loading",
       "kind": "loading",
-      "props": {
-        "open": true,
-        "title": "Saving Changes",
-        "description": "Please wait while we save your changes.",
-        "confirmLabel": "Save",
-        "loading": true
-      },
-      "code": "<Dialog\n  open\n  title=\"Saving Changes\"\n  description=\"Please wait while we save your changes.\"\n  confirmLabel=\"Save\"\n  loading\n>Example</Dialog>"
+      "props": {},
+      "code": "<Dialog\n        open\n        onClose={() => undefined}\n        title=\"Saving Changes\"\n        description=\"Please wait while we save your changes.\"\n        confirmLabel=\"Save\"\n        onConfirm={() => undefined}\n        loading\n      />",
+      "composite": true
     },
     {
       "id": "DialogMotion",

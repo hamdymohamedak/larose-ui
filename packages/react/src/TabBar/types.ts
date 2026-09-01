@@ -12,6 +12,8 @@ export interface TabBarProps {
   onValueChange?: (value: string) => void;
   platform?: TabBarPlatform;
   variant?: TabBarVariant;
+  /** Floating Liquid Glass material with a morphing selection pill on the active tab. */
+  liquidGlass?: boolean;
   /** iOS: search as trailing tab. */
   searchTab?: {
     style?: TabBarSearchStyle;
