@@ -529,7 +529,7 @@ describe('Navigation and search', () => {
     );
     expect(container.querySelector('[data-liquid-glass="true"]')).toBeTruthy();
     expect(container.querySelector('[class*="listShell"]')).toBeTruthy();
-    expect(container.querySelector('[class*="liquidGlassIndicator"]')).toBeTruthy();
+    expect(container.querySelector('[data-larose-glass-lens]')).toBeTruthy();
   });
 
   it('commits token field input on comma', async () => {

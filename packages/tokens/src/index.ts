@@ -35,6 +35,7 @@ import { tabBarTokensToCSSVariables, getTabBarTokens } from './tab-bar-tokens';
 import { tokenFieldTokensToCSSVariables, getTokenFieldTokens } from './token-field-tokens';
 import { alertDialogTokensToCSSVariables, getAlertDialogTokens } from './alert-dialog-tokens';
 import { motionTokensToCSSVariables, getMotionTokens } from './motion-tokens';
+import { glassTokensToCSSVariables, getGlassTokens } from './glass-tokens';
 import { sharingTokensToCSSVariables, getSharingTokens } from './sharing-tokens';
 import { cardTokensToCSSVariables, getCardTokens } from './card-tokens';
 import { modalTokensToCSSVariables, getModalTokens } from './modal-tokens';
@@ -188,6 +189,8 @@ export {
 export type { AlertDialogTokens } from './alert-dialog-tokens';
 export { getMotionTokens, motionTokensToCSSVariables, MOTION_PRESET_EASING } from './motion-tokens';
 export type { MotionTokens, MotionPresetName } from './motion-tokens';
+export { getGlassTokens, glassTokensToCSSVariables } from './glass-tokens';
+export type { GlassTokens } from './glass-tokens';
 
 const semanticColors = {
   success: '#34c759',
@@ -493,6 +496,7 @@ export function tokensToCSSVariables(
   Object.assign(vars, tokenFieldTokensToCSSVariables(getTokenFieldTokens(mode)));
   Object.assign(vars, alertDialogTokensToCSSVariables(getAlertDialogTokens(mode)));
   Object.assign(vars, motionTokensToCSSVariables(getMotionTokens(mode)));
+  Object.assign(vars, glassTokensToCSSVariables(getGlassTokens(mode)));
   Object.assign(vars, cardTokensToCSSVariables(getCardTokens(mode)));
   Object.assign(vars, modalTokensToCSSVariables(getModalTokens(mode)));
   Object.assign(vars, drawerTokensToCSSVariables(getDrawerTokens(mode)));

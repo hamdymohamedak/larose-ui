@@ -11,10 +11,17 @@ import {
   useMemo,
   useRef,
   useState,
-  type CSSProperties,
   type ReactElement,
   type RefObject,
 } from 'react';
+import { getSpringPreset, stepSpring, isSpringSettled, detectA11yPreferences } from '@larose-ui/core';
+import {
+  isLiquidGlassEnabled,
+  liquidGlassOpticalKey,
+  resolveLiquidGlassLens,
+  type LiquidGlassProps,
+} from '@larose-ui/glass';
+import { useGlassLensOverlay } from '@larose-ui/glass/react';
 import type { TabBarItemProps, TabBarListProps, TabBarPanelProps, TabBarProps } from './types';
 import { formatTabBarBadge, resolveTabBarPlacement, warnIfTooManyTabs } from './utils';
 import styles from '@larose-ui/styles/components/TabBar/TabBar.module.css';
@@ -24,7 +31,7 @@ interface TabBarContextValue {
   onValueChange: (value: string) => void;
   baseId: string;
   platform: NonNullable<TabBarProps['platform']>;
-  liquidGlass: boolean;
+  liquidGlass: boolean | LiquidGlassProps;
 }
 
 const TabBarContext = createContext<TabBarContextValue | null>(null);
@@ -44,76 +51,207 @@ function SearchTabIcon() {
   );
 }
 
-function useLiquidGlassIndicator(
-  shellRef: RefObject<HTMLDivElement | null>,
-  activeValue: string,
-  liquidGlass: boolean,
-) {
-  const [indicatorStyle, setIndicatorStyle] = useState<CSSProperties>({ opacity: 0 });
+const TAB_INDICATOR_FALLBACK = { width: 80, height: 36, borderRadius: 18 };
 
-  const updateIndicator = useCallback(() => {
+interface LiquidGlassTabIndicatorProps {
+  shellRef: RefObject<HTMLDivElement | null>;
+  activeValue: string;
+  platform: NonNullable<TabBarProps['platform']>;
+  liquidGlass: boolean | LiquidGlassProps;
+}
+
+/** Displacement-mapped selection lens — reuses map during spring animation via setBounds. */
+function LiquidGlassTabIndicator({
+  shellRef,
+  activeValue,
+  platform,
+  liquidGlass,
+}: LiquidGlassTabIndicatorProps) {
+  const rafRef = useRef(0);
+  const springX = useRef({ value: 0, velocity: 0 });
+  const springY = useRef({ value: 0, velocity: 0 });
+  const springW = useRef({ value: 80, velocity: 0 });
+  const springH = useRef({ value: 36, velocity: 0 });
+  const initialised = useRef(false);
+  const reducedMotion = detectA11yPreferences().reducedMotion;
+  const isVertical = platform === 'visionos';
+
+  const glassKey =
+    liquidGlass === true
+      ? 'default'
+      : liquidGlass === false
+        ? 'off'
+        : liquidGlassOpticalKey(liquidGlass);
+
+  const baseLens = useMemo(
+    () => resolveLiquidGlassLens(TAB_INDICATOR_FALLBACK, liquidGlass),
+    [glassKey, liquidGlass],
+  );
+
+  const { lensRef, setBounds, updateLens } = useGlassLensOverlay({ lens: baseLens });
+  const lastLensSize = useRef({ width: 0, height: 0 });
+
+  const syncLensGeometry = useCallback(
+    (width: number, height: number) => {
+      if (
+        width === lastLensSize.current.width &&
+        height === lastLensSize.current.height
+      ) {
+        return;
+      }
+      lastLensSize.current = { width, height };
+      updateLens(
+        resolveLiquidGlassLens(
+          { width, height, borderRadius: height / 2 },
+          liquidGlass,
+        ),
+      );
+    },
+    [liquidGlass, updateLens],
+  );
+
+  const measureActive = useCallback((): { x: number; y: number; width: number; height: number } | null => {
     const shell = shellRef.current;
-    if (!shell || !liquidGlass) return;
+    if (!shell) return null;
 
     const activeTab = shell.querySelector<HTMLElement>(`[data-tab-value="${activeValue}"]`);
-    if (!activeTab) {
-      setIndicatorStyle({ opacity: 0 });
-      return;
-    }
+    if (!activeTab) return null;
 
     const shellRect = shell.getBoundingClientRect();
     const tabRect = activeTab.getBoundingClientRect();
 
-    setIndicatorStyle({
-      opacity: 1,
+    const bounds = {
+      x: tabRect.left - shellRect.left,
+      y: tabRect.top - shellRect.top,
       width: tabRect.width,
       height: tabRect.height,
-      transform: `translate(${tabRect.left - shellRect.left}px, ${tabRect.top - shellRect.top}px)`,
-    });
-  }, [activeValue, liquidGlass, shellRef]);
+    };
 
-  useLayoutEffect(() => {
-    updateIndicator();
-    const frame = requestAnimationFrame(updateIndicator);
-    return () => cancelAnimationFrame(frame);
-  }, [updateIndicator]);
+    syncLensGeometry(bounds.width, bounds.height);
+
+    return bounds;
+  }, [activeValue, shellRef, syncLensGeometry]);
 
   useEffect(() => {
-    if (!liquidGlass || typeof ResizeObserver === 'undefined') return undefined;
+    lastLensSize.current = { width: 0, height: 0 };
+    updateLens(baseLens);
+  }, [baseLens, updateLens]);
 
+  useLayoutEffect(() => {
+    const m = measureActive();
+    if (!m) return;
+
+    if (!initialised.current) {
+      springX.current = { value: m.x, velocity: 0 };
+      springY.current = { value: m.y, velocity: 0 };
+      springW.current = { value: m.width, velocity: 0 };
+      springH.current = { value: m.height, velocity: 0 };
+      initialised.current = true;
+      setBounds(m);
+      return;
+    }
+
+    if (reducedMotion) {
+      setBounds(m);
+      return;
+    }
+
+    const config = getSpringPreset('snappy');
+    const targetX = m.x;
+    const targetY = m.y;
+    const targetW = m.width;
+    const targetH = m.height;
+    let last = performance.now();
+
+    const tick = (now: number) => {
+      const dt = Math.min((now - last) / 1000, 0.032);
+      last = now;
+
+      if (isVertical) {
+        springY.current = stepSpring(springY.current, targetY, config, dt);
+        springH.current = stepSpring(springH.current, targetH, config, dt);
+        setBounds({
+          x: targetX,
+          y: springY.current.value,
+          width: targetW,
+          height: springH.current.value,
+        });
+        if (
+          !isSpringSettled(springY.current, targetY) ||
+          !isSpringSettled(springH.current, targetH)
+        ) {
+          rafRef.current = requestAnimationFrame(tick);
+        }
+      } else {
+        springX.current = stepSpring(springX.current, targetX, config, dt);
+        springW.current = stepSpring(springW.current, targetW, config, dt);
+        setBounds({
+          x: springX.current.value,
+          y: targetY,
+          width: springW.current.value,
+          height: targetH,
+        });
+        if (
+          !isSpringSettled(springX.current, targetX) ||
+          !isSpringSettled(springW.current, targetW)
+        ) {
+          rafRef.current = requestAnimationFrame(tick);
+        }
+      }
+    };
+
+    cancelAnimationFrame(rafRef.current);
+    rafRef.current = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafRef.current);
+  }, [activeValue, isVertical, measureActive, reducedMotion, setBounds]);
+
+  useEffect(() => {
     const shell = shellRef.current;
-    if (!shell) return undefined;
+    if (!shell || typeof ResizeObserver === 'undefined') return undefined;
 
-    const observer = new ResizeObserver(updateIndicator);
+    const sync = () => {
+      const m = measureActive();
+      if (m) setBounds(m);
+    };
+
+    const observer = new ResizeObserver(sync);
     observer.observe(shell);
-    window.addEventListener('resize', updateIndicator);
+    window.addEventListener('resize', sync);
 
     return () => {
       observer.disconnect();
-      window.removeEventListener('resize', updateIndicator);
+      window.removeEventListener('resize', sync);
     };
-  }, [liquidGlass, shellRef, updateIndicator]);
+  }, [measureActive, setBounds, shellRef]);
 
-  return indicatorStyle;
+  return (
+    <div
+      ref={lensRef}
+      className={styles.liquidGlassIndicator}
+      aria-hidden="true"
+      data-larose-glass-lens=""
+    />
+  );
 }
 
 export function TabBarList({ children }: TabBarListProps) {
   const { platform, liquidGlass, value } = useTabBarContext('TabBarList');
   const shellRef = useRef<HTMLDivElement>(null);
-  const indicatorStyle = useLiquidGlassIndicator(shellRef, value, liquidGlass);
+  const glassOn = isLiquidGlassEnabled(liquidGlass);
 
   return (
     <div
       ref={shellRef}
       className={styles.listShell}
-      data-liquid-glass={liquidGlass ? 'true' : undefined}
+      data-liquid-glass={glassOn ? 'true' : undefined}
       data-platform={platform}
     >
-      {liquidGlass && (
-        <span
-          className={styles.liquidGlassIndicator}
-          style={indicatorStyle}
-          aria-hidden="true"
+      {glassOn && (
+        <LiquidGlassTabIndicator
+          shellRef={shellRef}
+          activeValue={value}
+          platform={platform}
+          liquidGlass={liquidGlass}
         />
       )}
       <ul
@@ -232,10 +370,14 @@ export function TabBar({
         data-platform={platform}
         data-variant={variant}
         data-placement={placement}
-        data-liquid-glass={liquidGlass ? 'true' : undefined}
+        data-liquid-glass={isLiquidGlassEnabled(liquidGlass) ? 'true' : undefined}
         aria-label={ariaLabel}
       >
-        <div className={styles.layout} data-platform={platform} data-liquid-glass={liquidGlass ? 'true' : undefined}>
+        <div
+          className={styles.layout}
+          data-platform={platform}
+          data-liquid-glass={isLiquidGlassEnabled(liquidGlass) ? 'true' : undefined}
+        >
           {list &&
             cloneElement(
               list,
@@ -248,6 +390,7 @@ export function TabBar({
                       type="button"
                       role="tab"
                       className={[styles.tab, styles.searchTab].join(' ')}
+                      data-tab-value="__search__"
                       data-style={searchTab.style ?? 'standard'}
                       data-selected={current === '__search__' ? 'true' : undefined}
                       aria-selected={current === '__search__'}

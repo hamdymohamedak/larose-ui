@@ -1,7 +1,7 @@
 {
-  "name": "@larose-ui/react",
+  "name": "@larose-ui/glass",
   "version": "0.2.0",
-  "description": "React components for laRose UI platform",
+  "description": "Glass rendering engine with displacement-map refraction for laRose UI",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -11,35 +11,41 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     },
-    "./styles.css": "./dist/index.css"
+    "./react": {
+      "types": "./dist/react/index.d.ts",
+      "import": "./dist/react/index.js"
+    }
   },
   "files": [
     "dist",
     "README.md"
   ],
   "scripts": {
-    "build": "node ../../scripts/build-css-package.mjs .",
-    "dev": "node ../../scripts/build-css-package.mjs . --watch",
+    "build": "pnpm --filter @larose-ui/tokens build && tsup src/index.ts src/react/index.ts --format esm --dts --clean",
+    "dev": "tsup src/index.ts src/react/index.ts --format esm --dts --watch",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf dist"
   },
   "dependencies": {
     "@larose-ui/core": "workspace:*",
-    "@larose-ui/glass": "workspace:*",
-    "@larose-ui/primitives": "workspace:*",
-    "@larose-ui/styles": "workspace:*",
-    "@larose-ui/themes": "workspace:*",
     "@larose-ui/tokens": "workspace:*"
   },
   "peerDependencies": {
     "react": ">=18",
     "react-dom": ">=18"
   },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
+  },
   "devDependencies": {
-    "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",
-    "@testing-library/user-event": "^14.5.2",
+    "@types/react": "^19.0.2",
     "@vitejs/plugin-react": "^4.3.4",
     "jsdom": "^25.0.1",
     "react": "^19.0.0",
@@ -55,17 +61,14 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hamdymohamedak/larose-ui.git",
-    "directory": "packages/react"
+    "directory": "packages/glass"
   },
   "keywords": [
     "larose",
-    "react",
-    "ui-platform",
-    "design-system",
-    "saas"
-  ],
-  "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/react#readme",
-  "bugs": {
-    "url": "https://github.com/hamdymohamedak/larose-ui/issues"
-  }
+    "glass",
+    "refraction",
+    "displacement-map",
+    "liquid-glass",
+    "ui-platform"
+  ]
 }

@@ -33,7 +33,7 @@ export const IOS: Story = {
   argTypes: {
     liquidGlass: {
       control: 'boolean',
-      description: 'Floating Liquid Glass capsule with a morphing selection pill on the active tab.',
+      description: 'Floating liquid glass with displacement-mapped selection lens.',
     },
   },
   args: {
@@ -113,7 +113,7 @@ export const IOS: Story = {
           }}
         >
           {liquidGlass
-            ? '● Liquid Glass ON — frosted capsule + morphing pill'
+            ? '● Liquid Glass ON — drag tabs; lens uses displacement refraction'
             : '○ Liquid Glass OFF — standard tab bar'}
         </p>
         <TabBar

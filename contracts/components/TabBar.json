@@ -20,9 +20,9 @@
     },
     {
       "name": "liquidGlass",
-      "type": "boolean",
+      "type": "boolean | LiquidGlassProps",
       "required": false,
-      "description": "Floating Liquid Glass material with a morphing selection pill on the active tab."
+      "description": "Floating liquid glass with displacement-mapped selection lens. Pass true for defaults or an object with width, height, borderRadius, scale, depth, curvature, splay, chroma, blur, glow, edgeHighlight, specularAngle."
     },
     {
       "name": "platform",
