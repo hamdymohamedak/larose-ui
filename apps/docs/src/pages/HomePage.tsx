@@ -8,9 +8,16 @@ import {
   Card,
   Input,
   LaRoseProvider,
-  Typography,
 } from '@larose-ui/react';
-import { Layers, Palette, Zap, SlidersHorizontal, type LucideIcon } from 'lucide-react';
+import {
+  ArrowRight,
+  Box,
+  Layers,
+  Palette,
+  Sparkles,
+  Zap,
+  type LucideIcon,
+} from 'lucide-react';
 import { FrameworkSelector } from '@/components/FrameworkSelector';
 import { docsComponents, docsGuides, docsPackages } from '@/data/catalog.generated';
 import { PARITY_COMPONENTS } from '@/lib/frameworks';
@@ -19,34 +26,43 @@ interface Feature {
   Icon: LucideIcon;
   title: string;
   desc: string;
+  wide?: boolean;
 }
 
 const FEATURES: Feature[] = [
   {
     Icon: Layers,
-    title: '90+ Ready-to-use Components',
-    desc: 'Buttons, forms, modals, tables, data grids — every UI element your SaaS app needs, designed and built.',
+    title: '90+ production components',
+    desc: 'Buttons, forms, modals, tables, and data grids — every surface your SaaS needs, designed with accessibility and polish built in.',
+    wide: true,
   },
   {
     Icon: Palette,
-    title: 'Complete Design System',
-    desc: 'Colors, spacing, typography, and motion defined once as tokens. Change your brand in one place, update everywhere.',
+    title: 'Token-driven design system',
+    desc: 'Colors, spacing, typography, and motion defined once. Rebrand in minutes, not weeks.',
   },
   {
     Icon: Zap,
     title: 'React · Vue 3 · Svelte 5',
-    desc: 'The same component, the same API, the same look — across all three frameworks. Switch stacks without relearning.',
+    desc: 'One API, three frameworks. Ship the same experience regardless of stack.',
   },
   {
-    Icon: SlidersHorizontal,
-    title: 'Customize 10% or 90%',
-    desc: 'Use Apple-inspired defaults or go fully custom. Override tokens, extend components, or bring your own theme.',
+    Icon: Sparkles,
+    title: 'Liquid glass engine',
+    desc: 'Displacement-mapped refraction for premium interfaces — TabBar, toggles, and overlays.',
+    wide: true,
   },
 ];
 
+const STEPS = [
+  { title: 'Install', code: 'pnpm add @larose-ui/react' },
+  { title: 'Wrap your app', code: '<LaRoseProvider theme="light">' },
+  { title: 'Compose UI', code: '<Button variant="primary">Ship</Button>' },
+] as const;
+
 export function HomePage() {
   const navigate = useNavigate();
-  const [customization, setCustomization] = useState(30);
+  const [customization, setCustomization] = useState(32);
 
   const themeConfig = useMemo(
     () =>
@@ -72,66 +88,74 @@ export function HomePage() {
   );
 
   return (
-    <div className="docs-home-v2">
-      {/* ══════════════ HERO — full viewport ══════════════ */}
-      <section className="docs-hero-screen">
-        <div className="docs-hero-content">
-          {/* ── Left: copy ── */}
-          <div className="docs-hero-copy">
-            <div className="docs-hero-badge">
-              <Badge variant="info">UI Operating System</Badge>
+    <div className="docs-home-v3">
+      <section className="docs-hero-v3">
+        <div className="docs-hero-v3__glow docs-hero-v3__glow--a" aria-hidden />
+        <div className="docs-hero-v3__glow docs-hero-v3__glow--b" aria-hidden />
+
+        <div className="docs-hero-v3__grid">
+          <div className="docs-hero-v3__copy">
+            <div className="docs-hero-v3__eyebrow">
+              <span className="docs-hero-v3__pulse" aria-hidden />
+              <span>UI operating system for SaaS</span>
             </div>
 
-            <h1 className="docs-hero-headline">
-              <span className="docs-hero-brand">laRose</span>
-              <span className="docs-hero-brand-ui">UI</span>
+            <h1 className="docs-hero-v3__title">
+              Design systems that
+              <em> ship</em>
+              , not slow you down.
             </h1>
 
-            <p className="docs-hero-tagline">
-              Build production-ready SaaS interfaces, faster.
+            <p className="docs-hero-v3__lead">
+              laRose UI is a complete interface layer — components, tokens, motion, and a
+              cross-framework runtime for teams building polished products at speed.
             </p>
 
-            <p className="docs-hero-description">
-              A complete UI design system — 90+ components, design tokens, and a runtime for
-              React, Vue 3, and Svelte 5. Install once, ship confidently.
-            </p>
-
-            <div className="docs-hero-frameworks">
-              <span className="docs-hero-fw">React</span>
-              <span className="docs-hero-fw-sep">·</span>
-              <span className="docs-hero-fw">Vue 3</span>
-              <span className="docs-hero-fw-sep">·</span>
-              <span className="docs-hero-fw">Svelte 5</span>
+            <div className="docs-hero-v3__chips">
+              {['React', 'Vue 3', 'Svelte 5', 'TypeScript'].map((fw) => (
+                <span key={fw} className="docs-hero-v3__chip">
+                  {fw}
+                </span>
+              ))}
             </div>
 
-            <div className="docs-hero-actions">
-              <Button onClick={() => navigate('/docs/getting-started')}>
-                Get started →
+            <div className="docs-hero-v3__actions">
+              <Button size="lg" onClick={() => navigate('/docs/getting-started')}>
+                Start building
+                <ArrowRight size={16} aria-hidden />
               </Button>
-              <Button variant="outline" onClick={() => navigate('/docs/components')}>
+              <Button size="lg" variant="outline" onClick={() => navigate('/docs/components')}>
                 Browse components
               </Button>
             </div>
+
+            <p className="docs-hero-v3__meta">
+              Open source · MIT · Monorepo with {docsPackages.length} packages
+            </p>
           </div>
 
-          {/* ── Right: live demo ── */}
-          <div className="docs-hero-demo">
-            <div className="docs-hero-demo-label">Live theming preview</div>
+          <div className="docs-hero-v3__panel">
+            <div className="docs-hero-v3__panel-header">
+              <Badge variant="info">Live preview</Badge>
+              <span>Drag to morph tokens</span>
+            </div>
 
-            <LaRoseProvider theme="light" themeConfig={themeConfig}>
-              <Card title="Team workspace" padding="md">
-                <Input label="Project name" defaultValue="My SaaS App" />
-                <div className="docs-action-row">
-                  <Button>Create project</Button>
-                  <Button variant="secondary">Cancel</Button>
-                </div>
-              </Card>
-            </LaRoseProvider>
+            <div className="docs-hero-v3__panel-body">
+              <LaRoseProvider theme="light" themeConfig={themeConfig}>
+                <Card title="Workspace" padding="md">
+                  <Input label="Project" defaultValue="Acme Dashboard" />
+                  <div className="docs-action-row">
+                    <Button>Create</Button>
+                    <Button variant="secondary">Cancel</Button>
+                  </div>
+                </Card>
+              </LaRoseProvider>
+            </div>
 
-            <div className="docs-hero-slider">
-              <div className="docs-hero-slider-labels">
-                <span>Apple-inspired defaults</span>
-                <span>Fully custom brand</span>
+            <div className="docs-hero-v3__slider">
+              <div className="docs-hero-v3__slider-labels">
+                <span>Apple defaults</span>
+                <span>Custom brand</span>
               </div>
               <input
                 aria-label="Customization amount"
@@ -141,112 +165,121 @@ export function HomePage() {
                 value={customization}
                 onChange={(e) => setCustomization(Number(e.target.value))}
               />
-              <span className="docs-hero-slider-hint">
-                {customization}% customized — drag to see live theming
-              </span>
+              <span className="docs-hero-v3__slider-value">{customization}% customized</span>
             </div>
           </div>
         </div>
-
-        <div className="docs-hero-scroll-hint" aria-hidden="true">
-          <span>Scroll to learn more</span>
-          <div className="docs-hero-scroll-arrow" />
-        </div>
       </section>
 
-      {/* ══════════════ WHAT IS LAROSE UI? ══════════════ */}
-      <section className="docs-section docs-section--what">
-        <div className="docs-section-inner">
-          <Typography as="h2" role="title" className="docs-section-heading">
-            What is laRose UI?
-          </Typography>
-          <Typography muted className="docs-section-sub">
-            Think of it as the complete UI foundation for your SaaS product — every component,
-            style, and design decision you'd otherwise spend months building, ready to use today.
-          </Typography>
+      <section className="docs-band-v3 docs-band-v3--features">
+        <div className="docs-band-v3__inner">
+          <header className="docs-band-v3__header">
+            <p className="docs-band-v3__kicker">Platform</p>
+            <h2>Everything you need to ship a credible product UI</h2>
+            <p>
+              Skip months of design decisions. Start from a system that already feels native on
+              macOS, iOS, and the web.
+            </p>
+          </header>
 
-          <div className="docs-features-grid">
-            {FEATURES.map(({ Icon, title, desc }) => (
-              <div key={title} className="docs-feature-card">
-                <div className="docs-feature-icon">
-                  <Icon size={22} strokeWidth={1.75} />
+          <div className="docs-bento-v3">
+            {FEATURES.map(({ Icon, title, desc, wide }) => (
+              <article
+                key={title}
+                className={`docs-bento-v3__card${wide ? ' docs-bento-v3__card--wide' : ''}`}
+              >
+                <div className="docs-bento-v3__icon">
+                  <Icon size={20} strokeWidth={1.75} />
                 </div>
                 <h3>{title}</h3>
                 <p>{desc}</p>
-              </div>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ══════════════ UP IN 3 STEPS ══════════════ */}
-      <section className="docs-section docs-section--start">
-        <div className="docs-section-inner">
-          <Typography as="h2" role="title" className="docs-section-heading">
-            Up and running in 3 steps
-          </Typography>
-          <Typography muted className="docs-section-sub">
-            No build configuration. No design decisions. Just install and start building.
-          </Typography>
+      <section className="docs-band-v3 docs-band-v3--steps">
+        <div className="docs-band-v3__inner">
+          <header className="docs-band-v3__header">
+            <p className="docs-band-v3__kicker">Quick start</p>
+            <h2>Up and running in three steps</h2>
+            <p>Install once, wrap your app, and compose with production-ready primitives.</p>
+          </header>
 
-          <div className="docs-steps-row">
-            <div className="docs-step">
-              <div className="docs-step-num">1</div>
-              <div>
-                <h3>Install</h3>
-                <code className="docs-step-code">npm install @larose-ui/react</code>
-              </div>
-            </div>
-            <div className="docs-step-arrow">→</div>
-            <div className="docs-step">
-              <div className="docs-step-num">2</div>
-              <div>
-                <h3>Wrap your app</h3>
-                <code className="docs-step-code">{'<LaRoseProvider>'}</code>
-              </div>
-            </div>
-            <div className="docs-step-arrow">→</div>
-            <div className="docs-step">
-              <div className="docs-step-num">3</div>
-              <div>
-                <h3>Use components</h3>
-                <code className="docs-step-code">{'<Button>Click me</Button>'}</code>
-              </div>
-            </div>
-          </div>
+          <ol className="docs-timeline-v3">
+            {STEPS.map((step, index) => (
+              <li key={step.title} className="docs-timeline-v3__item">
+                <div className="docs-timeline-v3__marker">{index + 1}</div>
+                <div className="docs-timeline-v3__body">
+                  <h3>{step.title}</h3>
+                  <pre className="docs-timeline-v3__code">
+                    <code>{step.code}</code>
+                  </pre>
+                </div>
+              </li>
+            ))}
+          </ol>
 
-          <div className="docs-section-cta">
+          <div className="docs-band-v3__cta">
             <Button onClick={() => navigate('/docs/getting-started')}>
-              Full getting started guide →
+              Read the full guide
+              <ArrowRight size={16} aria-hidden />
             </Button>
             <FrameworkSelector />
           </div>
         </div>
       </section>
 
-      {/* ══════════════ BY THE NUMBERS ══════════════ */}
-      <section className="docs-section docs-section--stats">
-        <div className="docs-section-inner">
-          <div className="docs-stats-grid">
-            <div className="docs-stat">
-              <span className="docs-stat-value">{docsComponents.length}</span>
-              <span className="docs-stat-label">Components</span>
-            </div>
-            <div className="docs-stat">
-              <span className="docs-stat-value">{PARITY_COMPONENTS.size}</span>
-              <span className="docs-stat-label">Parity components</span>
-            </div>
-            <div className="docs-stat">
-              <span className="docs-stat-value">{docsPackages.length}</span>
-              <span className="docs-stat-label">Packages</span>
-            </div>
-            <div className="docs-stat">
-              <span className="docs-stat-value">{docsGuides.length}</span>
-              <span className="docs-stat-label">Guides</span>
-            </div>
+      <section className="docs-band-v3 docs-band-v3--stats">
+        <div className="docs-band-v3__inner docs-stats-v3">
+          <div className="docs-stats-v3__item">
+            <span className="docs-stats-v3__value">{docsComponents.length}</span>
+            <span className="docs-stats-v3__label">Components</span>
+          </div>
+          <div className="docs-stats-v3__divider" aria-hidden />
+          <div className="docs-stats-v3__item">
+            <span className="docs-stats-v3__value">{PARITY_COMPONENTS.size}</span>
+            <span className="docs-stats-v3__label">Cross-framework</span>
+          </div>
+          <div className="docs-stats-v3__divider" aria-hidden />
+          <div className="docs-stats-v3__item">
+            <span className="docs-stats-v3__value">{docsPackages.length}</span>
+            <span className="docs-stats-v3__label">Packages</span>
+          </div>
+          <div className="docs-stats-v3__divider" aria-hidden />
+          <div className="docs-stats-v3__item">
+            <span className="docs-stats-v3__value">{docsGuides.length}</span>
+            <span className="docs-stats-v3__label">Guides</span>
           </div>
         </div>
       </section>
+
+      <footer className="docs-footer-v3">
+        <div className="docs-footer-v3__inner">
+          <div className="docs-footer-v3__brand">
+            <Box size={18} strokeWidth={1.75} aria-hidden />
+            <span>laRose UI</span>
+          </div>
+          <nav className="docs-footer-v3__links" aria-label="Footer">
+            <button type="button" onClick={() => navigate('/docs/getting-started')}>
+              Getting started
+            </button>
+            <button type="button" onClick={() => navigate('/changelog')}>
+              Changelog
+            </button>
+            <button
+              type="button"
+              onClick={() =>
+                window.open('https://github.com/hamdymohamedak/larose-ui', '_blank', 'noopener')
+              }
+            >
+              GitHub
+            </button>
+          </nav>
+          <p className="docs-footer-v3__copy">Built for teams who care about craft.</p>
+        </div>
+      </footer>
     </div>
   );
 }

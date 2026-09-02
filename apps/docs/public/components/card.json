@@ -42,6 +42,14 @@
       "props": {},
       "code": "// See Storybook story \"WithBadge\" for full example.",
       "composite": true
+    },
+    {
+      "id": "Card",
+      "title": "Card",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"Card\" for full example.",
+      "composite": true
     }
   ],
   "accessibility": [],

@@ -59,7 +59,8 @@
   display: flex;
   width: 100%;
   padding: var(--lr-space-2) var(--lr-space-3);
-  border: none;
+  padding-inline-start: calc(var(--lr-space-3) + 2px);
+  border: 1px solid transparent;
   border-radius: var(--lr-radius-sm);
   background: transparent;
   color: var(--lr-color-text);
@@ -67,11 +68,24 @@
   font-size: var(--lr-font-size-sm);
   text-align: start;
   cursor: pointer;
+  transition:
+    background 0.12s ease,
+    border-color 0.12s ease,
+    box-shadow 0.12s ease;
+}
+
+.item:hover:not([data-state='active']) {
+  background: var(--lr-color-surface-muted);
 }
 
 .item[data-state='active'] {
-  background: var(--lr-color-primary);
-  color: var(--lr-color-text-inverse);
+  background: color-mix(in srgb, var(--lr-color-primary) 16%, var(--lr-color-surface));
+  border-color: color-mix(in srgb, var(--lr-color-primary) 30%, var(--lr-color-border));
+  color: var(--lr-color-text);
+  font-weight: var(--lr-font-weight-semibold);
+  box-shadow:
+    inset 3px 0 0 var(--lr-color-primary),
+    0 1px 3px color-mix(in srgb, var(--lr-color-primary) 14%, transparent);
 }
 
 .item:focus-visible {

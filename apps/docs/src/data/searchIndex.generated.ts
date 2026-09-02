@@ -979,6 +979,14 @@ export const docsSearchIndex = [
     "excerpt": "// See Storybook story \"Sizes\" for full example."
   },
   {
+    "id": "example:button:Button",
+    "title": "Button — Button",
+    "type": "example",
+    "path": "/docs/components/button#examples",
+    "keywords": "Button Button advanced {}",
+    "excerpt": "// See Storybook story \"Button\" for full example."
+  },
+  {
     "id": "component:button-group",
     "title": "ButtonGroup",
     "type": "component",
@@ -1057,6 +1065,14 @@ export const docsSearchIndex = [
     "path": "/docs/components/card#examples",
     "keywords": "Card With Badge advanced {}",
     "excerpt": "// See Storybook story \"WithBadge\" for full example."
+  },
+  {
+    "id": "example:card:Card",
+    "title": "Card — Card",
+    "type": "example",
+    "path": "/docs/components/card#examples",
+    "keywords": "Card Card advanced {}",
+    "excerpt": "// See Storybook story \"Card\" for full example."
   },
   {
     "id": "component:chart",
@@ -4915,6 +4931,22 @@ export const docsSearchIndex = [
     "excerpt": "ReactNode (required)"
   },
   {
+    "id": "example:popover:PopoverStory",
+    "title": "Popover — Popover",
+    "type": "example",
+    "path": "/docs/components/popover#examples",
+    "keywords": "Popover Popover advanced {}",
+    "excerpt": "// See Storybook story \"PopoverStory\" for full example."
+  },
+  {
+    "id": "example:popover:PopoverPortalStory",
+    "title": "Popover — Popover (portal / overflow)",
+    "type": "example",
+    "path": "/docs/components/popover#examples",
+    "keywords": "Popover Popover (portal / overflow) advanced {}",
+    "excerpt": "// See Storybook story \"PopoverPortalStory\" for full example."
+  },
+  {
     "id": "example:popover:PopoverAndTooltip",
     "title": "Popover — Popover And Tooltip",
     "type": "example",
@@ -5635,6 +5667,14 @@ export const docsSearchIndex = [
     "excerpt": "<Switch label=\"Email notifications\" defaultChecked hint=\"Receive product updates\" />"
   },
   {
+    "id": "example:switch:SwitchStory",
+    "title": "Switch — Switch",
+    "type": "example",
+    "path": "/docs/components/switch#examples",
+    "keywords": "Switch Switch advanced {}",
+    "excerpt": "// See Storybook story \"SwitchStory\" for full example."
+  },
+  {
     "id": "example:switch:Default",
     "title": "Switch — Default",
     "type": "example",
@@ -6145,6 +6185,14 @@ export const docsSearchIndex = [
     "path": "/docs/components/tooltip#examples",
     "keywords": "Tooltip Expansion Tooltip advanced {}",
     "excerpt": "// See Storybook story \"ExpansionTooltip\" for full example."
+  },
+  {
+    "id": "example:tooltip:TooltipStory",
+    "title": "Tooltip — Tooltip",
+    "type": "example",
+    "path": "/docs/components/tooltip#examples",
+    "keywords": "Tooltip Tooltip advanced {}",
+    "excerpt": "// See Storybook story \"TooltipStory\" for full example."
   },
   {
     "id": "example:tooltip:TooltipDefault",
@@ -9987,6 +10035,30 @@ export const docsSearchIndex = [
     "excerpt": "--lr-tab-bar-badge-fg = #ffffff"
   },
   {
+    "id": "token:--lr-tab-bar-liquid-glass-bg",
+    "title": "tab.bar.liquid.glass.bg",
+    "type": "token",
+    "path": "/docs/design/tokens",
+    "keywords": "tab.bar.liquid.glass.bg --lr-tab-bar-liquid-glass-bg Other Design token exposed as --lr-tab-bar-liquid-glass-bg",
+    "excerpt": "--lr-tab-bar-liquid-glass-bg = rgb(255 255 255 / 0.28)"
+  },
+  {
+    "id": "token:--lr-tab-bar-liquid-glass-active-bg",
+    "title": "tab.bar.liquid.glass.active.bg",
+    "type": "token",
+    "path": "/docs/design/tokens",
+    "keywords": "tab.bar.liquid.glass.active.bg --lr-tab-bar-liquid-glass-active-bg Other Design token exposed as --lr-tab-bar-liquid-glass-active-bg",
+    "excerpt": "--lr-tab-bar-liquid-glass-active-bg = rgb(255 255 255 / 0.92)"
+  },
+  {
+    "id": "token:--lr-tab-bar-liquid-glass-glow",
+    "title": "tab.bar.liquid.glass.glow",
+    "type": "token",
+    "path": "/docs/design/tokens",
+    "keywords": "tab.bar.liquid.glass.glow --lr-tab-bar-liquid-glass-glow Other Design token exposed as --lr-tab-bar-liquid-glass-glow",
+    "excerpt": "--lr-tab-bar-liquid-glass-glow = 0 6px 24px rgb(236 72 153 / 0.22)"
+  },
+  {
     "id": "token:--lr-token-field-min-height",
     "title": "token.field.min.height",
     "type": "token",
@@ -10129,6 +10201,78 @@ export const docsSearchIndex = [
     "path": "/docs/design/tokens",
     "keywords": "alert.dialog.accessory.max.height --lr-alert-dialog-accessory-max-height Other Design token exposed as --lr-alert-dialog-accessory-max-height",
     "excerpt": "--lr-alert-dialog-accessory-max-height = 9.625rem"
+  },
+  {
+    "id": "token:--lr-glass-refraction-scale",
+    "title": "glass.refraction.scale",
+    "type": "token",
+    "path": "/docs/design/tokens",
+    "keywords": "glass.refraction.scale --lr-glass-refraction-scale Other Design token exposed as --lr-glass-refraction-scale",
+    "excerpt": "--lr-glass-refraction-scale = 1"
+  },
+  {
+    "id": "token:--lr-glass-depth",
+    "title": "glass.depth",
+    "type": "token",
+    "path": "/docs/design/tokens",
+    "keywords": "glass.depth --lr-glass-depth Other Design token exposed as --lr-glass-depth",
+    "excerpt": "--lr-glass-depth = 10"
+  },
+  {
+    "id": "token:--lr-glass-curvature",
+    "title": "glass.curvature",
+    "type": "token",
+    "path": "/docs/design/tokens",
+    "keywords": "glass.curvature --lr-glass-curvature Other Design token exposed as --lr-glass-curvature",
+    "excerpt": "--lr-glass-curvature = 40"
+  },
+  {
+    "id": "token:--lr-glass-chroma",
+    "title": "glass.chroma",
+    "type": "token",
+    "path": "/docs/design/tokens",
+    "keywords": "glass.chroma --lr-glass-chroma Other Design token exposed as --lr-glass-chroma",
+    "excerpt": "--lr-glass-chroma = 0.08"
+  },
+  {
+    "id": "token:--lr-glass-blur",
+    "title": "glass.blur",
+    "type": "token",
+    "path": "/docs/design/tokens",
+    "keywords": "glass.blur --lr-glass-blur Other Design token exposed as --lr-glass-blur",
+    "excerpt": "--lr-glass-blur = 0px"
+  },
+  {
+    "id": "token:--lr-glass-glow",
+    "title": "glass.glow",
+    "type": "token",
+    "path": "/docs/design/tokens",
+    "keywords": "glass.glow --lr-glass-glow Other Design token exposed as --lr-glass-glow",
+    "excerpt": "--lr-glass-glow = 0.1"
+  },
+  {
+    "id": "token:--lr-glass-edge-highlight",
+    "title": "glass.edge.highlight",
+    "type": "token",
+    "path": "/docs/design/tokens",
+    "keywords": "glass.edge.highlight --lr-glass-edge-highlight Other Design token exposed as --lr-glass-edge-highlight",
+    "excerpt": "--lr-glass-edge-highlight = 0.55"
+  },
+  {
+    "id": "token:--lr-glass-specular-angle",
+    "title": "glass.specular.angle",
+    "type": "token",
+    "path": "/docs/design/tokens",
+    "keywords": "glass.specular.angle --lr-glass-specular-angle Other Design token exposed as --lr-glass-specular-angle",
+    "excerpt": "--lr-glass-specular-angle = 45deg"
+  },
+  {
+    "id": "token:--lr-glass-splay",
+    "title": "glass.splay",
+    "type": "token",
+    "path": "/docs/design/tokens",
+    "keywords": "glass.splay --lr-glass-splay Other Design token exposed as --lr-glass-splay",
+    "excerpt": "--lr-glass-splay = 1"
   },
   {
     "id": "token:--lr-card-background",
@@ -13991,6 +14135,30 @@ export const docsTokenGroups: Record<string, TokenSearchEntry[]> = {
       "relatedComponents": []
     },
     {
+      "name": "tab.bar.liquid.glass.bg",
+      "cssVariable": "--lr-tab-bar-liquid-glass-bg",
+      "value": "rgb(255 255 255 / 0.28)",
+      "category": "Other",
+      "description": "Design token exposed as --lr-tab-bar-liquid-glass-bg",
+      "relatedComponents": []
+    },
+    {
+      "name": "tab.bar.liquid.glass.active.bg",
+      "cssVariable": "--lr-tab-bar-liquid-glass-active-bg",
+      "value": "rgb(255 255 255 / 0.92)",
+      "category": "Other",
+      "description": "Design token exposed as --lr-tab-bar-liquid-glass-active-bg",
+      "relatedComponents": []
+    },
+    {
+      "name": "tab.bar.liquid.glass.glow",
+      "cssVariable": "--lr-tab-bar-liquid-glass-glow",
+      "value": "0 6px 24px rgb(236 72 153 / 0.22)",
+      "category": "Other",
+      "description": "Design token exposed as --lr-tab-bar-liquid-glass-glow",
+      "relatedComponents": []
+    },
+    {
       "name": "token.field.min.height",
       "cssVariable": "--lr-token-field-min-height",
       "value": "2rem",
@@ -14159,6 +14327,78 @@ export const docsTokenGroups: Record<string, TokenSearchEntry[]> = {
       "value": "9.625rem",
       "category": "Other",
       "description": "Design token exposed as --lr-alert-dialog-accessory-max-height",
+      "relatedComponents": []
+    },
+    {
+      "name": "glass.refraction.scale",
+      "cssVariable": "--lr-glass-refraction-scale",
+      "value": "1",
+      "category": "Other",
+      "description": "Design token exposed as --lr-glass-refraction-scale",
+      "relatedComponents": []
+    },
+    {
+      "name": "glass.depth",
+      "cssVariable": "--lr-glass-depth",
+      "value": "10",
+      "category": "Other",
+      "description": "Design token exposed as --lr-glass-depth",
+      "relatedComponents": []
+    },
+    {
+      "name": "glass.curvature",
+      "cssVariable": "--lr-glass-curvature",
+      "value": "40",
+      "category": "Other",
+      "description": "Design token exposed as --lr-glass-curvature",
+      "relatedComponents": []
+    },
+    {
+      "name": "glass.chroma",
+      "cssVariable": "--lr-glass-chroma",
+      "value": "0.08",
+      "category": "Other",
+      "description": "Design token exposed as --lr-glass-chroma",
+      "relatedComponents": []
+    },
+    {
+      "name": "glass.blur",
+      "cssVariable": "--lr-glass-blur",
+      "value": "0px",
+      "category": "Other",
+      "description": "Design token exposed as --lr-glass-blur",
+      "relatedComponents": []
+    },
+    {
+      "name": "glass.glow",
+      "cssVariable": "--lr-glass-glow",
+      "value": "0.1",
+      "category": "Other",
+      "description": "Design token exposed as --lr-glass-glow",
+      "relatedComponents": []
+    },
+    {
+      "name": "glass.edge.highlight",
+      "cssVariable": "--lr-glass-edge-highlight",
+      "value": "0.55",
+      "category": "Other",
+      "description": "Design token exposed as --lr-glass-edge-highlight",
+      "relatedComponents": []
+    },
+    {
+      "name": "glass.specular.angle",
+      "cssVariable": "--lr-glass-specular-angle",
+      "value": "45deg",
+      "category": "Other",
+      "description": "Design token exposed as --lr-glass-specular-angle",
+      "relatedComponents": []
+    },
+    {
+      "name": "glass.splay",
+      "cssVariable": "--lr-glass-splay",
+      "value": "1",
+      "category": "Other",
+      "description": "Design token exposed as --lr-glass-splay",
       "relatedComponents": []
     },
     {

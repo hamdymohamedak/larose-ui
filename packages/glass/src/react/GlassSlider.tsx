@@ -95,6 +95,7 @@ export function GlassSlider({
     <div
       ref={wrapperRef}
       className={className}
+      data-larose-glass-slider=""
       style={{
         position: 'relative',
         display: 'flex',
@@ -133,7 +134,7 @@ export function GlassSlider({
           ref={lensRef}
           aria-hidden="true"
           data-larose-glass-lens=""
-          style={{ position: 'absolute', left: 0, top: 0 }}
+          style={{ position: 'absolute', left: 0, top: 0, pointerEvents: 'none' }}
         />
       </div>
 

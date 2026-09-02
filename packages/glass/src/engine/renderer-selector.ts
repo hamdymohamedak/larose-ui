@@ -3,7 +3,6 @@ import {
   supportsCanvasGlass,
   supportsSVGGlass,
   supportsVideoGlass,
-  supportsWebGLGlass,
 } from '../capabilities/detect';
 
 export function selectRenderer(

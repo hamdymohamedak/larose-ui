@@ -128,11 +128,20 @@ export interface DraggableGlassProbeProps {
  * Wraps a single Glass demo. Pointer-drag moves it freely over the fixed backdrop.
  */
 const INTERACTIVE_SELECTOR =
-  'button, input, select, textarea, a[href], [role="switch"], [role="slider"], [role="tab"], [contenteditable="true"]';
+  'button, input, select, textarea, a[href], [role="switch"], [role="slider"], [role="tab"], [contenteditable="true"], [data-larose-glass-switch], [data-larose-glass-slider], [data-larose-glass-toggle-group]';
 
 function isInteractiveTarget(target: EventTarget | null): boolean {
   if (!(target instanceof Element)) return false;
-  return Boolean(target.closest(INTERACTIVE_SELECTOR));
+  if (target.closest(INTERACTIVE_SELECTOR)) return true;
+  const label = target.closest('label');
+  if (
+    label?.querySelector(
+      'input[type="checkbox"][role="switch"], input[type="range"], input[type="checkbox"]',
+    )
+  ) {
+    return true;
+  }
+  return false;
 }
 
 export function DraggableGlassProbe({

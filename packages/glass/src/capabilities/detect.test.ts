@@ -2,7 +2,6 @@ import { describe, it, expect, beforeEach } from 'vitest';
 import {
   supportsSVGGlass,
   supportsBackdropGlassRefraction,
-  supportsBackdropSvgDisplacement,
   selectRefractionMode,
   supportsWebGLGlass,
   resetCapabilityCache,

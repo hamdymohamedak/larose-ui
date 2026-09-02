@@ -1,7 +1,6 @@
 import {
   useCallback,
   useEffect,
-  useId,
   useRef,
   useState,
   type ChangeEvent,
@@ -42,7 +41,6 @@ export function GlassSwitch({
   const [internal, setInternal] = useState(defaultChecked);
   const isControlled = checked !== undefined;
   const isOn = isControlled ? checked : internal;
-  const inputId = useId();
   const rafRef = useRef(0);
   const springRef = useRef({ value: isOn ? 1 : 0, velocity: 0 });
   const reducedMotion = detectA11yPreferences().reducedMotion;
@@ -92,18 +90,32 @@ export function GlassSwitch({
   return (
     <label
       className={className}
+      data-larose-glass-switch=""
       style={{
-        display: 'inline-flex',
-        alignItems: 'center',
+        position: 'relative',
+        display: 'inline-block',
+        width: TRACK_WIDTH,
+        height: TRACK_HEIGHT,
+        borderRadius: TRACK_HEIGHT / 2,
+        isolation: 'isolate',
+        background: isOn
+          ? 'var(--lr-color-accent, #34c759)'
+          : 'var(--lr-color-fill-tertiary, rgb(120 120 128 / 0.16))',
         cursor: disabled ? 'not-allowed' : 'pointer',
         opacity: disabled ? 0.5 : 1,
+        transition: reducedMotion ? 'none' : 'background 0.22s ease',
+        boxShadow: 'inset 0 1.5px 4px rgb(0 0 0 / 0.08)',
         WebkitTapHighlightColor: 'transparent',
         ...style,
       }}
-      htmlFor={inputId}
     >
+      <div
+        ref={lensRef}
+        aria-hidden="true"
+        data-larose-glass-lens=""
+        style={{ pointerEvents: 'none' }}
+      />
       <input
-        id={inputId}
         type="checkbox"
         role="switch"
         checked={isOn}
@@ -113,28 +125,15 @@ export function GlassSwitch({
         aria-checked={isOn}
         style={{
           position: 'absolute',
-          width: 1, height: 1, padding: 0, margin: -1,
-          overflow: 'hidden', clip: 'rect(0,0,0,0)',
-          whiteSpace: 'nowrap', border: 0,
+          inset: 0,
+          width: '100%',
+          height: '100%',
+          margin: 0,
+          opacity: 0,
+          zIndex: 2,
+          cursor: disabled ? 'not-allowed' : 'pointer',
         }}
       />
-      <div
-        aria-hidden="true"
-        style={{
-          position: 'relative',
-          width: TRACK_WIDTH,
-          height: TRACK_HEIGHT,
-          borderRadius: TRACK_HEIGHT / 2,
-          isolation: 'isolate',
-          background: isOn
-            ? 'var(--lr-color-accent, #34c759)'
-            : 'var(--lr-color-fill-tertiary, rgb(120 120 128 / 0.16))',
-          transition: reducedMotion ? 'none' : 'background 0.22s ease',
-          boxShadow: 'inset 0 1.5px 4px rgb(0 0 0 / 0.08)',
-        }}
-      >
-        <div ref={lensRef} aria-hidden="true" data-larose-glass-lens="" />
-      </div>
     </label>
   );
 }

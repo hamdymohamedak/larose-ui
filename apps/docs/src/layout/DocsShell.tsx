@@ -15,6 +15,7 @@ import {
 import { CommandSearch, useCommandPalette } from '@/components/CommandSearch';
 import { DocsNavLink } from '@/components/DocsNavLink';
 import { DocsErrorBoundary } from '@/components/DocsErrorBoundary';
+import { DocsOverviewNav } from '@/components/DocsOverviewNav';
 import { FrameworkSelector } from '@/components/FrameworkSelector';
 import { filterNavigation, findDocsPageTitle } from '@/navigation';
 import { useDocsTheme } from '@/theme/DocsThemeProvider';
@@ -56,6 +57,7 @@ export function DocsShell({ children }: { children?: ReactNode }) {
   if (isOverview) {
     return (
       <div className="docs-shell docs-shell--overview">
+        <DocsOverviewNav />
         <div className="docs-main docs-main--overview">
           <div className="docs-main-scroll docs-main-scroll--overview">
             <div className="docs-page docs-page--home">

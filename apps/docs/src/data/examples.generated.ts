@@ -288,6 +288,14 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "props": {},
       "code": "// See Storybook story \"Sizes\" for full example.",
       "composite": true
+    },
+    {
+      "id": "Button",
+      "title": "Button",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"Button\" for full example.",
+      "composite": true
     }
   ],
   "ButtonGroup": [],
@@ -309,6 +317,14 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "kind": "advanced",
       "props": {},
       "code": "// See Storybook story \"WithBadge\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "Card",
+      "title": "Card",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"Card\" for full example.",
       "composite": true
     }
   ],
@@ -1022,6 +1038,22 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
   ],
   "Popover": [
     {
+      "id": "PopoverStory",
+      "title": "Popover",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"PopoverStory\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "PopoverPortalStory",
+      "title": "Popover (portal / overflow)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"PopoverPortalStory\" for full example.",
+      "composite": true
+    },
+    {
       "id": "PopoverAndTooltip",
       "title": "Popover And Tooltip",
       "kind": "advanced",
@@ -1295,6 +1327,14 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "composite": true
     },
     {
+      "id": "SwitchStory",
+      "title": "Switch",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"SwitchStory\" for full example.",
+      "composite": true
+    },
+    {
       "id": "Default",
       "title": "Default",
       "kind": "basic",
@@ -1445,6 +1485,14 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "kind": "advanced",
       "props": {},
       "code": "// See Storybook story \"ExpansionTooltip\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "TooltipStory",
+      "title": "Tooltip",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"TooltipStory\" for full example.",
       "composite": true
     },
     {
