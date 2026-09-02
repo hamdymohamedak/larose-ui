@@ -83,12 +83,12 @@ function withHomepageLinkHeader(
   }
 
   const originalWriteHead = res.writeHead.bind(res);
-  res.writeHead = function writeHeadWithLink(statusCode, ...args) {
+  res.writeHead = ((statusCode: number, ...args: unknown[]) => {
     if (!res.getHeader('Link')) {
       res.setHeader('Link', linkHeader);
     }
-    return originalWriteHead(statusCode, ...args);
-  };
+    return originalWriteHead(statusCode, ...(args as Parameters<typeof originalWriteHead> extends [number, ...infer R] ? R : never));
+  }) as typeof res.writeHead;
   next();
 }
 

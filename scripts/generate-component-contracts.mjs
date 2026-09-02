@@ -7,6 +7,18 @@ import { COMPONENT_ANATOMY } from './lib/docs-metadata.mjs';
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const componentNames = listComponentNames(root);
 const contracts = extractComponentContracts(root, componentNames, COMPONENT_ANATOMY, 'react');
+
+const glassIndexPath = join(root, 'packages/glass/src/react/index.ts');
+const glassNames = ['Glass', 'GlassPopover', 'GlassTooltip'];
+Object.assign(
+  contracts,
+  extractComponentContracts(root, glassNames, COMPONENT_ANATOMY, 'react', glassIndexPath),
+);
+for (const name of glassNames) {
+  if (contracts[name]) {
+    contracts[name].package = '@larose-ui/glass/react';
+  }
+}
 const outDir = join(root, 'contracts/components');
 mkdirSync(outDir, { recursive: true });
 

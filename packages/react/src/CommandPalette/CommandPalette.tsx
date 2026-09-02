@@ -113,13 +113,13 @@ export function CommandPalette({
     const active = document.getElementById(
       filtered[activeIndex] ? `larose-command-${filtered[activeIndex]!.id}` : '',
     );
-    active?.scrollIntoView({ block: 'nearest' });
+    active?.scrollIntoView?.({ block: 'nearest' });
   }, [activeIndex, filtered, open]);
 
   useEffect(() => {
     if (!open) return undefined;
 
-    const onKeyDown = (event: KeyboardEvent) => {
+    const onKeyDown = (event: globalThis.KeyboardEvent) => {
       if (event.key !== 'Escape') return;
       if (event.target instanceof Element && event.target.closest('[role="dialog"]')) return;
       event.preventDefault();

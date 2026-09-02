@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useMemo } from 'react';
-import { Glass, getCachedDisplacementMap } from '@larose-ui/glass';
+import { getCachedDisplacementMap } from '@larose-ui/glass';
 import type { LiquidGlassProps } from '@larose-ui/glass';
+import { Glass } from '@larose-ui/glass/react';
 import { GlassStoryScene } from './glass/GlassStoryScene';
 
 const defaultLens: Required<

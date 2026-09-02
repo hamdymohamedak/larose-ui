@@ -2,37 +2,34 @@
   "name": "Glass",
   "version": "1",
   "framework": "react",
-  "package": "@larose-ui/glass/react",
   "props": [
-    {
-      "name": "lens",
-      "type": "GlassLens",
-      "required": true,
-      "description": "Lens geometry and optical parameters for displacement refraction."
-    },
-    {
-      "name": "children",
-      "type": "ReactNode",
-      "required": false
-    },
     {
       "name": "debug",
       "type": "boolean",
-      "required": false,
-      "description": "Show debug overlay with renderer kind and map version."
+      "required": false
     },
     {
       "name": "disabled",
       "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "lens",
+      "type": "GlassLens",
+      "required": true
+    },
+    {
+      "name": "position",
+      "type": "GlassPosition",
+      "required": false
+    },
+    {
+      "name": "refract",
+      "type": "ReactNode",
       "required": false,
-      "description": "Static frosted surface without displacement engine."
+      "description": "Painted layer the lens bends (required for WebKit scene refraction)."
     }
   ],
-  "accessibility": {
-    "requirements": [
-      "Respects prefers-reduced-motion via static glass fallback.",
-      "Decorative lens backdrop is aria-hidden."
-    ],
-    "aria": []
-  }
+  "events": [],
+  "package": "@larose-ui/glass/react"
 }

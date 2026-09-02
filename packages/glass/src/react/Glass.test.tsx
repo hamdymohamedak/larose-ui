@@ -20,8 +20,8 @@ describe('Glass (React)', () => {
     expect(screen.getByText('Hello')).toBeTruthy();
 
     await waitFor(() => {
-      const filtered = container.querySelector('[data-larose-glass]') as HTMLElement;
-      expect(filtered?.style.filter).toMatch(/url\(#larose-glass-/);
+      const lens = container.querySelector('[data-larose-glass-lens]') as HTMLElement;
+      expect(lens?.style.filter || lens?.getAttribute('style')).toMatch(/url\(#larose-glass-/);
       expect(document.getElementById('larose-glass-defs')).toBeTruthy();
     });
   });

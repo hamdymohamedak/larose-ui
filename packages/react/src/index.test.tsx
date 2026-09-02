@@ -1222,7 +1222,7 @@ describe('CommandPalette', () => {
         ]}
       />,
     );
-    await userEvent.type(screen.getByRole('searchbox'), 'export');
+    await userEvent.type(screen.getByRole('combobox'), 'export');
     expect(screen.getByRole('option', { name: 'Export CSV' })).toBeInTheDocument();
     expect(screen.queryByRole('option', { name: 'Add employee' })).not.toBeInTheDocument();
   });

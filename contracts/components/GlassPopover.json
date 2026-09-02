@@ -2,23 +2,7 @@
   "name": "GlassPopover",
   "version": "1",
   "framework": "react",
-  "package": "@larose-ui/glass/react",
   "props": [
-    {
-      "name": "trigger",
-      "type": "ReactNode",
-      "required": true
-    },
-    {
-      "name": "children",
-      "type": "ReactNode",
-      "required": true
-    },
-    {
-      "name": "open",
-      "type": "boolean",
-      "required": false
-    },
     {
       "name": "defaultOpen",
       "type": "boolean",
@@ -26,8 +10,25 @@
       "default": "false"
     },
     {
+      "name": "lens",
+      "type": "Partial<GlassLens>",
+      "required": false
+    },
+    {
+      "name": "modal",
+      "type": "boolean",
+      "required": false,
+      "default": "true",
+      "description": "Trap focus inside the panel while open (default true)."
+    },
+    {
       "name": "onOpenChange",
       "type": "(open: boolean) => void",
+      "required": false
+    },
+    {
+      "name": "open",
+      "type": "boolean",
       "required": false
     },
     {
@@ -35,24 +36,18 @@
       "type": "boolean",
       "required": false,
       "default": "true",
-      "description": "Render panel in document.body portal to escape overflow clipping."
+      "description": "Render panel in a document.body portal (default true)."
     },
     {
-      "name": "modal",
-      "type": "boolean",
-      "required": false,
-      "default": "true",
-      "description": "Trap focus inside panel while open."
+      "name": "trigger",
+      "type": "ReactNode",
+      "required": true
     },
     {
       "name": "width",
       "type": "number",
-      "required": false
-    },
-    {
-      "name": "lens",
-      "type": "Partial<GlassLens>",
-      "required": false
+      "required": false,
+      "default": "DEFAULT_W"
     }
   ],
   "events": [
@@ -61,19 +56,17 @@
       "payload": "(open: boolean) => void"
     }
   ],
-  "states": ["closed", "open"],
-  "accessibility": {
-    "requirements": [
-      "role=dialog with aria-modal when modal.",
-      "Escape closes; focus returns to trigger.",
-      "Click outside closes."
-    ],
-    "aria": ["aria-expanded", "aria-controls", "aria-labelledby", "aria-modal"]
+  "defaults": {
+    "defaultOpen": "false",
+    "modal": "true",
+    "portal": "true",
+    "width": "DEFAULT_W"
   },
-  "keyboard": {
-    "keys": ["Escape", "Tab"],
-    "behavior": ["escape-close", "focus-trap"]
-  },
-  "controlled": ["open"],
-  "uncontrolled": ["open"]
+  "controlled": [
+    "open"
+  ],
+  "uncontrolled": [
+    "open"
+  ],
+  "package": "@larose-ui/glass/react"
 }

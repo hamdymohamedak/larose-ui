@@ -2,7 +2,6 @@
   "name": "GlassTooltip",
   "version": "1",
   "framework": "react",
-  "package": "@larose-ui/glass/react",
   "props": [
     {
       "name": "content",
@@ -10,27 +9,21 @@
       "required": true
     },
     {
-      "name": "children",
-      "type": "ReactNode",
-      "required": true
+      "name": "lens",
+      "type": "Partial<GlassLens>",
+      "required": false
     },
     {
       "name": "portal",
       "type": "boolean",
       "required": false,
-      "default": "true"
-    },
-    {
-      "name": "lens",
-      "type": "Partial<GlassLens>",
-      "required": false
+      "default": "true",
+      "description": "Render tooltip in a document.body portal (default true)."
     }
   ],
-  "accessibility": {
-    "requirements": [
-      "role=tooltip with aria-describedby on hover/focus.",
-      "Flips above/below based on viewport space."
-    ],
-    "aria": ["aria-describedby"]
-  }
+  "events": [],
+  "defaults": {
+    "portal": "true"
+  },
+  "package": "@larose-ui/glass/react"
 }
