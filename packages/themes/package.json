@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/themes",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Named theme presets and tenant branding helpers for laRose",
   "type": "module",
   "main": "./dist/index.js",
