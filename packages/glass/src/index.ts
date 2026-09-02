@@ -86,3 +86,23 @@ export {
 // Re-export canonical tokens from @larose-ui/tokens
 export { getGlassTokens, glassTokensToCSSVariables } from '@larose-ui/tokens';
 export type { GlassTokens } from '@larose-ui/tokens';
+
+// Liquid glass — shared displacement + optics primitives
+export {
+  buildLiquidGlassDisplacementMap,
+  squircleHeightFn,
+  roundedRectSDF,
+} from './liquid-glass/displacement-map';
+export type { BuildDisplacementMapOptions } from './liquid-glass/displacement-map';
+export {
+  LIQUID_GLASS_OPTICS_DEFAULTS,
+  LIQUID_GLASS_PRESETS,
+  resolveLiquidGlassOptics,
+} from './liquid-glass/defaults';
+export { supportsLiquidGlassRefraction } from './liquid-glass/detect';
+export type {
+  LiquidGlassOptics,
+  LiquidGlassGeometry,
+  LiquidGlassSurfaceProps,
+  ResolvedLiquidGlassOptics,
+} from './liquid-glass/types';

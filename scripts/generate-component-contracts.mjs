@@ -9,7 +9,7 @@ const componentNames = listComponentNames(root);
 const contracts = extractComponentContracts(root, componentNames, COMPONENT_ANATOMY, 'react');
 
 const glassIndexPath = join(root, 'packages/glass/src/react/index.ts');
-const glassNames = ['Glass', 'GlassPopover', 'GlassTooltip'];
+const glassNames = ['Glass'];
 Object.assign(
   contracts,
   extractComponentContracts(root, glassNames, COMPONENT_ANATOMY, 'react', glassIndexPath),

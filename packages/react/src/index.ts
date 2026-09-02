@@ -644,28 +644,6 @@ export {
   warnIfSearchPlacementMismatch,
 } from './SearchField/utils';
 
-export {
-  TabBar,
-  TabBarList,
-  TabBarItem,
-  TabBarPanel,
-} from './TabBar/TabBar';
-export type {
-  TabBarProps,
-  TabBarItemProps,
-  TabBarListProps,
-  TabBarPanelProps,
-  TabBarPlatform,
-  TabBarVariant,
-  TabBarSearchStyle,
-} from './TabBar/types';
-export {
-  MAX_TAB_BAR_ITEMS,
-  formatTabBarBadge,
-  warnIfTooManyTabs,
-  resolveTabBarPlacement,
-} from './TabBar/utils';
-
 export { TokenField } from './TokenField/TokenField';
 export type { TokenFieldProps, TokenFieldToken } from './TokenField/types';
 export {
