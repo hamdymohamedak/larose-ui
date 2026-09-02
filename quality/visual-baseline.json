@@ -2,6 +2,10 @@
   "version": 1,
   "stories": [
     {
+      "file": "AI.stories.tsx",
+      "title": "AI/SmartTable"
+    },
+    {
       "file": "Accelerators.stories.tsx",
       "title": "Foundation/Accelerators"
     },
@@ -12,10 +16,6 @@
     {
       "file": "AdaptiveTable.stories.tsx",
       "title": "Runtime/AdaptiveTable"
-    },
-    {
-      "file": "AI.stories.tsx",
-      "title": "AI/SmartTable"
     },
     {
       "file": "Alert.stories.tsx",
@@ -126,6 +126,14 @@
       "title": "Foundation/Form Controls"
     },
     {
+      "file": "Glass.stories.tsx",
+      "title": "Glass"
+    },
+    {
+      "file": "GlassLensLab.stories.tsx",
+      "title": "Glass/Lens Lab"
+    },
+    {
       "file": "ImageView.stories.tsx",
       "title": "Foundation/Image Views"
     },
@@ -190,12 +198,12 @@
       "title": "Platform/Full Demo"
     },
     {
-      "file": "Popover.stories.tsx",
-      "title": "Foundation/Popover"
-    },
-    {
       "file": "PopUpButton.stories.tsx",
       "title": "Foundation/Pop-up Buttons"
+    },
+    {
+      "file": "Popover.stories.tsx",
+      "title": "Foundation/Popover"
     },
     {
       "file": "Progress.stories.tsx",
@@ -238,16 +246,24 @@
       "title": "Foundation/Switch"
     },
     {
+      "file": "TabBar.stories.tsx",
+      "title": "Foundation/TabBar"
+    },
+    {
+      "file": "TabBarLiquidGlass.stories.tsx",
+      "title": "Foundation/TabBar"
+    },
+    {
       "file": "TabView.stories.tsx",
       "title": "Foundation/Tab Views"
     },
     {
-      "file": "Textarea.stories.tsx",
-      "title": "Foundation/Textarea"
-    },
-    {
       "file": "TextView.stories.tsx",
       "title": "Foundation/Text Views"
+    },
+    {
+      "file": "Textarea.stories.tsx",
+      "title": "Foundation/Textarea"
     },
     {
       "file": "Toolbar.stories.tsx",

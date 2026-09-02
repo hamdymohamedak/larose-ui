@@ -26,6 +26,14 @@
       "composite": true
     },
     {
+      "id": "TooltipStory",
+      "title": "Tooltip",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"TooltipStory\" for full example.",
+      "composite": true
+    },
+    {
       "id": "TooltipDefault",
       "title": "Tooltip Default",
       "kind": "basic",

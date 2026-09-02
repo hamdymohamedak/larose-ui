@@ -1,0 +1,66 @@
+openapi: 3.1.0
+info:
+  title: laRose UI Packages API
+  version: 1.0.0
+  description: Package catalog for the laRose UI monorepo.
+servers:
+  - url: https://hamdymohamedak.github.io/larose-ui
+paths:
+  /docs/packages:
+    get:
+      operationId: listPackages
+      summary: Human-readable package index
+      responses:
+        '200':
+          description: Package documentation index
+          content:
+            text/html:
+              schema:
+                type: string
+  /docs/packages/{packageId}:
+    get:
+      operationId: getPackageDocs
+      summary: Package documentation page
+      parameters:
+        - name: packageId
+          in: path
+          required: true
+          schema:
+            type: string
+            enum:
+              - accessibility
+              - ai
+              - cli
+              - contracts
+              - core
+              - data
+              - desktop-core
+              - devtools
+              - electron
+              - enterprise
+              - forms
+              - migration
+              - network
+              - next
+              - nuxt
+              - observability
+              - offline
+              - permissions
+              - primitives
+              - react
+              - runtime
+              - runtime-core
+              - styles
+              - svelte
+              - tauri
+              - testing
+              - themes
+              - tokens
+              - vue
+      responses:
+        '200':
+          description: Package documentation page
+          content:
+            text/html:
+              schema:
+                type: string

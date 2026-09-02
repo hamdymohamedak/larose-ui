@@ -8,4 +8,4 @@
 
 ### Patch Changes
 
-- @larose-ui/tokens@0.1.3
+- @larose-ui/tokens@0.1.2

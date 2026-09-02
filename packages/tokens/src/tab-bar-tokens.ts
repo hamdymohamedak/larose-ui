@@ -12,6 +12,9 @@ export interface TabBarTokens {
   inactiveFg: string;
   badgeBg: string;
   badgeFg: string;
+  liquidGlassBg: string;
+  liquidGlassActiveBg: string;
+  liquidGlassGlow: string;
 }
 
 /** @see https://developer.apple.com/design/human-interface-guidelines/tab-bars */
@@ -29,6 +32,9 @@ export function getTabBarTokens(mode: ThemeMode): TabBarTokens {
       inactiveFg: '#8e8e93',
       badgeBg: '#ff453a',
       badgeFg: '#ffffff',
+      liquidGlassBg: 'rgb(44 44 46 / 0.38)',
+      liquidGlassActiveBg: 'rgb(90 90 96 / 0.88)',
+      liquidGlassGlow: '0 6px 24px rgb(255 105 180 / 0.24)',
     };
   }
   return {
@@ -43,6 +49,9 @@ export function getTabBarTokens(mode: ThemeMode): TabBarTokens {
     inactiveFg: '#8e8e93',
     badgeBg: '#ff3b30',
     badgeFg: '#ffffff',
+    liquidGlassBg: 'rgb(255 255 255 / 0.28)',
+    liquidGlassActiveBg: 'rgb(255 255 255 / 0.92)',
+    liquidGlassGlow: '0 6px 24px rgb(236 72 153 / 0.22)',
   };
 }
 
@@ -59,6 +68,9 @@ export function tabBarTokensToCSSVariables(tokens: TabBarTokens): Record<string,
     '--lr-tab-bar-inactive-fg': tokens.inactiveFg,
     '--lr-tab-bar-badge-bg': tokens.badgeBg,
     '--lr-tab-bar-badge-fg': tokens.badgeFg,
+    '--lr-tab-bar-liquid-glass-bg': tokens.liquidGlassBg,
+    '--lr-tab-bar-liquid-glass-active-bg': tokens.liquidGlassActiveBg,
+    '--lr-tab-bar-liquid-glass-glow': tokens.liquidGlassGlow,
   };
 }
 

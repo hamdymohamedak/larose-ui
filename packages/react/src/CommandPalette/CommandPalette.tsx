@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState, type KeyboardEvent } from 'react';
 import { STANDARD_ACCELERATORS } from '@larose-ui/core';
 import { useAccelerator } from '../accelerator';
 import styles from '@larose-ui/styles/components/CommandPalette/CommandPalette.module.css';
@@ -70,10 +70,16 @@ export function CommandPalette({
     }
   }, [activeIndex, filtered.length]);
 
-  useEffect(() => {
-    if (!open) return;
+  const filteredRef = useRef(filtered);
+  const activeIndexRef = useRef(activeIndex);
+  filteredRef.current = filtered;
+  activeIndexRef.current = activeIndex;
 
-    const onKeyDown = (event: KeyboardEvent) => {
+  const handleNavigationKeyDown = useCallback(
+    (event: KeyboardEvent<HTMLElement>) => {
+      const items = filteredRef.current;
+      const current = activeIndexRef.current;
+
       if (event.key === 'Escape') {
         event.preventDefault();
         close();
@@ -82,25 +88,47 @@ export function CommandPalette({
 
       if (event.key === 'ArrowDown') {
         event.preventDefault();
-        setActiveIndex((index) => (index + 1) % Math.max(filtered.length, 1));
+        setActiveIndex((index) => (index + 1) % Math.max(items.length, 1));
+        return;
       }
 
       if (event.key === 'ArrowUp') {
         event.preventDefault();
         setActiveIndex(
-          (index) => (index - 1 + Math.max(filtered.length, 1)) % Math.max(filtered.length, 1),
+          (index) => (index - 1 + Math.max(items.length, 1)) % Math.max(items.length, 1),
         );
+        return;
       }
 
-      if (event.key === 'Enter' && filtered[activeIndex]) {
+      if (event.key === 'Enter' && items[current]) {
         event.preventDefault();
-        selectItem(filtered[activeIndex]!);
+        selectItem(items[current]!);
       }
+    },
+    [close, selectItem],
+  );
+
+  useEffect(() => {
+    if (!open) return;
+    const active = document.getElementById(
+      filtered[activeIndex] ? `larose-command-${filtered[activeIndex]!.id}` : '',
+    );
+    active?.scrollIntoView?.({ block: 'nearest' });
+  }, [activeIndex, filtered, open]);
+
+  useEffect(() => {
+    if (!open) return undefined;
+
+    const onKeyDown = (event: globalThis.KeyboardEvent) => {
+      if (event.key !== 'Escape') return;
+      if (event.target instanceof Element && event.target.closest('[role="dialog"]')) return;
+      event.preventDefault();
+      close();
     };
 
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
-  }, [activeIndex, close, filtered, open, selectItem]);
+  }, [close, open]);
 
   if (!open) return null;
 
@@ -127,14 +155,18 @@ export function CommandPalette({
           className={styles.search}
           placeholder={placeholder}
           value={query}
+          role="combobox"
           aria-controls="larose-command-list"
+          aria-expanded={filtered.length > 0}
           aria-activedescendant={
             filtered[activeIndex] ? `larose-command-${filtered[activeIndex]!.id}` : undefined
           }
+          aria-autocomplete="list"
           onChange={(event) => {
             setQuery(event.target.value);
             setActiveIndex(0);
           }}
+          onKeyDown={handleNavigationKeyDown}
         />
         <ul
           id="larose-command-list"

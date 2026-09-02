@@ -19,6 +19,12 @@
       "required": false
     },
     {
+      "name": "liquidGlass",
+      "type": "boolean | LiquidGlassProps",
+      "required": false,
+      "description": "Floating liquid glass with displacement-mapped selection lens. Pass true for defaults or an object with width, height, borderRadius, scale, depth, curvature, splay, chroma, blur, glow, edgeHighlight, specularAngle."
+    },
+    {
       "name": "platform",
       "type": "TabBarPlatform",
       "required": false

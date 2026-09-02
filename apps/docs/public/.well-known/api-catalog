@@ -1,0 +1,85 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://hamdymohamedak.github.io/larose-ui/api/v1/components",
+      "service-desc": [
+        {
+          "href": "https://hamdymohamedak.github.io/larose-ui/.well-known/openapi/component-metadata.yaml",
+          "type": "application/yaml"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://hamdymohamedak.github.io/larose-ui/docs/components",
+          "type": "text/html"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://hamdymohamedak.github.io/larose-ui/.well-known/health",
+          "type": "application/json"
+        }
+      ],
+      "service-meta": [
+        {
+          "href": "https://hamdymohamedak.github.io/larose-ui/.well-known/openid-configuration",
+          "type": "application/json"
+        }
+      ]
+    },
+    {
+      "anchor": "https://hamdymohamedak.github.io/larose-ui/api/v1/documentation",
+      "service-desc": [
+        {
+          "href": "https://hamdymohamedak.github.io/larose-ui/.well-known/openapi/documentation.yaml",
+          "type": "application/yaml"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://hamdymohamedak.github.io/larose-ui/docs/getting-started",
+          "type": "text/html"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://hamdymohamedak.github.io/larose-ui/.well-known/health",
+          "type": "application/json"
+        }
+      ],
+      "service-meta": [
+        {
+          "href": "https://hamdymohamedak.github.io/larose-ui/.well-known/openid-configuration",
+          "type": "application/json"
+        }
+      ]
+    },
+    {
+      "anchor": "https://hamdymohamedak.github.io/larose-ui/api/v1/packages",
+      "service-desc": [
+        {
+          "href": "https://hamdymohamedak.github.io/larose-ui/.well-known/openapi/packages.yaml",
+          "type": "application/yaml"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://hamdymohamedak.github.io/larose-ui/docs/packages",
+          "type": "text/html"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://hamdymohamedak.github.io/larose-ui/.well-known/health",
+          "type": "application/json"
+        }
+      ],
+      "service-meta": [
+        {
+          "href": "https://hamdymohamedak.github.io/larose-ui/.well-known/openid-configuration",
+          "type": "application/json"
+        }
+      ]
+    }
+  ]
+}

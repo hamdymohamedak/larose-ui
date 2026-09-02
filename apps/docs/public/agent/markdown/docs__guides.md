@@ -1,0 +1,17 @@
+# Guides
+
+- [Architecture](/docs/guides/architecture)
+- [Vue 3](/docs/guides/vue)
+- [Svelte 5](/docs/guides/svelte)
+- [Next.js](/docs/guides/nextjs)
+- [Nuxt](/docs/guides/nuxt)
+- [Desktop integration](/docs/guides/desktop)
+- [Runtime](/docs/guides/runtime)
+- [Customization](/docs/guides/customization)
+- [Motion system](/docs/guides/motion)
+- [Refined design language](/docs/guides/design-language)
+- [Observability](/docs/guides/observability)
+- [DevTools](/docs/guides/devtools)
+- [AI runtime](/docs/guides/ai)
+- [Migration & CLI](/docs/guides/migration)
+- [Roadmap](/docs/guides/roadmap)

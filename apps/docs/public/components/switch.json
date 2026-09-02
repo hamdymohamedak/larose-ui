@@ -51,6 +51,14 @@
       "composite": true
     },
     {
+      "id": "SwitchStory",
+      "title": "Switch",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"SwitchStory\" for full example.",
+      "composite": true
+    },
+    {
       "id": "Default",
       "title": "Default",
       "kind": "basic",

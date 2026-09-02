@@ -172,8 +172,8 @@ export function compareComponentContracts(
     });
   }
 
-  const canonicalEvents = new Map(canonical.events.map((e) => [e.name, e]));
-  const implEvents = new Map(implementation.events.map((e) => [e.name, e]));
+  const canonicalEvents = new Map((canonical.events ?? []).map((e) => [e.name, e]));
+  const implEvents = new Map((implementation.events ?? []).map((e) => [e.name, e]));
 
   for (const [name, event] of canonicalEvents) {
     if (!implEvents.has(name)) {

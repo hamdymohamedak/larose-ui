@@ -1,0 +1,55 @@
+openapi: 3.1.0
+info:
+  title: laRose UI Component Metadata API
+  version: 1.0.0
+  description: Machine-readable component props, examples, and accessibility metadata.
+servers:
+  - url: https://hamdymohamedak.github.io/larose-ui
+paths:
+  /components/{slug}.json:
+    get:
+      operationId: getComponentMetadata
+      summary: Get component metadata by slug
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+            enum:
+              - activity-share-button
+              - activity-view
+              - alert
+      responses:
+        '200':
+          description: Component metadata document
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ComponentMetadata'
+components:
+  schemas:
+    ComponentMetadata:
+      type: object
+      required: [component, category, import, props]
+      properties:
+        component:
+          type: string
+        category:
+          type: string
+        import:
+          type: string
+        props:
+          type: array
+          items:
+            type: object
+            properties:
+              name: { type: string }
+              type: { type: string }
+              required: { type: boolean }
+              description: { type: string }
+        examples:
+          type: array
+        accessibility:
+          type: array
+          items: { type: string }

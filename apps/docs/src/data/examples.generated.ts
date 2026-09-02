@@ -288,6 +288,14 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "props": {},
       "code": "// See Storybook story \"Sizes\" for full example.",
       "composite": true
+    },
+    {
+      "id": "Button",
+      "title": "Button",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"Button\" for full example.",
+      "composite": true
     }
   ],
   "ButtonGroup": [],
@@ -309,6 +317,14 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "kind": "advanced",
       "props": {},
       "code": "// See Storybook story \"WithBadge\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "Card",
+      "title": "Card",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"Card\" for full example.",
       "composite": true
     }
   ],
@@ -555,14 +571,9 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "Loading",
       "title": "Loading",
       "kind": "loading",
-      "props": {
-        "open": true,
-        "title": "Saving Changes",
-        "description": "Please wait while we save your changes.",
-        "confirmLabel": "Save",
-        "loading": true
-      },
-      "code": "<Dialog\n  open\n  title=\"Saving Changes\"\n  description=\"Please wait while we save your changes.\"\n  confirmLabel=\"Save\"\n  loading\n>Example</Dialog>"
+      "props": {},
+      "code": "<Dialog\n        open\n        onClose={() => undefined}\n        title=\"Saving Changes\"\n        description=\"Please wait while we save your changes.\"\n        confirmLabel=\"Save\"\n        onConfirm={() => undefined}\n        loading\n      />",
+      "composite": true
     },
     {
       "id": "DialogMotion",
@@ -1027,6 +1038,22 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
   ],
   "Popover": [
     {
+      "id": "PopoverStory",
+      "title": "Popover",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"PopoverStory\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "PopoverPortalStory",
+      "title": "Popover (portal / overflow)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"PopoverPortalStory\" for full example.",
+      "composite": true
+    },
+    {
       "id": "PopoverAndTooltip",
       "title": "Popover And Tooltip",
       "kind": "advanced",
@@ -1300,6 +1327,14 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "composite": true
     },
     {
+      "id": "SwitchStory",
+      "title": "Switch",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"SwitchStory\" for full example.",
+      "composite": true
+    },
+    {
       "id": "Default",
       "title": "Default",
       "kind": "basic",
@@ -1450,6 +1485,14 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "kind": "advanced",
       "props": {},
       "code": "// See Storybook story \"ExpansionTooltip\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "TooltipStory",
+      "title": "Tooltip",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"TooltipStory\" for full example.",
       "composite": true
     },
     {

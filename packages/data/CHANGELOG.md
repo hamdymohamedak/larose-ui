@@ -12,14 +12,6 @@
   - @larose-ui/core@0.2.0
   - @larose-ui/permissions@0.2.0
 
-## 0.1.2
-
-### Patch Changes
-
-- Updated dependencies [989ea15]
-  - @larose-ui/core@0.1.2
-  - @larose-ui/permissions@0.1.2
-
 ## 0.1.1
 
 ### Patch Changes

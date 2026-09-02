@@ -9,7 +9,8 @@ export default defineConfig({
   plugins: [
     vue(),
     dts({
-      include: ['src'],
+      include: ['src', 'env.d.ts'],
+      tsconfigPath: './tsconfig.json',
       rollupTypes: true,
     }),
   ],

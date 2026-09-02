@@ -12,14 +12,7 @@
   - @larose-ui/contracts@0.2.0
   - @larose-ui/quality-core@0.2.0
   - @larose-ui/migration@0.2.0
-  - @larose-ui/accessibility@0.1.3
-
-## 0.1.2
-
-### Patch Changes
-
-- @larose-ui/accessibility@0.1.2
-- @larose-ui/contracts@0.1.2
+  - @larose-ui/accessibility@0.1.2
 
 ## 0.1.1
 

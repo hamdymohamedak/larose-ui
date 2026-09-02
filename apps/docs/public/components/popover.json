@@ -57,6 +57,22 @@
   ],
   "examples": [
     {
+      "id": "PopoverStory",
+      "title": "Popover",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"PopoverStory\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "PopoverPortalStory",
+      "title": "Popover (portal / overflow)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"PopoverPortalStory\" for full example.",
+      "composite": true
+    },
+    {
       "id": "PopoverAndTooltip",
       "title": "Popover And Tooltip",
       "kind": "advanced",

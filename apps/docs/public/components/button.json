@@ -240,6 +240,14 @@
       "props": {},
       "code": "// See Storybook story \"Sizes\" for full example.",
       "composite": true
+    },
+    {
+      "id": "Button",
+      "title": "Button",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"Button\" for full example.",
+      "composite": true
     }
   ],
   "accessibility": [

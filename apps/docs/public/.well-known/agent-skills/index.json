@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "larose-ui-components",
+      "type": "skill-md",
+      "description": "Look up laRose UI React component props, examples, and accessibility notes. Use when implementing UI with @larose-ui/react or documenting component APIs.",
+      "url": "https://hamdymohamedak.github.io/larose-ui/.well-known/agent-skills/larose-ui-components/SKILL.md",
+      "digest": "sha256:ad51d347419c09b69352f26faec6362815b77c2dc17a29bb7b678024d683ca5d"
+    },
+    {
+      "name": "larose-ui-docs",
+      "type": "skill-md",
+      "description": "Navigate laRose UI documentation, guides, and getting-started flows. Use when integrating laRose UI, exploring framework guides, or answering questions about the design system.",
+      "url": "https://hamdymohamedak.github.io/larose-ui/.well-known/agent-skills/larose-ui-docs/SKILL.md",
+      "digest": "sha256:c237047716e964d037cab6356c34c3e378c85231dbd6283b1c459b0758ac1628"
+    },
+    {
+      "name": "larose-ui-packages",
+      "type": "skill-md",
+      "description": "Explore laRose UI monorepo packages, integration paths, and package-specific docs. Use when choosing @larose-ui packages or comparing React, Vue, and Svelte adapters.",
+      "url": "https://hamdymohamedak.github.io/larose-ui/.well-known/agent-skills/larose-ui-packages/SKILL.md",
+      "digest": "sha256:db53f6c6e4710f4e11d411b9f88acbe11b3486330ca1b8217973b978b4cbd10e"
+    }
+  ]
+}

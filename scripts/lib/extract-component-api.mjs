@@ -45,10 +45,9 @@ const DOM_BASE_PROPS = new Set([
 /**
  * @param {string} root
  * @param {string[]} componentNames
+ * @param {string} [indexPath]
  */
-export function extractComponentApi(root, componentNames) {
-  const reactRoot = join(root, 'packages/react');
-  const indexPath = join(reactRoot, 'src/index.ts');
+export function extractComponentApi(root, componentNames, indexPath = join(root, 'packages/react/src/index.ts')) {
   const propsMap = parsePropsExports(indexPath);
 
   /** @type {Record<string, import('./docs-types.mjs').DocsComponentApi>} */
@@ -85,9 +84,16 @@ export function extractComponentApi(root, componentNames) {
  * @param {string[]} componentNames
  * @param {Record<string, { slots?: string[]; states?: string[] }>} [anatomy]
  * @param {'react' | 'vue' | 'svelte' | 'neutral'} [framework]
+ * @param {string} [indexPath]
  */
-export function extractComponentContracts(root, componentNames, anatomy = {}, framework = 'react') {
-  const api = extractComponentApi(root, componentNames);
+export function extractComponentContracts(
+  root,
+  componentNames,
+  anatomy = {},
+  framework = 'react',
+  indexPath,
+) {
+  const api = extractComponentApi(root, componentNames, indexPath);
   /** @type {Record<string, import('../../packages/contracts/src/types.ts').ComponentContract>} */
   const contracts = {};
 

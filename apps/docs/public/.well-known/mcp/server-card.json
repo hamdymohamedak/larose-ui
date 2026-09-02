@@ -1,0 +1,36 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/v1/server-card.schema.json",
+  "name": "io.github.hamdymohamedak/larose-ui-docs",
+  "version": "0.1.1",
+  "description": "MCP access to laRose UI documentation, components, packages, and guides.",
+  "title": "laRose UI Documentation",
+  "websiteUrl": "https://hamdymohamedak.github.io/larose-ui",
+  "repository": {
+    "url": "https://github.com/hamdymohamedak/larose-ui",
+    "source": "github",
+    "subfolder": "apps/docs"
+  },
+  "serverInfo": {
+    "name": "laRose UI Documentation MCP",
+    "version": "0.1.1"
+  },
+  "transport": {
+    "type": "streamable-http",
+    "endpoint": "https://hamdymohamedak.github.io/larose-ui/mcp"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://hamdymohamedak.github.io/larose-ui/mcp",
+      "supportedProtocolVersions": [
+        "2024-11-05",
+        "2025-03-26"
+      ]
+    }
+  ],
+  "capabilities": {
+    "tools": true,
+    "resources": true,
+    "prompts": true
+  }
+}

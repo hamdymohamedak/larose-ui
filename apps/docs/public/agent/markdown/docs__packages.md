@@ -1,0 +1,31 @@
+# Packages
+
+- [@larose-ui/accessibility](/docs/packages/accessibility): Accessibility utilities and component source scanners.
+- [@larose-ui/ai](/docs/packages/ai): Permission-bound AI for SmartTable and SmartForm.
+- [@larose-ui/cli](/docs/packages/cli): CLI for quality gates, migration, and code generation.
+- [@larose-ui/contracts](/docs/packages/contracts): Validate UI schemas against API contracts in CI.
+- [@larose-ui/core](/docs/packages/core): Framework-agnostic types, state machines, and runtime contracts.
+- [@larose-ui/data](/docs/packages/data): Backend-aware data fetching with self-healing errors.
+- [@larose-ui/desktop-core](/docs/packages/desktop-core): Desktop host utilities — native menus, accelerators, window chrome.
+- [@larose-ui/devtools](/docs/packages/devtools): In-app runtime inspector for development.
+- [@larose-ui/electron](/docs/packages/electron): Electron adapter for laRose desktop apps.
+- [@larose-ui/enterprise](/docs/packages/enterprise): Enterprise patterns — audit trails, session guards, schema IaC.
+- [@larose-ui/forms](/docs/packages/forms): Schema-driven forms with validation and conditional fields.
+- [@larose-ui/migration](/docs/packages/migration): Codemods, generators, and release intelligence.
+- [@larose-ui/network](/docs/packages/network): Network condition detection for adaptive UI.
+- [@larose-ui/next](/docs/packages/next): Next.js integration — SSR theme script and LaRoseRoot boundary.
+- [@larose-ui/nuxt](/docs/packages/nuxt): Nuxt module for CSS injection, theme script, and Vue providers.
+- [@larose-ui/observability](/docs/packages/observability): UX observability — journeys, funnels, and rage-click analysis.
+- [@larose-ui/offline](/docs/packages/offline): Offline request queue with sync and conflict handling.
+- [@larose-ui/permissions](/docs/packages/permissions): Authorization-aware UI with RBAC/ABAC patterns.
+- [@larose-ui/primitives](/docs/packages/primitives): Headless menu keyboard, type-ahead, and accelerator behavior.
+- [@larose-ui/react](/docs/packages/react): Production-ready React components with built-in UI states.
+- [@larose-ui/runtime](/docs/packages/runtime): Unified runtime — theme, i18n, permissions, network, and session.
+- [@larose-ui/runtime-core](/docs/packages/runtime-core): Framework-agnostic runtime store, host detection, and i18n.
+- [@larose-ui/styles](/docs/packages/styles): Framework-agnostic component CSS from the design system.
+- [@larose-ui/svelte](/docs/packages/svelte): Svelte 5 components with runes and shared laRose styles.
+- [@larose-ui/tauri](/docs/packages/tauri): Tauri adapter for laRose desktop webviews.
+- [@larose-ui/testing](/docs/packages/testing): Test utilities with full laRose runtime context.
+- [@larose-ui/themes](/docs/packages/themes): Named theme presets and tenant branding helpers.
+- [@larose-ui/tokens](/docs/packages/tokens): Runtime design tokens as CSS custom properties.
+- [@larose-ui/vue](/docs/packages/vue): Vue 3 components — thin adapter over shared styles and runtime-core.

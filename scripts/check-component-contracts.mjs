@@ -31,6 +31,21 @@ if (canonicalFiles.length === 0) {
 const names = listComponentNames(root);
 const liveContracts = extractComponentContracts(root, names, COMPONENT_ANATOMY, 'react');
 
+const glassIndexPath = join(root, 'packages/glass/src/react/index.ts');
+const glassNames = canonicalFiles
+  .map((file) => file.replace(/\.json$/, ''))
+  .filter((name) => {
+    const canonical = JSON.parse(readFileSync(join(componentsDir, `${name}.json`), 'utf8'));
+    return canonical.package === '@larose-ui/glass/react';
+  });
+
+if (glassNames.length > 0) {
+  Object.assign(
+    liveContracts,
+    extractComponentContracts(root, glassNames, COMPONENT_ANATOMY, 'react', glassIndexPath),
+  );
+}
+
 for (const file of canonicalFiles) {
   const componentName = file.replace(/\.json$/, '');
   const canonical = JSON.parse(readFileSync(join(componentsDir, file), 'utf8'));

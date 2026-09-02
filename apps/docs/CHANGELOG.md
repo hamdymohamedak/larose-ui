@@ -9,5 +9,5 @@
   - @larose-ui/styles@0.2.0
   - @larose-ui/runtime@1.0.0
   - @larose-ui/core@0.2.0
-  - @larose-ui/themes@0.1.3
-  - @larose-ui/tokens@0.1.3
+  - @larose-ui/themes@0.1.2
+  - @larose-ui/tokens@0.1.2

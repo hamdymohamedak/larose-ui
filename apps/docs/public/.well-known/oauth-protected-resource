@@ -1,0 +1,17 @@
+{
+  "resource": "https://hamdymohamedak.github.io/larose-ui/",
+  "resource_name": "laRose UI Documentation API",
+  "authorization_servers": [
+    "https://hamdymohamedak.github.io/larose-ui"
+  ],
+  "scopes_supported": [
+    "docs:read",
+    "openid",
+    "profile",
+    "email"
+  ],
+  "bearer_methods_supported": [
+    "header"
+  ],
+  "resource_documentation": "https://hamdymohamedak.github.io/larose-ui/docs/getting-started"
+}

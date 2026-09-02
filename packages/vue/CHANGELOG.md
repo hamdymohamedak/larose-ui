@@ -13,5 +13,5 @@
   - @larose-ui/runtime-core@0.2.0
   - @larose-ui/primitives@0.2.0
   - @larose-ui/core@0.2.0
-  - @larose-ui/themes@0.1.3
-  - @larose-ui/tokens@0.1.3
+  - @larose-ui/themes@0.1.2
+  - @larose-ui/tokens@0.1.2
