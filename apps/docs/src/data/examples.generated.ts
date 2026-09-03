@@ -1463,11 +1463,11 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
   ],
   "LiquidGlassSwitch": [
     {
-      "id": "AllControls",
-      "title": "All controls",
-      "kind": "variants",
+      "id": "SwitchDefault",
+      "title": "Switch Default",
+      "kind": "basic",
       "props": {},
-      "code": "// See Storybook story \"AllControls\" for full example.",
+      "code": "<Switch label=\"Email notifications\" defaultChecked hint=\"Receive product updates\" />",
       "composite": true
     }
   ],

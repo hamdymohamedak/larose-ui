@@ -12,6 +12,8 @@
   cursor: pointer;
   position: relative;
   min-width: 0;
+  padding-block: 0;
+  box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
   user-select: none;
   transition:
@@ -29,18 +31,21 @@
 
 /* Apple HIG: 44×44 pt minimum hit region for standard controls */
 .button[data-size='sm'] {
+  height: var(--lr-button-height-sm);
   min-height: var(--lr-button-height-sm);
   padding-inline: var(--lr-button-padding-inline-sm);
   font-size: var(--lr-button-font-size-sm);
 }
 
 .button[data-size='md'] {
+  height: var(--lr-button-height-md);
   min-height: var(--lr-button-height-md);
   padding-inline: var(--lr-button-padding-inline-md);
   font-size: var(--lr-button-font-size-md);
 }
 
 .button[data-size='lg'] {
+  height: var(--lr-button-height-lg);
   min-height: var(--lr-button-height-lg);
   padding-inline: var(--lr-button-padding-inline-lg);
   font-size: var(--lr-button-font-size-lg);
@@ -183,7 +188,7 @@
 /* Primary — filled accent (default / primary role) */
 .button[data-variant='primary'] {
   background-color: var(--lr-color-primary);
-  color: var(--lr-color-text-inverse);
+  color: var(--lr-button-on-primary-color);
 }
 
 .button[data-variant='primary']:hover:not(:disabled) {
@@ -309,11 +314,37 @@
 .icon {
   display: inline-flex;
   flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+}
+
+.icon svg {
+  display: block;
+  flex-shrink: 0;
+}
+
+.button[data-size='sm'] .icon svg {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.button[data-size='md'] .icon svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.button[data-size='lg'] .icon svg {
+  width: 1rem;
+  height: 1rem;
 }
 
 .content {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 .errorMessage {

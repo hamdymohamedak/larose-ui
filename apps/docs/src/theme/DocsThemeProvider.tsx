@@ -2,7 +2,7 @@ import {
   createContext,
   useCallback,
   useContext,
-  useEffect,
+  useLayoutEffect,
   useMemo,
   useState,
   type ReactNode,
@@ -45,7 +45,7 @@ export function DocsThemeProvider({ children }: { children: ReactNode }) {
     [themeConfig, theme],
   );
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const root = document.documentElement;
     root.dataset.docsTheme = theme;
     root.style.colorScheme = theme;

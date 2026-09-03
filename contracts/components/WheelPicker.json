@@ -2,7 +2,66 @@
   "name": "WheelPicker",
   "version": "1",
   "framework": "react",
-  "props": [],
-  "events": [],
-  "keyboard": {}
+  "props": [
+    {
+      "name": "'aria-label'",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "columns",
+      "type": "PickerColumn[]",
+      "required": true
+    },
+    {
+      "name": "compact",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "description": "Compact popover presentation — wheels fill the panel edge-to-edge."
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    },
+    {
+      "name": "inline",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "description": "Removes chrome for embedding in inline layouts."
+    },
+    {
+      "name": "value",
+      "type": "PickerValue",
+      "required": true
+    }
+  ],
+  "events": [
+    {
+      "name": "onChange",
+      "payload": "(value: PickerValue) => void"
+    }
+  ],
+  "defaults": {
+    "compact": "false",
+    "disabled": "false",
+    "inline": "false"
+  },
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  },
+  "controlled": [
+    "value"
+  ]
 }

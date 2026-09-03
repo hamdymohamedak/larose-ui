@@ -2,10 +2,6 @@
   "version": 1,
   "stories": [
     {
-      "file": "AI.stories.tsx",
-      "title": "AI/SmartTable"
-    },
-    {
       "file": "Accelerators.stories.tsx",
       "title": "Foundation/Accelerators"
     },
@@ -16,6 +12,10 @@
     {
       "file": "AdaptiveTable.stories.tsx",
       "title": "Runtime/AdaptiveTable"
+    },
+    {
+      "file": "AI.stories.tsx",
+      "title": "AI/SmartTable"
     },
     {
       "file": "Alert.stories.tsx",
@@ -48,6 +48,10 @@
     {
       "file": "Checkbox.stories.tsx",
       "title": "Foundation/Checkbox"
+    },
+    {
+      "file": "CommandPalette.stories.tsx",
+      "title": "Foundation/CommandPalette"
     },
     {
       "file": "ContextMenu.stories.tsx",
@@ -126,10 +130,6 @@
       "title": "Foundation/Form Controls"
     },
     {
-      "file": "Glass.stories.tsx",
-      "title": "Glass"
-    },
-    {
       "file": "GlassLensLab.stories.tsx",
       "title": "Glass/Lens Lab"
     },
@@ -144,6 +144,26 @@
     {
       "file": "Layout.stories.tsx",
       "title": "Foundation/Layout"
+    },
+    {
+      "file": "LiquidGlassButton.stories.tsx",
+      "title": "Glass/LiquidGlass/Button"
+    },
+    {
+      "file": "LiquidGlassControls.stories.tsx",
+      "title": "Glass/LiquidGlass/Controls"
+    },
+    {
+      "file": "LiquidGlassSurface.stories.tsx",
+      "title": "Glass/LiquidGlass/Surface"
+    },
+    {
+      "file": "LiquidGlassTabBar.stories.tsx",
+      "title": "Glass/LiquidGlass TabBar"
+    },
+    {
+      "file": "LiquidGlassTopBar.stories.tsx",
+      "title": "Glass/LiquidGlass/TopBar"
     },
     {
       "file": "ListTable.stories.tsx",
@@ -198,12 +218,12 @@
       "title": "Platform/Full Demo"
     },
     {
-      "file": "PopUpButton.stories.tsx",
-      "title": "Foundation/Pop-up Buttons"
-    },
-    {
       "file": "Popover.stories.tsx",
       "title": "Foundation/Popover"
+    },
+    {
+      "file": "PopUpButton.stories.tsx",
+      "title": "Foundation/Pop-up Buttons"
     },
     {
       "file": "Progress.stories.tsx",
@@ -246,24 +266,16 @@
       "title": "Foundation/Switch"
     },
     {
-      "file": "TabBar.stories.tsx",
-      "title": "Foundation/TabBar"
-    },
-    {
-      "file": "TabBarLiquidGlass.stories.tsx",
-      "title": "Foundation/TabBar"
-    },
-    {
       "file": "TabView.stories.tsx",
       "title": "Foundation/Tab Views"
     },
     {
-      "file": "TextView.stories.tsx",
-      "title": "Foundation/Text Views"
-    },
-    {
       "file": "Textarea.stories.tsx",
       "title": "Foundation/Textarea"
+    },
+    {
+      "file": "TextView.stories.tsx",
+      "title": "Foundation/Text Views"
     },
     {
       "file": "Toolbar.stories.tsx",

@@ -3,7 +3,99 @@
   "category": "Forms",
   "package": "@larose-ui/react",
   "import": "import { DateTimePicker } from '@larose-ui/react';",
-  "props": [],
+  "props": [
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "error",
+      "type": "string | null",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "hint",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "inputSize",
+      "type": "Size",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "loading",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "locale",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "maxDate",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "minDate",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "minuteInterval",
+      "type": "number",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "mode",
+      "type": "DateTimePickerMode",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "state",
+      "type": "UIState",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "use12Hour",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "value",
+      "type": "DateTimeValue",
+      "required": false,
+      "default": "{",
+      "inherited": false
+    },
+    {
+      "name": "yearRange",
+      "type": "{ start: number; end: number }",
+      "required": false,
+      "inherited": false
+    }
+  ],
   "examples": [],
   "accessibility": [],
   "anatomy": null,

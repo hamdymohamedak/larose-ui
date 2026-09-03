@@ -113,7 +113,6 @@ function ControlledCheckbox({
 
 export const SwitchStory: StoryObj<SwitchArgs> = {
   name: 'Switch',
-  component: LiquidGlassSwitch,
   argTypes: liquidGlassSwitchArgTypes,
   args: liquidGlassSwitchDefaults,
   render: (args) => (
@@ -129,7 +128,6 @@ export const SwitchStory: StoryObj<SwitchArgs> = {
 
 export const ProgressStory: StoryObj<ProgressArgs> = {
   name: 'Progress',
-  component: LiquidGlassProgress,
   argTypes: liquidGlassProgressArgTypes,
   args: liquidGlassProgressDefaults,
   render: (args) => (
@@ -159,7 +157,6 @@ export const ProgressIndeterminate: StoryObj<ProgressArgs> = {
 
 export const RangeStory: StoryObj<RangeArgs> = {
   name: 'Range',
-  component: LiquidGlassRange,
   argTypes: liquidGlassRangeArgTypes,
   args: liquidGlassRangeDefaults,
   render: (args) => (
@@ -175,7 +172,6 @@ export const RangeStory: StoryObj<RangeArgs> = {
 
 export const CheckboxStory: StoryObj<CheckboxArgs> = {
   name: 'Checkbox',
-  component: LiquidGlassCheckbox,
   argTypes: liquidGlassCheckboxArgTypes,
   args: liquidGlassCheckboxDefaults,
   render: (args) => (

@@ -10,6 +10,11 @@ import {
 /** Hide props that cannot be driven from Storybook controls. */
 export const hiddenControl = { table: { disable: true } } as const;
 
+/** Portable action stub — `fn()` infers vitest spy types that break declaration emit. */
+function storyAction<F extends (...args: never[]) => unknown>(): F {
+  return fn() as unknown as F;
+}
+
 export function hiddenProps(...keys: string[]): ArgTypes {
   return Object.fromEntries(keys.map((key) => [key, hiddenControl]));
 }
@@ -190,7 +195,7 @@ export const liquidGlassButtonDefaults = {
   fontWeight: 500,
   disabled: false,
   type: 'button' as const,
-  onClick: fn(),
+  onClick: storyAction<() => void>(),
   ...liquidGlassOpticsDefaults,
   displacementScale: 28,
   bezelWidth: 16,
@@ -286,7 +291,7 @@ export const liquidGlassTopBarDefaults = {
   borderRadius: 20,
   position: 'fixed' as const,
   defaultActiveKey: 'home',
-  onChange: fn(),
+  onChange: storyAction<(key: string) => void>(),
   activeColor: '#ffffff',
   inactiveColor: 'rgba(255, 255, 255, 0.62)',
   titleColor: '#ffffff',
@@ -364,7 +369,7 @@ export const liquidGlassTabBarArgTypes: ArgTypes = {
 export const liquidGlassTabBarDefaults = {
   tabPreset: 'full' as TabBarTabPreset,
   defaultActiveKey: 'home',
-  onChange: fn(),
+  onChange: storyAction<(key: string) => void>(),
   height: 64,
   borderRadius: 30,
   maxWidth: 420,
@@ -401,7 +406,7 @@ export const liquidGlassSurfaceDefaults = {
   maxWidth: 0,
   minHeight: 0,
   maxHeight: 0,
-  onDisplacementMapChange: fn(),
+  onDisplacementMapChange: storyAction<(map: string) => void>(),
   ...liquidGlassOpticsDefaults,
 };
 
@@ -472,7 +477,7 @@ export const liquidGlassSwitchDefaults = {
   height: 32,
   thumbSize: 28,
   activeTrackTint: LIQUID_GLASS_SWITCH_ACTIVE_GREEN,
-  onChange: fn(),
+  onChange: storyAction<(checked: boolean) => void>(),
   ...liquidGlassOpticsDefaults,
   displacementScale: 24,
   bezelWidth: 12,
@@ -526,7 +531,7 @@ export const liquidGlassRangeDefaults = {
   trackHeight: 8,
   thumbSize: 28,
   fillColor: 'rgba(255, 255, 255, 0.35)',
-  onChange: fn(),
+  onChange: storyAction<(value: number) => void>(),
   ...liquidGlassOpticsDefaults,
   displacementScale: 22,
   bezelWidth: 12,
@@ -556,7 +561,7 @@ export const liquidGlassCheckboxDefaults = {
   checkColor: '#ffffff',
   checkedTint: 'rgba(52, 199, 89, 0.42)',
   labelColor: '#ffffff',
-  onChange: fn(),
+  onChange: storyAction<(checked: boolean) => void>(),
   ...liquidGlassOpticsDefaults,
   displacementScale: 20,
   bezelWidth: 10,

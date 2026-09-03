@@ -88,9 +88,13 @@ export function HomePage() {
           </div>
 
           <div className="docs-hero-v3__actions">
-            <Button size="lg" onClick={() => navigate('/docs/getting-started')}>
+            <Button
+              size="lg"
+              shape="capsule"
+              rightIcon={<ArrowRight size={16} aria-hidden />}
+              onClick={() => navigate('/docs/getting-started')}
+            >
               Start building
-              <ArrowRight size={16} aria-hidden />
             </Button>
             <Button size="lg" variant="outline" onClick={() => navigate('/docs/components')}>
               Browse components

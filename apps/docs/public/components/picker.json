@@ -3,7 +3,87 @@
   "category": "Forms",
   "package": "@larose-ui/react",
   "import": "import { Picker } from '@larose-ui/react';",
-  "props": [],
+  "props": [
+    {
+      "name": "'aria-label'",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "columns",
+      "type": "PickerColumn[]",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "inherited": false
+    },
+    {
+      "name": "error",
+      "type": "string | null",
+      "required": false,
+      "default": "null",
+      "inherited": false
+    },
+    {
+      "name": "formatValue",
+      "type": "(value: PickerValue, columns: PickerColumn[]) => string",
+      "required": false,
+      "default": "defaultFormatValue",
+      "description": "Formats the compact trigger label from the current value.",
+      "inherited": false
+    },
+    {
+      "name": "hint",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "inputSize",
+      "type": "Size",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "loading",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "inherited": false
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "required": false,
+      "default": "'Select'",
+      "description": "Shown on the compact trigger when no selection exists.",
+      "inherited": false
+    },
+    {
+      "name": "state",
+      "type": "UIState",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "value",
+      "type": "PickerValue",
+      "required": true,
+      "inherited": false
+    }
+  ],
   "examples": [
     {
       "id": "WheelStyle",
@@ -78,7 +158,9 @@
       "composite": true
     }
   ],
-  "accessibility": [],
+  "accessibility": [
+    "Supports ARIA attributes via standard HTML element props."
+  ],
   "anatomy": {
     "summary": "Picker covers date/time selection with wheel and calendar variants.",
     "structure": [

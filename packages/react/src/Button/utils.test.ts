@@ -1,8 +1,10 @@
+import { createElement } from 'react';
 import { describe, expect, it } from 'vitest';
 import {
   formatButtonLabel,
   hasTextContent,
   resolveButtonShape,
+  splitButtonChildren,
 } from './utils';
 
 describe('Button utils', () => {
@@ -28,5 +30,17 @@ describe('Button utils', () => {
   it('detects text content in labels', () => {
     expect(hasTextContent('Save')).toBe(true);
     expect(hasTextContent('  ')).toBe(false);
+  });
+
+  it('splits mixed text and inline icons from children', () => {
+    const result = splitButtonChildren(['Start building', createElement('svg')]);
+    expect(result.text).toBe('Start building');
+    expect(result.inlineIcons).toHaveLength(1);
+  });
+
+  it('trims whitespace-only text nodes when splitting children', () => {
+    const result = splitButtonChildren(['  Save  ']);
+    expect(result.text).toBe('Save');
+    expect(result.inlineIcons).toHaveLength(0);
   });
 });

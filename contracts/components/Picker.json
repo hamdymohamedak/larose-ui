@@ -2,8 +2,81 @@
   "name": "Picker",
   "version": "1",
   "framework": "react",
-  "props": [],
-  "events": [],
+  "props": [
+    {
+      "name": "'aria-label'",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "columns",
+      "type": "PickerColumn[]",
+      "required": true
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    },
+    {
+      "name": "error",
+      "type": "string | null",
+      "required": false,
+      "default": "null"
+    },
+    {
+      "name": "formatValue",
+      "type": "(value: PickerValue, columns: PickerColumn[]) => string",
+      "required": false,
+      "default": "defaultFormatValue",
+      "description": "Formats the compact trigger label from the current value."
+    },
+    {
+      "name": "hint",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "inputSize",
+      "type": "Size",
+      "required": false
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "loading",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "required": false,
+      "default": "'Select'",
+      "description": "Shown on the compact trigger when no selection exists."
+    },
+    {
+      "name": "state",
+      "type": "UIState",
+      "required": false
+    },
+    {
+      "name": "value",
+      "type": "PickerValue",
+      "required": true
+    }
+  ],
+  "events": [
+    {
+      "name": "onChange",
+      "payload": "(value: PickerValue) => void"
+    }
+  ],
   "slots": [
     "label",
     "value"
@@ -12,5 +85,25 @@
     "closed",
     "open"
   ],
-  "keyboard": {}
+  "defaults": {
+    "disabled": "false",
+    "error": "null",
+    "formatValue": "defaultFormatValue",
+    "loading": "false",
+    "placeholder": "'Select'"
+  },
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  },
+  "controlled": [
+    "value"
+  ]
 }

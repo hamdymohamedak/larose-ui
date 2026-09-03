@@ -247,8 +247,16 @@ export const docsSearchIndex = [
     "title": "AcceleratorProvider",
     "type": "component",
     "path": "/docs/components/accelerator-provider",
-    "keywords": "AcceleratorProvider Other",
+    "keywords": "AcceleratorProvider Other AcceleratorProvider.platform AcceleratorPlatform AcceleratorProvider.children ReactNode",
     "excerpt": "Other component from @larose-ui/react"
+  },
+  {
+    "id": "prop:accelerator-provider:platform",
+    "title": "AcceleratorProvider.platform",
+    "type": "prop",
+    "path": "/docs/components/accelerator-provider#api",
+    "keywords": "AcceleratorProvider platform AcceleratorPlatform ",
+    "excerpt": "AcceleratorPlatform"
   },
   {
     "id": "component:accordion",
@@ -1215,8 +1223,40 @@ export const docsSearchIndex = [
     "title": "CalendarGrid",
     "type": "component",
     "path": "/docs/components/calendar-grid",
-    "keywords": "CalendarGrid Forms",
+    "keywords": "CalendarGrid Forms CalendarGrid.locale string CalendarGrid.maxDate string CalendarGrid.minDate string CalendarGrid.value string CalendarGrid.onChange (isoDate: string) => void",
     "excerpt": "Forms component from @larose-ui/react"
+  },
+  {
+    "id": "prop:calendar-grid:locale",
+    "title": "CalendarGrid.locale",
+    "type": "prop",
+    "path": "/docs/components/calendar-grid#api",
+    "keywords": "CalendarGrid locale string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:calendar-grid:maxDate",
+    "title": "CalendarGrid.maxDate",
+    "type": "prop",
+    "path": "/docs/components/calendar-grid#api",
+    "keywords": "CalendarGrid maxDate string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:calendar-grid:minDate",
+    "title": "CalendarGrid.minDate",
+    "type": "prop",
+    "path": "/docs/components/calendar-grid#api",
+    "keywords": "CalendarGrid minDate string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:calendar-grid:value",
+    "title": "CalendarGrid.value",
+    "type": "prop",
+    "path": "/docs/components/calendar-grid#api",
+    "keywords": "CalendarGrid value string ",
+    "excerpt": "string"
   },
   {
     "id": "component:caption-button",
@@ -2415,8 +2455,128 @@ export const docsSearchIndex = [
     "title": "DateTimePicker",
     "type": "component",
     "path": "/docs/components/date-time-picker",
-    "keywords": "DateTimePicker Forms",
+    "keywords": "DateTimePicker Forms DateTimePicker.disabled boolean DateTimePicker.error string | null DateTimePicker.hint string DateTimePicker.inputSize Size DateTimePicker.label string DateTimePicker.loading boolean DateTimePicker.locale string DateTimePicker.maxDate string DateTimePicker.minDate string DateTimePicker.minuteInterval number DateTimePicker.mode DateTimePickerMode DateTimePicker.state UIState DateTimePicker.use12Hour boolean DateTimePicker.value DateTimeValue DateTimePicker.yearRange { start: number; end: number } DateTimePicker.onChange (value: DateTimeValue) => void DateTimePicker.style DateTimePickerStyle",
     "excerpt": "Forms component from @larose-ui/react"
+  },
+  {
+    "id": "prop:date-time-picker:disabled",
+    "title": "DateTimePicker.disabled",
+    "type": "prop",
+    "path": "/docs/components/date-time-picker#api",
+    "keywords": "DateTimePicker disabled boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "prop:date-time-picker:error",
+    "title": "DateTimePicker.error",
+    "type": "prop",
+    "path": "/docs/components/date-time-picker#api",
+    "keywords": "DateTimePicker error string | null ",
+    "excerpt": "string | null"
+  },
+  {
+    "id": "prop:date-time-picker:hint",
+    "title": "DateTimePicker.hint",
+    "type": "prop",
+    "path": "/docs/components/date-time-picker#api",
+    "keywords": "DateTimePicker hint string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:date-time-picker:inputSize",
+    "title": "DateTimePicker.inputSize",
+    "type": "prop",
+    "path": "/docs/components/date-time-picker#api",
+    "keywords": "DateTimePicker inputSize Size ",
+    "excerpt": "Size"
+  },
+  {
+    "id": "prop:date-time-picker:label",
+    "title": "DateTimePicker.label",
+    "type": "prop",
+    "path": "/docs/components/date-time-picker#api",
+    "keywords": "DateTimePicker label string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:date-time-picker:loading",
+    "title": "DateTimePicker.loading",
+    "type": "prop",
+    "path": "/docs/components/date-time-picker#api",
+    "keywords": "DateTimePicker loading boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "prop:date-time-picker:locale",
+    "title": "DateTimePicker.locale",
+    "type": "prop",
+    "path": "/docs/components/date-time-picker#api",
+    "keywords": "DateTimePicker locale string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:date-time-picker:maxDate",
+    "title": "DateTimePicker.maxDate",
+    "type": "prop",
+    "path": "/docs/components/date-time-picker#api",
+    "keywords": "DateTimePicker maxDate string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:date-time-picker:minDate",
+    "title": "DateTimePicker.minDate",
+    "type": "prop",
+    "path": "/docs/components/date-time-picker#api",
+    "keywords": "DateTimePicker minDate string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:date-time-picker:minuteInterval",
+    "title": "DateTimePicker.minuteInterval",
+    "type": "prop",
+    "path": "/docs/components/date-time-picker#api",
+    "keywords": "DateTimePicker minuteInterval number ",
+    "excerpt": "number"
+  },
+  {
+    "id": "prop:date-time-picker:mode",
+    "title": "DateTimePicker.mode",
+    "type": "prop",
+    "path": "/docs/components/date-time-picker#api",
+    "keywords": "DateTimePicker mode DateTimePickerMode ",
+    "excerpt": "DateTimePickerMode"
+  },
+  {
+    "id": "prop:date-time-picker:state",
+    "title": "DateTimePicker.state",
+    "type": "prop",
+    "path": "/docs/components/date-time-picker#api",
+    "keywords": "DateTimePicker state UIState ",
+    "excerpt": "UIState"
+  },
+  {
+    "id": "prop:date-time-picker:use12Hour",
+    "title": "DateTimePicker.use12Hour",
+    "type": "prop",
+    "path": "/docs/components/date-time-picker#api",
+    "keywords": "DateTimePicker use12Hour boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "prop:date-time-picker:value",
+    "title": "DateTimePicker.value",
+    "type": "prop",
+    "path": "/docs/components/date-time-picker#api",
+    "keywords": "DateTimePicker value DateTimeValue ",
+    "excerpt": "DateTimeValue"
+  },
+  {
+    "id": "prop:date-time-picker:yearRange",
+    "title": "DateTimePicker.yearRange",
+    "type": "prop",
+    "path": "/docs/components/date-time-picker#api",
+    "keywords": "DateTimePicker yearRange { start: number; end: number } ",
+    "excerpt": "{ start: number; end: number }"
   },
   {
     "id": "component:dialog",
@@ -5019,12 +5179,12 @@ export const docsSearchIndex = [
     "excerpt": "Track width in px."
   },
   {
-    "id": "example:liquid-glass-switch:AllControls",
-    "title": "LiquidGlassSwitch — All controls",
+    "id": "example:liquid-glass-switch:SwitchDefault",
+    "title": "LiquidGlassSwitch — Switch Default",
     "type": "example",
     "path": "/docs/components/liquid-glass-switch#examples",
-    "keywords": "LiquidGlassSwitch All controls variants {}",
-    "excerpt": "// See Storybook story \"AllControls\" for full example."
+    "keywords": "LiquidGlassSwitch Switch Default basic {}",
+    "excerpt": "<Switch label=\"Email notifications\" defaultChecked hint=\"Receive product updates\" />"
   },
   {
     "id": "component:liquid-glass-tab-bar",
@@ -5975,8 +6135,32 @@ export const docsSearchIndex = [
     "title": "MnemonicLabel",
     "type": "component",
     "path": "/docs/components/mnemonic-label",
-    "keywords": "MnemonicLabel Other",
+    "keywords": "MnemonicLabel Other MnemonicLabel.label string MnemonicLabel.mnemonic string MnemonicLabel.showAccessKey boolean MnemonicLabel.className string",
     "excerpt": "Other component from @larose-ui/react"
+  },
+  {
+    "id": "prop:mnemonic-label:label",
+    "title": "MnemonicLabel.label",
+    "type": "prop",
+    "path": "/docs/components/mnemonic-label#api",
+    "keywords": "MnemonicLabel label string ",
+    "excerpt": "string (required)"
+  },
+  {
+    "id": "prop:mnemonic-label:mnemonic",
+    "title": "MnemonicLabel.mnemonic",
+    "type": "prop",
+    "path": "/docs/components/mnemonic-label#api",
+    "keywords": "MnemonicLabel mnemonic string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:mnemonic-label:showAccessKey",
+    "title": "MnemonicLabel.showAccessKey",
+    "type": "prop",
+    "path": "/docs/components/mnemonic-label#api",
+    "keywords": "MnemonicLabel showAccessKey boolean When true, underline the access key character.",
+    "excerpt": "When true, underline the access key character."
   },
   {
     "id": "component:modal",
@@ -6623,8 +6807,104 @@ export const docsSearchIndex = [
     "title": "Picker",
     "type": "component",
     "path": "/docs/components/picker",
-    "keywords": "Picker Forms",
+    "keywords": "Picker Forms Picker.'aria-label' string Picker.columns PickerColumn[] Picker.disabled boolean Picker.error string | null Picker.formatValue (value: PickerValue, columns: PickerColumn[]) => string Picker.hint string Picker.inputSize Size Picker.label string Picker.loading boolean Picker.placeholder string Picker.state UIState Picker.value PickerValue Picker.onChange (value: PickerValue) => void Picker.style PickerStyle",
     "excerpt": "Forms component from @larose-ui/react"
+  },
+  {
+    "id": "prop:picker:'aria-label'",
+    "title": "Picker.'aria-label'",
+    "type": "prop",
+    "path": "/docs/components/picker#api",
+    "keywords": "Picker 'aria-label' string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:picker:columns",
+    "title": "Picker.columns",
+    "type": "prop",
+    "path": "/docs/components/picker#api",
+    "keywords": "Picker columns PickerColumn[] ",
+    "excerpt": "PickerColumn[] (required)"
+  },
+  {
+    "id": "prop:picker:disabled",
+    "title": "Picker.disabled",
+    "type": "prop",
+    "path": "/docs/components/picker#api",
+    "keywords": "Picker disabled boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "prop:picker:error",
+    "title": "Picker.error",
+    "type": "prop",
+    "path": "/docs/components/picker#api",
+    "keywords": "Picker error string | null ",
+    "excerpt": "string | null"
+  },
+  {
+    "id": "prop:picker:formatValue",
+    "title": "Picker.formatValue",
+    "type": "prop",
+    "path": "/docs/components/picker#api",
+    "keywords": "Picker formatValue (value: PickerValue, columns: PickerColumn[]) => string Formats the compact trigger label from the current value.",
+    "excerpt": "Formats the compact trigger label from the current value."
+  },
+  {
+    "id": "prop:picker:hint",
+    "title": "Picker.hint",
+    "type": "prop",
+    "path": "/docs/components/picker#api",
+    "keywords": "Picker hint string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:picker:inputSize",
+    "title": "Picker.inputSize",
+    "type": "prop",
+    "path": "/docs/components/picker#api",
+    "keywords": "Picker inputSize Size ",
+    "excerpt": "Size"
+  },
+  {
+    "id": "prop:picker:label",
+    "title": "Picker.label",
+    "type": "prop",
+    "path": "/docs/components/picker#api",
+    "keywords": "Picker label string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:picker:loading",
+    "title": "Picker.loading",
+    "type": "prop",
+    "path": "/docs/components/picker#api",
+    "keywords": "Picker loading boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "prop:picker:placeholder",
+    "title": "Picker.placeholder",
+    "type": "prop",
+    "path": "/docs/components/picker#api",
+    "keywords": "Picker placeholder string Shown on the compact trigger when no selection exists.",
+    "excerpt": "Shown on the compact trigger when no selection exists."
+  },
+  {
+    "id": "prop:picker:state",
+    "title": "Picker.state",
+    "type": "prop",
+    "path": "/docs/components/picker#api",
+    "keywords": "Picker state UIState ",
+    "excerpt": "UIState"
+  },
+  {
+    "id": "prop:picker:value",
+    "title": "Picker.value",
+    "type": "prop",
+    "path": "/docs/components/picker#api",
+    "keywords": "Picker value PickerValue ",
+    "excerpt": "PickerValue (required)"
   },
   {
     "id": "example:picker:WheelStyle",
@@ -9151,16 +9431,104 @@ export const docsSearchIndex = [
     "title": "WheelColumn",
     "type": "component",
     "path": "/docs/components/wheel-column",
-    "keywords": "WheelColumn Forms",
+    "keywords": "WheelColumn Forms WheelColumn.columnFlex number WheelColumn.disabled boolean WheelColumn.label string WheelColumn.options PickerOption[] WheelColumn.value string WheelColumn.id string WheelColumn.onChange (value: string) => void",
     "excerpt": "Forms component from @larose-ui/react"
+  },
+  {
+    "id": "prop:wheel-column:columnFlex",
+    "title": "WheelColumn.columnFlex",
+    "type": "prop",
+    "path": "/docs/components/wheel-column#api",
+    "keywords": "WheelColumn columnFlex number ",
+    "excerpt": "number"
+  },
+  {
+    "id": "prop:wheel-column:disabled",
+    "title": "WheelColumn.disabled",
+    "type": "prop",
+    "path": "/docs/components/wheel-column#api",
+    "keywords": "WheelColumn disabled boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "prop:wheel-column:label",
+    "title": "WheelColumn.label",
+    "type": "prop",
+    "path": "/docs/components/wheel-column#api",
+    "keywords": "WheelColumn label string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:wheel-column:options",
+    "title": "WheelColumn.options",
+    "type": "prop",
+    "path": "/docs/components/wheel-column#api",
+    "keywords": "WheelColumn options PickerOption[] ",
+    "excerpt": "PickerOption[] (required)"
+  },
+  {
+    "id": "prop:wheel-column:value",
+    "title": "WheelColumn.value",
+    "type": "prop",
+    "path": "/docs/components/wheel-column#api",
+    "keywords": "WheelColumn value string ",
+    "excerpt": "string (required)"
   },
   {
     "id": "component:wheel-picker",
     "title": "WheelPicker",
     "type": "component",
     "path": "/docs/components/wheel-picker",
-    "keywords": "WheelPicker Forms",
+    "keywords": "WheelPicker Forms WheelPicker.'aria-label' string WheelPicker.columns PickerColumn[] WheelPicker.compact boolean WheelPicker.disabled boolean WheelPicker.inline boolean WheelPicker.value PickerValue WheelPicker.onChange (value: PickerValue) => void",
     "excerpt": "Forms component from @larose-ui/react"
+  },
+  {
+    "id": "prop:wheel-picker:'aria-label'",
+    "title": "WheelPicker.'aria-label'",
+    "type": "prop",
+    "path": "/docs/components/wheel-picker#api",
+    "keywords": "WheelPicker 'aria-label' string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:wheel-picker:columns",
+    "title": "WheelPicker.columns",
+    "type": "prop",
+    "path": "/docs/components/wheel-picker#api",
+    "keywords": "WheelPicker columns PickerColumn[] ",
+    "excerpt": "PickerColumn[] (required)"
+  },
+  {
+    "id": "prop:wheel-picker:compact",
+    "title": "WheelPicker.compact",
+    "type": "prop",
+    "path": "/docs/components/wheel-picker#api",
+    "keywords": "WheelPicker compact boolean Compact popover presentation — wheels fill the panel edge-to-edge.",
+    "excerpt": "Compact popover presentation — wheels fill the panel edge-to-edge."
+  },
+  {
+    "id": "prop:wheel-picker:disabled",
+    "title": "WheelPicker.disabled",
+    "type": "prop",
+    "path": "/docs/components/wheel-picker#api",
+    "keywords": "WheelPicker disabled boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "prop:wheel-picker:inline",
+    "title": "WheelPicker.inline",
+    "type": "prop",
+    "path": "/docs/components/wheel-picker#api",
+    "keywords": "WheelPicker inline boolean Removes chrome for embedding in inline layouts.",
+    "excerpt": "Removes chrome for embedding in inline layouts."
+  },
+  {
+    "id": "prop:wheel-picker:value",
+    "title": "WheelPicker.value",
+    "type": "prop",
+    "path": "/docs/components/wheel-picker#api",
+    "keywords": "WheelPicker value PickerValue ",
+    "excerpt": "PickerValue (required)"
   },
   {
     "id": "guide:architecture",
@@ -9409,6 +9777,14 @@ export const docsSearchIndex = [
     "path": "/docs/design/tokens",
     "keywords": "button.plain.color --lr-button-plain-color Colors Design token exposed as --lr-button-plain-color",
     "excerpt": "--lr-button-plain-color = #0071e3"
+  },
+  {
+    "id": "token:--lr-button-on-primary-color",
+    "title": "button.on.primary.color",
+    "type": "token",
+    "path": "/docs/design/tokens",
+    "keywords": "button.on.primary.color --lr-button-on-primary-color Colors Design token exposed as --lr-button-on-primary-color",
+    "excerpt": "--lr-button-on-primary-color = #ffffff"
   },
   {
     "id": "token:--lr-dnd-insertion-color",
@@ -13317,6 +13693,17 @@ export const docsTokenGroups: Record<string, TokenSearchEntry[]> = {
       "value": "#0071e3",
       "category": "Colors",
       "description": "Design token exposed as --lr-button-plain-color",
+      "relatedComponents": [
+        "Button",
+        "ButtonGroup"
+      ]
+    },
+    {
+      "name": "button.on.primary.color",
+      "cssVariable": "--lr-button-on-primary-color",
+      "value": "#ffffff",
+      "category": "Colors",
+      "description": "Design token exposed as --lr-button-on-primary-color",
       "relatedComponents": [
         "Button",
         "ButtonGroup"

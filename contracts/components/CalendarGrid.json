@@ -2,7 +2,40 @@
   "name": "CalendarGrid",
   "version": "1",
   "framework": "react",
-  "props": [],
-  "events": [],
-  "keyboard": {}
+  "props": [
+    {
+      "name": "locale",
+      "type": "string",
+      "required": false,
+      "default": "'en'"
+    },
+    {
+      "name": "maxDate",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "minDate",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "onChange",
+      "payload": "(isoDate: string) => void"
+    }
+  ],
+  "defaults": {
+    "locale": "'en'"
+  },
+  "keyboard": {},
+  "controlled": [
+    "value"
+  ]
 }

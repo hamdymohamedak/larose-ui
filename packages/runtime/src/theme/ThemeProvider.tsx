@@ -1,6 +1,7 @@
 import {
   createContext,
   useContext,
+  useLayoutEffect,
   useEffect,
   useMemo,
   useRef,
@@ -123,7 +124,7 @@ export function ThemeProvider({
     [normalizedTheme, density, activeTheme, brandColors, components],
   );
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!ref.current) return;
 
     applyResolvedTheme(ref.current, {

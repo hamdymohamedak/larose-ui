@@ -2,7 +2,95 @@
   "name": "DateTimePicker",
   "version": "1",
   "framework": "react",
-  "props": [],
-  "events": [],
-  "keyboard": {}
+  "props": [
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "error",
+      "type": "string | null",
+      "required": false
+    },
+    {
+      "name": "hint",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "inputSize",
+      "type": "Size",
+      "required": false
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "loading",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "locale",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "maxDate",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "minDate",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "minuteInterval",
+      "type": "number",
+      "required": false
+    },
+    {
+      "name": "mode",
+      "type": "DateTimePickerMode",
+      "required": false
+    },
+    {
+      "name": "state",
+      "type": "UIState",
+      "required": false
+    },
+    {
+      "name": "use12Hour",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "value",
+      "type": "DateTimeValue",
+      "required": false,
+      "default": "{"
+    },
+    {
+      "name": "yearRange",
+      "type": "{ start: number; end: number }",
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "onChange",
+      "payload": "(value: DateTimeValue) => void"
+    }
+  ],
+  "defaults": {
+    "value": "{"
+  },
+  "keyboard": {},
+  "controlled": [
+    "value"
+  ]
 }

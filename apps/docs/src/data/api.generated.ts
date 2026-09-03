@@ -17,7 +17,20 @@ export interface DocsComponentApi {
 
 export const docsComponentApi: Record<string, DocsComponentApi> = {
   "AcceleratorProvider": {
-    "props": [],
+    "props": [
+      {
+        "name": "platform",
+        "type": "AcceleratorPlatform",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": true,
+        "inherited": true
+      }
+    ],
     "events": [],
     "accessibility": []
   },
@@ -695,8 +708,47 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
     ]
   },
   "CalendarGrid": {
-    "props": [],
-    "events": [],
+    "props": [
+      {
+        "name": "locale",
+        "type": "string",
+        "required": false,
+        "default": "'en'",
+        "inherited": false
+      },
+      {
+        "name": "maxDate",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "minDate",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "onChange",
+        "type": "(isoDate: string) => void",
+        "required": true,
+        "inherited": true
+      }
+    ],
+    "events": [
+      {
+        "name": "onChange",
+        "type": "(isoDate: string) => void",
+        "required": true,
+        "inherited": true
+      }
+    ],
     "accessibility": []
   },
   "CaptionButton": {
@@ -1558,8 +1610,119 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
     "accessibility": []
   },
   "DateTimePicker": {
-    "props": [],
-    "events": [],
+    "props": [
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "error",
+        "type": "string | null",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "hint",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "inputSize",
+        "type": "Size",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "loading",
+        "type": "boolean",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "locale",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "maxDate",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "minDate",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "minuteInterval",
+        "type": "number",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "mode",
+        "type": "DateTimePickerMode",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "state",
+        "type": "UIState",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "use12Hour",
+        "type": "boolean",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "value",
+        "type": "DateTimeValue",
+        "required": false,
+        "default": "{",
+        "inherited": false
+      },
+      {
+        "name": "yearRange",
+        "type": "{ start: number; end: number }",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "onChange",
+        "type": "(value: DateTimeValue) => void",
+        "required": false,
+        "inherited": true
+      },
+      {
+        "name": "style",
+        "type": "DateTimePickerStyle",
+        "required": false,
+        "inherited": true
+      }
+    ],
+    "events": [
+      {
+        "name": "onChange",
+        "type": "(value: DateTimeValue) => void",
+        "required": false,
+        "inherited": true
+      }
+    ],
     "accessibility": []
   },
   "Dialog": {
@@ -4463,7 +4626,33 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
     "accessibility": []
   },
   "MnemonicLabel": {
-    "props": [],
+    "props": [
+      {
+        "name": "label",
+        "type": "string",
+        "required": true,
+        "inherited": false
+      },
+      {
+        "name": "mnemonic",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "showAccessKey",
+        "type": "boolean",
+        "required": false,
+        "description": "When true, underline the access key character.",
+        "inherited": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true
+      }
+    ],
     "events": [],
     "accessibility": []
   },
@@ -5036,9 +5225,111 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
     ]
   },
   "Picker": {
-    "props": [],
-    "events": [],
-    "accessibility": []
+    "props": [
+      {
+        "name": "'aria-label'",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "columns",
+        "type": "PickerColumn[]",
+        "required": true,
+        "inherited": false
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "inherited": false
+      },
+      {
+        "name": "error",
+        "type": "string | null",
+        "required": false,
+        "default": "null",
+        "inherited": false
+      },
+      {
+        "name": "formatValue",
+        "type": "(value: PickerValue, columns: PickerColumn[]) => string",
+        "required": false,
+        "default": "defaultFormatValue",
+        "description": "Formats the compact trigger label from the current value.",
+        "inherited": false
+      },
+      {
+        "name": "hint",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "inputSize",
+        "type": "Size",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "loading",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "inherited": false
+      },
+      {
+        "name": "placeholder",
+        "type": "string",
+        "required": false,
+        "default": "'Select'",
+        "description": "Shown on the compact trigger when no selection exists.",
+        "inherited": false
+      },
+      {
+        "name": "state",
+        "type": "UIState",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "value",
+        "type": "PickerValue",
+        "required": true,
+        "inherited": false
+      },
+      {
+        "name": "onChange",
+        "type": "(value: PickerValue) => void",
+        "required": true,
+        "inherited": true
+      },
+      {
+        "name": "style",
+        "type": "PickerStyle",
+        "required": false,
+        "default": "'wheels'",
+        "inherited": true
+      }
+    ],
+    "events": [
+      {
+        "name": "onChange",
+        "type": "(value: PickerValue) => void",
+        "required": true,
+        "inherited": true
+      }
+    ],
+    "accessibility": [
+      "Supports ARIA attributes via standard HTML element props."
+    ]
   },
   "Popover": {
     "props": [
@@ -6960,14 +7251,122 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
     "accessibility": []
   },
   "WheelColumn": {
-    "props": [],
-    "events": [],
+    "props": [
+      {
+        "name": "columnFlex",
+        "type": "number",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "inherited": false
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "options",
+        "type": "PickerOption[]",
+        "required": true,
+        "inherited": false
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "required": true,
+        "inherited": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": true,
+        "inherited": true
+      },
+      {
+        "name": "onChange",
+        "type": "(value: string) => void",
+        "required": true,
+        "inherited": true
+      }
+    ],
+    "events": [
+      {
+        "name": "onChange",
+        "type": "(value: string) => void",
+        "required": true,
+        "inherited": true
+      }
+    ],
     "accessibility": []
   },
   "WheelPicker": {
-    "props": [],
-    "events": [],
-    "accessibility": []
+    "props": [
+      {
+        "name": "'aria-label'",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "columns",
+        "type": "PickerColumn[]",
+        "required": true,
+        "inherited": false
+      },
+      {
+        "name": "compact",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "description": "Compact popover presentation — wheels fill the panel edge-to-edge.",
+        "inherited": false
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "inherited": false
+      },
+      {
+        "name": "inline",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "description": "Removes chrome for embedding in inline layouts.",
+        "inherited": false
+      },
+      {
+        "name": "value",
+        "type": "PickerValue",
+        "required": true,
+        "inherited": false
+      },
+      {
+        "name": "onChange",
+        "type": "(value: PickerValue) => void",
+        "required": true,
+        "inherited": true
+      }
+    ],
+    "events": [
+      {
+        "name": "onChange",
+        "type": "(value: PickerValue) => void",
+        "required": true,
+        "inherited": true
+      }
+    ],
+    "accessibility": [
+      "Supports ARIA attributes via standard HTML element props."
+    ]
   }
 };
 

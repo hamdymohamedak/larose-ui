@@ -34,7 +34,7 @@ Apple-inspired by default. Fully customizable by architecture.
 - @larose-ui/vue: Vue 3 components — thin adapter over shared styles and runtime-core.
 
 ## Components
-- AcceleratorProvider (Other) — 0 documented props
+- AcceleratorProvider (Other) — 1 documented props
 - Accordion (Content) — 5 documented props
 - AccordionContent (Content) — 0 documented props
 - AccordionItem (Content) — 2 documented props
@@ -49,7 +49,7 @@ Apple-inspired by default. Fully customizable by architecture.
 - Breadcrumb (Navigation) — 2 documented props
 - Button (Actions) — 15 documented props
 - ButtonGroup (Actions) — 3 documented props
-- CalendarGrid (Forms) — 0 documented props
+- CalendarGrid (Forms) — 4 documented props
 - CaptionButton (Other) — 3 documented props
 - Card (Layout) — 3 documented props
 - Chart (Data) — 16 documented props
@@ -63,7 +63,7 @@ Apple-inspired by default. Fully customizable by architecture.
 - DataTable (Data) — 11 documented props
 - DatePicker (Forms) — 7 documented props
 - DateRangePicker (Forms) — 13 documented props
-- DateTimePicker (Forms) — 0 documented props
+- DateTimePicker (Forms) — 15 documented props
 - Dialog (Overlay) — 8 documented props
 - DisclosureButton (Content) — 7 documented props
 - DisclosureGroup (Content) — 5 documented props
@@ -117,7 +117,7 @@ Apple-inspired by default. Fully customizable by architecture.
 - Menu (Navigation) — 11 documented props
 - MenuBar (Navigation) — 13 documented props
 - MenuBarExtra (Navigation) — 7 documented props
-- MnemonicLabel (Other) — 0 documented props
+- MnemonicLabel (Other) — 3 documented props
 - Modal (Overlay) — 9 documented props
 - Monogram (Other) — 2 documented props
 - MorePullDownButton (Navigation) — 0 documented props
@@ -128,7 +128,7 @@ Apple-inspired by default. Fully customizable by architecture.
 - OutlineViewToolbar (Data) — 4 documented props
 - Pagination (Navigation) — 7 documented props
 - PathControl (Navigation) — 8 documented props
-- Picker (Forms) — 0 documented props
+- Picker (Forms) — 12 documented props
 - Popover (Overlay) — 8 documented props
 - PopUpButton (Navigation) — 9 documented props
 - Poster (Other) — 2 documented props
@@ -177,8 +177,8 @@ Apple-inspired by default. Fully customizable by architecture.
 - WebView (Content) — 7 documented props
 - WebViewNavigation (Content) — 6 documented props
 - WebViewShell (Content) — 2 documented props
-- WheelColumn (Forms) — 0 documented props
-- WheelPicker (Forms) — 0 documented props
+- WheelColumn (Forms) — 5 documented props
+- WheelPicker (Forms) — 6 documented props
 
 ## Guides
 - Architecture: /docs/guides/architecture
