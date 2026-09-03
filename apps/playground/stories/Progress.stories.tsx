@@ -4,7 +4,12 @@ import { Progress } from '@larose-ui/react';
 const meta: Meta<typeof Progress> = {
   title: 'Foundation/Progress',
   component: Progress,
-  tags: ['autodocs'],
+  tags: ['autodocs', 'fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: {
+    laRose: {
+      crossFramework: 'progress',
+    },
+  },
   argTypes: {
     variant: { control: 'select', options: ['default', 'success', 'error'] },
     value: { control: { type: 'range', min: 0, max: 100, step: 1 } },

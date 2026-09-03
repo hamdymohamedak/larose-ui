@@ -15,6 +15,7 @@ import {
 
 const meta: Meta = {
   title: 'Foundation/Disclosure & Labels',
+  tags: ['autodocs', 'fw-react'],
   parameters: { layout: 'padded' },
 };
 
@@ -22,6 +23,13 @@ export default meta;
 type Story = StoryObj;
 
 export const DisclosureTriangleStory: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'disclosureTriangle' } },
+  args: {
+    label: "Advanced options",
+    expanded: false,
+  },
+
   name: 'Disclosure triangle',
   render: function TriangleDemo() {
     const [expanded, setExpanded] = useState(false);

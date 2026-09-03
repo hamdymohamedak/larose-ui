@@ -7,7 +7,9 @@ import './preview.css';
 import {
   renderCrossFrameworkStory,
   renderFrameworkAvailabilityGuard,
+  resolveCrossFrameworkId,
 } from './crossFramework/CrossFrameworkStory';
+import { readToolbarFramework } from './crossFramework/frameworkSupport';
 import { StorybookProvider, type StorybookLocale } from './StorybookProvider';
 
 const StoryFrame = memo(function StoryFrame({
@@ -37,7 +39,10 @@ function LaRoseDecorator({
   Story: ComponentType;
   context: StoryContext;
 }) {
-  const crossFrameworkId = context.parameters.laRose?.crossFramework as string | undefined;
+  const explicitCrossFrameworkId = context.parameters.laRose?.crossFramework as
+    | string
+    | undefined;
+  const crossFrameworkId = resolveCrossFrameworkId(context);
   const standalone = context.parameters.laRose?.standalone === true;
   const useRuntime = context.parameters.laRose?.runtime === true;
   const fullscreen = context.parameters.layout === 'fullscreen';
@@ -47,7 +52,37 @@ function LaRoseDecorator({
     return <StoryFrame fullscreen={fullscreen}>{unavailable}</StoryFrame>;
   }
 
-  if (crossFrameworkId) {
+  // Vue/Svelte: mount real package via registry (explicit param or title map).
+  // Never fall through to React CSF — that looked like a silent React stand-in.
+  const toolbarFramework = readToolbarFramework(context.globals);
+  if (toolbarFramework !== 'react') {
+    if (crossFrameworkId) {
+      const crossFrameworkStory = renderCrossFrameworkStory(context);
+      if (crossFrameworkStory) {
+        return <StoryFrame fullscreen={fullscreen}>{crossFrameworkStory}</StoryFrame>;
+      }
+    }
+    const displayName =
+      (context.parameters.laRose?.displayName as string | undefined) ?? context.title;
+    return (
+      <StoryFrame fullscreen={fullscreen}>
+        {renderFrameworkAvailabilityGuard({
+          ...context,
+          // Force the unsupported panel even when tags claimed support but mount is missing.
+          parameters: {
+            ...context.parameters,
+            laRose: {
+              ...(context.parameters.laRose as object),
+              frameworks: ['react'],
+              displayName,
+            },
+          },
+        })}
+      </StoryFrame>
+    );
+  }
+
+  if (explicitCrossFrameworkId && !context.component) {
     const crossFrameworkStory = renderCrossFrameworkStory(context);
     if (crossFrameworkStory) {
       return <StoryFrame fullscreen={fullscreen}>{crossFrameworkStory}</StoryFrame>;
@@ -106,7 +141,7 @@ const preview: Preview = {
   globalTypes: {
     framework: {
       description:
-        'Mount the real package for this story. Vue 3 and Svelte 5 only render components those packages export — React-only stories (including Liquid Glass) stay hidden.',
+        'Mount the real package for this story. Vue 3 / Svelte 5 hide React-only demos (AI, Enterprise, Motion, …) and jump to a supported Foundation/Glass story.',
       toolbar: {
         title: 'Framework',
         icon: 'batchaccept',

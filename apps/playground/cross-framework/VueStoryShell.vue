@@ -26,7 +26,9 @@ const ResolvedComponent = computed(
 <template>
   <LaRoseProvider :theme="theme" :density="density">
     <component :is="ResolvedComponent" v-bind="componentProps">
-      <template v-if="slotText">{{ slotText }}</template>
+      <template v-if="slotText" #default>{{ slotText }}</template>
+      <!-- DockMenu / similar chrome use a named icon slot -->
+      <template v-if="slotText" #icon>{{ slotText }}</template>
     </component>
   </LaRoseProvider>
 </template>

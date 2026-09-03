@@ -16,6 +16,7 @@ function AuditDemo() {
 }
 
 const meta: Meta<typeof AuditDemo> = {
+  tags: ['fw-react'],
   title: 'Enterprise/Audit',
   component: AuditDemo,
   parameters: { laRose: { standalone: true } },

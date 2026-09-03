@@ -42,8 +42,9 @@ export function UnsupportedFrameworkPanel({
         stand-in.
       </p>
       <p style={{ margin: '0.75rem 0 0' }}>
-        Switch the toolbar back to React to preview this story, or open <code>Parity/Components</code>{' '}
-        for Vue 3 and Svelte 5 implementations that actually ship.
+        Switch the Framework toolbar back to React, or pick a story tagged for{' '}
+        {requestedLabel} (Foundation / Glass / Parity). Changing the toolbar also jumps away from
+        React-only demos automatically.
       </p>
     </div>
   );

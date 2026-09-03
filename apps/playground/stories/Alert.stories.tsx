@@ -4,8 +4,11 @@ import { Alert } from '@larose-ui/react';
 const meta: Meta<typeof Alert> = {
   title: 'Foundation/Notice',
   component: Alert,
-  tags: ['autodocs'],
+  tags: ['autodocs', 'fw-react', 'fw-vue', 'fw-svelte'],
   parameters: {
+    laRose: {
+      crossFramework: 'alert',
+    },
     docs: {
       description: {
         component:

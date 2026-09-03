@@ -3,6 +3,7 @@ import { AlertDialog } from '@larose-ui/react';
 
 const meta: Meta = {
   title: 'Foundation/Alert',
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
   parameters: {
     layout: 'fullscreen',
     docs: {

@@ -35,6 +35,7 @@ function ComposeIcon() {
 
 const meta: Meta = {
   title: 'Foundation/Home Screen Quick Actions',
+  tags: ['autodocs', 'fw-react'],
   parameters: { layout: 'padded' },
 };
 
@@ -42,6 +43,9 @@ export default meta;
 type Story = StoryObj;
 
 export const MailActions: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'homeScreenQuickActions' } },
+  args: { appName: 'Mail', open: true },
   name: 'Mail',
   render: function MailQuickActionsDemo() {
     const [lastAction, setLastAction] = useState('Touch and hold the Mail icon');

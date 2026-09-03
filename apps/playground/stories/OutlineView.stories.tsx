@@ -82,6 +82,7 @@ const finderData: OutlineNode[] = [
 
 const meta: Meta = {
   title: 'Foundation/Outline Views',
+  tags: ['autodocs', 'fw-react'],
   parameters: { layout: 'padded' },
 };
 
@@ -89,6 +90,8 @@ export default meta;
 type Story = StoryObj;
 
 export const FinderStyle: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'outlineView' } },
   name: 'Finder-style outline',
   render: function FinderOutlineDemo() {
     const [selectedId, setSelectedId] = useState('brief');
@@ -233,6 +236,8 @@ export const SplitViewCompanion: Story = {
 };
 
 export const BasicOutline: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'outlineView' } },
   render: () => (
     <OutlineView
       data={finderData}

@@ -103,6 +103,7 @@ function ObservabilityDemo() {
 }
 
 const meta: Meta = {
+  tags: ['fw-react'],
   title: 'Observability/Demo',
   component: ObservabilityDemo,
   parameters: {

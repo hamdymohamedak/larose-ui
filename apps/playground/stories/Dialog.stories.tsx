@@ -5,7 +5,7 @@ import { Button, Dialog } from '@larose-ui/react';
 const meta: Meta<typeof Dialog> = {
   title: 'Foundation/Dialog',
   component: Dialog,
-  tags: ['autodocs'],
+  tags: ['autodocs', 'fw-react', 'fw-vue', 'fw-svelte'],
   parameters: { layout: 'centered' },
 };
 

@@ -32,11 +32,11 @@
     {#if title}<strong>{title}</strong>{/if}
   </div>
   {#if items.length}
-    <nav role="tablist">
+    <div role="tablist">
       {#each items as item (item.key)}
         <button type="button" role="tab" aria-selected={item.key === current} disabled={item.disabled} onclick={() => select(item.key, item.disabled)}>{item.label}</button>
       {/each}
-    </nav>
+    </div>
   {/if}
   {@render trailing?.()}
 </LiquidGlass>

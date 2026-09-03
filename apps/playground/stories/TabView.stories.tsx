@@ -12,6 +12,7 @@ import {
 
 const meta: Meta = {
   title: 'Foundation/Tab Views',
+  tags: ['autodocs', 'fw-react'],
   parameters: { layout: 'padded' },
 };
 
@@ -19,6 +20,9 @@ export default meta;
 type Story = StoryObj;
 
 export const Bordered: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'tabView' } },
+  args: { variant: 'bordered', defaultValue: 'general' },
   render: () => (
     <TabView defaultValue="general" variant="bordered" aria-label="Settings tabs">
       <TabViewList aria-label="Settings sections">
@@ -40,6 +44,9 @@ export const Bordered: Story = {
 };
 
 export const Bezeled: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'tabView' } },
+  args: { variant: 'bezeled', defaultValue: 'general' },
   render: () => (
     <TabView defaultValue="slides" variant="bezeled">
       <TabViewList aria-label="Keynote panes">
@@ -61,6 +68,9 @@ export const Bezeled: Story = {
 };
 
 export const BorderlessHiddenTabs: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'tabView' } },
+  args: { variant: 'borderless', showTabs: false, defaultValue: 'general' },
   name: 'Borderless with hidden tabs',
   render: function HiddenTabsDemo() {
     const [value, setValue] = useState('accounts');

@@ -31,6 +31,7 @@ const customTheme = createTheme({
 });
 
 const meta: Meta = {
+  tags: ['fw-react'],
   title: 'Design System/Customization',
   parameters: {
     layout: 'padded',

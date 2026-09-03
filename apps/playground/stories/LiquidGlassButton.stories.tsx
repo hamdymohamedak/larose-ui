@@ -26,6 +26,7 @@ type ButtonArgs = ComponentProps<typeof LiquidGlassButton>;
 
 const meta: Meta<ButtonArgs> = {
   title: 'Glass/LiquidGlass/Button',
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
   component: LiquidGlassButton,
   parameters: {
     layout: 'fullscreen',

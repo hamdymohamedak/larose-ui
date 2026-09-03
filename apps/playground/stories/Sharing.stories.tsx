@@ -24,6 +24,7 @@ const collaborators = [
 
 const meta: Meta = {
   title: 'Foundation/Collaboration & Sharing',
+  tags: ['autodocs', 'fw-react'],
   parameters: { layout: 'padded' },
 };
 
@@ -31,6 +32,9 @@ export default meta;
 type Story = StoryObj;
 
 export const ShareButtonOnly: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'shareButton' } },
+  args: { label: 'Share' },
   render: () => <ShareButton />,
 };
 

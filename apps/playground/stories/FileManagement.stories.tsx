@@ -49,6 +49,7 @@ const sampleFiles: FileBrowserItem[] = [
 
 const meta: Meta = {
   title: 'Foundation/File Management',
+  tags: ['autodocs', 'fw-react'],
   parameters: { layout: 'padded' },
 };
 
@@ -174,6 +175,13 @@ export const DocumentWorkspace: Story = {
 };
 
 export const ImportWithFileUpload: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'fileUpload' } },
+  args: {
+    label: "Import document",
+    hint: "PDF, Pages, or Numbers",
+  },
+
   render: () => (
     <Card title="Import attachment" padding="md">
       <FileUpload

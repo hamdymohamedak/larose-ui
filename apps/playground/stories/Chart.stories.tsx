@@ -23,7 +23,7 @@ const stockData = [
 const meta: Meta<typeof Chart> = {
   title: 'Foundation/Chart',
   component: Chart,
-  tags: ['autodocs'],
+  tags: ['autodocs', 'fw-react', 'fw-vue', 'fw-svelte'],
   argTypes: {
     mark: { control: 'select', options: ['bar', 'line', 'point'] },
   },

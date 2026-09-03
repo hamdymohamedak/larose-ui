@@ -4,7 +4,12 @@ import { Card, Button, Badge } from '@larose-ui/react';
 const meta: Meta<typeof Card> = {
   title: 'Foundation/Card',
   component: Card,
-  tags: ['autodocs'],
+  tags: ['autodocs', 'fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: {
+    laRose: {
+      crossFramework: 'card',
+    },
+  },
 };
 
 export default meta;
@@ -20,6 +25,7 @@ export const Default: Story = {
 };
 
 export const WithBadge: Story = {
+  tags: ['fw-react'],
   render: () => (
     <Card
       title="Payroll Status"

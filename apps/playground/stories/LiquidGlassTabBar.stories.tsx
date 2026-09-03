@@ -44,6 +44,7 @@ function ControlledTabBar({
 
 const meta: Meta<TabBarStoryArgs> = {
   title: 'Glass/LiquidGlass TabBar',
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
   component: ControlledTabBar,
   parameters: {
     layout: 'fullscreen',

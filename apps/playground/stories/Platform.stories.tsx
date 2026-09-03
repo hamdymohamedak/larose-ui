@@ -125,6 +125,7 @@ function PlatformDemo() {
 }
 
 const meta: Meta<typeof PlatformDemo> = {
+  tags: ['fw-react'],
   title: 'Platform/Full Demo',
   component: PlatformDemo,
   parameters: { layout: 'padded', laRose: { standalone: true } },

@@ -15,6 +15,7 @@ import {
 
 const meta: Meta = {
   title: 'Foundation/Entering Data',
+  tags: ['autodocs', 'fw-react'],
   parameters: { layout: 'padded' },
 };
 
@@ -22,6 +23,7 @@ export default meta;
 type Story = StoryObj;
 
 export const ClearPromptsAndDefaults: Story = {
+  tags: ['fw-react'],
   render: () => (
     <Card title="Account" padding="md">
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -80,6 +82,9 @@ export const NumericFormatting: Story = {
 };
 
 export const SecurePasswordField: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'secureField' } },
+  args: { label: 'Password' },
   render: () => (
     <Card title="Sign in" padding="md">
       <SecureField

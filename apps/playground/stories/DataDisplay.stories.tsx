@@ -8,16 +8,21 @@ import {
   Badge,
   DataTable,
   Pagination,
+  Breadcrumb,
 } from '@larose-ui/react';
 
 const meta: Meta = {
   title: 'Foundation/DataDisplay',
-  tags: ['autodocs'],
+  tags: ['autodocs', 'fw-react'],
 };
 
 export default meta;
 
 export const AccordionDefault: StoryObj = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'accordion' } },
+  args: { type: 'single', collapsible: true, defaultValue: ['profile'] },
+
   render: () => (
     <Accordion type="single" collapsible defaultValue={['profile']}>
       <AccordionItem value="profile">
@@ -43,6 +48,13 @@ const employees = [
 ];
 
 export const DataTableDefault: StoryObj = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'dataTable' } },
+  args: {
+    caption: "Employees",
+    striped: true,
+  },
+
   render: () => (
     <DataTable
       caption="Employees"
@@ -65,6 +77,13 @@ export const DataTableDefault: StoryObj = {
 };
 
 export const DataTableLoading: StoryObj = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'dataTable' } },
+  args: {
+    loading: true,
+    data: [],
+  },
+
   render: () => (
     <DataTable
       loading
@@ -79,6 +98,13 @@ export const DataTableLoading: StoryObj = {
 };
 
 export const DataTableEmpty: StoryObj = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'dataTable' } },
+  args: {
+    data: [],
+    emptyTitle: "No employees",
+  },
+
   render: () => (
     <DataTable
       data={[]}
@@ -103,5 +129,26 @@ function PaginationDemo() {
 }
 
 export const PaginationDefault: StoryObj = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'pagination' } },
+  args: {
+    page: 1,
+    totalPages: 12,
+  },
+
   render: () => <PaginationDemo />,
+};
+
+
+export const BreadcrumbDefault: StoryObj = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'breadcrumb' } },
+  args: {
+    items: [
+      { label: 'Home', href: '#' },
+      { label: 'Employees', href: '#' },
+      { label: 'Ahmed', current: true },
+    ],
+  },
+  render: (args) => <Breadcrumb items={args.items as never} />,
 };

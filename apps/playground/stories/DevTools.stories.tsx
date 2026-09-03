@@ -23,6 +23,7 @@ function DevToolsDemo() {
 }
 
 const meta: Meta<typeof DevToolsDemo> = {
+  tags: ['fw-react'],
   title: 'DevOps/DevTools',
   component: DevToolsDemo,
   parameters: { laRose: { standalone: true } },

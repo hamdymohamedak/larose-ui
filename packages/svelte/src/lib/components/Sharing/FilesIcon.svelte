@@ -1,0 +1,1 @@
+<svg viewBox="0 0 24 24" width="1.125rem" height="1.125rem" fill="none" aria-hidden="true"><path d="M8 6.5h8l2 2V18a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 6.5 18V8A1.5 1.5 0 0 1 8 6.5Z" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round" /><path d="M8 6.5V5.5A1.5 1.5 0 0 1 9.5 4h5A1.5 1.5 0 0 1 16 5.5v1" stroke="currentColor" stroke-width="1.75" /></svg>

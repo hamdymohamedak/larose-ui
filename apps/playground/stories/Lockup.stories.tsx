@@ -42,6 +42,7 @@ const posters = [
 
 const meta: Meta = {
   title: 'Foundation/Lockups',
+  tags: ['autodocs', 'fw-react'],
   parameters: { layout: 'centered' },
 };
 
@@ -195,6 +196,12 @@ export const CaptionButtonGrid: Story = {
 };
 
 export const VerticalMonograms: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'monogram' } },
+  args: {
+    name: "Sara Ali",
+  },
+
   name: 'Vertical Monograms',
   render: function VerticalMonogramsDemo() {
     const [focusedIndex, setFocusedIndex] = useState(0);

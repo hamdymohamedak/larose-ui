@@ -4,7 +4,12 @@ import { Textarea } from '@larose-ui/react';
 const meta: Meta<typeof Textarea> = {
   title: 'Foundation/Textarea',
   component: Textarea,
-  tags: ['autodocs'],
+  tags: ['autodocs', 'fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: {
+    laRose: {
+      crossFramework: 'textarea',
+    },
+  },
   argTypes: {
     inputSize: { control: 'select', options: ['sm', 'md', 'lg'] },
   },

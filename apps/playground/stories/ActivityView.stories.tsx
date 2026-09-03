@@ -15,6 +15,7 @@ import {
 
 const meta: Meta = {
   title: 'Foundation/Activity Views',
+  tags: ['autodocs', 'fw-react'],
   parameters: { layout: 'padded' },
 };
 
@@ -23,6 +24,9 @@ type Story = StoryObj;
 
 export const NotesShareSheet: Story = {
   name: 'Notes share sheet',
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'activityView' } },
+  args: { open: true, title: 'Share Note', presentation: 'sheet' },
   render: function NotesShareDemo() {
     const [lastAction, setLastAction] = useState('Choose an activity');
 
@@ -62,6 +66,9 @@ export const NotesShareSheet: Story = {
 
 export const PhotoAppActivities: Story = {
   name: 'App-specific activities',
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'activityView' } },
+  args: { open: true, title: 'Share Photo', presentation: 'sheet' },
   render: function PhotoActivitiesDemo() {
     const [open, setOpen] = useState(true);
     const activities = createPhotoActivities();

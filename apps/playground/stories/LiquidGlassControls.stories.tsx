@@ -34,6 +34,7 @@ const panelStyle = {
 
 const meta: Meta = {
   title: 'Glass/LiquidGlass/Controls',
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
   parameters: {
     layout: 'fullscreen',
     controls: { expanded: true, sort: 'requiredFirst' },
@@ -112,6 +113,8 @@ function ControlledCheckbox({
 }
 
 export const SwitchStory: StoryObj<SwitchArgs> = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'liquidGlassSwitch' } },
   name: 'Switch',
   argTypes: liquidGlassSwitchArgTypes,
   args: liquidGlassSwitchDefaults,
@@ -127,6 +130,8 @@ export const SwitchStory: StoryObj<SwitchArgs> = {
 };
 
 export const ProgressStory: StoryObj<ProgressArgs> = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'liquidGlassProgress' } },
   name: 'Progress',
   argTypes: liquidGlassProgressArgTypes,
   args: liquidGlassProgressDefaults,
@@ -142,8 +147,13 @@ export const ProgressStory: StoryObj<ProgressArgs> = {
 };
 
 export const ProgressIndeterminate: StoryObj<ProgressArgs> = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
   name: 'Progress / Indeterminate',
-  parameters: { controls: { disable: true } },
+  parameters: {
+    controls: { disable: true },
+    laRose: { crossFramework: 'liquidGlassProgress' },
+  },
+  args: { indeterminate: true, value: 0 },
   render: () => (
     <GlassScrollTestScene contentPaddingBottom={80}>
       {centerScene(
@@ -156,6 +166,8 @@ export const ProgressIndeterminate: StoryObj<ProgressArgs> = {
 };
 
 export const RangeStory: StoryObj<RangeArgs> = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'liquidGlassRange' } },
   name: 'Range',
   argTypes: liquidGlassRangeArgTypes,
   args: liquidGlassRangeDefaults,
@@ -171,6 +183,8 @@ export const RangeStory: StoryObj<RangeArgs> = {
 };
 
 export const CheckboxStory: StoryObj<CheckboxArgs> = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'liquidGlassCheckbox' } },
   name: 'Checkbox',
   argTypes: liquidGlassCheckboxArgTypes,
   args: liquidGlassCheckboxDefaults,
@@ -186,6 +200,7 @@ export const CheckboxStory: StoryObj<CheckboxArgs> = {
 };
 
 export const AllControls: StoryObj = {
+  tags: ['fw-react'],
   name: 'All controls',
   parameters: { controls: { disable: true } },
   render: () => {

@@ -29,12 +29,18 @@
         }))
       : undefined,
   );
+
+  // DockMenu expects `icon` snippet; most others use `children`.
+  const mountProps = $derived({
+    ...componentProps,
+    ...(textSnippet
+      ? componentName === 'DockMenu'
+        ? { icon: textSnippet }
+        : { children: textSnippet }
+      : {}),
+  });
 </script>
 
 <LaRoseProvider {theme} {density}>
-  {#if textSnippet}
-    <ResolvedComponent {...componentProps} children={textSnippet} />
-  {:else}
-    <ResolvedComponent {...componentProps} />
-  {/if}
+  <ResolvedComponent {...mountProps} />
 </LaRoseProvider>

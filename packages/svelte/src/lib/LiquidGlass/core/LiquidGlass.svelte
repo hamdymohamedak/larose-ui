@@ -58,8 +58,16 @@
   </svg>
 {/if}
 
-<svelte:element this={as} bind:this={shellNode} class={className} style={toStyle(geometryStyle)} aria-label={ariaLabel} {type} {disabled}>
-  <div style="position:relative;z-index:1;width:100%;height:100%;box-sizing:border-box">
-    {@render children?.()}
-  </div>
-</svelte:element>
+{#if as === 'button'}
+  <button bind:this={shellNode} class={className} style={toStyle(geometryStyle)} aria-label={ariaLabel} type={type === 'submit' || type === 'reset' ? type : 'button'} {disabled}>
+    <div style="position:relative;z-index:1;width:100%;height:100%;box-sizing:border-box">
+      {@render children?.()}
+    </div>
+  </button>
+{:else}
+  <svelte:element this={as} bind:this={shellNode} class={className} style={toStyle(geometryStyle)} aria-label={ariaLabel}>
+    <div style="position:relative;z-index:1;width:100%;height:100%;box-sizing:border-box">
+      {@render children?.()}
+    </div>
+  </svelte:element>
+{/if}

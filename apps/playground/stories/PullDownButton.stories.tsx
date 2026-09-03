@@ -17,6 +17,7 @@ function AddIcon() {
 
 const meta: Meta = {
   title: 'Foundation/Pull-down Buttons',
+  tags: ['autodocs', 'fw-react'],
   parameters: { layout: 'padded' },
 };
 
@@ -24,6 +25,12 @@ export default meta;
 type Story = StoryObj;
 
 export const AddMenu: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'pullDownButton' } },
+  args: {
+    label: "Add",
+  },
+
   name: 'Add',
   render: function AddMenuDemo() {
     const [lastAction, setLastAction] = useState('Choose an add action');

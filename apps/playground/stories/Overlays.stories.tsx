@@ -13,12 +13,16 @@ import {
 
 const meta: Meta = {
   title: 'Foundation/Overlays',
-  tags: ['autodocs'],
+  tags: ['autodocs', 'fw-react'],
 };
 
 export default meta;
 
 export const TooltipDefault: StoryObj = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'tooltip' } },
+  args: { content: 'Export employees as CSV', label: 'Export' },
+
   render: () => (
     <Tooltip content="Export employees as CSV">
       <Button variant="outline">Export</Button>
@@ -49,6 +53,13 @@ function ToastDemo() {
 }
 
 export const ToastDefault: StoryObj = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'toast' } },
+  args: {
+    autoTitle: 'Welcome',
+    autoMessage: 'laRose toast notifications are ready.',
+    buttonLabel: 'Show toast',
+  },
   render: () => (
     <ToastProvider>
       <ToastDemo />
@@ -57,6 +68,10 @@ export const ToastDefault: StoryObj = {
 };
 
 export const TabsDefault: StoryObj = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'tabs' } },
+  args: { defaultValue: 'profile' },
+
   render: () => (
     <Tabs defaultValue="profile">
       <TabsList aria-label="Employee sections">

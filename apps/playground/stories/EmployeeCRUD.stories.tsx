@@ -156,6 +156,7 @@ function EmployeeCrudDemo() {
 }
 
 const meta: Meta = {
+  tags: ['fw-react'],
   title: 'Intelligence/Employee CRUD',
   component: EmployeeCrudDemo,
   parameters: {

@@ -16,6 +16,7 @@ const sampleImage =
 
 const meta: Meta = {
   title: 'Foundation/Image Views',
+  tags: ['autodocs', 'fw-react'],
   parameters: { layout: 'padded' },
 };
 
@@ -23,6 +24,13 @@ export default meta;
 type Story = StoryObj;
 
 export const FitModes: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'imageView' } },
+  args: {
+    fit: "contain",
+    alt: "Sample contain",
+  },
+
   render: () => (
     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
       {(['contain', 'cover', 'fill'] as const).map((fit) => (

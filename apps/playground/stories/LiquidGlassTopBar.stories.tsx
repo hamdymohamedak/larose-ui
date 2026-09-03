@@ -48,6 +48,7 @@ function ControlledTopBar({
 
 const meta: Meta<TopBarStoryArgs> = {
   title: 'Glass/LiquidGlass/TopBar',
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
   component: ControlledTopBar,
   parameters: {
     layout: 'fullscreen',

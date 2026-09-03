@@ -1,0 +1,1 @@
+export { useMenuBarAccelerators } from './useAccelerator';

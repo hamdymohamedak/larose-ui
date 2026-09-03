@@ -8,6 +8,7 @@ import {
 
 const meta: Meta = {
   title: 'Foundation/Ornaments',
+  tags: ['autodocs', 'fw-react'],
   parameters: { layout: 'padded' },
 };
 
@@ -15,6 +16,9 @@ export default meta;
 type Story = StoryObj;
 
 export const NowPlaying: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'ornament' } },
+  args: { label: 'Now Playing' },
   name: 'Now Playing (bottom)',
   render: function NowPlayingDemo() {
     const [playing, setPlaying] = useState(true);

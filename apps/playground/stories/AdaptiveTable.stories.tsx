@@ -46,6 +46,7 @@ function RuntimeDemo() {
 }
 
 const meta: Meta = {
+  tags: ['fw-react'],
   title: 'Runtime/AdaptiveTable',
   component: RuntimeDemo,
   parameters: { layout: 'padded', laRose: { runtime: true } },

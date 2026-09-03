@@ -10,7 +10,12 @@ import {
 const meta: Meta<typeof Input> = {
   title: 'Foundation/Input',
   component: Input,
-  tags: ['autodocs'],
+  tags: ['autodocs', 'fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: {
+    laRose: {
+      crossFramework: 'input',
+    },
+  },
 };
 
 export default meta;
@@ -56,6 +61,7 @@ export const CurrencyFormat: Story = {
 };
 
 export const Secure: Story = {
+  tags: ['fw-react'],
   render: () => <SecureField label="Password" required hint="Never prepopulated" />,
 };
 

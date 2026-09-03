@@ -35,6 +35,7 @@ const pages = [
 
 const meta: Meta = {
   title: 'Foundation/Web Views',
+  tags: ['autodocs', 'fw-react'],
   parameters: { layout: 'padded' },
 };
 
@@ -42,6 +43,9 @@ export default meta;
 type Story = StoryObj;
 
 export const EmbeddedHtml: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'webView' } },
+  args: { src: 'https://example.com', title: 'Example' },
   name: 'Embedded HTML (Mail-style)',
   render: () => (
     <Card title="Message body" padding="md">
@@ -56,6 +60,9 @@ export const EmbeddedHtml: Story = {
 };
 
 export const BriefWebsiteAccess: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'webView' } },
+  args: { src: 'https://example.com', title: 'Website' },
   render: () => (
     <Card title="Help article" padding="md">
       <Typography role="footnote" muted>

@@ -20,6 +20,10 @@
     inputSize?: Size;
     id?: string;
     type?: string;
+    autocomplete?: string;
+    spellcheck?: boolean;
+    placeholder?: string;
+    name?: string;
     class?: string;
     style?: string;
     value?: string;
@@ -37,6 +41,10 @@
     inputSize = 'md',
     id,
     type = 'text',
+    autocomplete,
+    spellcheck,
+    placeholder,
+    name,
     class: className,
     style,
     value = $bindable(''),
@@ -95,6 +103,10 @@
         type={merged.type ?? 'text'}
         class={cn(styles.input, merged.class)}
         data-size={merged.inputSize ?? 'md'}
+        autocomplete={autocomplete as HTMLInputElement['autocomplete']}
+        spellcheck={spellcheck}
+        placeholder={placeholder}
+        name={name}
         bind:value
         disabled={merged.disabled || uiState === 'disabled'}
         readonly={merged.readOnly || uiState === 'readonly'}

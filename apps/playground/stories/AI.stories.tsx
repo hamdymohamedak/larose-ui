@@ -28,6 +28,7 @@ function SmartTableDemo() {
 }
 
 const meta: Meta<typeof SmartTableDemo> = {
+  tags: ['fw-react'],
   title: 'AI/SmartTable',
   component: SmartTableDemo,
   parameters: { laRose: { standalone: true } },

@@ -66,6 +66,7 @@ const formatEntries: MenuEntry[] = [
 
 const meta: Meta = {
   title: 'Foundation/Menus',
+  tags: ['autodocs', 'fw-react'],
   parameters: { layout: 'fullscreen' },
   decorators: [
     (Story) => (
@@ -80,6 +81,9 @@ export default meta;
 type Story = StoryObj;
 
 export const LargeLayout: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'menu' } },
+  args: { open: true, layout: 'large', title: 'Edit' },
   name: 'Large (default)',
   render: function LargeMenuDemo() {
     const [lastAction, setLastAction] = useState('Open the menu, then try ⇧⌘N or ⇧⌘O');
@@ -126,6 +130,9 @@ export const LargeLayout: Story = {
 };
 
 export const MediumLayout: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'menu' } },
+  args: { open: true, layout: 'medium', title: 'Edit' },
   name: 'Medium layout',
   render: function MediumMenuDemo() {
     return (
@@ -147,6 +154,9 @@ export const MediumLayout: Story = {
 };
 
 export const SmallLayout: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'menu' } },
+  args: { open: true, layout: 'small', title: 'Edit' },
   name: 'Small layout',
   render: function SmallMenuDemo() {
     return (

@@ -23,6 +23,8 @@ const props = withDefaults(
     id?: string;
     type?: string;
     modelValue?: string;
+    autocomplete?: string;
+    spellcheck?: boolean;
     class?: string;
   }>(),
   {
@@ -79,6 +81,8 @@ const emit = defineEmits<{
         <input
           :id="inputId"
           :type="merged.type"
+          :autocomplete="merged.autocomplete"
+          :spellcheck="merged.spellcheck"
           :class="cn(styles.input, merged.class)"
           :data-size="merged.inputSize"
           :value="modelValue"

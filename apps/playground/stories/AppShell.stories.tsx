@@ -18,12 +18,16 @@ import {
 
 const meta: Meta = {
   title: 'Foundation/AppShell',
-  tags: ['autodocs'],
+  tags: ['autodocs', 'fw-react'],
 };
 
 export default meta;
 
 export const SidebarDefault: StoryObj = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'sidebar' } },
+  args: { brand: 'laRose' },
+
   render: () => (
     <div style={{ display: 'flex', minHeight: 320, border: '1px solid var(--lr-color-border)' }}>
       <Sidebar>
@@ -46,6 +50,10 @@ export const SidebarDefault: StoryObj = {
 };
 
 export const HeaderDefault: StoryObj = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'header' } },
+  args: { title: 'Employees', brand: 'laRose' },
+
   render: () => (
     <Header>
       <HeaderBrand>laRose</HeaderBrand>
@@ -60,6 +68,10 @@ export const HeaderDefault: StoryObj = {
 };
 
 export const HeaderWithTitle: StoryObj = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'header' } },
+  args: { title: 'Dashboard', brand: 'laRose' },
+
   render: () => (
     <Header>
       <HeaderTitle>Employees</HeaderTitle>
@@ -71,6 +83,10 @@ export const HeaderWithTitle: StoryObj = {
 };
 
 export const FileUploadDefault: StoryObj = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'fileUpload' } },
+  args: { label: 'Upload files' },
+
   render: () => (
     <FileUpload
       label="Attachments"
@@ -119,6 +135,10 @@ function CommandPaletteDemo() {
 }
 
 export const CommandPaletteDefault: StoryObj = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'commandPalette' } },
+  args: { open: true },
+
   render: () => <CommandPaletteDemo />,
 };
 

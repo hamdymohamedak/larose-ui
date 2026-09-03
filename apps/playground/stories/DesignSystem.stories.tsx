@@ -33,6 +33,7 @@ function RefinedShell({ children }: { children: ReactNode }) {
 }
 
 const meta: Meta = {
+  tags: ['fw-react'],
   title: 'Design System/Refined Theme',
   parameters: { layout: 'fullscreen', laRose: { standalone: true } },
 };

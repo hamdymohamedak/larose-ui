@@ -26,6 +26,7 @@ function SchemaDemo() {
 }
 
 const meta: Meta<typeof SchemaDemo> = {
+  tags: ['fw-react'],
   title: 'Enterprise/Schema',
   component: SchemaDemo,
   parameters: { laRose: { standalone: true } },

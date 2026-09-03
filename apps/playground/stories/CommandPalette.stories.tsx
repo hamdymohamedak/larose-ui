@@ -24,6 +24,7 @@ type CommandPalettePlaygroundArgs = {
 
 const meta: Meta<CommandPalettePlaygroundArgs> = {
   title: 'Foundation/CommandPalette',
+  tags: ['autodocs', 'fw-react'],
   parameters: {
     layout: 'fullscreen',
     controls: { expanded: true },
@@ -53,6 +54,9 @@ export default meta;
 type Story = StoryObj<CommandPalettePlaygroundArgs>;
 
 export const Playground: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'commandPalette' } },
+
   render: function CommandPalettePlayground(args) {
     const [open, setOpen] = useState(args.open);
     useEffect(() => {

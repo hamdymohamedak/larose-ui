@@ -1,0 +1,1 @@
+export { useMenuAcceleratorRegistration } from './useAccelerator';
