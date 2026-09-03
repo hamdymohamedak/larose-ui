@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useEffect, useState, type ComponentProps } from 'react';
-import { LiquidGlassTopBar } from '@larose-ui/glass/react';
+import { LiquidGlassTopBar } from '@larose-ui/react';
 import { GlassScrollTestScene } from './glass/GlassScrollTestScene';
 import {
   liquidGlassTopBarArgTypes,

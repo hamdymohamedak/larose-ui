@@ -1,6 +1,7 @@
 {
   "component": "DragDropList",
   "category": "DragDrop",
+  "package": "@larose-ui/react",
   "import": "import { DragDropList } from '@larose-ui/react';",
   "props": [
     {

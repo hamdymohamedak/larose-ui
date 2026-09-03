@@ -1,6 +1,7 @@
 {
   "component": "Button",
   "category": "Actions",
+  "package": "@larose-ui/react",
   "import": "import { Button } from '@larose-ui/react';",
   "props": [
     {
@@ -110,7 +111,7 @@
         "children": "Add to Cart",
         "variant": "primary"
       },
-      "code": "<Button\n  variant=\"primary\"\n>Add to Cart</Button>"
+      "code": "import { Button } from '@larose-ui/react';\n\n<Button\n  variant=\"primary\"\n>Add to Cart</Button>"
     },
     {
       "id": "Secondary",
@@ -121,7 +122,7 @@
         "variant": "secondary",
         "buttonRole": "cancel"
       },
-      "code": "<Button\n  variant=\"secondary\"\n  buttonRole=\"cancel\"\n>Cancel</Button>"
+      "code": "import { Button } from '@larose-ui/react';\n\n<Button\n  variant=\"secondary\"\n  buttonRole=\"cancel\"\n>Cancel</Button>"
     },
     {
       "id": "Loading",
@@ -132,7 +133,7 @@
         "loadingLabel": "Checking out…",
         "loading": true
       },
-      "code": "<Button\n  loadingLabel=\"Checking out…\"\n  loading\n>Checkout</Button>"
+      "code": "import { Button } from '@larose-ui/react';\n\n<Button\n  loadingLabel=\"Checking out…\"\n  loading\n>Checkout</Button>"
     },
     {
       "id": "Disabled",
@@ -142,7 +143,7 @@
         "children": "Unavailable",
         "disabled": true
       },
-      "code": "<Button\n  disabled\n>Unavailable</Button>"
+      "code": "import { Button } from '@larose-ui/react';\n\n<Button\n  disabled\n>Unavailable</Button>"
     },
     {
       "id": "DestructiveFilled",
@@ -152,7 +153,7 @@
         "children": "Delete Employee",
         "variant": "destructive"
       },
-      "code": "<Button\n  variant=\"destructive\"\n>Delete Employee</Button>"
+      "code": "import { Button } from '@larose-ui/react';\n\n<Button\n  variant=\"destructive\"\n>Delete Employee</Button>"
     },
     {
       "id": "DestructivePlain",
@@ -163,7 +164,7 @@
         "variant": "ghost",
         "buttonRole": "destructive"
       },
-      "code": "<Button\n  variant=\"ghost\"\n  buttonRole=\"destructive\"\n>Delete Account</Button>"
+      "code": "import { Button } from '@larose-ui/react';\n\n<Button\n  variant=\"ghost\"\n  buttonRole=\"destructive\"\n>Delete Account</Button>"
     },
     {
       "id": "OpensAnotherView",
@@ -175,7 +176,7 @@
         "opensAnotherView": true,
         "tooltip": "Opens AutoFill settings"
       },
-      "code": "<Button\n  variant=\"secondary\"\n  opensAnotherView\n  tooltip=\"Opens AutoFill settings\"\n>Edit</Button>"
+      "code": "import { Button } from '@larose-ui/react';\n\n<Button\n  variant=\"secondary\"\n  opensAnotherView\n  tooltip=\"Opens AutoFill settings\"\n>Edit</Button>"
     },
     {
       "id": "IconOnly",
@@ -242,11 +243,11 @@
       "composite": true
     },
     {
-      "id": "Button",
-      "title": "Button",
+      "id": "DialogMotion",
+      "title": "Dialog Motion",
       "kind": "advanced",
       "props": {},
-      "code": "// See Storybook story \"Button\" for full example.",
+      "code": "<>\n        <Button onClick={() => setOpen(true)}>Open dialog</Button>\n        <Modal open={open} onClose={() => setOpen(false)} title=\"Motion dialog\">\n          <p style={{ margin: 0 }}>Subtle scale, fade, and vertical movement on enter and exit.</p>\n        </Modal>\n      </>",
       "composite": true
     }
   ],

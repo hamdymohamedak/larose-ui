@@ -1,6 +1,7 @@
 {
   "component": "Chart",
   "category": "Data",
+  "package": "@larose-ui/react",
   "import": "import { Chart } from '@larose-ui/react';",
   "props": [
     {
@@ -130,7 +131,7 @@
         "min": 0,
         "tickCount": 4
       },
-      "code": "<Chart\n  mark=\"bar\"\n  title=\"Steps\"\n  subtitle=\"You averaged 8,102 steps per day this week.\"\n  accessibilitySummary=\"Bar chart showing daily steps for seven days. Highest on Thursday with 11,200 steps.\"\n  min={0}\n  tickCount={4}\n>Example</Chart>"
+      "code": "import { Chart } from '@larose-ui/react';\n\n<Chart\n  mark=\"bar\"\n  title=\"Steps\"\n  subtitle=\"You averaged 8,102 steps per day this week.\"\n  accessibilitySummary=\"Bar chart showing daily steps for seven days. Highest on Thursday with 11,200 steps.\"\n  min={0}\n  tickCount={4}\n>Example</Chart>"
     },
     {
       "id": "LineChart",
@@ -143,7 +144,7 @@
         "showPoints": true,
         "interactive": true
       },
-      "code": "<Chart\n  mark=\"line\"\n  title=\"Stock performance\"\n  subtitle=\"Five-year trend for AAPL.\"\n  showPoints\n  interactive\n>Example</Chart>"
+      "code": "import { Chart } from '@larose-ui/react';\n\n<Chart\n  mark=\"line\"\n  title=\"Stock performance\"\n  subtitle=\"Five-year trend for AAPL.\"\n  showPoints\n  interactive\n>Example</Chart>"
     },
     {
       "id": "PointChart",
@@ -172,7 +173,7 @@
         "x": "12a",
         "y": 88
       },
-      "code": "<Chart\n  mark=\"line\"\n  title=\"Battery\"\n  subtitle=\"Charge level over the last 24 hours.\"\n  x=\"12a\"\n  y={88}\n>Example</Chart>"
+      "code": "import { Chart } from '@larose-ui/react';\n\n<Chart\n  mark=\"line\"\n  title=\"Battery\"\n  subtitle=\"Charge level over the last 24 hours.\"\n  x=\"12a\"\n  y={88}\n>Example</Chart>"
     }
   ],
   "accessibility": [],

@@ -14,6 +14,7 @@ const ARCHITECTURE = `
         ├── @larose-ui/core
         ├── @larose-ui/tokens
         ├── @larose-ui/themes
+        ├── LiquidGlass* (displacement + optics)
         │
         ↓
 @larose-ui/runtime
@@ -26,7 +27,7 @@ const ARCHITECTURE = `
 
 ## Package relationships
 
-- **react** — production UI components and LaRoseProvider
+- **react** — production UI components (140+ documented), including LiquidGlass TabBar, TopBar, Button, Switch, Range, Checkbox, Progress
 - **tokens** — CSS custom properties and component token registries
 - **themes** — \`createTheme\`, presets, component defaults
 - **runtime** — network, session, permissions, toasts

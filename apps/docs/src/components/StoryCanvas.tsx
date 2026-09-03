@@ -17,6 +17,8 @@ export interface StoryCanvasProps {
   showToolbar?: boolean;
   padded?: boolean;
   centered?: boolean;
+  /** Immersive liquid glass scene — full width, dark aurora, no device frame */
+  variant?: 'default' | 'glass';
 }
 
 export function StoryCanvas({
@@ -25,13 +27,15 @@ export function StoryCanvas({
   showToolbar = true,
   padded = true,
   centered = false,
+  variant = 'default',
 }: StoryCanvasProps) {
   const [viewport, setViewport] = useState<PreviewViewport>('desktop');
   const [direction, setDirection] = useState<PreviewDirection>('ltr');
   const [appearance, setAppearance] = useState<PreviewAppearance>('light');
+  const isGlass = variant === 'glass';
 
   return (
-    <div className="docs-sb-canvas">
+    <div className={`docs-sb-canvas${isGlass ? ' docs-sb-canvas--glass' : ''}`}>
       <div className="docs-sb-canvas__chrome">
         <div className="docs-sb-canvas__dots" aria-hidden="true">
           <span />
@@ -41,7 +45,7 @@ export function StoryCanvas({
         {storyName ? <span className="docs-sb-canvas__story">{storyName}</span> : null}
       </div>
 
-      {showToolbar ? (
+      {!isGlass && showToolbar ? (
         <div className="docs-sb-canvas__toolbar">
           <PreviewToolbar
             viewport={viewport}
@@ -55,9 +59,15 @@ export function StoryCanvas({
       ) : null}
 
       <div
-        className={`docs-sb-canvas__viewport${padded ? ' docs-sb-canvas__viewport--padded' : ''}${centered ? ' docs-sb-canvas__viewport--centered' : ''}`}
+        className={[
+          'docs-sb-canvas__viewport',
+          isGlass ? 'docs-sb-canvas__viewport--glass' : padded ? 'docs-sb-canvas__viewport--padded' : '',
+          !isGlass && centered ? 'docs-sb-canvas__viewport--centered' : '',
+        ]
+          .filter(Boolean)
+          .join(' ')}
       >
-        {showToolbar ? (
+        {!isGlass && showToolbar ? (
           <PreviewViewportFrame viewport={viewport} direction={direction} appearance={appearance}>
             {children}
           </PreviewViewportFrame>
@@ -112,6 +122,7 @@ interface StorySectionProps {
   code: string;
   language?: string;
   defaultCodeOpen?: boolean;
+  variant?: 'default' | 'glass';
 }
 
 export function StorySection({
@@ -121,6 +132,7 @@ export function StorySection({
   code,
   language = 'tsx',
   defaultCodeOpen = false,
+  variant = 'default',
 }: StorySectionProps) {
   const [showCode, setShowCode] = useState(defaultCodeOpen);
 
@@ -131,7 +143,7 @@ export function StorySection({
         {description ? <p className="docs-sb-story__desc">{description}</p> : null}
       </header>
 
-      <StoryCanvas storyName={title} showToolbar={false} padded centered>
+      <StoryCanvas storyName={title} showToolbar={false} padded={variant !== 'glass'} centered={variant !== 'glass'} variant={variant}>
         {preview}
       </StoryCanvas>
 

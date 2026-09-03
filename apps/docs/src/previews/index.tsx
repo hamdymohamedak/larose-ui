@@ -3,9 +3,15 @@ import { Typography } from '@larose-ui/react';
 import { PreviewFrame } from '@/components/PreviewFrame';
 import { findComponent } from '@/data/catalog.generated';
 import { INTERACTIVE_PREVIEWS } from '@/previews/interactivePreviews';
+import { GLASS_STATIC_PREVIEWS } from '@/previews/glass/glassPreviews';
+import { isGlassDocComponent } from '@/lib/glassComponents';
 import { STATIC_PREVIEWS } from '@/previews/staticPreviews';
 
 export function getComponentPreview(componentName: string): ReactNode {
+  if (isGlassDocComponent(componentName) && GLASS_STATIC_PREVIEWS[componentName]) {
+    return GLASS_STATIC_PREVIEWS[componentName]();
+  }
+
   const interactive = INTERACTIVE_PREVIEWS[componentName];
   if (interactive) return interactive();
 

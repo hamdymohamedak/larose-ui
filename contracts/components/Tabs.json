@@ -26,6 +26,13 @@
       "payload": "(value: string) => void"
     }
   ],
+  "slots": [
+    "children"
+  ],
+  "states": [
+    "default",
+    "disabled"
+  ],
   "defaults": {
     "defaultValue": "''"
   },

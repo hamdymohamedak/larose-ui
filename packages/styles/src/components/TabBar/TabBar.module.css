@@ -200,7 +200,7 @@
   -webkit-backdrop-filter: none;
 }
 
-/* Morphing selection lens — visual surface from @larose-ui/glass engine */
+/* Morphing selection lens — visual surface from LiquidGlass engine (@larose-ui/react) */
 .liquidGlassIndicator {
   position: absolute;
   top: 0;

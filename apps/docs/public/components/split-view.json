@@ -1,0 +1,85 @@
+{
+  "component": "SplitView",
+  "category": "Layout",
+  "package": "@larose-ui/react",
+  "import": "import { SplitView } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "'aria-label'",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "compactMode",
+      "type": "SplitCompactMode",
+      "required": false,
+      "default": "'side-by-side'",
+      "inherited": false
+    },
+    {
+      "name": "onSizesChange",
+      "type": "(sizes: number[]) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "orientation",
+      "type": "SplitOrientation",
+      "required": false,
+      "default": "'horizontal'",
+      "inherited": false
+    },
+    {
+      "name": "storageKey",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "toolbar",
+      "type": "ReactNode",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [
+    {
+      "id": "SidebarDetailInspector",
+      "title": "Sidebar · content · inspector",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"SidebarDetailInspector\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "VerticalSplit",
+      "title": "Vertical Split",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"VerticalSplit\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "DragBetweenPanes",
+      "title": "Drag between panes",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"DragBetweenPanes\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "CompactStack",
+      "title": "Compact Stack",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"CompactStack\" for full example.",
+      "composite": true
+    }
+  ],
+  "accessibility": [
+    "Supports ARIA attributes via standard HTML element props."
+  ],
+  "anatomy": null,
+  "playground": null
+}

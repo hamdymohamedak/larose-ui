@@ -99,6 +99,7 @@ import {
   WebViewShell,
 } from '@larose-ui/react';
 import { PreviewFrame } from '@/components/PreviewFrame';
+import { GLASS_STATIC_PREVIEWS } from '@/previews/glass/glassPreviews';
 
 const employees = [
   { id: '1', name: 'Ahmed Mohamed', role: 'Engineer', department: 'Platform' },
@@ -762,5 +763,6 @@ export const STATIC_PREVIEWS: Record<string, () => ReactNode> = {
       </div>
     </PreviewFrame>
   ),
+  ...GLASS_STATIC_PREVIEWS,
 };
 

@@ -1,0 +1,101 @@
+{
+  "name": "LiquidGlassSwitch",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "'aria-label'",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "activeTrackTint",
+      "type": "LiquidGlassSwitchActiveTrackTint",
+      "required": false,
+      "description": "Active track tint when on. Defaults to iOS-style green.\nPass `'glass'` () for liquid glass only, or any CSS color."
+    },
+    {
+      "name": "borderRadius",
+      "type": "number",
+      "required": false
+    },
+    {
+      "name": "checked",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "defaultChecked",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "height",
+      "type": "number",
+      "required": false,
+      "description": "Track height in px."
+    },
+    {
+      "name": "inactiveTrackTint",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "padding",
+      "type": "number",
+      "required": false,
+      "description": "Track padding around thumb."
+    },
+    {
+      "name": "thumbSize",
+      "type": "number",
+      "required": false,
+      "description": "Thumb diameter in px."
+    },
+    {
+      "name": "thumbTint",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "width",
+      "type": "number",
+      "required": false,
+      "description": "Track width in px."
+    }
+  ],
+  "events": [
+    {
+      "name": "onChange",
+      "payload": "(checked: boolean) => void"
+    }
+  ],
+  "slots": [],
+  "states": [
+    "off",
+    "on",
+    "disabled"
+  ],
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  },
+  "controlled": [
+    "checked"
+  ],
+  "uncontrolled": [
+    "checked"
+  ]
+}

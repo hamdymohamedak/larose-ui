@@ -2,6 +2,8 @@ import { readFileSync, writeFileSync, mkdirSync, readdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { extractComponentApi } from './lib/extract-component-api.mjs';
+import { parseComponentExportsFromIndex } from './lib/parse-index-exports.mjs';
+import { isGlassDocComponent } from './lib/glass-components.mjs';
 import { PLAYGROUND_CONTROLS, COMPONENT_ANATOMY } from './lib/docs-metadata.mjs';
 import { buildStoryExamplesIndex } from './lib/parse-story-examples.mjs';
 import { buildSearchIndex, extractTokenSearchEntries } from './lib/build-search-index.mjs';
@@ -62,13 +64,18 @@ const theme = createTheme({ preset: 'refined', colors: { primary: '#6C5CE7' } })
     features: ['Built-in presets', 'Runtime theme application', 'Component token overrides'],
   },
   react: {
-    tagline: 'Production-ready React components with built-in UI states.',
+    tagline: 'Production-ready React components with built-in UI states and LiquidGlass refraction surfaces.',
     peer: 'react >=18',
-    example: `import { Button, Card, Input } from '@larose-ui/react';
+    example: `import { Button, LiquidGlass, LiquidGlassTabBar } from '@larose-ui/react';
 import '@larose-ui/tokens/styles.css';
 import '@larose-ui/styles/styles.css';
 import '@larose-ui/react/styles.css';`,
-    features: ['Form controls, overlays, navigation, data display', 'Token-driven styling', 'Customization hooks'],
+    features: [
+      'Form controls, overlays, navigation, data display',
+      'LiquidGlass TabBar, TopBar, Button, Switch, Range, Checkbox, Progress',
+      'SVG displacement refraction on Chromium with blur fallback',
+      'Token-driven styling and customization hooks',
+    ],
   },
   vue: {
     tagline: 'Vue 3 components — thin adapter over shared styles and runtime-core.',
@@ -256,24 +263,13 @@ const GUIDES = [
   { id: 'roadmap', title: 'Roadmap', file: 'docs/ROADMAP.md' },
 ];
 
-const reactIndex = readFileSync(join(root, 'packages/react/src/index.ts'), 'utf8');
+const reactIndexPath = join(root, 'packages/react/src/index.ts');
+const liquidGlassIndexPath = join(root, 'packages/react/src/LiquidGlass/index.ts');
 const skipPattern =
-  /^(format|resolve|prepare|build|create|apply|get|use|clamp|warn|truncate|sort|filter|flatten|collect|normalize|merge|tokenize|count|default|MAX_|MIN_|STANDARD_|DEFAULT_|PATH_|LAROSE_|BackChevron|Close|Compose|Share|Sidebar|DocumentMenu|Search|Overflow|buildMinute|buildMonth|buildDay|formatDate|parseISO|toISO|snapMinute|resolveAutomatic|createApp|createFile|createEdit|createFormat|createView|createWindow|createHelp|createDefault|createPhoto|entriesFrom|toolbarActions|quickActionsTo)/;
+  /^(format|resolve|prepare|build|create|apply|get|use|clamp|warn|truncate|sort|filter|flatten|collect|normalize|merge|tokenize|count|default|MAX_|MIN_|STANDARD_|DEFAULT_|PATH_|LAROSE_|BackChevron|Close|Compose|Share|Sidebar|DocumentMenu|Search|Overflow|buildMinute|buildMonth|buildDay|formatDate|parseISO|toISO|snapMinute|resolveAutomatic|createApp|createFile|createEdit|createFormat|createView|createWindow|createHelp|createDefault|createPhoto|entriesFrom|toolbarActions|quickActionsTo|LaRoseProvider|MotionProvider|ToastProvider|DragDropProvider|Presence|Collapse|Can|Permission|DataView|Form|SmartTable|AIProvider|DevToolsProvider|SessionGuard|AuditedInput|UISchemaRenderer|LaRoseElectronRoot|LaRoseTauriRoot)/;
 
-const componentNames = new Set();
-for (const line of reactIndex.split('\n')) {
-  const single = line.match(/^export \{ ([A-Z][A-Za-z0-9_]*) \} from/);
-  if (single) componentNames.add(single[1]);
-  const multi = line.match(/^export \{([^}]+)\} from/);
-  if (multi && !line.startsWith('export type')) {
-    for (const part of multi[1].split(',')) {
-      const name = part.trim().split(/\s+as\s+/)[0].trim();
-      if (/^[A-Z]/.test(name) && !name.endsWith('Props') && !name.endsWith('Variant') && !name.endsWith('Config')) {
-        componentNames.add(name);
-      }
-    }
-  }
-}
+const reactComponentNames = parseComponentExportsFromIndex(reactIndexPath);
+const glassComponentNames = reactComponentNames.filter(isGlassDocComponent);
 
 const categoryMap = {
   Actions: ['Button', 'AsyncButton', 'HelpButton', 'SquareButton', 'ButtonGroup', 'ShareButton', 'CollaborationButton', 'ActivityShareButton'],
@@ -281,8 +277,18 @@ const categoryMap = {
   Feedback: ['Alert', 'AlertDialog', 'Progress', 'Spinner', 'Badge', 'Skeleton', 'EmptyState', 'Tooltip', 'ToastProvider'],
   Overlay: ['Modal', 'Dialog', 'Drawer', 'Popover', 'ContextMenu', 'CommandPalette'],
   Layout: ['Card', 'Box', 'Collection', 'ColumnView', 'Lockup', 'SplitView', 'SplitViewPane', 'SplitViewToolbar', 'OrnamentWindow', 'Ornament', 'OrnamentButton'],
-  Navigation: ['Sidebar', 'Header', 'Breadcrumb', 'Tabs', 'TabsList', 'TabsTrigger', 'TabsPanel', 'TabView', 'TabViewList', 'TabViewTab', 'TabViewPanel', 'TabBar', 'TabBarList', 'TabBarItem', 'TabBarPanel', 'Menu', 'MenuBar', 'MenuBarExtra', 'DockMenu', 'DockBar', 'PopUpButton', 'PullDownButton', 'MorePullDownButton', 'EditMenu', 'PathControl', 'Pagination'],
+  Navigation: ['Sidebar', 'Header', 'Breadcrumb', 'Tabs', 'TabsList', 'TabsTrigger', 'TabsPanel', 'TabView', 'TabViewList', 'TabViewTab', 'TabViewPanel', 'Menu', 'MenuBar', 'MenuBarExtra', 'DockMenu', 'DockBar', 'PopUpButton', 'PullDownButton', 'MorePullDownButton', 'EditMenu', 'PathControl', 'Pagination'],
   Toolbar: ['Toolbar', 'ToolbarItem', 'ToolbarGroup', 'ToolbarTitle', 'ToolbarBackButton', 'ToolbarCloseButton', 'ToolbarSearch', 'ToolbarMoreButton', 'ToolbarDocumentMenu', 'ToolbarProminentButton', 'ToolbarFixedSpace', 'ToolbarSection'],
+  Glass: [
+    'LiquidGlass',
+    'LiquidGlassTabBar',
+    'LiquidGlassButton',
+    'LiquidGlassTopBar',
+    'LiquidGlassSwitch',
+    'LiquidGlassProgress',
+    'LiquidGlassRange',
+    'LiquidGlassCheckbox',
+  ],
   Data: ['DataTable', 'List', 'ListSection', 'ListRow', 'Table', 'OutlineView', 'OutlineViewToolbar', 'Chart'],
   Content: ['Typography', 'Label', 'DisclosureTriangle', 'DisclosureButton', 'DisclosureGroup', 'DisclosureList', 'ImageView', 'ImageOverlay', 'ImageWell', 'ImageButton', 'TextView', 'WebView', 'WebViewShell', 'WebViewNavigation', 'Accordion', 'AccordionItem', 'AccordionTrigger', 'AccordionContent'],
   Sharing: ['ShareSheet', 'CollaborationPopover', 'ShareToolbar', 'ActivityView'],
@@ -301,15 +307,16 @@ function slug(name) {
   return name.replace(/([a-z0-9])([A-Z])/g, '$1-$2').replace(/_/g, '-').toLowerCase();
 }
 
-const components = [...componentNames]
+const components = reactComponentNames
   .filter((name) => !skipPattern.test(name))
   .filter((name) => !name.endsWith('Icon'))
-  .sort((a, b) => a.localeCompare(b))
   .map((name) => ({
     id: slug(name),
     name,
     category: byCategory.get(name) ?? 'Other',
-  }));
+    package: 'react',
+  }))
+  .sort((a, b) => a.name.localeCompare(b.name));
 
 const packages = Object.entries(PACKAGES)
   .sort(([a], [b]) => a.localeCompare(b))
@@ -326,7 +333,10 @@ const guideContentEntries = GUIDES.map((guide) => [
 const guideContent = Object.fromEntries(guideContentEntries);
 
 const componentNameList = components.map((component) => component.name);
-const api = extractComponentApi(root, componentNameList);
+const api = {
+  ...extractComponentApi(root, reactComponentNames.filter((name) => !skipPattern.test(name) && !name.endsWith('Icon'))),
+  ...extractComponentApi(root, glassComponentNames, liquidGlassIndexPath),
+};
 
 /** @type {Record<string, import('./lib/docs-types.mjs').DocsExampleEntry[]>} */
 const examples = buildStoryExamplesIndex(root, componentNameList);
@@ -377,6 +387,7 @@ export interface DocsComponentEntry {
   id: string;
   name: string;
   category: string;
+  package?: 'react';
 }
 
 export interface DocsGuideEntry {
@@ -634,10 +645,12 @@ writeFileSync(
 );
 
 for (const component of components) {
+  const importLine = `import { ${component.name} } from '@larose-ui/react';`;
   const metadata = {
     component: component.name,
     category: component.category,
-    import: `import { ${component.name} } from '@larose-ui/react';`,
+    package: '@larose-ui/react',
+    import: importLine,
     props: api[component.name]?.props.filter((prop) => !prop.inherited) ?? [],
     examples: examples[component.name] ?? [],
     accessibility: api[component.name]?.accessibility ?? [],

@@ -1,6 +1,7 @@
 {
   "component": "Alert",
   "category": "Feedback",
+  "package": "@larose-ui/react",
   "import": "import { Alert } from '@larose-ui/react';",
   "props": [
     {
@@ -26,7 +27,7 @@
         "title": "Information",
         "children": "Payroll period closes in 3 days."
       },
-      "code": "<Alert\n  variant=\"info\"\n  title=\"Information\"\n>Payroll period closes in 3 days.</Alert>"
+      "code": "import { Alert } from '@larose-ui/react';\n\n<Alert\n  variant=\"info\"\n  title=\"Information\"\n>Payroll period closes in 3 days.</Alert>"
     },
     {
       "id": "Success",
@@ -37,7 +38,7 @@
         "title": "Saved",
         "children": "Employee record updated successfully."
       },
-      "code": "<Alert\n  variant=\"success\"\n  title=\"Saved\"\n>Employee record updated successfully.</Alert>"
+      "code": "import { Alert } from '@larose-ui/react';\n\n<Alert\n  variant=\"success\"\n  title=\"Saved\"\n>Employee record updated successfully.</Alert>"
     },
     {
       "id": "Warning",
@@ -48,7 +49,7 @@
         "title": "Warning",
         "children": "This action affects 12 employees."
       },
-      "code": "<Alert\n  variant=\"warning\"\n  title=\"Warning\"\n>This action affects 12 employees.</Alert>"
+      "code": "import { Alert } from '@larose-ui/react';\n\n<Alert\n  variant=\"warning\"\n  title=\"Warning\"\n>This action affects 12 employees.</Alert>"
     },
     {
       "id": "Error",
@@ -59,7 +60,7 @@
         "title": "Error",
         "children": "Unable to connect to payroll service."
       },
-      "code": "<Alert\n  variant=\"error\"\n  title=\"Error\"\n>Unable to connect to payroll service.</Alert>"
+      "code": "import { Alert } from '@larose-ui/react';\n\n<Alert\n  variant=\"error\"\n  title=\"Error\"\n>Unable to connect to payroll service.</Alert>"
     },
     {
       "id": "Dismissible",
@@ -69,7 +70,47 @@
         "variant": "info",
         "children": "This notice can be dismissed."
       },
-      "code": "<Alert\n  variant=\"info\"\n>This notice can be dismissed.</Alert>"
+      "code": "import { Alert } from '@larose-ui/react';\n\n<Alert\n  variant=\"info\"\n>This notice can be dismissed.</Alert>"
+    },
+    {
+      "id": "DeleteConfirmation",
+      "title": "Destructive (compact)",
+      "kind": "destructive",
+      "props": {},
+      "code": "// See Storybook story \"DeleteConfirmation\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "ThreeButtonStack",
+      "title": "Three actions (compact)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"ThreeButtonStack\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "DeliberateEmptyTrash",
+      "title": "Deliberate destructive (desktop)",
+      "kind": "destructive",
+      "props": {},
+      "code": "// See Storybook story \"DeliberateEmptyTrash\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "InformationalDone",
+      "title": "Informational (tablet)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"InformationalDone\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "PasswordPrompt",
+      "title": "Secure field (desktop)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"PasswordPrompt\" for full example.",
+      "composite": true
     }
   ],
   "accessibility": [

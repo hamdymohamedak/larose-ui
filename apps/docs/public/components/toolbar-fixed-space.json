@@ -1,0 +1,11 @@
+{
+  "component": "ToolbarFixedSpace",
+  "category": "Toolbar",
+  "package": "@larose-ui/react",
+  "import": "import { ToolbarFixedSpace } from '@larose-ui/react';",
+  "props": [],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

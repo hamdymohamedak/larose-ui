@@ -769,3 +769,45 @@ export type {
 
 export { applyTokensToElement, getTokens, tokensToCSSVariables } from '@larose-ui/tokens';
 export type { ColorTokens, TokenSet } from '@larose-ui/tokens';
+
+// Liquid glass — displacement-mapped refraction surfaces
+export {
+  LiquidGlass,
+  LiquidGlassTabBar,
+  LiquidGlassButton,
+  LiquidGlassTopBar,
+  LiquidGlassSwitch,
+  LIQUID_GLASS_SWITCH_ACTIVE_GREEN,
+  LIQUID_GLASS_SWITCH_TRACK_GLASS,
+  LiquidGlassProgress,
+  LiquidGlassRange,
+  LiquidGlassCheckbox,
+  useLiquidGlass,
+  buildLiquidGlassDisplacementMap,
+  squircleHeightFn,
+  roundedRectSDF,
+  LIQUID_GLASS_OPTICS_DEFAULTS,
+  LIQUID_GLASS_PRESETS,
+  resolveLiquidGlassOptics,
+  supportsLiquidGlassRefraction,
+} from './LiquidGlass';
+export type {
+  LiquidGlassSurfaceProps,
+  LiquidGlassTabBarProps,
+  LiquidGlassTabItem,
+  LiquidGlassButtonProps,
+  LiquidGlassTopBarProps,
+  LiquidGlassTopBarItem,
+  LiquidGlassTopBarVariant,
+  LiquidGlassSwitchProps,
+  LiquidGlassSwitchActiveTrackTint,
+  LiquidGlassProgressProps,
+  LiquidGlassRangeProps,
+  LiquidGlassCheckboxProps,
+  UseLiquidGlassOptions,
+  UseLiquidGlassResult,
+  BuildDisplacementMapOptions,
+  LiquidGlassOptics,
+  LiquidGlassGeometry,
+  ResolvedLiquidGlassOptics,
+} from './LiquidGlass';

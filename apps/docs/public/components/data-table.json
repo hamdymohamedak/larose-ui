@@ -1,6 +1,7 @@
 {
   "component": "DataTable",
   "category": "Data",
+  "package": "@larose-ui/react",
   "import": "import { DataTable } from '@larose-ui/react';",
   "props": [
     {

@@ -1,6 +1,7 @@
 {
   "component": "MenuBarExtra",
   "category": "Navigation",
+  "package": "@larose-ui/react",
   "import": "import { MenuBarExtra } from '@larose-ui/react';",
   "props": [
     {

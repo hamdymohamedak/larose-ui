@@ -42,14 +42,6 @@ const config: StorybookConfig = {
         conditions: ['browser', 'svelte'],
         alias: [
           {
-            find: '@larose-ui/glass/react',
-            replacement: join(repoRoot, 'packages/glass/src/react/index.ts'),
-          },
-          {
-            find: '@larose-ui/glass',
-            replacement: join(repoRoot, 'packages/glass/src/index.ts'),
-          },
-          {
             find: '@larose-ui/react/styles.css',
             replacement: stylesStub,
           },
@@ -96,7 +88,6 @@ const config: StorybookConfig = {
           '@larose-ui/offline',
           '@larose-ui/permissions',
           '@larose-ui/observability',
-          '@larose-ui/glass',
         ],
         include: ['vue', 'svelte', '@larose-ui/react'],
       },

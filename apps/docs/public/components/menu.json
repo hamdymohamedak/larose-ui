@@ -1,6 +1,7 @@
 {
   "component": "Menu",
   "category": "Navigation",
+  "package": "@larose-ui/react",
   "import": "import { Menu } from '@larose-ui/react';",
   "props": [
     {
@@ -77,35 +78,43 @@
   ],
   "examples": [
     {
-      "id": "MenuAlwaysOpen",
-      "title": "Menu (always open)",
-      "kind": "advanced",
+      "id": "LargeLayout",
+      "title": "Large (default)",
+      "kind": "basic",
       "props": {},
-      "code": "// See Storybook story \"MenuAlwaysOpen\" for full example.",
+      "code": "// See Storybook story \"LargeLayout\" for full example.",
       "composite": true
     },
     {
-      "id": "AddMenu",
-      "title": "Add",
+      "id": "MediumLayout",
+      "title": "Medium layout",
       "kind": "advanced",
       "props": {},
-      "code": "// See Storybook story \"AddMenu\" for full example.",
+      "code": "// See Storybook story \"MediumLayout\" for full example.",
       "composite": true
     },
     {
-      "id": "SortMenu",
-      "title": "Sort",
-      "kind": "advanced",
+      "id": "SmallLayout",
+      "title": "Small layout",
+      "kind": "variants",
       "props": {},
-      "code": "// See Storybook story \"SortMenu\" for full example.",
+      "code": "<Menu layout=\"small\" open onOpenChange={() => undefined} entries={formatEntries} />",
       "composite": true
     },
     {
-      "id": "MoreMenu",
-      "title": "More (Notes)",
+      "id": "SubmenuAndToggles",
+      "title": "Submenus and toggles",
       "kind": "advanced",
       "props": {},
-      "code": "// See Storybook story \"MoreMenu\" for full example.",
+      "code": "// See Storybook story \"SubmenuAndToggles\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "UnavailableItems",
+      "title": "Unavailable items",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"UnavailableItems\" for full example.",
       "composite": true
     }
   ],

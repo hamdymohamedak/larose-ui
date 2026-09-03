@@ -1,6 +1,7 @@
 {
   "component": "Spinner",
   "category": "Feedback",
+  "package": "@larose-ui/react",
   "import": "import { Spinner } from '@larose-ui/react';",
   "props": [
     {

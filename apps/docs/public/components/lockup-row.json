@@ -1,0 +1,24 @@
+{
+  "component": "LockupRow",
+  "category": "Other",
+  "package": "@larose-ui/react",
+  "import": "import { LockupRow } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "axis",
+      "type": "LockupAxis",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "itemWidth",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

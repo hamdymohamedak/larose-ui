@@ -1,6 +1,7 @@
 {
   "component": "Progress",
   "category": "Feedback",
+  "package": "@larose-ui/react",
   "import": "import { Progress } from '@larose-ui/react';",
   "props": [
     {
@@ -66,7 +67,7 @@
         "label": "Profile completion",
         "showValue": true
       },
-      "code": "<Progress\n  value={65}\n  label=\"Profile completion\"\n  showValue\n/>"
+      "code": "import { Progress } from '@larose-ui/react';\n\n<Progress\n  value={65}\n  label=\"Profile completion\"\n  showValue\n/>"
     },
     {
       "id": "Success",
@@ -78,7 +79,7 @@
         "variant": "success",
         "showValue": true
       },
-      "code": "<Progress\n  value={100}\n  label=\"Upload complete\"\n  variant=\"success\"\n  showValue\n/>"
+      "code": "import { Progress } from '@larose-ui/react';\n\n<Progress\n  value={100}\n  label=\"Upload complete\"\n  variant=\"success\"\n  showValue\n/>"
     },
     {
       "id": "Error",
@@ -90,7 +91,7 @@
         "variant": "error",
         "showValue": true
       },
-      "code": "<Progress\n  value={35}\n  label=\"Sync failed\"\n  variant=\"error\"\n  showValue\n/>"
+      "code": "import { Progress } from '@larose-ui/react';\n\n<Progress\n  value={35}\n  label=\"Sync failed\"\n  variant=\"error\"\n  showValue\n/>"
     },
     {
       "id": "Loading",
@@ -102,7 +103,7 @@
         "showValue": true,
         "state": "loading"
       },
-      "code": "<Progress\n  value={45}\n  label=\"Importing employees\"\n  showValue\n  state=\"loading\"\n/>"
+      "code": "import { Progress } from '@larose-ui/react';\n\n<Progress\n  value={45}\n  label=\"Importing employees\"\n  showValue\n  state=\"loading\"\n/>"
     }
   ],
   "accessibility": [

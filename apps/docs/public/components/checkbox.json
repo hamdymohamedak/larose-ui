@@ -1,6 +1,7 @@
 {
   "component": "Checkbox",
   "category": "Forms",
+  "package": "@larose-ui/react",
   "import": "import { Checkbox } from '@larose-ui/react';",
   "props": [
     {
@@ -38,7 +39,7 @@
       "props": {
         "label": "I agree to the terms"
       },
-      "code": "<Checkbox\n  label=\"I agree to the terms\"\n>Example</Checkbox>"
+      "code": "import { Checkbox } from '@larose-ui/react';\n\n<Checkbox\n  label=\"I agree to the terms\"\n>Example</Checkbox>"
     },
     {
       "id": "Checked",
@@ -48,7 +49,7 @@
         "label": "Subscribe to newsletter",
         "defaultChecked": true
       },
-      "code": "<Checkbox\n  label=\"Subscribe to newsletter\"\n  defaultChecked\n>Example</Checkbox>"
+      "code": "import { Checkbox } from '@larose-ui/react';\n\n<Checkbox\n  label=\"Subscribe to newsletter\"\n  defaultChecked\n>Example</Checkbox>"
     },
     {
       "id": "WithHint",
@@ -58,7 +59,7 @@
         "label": "Send me product updates",
         "hint": "You can unsubscribe at any time"
       },
-      "code": "<Checkbox\n  label=\"Send me product updates\"\n  hint=\"You can unsubscribe at any time\"\n>Example</Checkbox>"
+      "code": "import { Checkbox } from '@larose-ui/react';\n\n<Checkbox\n  label=\"Send me product updates\"\n  hint=\"You can unsubscribe at any time\"\n>Example</Checkbox>"
     },
     {
       "id": "WithError",
@@ -68,7 +69,7 @@
         "label": "I agree to the terms",
         "error": "You must accept the terms to continue"
       },
-      "code": "<Checkbox\n  label=\"I agree to the terms\"\n  error=\"You must accept the terms to continue\"\n>Example</Checkbox>"
+      "code": "import { Checkbox } from '@larose-ui/react';\n\n<Checkbox\n  label=\"I agree to the terms\"\n  error=\"You must accept the terms to continue\"\n>Example</Checkbox>"
     },
     {
       "id": "Disabled",
@@ -78,7 +79,7 @@
         "label": "Legacy feature access",
         "disabled": true
       },
-      "code": "<Checkbox\n  label=\"Legacy feature access\"\n  disabled\n>Example</Checkbox>"
+      "code": "import { Checkbox } from '@larose-ui/react';\n\n<Checkbox\n  label=\"Legacy feature access\"\n  disabled\n>Example</Checkbox>"
     },
     {
       "id": "CheckboxDefault",

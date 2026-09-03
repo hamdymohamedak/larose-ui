@@ -1,0 +1,25 @@
+{
+  "component": "ToolbarBackButton",
+  "category": "Toolbar",
+  "package": "@larose-ui/react",
+  "import": "import { ToolbarBackButton } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "companionLabel",
+      "type": "string",
+      "required": false,
+      "description": "visionOS reveals label on look — optional visible companion text.",
+      "inherited": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

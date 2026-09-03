@@ -1,6 +1,7 @@
 {
   "component": "List",
   "category": "Data",
+  "package": "@larose-ui/react",
   "import": "import { List } from '@larose-ui/react';",
   "props": [
     {
@@ -18,22 +19,6 @@
   ],
   "examples": [
     {
-      "id": "FinderStyleList",
-      "title": "Finder Style List",
-      "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"FinderStyleList\" for full example.",
-      "composite": true
-    },
-    {
-      "id": "ReorderableList",
-      "title": "Reorderable List",
-      "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"ReorderableList\" for full example.",
-      "composite": true
-    },
-    {
       "id": "GroupedList",
       "title": "Grouped List",
       "kind": "advanced",
@@ -42,11 +27,11 @@
       "composite": true
     },
     {
-      "id": "ListAccessories",
-      "title": "List Accessories",
+      "id": "MiddleTruncation",
+      "title": "Middle Truncation",
       "kind": "advanced",
       "props": {},
-      "code": "// See Storybook story \"ListAccessories\" for full example.",
+      "code": "// See Storybook story \"MiddleTruncation\" for full example.",
       "composite": true
     }
   ],

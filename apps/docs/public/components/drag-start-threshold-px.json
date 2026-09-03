@@ -1,0 +1,11 @@
+{
+  "component": "DRAG_START_THRESHOLD_PX",
+  "category": "Other",
+  "package": "@larose-ui/react",
+  "import": "import { DRAG_START_THRESHOLD_PX } from '@larose-ui/react';",
+  "props": [],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

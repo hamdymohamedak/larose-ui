@@ -1,0 +1,68 @@
+{
+  "component": "SplitViewPane",
+  "category": "Layout",
+  "package": "@larose-ui/react",
+  "import": "import { SplitViewPane } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "'aria-label'",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "collapsible",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "defaultSize",
+      "type": "number",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "defaultVisible",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "maxSize",
+      "type": "number",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "minSize",
+      "type": "number",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onVisibleChange",
+      "type": "(visible: boolean) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "visible",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [
+    "Supports ARIA attributes via standard HTML element props."
+  ],
+  "anatomy": null,
+  "playground": null
+}

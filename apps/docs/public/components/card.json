@@ -1,6 +1,7 @@
 {
   "component": "Card",
   "category": "Layout",
+  "package": "@larose-ui/react",
   "import": "import { Card } from '@larose-ui/react';",
   "props": [
     {
@@ -33,7 +34,7 @@
         "description": "Manage employee information",
         "children": "Ahmed Mohamed — Software Engineer"
       },
-      "code": "<Card\n  title=\"Employee Profile\"\n  description=\"Manage employee information\"\n>Ahmed Mohamed — Software Engineer</Card>"
+      "code": "import { Card } from '@larose-ui/react';\n\n<Card\n  title=\"Employee Profile\"\n  description=\"Manage employee information\"\n>Ahmed Mohamed — Software Engineer</Card>"
     },
     {
       "id": "WithBadge",
@@ -44,11 +45,115 @@
       "composite": true
     },
     {
-      "id": "Card",
-      "title": "Card",
+      "id": "ClearPromptsAndDefaults",
+      "title": "Clear Prompts And Defaults",
+      "kind": "basic",
+      "props": {},
+      "code": "// See Storybook story \"ClearPromptsAndDefaults\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "DynamicValidation",
+      "title": "Dynamic Validation",
       "kind": "advanced",
       "props": {},
-      "code": "// See Storybook story \"Card\" for full example.",
+      "code": "// See Storybook story \"DynamicValidation\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "NumericFormatting",
+      "title": "Numeric Formatting",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"NumericFormatting\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "SecurePasswordField",
+      "title": "Secure Password Field",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"SecurePasswordField\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "PasteAndDrop",
+      "title": "Paste And Drop",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"PasteAndDrop\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "ContinueWhenComplete",
+      "title": "Continue When Complete",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"ContinueWhenComplete\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "ExpansionTooltip",
+      "title": "Expansion Tooltip",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"ExpansionTooltip\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "DisclosureButtonStory",
+      "title": "Disclosure button",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"DisclosureButtonStory\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "LabelImportance",
+      "title": "Label Importance",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"LabelImportance\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "SelectableLabel",
+      "title": "Selectable Label",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"SelectableLabel\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "UnsavedChanges",
+      "title": "Unsaved Changes",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"UnsavedChanges\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "ImportWithFileUpload",
+      "title": "Import With File Upload",
+      "kind": "loading",
+      "props": {},
+      "code": "// See Storybook story \"ImportWithFileUpload\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "ListAccessories",
+      "title": "List Accessories",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"ListAccessories\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "DocumentToolbar",
+      "title": "Document Toolbar",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"DocumentToolbar\" for full example.",
       "composite": true
     }
   ],

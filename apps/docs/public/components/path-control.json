@@ -1,6 +1,7 @@
 {
   "component": "PathControl",
   "category": "Navigation",
+  "package": "@larose-ui/react",
   "import": "import { PathControl } from '@larose-ui/react';",
   "props": [
     {

@@ -1,6 +1,7 @@
 {
   "component": "SquareButton",
   "category": "Actions",
+  "package": "@larose-ui/react",
   "import": "import { SquareButton } from '@larose-ui/react';",
   "props": [
     {

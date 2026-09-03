@@ -1,6 +1,7 @@
 {
   "component": "FileBrowser",
   "category": "Files",
+  "package": "@larose-ui/react",
   "import": "import { FileBrowser } from '@larose-ui/react';",
   "props": [
     {

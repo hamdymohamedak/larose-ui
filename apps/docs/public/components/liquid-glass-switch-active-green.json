@@ -1,0 +1,11 @@
+{
+  "component": "LIQUID_GLASS_SWITCH_ACTIVE_GREEN",
+  "category": "Other",
+  "package": "@larose-ui/react",
+  "import": "import { LIQUID_GLASS_SWITCH_ACTIVE_GREEN } from '@larose-ui/react';",
+  "props": [],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

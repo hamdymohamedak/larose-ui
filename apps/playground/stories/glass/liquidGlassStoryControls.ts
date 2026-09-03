@@ -1,7 +1,11 @@
 import type { ArgTypes } from '@storybook/react';
 import { fn } from '@storybook/test';
-import { LIQUID_GLASS_OPTICS_DEFAULTS } from '@larose-ui/glass';
-import type { LiquidGlassOptics } from '@larose-ui/glass';
+import { LIQUID_GLASS_OPTICS_DEFAULTS } from '@larose-ui/react';
+import type { LiquidGlassOptics } from '@larose-ui/react';
+import {
+  LIQUID_GLASS_SWITCH_ACTIVE_GREEN,
+  LIQUID_GLASS_SWITCH_TRACK_GLASS,
+} from '@larose-ui/react';
 
 /** Hide props that cannot be driven from Storybook controls. */
 export const hiddenControl = { table: { disable: true } } as const;
@@ -423,3 +427,139 @@ export function stripZeroGeometry<T extends Record<string, unknown>>(props: T): 
 export function prepareSurfaceProps<T extends Record<string, unknown>>(props: T): T {
   return stripZeroGeometry(stripStorybookCallbacks(props));
 }
+
+// ─── Form controls ────────────────────────────────────────────────────────────
+
+const formControlHidden = hiddenProps('className', 'style');
+
+export const liquidGlassSwitchArgTypes: ArgTypes = {
+  defaultChecked: { control: 'boolean', table: { category: 'State' } },
+  disabled: { control: 'boolean', table: { category: 'State' } },
+  width: { control: { type: 'range', min: 40, max: 72, step: 2 }, table: { category: 'Geometry' } },
+  height: { control: { type: 'range', min: 24, max: 44, step: 2 }, table: { category: 'Geometry' } },
+  thumbSize: { control: { type: 'range', min: 20, max: 36, step: 1 }, table: { category: 'Geometry' } },
+  activeTrackTint: {
+    control: 'select',
+    options: [
+      LIQUID_GLASS_SWITCH_ACTIVE_GREEN,
+      LIQUID_GLASS_SWITCH_TRACK_GLASS,
+      'rgba(255, 255, 255, 0.10)',
+      'rgba(59, 130, 246, 0.45)',
+      'rgba(255, 149, 0, 0.45)',
+    ],
+    labels: {
+      [LIQUID_GLASS_SWITCH_ACTIVE_GREEN]: 'Green (default)',
+      [LIQUID_GLASS_SWITCH_TRACK_GLASS]: 'Liquid glass',
+      'rgba(255, 255, 255, 0.10)': 'White glass',
+      'rgba(59, 130, 246, 0.45)': 'Blue',
+      'rgba(255, 149, 0, 0.45)': 'Orange',
+    },
+    description:
+      'Active track color when on. Green by default; choose Liquid glass for no color wash, or any CSS color.',
+    table: { category: 'Colors' },
+  },
+  inactiveTrackTint: { control: 'text', table: { category: 'Colors' } },
+  thumbTint: { control: 'text', table: { category: 'Colors' } },
+  ...liquidGlassOpticsArgTypes,
+  onChange: { table: { disable: true }, action: 'change' },
+  ...formControlHidden,
+};
+
+export const liquidGlassSwitchDefaults = {
+  defaultChecked: true,
+  disabled: false,
+  width: 52,
+  height: 32,
+  thumbSize: 28,
+  activeTrackTint: LIQUID_GLASS_SWITCH_ACTIVE_GREEN,
+  onChange: fn(),
+  ...liquidGlassOpticsDefaults,
+  displacementScale: 24,
+  bezelWidth: 12,
+  shadowIntensity: 0.7,
+};
+
+export const liquidGlassProgressArgTypes: ArgTypes = {
+  value: { control: { type: 'range', min: 0, max: 100, step: 1 }, table: { category: 'State' } },
+  max: { control: { type: 'range', min: 1, max: 100, step: 1 }, table: { category: 'State' } },
+  indeterminate: { control: 'boolean', table: { category: 'State' } },
+  height: { control: { type: 'range', min: 6, max: 24, step: 1 }, table: { category: 'Geometry' } },
+  fillColor: { control: 'text', table: { category: 'Colors' } },
+  fillGlow: { control: 'text', table: { category: 'Colors' } },
+  ...liquidGlassOpticsArgTypes,
+  ...formControlHidden,
+};
+
+export const liquidGlassProgressDefaults = {
+  value: 62,
+  max: 100,
+  indeterminate: false,
+  height: 10,
+  fillColor: 'rgba(255, 255, 255, 0.55)',
+  fillGlow: 'rgba(255, 255, 255, 0.35)',
+  ...liquidGlassOpticsDefaults,
+  displacementScale: 18,
+  bezelWidth: 10,
+  shadowIntensity: 0.6,
+};
+
+export const liquidGlassRangeArgTypes: ArgTypes = {
+  defaultValue: { control: { type: 'range', min: 0, max: 100, step: 1 }, table: { category: 'State' } },
+  min: { control: { type: 'range', min: 0, max: 50, step: 1 }, table: { category: 'State' } },
+  max: { control: { type: 'range', min: 50, max: 100, step: 1 }, table: { category: 'State' } },
+  step: { control: { type: 'range', min: 1, max: 10, step: 1 }, table: { category: 'State' } },
+  disabled: { control: 'boolean', table: { category: 'State' } },
+  trackHeight: { control: { type: 'range', min: 4, max: 16, step: 1 }, table: { category: 'Geometry' } },
+  thumbSize: { control: { type: 'range', min: 20, max: 40, step: 1 }, table: { category: 'Geometry' } },
+  fillColor: { control: 'text', table: { category: 'Colors' } },
+  ...liquidGlassOpticsArgTypes,
+  onChange: { table: { disable: true }, action: 'change' },
+  ...formControlHidden,
+};
+
+export const liquidGlassRangeDefaults = {
+  defaultValue: 42,
+  min: 0,
+  max: 100,
+  step: 1,
+  disabled: false,
+  trackHeight: 8,
+  thumbSize: 28,
+  fillColor: 'rgba(255, 255, 255, 0.35)',
+  onChange: fn(),
+  ...liquidGlassOpticsDefaults,
+  displacementScale: 22,
+  bezelWidth: 12,
+  shadowIntensity: 0.75,
+};
+
+export const liquidGlassCheckboxArgTypes: ArgTypes = {
+  label: { control: 'text', table: { category: 'Content' } },
+  defaultChecked: { control: 'boolean', table: { category: 'State' } },
+  disabled: { control: 'boolean', table: { category: 'State' } },
+  size: { control: { type: 'range', min: 20, max: 36, step: 1 }, table: { category: 'Geometry' } },
+  borderRadius: { control: { type: 'range', min: 4, max: 16, step: 1 }, table: { category: 'Geometry' } },
+  checkColor: { control: 'color', table: { category: 'Colors' } },
+  checkedTint: { control: 'text', table: { category: 'Colors' } },
+  labelColor: { control: 'color', table: { category: 'Colors' } },
+  ...liquidGlassOpticsArgTypes,
+  onChange: { table: { disable: true }, action: 'change' },
+  ...formControlHidden,
+};
+
+export const liquidGlassCheckboxDefaults = {
+  label: 'Enable liquid glass',
+  defaultChecked: true,
+  disabled: false,
+  size: 26,
+  borderRadius: 8,
+  checkColor: '#ffffff',
+  checkedTint: 'rgba(52, 199, 89, 0.42)',
+  labelColor: '#ffffff',
+  onChange: fn(),
+  ...liquidGlassOpticsDefaults,
+  displacementScale: 20,
+  bezelWidth: 10,
+  shadowIntensity: 0.65,
+};
+

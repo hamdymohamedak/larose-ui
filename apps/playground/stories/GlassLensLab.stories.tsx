@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useMemo, useState } from 'react';
-import { buildLiquidGlassDisplacementMap } from '@larose-ui/glass';
-import { LiquidGlass } from '@larose-ui/glass/react';
+import { buildLiquidGlassDisplacementMap } from '@larose-ui/react';
+import { LiquidGlass } from '@larose-ui/react';
 import { GlassScrollTestScene } from './glass/GlassScrollTestScene';
 import {
   liquidGlassSurfaceArgTypes,

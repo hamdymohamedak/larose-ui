@@ -1,6 +1,7 @@
 {
   "component": "Collection",
   "category": "Layout",
+  "package": "@larose-ui/react",
   "import": "import { Collection } from '@larose-ui/react';",
   "props": [
     {

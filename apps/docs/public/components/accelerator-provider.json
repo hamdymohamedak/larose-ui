@@ -1,0 +1,11 @@
+{
+  "component": "AcceleratorProvider",
+  "category": "Other",
+  "package": "@larose-ui/react",
+  "import": "import { AcceleratorProvider } from '@larose-ui/react';",
+  "props": [],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

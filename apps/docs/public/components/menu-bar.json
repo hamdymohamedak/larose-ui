@@ -1,6 +1,7 @@
 {
   "component": "MenuBar",
   "category": "Navigation",
+  "package": "@larose-ui/react",
   "import": "import { MenuBar } from '@larose-ui/react';",
   "props": [
     {
@@ -95,6 +96,30 @@
       "kind": "advanced",
       "props": {},
       "code": "// See Storybook story \"MenuBarGlobalShortcuts\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "MacOSStandard",
+      "title": "macOS standard menus",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"MacOSStandard\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "IPadOSHiddenUntilRevealed",
+      "title": "iPadOS reveal at top edge",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"IPadOSHiddenUntilRevealed\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "DisabledNotHidden",
+      "title": "Unavailable items stay visible",
+      "kind": "disabled",
+      "props": {},
+      "code": "// See Storybook story \"DisabledNotHidden\" for full example.",
       "composite": true
     }
   ],

@@ -1,0 +1,36 @@
+{
+  "component": "ToolbarDocumentMenu",
+  "category": "Toolbar",
+  "package": "@larose-ui/react",
+  "import": "import { ToolbarDocumentMenu } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "entries",
+      "type": "MenuEntry[]",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "onAction",
+      "type": "(entryId: string) => void",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

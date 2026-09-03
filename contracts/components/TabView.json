@@ -49,6 +49,13 @@
       "payload": "(value: string) => void"
     }
   ],
+  "slots": [
+    "children"
+  ],
+  "states": [
+    "default",
+    "active tab"
+  ],
   "defaults": {
     "defaultValue": "''",
     "inset": "true",

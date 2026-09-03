@@ -15,7 +15,6 @@
     "@larose-ui/core": "workspace:*",
     "@larose-ui/data": "workspace:*",
     "@larose-ui/forms": "workspace:*",
-    "@larose-ui/glass": "workspace:*",
     "@larose-ui/observability": "workspace:*",
     "@larose-ui/permissions": "workspace:*",
     "@larose-ui/ai": "workspace:*",

@@ -1,6 +1,7 @@
 {
   "component": "Label",
   "category": "Content",
+  "package": "@larose-ui/react",
   "import": "import { Label } from '@larose-ui/react';",
   "props": [
     {
@@ -30,16 +31,7 @@
       "inherited": false
     }
   ],
-  "examples": [
-    {
-      "id": "LabelImportance",
-      "title": "Label Importance",
-      "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"LabelImportance\" for full example.",
-      "composite": true
-    }
-  ],
+  "examples": [],
   "accessibility": [],
   "anatomy": null,
   "playground": null

@@ -1,0 +1,155 @@
+{
+  "component": "LiquidGlass",
+  "category": "Glass",
+  "package": "@larose-ui/react",
+  "import": "import { LiquidGlass } from '@larose-ui/react';",
+  "props": [],
+  "examples": [
+    {
+      "id": "NaturalLanguageFilter",
+      "title": "Natural Language Filter",
+      "kind": "variants",
+      "props": {},
+      "code": "// See Storybook story \"NaturalLanguageFilter\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "NaturalLanguagePopulate",
+      "title": "Natural Language Populate",
+      "kind": "variants",
+      "props": {},
+      "code": "<SmartFormDemo />",
+      "composite": true
+    },
+    {
+      "id": "Default",
+      "title": "Default",
+      "kind": "basic",
+      "props": {},
+      "code": "<RuntimeDemo />",
+      "composite": true
+    },
+    {
+      "id": "Loading",
+      "title": "Loading",
+      "kind": "loading",
+      "props": {},
+      "code": "// See Storybook story \"Loading\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "Empty",
+      "title": "Empty",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"Empty\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "SidebarDefault",
+      "title": "Sidebar Default",
+      "kind": "basic",
+      "props": {},
+      "code": "// See Storybook story \"SidebarDefault\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "AppShellLayout",
+      "title": "App Shell Layout",
+      "kind": "advanced",
+      "props": {},
+      "code": "<AppShellDemo />",
+      "composite": true
+    },
+    {
+      "id": "DefaultRefined",
+      "title": "Default (Apple-inspired)",
+      "kind": "basic",
+      "props": {},
+      "code": "// See Storybook story \"DefaultRefined\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "SmallOverrides",
+      "title": "10% customization",
+      "kind": "variants",
+      "props": {},
+      "code": "// See Storybook story \"SmallOverrides\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "FullCustomTheme",
+      "title": "90% customization",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"FullCustomTheme\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "PaginationDefault",
+      "title": "Pagination Default",
+      "kind": "basic",
+      "props": {},
+      "code": "<PaginationDemo />",
+      "composite": true
+    },
+    {
+      "id": "Overview",
+      "title": "Overview",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"Overview\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "TypographyScale",
+      "title": "Typography Scale",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"TypographyScale\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "Surfaces",
+      "title": "Surfaces",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"Surfaces\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "ThemeComparison",
+      "title": "Theme Comparison",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"ThemeComparison\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "RTLArabic",
+      "title": "R T L Arabic",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"RTLArabic\" for full example.",
+      "composite": true
+    }
+  ],
+  "accessibility": [],
+  "anatomy": {
+    "summary": "Base liquid glass surface with SVG displacement refraction on Chromium and frosted blur elsewhere.",
+    "structure": [
+      "LiquidGlass shell",
+      "Specular rim",
+      "Inner highlight",
+      "Content wrapper"
+    ],
+    "composition": "Use as a layout primitive or compose higher-level LiquidGlass* components.",
+    "slots": [
+      "children"
+    ],
+    "states": [
+      "default"
+    ]
+  },
+  "playground": null
+}

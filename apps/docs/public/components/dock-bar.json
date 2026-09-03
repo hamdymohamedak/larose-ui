@@ -1,6 +1,7 @@
 {
   "component": "DockBar",
   "category": "Navigation",
+  "package": "@larose-ui/react",
   "import": "import { DockBar } from '@larose-ui/react';",
   "props": [
     {

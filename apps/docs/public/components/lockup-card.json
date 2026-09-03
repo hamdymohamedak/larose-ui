@@ -1,0 +1,24 @@
+{
+  "component": "LockupCard",
+  "category": "Other",
+  "package": "@larose-ui/react",
+  "import": "import { LockupCard } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "rating",
+      "type": "number",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "review",
+      "type": "string",
+      "required": true,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

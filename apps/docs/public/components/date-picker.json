@@ -1,6 +1,7 @@
 {
   "component": "DatePicker",
   "category": "Forms",
+  "package": "@larose-ui/react",
   "import": "import { DatePicker } from '@larose-ui/react';",
   "props": [
     {

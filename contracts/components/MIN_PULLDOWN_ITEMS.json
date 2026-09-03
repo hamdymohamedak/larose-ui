@@ -1,0 +1,8 @@
+{
+  "name": "MIN_PULLDOWN_ITEMS",
+  "version": "1",
+  "framework": "react",
+  "props": [],
+  "events": [],
+  "keyboard": {}
+}

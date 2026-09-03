@@ -1,0 +1,11 @@
+{
+  "component": "ThemeCustomizationContext",
+  "category": "Other",
+  "package": "@larose-ui/react",
+  "import": "import { ThemeCustomizationContext } from '@larose-ui/react';",
+  "props": [],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

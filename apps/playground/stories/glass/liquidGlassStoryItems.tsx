@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import type { LiquidGlassTabItem, LiquidGlassTopBarItem } from '@larose-ui/glass/react';
+import type { LiquidGlassTabItem, LiquidGlassTopBarItem } from '@larose-ui/react';
 import type { TabBarTabPreset } from './liquidGlassStoryControls';
 
 function IconHome({ size = 23 }: { size?: number }) {

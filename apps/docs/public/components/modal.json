@@ -1,6 +1,7 @@
 {
   "component": "Modal",
   "category": "Overlay",
+  "package": "@larose-ui/react",
   "import": "import { Modal } from '@larose-ui/react';",
   "props": [
     {

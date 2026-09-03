@@ -1,6 +1,7 @@
 {
   "component": "DateRangePicker",
   "category": "Forms",
+  "package": "@larose-ui/react",
   "import": "import { DateRangePicker } from '@larose-ui/react';",
   "props": [
     {
@@ -88,16 +89,7 @@
       "inherited": false
     }
   ],
-  "examples": [
-    {
-      "id": "DateRangePickerDefault",
-      "title": "Date Range Picker Default",
-      "kind": "basic",
-      "props": {},
-      "code": "<DateRangeDemo />",
-      "composite": true
-    }
-  ],
+  "examples": [],
   "accessibility": [],
   "anatomy": null,
   "playground": null

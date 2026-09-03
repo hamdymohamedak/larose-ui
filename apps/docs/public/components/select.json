@@ -1,6 +1,7 @@
 {
   "component": "Select",
   "category": "Forms",
+  "package": "@larose-ui/react",
   "import": "import { Select } from '@larose-ui/react';",
   "props": [
     {
@@ -65,14 +66,6 @@
   ],
   "examples": [
     {
-      "id": "SelectableLabel",
-      "title": "Selectable Label",
-      "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"SelectableLabel\" for full example.",
-      "composite": true
-    },
-    {
       "id": "SelectDefault",
       "title": "Select Default",
       "kind": "basic",
@@ -88,7 +81,7 @@
         "label": "Department",
         "placeholder": "Choose a department"
       },
-      "code": "<Select\n  label=\"Department\"\n  placeholder=\"Choose a department\"\n>Example</Select>"
+      "code": "import { Select } from '@larose-ui/react';\n\n<Select\n  label=\"Department\"\n  placeholder=\"Choose a department\"\n>Example</Select>"
     },
     {
       "id": "WithHint",
@@ -98,7 +91,7 @@
         "label": "Department",
         "hint": "Used for org chart and permissions"
       },
-      "code": "<Select\n  label=\"Department\"\n  hint=\"Used for org chart and permissions\"\n>Example</Select>"
+      "code": "import { Select } from '@larose-ui/react';\n\n<Select\n  label=\"Department\"\n  hint=\"Used for org chart and permissions\"\n>Example</Select>"
     },
     {
       "id": "Required",
@@ -108,7 +101,7 @@
         "label": "Department",
         "required": true
       },
-      "code": "<Select\n  label=\"Department\"\n  required\n>Example</Select>"
+      "code": "import { Select } from '@larose-ui/react';\n\n<Select\n  label=\"Department\"\n  required\n>Example</Select>"
     },
     {
       "id": "Loading",
@@ -118,7 +111,7 @@
         "label": "Department",
         "loading": true
       },
-      "code": "<Select\n  label=\"Department\"\n  loading\n>Example</Select>"
+      "code": "import { Select } from '@larose-ui/react';\n\n<Select\n  label=\"Department\"\n  loading\n>Example</Select>"
     },
     {
       "id": "WithError",
@@ -128,7 +121,7 @@
         "label": "Department",
         "error": "Department is required"
       },
-      "code": "<Select\n  label=\"Department\"\n  error=\"Department is required\"\n>Example</Select>"
+      "code": "import { Select } from '@larose-ui/react';\n\n<Select\n  label=\"Department\"\n  error=\"Department is required\"\n>Example</Select>"
     },
     {
       "id": "Disabled",
@@ -139,7 +132,7 @@
         "disabled": true,
         "defaultValue": "eng"
       },
-      "code": "<Select\n  label=\"Department\"\n  disabled\n  defaultValue=\"eng\"\n>Example</Select>"
+      "code": "import { Select } from '@larose-ui/react';\n\n<Select\n  label=\"Department\"\n  disabled\n  defaultValue=\"eng\"\n>Example</Select>"
     }
   ],
   "accessibility": [

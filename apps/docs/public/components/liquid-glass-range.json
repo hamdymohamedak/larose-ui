@@ -1,0 +1,133 @@
+{
+  "component": "LiquidGlassRange",
+  "category": "Glass",
+  "package": "@larose-ui/react",
+  "import": "import { LiquidGlassRange } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "'aria-label'",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "borderRadius",
+      "type": "number",
+      "required": false,
+      "default": "LIQUID_GLASS_PRESETS.slider.borderRadius",
+      "inherited": false
+    },
+    {
+      "name": "defaultValue",
+      "type": "number",
+      "required": false,
+      "default": "50",
+      "inherited": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "inherited": false
+    },
+    {
+      "name": "fillColor",
+      "type": "string",
+      "required": false,
+      "default": "'rgba(255",
+      "inherited": false
+    },
+    {
+      "name": "max",
+      "type": "number",
+      "required": false,
+      "default": "== min) return 0;",
+      "inherited": false
+    },
+    {
+      "name": "min",
+      "type": "number",
+      "required": false,
+      "default": "0",
+      "inherited": false
+    },
+    {
+      "name": "step",
+      "type": "number",
+      "required": false,
+      "default": "1",
+      "inherited": false
+    },
+    {
+      "name": "thumbSize",
+      "type": "number",
+      "required": false,
+      "default": "28",
+      "description": "Thumb diameter in px.",
+      "inherited": false
+    },
+    {
+      "name": "trackHeight",
+      "type": "number",
+      "required": false,
+      "default": "8",
+      "description": "Track height in px.",
+      "inherited": false
+    },
+    {
+      "name": "value",
+      "type": "number",
+      "required": false,
+      "default": "controlledValue ?? internalValue;",
+      "inherited": false
+    },
+    {
+      "name": "width",
+      "type": "number | string",
+      "required": false,
+      "default": "'100%'",
+      "inherited": false
+    }
+  ],
+  "examples": [
+    {
+      "id": "DateRangePickerDefault",
+      "title": "Date Range Picker Default",
+      "kind": "basic",
+      "props": {},
+      "code": "<DateRangeDemo />",
+      "composite": true
+    }
+  ],
+  "accessibility": [
+    "Supports ARIA attributes via standard HTML element props."
+  ],
+  "anatomy": {
+    "summary": "Range slider with glass track, fill, and draggable glass thumb.",
+    "structure": [
+      "Glass track",
+      "Fill",
+      "Glass thumb",
+      "Native range input (a11y)"
+    ],
+    "composition": "Use for volume, brightness, or any scalar control over a colorful backdrop.",
+    "slots": [],
+    "states": [
+      "default",
+      "disabled"
+    ]
+  },
+  "playground": {
+    "defaultValue": {
+      "control": "number",
+      "default": 50,
+      "min": 0,
+      "max": 100
+    },
+    "disabled": {
+      "control": "boolean",
+      "default": false
+    }
+  }
+}

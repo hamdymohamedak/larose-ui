@@ -1,0 +1,91 @@
+{
+  "name": "LiquidGlassProgress",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "'aria-label'",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "borderRadius",
+      "type": "number",
+      "required": false,
+      "default": "{borderRadius"
+    },
+    {
+      "name": "fillColor",
+      "type": "string",
+      "required": false,
+      "default": "'rgba(255"
+    },
+    {
+      "name": "fillGlow",
+      "type": "string",
+      "required": false,
+      "default": "'rgba(255"
+    },
+    {
+      "name": "height",
+      "type": "number",
+      "required": false,
+      "default": "\"100%\"",
+      "description": "Track height in px."
+    },
+    {
+      "name": "indeterminate",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "description": "Indeterminate loading state."
+    },
+    {
+      "name": "max",
+      "type": "number",
+      "required": false,
+      "default": "100",
+      "description": "Maximum value."
+    },
+    {
+      "name": "value",
+      "type": "number",
+      "required": false,
+      "default": "0",
+      "description": "Current value."
+    },
+    {
+      "name": "width",
+      "type": "number | string",
+      "required": false,
+      "default": "\"100%\""
+    }
+  ],
+  "events": [],
+  "slots": [],
+  "states": [
+    "determinate",
+    "indeterminate"
+  ],
+  "defaults": {
+    "borderRadius": "{borderRadius",
+    "fillColor": "'rgba(255",
+    "fillGlow": "'rgba(255",
+    "height": "\"100%\"",
+    "indeterminate": "false",
+    "max": "100",
+    "value": "0",
+    "width": "\"100%\""
+  },
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  }
+}

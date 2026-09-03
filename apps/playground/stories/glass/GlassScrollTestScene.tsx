@@ -1,6 +1,6 @@
 /**
  * Storybook-only: a scrollable aurora scene that gives glass components a
- * rich, colorful backdrop to refract.  Not part of @larose-ui/glass.
+ * rich, colorful backdrop to refract.  Not part of @larose-ui/react.
  */
 import { useEffect, type CSSProperties, type ReactNode } from 'react';
 

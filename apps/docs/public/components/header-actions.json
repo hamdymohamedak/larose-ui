@@ -1,0 +1,11 @@
+{
+  "component": "HeaderActions",
+  "category": "Other",
+  "package": "@larose-ui/react",
+  "import": "import { HeaderActions } from '@larose-ui/react';",
+  "props": [],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

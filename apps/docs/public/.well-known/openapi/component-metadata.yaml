@@ -17,9 +17,9 @@ paths:
           schema:
             type: string
             enum:
-              - activity-share-button
-              - activity-view
-              - alert
+              - accelerator-provider
+              - accordion
+              - accordion-content
       responses:
         '200':
           description: Component metadata document

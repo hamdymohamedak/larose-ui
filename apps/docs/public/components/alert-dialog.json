@@ -1,6 +1,7 @@
 {
   "component": "AlertDialog",
   "category": "Feedback",
+  "package": "@larose-ui/react",
   "import": "import { AlertDialog } from '@larose-ui/react';",
   "props": [
     {

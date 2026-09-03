@@ -1,0 +1,116 @@
+{
+  "component": "LiquidGlassButton",
+  "category": "Glass",
+  "package": "@larose-ui/react",
+  "import": "import { LiquidGlassButton } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "borderRadius",
+      "type": "number",
+      "required": false,
+      "default": "LIQUID_GLASS_PRESETS.button.borderRadius",
+      "inherited": false
+    },
+    {
+      "name": "color",
+      "type": "string",
+      "required": false,
+      "default": "'#ffffff'",
+      "description": "Text/icon colour.",
+      "inherited": false
+    },
+    {
+      "name": "fontSize",
+      "type": "string | number",
+      "required": false,
+      "default": "'0.9375rem'",
+      "description": "Font size.",
+      "inherited": false
+    },
+    {
+      "name": "fontWeight",
+      "type": "number",
+      "required": false,
+      "default": "500",
+      "description": "Font weight.",
+      "inherited": false
+    },
+    {
+      "name": "height",
+      "type": "number | string",
+      "required": false,
+      "default": "48",
+      "inherited": false
+    },
+    {
+      "name": "width",
+      "type": "number | string",
+      "required": false,
+      "default": "140",
+      "inherited": false
+    }
+  ],
+  "examples": [
+    {
+      "id": "Playground",
+      "title": "Playground",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"Playground\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "Row",
+      "title": "Row",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"Row\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "Gallery",
+      "title": "Gallery / All components",
+      "kind": "variants",
+      "props": {},
+      "code": "// See Storybook story \"Gallery\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "ShareButtonOnly",
+      "title": "Share Button Only",
+      "kind": "advanced",
+      "props": {},
+      "code": "<ShareButton />",
+      "composite": true
+    }
+  ],
+  "accessibility": [],
+  "anatomy": {
+    "summary": "Pill button with full liquid glass optics exposed for tuning.",
+    "structure": [
+      "LiquidGlass button shell",
+      "Label / icon children"
+    ],
+    "composition": "Use for primary actions on colorful or photographic backgrounds.",
+    "slots": [
+      "children"
+    ],
+    "states": [
+      "default",
+      "disabled",
+      "hover",
+      "active"
+    ]
+  },
+  "playground": {
+    "children": {
+      "control": "text",
+      "default": "Continue",
+      "label": "Label"
+    },
+    "disabled": {
+      "control": "boolean",
+      "default": false
+    }
+  }
+}

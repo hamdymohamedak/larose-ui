@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { LiquidGlass } from '@larose-ui/glass/react';
+import { LiquidGlass } from '@larose-ui/react';
 import { GlassScrollTestScene } from './glass/GlassScrollTestScene';
 import {
   liquidGlassSurfaceArgTypes,

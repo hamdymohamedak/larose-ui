@@ -1,6 +1,7 @@
 {
   "component": "TokenField",
   "category": "Forms",
+  "package": "@larose-ui/react",
   "import": "import { TokenField } from '@larose-ui/react';",
   "props": [
     {

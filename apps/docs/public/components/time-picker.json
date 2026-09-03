@@ -1,6 +1,7 @@
 {
   "component": "TimePicker",
   "category": "Forms",
+  "package": "@larose-ui/react",
   "import": "import { TimePicker } from '@larose-ui/react';",
   "props": [
     {

@@ -1,6 +1,7 @@
 {
   "component": "ButtonGroup",
   "category": "Actions",
+  "package": "@larose-ui/react",
   "import": "import { ButtonGroup } from '@larose-ui/react';",
   "props": [
     {

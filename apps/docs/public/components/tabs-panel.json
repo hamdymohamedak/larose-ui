@@ -1,0 +1,18 @@
+{
+  "component": "TabsPanel",
+  "category": "Navigation",
+  "package": "@larose-ui/react",
+  "import": "import { TabsPanel } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "value",
+      "type": "string",
+      "required": true,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

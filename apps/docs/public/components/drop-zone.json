@@ -1,6 +1,7 @@
 {
   "component": "DropZone",
   "category": "DragDrop",
+  "package": "@larose-ui/react",
   "import": "import { DropZone } from '@larose-ui/react';",
   "props": [
     {

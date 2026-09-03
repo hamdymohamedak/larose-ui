@@ -1,6 +1,7 @@
 {
   "component": "CollaborationButton",
   "category": "Actions",
+  "package": "@larose-ui/react",
   "import": "import { CollaborationButton } from '@larose-ui/react';",
   "props": [
     {

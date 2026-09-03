@@ -3,9 +3,13 @@ import { useState, type ComponentProps } from 'react';
 import {
   LiquidGlass,
   LiquidGlassButton,
+  LiquidGlassCheckbox,
+  LiquidGlassProgress,
+  LiquidGlassRange,
+  LiquidGlassSwitch,
   LiquidGlassTabBar,
   LiquidGlassTopBar,
-} from '@larose-ui/glass/react';
+} from '@larose-ui/react';
 import { GlassScrollTestScene } from './glass/GlassScrollTestScene';
 import {
   liquidGlassButtonArgTypes,
@@ -84,6 +88,8 @@ export const Gallery: StoryObj = {
   render: () => {
     const [nav, setNav] = useState('discover');
     const [tab, setTab] = useState('home');
+    const [notifications, setNotifications] = useState(true);
+    const [volume, setVolume] = useState(55);
 
     return (
       <GlassScrollTestScene>
@@ -98,9 +104,9 @@ export const Gallery: StoryObj = {
         <div style={{ marginTop: 72, display: 'flex', flexDirection: 'column', gap: 20 }}>
           <LiquidGlass
             width="100%"
-            height={140}
+            height={180}
             borderRadius={22}
-            style={{ display: 'flex', alignItems: 'flex-end', padding: 20 }}
+            style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: 20, gap: 16 }}
           >
             <div>
               <h3 style={{ margin: '0 0 4px', fontSize: 18, fontWeight: 600, color: '#F3F1FA' }}>
@@ -109,6 +115,20 @@ export const Gallery: StoryObj = {
               <p style={{ margin: 0, fontSize: 13, color: '#B9B3D6' }}>
                 Scroll — the aurora refracts through every surface.
               </p>
+            </div>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <span style={{ color: '#E8E4F4', fontSize: 13 }}>Notifications</span>
+                <LiquidGlassSwitch
+                  checked={notifications}
+                  onChange={setNotifications}
+                  aria-label="Notifications"
+                />
+              </div>
+              <LiquidGlassCheckbox label="Sync across devices" defaultChecked />
+              <LiquidGlassRange value={volume} onChange={setVolume} aria-label="Volume" />
+              <LiquidGlassProgress value={volume} aria-label="Storage used" />
             </div>
           </LiquidGlass>
 

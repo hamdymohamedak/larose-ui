@@ -2,6 +2,7 @@ import { readFileSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import ts from 'typescript';
 import { toComponentContract } from './component-contract.mjs';
+import { parseComponentExportsFromIndex } from './parse-index-exports.mjs';
 
 const DOM_BASE_PROPS = new Set([
   'className',
@@ -169,8 +170,8 @@ function parsePropsExports(indexPath) {
 export function listComponentNames(root) {
   const reactRoot = join(root, 'packages/react');
   const indexPath = join(reactRoot, 'src/index.ts');
-  const propsMap = parsePropsExports(indexPath);
-  return [...propsMap.keys()].sort((a, b) => a.localeCompare(b));
+  const reactNames = parseComponentExportsFromIndex(indexPath);
+  return [...new Set(reactNames)].sort((a, b) => a.localeCompare(b));
 }
 
 /**

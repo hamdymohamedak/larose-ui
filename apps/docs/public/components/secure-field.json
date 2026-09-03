@@ -1,6 +1,7 @@
 {
   "component": "SecureField",
   "category": "Forms",
+  "package": "@larose-ui/react",
   "import": "import { SecureField } from '@larose-ui/react';",
   "props": [],
   "examples": [],

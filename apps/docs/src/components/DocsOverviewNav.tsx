@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@larose-ui/react';
-import { useDocsTheme } from '@/theme/DocsThemeProvider';
+import { DocsThemeSwitch } from '@/components/DocsThemeSwitch';
 
 const LINKS = [
   { label: 'Components', path: '/docs/components' },
@@ -11,7 +11,6 @@ const LINKS = [
 
 export function DocsOverviewNav() {
   const navigate = useNavigate();
-  const { theme, toggleTheme } = useDocsTheme();
 
   return (
     <header className="docs-overview-nav">
@@ -38,14 +37,7 @@ export function DocsOverviewNav() {
         </nav>
 
         <div className="docs-overview-nav__actions">
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={toggleTheme}
-            aria-pressed={theme === 'dark'}
-          >
-            {theme === 'dark' ? 'Light' : 'Dark'}
-          </Button>
+          <DocsThemeSwitch labelVariant="short" />
           <Button size="sm" onClick={() => navigate('/docs/getting-started')}>
             Get started
           </Button>

@@ -1,6 +1,7 @@
 {
   "component": "Skeleton",
   "category": "Feedback",
+  "package": "@larose-ui/react",
   "import": "import { Skeleton } from '@larose-ui/react';",
   "props": [
     {
@@ -40,7 +41,7 @@
       "props": {
         "width": 200
       },
-      "code": "<Skeleton\n  width={200}\n/>"
+      "code": "import { Skeleton } from '@larose-ui/react';\n\n<Skeleton\n  width={200}\n/>"
     }
   ],
   "accessibility": [

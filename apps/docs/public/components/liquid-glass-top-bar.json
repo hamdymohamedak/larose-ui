@@ -1,0 +1,192 @@
+{
+  "component": "LiquidGlassTopBar",
+  "category": "Glass",
+  "package": "@larose-ui/react",
+  "import": "import { LiquidGlassTopBar } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "activeColor",
+      "type": "string",
+      "required": false,
+      "default": "'#ffffff'",
+      "inherited": false
+    },
+    {
+      "name": "activeKey",
+      "type": "string",
+      "required": false,
+      "default": "controlledActiveKey ?? internalActiveKey;",
+      "inherited": false
+    },
+    {
+      "name": "borderRadius",
+      "type": "number",
+      "required": false,
+      "default": "borderRadiusProp ?? (isFloating ? LIQUID_GLASS_PRESETS.topBar.borderRadius : 0);",
+      "inherited": false
+    },
+    {
+      "name": "defaultActiveKey",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "height",
+      "type": "number",
+      "required": false,
+      "default": "56",
+      "inherited": false
+    },
+    {
+      "name": "inactiveColor",
+      "type": "string",
+      "required": false,
+      "default": "'rgba(255",
+      "inherited": false
+    },
+    {
+      "name": "insetX",
+      "type": "number",
+      "required": false,
+      "default": "insetXProp ?? (isFloating ? 16 : 0);",
+      "inherited": false
+    },
+    {
+      "name": "items",
+      "type": "LiquidGlassTopBarItem[]",
+      "required": false,
+      "default": "[]",
+      "inherited": false
+    },
+    {
+      "name": "logo",
+      "type": "ReactNode",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "navActiveBackground",
+      "type": "string",
+      "required": false,
+      "default": "'rgba(255",
+      "description": "Active nav pill background.",
+      "inherited": false
+    },
+    {
+      "name": "navTrackBackground",
+      "type": "string",
+      "required": false,
+      "default": "'rgba(255",
+      "description": "Background of the segmented nav track.",
+      "inherited": false
+    },
+    {
+      "name": "paddingX",
+      "type": "number",
+      "required": false,
+      "default": "16",
+      "inherited": false
+    },
+    {
+      "name": "position",
+      "type": "'fixed' | 'absolute' | 'relative' | 'sticky' | 'static'",
+      "required": false,
+      "default": "'fixed'",
+      "inherited": false
+    },
+    {
+      "name": "titleColor",
+      "type": "string",
+      "required": false,
+      "default": "'#ffffff'",
+      "inherited": false
+    },
+    {
+      "name": "top",
+      "type": "number | string",
+      "required": false,
+      "default": "topProp ?? (isFloating ? 14 : 0);",
+      "inherited": false
+    },
+    {
+      "name": "trailing",
+      "type": "ReactNode",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "variant",
+      "type": "LiquidGlassTopBarVariant",
+      "required": false,
+      "default": "'floating'",
+      "description": "`floating` — inset pill bar with rounded corners (modern macOS/iOS style).\n`edge` — full-bleed bar flush with the viewport top.",
+      "inherited": false
+    }
+  ],
+  "examples": [
+    {
+      "id": "Playground",
+      "title": "Playground",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"Playground\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "Edge",
+      "title": "Edge",
+      "kind": "advanced",
+      "props": {
+        "variant": "edge",
+        "insetX": 0,
+        "top": 0,
+        "borderRadius": 0
+      },
+      "code": "import { LiquidGlassTopBar } from '@larose-ui/react';\n\n<LiquidGlassTopBar\n  variant=\"edge\"\n  insetX={0}\n  top={0}\n  borderRadius={0}\n>Example</LiquidGlassTopBar>"
+    },
+    {
+      "id": "NoTrailing",
+      "title": "No Trailing",
+      "kind": "advanced",
+      "props": {
+        "showTrailing": false
+      },
+      "code": "import { LiquidGlassTopBar } from '@larose-ui/react';\n\n<LiquidGlassTopBar\n  showTrailing={false}\n>Example</LiquidGlassTopBar>"
+    },
+    {
+      "id": "StrongRefraction",
+      "title": "Strong Refraction",
+      "kind": "advanced",
+      "props": {
+        "displacementScale": 50,
+        "bezelWidth": 28,
+        "specularTopOpacity": 0.95,
+        "refractionStrength": 1.2
+      },
+      "code": "import { LiquidGlassTopBar } from '@larose-ui/react';\n\n<LiquidGlassTopBar\n  displacementScale={50}\n  bezelWidth={28}\n  specularTopOpacity={0.95}\n  refractionStrength={1.2}\n>Example</LiquidGlassTopBar>"
+    }
+  ],
+  "accessibility": [
+    "Supports ARIA attributes via standard HTML element props."
+  ],
+  "anatomy": {
+    "summary": "Floating or edge-aligned top navigation with segmented control and trailing actions.",
+    "structure": [
+      "LiquidGlass header",
+      "Title",
+      "Segmented nav",
+      "Trailing slot"
+    ],
+    "composition": "Pair title with nav items; use variant floating for iOS-style inset bars.",
+    "slots": [
+      "title",
+      "trailing",
+      "logo"
+    ],
+    "states": [
+      "default"
+    ]
+  },
+  "playground": null
+}

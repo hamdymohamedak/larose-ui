@@ -1,6 +1,7 @@
 {
   "component": "ColumnView",
   "category": "Layout",
+  "package": "@larose-ui/react",
   "import": "import { ColumnView } from '@larose-ui/react';",
   "props": [
     {
