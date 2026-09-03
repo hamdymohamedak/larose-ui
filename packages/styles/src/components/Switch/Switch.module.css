@@ -49,7 +49,7 @@
   position: absolute;
   left: 0.125rem;
   border-radius: var(--lr-radius-full);
-  background: var(--lr-color-text-inverse);
+  background: var(--lr-button-on-primary-color);
   transition: transform var(--lr-duration-normal) var(--lr-easing-default);
 }
 

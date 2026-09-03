@@ -1,6 +1,6 @@
-import { useCallback, useState, type CSSProperties } from 'react';
+import { useCallback, useState } from 'react';
 import { LIQUID_GLASS_PRESETS } from '../engine/defaults';
-import type { LiquidGlassOptics } from '../engine/types';
+import type { LiquidGlassChromeProps, LiquidGlassOptics } from '../engine/types';
 import { LiquidGlass } from '../core/LiquidGlass';
 
 /** iOS-style green used when the switch is on (default). */
@@ -13,7 +13,8 @@ export type LiquidGlassSwitchActiveTrackTint =
   | string
   | typeof LIQUID_GLASS_SWITCH_TRACK_GLASS;
 
-export interface LiquidGlassSwitchProps extends LiquidGlassOptics {
+export interface LiquidGlassSwitchProps
+  extends LiquidGlassOptics, LiquidGlassChromeProps {
   checked?: boolean;
   defaultChecked?: boolean;
   onChange?: (checked: boolean) => void;
@@ -34,8 +35,6 @@ export interface LiquidGlassSwitchProps extends LiquidGlassOptics {
   activeTrackTint?: LiquidGlassSwitchActiveTrackTint;
   inactiveTrackTint?: string;
   thumbTint?: string;
-  className?: string;
-  style?: CSSProperties;
   'aria-label'?: string;
 }
 

@@ -1,4 +1,5 @@
 import styles from '@larose-ui/styles/components/WebView/WebView.module.css';
+import type { CSSProperties } from 'react';
 
 export interface WebViewNavigationProps {
   canGoBack?: boolean;
@@ -8,6 +9,8 @@ export interface WebViewNavigationProps {
   title?: string;
   backLabel?: string;
   forwardLabel?: string;
+  className?: string;
+  style?: CSSProperties;
 }
 
 function ChevronLeft() {
@@ -34,9 +37,16 @@ export function WebViewNavigation({
   title,
   backLabel = 'Back',
   forwardLabel = 'Forward',
+  className,
+  style,
 }: WebViewNavigationProps) {
   return (
-    <div className={styles.toolbar} role="toolbar" aria-label="Web view navigation">
+    <div
+      className={[styles.toolbar, className].filter(Boolean).join(' ')}
+      style={style}
+      role="toolbar"
+      aria-label="Web view navigation"
+    >
       <button
         type="button"
         className={styles.navButton}

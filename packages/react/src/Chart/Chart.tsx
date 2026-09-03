@@ -4,6 +4,7 @@ import {
   useMemo,
   useRef,
   useState,
+  type CSSProperties,
   type KeyboardEvent,
   type PointerEvent,
 } from 'react';
@@ -59,6 +60,7 @@ export interface ChartProps {
   yAxisTrailing?: boolean;
   showLegend?: boolean;
   className?: string;
+  style?: CSSProperties;
   onPointFocus?: (point: ChartDataPoint, seriesId: string, index: number) => void;
 }
 
@@ -130,6 +132,7 @@ export function Chart({
   yAxisTrailing = false,
   showLegend,
   className,
+  style,
   onPointFocus,
 }: ChartProps) {
   const chartId = useId();
@@ -344,6 +347,7 @@ export function Chart({
   return (
     <figure
       className={[styles.chart, className].filter(Boolean).join(' ')}
+      style={style}
       aria-labelledby={title ? `${chartId}-title` : undefined}
       aria-describedby={
         accessibilitySummary || subtitle ? `${chartId}-summary` : undefined

@@ -13,7 +13,15 @@ export interface EditMenuTokens {
  * @see https://developer.apple.com/design/human-interface-guidelines/edit-menus
  */
 export function getEditMenuTokens(mode: ThemeMode): EditMenuTokens {
-  void mode;
+  if (mode === 'dark') {
+    return {
+      compactRadius: '0.625rem',
+      compactHeight: '2.375rem',
+      compactShadow: '0 8px 24px rgb(0 0 0 / 0.45)',
+      pointerSize: '0.625rem',
+      chevronWidth: '2.25rem',
+    };
+  }
   return {
     compactRadius: '0.625rem',
     compactHeight: '2.375rem',

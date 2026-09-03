@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 
 /** Visual and interaction preset for modal alerts. */
 export type AlertDialogPresentation =
@@ -53,6 +53,7 @@ export interface AlertDialogProps {
   /** When unset, no button receives default keyboard focus styling. */
   defaultActionId?: string;
   className?: string;
+  style?: CSSProperties;
 }
 
 export interface AlertDialogButtonLayout {

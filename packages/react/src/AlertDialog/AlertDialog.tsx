@@ -52,6 +52,7 @@ export function AlertDialog({
   accessory,
   defaultActionId,
   className,
+  style,
 }: AlertDialogProps) {
   const titleId = useId();
   const messageId = useId();
@@ -133,6 +134,7 @@ export function AlertDialog({
         ]
           .filter(Boolean)
           .join(' ')}
+        style={style}
         role="alertdialog"
         aria-modal="true"
         aria-labelledby={titleId}

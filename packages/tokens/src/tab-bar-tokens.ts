@@ -15,6 +15,8 @@ export interface TabBarTokens {
   liquidGlassBg: string;
   liquidGlassActiveBg: string;
   liquidGlassGlow: string;
+  liquidGlassBorder: string;
+  liquidGlassSearchBg: string;
 }
 
 /** @see https://developer.apple.com/design/human-interface-guidelines/tab-bars */
@@ -35,6 +37,8 @@ export function getTabBarTokens(mode: ThemeMode): TabBarTokens {
       liquidGlassBg: 'rgb(44 44 46 / 0.38)',
       liquidGlassActiveBg: 'rgb(90 90 96 / 0.88)',
       liquidGlassGlow: '0 6px 24px rgb(255 105 180 / 0.24)',
+      liquidGlassBorder: 'rgb(255 255 255 / 0.16)',
+      liquidGlassSearchBg: 'rgb(255 255 255 / 0.12)',
     };
   }
   return {
@@ -52,6 +56,8 @@ export function getTabBarTokens(mode: ThemeMode): TabBarTokens {
     liquidGlassBg: 'rgb(255 255 255 / 0.28)',
     liquidGlassActiveBg: 'rgb(255 255 255 / 0.92)',
     liquidGlassGlow: '0 6px 24px rgb(236 72 153 / 0.22)',
+    liquidGlassBorder: 'rgb(255 255 255 / 0.55)',
+    liquidGlassSearchBg: 'rgb(255 255 255 / 0.5)',
   };
 }
 
@@ -71,6 +77,8 @@ export function tabBarTokensToCSSVariables(tokens: TabBarTokens): Record<string,
     '--lr-tab-bar-liquid-glass-bg': tokens.liquidGlassBg,
     '--lr-tab-bar-liquid-glass-active-bg': tokens.liquidGlassActiveBg,
     '--lr-tab-bar-liquid-glass-glow': tokens.liquidGlassGlow,
+    '--lr-tab-bar-liquid-glass-border': tokens.liquidGlassBorder,
+    '--lr-tab-bar-liquid-glass-search-bg': tokens.liquidGlassSearchBg,
   };
 }
 

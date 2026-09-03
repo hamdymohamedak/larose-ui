@@ -10,7 +10,9 @@ import {
   type MouseEvent as ReactMouseEvent,
   type ReactElement,
   type ReactNode,
+  type CSSProperties,
 } from 'react';
+import { mergeStyles } from '../shared/styleProps';
 import { ContextualMenuPortal } from '../Motion/OverlayPortal';
 import type { ContextMenuEntry, ContextMenuItemConfig, ContextMenuPosition } from './types';
 import {
@@ -35,6 +37,8 @@ export interface ContextMenuProps {
   /** Enable long-press / touch-and-hold in addition to secondary click. */
   longPress?: boolean;
   dimBackground?: boolean;
+  className?: string;
+  style?: CSSProperties;
 }
 
 function ContextMenuPanel({
@@ -149,6 +153,8 @@ export function ContextMenu({
   onEntrySelect,
   longPress = true,
   dimBackground = true,
+  className,
+  style,
 }: ContextMenuProps) {
   const menuId = useId();
   const [internalOpen, setInternalOpen] = useState(false);
@@ -250,7 +256,9 @@ export function ContextMenu({
 
   return (
     <>
-      <span className={styles.triggerWrap}>{bindTrigger(children as ReactElement<Record<string, unknown>>)}</span>
+      <span className={[styles.triggerWrap, className].filter(Boolean).join(' ')} style={style}>
+        {bindTrigger(children as ReactElement<Record<string, unknown>>)}
+      </span>
       <ContextualMenuPortal
         open={isOpen}
         onClose={close}
@@ -261,7 +269,7 @@ export function ContextMenu({
         surfaceClassName={styles.menu}
         surfaceRole="menu"
         aria-label={title ?? 'Context menu'}
-        surfaceStyle={{ left: position.x, top: position.y }}
+        surfaceStyle={mergeStyles({ left: position.x, top: position.y }, style)}
         onSurfaceClick={(event) => event.stopPropagation()}
       >
         <ContextMenuPanel

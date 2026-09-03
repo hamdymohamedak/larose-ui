@@ -1,4 +1,4 @@
-import { forwardRef, type InputHTMLAttributes } from 'react';
+import { forwardRef, type CSSProperties, type InputHTMLAttributes } from 'react';
 import type { Size } from '@larose-ui/core';
 import styles from '@larose-ui/styles/components/Radio/Radio.module.css';
 
@@ -11,14 +11,14 @@ export interface RadioProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 
 
 export const Radio = forwardRef<HTMLInputElement, RadioProps>(
   (
-    { label, hint, error = null, disabled, boxSize = 'md', className, id, ...props },
+    { label, hint, error = null, disabled, boxSize = 'md', className, style, id, ...props },
     ref,
   ) => {
     const inputId = id ?? label.toLowerCase().replace(/\s+/g, '-');
     const errorMessage = typeof error === 'string' ? error : null;
 
     return (
-      <div className={styles.wrapper} data-state={errorMessage ? 'error' : 'default'}>
+      <div className={styles.wrapper} style={style} data-state={errorMessage ? 'error' : 'default'}>
         <label htmlFor={inputId} className={styles.row}>
           <input
             ref={ref}

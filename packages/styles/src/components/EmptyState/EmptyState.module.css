@@ -35,6 +35,7 @@
   font-size: var(--lr-font-size-lg);
   font-weight: var(--lr-font-weight-semibold);
   letter-spacing: -0.014em;
+  color: var(--lr-color-text);
 }
 
 .description {

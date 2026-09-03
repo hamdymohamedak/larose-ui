@@ -1,9 +1,10 @@
-import { useCallback, useState, type CSSProperties, type ReactNode } from 'react';
+import { useCallback, useState, type ReactNode } from 'react';
 import { LIQUID_GLASS_PRESETS } from '../engine/defaults';
-import type { LiquidGlassOptics } from '../engine/types';
+import type { LiquidGlassChromeProps, LiquidGlassOptics } from '../engine/types';
 import { LiquidGlass } from '../core/LiquidGlass';
 
-export interface LiquidGlassCheckboxProps extends LiquidGlassOptics {
+export interface LiquidGlassCheckboxProps
+  extends LiquidGlassOptics, LiquidGlassChromeProps {
   checked?: boolean;
   defaultChecked?: boolean;
   onChange?: (checked: boolean) => void;
@@ -15,8 +16,6 @@ export interface LiquidGlassCheckboxProps extends LiquidGlassOptics {
   checkedTint?: string;
   label?: ReactNode;
   labelColor?: string;
-  className?: string;
-  style?: CSSProperties;
   'aria-label'?: string;
 }
 

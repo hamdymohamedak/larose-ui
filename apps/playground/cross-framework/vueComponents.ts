@@ -11,3 +11,11 @@ export { default as Select } from '../../../packages/vue/src/components/Select/S
 export { default as Progress } from '../../../packages/vue/src/components/Progress/Progress.vue';
 export { default as Alert } from '../../../packages/vue/src/components/Alert/Alert.vue';
 export { default as Card } from '../../../packages/vue/src/components/Card/Card.vue';
+export { default as LiquidGlass } from '../../../packages/vue/src/LiquidGlass/core/LiquidGlass.vue';
+export { default as LiquidGlassButton } from '../../../packages/vue/src/LiquidGlass/Button/LiquidGlassButton.vue';
+export { default as LiquidGlassSwitch } from '../../../packages/vue/src/LiquidGlass/Switch/LiquidGlassSwitch.vue';
+export { default as LiquidGlassCheckbox } from '../../../packages/vue/src/LiquidGlass/Checkbox/LiquidGlassCheckbox.vue';
+export { default as LiquidGlassProgress } from '../../../packages/vue/src/LiquidGlass/Progress/LiquidGlassProgress.vue';
+export { default as LiquidGlassRange } from '../../../packages/vue/src/LiquidGlass/Range/LiquidGlassRange.vue';
+export { default as LiquidGlassTabBar } from '../../../packages/vue/src/LiquidGlass/TabBar/LiquidGlassTabBar.vue';
+export { default as LiquidGlassTopBar } from '../../../packages/vue/src/LiquidGlass/TopBar/LiquidGlassTopBar.vue';

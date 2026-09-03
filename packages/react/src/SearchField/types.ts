@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 
 export type SearchFieldPlacement =
   | 'toolbar-trailing'
@@ -43,6 +43,7 @@ export interface SearchFieldProps {
   showDictation?: boolean;
   autoFocus?: boolean;
   className?: string;
+  style?: CSSProperties;
   'aria-label'?: string;
 }
 
@@ -51,6 +52,7 @@ export interface SearchScopeBarProps {
   value: string;
   onChange: (scopeId: string) => void;
   className?: string;
+  style?: CSSProperties;
 }
 
 export interface SearchTokenChipProps {

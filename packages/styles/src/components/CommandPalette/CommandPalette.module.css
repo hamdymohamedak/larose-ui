@@ -6,7 +6,7 @@
   align-items: flex-start;
   justify-content: center;
   padding: 10vh var(--lr-space-4) var(--lr-space-4);
-  background: rgb(15 23 42 / 0.45);
+  background: var(--lr-surface-overlay);
 }
 
 .dialog {
@@ -78,7 +78,7 @@
 
 .item[data-state='active'] {
   background: var(--lr-color-primary);
-  color: var(--lr-color-text-inverse);
+  color: var(--lr-color-on-accent, var(--lr-button-on-primary-color));
 }
 
 .item:focus-visible {

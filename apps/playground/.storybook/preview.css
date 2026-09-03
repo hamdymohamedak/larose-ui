@@ -1,0 +1,6 @@
+html,
+body,
+#storybook-root {
+  background: var(--lr-color-background);
+  color: var(--lr-color-text);
+}

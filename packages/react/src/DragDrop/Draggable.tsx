@@ -4,6 +4,7 @@ import {
   useState,
   type PointerEvent as ReactPointerEvent,
   type ReactNode,
+  type CSSProperties,
 } from 'react';
 import { DRAG_START_THRESHOLD_PX } from '@larose-ui/tokens';
 import { useDragDropContext } from './DragDropContext';
@@ -21,6 +22,7 @@ export interface DraggableProps<T = unknown> {
   disabled?: boolean;
   children: ReactNode;
   className?: string;
+  style?: CSSProperties;
 }
 
 export function Draggable<T>({
@@ -33,6 +35,7 @@ export function Draggable<T>({
   disabled = false,
   children,
   className,
+  style,
 }: DraggableProps<T>) {
   const {
     session,
@@ -148,6 +151,7 @@ export function Draggable<T>({
     <div
       ref={ref}
       className={[styles.draggable, className].filter(Boolean).join(' ')}
+      style={style}
       data-dragging={isDragging ? 'true' : undefined}
       data-disabled={disabled ? 'true' : undefined}
       aria-grabbed={isDragging ? true : undefined}

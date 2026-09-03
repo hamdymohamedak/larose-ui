@@ -24,6 +24,7 @@
     tooltip?: string;
     type?: 'button' | 'submit' | 'reset';
     class?: string;
+    style?: string;
     onclick?: (event: MouseEvent) => void;
     children?: Snippet;
     leftIcon?: Snippet;
@@ -65,6 +66,7 @@
 <button
   type={merged.type ?? 'button'}
   class={cn(styles.button, merged.class)}
+  style={merged.style}
   data-variant={resolvedVariant}
   data-size={merged.size ?? 'md'}
   data-shape={resolvedShape}

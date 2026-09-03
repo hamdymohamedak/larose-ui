@@ -7,11 +7,13 @@
   interface Props {
     variant?: BadgeVariant;
     children: Snippet;
+    class?: string;
+    style?: string;
   }
 
-  let { variant = 'default', children }: Props = $props();
+  let { variant = 'default', children, class: className, style }: Props = $props();
 </script>
 
-<span class={styles.badge} data-variant={variant}>
+<span class={[styles.badge, className].filter(Boolean).join(' ')} {style} data-variant={variant}>
   {@render children()}
 </span>

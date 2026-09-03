@@ -1,4 +1,11 @@
-import type { CSSProperties, ReactNode } from 'react';
+import type { CSSProperties, ElementType, ReactNode } from 'react';
+
+/** Shared chrome — every LiquidGlass component accepts direct CSS. */
+export interface LiquidGlassChromeProps {
+  className?: string;
+  /** Inline CSS merged onto the surface. Flex / grid / padding apply to inner content. */
+  style?: CSSProperties;
+}
 
 /** Shared optical + surface props for all LiquidGlass components. */
 export interface LiquidGlassOptics {
@@ -46,12 +53,14 @@ export interface LiquidGlassGeometry {
   borderRadius?: number;
 }
 
-export interface LiquidGlassSurfaceProps extends LiquidGlassOptics, LiquidGlassGeometry {
+export interface LiquidGlassSurfaceProps
+  extends LiquidGlassOptics, LiquidGlassGeometry, LiquidGlassChromeProps {
   children?: ReactNode;
-  className?: string;
-  style?: CSSProperties;
-  /** HTML element or component for the glass shell. @default 'div' */
-  as?: 'div' | 'nav' | 'header' | 'section' | 'button' | 'span';
+  /**
+   * Any HTML/SVG tag or custom component for the glass shell
+   * (`div`, `footer`, `li`, `nav`, …). @default 'div'
+   */
+  as?: ElementType;
   /** Accessible label (recommended for nav/header). */
   'aria-label'?: string;
   /** Expose the displacement map data URL (for debug / lens lab). */

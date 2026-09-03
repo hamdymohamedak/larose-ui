@@ -1,4 +1,5 @@
 import { Button } from '../Button/Button';
+import type { CSSProperties } from 'react';
 import type { FilePreviewSource } from './types';
 import { canPreviewFile } from './utils';
 import { PreviewIcon } from './icons';
@@ -8,19 +9,31 @@ export interface FilePreviewProps {
   source: FilePreviewSource;
   onClose?: () => void;
   closeLabel?: string;
+  className?: string;
+  style?: CSSProperties;
 }
 
 /**
  * Quick Look-style preview for supported file types.
  * @see https://developer.apple.com/design/human-interface-guidelines/file-management
  */
-export function FilePreview({ source, onClose, closeLabel = 'Close preview' }: FilePreviewProps) {
+export function FilePreview({
+  source,
+  onClose,
+  closeLabel = 'Close preview',
+  className,
+  style,
+}: FilePreviewProps) {
   const previewable = canPreviewFile(source);
   const type = (source.type ?? source.extension ?? '').toLowerCase();
   const isImage = type.includes('image') || ['png', 'jpg', 'jpeg', 'gif', 'webp', 'svg'].includes(type);
 
   return (
-    <section className={styles.preview} aria-label={`Preview ${source.name}`}>
+    <section
+      className={[styles.preview, className].filter(Boolean).join(' ')}
+      style={style}
+      aria-label={`Preview ${source.name}`}
+    >
       <div className={styles.previewHeader}>
         <h3 className={styles.previewTitle}>{source.name}</h3>
         {onClose && (

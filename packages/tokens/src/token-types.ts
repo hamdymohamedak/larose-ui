@@ -16,6 +16,7 @@ export interface ColorTokens {
   text: string;
   textMuted: string;
   textInverse: string;
+  onAccent: string;
 }
 
 export interface SurfaceTokens {

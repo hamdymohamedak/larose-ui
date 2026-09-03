@@ -19,6 +19,7 @@
     id?: string;
     rows?: number;
     class?: string;
+    style?: string;
     value?: string;
   }
 
@@ -35,6 +36,7 @@
     id,
     rows = 4,
     class: className,
+    style,
     value = $bindable(''),
   }: Props = $props();
 
@@ -52,6 +54,8 @@
   {required}
   htmlFor={inputId}
   {uiState}
+  class={className}
+  {style}
 >
   <div class={styles.inputContainer}>
     <textarea

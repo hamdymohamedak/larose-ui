@@ -23,5 +23,5 @@
 .denial {
   margin: 0;
   font-size: var(--lr-font-size-sm);
-  color: var(--lr-color-danger, #dc2626);
+  color: var(--lr-color-error);
 }

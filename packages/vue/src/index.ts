@@ -30,6 +30,8 @@ export { default as Card } from './components/Card/Card.vue';
 export { default as Modal } from './components/Modal/Modal.vue';
 export { default as Dialog } from './components/Dialog/Dialog.vue';
 
+export * from './LiquidGlass';
+
 export { formatButtonLabel, resolveButtonShape } from './button/utils';
 export type { ButtonShape, ButtonPlatformSize } from './button/types';
 

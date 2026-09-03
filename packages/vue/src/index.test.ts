@@ -3,6 +3,8 @@ import { mount } from '@vue/test-utils';
 import Badge from './components/Badge/Badge.vue';
 import Button from './components/Button/Button.vue';
 import LaRoseProvider from './provider/LaRoseProvider.vue';
+import LiquidGlassButton from './LiquidGlass/Button/LiquidGlassButton.vue';
+import { squircleHeightFn } from './LiquidGlass/engine/displacement-map';
 
 describe('Badge', () => {
   it('renders slot content', () => {
@@ -41,5 +43,20 @@ describe('LaRoseProvider', () => {
       slots: { default: '<span>child</span>' },
     });
     expect(wrapper.find('[data-lr-provider]').exists()).toBe(true);
+  });
+});
+
+describe('LiquidGlass', () => {
+  it('shares the same squircle engine as React', () => {
+    expect(squircleHeightFn(0)).toBe(0);
+    expect(squircleHeightFn(1)).toBe(1);
+  });
+
+  it('renders a liquid glass button', () => {
+    const wrapper = mount(LiquidGlassButton, {
+      slots: { default: 'Glass' },
+    });
+    expect(wrapper.text()).toContain('Glass');
+    expect(wrapper.find('button').exists()).toBe(true);
   });
 });

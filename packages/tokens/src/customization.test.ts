@@ -53,6 +53,19 @@ describe('theme customization tokens', () => {
     expect(element.dataset.lrThemePreset).toBe('refined');
   });
 
+  it('syncs theme onto documentElement so portaled overlays inherit tokens', () => {
+    const element = document.createElement('div');
+
+    applyResolvedTheme(element, { mode: 'dark' });
+
+    expect(element.style.colorScheme).toBe('dark');
+    expect(document.documentElement.dataset.lrTheme).toBe('dark');
+    expect(document.documentElement.style.colorScheme).toBe('dark');
+    expect(document.documentElement.style.getPropertyValue('--lr-color-background')).toBe('#1c1c1e');
+    expect(document.documentElement.style.getPropertyValue('--lr-toolbar-fg')).toBe('#f5f5f7');
+    expect(document.documentElement.style.getPropertyValue('--lr-color-on-accent')).toBe('#ffffff');
+  });
+
   it('exports mergeTokenOverrides for layered themes', () => {
     const base = mergeTokenOverrides(
       {
@@ -72,6 +85,7 @@ describe('theme customization tokens', () => {
           text: '#1d1d1f',
           textMuted: '#6e6e73',
           textInverse: '#ffffff',
+          onAccent: '#ffffff',
         },
       } as never,
       { colors: { primary: '#6C5CE7' } },

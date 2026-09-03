@@ -4,7 +4,7 @@
   gap: var(--lr-space-2);
   padding: var(--lr-space-2) var(--lr-space-3);
   border-radius: var(--lr-dock-radius);
-  background: rgb(255 255 255 / 0.55);
+  background: var(--lr-dock-bg);
   border: 1px solid var(--lr-color-border);
   backdrop-filter: blur(1rem);
 }

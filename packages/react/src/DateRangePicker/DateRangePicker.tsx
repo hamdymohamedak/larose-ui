@@ -1,4 +1,4 @@
-import { useId } from 'react';
+import { useId, type CSSProperties } from 'react';
 import type { Size, UIState } from '@larose-ui/core';
 import { resolveUIState } from '@larose-ui/core';
 import styles from '@larose-ui/styles/components/DatePicker/datetime-field.module.css';
@@ -24,6 +24,7 @@ export interface DateRangePickerProps {
   disabled?: boolean;
   readOnly?: boolean;
   className?: string;
+  style?: CSSProperties;
   id?: string;
 }
 
@@ -43,6 +44,7 @@ export function DateRangePicker({
   disabled,
   readOnly,
   className,
+  style,
   id,
 }: DateRangePickerProps) {
   const generatedId = useId();
@@ -59,6 +61,7 @@ export function DateRangePicker({
   return (
     <fieldset
       className={[styles.wrapper, className].filter(Boolean).join(' ')}
+      style={style}
       data-state={uiState}
       aria-describedby={
         errorMessage ? `${groupId}-error` : hint ? `${groupId}-hint` : undefined

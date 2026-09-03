@@ -12,9 +12,9 @@ export interface WebViewShellProps extends WebViewProps {
  * Web view with optional back/forward navigation for multi-page in-app browsing.
  * @see https://developer.apple.com/design/human-interface-guidelines/web-views
  */
-export function WebViewShell({ navigation, footer, className, ...webViewProps }: WebViewShellProps) {
+export function WebViewShell({ navigation, footer, className, style, ...webViewProps }: WebViewShellProps) {
   return (
-    <div className={[styles.shell, className].filter(Boolean).join(' ')}>
+    <div className={[styles.shell, className].filter(Boolean).join(' ')} style={style}>
       {navigation && <WebViewNavigation {...navigation} />}
       <WebView {...webViewProps} embedded />
       {footer}

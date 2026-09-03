@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState, type KeyboardEvent } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties, type KeyboardEvent } from 'react';
 import { STANDARD_ACCELERATORS } from '@larose-ui/core';
 import { useAccelerator } from '../accelerator';
 import styles from '@larose-ui/styles/components/CommandPalette/CommandPalette.module.css';
@@ -17,6 +17,8 @@ export interface CommandPaletteProps {
   items: CommandPaletteItem[];
   placeholder?: string;
   emptyMessage?: string;
+  className?: string;
+  style?: CSSProperties;
   'aria-label'?: string;
 }
 
@@ -32,6 +34,8 @@ export function CommandPalette({
   items,
   placeholder = 'Search commands…',
   emptyMessage = 'No commands found',
+  className,
+  style,
   'aria-label': ariaLabel = 'Command palette',
 }: CommandPaletteProps) {
   const [query, setQuery] = useState('');
@@ -142,7 +146,7 @@ export function CommandPalette({
   let itemIndex = -1;
 
   return (
-    <div className={styles.overlay} onClick={close}>
+    <div className={[styles.overlay, className].filter(Boolean).join(' ')} style={style} onClick={close}>
       <div
         role="dialog"
         aria-label={ariaLabel}

@@ -224,6 +224,12 @@ importers:
       '@storybook/addon-interactions':
         specifier: ^8.4.7
         version: 8.6.14(storybook@8.6.18(prettier@3.9.6))
+      '@storybook/core-events':
+        specifier: ^8.4.7
+        version: 8.6.14(storybook@8.6.18(prettier@3.9.6))
+      '@storybook/manager-api':
+        specifier: ^8.4.7
+        version: 8.6.18(storybook@8.6.18(prettier@3.9.6))
       '@storybook/react':
         specifier: ^8.4.7
         version: 8.6.18(@storybook/test@8.6.15(storybook@8.6.18(prettier@3.9.6)))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(storybook@8.6.18(prettier@3.9.6))(typescript@5.9.3)
@@ -248,6 +254,9 @@ importers:
       vite:
         specifier: ^6.0.3
         version: 6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)
+      vitest:
+        specifier: ^2.1.8
+        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
 
   packages/accessibility:
     dependencies:
@@ -3231,6 +3240,11 @@ packages:
 
   '@storybook/components@8.6.18':
     resolution: {integrity: sha512-55yViiZzPS/cPBuOeW4QGxGqrusjXVyxuknmbYCIwDtFyyvI/CgbjXRHdxNBaIjz+IlftxvBmmSaOqFG5+/dkA==}
+    peerDependencies:
+      storybook: ^8.2.0 || ^8.3.0-0 || ^8.4.0-0 || ^8.5.0-0 || ^8.6.0-0
+
+  '@storybook/core-events@8.6.14':
+    resolution: {integrity: sha512-RrJ95u3HuIE4Nk8VmZP0tc/u0vYoE2v9fYlMw6K2GUSExzKDITs3voy6WMIY7Q3qbQun8XUXVlmqkuFzTEy/pA==}
     peerDependencies:
       storybook: ^8.2.0 || ^8.3.0-0 || ^8.4.0-0 || ^8.5.0-0 || ^8.6.0-0
 
@@ -9732,6 +9746,10 @@ snapshots:
       vite: 6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)
 
   '@storybook/components@8.6.18(storybook@8.6.18(prettier@3.9.6))':
+    dependencies:
+      storybook: 8.6.18(prettier@3.9.6)
+
+  '@storybook/core-events@8.6.14(storybook@8.6.18(prettier@3.9.6))':
     dependencies:
       storybook: 8.6.18(prettier@3.9.6)
 

@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 import { formatBoxTitle } from './utils';
 import type { BoxTitlePosition, BoxVariant } from './types';
 import styles from '@larose-ui/styles/components/Layout/Layout.module.css';
@@ -12,6 +12,7 @@ export interface BoxProps {
   padding?: 'sm' | 'md' | 'lg';
   children: ReactNode;
   className?: string;
+  style?: CSSProperties;
   'aria-label'?: string;
 }
 
@@ -27,12 +28,17 @@ export function Box({
   padding = 'md',
   children,
   className,
+  style,
   'aria-label': ariaLabel,
 }: BoxProps) {
   const formattedTitle = title ? formatBoxTitle(title, settingsStyle) : undefined;
 
   return (
-    <section className={[styles.boxWrapper, className].filter(Boolean).join(' ')} aria-label={ariaLabel ?? formattedTitle}>
+    <section
+      className={[styles.boxWrapper, className].filter(Boolean).join(' ')}
+      style={style}
+      aria-label={ariaLabel ?? formattedTitle}
+    >
       {formattedTitle && titlePosition === 'above' && (
         <h3 className={styles.titleAbove}>{formattedTitle}</h3>
       )}

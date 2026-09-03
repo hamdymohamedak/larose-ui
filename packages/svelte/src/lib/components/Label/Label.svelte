@@ -10,6 +10,7 @@
     selectable?: boolean;
     mono?: boolean;
     class?: string;
+    style?: string;
     children: Snippet;
   }
 
@@ -18,6 +19,7 @@
     selectable = false,
     mono = false,
     class: className,
+    style,
     children,
   }: Props = $props();
 </script>
@@ -25,6 +27,7 @@
 <svelte:element
   this={'span'}
   class={cn(styles.root, styles[importance], className)}
+  {style}
   data-importance={importance}
   data-selectable={selectable ? 'true' : undefined}
   data-mono={mono ? 'true' : undefined}

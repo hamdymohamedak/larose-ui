@@ -1,9 +1,9 @@
-import type { CSSProperties } from 'react';
 import { LIQUID_GLASS_PRESETS } from '../engine/defaults';
-import type { LiquidGlassOptics } from '../engine/types';
+import type { LiquidGlassChromeProps, LiquidGlassOptics } from '../engine/types';
 import { LiquidGlass } from '../core/LiquidGlass';
 
-export interface LiquidGlassProgressProps extends LiquidGlassOptics {
+export interface LiquidGlassProgressProps
+  extends LiquidGlassOptics, LiquidGlassChromeProps {
   /** Current value. @default 0 */
   value?: number;
   /** Maximum value. @default 100 */
@@ -16,8 +16,6 @@ export interface LiquidGlassProgressProps extends LiquidGlassOptics {
   borderRadius?: number;
   fillColor?: string;
   fillGlow?: string;
-  className?: string;
-  style?: CSSProperties;
   'aria-label'?: string;
 }
 

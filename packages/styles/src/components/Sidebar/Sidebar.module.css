@@ -189,7 +189,7 @@
   padding: 0 0.25rem;
   border-radius: 9999px;
   background: var(--lr-tab-bar-badge-bg, #ff3b30);
-  color: #fff;
+  color: var(--lr-color-on-accent, var(--lr-button-on-primary-color));
   font-size: 0.625rem;
   font-weight: 700;
   line-height: 1rem;

@@ -11,6 +11,7 @@
     description?: string;
     closeOnOverlay?: boolean;
     class?: string;
+    style?: string;
     overlayClass?: string;
     contentClass?: string;
     onclose?: () => void;
@@ -69,6 +70,7 @@
     <div
       bind:this={dialogEl}
       class={cn(styles.dialog, merged.class)}
+      style={merged.style}
       role="dialog"
       tabindex="-1"
       aria-modal="true"

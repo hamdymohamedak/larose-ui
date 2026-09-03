@@ -1,4 +1,4 @@
-import { useEffect, useId, useState, type ReactNode } from 'react';
+import { useEffect, useId, useState, type CSSProperties, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import type {
   ShareAudience,
@@ -20,6 +20,8 @@ export interface ShareSheetProps {
   destinations?: ShareDestination[];
   permissionOptions?: SharePermissionOption[];
   footer?: ReactNode;
+  className?: string;
+  style?: CSSProperties;
 }
 
 const defaultDestinations: ShareDestination[] = [];
@@ -64,6 +66,8 @@ export function ShareSheet({
   destinations = defaultDestinations,
   permissionOptions = defaultPermissionOptions,
   footer,
+  className,
+  style,
 }: ShareSheetProps) {
   const titleId = useId();
   const [showPermissions, setShowPermissions] = useState(false);
@@ -100,7 +104,8 @@ export function ShareSheet({
       }}
     >
       <div
-        className={styles.sheet}
+        className={[styles.sheet, className].filter(Boolean).join(' ')}
+        style={style}
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}

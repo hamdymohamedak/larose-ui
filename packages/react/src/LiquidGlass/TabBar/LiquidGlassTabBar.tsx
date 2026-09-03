@@ -1,11 +1,10 @@
 import {
   useCallback,
   useState,
-  type CSSProperties,
   type ReactNode,
 } from 'react';
 import { LIQUID_GLASS_PRESETS } from '../engine/defaults';
-import type { LiquidGlassOptics } from '../engine/types';
+import type { LiquidGlassChromeProps, LiquidGlassOptics } from '../engine/types';
 import { LiquidGlass } from '../core/LiquidGlass';
 
 // ─── Public types ─────────────────────────────────────────────────────────────
@@ -19,7 +18,8 @@ export interface LiquidGlassTabItem {
   disabled?: boolean;
 }
 
-export interface LiquidGlassTabBarProps extends LiquidGlassOptics {
+export interface LiquidGlassTabBarProps
+  extends LiquidGlassOptics, LiquidGlassChromeProps {
   items: LiquidGlassTabItem[];
   activeKey?: string;
   defaultActiveKey?: string;
@@ -35,8 +35,6 @@ export interface LiquidGlassTabBarProps extends LiquidGlassOptics {
   inactiveColor?: string;
   position?: 'fixed' | 'absolute' | 'relative' | 'static';
   bottom?: number | string;
-  className?: string;
-  style?: CSSProperties;
 }
 
 /**

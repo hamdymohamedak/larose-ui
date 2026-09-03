@@ -9,6 +9,7 @@
     description?: string;
     padding?: 'none' | 'sm' | 'md' | 'lg';
     class?: string;
+    style?: string;
     children?: Snippet;
     body?: Snippet;
     footer?: Snippet;
@@ -18,7 +19,7 @@
   const merged = $derived(getComponentDefaults('Card', props));
 </script>
 
-<article class={cn(styles.card, merged.class)} data-padding={merged.padding ?? 'md'}>
+<article class={cn(styles.card, merged.class)} style={merged.style} data-padding={merged.padding ?? 'md'}>
   {#if merged.children}
     {@render merged.children()}
   {:else}

@@ -8,6 +8,7 @@ import {
   useId,
   useMemo,
   useState,
+  type CSSProperties,
   type ReactElement,
   type ReactNode,
 } from 'react';
@@ -40,6 +41,7 @@ export interface TabViewProps {
   inset?: boolean;
   children: ReactNode;
   className?: string;
+  style?: CSSProperties;
   'aria-label'?: string;
 }
 
@@ -52,6 +54,7 @@ export function TabView({
   inset = true,
   children,
   className,
+  style,
   'aria-label': ariaLabel = 'Tab view',
 }: TabViewProps) {
   const [internalValue, setInternalValue] = useState(defaultValue);
@@ -96,6 +99,7 @@ export function TabView({
     <TabViewContext.Provider value={context}>
       <div
         className={[styles.tabView, className].filter(Boolean).join(' ')}
+        style={style}
         data-variant={variant}
         data-inset={inset ? 'true' : undefined}
         aria-label={ariaLabel}
@@ -109,12 +113,24 @@ export function TabView({
 
 export interface TabViewListProps {
   children: ReactNode;
+  className?: string;
+  style?: CSSProperties;
   'aria-label'?: string;
 }
 
-export function TabViewList({ children, 'aria-label': listLabel = 'Tabs' }: TabViewListProps) {
+export function TabViewList({
+  children,
+  className,
+  style,
+  'aria-label': listLabel = 'Tabs',
+}: TabViewListProps) {
   return (
-    <ul className={styles.tabList} role="tablist" aria-label={listLabel}>
+    <ul
+      className={[styles.tabList, className].filter(Boolean).join(' ')}
+      style={style}
+      role="tablist"
+      aria-label={listLabel}
+    >
       {children}
     </ul>
   );
@@ -124,16 +140,18 @@ export interface TabViewTabProps {
   value: string;
   label: string;
   disabled?: boolean;
+  className?: string;
+  style?: CSSProperties;
 }
 
-export function TabViewTab({ value, label, disabled }: TabViewTabProps) {
+export function TabViewTab({ value, label, disabled, className, style }: TabViewTabProps) {
   const { value: activeValue, onValueChange, baseId } = useTabViewContext('TabViewTab');
   const selected = activeValue === value;
   const tabId = `${baseId}-tab-${value}`;
   const panelId = `${baseId}-panel-${value}`;
 
   return (
-    <li role="presentation">
+    <li role="presentation" className={className} style={style}>
       <button
         type="button"
         id={tabId}
@@ -155,9 +173,11 @@ export function TabViewTab({ value, label, disabled }: TabViewTabProps) {
 export interface TabViewPanelProps {
   value: string;
   children: ReactNode;
+  className?: string;
+  style?: CSSProperties;
 }
 
-export function TabViewPanel({ value, children }: TabViewPanelProps) {
+export function TabViewPanel({ value, children, className, style }: TabViewPanelProps) {
   const { value: activeValue, baseId } = useTabViewContext('TabViewPanel');
   const selected = activeValue === value;
   const tabId = `${baseId}-tab-${value}`;
@@ -169,7 +189,8 @@ export function TabViewPanel({ value, children }: TabViewPanelProps) {
     <div
       id={panelId}
       role="tabpanel"
-      className={styles.panel}
+      className={[styles.panel, className].filter(Boolean).join(' ')}
+      style={style}
       aria-labelledby={tabId}
       tabIndex={0}
     >

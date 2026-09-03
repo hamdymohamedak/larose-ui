@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 import styles from '@larose-ui/styles/components/Button/Button.module.css';
 
 export interface ButtonGroupProps {
@@ -8,6 +8,7 @@ export interface ButtonGroupProps {
   /** Full-width buttons for watchOS-style primary actions. */
   fullWidth?: boolean;
   className?: string;
+  style?: CSSProperties;
   'aria-label'?: string;
 }
 
@@ -19,11 +20,13 @@ export function ButtonGroup({
   orientation = 'horizontal',
   fullWidth = false,
   className,
+  style,
   'aria-label': ariaLabel,
 }: ButtonGroupProps) {
   return (
     <div
       className={[styles.group, className].filter(Boolean).join(' ')}
+      style={style}
       data-orientation={orientation}
       data-full-width={fullWidth ? 'true' : undefined}
       role="group"

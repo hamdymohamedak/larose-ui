@@ -139,7 +139,15 @@ export function LaRoseProvider({
       <ThemeCustomizationContext.Provider value={customizationValue}>
         <MotionProvider {...motionConfig}>
           <AcceleratorProvider>
-            <div ref={ref} data-lr-provider style={{ minHeight: 'inherit' }}>
+            <div
+              ref={ref}
+              data-lr-provider
+              style={{
+                minHeight: 'inherit',
+                color: 'var(--lr-color-text)',
+                backgroundColor: 'var(--lr-color-background)',
+              }}
+            >
               {children}
             </div>
           </AcceleratorProvider>

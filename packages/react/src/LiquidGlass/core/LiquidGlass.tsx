@@ -2,6 +2,7 @@ import {
   createElement,
   type ButtonHTMLAttributes,
   type CSSProperties,
+  type ElementType,
   type HTMLAttributes,
 } from 'react';
 import type { LiquidGlassSurfaceProps } from '../engine/types';
@@ -20,7 +21,7 @@ export function LiquidGlass({
   children,
   className,
   style,
-  as = 'div',
+  as: Tag = 'div',
   width,
   height,
   minWidth,
@@ -137,7 +138,7 @@ export function LiquidGlass({
       )}
 
       {createElement(
-        as,
+        Tag as ElementType,
         {
           ref: shellRef,
           className,

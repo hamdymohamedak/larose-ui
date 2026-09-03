@@ -1,4 +1,4 @@
-import { useEffect, useId, useMemo, type ReactNode } from 'react';
+import { useEffect, useId, useMemo, type CSSProperties, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import type { ActivityItem, ActivityPresentation } from './types';
 import { partitionActivities, prepareActivities } from './activityUtils';
@@ -15,6 +15,8 @@ export interface ActivityViewProps {
   footer?: ReactNode;
   /** Used for popover positioning when presentation is popover. */
   anchorRef?: React.RefObject<HTMLElement | null>;
+  className?: string;
+  style?: CSSProperties;
 }
 
 function ActivityViewPanel({
@@ -130,6 +132,8 @@ export function ActivityView({
   onActivitySelect,
   footer,
   anchorRef,
+  className,
+  style,
 }: ActivityViewProps) {
   const titleId = useId();
 
@@ -178,7 +182,7 @@ export function ActivityView({
 
   if (presentation === 'popover') {
     const anchor = anchorRef?.current?.getBoundingClientRect();
-    const style = anchor
+    const anchorStyle = anchor
       ? {
           position: 'fixed' as const,
           top: anchor.bottom + 8,
@@ -190,8 +194,8 @@ export function ActivityView({
     return createPortal(
       <div className={styles.activityPopoverBackdrop} role="presentation" onClick={onClose}>
         <div
-          className={styles.activityPopover}
-          style={style}
+          className={[styles.activityPopover, className].filter(Boolean).join(' ')}
+          style={{ ...anchorStyle, ...style }}
           role="dialog"
           aria-modal="true"
           aria-labelledby={title ? titleId : undefined}
@@ -213,7 +217,8 @@ export function ActivityView({
       }}
     >
       <div
-        className={styles.activitySheet}
+        className={[styles.activitySheet, className].filter(Boolean).join(' ')}
+        style={style}
         role="dialog"
         aria-modal="true"
         aria-labelledby={title ? titleId : undefined}

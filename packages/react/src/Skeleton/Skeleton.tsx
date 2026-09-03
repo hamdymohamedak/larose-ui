@@ -1,3 +1,5 @@
+import type { CSSProperties } from 'react';
+import { mergeStyles } from '../shared/styleProps';
 import styles from '@larose-ui/styles/components/Skeleton/Skeleton.module.css';
 
 export interface SkeletonProps {
@@ -5,6 +7,8 @@ export interface SkeletonProps {
   height?: string | number;
   variant?: 'text' | 'circular' | 'rectangular';
   lines?: number;
+  className?: string;
+  style?: CSSProperties;
 }
 
 export function Skeleton({
@@ -12,10 +16,12 @@ export function Skeleton({
   height = '1rem',
   variant = 'text',
   lines = 1,
+  className,
+  style,
 }: SkeletonProps) {
   if (lines > 1) {
     return (
-      <div className={styles.group} aria-hidden="true">
+      <div className={[styles.group, className].filter(Boolean).join(' ')} style={style} aria-hidden="true">
         {Array.from({ length: lines }).map((_, i) => (
           <div
             key={i}
@@ -33,9 +39,12 @@ export function Skeleton({
 
   return (
     <div
-      className={styles.skeleton}
+      className={[styles.skeleton, className].filter(Boolean).join(' ')}
       data-variant={variant}
-      style={{ width, height: variant === 'circular' ? width : height }}
+      style={mergeStyles(
+        { width, height: variant === 'circular' ? width : height },
+        style,
+      )}
       aria-hidden="true"
     />
   );

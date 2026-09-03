@@ -1,4 +1,4 @@
-import type { ElementType, ReactNode } from 'react';
+import type { CSSProperties, ElementType, ReactNode } from 'react';
 import type { TypographyRole } from '@larose-ui/core';
 import styles from '@larose-ui/styles/components/Typography/Typography.module.css';
 
@@ -19,6 +19,7 @@ export interface TypographyProps {
   as?: ElementType;
   children: ReactNode;
   className?: string;
+  style?: CSSProperties;
   muted?: boolean;
 }
 
@@ -27,6 +28,7 @@ export function Typography({
   as,
   children,
   className,
+  style,
   muted = false,
 }: TypographyProps) {
   const Component = as ?? defaultElement[role];
@@ -34,6 +36,7 @@ export function Typography({
   return (
     <Component
       className={[styles.root, className].filter(Boolean).join(' ')}
+      style={style}
       data-lr-type={role}
       data-muted={muted ? 'true' : undefined}
     >

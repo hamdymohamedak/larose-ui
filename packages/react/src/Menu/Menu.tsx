@@ -8,8 +8,10 @@ import {
   useRef,
   useState,
   type ReactElement,
+  type CSSProperties,
 } from 'react';
 import { ContextualMenuPortal } from '../Motion/OverlayPortal';
+import { mergeStyles } from '../shared/styleProps';
 import {
   resolveMenuShortcut,
   useAcceleratorContext,
@@ -46,6 +48,8 @@ export interface MenuProps {
   enableMnemonics?: boolean;
   /** When true, underline mnemonic access keys in labels. */
   mnemonicVisible?: boolean;
+  className?: string;
+  style?: CSSProperties;
 }
 
 function MenuItemRow({
@@ -327,6 +331,8 @@ export function Menu({
   enableTypeAhead = true,
   enableMnemonics = true,
   mnemonicVisible = false,
+  className,
+  style,
 }: MenuProps) {
   const menuId = useId();
   const triggerRef = useRef<HTMLSpanElement>(null);
@@ -428,7 +434,7 @@ export function Menu({
       surfaceClassName={styles.menu}
       surfaceRole="menu"
       aria-label="Menu"
-      surfaceStyle={{ left: position.x, top: position.y }}
+      surfaceStyle={mergeStyles({ left: position.x, top: position.y }, style)}
       onSurfaceClick={(event) => event.stopPropagation()}
     >
       <MenuPanel
@@ -458,7 +464,7 @@ export function Menu({
 
   return (
     <>
-      <span ref={triggerRef} className={styles.triggerWrap}>
+      <span ref={triggerRef} className={[styles.triggerWrap, className].filter(Boolean).join(' ')} style={style}>
         {bindTrigger(children as ReactElement<Record<string, unknown>>)}
       </span>
       {menuPortal}

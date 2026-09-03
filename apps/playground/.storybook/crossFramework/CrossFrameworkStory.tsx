@@ -1,8 +1,25 @@
-import type { ReactNode } from 'react';
 import type { StoryContext } from '@storybook/react';
-import { CrossFrameworkHost, ReactOnlyFrameworkNotice } from './FrameworkHost';
+import { CrossFrameworkHost } from './FrameworkHost';
+import {
+  readToolbarFramework,
+  resolveStoryFrameworks,
+  storySupportsFramework,
+} from './frameworkSupport';
 import { getCrossFrameworkDefinition } from './registry';
 import type { CrossFrameworkRenderArgs, StorybookFramework } from './types';
+import { UnsupportedFrameworkPanel } from './UnsupportedFramework';
+
+export function storyFrameworksFromContext(context: StoryContext): StorybookFramework[] {
+  const laRose = (context.parameters.laRose ?? {}) as {
+    frameworks?: StorybookFramework[];
+    crossFramework?: string;
+  };
+
+  return resolveStoryFrameworks({
+    explicit: laRose.frameworks,
+    registryFrameworks: getCrossFrameworkDefinition(laRose.crossFramework)?.frameworks,
+  });
+}
 
 export function renderCrossFrameworkStory(context: StoryContext) {
   const registryId = context.parameters.laRose?.crossFramework as string | undefined;
@@ -12,7 +29,7 @@ export function renderCrossFrameworkStory(context: StoryContext) {
     return null;
   }
 
-  const framework = (context.globals.framework as StorybookFramework) ?? 'react';
+  const framework = readToolbarFramework(context.globals);
   const theme = (context.globals.theme as 'light' | 'dark') ?? 'light';
   const density =
     (context.globals.density as 'compact' | 'comfortable' | 'spacious') ?? 'comfortable';
@@ -27,18 +44,22 @@ export function renderCrossFrameworkStory(context: StoryContext) {
   );
 }
 
-export function renderReactOnlyFrameworkGuard(context: StoryContext, children: ReactNode) {
-  const framework = (context.globals.framework as StorybookFramework) ?? 'react';
-  const isParity = Boolean(context.parameters.laRose?.crossFramework);
+export function renderFrameworkAvailabilityGuard(context: StoryContext) {
+  const framework = readToolbarFramework(context.globals);
+  const supported = storyFrameworksFromContext(context);
 
-  if (isParity || framework === 'react') {
-    return children;
+  if (storySupportsFramework(framework, supported)) {
+    return null;
   }
 
+  const displayName =
+    (context.parameters.laRose?.displayName as string | undefined) ?? context.title;
+
   return (
-    <>
-      <ReactOnlyFrameworkNotice framework={framework} />
-      {children}
-    </>
+    <UnsupportedFrameworkPanel
+      requested={framework}
+      supported={supported}
+      displayName={displayName}
+    />
   );
 }

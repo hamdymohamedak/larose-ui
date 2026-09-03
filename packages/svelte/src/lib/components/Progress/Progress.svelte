@@ -11,6 +11,8 @@
     variant?: ProgressVariant;
     state?: UIState;
     showValue?: boolean;
+    class?: string;
+    style?: string;
   }
 
   let {
@@ -20,13 +22,15 @@
     variant = 'default',
     state = 'idle',
     showValue = false,
+    class: className,
+    style,
   }: Props = $props();
 
   const clamped = $derived(Math.min(max, Math.max(0, value)));
   const percent = $derived(max > 0 ? Math.round((clamped / max) * 100) : 0);
 </script>
 
-<div class={styles.wrapper} data-state={state}>
+<div class={[styles.wrapper, className].filter(Boolean).join(' ')} {style} data-state={state}>
   {#if label || showValue}
     <div class={styles.header}>
       {#if label}<span class={styles.label}>{label}</span>{/if}

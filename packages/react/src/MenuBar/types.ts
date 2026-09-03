@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 import type { MenuEntry } from '../Menu/types';
 
 export type MenuBarPlatform = 'macos' | 'ipados';
@@ -87,6 +87,7 @@ export interface MenuBarProps {
   /** macOS: show a read-only Apple menu stub (system-provided on real macOS). */
   showAppleMenu?: boolean;
   className?: string;
+  style?: CSSProperties;
   onMenuAction?: (menuId: string, entryId: string) => void;
   /** Register top-level menu accelerators globally. Defaults to true. */
   enableGlobalShortcuts?: boolean;

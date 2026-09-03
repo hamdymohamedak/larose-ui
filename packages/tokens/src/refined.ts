@@ -81,6 +81,7 @@ export function getRefinedTokenOverrides(mode: ThemeMode): TokenOverrides {
         text: '#f5f5f7',
         textMuted: '#98989d',
         textInverse: '#1c1c1e',
+        onAccent: '#ffffff',
       },
       surfaces: {
         base: '#2c2c2e',
@@ -136,6 +137,7 @@ export function getRefinedTokenOverrides(mode: ThemeMode): TokenOverrides {
       text: '#1d1d1f',
       textMuted: '#5c5c60',
       textInverse: '#ffffff',
+      onAccent: '#ffffff',
     },
     surfaces: {
       base: '#ffffff',

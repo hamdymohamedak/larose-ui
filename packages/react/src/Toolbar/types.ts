@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 import type { MenuEntry } from '../Menu/types';
 
 export type ToolbarPlatform = 'ios' | 'ipados' | 'macos' | 'visionos' | 'watchos';
@@ -27,6 +27,7 @@ export interface ToolbarProps {
   /** Hide toolbar for distraction-free experience. */
   hidden?: boolean;
   className?: string;
+  style?: CSSProperties;
   children?: ReactNode;
   'aria-label'?: string;
 }
@@ -36,6 +37,7 @@ export interface ToolbarSectionProps {
   /** Center items collapse into the system overflow menu when space is tight. */
   collapsible?: boolean;
   className?: string;
+  style?: CSSProperties;
   children?: ReactNode;
 }
 
@@ -49,10 +51,12 @@ export interface ToolbarItemProps {
   onClick?: () => void;
   collapsible?: boolean;
   className?: string;
+  style?: CSSProperties;
 }
 
 export interface ToolbarGroupProps {
   className?: string;
+  style?: CSSProperties;
   children?: ReactNode;
 }
 
@@ -60,6 +64,7 @@ export interface ToolbarTitleProps {
   children: string;
   large?: boolean;
   className?: string;
+  style?: CSSProperties;
 }
 
 export interface ToolbarSearchProps {
@@ -68,6 +73,7 @@ export interface ToolbarSearchProps {
   onChange?: (value: string) => void;
   'aria-label'?: string;
   className?: string;
+  style?: CSSProperties;
 }
 
 export interface ToolbarMoreButtonProps {
@@ -89,6 +95,7 @@ export interface ToolbarProminentButtonProps {
   onClick?: () => void;
   disabled?: boolean;
   className?: string;
+  style?: CSSProperties;
 }
 
 export interface ToolbarBackButtonProps {

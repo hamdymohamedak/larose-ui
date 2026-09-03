@@ -4,6 +4,7 @@ import {
   useContext,
   useMemo,
   useState,
+  type CSSProperties,
   type ReactNode,
 } from 'react';
 import { createPortal } from 'react-dom';
@@ -19,6 +20,8 @@ export interface ToastInput {
   message: string;
   variant?: ToastVariant;
   duration?: number;
+  className?: string;
+  style?: CSSProperties;
 }
 
 export type ToastPlacement =
@@ -127,7 +130,8 @@ function Toast({ item, placement, onDismiss, onExitComplete }: ToastProps) {
       onExitComplete={onExitComplete}
     >
       <div
-        className={[styles.toast, motionStyles.layoutItem].filter(Boolean).join(' ')}
+        className={[styles.toast, motionStyles.layoutItem, item.className].filter(Boolean).join(' ')}
+        style={item.style}
         data-variant={variant}
         data-placement={placement}
         role={variant === 'error' ? 'alert' : 'status'}

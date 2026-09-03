@@ -21,6 +21,7 @@
     id?: string;
     type?: string;
     class?: string;
+    style?: string;
     value?: string;
   }
 
@@ -37,6 +38,7 @@
     id,
     type = 'text',
     class: className,
+    style,
     value = $bindable(''),
   }: Props = $props();
 
@@ -53,6 +55,7 @@
     id,
     type,
     class: className,
+    style,
   }));
 
   let focused = $state(false);
@@ -77,6 +80,8 @@
   required={merged.required}
   htmlFor={inputId}
   uiState={uiState}
+  class={merged.class}
+  style={merged.style}
 >
   <div class={styles.inputContainer}>
     <div

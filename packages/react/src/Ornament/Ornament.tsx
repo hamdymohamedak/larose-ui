@@ -1,4 +1,4 @@
-import { useEffect, useMemo, type ReactNode } from 'react';
+import { useEffect, useMemo, type CSSProperties, type ReactNode } from 'react';
 import type { OrnamentConfig, OrnamentContentAlignment, OrnamentEdge, OrnamentVisibility } from './types';
 import { alignmentToFlex, resolveOrnamentVisibility, warnIfTooManyOrnaments } from './utils';
 import styles from '@larose-ui/styles/components/Ornament/Ornament.module.css';
@@ -14,12 +14,14 @@ export interface OrnamentWindowProps {
   immersive?: boolean;
   ornaments?: OrnamentConfig[];
   className?: string;
+  style?: CSSProperties;
   'aria-label'?: string;
 }
 
 export interface OrnamentProps {
   children: ReactNode;
   className?: string;
+  style?: CSSProperties;
 }
 
 export interface OrnamentButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -39,6 +41,7 @@ export function OrnamentWindow({
   immersive = false,
   ornaments,
   className,
+  style,
   'aria-label': ariaLabel = 'Window',
 }: OrnamentWindowProps) {
   const resolvedOrnaments = useMemo(() => {
@@ -57,6 +60,7 @@ export function OrnamentWindow({
   return (
     <section
       className={[styles.window, className].filter(Boolean).join(' ')}
+      style={style}
       aria-label={ariaLabel}
       data-immersive={immersive ? 'true' : undefined}
     >
@@ -89,9 +93,13 @@ export function OrnamentWindow({
 }
 
 /** Glass ornament container for custom controls. */
-export function Ornament({ children, className }: OrnamentProps) {
+export function Ornament({ children, className, style }: OrnamentProps) {
   return (
-    <div className={[styles.ornament, className].filter(Boolean).join(' ')} role="toolbar">
+    <div
+      className={[styles.ornament, className].filter(Boolean).join(' ')}
+      style={style}
+      role="toolbar"
+    >
       <div className={styles.ornamentInner}>{children}</div>
     </div>
   );

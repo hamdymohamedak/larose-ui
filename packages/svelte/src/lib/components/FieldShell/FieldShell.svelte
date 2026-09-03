@@ -11,6 +11,8 @@
     htmlFor?: string;
     uiState?: UIState;
     children: Snippet;
+    class?: string;
+    style?: string;
   }
 
   let {
@@ -21,10 +23,12 @@
     htmlFor,
     uiState = 'idle',
     children,
+    class: className,
+    style,
   }: Props = $props();
 </script>
 
-<div class={styles.wrapper} data-state={uiState}>
+<div class={[styles.wrapper, className].filter(Boolean).join(' ')} {style} data-state={uiState}>
   {#if label}
     <label for={htmlFor} class={styles.label}>
       {label}

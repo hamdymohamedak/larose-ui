@@ -11,6 +11,7 @@ import {
   useState,
   type ReactElement,
   type ReactNode,
+  type CSSProperties,
 } from 'react';
 import type { SplitCompactMode, SplitOrientation } from './types';
 import {
@@ -68,6 +69,7 @@ export interface SplitViewProps {
   toolbar?: ReactNode;
   onSizesChange?: (sizes: number[]) => void;
   className?: string;
+  style?: CSSProperties;
   'aria-label'?: string;
 }
 
@@ -101,6 +103,7 @@ export function SplitView({
   toolbar,
   onSizesChange,
   className,
+  style,
   'aria-label': ariaLabel = 'Split view',
 }: SplitViewProps) {
   const paneElements = useMemo(
@@ -236,6 +239,7 @@ export function SplitView({
       <div
         ref={containerRef}
         className={[styles.splitView, className].filter(Boolean).join(' ')}
+        style={style}
         data-orientation={orientation}
         data-compact={compactMode === 'stack' ? 'stack' : undefined}
         role="group"

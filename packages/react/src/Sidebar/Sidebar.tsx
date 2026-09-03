@@ -79,17 +79,23 @@ export function Sidebar({
 
 export interface SidebarHeaderProps {
   children: ReactNode;
+  className?: string;
+  style?: CSSProperties;
 }
 
-export function SidebarHeader({ children }: SidebarHeaderProps) {
-  return <div className={styles.header}>{children}</div>;
+export function SidebarHeader({ children, className, style }: SidebarHeaderProps) {
+  return (
+    <div className={[styles.header, className].filter(Boolean).join(' ')} style={style}>
+      {children}
+    </div>
+  );
 }
 
 export type SidebarSearchProps = Omit<SearchFieldProps, 'placement'>;
 
-export function SidebarSearch(props: SidebarSearchProps) {
+export function SidebarSearch({ className, style, ...props }: SidebarSearchProps) {
   return (
-    <div className={styles.search}>
+    <div className={[styles.search, className].filter(Boolean).join(' ')} style={style}>
       <SearchField {...props} placement="sidebar-top" platform={props.platform ?? 'macos'} />
     </div>
   );
@@ -97,12 +103,19 @@ export function SidebarSearch(props: SidebarSearchProps) {
 
 export interface SidebarNavProps {
   children: ReactNode;
+  className?: string;
+  style?: CSSProperties;
   'aria-label'?: string;
 }
 
-export function SidebarNav({ children, 'aria-label': ariaLabel = 'Sidebar navigation' }: SidebarNavProps) {
+export function SidebarNav({
+  children,
+  className,
+  style,
+  'aria-label': ariaLabel = 'Sidebar navigation',
+}: SidebarNavProps) {
   return (
-    <nav className={styles.nav} aria-label={ariaLabel}>
+    <nav className={[styles.nav, className].filter(Boolean).join(' ')} style={style} aria-label={ariaLabel}>
       {children}
     </nav>
   );
@@ -111,11 +124,13 @@ export function SidebarNav({ children, 'aria-label': ariaLabel = 'Sidebar naviga
 export interface SidebarGroupProps {
   label: string;
   children: ReactNode;
+  className?: string;
+  style?: CSSProperties;
 }
 
-export function SidebarGroup({ label, children }: SidebarGroupProps) {
+export function SidebarGroup({ label, children, className, style }: SidebarGroupProps) {
   return (
-    <div role="group" aria-label={label}>
+    <div className={className} style={style} role="group" aria-label={label}>
       <div className={styles.groupLabel}>{label}</div>
       {children}
     </div>
@@ -126,12 +141,16 @@ export interface SidebarDisclosureSectionProps {
   label: string;
   defaultExpanded?: boolean;
   children: ReactNode;
+  className?: string;
+  style?: CSSProperties;
 }
 
 export function SidebarDisclosureSection({
   label,
   defaultExpanded = true,
   children,
+  className,
+  style,
 }: SidebarDisclosureSectionProps) {
   const panelId = useId();
   const [expanded, setExpanded] = useState(defaultExpanded);
@@ -140,7 +159,7 @@ export function SidebarDisclosureSection({
   }, []);
 
   return (
-    <div className={styles.disclosureSection}>
+    <div className={[styles.disclosureSection, className].filter(Boolean).join(' ')} style={style}>
       <button
         type="button"
         className={styles.disclosureTrigger}
@@ -170,6 +189,8 @@ export interface SidebarItemProps {
   /** Fixed accent color for special icons (e.g. VIP in Mail). Use sparingly. */
   accentColor?: string;
   onClick?: () => void;
+  className?: string;
+  style?: CSSProperties;
 }
 
 export function SidebarItem({
@@ -181,6 +202,8 @@ export function SidebarItem({
   badge,
   accentColor,
   onClick,
+  className,
+  style,
 }: SidebarItemProps) {
   const state = disabled ? 'disabled' : active ? 'active' : 'inactive';
   const content = (
@@ -203,7 +226,7 @@ export function SidebarItem({
     const safeHref = sanitizeNavigationUrl(href);
     if (!safeHref) {
       return (
-        <button type="button" className={styles.item} data-state={state} disabled aria-current={active ? 'page' : undefined}>
+        <button type="button" className={[styles.item, className].filter(Boolean).join(' ')} style={style} data-state={state} disabled aria-current={active ? 'page' : undefined}>
           {content}
         </button>
       );
@@ -211,7 +234,8 @@ export function SidebarItem({
     return (
       <a
         href={safeHref}
-        className={styles.item}
+        className={[styles.item, className].filter(Boolean).join(' ')}
+        style={style}
         data-state={state}
         aria-current={active ? 'page' : undefined}
       >
@@ -223,7 +247,8 @@ export function SidebarItem({
   return (
     <button
       type="button"
-      className={styles.item}
+      className={[styles.item, className].filter(Boolean).join(' ')}
+      style={style}
       data-state={state}
       aria-current={active ? 'page' : undefined}
       disabled={disabled}
@@ -238,13 +263,23 @@ export function SidebarToggle({
   hidden,
   onToggle,
   label = 'Toggle sidebar',
+  className,
+  style,
 }: {
   hidden?: boolean;
   onToggle?: () => void;
   label?: string;
+  className?: string;
+  style?: CSSProperties;
 }) {
   return (
-    <button type="button" className={styles.toggle} aria-pressed={!hidden} onClick={onToggle}>
+    <button
+      type="button"
+      className={[styles.toggle, className].filter(Boolean).join(' ')}
+      style={style}
+      aria-pressed={!hidden}
+      onClick={onToggle}
+    >
       {hidden ? 'Show Sidebar' : 'Hide Sidebar'}
       <span className="sr-only">{label}</span>
     </button>

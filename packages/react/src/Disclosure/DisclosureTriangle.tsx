@@ -1,4 +1,4 @@
-import { useCallback, useId, useState, type ReactNode } from 'react';
+import { useCallback, useId, useState, type CSSProperties, type ReactNode } from 'react';
 import styles from '@larose-ui/styles/components/Disclosure/Disclosure.module.css';
 
 function TriangleIcon() {
@@ -23,6 +23,8 @@ export interface DisclosureTriangleProps {
   onExpandedChange?: (expanded: boolean) => void;
   children?: ReactNode;
   disabled?: boolean;
+  className?: string;
+  style?: CSSProperties;
 }
 
 /**
@@ -36,6 +38,8 @@ export function DisclosureTriangle({
   onExpandedChange,
   children,
   disabled = false,
+  className,
+  style,
 }: DisclosureTriangleProps) {
   const panelId = useId();
   const isControlled = expanded !== undefined;
@@ -50,7 +54,7 @@ export function DisclosureTriangle({
   }, [disabled, isControlled, isExpanded, onExpandedChange]);
 
   return (
-    <div className={styles.group}>
+    <div className={[styles.group, className].filter(Boolean).join(' ')} style={style}>
       <div className={styles.row}>
         <button
           type="button"

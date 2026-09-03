@@ -1,4 +1,4 @@
-import { useCallback, useId, useState, type ReactNode } from 'react';
+import { useCallback, useId, useState, type CSSProperties, type ReactNode } from 'react';
 import styles from '@larose-ui/styles/components/Disclosure/Disclosure.module.css';
 
 function ChevronIcon() {
@@ -20,6 +20,8 @@ export interface DisclosureButtonProps {
   /** Content revealed when expanded. Use only one disclosure button per view. */
   detail?: ReactNode;
   disabled?: boolean;
+  className?: string;
+  style?: CSSProperties;
   'aria-label'?: string;
 }
 
@@ -35,6 +37,8 @@ export function DisclosureButton({
   children,
   detail,
   disabled = false,
+  className,
+  style,
   'aria-label': ariaLabel = 'Show more options',
 }: DisclosureButtonProps) {
   const panelId = useId();
@@ -50,7 +54,7 @@ export function DisclosureButton({
   }, [disabled, isControlled, isExpanded, onExpandedChange]);
 
   return (
-    <div className={styles.group}>
+    <div className={[styles.group, className].filter(Boolean).join(' ')} style={style}>
       <div className={styles.buttonRow}>
         <div className={styles.buttonContent}>
           {label && <div className={styles.triangleLabel}>{label}</div>}

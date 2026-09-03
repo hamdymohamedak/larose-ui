@@ -71,7 +71,7 @@
 }
 
 .caution {
-  color: #ff9500;
+  color: var(--lr-color-warning);
 }
 
 .title {
@@ -181,7 +181,7 @@
 }
 
 .action[data-destructive='true'] {
-  color: #ff3b30;
+  color: var(--lr-button-destructive);
 }
 
 .action:active {
@@ -189,13 +189,13 @@
 }
 
 .action[data-default-focus='true'] {
-  background: rgb(0 122 255 / 0.08);
+  background: color-mix(in srgb, var(--lr-color-primary) 12%, transparent);
 }
 
 .alert[data-presentation='desktop'] .action[data-default-focus='true'],
 .alert[data-presentation='spatial'] .action[data-default-focus='true'] {
   background: var(--lr-color-primary, #007aff);
-  color: #fff;
+  color: var(--lr-color-on-accent, var(--lr-button-on-primary-color));
 }
 
 /* Desktop — bordered push buttons in a trailing row */
@@ -232,15 +232,15 @@
 .alert[data-presentation='spatial'] .actions[data-layout='row'] .action[data-default-focus='true'] {
   border-color: transparent;
   background: var(--lr-color-primary, #007aff);
-  color: #fff;
+  color: var(--lr-color-on-accent, var(--lr-button-on-primary-color));
   font-weight: 600;
 }
 
 .alert[data-presentation='desktop'] .actions[data-layout='row'] .action[data-destructive='true'],
 .alert[data-presentation='spatial'] .actions[data-layout='row'] .action[data-destructive='true'] {
   border-color: transparent;
-  background: #ff3b30;
-  color: #fff;
+  background: var(--lr-button-destructive);
+  color: var(--lr-color-on-accent, var(--lr-button-on-primary-color));
   font-weight: 600;
 }
 

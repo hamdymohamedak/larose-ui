@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef } from 'react';
 import { StorybookProvider } from '../StorybookProvider';
+import { FRAMEWORK_LABELS, storySupportsFramework } from './frameworkSupport';
 import { mountSvelteStory } from './mountSvelte';
 import { mountVueStory } from './mountVue';
 import type {
@@ -8,41 +9,7 @@ import type {
   CrossFrameworkRenderArgs,
   StorybookFramework,
 } from './types';
-import { pickSupportedFramework } from './types';
-
-const frameworkLabels: Record<StorybookFramework, string> = {
-  react: 'React',
-  vue: 'Vue 3',
-  svelte: 'Svelte 5',
-};
-
-function FrameworkNotice({
-  requested,
-  active,
-  definition,
-}: {
-  requested: StorybookFramework;
-  active: StorybookFramework;
-  definition: CrossFrameworkComponentDefinition;
-}) {
-  if (requested === active) return null;
-
-  return (
-    <div
-      style={{
-        marginBottom: '0.75rem',
-        padding: '0.5rem 0.75rem',
-        borderRadius: 8,
-        background: 'var(--larose-color-surface-secondary, #f4f4f5)',
-        border: '1px solid var(--larose-color-border-subtle, #e4e4e7)',
-        fontSize: 13,
-      }}
-    >
-      {frameworkLabels[requested]} is not available for {definition.displayName}. Showing{' '}
-      {frameworkLabels[active]} instead.
-    </div>
-  );
-}
+import { UnsupportedFrameworkPanel } from './UnsupportedFramework';
 
 export function CrossFrameworkHost({
   definition,
@@ -55,20 +22,20 @@ export function CrossFrameworkHost({
   framework: StorybookFramework;
   provider: CrossFrameworkProviderContext;
 }) {
-  const activeFramework = pickSupportedFramework(framework, definition.frameworks);
+  const supported = storySupportsFramework(framework, definition.frameworks);
   const mapped = useMemo(() => definition.mapArgs(args), [definition, args]);
   const mountRef = useRef<HTMLDivElement>(null);
   const mountKey = useMemo(
-    () => JSON.stringify({ activeFramework, args, provider }),
-    [activeFramework, args, provider],
+    () => JSON.stringify({ framework, args, provider }),
+    [framework, args, provider],
   );
 
   useEffect(() => {
     const target = mountRef.current;
-    if (!target || activeFramework === 'react') return;
+    if (!target || !supported || framework === 'react') return;
 
     const cleanup =
-      activeFramework === 'vue'
+      framework === 'vue'
         ? mountVueStory(target, {
             componentName: definition.componentName,
             componentProps: mapped.props,
@@ -83,7 +50,17 @@ export function CrossFrameworkHost({
           });
 
     return cleanup;
-  }, [activeFramework, definition.componentName, mapped, mountKey, provider]);
+  }, [supported, framework, definition.componentName, mapped, mountKey, provider]);
+
+  if (!supported) {
+    return (
+      <UnsupportedFrameworkPanel
+        requested={framework}
+        supported={definition.frameworks}
+        displayName={definition.displayName}
+      />
+    );
+  }
 
   return (
     <div>
@@ -104,7 +81,7 @@ export function CrossFrameworkHost({
             textTransform: 'uppercase',
           }}
         >
-          Framework
+          Mounted package
         </span>
         <code
           style={{
@@ -113,49 +90,18 @@ export function CrossFrameworkHost({
             background: 'var(--larose-color-surface-secondary, #f4f4f5)',
           }}
         >
-          {frameworkLabels[activeFramework]}
+          {FRAMEWORK_LABELS[framework]}
         </code>
         <span>· {definition.displayName}</span>
       </div>
 
-      <FrameworkNotice
-        requested={framework}
-        active={activeFramework}
-        definition={definition}
-      />
-
-      {activeFramework === 'react' ? (
+      {framework === 'react' ? (
         <StorybookProvider theme={provider.theme} density={provider.density}>
           {definition.renderReact(mapped.props, mapped.slotText, provider)}
         </StorybookProvider>
       ) : (
         <div ref={mountRef} key={mountKey} />
       )}
-    </div>
-  );
-}
-
-export function ReactOnlyFrameworkNotice({
-  framework,
-}: {
-  framework: StorybookFramework;
-}) {
-  if (framework === 'react') return null;
-
-  return (
-    <div
-      style={{
-        padding: '1rem 1.25rem',
-        borderRadius: 8,
-        border: '1px dashed var(--larose-color-border-subtle, #d4d4d8)',
-        color: 'var(--larose-color-text-secondary, #71717a)',
-        fontSize: 14,
-        lineHeight: 1.5,
-      }}
-    >
-      <strong>{frameworkLabels[framework]}</strong> rendering is only enabled for stories under{' '}
-      <code>Parity/*</code>. Use the toolbar Framework control on parity stories, or open{' '}
-      <code>Parity/{'{Component}'}</code> to compare implementations.
     </div>
   );
 }

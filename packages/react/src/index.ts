@@ -809,5 +809,6 @@ export type {
   BuildDisplacementMapOptions,
   LiquidGlassOptics,
   LiquidGlassGeometry,
+  LiquidGlassChromeProps,
   ResolvedLiquidGlassOptics,
 } from './LiquidGlass';

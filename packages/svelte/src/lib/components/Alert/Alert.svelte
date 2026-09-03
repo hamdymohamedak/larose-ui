@@ -9,12 +9,14 @@
     title?: string;
     onDismiss?: () => void;
     children: Snippet;
+    class?: string;
+    style?: string;
   }
 
-  let { variant = 'info', title, onDismiss, children }: Props = $props();
+  let { variant = 'info', title, onDismiss, children, class: className, style }: Props = $props();
 </script>
 
-<div class={styles.alert} data-variant={variant} role="alert">
+<div class={[styles.alert, className].filter(Boolean).join(' ')} {style} data-variant={variant} role="alert">
   <div class={styles.content}>
     {#if title}<strong class={styles.title}>{title}</strong>{/if}
     <div class={styles.message}>{@render children()}</div>

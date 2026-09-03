@@ -9,6 +9,7 @@
     "prebuild": "turbo run build --filter=@larose-ui/playground^...",
     "build": "storybook build",
     "typecheck": "tsc --noEmit",
+    "test": "vitest run",
     "clean": "rm -rf storybook-static"
   },
   "dependencies": {
@@ -34,6 +35,8 @@
   "devDependencies": {
     "@storybook/addon-essentials": "^8.4.7",
     "@storybook/addon-interactions": "^8.4.7",
+    "@storybook/core-events": "^8.4.7",
+    "@storybook/manager-api": "^8.4.7",
     "@storybook/react": "^8.4.7",
     "@storybook/react-vite": "^8.4.7",
     "@storybook/test": "^8.4.7",
@@ -41,6 +44,7 @@
     "@vitejs/plugin-vue": "^5.2.1",
     "storybook": "^8.4.7",
     "typescript": "^5.7.2",
-    "vite": "^6.0.3"
+    "vite": "^6.0.3",
+    "vitest": "^2.1.8"
   }
 }

@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react';
 import type { UIState } from '@larose-ui/core';
 import styles from '@larose-ui/styles/components/Progress/Progress.module.css';
 
@@ -10,6 +11,8 @@ export interface ProgressProps {
   variant?: ProgressVariant;
   state?: UIState;
   showValue?: boolean;
+  className?: string;
+  style?: CSSProperties;
 }
 
 export function Progress({
@@ -19,12 +22,14 @@ export function Progress({
   variant = 'default',
   state = 'idle',
   showValue = false,
+  className,
+  style,
 }: ProgressProps) {
   const clamped = Math.min(max, Math.max(0, value));
   const percent = max > 0 ? Math.round((clamped / max) * 100) : 0;
 
   return (
-    <div className={styles.wrapper} data-state={state}>
+    <div className={[styles.wrapper, className].filter(Boolean).join(' ')} style={style} data-state={state}>
       {(label || showValue) && (
         <div className={styles.header}>
           {label && <span className={styles.label}>{label}</span>}

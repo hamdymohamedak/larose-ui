@@ -263,7 +263,7 @@ export const docsSearchIndex = [
     "title": "Accordion",
     "type": "component",
     "path": "/docs/components/accordion",
-    "keywords": "Accordion Content Accordion.collapsible boolean Accordion.defaultValue string[] Accordion.onValueChange (value: string[]) => void Accordion.type 'single' | 'multiple' Accordion.value string[] Accordion.children ReactNode Accordion.className string",
+    "keywords": "Accordion Content Accordion.collapsible boolean Accordion.defaultValue string[] Accordion.onValueChange (value: string[]) => void Accordion.type 'single' | 'multiple' Accordion.value string[] Accordion.children ReactNode Accordion.className string Accordion.style CSSProperties",
     "excerpt": "Content component from @larose-ui/react"
   },
   {
@@ -327,7 +327,7 @@ export const docsSearchIndex = [
     "title": "AccordionContent",
     "type": "component",
     "path": "/docs/components/accordion-content",
-    "keywords": "AccordionContent Content AccordionContent.children ReactNode",
+    "keywords": "AccordionContent Content AccordionContent.children ReactNode AccordionContent.className string AccordionContent.style CSSProperties",
     "excerpt": "Content component from @larose-ui/react"
   },
   {
@@ -335,7 +335,7 @@ export const docsSearchIndex = [
     "title": "AccordionItem",
     "type": "component",
     "path": "/docs/components/accordion-item",
-    "keywords": "AccordionItem Content AccordionItem.disabled boolean AccordionItem.value string AccordionItem.children ReactNode",
+    "keywords": "AccordionItem Content AccordionItem.disabled boolean AccordionItem.value string AccordionItem.children ReactNode AccordionItem.className string AccordionItem.style CSSProperties",
     "excerpt": "Content component from @larose-ui/react"
   },
   {
@@ -359,7 +359,7 @@ export const docsSearchIndex = [
     "title": "AccordionTrigger",
     "type": "component",
     "path": "/docs/components/accordion-trigger",
-    "keywords": "AccordionTrigger Content AccordionTrigger.children ReactNode",
+    "keywords": "AccordionTrigger Content AccordionTrigger.children ReactNode AccordionTrigger.className string AccordionTrigger.style CSSProperties",
     "excerpt": "Content component from @larose-ui/react"
   },
   {
@@ -519,7 +519,7 @@ export const docsSearchIndex = [
     "title": "Alert",
     "type": "component",
     "path": "/docs/components/alert",
-    "keywords": "Alert Feedback Alert.onDismiss () => void Alert.variant AlertVariant Alert.children ReactNode Alert.title string",
+    "keywords": "Alert Feedback Alert.onDismiss () => void Alert.variant AlertVariant Alert.children ReactNode Alert.className string Alert.style CSSProperties Alert.title string",
     "excerpt": "Feedback component from @larose-ui/react"
   },
   {
@@ -775,7 +775,7 @@ export const docsSearchIndex = [
     "title": "Badge",
     "type": "component",
     "path": "/docs/components/badge",
-    "keywords": "Badge Feedback Badge.variant BadgeVariant Badge.children ReactNode",
+    "keywords": "Badge Feedback Badge.variant BadgeVariant Badge.children ReactNode Badge.className string Badge.style CSSProperties",
     "excerpt": "Feedback component from @larose-ui/react"
   },
   {
@@ -839,7 +839,7 @@ export const docsSearchIndex = [
     "title": "Box",
     "type": "component",
     "path": "/docs/components/box",
-    "keywords": "Box Layout Box.'aria-label' string Box.padding 'sm' | 'md' | 'lg' Box.settingsStyle boolean Box.titlePosition BoxTitlePosition Box.variant BoxVariant Box.children ReactNode Box.className string Box.title string",
+    "keywords": "Box Layout Box.'aria-label' string Box.padding 'sm' | 'md' | 'lg' Box.settingsStyle boolean Box.titlePosition BoxTitlePosition Box.variant BoxVariant Box.children ReactNode Box.className string Box.style CSSProperties Box.title string",
     "excerpt": "Layout component from @larose-ui/react"
   },
   {
@@ -911,7 +911,7 @@ export const docsSearchIndex = [
     "title": "Breadcrumb",
     "type": "component",
     "path": "/docs/components/breadcrumb",
-    "keywords": "Breadcrumb Navigation Breadcrumb.'aria-label' string Breadcrumb.items BreadcrumbItem[]",
+    "keywords": "Breadcrumb Navigation Breadcrumb.'aria-label' string Breadcrumb.items BreadcrumbItem[] Breadcrumb.className string Breadcrumb.style CSSProperties",
     "excerpt": "Navigation component from @larose-ui/react"
   },
   {
@@ -1191,7 +1191,7 @@ export const docsSearchIndex = [
     "title": "ButtonGroup",
     "type": "component",
     "path": "/docs/components/button-group",
-    "keywords": "ButtonGroup Actions ButtonGroup.'aria-label' string ButtonGroup.fullWidth boolean ButtonGroup.orientation 'horizontal' | 'vertical' ButtonGroup.children ReactNode ButtonGroup.className string",
+    "keywords": "ButtonGroup Actions ButtonGroup.'aria-label' string ButtonGroup.fullWidth boolean ButtonGroup.orientation 'horizontal' | 'vertical' ButtonGroup.children ReactNode ButtonGroup.className string ButtonGroup.style CSSProperties",
     "excerpt": "Actions component from @larose-ui/react"
   },
   {
@@ -2583,7 +2583,7 @@ export const docsSearchIndex = [
     "title": "Dialog",
     "type": "component",
     "path": "/docs/components/dialog",
-    "keywords": "Dialog Overlay Dialog.cancelLabel string Dialog.confirmLabel string Dialog.description string Dialog.loading boolean Dialog.onClose () => void Dialog.onConfirm () => void Dialog.open boolean Dialog.variant 'default' | 'destructive' Dialog.children ReactNode Dialog.title string",
+    "keywords": "Dialog Overlay Dialog.cancelLabel string Dialog.confirmLabel string Dialog.description string Dialog.loading boolean Dialog.onClose () => void Dialog.onConfirm () => void Dialog.open boolean Dialog.variant 'default' | 'destructive' Dialog.children ReactNode Dialog.className string Dialog.style CSSProperties Dialog.title string",
     "excerpt": "Overlay component from @larose-ui/react"
   },
   {
@@ -3591,7 +3591,7 @@ export const docsSearchIndex = [
     "title": "EmptyState",
     "type": "component",
     "path": "/docs/components/empty-state",
-    "keywords": "EmptyState Feedback EmptyState.actionLabel string EmptyState.description string EmptyState.icon ReactNode EmptyState.onAction () => void EmptyState.state UIState EmptyState.title string",
+    "keywords": "EmptyState Feedback EmptyState.actionLabel string EmptyState.description string EmptyState.icon ReactNode EmptyState.onAction () => void EmptyState.state UIState EmptyState.className string EmptyState.style CSSProperties EmptyState.title string",
     "excerpt": "Feedback component from @larose-ui/react"
   },
   {
@@ -3887,7 +3887,7 @@ export const docsSearchIndex = [
     "title": "Header",
     "type": "component",
     "path": "/docs/components/header",
-    "keywords": "Header Navigation Header.children ReactNode Header.className string",
+    "keywords": "Header Navigation Header.children ReactNode Header.className string Header.style CSSProperties",
     "excerpt": "Navigation component from @larose-ui/react"
   },
   {
@@ -3919,7 +3919,7 @@ export const docsSearchIndex = [
     "title": "HeaderActions",
     "type": "component",
     "path": "/docs/components/header-actions",
-    "keywords": "HeaderActions Other HeaderActions.children ReactNode",
+    "keywords": "HeaderActions Other HeaderActions.children ReactNode HeaderActions.className string HeaderActions.style CSSProperties",
     "excerpt": "Other component from @larose-ui/react"
   },
   {
@@ -3927,7 +3927,7 @@ export const docsSearchIndex = [
     "title": "HeaderBrand",
     "type": "component",
     "path": "/docs/components/header-brand",
-    "keywords": "HeaderBrand Other HeaderBrand.children ReactNode",
+    "keywords": "HeaderBrand Other HeaderBrand.children ReactNode HeaderBrand.className string HeaderBrand.style CSSProperties",
     "excerpt": "Other component from @larose-ui/react"
   },
   {
@@ -3935,7 +3935,7 @@ export const docsSearchIndex = [
     "title": "HeaderTitle",
     "type": "component",
     "path": "/docs/components/header-title",
-    "keywords": "HeaderTitle Other HeaderTitle.children ReactNode",
+    "keywords": "HeaderTitle Other HeaderTitle.children ReactNode HeaderTitle.className string HeaderTitle.style CSSProperties",
     "excerpt": "Other component from @larose-ui/react"
   },
   {
@@ -4479,7 +4479,7 @@ export const docsSearchIndex = [
     "title": "Label",
     "type": "component",
     "path": "/docs/components/label",
-    "keywords": "Label Content Label.as ElementType Label.importance LabelImportance Label.mono boolean Label.selectable boolean Label.children ReactNode Label.className string",
+    "keywords": "Label Content Label.as ElementType Label.importance LabelImportance Label.mono boolean Label.selectable boolean Label.children ReactNode Label.className string Label.style CSSProperties",
     "excerpt": "Content component from @larose-ui/react"
   },
   {
@@ -4687,7 +4687,7 @@ export const docsSearchIndex = [
     "title": "LiquidGlassButton",
     "type": "component",
     "path": "/docs/components/liquid-glass-button",
-    "keywords": "LiquidGlassButton Glass LiquidGlassButton.borderRadius number LiquidGlassButton.color string LiquidGlassButton.fontSize string | number LiquidGlassButton.fontWeight number LiquidGlassButton.height number | string LiquidGlassButton.width number | string LiquidGlassButton.children ReactNode LiquidGlassButton.style CSSProperties",
+    "keywords": "LiquidGlassButton Glass LiquidGlassButton.borderRadius number LiquidGlassButton.color string LiquidGlassButton.fontSize string | number LiquidGlassButton.fontWeight number LiquidGlassButton.height number | string LiquidGlassButton.width number | string LiquidGlassButton.children ReactNode",
     "excerpt": "Glass component from @larose-ui/react"
   },
   {
@@ -4775,7 +4775,7 @@ export const docsSearchIndex = [
     "title": "LiquidGlassCheckbox",
     "type": "component",
     "path": "/docs/components/liquid-glass-checkbox",
-    "keywords": "LiquidGlassCheckbox Glass LiquidGlassCheckbox.'aria-label' string LiquidGlassCheckbox.borderRadius number LiquidGlassCheckbox.checkColor string LiquidGlassCheckbox.checked boolean LiquidGlassCheckbox.checkedTint string LiquidGlassCheckbox.defaultChecked boolean LiquidGlassCheckbox.disabled boolean LiquidGlassCheckbox.label ReactNode LiquidGlassCheckbox.labelColor string LiquidGlassCheckbox.size number LiquidGlassCheckbox.className string LiquidGlassCheckbox.onChange (checked: boolean) => void LiquidGlassCheckbox.style CSSProperties",
+    "keywords": "LiquidGlassCheckbox Glass LiquidGlassCheckbox.'aria-label' string LiquidGlassCheckbox.borderRadius number LiquidGlassCheckbox.checkColor string LiquidGlassCheckbox.checked boolean LiquidGlassCheckbox.checkedTint string LiquidGlassCheckbox.defaultChecked boolean LiquidGlassCheckbox.disabled boolean LiquidGlassCheckbox.label ReactNode LiquidGlassCheckbox.labelColor string LiquidGlassCheckbox.size number LiquidGlassCheckbox.onChange (checked: boolean) => void",
     "excerpt": "Glass component from @larose-ui/react"
   },
   {
@@ -4871,7 +4871,7 @@ export const docsSearchIndex = [
     "title": "LiquidGlassProgress",
     "type": "component",
     "path": "/docs/components/liquid-glass-progress",
-    "keywords": "LiquidGlassProgress Glass LiquidGlassProgress.'aria-label' string LiquidGlassProgress.borderRadius number LiquidGlassProgress.fillColor string LiquidGlassProgress.fillGlow string LiquidGlassProgress.height number LiquidGlassProgress.indeterminate boolean LiquidGlassProgress.max number LiquidGlassProgress.value number LiquidGlassProgress.width number | string LiquidGlassProgress.className string LiquidGlassProgress.style CSSProperties",
+    "keywords": "LiquidGlassProgress Glass LiquidGlassProgress.'aria-label' string LiquidGlassProgress.borderRadius number LiquidGlassProgress.fillColor string LiquidGlassProgress.fillGlow string LiquidGlassProgress.height number LiquidGlassProgress.indeterminate boolean LiquidGlassProgress.max number LiquidGlassProgress.value number LiquidGlassProgress.width number | string",
     "excerpt": "Glass component from @larose-ui/react"
   },
   {
@@ -4967,7 +4967,7 @@ export const docsSearchIndex = [
     "title": "LiquidGlassRange",
     "type": "component",
     "path": "/docs/components/liquid-glass-range",
-    "keywords": "LiquidGlassRange Glass LiquidGlassRange.'aria-label' string LiquidGlassRange.borderRadius number LiquidGlassRange.defaultValue number LiquidGlassRange.disabled boolean LiquidGlassRange.fillColor string LiquidGlassRange.max number LiquidGlassRange.min number LiquidGlassRange.step number LiquidGlassRange.thumbSize number LiquidGlassRange.trackHeight number LiquidGlassRange.value number LiquidGlassRange.width number | string LiquidGlassRange.className string LiquidGlassRange.onChange (value: number) => void LiquidGlassRange.style CSSProperties",
+    "keywords": "LiquidGlassRange Glass LiquidGlassRange.'aria-label' string LiquidGlassRange.borderRadius number LiquidGlassRange.defaultValue number LiquidGlassRange.disabled boolean LiquidGlassRange.fillColor string LiquidGlassRange.max number LiquidGlassRange.min number LiquidGlassRange.step number LiquidGlassRange.thumbSize number LiquidGlassRange.trackHeight number LiquidGlassRange.value number LiquidGlassRange.width number | string LiquidGlassRange.onChange (value: number) => void",
     "excerpt": "Glass component from @larose-ui/react"
   },
   {
@@ -5079,7 +5079,7 @@ export const docsSearchIndex = [
     "title": "LiquidGlassSwitch",
     "type": "component",
     "path": "/docs/components/liquid-glass-switch",
-    "keywords": "LiquidGlassSwitch Glass LiquidGlassSwitch.'aria-label' string LiquidGlassSwitch.activeTrackTint LiquidGlassSwitchActiveTrackTint LiquidGlassSwitch.borderRadius number LiquidGlassSwitch.checked boolean LiquidGlassSwitch.defaultChecked boolean LiquidGlassSwitch.disabled boolean LiquidGlassSwitch.height number LiquidGlassSwitch.inactiveTrackTint string LiquidGlassSwitch.padding number LiquidGlassSwitch.thumbSize number LiquidGlassSwitch.thumbTint string LiquidGlassSwitch.width number LiquidGlassSwitch.className string LiquidGlassSwitch.onChange (checked: boolean) => void LiquidGlassSwitch.style CSSProperties",
+    "keywords": "LiquidGlassSwitch Glass LiquidGlassSwitch.'aria-label' string LiquidGlassSwitch.activeTrackTint LiquidGlassSwitchActiveTrackTint LiquidGlassSwitch.borderRadius number LiquidGlassSwitch.checked boolean LiquidGlassSwitch.defaultChecked boolean LiquidGlassSwitch.disabled boolean LiquidGlassSwitch.height number LiquidGlassSwitch.inactiveTrackTint string LiquidGlassSwitch.padding number LiquidGlassSwitch.thumbSize number LiquidGlassSwitch.thumbTint string LiquidGlassSwitch.width number LiquidGlassSwitch.onChange (checked: boolean) => void",
     "excerpt": "Glass component from @larose-ui/react"
   },
   {
@@ -5191,7 +5191,7 @@ export const docsSearchIndex = [
     "title": "LiquidGlassTabBar",
     "type": "component",
     "path": "/docs/components/liquid-glass-tab-bar",
-    "keywords": "LiquidGlassTabBar Glass LiquidGlassTabBar.activeColor string LiquidGlassTabBar.activeKey string LiquidGlassTabBar.borderRadius number LiquidGlassTabBar.bottom number | string LiquidGlassTabBar.defaultActiveKey string LiquidGlassTabBar.height number LiquidGlassTabBar.inactiveColor string LiquidGlassTabBar.indicatorBackground string LiquidGlassTabBar.indicatorBorderColor string LiquidGlassTabBar.indicatorPadding number LiquidGlassTabBar.items LiquidGlassTabItem[] LiquidGlassTabBar.maxWidth number LiquidGlassTabBar.position 'fixed' | 'absolute' | 'relative' | 'static' LiquidGlassTabBar.showIndicator boolean LiquidGlassTabBar.className string LiquidGlassTabBar.onChange (key: string) => void LiquidGlassTabBar.style CSSProperties",
+    "keywords": "LiquidGlassTabBar Glass LiquidGlassTabBar.activeColor string LiquidGlassTabBar.activeKey string LiquidGlassTabBar.borderRadius number LiquidGlassTabBar.bottom number | string LiquidGlassTabBar.defaultActiveKey string LiquidGlassTabBar.height number LiquidGlassTabBar.inactiveColor string LiquidGlassTabBar.indicatorBackground string LiquidGlassTabBar.indicatorBorderColor string LiquidGlassTabBar.indicatorPadding number LiquidGlassTabBar.items LiquidGlassTabItem[] LiquidGlassTabBar.maxWidth number LiquidGlassTabBar.position 'fixed' | 'absolute' | 'relative' | 'static' LiquidGlassTabBar.showIndicator boolean LiquidGlassTabBar.onChange (key: string) => void",
     "excerpt": "Glass component from @larose-ui/react"
   },
   {
@@ -5359,7 +5359,7 @@ export const docsSearchIndex = [
     "title": "LiquidGlassTopBar",
     "type": "component",
     "path": "/docs/components/liquid-glass-top-bar",
-    "keywords": "LiquidGlassTopBar Glass LiquidGlassTopBar.activeColor string LiquidGlassTopBar.activeKey string LiquidGlassTopBar.borderRadius number LiquidGlassTopBar.defaultActiveKey string LiquidGlassTopBar.height number LiquidGlassTopBar.inactiveColor string LiquidGlassTopBar.insetX number LiquidGlassTopBar.items LiquidGlassTopBarItem[] LiquidGlassTopBar.logo ReactNode LiquidGlassTopBar.navActiveBackground string LiquidGlassTopBar.navTrackBackground string LiquidGlassTopBar.paddingX number LiquidGlassTopBar.position 'fixed' | 'absolute' | 'relative' | 'sticky' | 'static' LiquidGlassTopBar.titleColor string LiquidGlassTopBar.top number | string LiquidGlassTopBar.trailing ReactNode LiquidGlassTopBar.variant LiquidGlassTopBarVariant LiquidGlassTopBar.className string LiquidGlassTopBar.onChange (key: string) => void LiquidGlassTopBar.style CSSProperties LiquidGlassTopBar.title ReactNode",
+    "keywords": "LiquidGlassTopBar Glass LiquidGlassTopBar.activeColor string LiquidGlassTopBar.activeKey string LiquidGlassTopBar.borderRadius number LiquidGlassTopBar.defaultActiveKey string LiquidGlassTopBar.height number LiquidGlassTopBar.inactiveColor string LiquidGlassTopBar.insetX number LiquidGlassTopBar.items LiquidGlassTopBarItem[] LiquidGlassTopBar.logo ReactNode LiquidGlassTopBar.navActiveBackground string LiquidGlassTopBar.navTrackBackground string LiquidGlassTopBar.paddingX number LiquidGlassTopBar.position 'fixed' | 'absolute' | 'relative' | 'sticky' | 'static' LiquidGlassTopBar.titleColor string LiquidGlassTopBar.top number | string LiquidGlassTopBar.trailing ReactNode LiquidGlassTopBar.variant LiquidGlassTopBarVariant LiquidGlassTopBar.onChange (key: string) => void LiquidGlassTopBar.title ReactNode",
     "excerpt": "Glass component from @larose-ui/react"
   },
   {
@@ -5535,7 +5535,7 @@ export const docsSearchIndex = [
     "title": "List",
     "type": "component",
     "path": "/docs/components/list",
-    "keywords": "List Data List.'aria-label' string List.variant ListVariant List.children ReactNode List.className string",
+    "keywords": "List Data List.'aria-label' string List.variant ListVariant List.children ReactNode List.className string List.style CSSProperties",
     "excerpt": "Data component from @larose-ui/react"
   },
   {
@@ -5575,7 +5575,7 @@ export const docsSearchIndex = [
     "title": "ListRow",
     "type": "component",
     "path": "/docs/components/list-row",
-    "keywords": "ListRow Data ListRow.accessory ListAccessory ListRow.disabled boolean ListRow.leading ReactNode ListRow.onInfo (event: MouseEvent<HTMLButtonElement>) => void ListRow.onPress () => void ListRow.selected boolean ListRow.subtitle string ListRow.truncate 'end' | 'middle' ListRow.title string",
+    "keywords": "ListRow Data ListRow.accessory ListAccessory ListRow.disabled boolean ListRow.leading ReactNode ListRow.onInfo (event: MouseEvent<HTMLButtonElement>) => void ListRow.onPress () => void ListRow.selected boolean ListRow.subtitle string ListRow.truncate 'end' | 'middle' ListRow.className string ListRow.style CSSProperties ListRow.title string",
     "excerpt": "Data component from @larose-ui/react"
   },
   {
@@ -5647,7 +5647,7 @@ export const docsSearchIndex = [
     "title": "ListSection",
     "type": "component",
     "path": "/docs/components/list-section",
-    "keywords": "ListSection Data ListSection.footer string ListSection.header string ListSection.children ReactNode",
+    "keywords": "ListSection Data ListSection.footer string ListSection.header string ListSection.children ReactNode ListSection.className string ListSection.style CSSProperties",
     "excerpt": "Data component from @larose-ui/react"
   },
   {
@@ -7215,7 +7215,7 @@ export const docsSearchIndex = [
     "title": "Progress",
     "type": "component",
     "path": "/docs/components/progress",
-    "keywords": "Progress Feedback Progress.label string Progress.max number Progress.showValue boolean Progress.state UIState Progress.value number Progress.variant ProgressVariant",
+    "keywords": "Progress Feedback Progress.label string Progress.max number Progress.showValue boolean Progress.state UIState Progress.value number Progress.variant ProgressVariant Progress.className string Progress.style CSSProperties",
     "excerpt": "Feedback component from @larose-ui/react"
   },
   {
@@ -7663,7 +7663,7 @@ export const docsSearchIndex = [
     "title": "Skeleton",
     "type": "component",
     "path": "/docs/components/skeleton",
-    "keywords": "Skeleton Feedback Skeleton.height string | number Skeleton.lines number Skeleton.variant 'text' | 'circular' | 'rectangular' Skeleton.width string | number",
+    "keywords": "Skeleton Feedback Skeleton.height string | number Skeleton.lines number Skeleton.variant 'text' | 'circular' | 'rectangular' Skeleton.width string | number Skeleton.className string Skeleton.style CSSProperties",
     "excerpt": "Feedback component from @larose-ui/react"
   },
   {
@@ -7711,7 +7711,7 @@ export const docsSearchIndex = [
     "title": "Spinner",
     "type": "component",
     "path": "/docs/components/spinner",
-    "keywords": "Spinner Feedback Spinner.label string Spinner.size Size",
+    "keywords": "Spinner Feedback Spinner.label string Spinner.size Size Spinner.className string Spinner.style CSSProperties",
     "excerpt": "Feedback component from @larose-ui/react"
   },
   {
@@ -8175,7 +8175,7 @@ export const docsSearchIndex = [
     "title": "Tabs",
     "type": "component",
     "path": "/docs/components/tabs",
-    "keywords": "Tabs Navigation Tabs.defaultValue string Tabs.onValueChange (value: string) => void Tabs.value string Tabs.children ReactNode Tabs.className string",
+    "keywords": "Tabs Navigation Tabs.defaultValue string Tabs.onValueChange (value: string) => void Tabs.value string Tabs.children ReactNode Tabs.className string Tabs.style CSSProperties",
     "excerpt": "Navigation component from @larose-ui/react"
   },
   {
@@ -8215,7 +8215,7 @@ export const docsSearchIndex = [
     "title": "TabsList",
     "type": "component",
     "path": "/docs/components/tabs-list",
-    "keywords": "TabsList Navigation TabsList.'aria-label' string TabsList.children ReactNode",
+    "keywords": "TabsList Navigation TabsList.'aria-label' string TabsList.children ReactNode TabsList.className string TabsList.style CSSProperties",
     "excerpt": "Navigation component from @larose-ui/react"
   },
   {
@@ -8247,7 +8247,7 @@ export const docsSearchIndex = [
     "title": "TabsTrigger",
     "type": "component",
     "path": "/docs/components/tabs-trigger",
-    "keywords": "TabsTrigger Navigation TabsTrigger.disabled boolean TabsTrigger.value string TabsTrigger.children ReactNode",
+    "keywords": "TabsTrigger Navigation TabsTrigger.disabled boolean TabsTrigger.value string TabsTrigger.children ReactNode TabsTrigger.className string TabsTrigger.style CSSProperties",
     "excerpt": "Navigation component from @larose-ui/react"
   },
   {
@@ -9135,7 +9135,7 @@ export const docsSearchIndex = [
     "title": "Tooltip",
     "type": "component",
     "path": "/docs/components/tooltip",
-    "keywords": "Tooltip Feedback Tooltip.content ReactNode Tooltip.side TooltipSide Tooltip.children ReactNode",
+    "keywords": "Tooltip Feedback Tooltip.content ReactNode Tooltip.side TooltipSide Tooltip.children ReactNode Tooltip.className string Tooltip.style CSSProperties",
     "excerpt": "Feedback component from @larose-ui/react"
   },
   {
@@ -9191,7 +9191,7 @@ export const docsSearchIndex = [
     "title": "Typography",
     "type": "component",
     "path": "/docs/components/typography",
-    "keywords": "Typography Content Typography.as ElementType Typography.muted boolean Typography.children ReactNode Typography.className string Typography.role TypographyRole",
+    "keywords": "Typography Content Typography.as ElementType Typography.muted boolean Typography.children ReactNode Typography.className string Typography.role TypographyRole Typography.style CSSProperties",
     "excerpt": "Content component from @larose-ui/react"
   },
   {

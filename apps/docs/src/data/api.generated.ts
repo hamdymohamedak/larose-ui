@@ -80,6 +80,12 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
+        "required": false,
+        "inherited": true
       }
     ],
     "events": [
@@ -98,6 +104,18 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "children",
         "type": "ReactNode",
         "required": true,
+        "inherited": true
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
+        "required": false,
         "inherited": true
       }
     ],
@@ -123,6 +141,18 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "ReactNode",
         "required": true,
         "inherited": true
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
+        "required": false,
+        "inherited": true
       }
     ],
     "events": [],
@@ -134,6 +164,18 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "children",
         "type": "ReactNode",
         "required": true,
+        "inherited": true
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
+        "required": false,
         "inherited": true
       }
     ],
@@ -282,6 +324,18 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "children",
         "type": "ReactNode",
         "required": true,
+        "inherited": true
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
+        "required": false,
         "inherited": true
       },
       {
@@ -476,6 +530,18 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "ReactNode",
         "required": true,
         "inherited": true
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
+        "required": false,
+        "inherited": true
       }
     ],
     "events": [],
@@ -529,6 +595,12 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "inherited": true
       },
       {
+        "name": "style",
+        "type": "CSSProperties",
+        "required": false,
+        "inherited": true
+      },
+      {
         "name": "title",
         "type": "string",
         "required": false,
@@ -553,6 +625,20 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "BreadcrumbItem[]",
         "required": true,
         "inherited": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "default": "{styles.separator",
+        "inherited": true
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
+        "required": false,
+        "default": "{style",
+        "inherited": true
       }
     ],
     "events": [],
@@ -698,6 +784,12 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
       {
         "name": "className",
         "type": "string",
+        "required": false,
+        "inherited": true
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
         "required": false,
         "inherited": true
       }
@@ -1782,6 +1874,18 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "inherited": true
       },
       {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
+        "required": false,
+        "inherited": true
+      },
+      {
         "name": "title",
         "type": "string",
         "required": true,
@@ -2662,6 +2766,18 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "inherited": false
       },
       {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
+        "required": false,
+        "inherited": true
+      },
+      {
         "name": "title",
         "type": "string",
         "required": true,
@@ -2893,6 +3009,12 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
+        "required": false,
+        "inherited": true
       }
     ],
     "events": [],
@@ -2904,6 +3026,18 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "children",
         "type": "ReactNode",
         "required": true,
+        "inherited": true
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
+        "required": false,
         "inherited": true
       }
     ],
@@ -2917,6 +3051,18 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "ReactNode",
         "required": true,
         "inherited": true
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
+        "required": false,
+        "inherited": true
       }
     ],
     "events": [],
@@ -2928,6 +3074,18 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "children",
         "type": "ReactNode",
         "required": true,
+        "inherited": true
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
+        "required": false,
         "inherited": true
       }
     ],
@@ -3298,6 +3456,12 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
+        "required": false,
+        "inherited": true
       }
     ],
     "events": [],
@@ -3380,12 +3544,6 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "ReactNode",
         "required": true,
         "inherited": true
-      },
-      {
-        "name": "style",
-        "type": "CSSProperties",
-        "required": false,
-        "inherited": true
       }
     ],
     "events": [],
@@ -3455,20 +3613,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "inherited": false
       },
       {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
-      },
-      {
         "name": "onChange",
         "type": "(checked: boolean) => void",
-        "required": false,
-        "inherited": true
-      },
-      {
-        "name": "style",
-        "type": "CSSProperties",
         "required": false,
         "inherited": true
       }
@@ -3552,20 +3698,6 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "\"100%\"",
         "inherited": false
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "default": "{className",
-        "inherited": true
-      },
-      {
-        "name": "style",
-        "type": "CSSProperties",
-        "required": false,
-        "default": "{{",
-        "inherited": true
       }
     ],
     "events": [],
@@ -3661,20 +3793,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "inherited": false
       },
       {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
-      },
-      {
         "name": "onChange",
         "type": "(value: number) => void",
-        "required": false,
-        "inherited": true
-      },
-      {
-        "name": "style",
-        "type": "CSSProperties",
         "required": false,
         "inherited": true
       }
@@ -3771,20 +3891,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "inherited": false
       },
       {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
-      },
-      {
         "name": "onChange",
         "type": "(checked: boolean) => void",
-        "required": false,
-        "inherited": true
-      },
-      {
-        "name": "style",
-        "type": "CSSProperties",
         "required": false,
         "inherited": true
       }
@@ -3900,20 +4008,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "inherited": false
       },
       {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
-      },
-      {
         "name": "onChange",
         "type": "(key: string) => void",
-        "required": false,
-        "inherited": true
-      },
-      {
-        "name": "style",
-        "type": "CSSProperties",
         "required": false,
         "inherited": true
       }
@@ -4050,20 +4146,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "inherited": false
       },
       {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
-      },
-      {
         "name": "onChange",
         "type": "(key: string) => void",
-        "required": false,
-        "inherited": true
-      },
-      {
-        "name": "style",
-        "type": "CSSProperties",
         "required": false,
         "inherited": true
       },
@@ -4109,6 +4193,12 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
       {
         "name": "className",
         "type": "string",
+        "required": false,
+        "inherited": true
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
         "required": false,
         "inherited": true
       }
@@ -4169,6 +4259,18 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "inherited": false
       },
       {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
+        "required": false,
+        "inherited": true
+      },
+      {
         "name": "title",
         "type": "string",
         "required": true,
@@ -4209,6 +4311,18 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "children",
         "type": "ReactNode",
         "required": true,
+        "inherited": true
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
+        "required": false,
         "inherited": true
       }
     ],
@@ -5536,6 +5650,18 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "ProgressVariant",
         "required": false,
         "inherited": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
+        "required": false,
+        "inherited": true
       }
     ],
     "events": [],
@@ -5753,6 +5879,20 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "'100%'",
         "inherited": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "default": "{[styles.group",
+        "inherited": true
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
+        "required": false,
+        "default": "{style",
+        "inherited": true
       }
     ],
     "events": [],
@@ -5773,6 +5913,18 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "Size",
         "required": false,
         "inherited": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
+        "required": false,
+        "inherited": true
       }
     ],
     "events": [],
@@ -6150,6 +6302,12 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
+        "required": false,
+        "inherited": true
       }
     ],
     "events": [
@@ -6174,6 +6332,18 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "children",
         "type": "ReactNode",
         "required": true,
+        "inherited": true
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
+        "required": false,
         "inherited": true
       }
     ],
@@ -6218,6 +6388,18 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "children",
         "type": "ReactNode",
         "required": true,
+        "inherited": true
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
+        "required": false,
         "inherited": true
       }
     ],
@@ -7043,6 +7225,18 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "ReactNode",
         "required": true,
         "inherited": true
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
+        "required": false,
+        "inherited": true
       }
     ],
     "events": [],
@@ -7077,6 +7271,12 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
       {
         "name": "role",
         "type": "TypographyRole",
+        "required": false,
+        "inherited": true
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
         "required": false,
         "inherited": true
       }

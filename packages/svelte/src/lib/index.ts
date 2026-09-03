@@ -37,6 +37,8 @@ export { default as Card } from './components/Card/Card.svelte';
 export { default as Modal } from './components/Modal/Modal.svelte';
 export { default as Dialog } from './components/Dialog/Dialog.svelte';
 
+export * from './LiquidGlass';
+
 export { formatButtonLabel, resolveButtonShape } from './button/utils';
 export type { ButtonShape } from './button/utils';
 

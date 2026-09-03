@@ -1,11 +1,10 @@
 import {
   useCallback,
   useState,
-  type CSSProperties,
   type ReactNode,
 } from 'react';
 import { LIQUID_GLASS_PRESETS } from '../engine/defaults';
-import type { LiquidGlassOptics } from '../engine/types';
+import type { LiquidGlassChromeProps, LiquidGlassOptics } from '../engine/types';
 import { LiquidGlass } from '../core/LiquidGlass';
 
 export interface LiquidGlassTopBarItem {
@@ -18,7 +17,8 @@ export interface LiquidGlassTopBarItem {
 
 export type LiquidGlassTopBarVariant = 'floating' | 'edge';
 
-export interface LiquidGlassTopBarProps extends LiquidGlassOptics {
+export interface LiquidGlassTopBarProps
+  extends LiquidGlassOptics, LiquidGlassChromeProps {
   title?: ReactNode;
   logo?: ReactNode;
   items?: LiquidGlassTopBarItem[];
@@ -45,8 +45,6 @@ export interface LiquidGlassTopBarProps extends LiquidGlassOptics {
   position?: 'fixed' | 'absolute' | 'relative' | 'sticky' | 'static';
   top?: number | string;
   insetX?: number;
-  className?: string;
-  style?: CSSProperties;
 }
 
 /**

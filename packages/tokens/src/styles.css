@@ -1,4 +1,5 @@
 :root {
+  color-scheme: light;
   --lr-color-primary: #0071e3;
   --lr-color-primary-hover: #0077ed;
   --lr-color-primary-active: #006edb;
@@ -14,6 +15,18 @@
   --lr-color-text: #1d1d1f;
   --lr-color-text-muted: #5c5c60;
   --lr-color-text-inverse: #ffffff;
+  --lr-color-on-accent: #ffffff;
+
+  --lr-surface-base: #ffffff;
+  --lr-surface-secondary: #f5f5f7;
+  --lr-surface-elevated: #ffffff;
+  --lr-surface-floating: #ffffff;
+  --lr-surface-overlay: rgb(0 0 0 / 0.35);
+  --lr-surface-glass-bg: rgb(255 255 255 / 0.72);
+  --lr-surface-glass-border: rgb(0 0 0 / 0.06);
+  --lr-surface-glass-blur: 20px;
+  --lr-surface-glass-saturation: 180%;
+  --lr-surface-glass-shadow: 0 8px 32px rgb(0 0 0 / 0.12);
 
   --lr-font-family-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --lr-font-family-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
@@ -109,6 +122,7 @@
   --lr-button-secondary-bg: rgb(118 118 128 / 0.12);
   --lr-button-secondary-border: transparent;
   --lr-button-plain-color: #0071e3;
+  --lr-button-on-primary-color: #ffffff;
 
   --lr-chart-grid: rgb(0 0 0 / 0.06);
   --lr-chart-axis: rgb(0 0 0 / 0.12);
@@ -149,6 +163,7 @@
   --lr-dock-menu-offset: 0.5rem;
   --lr-dock-height: 4.25rem;
   --lr-dock-radius: 1rem;
+  --lr-dock-bg: rgb(255 255 255 / 0.55);
   --lr-quick-action-icon-size: 3.5rem;
 
   --lr-edit-menu-compact-radius: 0.625rem;
@@ -172,6 +187,7 @@
   --lr-menu-separator: rgb(0 0 0 / 0.08);
   --lr-menu-destructive: #ff3b30;
   --lr-menu-checkmark-width: 1.125rem;
+  --lr-menu-backdrop: rgb(0 0 0 / 0.12);
 
   --lr-ornament-offset: 0.75rem;
   --lr-ornament-radius: 1rem;
@@ -271,6 +287,11 @@
   --lr-tab-bar-inactive-fg: #8e8e93;
   --lr-tab-bar-badge-bg: #ff3b30;
   --lr-tab-bar-badge-fg: #ffffff;
+  --lr-tab-bar-liquid-glass-bg: rgb(255 255 255 / 0.28);
+  --lr-tab-bar-liquid-glass-active-bg: rgb(255 255 255 / 0.92);
+  --lr-tab-bar-liquid-glass-glow: 0 6px 24px rgb(236 72 153 / 0.22);
+  --lr-tab-bar-liquid-glass-border: rgb(255 255 255 / 0.55);
+  --lr-tab-bar-liquid-glass-search-bg: rgb(255 255 255 / 0.5);
 
   --lr-token-field-min-height: 2rem;
   --lr-token-field-radius: 0.4375rem;
@@ -431,6 +452,7 @@
 }
 
 [data-lr-theme="dark"] {
+  color-scheme: dark;
   --lr-color-primary: #0a84ff;
   --lr-color-primary-hover: #409cff;
   --lr-color-primary-active: #0077ed;
@@ -446,12 +468,25 @@
   --lr-color-text: #f5f5f7;
   --lr-color-text-muted: #98989d;
   --lr-color-text-inverse: #1c1c1e;
+  --lr-color-on-accent: #ffffff;
+
+  --lr-surface-base: #2c2c2e;
+  --lr-surface-secondary: #1c1c1e;
+  --lr-surface-elevated: #3a3a3c;
+  --lr-surface-floating: #48484a;
+  --lr-surface-overlay: rgb(0 0 0 / 0.55);
+  --lr-surface-glass-bg: rgb(44 44 46 / 0.78);
+  --lr-surface-glass-border: rgb(255 255 255 / 0.1);
+  --lr-surface-glass-blur: 24px;
+  --lr-surface-glass-saturation: 180%;
+  --lr-surface-glass-shadow: 0 8px 32px rgb(0 0 0 / 0.35);
 
   --lr-button-destructive: #ff453a;
   --lr-button-destructive-hover: #ff6961;
   --lr-button-destructive-active: #d70015;
   --lr-button-secondary-bg: rgb(118 118 128 / 0.24);
   --lr-button-plain-color: #0a84ff;
+  --lr-button-on-primary-color: #ffffff;
 
   --lr-chart-grid: rgb(255 255 255 / 0.08);
   --lr-chart-axis: rgb(255 255 255 / 0.18);
@@ -542,6 +577,80 @@
   --lr-lockup-focus-tilt: 4deg;
 
   --lr-picker-selection-bg: rgb(255 255 255 / 0.1);
+
+  --lr-menu-bar-bg: rgb(40 40 40 / 0.82);
+  --lr-menu-bar-fg: #f5f5f7;
+  --lr-menu-bar-item-hover: rgb(255 255 255 / 0.08);
+  --lr-menu-bar-item-active: rgb(255 255 255 / 0.14);
+  --lr-menu-bar-separator: rgb(255 255 255 / 0.12);
+  --lr-menu-bar-shadow: 0 1px 0 rgb(0 0 0 / 0.35);
+
+  --lr-toolbar-bg: rgb(30 30 30 / 0.72);
+  --lr-toolbar-fg: #f5f5f7;
+  --lr-toolbar-item-hover: rgb(255 255 255 / 0.08);
+  --lr-toolbar-item-active: rgb(255 255 255 / 0.14);
+  --lr-toolbar-separator: rgb(255 255 255 / 0.12);
+  --lr-toolbar-prominent-bg: #0a84ff;
+
+  --lr-path-control-separator: rgb(255 255 255 / 0.2);
+  --lr-path-control-bg: rgb(40 40 40 / 0.5);
+  --lr-path-control-fg: #f5f5f7;
+  --lr-path-control-item-hover: rgb(255 255 255 / 0.08);
+
+  --lr-search-field-bg: rgb(118 118 128 / 0.24);
+  --lr-search-field-fg: #f5f5f7;
+  --lr-search-field-placeholder: rgb(235 235 245 / 0.6);
+  --lr-search-field-token-bg: rgb(10 132 255 / 0.25);
+
+  --lr-sidebar-bg: rgb(30 30 30 / 0.72);
+  --lr-sidebar-fg: #f5f5f7;
+  --lr-sidebar-item-hover: rgb(255 255 255 / 0.08);
+  --lr-sidebar-item-active: rgb(10 132 255 / 0.22);
+
+  --lr-tab-bar-bg: rgb(30 30 30 / 0.72);
+  --lr-tab-bar-fg: #0a84ff;
+  --lr-tab-bar-inactive-fg: #8e8e93;
+  --lr-tab-bar-badge-bg: #ff453a;
+  --lr-tab-bar-liquid-glass-bg: rgb(44 44 46 / 0.38);
+  --lr-tab-bar-liquid-glass-active-bg: rgb(90 90 96 / 0.88);
+  --lr-tab-bar-liquid-glass-glow: 0 6px 24px rgb(255 105 180 / 0.24);
+  --lr-tab-bar-liquid-glass-border: rgb(255 255 255 / 0.16);
+  --lr-tab-bar-liquid-glass-search-bg: rgb(255 255 255 / 0.12);
+
+  --lr-token-field-token-bg: rgb(10 132 255 / 0.28);
+  --lr-token-field-token-fg: #f5f5f7;
+  --lr-token-field-bg: rgb(40 40 40 / 0.6);
+  --lr-token-field-border: rgb(255 255 255 / 0.12);
+
+  --lr-alert-dialog-shadow: 0 11px 34px rgb(0 0 0 / 0.55);
+  --lr-alert-dialog-bg: rgb(44 44 46 / 0.92);
+  --lr-alert-dialog-separator: rgb(255 255 255 / 0.14);
+
+  --lr-menu-shadow: 0 12px 40px rgb(0 0 0 / 0.45);
+  --lr-menu-separator: rgb(255 255 255 / 0.1);
+  --lr-menu-destructive: #ff453a;
+  --lr-menu-backdrop: rgb(0 0 0 / 0.45);
+
+  --lr-context-menu-shadow: 0 12px 40px rgb(0 0 0 / 0.45);
+  --lr-context-menu-destructive: #ff453a;
+  --lr-context-menu-separator: rgb(255 255 255 / 0.1);
+
+  --lr-dock-bg: rgb(44 44 46 / 0.72);
+  --lr-edit-menu-compact-shadow: 0 8px 24px rgb(0 0 0 / 0.45);
+  --lr-quick-action-menu-shadow: 0 12px 40px rgb(0 0 0 / 0.45);
+
+  --lr-modal-overlay: rgb(0 0 0 / 0.55);
+  --lr-drawer-overlay: rgb(0 0 0 / 0.55);
+
+  --lr-shadow-sm: 0 1px 2px rgb(0 0 0 / 0.24);
+  --lr-shadow-md: 0 4px 12px rgb(0 0 0 / 0.28);
+  --lr-shadow-lg: 0 12px 28px rgb(0 0 0 / 0.32);
+}
+
+html[data-lr-theme],
+[data-lr-provider] {
+  color: var(--lr-color-text);
+  background-color: var(--lr-color-background);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -574,4 +683,5 @@ body {
   line-height: var(--lr-line-height-normal);
   color: var(--lr-color-text);
   background-color: var(--lr-color-background);
+  color-scheme: inherit;
 }

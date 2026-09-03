@@ -1,4 +1,4 @@
-import { useCallback, useState, type ButtonHTMLAttributes } from 'react';
+import { useCallback, useState, type ButtonHTMLAttributes, type CSSProperties } from 'react';
 import type { Size } from '@larose-ui/core';
 import styles from '@larose-ui/styles/components/Switch/Switch.module.css';
 
@@ -9,6 +9,7 @@ export interface SwitchProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement
   onCheckedChange?: (checked: boolean) => void;
   hint?: string;
   switchSize?: Size;
+  style?: CSSProperties;
 }
 
 export function Switch({
@@ -20,6 +21,7 @@ export function Switch({
   disabled,
   switchSize = 'md',
   className,
+  style,
   id,
   ...props
 }: SwitchProps) {
@@ -38,7 +40,7 @@ export function Switch({
   }, [disabled, isControlled, isOn, onCheckedChange]);
 
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} style={style}>
       <div className={styles.row}>
         <button
           id={inputId}

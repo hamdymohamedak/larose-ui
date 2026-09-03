@@ -4,6 +4,7 @@ import {
   useRef,
   useState,
   type ClipboardEvent,
+  type CSSProperties,
   type DragEvent,
   type KeyboardEvent,
 } from 'react';
@@ -17,6 +18,8 @@ export interface ImageWellProps {
   accept?: string;
   placeholder?: string;
   disabled?: boolean;
+  className?: string;
+  style?: CSSProperties;
 }
 
 /**
@@ -30,6 +33,8 @@ export function ImageWell({
   accept = 'image/*',
   placeholder = 'Drop an image, paste, or click to choose',
   disabled = false,
+  className,
+  style,
 }: ImageWellProps) {
   const inputId = useId();
   const inputRef = useRef<HTMLInputElement>(null);
@@ -86,7 +91,8 @@ export function ImageWell({
 
   return (
     <div
-      className={styles.well}
+      className={[styles.well, className].filter(Boolean).join(' ')}
+      style={style}
       data-state={dragOver ? 'dragover' : 'default'}
       role="button"
       tabIndex={disabled ? -1 : 0}

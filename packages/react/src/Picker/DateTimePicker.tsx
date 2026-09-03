@@ -1,9 +1,10 @@
-import { useCallback, useId, useMemo } from 'react';
+import { useCallback, useId, useMemo, type CSSProperties } from 'react';
 import type { Size, UIState } from '@larose-ui/core';
 import { resolveUIState } from '@larose-ui/core';
 import { FieldShell } from '../DataEntry/FieldShell';
 import { fieldIdFromLabel } from '../DataEntry/utils';
 import { Popover } from '../Popover/Popover';
+import { resolvePickerChrome } from './chrome';
 import { CalendarGrid } from './CalendarGrid';
 import type { DateTimePickerMode, DateTimePickerStyle, DateTimeValue, PickerColumn, PickerValue } from './types';
 import { WheelPicker } from './WheelPicker';
@@ -32,7 +33,10 @@ export interface DateTimePickerProps {
   value?: DateTimeValue;
   onChange?: (value: DateTimeValue) => void;
   mode?: DateTimePickerMode;
-  style?: DateTimePickerStyle;
+  /** Compact / wheels / inline / automatic. Use with object `style` when you need both. */
+  appearance?: DateTimePickerStyle;
+  /** Appearance string or inline CSS. */
+  style?: DateTimePickerStyle | CSSProperties;
   label?: string;
   hint?: string;
   error?: string | null;
@@ -46,6 +50,7 @@ export interface DateTimePickerProps {
   minDate?: string;
   maxDate?: string;
   yearRange?: { start: number; end: number };
+  className?: string;
 }
 
 function buildDateColumns(
@@ -132,7 +137,8 @@ export function DateTimePicker({
   value = {},
   onChange,
   mode = 'date',
-  style = 'automatic',
+  appearance,
+  style,
   label,
   hint,
   error = null,
@@ -145,7 +151,13 @@ export function DateTimePicker({
   minDate,
   maxDate,
   yearRange = { start: new Date().getFullYear() - 5, end: new Date().getFullYear() + 5 },
+  className,
 }: DateTimePickerProps) {
+  const { appearance: pickerAppearance, css } = resolvePickerChrome(
+    appearance,
+    style,
+    'automatic',
+  );
   const fieldId = useId();
   const inputId = label ? fieldIdFromLabel(label) : fieldId;
   const uiState = resolveUIState({ state, loading, error, disabled });
@@ -153,7 +165,9 @@ export function DateTimePicker({
   const isDisabled = disabled || uiState === 'disabled' || uiState === 'loading';
 
   const resolvedStyle =
-    style === 'automatic' ? resolveAutomaticPickerStyle(mode) : style;
+    pickerAppearance === 'automatic'
+      ? resolveAutomaticPickerStyle(mode)
+      : pickerAppearance;
 
   const displayLabel = formatDateTimeLabel(value, mode, locale);
 
@@ -282,7 +296,7 @@ export function DateTimePicker({
               )
             : dateWheels;
     return (
-      <FieldShell label={label} hint={hint} error={errorMessage} htmlFor={inputId} uiState={uiState}>
+      <FieldShell label={label} hint={hint} error={errorMessage} htmlFor={inputId} uiState={uiState} className={className} style={css}>
         <div className={styles.picker}>{content}</div>
       </FieldShell>
     );
@@ -290,7 +304,7 @@ export function DateTimePicker({
 
   if (resolvedStyle === 'inline') {
     return (
-      <FieldShell label={label} hint={hint} error={errorMessage} htmlFor={inputId} uiState={uiState}>
+      <FieldShell label={label} hint={hint} error={errorMessage} htmlFor={inputId} uiState={uiState} className={className} style={css}>
         <div className={styles.inlineLayout}>{panelContent}</div>
       </FieldShell>
     );
@@ -304,7 +318,7 @@ export function DateTimePicker({
         : styles.popoverPanelCalendar;
 
   return (
-    <FieldShell label={label} hint={hint} error={errorMessage} htmlFor={inputId} uiState={uiState}>
+    <FieldShell label={label} hint={hint} error={errorMessage} htmlFor={inputId} uiState={uiState} className={className} style={css}>
       <div className={styles.compactField}>
         <Popover
           side="bottom"

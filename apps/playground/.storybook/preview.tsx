@@ -3,9 +3,10 @@ import { memo, type ComponentType } from 'react';
 import '@larose-ui/tokens/styles.css';
 import '@larose-ui/styles/styles.css';
 import '@larose-ui/react/styles.css';
+import './preview.css';
 import {
   renderCrossFrameworkStory,
-  renderReactOnlyFrameworkGuard,
+  renderFrameworkAvailabilityGuard,
 } from './crossFramework/CrossFrameworkStory';
 import { StorybookProvider, type StorybookLocale } from './StorybookProvider';
 
@@ -41,6 +42,11 @@ function LaRoseDecorator({
   const useRuntime = context.parameters.laRose?.runtime === true;
   const fullscreen = context.parameters.layout === 'fullscreen';
 
+  const unavailable = renderFrameworkAvailabilityGuard(context);
+  if (unavailable) {
+    return <StoryFrame fullscreen={fullscreen}>{unavailable}</StoryFrame>;
+  }
+
   if (crossFrameworkId) {
     const crossFrameworkStory = renderCrossFrameworkStory(context);
     if (crossFrameworkStory) {
@@ -48,13 +54,11 @@ function LaRoseDecorator({
     }
   }
 
-  const storyContent = (
+  const wrappedStory = (
     <StoryFrame fullscreen={fullscreen}>
       <Story />
     </StoryFrame>
   );
-
-  const wrappedStory = renderReactOnlyFrameworkGuard(context, storyContent);
 
   if (standalone) {
     return wrappedStory;
@@ -85,6 +89,7 @@ function LaRoseDecorator({
 }
 
 const preview: Preview = {
+  tags: ['fw-react'],
   parameters: {
     controls: { expanded: true, sort: 'requiredFirst' },
     docs: { autodocs: 'tag' },
@@ -100,7 +105,8 @@ const preview: Preview = {
   decorators: [(Story, context) => <LaRoseDecorator Story={Story} context={context} />],
   globalTypes: {
     framework: {
-      description: 'Component implementation framework (Parity stories)',
+      description:
+        'Mount the real package for this story. Vue 3 and Svelte 5 only render components those packages export — React-only stories (including Liquid Glass) stay hidden.',
       toolbar: {
         title: 'Framework',
         icon: 'batchaccept',

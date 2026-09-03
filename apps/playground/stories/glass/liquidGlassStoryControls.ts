@@ -19,6 +19,14 @@ export function hiddenProps(...keys: string[]): ArgTypes {
   return Object.fromEntries(keys.map((key) => [key, hiddenControl]));
 }
 
+const chromeStyleArgType: ArgTypes = {
+  style: {
+    control: 'object',
+    description: 'Inline CSS — write any CSS properties directly on the component',
+    table: { category: 'Chrome' },
+  },
+};
+
 // ─── Shared optics ────────────────────────────────────────────────────────────
 
 export const liquidGlassOpticsArgTypes: ArgTypes = {
@@ -171,11 +179,11 @@ export const liquidGlassButtonArgTypes: ArgTypes = {
     table: { disable: true },
     action: 'click',
   },
+  ...chromeStyleArgType,
   ...hiddenProps(
     'onFocus',
     'onBlur',
     'className',
-    'style',
     'ref',
     'form',
     'name',
@@ -276,8 +284,8 @@ export const liquidGlassTopBarArgTypes: ArgTypes = {
     'logo',
     'trailing',
     'className',
-    'style',
   ),
+  ...chromeStyleArgType,
 };
 
 export const liquidGlassTopBarDefaults = {
@@ -363,7 +371,8 @@ export const liquidGlassTabBarArgTypes: ArgTypes = {
     table: { disable: true },
     action: 'change',
   },
-  ...hiddenProps('items', 'activeKey', 'className', 'style'),
+  ...hiddenProps('items', 'activeKey', 'className'),
+  ...chromeStyleArgType,
 };
 
 export const liquidGlassTabBarDefaults = {
@@ -394,11 +403,18 @@ export const liquidGlassSurfaceArgTypes: ArgTypes = {
     table: { disable: true },
     action: 'displacementMapChange',
   },
-  ...hiddenProps('children', 'className', 'style', 'as', 'aria-label'),
+  as: {
+    control: 'text',
+    description: 'HTML/SVG tag or custom component (`div`, `footer`, `li`, `nav`, …)',
+    table: { category: 'Chrome' },
+  },
+  ...chromeStyleArgType,
+  ...hiddenProps('children', 'className', 'aria-label'),
 };
 
 export const liquidGlassSurfaceDefaults = {
   label: 'Liquid glass',
+  as: 'div',
   width: 280,
   height: 120,
   borderRadius: 36,
@@ -435,7 +451,10 @@ export function prepareSurfaceProps<T extends Record<string, unknown>>(props: T)
 
 // ─── Form controls ────────────────────────────────────────────────────────────
 
-const formControlHidden = hiddenProps('className', 'style');
+const formControlChrome: ArgTypes = {
+  ...hiddenProps('className'),
+  ...chromeStyleArgType,
+};
 
 export const liquidGlassSwitchArgTypes: ArgTypes = {
   defaultChecked: { control: 'boolean', table: { category: 'State' } },
@@ -467,7 +486,7 @@ export const liquidGlassSwitchArgTypes: ArgTypes = {
   thumbTint: { control: 'text', table: { category: 'Colors' } },
   ...liquidGlassOpticsArgTypes,
   onChange: { table: { disable: true }, action: 'change' },
-  ...formControlHidden,
+  ...formControlChrome,
 };
 
 export const liquidGlassSwitchDefaults = {
@@ -492,7 +511,7 @@ export const liquidGlassProgressArgTypes: ArgTypes = {
   fillColor: { control: 'text', table: { category: 'Colors' } },
   fillGlow: { control: 'text', table: { category: 'Colors' } },
   ...liquidGlassOpticsArgTypes,
-  ...formControlHidden,
+  ...formControlChrome,
 };
 
 export const liquidGlassProgressDefaults = {
@@ -519,7 +538,7 @@ export const liquidGlassRangeArgTypes: ArgTypes = {
   fillColor: { control: 'text', table: { category: 'Colors' } },
   ...liquidGlassOpticsArgTypes,
   onChange: { table: { disable: true }, action: 'change' },
-  ...formControlHidden,
+  ...formControlChrome,
 };
 
 export const liquidGlassRangeDefaults = {
@@ -549,7 +568,7 @@ export const liquidGlassCheckboxArgTypes: ArgTypes = {
   labelColor: { control: 'color', table: { category: 'Colors' } },
   ...liquidGlassOpticsArgTypes,
   onChange: { table: { disable: true }, action: 'change' },
-  ...formControlHidden,
+  ...formControlChrome,
 };
 
 export const liquidGlassCheckboxDefaults = {

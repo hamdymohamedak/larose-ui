@@ -30,6 +30,7 @@ export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
       id,
       value = '',
       onChange,
+      style,
       ...props
     },
     ref,
@@ -39,7 +40,7 @@ export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
     const errorMessage = typeof error === 'string' ? error : null;
 
     return (
-      <div className={styles.wrapper} data-state={uiState}>
+      <div className={styles.wrapper} style={style} data-state={uiState}>
         {label && (
           <label htmlFor={inputId} className={styles.label}>
             {label}

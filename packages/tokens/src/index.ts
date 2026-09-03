@@ -354,6 +354,7 @@ function createBaseTokenSet(mode: ThemeMode): TokenSet {
     text: '#1d1d1f',
     textMuted: '#5c5c60',
     textInverse: '#ffffff',
+    onAccent: '#ffffff',
     ...(mode === 'dark'
       ? {
           primary: '#0a84ff',
@@ -367,6 +368,7 @@ function createBaseTokenSet(mode: ThemeMode): TokenSet {
           text: '#f5f5f7',
           textMuted: '#98989d',
           textInverse: '#1c1c1e',
+          onAccent: '#ffffff',
         }
       : {}),
   };
@@ -521,6 +523,11 @@ export interface ApplyThemeOptions {
   brandColors?: Partial<ColorTokens>;
   componentTokenOverrides?: ComponentTokenOverrides;
   presetId?: string;
+  /**
+   * Mirror tokens onto `document.documentElement` so portaled overlays
+   * (menus, dialogs, toasts) inherit the active theme. Defaults to true.
+   */
+  syncDocument?: boolean;
 }
 
 export function resolveThemeCSSVariables(options: ApplyThemeOptions): Record<string, string> {
@@ -543,7 +550,7 @@ export function resolveThemeCSSVariables(options: ApplyThemeOptions): Record<str
   });
 }
 
-export function applyResolvedTheme(element: HTMLElement, options: ApplyThemeOptions): void {
+function writeThemeToElement(element: HTMLElement, options: ApplyThemeOptions): void {
   const density = options.density ?? 'comfortable';
   const vars = resolveThemeCSSVariables(options);
 
@@ -553,9 +560,21 @@ export function applyResolvedTheme(element: HTMLElement, options: ApplyThemeOpti
 
   element.dataset.lrTheme = options.mode;
   element.dataset.lrDensity = density;
+  element.style.colorScheme = options.mode;
 
   if (options.presetId) {
     element.dataset.lrThemePreset = options.presetId;
+  }
+}
+
+export function applyResolvedTheme(element: HTMLElement, options: ApplyThemeOptions): void {
+  writeThemeToElement(element, options);
+
+  if (options.syncDocument === false || typeof document === 'undefined') return;
+
+  const root = document.documentElement;
+  if (element !== root) {
+    writeThemeToElement(root, options);
   }
 }
 

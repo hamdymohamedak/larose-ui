@@ -11,6 +11,7 @@
     boxSize?: Size;
     id?: string;
     class?: string;
+    style?: string;
     checked?: boolean;
     onchange?: (event: Event) => void;
   }
@@ -23,6 +24,7 @@
     boxSize = 'md',
     id,
     class: className,
+    style,
     checked = $bindable(false),
     onchange,
   }: Props = $props();
@@ -30,7 +32,7 @@
   const inputId = $derived(id ?? label.toLowerCase().replace(/\s+/g, '-'));
 </script>
 
-<div class={styles.wrapper} data-state={error ? 'error' : 'default'}>
+<div class={styles.wrapper} {style} data-state={error ? 'error' : 'default'}>
   <label for={inputId} class={styles.row}>
     <input
       id={inputId}

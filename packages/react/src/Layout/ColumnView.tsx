@@ -8,6 +8,8 @@ export interface ColumnViewProps {
   initialPath?: string[];
   onPathChange?: (path: string[]) => void;
   ariaLabel?: string;
+  className?: string;
+  style?: CSSProperties;
 }
 
 function DisclosureIcon() {
@@ -23,6 +25,8 @@ export function ColumnView({
   initialPath = [],
   onPathChange,
   ariaLabel = 'Column view',
+  className,
+  style,
 }: ColumnViewProps) {
   const [path, setPath] = useState<string[]>(initialPath);
 
@@ -47,7 +51,11 @@ export function ColumnView({
   };
 
   return (
-    <div className={styles.columnView} aria-label={ariaLabel}>
+    <div
+      className={[styles.columnView, className].filter(Boolean).join(' ')}
+      style={style}
+      aria-label={ariaLabel}
+    >
       {columns.map((nodes, level) => (
         <div
           key={`column-${level}`}

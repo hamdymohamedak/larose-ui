@@ -6,8 +6,10 @@ import {
   useRef,
   useState,
   type ReactNode,
+  type CSSProperties,
 } from 'react';
 import { ContextualMenuPortal } from '../Motion/OverlayPortal';
+import { mergeStyles } from '../shared/styleProps';
 import { LONG_PRESS_MS } from '../ContextMenu/utils';
 import type { QuickActionIconPlacement, QuickActionItem } from './types';
 import {
@@ -28,6 +30,8 @@ export interface HomeScreenQuickActionsProps {
   onActionSelect?: (action: QuickActionItem) => void;
   open?: boolean;
   onOpenChange?: (open: boolean) => void;
+  className?: string;
+  style?: CSSProperties;
 }
 
 function QuickActionRow({
@@ -76,6 +80,8 @@ export function HomeScreenQuickActions({
   onActionSelect,
   open,
   onOpenChange,
+  className,
+  style,
 }: HomeScreenQuickActionsProps) {
   const menuId = useId();
   const iconRef = useRef<HTMLDivElement>(null);
@@ -143,7 +149,7 @@ export function HomeScreenQuickActions({
   }, [close, isOpen]);
 
   return (
-    <div className={styles.quickActionsWrap}>
+    <div className={[styles.quickActionsWrap, className].filter(Boolean).join(' ')} style={style}>
       <div
         ref={iconRef}
         className={styles.appIcon}
@@ -178,7 +184,7 @@ export function HomeScreenQuickActions({
         surfaceClassName={styles.menu}
         surfaceRole="menu"
         aria-label={`${appName} quick actions`}
-        surfaceStyle={{ left: position.x, top: position.y }}
+        surfaceStyle={mergeStyles({ left: position.x, top: position.y }, style)}
         onSurfaceClick={(event) => event.stopPropagation()}
       >
         <ul className={styles.list}>

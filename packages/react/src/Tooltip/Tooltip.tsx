@@ -1,4 +1,4 @@
-import { useId, useState, type ReactNode } from 'react';
+import { useId, useState, type CSSProperties, type ReactNode } from 'react';
 import { Presence } from '../Motion/Presence';
 import styles from '@larose-ui/styles/components/Tooltip/Tooltip.module.css';
 
@@ -8,15 +8,18 @@ export interface TooltipProps {
   content: ReactNode;
   children: ReactNode;
   side?: TooltipSide;
+  className?: string;
+  style?: CSSProperties;
 }
 
-export function Tooltip({ content, children, side = 'top' }: TooltipProps) {
+export function Tooltip({ content, children, side = 'top', className, style }: TooltipProps) {
   const [visible, setVisible] = useState(false);
   const tooltipId = useId();
 
   return (
     <span
-      className={styles.wrapper}
+      className={[styles.wrapper, className].filter(Boolean).join(' ')}
+      style={style}
       onMouseEnter={() => setVisible(true)}
       onMouseLeave={() => setVisible(false)}
       onFocusCapture={() => setVisible(true)}

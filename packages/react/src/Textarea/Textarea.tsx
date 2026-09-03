@@ -30,6 +30,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
       className,
       id,
       rows = 4,
+      style,
       ...props
     },
     ref,
@@ -46,6 +47,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
         required={required}
         htmlFor={inputId}
         uiState={uiState}
+        style={style}
       >
         <div className={styles.inputContainer}>
           <textarea

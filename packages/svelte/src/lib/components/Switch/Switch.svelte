@@ -10,6 +10,7 @@
     switchSize?: Size;
     id?: string;
     class?: string;
+    style?: string;
     checked?: boolean;
   }
 
@@ -20,6 +21,7 @@
     switchSize = 'md',
     id,
     class: className,
+    style,
     checked = $bindable(false),
   }: Props = $props();
 
@@ -31,7 +33,7 @@
   }
 </script>
 
-<div class={styles.wrapper}>
+<div class={styles.wrapper} {style}>
   <div class={styles.row}>
     <button
       id={inputId}

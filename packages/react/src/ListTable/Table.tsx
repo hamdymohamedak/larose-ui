@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState, type ReactNode } from 'react';
+import { useCallback, useMemo, useState, type CSSProperties, type ReactNode } from 'react';
 import type { SortDirection, TableSelectionMode } from './types';
 import { formatColumnHeader, nextSortDirection, sortRows } from './utils';
 import styles from '@larose-ui/styles/components/ListTable/ListTable.module.css';
@@ -25,6 +25,8 @@ export interface TableProps<T> {
   defaultSortDirection?: SortDirection;
   alternatingRows?: boolean;
   resizableColumns?: boolean;
+  className?: string;
+  style?: CSSProperties;
 }
 
 export function Table<T>({
@@ -40,6 +42,8 @@ export function Table<T>({
   defaultSortDirection = 'asc',
   alternatingRows = true,
   resizableColumns = true,
+  className,
+  style,
 }: TableProps<T>) {
   const [sortKey, setSortKey] = useState(defaultSortKey ?? columns[0]?.key ?? '');
   const [sortDirection, setSortDirection] = useState<SortDirection>(defaultSortDirection);
@@ -81,7 +85,7 @@ export function Table<T>({
   );
 
   return (
-    <div className={styles.tableWrap}>
+    <div className={[styles.tableWrap, className].filter(Boolean).join(' ')} style={style}>
       <table className={styles.table} aria-label={ariaLabel ?? caption}>
         {caption && <caption className={styles.tableCaption}>{caption}</caption>}
         <colgroup>

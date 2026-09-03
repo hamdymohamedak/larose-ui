@@ -42,9 +42,14 @@ function DictationIcon() {
   );
 }
 
-export function SearchScopeBar({ options, value, onChange, className }: SearchScopeBarProps) {
+export function SearchScopeBar({ options, value, onChange, className, style }: SearchScopeBarProps) {
   return (
-    <div className={[styles.scopeBar, className].filter(Boolean).join(' ')} role="tablist" aria-label="Search scope">
+    <div
+      className={[styles.scopeBar, className].filter(Boolean).join(' ')}
+      style={style}
+      role="tablist"
+      aria-label="Search scope"
+    >
       {options.map((option) => (
         <button
           key={option.id}
@@ -105,6 +110,7 @@ export function SearchField({
   showDictation = platform === 'macos' || platform === 'ipados',
   autoFocus = false,
   className,
+  style,
   'aria-label': ariaLabel = 'Search',
 }: SearchFieldProps) {
   const listId = useId();
@@ -145,7 +151,7 @@ export function SearchField({
   };
 
   return (
-    <div className={[styles.searchField, className].filter(Boolean).join(' ')} data-platform={platform}>
+    <div className={[styles.searchField, className].filter(Boolean).join(' ')} style={style} data-platform={platform}>
       {scope && (
         <SearchScopeBar options={scope.options} value={scope.value} onChange={scope.onChange} />
       )}

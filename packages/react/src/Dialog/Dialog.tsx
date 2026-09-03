@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 import { Button } from '../Button/Button';
 import { Modal } from '../Modal/Modal';
 import styles from '@larose-ui/styles/components/Dialog/Dialog.module.css';
@@ -14,6 +14,8 @@ export interface DialogProps {
   onConfirm?: () => void;
   loading?: boolean;
   variant?: 'default' | 'destructive';
+  className?: string;
+  style?: CSSProperties;
 }
 
 export function Dialog({
@@ -27,9 +29,18 @@ export function Dialog({
   onConfirm,
   loading,
   variant = 'default',
+  className,
+  style,
 }: DialogProps) {
   return (
-    <Modal open={open} onClose={onClose} title={title} description={description}>
+    <Modal
+      open={open}
+      onClose={onClose}
+      title={title}
+      description={description}
+      className={className}
+      style={style}
+    >
       {children && <div className={styles.body}>{children}</div>}
       <div className={styles.actions}>
         <Button buttonRole="cancel" variant="secondary" onClick={onClose} disabled={loading}>
