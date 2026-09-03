@@ -16,6 +16,8 @@
     "a11y": "node scripts/a11y-audit.mjs",
     "migrate": "node packages/cli/dist/cli.js migrate --to 1.0.0",
     "migrate:apply": "node packages/cli/dist/cli.js migrate --to 1.0.0 --apply",
+    "contribute": "node packages/cli/dist/cli.js contribute",
+    "contribute:list": "node packages/cli/dist/cli.js contribute list",
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "pnpm build && changeset publish",

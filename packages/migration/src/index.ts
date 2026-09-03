@@ -137,6 +137,24 @@ export {
 } from './generators';
 
 export {
+  PACKAGE_PROFILES,
+  appendChangelogUnreleased,
+  formatContributeReport,
+  formatPackageList,
+  listPackageProfiles,
+  planComponentScaffold,
+  resolvePackageProfile,
+  toCamelCase,
+  toPascalCase,
+  type FrameworkId,
+  type PackageProfile,
+  type PackageScripts,
+  type ScaffoldFile,
+  type ScaffoldKind,
+  type ScaffoldPlan,
+} from './componentScaffold';
+
+export {
   analyzeRelease,
   formatReleaseReport,
   formatReleaseJson,

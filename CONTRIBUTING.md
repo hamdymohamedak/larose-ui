@@ -27,6 +27,8 @@ Useful commands during development:
 | `pnpm lint` | ESLint |
 | `pnpm typecheck` | TypeScript across the monorepo |
 | `pnpm run doctor` | Quality gates (deprecations, contracts, a11y) |
+| `make contribute-list` | List packages for contribution scaffolds |
+| `make contribute NAME=X PACKAGE=react` | Scaffold new component/module stubs |
 | `make test-all` | Full CI suite locally |
 
 ## Branch workflow
@@ -39,6 +41,29 @@ Useful commands during development:
 CI runs on pushes and pull requests to `dev`. Releases are published only when changes land on `main` (see [Releases](#releases)).
 
 ## Making changes
+
+### Scaffold a new component (contributors)
+
+Use the contribute CLI to create stub folders/files only — you still write the real implementation.
+
+```bash
+# See which packages support UI vs module scaffolds
+make contribute-list
+
+# React UI component → adapter + test + shared CSS + CHANGELOG Unreleased entry
+make contribute NAME=StatusPill PACKAGE=react
+
+# Vue / Svelte / host adapters
+make contribute NAME=StatusPill PACKAGE=vue
+make contribute NAME=StatusPill PACKAGE=svelte
+make contribute NAME=WindowBridge PACKAGE=tauri
+
+# Or via the CLI directly (build CLI first if needed)
+pnpm --filter @larose-ui/cli build
+node packages/cli/dist/cli.js contribute component StatusPill --package react --dry-run
+```
+
+The command prints the paths of the component, test, and CSS files, plus package-specific build/test tips. It refuses to overwrite existing files and checks that the package source layout exists first.
 
 ### Packages and apps
 

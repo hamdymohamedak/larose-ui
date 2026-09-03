@@ -9,6 +9,7 @@ import {
   runRelease,
   runVisualRegressionCheck,
 } from './doctor.js';
+import { contributeListReport, runContributeComponent } from './contribute.js';
 import { formatVisualRegressionReport } from '@larose-ui/quality-core';
 import { resolveSafePath } from './pathSafety.js';
 
@@ -18,6 +19,39 @@ const rootDir = resolve(process.cwd());
 
 function hasFlag(flag: string): boolean {
   return args.includes(flag);
+}
+
+function flagValue(flag: string): string | undefined {
+  const index = args.indexOf(flag);
+  if (index < 0) return undefined;
+  return args[index + 1];
+}
+
+function printHelp(): void {
+  console.log(`laRose CLI
+
+Usage:
+  larose doctor              Run quality checks
+  larose doctor --ci         CI mode (warnings fail)
+  larose doctor --json       JSON report for CI pipelines
+  larose doctor --ci --json  Combined CI + JSON output
+  larose visual-regression   Validate Storybook story manifest
+  larose migrate --to 1.0.0       Migration report (dry run)
+  larose migrate --to 1.0.0 --apply  Apply safe codemods
+  larose generate form Name     Generate form scaffold
+  larose generate page Name     Generate page scaffold
+  larose generate feature Name  Generate full feature scaffold
+  larose contribute list                    List contribution package targets
+  larose contribute component Name --package react
+       Scaffold a new component/module stub for contributors
+       Flags: --dry-run  --skip-styles  --skip-changelog  --skip-index
+  larose release                Monorepo release readiness report
+  larose release --json         JSON release report
+
+Makefile shortcuts:
+  make contribute NAME=StatusPill PACKAGE=react
+  make contribute-list
+`);
 }
 
 async function main() {
@@ -64,29 +98,54 @@ async function main() {
       }
       break;
     }
+    case 'contribute': {
+      const sub = args[1] ?? 'list';
+      if (sub === 'list' || sub === '--list') {
+        console.log(contributeListReport());
+        break;
+      }
+      if (sub === 'component' || sub === 'module') {
+        const name = args[2];
+        const packageId = flagValue('--package') ?? flagValue('-p') ?? flagValue('--to');
+        if (!name || !packageId) {
+          console.error(
+            'Usage: larose contribute component <Name> --package <react|vue|svelte|tauri|...>',
+          );
+          process.exit(1);
+        }
+        try {
+          const result = await runContributeComponent(rootDir, packageId, name, {
+            dryRun: hasFlag('--dry-run'),
+            skipStyles: hasFlag('--skip-styles'),
+            skipChangelog: hasFlag('--skip-changelog'),
+            skipIndex: hasFlag('--skip-index'),
+          });
+          console.log(result.report);
+        } catch (err) {
+          console.error(err instanceof Error ? err.message : err);
+          process.exit(1);
+        }
+        break;
+      }
+      console.error(`Unknown contribute subcommand: ${sub}`);
+      console.error('Use: larose contribute list | larose contribute component Name --package react');
+      process.exit(1);
+      break;
+    }
     case 'release': {
       const { output, ready } = await runRelease(rootDir, hasFlag('--json'));
       console.log(output);
       process.exit(ready ? 0 : 1);
       break;
     }
+    case 'help':
+    case '--help':
+    case '-h':
+      printHelp();
+      break;
     default:
-      console.log(`laRose CLI
-
-Usage:
-  larose doctor              Run quality checks
-  larose doctor --ci         CI mode (warnings fail)
-  larose doctor --json       JSON report for CI pipelines
-  larose doctor --ci --json  Combined CI + JSON output
-  larose visual-regression   Validate Storybook story manifest
-  larose migrate --to 1.0.0       Migration report (dry run)
-  larose migrate --to 1.0.0 --apply  Apply safe codemods
-  larose generate form Name     Generate form scaffold
-  larose generate page Name     Generate page scaffold
-  larose generate feature Name  Generate full feature scaffold
-  larose release                Monorepo release readiness report
-  larose release --json         JSON release report
-`);
+      printHelp();
+      process.exit(command === undefined ? 0 : 1);
   }
 }
 
