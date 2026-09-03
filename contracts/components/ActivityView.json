@@ -1,7 +1,7 @@
 {
   "name": "ActivityView",
   "version": "1",
-  "framework": "react",
+  "framework": "neutral",
   "props": [
     {
       "name": "activities",
@@ -10,7 +10,7 @@
     },
     {
       "name": "anchorRef",
-      "type": "React.RefObject<HTMLElement | null>",
+      "type": "React.Ref",
       "required": false,
       "description": "Used for popover positioning when presentation is popover."
     },
@@ -21,7 +21,7 @@
     },
     {
       "name": "footer",
-      "type": "ReactNode",
+      "type": "Node",
       "required": false
     },
     {

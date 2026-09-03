@@ -1,11 +1,11 @@
 {
   "name": "SplitViewToolbar",
   "version": "1",
-  "framework": "react",
+  "framework": "neutral",
   "props": [
     {
       "name": "actions",
-      "type": "ReactNode",
+      "type": "Node",
       "required": false,
       "description": "Optional actions rendered before pane restore buttons."
     }

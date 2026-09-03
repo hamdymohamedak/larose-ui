@@ -1,7 +1,7 @@
 {
   "name": "@larose-ui/runtime",
   "version": "1.0.0",
-  "description": "Runtime providers for laRose UI platform — theme, i18n, network, offline, responsive",
+  "description": "React runtime adapter for laRose UI — theme, i18n, network, offline, responsive (logic in runtime-core)",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",

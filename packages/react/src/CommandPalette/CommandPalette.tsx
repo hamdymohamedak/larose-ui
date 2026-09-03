@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties, type KeyboardEvent } from 'react';
 import { STANDARD_ACCELERATORS } from '@larose-ui/core';
+import { activateOverlayFocus } from '@larose-ui/primitives';
 import { useAccelerator } from '../accelerator';
 import styles from '@larose-ui/styles/components/CommandPalette/CommandPalette.module.css';
 
@@ -41,6 +42,7 @@ export function CommandPalette({
   const [query, setQuery] = useState('');
   const [activeIndex, setActiveIndex] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
 
   const filtered = useMemo(
     () => items.filter((item) => matchesQuery(item, query.trim())),
@@ -66,7 +68,12 @@ export function CommandPalette({
     setQuery('');
     setActiveIndex(0);
     inputRef.current?.focus();
-  }, [open]);
+    return activateOverlayFocus({
+      container: dialogRef.current,
+      onEscape: close,
+      autoFocus: false,
+    });
+  }, [open, close]);
 
   useEffect(() => {
     if (activeIndex >= filtered.length) {
@@ -120,20 +127,6 @@ export function CommandPalette({
     active?.scrollIntoView?.({ block: 'nearest' });
   }, [activeIndex, filtered, open]);
 
-  useEffect(() => {
-    if (!open) return undefined;
-
-    const onKeyDown = (event: globalThis.KeyboardEvent) => {
-      if (event.key !== 'Escape') return;
-      if (event.target instanceof Element && event.target.closest('[role="dialog"]')) return;
-      event.preventDefault();
-      close();
-    };
-
-    window.addEventListener('keydown', onKeyDown);
-    return () => window.removeEventListener('keydown', onKeyDown);
-  }, [close, open]);
-
   if (!open) return null;
 
   const grouped = filtered.reduce<Record<string, CommandPaletteItem[]>>((acc, item) => {
@@ -148,6 +141,7 @@ export function CommandPalette({
   return (
     <div className={[styles.overlay, className].filter(Boolean).join(' ')} style={style} onClick={close}>
       <div
+        ref={dialogRef}
         role="dialog"
         aria-label={ariaLabel}
         className={styles.dialog}

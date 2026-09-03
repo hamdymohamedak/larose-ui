@@ -3,7 +3,7 @@
   import { DRAG_START_THRESHOLD_PX } from '@larose-ui/tokens';
   import { getDragDropContext } from '../../DragDrop/context';
   import type { DragItem } from '../../DragDrop/types';
-  import { distance } from '../../DragDrop/utils';
+  import { shouldBeginDrag } from '@larose-ui/primitives';
   import styles from '@larose-ui/styles/components/DragDrop/DragDrop.module.css';
   import { cn } from '../../utils/cn';
 
@@ -62,9 +62,12 @@
   }}
   onpointermove={(event) => {
     if (!pending || !origin || event.pointerId !== origin.pointerId) return;
-    const moved = distance(origin.x, origin.y, event.clientX, event.clientY);
     const session = ctx.getSession();
-    if (!session && moved >= DRAG_START_THRESHOLD_PX && el) {
+    if (
+      !session &&
+      shouldBeginDrag(origin.x, origin.y, event.clientX, event.clientY, DRAG_START_THRESHOLD_PX) &&
+      el
+    ) {
       ctx.beginPointerDrag(buildItem(), event.pointerId, event.clientX, event.clientY, el);
       pending = false;
       return;

@@ -34,7 +34,7 @@ function select(activity: ActivityItem) {
 </script>
 
 <template>
-  <Teleport to="body">
+  <Teleport to="[data-lr-portal-root], [data-lr-provider], body">
     <div v-if="open" :class="presentation === 'popover' ? styles.activityPopoverBackdrop : styles.sheetOverlay" role="presentation" @click.self="emit('close')">
       <div :class="cn(presentation === 'popover' ? styles.activityPopover : styles.activitySheet, props.class)" :style="props.style" role="dialog" aria-modal="true" :aria-labelledby="title ? titleId : undefined" @click.stop>
         <div v-if="title" :class="styles.activityHeader"><h2 :id="titleId" :class="styles.sheetTitle">{{ title }}</h2></div>

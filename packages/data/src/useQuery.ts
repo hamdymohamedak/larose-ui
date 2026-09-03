@@ -1,40 +1,18 @@
 import { useCallback, useEffect, useReducer, useRef } from 'react';
 import type { ApiError } from '@larose-ui/core';
 import { usePermissions } from '@larose-ui/permissions';
-import { apiFetch, isApiError, type ApiFetchOptions } from './client';
+import {
+  apiFetch,
+  createInitialQueryState,
+  isApiError,
+  isQueryEmpty,
+  queryReducer,
+  type ApiFetchOptions,
+  type QueryState,
+  type QueryStatus,
+} from '@larose-ui/data-core';
 
-export type QueryStatus = 'idle' | 'loading' | 'success' | 'error' | 'unauthorized';
-
-export interface QueryState<T> {
-  status: QueryStatus;
-  data: T | null;
-  error: ApiError | null;
-  retryCount: number;
-}
-
-type QueryAction<T> =
-  | { type: 'LOAD' }
-  | { type: 'SUCCESS'; data: T }
-  | { type: 'ERROR'; error: ApiError }
-  | { type: 'UNAUTHORIZED' }
-  | { type: 'RETRY' };
-
-function queryReducer<T>(state: QueryState<T>, action: QueryAction<T>): QueryState<T> {
-  switch (action.type) {
-    case 'LOAD':
-      return { ...state, status: 'loading', error: null };
-    case 'SUCCESS':
-      return { status: 'success', data: action.data, error: null, retryCount: state.retryCount };
-    case 'ERROR':
-      return { ...state, status: 'error', error: action.error };
-    case 'UNAUTHORIZED':
-      return { ...state, status: 'unauthorized', error: { code: 403, message: 'Unauthorized', retryable: false } };
-    case 'RETRY':
-      return { ...state, retryCount: state.retryCount + 1, status: 'loading' };
-    default:
-      return state;
-  }
-}
+export type { QueryStatus };
 
 export interface UseQueryOptions<T> extends ApiFetchOptions {
   enabled?: boolean;
@@ -57,12 +35,7 @@ export function useQuery<T>(
   const { check } = usePermissions();
   const permissionAllowed = permission ? check(permission, resource).allowed : true;
 
-  const [state, dispatch] = useReducer(queryReducer<T>, {
-    status: 'idle',
-    data: initialData ?? null,
-    error: null,
-    retryCount: 0,
-  });
+  const [state, dispatch] = useReducer(queryReducer<T>, createInitialQueryState(initialData));
 
   const fetchOptionsRef = useRef(fetchOptions);
   fetchOptionsRef.current = fetchOptions;
@@ -88,7 +61,7 @@ export function useQuery<T>(
       } else {
         dispatch({
           type: 'ERROR',
-          error: { code: 500, message: 'Unknown error', retryable: true },
+          error: { code: 500, message: 'Unknown error', retryable: true } satisfies ApiError,
         });
       }
     }
@@ -102,16 +75,10 @@ export function useQuery<T>(
     dispatch({ type: 'RETRY' });
   }, []);
 
-  const isEmpty =
-    state.status === 'success' &&
-    (state.data === null ||
-      state.data === undefined ||
-      (Array.isArray(state.data) && state.data.length === 0));
-
   return {
     ...state,
     refetch: execute,
     retry,
-    isEmpty,
+    isEmpty: isQueryEmpty(state.status, state.data),
   };
 }

@@ -9,7 +9,7 @@ defineProps<{
 </script>
 
 <template>
-  <Teleport to="body">
+  <Teleport to="[data-lr-portal-root], [data-lr-provider], body">
     <div v-if="session" :class="styles.previewLayer" aria-hidden="true">
       <div
         :class="styles.preview"

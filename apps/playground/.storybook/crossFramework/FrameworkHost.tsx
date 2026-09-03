@@ -62,38 +62,42 @@ export function CrossFrameworkHost({
     );
   }
 
+  const hideMountBanner = definition.id.startsWith('liquidGlass');
+
   return (
     <div>
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '0.5rem',
-          marginBottom: '0.75rem',
-          fontSize: 12,
-          color: 'var(--larose-color-text-secondary, #71717a)',
-        }}
-      >
-        <span
+      {!hideMountBanner && (
+        <div
           style={{
-            fontWeight: 600,
-            letterSpacing: '0.02em',
-            textTransform: 'uppercase',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.5rem',
+            marginBottom: '0.75rem',
+            fontSize: 12,
+            color: 'var(--larose-color-text-secondary, #71717a)',
           }}
         >
-          Mounted package
-        </span>
-        <code
-          style={{
-            padding: '0.15rem 0.45rem',
-            borderRadius: 6,
-            background: 'var(--larose-color-surface-secondary, #f4f4f5)',
-          }}
-        >
-          {FRAMEWORK_LABELS[framework]}
-        </code>
-        <span>· {definition.displayName}</span>
-      </div>
+          <span
+            style={{
+              fontWeight: 600,
+              letterSpacing: '0.02em',
+              textTransform: 'uppercase',
+            }}
+          >
+            Mounted package
+          </span>
+          <code
+            style={{
+              padding: '0.15rem 0.45rem',
+              borderRadius: 6,
+              background: 'var(--larose-color-surface-secondary, #f4f4f5)',
+            }}
+          >
+            {FRAMEWORK_LABELS[framework]}
+          </code>
+          <span>· {definition.displayName}</span>
+        </div>
+      )}
 
       {framework === 'react' ? (
         <StorybookProvider theme={provider.theme} density={provider.density}>

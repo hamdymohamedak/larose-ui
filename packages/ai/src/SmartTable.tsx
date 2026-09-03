@@ -1,8 +1,8 @@
 import { useMemo, useState } from 'react';
 import { AdaptiveTable, type AdaptiveTableProps } from '@larose-ui/runtime';
 import { Input, Button } from '@larose-ui/react';
-import type { AIAdapter } from './adapter';
-import { createMockAdapter } from './adapters/mockAdapter';
+import type { AIAdapter } from '@larose-ui/ai-core';
+import { createMockAdapter } from '@larose-ui/ai-core';
 import styles from './SmartTable.module.css';
 import { useSmartAIRuntime } from './useSmartAIRuntime';
 

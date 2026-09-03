@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref, watch } from 'vue';
+import { ref, watch } from 'vue';
 import type { CSSProperties } from 'vue';
+import { activateOverlayFocus, focusFirst } from '@larose-ui/primitives';
 import styles from '@larose-ui/styles/components/Drawer/Drawer.module.css';
 import { cn } from '../../utils/cn';
 import { useComponentDefaults } from '../../composables/useComponentDefaults';
@@ -31,7 +32,6 @@ const merged = useComponentDefaults('Drawer', props);
 const emit = defineEmits<{ close: [] }>();
 
 const panelRef = ref<HTMLElement | null>(null);
-let previousFocus: HTMLElement | null = null;
 
 function onClose() {
   emit('close');
@@ -43,37 +43,32 @@ function onOverlayClick(event: MouseEvent) {
   }
 }
 
-function onKeyDown(event: KeyboardEvent) {
-  if (event.key === 'Escape' && merged.open) onClose();
-}
-
 watch(
   () => merged.open,
-  (open) => {
-    if (open) {
-      previousFocus = document.activeElement as HTMLElement;
-      requestAnimationFrame(() => panelRef.value?.focus());
-      document.body.style.overflow = 'hidden';
-      return;
-    }
-    document.body.style.overflow = '';
-    previousFocus?.focus();
+  (open, _prev, onCleanup) => {
+    if (!open) return;
+    let deactivate: (() => void) | null = null;
+    const frame = requestAnimationFrame(() => {
+      if (!focusFirst(panelRef.value)) {
+        panelRef.value?.focus();
+      }
+      deactivate = activateOverlayFocus({
+        container: panelRef.value,
+        onEscape: onClose,
+        autoFocus: false,
+      });
+    });
+    onCleanup(() => {
+      cancelAnimationFrame(frame);
+      deactivate?.();
+    });
   },
   { immediate: true },
 );
-
-onMounted(() => {
-  document.addEventListener('keydown', onKeyDown);
-});
-
-onUnmounted(() => {
-  document.removeEventListener('keydown', onKeyDown);
-  document.body.style.overflow = '';
-});
 </script>
 
 <template>
-  <Teleport v-if="merged.open" to="body">
+  <Teleport v-if="merged.open" to="[data-lr-portal-root], [data-lr-provider], body">
     <div
       :class="cn(styles.overlay, merged.overlayClass)"
       :style="{ ...merged.overlayStyle, ...merged.style }"

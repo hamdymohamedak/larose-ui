@@ -108,6 +108,10 @@ pnpm dev   # http://localhost:6006
 | Package | Description |
 |---------|-------------|
 | `@larose-ui/core` | Types, async state machines, error classification |
+| `@larose-ui/liquid-glass-core` | Shared Liquid Glass optics / displacement engine |
+| `@larose-ui/component-logic` | Shared component utils / HIG helpers (framework-agnostic) |
+| `@larose-ui/forms-core` | Framework-agnostic form schema helpers |
+| `@larose-ui/data-core` | Framework-agnostic `apiFetch` client |
 | `@larose-ui/tokens` | Runtime design tokens with density and theming |
 | `@larose-ui/themes` | Named theme presets and tenant branding |
 | `@larose-ui/react` | React components with production UI states |

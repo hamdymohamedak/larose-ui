@@ -12,6 +12,7 @@
     splitCompactAndList,
   } from '../../Menu/utils';
   import styles from '@larose-ui/styles/components/Menu/Menu.module.css';
+  import { portal } from '../../utils/portal';
 
   let {
     children,
@@ -56,6 +57,7 @@
   const isOpen = $derived(open ?? internalOpen);
   const prepared = $derived(prepareMenuEntries(entries));
   const split = $derived(splitCompactAndList(prepared, layout));
+  const isControlled = $derived(open !== undefined);
 
   function setOpen(next: boolean) {
     if (open === undefined) internalOpen = next;
@@ -70,9 +72,21 @@
     return layout === 'large' ? 240 : 280;
   }
 
-  function openFromTrigger() {
+  function centerOnViewport() {
+    position = {
+      x: Math.max(16, (window.innerWidth - estimateWidth()) / 2),
+      y: Math.max(16, (window.innerHeight - estimateHeight()) / 2),
+      placement: 'below',
+    };
+  }
+
+  function positionFromTrigger() {
     const rect = triggerEl?.getBoundingClientRect() ?? new DOMRect(100, 100, 120, 32);
     position = resolveMenuPanelPosition(rect, estimateWidth(), estimateHeight());
+  }
+
+  function openFromTrigger() {
+    positionFromTrigger();
     setOpen(true);
   }
 
@@ -88,12 +102,10 @@
   $effect(() => {
     if (!isOpen) return;
     if (!children) {
-      position = {
-        x: Math.max(16, (window.innerWidth - estimateWidth()) / 2),
-        y: Math.max(16, (window.innerHeight - estimateHeight()) / 2),
-        placement: 'below',
-      };
+      centerOnViewport();
+      return;
     }
+    if (isControlled) positionFromTrigger();
   });
 
   $effect(() => {
@@ -134,6 +146,7 @@
 {/if}
 
 {#if isOpen}
+  <div use:portal>
   {#if dimBackground}
     <div class={styles.menuBackdrop} role="presentation" onclick={close}></div>
   {/if}
@@ -259,5 +272,6 @@
         {/if}
       {/each}
     </ul>
+  </div>
   </div>
 {/if}

@@ -30,7 +30,7 @@ if (canonicalFiles.length === 0) {
 }
 
 const names = listComponentNames(root);
-const liveContracts = extractComponentContracts(root, names, COMPONENT_ANATOMY, 'react');
+const liveContracts = extractComponentContracts(root, names, COMPONENT_ANATOMY, 'neutral');
 
 const liquidGlassIndexPath = join(root, 'packages/react/src/LiquidGlass/index.ts');
 const glassNames = canonicalFiles
@@ -40,7 +40,7 @@ const glassNames = canonicalFiles
 if (glassNames.length > 0) {
   Object.assign(
     liveContracts,
-    extractComponentContracts(root, glassNames, COMPONENT_ANATOMY, 'react', liquidGlassIndexPath),
+    extractComponentContracts(root, glassNames, COMPONENT_ANATOMY, 'neutral', liquidGlassIndexPath),
   );
 }
 

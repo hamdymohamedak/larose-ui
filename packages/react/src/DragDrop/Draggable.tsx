@@ -7,9 +7,9 @@ import {
   type CSSProperties,
 } from 'react';
 import { DRAG_START_THRESHOLD_PX } from '@larose-ui/tokens';
+import { shouldBeginDrag } from '@larose-ui/primitives';
 import { useDragDropContext } from './DragDropContext';
 import type { DragItem } from './types';
-import { distance } from './utils';
 import styles from '@larose-ui/styles/components/DragDrop/DragDrop.module.css';
 
 export interface DraggableProps<T = unknown> {
@@ -112,14 +112,16 @@ export function Draggable<T>({
     if (!pending || !originRef.current) return;
     if (event.pointerId !== originRef.current.pointerId) return;
 
-    const moved = distance(
-      originRef.current.x,
-      originRef.current.y,
-      event.clientX,
-      event.clientY,
-    );
-
-    if (!session && moved >= DRAG_START_THRESHOLD_PX) {
+    if (
+      !session &&
+      shouldBeginDrag(
+        originRef.current.x,
+        originRef.current.y,
+        event.clientX,
+        event.clientY,
+        DRAG_START_THRESHOLD_PX,
+      )
+    ) {
       beginPointerDrag(
         buildItem(),
         event.pointerId,

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, nextTick, ref, watch, type CSSProperties } from 'vue';
+import { activateOverlayFocus } from '@larose-ui/primitives';
 import styles from '@larose-ui/styles/components/CommandPalette/CommandPalette.module.css';
 import { cn } from '../../utils/cn';
 
@@ -32,6 +33,7 @@ const emit = defineEmits<{ openChange: [open: boolean] }>();
 const query = ref('');
 const activeIndex = ref(0);
 const inputRef = ref<HTMLInputElement | null>(null);
+const dialogRef = ref<HTMLElement | null>(null);
 
 const filtered = computed(() => {
   const q = query.value.trim().toLowerCase();
@@ -54,12 +56,18 @@ function select(item: CommandPaletteItem) {
 
 watch(
   () => props.open,
-  async (open) => {
+  async (open, _prev, onCleanup) => {
     if (!open) return;
     query.value = '';
     activeIndex.value = 0;
     await nextTick();
     inputRef.value?.focus();
+    const deactivate = activateOverlayFocus({
+      container: dialogRef.value,
+      onEscape: close,
+      autoFocus: false,
+    });
+    onCleanup(() => deactivate());
   },
 );
 
@@ -82,9 +90,10 @@ function onKeyDown(event: KeyboardEvent) {
 </script>
 
 <template>
-  <Teleport v-if="open" to="body">
+  <Teleport v-if="open" to="[data-lr-portal-root], [data-lr-provider], body">
     <div :class="styles.overlay" role="presentation" @click.self="close" @keydown="onKeyDown">
       <div
+        ref="dialogRef"
         role="dialog"
         aria-modal="true"
         :aria-label="ariaLabel"

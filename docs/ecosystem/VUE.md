@@ -7,13 +7,15 @@
 @larose-ui/tokens
 @larose-ui/styles
 @larose-ui/primitives
+@larose-ui/component-logic
+@larose-ui/liquid-glass-core
 @larose-ui/themes
 @larose-ui/runtime-core
         ↓
 @larose-ui/vue
 ```
 
-Components reuse **shared CSS modules** from `@larose-ui/styles` — one visual language, no duplicated design system.
+Components reuse **shared CSS modules** from `@larose-ui/styles`, shared utils from `@larose-ui/component-logic`, and interaction helpers from `@larose-ui/primitives` — one visual language, no duplicated design system logic.
 
 ## Install
 
@@ -66,16 +68,26 @@ import { LaRoseProvider, RuntimeProvider } from '@larose-ui/vue';
 
 Use `useRuntimeContext()` inside setup functions to read or patch runtime state.
 
-## Initial component set
+## Components
 
-Foundation components available in v0.1.1:
+The Vue package mirrors the React component surface, including:
 
-- **Actions:** Button
-- **Forms:** Input, Textarea, Select, Checkbox, Radio, Switch, FieldShell
-- **Feedback:** Alert, Progress, Spinner, Badge, Label
-- **Layout:** Card, Modal, Dialog
+- **Actions:** Button, ButtonGroup, AsyncButton, HelpButton, SquareButton
+- **Forms / data entry:** Input, Textarea, Select, Checkbox, Radio, Switch, FieldShell, SecureField, TokenField, …
+- **Feedback:** Alert, AlertDialog, Progress, Spinner, Badge, Label, Toast
+- **Navigation / chrome:** Tabs, TabView, Sidebar, Toolbar, Menu, MenuBar, ContextMenu, Breadcrumb
+- **Overlays:** Modal, Dialog, Drawer, Popover, CommandPalette
+- **Layout / data display:** Card, SplitView, List / Table, Chart, Disclosure, …
+- **Liquid Glass:** `LiquidGlass`, `LiquidGlassButton`, TabBar, TopBar, and related controls
 
-Menu, Tabs, Tooltip, and CommandPalette will follow the same adapter pattern using `@larose-ui/primitives`.
+Shared behavior (menus, focus trap helpers, domain utils) lives in `@larose-ui/primitives` and `@larose-ui/component-logic`. Vue adapters focus on rendering and Vue idioms (`v-model`, slots).
+
+> **Intelligence adapters:** Schema/client/authz logic lives in `*-core` packages. Vue UI adapters:
+>
+> - `@larose-ui/forms-vue` — schema-driven `Form`
+> - `@larose-ui/data-vue` — `useQuery`, `useMutation`, `DataView`
+> - `@larose-ui/permissions-vue` — `PermissionProvider`, `Can`, `Permission`
+> - `@larose-ui/observability-vue` — `ObservabilityProvider`, `ObservedForm`, `ObservedComponent`
 
 ## v-model
 

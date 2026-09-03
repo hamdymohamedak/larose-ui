@@ -187,7 +187,7 @@ onUnmounted(() => {
   >
     <slot />
   </span>
-  <Teleport to="body">
+  <Teleport to="[data-lr-portal-root], [data-lr-provider], body">
     <div v-if="isOpen && actions.length">
       <div
         v-if="dimBackground"

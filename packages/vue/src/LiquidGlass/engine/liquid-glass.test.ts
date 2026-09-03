@@ -1,9 +1,13 @@
 import { describe, it, expect } from 'vitest';
-import { squircleHeightFn, roundedRectSDF } from './displacement-map';
-import { resolveLiquidGlassOptics, LIQUID_GLASS_OPTICS_DEFAULTS } from './defaults';
-import { supportsLiquidGlassRefraction } from './detect';
+import {
+  squircleHeightFn,
+  roundedRectSDF,
+  resolveLiquidGlassOptics,
+  LIQUID_GLASS_OPTICS_DEFAULTS,
+  supportsLiquidGlassRefraction,
+} from '@larose-ui/liquid-glass-core';
 
-describe('liquid-glass', () => {
+describe('liquid-glass (vue adapter re-exports)', () => {
   it('squircleHeightFn is 0 at t=0 and 1 at t=1', () => {
     expect(squircleHeightFn(0)).toBe(0);
     expect(squircleHeightFn(1)).toBe(1);

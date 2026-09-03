@@ -55,7 +55,7 @@ function onPointerDown(e: PointerEvent) {
       @contextmenu.prevent="openAbove"
     ><slot name="icon" /></div>
     <span :class="styles.hint">Touch and hold for quick actions</span>
-    <Teleport to="body">
+    <Teleport to="[data-lr-portal-root], [data-lr-provider], body">
       <div v-if="isOpen">
         <div :class="styles.menuBackdrop" @click="close" />
         <div :id="menuId" :class="styles.menu" role="menu" :aria-label="`${appName} quick actions`" :style="{ left: `${position.x}px`, top: `${position.y}px`, position: 'fixed', zIndex: 1000 }" @click.stop>

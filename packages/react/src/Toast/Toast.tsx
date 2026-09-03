@@ -12,6 +12,7 @@ import type { AlertVariant } from '../Alert/Alert';
 import { Presence } from '../Motion/Presence';
 import motionStyles from '@larose-ui/styles/components/Motion/motion.module.css';
 import styles from '@larose-ui/styles/components/Toast/Toast.module.css';
+import { getLaRosePortalTarget } from '@larose-ui/core';
 
 export type ToastVariant = AlertVariant;
 
@@ -81,8 +82,7 @@ export function ToastProvider({
   return (
     <ToastContext.Provider value={value}>
       {children}
-      {createPortal(
-        <div
+      {createPortal(<div
           className={styles.viewport}
           data-placement={placement}
           aria-live="polite"
@@ -98,7 +98,7 @@ export function ToastProvider({
             />
           ))}
         </div>,
-        document.body,
+    getLaRosePortalTarget(),
       )}
     </ToastContext.Provider>
   );

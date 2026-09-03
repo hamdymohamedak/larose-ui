@@ -8,11 +8,15 @@ import {
 } from 'react';
 import { createPortal } from 'react-dom';
 import type { ComponentMotionOverride } from '@larose-ui/themes';
+import {
+  activateOverlayFocus,
+} from '@larose-ui/primitives';
 import { useComponentDefaults } from '../theme/useComponentDefaults';
 import { useComponentMotion } from '../theme/useComponentMotion';
 import { usePresence } from '../Motion/usePresence';
 import motionStyles from '@larose-ui/styles/components/Motion/motion.module.css';
 import styles from '@larose-ui/styles/components/Modal/Modal.module.css';
+import { getLaRosePortalTarget } from '@larose-ui/core';
 
 export interface ModalProps extends HTMLAttributes<HTMLDivElement> {
   open: boolean;
@@ -49,31 +53,15 @@ export function Modal(incomingProps: ModalProps) {
   } = useComponentDefaults('Modal', incomingProps);
 
   const dialogRef = useRef<HTMLDivElement>(null);
-  const previousFocus = useRef<HTMLElement | null>(null);
   const { phase, shouldRender, onAnimationEnd } = usePresence({ present: open });
   const { style: motionStyle } = useComponentMotion('Modal', motion);
 
   useEffect(() => {
     if (!open) return;
-
-    previousFocus.current = document.activeElement as HTMLElement;
-    const focusable = dialogRef.current?.querySelector<HTMLElement>(
-      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
-    );
-    focusable?.focus();
-
-    const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
-    };
-
-    document.addEventListener('keydown', onKeyDown);
-    document.body.style.overflow = 'hidden';
-
-    return () => {
-      document.removeEventListener('keydown', onKeyDown);
-      document.body.style.overflow = '';
-      previousFocus.current?.focus();
-    };
+    return activateOverlayFocus({
+      container: dialogRef.current,
+      onEscape: onClose,
+    });
   }, [open, onClose]);
 
   if (!shouldRender) return null;
@@ -103,8 +91,7 @@ export function Modal(incomingProps: ModalProps) {
     .filter(Boolean)
     .join(' ');
 
-  return createPortal(
-    <div
+  return createPortal(<div
       className={backdropClass}
       style={{ ...motionStyle, ...overlayStyle, ...style }}
       onClick={handleOverlayClick}
@@ -137,6 +124,6 @@ export function Modal(incomingProps: ModalProps) {
         <div className={styles.content}>{children}</div>
       </div>
     </div>,
-    document.body,
+    getLaRosePortalTarget(),
   );
 }

@@ -1,7 +1,7 @@
 {
   "name": "Button",
   "version": "1",
-  "framework": "react",
+  "framework": "neutral",
   "props": [
     {
       "name": "buttonRole",
@@ -33,7 +33,7 @@
     },
     {
       "name": "leftIcon",
-      "type": "ReactNode",
+      "type": "Node",
       "required": false
     },
     {
@@ -55,7 +55,7 @@
     },
     {
       "name": "rightIcon",
-      "type": "ReactNode",
+      "type": "Node",
       "required": false
     },
     {

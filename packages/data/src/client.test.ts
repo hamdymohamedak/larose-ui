@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { classifyHttpError } from '@larose-ui/core';
-import { getRetryDelay, isApiError, ApiRequestError } from './client';
+import { getRetryDelay, isApiError, ApiRequestError } from '@larose-ui/data-core';
 
 describe('client helpers', () => {
   it('calculates exponential retry delay', () => {

@@ -141,7 +141,7 @@ const preview: Preview = {
   globalTypes: {
     framework: {
       description:
-        'Mount the real package for this story. Vue 3 / Svelte 5 hide React-only demos (AI, Enterprise, Motion, …) and jump to a supported Foundation/Glass story.',
+        'Mount the real package for this story. Vue 3 / Svelte 5 hide React-only platform demos (AI, Enterprise, Motion, Observability, …) and jump to a supported Foundation/Glass story.',
       toolbar: {
         title: 'Framework',
         icon: 'batchaccept',

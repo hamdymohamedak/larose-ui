@@ -1,37 +1,12 @@
 import { useCallback, useReducer } from 'react';
 import type { ApiError, AsyncState } from '@larose-ui/core';
-import { apiFetch, isApiError, type ApiFetchOptions } from './client';
-
-export interface MutationState<TData, TVariables> {
-  status: AsyncState;
-  data: TData | null;
-  error: ApiError | null;
-  variables: TVariables | null;
-}
-
-type MutationAction<TData, TVariables> =
-  | { type: 'SUBMIT'; variables: TVariables }
-  | { type: 'SUCCESS'; data: TData }
-  | { type: 'ERROR'; error: ApiError }
-  | { type: 'RESET' };
-
-function mutationReducer<TData, TVariables>(
-  state: MutationState<TData, TVariables>,
-  action: MutationAction<TData, TVariables>,
-): MutationState<TData, TVariables> {
-  switch (action.type) {
-    case 'SUBMIT':
-      return { ...state, status: 'submitting', error: null, variables: action.variables };
-    case 'SUCCESS':
-      return { status: 'success', data: action.data, error: null, variables: state.variables };
-    case 'ERROR':
-      return { ...state, status: 'error', error: action.error };
-    case 'RESET':
-      return { status: 'idle', data: null, error: null, variables: null };
-    default:
-      return state;
-  }
-}
+import {
+  apiFetch,
+  createInitialMutationState,
+  isApiError,
+  mutationReducer,
+  type ApiFetchOptions,
+} from '@larose-ui/data-core';
 
 export interface UseMutationOptions<TData, TVariables> extends ApiFetchOptions {
   url: string;
@@ -53,12 +28,10 @@ export function useMutation<TData = unknown, TVariables = unknown>(
 ): UseMutationResult<TData, TVariables> {
   const { url, method = 'POST', onSuccess, onError, ...fetchOptions } = options;
 
-  const [state, dispatch] = useReducer(mutationReducer<TData, TVariables>, {
-    status: 'idle',
-    data: null,
-    error: null,
-    variables: null,
-  });
+  const [state, dispatch] = useReducer(
+    mutationReducer<TData, TVariables>,
+    createInitialMutationState(),
+  );
 
   const mutate = useCallback(
     async (variables: TVariables): Promise<TData | undefined> => {

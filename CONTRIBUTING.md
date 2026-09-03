@@ -83,6 +83,33 @@ pnpm --filter @larose-ui/react build
 - Run `pnpm lint` before pushing.
 - Fix type errors — `pnpm typecheck` must pass.
 
+### No logic duplication across frameworks (required)
+
+Shared behavior must **not** be copy-pasted into React, Vue, and Svelte.
+
+| Kind of code | Where it belongs |
+|--------------|------------------|
+| Pure utils, defaults, engines, state machines | `@larose-ui/core`, `@larose-ui/primitives`, `@larose-ui/component-logic`, `@larose-ui/liquid-glass-core`, or another `*-core` package |
+| Menu / keyboard / type-ahead | `@larose-ui/primitives` |
+| Domain utils (Toolbar, AlertDialog, Chart, …) | `@larose-ui/component-logic` |
+| Form schema / validation (no UI) | `@larose-ui/forms-core` |
+| Data client / fetch helpers (no UI) | `@larose-ui/data-core` |
+| Permissions / ABAC (no UI) | `@larose-ui/permissions-core` |
+| Observability collectors | `@larose-ui/observability-core` |
+| Runtime store / host / i18n helpers | `@larose-ui/runtime-core` |
+| AI intents / runtime | `@larose-ui/ai-core` |
+| Enterprise version / schema / audit model | `@larose-ui/enterprise-core` |
+| Test matrix scenarios | `@larose-ui/testing-core` |
+| Liquid Glass optics / displacement | `@larose-ui/liquid-glass-core` |
+| CSS / visual tokens | `@larose-ui/styles`, `@larose-ui/tokens` |
+| Framework rendering only | `@larose-ui/react`, `@larose-ui/vue`, `@larose-ui/svelte` (+ `*-vue` / `*-svelte` / React intelligence adapters) |
+
+**Hard rule:** packages named `*-core` (and other framework-agnostic packages listed in `scripts/check-framework-neutrality.mjs`) must not depend on or import `react`, `vue`, or `svelte`. Run `pnpm check:framework-neutrality` before PRs that touch cores.
+
+**Do not** add a new `utils.ts`, engine file, or pure helper in one UI package and then duplicate it in the others. Extract shared logic first, then thin adapters that import it.
+
+Framework packages may keep thin re-export shims for public API stability, but the implementation must live in one shared place. React is **one adapter among three**, not the source of truth for platform logic.
+
 ### Tests
 
 - Add or update tests for behavior you change (`vitest` in each package).
@@ -154,6 +181,8 @@ Run this before merging significant work when possible.
 ## Documentation
 
 - Architecture: [`docs/architecture/ARCHITECTURE.md`](docs/architecture/ARCHITECTURE.md)
+- Versioning: [`docs/architecture/VERSIONING.md`](docs/architecture/VERSIONING.md)
+- Product positioning: [`docs/architecture/PRODUCT_POSITIONING.md`](docs/architecture/PRODUCT_POSITIONING.md)
 - Runtime: [`docs/runtime/RUNTIME_2.md`](docs/runtime/RUNTIME_2.md)
 - Migration: [`docs/ecosystem/MIGRATION.md`](docs/ecosystem/MIGRATION.md)
 - Design language: [`docs/design/REFINED_DESIGN_LANGUAGE.md`](docs/design/REFINED_DESIGN_LANGUAGE.md)

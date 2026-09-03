@@ -1,11 +1,11 @@
 {
   "name": "Tooltip",
   "version": "1",
-  "framework": "react",
+  "framework": "neutral",
   "props": [
     {
       "name": "content",
-      "type": "ReactNode",
+      "type": "Node",
       "required": true
     },
     {

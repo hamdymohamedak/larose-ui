@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/offline",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "Offline request queue and sync for laRose UI platform",
   "type": "module",
   "main": "./dist/index.js",

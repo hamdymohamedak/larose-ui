@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { activateOverlayFocus } from '@larose-ui/primitives';
   import styles from '@larose-ui/styles/components/CommandPalette/CommandPalette.module.css';
   import { cn } from '../../utils/cn';
   import { portal } from '../../utils/portal';
@@ -36,6 +37,7 @@
   let query = $state('');
   let activeIndex = $state(0);
   let inputEl = $state<HTMLInputElement | null>(null);
+  let dialogEl = $state<HTMLElement | null>(null);
 
   const filtered = $derived.by(() => {
     const q = query.trim().toLowerCase();
@@ -60,7 +62,16 @@
     if (!open) return;
     query = '';
     activeIndex = 0;
-    queueMicrotask(() => inputEl?.focus());
+    let deactivate: (() => void) | undefined;
+    queueMicrotask(() => {
+      inputEl?.focus();
+      deactivate = activateOverlayFocus({
+        container: dialogEl,
+        onEscape: close,
+        autoFocus: false,
+      });
+    });
+    return () => deactivate?.();
   });
 
   function onKeyDown(event: KeyboardEvent) {
@@ -93,6 +104,7 @@
     onkeydown={onKeyDown}
   >
     <div
+      bind:this={dialogEl}
       class={cn(styles.dialog, className)}
       {style}
       role="dialog"

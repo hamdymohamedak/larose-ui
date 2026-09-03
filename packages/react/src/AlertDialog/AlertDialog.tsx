@@ -1,11 +1,6 @@
-import {
-  useCallback,
-  useEffect,
-  useId,
-  useRef,
-  useState,
-} from 'react';
+import { useCallback, useEffect, useId, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
+import { activateOverlayFocus } from '@larose-ui/primitives';
 import { usePresence } from '../Motion/usePresence';
 import motionStyles from '@larose-ui/styles/components/Motion/motion.module.css';
 import type { AlertDialogAction, AlertDialogProps } from './types';
@@ -18,6 +13,7 @@ import {
   warnIfAlertTitleTooLong,
 } from './utils';
 import styles from '@larose-ui/styles/components/AlertDialog/AlertDialog.module.css';
+import { getLaRosePortalTarget } from '@larose-ui/core';
 
 function CautionIcon() {
   return (
@@ -82,23 +78,20 @@ export function AlertDialog({
   useEffect(() => {
     if (!open) return;
 
-    const onKeyDown = (event: globalThis.KeyboardEvent) => {
-      if (event.key !== 'Escape') return;
-      event.preventDefault();
-      const cancel = resolveCancelAction(actions);
-      if (cancel) runAction(cancel);
-      else close();
-    };
-
-    document.addEventListener('keydown', onKeyDown);
-    document.body.style.overflow = 'hidden';
-    dialogRef.current?.focus();
-
-    return () => {
-      document.removeEventListener('keydown', onKeyDown);
-      document.body.style.overflow = '';
-    };
+    return activateOverlayFocus({
+      container: dialogRef.current,
+      onEscape: () => {
+        const cancel = resolveCancelAction(actions);
+        if (cancel) runAction(cancel);
+        else close();
+      },
+      autoFocus: false,
+    });
   }, [actions, close, open, runAction]);
+
+  useEffect(() => {
+    if (open) dialogRef.current?.focus();
+  }, [open]);
 
   const { phase, shouldRender, onAnimationEnd } = usePresence({ present: open });
 
@@ -108,8 +101,7 @@ export function AlertDialog({
   const resolvedDefaultId =
     defaultActionId ?? ordered.find((action) => action.role === 'default')?.id;
 
-  return createPortal(
-    <div
+  return createPortal(<div
       className={[
         styles.overlay,
         phase === 'entering' || phase === 'exiting'
@@ -225,7 +217,7 @@ export function AlertDialog({
         )}
       </div>
     </div>,
-    document.body,
+    getLaRosePortalTarget(),
   );
 }
 

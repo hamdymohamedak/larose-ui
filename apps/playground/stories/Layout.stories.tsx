@@ -96,6 +96,9 @@ export const BoxSettingsStyle: Story = {
 };
 
 export const CollectionGrid: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'collection' } },
+  args: { layout: 'grid', columns: 4 },
   render: function CollectionGridDemo() {
     const [selectedId, setSelectedId] = useState('1');
     return (
@@ -105,11 +108,17 @@ export const CollectionGrid: Story = {
 };
 
 export const CollectionRow: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'collection' } },
+  args: { layout: 'row' },
   render: () => (
     <Collection items={photos.slice(0, 5)} layout="row" ariaLabel="Recent albums" />
   ),
 };
 
 export const ColumnViewBrowser: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'columnView' } },
+  args: { initialPath: ['icloud', 'design'] },
   render: () => <ColumnView data={hierarchy} initialPath={['icloud', 'design']} />,
 };

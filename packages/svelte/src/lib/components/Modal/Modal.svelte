@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
-  import { onMount } from 'svelte';
+  import { activateOverlayFocus } from '@larose-ui/primitives';
   import styles from '@larose-ui/styles/components/Modal/Modal.module.css';
   import { cn } from '../../utils/cn';
   import { getComponentDefaults } from '../../theme/context';
@@ -22,7 +22,6 @@
   const merged = $derived(getComponentDefaults('Modal', props));
 
   let dialogEl = $state<HTMLDivElement | null>(null);
-  let previousFocus = $state<HTMLElement | null>(null);
 
   function close() {
     merged.onclose?.();
@@ -32,29 +31,16 @@
     if (merged.closeOnOverlay !== false) close();
   }
 
-  function onKeyDown(event: KeyboardEvent) {
-    if (event.key === 'Escape') close();
-  }
-
   $effect(() => {
     if (!merged.open) return;
-    previousFocus = document.activeElement as HTMLElement;
+    let deactivate: (() => void) | undefined;
     queueMicrotask(() => {
-      const focusable = dialogEl?.querySelector<HTMLElement>(
-        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
-      );
-      focusable?.focus();
+      deactivate = activateOverlayFocus({
+        container: dialogEl,
+        onEscape: close,
+      });
     });
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.body.style.overflow = '';
-      previousFocus?.focus();
-    };
-  });
-
-  onMount(() => {
-    document.addEventListener('keydown', onKeyDown);
-    return () => document.removeEventListener('keydown', onKeyDown);
+    return () => deactivate?.();
   });
 </script>
 

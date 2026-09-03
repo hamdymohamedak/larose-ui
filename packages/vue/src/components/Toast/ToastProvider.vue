@@ -43,7 +43,7 @@ provide(toastInjectionKey, { toast, dismiss });
 
 <template>
   <slot />
-  <Teleport to="body">
+  <Teleport to="[data-lr-portal-root], [data-lr-provider], body">
     <div
       :class="styles.viewport"
       :data-placement="placement"

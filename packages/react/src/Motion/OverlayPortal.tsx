@@ -1,5 +1,6 @@
 import { createPortal } from 'react-dom';
 import type { CSSProperties, ReactNode } from 'react';
+import { getLaRosePortalTarget } from '@larose-ui/core';
 import { usePresence } from './usePresence';
 import motionStyles from '@larose-ui/styles/components/Motion/motion.module.css';
 import { mergeStyles } from '../shared/styleProps';
@@ -86,7 +87,7 @@ export function ContextualMenuPortal({
         {children}
       </div>
     </>,
-    document.body,
+    getLaRosePortalTarget(),
   );
 }
 

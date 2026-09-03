@@ -125,7 +125,7 @@ onBeforeUnmount(() => {
       </svg>
     </button>
 
-    <Teleport to="body">
+    <Teleport to="[data-lr-portal-root], [data-lr-provider], body">
       <div v-if="open">
         <div :class="styles.menuBackdrop" role="presentation" @click="close" />
         <div

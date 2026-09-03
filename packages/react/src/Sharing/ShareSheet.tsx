@@ -10,6 +10,7 @@ import type {
 import { formatSharePermissionSummary } from './utils';
 import { ChevronRightIcon } from './icons';
 import styles from '@larose-ui/styles/components/Sharing/Sharing.module.css';
+import { getLaRosePortalTarget } from '@larose-ui/core';
 
 export interface ShareSheetProps {
   open: boolean;
@@ -95,8 +96,7 @@ export function ShareSheet({
     setShowPermissions(false);
   };
 
-  return createPortal(
-    <div
+  return createPortal(<div
       className={styles.sheetOverlay}
       role="presentation"
       onClick={(event) => {
@@ -174,6 +174,6 @@ export function ShareSheet({
         {footer && <div className={styles.section}>{footer}</div>}
       </div>
     </div>,
-    document.body,
+    getLaRosePortalTarget(),
   );
 }

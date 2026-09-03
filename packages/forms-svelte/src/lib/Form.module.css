@@ -1,0 +1,48 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lr-space-4);
+  max-width: 28rem;
+}
+
+.title {
+  margin: 0;
+  font-size: var(--lr-font-size-xl);
+  font-weight: var(--lr-font-weight-semibold);
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--lr-space-2);
+}
+
+.selectLabel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lr-space-1);
+  font-size: var(--lr-font-size-sm);
+  font-weight: var(--lr-font-weight-medium);
+}
+
+.select,
+.textarea {
+  font-family: var(--lr-font-family-sans);
+  font-size: var(--lr-font-size-md);
+  padding: var(--lr-space-2) var(--lr-space-3);
+  border: 1px solid var(--lr-color-border);
+  border-radius: var(--lr-radius-md);
+  background: var(--lr-color-background);
+  color: var(--lr-color-text);
+}
+
+.textarea {
+  min-height: 5rem;
+  resize: vertical;
+}
+
+.select:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--lr-color-primary);
+}

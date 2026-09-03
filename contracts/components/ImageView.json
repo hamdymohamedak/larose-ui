@@ -1,7 +1,7 @@
 {
   "name": "ImageView",
   "version": "1",
-  "framework": "react",
+  "framework": "neutral",
   "props": [
     {
       "name": "alt",
@@ -27,7 +27,7 @@
     },
     {
       "name": "frameStyle",
-      "type": "CSSProperties",
+      "type": "Style",
       "required": false
     },
     {

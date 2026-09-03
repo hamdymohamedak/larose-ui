@@ -69,7 +69,7 @@ watch(isOpen, (open) => {
   <span :class="cn(styles.triggerWrap, props.class)" :style="props.style" @contextmenu="onContextMenu" @pointerdown="onPointerDown" @pointerup="clearLongPress" @pointercancel="clearLongPress" @pointerleave="clearLongPress">
     <slot />
   </span>
-  <Teleport to="body">
+  <Teleport to="[data-lr-portal-root], [data-lr-provider], body">
     <div v-if="isOpen">
       <div v-if="dimBackground" :class="styles.menuBackdrop" @click="close" />
       <div :id="menuId" :class="styles.menu" role="menu" :aria-label="title ?? 'Context menu'" :style="{ left: `${position.x}px`, top: `${position.y}px`, position: 'fixed', zIndex: 1000 }" @click.stop>

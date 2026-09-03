@@ -34,6 +34,9 @@ jobs:
       - name: Lint
         run: pnpm lint
 
+      - name: Framework neutrality
+        run: pnpm check:framework-neutrality
+
       - name: Typecheck
         run: pnpm typecheck
 

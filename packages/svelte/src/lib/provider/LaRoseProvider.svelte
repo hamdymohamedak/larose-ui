@@ -65,6 +65,6 @@
   });
 </script>
 
-<div bind:this={rootEl} data-lr-provider style="min-height: inherit">
+<div bind:this={rootEl} data-lr-provider data-lr-portal-root style="min-height: inherit">
   {@render children()}
 </div>

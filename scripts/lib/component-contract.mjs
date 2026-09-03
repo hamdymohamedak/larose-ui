@@ -92,12 +92,37 @@ export function propsToContractProps(props) {
     .map(
       /** @returns {ComponentContractProp} */ (prop) => ({
         name: prop.name,
-        type: prop.type,
+        type: normalizeContractType(prop.type),
         required: prop.required,
         default: prop.default,
         description: prop.description,
       }),
     );
+}
+
+/**
+ * Map framework-specific types to neutral contract types.
+ * @param {string | undefined} type
+ */
+export function normalizeContractType(type) {
+  if (!type) return type;
+  return type
+    .replace(/\bReactNode\b/g, 'Node')
+    .replace(/\bReact\.ReactNode\b/g, 'Node')
+    .replace(/\bCSSProperties\b/g, 'Style')
+    .replace(/\bReact\.CSSProperties\b/g, 'Style')
+    .replace(/\bElementType\b/g, 'ElementTag')
+    .replace(/\bReact\.ElementType\b/g, 'ElementTag')
+    .replace(/\bHTMLAttributes<[^>]+>/g, 'HtmlAttributes')
+    .replace(/\bButtonHTMLAttributes<[^>]+>/g, 'ButtonAttributes')
+    .replace(/\bInputHTMLAttributes<[^>]+>/g, 'InputAttributes')
+    .replace(/\bChangeEvent<[^>]+>/g, 'ChangeEvent')
+    .replace(/\bMouseEvent<[^>]+>/g, 'MouseEvent')
+    .replace(/\bKeyboardEvent<[^>]+>/g, 'KeyboardEvent')
+    .replace(/\bFormEvent<[^>]+>/g, 'FormEvent')
+    .replace(/\bRefObject<[^>]+>/g, 'Ref')
+    .replace(/\bMutableRefObject<[^>]+>/g, 'Ref')
+    .replace(/\bForwardedRef<[^>]+>/g, 'Ref');
 }
 
 /**
@@ -108,7 +133,7 @@ export function propsToContractEvents(props) {
     .filter((prop) => prop.name.startsWith('on') && prop.name.length > 2)
     .map((prop) => ({
       name: prop.name,
-      payload: prop.type,
+      payload: normalizeContractType(prop.type),
       description: prop.description,
     }));
 }
@@ -141,7 +166,8 @@ export function toComponentContract(componentName, api, anatomy = {}, framework 
   const contract = {
     name: componentName,
     version: '1',
-    framework,
+    // Canonical contracts are framework-neutral even when authored from React.
+    framework: framework === 'react' ? 'neutral' : framework,
     props,
     events,
     slots: meta.slots,

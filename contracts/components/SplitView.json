@@ -1,7 +1,7 @@
 {
   "name": "SplitView",
   "version": "1",
-  "framework": "react",
+  "framework": "neutral",
   "props": [
     {
       "name": "'aria-label'",
@@ -32,7 +32,7 @@
     },
     {
       "name": "toolbar",
-      "type": "ReactNode",
+      "type": "Node",
       "required": false
     }
   ],

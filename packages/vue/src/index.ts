@@ -464,6 +464,7 @@ export { default as HeaderBrand } from './components/Header/HeaderBrand.vue';
 export { default as HeaderActions } from './components/Header/HeaderActions.vue';
 
 export { default as CommandPalette } from './components/CommandPalette/CommandPalette.vue';
+export { useCommandPaletteShortcut } from './components/CommandPalette/useCommandPaletteShortcut';
 
 export { default as AcceleratorProvider } from './components/Accelerator/AcceleratorProvider.vue';
 export { default as MnemonicLabel } from './components/Accelerator/MnemonicLabel.vue';

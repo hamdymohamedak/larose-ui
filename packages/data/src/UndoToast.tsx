@@ -1,4 +1,4 @@
-import type { UndoAction } from './useUndo';
+import type { UndoAction } from '@larose-ui/data-core';
 
 export interface UndoToastProps {
   actions: UndoAction[];

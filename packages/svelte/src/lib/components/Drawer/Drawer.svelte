@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
-  import { onMount } from 'svelte';
+  import { activateOverlayFocus, focusFirst } from '@larose-ui/primitives';
   import styles from '@larose-ui/styles/components/Drawer/Drawer.module.css';
   import { cn } from '../../utils/cn';
   import { portal } from '../../utils/portal';
@@ -26,7 +26,6 @@
   const merged = $derived(getComponentDefaults('Drawer', props));
 
   let panelEl = $state<HTMLElement | null>(null);
-  let previousFocus = $state<HTMLElement | null>(null);
 
   function close() {
     merged.onclose?.();
@@ -36,24 +35,20 @@
     if (merged.closeOnOverlay !== false && event.target === event.currentTarget) close();
   }
 
-  function onKeyDown(event: KeyboardEvent) {
-    if (event.key === 'Escape') close();
-  }
-
   $effect(() => {
     if (!merged.open) return;
-    previousFocus = document.activeElement as HTMLElement;
-    queueMicrotask(() => panelEl?.focus());
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.body.style.overflow = '';
-      previousFocus?.focus();
-    };
-  });
-
-  onMount(() => {
-    document.addEventListener('keydown', onKeyDown);
-    return () => document.removeEventListener('keydown', onKeyDown);
+    let deactivate: (() => void) | undefined;
+    queueMicrotask(() => {
+      if (!focusFirst(panelEl)) {
+        panelEl?.focus();
+      }
+      deactivate = activateOverlayFocus({
+        container: panelEl,
+        onEscape: close,
+        autoFocus: false,
+      });
+    });
+    return () => deactivate?.();
   });
 </script>
 

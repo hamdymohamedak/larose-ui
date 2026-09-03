@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { computed, onUnmounted, ref, useId, watch } from 'vue';
+import { computed, ref, useId, watch } from 'vue';
 import type { CSSProperties } from 'vue';
+import { activateOverlayFocus } from '@larose-ui/primitives';
 import type {
   AlertDialogAction,
   AlertDialogPresentation,
@@ -88,39 +89,36 @@ function openHelp() {
   }
 }
 
-function onKeyDown(event: KeyboardEvent) {
-  if (event.key !== 'Escape' || !props.open) return;
-  event.preventDefault();
-  const cancel = resolveCancelAction(props.actions);
-  if (cancel) runAction(cancel);
-  else close();
-}
-
 watch(
   () => props.open,
-  (open) => {
-    if (!open) {
-      document.body.style.overflow = '';
-      document.removeEventListener('keydown', onKeyDown);
-      return;
-    }
+  (open, _prev, onCleanup) => {
+    if (!open) return;
     validateAlertActions(props.actions);
     warnIfAlertTitleTooLong(props.title);
-    document.addEventListener('keydown', onKeyDown);
-    document.body.style.overflow = 'hidden';
-    requestAnimationFrame(() => dialogRef.value?.focus());
+    let deactivate: (() => void) | null = null;
+    const frame = requestAnimationFrame(() => {
+      dialogRef.value?.focus();
+      deactivate = activateOverlayFocus({
+        container: dialogRef.value,
+        onEscape: () => {
+          const cancel = resolveCancelAction(props.actions);
+          if (cancel) runAction(cancel);
+          else close();
+        },
+        autoFocus: false,
+      });
+    });
+    onCleanup(() => {
+      cancelAnimationFrame(frame);
+      deactivate?.();
+    });
   },
   { immediate: true },
 );
-
-onUnmounted(() => {
-  document.removeEventListener('keydown', onKeyDown);
-  document.body.style.overflow = '';
-});
 </script>
 
 <template>
-  <Teleport v-if="open" to="body">
+  <Teleport v-if="open" to="[data-lr-portal-root], [data-lr-provider], body">
     <div :class="styles.overlay" :data-presentation="presentation" role="presentation">
       <div
         ref="dialogRef"

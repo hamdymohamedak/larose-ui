@@ -6,8 +6,14 @@ import {
   useMemo,
   useState,
   type CSSProperties,
+  type KeyboardEvent,
   type ReactNode,
 } from 'react';
+import {
+  createTabIds,
+  handleTabListKeyDown,
+  isTabSelected,
+} from '@larose-ui/primitives';
 import styles from '@larose-ui/styles/components/Tabs/Tabs.module.css';
 
 interface TabsContextValue {
@@ -87,12 +93,22 @@ export function TabsList({
   style,
   'aria-label': ariaLabel = 'Tabs',
 }: TabsListProps) {
+  const { value, onValueChange } = useTabsContext('TabsList');
+
+  const onKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    handleTabListKeyDown(event.nativeEvent, event.currentTarget, {
+      activeValue: value,
+      onValueChange,
+    });
+  };
+
   return (
     <div
       className={[styles.list, className].filter(Boolean).join(' ')}
       style={style}
       role="tablist"
       aria-label={ariaLabel}
+      onKeyDown={onKeyDown}
     >
       {children}
     </div>
@@ -109,9 +125,8 @@ export interface TabsTriggerProps {
 
 export function TabsTrigger({ value, children, disabled, className, style }: TabsTriggerProps) {
   const { value: activeValue, onValueChange, baseId } = useTabsContext('TabsTrigger');
-  const selected = activeValue === value;
-  const tabId = `${baseId}-tab-${value}`;
-  const panelId = `${baseId}-panel-${value}`;
+  const selected = isTabSelected(activeValue, value);
+  const { tabId, panelId } = createTabIds(baseId, value);
 
   return (
     <button
@@ -124,6 +139,7 @@ export function TabsTrigger({ value, children, disabled, className, style }: Tab
       aria-controls={panelId}
       tabIndex={selected ? 0 : -1}
       data-state={selected ? 'active' : 'inactive'}
+      data-value={value}
       disabled={disabled}
       onClick={() => onValueChange(value)}
     >
@@ -141,9 +157,8 @@ export interface TabsPanelProps {
 
 export function TabsPanel({ value, children, className, style }: TabsPanelProps) {
   const { value: activeValue, baseId } = useTabsContext('TabsPanel');
-  const selected = activeValue === value;
-  const tabId = `${baseId}-tab-${value}`;
-  const panelId = `${baseId}-panel-${value}`;
+  const selected = isTabSelected(activeValue, value);
+  const { tabId, panelId } = createTabIds(baseId, value);
 
   if (!selected) return null;
 

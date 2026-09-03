@@ -1,7 +1,7 @@
 {
   "name": "@larose-ui/testing",
   "version": "0.2.0",
-  "description": "Testing utilities and test matrix helpers for laRose",
+  "description": "React testing adapter for laRose — renderWithLaRose over testing-core matrix",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -24,7 +24,8 @@
   },
   "dependencies": {
     "@larose-ui/core": "workspace:*",
-    "@larose-ui/runtime": "workspace:*"
+    "@larose-ui/runtime": "workspace:*",
+    "@larose-ui/testing-core": "workspace:*"
   },
   "peerDependencies": {
     "@testing-library/react": ">=16",

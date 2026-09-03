@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { evaluateCondition, getVisibleFields, validateForm } from './schema';
+import { evaluateCondition, getVisibleFields, validateForm } from '@larose-ui/forms-core';
+
 
 const schema = {
   id: 'employee',

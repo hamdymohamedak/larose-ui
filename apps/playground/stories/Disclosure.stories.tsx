@@ -26,7 +26,7 @@ export const DisclosureTriangleStory: Story = {
   tags: ['fw-react', 'fw-vue', 'fw-svelte'],
   parameters: { laRose: { crossFramework: 'disclosureTriangle' } },
   args: {
-    label: "Advanced options",
+    label: 'Advanced options',
     expanded: false,
   },
 
@@ -56,6 +56,9 @@ export const DisclosureTriangleStory: Story = {
 
 export const DisclosureButtonStory: Story = {
   name: 'Disclosure button',
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'disclosureButton' } },
+  args: { defaultExpanded: false, label: 'Save document' },
   render: function ButtonDemo() {
     const [expanded, setExpanded] = useState(false);
     return (
@@ -84,6 +87,9 @@ export const DisclosureButtonStory: Story = {
 
 export const DisclosureGroupStory: Story = {
   name: 'Disclosure group',
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'disclosureGroup' } },
+  args: { label: 'Delivery details', defaultExpanded: true },
   render: () => (
     <DisclosureGroup label="Delivery details" defaultExpanded>
       <Input label="Recipient" defaultValue="sara@company.com" />
@@ -93,6 +99,8 @@ export const DisclosureGroupStory: Story = {
 };
 
 export const FinderStyleList: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'disclosureList' } },
   render: () => (
     <DisclosureList
       defaultExpandedIds={['work']}
@@ -112,6 +120,9 @@ export const FinderStyleList: Story = {
 };
 
 export const LabelImportance: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'label' } },
+  args: { label: 'Primary information', importance: 'primary' },
   render: () => (
     <Card title="System label colors" padding="md">
       <div style={{ display: 'grid', gap: '0.5rem' }}>
@@ -125,6 +136,14 @@ export const LabelImportance: Story = {
 };
 
 export const SelectableLabel: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'label' } },
+  args: {
+    label: 'Error E-1042 · IP 192.168.1.42 · Serial LR-2026-0830',
+    importance: 'secondary',
+    selectable: true,
+    mono: true,
+  },
   render: () => (
     <Card title="Diagnostics" padding="md">
       <Label importance="secondary" selectable mono>

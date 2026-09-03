@@ -1,4 +1,4 @@
-import type { Accelerator } from '@larose-ui/react';
+import type { Accelerator } from '@larose-ui/core';
 
 /**
  * Browser-safe accelerators for Storybook demos.

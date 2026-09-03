@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue';
 import { DRAG_START_THRESHOLD_PX } from '@larose-ui/tokens';
-import { distance } from '../../DragDrop/utils';
+import { shouldBeginDrag } from '@larose-ui/primitives';
 import { useDragDropContext } from '../../DragDrop/context';
 import styles from '@larose-ui/styles/components/DragDrop/DragDrop.module.css';
 import { cn } from '../../utils/cn';
@@ -67,14 +67,16 @@ function onPointerMove(event: PointerEvent) {
   if (!pending.value || !origin.value) return;
   if (event.pointerId !== origin.value.pointerId) return;
 
-  const moved = distance(
-    origin.value.x,
-    origin.value.y,
-    event.clientX,
-    event.clientY,
-  );
-
-  if (!session.value && moved >= DRAG_START_THRESHOLD_PX) {
+  if (
+    !session.value &&
+    shouldBeginDrag(
+      origin.value.x,
+      origin.value.y,
+      event.clientX,
+      event.clientY,
+      DRAG_START_THRESHOLD_PX,
+    )
+  ) {
     beginPointerDrag(
       buildItem(),
       event.pointerId,

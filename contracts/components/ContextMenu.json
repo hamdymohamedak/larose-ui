@@ -1,7 +1,7 @@
 {
   "name": "ContextMenu",
   "version": "1",
-  "framework": "react",
+  "framework": "neutral",
   "props": [
     {
       "name": "dimBackground",
@@ -36,7 +36,7 @@
     },
     {
       "name": "preview",
-      "type": "ReactNode",
+      "type": "Node",
       "required": false
     }
   ],

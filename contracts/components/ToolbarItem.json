@@ -1,7 +1,7 @@
 {
   "name": "ToolbarItem",
   "version": "1",
-  "framework": "react",
+  "framework": "neutral",
   "props": [
     {
       "name": "collapsible",
@@ -15,7 +15,7 @@
     },
     {
       "name": "icon",
-      "type": "ReactNode",
+      "type": "Node",
       "required": false
     },
     {

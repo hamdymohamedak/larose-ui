@@ -1,7 +1,7 @@
 {
   "name": "@larose-ui/enterprise",
   "version": "0.2.0",
-  "description": "Enterprise features — audit trails, version compatibility, UI schema IaC, security patterns",
+  "description": "React enterprise UI adapter for laRose — audit, schema, session over @larose-ui/enterprise-core",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@larose-ui/core": "workspace:*",
+    "@larose-ui/enterprise-core": "workspace:*",
     "@larose-ui/forms": "workspace:*",
     "@larose-ui/observability": "workspace:*",
     "@larose-ui/permissions": "workspace:*",

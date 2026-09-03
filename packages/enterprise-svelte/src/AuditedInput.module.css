@@ -1,0 +1,16 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lr-space-2);
+}
+
+.historyButton {
+  align-self: flex-start;
+  font-size: var(--lr-font-size-sm);
+  color: var(--lr-color-primary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}

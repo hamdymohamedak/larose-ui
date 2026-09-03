@@ -200,9 +200,12 @@ export const CheckboxStory: StoryObj<CheckboxArgs> = {
 };
 
 export const AllControls: StoryObj = {
-  tags: ['fw-react'],
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
   name: 'All controls',
-  parameters: { controls: { disable: true } },
+  parameters: {
+    controls: { disable: true },
+    laRose: { crossFramework: 'liquidGlassAllControls' },
+  },
   render: () => {
     const [on, setOn] = useState(true);
     const [checked, setChecked] = useState(false);

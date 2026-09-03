@@ -1,8 +1,12 @@
 import { createContext, useContext, useMemo, type ReactNode } from 'react';
 import { usePermissions } from '@larose-ui/permissions';
-import type { AIAdapter } from './adapter';
-import { createMockAdapter } from './adapters/mockAdapter';
-import { createAIRuntime, type AIRuntime, type AIAuditEvent } from './runtime';
+import {
+  createMockAdapter,
+  createAIRuntime,
+  type AIAdapter,
+  type AIRuntime,
+  type AIAuditEvent,
+} from '@larose-ui/ai-core';
 
 export interface AIProviderProps {
   children: ReactNode;
@@ -18,7 +22,7 @@ export function AIProvider({ children, adapter, onAudit }: AIProviderProps) {
     () =>
       createAIRuntime({
         adapter: adapter ?? createMockAdapter(),
-        grantedPermissions: permissions,
+        grantedPermissions: () => permissions,
         onAudit,
       }),
     [adapter, permissions, onAudit],

@@ -27,6 +27,8 @@
   },
   "dependencies": {
     "@larose-ui/core": "workspace:*",
+    "@larose-ui/component-logic": "workspace:*",
+    "@larose-ui/liquid-glass-core": "workspace:*",
     "@larose-ui/primitives": "workspace:*",
     "@larose-ui/runtime-core": "workspace:*",
     "@larose-ui/styles": "workspace:*",

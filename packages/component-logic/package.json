@@ -1,0 +1,275 @@
+{
+  "name": "@larose-ui/component-logic",
+  "version": "0.2.0",
+  "description": "Shared framework-agnostic component logic for laRose UI (utils, domain helpers)",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./lockup": {
+      "types": "./dist/Lockup/index.d.ts",
+      "import": "./dist/Lockup/index.js"
+    },
+    "./tab-view": {
+      "types": "./dist/TabView/index.d.ts",
+      "import": "./dist/TabView/index.js"
+    },
+    "./image-view": {
+      "types": "./dist/ImageView/index.d.ts",
+      "import": "./dist/ImageView/index.js"
+    },
+    "./drag-drop": {
+      "types": "./dist/DragDrop/index.d.ts",
+      "import": "./dist/DragDrop/index.js"
+    },
+    "./sharing": {
+      "types": "./dist/Sharing/index.d.ts",
+      "import": "./dist/Sharing/index.js"
+    },
+    "./search-field": {
+      "types": "./dist/SearchField/index.d.ts",
+      "import": "./dist/SearchField/index.js"
+    },
+    "./layout": {
+      "types": "./dist/Layout/index.d.ts",
+      "import": "./dist/Layout/index.js"
+    },
+    "./token-field": {
+      "types": "./dist/TokenField/index.d.ts",
+      "import": "./dist/TokenField/index.js"
+    },
+    "./pull-down-button": {
+      "types": "./dist/PullDownButton/index.d.ts",
+      "import": "./dist/PullDownButton/index.js"
+    },
+    "./path-control": {
+      "types": "./dist/PathControl/index.d.ts",
+      "import": "./dist/PathControl/index.js"
+    },
+    "./ornament": {
+      "types": "./dist/Ornament/index.d.ts",
+      "import": "./dist/Ornament/index.js"
+    },
+    "./menu": {
+      "types": "./dist/Menu/index.d.ts",
+      "import": "./dist/Menu/index.js"
+    },
+    "./pop-up-button": {
+      "types": "./dist/PopUpButton/index.d.ts",
+      "import": "./dist/PopUpButton/index.js"
+    },
+    "./quick-actions": {
+      "types": "./dist/QuickActions/index.d.ts",
+      "import": "./dist/QuickActions/index.js"
+    },
+    "./dock-menu": {
+      "types": "./dist/DockMenu/index.d.ts",
+      "import": "./dist/DockMenu/index.js"
+    },
+    "./file-management": {
+      "types": "./dist/FileManagement/index.d.ts",
+      "import": "./dist/FileManagement/index.js"
+    },
+    "./data-entry": {
+      "types": "./dist/DataEntry/index.d.ts",
+      "import": "./dist/DataEntry/index.js"
+    },
+    "./split-view": {
+      "types": "./dist/SplitView/index.d.ts",
+      "import": "./dist/SplitView/index.js"
+    },
+    "./alert-dialog": {
+      "types": "./dist/AlertDialog/index.d.ts",
+      "import": "./dist/AlertDialog/index.js"
+    },
+    "./toolbar": {
+      "types": "./dist/Toolbar/index.d.ts",
+      "import": "./dist/Toolbar/index.js"
+    },
+    "./list-table": {
+      "types": "./dist/ListTable/index.d.ts",
+      "import": "./dist/ListTable/index.js"
+    },
+    "./chart": {
+      "types": "./dist/Chart/index.d.ts",
+      "import": "./dist/Chart/index.js"
+    },
+    "./context-menu": {
+      "types": "./dist/ContextMenu/index.d.ts",
+      "import": "./dist/ContextMenu/index.js"
+    },
+    "./menu-bar": {
+      "types": "./dist/MenuBar/index.d.ts",
+      "import": "./dist/MenuBar/index.js"
+    },
+    "./edit-menu": {
+      "types": "./dist/EditMenu/index.d.ts",
+      "import": "./dist/EditMenu/index.js"
+    },
+    "./picker": {
+      "types": "./dist/Picker/index.d.ts",
+      "import": "./dist/Picker/index.js"
+    },
+    "./button": {
+      "types": "./dist/Button/index.d.ts",
+      "import": "./dist/Button/index.js"
+    },
+    "./lockup/utils": {
+      "types": "./dist/Lockup/utils-public.d.ts",
+      "import": "./dist/Lockup/utils-public.js"
+    },
+    "./tab-view/utils": {
+      "types": "./dist/TabView/utils-public.d.ts",
+      "import": "./dist/TabView/utils-public.js"
+    },
+    "./image-view/utils": {
+      "types": "./dist/ImageView/utils-public.d.ts",
+      "import": "./dist/ImageView/utils-public.js"
+    },
+    "./drag-drop/utils": {
+      "types": "./dist/DragDrop/utils-public.d.ts",
+      "import": "./dist/DragDrop/utils-public.js"
+    },
+    "./sharing/utils": {
+      "types": "./dist/Sharing/utils-public.d.ts",
+      "import": "./dist/Sharing/utils-public.js"
+    },
+    "./search-field/utils": {
+      "types": "./dist/SearchField/utils-public.d.ts",
+      "import": "./dist/SearchField/utils-public.js"
+    },
+    "./layout/utils": {
+      "types": "./dist/Layout/utils-public.d.ts",
+      "import": "./dist/Layout/utils-public.js"
+    },
+    "./token-field/utils": {
+      "types": "./dist/TokenField/utils-public.d.ts",
+      "import": "./dist/TokenField/utils-public.js"
+    },
+    "./pull-down-button/utils": {
+      "types": "./dist/PullDownButton/utils-public.d.ts",
+      "import": "./dist/PullDownButton/utils-public.js"
+    },
+    "./path-control/utils": {
+      "types": "./dist/PathControl/utils-public.d.ts",
+      "import": "./dist/PathControl/utils-public.js"
+    },
+    "./ornament/utils": {
+      "types": "./dist/Ornament/utils-public.d.ts",
+      "import": "./dist/Ornament/utils-public.js"
+    },
+    "./menu/utils": {
+      "types": "./dist/Menu/utils-public.d.ts",
+      "import": "./dist/Menu/utils-public.js"
+    },
+    "./pop-up-button/utils": {
+      "types": "./dist/PopUpButton/utils-public.d.ts",
+      "import": "./dist/PopUpButton/utils-public.js"
+    },
+    "./quick-actions/utils": {
+      "types": "./dist/QuickActions/utils-public.d.ts",
+      "import": "./dist/QuickActions/utils-public.js"
+    },
+    "./dock-menu/utils": {
+      "types": "./dist/DockMenu/utils-public.d.ts",
+      "import": "./dist/DockMenu/utils-public.js"
+    },
+    "./file-management/utils": {
+      "types": "./dist/FileManagement/utils-public.d.ts",
+      "import": "./dist/FileManagement/utils-public.js"
+    },
+    "./data-entry/utils": {
+      "types": "./dist/DataEntry/utils-public.d.ts",
+      "import": "./dist/DataEntry/utils-public.js"
+    },
+    "./split-view/utils": {
+      "types": "./dist/SplitView/utils-public.d.ts",
+      "import": "./dist/SplitView/utils-public.js"
+    },
+    "./alert-dialog/utils": {
+      "types": "./dist/AlertDialog/utils-public.d.ts",
+      "import": "./dist/AlertDialog/utils-public.js"
+    },
+    "./toolbar/utils": {
+      "types": "./dist/Toolbar/utils-public.d.ts",
+      "import": "./dist/Toolbar/utils-public.js"
+    },
+    "./list-table/utils": {
+      "types": "./dist/ListTable/utils-public.d.ts",
+      "import": "./dist/ListTable/utils-public.js"
+    },
+    "./chart/utils": {
+      "types": "./dist/Chart/utils-public.d.ts",
+      "import": "./dist/Chart/utils-public.js"
+    },
+    "./context-menu/utils": {
+      "types": "./dist/ContextMenu/utils-public.d.ts",
+      "import": "./dist/ContextMenu/utils-public.js"
+    },
+    "./menu-bar/utils": {
+      "types": "./dist/MenuBar/utils-public.d.ts",
+      "import": "./dist/MenuBar/utils-public.js"
+    },
+    "./edit-menu/utils": {
+      "types": "./dist/EditMenu/utils-public.d.ts",
+      "import": "./dist/EditMenu/utils-public.js"
+    },
+    "./picker/utils": {
+      "types": "./dist/Picker/utils-public.d.ts",
+      "import": "./dist/Picker/utils-public.js"
+    },
+    "./menu-bar/standard-menus": {
+      "types": "./dist/MenuBar/standardMenus-public.d.ts",
+      "import": "./dist/MenuBar/standardMenus-public.js"
+    },
+    "./sharing/activity-utils": {
+      "types": "./dist/Sharing/activityUtils-public.d.ts",
+      "import": "./dist/Sharing/activityUtils-public.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@larose-ui/core": "workspace:*",
+    "@larose-ui/primitives": "workspace:*",
+    "@larose-ui/tokens": "workspace:*"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hamdymohamedak/larose-ui.git",
+    "directory": "packages/component-logic"
+  },
+  "keywords": [
+    "larose",
+    "ui-platform",
+    "component-logic",
+    "headless"
+  ],
+  "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/component-logic#readme",
+  "bugs": {
+    "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  }
+}

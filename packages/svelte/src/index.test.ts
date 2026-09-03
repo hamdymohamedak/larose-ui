@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { resolveButtonShape, formatButtonLabel } from './lib/button/utils';
 import { fieldIdFromLabel } from './lib/data-entry/utils';
 import { squircleHeightFn } from './lib/LiquidGlass/engine/displacement-map';
+import { createTabIds, getAdjacentValue, handleEscapeKey } from '@larose-ui/primitives';
 
 describe('button utils', () => {
   it('formats labels with ellipsis', () => {
@@ -25,5 +26,23 @@ describe('LiquidGlass engine', () => {
   it('shares the same squircle engine as React', () => {
     expect(squircleHeightFn(0)).toBe(0);
     expect(squircleHeightFn(1)).toBe(1);
+  });
+});
+
+describe('shared primitives', () => {
+  it('creates tab ids and adjacent values', () => {
+    expect(createTabIds('x', 'home')).toEqual({
+      tabId: 'x-tab-home',
+      panelId: 'x-panel-home',
+    });
+    expect(getAdjacentValue(['a', 'b'], 'a', 1)).toBe('b');
+  });
+
+  it('handles escape keys', () => {
+    let closed = false;
+    handleEscapeKey({ key: 'Escape' } as KeyboardEvent, () => {
+      closed = true;
+    });
+    expect(closed).toBe(true);
   });
 });

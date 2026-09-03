@@ -131,6 +131,8 @@ function useActionLog() {
 
 export const ShortcutLab: Story = {
   name: 'Shortcut lab',
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'shortcutLab', displayName: 'Foundation/Accelerators' } },
   render: function ShortcutLabDemo() {
     const { events, log } = useActionLog();
     const [menuOpen, setMenuOpen] = useState(false);

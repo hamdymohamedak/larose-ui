@@ -1,7 +1,7 @@
 {
   "name": "Popover",
   "version": "1",
-  "framework": "react",
+  "framework": "neutral",
   "props": [
     {
       "name": "'aria-label'",
@@ -10,7 +10,7 @@
     },
     {
       "name": "content",
-      "type": "ReactNode",
+      "type": "Node",
       "required": true
     },
     {
@@ -43,7 +43,7 @@
     },
     {
       "name": "trigger",
-      "type": "ReactNode",
+      "type": "Node",
       "required": true
     }
   ],

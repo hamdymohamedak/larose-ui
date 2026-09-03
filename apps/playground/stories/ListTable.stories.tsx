@@ -116,6 +116,9 @@ export const ListAccessories: Story = {
 };
 
 export const SortableTable: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'table' } },
+  args: { caption: 'Team directory', selectedKey: '1' },
   render: function SortableTableDemo() {
     const [selectedKey, setSelectedKey] = useState('1');
     return (

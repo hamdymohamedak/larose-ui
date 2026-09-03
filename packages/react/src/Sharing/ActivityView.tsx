@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import type { ActivityItem, ActivityPresentation } from './types';
 import { partitionActivities, prepareActivities } from './activityUtils';
 import styles from '@larose-ui/styles/components/Sharing/Sharing.module.css';
+import { getLaRosePortalTarget } from '@larose-ui/core';
 
 export interface ActivityViewProps {
   open: boolean;
@@ -191,8 +192,7 @@ export function ActivityView({
         }
       : undefined;
 
-    return createPortal(
-      <div className={styles.activityPopoverBackdrop} role="presentation" onClick={onClose}>
+    return createPortal(<div className={styles.activityPopoverBackdrop} role="presentation" onClick={onClose}>
         <div
           className={[styles.activityPopover, className].filter(Boolean).join(' ')}
           style={{ ...anchorStyle, ...style }}
@@ -204,12 +204,11 @@ export function ActivityView({
           {panel}
         </div>
       </div>,
-      document.body,
+    getLaRosePortalTarget(),
     );
   }
 
-  return createPortal(
-    <div
+  return createPortal(<div
       className={styles.sheetOverlay}
       role="presentation"
       onClick={(event) => {
@@ -226,6 +225,6 @@ export function ActivityView({
         {panel}
       </div>
     </div>,
-    document.body,
+    getLaRosePortalTarget(),
   );
 }

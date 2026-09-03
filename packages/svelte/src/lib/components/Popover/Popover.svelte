@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
+  import { activateOverlayFocus } from '@larose-ui/primitives';
   import styles from '@larose-ui/styles/components/Popover/Popover.module.css';
   import { cn } from '../../utils/cn';
 
@@ -33,6 +34,7 @@
 
   let internalOpen = $state(defaultOpen);
   let rootEl = $state<HTMLElement | null>(null);
+  let panelEl = $state<HTMLElement | null>(null);
   const popoverId = `lr-popover-${Math.random().toString(36).slice(2, 9)}`;
   const isOpen = $derived(open !== undefined ? open : internalOpen);
 
@@ -48,15 +50,18 @@
       if (!rootEl?.contains(event.target as Node)) setOpen(false);
     }
 
-    function onKeyDown(event: KeyboardEvent) {
-      if (event.key === 'Escape') setOpen(false);
-    }
-
     document.addEventListener('mousedown', onPointerDown);
-    document.addEventListener('keydown', onKeyDown);
+    let deactivate: (() => void) | undefined;
+    queueMicrotask(() => {
+      deactivate = activateOverlayFocus({
+        container: panelEl,
+        onEscape: () => setOpen(false),
+        lockScroll: false,
+      });
+    });
     return () => {
       document.removeEventListener('mousedown', onPointerDown);
-      document.removeEventListener('keydown', onKeyDown);
+      deactivate?.();
     };
   });
 </script>
@@ -80,6 +85,7 @@
   </span>
   {#if isOpen}
     <div
+      bind:this={panelEl}
       id={popoverId}
       role="dialog"
       aria-label={ariaLabel}

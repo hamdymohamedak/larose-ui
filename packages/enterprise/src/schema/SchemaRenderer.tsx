@@ -1,7 +1,7 @@
 import { Form } from '@larose-ui/forms';
 import { Can } from '@larose-ui/permissions';
 import { Alert } from '@larose-ui/react';
-import { compileFormSchema, validateUISchema, type UISchema } from './uiSchema';
+import { compileFormSchema, validateUISchema, type UISchema } from '@larose-ui/enterprise-core';
 
 export interface SchemaRendererProps {
   schema: UISchema;

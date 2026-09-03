@@ -2,6 +2,18 @@ import { readFileSync } from 'node:fs';
 import ts from 'typescript';
 
 /**
+ * True for real UI components — excludes SCREAMING_SNAKE constants and config blobs.
+ * @param {string} name
+ */
+export function isComponentContractCandidate(name) {
+  if (!/^[A-Z][A-Za-z0-9]*$/.test(name)) return false;
+  if (name.endsWith('Props') || name.endsWith('Variant') || name.endsWith('Config')) return false;
+  if (/^(MAX|MIN|DEFAULT|STANDARD|SYSTEM|LIQUID|DRAG|FOCUS|LAROSE|PATH)_/.test(name)) return false;
+  if (/^[A-Z0-9_]+$/.test(name)) return false; // SCREAMING_SNAKE
+  return true;
+}
+
+/**
  * Parse PascalCase component exports from a package index file (supports multiline exports).
  * @param {string} indexPath
  * @returns {string[]}
@@ -20,8 +32,7 @@ export function parseComponentExportsFromIndex(indexPath) {
 
     for (const element of statement.exportClause.elements) {
       const name = element.name.text;
-      if (!/^[A-Z]/.test(name)) continue;
-      if (name.endsWith('Props') || name.endsWith('Variant') || name.endsWith('Config')) continue;
+      if (!isComponentContractCandidate(name)) continue;
       names.add(name);
     }
   }

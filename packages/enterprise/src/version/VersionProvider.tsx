@@ -6,7 +6,7 @@ import {
 } from 'react';
 import type { VersionInfo } from '@larose-ui/core';
 import { Alert } from '@larose-ui/react';
-import { checkVersionCompatibility, type VersionCheckOptions } from './checkVersion';
+import { checkVersionCompatibility, type VersionCheckOptions } from '@larose-ui/enterprise-core';
 
 const VersionContext = createContext<VersionInfo | null>(null);
 

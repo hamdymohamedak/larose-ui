@@ -1,7 +1,7 @@
 {
   "name": "ToolbarBackButton",
   "version": "1",
-  "framework": "react",
+  "framework": "neutral",
   "props": [
     {
       "name": "companionLabel",

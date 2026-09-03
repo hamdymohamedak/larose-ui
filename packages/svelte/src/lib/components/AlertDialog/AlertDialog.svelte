@@ -14,6 +14,7 @@
     validateAlertActions,
     warnIfAlertTitleTooLong,
   } from '../../AlertDialog/utils';
+  import { activateOverlayFocus } from '@larose-ui/primitives';
   import styles from '@larose-ui/styles/components/AlertDialog/AlertDialog.module.css';
   import { cn } from '../../utils/cn';
   import { portal } from '../../utils/portal';
@@ -83,22 +84,20 @@
 
   $effect(() => {
     if (!open) return;
-
-    function onKeyDown(event: KeyboardEvent) {
-      if (event.key !== 'Escape') return;
-      event.preventDefault();
-      const cancel = resolveCancelAction(actions);
-      if (cancel) runAction(cancel);
-      else close();
-    }
-
-    document.addEventListener('keydown', onKeyDown);
-    document.body.style.overflow = 'hidden';
-    queueMicrotask(() => dialogEl?.focus());
-    return () => {
-      document.removeEventListener('keydown', onKeyDown);
-      document.body.style.overflow = '';
-    };
+    let deactivate: (() => void) | undefined;
+    queueMicrotask(() => {
+      dialogEl?.focus();
+      deactivate = activateOverlayFocus({
+        container: dialogEl,
+        onEscape: () => {
+          const cancel = resolveCancelAction(actions);
+          if (cancel) runAction(cancel);
+          else close();
+        },
+        autoFocus: false,
+      });
+    });
+    return () => deactivate?.();
   });
 </script>
 

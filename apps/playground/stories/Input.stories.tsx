@@ -61,7 +61,9 @@ export const CurrencyFormat: Story = {
 };
 
 export const Secure: Story = {
-  tags: ['fw-react'],
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'secureField' } },
+  args: { label: 'Password', required: true, hint: 'Never prepopulated' },
   render: () => <SecureField label="Password" required hint="Never prepopulated" />,
 };
 

@@ -142,6 +142,7 @@ export function LaRoseProvider({
             <div
               ref={ref}
               data-lr-provider
+              data-lr-portal-root
               style={{
                 minHeight: 'inherit',
                 color: 'var(--lr-color-text)',

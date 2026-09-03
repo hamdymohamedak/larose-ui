@@ -3,27 +3,27 @@ export type {
   AIAdapterContext,
   FormFillResult,
   TableFilterResult,
-} from './adapter';
-export { createMockAdapter } from './adapters/mockAdapter';
+} from '@larose-ui/ai-core';
+export { createMockAdapter } from '@larose-ui/ai-core';
 export {
   createHttpAdapter,
   createFallbackAdapter,
   type HttpAdapterOptions,
-} from './adapters/httpAdapter';
-export { parseIntent, sanitizePrompt, type AIIntent, type AIIntentType } from './intent';
+} from '@larose-ui/ai-core';
+export { parseIntent, sanitizePrompt, type AIIntent, type AIIntentType } from '@larose-ui/ai-core';
 export {
   checkIntentPermission,
   checkActionPermission,
   resolveIntentPermission,
   type IntentPermissionResult,
-} from './permissions';
+} from '@larose-ui/ai-core';
 export {
   createAIRuntime,
   type AIRuntime,
   type AIRuntimeConfig,
   type AIExecutionResult,
   type AIAuditEvent,
-} from './runtime';
+} from '@larose-ui/ai-core';
 export { AIProvider, useAIRuntime, useOptionalAIRuntime, type AIProviderProps } from './AIProvider';
 export { useSmartAIRuntime } from './useSmartAIRuntime';
 export { SmartTable, type SmartTableProps } from './SmartTable';

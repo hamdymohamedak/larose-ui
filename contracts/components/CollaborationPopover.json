@@ -1,7 +1,7 @@
 {
   "name": "CollaborationPopover",
   "version": "1",
-  "framework": "react",
+  "framework": "neutral",
   "props": [
     {
       "name": "actions",
@@ -53,7 +53,7 @@
     },
     {
       "name": "trigger",
-      "type": "ReactNode",
+      "type": "Node",
       "required": true
     }
   ],

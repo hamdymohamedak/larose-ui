@@ -25,7 +25,8 @@
   },
   "dependencies": {
     "@larose-ui/core": "workspace:*",
-    "@larose-ui/permissions": "workspace:*"
+    "@larose-ui/permissions": "workspace:*",
+    "@larose-ui/data-core": "workspace:*"
   },
   "peerDependencies": {
     "react": ">=18"

@@ -1,7 +1,7 @@
 {
   "name": "LiquidGlassTopBar",
   "version": "1",
-  "framework": "react",
+  "framework": "neutral",
   "props": [
     {
       "name": "activeColor",
@@ -52,7 +52,7 @@
     },
     {
       "name": "logo",
-      "type": "ReactNode",
+      "type": "Node",
       "required": false
     },
     {
@@ -95,7 +95,7 @@
     },
     {
       "name": "trailing",
-      "type": "ReactNode",
+      "type": "Node",
       "required": false
     },
     {

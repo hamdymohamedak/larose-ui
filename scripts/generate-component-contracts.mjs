@@ -12,10 +12,10 @@ const liquidGlassIndexPath = join(root, 'packages/react/src/LiquidGlass/index.ts
 const reactNames = parseComponentExportsFromIndex(reactIndexPath);
 const glassNames = reactNames.filter(isGlassDocComponent);
 
-const contracts = extractComponentContracts(root, reactNames, COMPONENT_ANATOMY, 'react', reactIndexPath);
+const contracts = extractComponentContracts(root, reactNames, COMPONENT_ANATOMY, 'neutral', reactIndexPath);
 Object.assign(
   contracts,
-  extractComponentContracts(root, glassNames, COMPONENT_ANATOMY, 'react', liquidGlassIndexPath),
+  extractComponentContracts(root, glassNames, COMPONENT_ANATOMY, 'neutral', liquidGlassIndexPath),
 );
 
 const outDir = join(root, 'contracts/components');

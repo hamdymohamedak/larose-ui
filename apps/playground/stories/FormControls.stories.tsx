@@ -46,7 +46,9 @@ export const CheckboxDefault: StoryObj = {
 };
 
 export const RadioGroup: StoryObj = {
-  tags: ['fw-react'],
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'radio' } },
+  args: { label: 'Starter', name: 'plan', value: 'starter', defaultChecked: true },
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
       <Radio name="plan" label="Starter" value="starter" defaultChecked />

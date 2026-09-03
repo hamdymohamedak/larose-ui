@@ -110,6 +110,9 @@ export const PasteAndDrop: Story = {
 };
 
 export const ContinueWhenComplete: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'formContinue' } },
+  args: { complete: true, label: 'Continue' },
   render: function ContinueWhenCompleteDemo() {
     const [values, setValues] = useState({ name: '', email: '' });
     const complete = isFormComplete(values, ['name', 'email']);

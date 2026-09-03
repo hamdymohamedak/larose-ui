@@ -1,7 +1,7 @@
 {
   "name": "@larose-ui/ai",
   "version": "1.0.0",
-  "description": "AI-native UI adapters — SmartTable and SmartForm with pluggable intelligence",
+  "description": "React AI UI adapter for laRose — SmartTable/SmartForm over @larose-ui/ai-core",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -23,6 +23,7 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
+    "@larose-ui/ai-core": "workspace:*",
     "@larose-ui/forms": "workspace:*",
     "@larose-ui/permissions": "workspace:*",
     "@larose-ui/react": "workspace:*",

@@ -40,11 +40,21 @@ export const ShareButtonOnly: Story = {
 
 export const CollaborationButtonStory: Story = {
   name: 'Collaboration Button',
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'collaborationButton' } },
+  args: { label: 'Collaboration' },
   render: () => <CollaborationButton collaborators={collaborators} />,
 };
 
 export const ShareSheetStory: Story = {
   name: 'Share Sheet',
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'shareSheet' } },
+  args: {
+    open: true,
+    title: 'Share Note',
+    settings: { audience: 'invited', permission: 'edit' },
+  },
   render: function ShareSheetDemo() {
     const [open, setOpen] = useState(true);
     const [settings, setSettings] = useState<ShareSettings>({
@@ -72,7 +82,12 @@ export const ShareSheetStory: Story = {
 
 export const CollaborationPopoverStory: Story = {
   name: 'Collaboration Popover',
-  parameters: { layout: 'centered' },
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: {
+    layout: 'centered',
+    laRose: { crossFramework: 'collaborationPopover' },
+  },
+  args: { defaultOpen: true },
   render: () => (
     <div
       style={{
@@ -84,30 +99,36 @@ export const CollaborationPopoverStory: Story = {
       }}
     >
       <CollaborationPopover
-      trigger={<CollaborationButton collaborators={collaborators} />}
-      collaborators={collaborators}
-      actions={[
-        {
-          id: 'updates',
-          label: 'Recent updates',
-          description: 'Sara edited the introduction 5 minutes ago',
-        },
-        {
-          id: 'activity',
-          label: 'View all activity',
-          description: 'See the full collaboration timeline',
-        },
-      ]}
-      onMessage={() => undefined}
-      onVideo={() => undefined}
-      onManage={() => undefined}
-      defaultOpen
+        trigger={<CollaborationButton collaborators={collaborators} />}
+        collaborators={collaborators}
+        actions={[
+          {
+            id: 'updates',
+            label: 'Recent updates',
+            description: 'Sara edited the introduction 5 minutes ago',
+          },
+          {
+            id: 'activity',
+            label: 'View all activity',
+            description: 'See the full collaboration timeline',
+          },
+        ]}
+        onMessage={() => undefined}
+        onVideo={() => undefined}
+        onManage={() => undefined}
+        defaultOpen
       />
     </div>
   ),
 };
 
 export const DocumentToolbar: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'shareToolbar' } },
+  args: {
+    shareTitle: 'Share Quarterly Plan',
+    collaborating: true,
+  },
   render: function DocumentToolbarDemo() {
     const [collaborating, setCollaborating] = useState(false);
 

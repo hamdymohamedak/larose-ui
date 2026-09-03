@@ -77,6 +77,8 @@ function FocusableRow({
 }
 
 export const Overview: Story = {
+  // Composite focus/lockup showcase — keep React-only.
+  tags: ['fw-react'],
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
       <section>
@@ -166,6 +168,9 @@ export const Overview: Story = {
 
 export const CaptionButtonGrid: Story = {
   name: 'Caption Button Grid',
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'captionButton' } },
+  args: { title: 'Movies', subtitle: 'Browse', label: 'Movies' },
   render: function CaptionGridDemo() {
     const [focusedIndex, setFocusedIndex] = useState(2);
     const labels = ['Movies', 'Shows', 'Sports', 'Kids', 'Library', 'Search'];

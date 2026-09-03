@@ -1,7 +1,14 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import type { DragItem, DragSession, DropTargetState } from '../../DragDrop/types';
-  import { acceptsDragType, resolveDropOperation } from '../../DragDrop/utils';
+  import {
+    appendDragItem,
+    buildDropResult,
+    createDragSession,
+    findDropTarget,
+    moveDragSession,
+    zonesFromElements,
+  } from '@larose-ui/primitives';
   import { setDragDropContext, type DropZoneRegistration } from '../../DragDrop/context';
   import DragPreview from './DragPreview.svelte';
 
@@ -13,24 +20,13 @@
   const zones = new Map<string, DropZoneRegistration>();
 
   function findTarget(x: number, y: number, items: DragItem[]) {
-    for (const zone of zones.values()) {
-      const el = zone.element;
-      if (!el) continue;
-      const rect = el.getBoundingClientRect();
-      const inside =
-        x >= rect.left && x <= rect.right && y >= rect.top && y <= rect.bottom;
-      if (!inside) continue;
-      const typeOk = items.every((item) => acceptsDragType(zone.accepts, item.type));
-      const customOk = zone.canDrop ? zone.canDrop(items) : true;
-      return { zoneId: zone.id, valid: typeOk && customOk };
-    }
-    return null;
+    return findDropTarget(zonesFromElements(zones.values()), x, y, items);
   }
 
   function updatePointer(x: number, y: number) {
     if (!session) return;
     target = findTarget(x, y, session.items);
-    session = { ...session, x, y };
+    session = moveDragSession(session, x, y);
   }
 
   async function endPointer(x: number, y: number, optionKey: boolean) {
@@ -47,12 +43,7 @@
       }, 220);
       return;
     }
-    await zone.onDrop({
-      items: current.items,
-      sourceId: current.sourceId,
-      destinationId: zone.id,
-      operation: resolveDropOperation(current.sourceId, zone.id, optionKey),
-    });
+    await zone.onDrop(buildDropResult(current, zone.id, optionKey));
     session = null;
     target = null;
   }
@@ -75,21 +66,12 @@
     },
     beginPointerDrag(item, pointerId, x, y) {
       revertPreview = false;
-      session = {
-        items: [item],
-        sourceId: item.sourceId,
-        pointerId,
-        startX: x,
-        startY: y,
-        x,
-        y,
-      };
+      session = createDragSession(item, pointerId, x, y);
       target = null;
     },
     addItemToSession(item) {
       if (!session) return;
-      if (session.items.some((entry) => entry.id === item.id)) return;
-      session = { ...session, items: [...session.items, item] };
+      session = appendDragItem(session, item);
     },
     updatePointer,
     endPointer,

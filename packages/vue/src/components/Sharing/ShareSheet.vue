@@ -34,7 +34,7 @@ watch(() => props.open, (open) => {
 </script>
 
 <template>
-  <Teleport to="body">
+  <Teleport to="[data-lr-portal-root], [data-lr-provider], body">
     <div v-if="open" :class="styles.sheetOverlay" role="presentation" @click.self="emit('close')">
       <div :class="cn(styles.sheet, props.class)" :style="props.style" role="dialog" aria-modal="true" :aria-labelledby="titleId">
         <div :class="styles.sheetHeader">

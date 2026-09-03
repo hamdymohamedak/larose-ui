@@ -1,0 +1,1046 @@
+{
+  "generatedAt": "2026-09-03T23:14:19.868Z",
+  "count": 104,
+  "entries": [
+    {
+      "id": "accordion",
+      "displayName": "Accordion",
+      "componentName": "AccordionDemo",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "activityShareButton",
+      "displayName": "ActivityShareButton",
+      "componentName": "ActivityShareButton",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "activityView",
+      "displayName": "ActivityView",
+      "componentName": "ActivityView",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "alert",
+      "displayName": "Alert",
+      "componentName": "Alert",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "alertDialog",
+      "displayName": "AlertDialog",
+      "componentName": "AlertDialog",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "asyncButton",
+      "displayName": "AsyncButton",
+      "componentName": "AsyncButton",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "badge",
+      "displayName": "Badge",
+      "componentName": "Badge",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "box",
+      "displayName": "Box",
+      "componentName": "Box",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "breadcrumb",
+      "displayName": "Breadcrumb",
+      "componentName": "Breadcrumb",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "button",
+      "displayName": "Button",
+      "componentName": "Button",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "buttonGroup",
+      "displayName": "ButtonGroup",
+      "componentName": "ButtonGroupDemo",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "captionButton",
+      "displayName": "CaptionButton",
+      "componentName": "CaptionButton",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "card",
+      "displayName": "Card",
+      "componentName": "Card",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "chart",
+      "displayName": "Chart",
+      "componentName": "Chart",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "checkbox",
+      "displayName": "Checkbox",
+      "componentName": "Checkbox",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "collaborationButton",
+      "displayName": "CollaborationButton",
+      "componentName": "CollaborationButton",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "collaborationPopover",
+      "displayName": "CollaborationPopover",
+      "componentName": "CollaborationPopoverDemo",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "collection",
+      "displayName": "Collection",
+      "componentName": "Collection",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "columnView",
+      "displayName": "ColumnView",
+      "componentName": "ColumnView",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "commandPalette",
+      "displayName": "CommandPalette",
+      "componentName": "CommandPalette",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "contextMenu",
+      "displayName": "ContextMenu",
+      "componentName": "ContextMenu",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "dataTable",
+      "displayName": "DataTable",
+      "componentName": "DataTable",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "datePicker",
+      "displayName": "DatePicker",
+      "componentName": "DatePicker",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "dateRangePicker",
+      "displayName": "DateRangePicker",
+      "componentName": "DateRangePicker",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "dateTimePicker",
+      "displayName": "DateTimePicker",
+      "componentName": "DateTimePicker",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "dialog",
+      "displayName": "Dialog",
+      "componentName": "Dialog",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "disclosureButton",
+      "displayName": "DisclosureButton",
+      "componentName": "DisclosureButtonDemo",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "disclosureGroup",
+      "displayName": "DisclosureGroup",
+      "componentName": "DisclosureGroupDemo",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "disclosureList",
+      "displayName": "DisclosureList",
+      "componentName": "DisclosureList",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "disclosureTriangle",
+      "displayName": "DisclosureTriangle",
+      "componentName": "DisclosureTriangle",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "dockBar",
+      "displayName": "DockBar",
+      "componentName": "DockBar",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "dockMenu",
+      "displayName": "DockMenu",
+      "componentName": "DockMenu",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "documentLauncher",
+      "displayName": "DocumentLauncher",
+      "componentName": "DocumentLauncher",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "documentToolbar",
+      "displayName": "DocumentToolbar",
+      "componentName": "DocumentToolbar",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "documentWorkspace",
+      "displayName": "DocumentWorkspace",
+      "componentName": "DocumentWorkspace",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "dragDropList",
+      "displayName": "DragDropList",
+      "componentName": "DragDropList",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "drawer",
+      "displayName": "Drawer",
+      "componentName": "Drawer",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "editMenu",
+      "displayName": "EditMenu",
+      "componentName": "EditMenu",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "emptyState",
+      "displayName": "EmptyState",
+      "componentName": "EmptyState",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "fileBrowser",
+      "displayName": "FileBrowser",
+      "componentName": "FileBrowser",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "filePreview",
+      "displayName": "FilePreview",
+      "componentName": "FilePreview",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "fileUpload",
+      "displayName": "FileUpload",
+      "componentName": "FileUpload",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "formContinue",
+      "displayName": "FormContinue",
+      "componentName": "FormContinue",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "header",
+      "displayName": "Header",
+      "componentName": "HeaderDemo",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "helpButton",
+      "displayName": "HelpButton",
+      "componentName": "HelpButton",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "homeScreenQuickActions",
+      "displayName": "HomeScreenQuickActions",
+      "componentName": "HomeScreenQuickActions",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "imageButton",
+      "displayName": "ImageButton",
+      "componentName": "ImageButton",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "imageView",
+      "displayName": "ImageView",
+      "componentName": "ImageView",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "imageWell",
+      "displayName": "ImageWell",
+      "componentName": "ImageWell",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "input",
+      "displayName": "Input",
+      "componentName": "Input",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "label",
+      "displayName": "Label",
+      "componentName": "Label",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "liquidGlass",
+      "displayName": "LiquidGlass",
+      "componentName": "LiquidGlass",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "liquidGlassAllControls",
+      "displayName": "LiquidGlass Controls",
+      "componentName": "LiquidGlass Controls",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "liquidGlassButton",
+      "displayName": "LiquidGlassButton",
+      "componentName": "LiquidGlassButton",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "liquidGlassCheckbox",
+      "displayName": "LiquidGlassCheckbox",
+      "componentName": "LiquidGlassCheckbox",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "liquidGlassProgress",
+      "displayName": "LiquidGlassProgress",
+      "componentName": "LiquidGlassProgress",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "liquidGlassRange",
+      "displayName": "LiquidGlassRange",
+      "componentName": "LiquidGlassRange",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "liquidGlassSwitch",
+      "displayName": "LiquidGlassSwitch",
+      "componentName": "LiquidGlassSwitch",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "liquidGlassTabBar",
+      "displayName": "LiquidGlassTabBar",
+      "componentName": "LiquidGlassTabBar",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "liquidGlassTopBar",
+      "displayName": "LiquidGlassTopBar",
+      "componentName": "LiquidGlassTopBar",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "list",
+      "displayName": "List",
+      "componentName": "ListDemo",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "lockupCard",
+      "displayName": "LockupCard",
+      "componentName": "LockupCard",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "menu",
+      "displayName": "Menu",
+      "componentName": "Menu",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "menuBar",
+      "displayName": "MenuBar",
+      "componentName": "MenuBar",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "modal",
+      "displayName": "Modal",
+      "componentName": "Modal",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "monogram",
+      "displayName": "Monogram",
+      "componentName": "Monogram",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "ornament",
+      "displayName": "Ornament",
+      "componentName": "Ornament",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "outlineView",
+      "displayName": "OutlineView",
+      "componentName": "OutlineView",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "pagination",
+      "displayName": "Pagination",
+      "componentName": "Pagination",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "pathControl",
+      "displayName": "PathControl",
+      "componentName": "PathControl",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "picker",
+      "displayName": "Picker",
+      "componentName": "Picker",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "popover",
+      "displayName": "Popover",
+      "componentName": "PopoverDemo",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "popUpButton",
+      "displayName": "PopUpButton",
+      "componentName": "PopUpButton",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "poster",
+      "displayName": "Poster",
+      "componentName": "Poster",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "progress",
+      "displayName": "Progress",
+      "componentName": "Progress",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "pullDownButton",
+      "displayName": "PullDownButton",
+      "componentName": "PullDownButton",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "radio",
+      "displayName": "Radio",
+      "componentName": "Radio",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "searchField",
+      "displayName": "SearchField",
+      "componentName": "SearchField",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "secureField",
+      "displayName": "SecureField",
+      "componentName": "SecureField",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "select",
+      "displayName": "Select",
+      "componentName": "Select",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "shareButton",
+      "displayName": "ShareButton",
+      "componentName": "ShareButton",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "shareSheet",
+      "displayName": "ShareSheet",
+      "componentName": "ShareSheet",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "shareToolbar",
+      "displayName": "ShareToolbar",
+      "componentName": "ShareToolbar",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "shortcutLab",
+      "displayName": "Foundation/Accelerators",
+      "componentName": "ShortcutLabDemo",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "sidebar",
+      "displayName": "Sidebar",
+      "componentName": "SidebarDemo",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "skeleton",
+      "displayName": "Skeleton",
+      "componentName": "Skeleton",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "spinner",
+      "displayName": "Spinner",
+      "componentName": "Spinner",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "splitView",
+      "displayName": "SplitView",
+      "componentName": "SplitViewDemo",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "squareButton",
+      "displayName": "SquareButton",
+      "componentName": "SquareButtonsDemo",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "switch",
+      "displayName": "Switch",
+      "componentName": "Switch",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "table",
+      "displayName": "Table",
+      "componentName": "TableDemo",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "tabs",
+      "displayName": "Tabs",
+      "componentName": "TabsDemo",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "tabView",
+      "displayName": "TabView",
+      "componentName": "TabViewDemo",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "textarea",
+      "displayName": "Textarea",
+      "componentName": "Textarea",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "textView",
+      "displayName": "TextView",
+      "componentName": "TextView",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "timePicker",
+      "displayName": "TimePicker",
+      "componentName": "TimePicker",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "toast",
+      "displayName": "Toast",
+      "componentName": "ToastDemo",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "tokenField",
+      "displayName": "TokenField",
+      "componentName": "TokenField",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "toolbar",
+      "displayName": "Toolbar",
+      "componentName": "Toolbar",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "tooltip",
+      "displayName": "Tooltip",
+      "componentName": "Tooltip",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "typography",
+      "displayName": "Typography",
+      "componentName": "Typography",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "unsavedIndicator",
+      "displayName": "UnsavedIndicator",
+      "componentName": "UnsavedIndicator",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "unsavedIndicators",
+      "displayName": "UnsavedIndicators",
+      "componentName": "UnsavedIndicators",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "wheelPicker",
+      "displayName": "WheelPicker",
+      "componentName": "WheelPicker",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    }
+  ]
+}

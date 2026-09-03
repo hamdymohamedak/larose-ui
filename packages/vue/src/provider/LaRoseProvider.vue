@@ -76,7 +76,7 @@ watch(() => props.tenantId, applyTheme);
 </script>
 
 <template>
-  <div ref="rootRef" data-lr-provider style="min-height: inherit">
+  <div ref="rootRef" data-lr-provider data-lr-portal-root style="min-height: inherit">
     <slot />
   </div>
 </template>

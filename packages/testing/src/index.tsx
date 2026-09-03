@@ -3,6 +3,12 @@ import type { ReactElement, ReactNode } from 'react';
 import type { Density, Environment, SessionState, TenantContext, ThemeMode } from '@larose-ui/core';
 import { LaRoseProvider } from '@larose-ui/runtime';
 import type { FeatureState } from '@larose-ui/runtime';
+import {
+  defaultTestMatrix as coreMatrix,
+  resolveMatrixOptions,
+  type TestMatrixCase as CoreCase,
+  type TestMatrixScenario,
+} from '@larose-ui/testing-core';
 
 export interface LaRoseTestOptions extends Omit<RenderOptions, 'wrapper'> {
   theme?: ThemeMode;
@@ -58,39 +64,17 @@ export function renderWithLaRose(
   return render(ui, { wrapper: Wrapper, ...renderOptions });
 }
 
-export type TestMatrixScenario =
-  | 'normal'
-  | 'loading'
-  | 'error'
-  | 'empty'
-  | 'offline'
-  | 'unauthorized'
-  | 'slow-network'
-  | 'mobile'
-  | 'rtl'
-  | 'dark';
-
-export interface TestMatrixCase {
-  scenario: TestMatrixScenario;
-  description: string;
+export type { TestMatrixScenario };
+export type TestMatrixCase = Omit<CoreCase, 'options'> & {
   options?: LaRoseTestOptions;
-}
+};
 
-export const defaultTestMatrix: TestMatrixCase[] = [
-  { scenario: 'normal', description: 'Default happy path' },
-  { scenario: 'dark', description: 'Dark mode', options: { theme: 'dark' } },
-  { scenario: 'rtl', description: 'RTL locale', options: { locale: 'ar' } },
-  {
-    scenario: 'unauthorized',
-    description: 'No permissions',
-    options: { permissions: [] },
-  },
-  {
-    scenario: 'mobile',
-    description: 'Compact density',
-    options: { density: 'compact' },
-  },
-];
+export const defaultTestMatrix: TestMatrixCase[] = coreMatrix.map((entry) => ({
+  ...entry,
+  options: entry.options as LaRoseTestOptions | undefined,
+}));
+
+export { resolveMatrixOptions };
 
 export const VISUAL_REGRESSION_GUIDE = `
 # Visual Regression Architecture

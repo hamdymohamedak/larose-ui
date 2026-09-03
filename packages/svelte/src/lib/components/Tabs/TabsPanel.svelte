@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
+  import { createTabIds, isTabSelected } from '@larose-ui/primitives';
   import styles from '@larose-ui/styles/components/Tabs/Tabs.module.css';
   import { cn } from '../../utils/cn';
   import { getTabsContext } from './context';
@@ -14,18 +15,17 @@
   let { value, children, class: className, style }: Props = $props();
 
   const tabs = getTabsContext('TabsPanel');
-  const selected = $derived(tabs.value === value);
-  const tabId = $derived(`${tabs.baseId}-tab-${value}`);
-  const panelId = $derived(`${tabs.baseId}-panel-${value}`);
+  const selected = $derived(isTabSelected(tabs.value, value));
+  const ids = $derived(createTabIds(tabs.baseId, value));
 </script>
 
 {#if selected}
   <div
-    id={panelId}
+    id={ids.panelId}
     role="tabpanel"
     class={cn(styles.panel, className)}
     {style}
-    aria-labelledby={tabId}
+    aria-labelledby={ids.tabId}
     tabindex="0"
   >
     {@render children()}
