@@ -94,9 +94,6 @@ import {
   Tooltip,
   Typography,
   UnsavedIndicator,
-  WebView,
-  WebViewNavigation,
-  WebViewShell,
 } from '@larose-ui/react';
 import { PreviewFrame } from '@/components/PreviewFrame';
 import { GLASS_STATIC_PREVIEWS } from '@/previews/glass/glassPreviews';
@@ -718,23 +715,6 @@ export const STATIC_PREVIEWS: Record<string, () => ReactNode> = {
   UnsavedIndicator: () => (
     <PreviewFrame title="Unsaved indicator">
       <UnsavedIndicator label="Employees.csv" />
-    </PreviewFrame>
-  ),
-  WebView: () => (
-    <PreviewFrame layout="block" title="Web view">
-      <WebView src="https://example.com" title="Example" style={{ minHeight: 160, width: '100%' }} />
-    </PreviewFrame>
-  ),
-  WebViewNavigation: () => (
-    <PreviewFrame layout="block" title="Web view navigation">
-      <WebViewNavigation canGoBack canGoForward onBack={() => undefined} onForward={() => undefined} />
-    </PreviewFrame>
-  ),
-  WebViewShell: () => (
-    <PreviewFrame layout="block" title="Web view shell">
-      <WebViewShell title="Documentation" url="https://example.com/docs">
-        <Typography muted>Embedded web content area</Typography>
-      </WebViewShell>
     </PreviewFrame>
   ),
   Header: () => (

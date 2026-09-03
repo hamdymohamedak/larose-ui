@@ -90,16 +90,6 @@ export const docsPackages: DocsPackageEntry[] = [
     ]
   },
   {
-    "id": "desktop-core",
-    "name": "@larose-ui/desktop-core",
-    "tagline": "Desktop host utilities — native menus, accelerators, window chrome.",
-    "example": "import { registerHost, mapMenuBarToNative } from '@larose-ui/desktop-core';",
-    "features": [
-      "Electron/Tauri host registration",
-      "Native menu mapping"
-    ]
-  },
-  {
     "id": "devtools",
     "name": "@larose-ui/devtools",
     "tagline": "In-app runtime inspector for development.",
@@ -109,17 +99,6 @@ export const docsPackages: DocsPackageEntry[] = [
       "Runtime context panel",
       "Event timeline",
       "Component inspector"
-    ]
-  },
-  {
-    "id": "electron",
-    "name": "@larose-ui/electron",
-    "tagline": "Electron adapter for laRose desktop apps.",
-    "peer": "electron >=28, react >=18",
-    "example": "import { LaRoseElectronRoot } from '@larose-ui/electron/client';",
-    "features": [
-      "Host bootstrap",
-      "Native menu templates"
     ]
   },
   {
@@ -292,17 +271,6 @@ export const docsPackages: DocsPackageEntry[] = [
       "Svelte 5 runes",
       "Shared design tokens",
       "Foundation parity components"
-    ]
-  },
-  {
-    "id": "tauri",
-    "name": "@larose-ui/tauri",
-    "tagline": "Tauri adapter for laRose desktop webviews.",
-    "peer": "react >=18",
-    "example": "import { LaRoseTauriRoot } from '@larose-ui/tauri/client';",
-    "features": [
-      "Host bootstrap",
-      "Tauri menu helpers"
     ]
   },
   {
@@ -1195,24 +1163,6 @@ export const docsComponents: DocsComponentEntry[] = [
     "package": "react"
   },
   {
-    "id": "web-view",
-    "name": "WebView",
-    "category": "Content",
-    "package": "react"
-  },
-  {
-    "id": "web-view-navigation",
-    "name": "WebViewNavigation",
-    "category": "Content",
-    "package": "react"
-  },
-  {
-    "id": "web-view-shell",
-    "name": "WebViewShell",
-    "category": "Content",
-    "package": "react"
-  },
-  {
     "id": "wheel-column",
     "name": "WheelColumn",
     "category": "Forms",
@@ -1251,11 +1201,6 @@ export const docsGuides: DocsGuideEntry[] = [
     "id": "nuxt",
     "title": "Nuxt",
     "file": "docs/ecosystem/NUXT.md"
-  },
-  {
-    "id": "desktop",
-    "title": "Desktop integration",
-    "file": "docs/ecosystem/DESKTOP.md"
   },
   {
     "id": "runtime",

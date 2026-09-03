@@ -69,7 +69,6 @@ import {
   Toolbar,
   Tooltip,
   Typography,
-  WebView,
   ActivityView,
   ContextMenu,
   DockBar,
@@ -1535,28 +1534,6 @@ export const crossFrameworkRegistry: Record<string, CrossFrameworkComponentDefin
       <ContextMenu {...(props as unknown as ComponentProps<typeof ContextMenu>)}>
         <button type="button">{slotText ?? 'Right-click me'}</button>
       </ContextMenu>
-    ),
-  },
-
-  webView: {
-    id: 'webView',
-    displayName: 'WebView',
-    componentName: 'WebView',
-    frameworks: [...ALL],
-    mapArgs: ({
-      src = 'https://example.com',
-      title = 'Example',
-      ...rest
-    }) => ({
-      props: {
-        src,
-        title,
-        style: { width: '100%', height: 280, border: '1px solid #ddd', borderRadius: 8 },
-        ...serializableProps(rest),
-      },
-    }),
-    renderReact: (props) => (
-      <WebView {...(props as unknown as ComponentProps<typeof WebView>)} />
     ),
   },
 

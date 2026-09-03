@@ -156,12 +156,6 @@ export { default as ImageButton } from './components/ImageView/ImageButton.svelt
 export type { ImageFit, ImageBackground, ImageFrameSequence } from './ImageView/types';
 
 export { default as TextView } from './components/TextView/TextView.svelte';
-export { default as WebView } from './components/WebView/WebView.svelte';
-export { default as WebViewShell } from './components/WebView/WebViewShell.svelte';
-export { default as WebViewNavigation } from './components/WebView/WebViewNavigation.svelte';
-export { useWebViewHistory } from './WebView/useWebViewHistory';
-export type { WebViewHistoryState } from './WebView/utils';
-
 export { default as Badge } from './components/Badge/Badge.svelte';
 export { default as Skeleton } from './components/Skeleton/Skeleton.svelte';
 export { default as EmptyState } from './components/EmptyState/EmptyState.svelte';

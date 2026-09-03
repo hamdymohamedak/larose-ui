@@ -6,9 +6,7 @@
 - [@larose-ui/contracts](/docs/packages/contracts): Validate UI schemas against API contracts in CI.
 - [@larose-ui/core](/docs/packages/core): Framework-agnostic types, state machines, and runtime contracts.
 - [@larose-ui/data](/docs/packages/data): Backend-aware data fetching with self-healing errors.
-- [@larose-ui/desktop-core](/docs/packages/desktop-core): Desktop host utilities — native menus, accelerators, window chrome.
 - [@larose-ui/devtools](/docs/packages/devtools): In-app runtime inspector for development.
-- [@larose-ui/electron](/docs/packages/electron): Electron adapter for laRose desktop apps.
 - [@larose-ui/enterprise](/docs/packages/enterprise): Enterprise patterns — audit trails, session guards, schema IaC.
 - [@larose-ui/forms](/docs/packages/forms): Schema-driven forms with validation and conditional fields.
 - [@larose-ui/migration](/docs/packages/migration): Codemods, generators, and release intelligence.
@@ -24,7 +22,6 @@
 - [@larose-ui/runtime-core](/docs/packages/runtime-core): Framework-agnostic runtime store, host detection, and i18n.
 - [@larose-ui/styles](/docs/packages/styles): Framework-agnostic component CSS from the design system.
 - [@larose-ui/svelte](/docs/packages/svelte): Svelte 5 components with runes and shared laRose styles.
-- [@larose-ui/tauri](/docs/packages/tauri): Tauri adapter for laRose desktop webviews.
 - [@larose-ui/testing](/docs/packages/testing): Test utilities with full laRose runtime context.
 - [@larose-ui/themes](/docs/packages/themes): Named theme presets and tenant branding helpers.
 - [@larose-ui/tokens](/docs/packages/tokens): Runtime design tokens as CSS custom properties.

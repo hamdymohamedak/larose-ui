@@ -109,7 +109,7 @@ async function main() {
         const packageId = flagValue('--package') ?? flagValue('-p') ?? flagValue('--to');
         if (!name || !packageId) {
           console.error(
-            'Usage: larose contribute component <Name> --package <react|vue|svelte|tauri|...>',
+            'Usage: larose contribute component <Name> --package <react|vue|svelte|...>',
           );
           process.exit(1);
         }

@@ -62,9 +62,10 @@
       "id": "FileUploadDefault",
       "title": "File Upload Default",
       "kind": "basic",
-      "props": {},
-      "code": "// See Storybook story \"FileUploadDefault\" for full example.",
-      "composite": true
+      "props": {
+        "label": "Upload files"
+      },
+      "code": "import { AppShell } from '@larose-ui/react';\n\n<AppShell\n  label=\"Upload files\"\n>Example</AppShell>"
     }
   ],
   "accessibility": [],

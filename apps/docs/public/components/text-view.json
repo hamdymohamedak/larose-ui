@@ -39,17 +39,23 @@
       "id": "ReadOnlySelectable",
       "title": "Read Only Selectable",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"ReadOnlySelectable\" for full example.",
-      "composite": true
+      "props": {
+        "selectable": true,
+        "value": "Release notes\\\\n\\\\nAutosave now preserves edits while you switch apps.",
+        "maxHeight": "12rem"
+      },
+      "code": "import { TextView } from '@larose-ui/react';\n\n<TextView\n  selectable\n  value=\"Release notes\\\\n\\\\nAutosave now preserves edits while you switch apps.\"\n  maxHeight=\"12rem\"\n>Example</TextView>"
     },
     {
       "id": "Editable",
       "title": "Editable",
       "kind": "advanced",
-      "props": {},
-      "code": "<Card title=\"Editable text view\" padding=\"md\">\n        <TextView\n          editable\n          value={value}\n          onChange={(event) => setValue(event.target.value)}\n          maxHeight=\"14rem\"\n          inputMode=\"text\"\n        />\n      </Card>",
-      "composite": true
+      "props": {
+        "editable": true,
+        "value": "Write a longer note here…",
+        "maxHeight": "14rem"
+      },
+      "code": "import { TextView } from '@larose-ui/react';\n\n<TextView\n  editable\n  value=\"Write a longer note here…\"\n  maxHeight=\"14rem\"\n>Example</TextView>"
     },
     {
       "id": "RichDisplay",

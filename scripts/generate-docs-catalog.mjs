@@ -121,23 +121,6 @@ import '@larose-ui/styles/styles.css';`,
     example: `export default defineNuxtConfig({ modules: ['@larose-ui/nuxt'] });`,
     features: ['Auto-imports', 'SSR theme script', 'LaRoseApp shell'],
   },
-  'desktop-core': {
-    tagline: 'Desktop host utilities — native menus, accelerators, window chrome.',
-    example: `import { registerHost, mapMenuBarToNative } from '@larose-ui/desktop-core';`,
-    features: ['Electron/Tauri host registration', 'Native menu mapping'],
-  },
-  electron: {
-    tagline: 'Electron adapter for laRose desktop apps.',
-    peer: 'electron >=28, react >=18',
-    example: `import { LaRoseElectronRoot } from '@larose-ui/electron/client';`,
-    features: ['Host bootstrap', 'Native menu templates'],
-  },
-  tauri: {
-    tagline: 'Tauri adapter for laRose desktop webviews.',
-    peer: 'react >=18',
-    example: `import { LaRoseTauriRoot } from '@larose-ui/tauri/client';`,
-    features: ['Host bootstrap', 'Tauri menu helpers'],
-  },
   network: {
     tagline: 'Network condition detection for adaptive UI.',
     example: `import { createNetworkMonitor } from '@larose-ui/network';
@@ -251,7 +234,6 @@ const GUIDES = [
   { id: 'svelte', title: 'Svelte 5', file: 'docs/ecosystem/SVELTE.md' },
   { id: 'nextjs', title: 'Next.js', file: 'docs/ecosystem/NEXTJS.md' },
   { id: 'nuxt', title: 'Nuxt', file: 'docs/ecosystem/NUXT.md' },
-  { id: 'desktop', title: 'Desktop integration', file: 'docs/ecosystem/DESKTOP.md' },
   { id: 'runtime', title: 'Runtime', file: 'docs/runtime/RUNTIME_2.md' },
   { id: 'customization', title: 'Customization', file: 'docs/design/CUSTOMIZATION.md' },
   { id: 'motion', title: 'Motion system', file: 'docs/design/MOTION_SYSTEM.md' },
@@ -266,7 +248,7 @@ const GUIDES = [
 const reactIndexPath = join(root, 'packages/react/src/index.ts');
 const liquidGlassIndexPath = join(root, 'packages/react/src/LiquidGlass/index.ts');
 const skipPattern =
-  /^(format|resolve|prepare|build|create|apply|get|use|clamp|warn|truncate|sort|filter|flatten|collect|normalize|merge|tokenize|count|default|MAX_|MIN_|STANDARD_|DEFAULT_|PATH_|LAROSE_|BackChevron|Close|Compose|Share|Sidebar|DocumentMenu|Search|Overflow|buildMinute|buildMonth|buildDay|formatDate|parseISO|toISO|snapMinute|resolveAutomatic|createApp|createFile|createEdit|createFormat|createView|createWindow|createHelp|createDefault|createPhoto|entriesFrom|toolbarActions|quickActionsTo|LaRoseProvider|MotionProvider|ToastProvider|DragDropProvider|Presence|Collapse|Can|Permission|DataView|Form|SmartTable|AIProvider|DevToolsProvider|SessionGuard|AuditedInput|UISchemaRenderer|LaRoseElectronRoot|LaRoseTauriRoot)/;
+  /^(format|resolve|prepare|build|create|apply|get|use|clamp|warn|truncate|sort|filter|flatten|collect|normalize|merge|tokenize|count|default|MAX_|MIN_|STANDARD_|DEFAULT_|PATH_|LAROSE_|BackChevron|Close|Compose|Share|Sidebar|DocumentMenu|Search|Overflow|buildMinute|buildMonth|buildDay|formatDate|parseISO|toISO|snapMinute|resolveAutomatic|createApp|createFile|createEdit|createFormat|createView|createWindow|createHelp|createDefault|createPhoto|entriesFrom|toolbarActions|quickActionsTo|LaRoseProvider|MotionProvider|ToastProvider|DragDropProvider|Presence|Collapse|Can|Permission|DataView|Form|SmartTable|AIProvider|DevToolsProvider|SessionGuard|AuditedInput|UISchemaRenderer)/;
 
 const reactComponentNames = parseComponentExportsFromIndex(reactIndexPath);
 const glassComponentNames = reactComponentNames.filter(isGlassDocComponent);
@@ -290,7 +272,7 @@ const categoryMap = {
     'LiquidGlassCheckbox',
   ],
   Data: ['DataTable', 'List', 'ListSection', 'ListRow', 'Table', 'OutlineView', 'OutlineViewToolbar', 'Chart'],
-  Content: ['Typography', 'Label', 'DisclosureTriangle', 'DisclosureButton', 'DisclosureGroup', 'DisclosureList', 'ImageView', 'ImageOverlay', 'ImageWell', 'ImageButton', 'TextView', 'WebView', 'WebViewShell', 'WebViewNavigation', 'Accordion', 'AccordionItem', 'AccordionTrigger', 'AccordionContent'],
+  Content: ['Typography', 'Label', 'DisclosureTriangle', 'DisclosureButton', 'DisclosureGroup', 'DisclosureList', 'ImageView', 'ImageOverlay', 'ImageWell', 'ImageButton', 'TextView', 'Accordion', 'AccordionItem', 'AccordionTrigger', 'AccordionContent'],
   Sharing: ['ShareSheet', 'CollaborationPopover', 'ShareToolbar', 'ActivityView'],
   Search: ['SearchField', 'SearchScopeBar', 'SearchTokenChip'],
   Files: ['DocumentToolbar', 'FileBrowser', 'FilePreview', 'UnsavedIndicator', 'DocumentLauncher'],

@@ -4,6 +4,8 @@
 
 ### Minor Changes
 
+- Drop electron/tauri contribute profiles; keep generic module scaffolds.
+
 - Add smart component/module contribution scaffold plans used by `larose contribute`.
 
 ## 0.2.0

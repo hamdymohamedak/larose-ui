@@ -10,8 +10,6 @@ export type FrameworkId =
   | 'vue'
   | 'svelte'
   | 'styles'
-  | 'tauri'
-  | 'electron'
   | 'generic';
 
 export interface PackageScripts {
@@ -161,47 +159,6 @@ export const PACKAGE_PROFILES: Record<string, PackageProfile> = {
     tips: [
       'CSS modules are auto-bundled by scripts/build-styles-package.mjs — no barrel import needed.',
       'Use --lr-* tokens from @larose-ui/tokens.',
-    ],
-  },
-  tauri: {
-    id: 'tauri',
-    npmName: '@larose-ui/tauri',
-    kind: 'module',
-    framework: 'tauri',
-    sourceRoot: 'src',
-    indexPath: 'src/index.ts',
-    exportStyle: 'named',
-    usesSharedStyles: false,
-    summary: 'Tauri host adapter (menus, bootstrap, chrome) — not a UI component package',
-    scripts: {
-      build: 'pnpm --filter @larose-ui/tauri build',
-      test: 'pnpm --filter @larose-ui/tauri test',
-      typecheck: 'pnpm --filter @larose-ui/tauri typecheck',
-      dev: 'pnpm --filter @larose-ui/tauri dev',
-    },
-    tips: [
-      'Prefer desktop-core for shared host logic; keep Tauri-specific glue here.',
-      'Peer: @tauri-apps/api >= 2',
-    ],
-  },
-  electron: {
-    id: 'electron',
-    npmName: '@larose-ui/electron',
-    kind: 'module',
-    framework: 'electron',
-    sourceRoot: 'src',
-    indexPath: 'src/index.ts',
-    exportStyle: 'named',
-    usesSharedStyles: false,
-    summary: 'Electron host adapter — not a UI component package',
-    scripts: {
-      build: 'pnpm --filter @larose-ui/electron build',
-      test: 'pnpm --filter @larose-ui/electron test',
-      typecheck: 'pnpm --filter @larose-ui/electron typecheck',
-      dev: 'pnpm --filter @larose-ui/electron dev',
-    },
-    tips: [
-      'Prefer desktop-core for shared host logic; keep Electron-specific glue here.',
     ],
   },
 };
@@ -544,9 +501,12 @@ export function formatPackageList(profiles: PackageProfile[] = listPackageProfil
   for (const p of profiles.filter((x) => x.kind === 'ui-component')) {
     lines.push(`  ${p.id.padEnd(12)} ${p.summary}`);
   }
-  lines.push('', 'Module / host packages (creates TS module + test, no CSS):');
-  for (const p of profiles.filter((x) => x.kind === 'module')) {
-    lines.push(`  ${p.id.padEnd(12)} ${p.summary}`);
+  const modules = profiles.filter((x) => x.kind === 'module');
+  if (modules.length > 0) {
+    lines.push('', 'Module packages (creates TS module + test, no CSS):');
+    for (const p of modules) {
+      lines.push(`  ${p.id.padEnd(12)} ${p.summary}`);
+    }
   }
   lines.push(
     '',

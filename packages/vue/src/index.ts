@@ -153,12 +153,6 @@ export { default as ImageButton } from './components/ImageView/ImageButton.vue';
 export type { ImageFit, ImageBackground, ImageFrameSequence } from './ImageView/types';
 
 export { default as TextView } from './components/TextView/TextView.vue';
-export { default as WebView } from './components/WebView/WebView.vue';
-export { default as WebViewShell } from './components/WebView/WebViewShell.vue';
-export { default as WebViewNavigation } from './components/WebView/WebViewNavigation.vue';
-export { useWebViewHistory } from './composables/useWebViewHistory';
-export type { WebViewHistoryState } from './WebView/utils';
-
 export { default as Badge } from './components/Badge/Badge.vue';
 export type { BadgeVariant } from './components/Badge/Badge.vue';
 export { default as Skeleton } from './components/Skeleton/Skeleton.vue';

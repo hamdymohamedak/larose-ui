@@ -9,6 +9,12 @@
       "required": false
     },
     {
+      "name": "appearance",
+      "type": "PickerStyle",
+      "required": false,
+      "description": "Wheel vs compact appearance. Use with object `style` when you need both."
+    },
+    {
       "name": "columns",
       "type": "PickerColumn[]",
       "required": true

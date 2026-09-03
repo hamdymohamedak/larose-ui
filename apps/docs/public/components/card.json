@@ -72,9 +72,10 @@
       "id": "SecurePasswordField",
       "title": "Secure Password Field",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"SecurePasswordField\" for full example.",
-      "composite": true
+      "props": {
+        "label": "Password"
+      },
+      "code": "import { EnteringData } from '@larose-ui/react';\n\n<EnteringData\n  label=\"Password\"\n>Example</EnteringData>"
     },
     {
       "id": "PasteAndDrop",
@@ -136,17 +137,20 @@
       "id": "ImportWithFileUpload",
       "title": "Import With File Upload",
       "kind": "loading",
-      "props": {},
-      "code": "// See Storybook story \"ImportWithFileUpload\" for full example.",
-      "composite": true
+      "props": {
+        "label": "Import document",
+        "hint": "PDF, Pages, or Numbers"
+      },
+      "code": "import { FileManagement } from '@larose-ui/react';\n\n<FileManagement\n  label=\"Import document\"\n  hint=\"PDF, Pages, or Numbers\"\n>Example</FileManagement>"
     },
     {
       "id": "ListAccessories",
       "title": "List Accessories",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"ListAccessories\" for full example.",
-      "composite": true
+      "props": {
+        "variant": "grouped"
+      },
+      "code": "import { Lists&Tables } from '@larose-ui/react';\n\n<Lists&Tables\n  variant=\"grouped\"\n>Example</Lists&Tables>"
     },
     {
       "id": "DocumentToolbar",

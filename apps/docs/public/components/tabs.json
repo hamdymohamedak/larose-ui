@@ -29,9 +29,10 @@
       "id": "TabsDefault",
       "title": "Tabs Default",
       "kind": "basic",
-      "props": {},
-      "code": "// See Storybook story \"TabsDefault\" for full example.",
-      "composite": true
+      "props": {
+        "defaultValue": "profile"
+      },
+      "code": "import { Overlays } from '@larose-ui/react';\n\n<Overlays\n  defaultValue=\"profile\"\n>Example</Overlays>"
     }
   ],
   "accessibility": [],

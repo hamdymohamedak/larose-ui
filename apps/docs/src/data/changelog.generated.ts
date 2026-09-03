@@ -9,6 +9,48 @@ export interface DocsChangelogEntry {
 
 export const docsChangelog: DocsChangelogEntry[] = [
   {
+    "package": "@larose-ui/cli",
+    "version": "Unreleased",
+    "heading": "Unreleased",
+    "body": "### Minor Changes\n\n- Contribute CLI no longer lists electron/tauri host packages.\n\n- Add `larose contribute` to scaffold component/module stubs for monorepo contributors (package-aware paths, tests, shared styles, CHANGELOG Unreleased)."
+  },
+  {
+    "package": "@larose-ui/migration",
+    "version": "Unreleased",
+    "heading": "Unreleased",
+    "body": "### Minor Changes\n\n- Drop electron/tauri contribute profiles; keep generic module scaffolds.\n\n- Add smart component/module contribution scaffold plans used by `larose contribute`."
+  },
+  {
+    "package": "@larose-ui/react",
+    "version": "Unreleased",
+    "heading": "Unreleased",
+    "body": "### Minor Changes\n\n- Remove WebView components; laRose stays web-first without embedded browser chrome."
+  },
+  {
+    "package": "@larose-ui/styles",
+    "version": "Unreleased",
+    "heading": "Unreleased",
+    "body": "### Minor Changes\n\n- Remove WebView CSS modules."
+  },
+  {
+    "package": "@larose-ui/svelte",
+    "version": "Unreleased",
+    "heading": "Unreleased",
+    "body": "### Minor Changes\n\n- Remove WebView components to match React web-first surface."
+  },
+  {
+    "package": "@larose-ui/tokens",
+    "version": "Unreleased",
+    "heading": "Unreleased",
+    "body": "### Minor Changes\n\n- Remove WebView design tokens."
+  },
+  {
+    "package": "@larose-ui/vue",
+    "version": "Unreleased",
+    "heading": "Unreleased",
+    "body": "### Minor Changes\n\n- Remove WebView components to match React web-first surface."
+  },
+  {
     "package": "@larose-ui/ai",
     "version": "1.0.0",
     "heading": "1.0.0",
@@ -51,22 +93,10 @@ export const docsChangelog: DocsChangelogEntry[] = [
     "body": "### Minor Changes\n\n- e989652: Evolve laRose into a framework-agnostic UI operating system: extract shared styles to `@larose-ui/styles`, add Vue 3 and Svelte 5 parity adapters, Next/Nuxt/Electron/Tauri/desktop-core integrations, runtime-core and contracts packages, cross-framework Storybook parity toolbar, AlertDialog focus-ring fix, docs site redesign with beginner-friendly onboarding, and CI/build fixes.\n\n### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/core@0.2.0\n  - @larose"
   },
   {
-    "package": "@larose-ui/desktop-core",
-    "version": "0.2.0",
-    "heading": "0.2.0",
-    "body": "### Minor Changes\n\n- e989652: Evolve laRose into a framework-agnostic UI operating system: extract shared styles to `@larose-ui/styles`, add Vue 3 and Svelte 5 parity adapters, Next/Nuxt/Electron/Tauri/desktop-core integrations, runtime-core and contracts packages, cross-framework Storybook parity toolbar, AlertDialog focus-ring fix, docs site redesign with beginner-friendly onboarding, and CI/build fixes.\n\n### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/runtime-core@0.2.0\n  -"
-  },
-  {
     "package": "@larose-ui/devtools-core",
     "version": "0.2.0",
     "heading": "0.2.0",
     "body": "### Minor Changes\n\n- e989652: Evolve laRose into a framework-agnostic UI operating system: extract shared styles to `@larose-ui/styles`, add Vue 3 and Svelte 5 parity adapters, Next/Nuxt/Electron/Tauri/desktop-core integrations, runtime-core and contracts packages, cross-framework Storybook parity toolbar, AlertDialog focus-ring fix, docs site redesign with beginner-friendly onboarding, and CI/build fixes.\n\n### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/observability-core@0.2"
-  },
-  {
-    "package": "@larose-ui/electron",
-    "version": "0.2.0",
-    "heading": "0.2.0",
-    "body": "### Minor Changes\n\n- e989652: Evolve laRose into a framework-agnostic UI operating system: extract shared styles to `@larose-ui/styles`, add Vue 3 and Svelte 5 parity adapters, Next/Nuxt/Electron/Tauri/desktop-core integrations, runtime-core and contracts packages, cross-framework Storybook parity toolbar, AlertDialog focus-ring fix, docs site redesign with beginner-friendly onboarding, and CI/build fixes.\n\n### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/runtime@1.0.0\n  - @lar"
   },
   {
     "package": "@larose-ui/enterprise",
@@ -153,12 +183,6 @@ export const docsChangelog: DocsChangelogEntry[] = [
     "body": "### Minor Changes\n\n- e989652: Evolve laRose into a framework-agnostic UI operating system: extract shared styles to `@larose-ui/styles`, add Vue 3 and Svelte 5 parity adapters, Next/Nuxt/Electron/Tauri/desktop-core integrations, runtime-core and contracts packages, cross-framework Storybook parity toolbar, AlertDialog focus-ring fix, docs site redesign with beginner-friendly onboarding, and CI/build fixes.\n\n### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/styles@0.2.0\n  - @laro"
   },
   {
-    "package": "@larose-ui/tauri",
-    "version": "0.2.0",
-    "heading": "0.2.0",
-    "body": "### Minor Changes\n\n- e989652: Evolve laRose into a framework-agnostic UI operating system: extract shared styles to `@larose-ui/styles`, add Vue 3 and Svelte 5 parity adapters, Next/Nuxt/Electron/Tauri/desktop-core integrations, runtime-core and contracts packages, cross-framework Storybook parity toolbar, AlertDialog focus-ring fix, docs site redesign with beginner-friendly onboarding, and CI/build fixes.\n\n### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/runtime@1.0.0\n  - @lar"
-  },
-  {
     "package": "@larose-ui/testing",
     "version": "0.2.0",
     "heading": "0.2.0",
@@ -223,29 +247,5 @@ export const docsChangelog: DocsChangelogEntry[] = [
     "version": "0.1.2",
     "heading": "0.1.2",
     "body": "### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/core@0.2.0"
-  },
-  {
-    "package": "@larose-ui/offline",
-    "version": "0.1.2",
-    "heading": "0.1.2",
-    "body": "### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/core@0.2.0"
-  },
-  {
-    "package": "@larose-ui/themes",
-    "version": "0.1.2",
-    "heading": "0.1.2",
-    "body": "### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/core@0.2.0\n  - @larose-ui/tokens@0.1.2"
-  },
-  {
-    "package": "@larose-ui/tokens",
-    "version": "0.1.2",
-    "heading": "0.1.2",
-    "body": "### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/core@0.2.0"
-  },
-  {
-    "package": "@larose-ui/accessibility",
-    "version": "0.1.1",
-    "heading": "0.1.1",
-    "body": "### Patch Changes\n\n- f1f64e6: Add package README files and fix repository/homepage links to point at hamdymohamedak/larose-ui.\n- Updated dependencies [f1f64e6]\n  - @larose-ui/core@0.1.1"
   }
 ];

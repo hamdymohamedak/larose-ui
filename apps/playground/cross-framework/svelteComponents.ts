@@ -46,7 +46,6 @@ export { default as Toolbar } from '../../../packages/svelte/src/lib/components/
 export { default as DockMenu } from '../../../packages/svelte/src/lib/components/DockMenu/DockMenu.svelte';
 export { default as DockBar } from '../../../packages/svelte/src/lib/components/DockMenu/DockBar.svelte';
 export { default as ContextMenu } from '../../../packages/svelte/src/lib/components/ContextMenu/ContextMenu.svelte';
-export { default as WebView } from '../../../packages/svelte/src/lib/components/WebView/WebView.svelte';
 export { default as EditMenu } from '../../../packages/svelte/src/lib/components/EditMenu/EditMenu.svelte';
 export { default as Ornament } from '../../../packages/svelte/src/lib/components/Ornament/Ornament.svelte';
 export { default as OutlineView } from '../../../packages/svelte/src/lib/components/ListTable/OutlineView.svelte';

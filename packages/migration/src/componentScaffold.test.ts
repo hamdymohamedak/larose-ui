@@ -50,14 +50,16 @@ describe('planComponentScaffold', () => {
     );
   });
 
-  it('plans tauri as module without styles', () => {
-    const plan = planComponentScaffold('tauri', 'WindowBridge');
+  it('plans generic module without styles for unknown packages', () => {
+    const plan = planComponentScaffold('network', 'WindowBridge', {
+      packageJson: { name: '@larose-ui/network' },
+    });
     expect(plan.kind).toBe('module');
     expect(plan.displayPaths.styles).toBeUndefined();
     expect(plan.displayPaths.component).toBe(
-      'packages/tauri/src/windowBridge/windowBridge.ts',
+      'packages/network/src/windowBridge/windowBridge.ts',
     );
-    expect(plan.changelogPackages).toEqual(['tauri']);
+    expect(plan.changelogPackages).toEqual(['network']);
   });
 
   it('rejects invalid names', () => {
@@ -101,7 +103,7 @@ describe('formatPackageList', () => {
     const text = formatPackageList();
     expect(text).toContain('react');
     expect(text).toContain('vue');
-    expect(text).toContain('tauri');
+    expect(text).toContain('svelte');
     expect(text).toContain('make contribute');
   });
 });

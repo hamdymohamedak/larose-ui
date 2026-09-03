@@ -54,11 +54,12 @@
     },
     {
       "id": "VerticalMonograms",
-      "title": "Vertical Monograms",
+      "title": "Sara Ali",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"VerticalMonograms\" for full example.",
-      "composite": true
+      "props": {
+        "name": "Sara Ali"
+      },
+      "code": "import { Lockup } from '@larose-ui/react';\n\n<Lockup\n  name=\"Sara Ali\"\n>Example</Lockup>"
     }
   ],
   "accessibility": [

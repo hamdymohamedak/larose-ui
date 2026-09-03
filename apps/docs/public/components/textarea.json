@@ -56,9 +56,11 @@
       "id": "TextareaDefault",
       "title": "Textarea Default",
       "kind": "basic",
-      "props": {},
-      "code": "<Textarea label=\"Description\" placeholder=\"Enter details...\" />",
-      "composite": true
+      "props": {
+        "label": "Description",
+        "placeholder": "Enter details..."
+      },
+      "code": "import { FormControls } from '@larose-ui/react';\n\n<FormControls\n  label=\"Description\"\n  placeholder=\"Enter details...\"\n>Example</FormControls>"
     },
     {
       "id": "Default",

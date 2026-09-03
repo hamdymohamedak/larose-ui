@@ -1,5 +1,11 @@
 # @larose-ui/react
 
+## Unreleased
+
+### Minor Changes
+
+- Remove WebView components; laRose stays web-first without embedded browser chrome.
+
 ## 0.2.0
 
 ### Minor Changes

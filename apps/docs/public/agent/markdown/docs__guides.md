@@ -5,7 +5,6 @@
 - [Svelte 5](/docs/guides/svelte)
 - [Next.js](/docs/guides/nextjs)
 - [Nuxt](/docs/guides/nuxt)
-- [Desktop integration](/docs/guides/desktop)
 - [Runtime](/docs/guides/runtime)
 - [Customization](/docs/guides/customization)
 - [Motion system](/docs/guides/motion)

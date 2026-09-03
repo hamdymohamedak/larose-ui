@@ -46,7 +46,6 @@ export { default as Toolbar } from '../../../packages/vue/src/components/Toolbar
 export { default as DockMenu } from '../../../packages/vue/src/components/DockMenu/DockMenu.vue';
 export { default as DockBar } from '../../../packages/vue/src/components/DockMenu/DockBar.vue';
 export { default as ContextMenu } from '../../../packages/vue/src/components/ContextMenu/ContextMenu.vue';
-export { default as WebView } from '../../../packages/vue/src/components/WebView/WebView.vue';
 export { default as EditMenu } from '../../../packages/vue/src/components/EditMenu/EditMenu.vue';
 export { default as Ornament } from '../../../packages/vue/src/components/Ornament/Ornament.vue';
 export { default as OutlineView } from '../../../packages/vue/src/components/ListTable/OutlineView.vue';

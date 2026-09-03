@@ -9,9 +9,7 @@ Apple-inspired by default. Fully customizable by architecture.
 - @larose-ui/contracts: Validate UI schemas against API contracts in CI.
 - @larose-ui/core: Framework-agnostic types, state machines, and runtime contracts.
 - @larose-ui/data: Backend-aware data fetching with self-healing errors.
-- @larose-ui/desktop-core: Desktop host utilities — native menus, accelerators, window chrome.
 - @larose-ui/devtools: In-app runtime inspector for development.
-- @larose-ui/electron: Electron adapter for laRose desktop apps.
 - @larose-ui/enterprise: Enterprise patterns — audit trails, session guards, schema IaC.
 - @larose-ui/forms: Schema-driven forms with validation and conditional fields.
 - @larose-ui/migration: Codemods, generators, and release intelligence.
@@ -27,7 +25,6 @@ Apple-inspired by default. Fully customizable by architecture.
 - @larose-ui/runtime-core: Framework-agnostic runtime store, host detection, and i18n.
 - @larose-ui/styles: Framework-agnostic component CSS from the design system.
 - @larose-ui/svelte: Svelte 5 components with runes and shared laRose styles.
-- @larose-ui/tauri: Tauri adapter for laRose desktop webviews.
 - @larose-ui/testing: Test utilities with full laRose runtime context.
 - @larose-ui/themes: Named theme presets and tenant branding helpers.
 - @larose-ui/tokens: Runtime design tokens as CSS custom properties.
@@ -63,7 +60,7 @@ Apple-inspired by default. Fully customizable by architecture.
 - DataTable (Data) — 11 documented props
 - DatePicker (Forms) — 7 documented props
 - DateRangePicker (Forms) — 13 documented props
-- DateTimePicker (Forms) — 15 documented props
+- DateTimePicker (Forms) — 16 documented props
 - Dialog (Overlay) — 8 documented props
 - DisclosureButton (Content) — 7 documented props
 - DisclosureGroup (Content) — 5 documented props
@@ -128,7 +125,7 @@ Apple-inspired by default. Fully customizable by architecture.
 - OutlineViewToolbar (Data) — 4 documented props
 - Pagination (Navigation) — 7 documented props
 - PathControl (Navigation) — 8 documented props
-- Picker (Forms) — 12 documented props
+- Picker (Forms) — 13 documented props
 - Popover (Overlay) — 8 documented props
 - PopUpButton (Navigation) — 9 documented props
 - Poster (Other) — 2 documented props
@@ -174,9 +171,6 @@ Apple-inspired by default. Fully customizable by architecture.
 - Tooltip (Feedback) — 2 documented props
 - Typography (Content) — 2 documented props
 - UnsavedIndicator (Files) — 2 documented props
-- WebView (Content) — 7 documented props
-- WebViewNavigation (Content) — 6 documented props
-- WebViewShell (Content) — 2 documented props
 - WheelColumn (Forms) — 5 documented props
 - WheelPicker (Forms) — 6 documented props
 
@@ -186,7 +180,6 @@ Apple-inspired by default. Fully customizable by architecture.
 - Svelte 5: /docs/guides/svelte
 - Next.js: /docs/guides/nextjs
 - Nuxt: /docs/guides/nuxt
-- Desktop integration: /docs/guides/desktop
 - Runtime: /docs/guides/runtime
 - Customization: /docs/guides/customization
 - Motion system: /docs/guides/motion

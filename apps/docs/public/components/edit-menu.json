@@ -85,17 +85,27 @@
       "id": "CompactSelectedText",
       "title": "Compact (touch and hold)",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"CompactSelectedText\" for full example.",
-      "composite": true
+      "props": {
+        "open": true,
+        "variant": "compact",
+        "hasSelection": true,
+        "canPaste": true,
+        "isEditable": true
+      },
+      "code": "import { EditMenu } from '@larose-ui/react';\n\n<EditMenu\n  open\n  variant=\"compact\"\n  hasSelection\n  canPaste\n  isEditable\n>Example</EditMenu>"
     },
     {
       "id": "ContextPointer",
       "title": "Context menu (pointer)",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"ContextPointer\" for full example.",
-      "composite": true
+      "props": {
+        "open": true,
+        "variant": "context",
+        "hasSelection": true,
+        "canPaste": true,
+        "isEditable": true
+      },
+      "code": "import { EditMenu } from '@larose-ui/react';\n\n<EditMenu\n  open\n  variant=\"context\"\n  hasSelection\n  canPaste\n  isEditable\n>Example</EditMenu>"
     },
     {
       "id": "AddressSelection",
@@ -109,9 +119,14 @@
       "id": "NoSelection",
       "title": "No selection",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"NoSelection\" for full example.",
-      "composite": true
+      "props": {
+        "open": true,
+        "variant": "compact",
+        "hasSelection": false,
+        "canPaste": true,
+        "isEditable": true
+      },
+      "code": "import { EditMenu } from '@larose-ui/react';\n\n<EditMenu\n  open\n  variant=\"compact\"\n  hasSelection={false}\n  canPaste\n  isEditable\n>Example</EditMenu>"
     },
     {
       "id": "CustomFormatCommands",

@@ -79,9 +79,10 @@
       "id": "ShareButtonOnly",
       "title": "Share Button Only",
       "kind": "advanced",
-      "props": {},
-      "code": "<ShareButton />",
-      "composite": true
+      "props": {
+        "label": "Share"
+      },
+      "code": "import { Collaboration&Sharing } from '@larose-ui/react';\n\n<Collaboration&Sharing\n  label=\"Share\"\n>Example</Collaboration&Sharing>"
     }
   ],
   "accessibility": [],

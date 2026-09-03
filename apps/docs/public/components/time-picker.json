@@ -56,9 +56,11 @@
       "id": "TimePickerDefault",
       "title": "Time Picker Default",
       "kind": "basic",
-      "props": {},
-      "code": "<TimePicker label=\"Meeting time\" value=\"09:30\" />",
-      "composite": true
+      "props": {
+        "label": "Meeting time",
+        "value": "09:30"
+      },
+      "code": "import { DateTime } from '@larose-ui/react';\n\n<DateTime\n  label=\"Meeting time\"\n  value=\"09:30\"\n>Example</DateTime>"
     }
   ],
   "accessibility": [],

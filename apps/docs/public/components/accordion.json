@@ -43,9 +43,11 @@
       "id": "AccordionDefault",
       "title": "Accordion Default",
       "kind": "basic",
-      "props": {},
-      "code": "// See Storybook story \"AccordionDefault\" for full example.",
-      "composite": true
+      "props": {
+        "type": "single",
+        "collapsible": true
+      },
+      "code": "import { DataDisplay } from '@larose-ui/react';\n\n<DataDisplay\n  type=\"single\"\n  collapsible\n>Example</DataDisplay>"
     },
     {
       "id": "AccordionCollapse",

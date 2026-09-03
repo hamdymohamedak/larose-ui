@@ -75,12 +75,9 @@ Doctor reads `larose.config.json` for framework-specific component and story pat
 | `@larose-ui/vue` | Vue 3 components + `LaRoseProvider` + `RuntimeProvider` |
 | `@larose-ui/nuxt` | Nuxt module — CSS, theme script, `LaRoseApp`, auto-imports |
 | `@larose-ui/svelte` | Svelte 5 components + `LaRoseProvider` + `RuntimeProvider` |
-| `@larose-ui/desktop-core` | Host registration, native menu mapping, window chrome tokens |
-| `@larose-ui/electron` | Electron bootstrap, native menu templates, `LaRoseElectronRoot` |
-| `@larose-ui/tauri` | Tauri bootstrap, native menu templates, `LaRoseTauriRoot` |
 | TanStack Start | Same React packages; see [TANSTACK_START.md](../ecosystem/TANSTACK_START.md) |
 
-See [VUE.md](../ecosystem/VUE.md), [NEXTJS.md](../ecosystem/NEXTJS.md), [SVELTE.md](../ecosystem/SVELTE.md), and [DESKTOP.md](../ecosystem/DESKTOP.md). Framework packages do not duplicate components — they consume shared styles, tokens, primitives, and runtime-core.
+See [VUE.md](../ecosystem/VUE.md), [NEXTJS.md](../ecosystem/NEXTJS.md), and [SVELTE.md](../ecosystem/SVELTE.md). Framework packages do not duplicate components — they consume shared styles, tokens, primitives, and runtime-core.
 
 ## Package Rules
 

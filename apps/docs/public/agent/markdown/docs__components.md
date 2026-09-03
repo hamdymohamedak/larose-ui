@@ -140,8 +140,5 @@
 - [Tooltip](/docs/components/tooltip) (Feedback)
 - [Typography](/docs/components/typography) (Content)
 - [UnsavedIndicator](/docs/components/unsaved-indicator) (Files)
-- [WebView](/docs/components/web-view) (Content)
-- [WebViewNavigation](/docs/components/web-view-navigation) (Content)
-- [WebViewShell](/docs/components/web-view-shell) (Content)
 - [WheelColumn](/docs/components/wheel-column) (Forms)
 - [WheelPicker](/docs/components/wheel-picker) (Forms)

@@ -59,28 +59,12 @@ export const docsSearchIndex = [
     "excerpt": "Backend-aware data fetching with self-healing errors."
   },
   {
-    "id": "package:desktop-core",
-    "title": "@larose-ui/desktop-core",
-    "type": "package",
-    "path": "/docs/packages/desktop-core",
-    "keywords": "@larose-ui/desktop-core Desktop host utilities — native menus, accelerators, window chrome. Electron/Tauri host registration Native menu mapping",
-    "excerpt": "Desktop host utilities — native menus, accelerators, window chrome."
-  },
-  {
     "id": "package:devtools",
     "title": "@larose-ui/devtools",
     "type": "package",
     "path": "/docs/packages/devtools",
     "keywords": "@larose-ui/devtools In-app runtime inspector for development. Runtime context panel Event timeline Component inspector",
     "excerpt": "In-app runtime inspector for development."
-  },
-  {
-    "id": "package:electron",
-    "title": "@larose-ui/electron",
-    "type": "package",
-    "path": "/docs/packages/electron",
-    "keywords": "@larose-ui/electron Electron adapter for laRose desktop apps. Host bootstrap Native menu templates",
-    "excerpt": "Electron adapter for laRose desktop apps."
   },
   {
     "id": "package:enterprise",
@@ -203,14 +187,6 @@ export const docsSearchIndex = [
     "excerpt": "Svelte 5 components with runes and shared laRose styles."
   },
   {
-    "id": "package:tauri",
-    "title": "@larose-ui/tauri",
-    "type": "package",
-    "path": "/docs/packages/tauri",
-    "keywords": "@larose-ui/tauri Tauri adapter for laRose desktop webviews. Host bootstrap Tauri menu helpers",
-    "excerpt": "Tauri adapter for laRose desktop webviews."
-  },
-  {
     "id": "package:testing",
     "title": "@larose-ui/testing",
     "type": "package",
@@ -311,8 +287,8 @@ export const docsSearchIndex = [
     "title": "Accordion — Accordion Default",
     "type": "example",
     "path": "/docs/components/accordion#examples",
-    "keywords": "Accordion Accordion Default basic {}",
-    "excerpt": "// See Storybook story \"AccordionDefault\" for full example."
+    "keywords": "Accordion Accordion Default basic {\"type\":\"single\",\"collapsible\":true}",
+    "excerpt": "import { DataDisplay } from '@larose-ui/react';\n\n<DataDisplay\n  type=\"single\"\n  collapsible\n>Example</DataDisplay>"
   },
   {
     "id": "example:accordion:AccordionCollapse",
@@ -367,7 +343,7 @@ export const docsSearchIndex = [
     "title": "ActivityShareButton",
     "type": "component",
     "path": "/docs/components/activity-share-button",
-    "keywords": "ActivityShareButton Actions ActivityShareButton.activities ActivityItem[] ActivityShareButton.excludedActivityIds string[] ActivityShareButton.label string ActivityShareButton.onActivitySelect (activity: ActivityItem) => void ActivityShareButton.presentation 'sheet' | 'popover' | 'auto' ActivityShareButton.title string",
+    "keywords": "ActivityShareButton Actions ActivityShareButton.activities ActivityItem[] ActivityShareButton.excludedActivityIds string[] ActivityShareButton.label string ActivityShareButton.onActivitySelect (activity: ActivityItem) => void ActivityShareButton.presentation 'sheet' | 'popover' | 'auto' ActivityShareButton.className string ActivityShareButton.style CSSProperties ActivityShareButton.title string",
     "excerpt": "Actions component from @larose-ui/react"
   },
   {
@@ -415,7 +391,7 @@ export const docsSearchIndex = [
     "title": "ActivityView",
     "type": "component",
     "path": "/docs/components/activity-view",
-    "keywords": "ActivityView Sharing ActivityView.activities ActivityItem[] ActivityView.anchorRef React.RefObject<HTMLElement | null> ActivityView.excludedActivityIds string[] ActivityView.footer ReactNode ActivityView.onActivitySelect (activity: ActivityItem) => void ActivityView.onClose () => void ActivityView.open boolean ActivityView.presentation ActivityPresentation ActivityView.title string",
+    "keywords": "ActivityView Sharing ActivityView.activities ActivityItem[] ActivityView.anchorRef React.RefObject<HTMLElement | null> ActivityView.excludedActivityIds string[] ActivityView.footer ReactNode ActivityView.onActivitySelect (activity: ActivityItem) => void ActivityView.onClose () => void ActivityView.open boolean ActivityView.presentation ActivityPresentation ActivityView.className string ActivityView.style CSSProperties ActivityView.title string",
     "excerpt": "Sharing component from @larose-ui/react"
   },
   {
@@ -487,16 +463,16 @@ export const docsSearchIndex = [
     "title": "ActivityView — Notes share sheet",
     "type": "example",
     "path": "/docs/components/activity-view#examples",
-    "keywords": "ActivityView Notes share sheet advanced {}",
-    "excerpt": "// See Storybook story \"NotesShareSheet\" for full example."
+    "keywords": "ActivityView Notes share sheet advanced {\"open\":true,\"title\":\"Share Note\",\"presentation\":\"sheet\"}",
+    "excerpt": "import { ActivityView } from '@larose-ui/react';\n\n<ActivityView\n  open\n  title=\"Share Note\"\n  presentation=\"sheet\"\n>Exam"
   },
   {
     "id": "example:activity-view:PhotoAppActivities",
     "title": "ActivityView — App-specific activities",
     "type": "example",
     "path": "/docs/components/activity-view#examples",
-    "keywords": "ActivityView App-specific activities advanced {}",
-    "excerpt": "// See Storybook story \"PhotoAppActivities\" for full example."
+    "keywords": "ActivityView App-specific activities advanced {\"open\":true,\"title\":\"Share Photo\",\"presentation\":\"sheet\"}",
+    "excerpt": "import { ActivityView } from '@larose-ui/react';\n\n<ActivityView\n  open\n  title=\"Share Photo\"\n  presentation=\"sheet\"\n>Exa"
   },
   {
     "id": "example:activity-view:CustomActionTitle",
@@ -623,7 +599,7 @@ export const docsSearchIndex = [
     "title": "AlertDialog",
     "type": "component",
     "path": "/docs/components/alert-dialog",
-    "keywords": "AlertDialog Feedback AlertDialog.accessory ReactNode AlertDialog.actions AlertDialogAction[] AlertDialog.defaultActionId string AlertDialog.helpUrl string AlertDialog.icon ReactNode AlertDialog.message string AlertDialog.onOpenChange (open: boolean) => void AlertDialog.open boolean AlertDialog.presentation AlertDialogPresentation AlertDialog.showCautionIcon boolean AlertDialog.suppression AlertDialogSuppression AlertDialog.textField AlertDialogTextField AlertDialog.className string AlertDialog.title string",
+    "keywords": "AlertDialog Feedback AlertDialog.accessory ReactNode AlertDialog.actions AlertDialogAction[] AlertDialog.defaultActionId string AlertDialog.helpUrl string AlertDialog.icon ReactNode AlertDialog.message string AlertDialog.onOpenChange (open: boolean) => void AlertDialog.open boolean AlertDialog.presentation AlertDialogPresentation AlertDialog.showCautionIcon boolean AlertDialog.suppression AlertDialogSuppression AlertDialog.textField AlertDialogTextField AlertDialog.className string AlertDialog.style CSSProperties AlertDialog.title string",
     "excerpt": "Feedback component from @larose-ui/react"
   },
   {
@@ -887,24 +863,24 @@ export const docsSearchIndex = [
     "title": "Box — Disclosure triangle",
     "type": "example",
     "path": "/docs/components/box#examples",
-    "keywords": "Box Disclosure triangle advanced {}",
-    "excerpt": "// See Storybook story \"DisclosureTriangleStory\" for full example."
+    "keywords": "Box Disclosure triangle advanced {\"label\":\"Advanced options\",\"expanded\":false}",
+    "excerpt": "import { Disclosure&Labels } from '@larose-ui/react';\n\n<Disclosure&Labels\n  label=\"Advanced options\"\n  expanded={false}\n"
   },
   {
     "id": "example:box:BoxSecondary",
     "title": "Box — Box Secondary",
     "type": "example",
     "path": "/docs/components/box#examples",
-    "keywords": "Box Box Secondary advanced {}",
-    "excerpt": "// See Storybook story \"BoxSecondary\" for full example."
+    "keywords": "Box Box Secondary advanced {\"title\":\"Export options\",\"variant\":\"secondary\"}",
+    "excerpt": "import { Layout } from '@larose-ui/react';\n\n<Layout\n  title=\"Export options\"\n  variant=\"secondary\"\n>Example</Layout>"
   },
   {
     "id": "example:box:BoxSettingsStyle",
     "title": "Box — Box Settings Style",
     "type": "example",
     "path": "/docs/components/box#examples",
-    "keywords": "Box Box Settings Style advanced {}",
-    "excerpt": "// See Storybook story \"BoxSettingsStyle\" for full example."
+    "keywords": "Box Box Settings Style advanced {\"title\":\"Sound\",\"variant\":\"secondary\",\"settingsStyle\":true}",
+    "excerpt": "import { Layout } from '@larose-ui/react';\n\n<Layout\n  title=\"Sound\"\n  variant=\"secondary\"\n  settingsStyle\n>Example</Layo"
   },
   {
     "id": "component:breadcrumb",
@@ -929,6 +905,14 @@ export const docsSearchIndex = [
     "path": "/docs/components/breadcrumb#api",
     "keywords": "Breadcrumb items BreadcrumbItem[] ",
     "excerpt": "BreadcrumbItem[] (required)"
+  },
+  {
+    "id": "example:breadcrumb:BreadcrumbDefault",
+    "title": "Breadcrumb — Breadcrumb Default",
+    "type": "example",
+    "path": "/docs/components/breadcrumb#examples",
+    "keywords": "Breadcrumb Breadcrumb Default basic {\"label\":\"Home\",\"href\":\"#\"}",
+    "excerpt": "import { DataDisplay } from '@larose-ui/react';\n\n<DataDisplay\n  label=\"Home\"\n  href=\"#\"\n>Example</DataDisplay>"
   },
   {
     "id": "component:button",
@@ -1223,7 +1207,7 @@ export const docsSearchIndex = [
     "title": "CalendarGrid",
     "type": "component",
     "path": "/docs/components/calendar-grid",
-    "keywords": "CalendarGrid Forms CalendarGrid.locale string CalendarGrid.maxDate string CalendarGrid.minDate string CalendarGrid.value string CalendarGrid.onChange (isoDate: string) => void",
+    "keywords": "CalendarGrid Forms CalendarGrid.locale string CalendarGrid.maxDate string CalendarGrid.minDate string CalendarGrid.value string CalendarGrid.className string CalendarGrid.onChange (isoDate: string) => void CalendarGrid.style CSSProperties",
     "excerpt": "Forms component from @larose-ui/react"
   },
   {
@@ -1367,8 +1351,8 @@ export const docsSearchIndex = [
     "title": "Card — Secure Password Field",
     "type": "example",
     "path": "/docs/components/card#examples",
-    "keywords": "Card Secure Password Field advanced {}",
-    "excerpt": "// See Storybook story \"SecurePasswordField\" for full example."
+    "keywords": "Card Secure Password Field advanced {\"label\":\"Password\"}",
+    "excerpt": "import { EnteringData } from '@larose-ui/react';\n\n<EnteringData\n  label=\"Password\"\n>Example</EnteringData>"
   },
   {
     "id": "example:card:PasteAndDrop",
@@ -1431,16 +1415,16 @@ export const docsSearchIndex = [
     "title": "Card — Import With File Upload",
     "type": "example",
     "path": "/docs/components/card#examples",
-    "keywords": "Card Import With File Upload loading {}",
-    "excerpt": "// See Storybook story \"ImportWithFileUpload\" for full example."
+    "keywords": "Card Import With File Upload loading {\"label\":\"Import document\",\"hint\":\"PDF, Pages, or Numbers\"}",
+    "excerpt": "import { FileManagement } from '@larose-ui/react';\n\n<FileManagement\n  label=\"Import document\"\n  hint=\"PDF, Pages, or Num"
   },
   {
     "id": "example:card:ListAccessories",
     "title": "Card — List Accessories",
     "type": "example",
     "path": "/docs/components/card#examples",
-    "keywords": "Card List Accessories advanced {}",
-    "excerpt": "// See Storybook story \"ListAccessories\" for full example."
+    "keywords": "Card List Accessories advanced {\"variant\":\"grouped\"}",
+    "excerpt": "import { Lists&Tables } from '@larose-ui/react';\n\n<Lists&Tables\n  variant=\"grouped\"\n>Example</Lists&Tables>"
   },
   {
     "id": "example:card:DocumentToolbar",
@@ -1455,7 +1439,7 @@ export const docsSearchIndex = [
     "title": "Chart",
     "type": "component",
     "path": "/docs/components/chart",
-    "keywords": "Chart Data Chart.accessibilitySummary string Chart.annotation string Chart.data ChartDataPoint[] Chart.height number Chart.interactive boolean Chart.mark ChartMark Chart.onPointFocus (point: ChartDataPoint, seriesId: string, index: number) => void Chart.series ChartSeries[] Chart.showLegend boolean Chart.showPoints boolean Chart.stacked boolean Chart.stackGap number Chart.subtitle string Chart.xAxis ChartAxisConfig Chart.yAxis ChartAxisConfig Chart.yAxisTrailing boolean Chart.className string Chart.title string",
+    "keywords": "Chart Data Chart.accessibilitySummary string Chart.annotation string Chart.data ChartDataPoint[] Chart.height number Chart.interactive boolean Chart.mark ChartMark Chart.onPointFocus (point: ChartDataPoint, seriesId: string, index: number) => void Chart.series ChartSeries[] Chart.showLegend boolean Chart.showPoints boolean Chart.stacked boolean Chart.stackGap number Chart.subtitle string Chart.xAxis ChartAxisConfig Chart.yAxis ChartAxisConfig Chart.yAxisTrailing boolean Chart.className string Chart.style CSSProperties Chart.title string",
     "excerpt": "Data component from @larose-ui/react"
   },
   {
@@ -1711,8 +1695,8 @@ export const docsSearchIndex = [
     "title": "Checkbox — Checkbox Default",
     "type": "example",
     "path": "/docs/components/checkbox#examples",
-    "keywords": "Checkbox Checkbox Default basic {}",
-    "excerpt": "<Checkbox label=\"I agree to the terms\" hint=\"Required before submitting\" />"
+    "keywords": "Checkbox Checkbox Default basic {\"label\":\"I agree to the terms\",\"hint\":\"Required before submitting\"}",
+    "excerpt": "import { FormControls } from '@larose-ui/react';\n\n<FormControls\n  label=\"I agree to the terms\"\n  hint=\"Required before s"
   },
   {
     "id": "component:collaboration-button",
@@ -1759,7 +1743,7 @@ export const docsSearchIndex = [
     "title": "CollaborationPopover",
     "type": "component",
     "path": "/docs/components/collaboration-popover",
-    "keywords": "CollaborationPopover Sharing CollaborationPopover.actions CollaborationAction[] CollaborationPopover.collaborators Collaborator[] CollaborationPopover.defaultOpen boolean CollaborationPopover.manageLabel string CollaborationPopover.onManage () => void CollaborationPopover.onMessage () => void CollaborationPopover.onOpenChange (open: boolean) => void CollaborationPopover.onVideo () => void CollaborationPopover.open boolean CollaborationPopover.trigger ReactNode",
+    "keywords": "CollaborationPopover Sharing CollaborationPopover.actions CollaborationAction[] CollaborationPopover.collaborators Collaborator[] CollaborationPopover.defaultOpen boolean CollaborationPopover.manageLabel string CollaborationPopover.onManage () => void CollaborationPopover.onMessage () => void CollaborationPopover.onOpenChange (open: boolean) => void CollaborationPopover.onVideo () => void CollaborationPopover.open boolean CollaborationPopover.trigger ReactNode CollaborationPopover.className string CollaborationPopover.style CSSProperties",
     "excerpt": "Sharing component from @larose-ui/react"
   },
   {
@@ -1855,7 +1839,7 @@ export const docsSearchIndex = [
     "title": "Collection",
     "type": "component",
     "path": "/docs/components/collection",
-    "keywords": "Collection Layout Collection.ariaLabel string Collection.columns number Collection.items CollectionItem[] Collection.layout CollectionLayout Collection.onSelect (item: CollectionItem) => void Collection.selectedId string",
+    "keywords": "Collection Layout Collection.ariaLabel string Collection.columns number Collection.items CollectionItem[] Collection.layout CollectionLayout Collection.onSelect (item: CollectionItem) => void Collection.selectedId string Collection.className string Collection.style CSSProperties",
     "excerpt": "Layout component from @larose-ui/react"
   },
   {
@@ -1927,7 +1911,7 @@ export const docsSearchIndex = [
     "title": "ColumnView",
     "type": "component",
     "path": "/docs/components/column-view",
-    "keywords": "ColumnView Layout ColumnView.ariaLabel string ColumnView.data ColumnViewNode[] ColumnView.initialPath string[] ColumnView.onPathChange (path: string[]) => void",
+    "keywords": "ColumnView Layout ColumnView.ariaLabel string ColumnView.data ColumnViewNode[] ColumnView.initialPath string[] ColumnView.onPathChange (path: string[]) => void ColumnView.className string ColumnView.style CSSProperties",
     "excerpt": "Layout component from @larose-ui/react"
   },
   {
@@ -1975,7 +1959,7 @@ export const docsSearchIndex = [
     "title": "CommandPalette",
     "type": "component",
     "path": "/docs/components/command-palette",
-    "keywords": "CommandPalette Overlay CommandPalette.'aria-label' string CommandPalette.emptyMessage string CommandPalette.items CommandPaletteItem[] CommandPalette.onOpenChange (open: boolean) => void CommandPalette.open boolean CommandPalette.placeholder string",
+    "keywords": "CommandPalette Overlay CommandPalette.'aria-label' string CommandPalette.emptyMessage string CommandPalette.items CommandPaletteItem[] CommandPalette.onOpenChange (open: boolean) => void CommandPalette.open boolean CommandPalette.placeholder string CommandPalette.className string CommandPalette.style CSSProperties",
     "excerpt": "Overlay component from @larose-ui/react"
   },
   {
@@ -2031,8 +2015,8 @@ export const docsSearchIndex = [
     "title": "CommandPalette — Command Palette Default",
     "type": "example",
     "path": "/docs/components/command-palette#examples",
-    "keywords": "CommandPalette Command Palette Default basic {}",
-    "excerpt": "<CommandPaletteDemo />"
+    "keywords": "CommandPalette Command Palette Default basic {\"open\":true}",
+    "excerpt": "import { AppShell } from '@larose-ui/react';\n\n<AppShell\n  open\n>Example</AppShell>"
   },
   {
     "id": "example:command-palette:Playground",
@@ -2055,7 +2039,7 @@ export const docsSearchIndex = [
     "title": "ContextMenu",
     "type": "component",
     "path": "/docs/components/context-menu",
-    "keywords": "ContextMenu Overlay ContextMenu.dimBackground boolean ContextMenu.entries ContextMenuEntry[] ContextMenu.longPress boolean ContextMenu.onEntrySelect (entry: ContextMenuItemConfig) => void ContextMenu.onOpenChange (open: boolean) => void ContextMenu.open boolean ContextMenu.preview ReactNode ContextMenu.children ReactElement ContextMenu.title string",
+    "keywords": "ContextMenu Overlay ContextMenu.dimBackground boolean ContextMenu.entries ContextMenuEntry[] ContextMenu.longPress boolean ContextMenu.onEntrySelect (entry: ContextMenuItemConfig) => void ContextMenu.onOpenChange (open: boolean) => void ContextMenu.open boolean ContextMenu.preview ReactNode ContextMenu.children ReactElement ContextMenu.className string ContextMenu.style CSSProperties ContextMenu.title string",
     "excerpt": "Overlay component from @larose-ui/react"
   },
   {
@@ -2119,16 +2103,16 @@ export const docsSearchIndex = [
     "title": "ContextMenu — Mail message",
     "type": "example",
     "path": "/docs/components/context-menu#examples",
-    "keywords": "ContextMenu Mail message advanced {}",
-    "excerpt": "// See Storybook story \"MailMessage\" for full example."
+    "keywords": "ContextMenu Mail message advanced {\"open\":true,\"title\":\"Message\"}",
+    "excerpt": "import { ContextMenu } from '@larose-ui/react';\n\n<ContextMenu\n  open\n  title=\"Message\"\n>Example</ContextMenu>"
   },
   {
     "id": "example:context-menu:MultiSelectTitle",
     "title": "ContextMenu — Multi-select title",
     "type": "example",
     "path": "/docs/components/context-menu#examples",
-    "keywords": "ContextMenu Multi-select title advanced {}",
-    "excerpt": "// See Storybook story \"MultiSelectTitle\" for full example."
+    "keywords": "ContextMenu Multi-select title advanced {\"open\":true,\"title\":\"3 items\"}",
+    "excerpt": "import { ContextMenu } from '@larose-ui/react';\n\n<ContextMenu\n  open\n  title=\"3 items\"\n>Example</ContextMenu>"
   },
   {
     "id": "example:context-menu:HiddenUnavailable",
@@ -2143,7 +2127,7 @@ export const docsSearchIndex = [
     "title": "DataTable",
     "type": "component",
     "path": "/docs/components/data-table",
-    "keywords": "DataTable Data DataTable.'aria-label' string DataTable.caption string DataTable.columns DataTableColumn<T>[] DataTable.data T[] DataTable.emptyDescription string DataTable.emptyMessage string DataTable.emptyTitle string DataTable.keyExtractor (row: T) => string DataTable.loading boolean DataTable.skeletonRows number DataTable.striped boolean DataTable.className string",
+    "keywords": "DataTable Data DataTable.'aria-label' string DataTable.caption string DataTable.columns DataTableColumn<T>[] DataTable.data T[] DataTable.emptyDescription string DataTable.emptyMessage string DataTable.emptyTitle string DataTable.keyExtractor (row: T) => string DataTable.loading boolean DataTable.skeletonRows number DataTable.striped boolean DataTable.className string DataTable.style CSSProperties",
     "excerpt": "Data component from @larose-ui/react"
   },
   {
@@ -2239,24 +2223,24 @@ export const docsSearchIndex = [
     "title": "DataTable — Data Table Default",
     "type": "example",
     "path": "/docs/components/data-table#examples",
-    "keywords": "DataTable Data Table Default basic {}",
-    "excerpt": "// See Storybook story \"DataTableDefault\" for full example."
+    "keywords": "DataTable Data Table Default basic {\"caption\":\"Employees\",\"striped\":true}",
+    "excerpt": "import { DataDisplay } from '@larose-ui/react';\n\n<DataDisplay\n  caption=\"Employees\"\n  striped\n>Example</DataDisplay>"
   },
   {
     "id": "example:data-table:DataTableLoading",
     "title": "DataTable — Data Table Loading",
     "type": "example",
     "path": "/docs/components/data-table#examples",
-    "keywords": "DataTable Data Table Loading loading {}",
-    "excerpt": "// See Storybook story \"DataTableLoading\" for full example."
+    "keywords": "DataTable Data Table Loading loading {\"loading\":true}",
+    "excerpt": "import { DataDisplay } from '@larose-ui/react';\n\n<DataDisplay\n  loading\n>Example</DataDisplay>"
   },
   {
     "id": "example:data-table:DataTableEmpty",
     "title": "DataTable — Data Table Empty",
     "type": "example",
     "path": "/docs/components/data-table#examples",
-    "keywords": "DataTable Data Table Empty advanced {}",
-    "excerpt": "// See Storybook story \"DataTableEmpty\" for full example."
+    "keywords": "DataTable Data Table Empty advanced {\"emptyTitle\":\"No employees\"}",
+    "excerpt": "import { DataDisplay } from '@larose-ui/react';\n\n<DataDisplay\n  emptyTitle=\"No employees\"\n>Example</DataDisplay>"
   },
   {
     "id": "component:date-picker",
@@ -2327,23 +2311,23 @@ export const docsSearchIndex = [
     "title": "DatePicker — Date Picker Default",
     "type": "example",
     "path": "/docs/components/date-picker#examples",
-    "keywords": "DatePicker Date Picker Default basic {}",
-    "excerpt": "// See Storybook story \"DatePickerDefault\" for full example."
+    "keywords": "DatePicker Date Picker Default basic {\"label\":\"Start date\",\"value\":\"2026-08-29\",\"hint\":\"Uses native date input with laRose tokens\"}",
+    "excerpt": "import { DateTime } from '@larose-ui/react';\n\n<DateTime\n  label=\"Start date\"\n  value=\"2026-08-29\"\n  hint=\"Uses native da"
   },
   {
     "id": "example:date-picker:DatePickerError",
     "title": "DatePicker — Date Picker Error",
     "type": "example",
     "path": "/docs/components/date-picker#examples",
-    "keywords": "DatePicker Date Picker Error error {}",
-    "excerpt": "// See Storybook story \"DatePickerError\" for full example."
+    "keywords": "DatePicker Date Picker Error error {\"label\":\"Due date\",\"error\":\"Due date is required\"}",
+    "excerpt": "import { DateTime } from '@larose-ui/react';\n\n<DateTime\n  label=\"Due date\"\n  error=\"Due date is required\"\n>Example</Date"
   },
   {
     "id": "component:date-range-picker",
     "title": "DateRangePicker",
     "type": "component",
     "path": "/docs/components/date-range-picker",
-    "keywords": "DateRangePicker Forms DateRangePicker.disabled boolean DateRangePicker.endLabel string DateRangePicker.error string | null DateRangePicker.hint string DateRangePicker.inputSize Size DateRangePicker.label string DateRangePicker.loading boolean DateRangePicker.max string DateRangePicker.min string DateRangePicker.readOnly boolean DateRangePicker.startLabel string DateRangePicker.state UIState DateRangePicker.value DateRange DateRangePicker.className string DateRangePicker.id string DateRangePicker.onChange (value: DateRange) => void",
+    "keywords": "DateRangePicker Forms DateRangePicker.disabled boolean DateRangePicker.endLabel string DateRangePicker.error string | null DateRangePicker.hint string DateRangePicker.inputSize Size DateRangePicker.label string DateRangePicker.loading boolean DateRangePicker.max string DateRangePicker.min string DateRangePicker.readOnly boolean DateRangePicker.startLabel string DateRangePicker.state UIState DateRangePicker.value DateRange DateRangePicker.className string DateRangePicker.id string DateRangePicker.onChange (value: DateRange) => void DateRangePicker.style CSSProperties",
     "excerpt": "Forms component from @larose-ui/react"
   },
   {
@@ -2455,8 +2439,16 @@ export const docsSearchIndex = [
     "title": "DateTimePicker",
     "type": "component",
     "path": "/docs/components/date-time-picker",
-    "keywords": "DateTimePicker Forms DateTimePicker.disabled boolean DateTimePicker.error string | null DateTimePicker.hint string DateTimePicker.inputSize Size DateTimePicker.label string DateTimePicker.loading boolean DateTimePicker.locale string DateTimePicker.maxDate string DateTimePicker.minDate string DateTimePicker.minuteInterval number DateTimePicker.mode DateTimePickerMode DateTimePicker.state UIState DateTimePicker.use12Hour boolean DateTimePicker.value DateTimeValue DateTimePicker.yearRange { start: number; end: number } DateTimePicker.onChange (value: DateTimeValue) => void DateTimePicker.style DateTimePickerStyle",
+    "keywords": "DateTimePicker Forms DateTimePicker.appearance DateTimePickerStyle DateTimePicker.disabled boolean DateTimePicker.error string | null DateTimePicker.hint string DateTimePicker.inputSize Size DateTimePicker.label string DateTimePicker.loading boolean DateTimePicker.locale string DateTimePicker.maxDate string DateTimePicker.minDate string DateTimePicker.minuteInterval number DateTimePicker.mode DateTimePickerMode DateTimePicker.state UIState DateTimePicker.use12Hour boolean DateTimePicker.value DateTimeValue DateTimePicker.yearRange { start: number; end: number } DateTimePicker.className string DateTimePicker.onChange (value: DateTimeValue) => void DateTimePicker.style DateTimePickerStyle | CSSProperties",
     "excerpt": "Forms component from @larose-ui/react"
+  },
+  {
+    "id": "prop:date-time-picker:appearance",
+    "title": "DateTimePicker.appearance",
+    "type": "prop",
+    "path": "/docs/components/date-time-picker#api",
+    "keywords": "DateTimePicker appearance DateTimePickerStyle Compact / wheels / inline / automatic. Use with object `style` when you need both.",
+    "excerpt": "Compact / wheels / inline / automatic. Use with object `style` when you need both."
   },
   {
     "id": "prop:date-time-picker:disabled",
@@ -2671,7 +2663,7 @@ export const docsSearchIndex = [
     "title": "DisclosureButton",
     "type": "component",
     "path": "/docs/components/disclosure-button",
-    "keywords": "DisclosureButton Content DisclosureButton.'aria-label' string DisclosureButton.defaultExpanded boolean DisclosureButton.detail ReactNode DisclosureButton.disabled boolean DisclosureButton.expanded boolean DisclosureButton.label string DisclosureButton.onExpandedChange (expanded: boolean) => void DisclosureButton.children ReactNode",
+    "keywords": "DisclosureButton Content DisclosureButton.'aria-label' string DisclosureButton.defaultExpanded boolean DisclosureButton.detail ReactNode DisclosureButton.disabled boolean DisclosureButton.expanded boolean DisclosureButton.label string DisclosureButton.onExpandedChange (expanded: boolean) => void DisclosureButton.children ReactNode DisclosureButton.className string DisclosureButton.style CSSProperties",
     "excerpt": "Content component from @larose-ui/react"
   },
   {
@@ -2735,7 +2727,7 @@ export const docsSearchIndex = [
     "title": "DisclosureGroup",
     "type": "component",
     "path": "/docs/components/disclosure-group",
-    "keywords": "DisclosureGroup Content DisclosureGroup.defaultExpanded boolean DisclosureGroup.disabled boolean DisclosureGroup.expanded boolean DisclosureGroup.label string DisclosureGroup.onExpandedChange (expanded: boolean) => void DisclosureGroup.children ReactNode",
+    "keywords": "DisclosureGroup Content DisclosureGroup.defaultExpanded boolean DisclosureGroup.disabled boolean DisclosureGroup.expanded boolean DisclosureGroup.label string DisclosureGroup.onExpandedChange (expanded: boolean) => void DisclosureGroup.children ReactNode DisclosureGroup.className string DisclosureGroup.style CSSProperties",
     "excerpt": "Content component from @larose-ui/react"
   },
   {
@@ -2791,7 +2783,7 @@ export const docsSearchIndex = [
     "title": "DisclosureList",
     "type": "component",
     "path": "/docs/components/disclosure-list",
-    "keywords": "DisclosureList Content DisclosureList.defaultExpandedIds string[] DisclosureList.items DisclosureListItem[]",
+    "keywords": "DisclosureList Content DisclosureList.defaultExpandedIds string[] DisclosureList.items DisclosureListItem[] DisclosureList.className string DisclosureList.style CSSProperties",
     "excerpt": "Content component from @larose-ui/react"
   },
   {
@@ -2823,7 +2815,7 @@ export const docsSearchIndex = [
     "title": "DisclosureTriangle",
     "type": "component",
     "path": "/docs/components/disclosure-triangle",
-    "keywords": "DisclosureTriangle Content DisclosureTriangle.defaultExpanded boolean DisclosureTriangle.disabled boolean DisclosureTriangle.expanded boolean DisclosureTriangle.label string DisclosureTriangle.onExpandedChange (expanded: boolean) => void DisclosureTriangle.children ReactNode",
+    "keywords": "DisclosureTriangle Content DisclosureTriangle.defaultExpanded boolean DisclosureTriangle.disabled boolean DisclosureTriangle.expanded boolean DisclosureTriangle.label string DisclosureTriangle.onExpandedChange (expanded: boolean) => void DisclosureTriangle.children ReactNode DisclosureTriangle.className string DisclosureTriangle.style CSSProperties",
     "excerpt": "Content component from @larose-ui/react"
   },
   {
@@ -2871,7 +2863,7 @@ export const docsSearchIndex = [
     "title": "DockBar",
     "type": "component",
     "path": "/docs/components/dock-bar",
-    "keywords": "DockBar Navigation DockBar.'aria-label' string DockBar.children ReactNode",
+    "keywords": "DockBar Navigation DockBar.'aria-label' string DockBar.children ReactNode DockBar.className string DockBar.style CSSProperties",
     "excerpt": "Navigation component from @larose-ui/react"
   },
   {
@@ -2887,7 +2879,7 @@ export const docsSearchIndex = [
     "title": "DockMenu",
     "type": "component",
     "path": "/docs/components/dock-menu",
-    "keywords": "DockMenu Navigation DockMenu.appName string DockMenu.closedEntries ContextMenuEntry[] DockMenu.icon ReactNode DockMenu.isRunning boolean DockMenu.onEntrySelect (entry: ContextMenuItemConfig) => void DockMenu.onOpenChange (open: boolean) => void DockMenu.onWindowSelect (window: DockWindow) => void DockMenu.open boolean DockMenu.openWindows DockWindow[] DockMenu.runningEntries ContextMenuEntry[]",
+    "keywords": "DockMenu Navigation DockMenu.appName string DockMenu.closedEntries ContextMenuEntry[] DockMenu.icon ReactNode DockMenu.isRunning boolean DockMenu.onEntrySelect (entry: ContextMenuItemConfig) => void DockMenu.onOpenChange (open: boolean) => void DockMenu.onWindowSelect (window: DockWindow) => void DockMenu.open boolean DockMenu.openWindows DockWindow[] DockMenu.runningEntries ContextMenuEntry[] DockMenu.className string DockMenu.style CSSProperties",
     "excerpt": "Navigation component from @larose-ui/react"
   },
   {
@@ -2975,24 +2967,24 @@ export const docsSearchIndex = [
     "title": "DockMenu — Safari (running)",
     "type": "example",
     "path": "/docs/components/dock-menu#examples",
-    "keywords": "DockMenu Safari (running) advanced {}",
-    "excerpt": "// See Storybook story \"SafariRunning\" for full example."
+    "keywords": "DockMenu Safari (running) advanced {\"appName\":\"Safari\",\"isRunning\":true,\"open\":true}",
+    "excerpt": "import { DockMenu } from '@larose-ui/react';\n\n<DockMenu\n  appName=\"Safari\"\n  isRunning\n  open\n>Example</DockMenu>"
   },
   {
     "id": "example:dock-menu:MailRunning",
     "title": "DockMenu — Mail (running)",
     "type": "example",
     "path": "/docs/components/dock-menu#examples",
-    "keywords": "DockMenu Mail (running) advanced {}",
-    "excerpt": "// See Storybook story \"MailRunning\" for full example."
+    "keywords": "DockMenu Mail (running) advanced {\"appName\":\"Mail\",\"isRunning\":true,\"open\":true}",
+    "excerpt": "import { DockMenu } from '@larose-ui/react';\n\n<DockMenu\n  appName=\"Mail\"\n  isRunning\n  open\n>Example</DockMenu>"
   },
   {
     "id": "example:dock-menu:AppNotRunning",
     "title": "DockMenu — App not running",
     "type": "example",
     "path": "/docs/components/dock-menu#examples",
-    "keywords": "DockMenu App not running advanced {}",
-    "excerpt": "// See Storybook story \"AppNotRunning\" for full example."
+    "keywords": "DockMenu App not running advanced {\"appName\":\"Photos\",\"isRunning\":false,\"open\":true}",
+    "excerpt": "import { DockMenu } from '@larose-ui/react';\n\n<DockMenu\n  appName=\"Photos\"\n  isRunning={false}\n  open\n>Example</DockMenu"
   },
   {
     "id": "example:dock-menu:HomeScreenQuickActionsStory",
@@ -3007,7 +2999,7 @@ export const docsSearchIndex = [
     "title": "DocumentLauncher",
     "type": "component",
     "path": "/docs/components/document-launcher",
-    "keywords": "DocumentLauncher Files DocumentLauncher.accessories ReactNode DocumentLauncher.appTitle string DocumentLauncher.background ReactNode DocumentLauncher.onPrimaryAction () => void DocumentLauncher.onSecondaryAction () => void DocumentLauncher.primaryActionLabel string DocumentLauncher.secondaryActionLabel string",
+    "keywords": "DocumentLauncher Files DocumentLauncher.accessories ReactNode DocumentLauncher.appTitle string DocumentLauncher.background ReactNode DocumentLauncher.onPrimaryAction () => void DocumentLauncher.onSecondaryAction () => void DocumentLauncher.primaryActionLabel string DocumentLauncher.secondaryActionLabel string DocumentLauncher.className string DocumentLauncher.style CSSProperties",
     "excerpt": "Files component from @larose-ui/react"
   },
   {
@@ -3079,7 +3071,7 @@ export const docsSearchIndex = [
     "title": "DocumentToolbar",
     "type": "component",
     "path": "/docs/components/document-toolbar",
-    "keywords": "DocumentToolbar Files DocumentToolbar.canSave boolean DocumentToolbar.newLabel string DocumentToolbar.onNew () => void DocumentToolbar.onOpen () => void DocumentToolbar.onSave () => void DocumentToolbar.openLabel string DocumentToolbar.saveLabel string DocumentToolbar.showAddButton boolean",
+    "keywords": "DocumentToolbar Files DocumentToolbar.canSave boolean DocumentToolbar.newLabel string DocumentToolbar.onNew () => void DocumentToolbar.onOpen () => void DocumentToolbar.onSave () => void DocumentToolbar.openLabel string DocumentToolbar.saveLabel string DocumentToolbar.showAddButton boolean DocumentToolbar.className string DocumentToolbar.style CSSProperties",
     "excerpt": "Files component from @larose-ui/react"
   },
   {
@@ -3167,7 +3159,7 @@ export const docsSearchIndex = [
     "title": "DragDropList",
     "type": "component",
     "path": "/docs/components/drag-drop-list",
-    "keywords": "DragDropList DragDrop DragDropList.items DragDropListItem[] DragDropList.onReorder (items: DragDropListItem[]) => void DragDropList.renderItem (item: DragDropListItem) => ReactNode DragDropList.zoneId string",
+    "keywords": "DragDropList DragDrop DragDropList.items DragDropListItem[] DragDropList.onReorder (items: DragDropListItem[]) => void DragDropList.renderItem (item: DragDropListItem) => ReactNode DragDropList.zoneId string DragDropList.className string DragDropList.style CSSProperties",
     "excerpt": "DragDrop component from @larose-ui/react"
   },
   {
@@ -3207,7 +3199,7 @@ export const docsSearchIndex = [
     "title": "Draggable",
     "type": "component",
     "path": "/docs/components/draggable",
-    "keywords": "Draggable DragDrop Draggable.data T Draggable.disabled boolean Draggable.label string Draggable.preview ReactNode Draggable.sourceId string Draggable.type string Draggable.children ReactNode Draggable.className string Draggable.id string",
+    "keywords": "Draggable DragDrop Draggable.data T Draggable.disabled boolean Draggable.label string Draggable.preview ReactNode Draggable.sourceId string Draggable.type string Draggable.children ReactNode Draggable.className string Draggable.id string Draggable.style CSSProperties",
     "excerpt": "DragDrop component from @larose-ui/react"
   },
   {
@@ -3367,7 +3359,7 @@ export const docsSearchIndex = [
     "title": "DropZone",
     "type": "component",
     "path": "/docs/components/drop-zone",
-    "keywords": "DropZone DragDrop DropZone.accepts string | string[] DropZone.canDrop (items: DragItem<T>[]) => boolean DropZone.disabled boolean DropZone.onDrop (result: DropResult<T>) => void | Promise<void> DropZone.showInvalidIndicator boolean DropZone.transferring boolean DropZone.transferringLabel string DropZone.children ReactNode DropZone.className string DropZone.id string",
+    "keywords": "DropZone DragDrop DropZone.accepts string | string[] DropZone.canDrop (items: DragItem<T>[]) => boolean DropZone.disabled boolean DropZone.onDrop (result: DropResult<T>) => void | Promise<void> DropZone.showInvalidIndicator boolean DropZone.transferring boolean DropZone.transferringLabel string DropZone.children ReactNode DropZone.className string DropZone.id string DropZone.style CSSProperties",
     "excerpt": "DragDrop component from @larose-ui/react"
   },
   {
@@ -3431,7 +3423,7 @@ export const docsSearchIndex = [
     "title": "EditMenu",
     "type": "component",
     "path": "/docs/components/edit-menu",
-    "keywords": "EditMenu Navigation EditMenu.context EditMenuContext EditMenu.customActions EditMenuItemConfig[] EditMenu.dimBackground boolean EditMenu.includeStandardActions boolean EditMenu.inputMode EditMenuInputMode EditMenu.longPress boolean EditMenu.onAction (actionId: string) => void EditMenu.onOpenChange (open: boolean) => void EditMenu.onStandardAction (actionId: StandardEditActionId) => void EditMenu.open boolean EditMenu.placement 'above' | 'below' | 'auto' EditMenu.variant EditMenuVariant EditMenu.children ReactElement",
+    "keywords": "EditMenu Navigation EditMenu.context EditMenuContext EditMenu.customActions EditMenuItemConfig[] EditMenu.dimBackground boolean EditMenu.includeStandardActions boolean EditMenu.inputMode EditMenuInputMode EditMenu.longPress boolean EditMenu.onAction (actionId: string) => void EditMenu.onOpenChange (open: boolean) => void EditMenu.onStandardAction (actionId: StandardEditActionId) => void EditMenu.open boolean EditMenu.placement 'above' | 'below' | 'auto' EditMenu.variant EditMenuVariant EditMenu.children ReactElement EditMenu.className string EditMenu.style CSSProperties",
     "excerpt": "Navigation component from @larose-ui/react"
   },
   {
@@ -3535,16 +3527,16 @@ export const docsSearchIndex = [
     "title": "EditMenu — Compact (touch and hold)",
     "type": "example",
     "path": "/docs/components/edit-menu#examples",
-    "keywords": "EditMenu Compact (touch and hold) advanced {}",
-    "excerpt": "// See Storybook story \"CompactSelectedText\" for full example."
+    "keywords": "EditMenu Compact (touch and hold) advanced {\"open\":true,\"variant\":\"compact\",\"hasSelection\":true,\"canPaste\":true,\"isEditable\":true}",
+    "excerpt": "import { EditMenu } from '@larose-ui/react';\n\n<EditMenu\n  open\n  variant=\"compact\"\n  hasSelection\n  canPaste\n  isEditabl"
   },
   {
     "id": "example:edit-menu:ContextPointer",
     "title": "EditMenu — Context menu (pointer)",
     "type": "example",
     "path": "/docs/components/edit-menu#examples",
-    "keywords": "EditMenu Context menu (pointer) advanced {}",
-    "excerpt": "// See Storybook story \"ContextPointer\" for full example."
+    "keywords": "EditMenu Context menu (pointer) advanced {\"open\":true,\"variant\":\"context\",\"hasSelection\":true,\"canPaste\":true,\"isEditable\":true}",
+    "excerpt": "import { EditMenu } from '@larose-ui/react';\n\n<EditMenu\n  open\n  variant=\"context\"\n  hasSelection\n  canPaste\n  isEditabl"
   },
   {
     "id": "example:edit-menu:AddressSelection",
@@ -3559,8 +3551,8 @@ export const docsSearchIndex = [
     "title": "EditMenu — No selection",
     "type": "example",
     "path": "/docs/components/edit-menu#examples",
-    "keywords": "EditMenu No selection advanced {}",
-    "excerpt": "// See Storybook story \"NoSelection\" for full example."
+    "keywords": "EditMenu No selection advanced {\"open\":true,\"variant\":\"compact\",\"hasSelection\":false,\"canPaste\":true,\"isEditable\":true}",
+    "excerpt": "import { EditMenu } from '@larose-ui/react';\n\n<EditMenu\n  open\n  variant=\"compact\"\n  hasSelection={false}\n  canPaste\n  i"
   },
   {
     "id": "example:edit-menu:CustomFormatCommands",
@@ -3663,7 +3655,7 @@ export const docsSearchIndex = [
     "title": "FileBrowser",
     "type": "component",
     "path": "/docs/components/file-browser",
-    "keywords": "FileBrowser Files FileBrowser.acceptTypes string[] FileBrowser.activeTab FileBrowserTab FileBrowser.emptyLabel string FileBrowser.files FileBrowserItem[] FileBrowser.onOpen (file: FileBrowserItem) => void FileBrowser.onSelect (file: FileBrowserItem) => void FileBrowser.onShowExtensionsChange (show: boolean) => void FileBrowser.onTabChange (tab: FileBrowserTab) => void FileBrowser.selectedId string FileBrowser.showExtensions boolean FileBrowser.toolbar ReactNode",
+    "keywords": "FileBrowser Files FileBrowser.acceptTypes string[] FileBrowser.activeTab FileBrowserTab FileBrowser.emptyLabel string FileBrowser.files FileBrowserItem[] FileBrowser.onOpen (file: FileBrowserItem) => void FileBrowser.onSelect (file: FileBrowserItem) => void FileBrowser.onShowExtensionsChange (show: boolean) => void FileBrowser.onTabChange (tab: FileBrowserTab) => void FileBrowser.selectedId string FileBrowser.showExtensions boolean FileBrowser.toolbar ReactNode FileBrowser.className string FileBrowser.style CSSProperties",
     "excerpt": "Files component from @larose-ui/react"
   },
   {
@@ -3767,7 +3759,7 @@ export const docsSearchIndex = [
     "title": "FilePreview",
     "type": "component",
     "path": "/docs/components/file-preview",
-    "keywords": "FilePreview Files FilePreview.closeLabel string FilePreview.onClose () => void FilePreview.source FilePreviewSource",
+    "keywords": "FilePreview Files FilePreview.closeLabel string FilePreview.onClose () => void FilePreview.source FilePreviewSource FilePreview.className string FilePreview.style CSSProperties",
     "excerpt": "Files component from @larose-ui/react"
   },
   {
@@ -3807,7 +3799,7 @@ export const docsSearchIndex = [
     "title": "FileUpload",
     "type": "component",
     "path": "/docs/components/file-upload",
-    "keywords": "FileUpload Forms FileUpload.accept string FileUpload.buttonLabel string FileUpload.disabled boolean FileUpload.error string | null FileUpload.hint string FileUpload.label string FileUpload.multiple boolean FileUpload.onFilesChange (files: File[]) => void FileUpload.className string",
+    "keywords": "FileUpload Forms FileUpload.accept string FileUpload.buttonLabel string FileUpload.disabled boolean FileUpload.error string | null FileUpload.hint string FileUpload.label string FileUpload.multiple boolean FileUpload.onFilesChange (files: File[]) => void FileUpload.className string FileUpload.style CSSProperties",
     "excerpt": "Forms component from @larose-ui/react"
   },
   {
@@ -3879,8 +3871,8 @@ export const docsSearchIndex = [
     "title": "FileUpload — File Upload Default",
     "type": "example",
     "path": "/docs/components/file-upload#examples",
-    "keywords": "FileUpload File Upload Default basic {}",
-    "excerpt": "// See Storybook story \"FileUploadDefault\" for full example."
+    "keywords": "FileUpload File Upload Default basic {\"label\":\"Upload files\"}",
+    "excerpt": "import { AppShell } from '@larose-ui/react';\n\n<AppShell\n  label=\"Upload files\"\n>Example</AppShell>"
   },
   {
     "id": "component:header",
@@ -3895,16 +3887,16 @@ export const docsSearchIndex = [
     "title": "Header — Header Default",
     "type": "example",
     "path": "/docs/components/header#examples",
-    "keywords": "Header Header Default basic {}",
-    "excerpt": "// See Storybook story \"HeaderDefault\" for full example."
+    "keywords": "Header Header Default basic {\"title\":\"Employees\",\"brand\":\"laRose\"}",
+    "excerpt": "import { AppShell } from '@larose-ui/react';\n\n<AppShell\n  title=\"Employees\"\n  brand=\"laRose\"\n>Example</AppShell>"
   },
   {
     "id": "example:header:HeaderWithTitle",
     "title": "Header — Header With Title",
     "type": "example",
     "path": "/docs/components/header#examples",
-    "keywords": "Header Header With Title advanced {}",
-    "excerpt": "// See Storybook story \"HeaderWithTitle\" for full example."
+    "keywords": "Header Header With Title advanced {\"title\":\"Dashboard\",\"brand\":\"laRose\"}",
+    "excerpt": "import { AppShell } from '@larose-ui/react';\n\n<AppShell\n  title=\"Dashboard\"\n  brand=\"laRose\"\n>Example</AppShell>"
   },
   {
     "id": "example:header:DocumentWorkspace",
@@ -3959,7 +3951,7 @@ export const docsSearchIndex = [
     "title": "HomeScreenQuickActions",
     "type": "component",
     "path": "/docs/components/home-screen-quick-actions",
-    "keywords": "HomeScreenQuickActions Platform HomeScreenQuickActions.actions QuickActionItem[] HomeScreenQuickActions.appName string HomeScreenQuickActions.icon ReactNode HomeScreenQuickActions.iconPlacement QuickActionIconPlacement HomeScreenQuickActions.includeSystemActions boolean HomeScreenQuickActions.onActionSelect (action: QuickActionItem) => void HomeScreenQuickActions.onOpenChange (open: boolean) => void HomeScreenQuickActions.open boolean HomeScreenQuickActions.systemActions QuickActionItem[]",
+    "keywords": "HomeScreenQuickActions Platform HomeScreenQuickActions.actions QuickActionItem[] HomeScreenQuickActions.appName string HomeScreenQuickActions.icon ReactNode HomeScreenQuickActions.iconPlacement QuickActionIconPlacement HomeScreenQuickActions.includeSystemActions boolean HomeScreenQuickActions.onActionSelect (action: QuickActionItem) => void HomeScreenQuickActions.onOpenChange (open: boolean) => void HomeScreenQuickActions.open boolean HomeScreenQuickActions.systemActions QuickActionItem[] HomeScreenQuickActions.className string HomeScreenQuickActions.style CSSProperties",
     "excerpt": "Platform component from @larose-ui/react"
   },
   {
@@ -4039,8 +4031,8 @@ export const docsSearchIndex = [
     "title": "HomeScreenQuickActions — Mail",
     "type": "example",
     "path": "/docs/components/home-screen-quick-actions#examples",
-    "keywords": "HomeScreenQuickActions Mail advanced {}",
-    "excerpt": "// See Storybook story \"MailActions\" for full example."
+    "keywords": "HomeScreenQuickActions Mail advanced {\"appName\":\"Mail\",\"open\":true}",
+    "excerpt": "import { HomeScreenQuickActions } from '@larose-ui/react';\n\n<HomeScreenQuickActions\n  appName=\"Mail\"\n  open\n>Example</Ho"
   },
   {
     "id": "example:home-screen-quick-actions:MapsActions",
@@ -4191,8 +4183,8 @@ export const docsSearchIndex = [
     "title": "ImageView — Fit Modes",
     "type": "example",
     "path": "/docs/components/image-view#examples",
-    "keywords": "ImageView Fit Modes advanced {}",
-    "excerpt": "// See Storybook story \"FitModes\" for full example."
+    "keywords": "ImageView Fit Modes advanced {\"fit\":\"contain\",\"alt\":\"Sample contain\"}",
+    "excerpt": "import { ImageView } from '@larose-ui/react';\n\n<ImageView\n  fit=\"contain\"\n  alt=\"Sample contain\"\n>Example</ImageView>"
   },
   {
     "id": "example:image-view:TextOverlay",
@@ -4231,7 +4223,7 @@ export const docsSearchIndex = [
     "title": "ImageWell",
     "type": "component",
     "path": "/docs/components/image-well",
-    "keywords": "ImageWell Content ImageWell.accept string ImageWell.disabled boolean ImageWell.label string ImageWell.onImageChange (file: File | null, previewUrl: string | null) => void ImageWell.placeholder string ImageWell.src string",
+    "keywords": "ImageWell Content ImageWell.accept string ImageWell.disabled boolean ImageWell.label string ImageWell.onImageChange (file: File | null, previewUrl: string | null) => void ImageWell.placeholder string ImageWell.src string ImageWell.className string ImageWell.style CSSProperties",
     "excerpt": "Content component from @larose-ui/react"
   },
   {
@@ -4599,8 +4591,8 @@ export const docsSearchIndex = [
     "title": "LiquidGlass — Sidebar Default",
     "type": "example",
     "path": "/docs/components/liquid-glass#examples",
-    "keywords": "LiquidGlass Sidebar Default basic {}",
-    "excerpt": "// See Storybook story \"SidebarDefault\" for full example."
+    "keywords": "LiquidGlass Sidebar Default basic {\"brand\":\"laRose\"}",
+    "excerpt": "import { AppShell } from '@larose-ui/react';\n\n<AppShell\n  brand=\"laRose\"\n>Example</AppShell>"
   },
   {
     "id": "example:liquid-glass:AppShellLayout",
@@ -4639,8 +4631,8 @@ export const docsSearchIndex = [
     "title": "LiquidGlass — Pagination Default",
     "type": "example",
     "path": "/docs/components/liquid-glass#examples",
-    "keywords": "LiquidGlass Pagination Default basic {}",
-    "excerpt": "<PaginationDemo />"
+    "keywords": "LiquidGlass Pagination Default basic {\"page\":1,\"totalPages\":12}",
+    "excerpt": "import { DataDisplay } from '@larose-ui/react';\n\n<DataDisplay\n  page={1}\n  totalPages={12}\n>Example</DataDisplay>"
   },
   {
     "id": "example:liquid-glass:Overview",
@@ -4767,8 +4759,8 @@ export const docsSearchIndex = [
     "title": "LiquidGlassButton — Share Button Only",
     "type": "example",
     "path": "/docs/components/liquid-glass-button#examples",
-    "keywords": "LiquidGlassButton Share Button Only advanced {}",
-    "excerpt": "<ShareButton />"
+    "keywords": "LiquidGlassButton Share Button Only advanced {\"label\":\"Share\"}",
+    "excerpt": "import { Collaboration&Sharing } from '@larose-ui/react';\n\n<Collaboration&Sharing\n  label=\"Share\"\n>Example</Collaboratio"
   },
   {
     "id": "component:liquid-glass-checkbox",
@@ -4863,8 +4855,8 @@ export const docsSearchIndex = [
     "title": "LiquidGlassCheckbox — Checkbox Default",
     "type": "example",
     "path": "/docs/components/liquid-glass-checkbox#examples",
-    "keywords": "LiquidGlassCheckbox Checkbox Default basic {}",
-    "excerpt": "<Checkbox label=\"I agree to the terms\" hint=\"Required before submitting\" />"
+    "keywords": "LiquidGlassCheckbox Checkbox Default basic {\"label\":\"I agree to the terms\",\"hint\":\"Required before submitting\"}",
+    "excerpt": "import { FormControls } from '@larose-ui/react';\n\n<FormControls\n  label=\"I agree to the terms\"\n  hint=\"Required before s"
   },
   {
     "id": "component:liquid-glass-progress",
@@ -4951,16 +4943,16 @@ export const docsSearchIndex = [
     "title": "LiquidGlassProgress — Progress Default",
     "type": "example",
     "path": "/docs/components/liquid-glass-progress#examples",
-    "keywords": "LiquidGlassProgress Progress Default basic {}",
-    "excerpt": "<Progress value={65} label=\"Profile completion\" showValue />"
+    "keywords": "LiquidGlassProgress Progress Default basic {\"value\":65,\"label\":\"Profile completion\",\"showValue\":true}",
+    "excerpt": "import { FormControls } from '@larose-ui/react';\n\n<FormControls\n  value={65}\n  label=\"Profile completion\"\n  showValue\n>E"
   },
   {
     "id": "example:liquid-glass-progress:ProgressSuccess",
     "title": "LiquidGlassProgress — Progress Success",
     "type": "example",
     "path": "/docs/components/liquid-glass-progress#examples",
-    "keywords": "LiquidGlassProgress Progress Success advanced {}",
-    "excerpt": "<Progress value={100} label=\"Upload complete\" variant=\"success\" showValue />"
+    "keywords": "LiquidGlassProgress Progress Success advanced {\"value\":100,\"label\":\"Upload complete\",\"variant\":\"success\",\"showValue\":true}",
+    "excerpt": "import { FormControls } from '@larose-ui/react';\n\n<FormControls\n  value={100}\n  label=\"Upload complete\"\n  variant=\"succe"
   },
   {
     "id": "component:liquid-glass-range",
@@ -5071,8 +5063,8 @@ export const docsSearchIndex = [
     "title": "LiquidGlassRange — Date Range Picker Default",
     "type": "example",
     "path": "/docs/components/liquid-glass-range#examples",
-    "keywords": "LiquidGlassRange Date Range Picker Default basic {}",
-    "excerpt": "<DateRangeDemo />"
+    "keywords": "LiquidGlassRange Date Range Picker Default basic {\"label\":\"Reporting period\"}",
+    "excerpt": "import { DateTime } from '@larose-ui/react';\n\n<DateTime\n  label=\"Reporting period\"\n>Example</DateTime>"
   },
   {
     "id": "component:liquid-glass-switch",
@@ -5183,8 +5175,8 @@ export const docsSearchIndex = [
     "title": "LiquidGlassSwitch — Switch Default",
     "type": "example",
     "path": "/docs/components/liquid-glass-switch#examples",
-    "keywords": "LiquidGlassSwitch Switch Default basic {}",
-    "excerpt": "<Switch label=\"Email notifications\" defaultChecked hint=\"Receive product updates\" />"
+    "keywords": "LiquidGlassSwitch Switch Default basic {\"label\":\"Email notifications\",\"checked\":true,\"hint\":\"Receive product updates\"}",
+    "excerpt": "import { FormControls } from '@larose-ui/react';\n\n<FormControls\n  label=\"Email notifications\"\n  checked\n  hint=\"Receive "
   },
   {
     "id": "component:liquid-glass-tab-bar",
@@ -5559,8 +5551,8 @@ export const docsSearchIndex = [
     "title": "List — Grouped List",
     "type": "example",
     "path": "/docs/components/list#examples",
-    "keywords": "List Grouped List advanced {}",
-    "excerpt": "// See Storybook story \"GroupedList\" for full example."
+    "keywords": "List Grouped List advanced {\"variant\":\"grouped\"}",
+    "excerpt": "import { Lists&Tables } from '@larose-ui/react';\n\n<Lists&Tables\n  variant=\"grouped\"\n>Example</Lists&Tables>"
   },
   {
     "id": "example:list:MiddleTruncation",
@@ -5671,7 +5663,7 @@ export const docsSearchIndex = [
     "title": "Lockup",
     "type": "component",
     "path": "/docs/components/lockup",
-    "keywords": "Lockup Layout Lockup.'aria-label' string Lockup.axis LockupAxis Lockup.focused boolean Lockup.footer ReactNode Lockup.header ReactNode Lockup.children ReactNode Lockup.className string Lockup.onBlur () => void Lockup.onClick () => void Lockup.onFocus () => void",
+    "keywords": "Lockup Layout Lockup.'aria-label' string Lockup.axis LockupAxis Lockup.focused boolean Lockup.footer ReactNode Lockup.header ReactNode Lockup.children ReactNode Lockup.className string Lockup.onBlur () => void Lockup.onClick () => void Lockup.onFocus () => void Lockup.style CSSProperties",
     "excerpt": "Layout component from @larose-ui/react"
   },
   {
@@ -5732,11 +5724,11 @@ export const docsSearchIndex = [
   },
   {
     "id": "example:lockup:VerticalMonograms",
-    "title": "Lockup — Vertical Monograms",
+    "title": "Lockup — Sara Ali",
     "type": "example",
     "path": "/docs/components/lockup#examples",
-    "keywords": "Lockup Vertical Monograms advanced {}",
-    "excerpt": "// See Storybook story \"VerticalMonograms\" for full example."
+    "keywords": "Lockup Sara Ali advanced {\"name\":\"Sara Ali\"}",
+    "excerpt": "import { Lockup } from '@larose-ui/react';\n\n<Lockup\n  name=\"Sara Ali\"\n>Example</Lockup>"
   },
   {
     "id": "component:lockup-card",
@@ -5767,7 +5759,7 @@ export const docsSearchIndex = [
     "title": "LockupRow",
     "type": "component",
     "path": "/docs/components/lockup-row",
-    "keywords": "LockupRow Other LockupRow.axis LockupAxis LockupRow.itemWidth string LockupRow.children ReactNode",
+    "keywords": "LockupRow Other LockupRow.axis LockupAxis LockupRow.itemWidth string LockupRow.children ReactNode LockupRow.className string LockupRow.style CSSProperties",
     "excerpt": "Other component from @larose-ui/react"
   },
   {
@@ -5791,7 +5783,7 @@ export const docsSearchIndex = [
     "title": "Menu",
     "type": "component",
     "path": "/docs/components/menu",
-    "keywords": "Menu Navigation Menu.dimBackground boolean Menu.enableMnemonics boolean Menu.enableShortcuts boolean Menu.enableTypeAhead boolean Menu.entries MenuEntry[] Menu.layout MenuLayout Menu.mnemonicVisible boolean Menu.onEntrySelect (entry: MenuItemConfig) => boolean | void Menu.onOpenChange (open: boolean) => void Menu.open boolean Menu.optionKey boolean Menu.children ReactElement Menu.title string",
+    "keywords": "Menu Navigation Menu.dimBackground boolean Menu.enableMnemonics boolean Menu.enableShortcuts boolean Menu.enableTypeAhead boolean Menu.entries MenuEntry[] Menu.layout MenuLayout Menu.mnemonicVisible boolean Menu.onEntrySelect (entry: MenuItemConfig) => boolean | void Menu.onOpenChange (open: boolean) => void Menu.open boolean Menu.optionKey boolean Menu.children ReactElement Menu.className string Menu.style CSSProperties Menu.title string",
     "excerpt": "Navigation component from @larose-ui/react"
   },
   {
@@ -5887,24 +5879,24 @@ export const docsSearchIndex = [
     "title": "Menu — Large (default)",
     "type": "example",
     "path": "/docs/components/menu#examples",
-    "keywords": "Menu Large (default) basic {}",
-    "excerpt": "// See Storybook story \"LargeLayout\" for full example."
+    "keywords": "Menu Large (default) basic {\"open\":true,\"layout\":\"large\",\"title\":\"Edit\"}",
+    "excerpt": "import { Menu } from '@larose-ui/react';\n\n<Menu\n  open\n  layout=\"large\"\n  title=\"Edit\"\n>Example</Menu>"
   },
   {
     "id": "example:menu:MediumLayout",
     "title": "Menu — Medium layout",
     "type": "example",
     "path": "/docs/components/menu#examples",
-    "keywords": "Menu Medium layout advanced {}",
-    "excerpt": "// See Storybook story \"MediumLayout\" for full example."
+    "keywords": "Menu Medium layout advanced {\"open\":true,\"layout\":\"medium\",\"title\":\"Edit\"}",
+    "excerpt": "import { Menu } from '@larose-ui/react';\n\n<Menu\n  open\n  layout=\"medium\"\n  title=\"Edit\"\n>Example</Menu>"
   },
   {
     "id": "example:menu:SmallLayout",
     "title": "Menu — Small layout",
     "type": "example",
     "path": "/docs/components/menu#examples",
-    "keywords": "Menu Small layout variants {}",
-    "excerpt": "<Menu layout=\"small\" open onOpenChange={() => undefined} entries={formatEntries} />"
+    "keywords": "Menu Small layout variants {\"open\":true,\"layout\":\"small\",\"title\":\"Edit\"}",
+    "excerpt": "import { Menu } from '@larose-ui/react';\n\n<Menu\n  open\n  layout=\"small\"\n  title=\"Edit\"\n>Example</Menu>"
   },
   {
     "id": "example:menu:SubmenuAndToggles",
@@ -5927,7 +5919,7 @@ export const docsSearchIndex = [
     "title": "MenuBar",
     "type": "component",
     "path": "/docs/components/menu-bar",
-    "keywords": "MenuBar Navigation MenuBar.appName string MenuBar.appSpecificMenus MenuBarMenuConfig[] MenuBar.enableGlobalShortcuts boolean MenuBar.enableMnemonics boolean MenuBar.enableTypeAhead boolean MenuBar.extras MenuBarExtraConfig[] MenuBar.menus MenuBarMenuConfig[] MenuBar.onMenuAction (menuId: string, entryId: string) => void MenuBar.onRevealChange (revealed: boolean) => void MenuBar.platform MenuBarPlatform MenuBar.revealed boolean MenuBar.showAppleMenu boolean MenuBar.standardOptions StandardMenuBarOptions MenuBar.className string",
+    "keywords": "MenuBar Navigation MenuBar.appName string MenuBar.appSpecificMenus MenuBarMenuConfig[] MenuBar.enableGlobalShortcuts boolean MenuBar.enableMnemonics boolean MenuBar.enableTypeAhead boolean MenuBar.extras MenuBarExtraConfig[] MenuBar.menus MenuBarMenuConfig[] MenuBar.onMenuAction (menuId: string, entryId: string) => void MenuBar.onRevealChange (revealed: boolean) => void MenuBar.platform MenuBarPlatform MenuBar.revealed boolean MenuBar.showAppleMenu boolean MenuBar.standardOptions StandardMenuBarOptions MenuBar.className string MenuBar.style CSSProperties",
     "excerpt": "Navigation component from @larose-ui/react"
   },
   {
@@ -6039,16 +6031,16 @@ export const docsSearchIndex = [
     "title": "MenuBar — Menu bar (global shortcuts)",
     "type": "example",
     "path": "/docs/components/menu-bar#examples",
-    "keywords": "MenuBar Menu bar (global shortcuts) advanced {}",
-    "excerpt": "// See Storybook story \"MenuBarGlobalShortcuts\" for full example."
+    "keywords": "MenuBar Menu bar (global shortcuts) advanced {\"appName\":\"laRose\",\"revealed\":true}",
+    "excerpt": "import { Accelerators } from '@larose-ui/react';\n\n<Accelerators\n  appName=\"laRose\"\n  revealed\n>Example</Accelerators>"
   },
   {
     "id": "example:menu-bar:MacOSStandard",
     "title": "MenuBar — macOS standard menus",
     "type": "example",
     "path": "/docs/components/menu-bar#examples",
-    "keywords": "MenuBar macOS standard menus advanced {}",
-    "excerpt": "// See Storybook story \"MacOSStandard\" for full example."
+    "keywords": "MenuBar macOS standard menus advanced {\"appName\":\"laRose\",\"platform\":\"macos\",\"revealed\":true}",
+    "excerpt": "import { MenuBar } from '@larose-ui/react';\n\n<MenuBar\n  appName=\"laRose\"\n  platform=\"macos\"\n  revealed\n>Example</MenuBar"
   },
   {
     "id": "example:menu-bar:IPadOSHiddenUntilRevealed",
@@ -6071,7 +6063,7 @@ export const docsSearchIndex = [
     "title": "MenuBarExtra",
     "type": "component",
     "path": "/docs/components/menu-bar-extra",
-    "keywords": "MenuBarExtra Navigation MenuBarExtra.enableMnemonics boolean MenuBarExtra.enableTypeAhead boolean MenuBarExtra.isOpen boolean MenuBarExtra.mnemonicVisible boolean MenuBarExtra.onAction (entry: MenuItemConfig) => void MenuBarExtra.onOpenChange (open: boolean) => void MenuBarExtra.optionKey boolean",
+    "keywords": "MenuBarExtra Navigation MenuBarExtra.enableMnemonics boolean MenuBarExtra.enableTypeAhead boolean MenuBarExtra.isOpen boolean MenuBarExtra.mnemonicVisible boolean MenuBarExtra.onAction (entry: MenuItemConfig) => void MenuBarExtra.onOpenChange (open: boolean) => void MenuBarExtra.optionKey boolean MenuBarExtra.className string MenuBarExtra.style CSSProperties",
     "excerpt": "Navigation component from @larose-ui/react"
   },
   {
@@ -6135,7 +6127,7 @@ export const docsSearchIndex = [
     "title": "MnemonicLabel",
     "type": "component",
     "path": "/docs/components/mnemonic-label",
-    "keywords": "MnemonicLabel Other MnemonicLabel.label string MnemonicLabel.mnemonic string MnemonicLabel.showAccessKey boolean MnemonicLabel.className string",
+    "keywords": "MnemonicLabel Other MnemonicLabel.label string MnemonicLabel.mnemonic string MnemonicLabel.showAccessKey boolean MnemonicLabel.className string MnemonicLabel.style CSSProperties",
     "excerpt": "Other component from @larose-ui/react"
   },
   {
@@ -6303,7 +6295,7 @@ export const docsSearchIndex = [
     "title": "Ornament",
     "type": "component",
     "path": "/docs/components/ornament",
-    "keywords": "Ornament Layout Ornament.children ReactNode Ornament.className string",
+    "keywords": "Ornament Layout Ornament.children ReactNode Ornament.className string Ornament.style CSSProperties",
     "excerpt": "Layout component from @larose-ui/react"
   },
   {
@@ -6311,8 +6303,8 @@ export const docsSearchIndex = [
     "title": "Ornament — Now Playing (bottom)",
     "type": "example",
     "path": "/docs/components/ornament#examples",
-    "keywords": "Ornament Now Playing (bottom) advanced {}",
-    "excerpt": "// See Storybook story \"NowPlaying\" for full example."
+    "keywords": "Ornament Now Playing (bottom) advanced {\"label\":\"Now Playing\"}",
+    "excerpt": "import { Ornament } from '@larose-ui/react';\n\n<Ornament\n  label=\"Now Playing\"\n>Example</Ornament>"
   },
   {
     "id": "example:ornament:ImmersiveHidden",
@@ -6351,7 +6343,7 @@ export const docsSearchIndex = [
     "title": "OrnamentWindow",
     "type": "component",
     "path": "/docs/components/ornament-window",
-    "keywords": "OrnamentWindow Layout OrnamentWindow.'aria-label' string OrnamentWindow.alignment OrnamentContentAlignment OrnamentWindow.edge OrnamentEdge OrnamentWindow.immersive boolean OrnamentWindow.ornament ReactNode OrnamentWindow.ornaments OrnamentConfig[] OrnamentWindow.visibility OrnamentVisibility OrnamentWindow.children ReactNode OrnamentWindow.className string",
+    "keywords": "OrnamentWindow Layout OrnamentWindow.'aria-label' string OrnamentWindow.alignment OrnamentContentAlignment OrnamentWindow.edge OrnamentEdge OrnamentWindow.immersive boolean OrnamentWindow.ornament ReactNode OrnamentWindow.ornaments OrnamentConfig[] OrnamentWindow.visibility OrnamentVisibility OrnamentWindow.children ReactNode OrnamentWindow.className string OrnamentWindow.style CSSProperties",
     "excerpt": "Layout component from @larose-ui/react"
   },
   {
@@ -6415,7 +6407,7 @@ export const docsSearchIndex = [
     "title": "OutlineView",
     "type": "component",
     "path": "/docs/components/outline-view",
-    "keywords": "OutlineView Data OutlineView.'aria-label' string OutlineView.alternatingRows boolean OutlineView.columns Array<string | OutlineColumn> OutlineView.data OutlineNode[] OutlineView.defaultExpandedIds string[] OutlineView.defaultSortDirection SortDirection OutlineView.defaultSortKey string OutlineView.editableColumns string[] OutlineView.expandedIds string[] OutlineView.onCellEdit (nodeId: string, columnKey: string, value: string) => void OutlineView.onExpandedChange (expandedIds: string[]) => void OutlineView.onRowDoubleClick (node: OutlineNode) => void OutlineView.onSelect (node: OutlineNode) => void OutlineView.primaryColumnHeader string OutlineView.resizableColumns boolean OutlineView.searchQuery string OutlineView.selectedId string OutlineView.sortable boolean OutlineView.storageKey string OutlineView.truncate 'middle' | 'end'",
+    "keywords": "OutlineView Data OutlineView.'aria-label' string OutlineView.alternatingRows boolean OutlineView.columns Array<string | OutlineColumn> OutlineView.data OutlineNode[] OutlineView.defaultExpandedIds string[] OutlineView.defaultSortDirection SortDirection OutlineView.defaultSortKey string OutlineView.editableColumns string[] OutlineView.expandedIds string[] OutlineView.onCellEdit (nodeId: string, columnKey: string, value: string) => void OutlineView.onExpandedChange (expandedIds: string[]) => void OutlineView.onRowDoubleClick (node: OutlineNode) => void OutlineView.onSelect (node: OutlineNode) => void OutlineView.primaryColumnHeader string OutlineView.resizableColumns boolean OutlineView.searchQuery string OutlineView.selectedId string OutlineView.sortable boolean OutlineView.storageKey string OutlineView.truncate 'middle' | 'end' OutlineView.className string OutlineView.style CSSProperties",
     "excerpt": "Data component from @larose-ui/react"
   },
   {
@@ -6615,7 +6607,7 @@ export const docsSearchIndex = [
     "title": "OutlineViewToolbar",
     "type": "component",
     "path": "/docs/components/outline-view-toolbar",
-    "keywords": "OutlineViewToolbar Data OutlineViewToolbar.'aria-label' string OutlineViewToolbar.onSearchChange (query: string) => void OutlineViewToolbar.placeholder string OutlineViewToolbar.searchQuery string",
+    "keywords": "OutlineViewToolbar Data OutlineViewToolbar.'aria-label' string OutlineViewToolbar.onSearchChange (query: string) => void OutlineViewToolbar.placeholder string OutlineViewToolbar.searchQuery string OutlineViewToolbar.className string OutlineViewToolbar.style CSSProperties",
     "excerpt": "Data component from @larose-ui/react"
   },
   {
@@ -6655,7 +6647,7 @@ export const docsSearchIndex = [
     "title": "Pagination",
     "type": "component",
     "path": "/docs/components/pagination",
-    "keywords": "Pagination Navigation Pagination.'aria-label' string Pagination.nextLabel string Pagination.onPageChange (page: number) => void Pagination.page number Pagination.previousLabel string Pagination.siblingCount number Pagination.totalPages number Pagination.className string",
+    "keywords": "Pagination Navigation Pagination.'aria-label' string Pagination.nextLabel string Pagination.onPageChange (page: number) => void Pagination.page number Pagination.previousLabel string Pagination.siblingCount number Pagination.totalPages number Pagination.className string Pagination.style CSSProperties",
     "excerpt": "Navigation component from @larose-ui/react"
   },
   {
@@ -6719,7 +6711,7 @@ export const docsSearchIndex = [
     "title": "PathControl",
     "type": "component",
     "path": "/docs/components/path-control",
-    "keywords": "PathControl Navigation PathControl.'aria-label' string PathControl.editable boolean PathControl.onChoose () => void PathControl.onDropPath (segments: PathSegment[]) => void PathControl.onSegmentSelect (segment: PathSegment) => void PathControl.segments PathSegment[] PathControl.selectedId string PathControl.variant PathControlVariant PathControl.className string",
+    "keywords": "PathControl Navigation PathControl.'aria-label' string PathControl.editable boolean PathControl.onChoose () => void PathControl.onDropPath (segments: PathSegment[]) => void PathControl.onSegmentSelect (segment: PathSegment) => void PathControl.segments PathSegment[] PathControl.selectedId string PathControl.variant PathControlVariant PathControl.className string PathControl.style CSSProperties",
     "excerpt": "Navigation component from @larose-ui/react"
   },
   {
@@ -6791,23 +6783,23 @@ export const docsSearchIndex = [
     "title": "PathControl — Path control (standard)",
     "type": "example",
     "path": "/docs/components/path-control#examples",
-    "keywords": "PathControl Path control (standard) advanced {}",
-    "excerpt": "// See Storybook story \"PathControlStandard\" for full example."
+    "keywords": "PathControl Path control (standard) advanced {\"variant\":\"standard\",\"selectedId\":\"file\"}",
+    "excerpt": "import { NavigationandSearch } from '@larose-ui/react';\n\n<NavigationandSearch\n  variant=\"standard\"\n  selectedId=\"file\"\n>"
   },
   {
     "id": "example:path-control:PathControlPopup",
     "title": "PathControl — Path control (pop-up)",
     "type": "example",
     "path": "/docs/components/path-control#examples",
-    "keywords": "PathControl Path control (pop-up) advanced {}",
-    "excerpt": "// See Storybook story \"PathControlPopup\" for full example."
+    "keywords": "PathControl Path control (pop-up) advanced {\"variant\":\"popup\",\"selectedId\":\"file\"}",
+    "excerpt": "import { NavigationandSearch } from '@larose-ui/react';\n\n<NavigationandSearch\n  variant=\"popup\"\n  selectedId=\"file\"\n>Exa"
   },
   {
     "id": "component:picker",
     "title": "Picker",
     "type": "component",
     "path": "/docs/components/picker",
-    "keywords": "Picker Forms Picker.'aria-label' string Picker.columns PickerColumn[] Picker.disabled boolean Picker.error string | null Picker.formatValue (value: PickerValue, columns: PickerColumn[]) => string Picker.hint string Picker.inputSize Size Picker.label string Picker.loading boolean Picker.placeholder string Picker.state UIState Picker.value PickerValue Picker.onChange (value: PickerValue) => void Picker.style PickerStyle",
+    "keywords": "Picker Forms Picker.'aria-label' string Picker.appearance PickerStyle Picker.columns PickerColumn[] Picker.disabled boolean Picker.error string | null Picker.formatValue (value: PickerValue, columns: PickerColumn[]) => string Picker.hint string Picker.inputSize Size Picker.label string Picker.loading boolean Picker.placeholder string Picker.state UIState Picker.value PickerValue Picker.className string Picker.onChange (value: PickerValue) => void Picker.style PickerStyle | CSSProperties",
     "excerpt": "Forms component from @larose-ui/react"
   },
   {
@@ -6817,6 +6809,14 @@ export const docsSearchIndex = [
     "path": "/docs/components/picker#api",
     "keywords": "Picker 'aria-label' string ",
     "excerpt": "string"
+  },
+  {
+    "id": "prop:picker:appearance",
+    "title": "Picker.appearance",
+    "type": "prop",
+    "path": "/docs/components/picker#api",
+    "keywords": "Picker appearance PickerStyle Wheel vs compact appearance. Use with object `style` when you need both.",
+    "excerpt": "Wheel vs compact appearance. Use with object `style` when you need both."
   },
   {
     "id": "prop:picker:columns",
@@ -6911,16 +6911,16 @@ export const docsSearchIndex = [
     "title": "Picker — Wheels (multipart)",
     "type": "example",
     "path": "/docs/components/picker#examples",
-    "keywords": "Picker Wheels (multipart) advanced {}",
-    "excerpt": "<Picker\n        label=\"Country\"\n        style=\"wheels\"\n        columns={[{ id: 'country', label: 'Country', options: cou"
+    "keywords": "Picker Wheels (multipart) advanced {\"label\":\"Country\",\"appearance\":\"wheels\"}",
+    "excerpt": "import { Picker } from '@larose-ui/react';\n\n<Picker\n  label=\"Country\"\n  appearance=\"wheels\"\n>Example</Picker>"
   },
   {
     "id": "example:picker:CompactStyle",
     "title": "Picker — Compact (popover)",
     "type": "example",
     "path": "/docs/components/picker#examples",
-    "keywords": "Picker Compact (popover) advanced {}",
-    "excerpt": "<Picker\n        label=\"Country\"\n        style=\"compact\"\n        columns={[{ id: 'country', label: 'Country', options: co"
+    "keywords": "Picker Compact (popover) advanced {\"label\":\"Country\",\"appearance\":\"compact\"}",
+    "excerpt": "import { Picker } from '@larose-ui/react';\n\n<Picker\n  label=\"Country\"\n  appearance=\"compact\"\n>Example</Picker>"
   },
   {
     "id": "example:picker:DateWheels",
@@ -6983,7 +6983,7 @@ export const docsSearchIndex = [
     "title": "Popover",
     "type": "component",
     "path": "/docs/components/popover",
-    "keywords": "Popover Overlay Popover.'aria-label' string Popover.content ReactNode Popover.defaultOpen boolean Popover.onOpenChange (open: boolean) => void Popover.open boolean Popover.panelClassName string Popover.side PopoverSide Popover.trigger ReactNode",
+    "keywords": "Popover Overlay Popover.'aria-label' string Popover.content ReactNode Popover.defaultOpen boolean Popover.onOpenChange (open: boolean) => void Popover.open boolean Popover.panelClassName string Popover.side PopoverSide Popover.trigger ReactNode Popover.className string Popover.style CSSProperties",
     "excerpt": "Overlay component from @larose-ui/react"
   },
   {
@@ -7063,16 +7063,16 @@ export const docsSearchIndex = [
     "title": "Popover — Default",
     "type": "example",
     "path": "/docs/components/popover#examples",
-    "keywords": "Popover Default basic {\"margin\":0,\"maxWidth\":220}",
-    "excerpt": "import { Popover } from '@larose-ui/react';\n\n<Popover\n  margin={0}\n  maxWidth={220}\n>Example</Popover>"
+    "keywords": "Popover Default basic {\"side\":\"bottom\",\"open\":true,\"triggerLabel\":\"Show info\",\"contentText\":\"Popovers present supplementary content anchored to a trigger.\",\"margin\":0,\"maxWidth\":220}",
+    "excerpt": "import { Popover } from '@larose-ui/react';\n\n<Popover\n  side=\"bottom\"\n  open\n  triggerLabel=\"Show info\"\n  contentText=\"P"
   },
   {
     "id": "example:popover:Top",
     "title": "Popover — Top",
     "type": "example",
     "path": "/docs/components/popover#examples",
-    "keywords": "Popover Top advanced {\"side\":\"top\",\"margin\":0}",
-    "excerpt": "import { Popover } from '@larose-ui/react';\n\n<Popover\n  side=\"top\"\n  margin={0}\n>Example</Popover>"
+    "keywords": "Popover Top advanced {\"side\":\"top\",\"open\":true,\"triggerLabel\":\"Top popover\",\"contentText\":\"Appears above the trigger.\",\"margin\":0}",
+    "excerpt": "import { Popover } from '@larose-ui/react';\n\n<Popover\n  side=\"top\"\n  open\n  triggerLabel=\"Top popover\"\n  contentText=\"Ap"
   },
   {
     "id": "example:popover:WithActions",
@@ -7087,7 +7087,7 @@ export const docsSearchIndex = [
     "title": "PopUpButton",
     "type": "component",
     "path": "/docs/components/pop-up-button",
-    "keywords": "PopUpButton Navigation PopUpButton.customOption PopUpCustomOption PopUpButton.defaultValue string PopUpButton.disabled boolean PopUpButton.explanatoryText string PopUpButton.label string PopUpButton.onValueChange (value: string) => void PopUpButton.options PopUpOption[] PopUpButton.placeholder string PopUpButton.value string PopUpButton.id string",
+    "keywords": "PopUpButton Navigation PopUpButton.customOption PopUpCustomOption PopUpButton.defaultValue string PopUpButton.disabled boolean PopUpButton.explanatoryText string PopUpButton.label string PopUpButton.onValueChange (value: string) => void PopUpButton.options PopUpOption[] PopUpButton.placeholder string PopUpButton.value string PopUpButton.className string PopUpButton.id string PopUpButton.style CSSProperties",
     "excerpt": "Navigation component from @larose-ui/react"
   },
   {
@@ -7167,16 +7167,16 @@ export const docsSearchIndex = [
     "title": "PopUpButton — Calendar repeat",
     "type": "example",
     "path": "/docs/components/pop-up-button#examples",
-    "keywords": "PopUpButton Calendar repeat advanced {}",
-    "excerpt": "// See Storybook story \"CalendarRepeat\" for full example."
+    "keywords": "PopUpButton Calendar repeat advanced {\"label\":\"Repeat\",\"value\":\"never\"}",
+    "excerpt": "import { PopUpButton } from '@larose-ui/react';\n\n<PopUpButton\n  label=\"Repeat\"\n  value=\"never\"\n>Example</PopUpButton>"
   },
   {
     "id": "example:pop-up-button:WithDefault",
     "title": "PopUpButton — Default selection",
     "type": "example",
     "path": "/docs/components/pop-up-button#examples",
-    "keywords": "PopUpButton Default selection basic {}",
-    "excerpt": "<PopUpButton\n        label=\"Priority\"\n        options={[\n          { value: 'low', label: 'Low' },\n          { value: 'm"
+    "keywords": "PopUpButton Default selection basic {\"label\":\"Priority\",\"value\":\"medium\",\"defaultValue\":\"medium\"}",
+    "excerpt": "import { PopUpButton } from '@larose-ui/react';\n\n<PopUpButton\n  label=\"Priority\"\n  value=\"medium\"\n  defaultValue=\"medium"
   },
   {
     "id": "example:pop-up-button:DisabledOption",
@@ -7271,16 +7271,16 @@ export const docsSearchIndex = [
     "title": "Progress — Progress Default",
     "type": "example",
     "path": "/docs/components/progress#examples",
-    "keywords": "Progress Progress Default basic {}",
-    "excerpt": "<Progress value={65} label=\"Profile completion\" showValue />"
+    "keywords": "Progress Progress Default basic {\"value\":65,\"label\":\"Profile completion\",\"showValue\":true}",
+    "excerpt": "import { FormControls } from '@larose-ui/react';\n\n<FormControls\n  value={65}\n  label=\"Profile completion\"\n  showValue\n>E"
   },
   {
     "id": "example:progress:ProgressSuccess",
     "title": "Progress — Progress Success",
     "type": "example",
     "path": "/docs/components/progress#examples",
-    "keywords": "Progress Progress Success advanced {}",
-    "excerpt": "<Progress value={100} label=\"Upload complete\" variant=\"success\" showValue />"
+    "keywords": "Progress Progress Success advanced {\"value\":100,\"label\":\"Upload complete\",\"variant\":\"success\",\"showValue\":true}",
+    "excerpt": "import { FormControls } from '@larose-ui/react';\n\n<FormControls\n  value={100}\n  label=\"Upload complete\"\n  variant=\"succe"
   },
   {
     "id": "example:progress:Default",
@@ -7319,7 +7319,7 @@ export const docsSearchIndex = [
     "title": "PullDownButton",
     "type": "component",
     "path": "/docs/components/pull-down-button",
-    "keywords": "PullDownButton Navigation PullDownButton.destructiveConfirmation PullDownDestructiveConfirmation PullDownButton.disabled boolean PullDownButton.entries PullDownEntry[] PullDownButton.icon ReactNode PullDownButton.label string PullDownButton.longPress boolean PullDownButton.menuTitle string PullDownButton.onAction (entry: MenuItemConfig) => void PullDownButton.variant PullDownButtonVariant",
+    "keywords": "PullDownButton Navigation PullDownButton.destructiveConfirmation PullDownDestructiveConfirmation PullDownButton.disabled boolean PullDownButton.entries PullDownEntry[] PullDownButton.icon ReactNode PullDownButton.label string PullDownButton.longPress boolean PullDownButton.menuTitle string PullDownButton.onAction (entry: MenuItemConfig) => void PullDownButton.variant PullDownButtonVariant PullDownButton.className string PullDownButton.style CSSProperties",
     "excerpt": "Navigation component from @larose-ui/react"
   },
   {
@@ -7399,8 +7399,8 @@ export const docsSearchIndex = [
     "title": "PullDownButton — Add",
     "type": "example",
     "path": "/docs/components/pull-down-button#examples",
-    "keywords": "PullDownButton Add advanced {}",
-    "excerpt": "// See Storybook story \"AddMenu\" for full example."
+    "keywords": "PullDownButton Add advanced {\"label\":\"Add\"}",
+    "excerpt": "import { PullDownButton } from '@larose-ui/react';\n\n<PullDownButton\n  label=\"Add\"\n>Example</PullDownButton>"
   },
   {
     "id": "example:pull-down-button:SortMenu",
@@ -7607,8 +7607,8 @@ export const docsSearchIndex = [
     "title": "Select — Select Default",
     "type": "example",
     "path": "/docs/components/select#examples",
-    "keywords": "Select Select Default basic {}",
-    "excerpt": "// See Storybook story \"SelectDefault\" for full example."
+    "keywords": "Select Select Default basic {\"label\":\"Engineering\",\"value\":\"eng\"}",
+    "excerpt": "import { FormControls } from '@larose-ui/react';\n\n<FormControls\n  label=\"Engineering\"\n  value=\"eng\"\n>Example</FormContro"
   },
   {
     "id": "example:select:Default",
@@ -7735,7 +7735,7 @@ export const docsSearchIndex = [
     "title": "SplitView",
     "type": "component",
     "path": "/docs/components/split-view",
-    "keywords": "SplitView Layout SplitView.'aria-label' string SplitView.compactMode SplitCompactMode SplitView.onSizesChange (sizes: number[]) => void SplitView.orientation SplitOrientation SplitView.storageKey string SplitView.toolbar ReactNode SplitView.children ReactNode SplitView.className string",
+    "keywords": "SplitView Layout SplitView.'aria-label' string SplitView.compactMode SplitCompactMode SplitView.onSizesChange (sizes: number[]) => void SplitView.orientation SplitOrientation SplitView.storageKey string SplitView.toolbar ReactNode SplitView.children ReactNode SplitView.className string SplitView.style CSSProperties",
     "excerpt": "Layout component from @larose-ui/react"
   },
   {
@@ -7791,16 +7791,16 @@ export const docsSearchIndex = [
     "title": "SplitView — Sidebar · content · inspector",
     "type": "example",
     "path": "/docs/components/split-view#examples",
-    "keywords": "SplitView Sidebar · content · inspector advanced {}",
-    "excerpt": "// See Storybook story \"SidebarDetailInspector\" for full example."
+    "keywords": "SplitView Sidebar · content · inspector advanced {\"orientation\":\"horizontal\",\"leftLabel\":\"Mailboxes\",\"rightLabel\":\"Message\"}",
+    "excerpt": "import { SplitView } from '@larose-ui/react';\n\n<SplitView\n  orientation=\"horizontal\"\n  leftLabel=\"Mailboxes\"\n  rightLabe"
   },
   {
     "id": "example:split-view:VerticalSplit",
     "title": "SplitView — Vertical Split",
     "type": "example",
     "path": "/docs/components/split-view#examples",
-    "keywords": "SplitView Vertical Split advanced {}",
-    "excerpt": "// See Storybook story \"VerticalSplit\" for full example."
+    "keywords": "SplitView Vertical Split advanced {\"orientation\":\"vertical\",\"leftLabel\":\"Navigator\",\"rightLabel\":\"Editor\"}",
+    "excerpt": "import { SplitView } from '@larose-ui/react';\n\n<SplitView\n  orientation=\"vertical\"\n  leftLabel=\"Navigator\"\n  rightLabel="
   },
   {
     "id": "example:split-view:DragBetweenPanes",
@@ -7815,8 +7815,8 @@ export const docsSearchIndex = [
     "title": "SplitView — Compact Stack",
     "type": "example",
     "path": "/docs/components/split-view#examples",
-    "keywords": "SplitView Compact Stack advanced {}",
-    "excerpt": "// See Storybook story \"CompactStack\" for full example."
+    "keywords": "SplitView Compact Stack advanced {\"orientation\":\"horizontal\",\"leftLabel\":\"Mailboxes\",\"rightLabel\":\"Message\"}",
+    "excerpt": "import { SplitView } from '@larose-ui/react';\n\n<SplitView\n  orientation=\"horizontal\"\n  leftLabel=\"Mailboxes\"\n  rightLabe"
   },
   {
     "id": "component:split-view-pane",
@@ -7903,7 +7903,7 @@ export const docsSearchIndex = [
     "title": "SplitViewToolbar",
     "type": "component",
     "path": "/docs/components/split-view-toolbar",
-    "keywords": "SplitViewToolbar Layout SplitViewToolbar.actions ReactNode",
+    "keywords": "SplitViewToolbar Layout SplitViewToolbar.actions ReactNode SplitViewToolbar.className string SplitViewToolbar.style CSSProperties",
     "excerpt": "Layout component from @larose-ui/react"
   },
   {
@@ -7951,7 +7951,7 @@ export const docsSearchIndex = [
     "title": "Switch",
     "type": "component",
     "path": "/docs/components/switch",
-    "keywords": "Switch Forms Switch.checked boolean Switch.defaultChecked boolean Switch.hint string Switch.label string Switch.onCheckedChange (checked: boolean) => void Switch.switchSize Size",
+    "keywords": "Switch Forms Switch.checked boolean Switch.defaultChecked boolean Switch.hint string Switch.label string Switch.onCheckedChange (checked: boolean) => void Switch.switchSize Size Switch.style CSSProperties",
     "excerpt": "Forms component from @larose-ui/react"
   },
   {
@@ -8007,8 +8007,8 @@ export const docsSearchIndex = [
     "title": "Switch — Switch Default",
     "type": "example",
     "path": "/docs/components/switch#examples",
-    "keywords": "Switch Switch Default basic {}",
-    "excerpt": "<Switch label=\"Email notifications\" defaultChecked hint=\"Receive product updates\" />"
+    "keywords": "Switch Switch Default basic {\"label\":\"Email notifications\",\"checked\":true,\"hint\":\"Receive product updates\"}",
+    "excerpt": "import { FormControls } from '@larose-ui/react';\n\n<FormControls\n  label=\"Email notifications\"\n  checked\n  hint=\"Receive "
   },
   {
     "id": "example:switch:Default",
@@ -8063,7 +8063,7 @@ export const docsSearchIndex = [
     "title": "Table",
     "type": "component",
     "path": "/docs/components/table",
-    "keywords": "Table Data Table.'aria-label' string Table.alternatingRows boolean Table.caption string Table.columns TableColumn<T>[] Table.data T[] Table.defaultSortDirection SortDirection Table.defaultSortKey string Table.keyExtractor (row: T) => string Table.onSelectRow (row: T) => void Table.resizableColumns boolean Table.selectedKey string Table.selectionMode TableSelectionMode",
+    "keywords": "Table Data Table.'aria-label' string Table.alternatingRows boolean Table.caption string Table.columns TableColumn<T>[] Table.data T[] Table.defaultSortDirection SortDirection Table.defaultSortKey string Table.keyExtractor (row: T) => string Table.onSelectRow (row: T) => void Table.resizableColumns boolean Table.selectedKey string Table.selectionMode TableSelectionMode Table.className string Table.style CSSProperties",
     "excerpt": "Data component from @larose-ui/react"
   },
   {
@@ -8207,8 +8207,8 @@ export const docsSearchIndex = [
     "title": "Tabs — Tabs Default",
     "type": "example",
     "path": "/docs/components/tabs#examples",
-    "keywords": "Tabs Tabs Default basic {}",
-    "excerpt": "// See Storybook story \"TabsDefault\" for full example."
+    "keywords": "Tabs Tabs Default basic {\"defaultValue\":\"profile\"}",
+    "excerpt": "import { Overlays } from '@larose-ui/react';\n\n<Overlays\n  defaultValue=\"profile\"\n>Example</Overlays>"
   },
   {
     "id": "component:tabs-list",
@@ -8231,7 +8231,7 @@ export const docsSearchIndex = [
     "title": "TabsPanel",
     "type": "component",
     "path": "/docs/components/tabs-panel",
-    "keywords": "TabsPanel Navigation TabsPanel.value string TabsPanel.children ReactNode",
+    "keywords": "TabsPanel Navigation TabsPanel.value string TabsPanel.children ReactNode TabsPanel.className string TabsPanel.style CSSProperties",
     "excerpt": "Navigation component from @larose-ui/react"
   },
   {
@@ -8271,7 +8271,7 @@ export const docsSearchIndex = [
     "title": "TabView",
     "type": "component",
     "path": "/docs/components/tab-view",
-    "keywords": "TabView Navigation TabView.'aria-label' string TabView.defaultValue string TabView.inset boolean TabView.onValueChange (value: string) => void TabView.showTabs boolean TabView.value string TabView.variant TabViewVariant TabView.children ReactNode TabView.className string",
+    "keywords": "TabView Navigation TabView.'aria-label' string TabView.defaultValue string TabView.inset boolean TabView.onValueChange (value: string) => void TabView.showTabs boolean TabView.value string TabView.variant TabViewVariant TabView.children ReactNode TabView.className string TabView.style CSSProperties",
     "excerpt": "Navigation component from @larose-ui/react"
   },
   {
@@ -8335,24 +8335,24 @@ export const docsSearchIndex = [
     "title": "TabView — Bordered",
     "type": "example",
     "path": "/docs/components/tab-view#examples",
-    "keywords": "TabView Bordered advanced {}",
-    "excerpt": "// See Storybook story \"Bordered\" for full example."
+    "keywords": "TabView Bordered advanced {\"variant\":\"bordered\",\"defaultValue\":\"general\"}",
+    "excerpt": "import { TabView } from '@larose-ui/react';\n\n<TabView\n  variant=\"bordered\"\n  defaultValue=\"general\"\n>Example</TabView>"
   },
   {
     "id": "example:tab-view:Bezeled",
     "title": "TabView — Bezeled",
     "type": "example",
     "path": "/docs/components/tab-view#examples",
-    "keywords": "TabView Bezeled advanced {}",
-    "excerpt": "// See Storybook story \"Bezeled\" for full example."
+    "keywords": "TabView Bezeled advanced {\"variant\":\"bezeled\",\"defaultValue\":\"general\"}",
+    "excerpt": "import { TabView } from '@larose-ui/react';\n\n<TabView\n  variant=\"bezeled\"\n  defaultValue=\"general\"\n>Example</TabView>"
   },
   {
     "id": "example:tab-view:BorderlessHiddenTabs",
     "title": "TabView — Borderless with hidden tabs",
     "type": "example",
     "path": "/docs/components/tab-view#examples",
-    "keywords": "TabView Borderless with hidden tabs advanced {}",
-    "excerpt": "// See Storybook story \"BorderlessHiddenTabs\" for full example."
+    "keywords": "TabView Borderless with hidden tabs advanced {\"variant\":\"borderless\",\"showTabs\":false,\"defaultValue\":\"general\"}",
+    "excerpt": "import { TabView } from '@larose-ui/react';\n\n<TabView\n  variant=\"borderless\"\n  showTabs={false}\n  defaultValue=\"general\""
   },
   {
     "id": "example:tab-view:SixTabLimit",
@@ -8367,7 +8367,7 @@ export const docsSearchIndex = [
     "title": "TabViewList",
     "type": "component",
     "path": "/docs/components/tab-view-list",
-    "keywords": "TabViewList Navigation TabViewList.'aria-label' string TabViewList.children ReactNode",
+    "keywords": "TabViewList Navigation TabViewList.'aria-label' string TabViewList.children ReactNode TabViewList.className string TabViewList.style CSSProperties",
     "excerpt": "Navigation component from @larose-ui/react"
   },
   {
@@ -8383,7 +8383,7 @@ export const docsSearchIndex = [
     "title": "TabViewPanel",
     "type": "component",
     "path": "/docs/components/tab-view-panel",
-    "keywords": "TabViewPanel Navigation TabViewPanel.value string TabViewPanel.children ReactNode",
+    "keywords": "TabViewPanel Navigation TabViewPanel.value string TabViewPanel.children ReactNode TabViewPanel.className string TabViewPanel.style CSSProperties",
     "excerpt": "Navigation component from @larose-ui/react"
   },
   {
@@ -8399,7 +8399,7 @@ export const docsSearchIndex = [
     "title": "TabViewTab",
     "type": "component",
     "path": "/docs/components/tab-view-tab",
-    "keywords": "TabViewTab Navigation TabViewTab.disabled boolean TabViewTab.label string TabViewTab.value string",
+    "keywords": "TabViewTab Navigation TabViewTab.disabled boolean TabViewTab.label string TabViewTab.value string TabViewTab.className string TabViewTab.style CSSProperties",
     "excerpt": "Navigation component from @larose-ui/react"
   },
   {
@@ -8495,8 +8495,8 @@ export const docsSearchIndex = [
     "title": "Textarea — Textarea Default",
     "type": "example",
     "path": "/docs/components/textarea#examples",
-    "keywords": "Textarea Textarea Default basic {}",
-    "excerpt": "<Textarea label=\"Description\" placeholder=\"Enter details...\" />"
+    "keywords": "Textarea Textarea Default basic {\"label\":\"Description\",\"placeholder\":\"Enter details...\"}",
+    "excerpt": "import { FormControls } from '@larose-ui/react';\n\n<FormControls\n  label=\"Description\"\n  placeholder=\"Enter details...\"\n>"
   },
   {
     "id": "example:textarea:Default",
@@ -8583,16 +8583,16 @@ export const docsSearchIndex = [
     "title": "TextView — Read Only Selectable",
     "type": "example",
     "path": "/docs/components/text-view#examples",
-    "keywords": "TextView Read Only Selectable advanced {}",
-    "excerpt": "// See Storybook story \"ReadOnlySelectable\" for full example."
+    "keywords": "TextView Read Only Selectable advanced {\"selectable\":true,\"value\":\"Release notes\\\\\\\\n\\\\\\\\nAutosave now preserves edits while you switch apps.\",\"maxHeight\":\"12rem\"}",
+    "excerpt": "import { TextView } from '@larose-ui/react';\n\n<TextView\n  selectable\n  value=\"Release notes\\\\n\\\\nAutosave now preserves "
   },
   {
     "id": "example:text-view:Editable",
     "title": "TextView — Editable",
     "type": "example",
     "path": "/docs/components/text-view#examples",
-    "keywords": "TextView Editable advanced {}",
-    "excerpt": "<Card title=\"Editable text view\" padding=\"md\">\n        <TextView\n          editable\n          value={value}\n          on"
+    "keywords": "TextView Editable advanced {\"editable\":true,\"value\":\"Write a longer note here…\",\"maxHeight\":\"14rem\"}",
+    "excerpt": "import { TextView } from '@larose-ui/react';\n\n<TextView\n  editable\n  value=\"Write a longer note here…\"\n  maxHeight=\"14re"
   },
   {
     "id": "example:text-view:RichDisplay",
@@ -8679,15 +8679,15 @@ export const docsSearchIndex = [
     "title": "TimePicker — Time Picker Default",
     "type": "example",
     "path": "/docs/components/time-picker#examples",
-    "keywords": "TimePicker Time Picker Default basic {}",
-    "excerpt": "<TimePicker label=\"Meeting time\" value=\"09:30\" />"
+    "keywords": "TimePicker Time Picker Default basic {\"label\":\"Meeting time\",\"value\":\"09:30\"}",
+    "excerpt": "import { DateTime } from '@larose-ui/react';\n\n<DateTime\n  label=\"Meeting time\"\n  value=\"09:30\"\n>Example</DateTime>"
   },
   {
     "id": "component:token-field",
     "title": "TokenField",
     "type": "component",
     "path": "/docs/components/token-field",
-    "keywords": "TokenField Forms TokenField.'aria-label' string TokenField.defaultTokens TokenFieldToken[] TokenField.delimiters string[] TokenField.onContextMenuEntries (token: TokenFieldToken) => MenuEntry[] TokenField.onTokensChange (tokens: TokenFieldToken[]) => void TokenField.placeholder string TokenField.suggestionDelayMs number TokenField.suggestions TokenFieldToken[] TokenField.tokens TokenFieldToken[] TokenField.className string",
+    "keywords": "TokenField Forms TokenField.'aria-label' string TokenField.defaultTokens TokenFieldToken[] TokenField.delimiters string[] TokenField.onContextMenuEntries (token: TokenFieldToken) => MenuEntry[] TokenField.onTokensChange (tokens: TokenFieldToken[]) => void TokenField.placeholder string TokenField.suggestionDelayMs number TokenField.suggestions TokenFieldToken[] TokenField.tokens TokenFieldToken[] TokenField.className string TokenField.style CSSProperties",
     "excerpt": "Forms component from @larose-ui/react"
   },
   {
@@ -8775,7 +8775,7 @@ export const docsSearchIndex = [
     "title": "Toolbar",
     "type": "component",
     "path": "/docs/components/toolbar",
-    "keywords": "Toolbar Toolbar Toolbar.'aria-label' string Toolbar.largeTitle boolean Toolbar.placement ToolbarPlacement Toolbar.platform ToolbarPlatform Toolbar.children ReactNode Toolbar.className string Toolbar.hidden boolean Toolbar.title string",
+    "keywords": "Toolbar Toolbar Toolbar.'aria-label' string Toolbar.largeTitle boolean Toolbar.placement ToolbarPlacement Toolbar.platform ToolbarPlatform Toolbar.children ReactNode Toolbar.className string Toolbar.hidden boolean Toolbar.style CSSProperties Toolbar.title string",
     "excerpt": "Toolbar component from @larose-ui/react"
   },
   {
@@ -8815,24 +8815,24 @@ export const docsSearchIndex = [
     "title": "Toolbar — macOS Notes (standard + More)",
     "type": "example",
     "path": "/docs/components/toolbar#examples",
-    "keywords": "Toolbar macOS Notes (standard + More) advanced {}",
-    "excerpt": "// See Storybook story \"MacNotesStyle\" for full example."
+    "keywords": "Toolbar macOS Notes (standard + More) advanced {\"title\":\"Notes\",\"platform\":\"macos\"}",
+    "excerpt": "import { Toolbar } from '@larose-ui/react';\n\n<Toolbar\n  title=\"Notes\"\n  platform=\"macos\"\n>Example</Toolbar>"
   },
   {
     "id": "example:toolbar:IOSMailNavigation",
     "title": "Toolbar — iOS navigation bar",
     "type": "example",
     "path": "/docs/components/toolbar#examples",
-    "keywords": "Toolbar iOS navigation bar advanced {}",
-    "excerpt": "// See Storybook story \"IOSMailNavigation\" for full example."
+    "keywords": "Toolbar iOS navigation bar advanced {\"title\":\"Inbox\",\"platform\":\"ios\"}",
+    "excerpt": "import { Toolbar } from '@larose-ui/react';\n\n<Toolbar\n  title=\"Inbox\"\n  platform=\"ios\"\n>Example</Toolbar>"
   },
   {
     "id": "example:toolbar:VisionOSBottomBar",
     "title": "Toolbar — visionOS bottom toolbar",
     "type": "example",
     "path": "/docs/components/toolbar#examples",
-    "keywords": "Toolbar visionOS bottom toolbar advanced {}",
-    "excerpt": "// See Storybook story \"VisionOSBottomBar\" for full example."
+    "keywords": "Toolbar visionOS bottom toolbar advanced {\"title\":\"Library\",\"platform\":\"visionos\"}",
+    "excerpt": "import { Toolbar } from '@larose-ui/react';\n\n<Toolbar\n  title=\"Library\"\n  platform=\"visionos\"\n>Example</Toolbar>"
   },
   {
     "id": "example:toolbar:TrailingProminentAction",
@@ -8943,7 +8943,7 @@ export const docsSearchIndex = [
     "title": "ToolbarGroup",
     "type": "component",
     "path": "/docs/components/toolbar-group",
-    "keywords": "ToolbarGroup Toolbar ToolbarGroup.children ReactNode ToolbarGroup.className string",
+    "keywords": "ToolbarGroup Toolbar ToolbarGroup.children ReactNode ToolbarGroup.className string ToolbarGroup.style CSSProperties",
     "excerpt": "Toolbar component from @larose-ui/react"
   },
   {
@@ -8951,7 +8951,7 @@ export const docsSearchIndex = [
     "title": "ToolbarItem",
     "type": "component",
     "path": "/docs/components/toolbar-item",
-    "keywords": "ToolbarItem Toolbar ToolbarItem.collapsible boolean ToolbarItem.disabled boolean ToolbarItem.icon ReactNode ToolbarItem.label string ToolbarItem.prominent boolean ToolbarItem.showLabel boolean ToolbarItem.className string ToolbarItem.id string ToolbarItem.onClick () => void",
+    "keywords": "ToolbarItem Toolbar ToolbarItem.collapsible boolean ToolbarItem.disabled boolean ToolbarItem.icon ReactNode ToolbarItem.label string ToolbarItem.prominent boolean ToolbarItem.showLabel boolean ToolbarItem.className string ToolbarItem.id string ToolbarItem.onClick () => void ToolbarItem.style CSSProperties",
     "excerpt": "Toolbar component from @larose-ui/react"
   },
   {
@@ -9047,7 +9047,7 @@ export const docsSearchIndex = [
     "title": "ToolbarProminentButton",
     "type": "component",
     "path": "/docs/components/toolbar-prominent-button",
-    "keywords": "ToolbarProminentButton Toolbar ToolbarProminentButton.disabled boolean ToolbarProminentButton.children string ToolbarProminentButton.className string ToolbarProminentButton.onClick () => void",
+    "keywords": "ToolbarProminentButton Toolbar ToolbarProminentButton.disabled boolean ToolbarProminentButton.children string ToolbarProminentButton.className string ToolbarProminentButton.onClick () => void ToolbarProminentButton.style CSSProperties",
     "excerpt": "Toolbar component from @larose-ui/react"
   },
   {
@@ -9063,7 +9063,7 @@ export const docsSearchIndex = [
     "title": "ToolbarSearch",
     "type": "component",
     "path": "/docs/components/toolbar-search",
-    "keywords": "ToolbarSearch Toolbar ToolbarSearch.'aria-label' string ToolbarSearch.placeholder string ToolbarSearch.value string ToolbarSearch.className string ToolbarSearch.onChange (value: string) => void",
+    "keywords": "ToolbarSearch Toolbar ToolbarSearch.'aria-label' string ToolbarSearch.placeholder string ToolbarSearch.value string ToolbarSearch.className string ToolbarSearch.onChange (value: string) => void ToolbarSearch.style CSSProperties",
     "excerpt": "Toolbar component from @larose-ui/react"
   },
   {
@@ -9095,7 +9095,7 @@ export const docsSearchIndex = [
     "title": "ToolbarSection",
     "type": "component",
     "path": "/docs/components/toolbar-section",
-    "keywords": "ToolbarSection Toolbar ToolbarSection.collapsible boolean ToolbarSection.placement ToolbarSectionPlacement ToolbarSection.children ReactNode ToolbarSection.className string",
+    "keywords": "ToolbarSection Toolbar ToolbarSection.collapsible boolean ToolbarSection.placement ToolbarSectionPlacement ToolbarSection.children ReactNode ToolbarSection.className string ToolbarSection.style CSSProperties",
     "excerpt": "Toolbar component from @larose-ui/react"
   },
   {
@@ -9119,7 +9119,7 @@ export const docsSearchIndex = [
     "title": "ToolbarTitle",
     "type": "component",
     "path": "/docs/components/toolbar-title",
-    "keywords": "ToolbarTitle Toolbar ToolbarTitle.large boolean ToolbarTitle.children string ToolbarTitle.className string",
+    "keywords": "ToolbarTitle Toolbar ToolbarTitle.large boolean ToolbarTitle.children string ToolbarTitle.className string ToolbarTitle.style CSSProperties",
     "excerpt": "Toolbar component from @larose-ui/react"
   },
   {
@@ -9159,8 +9159,8 @@ export const docsSearchIndex = [
     "title": "Tooltip — Tooltip Default",
     "type": "example",
     "path": "/docs/components/tooltip#examples",
-    "keywords": "Tooltip Tooltip Default basic {}",
-    "excerpt": "// See Storybook story \"TooltipDefault\" for full example."
+    "keywords": "Tooltip Tooltip Default basic {\"content\":\"Export employees as CSV\",\"label\":\"Export\"}",
+    "excerpt": "import { Overlays } from '@larose-ui/react';\n\n<Overlays\n  content=\"Export employees as CSV\"\n  label=\"Export\"\n>Example</O"
   },
   {
     "id": "example:tooltip:Default",
@@ -9223,15 +9223,15 @@ export const docsSearchIndex = [
     "title": "Typography — Menu (always open)",
     "type": "example",
     "path": "/docs/components/typography#examples",
-    "keywords": "Typography Menu (always open) advanced {}",
-    "excerpt": "// See Storybook story \"MenuAlwaysOpen\" for full example."
+    "keywords": "Typography Menu (always open) advanced {\"open\":true,\"layout\":\"large\",\"title\":\"Edit\"}",
+    "excerpt": "import { Accelerators } from '@larose-ui/react';\n\n<Accelerators\n  open\n  layout=\"large\"\n  title=\"Edit\"\n>Example</Acceler"
   },
   {
     "id": "component:unsaved-indicator",
     "title": "UnsavedIndicator",
     "type": "component",
     "path": "/docs/components/unsaved-indicator",
-    "keywords": "UnsavedIndicator Files UnsavedIndicator.autosaveEnabled boolean UnsavedIndicator.edited boolean UnsavedIndicator.title string",
+    "keywords": "UnsavedIndicator Files UnsavedIndicator.autosaveEnabled boolean UnsavedIndicator.edited boolean UnsavedIndicator.className string UnsavedIndicator.style CSSProperties UnsavedIndicator.title string",
     "excerpt": "Files component from @larose-ui/react"
   },
   {
@@ -9251,187 +9251,11 @@ export const docsSearchIndex = [
     "excerpt": "boolean"
   },
   {
-    "id": "component:web-view",
-    "title": "WebView",
-    "type": "component",
-    "path": "/docs/components/web-view",
-    "keywords": "WebView Content WebView.allowForms boolean WebView.allowScripts boolean WebView.embedded boolean WebView.height string | number WebView.html string WebView.sandboxed boolean WebView.src string WebView.title string",
-    "excerpt": "Content component from @larose-ui/react"
-  },
-  {
-    "id": "prop:web-view:allowForms",
-    "title": "WebView.allowForms",
-    "type": "prop",
-    "path": "/docs/components/web-view#api",
-    "keywords": "WebView allowForms boolean ",
-    "excerpt": "boolean"
-  },
-  {
-    "id": "prop:web-view:allowScripts",
-    "title": "WebView.allowScripts",
-    "type": "prop",
-    "path": "/docs/components/web-view#api",
-    "keywords": "WebView allowScripts boolean ",
-    "excerpt": "boolean"
-  },
-  {
-    "id": "prop:web-view:embedded",
-    "title": "WebView.embedded",
-    "type": "prop",
-    "path": "/docs/components/web-view#api",
-    "keywords": "WebView embedded boolean When true, omits outer frame styling (used inside ).",
-    "excerpt": "When true, omits outer frame styling (used inside )."
-  },
-  {
-    "id": "prop:web-view:height",
-    "title": "WebView.height",
-    "type": "prop",
-    "path": "/docs/components/web-view#api",
-    "keywords": "WebView height string | number ",
-    "excerpt": "string | number"
-  },
-  {
-    "id": "prop:web-view:html",
-    "title": "WebView.html",
-    "type": "prop",
-    "path": "/docs/components/web-view#api",
-    "keywords": "WebView html string Embedded HTML content, e.g. rich email bodies.",
-    "excerpt": "Embedded HTML content, e.g. rich email bodies."
-  },
-  {
-    "id": "prop:web-view:sandboxed",
-    "title": "WebView.sandboxed",
-    "type": "prop",
-    "path": "/docs/components/web-view#api",
-    "keywords": "WebView sandboxed boolean Restrict iframe capabilities; enabled by default for untrusted content.",
-    "excerpt": "Restrict iframe capabilities; enabled by default for untrusted content."
-  },
-  {
-    "id": "prop:web-view:src",
-    "title": "WebView.src",
-    "type": "prop",
-    "path": "/docs/components/web-view#api",
-    "keywords": "WebView src string Remote URL to load — use for brief in-app website access, not a full browser replacement.",
-    "excerpt": "Remote URL to load — use for brief in-app website access, not a full browser replacement."
-  },
-  {
-    "id": "example:web-view:EmbeddedHtml",
-    "title": "WebView — Embedded HTML (Mail-style)",
-    "type": "example",
-    "path": "/docs/components/web-view#examples",
-    "keywords": "WebView Embedded HTML (Mail-style) advanced {}",
-    "excerpt": "// See Storybook story \"EmbeddedHtml\" for full example."
-  },
-  {
-    "id": "example:web-view:BriefWebsiteAccess",
-    "title": "WebView — Brief Website Access",
-    "type": "example",
-    "path": "/docs/components/web-view#examples",
-    "keywords": "WebView Brief Website Access advanced {}",
-    "excerpt": "// See Storybook story \"BriefWebsiteAccess\" for full example."
-  },
-  {
-    "id": "example:web-view:WithNavigation",
-    "title": "WebView — With Navigation",
-    "type": "example",
-    "path": "/docs/components/web-view#examples",
-    "keywords": "WebView With Navigation advanced {}",
-    "excerpt": "// See Storybook story \"WithNavigation\" for full example."
-  },
-  {
-    "id": "example:web-view:NavigationOnly",
-    "title": "WebView — Navigation Only",
-    "type": "example",
-    "path": "/docs/components/web-view#examples",
-    "keywords": "WebView Navigation Only advanced {}",
-    "excerpt": "// See Storybook story \"NavigationOnly\" for full example."
-  },
-  {
-    "id": "component:web-view-navigation",
-    "title": "WebViewNavigation",
-    "type": "component",
-    "path": "/docs/components/web-view-navigation",
-    "keywords": "WebViewNavigation Content WebViewNavigation.backLabel string WebViewNavigation.canGoBack boolean WebViewNavigation.canGoForward boolean WebViewNavigation.forwardLabel string WebViewNavigation.onBack () => void WebViewNavigation.onForward () => void WebViewNavigation.title string",
-    "excerpt": "Content component from @larose-ui/react"
-  },
-  {
-    "id": "prop:web-view-navigation:backLabel",
-    "title": "WebViewNavigation.backLabel",
-    "type": "prop",
-    "path": "/docs/components/web-view-navigation#api",
-    "keywords": "WebViewNavigation backLabel string ",
-    "excerpt": "string"
-  },
-  {
-    "id": "prop:web-view-navigation:canGoBack",
-    "title": "WebViewNavigation.canGoBack",
-    "type": "prop",
-    "path": "/docs/components/web-view-navigation#api",
-    "keywords": "WebViewNavigation canGoBack boolean ",
-    "excerpt": "boolean"
-  },
-  {
-    "id": "prop:web-view-navigation:canGoForward",
-    "title": "WebViewNavigation.canGoForward",
-    "type": "prop",
-    "path": "/docs/components/web-view-navigation#api",
-    "keywords": "WebViewNavigation canGoForward boolean ",
-    "excerpt": "boolean"
-  },
-  {
-    "id": "prop:web-view-navigation:forwardLabel",
-    "title": "WebViewNavigation.forwardLabel",
-    "type": "prop",
-    "path": "/docs/components/web-view-navigation#api",
-    "keywords": "WebViewNavigation forwardLabel string ",
-    "excerpt": "string"
-  },
-  {
-    "id": "prop:web-view-navigation:onBack",
-    "title": "WebViewNavigation.onBack",
-    "type": "prop",
-    "path": "/docs/components/web-view-navigation#api",
-    "keywords": "WebViewNavigation onBack () => void ",
-    "excerpt": "() => void"
-  },
-  {
-    "id": "prop:web-view-navigation:onForward",
-    "title": "WebViewNavigation.onForward",
-    "type": "prop",
-    "path": "/docs/components/web-view-navigation#api",
-    "keywords": "WebViewNavigation onForward () => void ",
-    "excerpt": "() => void"
-  },
-  {
-    "id": "component:web-view-shell",
-    "title": "WebViewShell",
-    "type": "component",
-    "path": "/docs/components/web-view-shell",
-    "keywords": "WebViewShell Content WebViewShell.footer ReactNode WebViewShell.navigation WebViewNavigationProps",
-    "excerpt": "Content component from @larose-ui/react"
-  },
-  {
-    "id": "prop:web-view-shell:footer",
-    "title": "WebViewShell.footer",
-    "type": "prop",
-    "path": "/docs/components/web-view-shell#api",
-    "keywords": "WebViewShell footer ReactNode ",
-    "excerpt": "ReactNode"
-  },
-  {
-    "id": "prop:web-view-shell:navigation",
-    "title": "WebViewShell.navigation",
-    "type": "prop",
-    "path": "/docs/components/web-view-shell#api",
-    "keywords": "WebViewShell navigation WebViewNavigationProps ",
-    "excerpt": "WebViewNavigationProps"
-  },
-  {
     "id": "component:wheel-column",
     "title": "WheelColumn",
     "type": "component",
     "path": "/docs/components/wheel-column",
-    "keywords": "WheelColumn Forms WheelColumn.columnFlex number WheelColumn.disabled boolean WheelColumn.label string WheelColumn.options PickerOption[] WheelColumn.value string WheelColumn.id string WheelColumn.onChange (value: string) => void",
+    "keywords": "WheelColumn Forms WheelColumn.columnFlex number WheelColumn.disabled boolean WheelColumn.label string WheelColumn.options PickerOption[] WheelColumn.value string WheelColumn.className string WheelColumn.id string WheelColumn.onChange (value: string) => void WheelColumn.style CSSProperties",
     "excerpt": "Forms component from @larose-ui/react"
   },
   {
@@ -9479,7 +9303,7 @@ export const docsSearchIndex = [
     "title": "WheelPicker",
     "type": "component",
     "path": "/docs/components/wheel-picker",
-    "keywords": "WheelPicker Forms WheelPicker.'aria-label' string WheelPicker.columns PickerColumn[] WheelPicker.compact boolean WheelPicker.disabled boolean WheelPicker.inline boolean WheelPicker.value PickerValue WheelPicker.onChange (value: PickerValue) => void",
+    "keywords": "WheelPicker Forms WheelPicker.'aria-label' string WheelPicker.columns PickerColumn[] WheelPicker.compact boolean WheelPicker.disabled boolean WheelPicker.inline boolean WheelPicker.value PickerValue WheelPicker.className string WheelPicker.onChange (value: PickerValue) => void WheelPicker.style CSSProperties",
     "excerpt": "Forms component from @larose-ui/react"
   },
   {
@@ -9569,14 +9393,6 @@ export const docsSearchIndex = [
     "path": "/docs/guides/nuxt",
     "keywords": "Nuxt # Nuxt Integration\n\n`@larose-ui/nuxt` is a thin Nuxt module over `@larose-ui/vue`. It does not duplicate components.\n\n## Install\n\n```bash\npnpm add @larose-ui/nuxt @larose-ui/vue\n```\n\n## Configure\n\n```ts\n// nuxt.config.ts\nexport default defineNuxtConfig({\n  modules: ['@larose-ui/nuxt'],\n  laRose: {\n    theme: 'light',\n    density: 'comfortable',\n    appearance: 'system',\n    themeScript: true,\n    css: true,\n    runtime: { locale: 'en' },\n  },\n});\n```\n\nModule options (`laRose` key):\n\n| Option | Default | Description |\n|--------|---------|-------------|\n| `css` | `true` | Adds tokens + shared component CSS |\n| `themeScript` | `true` | Pre-hydration theme bootstrap script |\n| `appearance` | `system` | `light` / `dark` / `system` for theme script |\n| `theme` | `light` | Passed to `LaRoseProvider` |\n| `density` | `comfortable` | UI density |\n| `tenantId` | — | Optional tenant marker |\n| `runtime` | `false` | `true` or initial context object for `RuntimeProvider` |\n| `transpile` | `true` | Transpile `@larose-ui/vue` for SSR |\n\n## App shell\n\nWrap your app once in `app.vue`:\n\n```vue\n<template>\n  <LaRoseApp>\n    <NuxtPage />\n  </LaRoseApp>\n</template>\n```\n\n`LaRoseApp` is auto-registered globally and reads `runtimeConfig.public.laRose`.\n\n## Components\n\nImport from `@larose-ui/vue` (auto-imports also register provider composables):\n\n```vue\n<script setup lang=\"ts\">\nimport { Button, Input } from '@larose-ui/vue';\n\nconst email = ref('');\n</script>\n\n<template>\n  <Input v-model=\"email\" label=\"Email\" />\n  <Button variant=\"primary\">Save</Button>\n</template>\n```\n\n## SSR notes\n\n1. Keep interactive laRose components in client-only islands when they rely on `window` (rare for foundation components).\n2. The theme bootstrap script runs in `<head>` before Vue hydrates.\n3. Permission checks remain UX-only — enforce authorization on the server.\n\nSee also [VUE.md](./VUE.md).\n",
     "excerpt": "Nuxt Integration\n\n`@larose-ui/nuxt` is a thin Nuxt module over `@larose-ui/vue`. It does not duplicate components.\n\nInstall\n\n```bash\npnpm add @larose-ui/nuxt @l"
-  },
-  {
-    "id": "guide:desktop",
-    "title": "Desktop integration",
-    "type": "guide",
-    "path": "/docs/guides/desktop",
-    "keywords": "Desktop integration # Desktop Host Integration\n\nlaRose treats **Electron** and **Tauri** as host adapters — not separate UI libraries. Shared components, styles, tokens, and runtime remain in the framework packages (`@larose-ui/react`, `@larose-ui/vue`, etc.).\n\n## Architecture\n\n```text\n@larose-ui/core (accelerators, STANDARD_ACCELERATORS)\n        ↓\n@larose-ui/runtime-core (host detection, capabilities)\n        ↓\n@larose-ui/desktop-core (native menus, window chrome)\n        ↓\n@larose-ui/electron  |  @larose-ui/tauri\n```\n\n## Host registration\n\nDesktop hosts must register before laRose runtime boot:\n\n```ts\nimport { registerHost } from '@larose-ui/desktop-core';\n\nregisterHost('electron'); // or 'tauri'\n```\n\nOr use the bootstrap helpers:\n\n```ts\nimport { bootstrapLaRoseElectron } from '@larose-ui/electron';\nbootstrapLaRoseElectron({ windowChrome: { titlebarHeight: 32 } });\n```\n\nThe runtime reads `globalThis.__LAROSE_HOST__` and exposes desktop capabilities (`nativeMenus`, `globalShortcuts`, `windowControls`, `vibrancy`).\n\n## React (Electron)\n\n```tsx\nimport '@larose-ui/tokens/styles.css';\nimport '@larose-ui/styles/styles.css';\nimport { LaRoseElectronRoot } from '@larose-ui/electron/client';\nimport { Button } from '@larose-ui/react';\n\nexport function App() {\n  return (\n    <LaRoseElectronRoot theme=\"system\" locale=\"en\">\n      <Button variant=\"primary\">Save</Button>\n    </LaRoseElectronRoot>\n  );\n}\n```\n\n## Native menus\n\nMap laRose menu entries to native templates without duplicating behavior:\n\n```ts\nimport { buildElectronMenuFromMenuBar, STANDARD_ACCELERATORS } from '@larose-ui/electron';\n\nconst template = buildElectronMenuFromMenuBar([\n  {\n    id: 'file',\n    title: 'File',\n    entries: [\n      { id: 'save', label: 'Save', accelerator: STANDARD_ACCELERATORS.save },\n      { id: 'quit', label: 'Quit', accelerator: STANDARD_ACCELERATORS.quit },\n    ],\n  },\n]);\n\n// Pass template to Electron Menu.buildFromTemplate(template)\n```\n\nTauri uses the same menu config via `@larose-ui/tauri`:\n\n```ts\nimport ",
-    "excerpt": "Desktop Host Integration\n\nlaRose treats **Electron** and **Tauri** as host adapters — not separate UI libraries. Shared components, styles, tokens, and runtime"
   },
   {
     "id": "guide:runtime",
@@ -9769,6 +9585,14 @@ export const docsSearchIndex = [
     "path": "/docs/design/tokens",
     "keywords": "color.text.inverse --lr-color-text-inverse Colors Design token exposed as --lr-color-text-inverse",
     "excerpt": "--lr-color-text-inverse = #ffffff"
+  },
+  {
+    "id": "token:--lr-color-on-accent",
+    "title": "color.on.accent",
+    "type": "token",
+    "path": "/docs/design/tokens",
+    "keywords": "color.on.accent --lr-color-on-accent Colors Design token exposed as --lr-color-on-accent",
+    "excerpt": "--lr-color-on-accent = #ffffff"
   },
   {
     "id": "token:--lr-button-plain-color",
@@ -10401,14 +10225,6 @@ export const docsSearchIndex = [
     "path": "/docs/design/tokens",
     "keywords": "image.radius --lr-image-radius Radius Design token exposed as --lr-image-radius",
     "excerpt": "--lr-image-radius = 0.625rem"
-  },
-  {
-    "id": "token:--lr-web-view-radius",
-    "title": "web.view.radius",
-    "type": "token",
-    "path": "/docs/design/tokens",
-    "keywords": "web.view.radius --lr-web-view-radius Radius Design token exposed as --lr-web-view-radius",
-    "excerpt": "--lr-web-view-radius = 0.625rem"
   },
   {
     "id": "token:--lr-box-radius",
@@ -11939,38 +11755,6 @@ export const docsSearchIndex = [
     "excerpt": "--lr-image-well-bg = rgb(118 118 128 / 0.08)"
   },
   {
-    "id": "token:--lr-web-view-border",
-    "title": "web.view.border",
-    "type": "token",
-    "path": "/docs/design/tokens",
-    "keywords": "web.view.border --lr-web-view-border Other Design token exposed as --lr-web-view-border",
-    "excerpt": "--lr-web-view-border = rgb(0 0 0 / 0.08)"
-  },
-  {
-    "id": "token:--lr-web-view-toolbar-bg",
-    "title": "web.view.toolbar.bg",
-    "type": "token",
-    "path": "/docs/design/tokens",
-    "keywords": "web.view.toolbar.bg --lr-web-view-toolbar-bg Other Design token exposed as --lr-web-view-toolbar-bg",
-    "excerpt": "--lr-web-view-toolbar-bg = #ffffff"
-  },
-  {
-    "id": "token:--lr-web-view-toolbar-border",
-    "title": "web.view.toolbar.border",
-    "type": "token",
-    "path": "/docs/design/tokens",
-    "keywords": "web.view.toolbar.border --lr-web-view-toolbar-border Other Design token exposed as --lr-web-view-toolbar-border",
-    "excerpt": "--lr-web-view-toolbar-border = rgb(0 0 0 / 0.08)"
-  },
-  {
-    "id": "token:--lr-web-view-min-height",
-    "title": "web.view.min.height",
-    "type": "token",
-    "path": "/docs/design/tokens",
-    "keywords": "web.view.min.height --lr-web-view-min-height Other Design token exposed as --lr-web-view-min-height",
-    "excerpt": "--lr-web-view-min-height = 16rem"
-  },
-  {
     "id": "token:--lr-box-secondary-bg",
     "title": "box.secondary.bg",
     "type": "token",
@@ -12467,6 +12251,14 @@ export const docsSearchIndex = [
     "excerpt": "--lr-dock-height = 4.25rem"
   },
   {
+    "id": "token:--lr-dock-bg",
+    "title": "dock.bg",
+    "type": "token",
+    "path": "/docs/design/tokens",
+    "keywords": "dock.bg --lr-dock-bg Other Design token exposed as --lr-dock-bg",
+    "excerpt": "--lr-dock-bg = rgb(255 255 255 / 0.55)"
+  },
+  {
     "id": "token:--lr-quick-action-icon-size",
     "title": "quick.action.icon.size",
     "type": "token",
@@ -12585,6 +12377,14 @@ export const docsSearchIndex = [
     "path": "/docs/design/tokens",
     "keywords": "menu.shortcut.spacing --lr-menu-shortcut-spacing Other Design token exposed as --lr-menu-shortcut-spacing",
     "excerpt": "--lr-menu-shortcut-spacing = 1.5rem"
+  },
+  {
+    "id": "token:--lr-menu-backdrop",
+    "title": "menu.backdrop",
+    "type": "token",
+    "path": "/docs/design/tokens",
+    "keywords": "menu.backdrop --lr-menu-backdrop Other Design token exposed as --lr-menu-backdrop",
+    "excerpt": "--lr-menu-backdrop = rgb(0 0 0 / 0.12)"
   },
   {
     "id": "token:--lr-ornament-offset",
@@ -13171,6 +12971,22 @@ export const docsSearchIndex = [
     "excerpt": "--lr-tab-bar-liquid-glass-glow = 0 6px 24px rgb(236 72 153 / 0.22)"
   },
   {
+    "id": "token:--lr-tab-bar-liquid-glass-border",
+    "title": "tab.bar.liquid.glass.border",
+    "type": "token",
+    "path": "/docs/design/tokens",
+    "keywords": "tab.bar.liquid.glass.border --lr-tab-bar-liquid-glass-border Other Design token exposed as --lr-tab-bar-liquid-glass-border",
+    "excerpt": "--lr-tab-bar-liquid-glass-border = rgb(255 255 255 / 0.55)"
+  },
+  {
+    "id": "token:--lr-tab-bar-liquid-glass-search-bg",
+    "title": "tab.bar.liquid.glass.search.bg",
+    "type": "token",
+    "path": "/docs/design/tokens",
+    "keywords": "tab.bar.liquid.glass.search.bg --lr-tab-bar-liquid-glass-search-bg Other Design token exposed as --lr-tab-bar-liquid-glass-search-bg",
+    "excerpt": "--lr-tab-bar-liquid-glass-search-bg = rgb(255 255 255 / 0.5)"
+  },
+  {
     "id": "token:--lr-token-field-min-height",
     "title": "token.field.min.height",
     "type": "token",
@@ -13685,6 +13501,14 @@ export const docsTokenGroups: Record<string, TokenSearchEntry[]> = {
       "value": "#ffffff",
       "category": "Colors",
       "description": "Design token exposed as --lr-color-text-inverse",
+      "relatedComponents": []
+    },
+    {
+      "name": "color.on.accent",
+      "cssVariable": "--lr-color-on-accent",
+      "value": "#ffffff",
+      "category": "Colors",
+      "description": "Design token exposed as --lr-color-on-accent",
       "relatedComponents": []
     },
     {
@@ -14360,14 +14184,6 @@ export const docsTokenGroups: Record<string, TokenSearchEntry[]> = {
       "value": "0.625rem",
       "category": "Radius",
       "description": "Design token exposed as --lr-image-radius",
-      "relatedComponents": []
-    },
-    {
-      "name": "web.view.radius",
-      "cssVariable": "--lr-web-view-radius",
-      "value": "0.625rem",
-      "category": "Radius",
-      "description": "Design token exposed as --lr-web-view-radius",
       "relatedComponents": []
     },
     {
@@ -16019,38 +15835,6 @@ export const docsTokenGroups: Record<string, TokenSearchEntry[]> = {
       "relatedComponents": []
     },
     {
-      "name": "web.view.border",
-      "cssVariable": "--lr-web-view-border",
-      "value": "rgb(0 0 0 / 0.08)",
-      "category": "Other",
-      "description": "Design token exposed as --lr-web-view-border",
-      "relatedComponents": []
-    },
-    {
-      "name": "web.view.toolbar.bg",
-      "cssVariable": "--lr-web-view-toolbar-bg",
-      "value": "#ffffff",
-      "category": "Other",
-      "description": "Design token exposed as --lr-web-view-toolbar-bg",
-      "relatedComponents": []
-    },
-    {
-      "name": "web.view.toolbar.border",
-      "cssVariable": "--lr-web-view-toolbar-border",
-      "value": "rgb(0 0 0 / 0.08)",
-      "category": "Other",
-      "description": "Design token exposed as --lr-web-view-toolbar-border",
-      "relatedComponents": []
-    },
-    {
-      "name": "web.view.min.height",
-      "cssVariable": "--lr-web-view-min-height",
-      "value": "16rem",
-      "category": "Other",
-      "description": "Design token exposed as --lr-web-view-min-height",
-      "relatedComponents": []
-    },
-    {
       "name": "box.secondary.bg",
       "cssVariable": "--lr-box-secondary-bg",
       "value": "rgb(118 118 128 / 0.12)",
@@ -16550,6 +16334,14 @@ export const docsTokenGroups: Record<string, TokenSearchEntry[]> = {
       "relatedComponents": []
     },
     {
+      "name": "dock.bg",
+      "cssVariable": "--lr-dock-bg",
+      "value": "rgb(255 255 255 / 0.55)",
+      "category": "Other",
+      "description": "Design token exposed as --lr-dock-bg",
+      "relatedComponents": []
+    },
+    {
       "name": "quick.action.icon.size",
       "cssVariable": "--lr-quick-action-icon-size",
       "value": "3.75rem",
@@ -16667,6 +16459,14 @@ export const docsTokenGroups: Record<string, TokenSearchEntry[]> = {
       "value": "1.5rem",
       "category": "Other",
       "description": "Design token exposed as --lr-menu-shortcut-spacing",
+      "relatedComponents": []
+    },
+    {
+      "name": "menu.backdrop",
+      "cssVariable": "--lr-menu-backdrop",
+      "value": "rgb(0 0 0 / 0.12)",
+      "category": "Other",
+      "description": "Design token exposed as --lr-menu-backdrop",
       "relatedComponents": []
     },
     {
@@ -17279,6 +17079,22 @@ export const docsTokenGroups: Record<string, TokenSearchEntry[]> = {
       "value": "0 6px 24px rgb(236 72 153 / 0.22)",
       "category": "Other",
       "description": "Design token exposed as --lr-tab-bar-liquid-glass-glow",
+      "relatedComponents": []
+    },
+    {
+      "name": "tab.bar.liquid.glass.border",
+      "cssVariable": "--lr-tab-bar-liquid-glass-border",
+      "value": "rgb(255 255 255 / 0.55)",
+      "category": "Other",
+      "description": "Design token exposed as --lr-tab-bar-liquid-glass-border",
+      "relatedComponents": []
+    },
+    {
+      "name": "tab.bar.liquid.glass.search.bg",
+      "cssVariable": "--lr-tab-bar-liquid-glass-search-bg",
+      "value": "rgb(255 255 255 / 0.5)",
+      "category": "Other",
+      "description": "Design token exposed as --lr-tab-bar-liquid-glass-search-bg",
       "relatedComponents": []
     },
     {

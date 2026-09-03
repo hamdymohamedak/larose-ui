@@ -4,6 +4,8 @@
 
 ### Minor Changes
 
+- Contribute CLI no longer lists electron/tauri host packages.
+
 - Add `larose contribute` to scaffold component/module stubs for monorepo contributors (package-aware paths, tests, shared styles, CHANGELOG Unreleased).
 
 ## 0.2.0

@@ -4,6 +4,7 @@ Category: Forms
 
 ## Props
 - `'aria-label'` (string)
+- `appearance` (PickerStyle) — Wheel vs compact appearance. Use with object `style` when you need both.
 - `columns` (PickerColumn[])
 - `disabled` (boolean)
 - `error` (string | null)

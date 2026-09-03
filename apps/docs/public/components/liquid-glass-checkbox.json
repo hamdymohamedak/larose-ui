@@ -71,9 +71,11 @@
       "id": "CheckboxDefault",
       "title": "Checkbox Default",
       "kind": "basic",
-      "props": {},
-      "code": "<Checkbox label=\"I agree to the terms\" hint=\"Required before submitting\" />",
-      "composite": true
+      "props": {
+        "label": "I agree to the terms",
+        "hint": "Required before submitting"
+      },
+      "code": "import { FormControls } from '@larose-ui/react';\n\n<FormControls\n  label=\"I agree to the terms\"\n  hint=\"Required before submitting\"\n>Example</FormControls>"
     }
   ],
   "accessibility": [

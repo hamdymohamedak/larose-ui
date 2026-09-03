@@ -103,12 +103,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://hamdymohamedak.github.io/larose-ui/docs/guides/desktop</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://hamdymohamedak.github.io/larose-ui/docs/guides/runtime</loc>
     <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
@@ -199,19 +193,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://hamdymohamedak.github.io/larose-ui/docs/packages/desktop-core</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://hamdymohamedak.github.io/larose-ui/docs/packages/devtools</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://hamdymohamedak.github.io/larose-ui/docs/packages/electron</loc>
     <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -302,12 +284,6 @@
   </url>
   <url>
     <loc>https://hamdymohamedak.github.io/larose-ui/docs/packages/svelte</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://hamdymohamedak.github.io/larose-ui/docs/packages/tauri</loc>
     <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1172,24 +1148,6 @@
   </url>
   <url>
     <loc>https://hamdymohamedak.github.io/larose-ui/docs/components/unsaved-indicator</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://hamdymohamedak.github.io/larose-ui/docs/components/web-view</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://hamdymohamedak.github.io/larose-ui/docs/components/web-view-navigation</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://hamdymohamedak.github.io/larose-ui/docs/components/web-view-shell</loc>
     <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

@@ -6,7 +6,6 @@ import { dataEntryTokensToCSSVariables, getDataEntryTokens } from './data-entry-
 import { fileManagementTokensToCSSVariables, getFileManagementTokens } from './file-management-tokens';
 import { imageViewTokensToCSSVariables, getImageViewTokens } from './image-view-tokens';
 import { textViewTokensToCSSVariables, getTextViewTokens } from './text-view-tokens';
-import { webViewTokensToCSSVariables, getWebViewTokens } from './web-view-tokens';
 import { boxTokensToCSSVariables, getBoxTokens } from './box-tokens';
 import { collectionTokensToCSSVariables, getCollectionTokens } from './collection-tokens';
 import { columnViewTokensToCSSVariables, getColumnViewTokens } from './column-view-tokens';
@@ -102,8 +101,6 @@ export { getImageViewTokens, imageViewTokensToCSSVariables } from './image-view-
 export type { ImageViewTokens } from './image-view-tokens';
 export { getTextViewTokens, textViewTokensToCSSVariables } from './text-view-tokens';
 export type { TextViewTokens } from './text-view-tokens';
-export { getWebViewTokens, webViewTokensToCSSVariables } from './web-view-tokens';
-export type { WebViewTokens } from './web-view-tokens';
 export { getBoxTokens, boxTokensToCSSVariables } from './box-tokens';
 export type { BoxTokens } from './box-tokens';
 export { getCollectionTokens, collectionTokensToCSSVariables } from './collection-tokens';
@@ -469,7 +466,6 @@ export function tokensToCSSVariables(
   Object.assign(vars, fileManagementTokensToCSSVariables(getFileManagementTokens(mode)));
   Object.assign(vars, imageViewTokensToCSSVariables(getImageViewTokens(mode)));
   Object.assign(vars, textViewTokensToCSSVariables(getTextViewTokens(mode)));
-  Object.assign(vars, webViewTokensToCSSVariables(getWebViewTokens(mode)));
   Object.assign(vars, boxTokensToCSSVariables(getBoxTokens(mode)));
   Object.assign(vars, collectionTokensToCSSVariables(getCollectionTokens(mode)));
   Object.assign(vars, columnViewTokensToCSSVariables(getColumnViewTokens(mode)));

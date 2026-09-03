@@ -48,7 +48,6 @@ import { Picker, DateTimePicker } from './Picker';
 import { Input } from './Input/Input';
 import { Textarea } from './Textarea/Textarea';
 import { TextView } from './TextView/TextView';
-import { WebView } from './WebView/WebView';
 import { Box } from './Layout/Box';
 import { Collection } from './Layout/Collection';
 import { Label } from './Label/Label';
@@ -693,13 +692,6 @@ describe('ImageView', () => {
   it('renders image with alt text', () => {
     renderWithProvider(<ImageView src="/sample.png" alt="Sample photo" />);
     expect(screen.getByRole('img', { name: 'Sample photo' })).toBeInTheDocument();
-  });
-});
-
-describe('WebView', () => {
-  it('renders embedded html in an iframe', () => {
-    renderWithProvider(<WebView html="<p>Hello</p>" title="Message body" />);
-    expect(screen.getByTitle('Message body')).toBeInTheDocument();
   });
 });
 

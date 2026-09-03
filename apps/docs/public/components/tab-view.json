@@ -56,25 +56,32 @@
       "id": "Bordered",
       "title": "Bordered",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"Bordered\" for full example.",
-      "composite": true
+      "props": {
+        "variant": "bordered",
+        "defaultValue": "general"
+      },
+      "code": "import { TabView } from '@larose-ui/react';\n\n<TabView\n  variant=\"bordered\"\n  defaultValue=\"general\"\n>Example</TabView>"
     },
     {
       "id": "Bezeled",
       "title": "Bezeled",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"Bezeled\" for full example.",
-      "composite": true
+      "props": {
+        "variant": "bezeled",
+        "defaultValue": "general"
+      },
+      "code": "import { TabView } from '@larose-ui/react';\n\n<TabView\n  variant=\"bezeled\"\n  defaultValue=\"general\"\n>Example</TabView>"
     },
     {
       "id": "BorderlessHiddenTabs",
       "title": "Borderless with hidden tabs",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"BorderlessHiddenTabs\" for full example.",
-      "composite": true
+      "props": {
+        "variant": "borderless",
+        "showTabs": false,
+        "defaultValue": "general"
+      },
+      "code": "import { TabView } from '@larose-ui/react';\n\n<TabView\n  variant=\"borderless\"\n  showTabs={false}\n  defaultValue=\"general\"\n>Example</TabView>"
     },
     {
       "id": "SixTabLimit",

@@ -17,7 +17,7 @@ export interface DocsNavSection {
 }
 
 // Framework guides that are hand-crafted — deduplicated from the catalog list
-const BUILTIN_GUIDE_IDS = new Set(['vue', 'svelte', 'nextjs', 'nuxt', 'desktop']);
+const BUILTIN_GUIDE_IDS = new Set(['vue', 'svelte', 'nextjs', 'nuxt']);
 
 export const docsNavigation: DocsNavSection[] = [
   // ── 1. Start here — visible, short, welcoming ──
@@ -38,7 +38,6 @@ export const docsNavigation: DocsNavSection[] = [
       { label: 'Svelte 5', path: '/docs/guides/svelte' },
       { label: 'Next.js', path: '/docs/guides/nextjs' },
       { label: 'Nuxt', path: '/docs/guides/nuxt' },
-      { label: 'Desktop (Electron / Tauri)', path: '/docs/guides/desktop' },
       ...docsGuides
         .filter((g) => !BUILTIN_GUIDE_IDS.has(g.id))
         .map((guide) => ({ label: guide.title, path: `/docs/guides/${guide.id}` })),

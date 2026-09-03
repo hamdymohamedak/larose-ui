@@ -9,17 +9,21 @@
       "id": "HeaderDefault",
       "title": "Header Default",
       "kind": "basic",
-      "props": {},
-      "code": "// See Storybook story \"HeaderDefault\" for full example.",
-      "composite": true
+      "props": {
+        "title": "Employees",
+        "brand": "laRose"
+      },
+      "code": "import { AppShell } from '@larose-ui/react';\n\n<AppShell\n  title=\"Employees\"\n  brand=\"laRose\"\n>Example</AppShell>"
     },
     {
       "id": "HeaderWithTitle",
       "title": "Header With Title",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"HeaderWithTitle\" for full example.",
-      "composite": true
+      "props": {
+        "title": "Dashboard",
+        "brand": "laRose"
+      },
+      "code": "import { AppShell } from '@larose-ui/react';\n\n<AppShell\n  title=\"Dashboard\"\n  brand=\"laRose\"\n>Example</AppShell>"
     },
     {
       "id": "DocumentWorkspace",

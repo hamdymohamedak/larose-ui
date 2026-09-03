@@ -22,9 +22,11 @@
       "id": "TooltipDefault",
       "title": "Tooltip Default",
       "kind": "basic",
-      "props": {},
-      "code": "// See Storybook story \"TooltipDefault\" for full example.",
-      "composite": true
+      "props": {
+        "content": "Export employees as CSV",
+        "label": "Export"
+      },
+      "code": "import { Overlays } from '@larose-ui/react';\n\n<Overlays\n  content=\"Export employees as CSV\"\n  label=\"Export\"\n>Example</Overlays>"
     },
     {
       "id": "Default",

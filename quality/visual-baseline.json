@@ -284,10 +284,6 @@
     {
       "file": "Tooltip.stories.tsx",
       "title": "Foundation/Tooltip"
-    },
-    {
-      "file": "WebView.stories.tsx",
-      "title": "Foundation/Web Views"
     }
   ]
 }

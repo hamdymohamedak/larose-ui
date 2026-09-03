@@ -62,9 +62,11 @@
       "id": "FitModes",
       "title": "Fit Modes",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"FitModes\" for full example.",
-      "composite": true
+      "props": {
+        "fit": "contain",
+        "alt": "Sample contain"
+      },
+      "code": "import { ImageView } from '@larose-ui/react';\n\n<ImageView\n  fit=\"contain\"\n  alt=\"Sample contain\"\n>Example</ImageView>"
     },
     {
       "id": "TextOverlay",

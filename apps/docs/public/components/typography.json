@@ -30,9 +30,12 @@
       "id": "MenuAlwaysOpen",
       "title": "Menu (always open)",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"MenuAlwaysOpen\" for full example.",
-      "composite": true
+      "props": {
+        "open": true,
+        "layout": "large",
+        "title": "Edit"
+      },
+      "code": "import { Accelerators } from '@larose-ui/react';\n\n<Accelerators\n  open\n  layout=\"large\"\n  title=\"Edit\"\n>Example</Accelerators>"
     }
   ],
   "accessibility": [],

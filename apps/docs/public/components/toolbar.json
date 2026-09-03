@@ -36,25 +36,31 @@
       "id": "MacNotesStyle",
       "title": "macOS Notes (standard + More)",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"MacNotesStyle\" for full example.",
-      "composite": true
+      "props": {
+        "title": "Notes",
+        "platform": "macos"
+      },
+      "code": "import { Toolbar } from '@larose-ui/react';\n\n<Toolbar\n  title=\"Notes\"\n  platform=\"macos\"\n>Example</Toolbar>"
     },
     {
       "id": "IOSMailNavigation",
       "title": "iOS navigation bar",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"IOSMailNavigation\" for full example.",
-      "composite": true
+      "props": {
+        "title": "Inbox",
+        "platform": "ios"
+      },
+      "code": "import { Toolbar } from '@larose-ui/react';\n\n<Toolbar\n  title=\"Inbox\"\n  platform=\"ios\"\n>Example</Toolbar>"
     },
     {
       "id": "VisionOSBottomBar",
       "title": "visionOS bottom toolbar",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"VisionOSBottomBar\" for full example.",
-      "composite": true
+      "props": {
+        "title": "Library",
+        "platform": "visionos"
+      },
+      "code": "import { Toolbar } from '@larose-ui/react';\n\n<Toolbar\n  title=\"Library\"\n  platform=\"visionos\"\n>Example</Toolbar>"
     },
     {
       "id": "TrailingProminentAction",

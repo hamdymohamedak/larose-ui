@@ -53,10 +53,9 @@ make contribute-list
 # React UI component → adapter + test + shared CSS + CHANGELOG Unreleased entry
 make contribute NAME=StatusPill PACKAGE=react
 
-# Vue / Svelte / host adapters
+# Vue / Svelte
 make contribute NAME=StatusPill PACKAGE=vue
 make contribute NAME=StatusPill PACKAGE=svelte
-make contribute NAME=WindowBridge PACKAGE=tauri
 
 # Or via the CLI directly (build CLI first if needed)
 pnpm --filter @larose-ui/cli build

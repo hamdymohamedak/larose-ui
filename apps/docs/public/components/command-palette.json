@@ -48,9 +48,10 @@
       "id": "CommandPaletteDefault",
       "title": "Command Palette Default",
       "kind": "basic",
-      "props": {},
-      "code": "<CommandPaletteDemo />",
-      "composite": true
+      "props": {
+        "open": true
+      },
+      "code": "import { AppShell } from '@larose-ui/react';\n\n<AppShell\n  open\n>Example</AppShell>"
     },
     {
       "id": "Playground",

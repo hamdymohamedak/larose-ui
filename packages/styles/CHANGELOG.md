@@ -1,5 +1,11 @@
 # @larose-ui/styles
 
+## Unreleased
+
+### Minor Changes
+
+- Remove WebView CSS modules.
+
 ## 0.2.0
 
 ### Minor Changes

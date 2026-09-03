@@ -65,9 +65,11 @@
       "id": "MailActions",
       "title": "Mail",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"MailActions\" for full example.",
-      "composite": true
+      "props": {
+        "appName": "Mail",
+        "open": true
+      },
+      "code": "import { HomeScreenQuickActions } from '@larose-ui/react';\n\n<HomeScreenQuickActions\n  appName=\"Mail\"\n  open\n>Example</HomeScreenQuickActions>"
     },
     {
       "id": "MapsActions",

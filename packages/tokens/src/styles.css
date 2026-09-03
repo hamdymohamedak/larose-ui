@@ -368,12 +368,6 @@
   --lr-text-view-focus-ring: 0 0 0 3px rgb(0 113 227 / 0.25);
   --lr-text-view-selection-bg: rgb(0 113 227 / 0.22);
 
-  --lr-web-view-radius: 0.625rem;
-  --lr-web-view-border: rgb(0 0 0 / 0.08);
-  --lr-web-view-toolbar-bg: #ffffff;
-  --lr-web-view-toolbar-border: rgb(0 0 0 / 0.08);
-  --lr-web-view-min-height: 16rem;
-
   --lr-box-radius: 0.625rem;
   --lr-box-secondary-bg: rgb(118 118 128 / 0.12);
   --lr-box-tertiary-bg: rgb(118 118 128 / 0.08);
@@ -539,10 +533,6 @@
   --lr-text-view-bg: rgb(118 118 128 / 0.18);
   --lr-text-view-focus-ring: 0 0 0 3px rgb(10 132 255 / 0.35);
   --lr-text-view-selection-bg: rgb(10 132 255 / 0.35);
-
-  --lr-web-view-border: rgb(255 255 255 / 0.12);
-  --lr-web-view-toolbar-bg: #2c2c2e;
-  --lr-web-view-toolbar-border: rgb(255 255 255 / 0.1);
 
   --lr-box-secondary-bg: rgb(118 118 128 / 0.24);
   --lr-box-tertiary-bg: rgb(118 118 128 / 0.16);

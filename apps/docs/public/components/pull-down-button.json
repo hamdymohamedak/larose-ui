@@ -70,9 +70,10 @@
       "id": "AddMenu",
       "title": "Add",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"AddMenu\" for full example.",
-      "composite": true
+      "props": {
+        "label": "Add"
+      },
+      "code": "import { PullDownButton } from '@larose-ui/react';\n\n<PullDownButton\n  label=\"Add\"\n>Example</PullDownButton>"
     },
     {
       "id": "SortMenu",
