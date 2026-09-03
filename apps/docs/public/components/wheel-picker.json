@@ -1,0 +1,55 @@
+{
+  "component": "WheelPicker",
+  "category": "Forms",
+  "package": "@larose-ui/react",
+  "import": "import { WheelPicker } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "'aria-label'",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "columns",
+      "type": "PickerColumn[]",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "compact",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "description": "Compact popover presentation — wheels fill the panel edge-to-edge.",
+      "inherited": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "inherited": false
+    },
+    {
+      "name": "inline",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "description": "Removes chrome for embedding in inline layouts.",
+      "inherited": false
+    },
+    {
+      "name": "value",
+      "type": "PickerValue",
+      "required": true,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [
+    "Supports ARIA attributes via standard HTML element props."
+  ],
+  "anatomy": null,
+  "playground": null
+}

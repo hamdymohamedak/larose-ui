@@ -1,0 +1,65 @@
+{
+  "name": "LiquidGlassButton",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "borderRadius",
+      "type": "number",
+      "required": false,
+      "default": "LIQUID_GLASS_PRESETS.button.borderRadius"
+    },
+    {
+      "name": "color",
+      "type": "string",
+      "required": false,
+      "default": "'#ffffff'",
+      "description": "Text/icon colour."
+    },
+    {
+      "name": "fontSize",
+      "type": "string | number",
+      "required": false,
+      "default": "'0.9375rem'",
+      "description": "Font size."
+    },
+    {
+      "name": "fontWeight",
+      "type": "number",
+      "required": false,
+      "default": "500",
+      "description": "Font weight."
+    },
+    {
+      "name": "height",
+      "type": "number | string",
+      "required": false,
+      "default": "48"
+    },
+    {
+      "name": "width",
+      "type": "number | string",
+      "required": false,
+      "default": "140"
+    }
+  ],
+  "events": [],
+  "slots": [
+    "children"
+  ],
+  "states": [
+    "default",
+    "disabled",
+    "hover",
+    "active"
+  ],
+  "defaults": {
+    "borderRadius": "LIQUID_GLASS_PRESETS.button.borderRadius",
+    "color": "'#ffffff'",
+    "fontSize": "'0.9375rem'",
+    "fontWeight": "500",
+    "height": "48",
+    "width": "140"
+  },
+  "keyboard": {}
+}

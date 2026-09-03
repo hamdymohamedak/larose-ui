@@ -16,6 +16,130 @@ export interface DocsComponentApi {
 }
 
 export const docsComponentApi: Record<string, DocsComponentApi> = {
+  "AcceleratorProvider": {
+    "props": [
+      {
+        "name": "platform",
+        "type": "AcceleratorPlatform",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": true,
+        "inherited": true
+      }
+    ],
+    "events": [],
+    "accessibility": []
+  },
+  "Accordion": {
+    "props": [
+      {
+        "name": "collapsible",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "inherited": false
+      },
+      {
+        "name": "defaultValue",
+        "type": "string[]",
+        "required": false,
+        "default": "[]",
+        "inherited": false
+      },
+      {
+        "name": "onValueChange",
+        "type": "(value: string[]) => void",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "type",
+        "type": "'single' | 'multiple'",
+        "required": false,
+        "default": "== 'single') {",
+        "inherited": false
+      },
+      {
+        "name": "value",
+        "type": "string[]",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": true,
+        "inherited": true
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true
+      }
+    ],
+    "events": [
+      {
+        "name": "onValueChange",
+        "type": "(value: string[]) => void",
+        "required": false,
+        "inherited": false
+      }
+    ],
+    "accessibility": []
+  },
+  "AccordionContent": {
+    "props": [
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": true,
+        "inherited": true
+      }
+    ],
+    "events": [],
+    "accessibility": []
+  },
+  "AccordionItem": {
+    "props": [
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "required": true,
+        "inherited": false
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": true,
+        "inherited": true
+      }
+    ],
+    "events": [],
+    "accessibility": []
+  },
+  "AccordionTrigger": {
+    "props": [
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": true,
+        "inherited": true
+      }
+    ],
+    "events": [],
+    "accessibility": []
+  },
   "ActivityShareButton": {
     "props": [
       {
@@ -582,6 +706,80 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
     "accessibility": [
       "Supports ARIA attributes via standard HTML element props."
     ]
+  },
+  "CalendarGrid": {
+    "props": [
+      {
+        "name": "locale",
+        "type": "string",
+        "required": false,
+        "default": "'en'",
+        "inherited": false
+      },
+      {
+        "name": "maxDate",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "minDate",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "onChange",
+        "type": "(isoDate: string) => void",
+        "required": true,
+        "inherited": true
+      }
+    ],
+    "events": [
+      {
+        "name": "onChange",
+        "type": "(isoDate: string) => void",
+        "required": true,
+        "inherited": true
+      }
+    ],
+    "accessibility": []
+  },
+  "CaptionButton": {
+    "props": [
+      {
+        "name": "imageUrl",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "subtitle",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "required": true,
+        "inherited": true
+      }
+    ],
+    "events": [],
+    "accessibility": []
   },
   "Card": {
     "props": [
@@ -1411,6 +1609,122 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
     ],
     "accessibility": []
   },
+  "DateTimePicker": {
+    "props": [
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "error",
+        "type": "string | null",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "hint",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "inputSize",
+        "type": "Size",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "loading",
+        "type": "boolean",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "locale",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "maxDate",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "minDate",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "minuteInterval",
+        "type": "number",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "mode",
+        "type": "DateTimePickerMode",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "state",
+        "type": "UIState",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "use12Hour",
+        "type": "boolean",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "value",
+        "type": "DateTimeValue",
+        "required": false,
+        "default": "{",
+        "inherited": false
+      },
+      {
+        "name": "yearRange",
+        "type": "{ start: number; end: number }",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "onChange",
+        "type": "(value: DateTimeValue) => void",
+        "required": false,
+        "inherited": true
+      },
+      {
+        "name": "style",
+        "type": "DateTimePickerStyle",
+        "required": false,
+        "inherited": true
+      }
+    ],
+    "events": [
+      {
+        "name": "onChange",
+        "type": "(value: DateTimeValue) => void",
+        "required": false,
+        "inherited": true
+      }
+    ],
+    "accessibility": []
+  },
   "Dialog": {
     "props": [
       {
@@ -1560,6 +1874,73 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
     "accessibility": [
       "Supports ARIA attributes via standard HTML element props."
     ]
+  },
+  "DisclosureGroup": {
+    "props": [
+      {
+        "name": "defaultExpanded",
+        "type": "boolean",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "expanded",
+        "type": "boolean",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": true,
+        "inherited": false
+      },
+      {
+        "name": "onExpandedChange",
+        "type": "(expanded: boolean) => void",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": true,
+        "inherited": true
+      }
+    ],
+    "events": [
+      {
+        "name": "onExpandedChange",
+        "type": "(expanded: boolean) => void",
+        "required": false,
+        "inherited": false
+      }
+    ],
+    "accessibility": []
+  },
+  "DisclosureList": {
+    "props": [
+      {
+        "name": "defaultExpandedIds",
+        "type": "string[]",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "items",
+        "type": "DisclosureListItem[]",
+        "required": true,
+        "inherited": false
+      }
+    ],
+    "events": [],
+    "accessibility": []
   },
   "DisclosureTriangle": {
     "props": [
@@ -1853,6 +2234,11 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "inherited": false
       }
     ],
+    "accessibility": []
+  },
+  "DRAG_START_THRESHOLD_PX": {
+    "props": [],
+    "events": [],
     "accessibility": []
   },
   "DragDropList": {
@@ -2494,14 +2880,55 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
     ],
     "accessibility": []
   },
-  "FormContinue": {
+  "Header": {
     "props": [
       {
-        "name": "complete",
-        "type": "boolean",
+        "name": "children",
+        "type": "ReactNode",
         "required": true,
-        "description": "When false, Continue stays disabled until required data is entered.",
-        "inherited": false
+        "inherited": true
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true
+      }
+    ],
+    "events": [],
+    "accessibility": []
+  },
+  "HeaderActions": {
+    "props": [
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": true,
+        "inherited": true
+      }
+    ],
+    "events": [],
+    "accessibility": []
+  },
+  "HeaderBrand": {
+    "props": [
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": true,
+        "inherited": true
+      }
+    ],
+    "events": [],
+    "accessibility": []
+  },
+  "HeaderTitle": {
+    "props": [
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": true,
+        "inherited": true
       }
     ],
     "events": [],
@@ -2876,17 +3303,788 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
     "events": [],
     "accessibility": []
   },
-  "LaRoseProvider": {
+  "LIQUID_GLASS_OPTICS_DEFAULTS": {
+    "props": [],
+    "events": [],
+    "accessibility": []
+  },
+  "LIQUID_GLASS_PRESETS": {
+    "props": [],
+    "events": [],
+    "accessibility": []
+  },
+  "LIQUID_GLASS_SWITCH_ACTIVE_GREEN": {
+    "props": [],
+    "events": [],
+    "accessibility": []
+  },
+  "LIQUID_GLASS_SWITCH_TRACK_GLASS": {
+    "props": [],
+    "events": [],
+    "accessibility": []
+  },
+  "LiquidGlass": {
+    "props": [],
+    "events": [],
+    "accessibility": []
+  },
+  "LiquidGlassButton": {
     "props": [
+      {
+        "name": "borderRadius",
+        "type": "number",
+        "required": false,
+        "default": "LIQUID_GLASS_PRESETS.button.borderRadius",
+        "inherited": false
+      },
+      {
+        "name": "color",
+        "type": "string",
+        "required": false,
+        "default": "'#ffffff'",
+        "description": "Text/icon colour.",
+        "inherited": false
+      },
+      {
+        "name": "fontSize",
+        "type": "string | number",
+        "required": false,
+        "default": "'0.9375rem'",
+        "description": "Font size.",
+        "inherited": false
+      },
+      {
+        "name": "fontWeight",
+        "type": "number",
+        "required": false,
+        "default": "500",
+        "description": "Font weight.",
+        "inherited": false
+      },
+      {
+        "name": "height",
+        "type": "number | string",
+        "required": false,
+        "default": "48",
+        "inherited": false
+      },
+      {
+        "name": "width",
+        "type": "number | string",
+        "required": false,
+        "default": "140",
+        "inherited": false
+      },
       {
         "name": "children",
         "type": "ReactNode",
         "required": true,
         "inherited": true
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
+        "required": false,
+        "inherited": true
       }
     ],
     "events": [],
     "accessibility": []
+  },
+  "LiquidGlassCheckbox": {
+    "props": [
+      {
+        "name": "'aria-label'",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "borderRadius",
+        "type": "number",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "checkColor",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "checked",
+        "type": "boolean",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "checkedTint",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "defaultChecked",
+        "type": "boolean",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "label",
+        "type": "ReactNode",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "labelColor",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "size",
+        "type": "number",
+        "required": false,
+        "description": "Box size in px.",
+        "inherited": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true
+      },
+      {
+        "name": "onChange",
+        "type": "(checked: boolean) => void",
+        "required": false,
+        "inherited": true
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
+        "required": false,
+        "inherited": true
+      }
+    ],
+    "events": [
+      {
+        "name": "onChange",
+        "type": "(checked: boolean) => void",
+        "required": false,
+        "inherited": true
+      }
+    ],
+    "accessibility": [
+      "Supports ARIA attributes via standard HTML element props."
+    ]
+  },
+  "LiquidGlassProgress": {
+    "props": [
+      {
+        "name": "'aria-label'",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "borderRadius",
+        "type": "number",
+        "required": false,
+        "default": "{borderRadius",
+        "inherited": false
+      },
+      {
+        "name": "fillColor",
+        "type": "string",
+        "required": false,
+        "default": "'rgba(255",
+        "inherited": false
+      },
+      {
+        "name": "fillGlow",
+        "type": "string",
+        "required": false,
+        "default": "'rgba(255",
+        "inherited": false
+      },
+      {
+        "name": "height",
+        "type": "number",
+        "required": false,
+        "default": "\"100%\"",
+        "description": "Track height in px.",
+        "inherited": false
+      },
+      {
+        "name": "indeterminate",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "description": "Indeterminate loading state.",
+        "inherited": false
+      },
+      {
+        "name": "max",
+        "type": "number",
+        "required": false,
+        "default": "100",
+        "description": "Maximum value.",
+        "inherited": false
+      },
+      {
+        "name": "value",
+        "type": "number",
+        "required": false,
+        "default": "0",
+        "description": "Current value.",
+        "inherited": false
+      },
+      {
+        "name": "width",
+        "type": "number | string",
+        "required": false,
+        "default": "\"100%\"",
+        "inherited": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "default": "{className",
+        "inherited": true
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
+        "required": false,
+        "default": "{{",
+        "inherited": true
+      }
+    ],
+    "events": [],
+    "accessibility": [
+      "Supports ARIA attributes via standard HTML element props."
+    ]
+  },
+  "LiquidGlassRange": {
+    "props": [
+      {
+        "name": "'aria-label'",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "borderRadius",
+        "type": "number",
+        "required": false,
+        "default": "LIQUID_GLASS_PRESETS.slider.borderRadius",
+        "inherited": false
+      },
+      {
+        "name": "defaultValue",
+        "type": "number",
+        "required": false,
+        "default": "50",
+        "inherited": false
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "inherited": false
+      },
+      {
+        "name": "fillColor",
+        "type": "string",
+        "required": false,
+        "default": "'rgba(255",
+        "inherited": false
+      },
+      {
+        "name": "max",
+        "type": "number",
+        "required": false,
+        "default": "== min) return 0;",
+        "inherited": false
+      },
+      {
+        "name": "min",
+        "type": "number",
+        "required": false,
+        "default": "0",
+        "inherited": false
+      },
+      {
+        "name": "step",
+        "type": "number",
+        "required": false,
+        "default": "1",
+        "inherited": false
+      },
+      {
+        "name": "thumbSize",
+        "type": "number",
+        "required": false,
+        "default": "28",
+        "description": "Thumb diameter in px.",
+        "inherited": false
+      },
+      {
+        "name": "trackHeight",
+        "type": "number",
+        "required": false,
+        "default": "8",
+        "description": "Track height in px.",
+        "inherited": false
+      },
+      {
+        "name": "value",
+        "type": "number",
+        "required": false,
+        "default": "controlledValue ?? internalValue;",
+        "inherited": false
+      },
+      {
+        "name": "width",
+        "type": "number | string",
+        "required": false,
+        "default": "'100%'",
+        "inherited": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true
+      },
+      {
+        "name": "onChange",
+        "type": "(value: number) => void",
+        "required": false,
+        "inherited": true
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
+        "required": false,
+        "inherited": true
+      }
+    ],
+    "events": [
+      {
+        "name": "onChange",
+        "type": "(value: number) => void",
+        "required": false,
+        "inherited": true
+      }
+    ],
+    "accessibility": [
+      "Supports ARIA attributes via standard HTML element props."
+    ]
+  },
+  "LiquidGlassSwitch": {
+    "props": [
+      {
+        "name": "'aria-label'",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "activeTrackTint",
+        "type": "LiquidGlassSwitchActiveTrackTint",
+        "required": false,
+        "description": "Active track tint when on. Defaults to iOS-style green.\nPass `'glass'` () for liquid glass only, or any CSS color.",
+        "inherited": false
+      },
+      {
+        "name": "borderRadius",
+        "type": "number",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "checked",
+        "type": "boolean",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "defaultChecked",
+        "type": "boolean",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "height",
+        "type": "number",
+        "required": false,
+        "description": "Track height in px.",
+        "inherited": false
+      },
+      {
+        "name": "inactiveTrackTint",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "padding",
+        "type": "number",
+        "required": false,
+        "description": "Track padding around thumb.",
+        "inherited": false
+      },
+      {
+        "name": "thumbSize",
+        "type": "number",
+        "required": false,
+        "description": "Thumb diameter in px.",
+        "inherited": false
+      },
+      {
+        "name": "thumbTint",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "width",
+        "type": "number",
+        "required": false,
+        "description": "Track width in px.",
+        "inherited": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true
+      },
+      {
+        "name": "onChange",
+        "type": "(checked: boolean) => void",
+        "required": false,
+        "inherited": true
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
+        "required": false,
+        "inherited": true
+      }
+    ],
+    "events": [
+      {
+        "name": "onChange",
+        "type": "(checked: boolean) => void",
+        "required": false,
+        "inherited": true
+      }
+    ],
+    "accessibility": [
+      "Supports ARIA attributes via standard HTML element props."
+    ]
+  },
+  "LiquidGlassTabBar": {
+    "props": [
+      {
+        "name": "activeColor",
+        "type": "string",
+        "required": false,
+        "default": "'#ffffff'",
+        "inherited": false
+      },
+      {
+        "name": "activeKey",
+        "type": "string",
+        "required": false,
+        "default": "controlledActiveKey ?? internalActiveKey;",
+        "inherited": false
+      },
+      {
+        "name": "borderRadius",
+        "type": "number",
+        "required": false,
+        "default": "LIQUID_GLASS_PRESETS.tabBar.borderRadius",
+        "inherited": false
+      },
+      {
+        "name": "bottom",
+        "type": "number | string",
+        "required": false,
+        "default": "22",
+        "inherited": false
+      },
+      {
+        "name": "defaultActiveKey",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "height",
+        "type": "number",
+        "required": false,
+        "default": "64",
+        "inherited": false
+      },
+      {
+        "name": "inactiveColor",
+        "type": "string",
+        "required": false,
+        "default": "'rgba(255",
+        "inherited": false
+      },
+      {
+        "name": "indicatorBackground",
+        "type": "string",
+        "required": false,
+        "default": "'rgba(255",
+        "inherited": false
+      },
+      {
+        "name": "indicatorBorderColor",
+        "type": "string",
+        "required": false,
+        "default": "'rgba(255",
+        "inherited": false
+      },
+      {
+        "name": "indicatorPadding",
+        "type": "number",
+        "required": false,
+        "default": "8",
+        "inherited": false
+      },
+      {
+        "name": "items",
+        "type": "LiquidGlassTabItem[]",
+        "required": true,
+        "inherited": false
+      },
+      {
+        "name": "maxWidth",
+        "type": "number",
+        "required": false,
+        "default": "420",
+        "inherited": false
+      },
+      {
+        "name": "position",
+        "type": "'fixed' | 'absolute' | 'relative' | 'static'",
+        "required": false,
+        "default": "'fixed'",
+        "inherited": false
+      },
+      {
+        "name": "showIndicator",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "inherited": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true
+      },
+      {
+        "name": "onChange",
+        "type": "(key: string) => void",
+        "required": false,
+        "inherited": true
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
+        "required": false,
+        "inherited": true
+      }
+    ],
+    "events": [
+      {
+        "name": "onChange",
+        "type": "(key: string) => void",
+        "required": false,
+        "inherited": true
+      }
+    ],
+    "accessibility": []
+  },
+  "LiquidGlassTopBar": {
+    "props": [
+      {
+        "name": "activeColor",
+        "type": "string",
+        "required": false,
+        "default": "'#ffffff'",
+        "inherited": false
+      },
+      {
+        "name": "activeKey",
+        "type": "string",
+        "required": false,
+        "default": "controlledActiveKey ?? internalActiveKey;",
+        "inherited": false
+      },
+      {
+        "name": "borderRadius",
+        "type": "number",
+        "required": false,
+        "default": "borderRadiusProp ?? (isFloating ? LIQUID_GLASS_PRESETS.topBar.borderRadius : 0);",
+        "inherited": false
+      },
+      {
+        "name": "defaultActiveKey",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "height",
+        "type": "number",
+        "required": false,
+        "default": "56",
+        "inherited": false
+      },
+      {
+        "name": "inactiveColor",
+        "type": "string",
+        "required": false,
+        "default": "'rgba(255",
+        "inherited": false
+      },
+      {
+        "name": "insetX",
+        "type": "number",
+        "required": false,
+        "default": "insetXProp ?? (isFloating ? 16 : 0);",
+        "inherited": false
+      },
+      {
+        "name": "items",
+        "type": "LiquidGlassTopBarItem[]",
+        "required": false,
+        "default": "[]",
+        "inherited": false
+      },
+      {
+        "name": "logo",
+        "type": "ReactNode",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "navActiveBackground",
+        "type": "string",
+        "required": false,
+        "default": "'rgba(255",
+        "description": "Active nav pill background.",
+        "inherited": false
+      },
+      {
+        "name": "navTrackBackground",
+        "type": "string",
+        "required": false,
+        "default": "'rgba(255",
+        "description": "Background of the segmented nav track.",
+        "inherited": false
+      },
+      {
+        "name": "paddingX",
+        "type": "number",
+        "required": false,
+        "default": "16",
+        "inherited": false
+      },
+      {
+        "name": "position",
+        "type": "'fixed' | 'absolute' | 'relative' | 'sticky' | 'static'",
+        "required": false,
+        "default": "'fixed'",
+        "inherited": false
+      },
+      {
+        "name": "titleColor",
+        "type": "string",
+        "required": false,
+        "default": "'#ffffff'",
+        "inherited": false
+      },
+      {
+        "name": "top",
+        "type": "number | string",
+        "required": false,
+        "default": "topProp ?? (isFloating ? 14 : 0);",
+        "inherited": false
+      },
+      {
+        "name": "trailing",
+        "type": "ReactNode",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "variant",
+        "type": "LiquidGlassTopBarVariant",
+        "required": false,
+        "default": "'floating'",
+        "description": "`floating` — inset pill bar with rounded corners (modern macOS/iOS style).\n`edge` — full-bleed bar flush with the viewport top.",
+        "inherited": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true
+      },
+      {
+        "name": "onChange",
+        "type": "(key: string) => void",
+        "required": false,
+        "inherited": true
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
+        "required": false,
+        "inherited": true
+      },
+      {
+        "name": "title",
+        "type": "ReactNode",
+        "required": false,
+        "inherited": true
+      }
+    ],
+    "events": [
+      {
+        "name": "onChange",
+        "type": "(key: string) => void",
+        "required": false,
+        "inherited": true
+      }
+    ],
+    "accessibility": [
+      "Supports ARIA attributes via standard HTML element props."
+    ]
   },
   "List": {
     "props": [
@@ -3103,6 +4301,54 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
     "accessibility": [
       "Supports ARIA attributes via standard HTML element props."
     ]
+  },
+  "LockupCard": {
+    "props": [
+      {
+        "name": "rating",
+        "type": "number",
+        "required": true,
+        "inherited": false
+      },
+      {
+        "name": "review",
+        "type": "string",
+        "required": true,
+        "inherited": false
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "required": false,
+        "inherited": true
+      }
+    ],
+    "events": [],
+    "accessibility": []
+  },
+  "LockupRow": {
+    "props": [
+      {
+        "name": "axis",
+        "type": "LockupAxis",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "itemWidth",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": true,
+        "inherited": true
+      }
+    ],
+    "events": [],
+    "accessibility": []
   },
   "Menu": {
     "props": [
@@ -3379,6 +4625,37 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
     ],
     "accessibility": []
   },
+  "MnemonicLabel": {
+    "props": [
+      {
+        "name": "label",
+        "type": "string",
+        "required": true,
+        "inherited": false
+      },
+      {
+        "name": "mnemonic",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "showAccessKey",
+        "type": "boolean",
+        "required": false,
+        "description": "When true, underline the access key character.",
+        "inherited": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true
+      }
+    ],
+    "events": [],
+    "accessibility": []
+  },
   "Modal": {
     "props": [
       {
@@ -3471,6 +4748,30 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
     "accessibility": [
       "Focus is managed while open; Escape typically closes the overlay."
     ]
+  },
+  "Monogram": {
+    "props": [
+      {
+        "name": "imageUrl",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "required": true,
+        "inherited": false
+      },
+      {
+        "name": "role",
+        "type": "string",
+        "required": false,
+        "inherited": true
+      }
+    ],
+    "events": [],
+    "accessibility": []
   },
   "MorePullDownButton": {
     "props": [],
@@ -3923,6 +5224,113 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
       "Supports ARIA attributes via standard HTML element props."
     ]
   },
+  "Picker": {
+    "props": [
+      {
+        "name": "'aria-label'",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "columns",
+        "type": "PickerColumn[]",
+        "required": true,
+        "inherited": false
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "inherited": false
+      },
+      {
+        "name": "error",
+        "type": "string | null",
+        "required": false,
+        "default": "null",
+        "inherited": false
+      },
+      {
+        "name": "formatValue",
+        "type": "(value: PickerValue, columns: PickerColumn[]) => string",
+        "required": false,
+        "default": "defaultFormatValue",
+        "description": "Formats the compact trigger label from the current value.",
+        "inherited": false
+      },
+      {
+        "name": "hint",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "inputSize",
+        "type": "Size",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "loading",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "inherited": false
+      },
+      {
+        "name": "placeholder",
+        "type": "string",
+        "required": false,
+        "default": "'Select'",
+        "description": "Shown on the compact trigger when no selection exists.",
+        "inherited": false
+      },
+      {
+        "name": "state",
+        "type": "UIState",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "value",
+        "type": "PickerValue",
+        "required": true,
+        "inherited": false
+      },
+      {
+        "name": "onChange",
+        "type": "(value: PickerValue) => void",
+        "required": true,
+        "inherited": true
+      },
+      {
+        "name": "style",
+        "type": "PickerStyle",
+        "required": false,
+        "default": "'wheels'",
+        "inherited": true
+      }
+    ],
+    "events": [
+      {
+        "name": "onChange",
+        "type": "(value: PickerValue) => void",
+        "required": true,
+        "inherited": true
+      }
+    ],
+    "accessibility": [
+      "Supports ARIA attributes via standard HTML element props."
+    ]
+  },
   "Popover": {
     "props": [
       {
@@ -4065,6 +5473,30 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "inherited": false
       }
     ],
+    "accessibility": []
+  },
+  "Poster": {
+    "props": [
+      {
+        "name": "imageUrl",
+        "type": "string",
+        "required": true,
+        "inherited": false
+      },
+      {
+        "name": "subtitle",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "required": false,
+        "inherited": true
+      }
+    ],
+    "events": [],
     "accessibility": []
   },
   "Progress": {
@@ -4346,6 +5778,158 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
     "events": [],
     "accessibility": []
   },
+  "SplitView": {
+    "props": [
+      {
+        "name": "'aria-label'",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "compactMode",
+        "type": "SplitCompactMode",
+        "required": false,
+        "default": "'side-by-side'",
+        "inherited": false
+      },
+      {
+        "name": "onSizesChange",
+        "type": "(sizes: number[]) => void",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "orientation",
+        "type": "SplitOrientation",
+        "required": false,
+        "default": "'horizontal'",
+        "inherited": false
+      },
+      {
+        "name": "storageKey",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "toolbar",
+        "type": "ReactNode",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": true,
+        "inherited": true
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true
+      }
+    ],
+    "events": [
+      {
+        "name": "onSizesChange",
+        "type": "(sizes: number[]) => void",
+        "required": false,
+        "inherited": false
+      }
+    ],
+    "accessibility": [
+      "Supports ARIA attributes via standard HTML element props."
+    ]
+  },
+  "SplitViewPane": {
+    "props": [
+      {
+        "name": "'aria-label'",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "collapsible",
+        "type": "boolean",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "defaultSize",
+        "type": "number",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "defaultVisible",
+        "type": "boolean",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "maxSize",
+        "type": "number",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "minSize",
+        "type": "number",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "onVisibleChange",
+        "type": "(visible: boolean) => void",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "visible",
+        "type": "boolean",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": true,
+        "inherited": true
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": true,
+        "inherited": true
+      }
+    ],
+    "events": [
+      {
+        "name": "onVisibleChange",
+        "type": "(visible: boolean) => void",
+        "required": false,
+        "inherited": false
+      }
+    ],
+    "accessibility": [
+      "Supports ARIA attributes via standard HTML element props."
+    ]
+  },
   "SplitViewToolbar": {
     "props": [
       {
@@ -4438,6 +6022,11 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
       "Uses native or laRose-managed focus rings and disabled states."
     ]
   },
+  "SYSTEM_ACTIVITY_IDS": {
+    "props": [],
+    "events": [],
+    "accessibility": []
+  },
   "Table": {
     "props": [
       {
@@ -4528,6 +6117,247 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
     "accessibility": [
       "Supports ARIA attributes via standard HTML element props."
     ]
+  },
+  "Tabs": {
+    "props": [
+      {
+        "name": "defaultValue",
+        "type": "string",
+        "required": false,
+        "default": "''",
+        "inherited": false
+      },
+      {
+        "name": "onValueChange",
+        "type": "(value: string) => void",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": true,
+        "inherited": true
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true
+      }
+    ],
+    "events": [
+      {
+        "name": "onValueChange",
+        "type": "(value: string) => void",
+        "required": false,
+        "inherited": false
+      }
+    ],
+    "accessibility": []
+  },
+  "TabsList": {
+    "props": [
+      {
+        "name": "'aria-label'",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": true,
+        "inherited": true
+      }
+    ],
+    "events": [],
+    "accessibility": [
+      "Supports ARIA attributes via standard HTML element props."
+    ]
+  },
+  "TabsPanel": {
+    "props": [
+      {
+        "name": "value",
+        "type": "string",
+        "required": true,
+        "inherited": false
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": true,
+        "inherited": true
+      }
+    ],
+    "events": [],
+    "accessibility": []
+  },
+  "TabsTrigger": {
+    "props": [
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "required": true,
+        "inherited": false
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": true,
+        "inherited": true
+      }
+    ],
+    "events": [],
+    "accessibility": []
+  },
+  "TabView": {
+    "props": [
+      {
+        "name": "'aria-label'",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "defaultValue",
+        "type": "string",
+        "required": false,
+        "default": "''",
+        "inherited": false
+      },
+      {
+        "name": "inset",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "inherited": false
+      },
+      {
+        "name": "onValueChange",
+        "type": "(value: string) => void",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "showTabs",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "inherited": false
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "variant",
+        "type": "TabViewVariant",
+        "required": false,
+        "default": "'bordered'",
+        "inherited": false
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": true,
+        "inherited": true
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true
+      }
+    ],
+    "events": [
+      {
+        "name": "onValueChange",
+        "type": "(value: string) => void",
+        "required": false,
+        "inherited": false
+      }
+    ],
+    "accessibility": [
+      "Supports ARIA attributes via standard HTML element props."
+    ]
+  },
+  "TabViewList": {
+    "props": [
+      {
+        "name": "'aria-label'",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": true,
+        "inherited": true
+      }
+    ],
+    "events": [],
+    "accessibility": [
+      "Supports ARIA attributes via standard HTML element props."
+    ]
+  },
+  "TabViewPanel": {
+    "props": [
+      {
+        "name": "value",
+        "type": "string",
+        "required": true,
+        "inherited": false
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": true,
+        "inherited": true
+      }
+    ],
+    "events": [],
+    "accessibility": []
+  },
+  "TabViewTab": {
+    "props": [
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": true,
+        "inherited": false
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "required": true,
+        "inherited": false
+      }
+    ],
+    "events": [],
+    "accessibility": []
   },
   "Textarea": {
     "props": [
@@ -4622,6 +6452,11 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
     "events": [],
     "accessibility": []
   },
+  "ThemeCustomizationContext": {
+    "props": [],
+    "events": [],
+    "accessibility": []
+  },
   "TimePicker": {
     "props": [
       {
@@ -4685,25 +6520,6 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "inherited": true
       }
     ],
-    "accessibility": []
-  },
-  "ToastProvider": {
-    "props": [
-      {
-        "name": "placement",
-        "type": "ToastPlacement",
-        "required": false,
-        "default": "'bottom-right'",
-        "inherited": false
-      },
-      {
-        "name": "children",
-        "type": "ReactNode",
-        "required": true,
-        "inherited": true
-      }
-    ],
-    "events": [],
     "accessibility": []
   },
   "TokenField": {
@@ -4787,6 +6603,426 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
     "accessibility": [
       "Supports ARIA attributes via standard HTML element props."
     ]
+  },
+  "Toolbar": {
+    "props": [
+      {
+        "name": "'aria-label'",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "largeTitle",
+        "type": "boolean",
+        "required": false,
+        "description": "iOS large title that collapses when scrolling.",
+        "inherited": false
+      },
+      {
+        "name": "placement",
+        "type": "ToolbarPlacement",
+        "required": false,
+        "description": "visionOS and watchOS placement.",
+        "inherited": false
+      },
+      {
+        "name": "platform",
+        "type": "ToolbarPlatform",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": false,
+        "inherited": true
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true
+      },
+      {
+        "name": "hidden",
+        "type": "boolean",
+        "required": false,
+        "description": "Hide toolbar for distraction-free experience.",
+        "inherited": true
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "required": false,
+        "description": "Concise view title — aim for under 15 characters.",
+        "inherited": true
+      }
+    ],
+    "events": [],
+    "accessibility": [
+      "Supports ARIA attributes via standard HTML element props."
+    ]
+  },
+  "ToolbarBackButton": {
+    "props": [
+      {
+        "name": "companionLabel",
+        "type": "string",
+        "required": false,
+        "description": "visionOS reveals label on look — optional visible companion text.",
+        "inherited": false
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "onClick",
+        "type": "() => void",
+        "required": false,
+        "inherited": true
+      }
+    ],
+    "events": [
+      {
+        "name": "onClick",
+        "type": "() => void",
+        "required": false,
+        "inherited": true
+      }
+    ],
+    "accessibility": []
+  },
+  "ToolbarCloseButton": {
+    "props": [
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "onClick",
+        "type": "() => void",
+        "required": false,
+        "inherited": true
+      }
+    ],
+    "events": [
+      {
+        "name": "onClick",
+        "type": "() => void",
+        "required": false,
+        "inherited": true
+      }
+    ],
+    "accessibility": []
+  },
+  "ToolbarDocumentMenu": {
+    "props": [
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "entries",
+        "type": "MenuEntry[]",
+        "required": true,
+        "inherited": false
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "onAction",
+        "type": "(entryId: string) => void",
+        "required": false,
+        "inherited": false
+      }
+    ],
+    "events": [
+      {
+        "name": "onAction",
+        "type": "(entryId: string) => void",
+        "required": false,
+        "inherited": false
+      }
+    ],
+    "accessibility": []
+  },
+  "ToolbarFixedSpace": {
+    "props": [],
+    "events": [],
+    "accessibility": []
+  },
+  "ToolbarGroup": {
+    "props": [
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": false,
+        "inherited": true
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true
+      }
+    ],
+    "events": [],
+    "accessibility": []
+  },
+  "ToolbarItem": {
+    "props": [
+      {
+        "name": "collapsible",
+        "type": "boolean",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "icon",
+        "type": "ReactNode",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": true,
+        "inherited": false
+      },
+      {
+        "name": "prominent",
+        "type": "boolean",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "showLabel",
+        "type": "boolean",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false,
+        "inherited": true
+      },
+      {
+        "name": "onClick",
+        "type": "() => void",
+        "required": false,
+        "inherited": true
+      }
+    ],
+    "events": [
+      {
+        "name": "onClick",
+        "type": "() => void",
+        "required": false,
+        "inherited": true
+      }
+    ],
+    "accessibility": []
+  },
+  "ToolbarMoreButton": {
+    "props": [
+      {
+        "name": "'aria-label'",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "entries",
+        "type": "MenuEntry[]",
+        "required": true,
+        "inherited": false
+      },
+      {
+        "name": "onAction",
+        "type": "(entryId: string) => void",
+        "required": false,
+        "inherited": false
+      }
+    ],
+    "events": [
+      {
+        "name": "onAction",
+        "type": "(entryId: string) => void",
+        "required": false,
+        "inherited": false
+      }
+    ],
+    "accessibility": [
+      "Supports ARIA attributes via standard HTML element props."
+    ]
+  },
+  "ToolbarProminentButton": {
+    "props": [
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "children",
+        "type": "string",
+        "required": true,
+        "inherited": true
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true
+      },
+      {
+        "name": "onClick",
+        "type": "() => void",
+        "required": false,
+        "inherited": true
+      }
+    ],
+    "events": [
+      {
+        "name": "onClick",
+        "type": "() => void",
+        "required": false,
+        "inherited": true
+      }
+    ],
+    "accessibility": []
+  },
+  "ToolbarSearch": {
+    "props": [
+      {
+        "name": "'aria-label'",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "placeholder",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true
+      },
+      {
+        "name": "onChange",
+        "type": "(value: string) => void",
+        "required": false,
+        "inherited": true
+      }
+    ],
+    "events": [
+      {
+        "name": "onChange",
+        "type": "(value: string) => void",
+        "required": false,
+        "inherited": true
+      }
+    ],
+    "accessibility": [
+      "Supports ARIA attributes via standard HTML element props."
+    ]
+  },
+  "ToolbarSection": {
+    "props": [
+      {
+        "name": "collapsible",
+        "type": "boolean",
+        "required": false,
+        "description": "Center items collapse into the system overflow menu when space is tight.",
+        "inherited": false
+      },
+      {
+        "name": "placement",
+        "type": "ToolbarSectionPlacement",
+        "required": true,
+        "inherited": false
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": false,
+        "inherited": true
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true
+      }
+    ],
+    "events": [],
+    "accessibility": []
+  },
+  "ToolbarTitle": {
+    "props": [
+      {
+        "name": "large",
+        "type": "boolean",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "children",
+        "type": "string",
+        "required": true,
+        "inherited": true
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true
+      }
+    ],
+    "events": [],
+    "accessibility": []
   },
   "Tooltip": {
     "props": [
@@ -5013,6 +7249,124 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
     ],
     "events": [],
     "accessibility": []
+  },
+  "WheelColumn": {
+    "props": [
+      {
+        "name": "columnFlex",
+        "type": "number",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "inherited": false
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "options",
+        "type": "PickerOption[]",
+        "required": true,
+        "inherited": false
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "required": true,
+        "inherited": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": true,
+        "inherited": true
+      },
+      {
+        "name": "onChange",
+        "type": "(value: string) => void",
+        "required": true,
+        "inherited": true
+      }
+    ],
+    "events": [
+      {
+        "name": "onChange",
+        "type": "(value: string) => void",
+        "required": true,
+        "inherited": true
+      }
+    ],
+    "accessibility": []
+  },
+  "WheelPicker": {
+    "props": [
+      {
+        "name": "'aria-label'",
+        "type": "string",
+        "required": false,
+        "inherited": false
+      },
+      {
+        "name": "columns",
+        "type": "PickerColumn[]",
+        "required": true,
+        "inherited": false
+      },
+      {
+        "name": "compact",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "description": "Compact popover presentation — wheels fill the panel edge-to-edge.",
+        "inherited": false
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "inherited": false
+      },
+      {
+        "name": "inline",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "description": "Removes chrome for embedding in inline layouts.",
+        "inherited": false
+      },
+      {
+        "name": "value",
+        "type": "PickerValue",
+        "required": true,
+        "inherited": false
+      },
+      {
+        "name": "onChange",
+        "type": "(value: PickerValue) => void",
+        "required": true,
+        "inherited": true
+      }
+    ],
+    "events": [
+      {
+        "name": "onChange",
+        "type": "(value: PickerValue) => void",
+        "required": true,
+        "inherited": true
+      }
+    ],
+    "accessibility": [
+      "Supports ARIA attributes via standard HTML element props."
+    ]
   }
 };
 

@@ -32,7 +32,7 @@ export function buildSearchIndex(input) {
       type: 'component',
       path: `/docs/components/${component.id}`,
       keywords: [component.name, component.category, ...propKeywords].join(' '),
-      excerpt: `${component.category} component from @larose-ui/react`,
+      excerpt: `${component.category} component from @larose-ui/${component.package ?? 'react'}`,
     });
 
     for (const prop of api?.props ?? []) {

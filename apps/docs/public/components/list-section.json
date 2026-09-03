@@ -1,6 +1,7 @@
 {
   "component": "ListSection",
   "category": "Data",
+  "package": "@larose-ui/react",
   "import": "import { ListSection } from '@larose-ui/react';",
   "props": [
     {

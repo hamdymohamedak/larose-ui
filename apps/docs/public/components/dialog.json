@@ -1,6 +1,7 @@
 {
   "component": "Dialog",
   "category": "Overlay",
+  "package": "@larose-ui/react",
   "import": "import { Dialog } from '@larose-ui/react';",
   "props": [
     {
@@ -67,14 +68,6 @@
       "kind": "loading",
       "props": {},
       "code": "<Dialog\n        open\n        onClose={() => undefined}\n        title=\"Saving Changes\"\n        description=\"Please wait while we save your changes.\"\n        confirmLabel=\"Save\"\n        onConfirm={() => undefined}\n        loading\n      />",
-      "composite": true
-    },
-    {
-      "id": "DialogMotion",
-      "title": "Dialog Motion",
-      "kind": "advanced",
-      "props": {},
-      "code": "<>\n        <Button onClick={() => setOpen(true)}>Open dialog</Button>\n        <Modal open={open} onClose={() => setOpen(false)} title=\"Motion dialog\">\n          <p style={{ margin: 0 }}>Subtle scale, fade, and vertical movement on enter and exit.</p>\n        </Modal>\n      </>",
       "composite": true
     }
   ],

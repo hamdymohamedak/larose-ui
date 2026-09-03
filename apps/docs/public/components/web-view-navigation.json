@@ -1,6 +1,7 @@
 {
   "component": "WebViewNavigation",
   "category": "Content",
+  "package": "@larose-ui/react",
   "import": "import { WebViewNavigation } from '@larose-ui/react';",
   "props": [
     {

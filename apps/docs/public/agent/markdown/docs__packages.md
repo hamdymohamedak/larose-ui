@@ -19,7 +19,7 @@
 - [@larose-ui/offline](/docs/packages/offline): Offline request queue with sync and conflict handling.
 - [@larose-ui/permissions](/docs/packages/permissions): Authorization-aware UI with RBAC/ABAC patterns.
 - [@larose-ui/primitives](/docs/packages/primitives): Headless menu keyboard, type-ahead, and accelerator behavior.
-- [@larose-ui/react](/docs/packages/react): Production-ready React components with built-in UI states.
+- [@larose-ui/react](/docs/packages/react): Production-ready React components with built-in UI states and LiquidGlass refraction surfaces.
 - [@larose-ui/runtime](/docs/packages/runtime): Unified runtime — theme, i18n, permissions, network, and session.
 - [@larose-ui/runtime-core](/docs/packages/runtime-core): Framework-agnostic runtime store, host detection, and i18n.
 - [@larose-ui/styles](/docs/packages/styles): Framework-agnostic component CSS from the design system.

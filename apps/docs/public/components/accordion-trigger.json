@@ -1,0 +1,11 @@
+{
+  "component": "AccordionTrigger",
+  "category": "Content",
+  "package": "@larose-ui/react",
+  "import": "import { AccordionTrigger } from '@larose-ui/react';",
+  "props": [],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

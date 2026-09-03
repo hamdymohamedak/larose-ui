@@ -1,6 +1,7 @@
 {
   "component": "OutlineViewToolbar",
   "category": "Data",
+  "package": "@larose-ui/react",
   "import": "import { OutlineViewToolbar } from '@larose-ui/react';",
   "props": [
     {

@@ -1,6 +1,7 @@
 {
   "component": "Badge",
   "category": "Feedback",
+  "package": "@larose-ui/react",
   "import": "import { Badge } from '@larose-ui/react';",
   "props": [
     {
@@ -18,7 +19,7 @@
       "props": {
         "children": "Draft"
       },
-      "code": "<Badge>Draft</Badge>"
+      "code": "import { Badge } from '@larose-ui/react';\n\n<Badge>Draft</Badge>"
     },
     {
       "id": "Info",
@@ -28,7 +29,7 @@
         "children": "Beta",
         "variant": "info"
       },
-      "code": "<Badge\n  variant=\"info\"\n>Beta</Badge>"
+      "code": "import { Badge } from '@larose-ui/react';\n\n<Badge\n  variant=\"info\"\n>Beta</Badge>"
     },
     {
       "id": "Success",
@@ -38,7 +39,7 @@
         "children": "Active",
         "variant": "success"
       },
-      "code": "<Badge\n  variant=\"success\"\n>Active</Badge>"
+      "code": "import { Badge } from '@larose-ui/react';\n\n<Badge\n  variant=\"success\"\n>Active</Badge>"
     },
     {
       "id": "Warning",
@@ -48,7 +49,7 @@
         "children": "Pending",
         "variant": "warning"
       },
-      "code": "<Badge\n  variant=\"warning\"\n>Pending</Badge>"
+      "code": "import { Badge } from '@larose-ui/react';\n\n<Badge\n  variant=\"warning\"\n>Pending</Badge>"
     },
     {
       "id": "Error",
@@ -58,7 +59,7 @@
         "children": "Suspended",
         "variant": "error"
       },
-      "code": "<Badge\n  variant=\"error\"\n>Suspended</Badge>"
+      "code": "import { Badge } from '@larose-ui/react';\n\n<Badge\n  variant=\"error\"\n>Suspended</Badge>"
     },
     {
       "id": "AllVariants",

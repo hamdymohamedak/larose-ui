@@ -1,6 +1,7 @@
 {
   "component": "WebViewShell",
   "category": "Content",
+  "package": "@larose-ui/react",
   "import": "import { WebViewShell } from '@larose-ui/react';",
   "props": [
     {

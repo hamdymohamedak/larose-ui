@@ -1,0 +1,8 @@
+{
+  "name": "MAX_ALERT_BUTTONS",
+  "version": "1",
+  "framework": "react",
+  "props": [],
+  "events": [],
+  "keyboard": {}
+}

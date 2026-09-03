@@ -1,0 +1,24 @@
+{
+  "component": "Poster",
+  "category": "Other",
+  "package": "@larose-ui/react",
+  "import": "import { Poster } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "imageUrl",
+      "type": "string",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "subtitle",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

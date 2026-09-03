@@ -1,0 +1,117 @@
+{
+  "name": "LiquidGlassTabBar",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "activeColor",
+      "type": "string",
+      "required": false,
+      "default": "'#ffffff'"
+    },
+    {
+      "name": "activeKey",
+      "type": "string",
+      "required": false,
+      "default": "controlledActiveKey ?? internalActiveKey;"
+    },
+    {
+      "name": "borderRadius",
+      "type": "number",
+      "required": false,
+      "default": "LIQUID_GLASS_PRESETS.tabBar.borderRadius"
+    },
+    {
+      "name": "bottom",
+      "type": "number | string",
+      "required": false,
+      "default": "22"
+    },
+    {
+      "name": "defaultActiveKey",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "height",
+      "type": "number",
+      "required": false,
+      "default": "64"
+    },
+    {
+      "name": "inactiveColor",
+      "type": "string",
+      "required": false,
+      "default": "'rgba(255"
+    },
+    {
+      "name": "indicatorBackground",
+      "type": "string",
+      "required": false,
+      "default": "'rgba(255"
+    },
+    {
+      "name": "indicatorBorderColor",
+      "type": "string",
+      "required": false,
+      "default": "'rgba(255"
+    },
+    {
+      "name": "indicatorPadding",
+      "type": "number",
+      "required": false,
+      "default": "8"
+    },
+    {
+      "name": "items",
+      "type": "LiquidGlassTabItem[]",
+      "required": true
+    },
+    {
+      "name": "maxWidth",
+      "type": "number",
+      "required": false,
+      "default": "420"
+    },
+    {
+      "name": "position",
+      "type": "'fixed' | 'absolute' | 'relative' | 'static'",
+      "required": false,
+      "default": "'fixed'"
+    },
+    {
+      "name": "showIndicator",
+      "type": "boolean",
+      "required": false,
+      "default": "true"
+    }
+  ],
+  "events": [
+    {
+      "name": "onChange",
+      "payload": "(key: string) => void"
+    }
+  ],
+  "slots": [
+    "items"
+  ],
+  "states": [
+    "default",
+    "disabled tab"
+  ],
+  "defaults": {
+    "activeColor": "'#ffffff'",
+    "activeKey": "controlledActiveKey ?? internalActiveKey;",
+    "borderRadius": "LIQUID_GLASS_PRESETS.tabBar.borderRadius",
+    "bottom": "22",
+    "height": "64",
+    "inactiveColor": "'rgba(255",
+    "indicatorBackground": "'rgba(255",
+    "indicatorBorderColor": "'rgba(255",
+    "indicatorPadding": "8",
+    "maxWidth": "420",
+    "position": "'fixed'",
+    "showIndicator": "true"
+  },
+  "keyboard": {}
+}

@@ -9,6 +9,17 @@
     <link rel="api-catalog" href="%BASE_URL%.well-known/api-catalog" />
     <link rel="sitemap" type="application/xml" href="%BASE_URL%sitemap.xml" />
     <title>laRose UI Docs</title>
+    <script>
+      (function () {
+        try {
+          var theme = localStorage.getItem('larose-docs-theme');
+          if (theme === 'dark' || theme === 'light') {
+            document.documentElement.dataset.docsTheme = theme;
+            document.documentElement.style.colorScheme = theme;
+          }
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

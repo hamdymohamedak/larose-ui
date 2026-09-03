@@ -2,7 +2,13 @@
   "name": "AcceleratorProvider",
   "version": "1",
   "framework": "react",
-  "props": [],
+  "props": [
+    {
+      "name": "platform",
+      "type": "AcceleratorPlatform",
+      "required": false
+    }
+  ],
   "events": [],
   "keyboard": {}
 }

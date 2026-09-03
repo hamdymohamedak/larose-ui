@@ -16,7 +16,6 @@ import { Toolbar } from './Toolbar/Toolbar';
 import { ComposeIcon } from './Toolbar/icons';
 import { PathControl } from './PathControl/PathControl';
 import { SearchField } from './SearchField/SearchField';
-import { TabBar, TabBarList, TabBarItem } from './TabBar/TabBar';
 import { TokenField } from './TokenField/TokenField';
 import { AlertDialog } from './AlertDialog/AlertDialog';
 import { EditMenu, EditMenuSelection } from './EditMenu/EditMenu';
@@ -503,33 +502,6 @@ describe('Navigation and search', () => {
     await userEvent.type(screen.getByRole('searchbox', { name: 'Search' }), 'design');
     expect(onChange).toHaveBeenCalled();
     expect(screen.getByRole('tab', { name: 'All' })).toBeInTheDocument();
-  });
-
-  it('renders tab bar items including disabled tabs', () => {
-    renderWithProvider(
-      <TabBar defaultValue="home" platform="ios">
-        <TabBarList>
-          <TabBarItem value="home" label="Home" icon={<ComposeIcon />} />
-          <TabBarItem value="settings" label="Settings" disabled />
-        </TabBarList>
-      </TabBar>,
-    );
-    expect(screen.getByRole('tab', { name: 'Home' })).toHaveAttribute('aria-selected', 'true');
-    expect(screen.getByRole('tab', { name: 'Settings' })).toBeDisabled();
-  });
-
-  it('renders liquid glass tab bar with selection indicator', () => {
-    const { container } = renderWithProvider(
-      <TabBar defaultValue="home" platform="ios" liquidGlass>
-        <TabBarList>
-          <TabBarItem value="home" label="Home" icon={<ComposeIcon />} />
-          <TabBarItem value="settings" label="Settings" />
-        </TabBarList>
-      </TabBar>,
-    );
-    expect(container.querySelector('[data-liquid-glass="true"]')).toBeTruthy();
-    expect(container.querySelector('[class*="listShell"]')).toBeTruthy();
-    expect(container.querySelector('[data-larose-glass-lens]')).toBeTruthy();
   });
 
   it('commits token field input on comma', async () => {

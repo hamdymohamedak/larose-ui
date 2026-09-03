@@ -1,0 +1,31 @@
+{
+  "component": "MnemonicLabel",
+  "category": "Other",
+  "package": "@larose-ui/react",
+  "import": "import { MnemonicLabel } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "mnemonic",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "showAccessKey",
+      "type": "boolean",
+      "required": false,
+      "description": "When true, underline the access key character.",
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

@@ -1,0 +1,11 @@
+{
+  "component": "AccordionContent",
+  "category": "Content",
+  "package": "@larose-ui/react",
+  "import": "import { AccordionContent } from '@larose-ui/react';",
+  "props": [],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

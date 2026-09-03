@@ -1,0 +1,30 @@
+{
+  "component": "CaptionButton",
+  "category": "Other",
+  "package": "@larose-ui/react",
+  "import": "import { CaptionButton } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "imageUrl",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "subtitle",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

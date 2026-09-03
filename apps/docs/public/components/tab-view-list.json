@@ -1,0 +1,20 @@
+{
+  "component": "TabViewList",
+  "category": "Navigation",
+  "package": "@larose-ui/react",
+  "import": "import { TabViewList } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "'aria-label'",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [
+    "Supports ARIA attributes via standard HTML element props."
+  ],
+  "anatomy": null,
+  "playground": null
+}

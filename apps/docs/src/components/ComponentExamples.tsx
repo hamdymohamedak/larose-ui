@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import { Typography } from '@larose-ui/react';
 import { StorySection } from '@/components/StoryCanvas';
 import type { DocsExampleEntry } from '@/data/examples.generated';
+import { isGlassDocComponent } from '@/lib/glassComponents';
 import { getComponentPreview } from '@/previews';
 import { renderPlaygroundComponent } from '@/previews/playgroundRegistry';
 import { playgroundControls } from '@/data/playground.generated';
@@ -37,12 +38,16 @@ export function ComponentExamples({ componentName, examples }: ComponentExamples
 
   if (items.length === 0) return null;
 
+  const isGlass = isGlassDocComponent(componentName);
+
   return (
     <section id="stories" className="docs-sb-stories">
       <div className="docs-sb-stories__header">
         <h2>Stories</h2>
         <Typography muted className="docs-sb-stories__lede">
-          Every variant from Storybook — preview, then show code to copy into your app.
+          {isGlass
+            ? 'Interactive aurora scene — scroll inside each preview so content passes under the glass and you can see displacement refraction (Chromium).'
+            : 'Every variant from Storybook — preview, then show code to copy into your app.'}
         </Typography>
       </div>
 
@@ -53,6 +58,7 @@ export function ComponentExamples({ componentName, examples }: ComponentExamples
             title={example.title}
             preview={renderExamplePreview(componentName, example)}
             code={example.code}
+            variant={isGlass ? 'glass' : 'default'}
           />
         ))}
       </div>

@@ -4,9 +4,10 @@ import type { DocsComponentApi } from '@/data/api.generated';
 interface ApiReferenceProps {
   api: DocsComponentApi;
   componentName: string;
+  packageName?: string;
 }
 
-export function ApiReference({ api, componentName }: ApiReferenceProps) {
+export function ApiReference({ api, componentName, packageName = '@larose-ui/react' }: ApiReferenceProps) {
   const ownProps = api.props.filter((prop) => !prop.inherited);
   const inheritedProps = api.props.filter((prop) => prop.inherited);
 
@@ -14,7 +15,7 @@ export function ApiReference({ api, componentName }: ApiReferenceProps) {
     <section id="api" className="docs-api-section">
       <h2>API</h2>
       <p>
-        Extracted from <code>{componentName}Props</code> in <code>@larose-ui/react</code>.
+        Extracted from <code>{componentName}Props</code> in <code>{packageName}</code>.
       </p>
 
       <PropTable title="Props" rows={ownProps} />

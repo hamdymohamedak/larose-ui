@@ -4,9 +4,11 @@ import { ApiReference } from '@/components/ApiReference';
 import { CodeBlock } from '@/components/CodeBlock';
 import { ComponentAnatomySection } from '@/components/ComponentAnatomySection';
 import { ComponentExamples } from '@/components/ComponentExamples';
+import { GlassComponentIntro } from '@/components/GlassComponentIntro';
 import { ComponentPreview } from '@/components/ComponentPreview';
 import { FrameworkCodeTabs } from '@/components/FrameworkCodeTabs';
 import { FrameworkSelector } from '@/components/FrameworkSelector';
+import { GlassPropsPlayground } from '@/components/GlassPropsPlayground';
 import { StoryCanvas } from '@/components/StoryCanvas';
 import { MarkdownContent } from '@/components/MarkdownContent';
 import { PropsPlayground } from '@/components/PropsPlayground';
@@ -14,6 +16,7 @@ import { guideSources } from '@/content/guides';
 import { getComponentApi } from '@/data/api.generated';
 import { getComponentExamples } from '@/data/examples.generated';
 import { componentAnatomy, playgroundControls } from '@/data/playground.generated';
+import { getGlassPlaygroundConfig } from '@/previews/glass/glassPlaygroundControls';
 import {
   docsComponentCategories,
   docsComponents,
@@ -29,6 +32,8 @@ import {
   getUsageCode,
   PARITY_COMPONENTS,
 } from '@/lib/frameworks';
+import { isGlassDocComponent } from '@/lib/glassComponents';
+import { GLASS_COMPONENT_COPY } from '@/previews/glass/glassComponentCopy';
 
 export function GuidePage() {
   const { guideId } = useParams();
@@ -158,29 +163,49 @@ export function ComponentDocPage() {
   const anatomy = componentAnatomy[component.name];
   const supported = getSupportedFrameworks(component.name);
   const isParity = PARITY_COMPONENTS.has(component.name);
+  const isGlass = isGlassDocComponent(component.name);
+  const glassCopy = GLASS_COMPONENT_COPY[component.name];
+  const glassPlayground = isGlass ? getGlassPlaygroundConfig(component.name) : undefined;
 
   return (
     <div className="docs-content docs-component-page docs-sb-page">
       <header className="docs-sb-page__header">
         <div className="docs-sb-page__meta">
           <Badge variant="info">{component.category}</Badge>
+          {isGlass ? <Badge variant="success">Liquid glass</Badge> : null}
           {isParity ? <Badge variant="success">React · Vue · Svelte</Badge> : null}
         </div>
         <h1>{component.name}</h1>
         <p className="docs-sb-page__lede">
-          {isParity
-            ? 'Foundation component with shared API across React, Vue 3, and Svelte 5.'
-            : 'React component from @larose-ui/react with live preview and Storybook-aligned examples.'}
+          {glassCopy?.tagline ??
+            (isGlass
+              ? 'Liquid glass component from @larose-ui/react — displacement-mapped refraction with full optics tuning.'
+              : isParity
+                ? 'Foundation component with shared API across React, Vue 3, and Svelte 5.'
+                : 'React component from @larose-ui/react with live preview and Storybook-aligned examples.')}
         </p>
         <FrameworkSelector supported={supported} />
       </header>
 
+      {isGlass ? <GlassComponentIntro componentName={component.name} /> : null}
+
       <section className="docs-sb-page__primary">
         <h2 className="docs-sb-page__section-label">Preview</h2>
-        {controls ? (
+        {glassPlayground ? (
+          <GlassPropsPlayground
+            componentName={component.name}
+            controls={glassPlayground.controls}
+          />
+        ) : controls ? (
           <PropsPlayground componentName={component.name} controls={controls} />
         ) : (
-          <StoryCanvas storyName="Default" padded centered>
+          <StoryCanvas
+            storyName="Preview"
+            showToolbar={false}
+            padded={!isGlass}
+            centered={!isGlass}
+            variant={isGlass ? 'glass' : 'default'}
+          >
             <ComponentPreview slug={component.id} />
           </StoryCanvas>
         )}
@@ -205,9 +230,9 @@ export function ComponentDocPage() {
           <FrameworkCodeTabs
             showSelector={false}
             snippets={{
-              react: getInstallCommand('react'),
-              vue: getInstallCommand('vue'),
-              svelte: getInstallCommand('svelte'),
+              react: getInstallCommand('react', component.name),
+              vue: getInstallCommand('vue', component.name),
+              svelte: getInstallCommand('svelte', component.name),
             }}
             title="Install"
           />
@@ -220,7 +245,13 @@ export function ComponentDocPage() {
         </div>
       </details>
 
-      {api ? <ApiReference api={api} componentName={component.name} /> : null}
+      {api ? (
+        <ApiReference
+          api={api}
+          componentName={component.name}
+          packageName="@larose-ui/react"
+        />
+      ) : null}
       {anatomy ? <ComponentAnatomySection anatomy={anatomy} /> : null}
     </div>
   );

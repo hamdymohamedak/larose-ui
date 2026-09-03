@@ -1,6 +1,7 @@
 {
   "component": "HelpButton",
   "category": "Actions",
+  "package": "@larose-ui/react",
   "import": "import { HelpButton } from '@larose-ui/react';",
   "props": [
     {

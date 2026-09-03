@@ -1,6 +1,7 @@
 {
   "component": "ListRow",
   "category": "Data",
+  "package": "@larose-ui/react",
   "import": "import { ListRow } from '@larose-ui/react';",
   "props": [
     {

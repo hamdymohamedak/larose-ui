@@ -1,0 +1,123 @@
+{
+  "component": "LiquidGlassSwitch",
+  "category": "Glass",
+  "package": "@larose-ui/react",
+  "import": "import { LiquidGlassSwitch } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "'aria-label'",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "activeTrackTint",
+      "type": "LiquidGlassSwitchActiveTrackTint",
+      "required": false,
+      "description": "Active track tint when on. Defaults to iOS-style green.\nPass `'glass'` () for liquid glass only, or any CSS color.",
+      "inherited": false
+    },
+    {
+      "name": "borderRadius",
+      "type": "number",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "checked",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "defaultChecked",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "height",
+      "type": "number",
+      "required": false,
+      "description": "Track height in px.",
+      "inherited": false
+    },
+    {
+      "name": "inactiveTrackTint",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "padding",
+      "type": "number",
+      "required": false,
+      "description": "Track padding around thumb.",
+      "inherited": false
+    },
+    {
+      "name": "thumbSize",
+      "type": "number",
+      "required": false,
+      "description": "Thumb diameter in px.",
+      "inherited": false
+    },
+    {
+      "name": "thumbTint",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "width",
+      "type": "number",
+      "required": false,
+      "description": "Track width in px.",
+      "inherited": false
+    }
+  ],
+  "examples": [
+    {
+      "id": "SwitchDefault",
+      "title": "Switch Default",
+      "kind": "basic",
+      "props": {},
+      "code": "<Switch label=\"Email notifications\" defaultChecked hint=\"Receive product updates\" />",
+      "composite": true
+    }
+  ],
+  "accessibility": [
+    "Supports ARIA attributes via standard HTML element props."
+  ],
+  "anatomy": {
+    "summary": "Toggle switch with glass track and sliding glass thumb.",
+    "structure": [
+      "Glass track",
+      "Glass thumb",
+      "Switch button semantics"
+    ],
+    "composition": "Controlled or uncontrolled; always provide aria-label when no visible label.",
+    "slots": [],
+    "states": [
+      "off",
+      "on",
+      "disabled"
+    ]
+  },
+  "playground": {
+    "defaultChecked": {
+      "control": "boolean",
+      "default": false
+    },
+    "disabled": {
+      "control": "boolean",
+      "default": false
+    }
+  }
+}

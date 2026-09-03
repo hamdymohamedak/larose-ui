@@ -2,15 +2,19 @@ import {
   createContext,
   useCallback,
   useContext,
-  useEffect,
+  useLayoutEffect,
   useMemo,
   useState,
   type ReactNode,
 } from 'react';
 import type { ThemeMode } from '@larose-ui/core';
 import { LaRoseProvider } from '@larose-ui/runtime';
+import { applyResolvedTheme } from '@larose-ui/tokens';
+import { resolveTheme } from '@larose-ui/themes';
+import { DOCS_SURFACE_MUTED, getDocsThemeConfig } from './docsThemeConfig';
 
 const STORAGE_KEY = 'larose-docs-theme';
+const DOCS_DENSITY = 'comfortable' as const;
 
 interface DocsThemeContextValue {
   theme: ThemeMode;
@@ -29,10 +33,36 @@ function readStoredTheme(): ThemeMode {
 export function DocsThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setThemeState] = useState<ThemeMode>(() => readStoredTheme());
 
-  useEffect(() => {
-    document.documentElement.dataset.docsTheme = theme;
+  const themeConfig = useMemo(() => getDocsThemeConfig(theme), [theme]);
+
+  const resolved = useMemo(
+    () =>
+      resolveTheme({
+        theme: themeConfig,
+        density: DOCS_DENSITY,
+        mode: theme,
+      }),
+    [themeConfig, theme],
+  );
+
+  useLayoutEffect(() => {
+    const root = document.documentElement;
+    root.dataset.docsTheme = theme;
+    root.style.colorScheme = theme;
+
+    applyResolvedTheme(root, {
+      mode: resolved.mode,
+      density: resolved.density,
+      tokenOverrides: resolved.tokenOverrides,
+      brandColors: resolved.brandColors,
+      componentTokenOverrides: resolved.componentTokenOverrides,
+      presetId: resolved.preset,
+    });
+
+    root.style.setProperty('--lr-color-surface-muted', DOCS_SURFACE_MUTED[theme]);
+
     window.localStorage.setItem(STORAGE_KEY, theme);
-  }, [theme]);
+  }, [theme, resolved]);
 
   const setTheme = useCallback((next: ThemeMode) => {
     setThemeState(next);
@@ -49,7 +79,7 @@ export function DocsThemeProvider({ children }: { children: ReactNode }) {
 
   return (
     <DocsThemeContext.Provider value={value}>
-      <LaRoseProvider theme={theme} density="comfortable">
+      <LaRoseProvider theme={theme} density={DOCS_DENSITY} themeConfig={themeConfig}>
         {children}
       </LaRoseProvider>
     </DocsThemeContext.Provider>

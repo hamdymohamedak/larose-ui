@@ -11,8 +11,63 @@ export interface DocsExampleEntry {
 }
 
 export const docsExamples: Record<string, DocsExampleEntry[]> = {
+  "AcceleratorProvider": [],
+  "Accordion": [
+    {
+      "id": "AccordionDefault",
+      "title": "Accordion Default",
+      "kind": "basic",
+      "props": {},
+      "code": "// See Storybook story \"AccordionDefault\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "AccordionCollapse",
+      "title": "Accordion Collapse",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"AccordionCollapse\" for full example.",
+      "composite": true
+    }
+  ],
+  "AccordionContent": [],
+  "AccordionItem": [],
+  "AccordionTrigger": [],
   "ActivityShareButton": [],
-  "ActivityView": [],
+  "ActivityView": [
+    {
+      "id": "NotesShareSheet",
+      "title": "Notes share sheet",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"NotesShareSheet\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "PhotoAppActivities",
+      "title": "App-specific activities",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"PhotoAppActivities\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "CustomActionTitle",
+      "title": "Custom action title",
+      "kind": "advanced",
+      "props": {},
+      "code": "<ActivityView\n        open={open}\n        onClose={() => setOpen(false)}\n        activities={activities}\n        title=\"Share Statement\"\n      />",
+      "composite": true
+    },
+    {
+      "id": "SheetPresentation",
+      "title": "Sheet Presentation",
+      "kind": "advanced",
+      "props": {},
+      "code": "<ActivityView\n        open={open}\n        onClose={() => setOpen(false)}\n        activities={createDefaultActivities()}\n        presentation=\"sheet\"\n      />",
+      "composite": true
+    }
+  ],
   "Alert": [
     {
       "id": "Info",
@@ -23,7 +78,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "title": "Information",
         "children": "Payroll period closes in 3 days."
       },
-      "code": "<Alert\n  variant=\"info\"\n  title=\"Information\"\n>Payroll period closes in 3 days.</Alert>"
+      "code": "import { Alert } from '@larose-ui/react';\n\n<Alert\n  variant=\"info\"\n  title=\"Information\"\n>Payroll period closes in 3 days.</Alert>"
     },
     {
       "id": "Success",
@@ -34,7 +89,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "title": "Saved",
         "children": "Employee record updated successfully."
       },
-      "code": "<Alert\n  variant=\"success\"\n  title=\"Saved\"\n>Employee record updated successfully.</Alert>"
+      "code": "import { Alert } from '@larose-ui/react';\n\n<Alert\n  variant=\"success\"\n  title=\"Saved\"\n>Employee record updated successfully.</Alert>"
     },
     {
       "id": "Warning",
@@ -45,7 +100,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "title": "Warning",
         "children": "This action affects 12 employees."
       },
-      "code": "<Alert\n  variant=\"warning\"\n  title=\"Warning\"\n>This action affects 12 employees.</Alert>"
+      "code": "import { Alert } from '@larose-ui/react';\n\n<Alert\n  variant=\"warning\"\n  title=\"Warning\"\n>This action affects 12 employees.</Alert>"
     },
     {
       "id": "Error",
@@ -56,7 +111,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "title": "Error",
         "children": "Unable to connect to payroll service."
       },
-      "code": "<Alert\n  variant=\"error\"\n  title=\"Error\"\n>Unable to connect to payroll service.</Alert>"
+      "code": "import { Alert } from '@larose-ui/react';\n\n<Alert\n  variant=\"error\"\n  title=\"Error\"\n>Unable to connect to payroll service.</Alert>"
     },
     {
       "id": "Dismissible",
@@ -66,7 +121,47 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "variant": "info",
         "children": "This notice can be dismissed."
       },
-      "code": "<Alert\n  variant=\"info\"\n>This notice can be dismissed.</Alert>"
+      "code": "import { Alert } from '@larose-ui/react';\n\n<Alert\n  variant=\"info\"\n>This notice can be dismissed.</Alert>"
+    },
+    {
+      "id": "DeleteConfirmation",
+      "title": "Destructive (compact)",
+      "kind": "destructive",
+      "props": {},
+      "code": "// See Storybook story \"DeleteConfirmation\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "ThreeButtonStack",
+      "title": "Three actions (compact)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"ThreeButtonStack\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "DeliberateEmptyTrash",
+      "title": "Deliberate destructive (desktop)",
+      "kind": "destructive",
+      "props": {},
+      "code": "// See Storybook story \"DeliberateEmptyTrash\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "InformationalDone",
+      "title": "Informational (tablet)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"InformationalDone\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "PasswordPrompt",
+      "title": "Secure field (desktop)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"PasswordPrompt\" for full example.",
+      "composite": true
     }
   ],
   "AlertDialog": [],
@@ -79,7 +174,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "props": {
         "children": "Draft"
       },
-      "code": "<Badge>Draft</Badge>"
+      "code": "import { Badge } from '@larose-ui/react';\n\n<Badge>Draft</Badge>"
     },
     {
       "id": "Info",
@@ -89,7 +184,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "children": "Beta",
         "variant": "info"
       },
-      "code": "<Badge\n  variant=\"info\"\n>Beta</Badge>"
+      "code": "import { Badge } from '@larose-ui/react';\n\n<Badge\n  variant=\"info\"\n>Beta</Badge>"
     },
     {
       "id": "Success",
@@ -99,7 +194,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "children": "Active",
         "variant": "success"
       },
-      "code": "<Badge\n  variant=\"success\"\n>Active</Badge>"
+      "code": "import { Badge } from '@larose-ui/react';\n\n<Badge\n  variant=\"success\"\n>Active</Badge>"
     },
     {
       "id": "Warning",
@@ -109,7 +204,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "children": "Pending",
         "variant": "warning"
       },
-      "code": "<Badge\n  variant=\"warning\"\n>Pending</Badge>"
+      "code": "import { Badge } from '@larose-ui/react';\n\n<Badge\n  variant=\"warning\"\n>Pending</Badge>"
     },
     {
       "id": "Error",
@@ -119,7 +214,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "children": "Suspended",
         "variant": "error"
       },
-      "code": "<Badge\n  variant=\"error\"\n>Suspended</Badge>"
+      "code": "import { Badge } from '@larose-ui/react';\n\n<Badge\n  variant=\"error\"\n>Suspended</Badge>"
     },
     {
       "id": "AllVariants",
@@ -131,6 +226,14 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
     }
   ],
   "Box": [
+    {
+      "id": "DisclosureTriangleStory",
+      "title": "Disclosure triangle",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"DisclosureTriangleStory\" for full example.",
+      "composite": true
+    },
     {
       "id": "BoxSecondary",
       "title": "Box Secondary",
@@ -158,7 +261,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "children": "Add to Cart",
         "variant": "primary"
       },
-      "code": "<Button\n  variant=\"primary\"\n>Add to Cart</Button>"
+      "code": "import { Button } from '@larose-ui/react';\n\n<Button\n  variant=\"primary\"\n>Add to Cart</Button>"
     },
     {
       "id": "Secondary",
@@ -169,7 +272,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "variant": "secondary",
         "buttonRole": "cancel"
       },
-      "code": "<Button\n  variant=\"secondary\"\n  buttonRole=\"cancel\"\n>Cancel</Button>"
+      "code": "import { Button } from '@larose-ui/react';\n\n<Button\n  variant=\"secondary\"\n  buttonRole=\"cancel\"\n>Cancel</Button>"
     },
     {
       "id": "Loading",
@@ -180,7 +283,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "loadingLabel": "Checking out…",
         "loading": true
       },
-      "code": "<Button\n  loadingLabel=\"Checking out…\"\n  loading\n>Checkout</Button>"
+      "code": "import { Button } from '@larose-ui/react';\n\n<Button\n  loadingLabel=\"Checking out…\"\n  loading\n>Checkout</Button>"
     },
     {
       "id": "Disabled",
@@ -190,7 +293,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "children": "Unavailable",
         "disabled": true
       },
-      "code": "<Button\n  disabled\n>Unavailable</Button>"
+      "code": "import { Button } from '@larose-ui/react';\n\n<Button\n  disabled\n>Unavailable</Button>"
     },
     {
       "id": "DestructiveFilled",
@@ -200,7 +303,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "children": "Delete Employee",
         "variant": "destructive"
       },
-      "code": "<Button\n  variant=\"destructive\"\n>Delete Employee</Button>"
+      "code": "import { Button } from '@larose-ui/react';\n\n<Button\n  variant=\"destructive\"\n>Delete Employee</Button>"
     },
     {
       "id": "DestructivePlain",
@@ -211,7 +314,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "variant": "ghost",
         "buttonRole": "destructive"
       },
-      "code": "<Button\n  variant=\"ghost\"\n  buttonRole=\"destructive\"\n>Delete Account</Button>"
+      "code": "import { Button } from '@larose-ui/react';\n\n<Button\n  variant=\"ghost\"\n  buttonRole=\"destructive\"\n>Delete Account</Button>"
     },
     {
       "id": "OpensAnotherView",
@@ -223,7 +326,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "opensAnotherView": true,
         "tooltip": "Opens AutoFill settings"
       },
-      "code": "<Button\n  variant=\"secondary\"\n  opensAnotherView\n  tooltip=\"Opens AutoFill settings\"\n>Edit</Button>"
+      "code": "import { Button } from '@larose-ui/react';\n\n<Button\n  variant=\"secondary\"\n  opensAnotherView\n  tooltip=\"Opens AutoFill settings\"\n>Edit</Button>"
     },
     {
       "id": "IconOnly",
@@ -290,15 +393,17 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "composite": true
     },
     {
-      "id": "Button",
-      "title": "Button",
+      "id": "DialogMotion",
+      "title": "Dialog Motion",
       "kind": "advanced",
       "props": {},
-      "code": "// See Storybook story \"Button\" for full example.",
+      "code": "<>\n        <Button onClick={() => setOpen(true)}>Open dialog</Button>\n        <Modal open={open} onClose={() => setOpen(false)} title=\"Motion dialog\">\n          <p style={{ margin: 0 }}>Subtle scale, fade, and vertical movement on enter and exit.</p>\n        </Modal>\n      </>",
       "composite": true
     }
   ],
   "ButtonGroup": [],
+  "CalendarGrid": [],
+  "CaptionButton": [],
   "Card": [
     {
       "id": "Default",
@@ -309,7 +414,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "description": "Manage employee information",
         "children": "Ahmed Mohamed — Software Engineer"
       },
-      "code": "<Card\n  title=\"Employee Profile\"\n  description=\"Manage employee information\"\n>Ahmed Mohamed — Software Engineer</Card>"
+      "code": "import { Card } from '@larose-ui/react';\n\n<Card\n  title=\"Employee Profile\"\n  description=\"Manage employee information\"\n>Ahmed Mohamed — Software Engineer</Card>"
     },
     {
       "id": "WithBadge",
@@ -320,11 +425,115 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "composite": true
     },
     {
-      "id": "Card",
-      "title": "Card",
+      "id": "ClearPromptsAndDefaults",
+      "title": "Clear Prompts And Defaults",
+      "kind": "basic",
+      "props": {},
+      "code": "// See Storybook story \"ClearPromptsAndDefaults\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "DynamicValidation",
+      "title": "Dynamic Validation",
       "kind": "advanced",
       "props": {},
-      "code": "// See Storybook story \"Card\" for full example.",
+      "code": "// See Storybook story \"DynamicValidation\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "NumericFormatting",
+      "title": "Numeric Formatting",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"NumericFormatting\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "SecurePasswordField",
+      "title": "Secure Password Field",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"SecurePasswordField\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "PasteAndDrop",
+      "title": "Paste And Drop",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"PasteAndDrop\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "ContinueWhenComplete",
+      "title": "Continue When Complete",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"ContinueWhenComplete\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "ExpansionTooltip",
+      "title": "Expansion Tooltip",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"ExpansionTooltip\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "DisclosureButtonStory",
+      "title": "Disclosure button",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"DisclosureButtonStory\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "LabelImportance",
+      "title": "Label Importance",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"LabelImportance\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "SelectableLabel",
+      "title": "Selectable Label",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"SelectableLabel\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "UnsavedChanges",
+      "title": "Unsaved Changes",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"UnsavedChanges\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "ImportWithFileUpload",
+      "title": "Import With File Upload",
+      "kind": "loading",
+      "props": {},
+      "code": "// See Storybook story \"ImportWithFileUpload\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "ListAccessories",
+      "title": "List Accessories",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"ListAccessories\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "DocumentToolbar",
+      "title": "Document Toolbar",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"DocumentToolbar\" for full example.",
       "composite": true
     }
   ],
@@ -341,7 +550,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "min": 0,
         "tickCount": 4
       },
-      "code": "<Chart\n  mark=\"bar\"\n  title=\"Steps\"\n  subtitle=\"You averaged 8,102 steps per day this week.\"\n  accessibilitySummary=\"Bar chart showing daily steps for seven days. Highest on Thursday with 11,200 steps.\"\n  min={0}\n  tickCount={4}\n>Example</Chart>"
+      "code": "import { Chart } from '@larose-ui/react';\n\n<Chart\n  mark=\"bar\"\n  title=\"Steps\"\n  subtitle=\"You averaged 8,102 steps per day this week.\"\n  accessibilitySummary=\"Bar chart showing daily steps for seven days. Highest on Thursday with 11,200 steps.\"\n  min={0}\n  tickCount={4}\n>Example</Chart>"
     },
     {
       "id": "LineChart",
@@ -354,7 +563,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "showPoints": true,
         "interactive": true
       },
-      "code": "<Chart\n  mark=\"line\"\n  title=\"Stock performance\"\n  subtitle=\"Five-year trend for AAPL.\"\n  showPoints\n  interactive\n>Example</Chart>"
+      "code": "import { Chart } from '@larose-ui/react';\n\n<Chart\n  mark=\"line\"\n  title=\"Stock performance\"\n  subtitle=\"Five-year trend for AAPL.\"\n  showPoints\n  interactive\n>Example</Chart>"
     },
     {
       "id": "PointChart",
@@ -383,7 +592,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "x": "12a",
         "y": 88
       },
-      "code": "<Chart\n  mark=\"line\"\n  title=\"Battery\"\n  subtitle=\"Charge level over the last 24 hours.\"\n  x=\"12a\"\n  y={88}\n>Example</Chart>"
+      "code": "import { Chart } from '@larose-ui/react';\n\n<Chart\n  mark=\"line\"\n  title=\"Battery\"\n  subtitle=\"Charge level over the last 24 hours.\"\n  x=\"12a\"\n  y={88}\n>Example</Chart>"
     }
   ],
   "Checkbox": [
@@ -394,7 +603,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "props": {
         "label": "I agree to the terms"
       },
-      "code": "<Checkbox\n  label=\"I agree to the terms\"\n>Example</Checkbox>"
+      "code": "import { Checkbox } from '@larose-ui/react';\n\n<Checkbox\n  label=\"I agree to the terms\"\n>Example</Checkbox>"
     },
     {
       "id": "Checked",
@@ -404,7 +613,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "label": "Subscribe to newsletter",
         "defaultChecked": true
       },
-      "code": "<Checkbox\n  label=\"Subscribe to newsletter\"\n  defaultChecked\n>Example</Checkbox>"
+      "code": "import { Checkbox } from '@larose-ui/react';\n\n<Checkbox\n  label=\"Subscribe to newsletter\"\n  defaultChecked\n>Example</Checkbox>"
     },
     {
       "id": "WithHint",
@@ -414,7 +623,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "label": "Send me product updates",
         "hint": "You can unsubscribe at any time"
       },
-      "code": "<Checkbox\n  label=\"Send me product updates\"\n  hint=\"You can unsubscribe at any time\"\n>Example</Checkbox>"
+      "code": "import { Checkbox } from '@larose-ui/react';\n\n<Checkbox\n  label=\"Send me product updates\"\n  hint=\"You can unsubscribe at any time\"\n>Example</Checkbox>"
     },
     {
       "id": "WithError",
@@ -424,7 +633,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "label": "I agree to the terms",
         "error": "You must accept the terms to continue"
       },
-      "code": "<Checkbox\n  label=\"I agree to the terms\"\n  error=\"You must accept the terms to continue\"\n>Example</Checkbox>"
+      "code": "import { Checkbox } from '@larose-ui/react';\n\n<Checkbox\n  label=\"I agree to the terms\"\n  error=\"You must accept the terms to continue\"\n>Example</Checkbox>"
     },
     {
       "id": "Disabled",
@@ -434,7 +643,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "label": "Legacy feature access",
         "disabled": true
       },
-      "code": "<Checkbox\n  label=\"Legacy feature access\"\n  disabled\n>Example</Checkbox>"
+      "code": "import { Checkbox } from '@larose-ui/react';\n\n<Checkbox\n  label=\"Legacy feature access\"\n  disabled\n>Example</Checkbox>"
     },
     {
       "id": "CheckboxDefault",
@@ -501,9 +710,51 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "props": {},
       "code": "<CommandPaletteDemo />",
       "composite": true
+    },
+    {
+      "id": "Playground",
+      "title": "Playground",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"Playground\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "Closed",
+      "title": "Closed",
+      "kind": "advanced",
+      "props": {
+        "open": false
+      },
+      "code": "import { CommandPalette } from '@larose-ui/react';\n\n<CommandPalette\n  open={false}\n>Example</CommandPalette>"
     }
   ],
-  "ContextMenu": [],
+  "ContextMenu": [
+    {
+      "id": "MailMessage",
+      "title": "Mail message",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"MailMessage\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "MultiSelectTitle",
+      "title": "Multi-select title",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"MultiSelectTitle\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "HiddenUnavailable",
+      "title": "Hidden Unavailable",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"HiddenUnavailable\" for full example.",
+      "composite": true
+    }
+  ],
   "DataTable": [
     {
       "id": "DataTableDefault",
@@ -548,16 +799,8 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "composite": true
     }
   ],
-  "DateRangePicker": [
-    {
-      "id": "DateRangePickerDefault",
-      "title": "Date Range Picker Default",
-      "kind": "basic",
-      "props": {},
-      "code": "<DateRangeDemo />",
-      "composite": true
-    }
-  ],
+  "DateRangePicker": [],
+  "DateTimePicker": [],
   "Dialog": [
     {
       "id": "ConfirmDelete",
@@ -574,38 +817,65 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "props": {},
       "code": "<Dialog\n        open\n        onClose={() => undefined}\n        title=\"Saving Changes\"\n        description=\"Please wait while we save your changes.\"\n        confirmLabel=\"Save\"\n        onConfirm={() => undefined}\n        loading\n      />",
       "composite": true
+    }
+  ],
+  "DisclosureButton": [],
+  "DisclosureGroup": [
+    {
+      "id": "DisclosureGroupStory",
+      "title": "Disclosure group",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"DisclosureGroupStory\" for full example.",
+      "composite": true
+    }
+  ],
+  "DisclosureList": [
+    {
+      "id": "FinderStyleList",
+      "title": "Finder Style List",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"FinderStyleList\" for full example.",
+      "composite": true
+    }
+  ],
+  "DisclosureTriangle": [],
+  "DockBar": [],
+  "DockMenu": [
+    {
+      "id": "SafariRunning",
+      "title": "Safari (running)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"SafariRunning\" for full example.",
+      "composite": true
     },
     {
-      "id": "DialogMotion",
-      "title": "Dialog Motion",
+      "id": "MailRunning",
+      "title": "Mail (running)",
       "kind": "advanced",
       "props": {},
-      "code": "<>\n        <Button onClick={() => setOpen(true)}>Open dialog</Button>\n        <Modal open={open} onClose={() => setOpen(false)} title=\"Motion dialog\">\n          <p style={{ margin: 0 }}>Subtle scale, fade, and vertical movement on enter and exit.</p>\n        </Modal>\n      </>",
+      "code": "// See Storybook story \"MailRunning\" for full example.",
       "composite": true
-    }
-  ],
-  "DisclosureButton": [
+    },
     {
-      "id": "DisclosureButtonStory",
-      "title": "Disclosure button",
+      "id": "AppNotRunning",
+      "title": "App not running",
       "kind": "advanced",
       "props": {},
-      "code": "// See Storybook story \"DisclosureButtonStory\" for full example.",
+      "code": "// See Storybook story \"AppNotRunning\" for full example.",
       "composite": true
-    }
-  ],
-  "DisclosureTriangle": [
+    },
     {
-      "id": "DisclosureTriangleStory",
-      "title": "Disclosure triangle",
+      "id": "HomeScreenQuickActionsStory",
+      "title": "Home Screen quick actions",
       "kind": "advanced",
       "props": {},
-      "code": "// See Storybook story \"DisclosureTriangleStory\" for full example.",
+      "code": "// See Storybook story \"HomeScreenQuickActionsStory\" for full example.",
       "composite": true
     }
   ],
-  "DockBar": [],
-  "DockMenu": [],
   "DocumentLauncher": [
     {
       "id": "DocumentLauncherStory",
@@ -624,16 +894,9 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "props": {},
       "code": "// See Storybook story \"DocumentToolbarStory\" for full example.",
       "composite": true
-    },
-    {
-      "id": "DocumentToolbar",
-      "title": "Document Toolbar",
-      "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"DocumentToolbar\" for full example.",
-      "composite": true
     }
   ],
+  "DRAG_START_THRESHOLD_PX": [],
   "DragDropList": [],
   "Draggable": [],
   "Drawer": [
@@ -652,18 +915,59 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "props": {},
       "code": "// See Storybook story \"Left\" for full example.",
       "composite": true
-    },
-    {
-      "id": "DrawerMotion",
-      "title": "Drawer Motion",
-      "kind": "advanced",
-      "props": {},
-      "code": "<>\n        <Button onClick={() => setOpen(true)}>Open drawer</Button>\n        <Drawer open={open} onClose={() => setOpen(false)} title=\"Drawer\" side=\"right\">\n          <p>Slides in with gentle spring easing. Exit reverses naturally.</p>\n        </Drawer>\n      </>",
-      "composite": true
     }
   ],
   "DropZone": [],
-  "EditMenu": [],
+  "EditMenu": [
+    {
+      "id": "CompactSelectedText",
+      "title": "Compact (touch and hold)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"CompactSelectedText\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "ContextPointer",
+      "title": "Context menu (pointer)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"ContextPointer\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "AddressSelection",
+      "title": "Address (contextual actions)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"AddressSelection\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "NoSelection",
+      "title": "No selection",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"NoSelection\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "CustomFormatCommands",
+      "title": "Custom format commands",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"CustomFormatCommands\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "CopyStaticText",
+      "title": "Copy static text",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"CopyStaticText\" for full example.",
+      "composite": true
+    }
+  ],
   "EditMenuSelection": [],
   "EmptyState": [
     {
@@ -675,7 +979,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "description": "Get started by creating your first employee record.",
         "actionLabel": "Add Employee"
       },
-      "code": "<EmptyState\n  title=\"No employees found\"\n  description=\"Get started by creating your first employee record.\"\n  actionLabel=\"Add Employee\"\n>Example</EmptyState>"
+      "code": "import { EmptyState } from '@larose-ui/react';\n\n<EmptyState\n  title=\"No employees found\"\n  description=\"Get started by creating your first employee record.\"\n  actionLabel=\"Add Employee\"\n>Example</EmptyState>"
     },
     {
       "id": "Offline",
@@ -686,7 +990,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "description": "Changes will sync when you reconnect.",
         "state": "offline"
       },
-      "code": "<EmptyState\n  title=\"You are offline\"\n  description=\"Changes will sync when you reconnect.\"\n  state=\"offline\"\n>Example</EmptyState>"
+      "code": "import { EmptyState } from '@larose-ui/react';\n\n<EmptyState\n  title=\"You are offline\"\n  description=\"Changes will sync when you reconnect.\"\n  state=\"offline\"\n>Example</EmptyState>"
     },
     {
       "id": "Unauthorized",
@@ -698,7 +1002,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "state": "unauthorized",
         "actionLabel": "Go back"
       },
-      "code": "<EmptyState\n  title=\"Access denied\"\n  description=\"You don't have permission to view this resource.\"\n  state=\"unauthorized\"\n  actionLabel=\"Go back\"\n>Example</EmptyState>"
+      "code": "import { EmptyState } from '@larose-ui/react';\n\n<EmptyState\n  title=\"Access denied\"\n  description=\"You don't have permission to view this resource.\"\n  state=\"unauthorized\"\n  actionLabel=\"Go back\"\n>Example</EmptyState>"
     }
   ],
   "FileBrowser": [
@@ -711,7 +1015,16 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "composite": true
     }
   ],
-  "FilePreview": [],
+  "FilePreview": [
+    {
+      "id": "QuickLookPreview",
+      "title": "Release Notes.md",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"QuickLookPreview\" for full example.",
+      "composite": true
+    }
+  ],
   "FileUpload": [
     {
       "id": "FileUploadDefault",
@@ -720,29 +1033,107 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "props": {},
       "code": "// See Storybook story \"FileUploadDefault\" for full example.",
       "composite": true
+    }
+  ],
+  "Header": [
+    {
+      "id": "HeaderDefault",
+      "title": "Header Default",
+      "kind": "basic",
+      "props": {},
+      "code": "// See Storybook story \"HeaderDefault\" for full example.",
+      "composite": true
     },
     {
-      "id": "ImportWithFileUpload",
-      "title": "Import With File Upload",
-      "kind": "loading",
+      "id": "HeaderWithTitle",
+      "title": "Header With Title",
+      "kind": "advanced",
       "props": {},
-      "code": "// See Storybook story \"ImportWithFileUpload\" for full example.",
+      "code": "// See Storybook story \"HeaderWithTitle\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "DocumentWorkspace",
+      "title": "Document Workspace",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"DocumentWorkspace\" for full example.",
       "composite": true
     }
   ],
-  "FormContinue": [],
+  "HeaderActions": [],
+  "HeaderBrand": [],
+  "HeaderTitle": [],
   "HelpButton": [],
   "HomeScreenQuickActions": [
     {
-      "id": "HomeScreenQuickActionsStory",
-      "title": "Home Screen quick actions",
+      "id": "MailActions",
+      "title": "Mail",
       "kind": "advanced",
       "props": {},
-      "code": "// See Storybook story \"HomeScreenQuickActionsStory\" for full example.",
+      "code": "// See Storybook story \"MailActions\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "MapsActions",
+      "title": "Maps",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"MapsActions\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "DynamicMessages",
+      "title": "Dynamic (Messages)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"DynamicMessages\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "WithoutSystemActions",
+      "title": "App actions only",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"WithoutSystemActions\" for full example.",
       "composite": true
     }
   ],
-  "ImageButton": [
+  "ImageButton": [],
+  "ImageOverlay": [],
+  "ImageView": [
+    {
+      "id": "FitModes",
+      "title": "Fit Modes",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"FitModes\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "TextOverlay",
+      "title": "Text Overlay",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"TextOverlay\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "AnimatedSequence",
+      "title": "Animated Sequence",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"AnimatedSequence\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "ImageWellStory",
+      "title": "Image Well",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"ImageWellStory\" for full example.",
+      "composite": true
+    },
     {
       "id": "ImageButtonStory",
       "title": "Image Button",
@@ -752,18 +1143,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "composite": true
     }
   ],
-  "ImageOverlay": [],
-  "ImageView": [],
-  "ImageWell": [
-    {
-      "id": "ImageWellStory",
-      "title": "Image Well",
-      "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"ImageWellStory\" for full example.",
-      "composite": true
-    }
-  ],
+  "ImageWell": [],
   "Input": [
     {
       "id": "Default",
@@ -773,7 +1153,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "label": "Employee Name",
         "placeholder": "Enter name"
       },
-      "code": "<Input\n  label=\"Employee Name\"\n  placeholder=\"Enter name\"\n>Example</Input>"
+      "code": "import { Input } from '@larose-ui/react';\n\n<Input\n  label=\"Employee Name\"\n  placeholder=\"Enter name\"\n>Example</Input>"
     },
     {
       "id": "WithHint",
@@ -784,7 +1164,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "placeholder": "username@company.com",
         "hint": "Work email address"
       },
-      "code": "<Input\n  label=\"Email\"\n  placeholder=\"username@company.com\"\n  hint=\"Work email address\"\n>Example</Input>"
+      "code": "import { Input } from '@larose-ui/react';\n\n<Input\n  label=\"Email\"\n  placeholder=\"username@company.com\"\n  hint=\"Work email address\"\n>Example</Input>"
     },
     {
       "id": "Required",
@@ -795,7 +1175,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "placeholder": "username@company.com",
         "required": true
       },
-      "code": "<Input\n  label=\"Email\"\n  placeholder=\"username@company.com\"\n  required\n>Example</Input>"
+      "code": "import { Input } from '@larose-ui/react';\n\n<Input\n  label=\"Email\"\n  placeholder=\"username@company.com\"\n  required\n>Example</Input>"
     },
     {
       "id": "Validated",
@@ -807,7 +1187,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "required": true,
         "validateOn": "change"
       },
-      "code": "<Input\n  label=\"Email\"\n  placeholder=\"username@company.com\"\n  required\n  validateOn=\"change\"\n>Example</Input>"
+      "code": "import { Input } from '@larose-ui/react';\n\n<Input\n  label=\"Email\"\n  placeholder=\"username@company.com\"\n  required\n  validateOn=\"change\"\n>Example</Input>"
     },
     {
       "id": "CurrencyFormat",
@@ -819,7 +1199,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "defaultValue": "85000",
         "hint": "Formatted when the field loses focus"
       },
-      "code": "<Input\n  label=\"Salary\"\n  format=\"currency\"\n  defaultValue=\"85000\"\n  hint=\"Formatted when the field loses focus\"\n>Example</Input>"
+      "code": "import { Input } from '@larose-ui/react';\n\n<Input\n  label=\"Salary\"\n  format=\"currency\"\n  defaultValue=\"85000\"\n  hint=\"Formatted when the field loses focus\"\n>Example</Input>"
     },
     {
       "id": "Secure",
@@ -838,7 +1218,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "loading": true,
         "placeholder": "Loading..."
       },
-      "code": "<Input\n  label=\"Department\"\n  loading\n  placeholder=\"Loading...\"\n>Example</Input>"
+      "code": "import { Input } from '@larose-ui/react';\n\n<Input\n  label=\"Department\"\n  loading\n  placeholder=\"Loading...\"\n>Example</Input>"
     },
     {
       "id": "Error",
@@ -849,7 +1229,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "error": "Must be a positive number",
         "defaultValue": "-100"
       },
-      "code": "<Input\n  label=\"Salary\"\n  error=\"Must be a positive number\"\n  defaultValue=\"-100\"\n>Example</Input>"
+      "code": "import { Input } from '@larose-ui/react';\n\n<Input\n  label=\"Salary\"\n  error=\"Must be a positive number\"\n  defaultValue=\"-100\"\n>Example</Input>"
     },
     {
       "id": "Disabled",
@@ -860,7 +1240,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "disabled": true,
         "defaultValue": "EMP-001"
       },
-      "code": "<Input\n  label=\"Employee ID\"\n  disabled\n  defaultValue=\"EMP-001\"\n>Example</Input>"
+      "code": "import { Input } from '@larose-ui/react';\n\n<Input\n  label=\"Employee ID\"\n  disabled\n  defaultValue=\"EMP-001\"\n>Example</Input>"
     },
     {
       "id": "ReadOnly",
@@ -871,37 +1251,342 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "readOnly": true,
         "defaultValue": "2026-08-29"
       },
-      "code": "<Input\n  label=\"Created At\"\n  readOnly\n  defaultValue=\"2026-08-29\"\n>Example</Input>"
+      "code": "import { Input } from '@larose-ui/react';\n\n<Input\n  label=\"Created At\"\n  readOnly\n  defaultValue=\"2026-08-29\"\n>Example</Input>"
     }
   ],
-  "Label": [
+  "Label": [],
+  "LIQUID_GLASS_OPTICS_DEFAULTS": [],
+  "LIQUID_GLASS_PRESETS": [],
+  "LIQUID_GLASS_SWITCH_ACTIVE_GREEN": [],
+  "LIQUID_GLASS_SWITCH_TRACK_GLASS": [],
+  "LiquidGlass": [
     {
-      "id": "LabelImportance",
-      "title": "Label Importance",
+      "id": "NaturalLanguageFilter",
+      "title": "Natural Language Filter",
+      "kind": "variants",
+      "props": {},
+      "code": "// See Storybook story \"NaturalLanguageFilter\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "NaturalLanguagePopulate",
+      "title": "Natural Language Populate",
+      "kind": "variants",
+      "props": {},
+      "code": "<SmartFormDemo />",
+      "composite": true
+    },
+    {
+      "id": "Default",
+      "title": "Default",
+      "kind": "basic",
+      "props": {},
+      "code": "<RuntimeDemo />",
+      "composite": true
+    },
+    {
+      "id": "Loading",
+      "title": "Loading",
+      "kind": "loading",
+      "props": {},
+      "code": "// See Storybook story \"Loading\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "Empty",
+      "title": "Empty",
       "kind": "advanced",
       "props": {},
-      "code": "// See Storybook story \"LabelImportance\" for full example.",
+      "code": "// See Storybook story \"Empty\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "SidebarDefault",
+      "title": "Sidebar Default",
+      "kind": "basic",
+      "props": {},
+      "code": "// See Storybook story \"SidebarDefault\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "AppShellLayout",
+      "title": "App Shell Layout",
+      "kind": "advanced",
+      "props": {},
+      "code": "<AppShellDemo />",
+      "composite": true
+    },
+    {
+      "id": "DefaultRefined",
+      "title": "Default (Apple-inspired)",
+      "kind": "basic",
+      "props": {},
+      "code": "// See Storybook story \"DefaultRefined\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "SmallOverrides",
+      "title": "10% customization",
+      "kind": "variants",
+      "props": {},
+      "code": "// See Storybook story \"SmallOverrides\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "FullCustomTheme",
+      "title": "90% customization",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"FullCustomTheme\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "PaginationDefault",
+      "title": "Pagination Default",
+      "kind": "basic",
+      "props": {},
+      "code": "<PaginationDemo />",
+      "composite": true
+    },
+    {
+      "id": "Overview",
+      "title": "Overview",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"Overview\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "TypographyScale",
+      "title": "Typography Scale",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"TypographyScale\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "Surfaces",
+      "title": "Surfaces",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"Surfaces\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "ThemeComparison",
+      "title": "Theme Comparison",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"ThemeComparison\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "RTLArabic",
+      "title": "R T L Arabic",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"RTLArabic\" for full example.",
       "composite": true
     }
   ],
-  "LaRoseProvider": [],
+  "LiquidGlassButton": [
+    {
+      "id": "Playground",
+      "title": "Playground",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"Playground\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "Row",
+      "title": "Row",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"Row\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "Gallery",
+      "title": "Gallery / All components",
+      "kind": "variants",
+      "props": {},
+      "code": "// See Storybook story \"Gallery\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "ShareButtonOnly",
+      "title": "Share Button Only",
+      "kind": "advanced",
+      "props": {},
+      "code": "<ShareButton />",
+      "composite": true
+    }
+  ],
+  "LiquidGlassCheckbox": [
+    {
+      "id": "CheckboxDefault",
+      "title": "Checkbox Default",
+      "kind": "basic",
+      "props": {},
+      "code": "<Checkbox label=\"I agree to the terms\" hint=\"Required before submitting\" />",
+      "composite": true
+    }
+  ],
+  "LiquidGlassProgress": [
+    {
+      "id": "ProgressDefault",
+      "title": "Progress Default",
+      "kind": "basic",
+      "props": {},
+      "code": "<Progress value={65} label=\"Profile completion\" showValue />",
+      "composite": true
+    },
+    {
+      "id": "ProgressSuccess",
+      "title": "Progress Success",
+      "kind": "advanced",
+      "props": {},
+      "code": "<Progress value={100} label=\"Upload complete\" variant=\"success\" showValue />",
+      "composite": true
+    }
+  ],
+  "LiquidGlassRange": [
+    {
+      "id": "DateRangePickerDefault",
+      "title": "Date Range Picker Default",
+      "kind": "basic",
+      "props": {},
+      "code": "<DateRangeDemo />",
+      "composite": true
+    }
+  ],
+  "LiquidGlassSwitch": [
+    {
+      "id": "SwitchDefault",
+      "title": "Switch Default",
+      "kind": "basic",
+      "props": {},
+      "code": "<Switch label=\"Email notifications\" defaultChecked hint=\"Receive product updates\" />",
+      "composite": true
+    }
+  ],
+  "LiquidGlassTabBar": [
+    {
+      "id": "Playground",
+      "title": "Playground",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"Playground\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "IconsOnly",
+      "title": "Icons Only",
+      "kind": "with-icon",
+      "props": {
+        "tabPreset": "iconsOnly",
+        "height": 60,
+        "maxWidth": 340
+      },
+      "code": "import { LiquidGlassTabBar } from '@larose-ui/react';\n\n<LiquidGlassTabBar\n  tabPreset=\"iconsOnly\"\n  height={60}\n  maxWidth={340}\n>Example</LiquidGlassTabBar>"
+    },
+    {
+      "id": "WithBadges",
+      "title": "With Badges",
+      "kind": "advanced",
+      "props": {
+        "tabPreset": "badges",
+        "defaultActiveKey": "notifs"
+      },
+      "code": "import { LiquidGlassTabBar } from '@larose-ui/react';\n\n<LiquidGlassTabBar\n  tabPreset=\"badges\"\n  defaultActiveKey=\"notifs\"\n>Example</LiquidGlassTabBar>"
+    },
+    {
+      "id": "StrongRefraction",
+      "title": "Strong Refraction",
+      "kind": "advanced",
+      "props": {
+        "displacementScale": 60,
+        "bezelWidth": 32,
+        "refractionStrength": 1.4,
+        "specularTopOpacity": 0.95,
+        "blur": 22
+      },
+      "code": "import { LiquidGlassTabBar } from '@larose-ui/react';\n\n<LiquidGlassTabBar\n  displacementScale={60}\n  bezelWidth={32}\n  refractionStrength={1.4}\n  specularTopOpacity={0.95}\n  blur={22}\n>Example</LiquidGlassTabBar>"
+    },
+    {
+      "id": "Subtle",
+      "title": "Subtle",
+      "kind": "advanced",
+      "props": {
+        "displacementScale": 18,
+        "bezelWidth": 12,
+        "refractionStrength": 0.6,
+        "specularTopOpacity": 0.45,
+        "specularEdgeOpacity": 0.25,
+        "innerTopHighlight": 0.18,
+        "innerBottomShadow": 0.1,
+        "shadowIntensity": 0.6,
+        "tint": "rgba(255,255,255,0.07)",
+        "tintFallback": "rgba(255,255,255,0.10)"
+      },
+      "code": "import { LiquidGlassTabBar } from '@larose-ui/react';\n\n<LiquidGlassTabBar\n  displacementScale={18}\n  bezelWidth={12}\n  refractionStrength={0.6}\n  specularTopOpacity={0.45}\n  specularEdgeOpacity={0.25}\n  innerTopHighlight={0.18}\n  innerBottomShadow={0.1}\n  shadowIntensity={0.6}\n  tint=\"rgba(255,255,255,0.07)\"\n  tintFallback=\"rgba(255,255,255,0.10)\"\n>Example</LiquidGlassTabBar>"
+    },
+    {
+      "id": "NoIndicator",
+      "title": "No Indicator",
+      "kind": "advanced",
+      "props": {
+        "showIndicator": false,
+        "inactiveColor": "rgba(255,255,255,0.45)"
+      },
+      "code": "import { LiquidGlassTabBar } from '@larose-ui/react';\n\n<LiquidGlassTabBar\n  showIndicator={false}\n  inactiveColor=\"rgba(255,255,255,0.45)\"\n>Example</LiquidGlassTabBar>"
+    }
+  ],
+  "LiquidGlassTopBar": [
+    {
+      "id": "Playground",
+      "title": "Playground",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"Playground\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "Edge",
+      "title": "Edge",
+      "kind": "advanced",
+      "props": {
+        "variant": "edge",
+        "insetX": 0,
+        "top": 0,
+        "borderRadius": 0
+      },
+      "code": "import { LiquidGlassTopBar } from '@larose-ui/react';\n\n<LiquidGlassTopBar\n  variant=\"edge\"\n  insetX={0}\n  top={0}\n  borderRadius={0}\n>Example</LiquidGlassTopBar>"
+    },
+    {
+      "id": "NoTrailing",
+      "title": "No Trailing",
+      "kind": "advanced",
+      "props": {
+        "showTrailing": false
+      },
+      "code": "import { LiquidGlassTopBar } from '@larose-ui/react';\n\n<LiquidGlassTopBar\n  showTrailing={false}\n>Example</LiquidGlassTopBar>"
+    },
+    {
+      "id": "StrongRefraction",
+      "title": "Strong Refraction",
+      "kind": "advanced",
+      "props": {
+        "displacementScale": 50,
+        "bezelWidth": 28,
+        "specularTopOpacity": 0.95,
+        "refractionStrength": 1.2
+      },
+      "code": "import { LiquidGlassTopBar } from '@larose-ui/react';\n\n<LiquidGlassTopBar\n  displacementScale={50}\n  bezelWidth={28}\n  specularTopOpacity={0.95}\n  refractionStrength={1.2}\n>Example</LiquidGlassTopBar>"
+    }
+  ],
   "List": [
-    {
-      "id": "FinderStyleList",
-      "title": "Finder Style List",
-      "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"FinderStyleList\" for full example.",
-      "composite": true
-    },
-    {
-      "id": "ReorderableList",
-      "title": "Reorderable List",
-      "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"ReorderableList\" for full example.",
-      "composite": true
-    },
     {
       "id": "GroupedList",
       "title": "Grouped List",
@@ -911,48 +1596,83 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "composite": true
     },
     {
-      "id": "ListAccessories",
-      "title": "List Accessories",
+      "id": "MiddleTruncation",
+      "title": "Middle Truncation",
       "kind": "advanced",
       "props": {},
-      "code": "// See Storybook story \"ListAccessories\" for full example.",
+      "code": "// See Storybook story \"MiddleTruncation\" for full example.",
       "composite": true
     }
   ],
   "ListRow": [],
   "ListSection": [],
-  "Lockup": [],
+  "Lockup": [
+    {
+      "id": "Overview",
+      "title": "Overview",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"Overview\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "CaptionButtonGrid",
+      "title": "Caption Button Grid",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"CaptionButtonGrid\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "VerticalMonograms",
+      "title": "Vertical Monograms",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"VerticalMonograms\" for full example.",
+      "composite": true
+    }
+  ],
+  "LockupCard": [],
+  "LockupRow": [],
   "Menu": [
     {
-      "id": "MenuAlwaysOpen",
-      "title": "Menu (always open)",
-      "kind": "advanced",
+      "id": "LargeLayout",
+      "title": "Large (default)",
+      "kind": "basic",
       "props": {},
-      "code": "// See Storybook story \"MenuAlwaysOpen\" for full example.",
+      "code": "// See Storybook story \"LargeLayout\" for full example.",
       "composite": true
     },
     {
-      "id": "AddMenu",
-      "title": "Add",
+      "id": "MediumLayout",
+      "title": "Medium layout",
       "kind": "advanced",
       "props": {},
-      "code": "// See Storybook story \"AddMenu\" for full example.",
+      "code": "// See Storybook story \"MediumLayout\" for full example.",
       "composite": true
     },
     {
-      "id": "SortMenu",
-      "title": "Sort",
-      "kind": "advanced",
+      "id": "SmallLayout",
+      "title": "Small layout",
+      "kind": "variants",
       "props": {},
-      "code": "// See Storybook story \"SortMenu\" for full example.",
+      "code": "<Menu layout=\"small\" open onOpenChange={() => undefined} entries={formatEntries} />",
       "composite": true
     },
     {
-      "id": "MoreMenu",
-      "title": "More (Notes)",
+      "id": "SubmenuAndToggles",
+      "title": "Submenus and toggles",
       "kind": "advanced",
       "props": {},
-      "code": "// See Storybook story \"MoreMenu\" for full example.",
+      "code": "// See Storybook story \"SubmenuAndToggles\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "UnavailableItems",
+      "title": "Unavailable items",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"UnavailableItems\" for full example.",
       "composite": true
     }
   ],
@@ -964,9 +1684,34 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "props": {},
       "code": "// See Storybook story \"MenuBarGlobalShortcuts\" for full example.",
       "composite": true
+    },
+    {
+      "id": "MacOSStandard",
+      "title": "macOS standard menus",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"MacOSStandard\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "IPadOSHiddenUntilRevealed",
+      "title": "iPadOS reveal at top edge",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"IPadOSHiddenUntilRevealed\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "DisabledNotHidden",
+      "title": "Unavailable items stay visible",
+      "kind": "disabled",
+      "props": {},
+      "code": "// See Storybook story \"DisabledNotHidden\" for full example.",
+      "composite": true
     }
   ],
   "MenuBarExtra": [],
+  "MnemonicLabel": [],
   "Modal": [
     {
       "id": "Default",
@@ -993,8 +1738,34 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "composite": true
     }
   ],
+  "Monogram": [],
   "MorePullDownButton": [],
-  "Ornament": [],
+  "Ornament": [
+    {
+      "id": "NowPlaying",
+      "title": "Now Playing (bottom)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"NowPlaying\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "ImmersiveHidden",
+      "title": "Hidden during immersive content",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"ImmersiveHidden\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "TopToolbar",
+      "title": "Top toolbar ornament",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"TopToolbar\" for full example.",
+      "composite": true
+    }
+  ],
   "OrnamentButton": [],
   "OrnamentWindow": [],
   "OutlineView": [
@@ -1005,19 +1776,34 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "props": {},
       "code": "// See Storybook story \"OutlineViewStory\" for full example.",
       "composite": true
-    }
-  ],
-  "OutlineViewToolbar": [],
-  "Pagination": [
+    },
     {
-      "id": "PaginationDefault",
-      "title": "Pagination Default",
+      "id": "FinderStyle",
+      "title": "Finder-style outline",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"FinderStyle\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "SplitViewCompanion",
+      "title": "Split view companion",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"SplitViewCompanion\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "BasicOutline",
+      "title": "Basic Outline",
       "kind": "basic",
       "props": {},
-      "code": "<PaginationDemo />",
+      "code": "// See Storybook story \"BasicOutline\" for full example.",
       "composite": true
     }
   ],
+  "OutlineViewToolbar": [],
+  "Pagination": [],
   "PathControl": [
     {
       "id": "PathControlStandard",
@@ -1036,23 +1822,81 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "composite": true
     }
   ],
+  "Picker": [
+    {
+      "id": "WheelStyle",
+      "title": "Wheels (multipart)",
+      "kind": "advanced",
+      "props": {},
+      "code": "<Picker\n        label=\"Country\"\n        style=\"wheels\"\n        columns={[{ id: 'country', label: 'Country', options: countries }]}\n        value={value}\n        onChange={setValue}\n      />",
+      "composite": true
+    },
+    {
+      "id": "CompactStyle",
+      "title": "Compact (popover)",
+      "kind": "advanced",
+      "props": {},
+      "code": "<Picker\n        label=\"Country\"\n        style=\"compact\"\n        columns={[{ id: 'country', label: 'Country', options: countries }]}\n        value={value}\n        onChange={setValue}\n      />",
+      "composite": true
+    },
+    {
+      "id": "DateWheels",
+      "title": "Date (wheels)",
+      "kind": "advanced",
+      "props": {},
+      "code": "<DateTimePicker\n        label=\"Due date\"\n        mode=\"date\"\n        style=\"wheels\"\n        value={value}\n        onChange={setValue}\n      />",
+      "composite": true
+    },
+    {
+      "id": "DateCompact",
+      "title": "Date (compact calendar)",
+      "kind": "advanced",
+      "props": {},
+      "code": "<DateTimePicker\n        label=\"Event date\"\n        mode=\"date\"\n        style=\"compact\"\n        value={value}\n        onChange={setValue}\n      />",
+      "composite": true
+    },
+    {
+      "id": "DateInline",
+      "title": "Date (inline calendar)",
+      "kind": "advanced",
+      "props": {},
+      "code": "<DateTimePicker\n        label=\"Trip date\"\n        mode=\"date\"\n        style=\"inline\"\n        value={value}\n        onChange={setValue}\n      />",
+      "composite": true
+    },
+    {
+      "id": "TimeWheels",
+      "title": "Time (wheels)",
+      "kind": "advanced",
+      "props": {},
+      "code": "<DateTimePicker\n        label=\"Meeting time\"\n        mode=\"time\"\n        style=\"wheels\"\n        minuteInterval={15}\n        value={value}\n        onChange={setValue}\n      />",
+      "composite": true
+    },
+    {
+      "id": "DateAndTimeCompact",
+      "title": "Date and time (compact)",
+      "kind": "advanced",
+      "props": {},
+      "code": "<DateTimePicker\n        label=\"Appointment\"\n        mode=\"datetime\"\n        style=\"compact\"\n        minuteInterval={5}\n        value={value}\n        onChange={setValue}\n      />",
+      "composite": true
+    },
+    {
+      "id": "CountdownTimer",
+      "title": "Countdown timer",
+      "kind": "advanced",
+      "props": {},
+      "code": "<DateTimePicker\n        label=\"Timer\"\n        mode=\"countdown\"\n        style=\"wheels\"\n        minuteInterval={1}\n        value={value}\n        onChange={setValue}\n      />",
+      "composite": true
+    },
+    {
+      "id": "LowLevelWheelPicker",
+      "title": "WheelPicker (low-level)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"LowLevelWheelPicker\" for full example.",
+      "composite": true
+    }
+  ],
   "Popover": [
-    {
-      "id": "PopoverStory",
-      "title": "Popover",
-      "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"PopoverStory\" for full example.",
-      "composite": true
-    },
-    {
-      "id": "PopoverPortalStory",
-      "title": "Popover (portal / overflow)",
-      "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"PopoverPortalStory\" for full example.",
-      "composite": true
-    },
     {
       "id": "PopoverAndTooltip",
       "title": "Popover And Tooltip",
@@ -1069,7 +1913,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "margin": 0,
         "maxWidth": 220
       },
-      "code": "<Popover\n  margin={0}\n  maxWidth={220}\n>Example</Popover>"
+      "code": "import { Popover } from '@larose-ui/react';\n\n<Popover\n  margin={0}\n  maxWidth={220}\n>Example</Popover>"
     },
     {
       "id": "Top",
@@ -1079,7 +1923,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "side": "top",
         "margin": 0
       },
-      "code": "<Popover\n  side=\"top\"\n  margin={0}\n>Example</Popover>"
+      "code": "import { Popover } from '@larose-ui/react';\n\n<Popover\n  side=\"top\"\n  margin={0}\n>Example</Popover>"
     },
     {
       "id": "WithActions",
@@ -1090,7 +1934,33 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "composite": true
     }
   ],
-  "PopUpButton": [],
+  "PopUpButton": [
+    {
+      "id": "CalendarRepeat",
+      "title": "Calendar repeat",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"CalendarRepeat\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "WithDefault",
+      "title": "Default selection",
+      "kind": "basic",
+      "props": {},
+      "code": "<PopUpButton\n        label=\"Priority\"\n        options={[\n          { value: 'low', label: 'Low' },\n          { value: 'medium', label: 'Medium' },\n          { value: 'high', label: 'High' },\n        ]}\n        defaultValue=\"medium\"\n      />",
+      "composite": true
+    },
+    {
+      "id": "DisabledOption",
+      "title": "Unavailable option",
+      "kind": "disabled",
+      "props": {},
+      "code": "// See Storybook story \"DisabledOption\" for full example.",
+      "composite": true
+    }
+  ],
+  "Poster": [],
   "Progress": [
     {
       "id": "ProgressDefault",
@@ -1117,7 +1987,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "label": "Profile completion",
         "showValue": true
       },
-      "code": "<Progress\n  value={65}\n  label=\"Profile completion\"\n  showValue\n/>"
+      "code": "import { Progress } from '@larose-ui/react';\n\n<Progress\n  value={65}\n  label=\"Profile completion\"\n  showValue\n/>"
     },
     {
       "id": "Success",
@@ -1129,7 +1999,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "variant": "success",
         "showValue": true
       },
-      "code": "<Progress\n  value={100}\n  label=\"Upload complete\"\n  variant=\"success\"\n  showValue\n/>"
+      "code": "import { Progress } from '@larose-ui/react';\n\n<Progress\n  value={100}\n  label=\"Upload complete\"\n  variant=\"success\"\n  showValue\n/>"
     },
     {
       "id": "Error",
@@ -1141,7 +2011,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "variant": "error",
         "showValue": true
       },
-      "code": "<Progress\n  value={35}\n  label=\"Sync failed\"\n  variant=\"error\"\n  showValue\n/>"
+      "code": "import { Progress } from '@larose-ui/react';\n\n<Progress\n  value={35}\n  label=\"Sync failed\"\n  variant=\"error\"\n  showValue\n/>"
     },
     {
       "id": "Loading",
@@ -1153,10 +2023,43 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "showValue": true,
         "state": "loading"
       },
-      "code": "<Progress\n  value={45}\n  label=\"Importing employees\"\n  showValue\n  state=\"loading\"\n/>"
+      "code": "import { Progress } from '@larose-ui/react';\n\n<Progress\n  value={45}\n  label=\"Importing employees\"\n  showValue\n  state=\"loading\"\n/>"
     }
   ],
-  "PullDownButton": [],
+  "PullDownButton": [
+    {
+      "id": "AddMenu",
+      "title": "Add",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"AddMenu\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "SortMenu",
+      "title": "Sort",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"SortMenu\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "MoreMenu",
+      "title": "More (Notes)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"MoreMenu\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "DestructiveConfirmation",
+      "title": "Destructive confirmation",
+      "kind": "destructive",
+      "props": {},
+      "code": "// See Storybook story \"DestructiveConfirmation\" for full example.",
+      "composite": true
+    }
+  ],
   "Radio": [
     {
       "id": "RadioGroup",
@@ -1176,7 +2079,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "value": "starter",
         "defaultChecked": true
       },
-      "code": "<Radio\n  name=\"plan\"\n  label=\"Starter plan\"\n  value=\"starter\"\n  defaultChecked\n>Example</Radio>"
+      "code": "import { Radio } from '@larose-ui/react';\n\n<Radio\n  name=\"plan\"\n  label=\"Starter plan\"\n  value=\"starter\"\n  defaultChecked\n>Example</Radio>"
     },
     {
       "id": "WithHint",
@@ -1188,7 +2091,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "value": "pro",
         "hint": "Includes advanced analytics"
       },
-      "code": "<Radio\n  name=\"plan\"\n  label=\"Pro plan\"\n  value=\"pro\"\n  hint=\"Includes advanced analytics\"\n>Example</Radio>"
+      "code": "import { Radio } from '@larose-ui/react';\n\n<Radio\n  name=\"plan\"\n  label=\"Pro plan\"\n  value=\"pro\"\n  hint=\"Includes advanced analytics\"\n>Example</Radio>"
     },
     {
       "id": "WithError",
@@ -1200,7 +2103,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "value": "enterprise",
         "error": "Select a plan to continue"
       },
-      "code": "<Radio\n  name=\"plan\"\n  label=\"Enterprise plan\"\n  value=\"enterprise\"\n  error=\"Select a plan to continue\"\n>Example</Radio>"
+      "code": "import { Radio } from '@larose-ui/react';\n\n<Radio\n  name=\"plan\"\n  label=\"Enterprise plan\"\n  value=\"enterprise\"\n  error=\"Select a plan to continue\"\n>Example</Radio>"
     },
     {
       "id": "Disabled",
@@ -1212,7 +2115,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "value": "legacy",
         "disabled": true
       },
-      "code": "<Radio\n  name=\"plan\"\n  label=\"Legacy plan\"\n  value=\"legacy\"\n  disabled\n>Example</Radio>"
+      "code": "import { Radio } from '@larose-ui/react';\n\n<Radio\n  name=\"plan\"\n  label=\"Legacy plan\"\n  value=\"legacy\"\n  disabled\n>Example</Radio>"
     },
     {
       "id": "Group",
@@ -1225,14 +2128,6 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
   ],
   "SecureField": [],
   "Select": [
-    {
-      "id": "SelectableLabel",
-      "title": "Selectable Label",
-      "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"SelectableLabel\" for full example.",
-      "composite": true
-    },
     {
       "id": "SelectDefault",
       "title": "Select Default",
@@ -1249,7 +2144,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "label": "Department",
         "placeholder": "Choose a department"
       },
-      "code": "<Select\n  label=\"Department\"\n  placeholder=\"Choose a department\"\n>Example</Select>"
+      "code": "import { Select } from '@larose-ui/react';\n\n<Select\n  label=\"Department\"\n  placeholder=\"Choose a department\"\n>Example</Select>"
     },
     {
       "id": "WithHint",
@@ -1259,7 +2154,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "label": "Department",
         "hint": "Used for org chart and permissions"
       },
-      "code": "<Select\n  label=\"Department\"\n  hint=\"Used for org chart and permissions\"\n>Example</Select>"
+      "code": "import { Select } from '@larose-ui/react';\n\n<Select\n  label=\"Department\"\n  hint=\"Used for org chart and permissions\"\n>Example</Select>"
     },
     {
       "id": "Required",
@@ -1269,7 +2164,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "label": "Department",
         "required": true
       },
-      "code": "<Select\n  label=\"Department\"\n  required\n>Example</Select>"
+      "code": "import { Select } from '@larose-ui/react';\n\n<Select\n  label=\"Department\"\n  required\n>Example</Select>"
     },
     {
       "id": "Loading",
@@ -1279,7 +2174,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "label": "Department",
         "loading": true
       },
-      "code": "<Select\n  label=\"Department\"\n  loading\n>Example</Select>"
+      "code": "import { Select } from '@larose-ui/react';\n\n<Select\n  label=\"Department\"\n  loading\n>Example</Select>"
     },
     {
       "id": "WithError",
@@ -1289,7 +2184,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "label": "Department",
         "error": "Department is required"
       },
-      "code": "<Select\n  label=\"Department\"\n  error=\"Department is required\"\n>Example</Select>"
+      "code": "import { Select } from '@larose-ui/react';\n\n<Select\n  label=\"Department\"\n  error=\"Department is required\"\n>Example</Select>"
     },
     {
       "id": "Disabled",
@@ -1300,7 +2195,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "disabled": true,
         "defaultValue": "eng"
       },
-      "code": "<Select\n  label=\"Department\"\n  disabled\n  defaultValue=\"eng\"\n>Example</Select>"
+      "code": "import { Select } from '@larose-ui/react';\n\n<Select\n  label=\"Department\"\n  disabled\n  defaultValue=\"eng\"\n>Example</Select>"
     }
   ],
   "Skeleton": [
@@ -1311,10 +2206,45 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "props": {
         "width": 200
       },
-      "code": "<Skeleton\n  width={200}\n/>"
+      "code": "import { Skeleton } from '@larose-ui/react';\n\n<Skeleton\n  width={200}\n/>"
     }
   ],
   "Spinner": [],
+  "SplitView": [
+    {
+      "id": "SidebarDetailInspector",
+      "title": "Sidebar · content · inspector",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"SidebarDetailInspector\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "VerticalSplit",
+      "title": "Vertical Split",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"VerticalSplit\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "DragBetweenPanes",
+      "title": "Drag between panes",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"DragBetweenPanes\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "CompactStack",
+      "title": "Compact Stack",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"CompactStack\" for full example.",
+      "composite": true
+    }
+  ],
+  "SplitViewPane": [],
   "SplitViewToolbar": [],
   "SquareButton": [],
   "Switch": [
@@ -1327,21 +2257,13 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "composite": true
     },
     {
-      "id": "SwitchStory",
-      "title": "Switch",
-      "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"SwitchStory\" for full example.",
-      "composite": true
-    },
-    {
       "id": "Default",
       "title": "Default",
       "kind": "basic",
       "props": {
         "label": "Email notifications"
       },
-      "code": "<Switch\n  label=\"Email notifications\"\n>Example</Switch>"
+      "code": "import { Switch } from '@larose-ui/react';\n\n<Switch\n  label=\"Email notifications\"\n>Example</Switch>"
     },
     {
       "id": "Checked",
@@ -1351,7 +2273,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "label": "Push notifications",
         "defaultChecked": true
       },
-      "code": "<Switch\n  label=\"Push notifications\"\n  defaultChecked\n>Example</Switch>"
+      "code": "import { Switch } from '@larose-ui/react';\n\n<Switch\n  label=\"Push notifications\"\n  defaultChecked\n>Example</Switch>"
     },
     {
       "id": "WithHint",
@@ -1361,7 +2283,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "label": "Marketing emails",
         "hint": "Receive occasional product announcements"
       },
-      "code": "<Switch\n  label=\"Marketing emails\"\n  hint=\"Receive occasional product announcements\"\n>Example</Switch>"
+      "code": "import { Switch } from '@larose-ui/react';\n\n<Switch\n  label=\"Marketing emails\"\n  hint=\"Receive occasional product announcements\"\n>Example</Switch>"
     },
     {
       "id": "Disabled",
@@ -1371,7 +2293,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "label": "Beta features",
         "disabled": true
       },
-      "code": "<Switch\n  label=\"Beta features\"\n  disabled\n>Example</Switch>"
+      "code": "import { Switch } from '@larose-ui/react';\n\n<Switch\n  label=\"Beta features\"\n  disabled\n>Example</Switch>"
     },
     {
       "id": "SettingsStyle",
@@ -1382,6 +2304,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "composite": true
     }
   ],
+  "SYSTEM_ACTIVITY_IDS": [],
   "Table": [
     {
       "id": "SortableTable",
@@ -1392,6 +2315,56 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "composite": true
     }
   ],
+  "Tabs": [
+    {
+      "id": "TabsDefault",
+      "title": "Tabs Default",
+      "kind": "basic",
+      "props": {},
+      "code": "// See Storybook story \"TabsDefault\" for full example.",
+      "composite": true
+    }
+  ],
+  "TabsList": [],
+  "TabsPanel": [],
+  "TabsTrigger": [],
+  "TabView": [
+    {
+      "id": "Bordered",
+      "title": "Bordered",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"Bordered\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "Bezeled",
+      "title": "Bezeled",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"Bezeled\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "BorderlessHiddenTabs",
+      "title": "Borderless with hidden tabs",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"BorderlessHiddenTabs\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "SixTabLimit",
+      "title": "Six tab guidance",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"SixTabLimit\" for full example.",
+      "composite": true
+    }
+  ],
+  "TabViewList": [],
+  "TabViewPanel": [],
+  "TabViewTab": [],
   "Textarea": [
     {
       "id": "TextareaDefault",
@@ -1409,7 +2382,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "label": "Description",
         "placeholder": "Enter details..."
       },
-      "code": "<Textarea\n  label=\"Description\"\n  placeholder=\"Enter details...\"\n>Example</Textarea>"
+      "code": "import { Textarea } from '@larose-ui/react';\n\n<Textarea\n  label=\"Description\"\n  placeholder=\"Enter details...\"\n>Example</Textarea>"
     },
     {
       "id": "WithHint",
@@ -1420,7 +2393,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "placeholder": "Add internal notes",
         "hint": "Visible to admins only"
       },
-      "code": "<Textarea\n  label=\"Notes\"\n  placeholder=\"Add internal notes\"\n  hint=\"Visible to admins only\"\n>Example</Textarea>"
+      "code": "import { Textarea } from '@larose-ui/react';\n\n<Textarea\n  label=\"Notes\"\n  placeholder=\"Add internal notes\"\n  hint=\"Visible to admins only\"\n>Example</Textarea>"
     },
     {
       "id": "Required",
@@ -1431,7 +2404,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "placeholder": "Tell us what you think",
         "required": true
       },
-      "code": "<Textarea\n  label=\"Feedback\"\n  placeholder=\"Tell us what you think\"\n  required\n>Example</Textarea>"
+      "code": "import { Textarea } from '@larose-ui/react';\n\n<Textarea\n  label=\"Feedback\"\n  placeholder=\"Tell us what you think\"\n  required\n>Example</Textarea>"
     },
     {
       "id": "WithError",
@@ -1442,7 +2415,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "defaultValue": "Too short",
         "error": "Description must be at least 20 characters"
       },
-      "code": "<Textarea\n  label=\"Description\"\n  defaultValue=\"Too short\"\n  error=\"Description must be at least 20 characters\"\n>Example</Textarea>"
+      "code": "import { Textarea } from '@larose-ui/react';\n\n<Textarea\n  label=\"Description\"\n  defaultValue=\"Too short\"\n  error=\"Description must be at least 20 characters\"\n>Example</Textarea>"
     },
     {
       "id": "Disabled",
@@ -1453,10 +2426,36 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "defaultValue": "This record is read-only.",
         "disabled": true
       },
-      "code": "<Textarea\n  label=\"Archived notes\"\n  defaultValue=\"This record is read-only.\"\n  disabled\n>Example</Textarea>"
+      "code": "import { Textarea } from '@larose-ui/react';\n\n<Textarea\n  label=\"Archived notes\"\n  defaultValue=\"This record is read-only.\"\n  disabled\n>Example</Textarea>"
     }
   ],
-  "TextView": [],
+  "TextView": [
+    {
+      "id": "ReadOnlySelectable",
+      "title": "Read Only Selectable",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"ReadOnlySelectable\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "Editable",
+      "title": "Editable",
+      "kind": "advanced",
+      "props": {},
+      "code": "<Card title=\"Editable text view\" padding=\"md\">\n        <TextView\n          editable\n          value={value}\n          onChange={(event) => setValue(event.target.value)}\n          maxHeight=\"14rem\"\n          inputMode=\"text\"\n        />\n      </Card>",
+      "composite": true
+    },
+    {
+      "id": "RichDisplay",
+      "title": "Rich Display",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"RichDisplay\" for full example.",
+      "composite": true
+    }
+  ],
+  "ThemeCustomizationContext": [],
   "TimePicker": [
     {
       "id": "TimePickerDefault",
@@ -1467,7 +2466,6 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "composite": true
     }
   ],
-  "ToastProvider": [],
   "TokenField": [
     {
       "id": "TokenFieldMail",
@@ -1478,23 +2476,60 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "composite": true
     }
   ],
+  "Toolbar": [
+    {
+      "id": "MacNotesStyle",
+      "title": "macOS Notes (standard + More)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"MacNotesStyle\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "IOSMailNavigation",
+      "title": "iOS navigation bar",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"IOSMailNavigation\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "VisionOSBottomBar",
+      "title": "visionOS bottom toolbar",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"VisionOSBottomBar\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "TrailingProminentAction",
+      "title": "Primary Done action",
+      "kind": "basic",
+      "props": {},
+      "code": "// See Storybook story \"TrailingProminentAction\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "SeparateTextAndSymbolGroups",
+      "title": "Separate text and symbol buttons",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"SeparateTextAndSymbolGroups\" for full example.",
+      "composite": true
+    }
+  ],
+  "ToolbarBackButton": [],
+  "ToolbarCloseButton": [],
+  "ToolbarDocumentMenu": [],
+  "ToolbarFixedSpace": [],
+  "ToolbarGroup": [],
+  "ToolbarItem": [],
+  "ToolbarMoreButton": [],
+  "ToolbarProminentButton": [],
+  "ToolbarSearch": [],
+  "ToolbarSection": [],
+  "ToolbarTitle": [],
   "Tooltip": [
-    {
-      "id": "ExpansionTooltip",
-      "title": "Expansion Tooltip",
-      "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"ExpansionTooltip\" for full example.",
-      "composite": true
-    },
-    {
-      "id": "TooltipStory",
-      "title": "Tooltip",
-      "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"TooltipStory\" for full example.",
-      "composite": true
-    },
     {
       "id": "TooltipDefault",
       "title": "Tooltip Default",
@@ -1510,7 +2545,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "props": {
         "content": "Export employees as CSV"
       },
-      "code": "<Tooltip\n  content=\"Export employees as CSV\"\n>Example</Tooltip>"
+      "code": "import { Tooltip } from '@larose-ui/react';\n\n<Tooltip\n  content=\"Export employees as CSV\"\n>Example</Tooltip>"
     },
     {
       "id": "OnText",
@@ -1520,7 +2555,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "content": "Last updated 2 hours ago",
         "textDecoration": "underline dotted"
       },
-      "code": "<Tooltip\n  content=\"Last updated 2 hours ago\"\n  textDecoration=\"underline dotted\"\n>Example</Tooltip>"
+      "code": "import { Tooltip } from '@larose-ui/react';\n\n<Tooltip\n  content=\"Last updated 2 hours ago\"\n  textDecoration=\"underline dotted\"\n>Example</Tooltip>"
     },
     {
       "id": "LongContent",
@@ -1529,23 +2564,66 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "props": {
         "content": "Keyboard shortcut: ⌘ + Shift + E"
       },
-      "code": "<Tooltip\n  content=\"Keyboard shortcut: ⌘ + Shift + E\"\n>Example</Tooltip>"
+      "code": "import { Tooltip } from '@larose-ui/react';\n\n<Tooltip\n  content=\"Keyboard shortcut: ⌘ + Shift + E\"\n>Example</Tooltip>"
     }
   ],
   "Typography": [
     {
-      "id": "TypographyScale",
-      "title": "Typography Scale",
+      "id": "ShortcutLab",
+      "title": "Shortcut lab",
       "kind": "advanced",
       "props": {},
-      "code": "// See Storybook story \"TypographyScale\" for full example.",
+      "code": "// See Storybook story \"ShortcutLab\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "MenuAlwaysOpen",
+      "title": "Menu (always open)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"MenuAlwaysOpen\" for full example.",
       "composite": true
     }
   ],
   "UnsavedIndicator": [],
-  "WebView": [],
+  "WebView": [
+    {
+      "id": "EmbeddedHtml",
+      "title": "Embedded HTML (Mail-style)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"EmbeddedHtml\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "BriefWebsiteAccess",
+      "title": "Brief Website Access",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"BriefWebsiteAccess\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "WithNavigation",
+      "title": "With Navigation",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"WithNavigation\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "NavigationOnly",
+      "title": "Navigation Only",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"NavigationOnly\" for full example.",
+      "composite": true
+    }
+  ],
   "WebViewNavigation": [],
-  "WebViewShell": []
+  "WebViewShell": [],
+  "WheelColumn": [],
+  "WheelPicker": []
 };
 
 export function getComponentExamples(name: string): DocsExampleEntry[] {

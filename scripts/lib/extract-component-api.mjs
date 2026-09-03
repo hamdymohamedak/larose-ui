@@ -2,6 +2,7 @@ import { readFileSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import ts from 'typescript';
 import { toComponentContract } from './component-contract.mjs';
+import { parseComponentExportsFromIndex } from './parse-index-exports.mjs';
 
 const DOM_BASE_PROPS = new Set([
   'className',
@@ -66,8 +67,16 @@ export function extractComponentApi(root, componentNames, indexPath = join(root,
       continue;
     }
 
-    const defaults = extractDefaults(source, name);
-    const props = extractInterfaceProps(source, entry.propsTypeName, defaults);
+    const propsFilePath =
+      resolvePropsTypeDefinition(entry.filePath, entry.propsTypeName) ?? entry.filePath;
+    const propsSource = readSource(propsFilePath);
+    if (!propsSource) {
+      api[name] = { props: [], events: [], accessibility: [] };
+      continue;
+    }
+
+    const defaults = extractDefaults(propsSource, name);
+    const props = extractInterfaceProps(propsSource, entry.propsTypeName, defaults);
     api[name] = {
       props,
       events: props.filter((prop) => prop.name.startsWith('on')),
@@ -169,8 +178,8 @@ function parsePropsExports(indexPath) {
 export function listComponentNames(root) {
   const reactRoot = join(root, 'packages/react');
   const indexPath = join(reactRoot, 'src/index.ts');
-  const propsMap = parsePropsExports(indexPath);
-  return [...propsMap.keys()].sort((a, b) => a.localeCompare(b));
+  const reactNames = parseComponentExportsFromIndex(indexPath);
+  return [...new Set(reactNames)].sort((a, b) => a.localeCompare(b));
 }
 
 /**
@@ -187,6 +196,42 @@ function resolveModuleFile(basePath) {
   for (const candidate of candidates) {
     if (existsSync(candidate)) return candidate;
   }
+  return null;
+}
+
+/**
+ * Follow `export type { Props } from './module'` chains to the file that defines the interface.
+ * @param {string} filePath
+ * @param {string} typeName
+ * @returns {string | null}
+ */
+function resolvePropsTypeDefinition(filePath, typeName) {
+  const source = readSource(filePath);
+  if (!source) return null;
+
+  if (hasInterface(source, typeName)) {
+    return filePath;
+  }
+
+  const sourceFile = createSourceFile(filePath, source);
+  for (const statement of sourceFile.statements) {
+    if (!ts.isExportDeclaration(statement) || !statement.moduleSpecifier) continue;
+    if (!statement.exportClause || !ts.isNamedExports(statement.exportClause)) continue;
+
+    const modulePath = statement.moduleSpecifier.text;
+    const nextPath = resolveModuleFile(join(dirname(filePath), modulePath));
+    if (!nextPath) continue;
+
+    for (const element of statement.exportClause.elements) {
+      const exportedName = element.name.text;
+      const localName = element.propertyName?.text ?? exportedName;
+      if (localName !== typeName && exportedName !== typeName) continue;
+
+      const resolved = resolvePropsTypeDefinition(nextPath, typeName);
+      if (resolved) return resolved;
+    }
+  }
+
   return null;
 }
 

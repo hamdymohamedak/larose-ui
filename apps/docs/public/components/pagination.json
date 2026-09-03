@@ -1,6 +1,7 @@
 {
   "component": "Pagination",
   "category": "Navigation",
+  "package": "@larose-ui/react",
   "import": "import { Pagination } from '@larose-ui/react';",
   "props": [
     {
@@ -46,16 +47,7 @@
       "inherited": false
     }
   ],
-  "examples": [
-    {
-      "id": "PaginationDefault",
-      "title": "Pagination Default",
-      "kind": "basic",
-      "props": {},
-      "code": "<PaginationDemo />",
-      "composite": true
-    }
-  ],
+  "examples": [],
   "accessibility": [
     "Supports ARIA attributes via standard HTML element props."
   ],

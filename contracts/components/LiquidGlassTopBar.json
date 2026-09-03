@@ -1,0 +1,150 @@
+{
+  "name": "LiquidGlassTopBar",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "activeColor",
+      "type": "string",
+      "required": false,
+      "default": "'#ffffff'"
+    },
+    {
+      "name": "activeKey",
+      "type": "string",
+      "required": false,
+      "default": "controlledActiveKey ?? internalActiveKey;"
+    },
+    {
+      "name": "borderRadius",
+      "type": "number",
+      "required": false,
+      "default": "borderRadiusProp ?? (isFloating ? LIQUID_GLASS_PRESETS.topBar.borderRadius : 0);"
+    },
+    {
+      "name": "defaultActiveKey",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "height",
+      "type": "number",
+      "required": false,
+      "default": "56"
+    },
+    {
+      "name": "inactiveColor",
+      "type": "string",
+      "required": false,
+      "default": "'rgba(255"
+    },
+    {
+      "name": "insetX",
+      "type": "number",
+      "required": false,
+      "default": "insetXProp ?? (isFloating ? 16 : 0);"
+    },
+    {
+      "name": "items",
+      "type": "LiquidGlassTopBarItem[]",
+      "required": false,
+      "default": "[]"
+    },
+    {
+      "name": "logo",
+      "type": "ReactNode",
+      "required": false
+    },
+    {
+      "name": "navActiveBackground",
+      "type": "string",
+      "required": false,
+      "default": "'rgba(255",
+      "description": "Active nav pill background."
+    },
+    {
+      "name": "navTrackBackground",
+      "type": "string",
+      "required": false,
+      "default": "'rgba(255",
+      "description": "Background of the segmented nav track."
+    },
+    {
+      "name": "paddingX",
+      "type": "number",
+      "required": false,
+      "default": "16"
+    },
+    {
+      "name": "position",
+      "type": "'fixed' | 'absolute' | 'relative' | 'sticky' | 'static'",
+      "required": false,
+      "default": "'fixed'"
+    },
+    {
+      "name": "titleColor",
+      "type": "string",
+      "required": false,
+      "default": "'#ffffff'"
+    },
+    {
+      "name": "top",
+      "type": "number | string",
+      "required": false,
+      "default": "topProp ?? (isFloating ? 14 : 0);"
+    },
+    {
+      "name": "trailing",
+      "type": "ReactNode",
+      "required": false
+    },
+    {
+      "name": "variant",
+      "type": "LiquidGlassTopBarVariant",
+      "required": false,
+      "default": "'floating'",
+      "description": "`floating` — inset pill bar with rounded corners (modern macOS/iOS style).\n`edge` — full-bleed bar flush with the viewport top."
+    }
+  ],
+  "events": [
+    {
+      "name": "onChange",
+      "payload": "(key: string) => void"
+    }
+  ],
+  "slots": [
+    "title",
+    "trailing",
+    "logo"
+  ],
+  "states": [
+    "default"
+  ],
+  "defaults": {
+    "activeColor": "'#ffffff'",
+    "activeKey": "controlledActiveKey ?? internalActiveKey;",
+    "borderRadius": "borderRadiusProp ?? (isFloating ? LIQUID_GLASS_PRESETS.topBar.borderRadius : 0);",
+    "height": "56",
+    "inactiveColor": "'rgba(255",
+    "insetX": "insetXProp ?? (isFloating ? 16 : 0);",
+    "items": "[]",
+    "navActiveBackground": "'rgba(255",
+    "navTrackBackground": "'rgba(255",
+    "paddingX": "16",
+    "position": "'fixed'",
+    "titleColor": "'#ffffff'",
+    "top": "topProp ?? (isFloating ? 14 : 0);",
+    "variant": "'floating'"
+  },
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  }
+}

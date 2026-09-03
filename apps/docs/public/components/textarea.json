@@ -1,6 +1,7 @@
 {
   "component": "Textarea",
   "category": "Forms",
+  "package": "@larose-ui/react",
   "import": "import { Textarea } from '@larose-ui/react';",
   "props": [
     {
@@ -67,7 +68,7 @@
         "label": "Description",
         "placeholder": "Enter details..."
       },
-      "code": "<Textarea\n  label=\"Description\"\n  placeholder=\"Enter details...\"\n>Example</Textarea>"
+      "code": "import { Textarea } from '@larose-ui/react';\n\n<Textarea\n  label=\"Description\"\n  placeholder=\"Enter details...\"\n>Example</Textarea>"
     },
     {
       "id": "WithHint",
@@ -78,7 +79,7 @@
         "placeholder": "Add internal notes",
         "hint": "Visible to admins only"
       },
-      "code": "<Textarea\n  label=\"Notes\"\n  placeholder=\"Add internal notes\"\n  hint=\"Visible to admins only\"\n>Example</Textarea>"
+      "code": "import { Textarea } from '@larose-ui/react';\n\n<Textarea\n  label=\"Notes\"\n  placeholder=\"Add internal notes\"\n  hint=\"Visible to admins only\"\n>Example</Textarea>"
     },
     {
       "id": "Required",
@@ -89,7 +90,7 @@
         "placeholder": "Tell us what you think",
         "required": true
       },
-      "code": "<Textarea\n  label=\"Feedback\"\n  placeholder=\"Tell us what you think\"\n  required\n>Example</Textarea>"
+      "code": "import { Textarea } from '@larose-ui/react';\n\n<Textarea\n  label=\"Feedback\"\n  placeholder=\"Tell us what you think\"\n  required\n>Example</Textarea>"
     },
     {
       "id": "WithError",
@@ -100,7 +101,7 @@
         "defaultValue": "Too short",
         "error": "Description must be at least 20 characters"
       },
-      "code": "<Textarea\n  label=\"Description\"\n  defaultValue=\"Too short\"\n  error=\"Description must be at least 20 characters\"\n>Example</Textarea>"
+      "code": "import { Textarea } from '@larose-ui/react';\n\n<Textarea\n  label=\"Description\"\n  defaultValue=\"Too short\"\n  error=\"Description must be at least 20 characters\"\n>Example</Textarea>"
     },
     {
       "id": "Disabled",
@@ -111,7 +112,7 @@
         "defaultValue": "This record is read-only.",
         "disabled": true
       },
-      "code": "<Textarea\n  label=\"Archived notes\"\n  defaultValue=\"This record is read-only.\"\n  disabled\n>Example</Textarea>"
+      "code": "import { Textarea } from '@larose-ui/react';\n\n<Textarea\n  label=\"Archived notes\"\n  defaultValue=\"This record is read-only.\"\n  disabled\n>Example</Textarea>"
     }
   ],
   "accessibility": [],

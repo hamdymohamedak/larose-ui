@@ -1,10 +1,11 @@
-import { dirname, join } from 'node:path';
+import { basename, dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import type { StorybookConfig } from '@storybook/react-vite';
 import { mergeConfig } from 'vite';
 
 const playgroundDir = dirname(fileURLToPath(import.meta.url));
 const repoRoot = join(playgroundDir, '../../..');
+const stylesStub = join(playgroundDir, 'larose-styles-stub.css');
 
 const config: StorybookConfig = {
   stories: ['../stories/**/*.stories.@(ts|tsx)'],
@@ -27,25 +28,34 @@ const config: StorybookConfig = {
           compilerOptions: { dev: true },
         }),
       ],
+      css: {
+        modules: {
+          // Match the scoped class names produced by scripts/build-css-package.mjs
+          generateScopedName(name, filename) {
+            const moduleName = basename(filename, '.module.css');
+            return `lr-${moduleName}-${name}`;
+          },
+        },
+      },
       resolve: {
         dedupe: ['react', 'react-dom'],
         conditions: ['browser', 'svelte'],
         alias: [
           {
-            find: '@larose-ui/glass/react',
-            replacement: join(repoRoot, 'packages/glass/src/react/index.ts'),
-          },
-          {
-            find: '@larose-ui/glass',
-            replacement: join(repoRoot, 'packages/glass/src/index.ts'),
-          },
-          {
             find: '@larose-ui/react/styles.css',
-            replacement: join(repoRoot, 'packages/react/dist/index.css'),
+            replacement: stylesStub,
+          },
+          {
+            find: '@larose-ui/styles/styles.css',
+            replacement: stylesStub,
+          },
+          {
+            find: '@larose-ui/tokens/styles.css',
+            replacement: join(repoRoot, 'packages/tokens/src/styles.css'),
           },
           {
             find: '@larose-ui/react',
-            replacement: join(repoRoot, 'packages/react/dist/index.js'),
+            replacement: join(repoRoot, 'packages/react/src/index.ts'),
           },
           {
             find: '@larose-ui/vue',
@@ -56,6 +66,11 @@ const config: StorybookConfig = {
             replacement: join(repoRoot, 'packages/svelte/src/lib/index.ts'),
           },
         ],
+      },
+      server: {
+        fs: {
+          allow: [repoRoot],
+        },
       },
       optimizeDeps: {
         exclude: [
@@ -73,7 +88,6 @@ const config: StorybookConfig = {
           '@larose-ui/offline',
           '@larose-ui/permissions',
           '@larose-ui/observability',
-          '@larose-ui/glass',
         ],
         include: ['vue', 'svelte', '@larose-ui/react'],
       },

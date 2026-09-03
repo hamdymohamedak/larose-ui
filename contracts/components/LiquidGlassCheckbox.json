@@ -1,0 +1,89 @@
+{
+  "name": "LiquidGlassCheckbox",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "'aria-label'",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "borderRadius",
+      "type": "number",
+      "required": false
+    },
+    {
+      "name": "checkColor",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "checked",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "checkedTint",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "defaultChecked",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "label",
+      "type": "ReactNode",
+      "required": false
+    },
+    {
+      "name": "labelColor",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "size",
+      "type": "number",
+      "required": false,
+      "description": "Box size in px."
+    }
+  ],
+  "events": [
+    {
+      "name": "onChange",
+      "payload": "(checked: boolean) => void"
+    }
+  ],
+  "slots": [
+    "label"
+  ],
+  "states": [
+    "unchecked",
+    "checked",
+    "disabled"
+  ],
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  },
+  "controlled": [
+    "checked"
+  ],
+  "uncontrolled": [
+    "checked"
+  ]
+}

@@ -1,14 +1,5 @@
-import { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { createTheme } from '@larose-ui/themes';
-import type { MotionSemanticPreset } from '@larose-ui/core';
-import {
-  Badge,
-  Button,
-  Card,
-  Input,
-  LaRoseProvider,
-} from '@larose-ui/react';
+import { Button } from '@larose-ui/react';
 import {
   ArrowRight,
   Box,
@@ -29,11 +20,13 @@ interface Feature {
   wide?: boolean;
 }
 
+const FRAMEWORKS = ['React', 'Vue 3', 'Svelte 5', 'TypeScript'] as const;
+
 const FEATURES: Feature[] = [
   {
     Icon: Layers,
-    title: '90+ production components',
-    desc: 'Buttons, forms, modals, tables, and data grids — every surface your SaaS needs, designed with accessibility and polish built in.',
+    title: '140+ production components',
+    desc: 'Buttons, forms, navigation, data display, and the LiquidGlass family — accessibility and polish built in.',
     wide: true,
   },
   {
@@ -49,7 +42,7 @@ const FEATURES: Feature[] = [
   {
     Icon: Sparkles,
     title: 'Liquid glass engine',
-    desc: 'Displacement-mapped refraction for premium interfaces — TabBar, toggles, and overlays.',
+    desc: 'Displacement-mapped refraction via @larose-ui/react — TabBar, TopBar, switches, sliders, and more.',
     wide: true,
   },
 ];
@@ -62,112 +55,55 @@ const STEPS = [
 
 export function HomePage() {
   const navigate = useNavigate();
-  const [customization, setCustomization] = useState(32);
-
-  const themeConfig = useMemo(
-    () =>
-      createTheme({
-        preset: 'refined',
-        colors: {
-          primary: mixColor('#007AFF', '#6C5CE7', customization / 100),
-        },
-        radius: {
-          md: `${8 + Math.round((customization / 100) * 10)}px`,
-        },
-        typography: {
-          fontFamily:
-            customization > 60
-              ? '"Avenir Next", system-ui, sans-serif'
-              : 'system-ui, -apple-system, BlinkMacSystemFont, sans-serif',
-        },
-        motion: {
-          preset: (customization > 75 ? 'snappy' : 'smooth') as MotionSemanticPreset,
-        },
-      }),
-    [customization],
-  );
 
   return (
     <div className="docs-home-v3">
-      <section className="docs-hero-v3">
+      <section className="docs-hero-v3 docs-hero-v3--centered">
+        <div className="docs-hero-v3__mesh" aria-hidden />
         <div className="docs-hero-v3__glow docs-hero-v3__glow--a" aria-hidden />
         <div className="docs-hero-v3__glow docs-hero-v3__glow--b" aria-hidden />
 
-        <div className="docs-hero-v3__grid">
-          <div className="docs-hero-v3__copy">
-            <div className="docs-hero-v3__eyebrow">
-              <span className="docs-hero-v3__pulse" aria-hidden />
-              <span>UI operating system for SaaS</span>
-            </div>
-
-            <h1 className="docs-hero-v3__title">
-              Design systems that
-              <em> ship</em>
-              , not slow you down.
-            </h1>
-
-            <p className="docs-hero-v3__lead">
-              laRose UI is a complete interface layer — components, tokens, motion, and a
-              cross-framework runtime for teams building polished products at speed.
-            </p>
-
-            <div className="docs-hero-v3__chips">
-              {['React', 'Vue 3', 'Svelte 5', 'TypeScript'].map((fw) => (
-                <span key={fw} className="docs-hero-v3__chip">
-                  {fw}
-                </span>
-              ))}
-            </div>
-
-            <div className="docs-hero-v3__actions">
-              <Button size="lg" onClick={() => navigate('/docs/getting-started')}>
-                Start building
-                <ArrowRight size={16} aria-hidden />
-              </Button>
-              <Button size="lg" variant="outline" onClick={() => navigate('/docs/components')}>
-                Browse components
-              </Button>
-            </div>
-
-            <p className="docs-hero-v3__meta">
-              Open source · MIT · Monorepo with {docsPackages.length} packages
-            </p>
+        <div className="docs-hero-v3__inner">
+          <div className="docs-hero-v3__eyebrow">
+            <span className="docs-hero-v3__pulse" aria-hidden />
+            <span>UI operating system for SaaS</span>
           </div>
 
-          <div className="docs-hero-v3__panel">
-            <div className="docs-hero-v3__panel-header">
-              <Badge variant="info">Live preview</Badge>
-              <span>Drag to morph tokens</span>
-            </div>
+          <h1 className="docs-hero-v3__title">
+            Design systems that
+            <em> ship</em>, not slow you down.
+          </h1>
 
-            <div className="docs-hero-v3__panel-body">
-              <LaRoseProvider theme="light" themeConfig={themeConfig}>
-                <Card title="Workspace" padding="md">
-                  <Input label="Project" defaultValue="Acme Dashboard" />
-                  <div className="docs-action-row">
-                    <Button>Create</Button>
-                    <Button variant="secondary">Cancel</Button>
-                  </div>
-                </Card>
-              </LaRoseProvider>
-            </div>
+          <p className="docs-hero-v3__lead">
+            laRose UI is a complete interface layer — components, tokens, motion, and a
+            cross-framework runtime for teams building polished products at speed.
+          </p>
 
-            <div className="docs-hero-v3__slider">
-              <div className="docs-hero-v3__slider-labels">
-                <span>Apple defaults</span>
-                <span>Custom brand</span>
-              </div>
-              <input
-                aria-label="Customization amount"
-                type="range"
-                min={0}
-                max={100}
-                value={customization}
-                onChange={(e) => setCustomization(Number(e.target.value))}
-              />
-              <span className="docs-hero-v3__slider-value">{customization}% customized</span>
-            </div>
+          <div className="docs-hero-v3__frameworks" role="list" aria-label="Supported frameworks">
+            {FRAMEWORKS.map((fw) => (
+              <span key={fw} className="docs-hero-v3__framework" role="listitem">
+                {fw}
+              </span>
+            ))}
           </div>
+
+          <div className="docs-hero-v3__actions">
+            <Button
+              size="lg"
+              shape="capsule"
+              rightIcon={<ArrowRight size={16} aria-hidden />}
+              onClick={() => navigate('/docs/getting-started')}
+            >
+              Start building
+            </Button>
+            <Button size="lg" variant="outline" onClick={() => navigate('/docs/components')}>
+              Browse components
+            </Button>
+          </div>
+
+          <p className="docs-hero-v3__meta">
+            Open source · MIT · Monorepo with {docsPackages.length} packages
+          </p>
         </div>
       </section>
 
@@ -282,20 +218,4 @@ export function HomePage() {
       </footer>
     </div>
   );
-}
-
-function mixColor(start: string, end: string, amount: number) {
-  const parse = (hex: string) => {
-    const normalized = hex.replace('#', '');
-    return [
-      Number.parseInt(normalized.slice(0, 2), 16),
-      Number.parseInt(normalized.slice(2, 4), 16),
-      Number.parseInt(normalized.slice(4, 6), 16),
-    ];
-  };
-  const [r1, g1, b1] = parse(start);
-  const [r2, g2, b2] = parse(end);
-  const channel = (a: number, b: number) => Math.round(a + (b - a) * amount);
-  const toHex = (value: number) => value.toString(16).padStart(2, '0');
-  return `#${toHex(channel(r1 ?? 0, r2 ?? 0))}${toHex(channel(g1 ?? 0, g2 ?? 0))}${toHex(channel(b1 ?? 0, b2 ?? 0))}`;
 }

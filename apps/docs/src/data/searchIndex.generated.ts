@@ -167,8 +167,8 @@ export const docsSearchIndex = [
     "title": "@larose-ui/react",
     "type": "package",
     "path": "/docs/packages/react",
-    "keywords": "@larose-ui/react Production-ready React components with built-in UI states. Form controls, overlays, navigation, data display Token-driven styling Customization hooks",
-    "excerpt": "Production-ready React components with built-in UI states."
+    "keywords": "@larose-ui/react Production-ready React components with built-in UI states and LiquidGlass refraction surfaces. Form controls, overlays, navigation, data display LiquidGlass TabBar, TopBar, Button, Switch, Range, Checkbox, Progress SVG displacement refraction on Chromium with blur fallback Token-driven styling and customization hooks",
+    "excerpt": "Production-ready React components with built-in UI states and LiquidGlass refraction surfaces."
   },
   {
     "id": "package:runtime",
@@ -241,6 +241,126 @@ export const docsSearchIndex = [
     "path": "/docs/packages/vue",
     "keywords": "@larose-ui/vue Vue 3 components — thin adapter over shared styles and runtime-core. Foundation parity set with React Composition API providers Shared CSS modules",
     "excerpt": "Vue 3 components — thin adapter over shared styles and runtime-core."
+  },
+  {
+    "id": "component:accelerator-provider",
+    "title": "AcceleratorProvider",
+    "type": "component",
+    "path": "/docs/components/accelerator-provider",
+    "keywords": "AcceleratorProvider Other AcceleratorProvider.platform AcceleratorPlatform AcceleratorProvider.children ReactNode",
+    "excerpt": "Other component from @larose-ui/react"
+  },
+  {
+    "id": "prop:accelerator-provider:platform",
+    "title": "AcceleratorProvider.platform",
+    "type": "prop",
+    "path": "/docs/components/accelerator-provider#api",
+    "keywords": "AcceleratorProvider platform AcceleratorPlatform ",
+    "excerpt": "AcceleratorPlatform"
+  },
+  {
+    "id": "component:accordion",
+    "title": "Accordion",
+    "type": "component",
+    "path": "/docs/components/accordion",
+    "keywords": "Accordion Content Accordion.collapsible boolean Accordion.defaultValue string[] Accordion.onValueChange (value: string[]) => void Accordion.type 'single' | 'multiple' Accordion.value string[] Accordion.children ReactNode Accordion.className string",
+    "excerpt": "Content component from @larose-ui/react"
+  },
+  {
+    "id": "prop:accordion:collapsible",
+    "title": "Accordion.collapsible",
+    "type": "prop",
+    "path": "/docs/components/accordion#api",
+    "keywords": "Accordion collapsible boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "prop:accordion:defaultValue",
+    "title": "Accordion.defaultValue",
+    "type": "prop",
+    "path": "/docs/components/accordion#api",
+    "keywords": "Accordion defaultValue string[] ",
+    "excerpt": "string[]"
+  },
+  {
+    "id": "prop:accordion:onValueChange",
+    "title": "Accordion.onValueChange",
+    "type": "prop",
+    "path": "/docs/components/accordion#api",
+    "keywords": "Accordion onValueChange (value: string[]) => void ",
+    "excerpt": "(value: string[]) => void"
+  },
+  {
+    "id": "prop:accordion:type",
+    "title": "Accordion.type",
+    "type": "prop",
+    "path": "/docs/components/accordion#api",
+    "keywords": "Accordion type 'single' | 'multiple' ",
+    "excerpt": "'single' | 'multiple'"
+  },
+  {
+    "id": "prop:accordion:value",
+    "title": "Accordion.value",
+    "type": "prop",
+    "path": "/docs/components/accordion#api",
+    "keywords": "Accordion value string[] ",
+    "excerpt": "string[]"
+  },
+  {
+    "id": "example:accordion:AccordionDefault",
+    "title": "Accordion — Accordion Default",
+    "type": "example",
+    "path": "/docs/components/accordion#examples",
+    "keywords": "Accordion Accordion Default basic {}",
+    "excerpt": "// See Storybook story \"AccordionDefault\" for full example."
+  },
+  {
+    "id": "example:accordion:AccordionCollapse",
+    "title": "Accordion — Accordion Collapse",
+    "type": "example",
+    "path": "/docs/components/accordion#examples",
+    "keywords": "Accordion Accordion Collapse advanced {}",
+    "excerpt": "// See Storybook story \"AccordionCollapse\" for full example."
+  },
+  {
+    "id": "component:accordion-content",
+    "title": "AccordionContent",
+    "type": "component",
+    "path": "/docs/components/accordion-content",
+    "keywords": "AccordionContent Content AccordionContent.children ReactNode",
+    "excerpt": "Content component from @larose-ui/react"
+  },
+  {
+    "id": "component:accordion-item",
+    "title": "AccordionItem",
+    "type": "component",
+    "path": "/docs/components/accordion-item",
+    "keywords": "AccordionItem Content AccordionItem.disabled boolean AccordionItem.value string AccordionItem.children ReactNode",
+    "excerpt": "Content component from @larose-ui/react"
+  },
+  {
+    "id": "prop:accordion-item:disabled",
+    "title": "AccordionItem.disabled",
+    "type": "prop",
+    "path": "/docs/components/accordion-item#api",
+    "keywords": "AccordionItem disabled boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "prop:accordion-item:value",
+    "title": "AccordionItem.value",
+    "type": "prop",
+    "path": "/docs/components/accordion-item#api",
+    "keywords": "AccordionItem value string ",
+    "excerpt": "string (required)"
+  },
+  {
+    "id": "component:accordion-trigger",
+    "title": "AccordionTrigger",
+    "type": "component",
+    "path": "/docs/components/accordion-trigger",
+    "keywords": "AccordionTrigger Content AccordionTrigger.children ReactNode",
+    "excerpt": "Content component from @larose-ui/react"
   },
   {
     "id": "component:activity-share-button",
@@ -363,6 +483,38 @@ export const docsSearchIndex = [
     "excerpt": "ActivityPresentation"
   },
   {
+    "id": "example:activity-view:NotesShareSheet",
+    "title": "ActivityView — Notes share sheet",
+    "type": "example",
+    "path": "/docs/components/activity-view#examples",
+    "keywords": "ActivityView Notes share sheet advanced {}",
+    "excerpt": "// See Storybook story \"NotesShareSheet\" for full example."
+  },
+  {
+    "id": "example:activity-view:PhotoAppActivities",
+    "title": "ActivityView — App-specific activities",
+    "type": "example",
+    "path": "/docs/components/activity-view#examples",
+    "keywords": "ActivityView App-specific activities advanced {}",
+    "excerpt": "// See Storybook story \"PhotoAppActivities\" for full example."
+  },
+  {
+    "id": "example:activity-view:CustomActionTitle",
+    "title": "ActivityView — Custom action title",
+    "type": "example",
+    "path": "/docs/components/activity-view#examples",
+    "keywords": "ActivityView Custom action title advanced {}",
+    "excerpt": "<ActivityView\n        open={open}\n        onClose={() => setOpen(false)}\n        activities={activities}\n        title=\""
+  },
+  {
+    "id": "example:activity-view:SheetPresentation",
+    "title": "ActivityView — Sheet Presentation",
+    "type": "example",
+    "path": "/docs/components/activity-view#examples",
+    "keywords": "ActivityView Sheet Presentation advanced {}",
+    "excerpt": "<ActivityView\n        open={open}\n        onClose={() => setOpen(false)}\n        activities={createDefaultActivities()}\n"
+  },
+  {
     "id": "component:alert",
     "title": "Alert",
     "type": "component",
@@ -392,7 +544,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/alert#examples",
     "keywords": "Alert Info advanced {\"variant\":\"info\",\"title\":\"Information\",\"children\":\"Payroll period closes in 3 days.\"}",
-    "excerpt": "<Alert\n  variant=\"info\"\n  title=\"Information\"\n>Payroll period closes in 3 days.</Alert>"
+    "excerpt": "import { Alert } from '@larose-ui/react';\n\n<Alert\n  variant=\"info\"\n  title=\"Information\"\n>Payroll period closes in 3 day"
   },
   {
     "id": "example:alert:Success",
@@ -400,7 +552,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/alert#examples",
     "keywords": "Alert Success advanced {\"variant\":\"success\",\"title\":\"Saved\",\"children\":\"Employee record updated successfully.\"}",
-    "excerpt": "<Alert\n  variant=\"success\"\n  title=\"Saved\"\n>Employee record updated successfully.</Alert>"
+    "excerpt": "import { Alert } from '@larose-ui/react';\n\n<Alert\n  variant=\"success\"\n  title=\"Saved\"\n>Employee record updated successfu"
   },
   {
     "id": "example:alert:Warning",
@@ -408,7 +560,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/alert#examples",
     "keywords": "Alert Warning advanced {\"variant\":\"warning\",\"title\":\"Warning\",\"children\":\"This action affects 12 employees.\"}",
-    "excerpt": "<Alert\n  variant=\"warning\"\n  title=\"Warning\"\n>This action affects 12 employees.</Alert>"
+    "excerpt": "import { Alert } from '@larose-ui/react';\n\n<Alert\n  variant=\"warning\"\n  title=\"Warning\"\n>This action affects 12 employee"
   },
   {
     "id": "example:alert:Error",
@@ -416,7 +568,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/alert#examples",
     "keywords": "Alert Error error {\"variant\":\"error\",\"title\":\"Error\",\"children\":\"Unable to connect to payroll service.\"}",
-    "excerpt": "<Alert\n  variant=\"error\"\n  title=\"Error\"\n>Unable to connect to payroll service.</Alert>"
+    "excerpt": "import { Alert } from '@larose-ui/react';\n\n<Alert\n  variant=\"error\"\n  title=\"Error\"\n>Unable to connect to payroll servic"
   },
   {
     "id": "example:alert:Dismissible",
@@ -424,7 +576,47 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/alert#examples",
     "keywords": "Alert Dismissible advanced {\"variant\":\"info\",\"children\":\"This notice can be dismissed.\"}",
-    "excerpt": "<Alert\n  variant=\"info\"\n>This notice can be dismissed.</Alert>"
+    "excerpt": "import { Alert } from '@larose-ui/react';\n\n<Alert\n  variant=\"info\"\n>This notice can be dismissed.</Alert>"
+  },
+  {
+    "id": "example:alert:DeleteConfirmation",
+    "title": "Alert — Destructive (compact)",
+    "type": "example",
+    "path": "/docs/components/alert#examples",
+    "keywords": "Alert Destructive (compact) destructive {}",
+    "excerpt": "// See Storybook story \"DeleteConfirmation\" for full example."
+  },
+  {
+    "id": "example:alert:ThreeButtonStack",
+    "title": "Alert — Three actions (compact)",
+    "type": "example",
+    "path": "/docs/components/alert#examples",
+    "keywords": "Alert Three actions (compact) advanced {}",
+    "excerpt": "// See Storybook story \"ThreeButtonStack\" for full example."
+  },
+  {
+    "id": "example:alert:DeliberateEmptyTrash",
+    "title": "Alert — Deliberate destructive (desktop)",
+    "type": "example",
+    "path": "/docs/components/alert#examples",
+    "keywords": "Alert Deliberate destructive (desktop) destructive {}",
+    "excerpt": "// See Storybook story \"DeliberateEmptyTrash\" for full example."
+  },
+  {
+    "id": "example:alert:InformationalDone",
+    "title": "Alert — Informational (tablet)",
+    "type": "example",
+    "path": "/docs/components/alert#examples",
+    "keywords": "Alert Informational (tablet) advanced {}",
+    "excerpt": "// See Storybook story \"InformationalDone\" for full example."
+  },
+  {
+    "id": "example:alert:PasswordPrompt",
+    "title": "Alert — Secure field (desktop)",
+    "type": "example",
+    "path": "/docs/components/alert#examples",
+    "keywords": "Alert Secure field (desktop) advanced {}",
+    "excerpt": "// See Storybook story \"PasswordPrompt\" for full example."
   },
   {
     "id": "component:alert-dialog",
@@ -600,7 +792,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/badge#examples",
     "keywords": "Badge Default basic {\"children\":\"Draft\"}",
-    "excerpt": "<Badge>Draft</Badge>"
+    "excerpt": "import { Badge } from '@larose-ui/react';\n\n<Badge>Draft</Badge>"
   },
   {
     "id": "example:badge:Info",
@@ -608,7 +800,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/badge#examples",
     "keywords": "Badge Info advanced {\"children\":\"Beta\",\"variant\":\"info\"}",
-    "excerpt": "<Badge\n  variant=\"info\"\n>Beta</Badge>"
+    "excerpt": "import { Badge } from '@larose-ui/react';\n\n<Badge\n  variant=\"info\"\n>Beta</Badge>"
   },
   {
     "id": "example:badge:Success",
@@ -616,7 +808,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/badge#examples",
     "keywords": "Badge Success advanced {\"children\":\"Active\",\"variant\":\"success\"}",
-    "excerpt": "<Badge\n  variant=\"success\"\n>Active</Badge>"
+    "excerpt": "import { Badge } from '@larose-ui/react';\n\n<Badge\n  variant=\"success\"\n>Active</Badge>"
   },
   {
     "id": "example:badge:Warning",
@@ -624,7 +816,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/badge#examples",
     "keywords": "Badge Warning advanced {\"children\":\"Pending\",\"variant\":\"warning\"}",
-    "excerpt": "<Badge\n  variant=\"warning\"\n>Pending</Badge>"
+    "excerpt": "import { Badge } from '@larose-ui/react';\n\n<Badge\n  variant=\"warning\"\n>Pending</Badge>"
   },
   {
     "id": "example:badge:Error",
@@ -632,7 +824,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/badge#examples",
     "keywords": "Badge Error error {\"children\":\"Suspended\",\"variant\":\"error\"}",
-    "excerpt": "<Badge\n  variant=\"error\"\n>Suspended</Badge>"
+    "excerpt": "import { Badge } from '@larose-ui/react';\n\n<Badge\n  variant=\"error\"\n>Suspended</Badge>"
   },
   {
     "id": "example:badge:AllVariants",
@@ -689,6 +881,14 @@ export const docsSearchIndex = [
     "path": "/docs/components/box#api",
     "keywords": "Box variant BoxVariant ",
     "excerpt": "BoxVariant"
+  },
+  {
+    "id": "example:box:DisclosureTriangleStory",
+    "title": "Box — Disclosure triangle",
+    "type": "example",
+    "path": "/docs/components/box#examples",
+    "keywords": "Box Disclosure triangle advanced {}",
+    "excerpt": "// See Storybook story \"DisclosureTriangleStory\" for full example."
   },
   {
     "id": "example:box:BoxSecondary",
@@ -864,7 +1064,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/button#examples",
     "keywords": "Button Primary basic {\"children\":\"Add to Cart\",\"variant\":\"primary\"}",
-    "excerpt": "<Button\n  variant=\"primary\"\n>Add to Cart</Button>"
+    "excerpt": "import { Button } from '@larose-ui/react';\n\n<Button\n  variant=\"primary\"\n>Add to Cart</Button>"
   },
   {
     "id": "example:button:Secondary",
@@ -872,7 +1072,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/button#examples",
     "keywords": "Button Secondary advanced {\"children\":\"Cancel\",\"variant\":\"secondary\",\"buttonRole\":\"cancel\"}",
-    "excerpt": "<Button\n  variant=\"secondary\"\n  buttonRole=\"cancel\"\n>Cancel</Button>"
+    "excerpt": "import { Button } from '@larose-ui/react';\n\n<Button\n  variant=\"secondary\"\n  buttonRole=\"cancel\"\n>Cancel</Button>"
   },
   {
     "id": "example:button:Loading",
@@ -880,7 +1080,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/button#examples",
     "keywords": "Button Loading loading {\"children\":\"Checkout\",\"loadingLabel\":\"Checking out…\",\"loading\":true}",
-    "excerpt": "<Button\n  loadingLabel=\"Checking out…\"\n  loading\n>Checkout</Button>"
+    "excerpt": "import { Button } from '@larose-ui/react';\n\n<Button\n  loadingLabel=\"Checking out…\"\n  loading\n>Checkout</Button>"
   },
   {
     "id": "example:button:Disabled",
@@ -888,7 +1088,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/button#examples",
     "keywords": "Button Disabled disabled {\"children\":\"Unavailable\",\"disabled\":true}",
-    "excerpt": "<Button\n  disabled\n>Unavailable</Button>"
+    "excerpt": "import { Button } from '@larose-ui/react';\n\n<Button\n  disabled\n>Unavailable</Button>"
   },
   {
     "id": "example:button:DestructiveFilled",
@@ -896,7 +1096,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/button#examples",
     "keywords": "Button Destructive Filled destructive {\"children\":\"Delete Employee\",\"variant\":\"destructive\"}",
-    "excerpt": "<Button\n  variant=\"destructive\"\n>Delete Employee</Button>"
+    "excerpt": "import { Button } from '@larose-ui/react';\n\n<Button\n  variant=\"destructive\"\n>Delete Employee</Button>"
   },
   {
     "id": "example:button:DestructivePlain",
@@ -904,7 +1104,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/button#examples",
     "keywords": "Button Destructive Plain destructive {\"children\":\"Delete Account\",\"variant\":\"ghost\",\"buttonRole\":\"destructive\"}",
-    "excerpt": "<Button\n  variant=\"ghost\"\n  buttonRole=\"destructive\"\n>Delete Account</Button>"
+    "excerpt": "import { Button } from '@larose-ui/react';\n\n<Button\n  variant=\"ghost\"\n  buttonRole=\"destructive\"\n>Delete Account</Button"
   },
   {
     "id": "example:button:OpensAnotherView",
@@ -912,7 +1112,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/button#examples",
     "keywords": "Button Opens another view (…) advanced {\"children\":\"Edit\",\"variant\":\"secondary\",\"opensAnotherView\":true,\"tooltip\":\"Opens AutoFill settings\"}",
-    "excerpt": "<Button\n  variant=\"secondary\"\n  opensAnotherView\n  tooltip=\"Opens AutoFill settings\"\n>Edit</Button>"
+    "excerpt": "import { Button } from '@larose-ui/react';\n\n<Button\n  variant=\"secondary\"\n  opensAnotherView\n  tooltip=\"Opens AutoFill s"
   },
   {
     "id": "example:button:IconOnly",
@@ -979,12 +1179,12 @@ export const docsSearchIndex = [
     "excerpt": "// See Storybook story \"Sizes\" for full example."
   },
   {
-    "id": "example:button:Button",
-    "title": "Button — Button",
+    "id": "example:button:DialogMotion",
+    "title": "Button — Dialog Motion",
     "type": "example",
     "path": "/docs/components/button#examples",
-    "keywords": "Button Button advanced {}",
-    "excerpt": "// See Storybook story \"Button\" for full example."
+    "keywords": "Button Dialog Motion advanced {}",
+    "excerpt": "<>\n        <Button onClick={() => setOpen(true)}>Open dialog</Button>\n        <Modal open={open} onClose={() => setOpen("
   },
   {
     "id": "component:button-group",
@@ -1017,6 +1217,78 @@ export const docsSearchIndex = [
     "path": "/docs/components/button-group#api",
     "keywords": "ButtonGroup orientation 'horizontal' | 'vertical' Horizontal row (default) or vertical stack for visionOS guidance.",
     "excerpt": "Horizontal row (default) or vertical stack for visionOS guidance."
+  },
+  {
+    "id": "component:calendar-grid",
+    "title": "CalendarGrid",
+    "type": "component",
+    "path": "/docs/components/calendar-grid",
+    "keywords": "CalendarGrid Forms CalendarGrid.locale string CalendarGrid.maxDate string CalendarGrid.minDate string CalendarGrid.value string CalendarGrid.onChange (isoDate: string) => void",
+    "excerpt": "Forms component from @larose-ui/react"
+  },
+  {
+    "id": "prop:calendar-grid:locale",
+    "title": "CalendarGrid.locale",
+    "type": "prop",
+    "path": "/docs/components/calendar-grid#api",
+    "keywords": "CalendarGrid locale string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:calendar-grid:maxDate",
+    "title": "CalendarGrid.maxDate",
+    "type": "prop",
+    "path": "/docs/components/calendar-grid#api",
+    "keywords": "CalendarGrid maxDate string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:calendar-grid:minDate",
+    "title": "CalendarGrid.minDate",
+    "type": "prop",
+    "path": "/docs/components/calendar-grid#api",
+    "keywords": "CalendarGrid minDate string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:calendar-grid:value",
+    "title": "CalendarGrid.value",
+    "type": "prop",
+    "path": "/docs/components/calendar-grid#api",
+    "keywords": "CalendarGrid value string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "component:caption-button",
+    "title": "CaptionButton",
+    "type": "component",
+    "path": "/docs/components/caption-button",
+    "keywords": "CaptionButton Other CaptionButton.imageUrl string CaptionButton.label string CaptionButton.subtitle string CaptionButton.title string",
+    "excerpt": "Other component from @larose-ui/react"
+  },
+  {
+    "id": "prop:caption-button:imageUrl",
+    "title": "CaptionButton.imageUrl",
+    "type": "prop",
+    "path": "/docs/components/caption-button#api",
+    "keywords": "CaptionButton imageUrl string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:caption-button:label",
+    "title": "CaptionButton.label",
+    "type": "prop",
+    "path": "/docs/components/caption-button#api",
+    "keywords": "CaptionButton label string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:caption-button:subtitle",
+    "title": "CaptionButton.subtitle",
+    "type": "prop",
+    "path": "/docs/components/caption-button#api",
+    "keywords": "CaptionButton subtitle string ",
+    "excerpt": "string"
   },
   {
     "id": "component:card",
@@ -1056,7 +1328,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/card#examples",
     "keywords": "Card Default basic {\"title\":\"Employee Profile\",\"description\":\"Manage employee information\",\"children\":\"Ahmed Mohamed — Software Engineer\"}",
-    "excerpt": "<Card\n  title=\"Employee Profile\"\n  description=\"Manage employee information\"\n>Ahmed Mohamed — Software Engineer</Card>"
+    "excerpt": "import { Card } from '@larose-ui/react';\n\n<Card\n  title=\"Employee Profile\"\n  description=\"Manage employee information\"\n>"
   },
   {
     "id": "example:card:WithBadge",
@@ -1067,12 +1339,116 @@ export const docsSearchIndex = [
     "excerpt": "// See Storybook story \"WithBadge\" for full example."
   },
   {
-    "id": "example:card:Card",
-    "title": "Card — Card",
+    "id": "example:card:ClearPromptsAndDefaults",
+    "title": "Card — Clear Prompts And Defaults",
     "type": "example",
     "path": "/docs/components/card#examples",
-    "keywords": "Card Card advanced {}",
-    "excerpt": "// See Storybook story \"Card\" for full example."
+    "keywords": "Card Clear Prompts And Defaults basic {}",
+    "excerpt": "// See Storybook story \"ClearPromptsAndDefaults\" for full example."
+  },
+  {
+    "id": "example:card:DynamicValidation",
+    "title": "Card — Dynamic Validation",
+    "type": "example",
+    "path": "/docs/components/card#examples",
+    "keywords": "Card Dynamic Validation advanced {}",
+    "excerpt": "// See Storybook story \"DynamicValidation\" for full example."
+  },
+  {
+    "id": "example:card:NumericFormatting",
+    "title": "Card — Numeric Formatting",
+    "type": "example",
+    "path": "/docs/components/card#examples",
+    "keywords": "Card Numeric Formatting advanced {}",
+    "excerpt": "// See Storybook story \"NumericFormatting\" for full example."
+  },
+  {
+    "id": "example:card:SecurePasswordField",
+    "title": "Card — Secure Password Field",
+    "type": "example",
+    "path": "/docs/components/card#examples",
+    "keywords": "Card Secure Password Field advanced {}",
+    "excerpt": "// See Storybook story \"SecurePasswordField\" for full example."
+  },
+  {
+    "id": "example:card:PasteAndDrop",
+    "title": "Card — Paste And Drop",
+    "type": "example",
+    "path": "/docs/components/card#examples",
+    "keywords": "Card Paste And Drop advanced {}",
+    "excerpt": "// See Storybook story \"PasteAndDrop\" for full example."
+  },
+  {
+    "id": "example:card:ContinueWhenComplete",
+    "title": "Card — Continue When Complete",
+    "type": "example",
+    "path": "/docs/components/card#examples",
+    "keywords": "Card Continue When Complete advanced {}",
+    "excerpt": "// See Storybook story \"ContinueWhenComplete\" for full example."
+  },
+  {
+    "id": "example:card:ExpansionTooltip",
+    "title": "Card — Expansion Tooltip",
+    "type": "example",
+    "path": "/docs/components/card#examples",
+    "keywords": "Card Expansion Tooltip advanced {}",
+    "excerpt": "// See Storybook story \"ExpansionTooltip\" for full example."
+  },
+  {
+    "id": "example:card:DisclosureButtonStory",
+    "title": "Card — Disclosure button",
+    "type": "example",
+    "path": "/docs/components/card#examples",
+    "keywords": "Card Disclosure button advanced {}",
+    "excerpt": "// See Storybook story \"DisclosureButtonStory\" for full example."
+  },
+  {
+    "id": "example:card:LabelImportance",
+    "title": "Card — Label Importance",
+    "type": "example",
+    "path": "/docs/components/card#examples",
+    "keywords": "Card Label Importance advanced {}",
+    "excerpt": "// See Storybook story \"LabelImportance\" for full example."
+  },
+  {
+    "id": "example:card:SelectableLabel",
+    "title": "Card — Selectable Label",
+    "type": "example",
+    "path": "/docs/components/card#examples",
+    "keywords": "Card Selectable Label advanced {}",
+    "excerpt": "// See Storybook story \"SelectableLabel\" for full example."
+  },
+  {
+    "id": "example:card:UnsavedChanges",
+    "title": "Card — Unsaved Changes",
+    "type": "example",
+    "path": "/docs/components/card#examples",
+    "keywords": "Card Unsaved Changes advanced {}",
+    "excerpt": "// See Storybook story \"UnsavedChanges\" for full example."
+  },
+  {
+    "id": "example:card:ImportWithFileUpload",
+    "title": "Card — Import With File Upload",
+    "type": "example",
+    "path": "/docs/components/card#examples",
+    "keywords": "Card Import With File Upload loading {}",
+    "excerpt": "// See Storybook story \"ImportWithFileUpload\" for full example."
+  },
+  {
+    "id": "example:card:ListAccessories",
+    "title": "Card — List Accessories",
+    "type": "example",
+    "path": "/docs/components/card#examples",
+    "keywords": "Card List Accessories advanced {}",
+    "excerpt": "// See Storybook story \"ListAccessories\" for full example."
+  },
+  {
+    "id": "example:card:DocumentToolbar",
+    "title": "Card — Document Toolbar",
+    "type": "example",
+    "path": "/docs/components/card#examples",
+    "keywords": "Card Document Toolbar advanced {}",
+    "excerpt": "// See Storybook story \"DocumentToolbar\" for full example."
   },
   {
     "id": "component:chart",
@@ -1216,7 +1592,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/chart#examples",
     "keywords": "Chart Bar Chart advanced {\"mark\":\"bar\",\"title\":\"Steps\",\"subtitle\":\"You averaged 8,102 steps per day this week.\",\"accessibilitySummary\":\"Bar chart showing daily steps for seven days. Highest on Thursday with 11,200 steps.\",\"min\":0,\"tickCount\":4}",
-    "excerpt": "<Chart\n  mark=\"bar\"\n  title=\"Steps\"\n  subtitle=\"You averaged 8,102 steps per day this week.\"\n  accessibilitySummary=\"Bar"
+    "excerpt": "import { Chart } from '@larose-ui/react';\n\n<Chart\n  mark=\"bar\"\n  title=\"Steps\"\n  subtitle=\"You averaged 8,102 steps per "
   },
   {
     "id": "example:chart:LineChart",
@@ -1224,7 +1600,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/chart#examples",
     "keywords": "Chart Line Chart advanced {\"mark\":\"line\",\"title\":\"Stock performance\",\"subtitle\":\"Five-year trend for AAPL.\",\"showPoints\":true,\"interactive\":true}",
-    "excerpt": "<Chart\n  mark=\"line\"\n  title=\"Stock performance\"\n  subtitle=\"Five-year trend for AAPL.\"\n  showPoints\n  interactive\n>Exam"
+    "excerpt": "import { Chart } from '@larose-ui/react';\n\n<Chart\n  mark=\"line\"\n  title=\"Stock performance\"\n  subtitle=\"Five-year trend "
   },
   {
     "id": "example:chart:PointChart",
@@ -1248,7 +1624,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/chart#examples",
     "keywords": "Chart Fixed Range advanced {\"mark\":\"line\",\"title\":\"Battery\",\"subtitle\":\"Charge level over the last 24 hours.\",\"x\":\"12a\",\"y\":88}",
-    "excerpt": "<Chart\n  mark=\"line\"\n  title=\"Battery\"\n  subtitle=\"Charge level over the last 24 hours.\"\n  x=\"12a\"\n  y={88}\n>Example</Ch"
+    "excerpt": "import { Chart } from '@larose-ui/react';\n\n<Chart\n  mark=\"line\"\n  title=\"Battery\"\n  subtitle=\"Charge level over the last"
   },
   {
     "id": "component:checkbox",
@@ -1296,7 +1672,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/checkbox#examples",
     "keywords": "Checkbox Default basic {\"label\":\"I agree to the terms\"}",
-    "excerpt": "<Checkbox\n  label=\"I agree to the terms\"\n>Example</Checkbox>"
+    "excerpt": "import { Checkbox } from '@larose-ui/react';\n\n<Checkbox\n  label=\"I agree to the terms\"\n>Example</Checkbox>"
   },
   {
     "id": "example:checkbox:Checked",
@@ -1304,7 +1680,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/checkbox#examples",
     "keywords": "Checkbox Checked advanced {\"label\":\"Subscribe to newsletter\",\"defaultChecked\":true}",
-    "excerpt": "<Checkbox\n  label=\"Subscribe to newsletter\"\n  defaultChecked\n>Example</Checkbox>"
+    "excerpt": "import { Checkbox } from '@larose-ui/react';\n\n<Checkbox\n  label=\"Subscribe to newsletter\"\n  defaultChecked\n>Example</Che"
   },
   {
     "id": "example:checkbox:WithHint",
@@ -1312,7 +1688,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/checkbox#examples",
     "keywords": "Checkbox With Hint advanced {\"label\":\"Send me product updates\",\"hint\":\"You can unsubscribe at any time\"}",
-    "excerpt": "<Checkbox\n  label=\"Send me product updates\"\n  hint=\"You can unsubscribe at any time\"\n>Example</Checkbox>"
+    "excerpt": "import { Checkbox } from '@larose-ui/react';\n\n<Checkbox\n  label=\"Send me product updates\"\n  hint=\"You can unsubscribe at"
   },
   {
     "id": "example:checkbox:WithError",
@@ -1320,7 +1696,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/checkbox#examples",
     "keywords": "Checkbox With Error error {\"label\":\"I agree to the terms\",\"error\":\"You must accept the terms to continue\"}",
-    "excerpt": "<Checkbox\n  label=\"I agree to the terms\"\n  error=\"You must accept the terms to continue\"\n>Example</Checkbox>"
+    "excerpt": "import { Checkbox } from '@larose-ui/react';\n\n<Checkbox\n  label=\"I agree to the terms\"\n  error=\"You must accept the term"
   },
   {
     "id": "example:checkbox:Disabled",
@@ -1328,7 +1704,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/checkbox#examples",
     "keywords": "Checkbox Disabled disabled {\"label\":\"Legacy feature access\",\"disabled\":true}",
-    "excerpt": "<Checkbox\n  label=\"Legacy feature access\"\n  disabled\n>Example</Checkbox>"
+    "excerpt": "import { Checkbox } from '@larose-ui/react';\n\n<Checkbox\n  label=\"Legacy feature access\"\n  disabled\n>Example</Checkbox>"
   },
   {
     "id": "example:checkbox:CheckboxDefault",
@@ -1659,6 +2035,22 @@ export const docsSearchIndex = [
     "excerpt": "<CommandPaletteDemo />"
   },
   {
+    "id": "example:command-palette:Playground",
+    "title": "CommandPalette — Playground",
+    "type": "example",
+    "path": "/docs/components/command-palette#examples",
+    "keywords": "CommandPalette Playground advanced {}",
+    "excerpt": "// See Storybook story \"Playground\" for full example."
+  },
+  {
+    "id": "example:command-palette:Closed",
+    "title": "CommandPalette — Closed",
+    "type": "example",
+    "path": "/docs/components/command-palette#examples",
+    "keywords": "CommandPalette Closed advanced {\"open\":false}",
+    "excerpt": "import { CommandPalette } from '@larose-ui/react';\n\n<CommandPalette\n  open={false}\n>Example</CommandPalette>"
+  },
+  {
     "id": "component:context-menu",
     "title": "ContextMenu",
     "type": "component",
@@ -1721,6 +2113,30 @@ export const docsSearchIndex = [
     "path": "/docs/components/context-menu#api",
     "keywords": "ContextMenu preview ReactNode ",
     "excerpt": "ReactNode"
+  },
+  {
+    "id": "example:context-menu:MailMessage",
+    "title": "ContextMenu — Mail message",
+    "type": "example",
+    "path": "/docs/components/context-menu#examples",
+    "keywords": "ContextMenu Mail message advanced {}",
+    "excerpt": "// See Storybook story \"MailMessage\" for full example."
+  },
+  {
+    "id": "example:context-menu:MultiSelectTitle",
+    "title": "ContextMenu — Multi-select title",
+    "type": "example",
+    "path": "/docs/components/context-menu#examples",
+    "keywords": "ContextMenu Multi-select title advanced {}",
+    "excerpt": "// See Storybook story \"MultiSelectTitle\" for full example."
+  },
+  {
+    "id": "example:context-menu:HiddenUnavailable",
+    "title": "ContextMenu — Hidden Unavailable",
+    "type": "example",
+    "path": "/docs/components/context-menu#examples",
+    "keywords": "ContextMenu Hidden Unavailable advanced {}",
+    "excerpt": "// See Storybook story \"HiddenUnavailable\" for full example."
   },
   {
     "id": "component:data-table",
@@ -2035,12 +2451,132 @@ export const docsSearchIndex = [
     "excerpt": "DateRange"
   },
   {
-    "id": "example:date-range-picker:DateRangePickerDefault",
-    "title": "DateRangePicker — Date Range Picker Default",
-    "type": "example",
-    "path": "/docs/components/date-range-picker#examples",
-    "keywords": "DateRangePicker Date Range Picker Default basic {}",
-    "excerpt": "<DateRangeDemo />"
+    "id": "component:date-time-picker",
+    "title": "DateTimePicker",
+    "type": "component",
+    "path": "/docs/components/date-time-picker",
+    "keywords": "DateTimePicker Forms DateTimePicker.disabled boolean DateTimePicker.error string | null DateTimePicker.hint string DateTimePicker.inputSize Size DateTimePicker.label string DateTimePicker.loading boolean DateTimePicker.locale string DateTimePicker.maxDate string DateTimePicker.minDate string DateTimePicker.minuteInterval number DateTimePicker.mode DateTimePickerMode DateTimePicker.state UIState DateTimePicker.use12Hour boolean DateTimePicker.value DateTimeValue DateTimePicker.yearRange { start: number; end: number } DateTimePicker.onChange (value: DateTimeValue) => void DateTimePicker.style DateTimePickerStyle",
+    "excerpt": "Forms component from @larose-ui/react"
+  },
+  {
+    "id": "prop:date-time-picker:disabled",
+    "title": "DateTimePicker.disabled",
+    "type": "prop",
+    "path": "/docs/components/date-time-picker#api",
+    "keywords": "DateTimePicker disabled boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "prop:date-time-picker:error",
+    "title": "DateTimePicker.error",
+    "type": "prop",
+    "path": "/docs/components/date-time-picker#api",
+    "keywords": "DateTimePicker error string | null ",
+    "excerpt": "string | null"
+  },
+  {
+    "id": "prop:date-time-picker:hint",
+    "title": "DateTimePicker.hint",
+    "type": "prop",
+    "path": "/docs/components/date-time-picker#api",
+    "keywords": "DateTimePicker hint string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:date-time-picker:inputSize",
+    "title": "DateTimePicker.inputSize",
+    "type": "prop",
+    "path": "/docs/components/date-time-picker#api",
+    "keywords": "DateTimePicker inputSize Size ",
+    "excerpt": "Size"
+  },
+  {
+    "id": "prop:date-time-picker:label",
+    "title": "DateTimePicker.label",
+    "type": "prop",
+    "path": "/docs/components/date-time-picker#api",
+    "keywords": "DateTimePicker label string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:date-time-picker:loading",
+    "title": "DateTimePicker.loading",
+    "type": "prop",
+    "path": "/docs/components/date-time-picker#api",
+    "keywords": "DateTimePicker loading boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "prop:date-time-picker:locale",
+    "title": "DateTimePicker.locale",
+    "type": "prop",
+    "path": "/docs/components/date-time-picker#api",
+    "keywords": "DateTimePicker locale string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:date-time-picker:maxDate",
+    "title": "DateTimePicker.maxDate",
+    "type": "prop",
+    "path": "/docs/components/date-time-picker#api",
+    "keywords": "DateTimePicker maxDate string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:date-time-picker:minDate",
+    "title": "DateTimePicker.minDate",
+    "type": "prop",
+    "path": "/docs/components/date-time-picker#api",
+    "keywords": "DateTimePicker minDate string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:date-time-picker:minuteInterval",
+    "title": "DateTimePicker.minuteInterval",
+    "type": "prop",
+    "path": "/docs/components/date-time-picker#api",
+    "keywords": "DateTimePicker minuteInterval number ",
+    "excerpt": "number"
+  },
+  {
+    "id": "prop:date-time-picker:mode",
+    "title": "DateTimePicker.mode",
+    "type": "prop",
+    "path": "/docs/components/date-time-picker#api",
+    "keywords": "DateTimePicker mode DateTimePickerMode ",
+    "excerpt": "DateTimePickerMode"
+  },
+  {
+    "id": "prop:date-time-picker:state",
+    "title": "DateTimePicker.state",
+    "type": "prop",
+    "path": "/docs/components/date-time-picker#api",
+    "keywords": "DateTimePicker state UIState ",
+    "excerpt": "UIState"
+  },
+  {
+    "id": "prop:date-time-picker:use12Hour",
+    "title": "DateTimePicker.use12Hour",
+    "type": "prop",
+    "path": "/docs/components/date-time-picker#api",
+    "keywords": "DateTimePicker use12Hour boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "prop:date-time-picker:value",
+    "title": "DateTimePicker.value",
+    "type": "prop",
+    "path": "/docs/components/date-time-picker#api",
+    "keywords": "DateTimePicker value DateTimeValue ",
+    "excerpt": "DateTimeValue"
+  },
+  {
+    "id": "prop:date-time-picker:yearRange",
+    "title": "DateTimePicker.yearRange",
+    "type": "prop",
+    "path": "/docs/components/date-time-picker#api",
+    "keywords": "DateTimePicker yearRange { start: number; end: number } ",
+    "excerpt": "{ start: number; end: number }"
   },
   {
     "id": "component:dialog",
@@ -2131,14 +2667,6 @@ export const docsSearchIndex = [
     "excerpt": "<Dialog\n        open\n        onClose={() => undefined}\n        title=\"Saving Changes\"\n        description=\"Please wait w"
   },
   {
-    "id": "example:dialog:DialogMotion",
-    "title": "Dialog — Dialog Motion",
-    "type": "example",
-    "path": "/docs/components/dialog#examples",
-    "keywords": "Dialog Dialog Motion advanced {}",
-    "excerpt": "<>\n        <Button onClick={() => setOpen(true)}>Open dialog</Button>\n        <Modal open={open} onClose={() => setOpen("
-  },
-  {
     "id": "component:disclosure-button",
     "title": "DisclosureButton",
     "type": "component",
@@ -2203,12 +2731,92 @@ export const docsSearchIndex = [
     "excerpt": "(expanded: boolean) => void"
   },
   {
-    "id": "example:disclosure-button:DisclosureButtonStory",
-    "title": "DisclosureButton — Disclosure button",
+    "id": "component:disclosure-group",
+    "title": "DisclosureGroup",
+    "type": "component",
+    "path": "/docs/components/disclosure-group",
+    "keywords": "DisclosureGroup Content DisclosureGroup.defaultExpanded boolean DisclosureGroup.disabled boolean DisclosureGroup.expanded boolean DisclosureGroup.label string DisclosureGroup.onExpandedChange (expanded: boolean) => void DisclosureGroup.children ReactNode",
+    "excerpt": "Content component from @larose-ui/react"
+  },
+  {
+    "id": "prop:disclosure-group:defaultExpanded",
+    "title": "DisclosureGroup.defaultExpanded",
+    "type": "prop",
+    "path": "/docs/components/disclosure-group#api",
+    "keywords": "DisclosureGroup defaultExpanded boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "prop:disclosure-group:disabled",
+    "title": "DisclosureGroup.disabled",
+    "type": "prop",
+    "path": "/docs/components/disclosure-group#api",
+    "keywords": "DisclosureGroup disabled boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "prop:disclosure-group:expanded",
+    "title": "DisclosureGroup.expanded",
+    "type": "prop",
+    "path": "/docs/components/disclosure-group#api",
+    "keywords": "DisclosureGroup expanded boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "prop:disclosure-group:label",
+    "title": "DisclosureGroup.label",
+    "type": "prop",
+    "path": "/docs/components/disclosure-group#api",
+    "keywords": "DisclosureGroup label string ",
+    "excerpt": "string (required)"
+  },
+  {
+    "id": "prop:disclosure-group:onExpandedChange",
+    "title": "DisclosureGroup.onExpandedChange",
+    "type": "prop",
+    "path": "/docs/components/disclosure-group#api",
+    "keywords": "DisclosureGroup onExpandedChange (expanded: boolean) => void ",
+    "excerpt": "(expanded: boolean) => void"
+  },
+  {
+    "id": "example:disclosure-group:DisclosureGroupStory",
+    "title": "DisclosureGroup — Disclosure group",
     "type": "example",
-    "path": "/docs/components/disclosure-button#examples",
-    "keywords": "DisclosureButton Disclosure button advanced {}",
-    "excerpt": "// See Storybook story \"DisclosureButtonStory\" for full example."
+    "path": "/docs/components/disclosure-group#examples",
+    "keywords": "DisclosureGroup Disclosure group advanced {}",
+    "excerpt": "// See Storybook story \"DisclosureGroupStory\" for full example."
+  },
+  {
+    "id": "component:disclosure-list",
+    "title": "DisclosureList",
+    "type": "component",
+    "path": "/docs/components/disclosure-list",
+    "keywords": "DisclosureList Content DisclosureList.defaultExpandedIds string[] DisclosureList.items DisclosureListItem[]",
+    "excerpt": "Content component from @larose-ui/react"
+  },
+  {
+    "id": "prop:disclosure-list:defaultExpandedIds",
+    "title": "DisclosureList.defaultExpandedIds",
+    "type": "prop",
+    "path": "/docs/components/disclosure-list#api",
+    "keywords": "DisclosureList defaultExpandedIds string[] ",
+    "excerpt": "string[]"
+  },
+  {
+    "id": "prop:disclosure-list:items",
+    "title": "DisclosureList.items",
+    "type": "prop",
+    "path": "/docs/components/disclosure-list#api",
+    "keywords": "DisclosureList items DisclosureListItem[] ",
+    "excerpt": "DisclosureListItem[] (required)"
+  },
+  {
+    "id": "example:disclosure-list:FinderStyleList",
+    "title": "DisclosureList — Finder Style List",
+    "type": "example",
+    "path": "/docs/components/disclosure-list#examples",
+    "keywords": "DisclosureList Finder Style List advanced {}",
+    "excerpt": "// See Storybook story \"FinderStyleList\" for full example."
   },
   {
     "id": "component:disclosure-triangle",
@@ -2257,14 +2865,6 @@ export const docsSearchIndex = [
     "path": "/docs/components/disclosure-triangle#api",
     "keywords": "DisclosureTriangle onExpandedChange (expanded: boolean) => void ",
     "excerpt": "(expanded: boolean) => void"
-  },
-  {
-    "id": "example:disclosure-triangle:DisclosureTriangleStory",
-    "title": "DisclosureTriangle — Disclosure triangle",
-    "type": "example",
-    "path": "/docs/components/disclosure-triangle#examples",
-    "keywords": "DisclosureTriangle Disclosure triangle advanced {}",
-    "excerpt": "// See Storybook story \"DisclosureTriangleStory\" for full example."
   },
   {
     "id": "component:dock-bar",
@@ -2369,6 +2969,38 @@ export const docsSearchIndex = [
     "path": "/docs/components/dock-menu#api",
     "keywords": "DockMenu runningEntries ContextMenuEntry[] High-value actions when the app is running (e.g. New Window, Get New Mail).",
     "excerpt": "High-value actions when the app is running (e.g. New Window, Get New Mail)."
+  },
+  {
+    "id": "example:dock-menu:SafariRunning",
+    "title": "DockMenu — Safari (running)",
+    "type": "example",
+    "path": "/docs/components/dock-menu#examples",
+    "keywords": "DockMenu Safari (running) advanced {}",
+    "excerpt": "// See Storybook story \"SafariRunning\" for full example."
+  },
+  {
+    "id": "example:dock-menu:MailRunning",
+    "title": "DockMenu — Mail (running)",
+    "type": "example",
+    "path": "/docs/components/dock-menu#examples",
+    "keywords": "DockMenu Mail (running) advanced {}",
+    "excerpt": "// See Storybook story \"MailRunning\" for full example."
+  },
+  {
+    "id": "example:dock-menu:AppNotRunning",
+    "title": "DockMenu — App not running",
+    "type": "example",
+    "path": "/docs/components/dock-menu#examples",
+    "keywords": "DockMenu App not running advanced {}",
+    "excerpt": "// See Storybook story \"AppNotRunning\" for full example."
+  },
+  {
+    "id": "example:dock-menu:HomeScreenQuickActionsStory",
+    "title": "DockMenu — Home Screen quick actions",
+    "type": "example",
+    "path": "/docs/components/dock-menu#examples",
+    "keywords": "DockMenu Home Screen quick actions advanced {}",
+    "excerpt": "// See Storybook story \"HomeScreenQuickActionsStory\" for full example."
   },
   {
     "id": "component:document-launcher",
@@ -2523,12 +3155,12 @@ export const docsSearchIndex = [
     "excerpt": "// See Storybook story \"DocumentToolbarStory\" for full example."
   },
   {
-    "id": "example:document-toolbar:DocumentToolbar",
-    "title": "DocumentToolbar — Document Toolbar",
-    "type": "example",
-    "path": "/docs/components/document-toolbar#examples",
-    "keywords": "DocumentToolbar Document Toolbar advanced {}",
-    "excerpt": "// See Storybook story \"DocumentToolbar\" for full example."
+    "id": "component:drag-start-threshold-px",
+    "title": "DRAG_START_THRESHOLD_PX",
+    "type": "component",
+    "path": "/docs/components/drag-start-threshold-px",
+    "keywords": "DRAG_START_THRESHOLD_PX Other",
+    "excerpt": "Other component from @larose-ui/react"
   },
   {
     "id": "component:drag-drop-list",
@@ -2731,14 +3363,6 @@ export const docsSearchIndex = [
     "excerpt": "// See Storybook story \"Left\" for full example."
   },
   {
-    "id": "example:drawer:DrawerMotion",
-    "title": "Drawer — Drawer Motion",
-    "type": "example",
-    "path": "/docs/components/drawer#examples",
-    "keywords": "Drawer Drawer Motion advanced {}",
-    "excerpt": "<>\n        <Button onClick={() => setOpen(true)}>Open drawer</Button>\n        <Drawer open={open} onClose={() => setOpen"
-  },
-  {
     "id": "component:drop-zone",
     "title": "DropZone",
     "type": "component",
@@ -2907,6 +3531,54 @@ export const docsSearchIndex = [
     "excerpt": "EditMenuVariant"
   },
   {
+    "id": "example:edit-menu:CompactSelectedText",
+    "title": "EditMenu — Compact (touch and hold)",
+    "type": "example",
+    "path": "/docs/components/edit-menu#examples",
+    "keywords": "EditMenu Compact (touch and hold) advanced {}",
+    "excerpt": "// See Storybook story \"CompactSelectedText\" for full example."
+  },
+  {
+    "id": "example:edit-menu:ContextPointer",
+    "title": "EditMenu — Context menu (pointer)",
+    "type": "example",
+    "path": "/docs/components/edit-menu#examples",
+    "keywords": "EditMenu Context menu (pointer) advanced {}",
+    "excerpt": "// See Storybook story \"ContextPointer\" for full example."
+  },
+  {
+    "id": "example:edit-menu:AddressSelection",
+    "title": "EditMenu — Address (contextual actions)",
+    "type": "example",
+    "path": "/docs/components/edit-menu#examples",
+    "keywords": "EditMenu Address (contextual actions) advanced {}",
+    "excerpt": "// See Storybook story \"AddressSelection\" for full example."
+  },
+  {
+    "id": "example:edit-menu:NoSelection",
+    "title": "EditMenu — No selection",
+    "type": "example",
+    "path": "/docs/components/edit-menu#examples",
+    "keywords": "EditMenu No selection advanced {}",
+    "excerpt": "// See Storybook story \"NoSelection\" for full example."
+  },
+  {
+    "id": "example:edit-menu:CustomFormatCommands",
+    "title": "EditMenu — Custom format commands",
+    "type": "example",
+    "path": "/docs/components/edit-menu#examples",
+    "keywords": "EditMenu Custom format commands advanced {}",
+    "excerpt": "// See Storybook story \"CustomFormatCommands\" for full example."
+  },
+  {
+    "id": "example:edit-menu:CopyStaticText",
+    "title": "EditMenu — Copy static text",
+    "type": "example",
+    "path": "/docs/components/edit-menu#examples",
+    "keywords": "EditMenu Copy static text advanced {}",
+    "excerpt": "// See Storybook story \"CopyStaticText\" for full example."
+  },
+  {
     "id": "component:edit-menu-selection",
     "title": "EditMenuSelection",
     "type": "component",
@@ -2968,7 +3640,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/empty-state#examples",
     "keywords": "EmptyState No Employees advanced {\"title\":\"No employees found\",\"description\":\"Get started by creating your first employee record.\",\"actionLabel\":\"Add Employee\"}",
-    "excerpt": "<EmptyState\n  title=\"No employees found\"\n  description=\"Get started by creating your first employee record.\"\n  actionLab"
+    "excerpt": "import { EmptyState } from '@larose-ui/react';\n\n<EmptyState\n  title=\"No employees found\"\n  description=\"Get started by c"
   },
   {
     "id": "example:empty-state:Offline",
@@ -2976,7 +3648,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/empty-state#examples",
     "keywords": "EmptyState Offline advanced {\"title\":\"You are offline\",\"description\":\"Changes will sync when you reconnect.\",\"state\":\"offline\"}",
-    "excerpt": "<EmptyState\n  title=\"You are offline\"\n  description=\"Changes will sync when you reconnect.\"\n  state=\"offline\"\n>Example</"
+    "excerpt": "import { EmptyState } from '@larose-ui/react';\n\n<EmptyState\n  title=\"You are offline\"\n  description=\"Changes will sync w"
   },
   {
     "id": "example:empty-state:Unauthorized",
@@ -2984,7 +3656,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/empty-state#examples",
     "keywords": "EmptyState Unauthorized advanced {\"title\":\"Access denied\",\"description\":\"You don't have permission to view this resource.\",\"state\":\"unauthorized\",\"actionLabel\":\"Go back\"}",
-    "excerpt": "<EmptyState\n  title=\"Access denied\"\n  description=\"You don't have permission to view this resource.\"\n  state=\"unauthoriz"
+    "excerpt": "import { EmptyState } from '@larose-ui/react';\n\n<EmptyState\n  title=\"Access denied\"\n  description=\"You don't have permis"
   },
   {
     "id": "component:file-browser",
@@ -3123,6 +3795,14 @@ export const docsSearchIndex = [
     "excerpt": "FilePreviewSource (required)"
   },
   {
+    "id": "example:file-preview:QuickLookPreview",
+    "title": "FilePreview — Release Notes.md",
+    "type": "example",
+    "path": "/docs/components/file-preview#examples",
+    "keywords": "FilePreview Release Notes.md advanced {}",
+    "excerpt": "// See Storybook story \"QuickLookPreview\" for full example."
+  },
+  {
     "id": "component:file-upload",
     "title": "FileUpload",
     "type": "component",
@@ -3203,28 +3883,60 @@ export const docsSearchIndex = [
     "excerpt": "// See Storybook story \"FileUploadDefault\" for full example."
   },
   {
-    "id": "example:file-upload:ImportWithFileUpload",
-    "title": "FileUpload — Import With File Upload",
-    "type": "example",
-    "path": "/docs/components/file-upload#examples",
-    "keywords": "FileUpload Import With File Upload loading {}",
-    "excerpt": "// See Storybook story \"ImportWithFileUpload\" for full example."
-  },
-  {
-    "id": "component:form-continue",
-    "title": "FormContinue",
+    "id": "component:header",
+    "title": "Header",
     "type": "component",
-    "path": "/docs/components/form-continue",
-    "keywords": "FormContinue Forms FormContinue.complete boolean",
-    "excerpt": "Forms component from @larose-ui/react"
+    "path": "/docs/components/header",
+    "keywords": "Header Navigation Header.children ReactNode Header.className string",
+    "excerpt": "Navigation component from @larose-ui/react"
   },
   {
-    "id": "prop:form-continue:complete",
-    "title": "FormContinue.complete",
-    "type": "prop",
-    "path": "/docs/components/form-continue#api",
-    "keywords": "FormContinue complete boolean When false, Continue stays disabled until required data is entered.",
-    "excerpt": "When false, Continue stays disabled until required data is entered."
+    "id": "example:header:HeaderDefault",
+    "title": "Header — Header Default",
+    "type": "example",
+    "path": "/docs/components/header#examples",
+    "keywords": "Header Header Default basic {}",
+    "excerpt": "// See Storybook story \"HeaderDefault\" for full example."
+  },
+  {
+    "id": "example:header:HeaderWithTitle",
+    "title": "Header — Header With Title",
+    "type": "example",
+    "path": "/docs/components/header#examples",
+    "keywords": "Header Header With Title advanced {}",
+    "excerpt": "// See Storybook story \"HeaderWithTitle\" for full example."
+  },
+  {
+    "id": "example:header:DocumentWorkspace",
+    "title": "Header — Document Workspace",
+    "type": "example",
+    "path": "/docs/components/header#examples",
+    "keywords": "Header Document Workspace advanced {}",
+    "excerpt": "// See Storybook story \"DocumentWorkspace\" for full example."
+  },
+  {
+    "id": "component:header-actions",
+    "title": "HeaderActions",
+    "type": "component",
+    "path": "/docs/components/header-actions",
+    "keywords": "HeaderActions Other HeaderActions.children ReactNode",
+    "excerpt": "Other component from @larose-ui/react"
+  },
+  {
+    "id": "component:header-brand",
+    "title": "HeaderBrand",
+    "type": "component",
+    "path": "/docs/components/header-brand",
+    "keywords": "HeaderBrand Other HeaderBrand.children ReactNode",
+    "excerpt": "Other component from @larose-ui/react"
+  },
+  {
+    "id": "component:header-title",
+    "title": "HeaderTitle",
+    "type": "component",
+    "path": "/docs/components/header-title",
+    "keywords": "HeaderTitle Other HeaderTitle.children ReactNode",
+    "excerpt": "Other component from @larose-ui/react"
   },
   {
     "id": "component:help-button",
@@ -3323,12 +4035,36 @@ export const docsSearchIndex = [
     "excerpt": "QuickActionItem[]"
   },
   {
-    "id": "example:home-screen-quick-actions:HomeScreenQuickActionsStory",
-    "title": "HomeScreenQuickActions — Home Screen quick actions",
+    "id": "example:home-screen-quick-actions:MailActions",
+    "title": "HomeScreenQuickActions — Mail",
     "type": "example",
     "path": "/docs/components/home-screen-quick-actions#examples",
-    "keywords": "HomeScreenQuickActions Home Screen quick actions advanced {}",
-    "excerpt": "// See Storybook story \"HomeScreenQuickActionsStory\" for full example."
+    "keywords": "HomeScreenQuickActions Mail advanced {}",
+    "excerpt": "// See Storybook story \"MailActions\" for full example."
+  },
+  {
+    "id": "example:home-screen-quick-actions:MapsActions",
+    "title": "HomeScreenQuickActions — Maps",
+    "type": "example",
+    "path": "/docs/components/home-screen-quick-actions#examples",
+    "keywords": "HomeScreenQuickActions Maps advanced {}",
+    "excerpt": "// See Storybook story \"MapsActions\" for full example."
+  },
+  {
+    "id": "example:home-screen-quick-actions:DynamicMessages",
+    "title": "HomeScreenQuickActions — Dynamic (Messages)",
+    "type": "example",
+    "path": "/docs/components/home-screen-quick-actions#examples",
+    "keywords": "HomeScreenQuickActions Dynamic (Messages) advanced {}",
+    "excerpt": "// See Storybook story \"DynamicMessages\" for full example."
+  },
+  {
+    "id": "example:home-screen-quick-actions:WithoutSystemActions",
+    "title": "HomeScreenQuickActions — App actions only",
+    "type": "example",
+    "path": "/docs/components/home-screen-quick-actions#examples",
+    "keywords": "HomeScreenQuickActions App actions only advanced {}",
+    "excerpt": "// See Storybook story \"WithoutSystemActions\" for full example."
   },
   {
     "id": "component:image-button",
@@ -3361,14 +4097,6 @@ export const docsSearchIndex = [
     "path": "/docs/components/image-button#api",
     "keywords": "ImageButton src string ",
     "excerpt": "string (required)"
-  },
-  {
-    "id": "example:image-button:ImageButtonStory",
-    "title": "ImageButton — Image Button",
-    "type": "example",
-    "path": "/docs/components/image-button#examples",
-    "keywords": "ImageButton Image Button advanced {}",
-    "excerpt": "// See Storybook story \"ImageButtonStory\" for full example."
   },
   {
     "id": "component:image-overlay",
@@ -3459,6 +4187,46 @@ export const docsSearchIndex = [
     "excerpt": "string"
   },
   {
+    "id": "example:image-view:FitModes",
+    "title": "ImageView — Fit Modes",
+    "type": "example",
+    "path": "/docs/components/image-view#examples",
+    "keywords": "ImageView Fit Modes advanced {}",
+    "excerpt": "// See Storybook story \"FitModes\" for full example."
+  },
+  {
+    "id": "example:image-view:TextOverlay",
+    "title": "ImageView — Text Overlay",
+    "type": "example",
+    "path": "/docs/components/image-view#examples",
+    "keywords": "ImageView Text Overlay advanced {}",
+    "excerpt": "// See Storybook story \"TextOverlay\" for full example."
+  },
+  {
+    "id": "example:image-view:AnimatedSequence",
+    "title": "ImageView — Animated Sequence",
+    "type": "example",
+    "path": "/docs/components/image-view#examples",
+    "keywords": "ImageView Animated Sequence advanced {}",
+    "excerpt": "// See Storybook story \"AnimatedSequence\" for full example."
+  },
+  {
+    "id": "example:image-view:ImageWellStory",
+    "title": "ImageView — Image Well",
+    "type": "example",
+    "path": "/docs/components/image-view#examples",
+    "keywords": "ImageView Image Well advanced {}",
+    "excerpt": "// See Storybook story \"ImageWellStory\" for full example."
+  },
+  {
+    "id": "example:image-view:ImageButtonStory",
+    "title": "ImageView — Image Button",
+    "type": "example",
+    "path": "/docs/components/image-view#examples",
+    "keywords": "ImageView Image Button advanced {}",
+    "excerpt": "// See Storybook story \"ImageButtonStory\" for full example."
+  },
+  {
     "id": "component:image-well",
     "title": "ImageWell",
     "type": "component",
@@ -3513,14 +4281,6 @@ export const docsSearchIndex = [
     "path": "/docs/components/image-well#api",
     "keywords": "ImageWell src string ",
     "excerpt": "string"
-  },
-  {
-    "id": "example:image-well:ImageWellStory",
-    "title": "ImageWell — Image Well",
-    "type": "example",
-    "path": "/docs/components/image-well#examples",
-    "keywords": "ImageWell Image Well advanced {}",
-    "excerpt": "// See Storybook story \"ImageWellStory\" for full example."
   },
   {
     "id": "component:input",
@@ -3640,7 +4400,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/input#examples",
     "keywords": "Input Default basic {\"label\":\"Employee Name\",\"placeholder\":\"Enter name\"}",
-    "excerpt": "<Input\n  label=\"Employee Name\"\n  placeholder=\"Enter name\"\n>Example</Input>"
+    "excerpt": "import { Input } from '@larose-ui/react';\n\n<Input\n  label=\"Employee Name\"\n  placeholder=\"Enter name\"\n>Example</Input>"
   },
   {
     "id": "example:input:WithHint",
@@ -3648,7 +4408,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/input#examples",
     "keywords": "Input With Hint advanced {\"label\":\"Email\",\"placeholder\":\"username@company.com\",\"hint\":\"Work email address\"}",
-    "excerpt": "<Input\n  label=\"Email\"\n  placeholder=\"username@company.com\"\n  hint=\"Work email address\"\n>Example</Input>"
+    "excerpt": "import { Input } from '@larose-ui/react';\n\n<Input\n  label=\"Email\"\n  placeholder=\"username@company.com\"\n  hint=\"Work emai"
   },
   {
     "id": "example:input:Required",
@@ -3656,7 +4416,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/input#examples",
     "keywords": "Input Required advanced {\"label\":\"Email\",\"placeholder\":\"username@company.com\",\"required\":true}",
-    "excerpt": "<Input\n  label=\"Email\"\n  placeholder=\"username@company.com\"\n  required\n>Example</Input>"
+    "excerpt": "import { Input } from '@larose-ui/react';\n\n<Input\n  label=\"Email\"\n  placeholder=\"username@company.com\"\n  required\n>Examp"
   },
   {
     "id": "example:input:Validated",
@@ -3664,7 +4424,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/input#examples",
     "keywords": "Input Validated advanced {\"label\":\"Email\",\"placeholder\":\"username@company.com\",\"required\":true,\"validateOn\":\"change\"}",
-    "excerpt": "<Input\n  label=\"Email\"\n  placeholder=\"username@company.com\"\n  required\n  validateOn=\"change\"\n>Example</Input>"
+    "excerpt": "import { Input } from '@larose-ui/react';\n\n<Input\n  label=\"Email\"\n  placeholder=\"username@company.com\"\n  required\n  vali"
   },
   {
     "id": "example:input:CurrencyFormat",
@@ -3672,7 +4432,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/input#examples",
     "keywords": "Input Currency Format advanced {\"label\":\"Salary\",\"format\":\"currency\",\"defaultValue\":\"85000\",\"hint\":\"Formatted when the field loses focus\"}",
-    "excerpt": "<Input\n  label=\"Salary\"\n  format=\"currency\"\n  defaultValue=\"85000\"\n  hint=\"Formatted when the field loses focus\"\n>Exampl"
+    "excerpt": "import { Input } from '@larose-ui/react';\n\n<Input\n  label=\"Salary\"\n  format=\"currency\"\n  defaultValue=\"85000\"\n  hint=\"Fo"
   },
   {
     "id": "example:input:Secure",
@@ -3688,7 +4448,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/input#examples",
     "keywords": "Input Loading loading {\"label\":\"Department\",\"loading\":true,\"placeholder\":\"Loading...\"}",
-    "excerpt": "<Input\n  label=\"Department\"\n  loading\n  placeholder=\"Loading...\"\n>Example</Input>"
+    "excerpt": "import { Input } from '@larose-ui/react';\n\n<Input\n  label=\"Department\"\n  loading\n  placeholder=\"Loading...\"\n>Example</In"
   },
   {
     "id": "example:input:Error",
@@ -3696,7 +4456,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/input#examples",
     "keywords": "Input Error error {\"label\":\"Salary\",\"error\":\"Must be a positive number\",\"defaultValue\":\"-100\"}",
-    "excerpt": "<Input\n  label=\"Salary\"\n  error=\"Must be a positive number\"\n  defaultValue=\"-100\"\n>Example</Input>"
+    "excerpt": "import { Input } from '@larose-ui/react';\n\n<Input\n  label=\"Salary\"\n  error=\"Must be a positive number\"\n  defaultValue=\"-"
   },
   {
     "id": "example:input:Disabled",
@@ -3704,7 +4464,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/input#examples",
     "keywords": "Input Disabled disabled {\"label\":\"Employee ID\",\"disabled\":true,\"defaultValue\":\"EMP-001\"}",
-    "excerpt": "<Input\n  label=\"Employee ID\"\n  disabled\n  defaultValue=\"EMP-001\"\n>Example</Input>"
+    "excerpt": "import { Input } from '@larose-ui/react';\n\n<Input\n  label=\"Employee ID\"\n  disabled\n  defaultValue=\"EMP-001\"\n>Example</In"
   },
   {
     "id": "example:input:ReadOnly",
@@ -3712,7 +4472,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/input#examples",
     "keywords": "Input Read Only advanced {\"label\":\"Created At\",\"readOnly\":true,\"defaultValue\":\"2026-08-29\"}",
-    "excerpt": "<Input\n  label=\"Created At\"\n  readOnly\n  defaultValue=\"2026-08-29\"\n>Example</Input>"
+    "excerpt": "import { Input } from '@larose-ui/react';\n\n<Input\n  label=\"Created At\"\n  readOnly\n  defaultValue=\"2026-08-29\"\n>Example</"
   },
   {
     "id": "component:label",
@@ -3755,20 +4515,1020 @@ export const docsSearchIndex = [
     "excerpt": "Allow selecting/copying useful static text."
   },
   {
-    "id": "example:label:LabelImportance",
-    "title": "Label — Label Importance",
-    "type": "example",
-    "path": "/docs/components/label#examples",
-    "keywords": "Label Label Importance advanced {}",
-    "excerpt": "// See Storybook story \"LabelImportance\" for full example."
+    "id": "component:liquid-glass-optics-defaults",
+    "title": "LIQUID_GLASS_OPTICS_DEFAULTS",
+    "type": "component",
+    "path": "/docs/components/liquid-glass-optics-defaults",
+    "keywords": "LIQUID_GLASS_OPTICS_DEFAULTS Other",
+    "excerpt": "Other component from @larose-ui/react"
   },
   {
-    "id": "component:la-rose-provider",
-    "title": "LaRoseProvider",
+    "id": "component:liquid-glass-presets",
+    "title": "LIQUID_GLASS_PRESETS",
     "type": "component",
-    "path": "/docs/components/la-rose-provider",
-    "keywords": "LaRoseProvider Other LaRoseProvider.children ReactNode",
+    "path": "/docs/components/liquid-glass-presets",
+    "keywords": "LIQUID_GLASS_PRESETS Other",
     "excerpt": "Other component from @larose-ui/react"
+  },
+  {
+    "id": "component:liquid-glass-switch-active-green",
+    "title": "LIQUID_GLASS_SWITCH_ACTIVE_GREEN",
+    "type": "component",
+    "path": "/docs/components/liquid-glass-switch-active-green",
+    "keywords": "LIQUID_GLASS_SWITCH_ACTIVE_GREEN Other",
+    "excerpt": "Other component from @larose-ui/react"
+  },
+  {
+    "id": "component:liquid-glass-switch-track-glass",
+    "title": "LIQUID_GLASS_SWITCH_TRACK_GLASS",
+    "type": "component",
+    "path": "/docs/components/liquid-glass-switch-track-glass",
+    "keywords": "LIQUID_GLASS_SWITCH_TRACK_GLASS Other",
+    "excerpt": "Other component from @larose-ui/react"
+  },
+  {
+    "id": "component:liquid-glass",
+    "title": "LiquidGlass",
+    "type": "component",
+    "path": "/docs/components/liquid-glass",
+    "keywords": "LiquidGlass Glass",
+    "excerpt": "Glass component from @larose-ui/react"
+  },
+  {
+    "id": "example:liquid-glass:NaturalLanguageFilter",
+    "title": "LiquidGlass — Natural Language Filter",
+    "type": "example",
+    "path": "/docs/components/liquid-glass#examples",
+    "keywords": "LiquidGlass Natural Language Filter variants {}",
+    "excerpt": "// See Storybook story \"NaturalLanguageFilter\" for full example."
+  },
+  {
+    "id": "example:liquid-glass:NaturalLanguagePopulate",
+    "title": "LiquidGlass — Natural Language Populate",
+    "type": "example",
+    "path": "/docs/components/liquid-glass#examples",
+    "keywords": "LiquidGlass Natural Language Populate variants {}",
+    "excerpt": "<SmartFormDemo />"
+  },
+  {
+    "id": "example:liquid-glass:Default",
+    "title": "LiquidGlass — Default",
+    "type": "example",
+    "path": "/docs/components/liquid-glass#examples",
+    "keywords": "LiquidGlass Default basic {}",
+    "excerpt": "<RuntimeDemo />"
+  },
+  {
+    "id": "example:liquid-glass:Loading",
+    "title": "LiquidGlass — Loading",
+    "type": "example",
+    "path": "/docs/components/liquid-glass#examples",
+    "keywords": "LiquidGlass Loading loading {}",
+    "excerpt": "// See Storybook story \"Loading\" for full example."
+  },
+  {
+    "id": "example:liquid-glass:Empty",
+    "title": "LiquidGlass — Empty",
+    "type": "example",
+    "path": "/docs/components/liquid-glass#examples",
+    "keywords": "LiquidGlass Empty advanced {}",
+    "excerpt": "// See Storybook story \"Empty\" for full example."
+  },
+  {
+    "id": "example:liquid-glass:SidebarDefault",
+    "title": "LiquidGlass — Sidebar Default",
+    "type": "example",
+    "path": "/docs/components/liquid-glass#examples",
+    "keywords": "LiquidGlass Sidebar Default basic {}",
+    "excerpt": "// See Storybook story \"SidebarDefault\" for full example."
+  },
+  {
+    "id": "example:liquid-glass:AppShellLayout",
+    "title": "LiquidGlass — App Shell Layout",
+    "type": "example",
+    "path": "/docs/components/liquid-glass#examples",
+    "keywords": "LiquidGlass App Shell Layout advanced {}",
+    "excerpt": "<AppShellDemo />"
+  },
+  {
+    "id": "example:liquid-glass:DefaultRefined",
+    "title": "LiquidGlass — Default (Apple-inspired)",
+    "type": "example",
+    "path": "/docs/components/liquid-glass#examples",
+    "keywords": "LiquidGlass Default (Apple-inspired) basic {}",
+    "excerpt": "// See Storybook story \"DefaultRefined\" for full example."
+  },
+  {
+    "id": "example:liquid-glass:SmallOverrides",
+    "title": "LiquidGlass — 10% customization",
+    "type": "example",
+    "path": "/docs/components/liquid-glass#examples",
+    "keywords": "LiquidGlass 10% customization variants {}",
+    "excerpt": "// See Storybook story \"SmallOverrides\" for full example."
+  },
+  {
+    "id": "example:liquid-glass:FullCustomTheme",
+    "title": "LiquidGlass — 90% customization",
+    "type": "example",
+    "path": "/docs/components/liquid-glass#examples",
+    "keywords": "LiquidGlass 90% customization advanced {}",
+    "excerpt": "// See Storybook story \"FullCustomTheme\" for full example."
+  },
+  {
+    "id": "example:liquid-glass:PaginationDefault",
+    "title": "LiquidGlass — Pagination Default",
+    "type": "example",
+    "path": "/docs/components/liquid-glass#examples",
+    "keywords": "LiquidGlass Pagination Default basic {}",
+    "excerpt": "<PaginationDemo />"
+  },
+  {
+    "id": "example:liquid-glass:Overview",
+    "title": "LiquidGlass — Overview",
+    "type": "example",
+    "path": "/docs/components/liquid-glass#examples",
+    "keywords": "LiquidGlass Overview advanced {}",
+    "excerpt": "// See Storybook story \"Overview\" for full example."
+  },
+  {
+    "id": "example:liquid-glass:TypographyScale",
+    "title": "LiquidGlass — Typography Scale",
+    "type": "example",
+    "path": "/docs/components/liquid-glass#examples",
+    "keywords": "LiquidGlass Typography Scale advanced {}",
+    "excerpt": "// See Storybook story \"TypographyScale\" for full example."
+  },
+  {
+    "id": "example:liquid-glass:Surfaces",
+    "title": "LiquidGlass — Surfaces",
+    "type": "example",
+    "path": "/docs/components/liquid-glass#examples",
+    "keywords": "LiquidGlass Surfaces advanced {}",
+    "excerpt": "// See Storybook story \"Surfaces\" for full example."
+  },
+  {
+    "id": "example:liquid-glass:ThemeComparison",
+    "title": "LiquidGlass — Theme Comparison",
+    "type": "example",
+    "path": "/docs/components/liquid-glass#examples",
+    "keywords": "LiquidGlass Theme Comparison advanced {}",
+    "excerpt": "// See Storybook story \"ThemeComparison\" for full example."
+  },
+  {
+    "id": "example:liquid-glass:RTLArabic",
+    "title": "LiquidGlass — R T L Arabic",
+    "type": "example",
+    "path": "/docs/components/liquid-glass#examples",
+    "keywords": "LiquidGlass R T L Arabic advanced {}",
+    "excerpt": "// See Storybook story \"RTLArabic\" for full example."
+  },
+  {
+    "id": "component:liquid-glass-button",
+    "title": "LiquidGlassButton",
+    "type": "component",
+    "path": "/docs/components/liquid-glass-button",
+    "keywords": "LiquidGlassButton Glass LiquidGlassButton.borderRadius number LiquidGlassButton.color string LiquidGlassButton.fontSize string | number LiquidGlassButton.fontWeight number LiquidGlassButton.height number | string LiquidGlassButton.width number | string LiquidGlassButton.children ReactNode LiquidGlassButton.style CSSProperties",
+    "excerpt": "Glass component from @larose-ui/react"
+  },
+  {
+    "id": "prop:liquid-glass-button:borderRadius",
+    "title": "LiquidGlassButton.borderRadius",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-button#api",
+    "keywords": "LiquidGlassButton borderRadius number ",
+    "excerpt": "number"
+  },
+  {
+    "id": "prop:liquid-glass-button:color",
+    "title": "LiquidGlassButton.color",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-button#api",
+    "keywords": "LiquidGlassButton color string Text/icon colour.",
+    "excerpt": "Text/icon colour."
+  },
+  {
+    "id": "prop:liquid-glass-button:fontSize",
+    "title": "LiquidGlassButton.fontSize",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-button#api",
+    "keywords": "LiquidGlassButton fontSize string | number Font size.",
+    "excerpt": "Font size."
+  },
+  {
+    "id": "prop:liquid-glass-button:fontWeight",
+    "title": "LiquidGlassButton.fontWeight",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-button#api",
+    "keywords": "LiquidGlassButton fontWeight number Font weight.",
+    "excerpt": "Font weight."
+  },
+  {
+    "id": "prop:liquid-glass-button:height",
+    "title": "LiquidGlassButton.height",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-button#api",
+    "keywords": "LiquidGlassButton height number | string ",
+    "excerpt": "number | string"
+  },
+  {
+    "id": "prop:liquid-glass-button:width",
+    "title": "LiquidGlassButton.width",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-button#api",
+    "keywords": "LiquidGlassButton width number | string ",
+    "excerpt": "number | string"
+  },
+  {
+    "id": "example:liquid-glass-button:Playground",
+    "title": "LiquidGlassButton — Playground",
+    "type": "example",
+    "path": "/docs/components/liquid-glass-button#examples",
+    "keywords": "LiquidGlassButton Playground advanced {}",
+    "excerpt": "// See Storybook story \"Playground\" for full example."
+  },
+  {
+    "id": "example:liquid-glass-button:Row",
+    "title": "LiquidGlassButton — Row",
+    "type": "example",
+    "path": "/docs/components/liquid-glass-button#examples",
+    "keywords": "LiquidGlassButton Row advanced {}",
+    "excerpt": "// See Storybook story \"Row\" for full example."
+  },
+  {
+    "id": "example:liquid-glass-button:Gallery",
+    "title": "LiquidGlassButton — Gallery / All components",
+    "type": "example",
+    "path": "/docs/components/liquid-glass-button#examples",
+    "keywords": "LiquidGlassButton Gallery / All components variants {}",
+    "excerpt": "// See Storybook story \"Gallery\" for full example."
+  },
+  {
+    "id": "example:liquid-glass-button:ShareButtonOnly",
+    "title": "LiquidGlassButton — Share Button Only",
+    "type": "example",
+    "path": "/docs/components/liquid-glass-button#examples",
+    "keywords": "LiquidGlassButton Share Button Only advanced {}",
+    "excerpt": "<ShareButton />"
+  },
+  {
+    "id": "component:liquid-glass-checkbox",
+    "title": "LiquidGlassCheckbox",
+    "type": "component",
+    "path": "/docs/components/liquid-glass-checkbox",
+    "keywords": "LiquidGlassCheckbox Glass LiquidGlassCheckbox.'aria-label' string LiquidGlassCheckbox.borderRadius number LiquidGlassCheckbox.checkColor string LiquidGlassCheckbox.checked boolean LiquidGlassCheckbox.checkedTint string LiquidGlassCheckbox.defaultChecked boolean LiquidGlassCheckbox.disabled boolean LiquidGlassCheckbox.label ReactNode LiquidGlassCheckbox.labelColor string LiquidGlassCheckbox.size number LiquidGlassCheckbox.className string LiquidGlassCheckbox.onChange (checked: boolean) => void LiquidGlassCheckbox.style CSSProperties",
+    "excerpt": "Glass component from @larose-ui/react"
+  },
+  {
+    "id": "prop:liquid-glass-checkbox:'aria-label'",
+    "title": "LiquidGlassCheckbox.'aria-label'",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-checkbox#api",
+    "keywords": "LiquidGlassCheckbox 'aria-label' string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:liquid-glass-checkbox:borderRadius",
+    "title": "LiquidGlassCheckbox.borderRadius",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-checkbox#api",
+    "keywords": "LiquidGlassCheckbox borderRadius number ",
+    "excerpt": "number"
+  },
+  {
+    "id": "prop:liquid-glass-checkbox:checkColor",
+    "title": "LiquidGlassCheckbox.checkColor",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-checkbox#api",
+    "keywords": "LiquidGlassCheckbox checkColor string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:liquid-glass-checkbox:checked",
+    "title": "LiquidGlassCheckbox.checked",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-checkbox#api",
+    "keywords": "LiquidGlassCheckbox checked boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "prop:liquid-glass-checkbox:checkedTint",
+    "title": "LiquidGlassCheckbox.checkedTint",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-checkbox#api",
+    "keywords": "LiquidGlassCheckbox checkedTint string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:liquid-glass-checkbox:defaultChecked",
+    "title": "LiquidGlassCheckbox.defaultChecked",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-checkbox#api",
+    "keywords": "LiquidGlassCheckbox defaultChecked boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "prop:liquid-glass-checkbox:disabled",
+    "title": "LiquidGlassCheckbox.disabled",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-checkbox#api",
+    "keywords": "LiquidGlassCheckbox disabled boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "prop:liquid-glass-checkbox:label",
+    "title": "LiquidGlassCheckbox.label",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-checkbox#api",
+    "keywords": "LiquidGlassCheckbox label ReactNode ",
+    "excerpt": "ReactNode"
+  },
+  {
+    "id": "prop:liquid-glass-checkbox:labelColor",
+    "title": "LiquidGlassCheckbox.labelColor",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-checkbox#api",
+    "keywords": "LiquidGlassCheckbox labelColor string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:liquid-glass-checkbox:size",
+    "title": "LiquidGlassCheckbox.size",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-checkbox#api",
+    "keywords": "LiquidGlassCheckbox size number Box size in px.",
+    "excerpt": "Box size in px."
+  },
+  {
+    "id": "example:liquid-glass-checkbox:CheckboxDefault",
+    "title": "LiquidGlassCheckbox — Checkbox Default",
+    "type": "example",
+    "path": "/docs/components/liquid-glass-checkbox#examples",
+    "keywords": "LiquidGlassCheckbox Checkbox Default basic {}",
+    "excerpt": "<Checkbox label=\"I agree to the terms\" hint=\"Required before submitting\" />"
+  },
+  {
+    "id": "component:liquid-glass-progress",
+    "title": "LiquidGlassProgress",
+    "type": "component",
+    "path": "/docs/components/liquid-glass-progress",
+    "keywords": "LiquidGlassProgress Glass LiquidGlassProgress.'aria-label' string LiquidGlassProgress.borderRadius number LiquidGlassProgress.fillColor string LiquidGlassProgress.fillGlow string LiquidGlassProgress.height number LiquidGlassProgress.indeterminate boolean LiquidGlassProgress.max number LiquidGlassProgress.value number LiquidGlassProgress.width number | string LiquidGlassProgress.className string LiquidGlassProgress.style CSSProperties",
+    "excerpt": "Glass component from @larose-ui/react"
+  },
+  {
+    "id": "prop:liquid-glass-progress:'aria-label'",
+    "title": "LiquidGlassProgress.'aria-label'",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-progress#api",
+    "keywords": "LiquidGlassProgress 'aria-label' string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:liquid-glass-progress:borderRadius",
+    "title": "LiquidGlassProgress.borderRadius",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-progress#api",
+    "keywords": "LiquidGlassProgress borderRadius number ",
+    "excerpt": "number"
+  },
+  {
+    "id": "prop:liquid-glass-progress:fillColor",
+    "title": "LiquidGlassProgress.fillColor",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-progress#api",
+    "keywords": "LiquidGlassProgress fillColor string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:liquid-glass-progress:fillGlow",
+    "title": "LiquidGlassProgress.fillGlow",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-progress#api",
+    "keywords": "LiquidGlassProgress fillGlow string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:liquid-glass-progress:height",
+    "title": "LiquidGlassProgress.height",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-progress#api",
+    "keywords": "LiquidGlassProgress height number Track height in px.",
+    "excerpt": "Track height in px."
+  },
+  {
+    "id": "prop:liquid-glass-progress:indeterminate",
+    "title": "LiquidGlassProgress.indeterminate",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-progress#api",
+    "keywords": "LiquidGlassProgress indeterminate boolean Indeterminate loading state.",
+    "excerpt": "Indeterminate loading state."
+  },
+  {
+    "id": "prop:liquid-glass-progress:max",
+    "title": "LiquidGlassProgress.max",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-progress#api",
+    "keywords": "LiquidGlassProgress max number Maximum value.",
+    "excerpt": "Maximum value."
+  },
+  {
+    "id": "prop:liquid-glass-progress:value",
+    "title": "LiquidGlassProgress.value",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-progress#api",
+    "keywords": "LiquidGlassProgress value number Current value.",
+    "excerpt": "Current value."
+  },
+  {
+    "id": "prop:liquid-glass-progress:width",
+    "title": "LiquidGlassProgress.width",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-progress#api",
+    "keywords": "LiquidGlassProgress width number | string ",
+    "excerpt": "number | string"
+  },
+  {
+    "id": "example:liquid-glass-progress:ProgressDefault",
+    "title": "LiquidGlassProgress — Progress Default",
+    "type": "example",
+    "path": "/docs/components/liquid-glass-progress#examples",
+    "keywords": "LiquidGlassProgress Progress Default basic {}",
+    "excerpt": "<Progress value={65} label=\"Profile completion\" showValue />"
+  },
+  {
+    "id": "example:liquid-glass-progress:ProgressSuccess",
+    "title": "LiquidGlassProgress — Progress Success",
+    "type": "example",
+    "path": "/docs/components/liquid-glass-progress#examples",
+    "keywords": "LiquidGlassProgress Progress Success advanced {}",
+    "excerpt": "<Progress value={100} label=\"Upload complete\" variant=\"success\" showValue />"
+  },
+  {
+    "id": "component:liquid-glass-range",
+    "title": "LiquidGlassRange",
+    "type": "component",
+    "path": "/docs/components/liquid-glass-range",
+    "keywords": "LiquidGlassRange Glass LiquidGlassRange.'aria-label' string LiquidGlassRange.borderRadius number LiquidGlassRange.defaultValue number LiquidGlassRange.disabled boolean LiquidGlassRange.fillColor string LiquidGlassRange.max number LiquidGlassRange.min number LiquidGlassRange.step number LiquidGlassRange.thumbSize number LiquidGlassRange.trackHeight number LiquidGlassRange.value number LiquidGlassRange.width number | string LiquidGlassRange.className string LiquidGlassRange.onChange (value: number) => void LiquidGlassRange.style CSSProperties",
+    "excerpt": "Glass component from @larose-ui/react"
+  },
+  {
+    "id": "prop:liquid-glass-range:'aria-label'",
+    "title": "LiquidGlassRange.'aria-label'",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-range#api",
+    "keywords": "LiquidGlassRange 'aria-label' string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:liquid-glass-range:borderRadius",
+    "title": "LiquidGlassRange.borderRadius",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-range#api",
+    "keywords": "LiquidGlassRange borderRadius number ",
+    "excerpt": "number"
+  },
+  {
+    "id": "prop:liquid-glass-range:defaultValue",
+    "title": "LiquidGlassRange.defaultValue",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-range#api",
+    "keywords": "LiquidGlassRange defaultValue number ",
+    "excerpt": "number"
+  },
+  {
+    "id": "prop:liquid-glass-range:disabled",
+    "title": "LiquidGlassRange.disabled",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-range#api",
+    "keywords": "LiquidGlassRange disabled boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "prop:liquid-glass-range:fillColor",
+    "title": "LiquidGlassRange.fillColor",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-range#api",
+    "keywords": "LiquidGlassRange fillColor string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:liquid-glass-range:max",
+    "title": "LiquidGlassRange.max",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-range#api",
+    "keywords": "LiquidGlassRange max number ",
+    "excerpt": "number"
+  },
+  {
+    "id": "prop:liquid-glass-range:min",
+    "title": "LiquidGlassRange.min",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-range#api",
+    "keywords": "LiquidGlassRange min number ",
+    "excerpt": "number"
+  },
+  {
+    "id": "prop:liquid-glass-range:step",
+    "title": "LiquidGlassRange.step",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-range#api",
+    "keywords": "LiquidGlassRange step number ",
+    "excerpt": "number"
+  },
+  {
+    "id": "prop:liquid-glass-range:thumbSize",
+    "title": "LiquidGlassRange.thumbSize",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-range#api",
+    "keywords": "LiquidGlassRange thumbSize number Thumb diameter in px.",
+    "excerpt": "Thumb diameter in px."
+  },
+  {
+    "id": "prop:liquid-glass-range:trackHeight",
+    "title": "LiquidGlassRange.trackHeight",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-range#api",
+    "keywords": "LiquidGlassRange trackHeight number Track height in px.",
+    "excerpt": "Track height in px."
+  },
+  {
+    "id": "prop:liquid-glass-range:value",
+    "title": "LiquidGlassRange.value",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-range#api",
+    "keywords": "LiquidGlassRange value number ",
+    "excerpt": "number"
+  },
+  {
+    "id": "prop:liquid-glass-range:width",
+    "title": "LiquidGlassRange.width",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-range#api",
+    "keywords": "LiquidGlassRange width number | string ",
+    "excerpt": "number | string"
+  },
+  {
+    "id": "example:liquid-glass-range:DateRangePickerDefault",
+    "title": "LiquidGlassRange — Date Range Picker Default",
+    "type": "example",
+    "path": "/docs/components/liquid-glass-range#examples",
+    "keywords": "LiquidGlassRange Date Range Picker Default basic {}",
+    "excerpt": "<DateRangeDemo />"
+  },
+  {
+    "id": "component:liquid-glass-switch",
+    "title": "LiquidGlassSwitch",
+    "type": "component",
+    "path": "/docs/components/liquid-glass-switch",
+    "keywords": "LiquidGlassSwitch Glass LiquidGlassSwitch.'aria-label' string LiquidGlassSwitch.activeTrackTint LiquidGlassSwitchActiveTrackTint LiquidGlassSwitch.borderRadius number LiquidGlassSwitch.checked boolean LiquidGlassSwitch.defaultChecked boolean LiquidGlassSwitch.disabled boolean LiquidGlassSwitch.height number LiquidGlassSwitch.inactiveTrackTint string LiquidGlassSwitch.padding number LiquidGlassSwitch.thumbSize number LiquidGlassSwitch.thumbTint string LiquidGlassSwitch.width number LiquidGlassSwitch.className string LiquidGlassSwitch.onChange (checked: boolean) => void LiquidGlassSwitch.style CSSProperties",
+    "excerpt": "Glass component from @larose-ui/react"
+  },
+  {
+    "id": "prop:liquid-glass-switch:'aria-label'",
+    "title": "LiquidGlassSwitch.'aria-label'",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-switch#api",
+    "keywords": "LiquidGlassSwitch 'aria-label' string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:liquid-glass-switch:activeTrackTint",
+    "title": "LiquidGlassSwitch.activeTrackTint",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-switch#api",
+    "keywords": "LiquidGlassSwitch activeTrackTint LiquidGlassSwitchActiveTrackTint Active track tint when on. Defaults to iOS-style green.\nPass `'glass'` () for liquid glass only, or any CSS color.",
+    "excerpt": "Active track tint when on. Defaults to iOS-style green.\nPass `'glass'` () for liquid glass only, or any CSS color."
+  },
+  {
+    "id": "prop:liquid-glass-switch:borderRadius",
+    "title": "LiquidGlassSwitch.borderRadius",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-switch#api",
+    "keywords": "LiquidGlassSwitch borderRadius number ",
+    "excerpt": "number"
+  },
+  {
+    "id": "prop:liquid-glass-switch:checked",
+    "title": "LiquidGlassSwitch.checked",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-switch#api",
+    "keywords": "LiquidGlassSwitch checked boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "prop:liquid-glass-switch:defaultChecked",
+    "title": "LiquidGlassSwitch.defaultChecked",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-switch#api",
+    "keywords": "LiquidGlassSwitch defaultChecked boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "prop:liquid-glass-switch:disabled",
+    "title": "LiquidGlassSwitch.disabled",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-switch#api",
+    "keywords": "LiquidGlassSwitch disabled boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "prop:liquid-glass-switch:height",
+    "title": "LiquidGlassSwitch.height",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-switch#api",
+    "keywords": "LiquidGlassSwitch height number Track height in px.",
+    "excerpt": "Track height in px."
+  },
+  {
+    "id": "prop:liquid-glass-switch:inactiveTrackTint",
+    "title": "LiquidGlassSwitch.inactiveTrackTint",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-switch#api",
+    "keywords": "LiquidGlassSwitch inactiveTrackTint string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:liquid-glass-switch:padding",
+    "title": "LiquidGlassSwitch.padding",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-switch#api",
+    "keywords": "LiquidGlassSwitch padding number Track padding around thumb.",
+    "excerpt": "Track padding around thumb."
+  },
+  {
+    "id": "prop:liquid-glass-switch:thumbSize",
+    "title": "LiquidGlassSwitch.thumbSize",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-switch#api",
+    "keywords": "LiquidGlassSwitch thumbSize number Thumb diameter in px.",
+    "excerpt": "Thumb diameter in px."
+  },
+  {
+    "id": "prop:liquid-glass-switch:thumbTint",
+    "title": "LiquidGlassSwitch.thumbTint",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-switch#api",
+    "keywords": "LiquidGlassSwitch thumbTint string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:liquid-glass-switch:width",
+    "title": "LiquidGlassSwitch.width",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-switch#api",
+    "keywords": "LiquidGlassSwitch width number Track width in px.",
+    "excerpt": "Track width in px."
+  },
+  {
+    "id": "example:liquid-glass-switch:SwitchDefault",
+    "title": "LiquidGlassSwitch — Switch Default",
+    "type": "example",
+    "path": "/docs/components/liquid-glass-switch#examples",
+    "keywords": "LiquidGlassSwitch Switch Default basic {}",
+    "excerpt": "<Switch label=\"Email notifications\" defaultChecked hint=\"Receive product updates\" />"
+  },
+  {
+    "id": "component:liquid-glass-tab-bar",
+    "title": "LiquidGlassTabBar",
+    "type": "component",
+    "path": "/docs/components/liquid-glass-tab-bar",
+    "keywords": "LiquidGlassTabBar Glass LiquidGlassTabBar.activeColor string LiquidGlassTabBar.activeKey string LiquidGlassTabBar.borderRadius number LiquidGlassTabBar.bottom number | string LiquidGlassTabBar.defaultActiveKey string LiquidGlassTabBar.height number LiquidGlassTabBar.inactiveColor string LiquidGlassTabBar.indicatorBackground string LiquidGlassTabBar.indicatorBorderColor string LiquidGlassTabBar.indicatorPadding number LiquidGlassTabBar.items LiquidGlassTabItem[] LiquidGlassTabBar.maxWidth number LiquidGlassTabBar.position 'fixed' | 'absolute' | 'relative' | 'static' LiquidGlassTabBar.showIndicator boolean LiquidGlassTabBar.className string LiquidGlassTabBar.onChange (key: string) => void LiquidGlassTabBar.style CSSProperties",
+    "excerpt": "Glass component from @larose-ui/react"
+  },
+  {
+    "id": "prop:liquid-glass-tab-bar:activeColor",
+    "title": "LiquidGlassTabBar.activeColor",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-tab-bar#api",
+    "keywords": "LiquidGlassTabBar activeColor string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:liquid-glass-tab-bar:activeKey",
+    "title": "LiquidGlassTabBar.activeKey",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-tab-bar#api",
+    "keywords": "LiquidGlassTabBar activeKey string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:liquid-glass-tab-bar:borderRadius",
+    "title": "LiquidGlassTabBar.borderRadius",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-tab-bar#api",
+    "keywords": "LiquidGlassTabBar borderRadius number ",
+    "excerpt": "number"
+  },
+  {
+    "id": "prop:liquid-glass-tab-bar:bottom",
+    "title": "LiquidGlassTabBar.bottom",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-tab-bar#api",
+    "keywords": "LiquidGlassTabBar bottom number | string ",
+    "excerpt": "number | string"
+  },
+  {
+    "id": "prop:liquid-glass-tab-bar:defaultActiveKey",
+    "title": "LiquidGlassTabBar.defaultActiveKey",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-tab-bar#api",
+    "keywords": "LiquidGlassTabBar defaultActiveKey string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:liquid-glass-tab-bar:height",
+    "title": "LiquidGlassTabBar.height",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-tab-bar#api",
+    "keywords": "LiquidGlassTabBar height number ",
+    "excerpt": "number"
+  },
+  {
+    "id": "prop:liquid-glass-tab-bar:inactiveColor",
+    "title": "LiquidGlassTabBar.inactiveColor",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-tab-bar#api",
+    "keywords": "LiquidGlassTabBar inactiveColor string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:liquid-glass-tab-bar:indicatorBackground",
+    "title": "LiquidGlassTabBar.indicatorBackground",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-tab-bar#api",
+    "keywords": "LiquidGlassTabBar indicatorBackground string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:liquid-glass-tab-bar:indicatorBorderColor",
+    "title": "LiquidGlassTabBar.indicatorBorderColor",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-tab-bar#api",
+    "keywords": "LiquidGlassTabBar indicatorBorderColor string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:liquid-glass-tab-bar:indicatorPadding",
+    "title": "LiquidGlassTabBar.indicatorPadding",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-tab-bar#api",
+    "keywords": "LiquidGlassTabBar indicatorPadding number ",
+    "excerpt": "number"
+  },
+  {
+    "id": "prop:liquid-glass-tab-bar:items",
+    "title": "LiquidGlassTabBar.items",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-tab-bar#api",
+    "keywords": "LiquidGlassTabBar items LiquidGlassTabItem[] ",
+    "excerpt": "LiquidGlassTabItem[] (required)"
+  },
+  {
+    "id": "prop:liquid-glass-tab-bar:maxWidth",
+    "title": "LiquidGlassTabBar.maxWidth",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-tab-bar#api",
+    "keywords": "LiquidGlassTabBar maxWidth number ",
+    "excerpt": "number"
+  },
+  {
+    "id": "prop:liquid-glass-tab-bar:position",
+    "title": "LiquidGlassTabBar.position",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-tab-bar#api",
+    "keywords": "LiquidGlassTabBar position 'fixed' | 'absolute' | 'relative' | 'static' ",
+    "excerpt": "'fixed' | 'absolute' | 'relative' | 'static'"
+  },
+  {
+    "id": "prop:liquid-glass-tab-bar:showIndicator",
+    "title": "LiquidGlassTabBar.showIndicator",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-tab-bar#api",
+    "keywords": "LiquidGlassTabBar showIndicator boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "example:liquid-glass-tab-bar:Playground",
+    "title": "LiquidGlassTabBar — Playground",
+    "type": "example",
+    "path": "/docs/components/liquid-glass-tab-bar#examples",
+    "keywords": "LiquidGlassTabBar Playground advanced {}",
+    "excerpt": "// See Storybook story \"Playground\" for full example."
+  },
+  {
+    "id": "example:liquid-glass-tab-bar:IconsOnly",
+    "title": "LiquidGlassTabBar — Icons Only",
+    "type": "example",
+    "path": "/docs/components/liquid-glass-tab-bar#examples",
+    "keywords": "LiquidGlassTabBar Icons Only with-icon {\"tabPreset\":\"iconsOnly\",\"height\":60,\"maxWidth\":340}",
+    "excerpt": "import { LiquidGlassTabBar } from '@larose-ui/react';\n\n<LiquidGlassTabBar\n  tabPreset=\"iconsOnly\"\n  height={60}\n  maxWid"
+  },
+  {
+    "id": "example:liquid-glass-tab-bar:WithBadges",
+    "title": "LiquidGlassTabBar — With Badges",
+    "type": "example",
+    "path": "/docs/components/liquid-glass-tab-bar#examples",
+    "keywords": "LiquidGlassTabBar With Badges advanced {\"tabPreset\":\"badges\",\"defaultActiveKey\":\"notifs\"}",
+    "excerpt": "import { LiquidGlassTabBar } from '@larose-ui/react';\n\n<LiquidGlassTabBar\n  tabPreset=\"badges\"\n  defaultActiveKey=\"notif"
+  },
+  {
+    "id": "example:liquid-glass-tab-bar:StrongRefraction",
+    "title": "LiquidGlassTabBar — Strong Refraction",
+    "type": "example",
+    "path": "/docs/components/liquid-glass-tab-bar#examples",
+    "keywords": "LiquidGlassTabBar Strong Refraction advanced {\"displacementScale\":60,\"bezelWidth\":32,\"refractionStrength\":1.4,\"specularTopOpacity\":0.95,\"blur\":22}",
+    "excerpt": "import { LiquidGlassTabBar } from '@larose-ui/react';\n\n<LiquidGlassTabBar\n  displacementScale={60}\n  bezelWidth={32}\n  r"
+  },
+  {
+    "id": "example:liquid-glass-tab-bar:Subtle",
+    "title": "LiquidGlassTabBar — Subtle",
+    "type": "example",
+    "path": "/docs/components/liquid-glass-tab-bar#examples",
+    "keywords": "LiquidGlassTabBar Subtle advanced {\"displacementScale\":18,\"bezelWidth\":12,\"refractionStrength\":0.6,\"specularTopOpacity\":0.45,\"specularEdgeOpacity\":0.25,\"innerTopHighlight\":0.18,\"innerBottomShadow\":0.1,\"shadowIntensity\":0.6,\"tint\":\"rgba(255,255,255,0.07)\",\"tintFallback\":\"rgba(255,255,255,0.10)\"}",
+    "excerpt": "import { LiquidGlassTabBar } from '@larose-ui/react';\n\n<LiquidGlassTabBar\n  displacementScale={18}\n  bezelWidth={12}\n  r"
+  },
+  {
+    "id": "example:liquid-glass-tab-bar:NoIndicator",
+    "title": "LiquidGlassTabBar — No Indicator",
+    "type": "example",
+    "path": "/docs/components/liquid-glass-tab-bar#examples",
+    "keywords": "LiquidGlassTabBar No Indicator advanced {\"showIndicator\":false,\"inactiveColor\":\"rgba(255,255,255,0.45)\"}",
+    "excerpt": "import { LiquidGlassTabBar } from '@larose-ui/react';\n\n<LiquidGlassTabBar\n  showIndicator={false}\n  inactiveColor=\"rgba("
+  },
+  {
+    "id": "component:liquid-glass-top-bar",
+    "title": "LiquidGlassTopBar",
+    "type": "component",
+    "path": "/docs/components/liquid-glass-top-bar",
+    "keywords": "LiquidGlassTopBar Glass LiquidGlassTopBar.activeColor string LiquidGlassTopBar.activeKey string LiquidGlassTopBar.borderRadius number LiquidGlassTopBar.defaultActiveKey string LiquidGlassTopBar.height number LiquidGlassTopBar.inactiveColor string LiquidGlassTopBar.insetX number LiquidGlassTopBar.items LiquidGlassTopBarItem[] LiquidGlassTopBar.logo ReactNode LiquidGlassTopBar.navActiveBackground string LiquidGlassTopBar.navTrackBackground string LiquidGlassTopBar.paddingX number LiquidGlassTopBar.position 'fixed' | 'absolute' | 'relative' | 'sticky' | 'static' LiquidGlassTopBar.titleColor string LiquidGlassTopBar.top number | string LiquidGlassTopBar.trailing ReactNode LiquidGlassTopBar.variant LiquidGlassTopBarVariant LiquidGlassTopBar.className string LiquidGlassTopBar.onChange (key: string) => void LiquidGlassTopBar.style CSSProperties LiquidGlassTopBar.title ReactNode",
+    "excerpt": "Glass component from @larose-ui/react"
+  },
+  {
+    "id": "prop:liquid-glass-top-bar:activeColor",
+    "title": "LiquidGlassTopBar.activeColor",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar activeColor string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:liquid-glass-top-bar:activeKey",
+    "title": "LiquidGlassTopBar.activeKey",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar activeKey string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:liquid-glass-top-bar:borderRadius",
+    "title": "LiquidGlassTopBar.borderRadius",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar borderRadius number ",
+    "excerpt": "number"
+  },
+  {
+    "id": "prop:liquid-glass-top-bar:defaultActiveKey",
+    "title": "LiquidGlassTopBar.defaultActiveKey",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar defaultActiveKey string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:liquid-glass-top-bar:height",
+    "title": "LiquidGlassTopBar.height",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar height number ",
+    "excerpt": "number"
+  },
+  {
+    "id": "prop:liquid-glass-top-bar:inactiveColor",
+    "title": "LiquidGlassTopBar.inactiveColor",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar inactiveColor string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:liquid-glass-top-bar:insetX",
+    "title": "LiquidGlassTopBar.insetX",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar insetX number ",
+    "excerpt": "number"
+  },
+  {
+    "id": "prop:liquid-glass-top-bar:items",
+    "title": "LiquidGlassTopBar.items",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar items LiquidGlassTopBarItem[] ",
+    "excerpt": "LiquidGlassTopBarItem[]"
+  },
+  {
+    "id": "prop:liquid-glass-top-bar:logo",
+    "title": "LiquidGlassTopBar.logo",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar logo ReactNode ",
+    "excerpt": "ReactNode"
+  },
+  {
+    "id": "prop:liquid-glass-top-bar:navActiveBackground",
+    "title": "LiquidGlassTopBar.navActiveBackground",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar navActiveBackground string Active nav pill background.",
+    "excerpt": "Active nav pill background."
+  },
+  {
+    "id": "prop:liquid-glass-top-bar:navTrackBackground",
+    "title": "LiquidGlassTopBar.navTrackBackground",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar navTrackBackground string Background of the segmented nav track.",
+    "excerpt": "Background of the segmented nav track."
+  },
+  {
+    "id": "prop:liquid-glass-top-bar:paddingX",
+    "title": "LiquidGlassTopBar.paddingX",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar paddingX number ",
+    "excerpt": "number"
+  },
+  {
+    "id": "prop:liquid-glass-top-bar:position",
+    "title": "LiquidGlassTopBar.position",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar position 'fixed' | 'absolute' | 'relative' | 'sticky' | 'static' ",
+    "excerpt": "'fixed' | 'absolute' | 'relative' | 'sticky' | 'static'"
+  },
+  {
+    "id": "prop:liquid-glass-top-bar:titleColor",
+    "title": "LiquidGlassTopBar.titleColor",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar titleColor string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:liquid-glass-top-bar:top",
+    "title": "LiquidGlassTopBar.top",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar top number | string ",
+    "excerpt": "number | string"
+  },
+  {
+    "id": "prop:liquid-glass-top-bar:trailing",
+    "title": "LiquidGlassTopBar.trailing",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar trailing ReactNode ",
+    "excerpt": "ReactNode"
+  },
+  {
+    "id": "prop:liquid-glass-top-bar:variant",
+    "title": "LiquidGlassTopBar.variant",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar variant LiquidGlassTopBarVariant `floating` — inset pill bar with rounded corners (modern macOS/iOS style).\n`edge` — full-bleed bar flush with the viewport top.",
+    "excerpt": "`floating` — inset pill bar with rounded corners (modern macOS/iOS style).\n`edge` — full-bleed bar flush with the viewport top."
+  },
+  {
+    "id": "example:liquid-glass-top-bar:Playground",
+    "title": "LiquidGlassTopBar — Playground",
+    "type": "example",
+    "path": "/docs/components/liquid-glass-top-bar#examples",
+    "keywords": "LiquidGlassTopBar Playground advanced {}",
+    "excerpt": "// See Storybook story \"Playground\" for full example."
+  },
+  {
+    "id": "example:liquid-glass-top-bar:Edge",
+    "title": "LiquidGlassTopBar — Edge",
+    "type": "example",
+    "path": "/docs/components/liquid-glass-top-bar#examples",
+    "keywords": "LiquidGlassTopBar Edge advanced {\"variant\":\"edge\",\"insetX\":0,\"top\":0,\"borderRadius\":0}",
+    "excerpt": "import { LiquidGlassTopBar } from '@larose-ui/react';\n\n<LiquidGlassTopBar\n  variant=\"edge\"\n  insetX={0}\n  top={0}\n  bord"
+  },
+  {
+    "id": "example:liquid-glass-top-bar:NoTrailing",
+    "title": "LiquidGlassTopBar — No Trailing",
+    "type": "example",
+    "path": "/docs/components/liquid-glass-top-bar#examples",
+    "keywords": "LiquidGlassTopBar No Trailing advanced {\"showTrailing\":false}",
+    "excerpt": "import { LiquidGlassTopBar } from '@larose-ui/react';\n\n<LiquidGlassTopBar\n  showTrailing={false}\n>Example</LiquidGlassTo"
+  },
+  {
+    "id": "example:liquid-glass-top-bar:StrongRefraction",
+    "title": "LiquidGlassTopBar — Strong Refraction",
+    "type": "example",
+    "path": "/docs/components/liquid-glass-top-bar#examples",
+    "keywords": "LiquidGlassTopBar Strong Refraction advanced {\"displacementScale\":50,\"bezelWidth\":28,\"specularTopOpacity\":0.95,\"refractionStrength\":1.2}",
+    "excerpt": "import { LiquidGlassTopBar } from '@larose-ui/react';\n\n<LiquidGlassTopBar\n  displacementScale={50}\n  bezelWidth={28}\n  s"
   },
   {
     "id": "component:list",
@@ -3795,22 +5555,6 @@ export const docsSearchIndex = [
     "excerpt": "ListVariant"
   },
   {
-    "id": "example:list:FinderStyleList",
-    "title": "List — Finder Style List",
-    "type": "example",
-    "path": "/docs/components/list#examples",
-    "keywords": "List Finder Style List advanced {}",
-    "excerpt": "// See Storybook story \"FinderStyleList\" for full example."
-  },
-  {
-    "id": "example:list:ReorderableList",
-    "title": "List — Reorderable List",
-    "type": "example",
-    "path": "/docs/components/list#examples",
-    "keywords": "List Reorderable List advanced {}",
-    "excerpt": "// See Storybook story \"ReorderableList\" for full example."
-  },
-  {
     "id": "example:list:GroupedList",
     "title": "List — Grouped List",
     "type": "example",
@@ -3819,12 +5563,12 @@ export const docsSearchIndex = [
     "excerpt": "// See Storybook story \"GroupedList\" for full example."
   },
   {
-    "id": "example:list:ListAccessories",
-    "title": "List — List Accessories",
+    "id": "example:list:MiddleTruncation",
+    "title": "List — Middle Truncation",
     "type": "example",
     "path": "/docs/components/list#examples",
-    "keywords": "List List Accessories advanced {}",
-    "excerpt": "// See Storybook story \"ListAccessories\" for full example."
+    "keywords": "List Middle Truncation advanced {}",
+    "excerpt": "// See Storybook story \"MiddleTruncation\" for full example."
   },
   {
     "id": "component:list-row",
@@ -3971,6 +5715,78 @@ export const docsSearchIndex = [
     "excerpt": "ReactNode"
   },
   {
+    "id": "example:lockup:Overview",
+    "title": "Lockup — Overview",
+    "type": "example",
+    "path": "/docs/components/lockup#examples",
+    "keywords": "Lockup Overview advanced {}",
+    "excerpt": "// See Storybook story \"Overview\" for full example."
+  },
+  {
+    "id": "example:lockup:CaptionButtonGrid",
+    "title": "Lockup — Caption Button Grid",
+    "type": "example",
+    "path": "/docs/components/lockup#examples",
+    "keywords": "Lockup Caption Button Grid advanced {}",
+    "excerpt": "// See Storybook story \"CaptionButtonGrid\" for full example."
+  },
+  {
+    "id": "example:lockup:VerticalMonograms",
+    "title": "Lockup — Vertical Monograms",
+    "type": "example",
+    "path": "/docs/components/lockup#examples",
+    "keywords": "Lockup Vertical Monograms advanced {}",
+    "excerpt": "// See Storybook story \"VerticalMonograms\" for full example."
+  },
+  {
+    "id": "component:lockup-card",
+    "title": "LockupCard",
+    "type": "component",
+    "path": "/docs/components/lockup-card",
+    "keywords": "LockupCard Other LockupCard.rating number LockupCard.review string LockupCard.title string",
+    "excerpt": "Other component from @larose-ui/react"
+  },
+  {
+    "id": "prop:lockup-card:rating",
+    "title": "LockupCard.rating",
+    "type": "prop",
+    "path": "/docs/components/lockup-card#api",
+    "keywords": "LockupCard rating number ",
+    "excerpt": "number (required)"
+  },
+  {
+    "id": "prop:lockup-card:review",
+    "title": "LockupCard.review",
+    "type": "prop",
+    "path": "/docs/components/lockup-card#api",
+    "keywords": "LockupCard review string ",
+    "excerpt": "string (required)"
+  },
+  {
+    "id": "component:lockup-row",
+    "title": "LockupRow",
+    "type": "component",
+    "path": "/docs/components/lockup-row",
+    "keywords": "LockupRow Other LockupRow.axis LockupAxis LockupRow.itemWidth string LockupRow.children ReactNode",
+    "excerpt": "Other component from @larose-ui/react"
+  },
+  {
+    "id": "prop:lockup-row:axis",
+    "title": "LockupRow.axis",
+    "type": "prop",
+    "path": "/docs/components/lockup-row#api",
+    "keywords": "LockupRow axis LockupAxis ",
+    "excerpt": "LockupAxis"
+  },
+  {
+    "id": "prop:lockup-row:itemWidth",
+    "title": "LockupRow.itemWidth",
+    "type": "prop",
+    "path": "/docs/components/lockup-row#api",
+    "keywords": "LockupRow itemWidth string ",
+    "excerpt": "string"
+  },
+  {
     "id": "component:menu",
     "title": "Menu",
     "type": "component",
@@ -4067,36 +5883,44 @@ export const docsSearchIndex = [
     "excerpt": "Passed from MenuBar for Option-key alternate accelerators."
   },
   {
-    "id": "example:menu:MenuAlwaysOpen",
-    "title": "Menu — Menu (always open)",
+    "id": "example:menu:LargeLayout",
+    "title": "Menu — Large (default)",
     "type": "example",
     "path": "/docs/components/menu#examples",
-    "keywords": "Menu Menu (always open) advanced {}",
-    "excerpt": "// See Storybook story \"MenuAlwaysOpen\" for full example."
+    "keywords": "Menu Large (default) basic {}",
+    "excerpt": "// See Storybook story \"LargeLayout\" for full example."
   },
   {
-    "id": "example:menu:AddMenu",
-    "title": "Menu — Add",
+    "id": "example:menu:MediumLayout",
+    "title": "Menu — Medium layout",
     "type": "example",
     "path": "/docs/components/menu#examples",
-    "keywords": "Menu Add advanced {}",
-    "excerpt": "// See Storybook story \"AddMenu\" for full example."
+    "keywords": "Menu Medium layout advanced {}",
+    "excerpt": "// See Storybook story \"MediumLayout\" for full example."
   },
   {
-    "id": "example:menu:SortMenu",
-    "title": "Menu — Sort",
+    "id": "example:menu:SmallLayout",
+    "title": "Menu — Small layout",
     "type": "example",
     "path": "/docs/components/menu#examples",
-    "keywords": "Menu Sort advanced {}",
-    "excerpt": "// See Storybook story \"SortMenu\" for full example."
+    "keywords": "Menu Small layout variants {}",
+    "excerpt": "<Menu layout=\"small\" open onOpenChange={() => undefined} entries={formatEntries} />"
   },
   {
-    "id": "example:menu:MoreMenu",
-    "title": "Menu — More (Notes)",
+    "id": "example:menu:SubmenuAndToggles",
+    "title": "Menu — Submenus and toggles",
     "type": "example",
     "path": "/docs/components/menu#examples",
-    "keywords": "Menu More (Notes) advanced {}",
-    "excerpt": "// See Storybook story \"MoreMenu\" for full example."
+    "keywords": "Menu Submenus and toggles advanced {}",
+    "excerpt": "// See Storybook story \"SubmenuAndToggles\" for full example."
+  },
+  {
+    "id": "example:menu:UnavailableItems",
+    "title": "Menu — Unavailable items",
+    "type": "example",
+    "path": "/docs/components/menu#examples",
+    "keywords": "Menu Unavailable items advanced {}",
+    "excerpt": "// See Storybook story \"UnavailableItems\" for full example."
   },
   {
     "id": "component:menu-bar",
@@ -4219,6 +6043,30 @@ export const docsSearchIndex = [
     "excerpt": "// See Storybook story \"MenuBarGlobalShortcuts\" for full example."
   },
   {
+    "id": "example:menu-bar:MacOSStandard",
+    "title": "MenuBar — macOS standard menus",
+    "type": "example",
+    "path": "/docs/components/menu-bar#examples",
+    "keywords": "MenuBar macOS standard menus advanced {}",
+    "excerpt": "// See Storybook story \"MacOSStandard\" for full example."
+  },
+  {
+    "id": "example:menu-bar:IPadOSHiddenUntilRevealed",
+    "title": "MenuBar — iPadOS reveal at top edge",
+    "type": "example",
+    "path": "/docs/components/menu-bar#examples",
+    "keywords": "MenuBar iPadOS reveal at top edge advanced {}",
+    "excerpt": "// See Storybook story \"IPadOSHiddenUntilRevealed\" for full example."
+  },
+  {
+    "id": "example:menu-bar:DisabledNotHidden",
+    "title": "MenuBar — Unavailable items stay visible",
+    "type": "example",
+    "path": "/docs/components/menu-bar#examples",
+    "keywords": "MenuBar Unavailable items stay visible disabled {}",
+    "excerpt": "// See Storybook story \"DisabledNotHidden\" for full example."
+  },
+  {
     "id": "component:menu-bar-extra",
     "title": "MenuBarExtra",
     "type": "component",
@@ -4281,6 +6129,38 @@ export const docsSearchIndex = [
     "path": "/docs/components/menu-bar-extra#api",
     "keywords": "MenuBarExtra optionKey boolean ",
     "excerpt": "boolean (required)"
+  },
+  {
+    "id": "component:mnemonic-label",
+    "title": "MnemonicLabel",
+    "type": "component",
+    "path": "/docs/components/mnemonic-label",
+    "keywords": "MnemonicLabel Other MnemonicLabel.label string MnemonicLabel.mnemonic string MnemonicLabel.showAccessKey boolean MnemonicLabel.className string",
+    "excerpt": "Other component from @larose-ui/react"
+  },
+  {
+    "id": "prop:mnemonic-label:label",
+    "title": "MnemonicLabel.label",
+    "type": "prop",
+    "path": "/docs/components/mnemonic-label#api",
+    "keywords": "MnemonicLabel label string ",
+    "excerpt": "string (required)"
+  },
+  {
+    "id": "prop:mnemonic-label:mnemonic",
+    "title": "MnemonicLabel.mnemonic",
+    "type": "prop",
+    "path": "/docs/components/mnemonic-label#api",
+    "keywords": "MnemonicLabel mnemonic string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:mnemonic-label:showAccessKey",
+    "title": "MnemonicLabel.showAccessKey",
+    "type": "prop",
+    "path": "/docs/components/mnemonic-label#api",
+    "keywords": "MnemonicLabel showAccessKey boolean When true, underline the access key character.",
+    "excerpt": "When true, underline the access key character."
   },
   {
     "id": "component:modal",
@@ -4387,6 +6267,30 @@ export const docsSearchIndex = [
     "excerpt": "// See Storybook story \"NoOverlayClose\" for full example."
   },
   {
+    "id": "component:monogram",
+    "title": "Monogram",
+    "type": "component",
+    "path": "/docs/components/monogram",
+    "keywords": "Monogram Other Monogram.imageUrl string Monogram.name string Monogram.role string",
+    "excerpt": "Other component from @larose-ui/react"
+  },
+  {
+    "id": "prop:monogram:imageUrl",
+    "title": "Monogram.imageUrl",
+    "type": "prop",
+    "path": "/docs/components/monogram#api",
+    "keywords": "Monogram imageUrl string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:monogram:name",
+    "title": "Monogram.name",
+    "type": "prop",
+    "path": "/docs/components/monogram#api",
+    "keywords": "Monogram name string ",
+    "excerpt": "string (required)"
+  },
+  {
     "id": "component:more-pull-down-button",
     "title": "MorePullDownButton",
     "type": "component",
@@ -4401,6 +6305,30 @@ export const docsSearchIndex = [
     "path": "/docs/components/ornament",
     "keywords": "Ornament Layout Ornament.children ReactNode Ornament.className string",
     "excerpt": "Layout component from @larose-ui/react"
+  },
+  {
+    "id": "example:ornament:NowPlaying",
+    "title": "Ornament — Now Playing (bottom)",
+    "type": "example",
+    "path": "/docs/components/ornament#examples",
+    "keywords": "Ornament Now Playing (bottom) advanced {}",
+    "excerpt": "// See Storybook story \"NowPlaying\" for full example."
+  },
+  {
+    "id": "example:ornament:ImmersiveHidden",
+    "title": "Ornament — Hidden during immersive content",
+    "type": "example",
+    "path": "/docs/components/ornament#examples",
+    "keywords": "Ornament Hidden during immersive content advanced {}",
+    "excerpt": "// See Storybook story \"ImmersiveHidden\" for full example."
+  },
+  {
+    "id": "example:ornament:TopToolbar",
+    "title": "Ornament — Top toolbar ornament",
+    "type": "example",
+    "path": "/docs/components/ornament#examples",
+    "keywords": "Ornament Top toolbar ornament advanced {}",
+    "excerpt": "// See Storybook story \"TopToolbar\" for full example."
   },
   {
     "id": "component:ornament-button",
@@ -4659,6 +6587,30 @@ export const docsSearchIndex = [
     "excerpt": "// See Storybook story \"OutlineViewStory\" for full example."
   },
   {
+    "id": "example:outline-view:FinderStyle",
+    "title": "OutlineView — Finder-style outline",
+    "type": "example",
+    "path": "/docs/components/outline-view#examples",
+    "keywords": "OutlineView Finder-style outline advanced {}",
+    "excerpt": "// See Storybook story \"FinderStyle\" for full example."
+  },
+  {
+    "id": "example:outline-view:SplitViewCompanion",
+    "title": "OutlineView — Split view companion",
+    "type": "example",
+    "path": "/docs/components/outline-view#examples",
+    "keywords": "OutlineView Split view companion advanced {}",
+    "excerpt": "// See Storybook story \"SplitViewCompanion\" for full example."
+  },
+  {
+    "id": "example:outline-view:BasicOutline",
+    "title": "OutlineView — Basic Outline",
+    "type": "example",
+    "path": "/docs/components/outline-view#examples",
+    "keywords": "OutlineView Basic Outline basic {}",
+    "excerpt": "// See Storybook story \"BasicOutline\" for full example."
+  },
+  {
     "id": "component:outline-view-toolbar",
     "title": "OutlineViewToolbar",
     "type": "component",
@@ -4763,14 +6715,6 @@ export const docsSearchIndex = [
     "excerpt": "number (required)"
   },
   {
-    "id": "example:pagination:PaginationDefault",
-    "title": "Pagination — Pagination Default",
-    "type": "example",
-    "path": "/docs/components/pagination#examples",
-    "keywords": "Pagination Pagination Default basic {}",
-    "excerpt": "<PaginationDemo />"
-  },
-  {
     "id": "component:path-control",
     "title": "PathControl",
     "type": "component",
@@ -4859,6 +6803,182 @@ export const docsSearchIndex = [
     "excerpt": "// See Storybook story \"PathControlPopup\" for full example."
   },
   {
+    "id": "component:picker",
+    "title": "Picker",
+    "type": "component",
+    "path": "/docs/components/picker",
+    "keywords": "Picker Forms Picker.'aria-label' string Picker.columns PickerColumn[] Picker.disabled boolean Picker.error string | null Picker.formatValue (value: PickerValue, columns: PickerColumn[]) => string Picker.hint string Picker.inputSize Size Picker.label string Picker.loading boolean Picker.placeholder string Picker.state UIState Picker.value PickerValue Picker.onChange (value: PickerValue) => void Picker.style PickerStyle",
+    "excerpt": "Forms component from @larose-ui/react"
+  },
+  {
+    "id": "prop:picker:'aria-label'",
+    "title": "Picker.'aria-label'",
+    "type": "prop",
+    "path": "/docs/components/picker#api",
+    "keywords": "Picker 'aria-label' string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:picker:columns",
+    "title": "Picker.columns",
+    "type": "prop",
+    "path": "/docs/components/picker#api",
+    "keywords": "Picker columns PickerColumn[] ",
+    "excerpt": "PickerColumn[] (required)"
+  },
+  {
+    "id": "prop:picker:disabled",
+    "title": "Picker.disabled",
+    "type": "prop",
+    "path": "/docs/components/picker#api",
+    "keywords": "Picker disabled boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "prop:picker:error",
+    "title": "Picker.error",
+    "type": "prop",
+    "path": "/docs/components/picker#api",
+    "keywords": "Picker error string | null ",
+    "excerpt": "string | null"
+  },
+  {
+    "id": "prop:picker:formatValue",
+    "title": "Picker.formatValue",
+    "type": "prop",
+    "path": "/docs/components/picker#api",
+    "keywords": "Picker formatValue (value: PickerValue, columns: PickerColumn[]) => string Formats the compact trigger label from the current value.",
+    "excerpt": "Formats the compact trigger label from the current value."
+  },
+  {
+    "id": "prop:picker:hint",
+    "title": "Picker.hint",
+    "type": "prop",
+    "path": "/docs/components/picker#api",
+    "keywords": "Picker hint string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:picker:inputSize",
+    "title": "Picker.inputSize",
+    "type": "prop",
+    "path": "/docs/components/picker#api",
+    "keywords": "Picker inputSize Size ",
+    "excerpt": "Size"
+  },
+  {
+    "id": "prop:picker:label",
+    "title": "Picker.label",
+    "type": "prop",
+    "path": "/docs/components/picker#api",
+    "keywords": "Picker label string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:picker:loading",
+    "title": "Picker.loading",
+    "type": "prop",
+    "path": "/docs/components/picker#api",
+    "keywords": "Picker loading boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "prop:picker:placeholder",
+    "title": "Picker.placeholder",
+    "type": "prop",
+    "path": "/docs/components/picker#api",
+    "keywords": "Picker placeholder string Shown on the compact trigger when no selection exists.",
+    "excerpt": "Shown on the compact trigger when no selection exists."
+  },
+  {
+    "id": "prop:picker:state",
+    "title": "Picker.state",
+    "type": "prop",
+    "path": "/docs/components/picker#api",
+    "keywords": "Picker state UIState ",
+    "excerpt": "UIState"
+  },
+  {
+    "id": "prop:picker:value",
+    "title": "Picker.value",
+    "type": "prop",
+    "path": "/docs/components/picker#api",
+    "keywords": "Picker value PickerValue ",
+    "excerpt": "PickerValue (required)"
+  },
+  {
+    "id": "example:picker:WheelStyle",
+    "title": "Picker — Wheels (multipart)",
+    "type": "example",
+    "path": "/docs/components/picker#examples",
+    "keywords": "Picker Wheels (multipart) advanced {}",
+    "excerpt": "<Picker\n        label=\"Country\"\n        style=\"wheels\"\n        columns={[{ id: 'country', label: 'Country', options: cou"
+  },
+  {
+    "id": "example:picker:CompactStyle",
+    "title": "Picker — Compact (popover)",
+    "type": "example",
+    "path": "/docs/components/picker#examples",
+    "keywords": "Picker Compact (popover) advanced {}",
+    "excerpt": "<Picker\n        label=\"Country\"\n        style=\"compact\"\n        columns={[{ id: 'country', label: 'Country', options: co"
+  },
+  {
+    "id": "example:picker:DateWheels",
+    "title": "Picker — Date (wheels)",
+    "type": "example",
+    "path": "/docs/components/picker#examples",
+    "keywords": "Picker Date (wheels) advanced {}",
+    "excerpt": "<DateTimePicker\n        label=\"Due date\"\n        mode=\"date\"\n        style=\"wheels\"\n        value={value}\n        onChan"
+  },
+  {
+    "id": "example:picker:DateCompact",
+    "title": "Picker — Date (compact calendar)",
+    "type": "example",
+    "path": "/docs/components/picker#examples",
+    "keywords": "Picker Date (compact calendar) advanced {}",
+    "excerpt": "<DateTimePicker\n        label=\"Event date\"\n        mode=\"date\"\n        style=\"compact\"\n        value={value}\n        onC"
+  },
+  {
+    "id": "example:picker:DateInline",
+    "title": "Picker — Date (inline calendar)",
+    "type": "example",
+    "path": "/docs/components/picker#examples",
+    "keywords": "Picker Date (inline calendar) advanced {}",
+    "excerpt": "<DateTimePicker\n        label=\"Trip date\"\n        mode=\"date\"\n        style=\"inline\"\n        value={value}\n        onCha"
+  },
+  {
+    "id": "example:picker:TimeWheels",
+    "title": "Picker — Time (wheels)",
+    "type": "example",
+    "path": "/docs/components/picker#examples",
+    "keywords": "Picker Time (wheels) advanced {}",
+    "excerpt": "<DateTimePicker\n        label=\"Meeting time\"\n        mode=\"time\"\n        style=\"wheels\"\n        minuteInterval={15}\n    "
+  },
+  {
+    "id": "example:picker:DateAndTimeCompact",
+    "title": "Picker — Date and time (compact)",
+    "type": "example",
+    "path": "/docs/components/picker#examples",
+    "keywords": "Picker Date and time (compact) advanced {}",
+    "excerpt": "<DateTimePicker\n        label=\"Appointment\"\n        mode=\"datetime\"\n        style=\"compact\"\n        minuteInterval={5}\n "
+  },
+  {
+    "id": "example:picker:CountdownTimer",
+    "title": "Picker — Countdown timer",
+    "type": "example",
+    "path": "/docs/components/picker#examples",
+    "keywords": "Picker Countdown timer advanced {}",
+    "excerpt": "<DateTimePicker\n        label=\"Timer\"\n        mode=\"countdown\"\n        style=\"wheels\"\n        minuteInterval={1}\n       "
+  },
+  {
+    "id": "example:picker:LowLevelWheelPicker",
+    "title": "Picker — WheelPicker (low-level)",
+    "type": "example",
+    "path": "/docs/components/picker#examples",
+    "keywords": "Picker WheelPicker (low-level) advanced {}",
+    "excerpt": "// See Storybook story \"LowLevelWheelPicker\" for full example."
+  },
+  {
     "id": "component:popover",
     "title": "Popover",
     "type": "component",
@@ -4931,22 +7051,6 @@ export const docsSearchIndex = [
     "excerpt": "ReactNode (required)"
   },
   {
-    "id": "example:popover:PopoverStory",
-    "title": "Popover — Popover",
-    "type": "example",
-    "path": "/docs/components/popover#examples",
-    "keywords": "Popover Popover advanced {}",
-    "excerpt": "// See Storybook story \"PopoverStory\" for full example."
-  },
-  {
-    "id": "example:popover:PopoverPortalStory",
-    "title": "Popover — Popover (portal / overflow)",
-    "type": "example",
-    "path": "/docs/components/popover#examples",
-    "keywords": "Popover Popover (portal / overflow) advanced {}",
-    "excerpt": "// See Storybook story \"PopoverPortalStory\" for full example."
-  },
-  {
     "id": "example:popover:PopoverAndTooltip",
     "title": "Popover — Popover And Tooltip",
     "type": "example",
@@ -4960,7 +7064,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/popover#examples",
     "keywords": "Popover Default basic {\"margin\":0,\"maxWidth\":220}",
-    "excerpt": "<Popover\n  margin={0}\n  maxWidth={220}\n>Example</Popover>"
+    "excerpt": "import { Popover } from '@larose-ui/react';\n\n<Popover\n  margin={0}\n  maxWidth={220}\n>Example</Popover>"
   },
   {
     "id": "example:popover:Top",
@@ -4968,7 +7072,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/popover#examples",
     "keywords": "Popover Top advanced {\"side\":\"top\",\"margin\":0}",
-    "excerpt": "<Popover\n  side=\"top\"\n  margin={0}\n>Example</Popover>"
+    "excerpt": "import { Popover } from '@larose-ui/react';\n\n<Popover\n  side=\"top\"\n  margin={0}\n>Example</Popover>"
   },
   {
     "id": "example:popover:WithActions",
@@ -5059,6 +7163,54 @@ export const docsSearchIndex = [
     "excerpt": "string"
   },
   {
+    "id": "example:pop-up-button:CalendarRepeat",
+    "title": "PopUpButton — Calendar repeat",
+    "type": "example",
+    "path": "/docs/components/pop-up-button#examples",
+    "keywords": "PopUpButton Calendar repeat advanced {}",
+    "excerpt": "// See Storybook story \"CalendarRepeat\" for full example."
+  },
+  {
+    "id": "example:pop-up-button:WithDefault",
+    "title": "PopUpButton — Default selection",
+    "type": "example",
+    "path": "/docs/components/pop-up-button#examples",
+    "keywords": "PopUpButton Default selection basic {}",
+    "excerpt": "<PopUpButton\n        label=\"Priority\"\n        options={[\n          { value: 'low', label: 'Low' },\n          { value: 'm"
+  },
+  {
+    "id": "example:pop-up-button:DisabledOption",
+    "title": "PopUpButton — Unavailable option",
+    "type": "example",
+    "path": "/docs/components/pop-up-button#examples",
+    "keywords": "PopUpButton Unavailable option disabled {}",
+    "excerpt": "// See Storybook story \"DisabledOption\" for full example."
+  },
+  {
+    "id": "component:poster",
+    "title": "Poster",
+    "type": "component",
+    "path": "/docs/components/poster",
+    "keywords": "Poster Other Poster.imageUrl string Poster.subtitle string Poster.title string",
+    "excerpt": "Other component from @larose-ui/react"
+  },
+  {
+    "id": "prop:poster:imageUrl",
+    "title": "Poster.imageUrl",
+    "type": "prop",
+    "path": "/docs/components/poster#api",
+    "keywords": "Poster imageUrl string ",
+    "excerpt": "string (required)"
+  },
+  {
+    "id": "prop:poster:subtitle",
+    "title": "Poster.subtitle",
+    "type": "prop",
+    "path": "/docs/components/poster#api",
+    "keywords": "Poster subtitle string ",
+    "excerpt": "string"
+  },
+  {
     "id": "component:progress",
     "title": "Progress",
     "type": "component",
@@ -5136,7 +7288,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/progress#examples",
     "keywords": "Progress Default basic {\"value\":65,\"label\":\"Profile completion\",\"showValue\":true}",
-    "excerpt": "<Progress\n  value={65}\n  label=\"Profile completion\"\n  showValue\n/>"
+    "excerpt": "import { Progress } from '@larose-ui/react';\n\n<Progress\n  value={65}\n  label=\"Profile completion\"\n  showValue\n/>"
   },
   {
     "id": "example:progress:Success",
@@ -5144,7 +7296,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/progress#examples",
     "keywords": "Progress Success advanced {\"value\":100,\"label\":\"Upload complete\",\"variant\":\"success\",\"showValue\":true}",
-    "excerpt": "<Progress\n  value={100}\n  label=\"Upload complete\"\n  variant=\"success\"\n  showValue\n/>"
+    "excerpt": "import { Progress } from '@larose-ui/react';\n\n<Progress\n  value={100}\n  label=\"Upload complete\"\n  variant=\"success\"\n  sh"
   },
   {
     "id": "example:progress:Error",
@@ -5152,7 +7304,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/progress#examples",
     "keywords": "Progress Error error {\"value\":35,\"label\":\"Sync failed\",\"variant\":\"error\",\"showValue\":true}",
-    "excerpt": "<Progress\n  value={35}\n  label=\"Sync failed\"\n  variant=\"error\"\n  showValue\n/>"
+    "excerpt": "import { Progress } from '@larose-ui/react';\n\n<Progress\n  value={35}\n  label=\"Sync failed\"\n  variant=\"error\"\n  showValue"
   },
   {
     "id": "example:progress:Loading",
@@ -5160,7 +7312,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/progress#examples",
     "keywords": "Progress Loading loading {\"value\":45,\"label\":\"Importing employees\",\"showValue\":true,\"state\":\"loading\"}",
-    "excerpt": "<Progress\n  value={45}\n  label=\"Importing employees\"\n  showValue\n  state=\"loading\"\n/>"
+    "excerpt": "import { Progress } from '@larose-ui/react';\n\n<Progress\n  value={45}\n  label=\"Importing employees\"\n  showValue\n  state=\""
   },
   {
     "id": "component:pull-down-button",
@@ -5243,6 +7395,38 @@ export const docsSearchIndex = [
     "excerpt": "PullDownButtonVariant"
   },
   {
+    "id": "example:pull-down-button:AddMenu",
+    "title": "PullDownButton — Add",
+    "type": "example",
+    "path": "/docs/components/pull-down-button#examples",
+    "keywords": "PullDownButton Add advanced {}",
+    "excerpt": "// See Storybook story \"AddMenu\" for full example."
+  },
+  {
+    "id": "example:pull-down-button:SortMenu",
+    "title": "PullDownButton — Sort",
+    "type": "example",
+    "path": "/docs/components/pull-down-button#examples",
+    "keywords": "PullDownButton Sort advanced {}",
+    "excerpt": "// See Storybook story \"SortMenu\" for full example."
+  },
+  {
+    "id": "example:pull-down-button:MoreMenu",
+    "title": "PullDownButton — More (Notes)",
+    "type": "example",
+    "path": "/docs/components/pull-down-button#examples",
+    "keywords": "PullDownButton More (Notes) advanced {}",
+    "excerpt": "// See Storybook story \"MoreMenu\" for full example."
+  },
+  {
+    "id": "example:pull-down-button:DestructiveConfirmation",
+    "title": "PullDownButton — Destructive confirmation",
+    "type": "example",
+    "path": "/docs/components/pull-down-button#examples",
+    "keywords": "PullDownButton Destructive confirmation destructive {}",
+    "excerpt": "// See Storybook story \"DestructiveConfirmation\" for full example."
+  },
+  {
     "id": "component:radio",
     "title": "Radio",
     "type": "component",
@@ -5296,7 +7480,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/radio#examples",
     "keywords": "Radio plan basic {\"name\":\"plan\",\"label\":\"Starter plan\",\"value\":\"starter\",\"defaultChecked\":true}",
-    "excerpt": "<Radio\n  name=\"plan\"\n  label=\"Starter plan\"\n  value=\"starter\"\n  defaultChecked\n>Example</Radio>"
+    "excerpt": "import { Radio } from '@larose-ui/react';\n\n<Radio\n  name=\"plan\"\n  label=\"Starter plan\"\n  value=\"starter\"\n  defaultChecke"
   },
   {
     "id": "example:radio:WithHint",
@@ -5304,7 +7488,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/radio#examples",
     "keywords": "Radio plan advanced {\"name\":\"plan\",\"label\":\"Pro plan\",\"value\":\"pro\",\"hint\":\"Includes advanced analytics\"}",
-    "excerpt": "<Radio\n  name=\"plan\"\n  label=\"Pro plan\"\n  value=\"pro\"\n  hint=\"Includes advanced analytics\"\n>Example</Radio>"
+    "excerpt": "import { Radio } from '@larose-ui/react';\n\n<Radio\n  name=\"plan\"\n  label=\"Pro plan\"\n  value=\"pro\"\n  hint=\"Includes advanc"
   },
   {
     "id": "example:radio:WithError",
@@ -5312,7 +7496,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/radio#examples",
     "keywords": "Radio plan error {\"name\":\"plan\",\"label\":\"Enterprise plan\",\"value\":\"enterprise\",\"error\":\"Select a plan to continue\"}",
-    "excerpt": "<Radio\n  name=\"plan\"\n  label=\"Enterprise plan\"\n  value=\"enterprise\"\n  error=\"Select a plan to continue\"\n>Example</Radio>"
+    "excerpt": "import { Radio } from '@larose-ui/react';\n\n<Radio\n  name=\"plan\"\n  label=\"Enterprise plan\"\n  value=\"enterprise\"\n  error=\""
   },
   {
     "id": "example:radio:Disabled",
@@ -5320,7 +7504,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/radio#examples",
     "keywords": "Radio plan disabled {\"name\":\"plan\",\"label\":\"Legacy plan\",\"value\":\"legacy\",\"disabled\":true}",
-    "excerpt": "<Radio\n  name=\"plan\"\n  label=\"Legacy plan\"\n  value=\"legacy\"\n  disabled\n>Example</Radio>"
+    "excerpt": "import { Radio } from '@larose-ui/react';\n\n<Radio\n  name=\"plan\"\n  label=\"Legacy plan\"\n  value=\"legacy\"\n  disabled\n>Examp"
   },
   {
     "id": "example:radio:Group",
@@ -5419,14 +7603,6 @@ export const docsSearchIndex = [
     "excerpt": "UIState"
   },
   {
-    "id": "example:select:SelectableLabel",
-    "title": "Select — Selectable Label",
-    "type": "example",
-    "path": "/docs/components/select#examples",
-    "keywords": "Select Selectable Label advanced {}",
-    "excerpt": "// See Storybook story \"SelectableLabel\" for full example."
-  },
-  {
     "id": "example:select:SelectDefault",
     "title": "Select — Select Default",
     "type": "example",
@@ -5440,7 +7616,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/select#examples",
     "keywords": "Select Default basic {\"label\":\"Department\",\"placeholder\":\"Choose a department\"}",
-    "excerpt": "<Select\n  label=\"Department\"\n  placeholder=\"Choose a department\"\n>Example</Select>"
+    "excerpt": "import { Select } from '@larose-ui/react';\n\n<Select\n  label=\"Department\"\n  placeholder=\"Choose a department\"\n>Example</S"
   },
   {
     "id": "example:select:WithHint",
@@ -5448,7 +7624,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/select#examples",
     "keywords": "Select With Hint advanced {\"label\":\"Department\",\"hint\":\"Used for org chart and permissions\"}",
-    "excerpt": "<Select\n  label=\"Department\"\n  hint=\"Used for org chart and permissions\"\n>Example</Select>"
+    "excerpt": "import { Select } from '@larose-ui/react';\n\n<Select\n  label=\"Department\"\n  hint=\"Used for org chart and permissions\"\n>Ex"
   },
   {
     "id": "example:select:Required",
@@ -5456,7 +7632,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/select#examples",
     "keywords": "Select Required advanced {\"label\":\"Department\",\"required\":true}",
-    "excerpt": "<Select\n  label=\"Department\"\n  required\n>Example</Select>"
+    "excerpt": "import { Select } from '@larose-ui/react';\n\n<Select\n  label=\"Department\"\n  required\n>Example</Select>"
   },
   {
     "id": "example:select:Loading",
@@ -5464,7 +7640,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/select#examples",
     "keywords": "Select Loading loading {\"label\":\"Department\",\"loading\":true}",
-    "excerpt": "<Select\n  label=\"Department\"\n  loading\n>Example</Select>"
+    "excerpt": "import { Select } from '@larose-ui/react';\n\n<Select\n  label=\"Department\"\n  loading\n>Example</Select>"
   },
   {
     "id": "example:select:WithError",
@@ -5472,7 +7648,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/select#examples",
     "keywords": "Select With Error error {\"label\":\"Department\",\"error\":\"Department is required\"}",
-    "excerpt": "<Select\n  label=\"Department\"\n  error=\"Department is required\"\n>Example</Select>"
+    "excerpt": "import { Select } from '@larose-ui/react';\n\n<Select\n  label=\"Department\"\n  error=\"Department is required\"\n>Example</Sele"
   },
   {
     "id": "example:select:Disabled",
@@ -5480,7 +7656,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/select#examples",
     "keywords": "Select Disabled disabled {\"label\":\"Department\",\"disabled\":true,\"defaultValue\":\"eng\"}",
-    "excerpt": "<Select\n  label=\"Department\"\n  disabled\n  defaultValue=\"eng\"\n>Example</Select>"
+    "excerpt": "import { Select } from '@larose-ui/react';\n\n<Select\n  label=\"Department\"\n  disabled\n  defaultValue=\"eng\"\n>Example</Selec"
   },
   {
     "id": "component:skeleton",
@@ -5528,7 +7704,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/skeleton#examples",
     "keywords": "Skeleton Text advanced {\"width\":200}",
-    "excerpt": "<Skeleton\n  width={200}\n/>"
+    "excerpt": "import { Skeleton } from '@larose-ui/react';\n\n<Skeleton\n  width={200}\n/>"
   },
   {
     "id": "component:spinner",
@@ -5553,6 +7729,174 @@ export const docsSearchIndex = [
     "path": "/docs/components/spinner#api",
     "keywords": "Spinner size Size ",
     "excerpt": "Size"
+  },
+  {
+    "id": "component:split-view",
+    "title": "SplitView",
+    "type": "component",
+    "path": "/docs/components/split-view",
+    "keywords": "SplitView Layout SplitView.'aria-label' string SplitView.compactMode SplitCompactMode SplitView.onSizesChange (sizes: number[]) => void SplitView.orientation SplitOrientation SplitView.storageKey string SplitView.toolbar ReactNode SplitView.children ReactNode SplitView.className string",
+    "excerpt": "Layout component from @larose-ui/react"
+  },
+  {
+    "id": "prop:split-view:'aria-label'",
+    "title": "SplitView.'aria-label'",
+    "type": "prop",
+    "path": "/docs/components/split-view#api",
+    "keywords": "SplitView 'aria-label' string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:split-view:compactMode",
+    "title": "SplitView.compactMode",
+    "type": "prop",
+    "path": "/docs/components/split-view#api",
+    "keywords": "SplitView compactMode SplitCompactMode ",
+    "excerpt": "SplitCompactMode"
+  },
+  {
+    "id": "prop:split-view:onSizesChange",
+    "title": "SplitView.onSizesChange",
+    "type": "prop",
+    "path": "/docs/components/split-view#api",
+    "keywords": "SplitView onSizesChange (sizes: number[]) => void ",
+    "excerpt": "(sizes: number[]) => void"
+  },
+  {
+    "id": "prop:split-view:orientation",
+    "title": "SplitView.orientation",
+    "type": "prop",
+    "path": "/docs/components/split-view#api",
+    "keywords": "SplitView orientation SplitOrientation ",
+    "excerpt": "SplitOrientation"
+  },
+  {
+    "id": "prop:split-view:storageKey",
+    "title": "SplitView.storageKey",
+    "type": "prop",
+    "path": "/docs/components/split-view#api",
+    "keywords": "SplitView storageKey string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:split-view:toolbar",
+    "title": "SplitView.toolbar",
+    "type": "prop",
+    "path": "/docs/components/split-view#api",
+    "keywords": "SplitView toolbar ReactNode ",
+    "excerpt": "ReactNode"
+  },
+  {
+    "id": "example:split-view:SidebarDetailInspector",
+    "title": "SplitView — Sidebar · content · inspector",
+    "type": "example",
+    "path": "/docs/components/split-view#examples",
+    "keywords": "SplitView Sidebar · content · inspector advanced {}",
+    "excerpt": "// See Storybook story \"SidebarDetailInspector\" for full example."
+  },
+  {
+    "id": "example:split-view:VerticalSplit",
+    "title": "SplitView — Vertical Split",
+    "type": "example",
+    "path": "/docs/components/split-view#examples",
+    "keywords": "SplitView Vertical Split advanced {}",
+    "excerpt": "// See Storybook story \"VerticalSplit\" for full example."
+  },
+  {
+    "id": "example:split-view:DragBetweenPanes",
+    "title": "SplitView — Drag between panes",
+    "type": "example",
+    "path": "/docs/components/split-view#examples",
+    "keywords": "SplitView Drag between panes advanced {}",
+    "excerpt": "// See Storybook story \"DragBetweenPanes\" for full example."
+  },
+  {
+    "id": "example:split-view:CompactStack",
+    "title": "SplitView — Compact Stack",
+    "type": "example",
+    "path": "/docs/components/split-view#examples",
+    "keywords": "SplitView Compact Stack advanced {}",
+    "excerpt": "// See Storybook story \"CompactStack\" for full example."
+  },
+  {
+    "id": "component:split-view-pane",
+    "title": "SplitViewPane",
+    "type": "component",
+    "path": "/docs/components/split-view-pane",
+    "keywords": "SplitViewPane Layout SplitViewPane.'aria-label' string SplitViewPane.collapsible boolean SplitViewPane.defaultSize number SplitViewPane.defaultVisible boolean SplitViewPane.label string SplitViewPane.maxSize number SplitViewPane.minSize number SplitViewPane.onVisibleChange (visible: boolean) => void SplitViewPane.visible boolean SplitViewPane.children ReactNode SplitViewPane.className string SplitViewPane.id string",
+    "excerpt": "Layout component from @larose-ui/react"
+  },
+  {
+    "id": "prop:split-view-pane:'aria-label'",
+    "title": "SplitViewPane.'aria-label'",
+    "type": "prop",
+    "path": "/docs/components/split-view-pane#api",
+    "keywords": "SplitViewPane 'aria-label' string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:split-view-pane:collapsible",
+    "title": "SplitViewPane.collapsible",
+    "type": "prop",
+    "path": "/docs/components/split-view-pane#api",
+    "keywords": "SplitViewPane collapsible boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "prop:split-view-pane:defaultSize",
+    "title": "SplitViewPane.defaultSize",
+    "type": "prop",
+    "path": "/docs/components/split-view-pane#api",
+    "keywords": "SplitViewPane defaultSize number ",
+    "excerpt": "number"
+  },
+  {
+    "id": "prop:split-view-pane:defaultVisible",
+    "title": "SplitViewPane.defaultVisible",
+    "type": "prop",
+    "path": "/docs/components/split-view-pane#api",
+    "keywords": "SplitViewPane defaultVisible boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "prop:split-view-pane:label",
+    "title": "SplitViewPane.label",
+    "type": "prop",
+    "path": "/docs/components/split-view-pane#api",
+    "keywords": "SplitViewPane label string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:split-view-pane:maxSize",
+    "title": "SplitViewPane.maxSize",
+    "type": "prop",
+    "path": "/docs/components/split-view-pane#api",
+    "keywords": "SplitViewPane maxSize number ",
+    "excerpt": "number"
+  },
+  {
+    "id": "prop:split-view-pane:minSize",
+    "title": "SplitViewPane.minSize",
+    "type": "prop",
+    "path": "/docs/components/split-view-pane#api",
+    "keywords": "SplitViewPane minSize number ",
+    "excerpt": "number"
+  },
+  {
+    "id": "prop:split-view-pane:onVisibleChange",
+    "title": "SplitViewPane.onVisibleChange",
+    "type": "prop",
+    "path": "/docs/components/split-view-pane#api",
+    "keywords": "SplitViewPane onVisibleChange (visible: boolean) => void ",
+    "excerpt": "(visible: boolean) => void"
+  },
+  {
+    "id": "prop:split-view-pane:visible",
+    "title": "SplitViewPane.visible",
+    "type": "prop",
+    "path": "/docs/components/split-view-pane#api",
+    "keywords": "SplitViewPane visible boolean ",
+    "excerpt": "boolean"
   },
   {
     "id": "component:split-view-toolbar",
@@ -5667,20 +8011,12 @@ export const docsSearchIndex = [
     "excerpt": "<Switch label=\"Email notifications\" defaultChecked hint=\"Receive product updates\" />"
   },
   {
-    "id": "example:switch:SwitchStory",
-    "title": "Switch — Switch",
-    "type": "example",
-    "path": "/docs/components/switch#examples",
-    "keywords": "Switch Switch advanced {}",
-    "excerpt": "// See Storybook story \"SwitchStory\" for full example."
-  },
-  {
     "id": "example:switch:Default",
     "title": "Switch — Default",
     "type": "example",
     "path": "/docs/components/switch#examples",
     "keywords": "Switch Default basic {\"label\":\"Email notifications\"}",
-    "excerpt": "<Switch\n  label=\"Email notifications\"\n>Example</Switch>"
+    "excerpt": "import { Switch } from '@larose-ui/react';\n\n<Switch\n  label=\"Email notifications\"\n>Example</Switch>"
   },
   {
     "id": "example:switch:Checked",
@@ -5688,7 +8024,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/switch#examples",
     "keywords": "Switch Checked advanced {\"label\":\"Push notifications\",\"defaultChecked\":true}",
-    "excerpt": "<Switch\n  label=\"Push notifications\"\n  defaultChecked\n>Example</Switch>"
+    "excerpt": "import { Switch } from '@larose-ui/react';\n\n<Switch\n  label=\"Push notifications\"\n  defaultChecked\n>Example</Switch>"
   },
   {
     "id": "example:switch:WithHint",
@@ -5696,7 +8032,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/switch#examples",
     "keywords": "Switch With Hint advanced {\"label\":\"Marketing emails\",\"hint\":\"Receive occasional product announcements\"}",
-    "excerpt": "<Switch\n  label=\"Marketing emails\"\n  hint=\"Receive occasional product announcements\"\n>Example</Switch>"
+    "excerpt": "import { Switch } from '@larose-ui/react';\n\n<Switch\n  label=\"Marketing emails\"\n  hint=\"Receive occasional product announ"
   },
   {
     "id": "example:switch:Disabled",
@@ -5704,7 +8040,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/switch#examples",
     "keywords": "Switch Disabled disabled {\"label\":\"Beta features\",\"disabled\":true}",
-    "excerpt": "<Switch\n  label=\"Beta features\"\n  disabled\n>Example</Switch>"
+    "excerpt": "import { Switch } from '@larose-ui/react';\n\n<Switch\n  label=\"Beta features\"\n  disabled\n>Example</Switch>"
   },
   {
     "id": "example:switch:SettingsStyle",
@@ -5713,6 +8049,14 @@ export const docsSearchIndex = [
     "path": "/docs/components/switch#examples",
     "keywords": "Switch Settings Style advanced {}",
     "excerpt": "// See Storybook story \"SettingsStyle\" for full example."
+  },
+  {
+    "id": "component:system-activity-ids",
+    "title": "SYSTEM_ACTIVITY_IDS",
+    "type": "component",
+    "path": "/docs/components/system-activity-ids",
+    "keywords": "SYSTEM_ACTIVITY_IDS Other",
+    "excerpt": "Other component from @larose-ui/react"
   },
   {
     "id": "component:table",
@@ -5827,6 +8171,262 @@ export const docsSearchIndex = [
     "excerpt": "// See Storybook story \"SortableTable\" for full example."
   },
   {
+    "id": "component:tabs",
+    "title": "Tabs",
+    "type": "component",
+    "path": "/docs/components/tabs",
+    "keywords": "Tabs Navigation Tabs.defaultValue string Tabs.onValueChange (value: string) => void Tabs.value string Tabs.children ReactNode Tabs.className string",
+    "excerpt": "Navigation component from @larose-ui/react"
+  },
+  {
+    "id": "prop:tabs:defaultValue",
+    "title": "Tabs.defaultValue",
+    "type": "prop",
+    "path": "/docs/components/tabs#api",
+    "keywords": "Tabs defaultValue string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:tabs:onValueChange",
+    "title": "Tabs.onValueChange",
+    "type": "prop",
+    "path": "/docs/components/tabs#api",
+    "keywords": "Tabs onValueChange (value: string) => void ",
+    "excerpt": "(value: string) => void"
+  },
+  {
+    "id": "prop:tabs:value",
+    "title": "Tabs.value",
+    "type": "prop",
+    "path": "/docs/components/tabs#api",
+    "keywords": "Tabs value string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "example:tabs:TabsDefault",
+    "title": "Tabs — Tabs Default",
+    "type": "example",
+    "path": "/docs/components/tabs#examples",
+    "keywords": "Tabs Tabs Default basic {}",
+    "excerpt": "// See Storybook story \"TabsDefault\" for full example."
+  },
+  {
+    "id": "component:tabs-list",
+    "title": "TabsList",
+    "type": "component",
+    "path": "/docs/components/tabs-list",
+    "keywords": "TabsList Navigation TabsList.'aria-label' string TabsList.children ReactNode",
+    "excerpt": "Navigation component from @larose-ui/react"
+  },
+  {
+    "id": "prop:tabs-list:'aria-label'",
+    "title": "TabsList.'aria-label'",
+    "type": "prop",
+    "path": "/docs/components/tabs-list#api",
+    "keywords": "TabsList 'aria-label' string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "component:tabs-panel",
+    "title": "TabsPanel",
+    "type": "component",
+    "path": "/docs/components/tabs-panel",
+    "keywords": "TabsPanel Navigation TabsPanel.value string TabsPanel.children ReactNode",
+    "excerpt": "Navigation component from @larose-ui/react"
+  },
+  {
+    "id": "prop:tabs-panel:value",
+    "title": "TabsPanel.value",
+    "type": "prop",
+    "path": "/docs/components/tabs-panel#api",
+    "keywords": "TabsPanel value string ",
+    "excerpt": "string (required)"
+  },
+  {
+    "id": "component:tabs-trigger",
+    "title": "TabsTrigger",
+    "type": "component",
+    "path": "/docs/components/tabs-trigger",
+    "keywords": "TabsTrigger Navigation TabsTrigger.disabled boolean TabsTrigger.value string TabsTrigger.children ReactNode",
+    "excerpt": "Navigation component from @larose-ui/react"
+  },
+  {
+    "id": "prop:tabs-trigger:disabled",
+    "title": "TabsTrigger.disabled",
+    "type": "prop",
+    "path": "/docs/components/tabs-trigger#api",
+    "keywords": "TabsTrigger disabled boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "prop:tabs-trigger:value",
+    "title": "TabsTrigger.value",
+    "type": "prop",
+    "path": "/docs/components/tabs-trigger#api",
+    "keywords": "TabsTrigger value string ",
+    "excerpt": "string (required)"
+  },
+  {
+    "id": "component:tab-view",
+    "title": "TabView",
+    "type": "component",
+    "path": "/docs/components/tab-view",
+    "keywords": "TabView Navigation TabView.'aria-label' string TabView.defaultValue string TabView.inset boolean TabView.onValueChange (value: string) => void TabView.showTabs boolean TabView.value string TabView.variant TabViewVariant TabView.children ReactNode TabView.className string",
+    "excerpt": "Navigation component from @larose-ui/react"
+  },
+  {
+    "id": "prop:tab-view:'aria-label'",
+    "title": "TabView.'aria-label'",
+    "type": "prop",
+    "path": "/docs/components/tab-view#api",
+    "keywords": "TabView 'aria-label' string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:tab-view:defaultValue",
+    "title": "TabView.defaultValue",
+    "type": "prop",
+    "path": "/docs/components/tab-view#api",
+    "keywords": "TabView defaultValue string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:tab-view:inset",
+    "title": "TabView.inset",
+    "type": "prop",
+    "path": "/docs/components/tab-view#api",
+    "keywords": "TabView inset boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "prop:tab-view:onValueChange",
+    "title": "TabView.onValueChange",
+    "type": "prop",
+    "path": "/docs/components/tab-view#api",
+    "keywords": "TabView onValueChange (value: string) => void ",
+    "excerpt": "(value: string) => void"
+  },
+  {
+    "id": "prop:tab-view:showTabs",
+    "title": "TabView.showTabs",
+    "type": "prop",
+    "path": "/docs/components/tab-view#api",
+    "keywords": "TabView showTabs boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "prop:tab-view:value",
+    "title": "TabView.value",
+    "type": "prop",
+    "path": "/docs/components/tab-view#api",
+    "keywords": "TabView value string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:tab-view:variant",
+    "title": "TabView.variant",
+    "type": "prop",
+    "path": "/docs/components/tab-view#api",
+    "keywords": "TabView variant TabViewVariant ",
+    "excerpt": "TabViewVariant"
+  },
+  {
+    "id": "example:tab-view:Bordered",
+    "title": "TabView — Bordered",
+    "type": "example",
+    "path": "/docs/components/tab-view#examples",
+    "keywords": "TabView Bordered advanced {}",
+    "excerpt": "// See Storybook story \"Bordered\" for full example."
+  },
+  {
+    "id": "example:tab-view:Bezeled",
+    "title": "TabView — Bezeled",
+    "type": "example",
+    "path": "/docs/components/tab-view#examples",
+    "keywords": "TabView Bezeled advanced {}",
+    "excerpt": "// See Storybook story \"Bezeled\" for full example."
+  },
+  {
+    "id": "example:tab-view:BorderlessHiddenTabs",
+    "title": "TabView — Borderless with hidden tabs",
+    "type": "example",
+    "path": "/docs/components/tab-view#examples",
+    "keywords": "TabView Borderless with hidden tabs advanced {}",
+    "excerpt": "// See Storybook story \"BorderlessHiddenTabs\" for full example."
+  },
+  {
+    "id": "example:tab-view:SixTabLimit",
+    "title": "TabView — Six tab guidance",
+    "type": "example",
+    "path": "/docs/components/tab-view#examples",
+    "keywords": "TabView Six tab guidance advanced {}",
+    "excerpt": "// See Storybook story \"SixTabLimit\" for full example."
+  },
+  {
+    "id": "component:tab-view-list",
+    "title": "TabViewList",
+    "type": "component",
+    "path": "/docs/components/tab-view-list",
+    "keywords": "TabViewList Navigation TabViewList.'aria-label' string TabViewList.children ReactNode",
+    "excerpt": "Navigation component from @larose-ui/react"
+  },
+  {
+    "id": "prop:tab-view-list:'aria-label'",
+    "title": "TabViewList.'aria-label'",
+    "type": "prop",
+    "path": "/docs/components/tab-view-list#api",
+    "keywords": "TabViewList 'aria-label' string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "component:tab-view-panel",
+    "title": "TabViewPanel",
+    "type": "component",
+    "path": "/docs/components/tab-view-panel",
+    "keywords": "TabViewPanel Navigation TabViewPanel.value string TabViewPanel.children ReactNode",
+    "excerpt": "Navigation component from @larose-ui/react"
+  },
+  {
+    "id": "prop:tab-view-panel:value",
+    "title": "TabViewPanel.value",
+    "type": "prop",
+    "path": "/docs/components/tab-view-panel#api",
+    "keywords": "TabViewPanel value string ",
+    "excerpt": "string (required)"
+  },
+  {
+    "id": "component:tab-view-tab",
+    "title": "TabViewTab",
+    "type": "component",
+    "path": "/docs/components/tab-view-tab",
+    "keywords": "TabViewTab Navigation TabViewTab.disabled boolean TabViewTab.label string TabViewTab.value string",
+    "excerpt": "Navigation component from @larose-ui/react"
+  },
+  {
+    "id": "prop:tab-view-tab:disabled",
+    "title": "TabViewTab.disabled",
+    "type": "prop",
+    "path": "/docs/components/tab-view-tab#api",
+    "keywords": "TabViewTab disabled boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "prop:tab-view-tab:label",
+    "title": "TabViewTab.label",
+    "type": "prop",
+    "path": "/docs/components/tab-view-tab#api",
+    "keywords": "TabViewTab label string ",
+    "excerpt": "string (required)"
+  },
+  {
+    "id": "prop:tab-view-tab:value",
+    "title": "TabViewTab.value",
+    "type": "prop",
+    "path": "/docs/components/tab-view-tab#api",
+    "keywords": "TabViewTab value string ",
+    "excerpt": "string (required)"
+  },
+  {
     "id": "component:textarea",
     "title": "Textarea",
     "type": "component",
@@ -5904,7 +8504,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/textarea#examples",
     "keywords": "Textarea Default basic {\"label\":\"Description\",\"placeholder\":\"Enter details...\"}",
-    "excerpt": "<Textarea\n  label=\"Description\"\n  placeholder=\"Enter details...\"\n>Example</Textarea>"
+    "excerpt": "import { Textarea } from '@larose-ui/react';\n\n<Textarea\n  label=\"Description\"\n  placeholder=\"Enter details...\"\n>Example<"
   },
   {
     "id": "example:textarea:WithHint",
@@ -5912,7 +8512,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/textarea#examples",
     "keywords": "Textarea With Hint advanced {\"label\":\"Notes\",\"placeholder\":\"Add internal notes\",\"hint\":\"Visible to admins only\"}",
-    "excerpt": "<Textarea\n  label=\"Notes\"\n  placeholder=\"Add internal notes\"\n  hint=\"Visible to admins only\"\n>Example</Textarea>"
+    "excerpt": "import { Textarea } from '@larose-ui/react';\n\n<Textarea\n  label=\"Notes\"\n  placeholder=\"Add internal notes\"\n  hint=\"Visib"
   },
   {
     "id": "example:textarea:Required",
@@ -5920,7 +8520,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/textarea#examples",
     "keywords": "Textarea Required advanced {\"label\":\"Feedback\",\"placeholder\":\"Tell us what you think\",\"required\":true}",
-    "excerpt": "<Textarea\n  label=\"Feedback\"\n  placeholder=\"Tell us what you think\"\n  required\n>Example</Textarea>"
+    "excerpt": "import { Textarea } from '@larose-ui/react';\n\n<Textarea\n  label=\"Feedback\"\n  placeholder=\"Tell us what you think\"\n  requ"
   },
   {
     "id": "example:textarea:WithError",
@@ -5928,7 +8528,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/textarea#examples",
     "keywords": "Textarea With Error error {\"label\":\"Description\",\"defaultValue\":\"Too short\",\"error\":\"Description must be at least 20 characters\"}",
-    "excerpt": "<Textarea\n  label=\"Description\"\n  defaultValue=\"Too short\"\n  error=\"Description must be at least 20 characters\"\n>Example"
+    "excerpt": "import { Textarea } from '@larose-ui/react';\n\n<Textarea\n  label=\"Description\"\n  defaultValue=\"Too short\"\n  error=\"Descri"
   },
   {
     "id": "example:textarea:Disabled",
@@ -5936,7 +8536,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/textarea#examples",
     "keywords": "Textarea Disabled disabled {\"label\":\"Archived notes\",\"defaultValue\":\"This record is read-only.\",\"disabled\":true}",
-    "excerpt": "<Textarea\n  label=\"Archived notes\"\n  defaultValue=\"This record is read-only.\"\n  disabled\n>Example</Textarea>"
+    "excerpt": "import { Textarea } from '@larose-ui/react';\n\n<Textarea\n  label=\"Archived notes\"\n  defaultValue=\"This record is read-onl"
   },
   {
     "id": "component:text-view",
@@ -5977,6 +8577,38 @@ export const docsSearchIndex = [
     "path": "/docs/components/text-view#api",
     "keywords": "TextView typographyRole TypographyRole ",
     "excerpt": "TypographyRole"
+  },
+  {
+    "id": "example:text-view:ReadOnlySelectable",
+    "title": "TextView — Read Only Selectable",
+    "type": "example",
+    "path": "/docs/components/text-view#examples",
+    "keywords": "TextView Read Only Selectable advanced {}",
+    "excerpt": "// See Storybook story \"ReadOnlySelectable\" for full example."
+  },
+  {
+    "id": "example:text-view:Editable",
+    "title": "TextView — Editable",
+    "type": "example",
+    "path": "/docs/components/text-view#examples",
+    "keywords": "TextView Editable advanced {}",
+    "excerpt": "<Card title=\"Editable text view\" padding=\"md\">\n        <TextView\n          editable\n          value={value}\n          on"
+  },
+  {
+    "id": "example:text-view:RichDisplay",
+    "title": "TextView — Rich Display",
+    "type": "example",
+    "path": "/docs/components/text-view#examples",
+    "keywords": "TextView Rich Display advanced {}",
+    "excerpt": "// See Storybook story \"RichDisplay\" for full example."
+  },
+  {
+    "id": "component:theme-customization-context",
+    "title": "ThemeCustomizationContext",
+    "type": "component",
+    "path": "/docs/components/theme-customization-context",
+    "keywords": "ThemeCustomizationContext Other",
+    "excerpt": "Other component from @larose-ui/react"
   },
   {
     "id": "component:time-picker",
@@ -6049,22 +8681,6 @@ export const docsSearchIndex = [
     "path": "/docs/components/time-picker#examples",
     "keywords": "TimePicker Time Picker Default basic {}",
     "excerpt": "<TimePicker label=\"Meeting time\" value=\"09:30\" />"
-  },
-  {
-    "id": "component:toast-provider",
-    "title": "ToastProvider",
-    "type": "component",
-    "path": "/docs/components/toast-provider",
-    "keywords": "ToastProvider Feedback ToastProvider.placement ToastPlacement ToastProvider.children ReactNode",
-    "excerpt": "Feedback component from @larose-ui/react"
-  },
-  {
-    "id": "prop:toast-provider:placement",
-    "title": "ToastProvider.placement",
-    "type": "prop",
-    "path": "/docs/components/toast-provider#api",
-    "keywords": "ToastProvider placement ToastPlacement ",
-    "excerpt": "ToastPlacement"
   },
   {
     "id": "component:token-field",
@@ -6155,6 +8771,366 @@ export const docsSearchIndex = [
     "excerpt": "// See Storybook story \"TokenFieldMail\" for full example."
   },
   {
+    "id": "component:toolbar",
+    "title": "Toolbar",
+    "type": "component",
+    "path": "/docs/components/toolbar",
+    "keywords": "Toolbar Toolbar Toolbar.'aria-label' string Toolbar.largeTitle boolean Toolbar.placement ToolbarPlacement Toolbar.platform ToolbarPlatform Toolbar.children ReactNode Toolbar.className string Toolbar.hidden boolean Toolbar.title string",
+    "excerpt": "Toolbar component from @larose-ui/react"
+  },
+  {
+    "id": "prop:toolbar:'aria-label'",
+    "title": "Toolbar.'aria-label'",
+    "type": "prop",
+    "path": "/docs/components/toolbar#api",
+    "keywords": "Toolbar 'aria-label' string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:toolbar:largeTitle",
+    "title": "Toolbar.largeTitle",
+    "type": "prop",
+    "path": "/docs/components/toolbar#api",
+    "keywords": "Toolbar largeTitle boolean iOS large title that collapses when scrolling.",
+    "excerpt": "iOS large title that collapses when scrolling."
+  },
+  {
+    "id": "prop:toolbar:placement",
+    "title": "Toolbar.placement",
+    "type": "prop",
+    "path": "/docs/components/toolbar#api",
+    "keywords": "Toolbar placement ToolbarPlacement visionOS and watchOS placement.",
+    "excerpt": "visionOS and watchOS placement."
+  },
+  {
+    "id": "prop:toolbar:platform",
+    "title": "Toolbar.platform",
+    "type": "prop",
+    "path": "/docs/components/toolbar#api",
+    "keywords": "Toolbar platform ToolbarPlatform ",
+    "excerpt": "ToolbarPlatform"
+  },
+  {
+    "id": "example:toolbar:MacNotesStyle",
+    "title": "Toolbar — macOS Notes (standard + More)",
+    "type": "example",
+    "path": "/docs/components/toolbar#examples",
+    "keywords": "Toolbar macOS Notes (standard + More) advanced {}",
+    "excerpt": "// See Storybook story \"MacNotesStyle\" for full example."
+  },
+  {
+    "id": "example:toolbar:IOSMailNavigation",
+    "title": "Toolbar — iOS navigation bar",
+    "type": "example",
+    "path": "/docs/components/toolbar#examples",
+    "keywords": "Toolbar iOS navigation bar advanced {}",
+    "excerpt": "// See Storybook story \"IOSMailNavigation\" for full example."
+  },
+  {
+    "id": "example:toolbar:VisionOSBottomBar",
+    "title": "Toolbar — visionOS bottom toolbar",
+    "type": "example",
+    "path": "/docs/components/toolbar#examples",
+    "keywords": "Toolbar visionOS bottom toolbar advanced {}",
+    "excerpt": "// See Storybook story \"VisionOSBottomBar\" for full example."
+  },
+  {
+    "id": "example:toolbar:TrailingProminentAction",
+    "title": "Toolbar — Primary Done action",
+    "type": "example",
+    "path": "/docs/components/toolbar#examples",
+    "keywords": "Toolbar Primary Done action basic {}",
+    "excerpt": "// See Storybook story \"TrailingProminentAction\" for full example."
+  },
+  {
+    "id": "example:toolbar:SeparateTextAndSymbolGroups",
+    "title": "Toolbar — Separate text and symbol buttons",
+    "type": "example",
+    "path": "/docs/components/toolbar#examples",
+    "keywords": "Toolbar Separate text and symbol buttons advanced {}",
+    "excerpt": "// See Storybook story \"SeparateTextAndSymbolGroups\" for full example."
+  },
+  {
+    "id": "component:toolbar-back-button",
+    "title": "ToolbarBackButton",
+    "type": "component",
+    "path": "/docs/components/toolbar-back-button",
+    "keywords": "ToolbarBackButton Toolbar ToolbarBackButton.companionLabel string ToolbarBackButton.disabled boolean ToolbarBackButton.onClick () => void",
+    "excerpt": "Toolbar component from @larose-ui/react"
+  },
+  {
+    "id": "prop:toolbar-back-button:companionLabel",
+    "title": "ToolbarBackButton.companionLabel",
+    "type": "prop",
+    "path": "/docs/components/toolbar-back-button#api",
+    "keywords": "ToolbarBackButton companionLabel string visionOS reveals label on look — optional visible companion text.",
+    "excerpt": "visionOS reveals label on look — optional visible companion text."
+  },
+  {
+    "id": "prop:toolbar-back-button:disabled",
+    "title": "ToolbarBackButton.disabled",
+    "type": "prop",
+    "path": "/docs/components/toolbar-back-button#api",
+    "keywords": "ToolbarBackButton disabled boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "component:toolbar-close-button",
+    "title": "ToolbarCloseButton",
+    "type": "component",
+    "path": "/docs/components/toolbar-close-button",
+    "keywords": "ToolbarCloseButton Toolbar ToolbarCloseButton.disabled boolean ToolbarCloseButton.onClick () => void",
+    "excerpt": "Toolbar component from @larose-ui/react"
+  },
+  {
+    "id": "prop:toolbar-close-button:disabled",
+    "title": "ToolbarCloseButton.disabled",
+    "type": "prop",
+    "path": "/docs/components/toolbar-close-button#api",
+    "keywords": "ToolbarCloseButton disabled boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "component:toolbar-document-menu",
+    "title": "ToolbarDocumentMenu",
+    "type": "component",
+    "path": "/docs/components/toolbar-document-menu",
+    "keywords": "ToolbarDocumentMenu Toolbar ToolbarDocumentMenu.disabled boolean ToolbarDocumentMenu.entries MenuEntry[] ToolbarDocumentMenu.label string ToolbarDocumentMenu.onAction (entryId: string) => void",
+    "excerpt": "Toolbar component from @larose-ui/react"
+  },
+  {
+    "id": "prop:toolbar-document-menu:disabled",
+    "title": "ToolbarDocumentMenu.disabled",
+    "type": "prop",
+    "path": "/docs/components/toolbar-document-menu#api",
+    "keywords": "ToolbarDocumentMenu disabled boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "prop:toolbar-document-menu:entries",
+    "title": "ToolbarDocumentMenu.entries",
+    "type": "prop",
+    "path": "/docs/components/toolbar-document-menu#api",
+    "keywords": "ToolbarDocumentMenu entries MenuEntry[] ",
+    "excerpt": "MenuEntry[] (required)"
+  },
+  {
+    "id": "prop:toolbar-document-menu:label",
+    "title": "ToolbarDocumentMenu.label",
+    "type": "prop",
+    "path": "/docs/components/toolbar-document-menu#api",
+    "keywords": "ToolbarDocumentMenu label string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:toolbar-document-menu:onAction",
+    "title": "ToolbarDocumentMenu.onAction",
+    "type": "prop",
+    "path": "/docs/components/toolbar-document-menu#api",
+    "keywords": "ToolbarDocumentMenu onAction (entryId: string) => void ",
+    "excerpt": "(entryId: string) => void"
+  },
+  {
+    "id": "component:toolbar-fixed-space",
+    "title": "ToolbarFixedSpace",
+    "type": "component",
+    "path": "/docs/components/toolbar-fixed-space",
+    "keywords": "ToolbarFixedSpace Toolbar",
+    "excerpt": "Toolbar component from @larose-ui/react"
+  },
+  {
+    "id": "component:toolbar-group",
+    "title": "ToolbarGroup",
+    "type": "component",
+    "path": "/docs/components/toolbar-group",
+    "keywords": "ToolbarGroup Toolbar ToolbarGroup.children ReactNode ToolbarGroup.className string",
+    "excerpt": "Toolbar component from @larose-ui/react"
+  },
+  {
+    "id": "component:toolbar-item",
+    "title": "ToolbarItem",
+    "type": "component",
+    "path": "/docs/components/toolbar-item",
+    "keywords": "ToolbarItem Toolbar ToolbarItem.collapsible boolean ToolbarItem.disabled boolean ToolbarItem.icon ReactNode ToolbarItem.label string ToolbarItem.prominent boolean ToolbarItem.showLabel boolean ToolbarItem.className string ToolbarItem.id string ToolbarItem.onClick () => void",
+    "excerpt": "Toolbar component from @larose-ui/react"
+  },
+  {
+    "id": "prop:toolbar-item:collapsible",
+    "title": "ToolbarItem.collapsible",
+    "type": "prop",
+    "path": "/docs/components/toolbar-item#api",
+    "keywords": "ToolbarItem collapsible boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "prop:toolbar-item:disabled",
+    "title": "ToolbarItem.disabled",
+    "type": "prop",
+    "path": "/docs/components/toolbar-item#api",
+    "keywords": "ToolbarItem disabled boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "prop:toolbar-item:icon",
+    "title": "ToolbarItem.icon",
+    "type": "prop",
+    "path": "/docs/components/toolbar-item#api",
+    "keywords": "ToolbarItem icon ReactNode ",
+    "excerpt": "ReactNode"
+  },
+  {
+    "id": "prop:toolbar-item:label",
+    "title": "ToolbarItem.label",
+    "type": "prop",
+    "path": "/docs/components/toolbar-item#api",
+    "keywords": "ToolbarItem label string ",
+    "excerpt": "string (required)"
+  },
+  {
+    "id": "prop:toolbar-item:prominent",
+    "title": "ToolbarItem.prominent",
+    "type": "prop",
+    "path": "/docs/components/toolbar-item#api",
+    "keywords": "ToolbarItem prominent boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "prop:toolbar-item:showLabel",
+    "title": "ToolbarItem.showLabel",
+    "type": "prop",
+    "path": "/docs/components/toolbar-item#api",
+    "keywords": "ToolbarItem showLabel boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "component:toolbar-more-button",
+    "title": "ToolbarMoreButton",
+    "type": "component",
+    "path": "/docs/components/toolbar-more-button",
+    "keywords": "ToolbarMoreButton Toolbar ToolbarMoreButton.'aria-label' string ToolbarMoreButton.disabled boolean ToolbarMoreButton.entries MenuEntry[] ToolbarMoreButton.onAction (entryId: string) => void",
+    "excerpt": "Toolbar component from @larose-ui/react"
+  },
+  {
+    "id": "prop:toolbar-more-button:'aria-label'",
+    "title": "ToolbarMoreButton.'aria-label'",
+    "type": "prop",
+    "path": "/docs/components/toolbar-more-button#api",
+    "keywords": "ToolbarMoreButton 'aria-label' string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:toolbar-more-button:disabled",
+    "title": "ToolbarMoreButton.disabled",
+    "type": "prop",
+    "path": "/docs/components/toolbar-more-button#api",
+    "keywords": "ToolbarMoreButton disabled boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "prop:toolbar-more-button:entries",
+    "title": "ToolbarMoreButton.entries",
+    "type": "prop",
+    "path": "/docs/components/toolbar-more-button#api",
+    "keywords": "ToolbarMoreButton entries MenuEntry[] ",
+    "excerpt": "MenuEntry[] (required)"
+  },
+  {
+    "id": "prop:toolbar-more-button:onAction",
+    "title": "ToolbarMoreButton.onAction",
+    "type": "prop",
+    "path": "/docs/components/toolbar-more-button#api",
+    "keywords": "ToolbarMoreButton onAction (entryId: string) => void ",
+    "excerpt": "(entryId: string) => void"
+  },
+  {
+    "id": "component:toolbar-prominent-button",
+    "title": "ToolbarProminentButton",
+    "type": "component",
+    "path": "/docs/components/toolbar-prominent-button",
+    "keywords": "ToolbarProminentButton Toolbar ToolbarProminentButton.disabled boolean ToolbarProminentButton.children string ToolbarProminentButton.className string ToolbarProminentButton.onClick () => void",
+    "excerpt": "Toolbar component from @larose-ui/react"
+  },
+  {
+    "id": "prop:toolbar-prominent-button:disabled",
+    "title": "ToolbarProminentButton.disabled",
+    "type": "prop",
+    "path": "/docs/components/toolbar-prominent-button#api",
+    "keywords": "ToolbarProminentButton disabled boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "component:toolbar-search",
+    "title": "ToolbarSearch",
+    "type": "component",
+    "path": "/docs/components/toolbar-search",
+    "keywords": "ToolbarSearch Toolbar ToolbarSearch.'aria-label' string ToolbarSearch.placeholder string ToolbarSearch.value string ToolbarSearch.className string ToolbarSearch.onChange (value: string) => void",
+    "excerpt": "Toolbar component from @larose-ui/react"
+  },
+  {
+    "id": "prop:toolbar-search:'aria-label'",
+    "title": "ToolbarSearch.'aria-label'",
+    "type": "prop",
+    "path": "/docs/components/toolbar-search#api",
+    "keywords": "ToolbarSearch 'aria-label' string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:toolbar-search:placeholder",
+    "title": "ToolbarSearch.placeholder",
+    "type": "prop",
+    "path": "/docs/components/toolbar-search#api",
+    "keywords": "ToolbarSearch placeholder string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:toolbar-search:value",
+    "title": "ToolbarSearch.value",
+    "type": "prop",
+    "path": "/docs/components/toolbar-search#api",
+    "keywords": "ToolbarSearch value string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "component:toolbar-section",
+    "title": "ToolbarSection",
+    "type": "component",
+    "path": "/docs/components/toolbar-section",
+    "keywords": "ToolbarSection Toolbar ToolbarSection.collapsible boolean ToolbarSection.placement ToolbarSectionPlacement ToolbarSection.children ReactNode ToolbarSection.className string",
+    "excerpt": "Toolbar component from @larose-ui/react"
+  },
+  {
+    "id": "prop:toolbar-section:collapsible",
+    "title": "ToolbarSection.collapsible",
+    "type": "prop",
+    "path": "/docs/components/toolbar-section#api",
+    "keywords": "ToolbarSection collapsible boolean Center items collapse into the system overflow menu when space is tight.",
+    "excerpt": "Center items collapse into the system overflow menu when space is tight."
+  },
+  {
+    "id": "prop:toolbar-section:placement",
+    "title": "ToolbarSection.placement",
+    "type": "prop",
+    "path": "/docs/components/toolbar-section#api",
+    "keywords": "ToolbarSection placement ToolbarSectionPlacement ",
+    "excerpt": "ToolbarSectionPlacement (required)"
+  },
+  {
+    "id": "component:toolbar-title",
+    "title": "ToolbarTitle",
+    "type": "component",
+    "path": "/docs/components/toolbar-title",
+    "keywords": "ToolbarTitle Toolbar ToolbarTitle.large boolean ToolbarTitle.children string ToolbarTitle.className string",
+    "excerpt": "Toolbar component from @larose-ui/react"
+  },
+  {
+    "id": "prop:toolbar-title:large",
+    "title": "ToolbarTitle.large",
+    "type": "prop",
+    "path": "/docs/components/toolbar-title#api",
+    "keywords": "ToolbarTitle large boolean ",
+    "excerpt": "boolean"
+  },
+  {
     "id": "component:tooltip",
     "title": "Tooltip",
     "type": "component",
@@ -6179,22 +9155,6 @@ export const docsSearchIndex = [
     "excerpt": "TooltipSide"
   },
   {
-    "id": "example:tooltip:ExpansionTooltip",
-    "title": "Tooltip — Expansion Tooltip",
-    "type": "example",
-    "path": "/docs/components/tooltip#examples",
-    "keywords": "Tooltip Expansion Tooltip advanced {}",
-    "excerpt": "// See Storybook story \"ExpansionTooltip\" for full example."
-  },
-  {
-    "id": "example:tooltip:TooltipStory",
-    "title": "Tooltip — Tooltip",
-    "type": "example",
-    "path": "/docs/components/tooltip#examples",
-    "keywords": "Tooltip Tooltip advanced {}",
-    "excerpt": "// See Storybook story \"TooltipStory\" for full example."
-  },
-  {
     "id": "example:tooltip:TooltipDefault",
     "title": "Tooltip — Tooltip Default",
     "type": "example",
@@ -6208,7 +9168,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/tooltip#examples",
     "keywords": "Tooltip Default basic {\"content\":\"Export employees as CSV\"}",
-    "excerpt": "<Tooltip\n  content=\"Export employees as CSV\"\n>Example</Tooltip>"
+    "excerpt": "import { Tooltip } from '@larose-ui/react';\n\n<Tooltip\n  content=\"Export employees as CSV\"\n>Example</Tooltip>"
   },
   {
     "id": "example:tooltip:OnText",
@@ -6216,7 +9176,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/tooltip#examples",
     "keywords": "Tooltip On Text advanced {\"content\":\"Last updated 2 hours ago\",\"textDecoration\":\"underline dotted\"}",
-    "excerpt": "<Tooltip\n  content=\"Last updated 2 hours ago\"\n  textDecoration=\"underline dotted\"\n>Example</Tooltip>"
+    "excerpt": "import { Tooltip } from '@larose-ui/react';\n\n<Tooltip\n  content=\"Last updated 2 hours ago\"\n  textDecoration=\"underline d"
   },
   {
     "id": "example:tooltip:LongContent",
@@ -6224,7 +9184,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/tooltip#examples",
     "keywords": "Tooltip Long Content advanced {\"content\":\"Keyboard shortcut: ⌘ + Shift + E\"}",
-    "excerpt": "<Tooltip\n  content=\"Keyboard shortcut: ⌘ + Shift + E\"\n>Example</Tooltip>"
+    "excerpt": "import { Tooltip } from '@larose-ui/react';\n\n<Tooltip\n  content=\"Keyboard shortcut: ⌘ + Shift + E\"\n>Example</Tooltip>"
   },
   {
     "id": "component:typography",
@@ -6251,12 +9211,20 @@ export const docsSearchIndex = [
     "excerpt": "boolean"
   },
   {
-    "id": "example:typography:TypographyScale",
-    "title": "Typography — Typography Scale",
+    "id": "example:typography:ShortcutLab",
+    "title": "Typography — Shortcut lab",
     "type": "example",
     "path": "/docs/components/typography#examples",
-    "keywords": "Typography Typography Scale advanced {}",
-    "excerpt": "// See Storybook story \"TypographyScale\" for full example."
+    "keywords": "Typography Shortcut lab advanced {}",
+    "excerpt": "// See Storybook story \"ShortcutLab\" for full example."
+  },
+  {
+    "id": "example:typography:MenuAlwaysOpen",
+    "title": "Typography — Menu (always open)",
+    "type": "example",
+    "path": "/docs/components/typography#examples",
+    "keywords": "Typography Menu (always open) advanced {}",
+    "excerpt": "// See Storybook story \"MenuAlwaysOpen\" for full example."
   },
   {
     "id": "component:unsaved-indicator",
@@ -6347,6 +9315,38 @@ export const docsSearchIndex = [
     "excerpt": "Remote URL to load — use for brief in-app website access, not a full browser replacement."
   },
   {
+    "id": "example:web-view:EmbeddedHtml",
+    "title": "WebView — Embedded HTML (Mail-style)",
+    "type": "example",
+    "path": "/docs/components/web-view#examples",
+    "keywords": "WebView Embedded HTML (Mail-style) advanced {}",
+    "excerpt": "// See Storybook story \"EmbeddedHtml\" for full example."
+  },
+  {
+    "id": "example:web-view:BriefWebsiteAccess",
+    "title": "WebView — Brief Website Access",
+    "type": "example",
+    "path": "/docs/components/web-view#examples",
+    "keywords": "WebView Brief Website Access advanced {}",
+    "excerpt": "// See Storybook story \"BriefWebsiteAccess\" for full example."
+  },
+  {
+    "id": "example:web-view:WithNavigation",
+    "title": "WebView — With Navigation",
+    "type": "example",
+    "path": "/docs/components/web-view#examples",
+    "keywords": "WebView With Navigation advanced {}",
+    "excerpt": "// See Storybook story \"WithNavigation\" for full example."
+  },
+  {
+    "id": "example:web-view:NavigationOnly",
+    "title": "WebView — Navigation Only",
+    "type": "example",
+    "path": "/docs/components/web-view#examples",
+    "keywords": "WebView Navigation Only advanced {}",
+    "excerpt": "// See Storybook story \"NavigationOnly\" for full example."
+  },
+  {
     "id": "component:web-view-navigation",
     "title": "WebViewNavigation",
     "type": "component",
@@ -6425,6 +9425,110 @@ export const docsSearchIndex = [
     "path": "/docs/components/web-view-shell#api",
     "keywords": "WebViewShell navigation WebViewNavigationProps ",
     "excerpt": "WebViewNavigationProps"
+  },
+  {
+    "id": "component:wheel-column",
+    "title": "WheelColumn",
+    "type": "component",
+    "path": "/docs/components/wheel-column",
+    "keywords": "WheelColumn Forms WheelColumn.columnFlex number WheelColumn.disabled boolean WheelColumn.label string WheelColumn.options PickerOption[] WheelColumn.value string WheelColumn.id string WheelColumn.onChange (value: string) => void",
+    "excerpt": "Forms component from @larose-ui/react"
+  },
+  {
+    "id": "prop:wheel-column:columnFlex",
+    "title": "WheelColumn.columnFlex",
+    "type": "prop",
+    "path": "/docs/components/wheel-column#api",
+    "keywords": "WheelColumn columnFlex number ",
+    "excerpt": "number"
+  },
+  {
+    "id": "prop:wheel-column:disabled",
+    "title": "WheelColumn.disabled",
+    "type": "prop",
+    "path": "/docs/components/wheel-column#api",
+    "keywords": "WheelColumn disabled boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "prop:wheel-column:label",
+    "title": "WheelColumn.label",
+    "type": "prop",
+    "path": "/docs/components/wheel-column#api",
+    "keywords": "WheelColumn label string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:wheel-column:options",
+    "title": "WheelColumn.options",
+    "type": "prop",
+    "path": "/docs/components/wheel-column#api",
+    "keywords": "WheelColumn options PickerOption[] ",
+    "excerpt": "PickerOption[] (required)"
+  },
+  {
+    "id": "prop:wheel-column:value",
+    "title": "WheelColumn.value",
+    "type": "prop",
+    "path": "/docs/components/wheel-column#api",
+    "keywords": "WheelColumn value string ",
+    "excerpt": "string (required)"
+  },
+  {
+    "id": "component:wheel-picker",
+    "title": "WheelPicker",
+    "type": "component",
+    "path": "/docs/components/wheel-picker",
+    "keywords": "WheelPicker Forms WheelPicker.'aria-label' string WheelPicker.columns PickerColumn[] WheelPicker.compact boolean WheelPicker.disabled boolean WheelPicker.inline boolean WheelPicker.value PickerValue WheelPicker.onChange (value: PickerValue) => void",
+    "excerpt": "Forms component from @larose-ui/react"
+  },
+  {
+    "id": "prop:wheel-picker:'aria-label'",
+    "title": "WheelPicker.'aria-label'",
+    "type": "prop",
+    "path": "/docs/components/wheel-picker#api",
+    "keywords": "WheelPicker 'aria-label' string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:wheel-picker:columns",
+    "title": "WheelPicker.columns",
+    "type": "prop",
+    "path": "/docs/components/wheel-picker#api",
+    "keywords": "WheelPicker columns PickerColumn[] ",
+    "excerpt": "PickerColumn[] (required)"
+  },
+  {
+    "id": "prop:wheel-picker:compact",
+    "title": "WheelPicker.compact",
+    "type": "prop",
+    "path": "/docs/components/wheel-picker#api",
+    "keywords": "WheelPicker compact boolean Compact popover presentation — wheels fill the panel edge-to-edge.",
+    "excerpt": "Compact popover presentation — wheels fill the panel edge-to-edge."
+  },
+  {
+    "id": "prop:wheel-picker:disabled",
+    "title": "WheelPicker.disabled",
+    "type": "prop",
+    "path": "/docs/components/wheel-picker#api",
+    "keywords": "WheelPicker disabled boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "prop:wheel-picker:inline",
+    "title": "WheelPicker.inline",
+    "type": "prop",
+    "path": "/docs/components/wheel-picker#api",
+    "keywords": "WheelPicker inline boolean Removes chrome for embedding in inline layouts.",
+    "excerpt": "Removes chrome for embedding in inline layouts."
+  },
+  {
+    "id": "prop:wheel-picker:value",
+    "title": "WheelPicker.value",
+    "type": "prop",
+    "path": "/docs/components/wheel-picker#api",
+    "keywords": "WheelPicker value PickerValue ",
+    "excerpt": "PickerValue (required)"
   },
   {
     "id": "guide:architecture",
@@ -6673,6 +9777,14 @@ export const docsSearchIndex = [
     "path": "/docs/design/tokens",
     "keywords": "button.plain.color --lr-button-plain-color Colors Design token exposed as --lr-button-plain-color",
     "excerpt": "--lr-button-plain-color = #0071e3"
+  },
+  {
+    "id": "token:--lr-button-on-primary-color",
+    "title": "button.on.primary.color",
+    "type": "token",
+    "path": "/docs/design/tokens",
+    "keywords": "button.on.primary.color --lr-button-on-primary-color Colors Design token exposed as --lr-button-on-primary-color",
+    "excerpt": "--lr-button-on-primary-color = #ffffff"
   },
   {
     "id": "token:--lr-dnd-insertion-color",
@@ -10581,6 +13693,17 @@ export const docsTokenGroups: Record<string, TokenSearchEntry[]> = {
       "value": "#0071e3",
       "category": "Colors",
       "description": "Design token exposed as --lr-button-plain-color",
+      "relatedComponents": [
+        "Button",
+        "ButtonGroup"
+      ]
+    },
+    {
+      "name": "button.on.primary.color",
+      "cssVariable": "--lr-button-on-primary-color",
+      "value": "#ffffff",
+      "category": "Colors",
+      "description": "Design token exposed as --lr-button-on-primary-color",
       "relatedComponents": [
         "Button",
         "ButtonGroup"

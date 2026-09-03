@@ -1,0 +1,194 @@
+{
+  "component": "LiquidGlassTabBar",
+  "category": "Glass",
+  "package": "@larose-ui/react",
+  "import": "import { LiquidGlassTabBar } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "activeColor",
+      "type": "string",
+      "required": false,
+      "default": "'#ffffff'",
+      "inherited": false
+    },
+    {
+      "name": "activeKey",
+      "type": "string",
+      "required": false,
+      "default": "controlledActiveKey ?? internalActiveKey;",
+      "inherited": false
+    },
+    {
+      "name": "borderRadius",
+      "type": "number",
+      "required": false,
+      "default": "LIQUID_GLASS_PRESETS.tabBar.borderRadius",
+      "inherited": false
+    },
+    {
+      "name": "bottom",
+      "type": "number | string",
+      "required": false,
+      "default": "22",
+      "inherited": false
+    },
+    {
+      "name": "defaultActiveKey",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "height",
+      "type": "number",
+      "required": false,
+      "default": "64",
+      "inherited": false
+    },
+    {
+      "name": "inactiveColor",
+      "type": "string",
+      "required": false,
+      "default": "'rgba(255",
+      "inherited": false
+    },
+    {
+      "name": "indicatorBackground",
+      "type": "string",
+      "required": false,
+      "default": "'rgba(255",
+      "inherited": false
+    },
+    {
+      "name": "indicatorBorderColor",
+      "type": "string",
+      "required": false,
+      "default": "'rgba(255",
+      "inherited": false
+    },
+    {
+      "name": "indicatorPadding",
+      "type": "number",
+      "required": false,
+      "default": "8",
+      "inherited": false
+    },
+    {
+      "name": "items",
+      "type": "LiquidGlassTabItem[]",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "maxWidth",
+      "type": "number",
+      "required": false,
+      "default": "420",
+      "inherited": false
+    },
+    {
+      "name": "position",
+      "type": "'fixed' | 'absolute' | 'relative' | 'static'",
+      "required": false,
+      "default": "'fixed'",
+      "inherited": false
+    },
+    {
+      "name": "showIndicator",
+      "type": "boolean",
+      "required": false,
+      "default": "true",
+      "inherited": false
+    }
+  ],
+  "examples": [
+    {
+      "id": "Playground",
+      "title": "Playground",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"Playground\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "IconsOnly",
+      "title": "Icons Only",
+      "kind": "with-icon",
+      "props": {
+        "tabPreset": "iconsOnly",
+        "height": 60,
+        "maxWidth": 340
+      },
+      "code": "import { LiquidGlassTabBar } from '@larose-ui/react';\n\n<LiquidGlassTabBar\n  tabPreset=\"iconsOnly\"\n  height={60}\n  maxWidth={340}\n>Example</LiquidGlassTabBar>"
+    },
+    {
+      "id": "WithBadges",
+      "title": "With Badges",
+      "kind": "advanced",
+      "props": {
+        "tabPreset": "badges",
+        "defaultActiveKey": "notifs"
+      },
+      "code": "import { LiquidGlassTabBar } from '@larose-ui/react';\n\n<LiquidGlassTabBar\n  tabPreset=\"badges\"\n  defaultActiveKey=\"notifs\"\n>Example</LiquidGlassTabBar>"
+    },
+    {
+      "id": "StrongRefraction",
+      "title": "Strong Refraction",
+      "kind": "advanced",
+      "props": {
+        "displacementScale": 60,
+        "bezelWidth": 32,
+        "refractionStrength": 1.4,
+        "specularTopOpacity": 0.95,
+        "blur": 22
+      },
+      "code": "import { LiquidGlassTabBar } from '@larose-ui/react';\n\n<LiquidGlassTabBar\n  displacementScale={60}\n  bezelWidth={32}\n  refractionStrength={1.4}\n  specularTopOpacity={0.95}\n  blur={22}\n>Example</LiquidGlassTabBar>"
+    },
+    {
+      "id": "Subtle",
+      "title": "Subtle",
+      "kind": "advanced",
+      "props": {
+        "displacementScale": 18,
+        "bezelWidth": 12,
+        "refractionStrength": 0.6,
+        "specularTopOpacity": 0.45,
+        "specularEdgeOpacity": 0.25,
+        "innerTopHighlight": 0.18,
+        "innerBottomShadow": 0.1,
+        "shadowIntensity": 0.6,
+        "tint": "rgba(255,255,255,0.07)",
+        "tintFallback": "rgba(255,255,255,0.10)"
+      },
+      "code": "import { LiquidGlassTabBar } from '@larose-ui/react';\n\n<LiquidGlassTabBar\n  displacementScale={18}\n  bezelWidth={12}\n  refractionStrength={0.6}\n  specularTopOpacity={0.45}\n  specularEdgeOpacity={0.25}\n  innerTopHighlight={0.18}\n  innerBottomShadow={0.1}\n  shadowIntensity={0.6}\n  tint=\"rgba(255,255,255,0.07)\"\n  tintFallback=\"rgba(255,255,255,0.10)\"\n>Example</LiquidGlassTabBar>"
+    },
+    {
+      "id": "NoIndicator",
+      "title": "No Indicator",
+      "kind": "advanced",
+      "props": {
+        "showIndicator": false,
+        "inactiveColor": "rgba(255,255,255,0.45)"
+      },
+      "code": "import { LiquidGlassTabBar } from '@larose-ui/react';\n\n<LiquidGlassTabBar\n  showIndicator={false}\n  inactiveColor=\"rgba(255,255,255,0.45)\"\n>Example</LiquidGlassTabBar>"
+    }
+  ],
+  "accessibility": [],
+  "anatomy": {
+    "summary": "iOS-style floating tab bar with morphing selection indicator on a shared LiquidGlass track.",
+    "structure": [
+      "LiquidGlass nav shell",
+      "Selection indicator",
+      "Tab buttons"
+    ],
+    "composition": "Pass items with icons and optional labels; control activeKey for routing.",
+    "slots": [
+      "items"
+    ],
+    "states": [
+      "default",
+      "disabled tab"
+    ]
+  },
+  "playground": null
+}

@@ -2,7 +2,56 @@
   "name": "Presence",
   "version": "1",
   "framework": "react",
-  "props": [],
-  "events": [],
-  "keyboard": {}
+  "props": [
+    {
+      "name": "immediate",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "description": "When true, skip exit animation and unmount immediately."
+    },
+    {
+      "name": "onExitComplete",
+      "type": "() => void",
+      "required": false
+    },
+    {
+      "name": "placement",
+      "type": "string",
+      "required": false,
+      "description": "Placement hint for spatial variants (toast, popover)."
+    },
+    {
+      "name": "present",
+      "type": "boolean",
+      "required": true
+    },
+    {
+      "name": "variant",
+      "type": "MotionVariant",
+      "required": false,
+      "default": "'fade'"
+    }
+  ],
+  "events": [
+    {
+      "name": "onExitComplete",
+      "payload": "() => void"
+    }
+  ],
+  "defaults": {
+    "immediate": "false",
+    "variant": "'fade'"
+  },
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  }
 }

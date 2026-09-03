@@ -1,3 +1,5 @@
+import { isGlassDocComponent } from '@/lib/glassComponents';
+
 export type DocsFramework = 'react' | 'vue' | 'svelte';
 
 export const DOCS_FRAMEWORKS: { id: DocsFramework; label: string }[] = [
@@ -38,7 +40,7 @@ export function frameworkLanguage(framework: DocsFramework): string {
   return 'tsx';
 }
 
-export function getInstallCommand(framework: DocsFramework): string {
+export function getInstallCommand(framework: DocsFramework, _componentName?: string): string {
   const base = '@larose-ui/tokens @larose-ui/styles';
   if (framework === 'vue') {
     return `pnpm add @larose-ui/vue ${base}`;
@@ -130,6 +132,26 @@ export function getUsageCode(componentName: string, framework: DocsFramework): s
       return `<${componentName} label="Email" placeholder="you@example.com" />`;
     }
     return `<${componentName} variant="primary">Example</${componentName}>`;
+  }
+
+  if (isGlassDocComponent(componentName)) {
+    const importLine = getImportCode(componentName, 'react');
+    if (componentName === 'LiquidGlassSwitch') {
+      return `${importLine}\n\n<LiquidGlassSwitch defaultChecked aria-label="Notifications" />`;
+    }
+    if (componentName === 'LiquidGlassCheckbox') {
+      return `${importLine}\n\n<LiquidGlassCheckbox label="Enable notifications" defaultChecked />`;
+    }
+    if (componentName === 'LiquidGlassProgress') {
+      return `${importLine}\n\n<LiquidGlassProgress value={62} aria-label="Progress" />`;
+    }
+    if (componentName === 'LiquidGlassRange') {
+      return `${importLine}\n\n<LiquidGlassRange defaultValue={50} aria-label="Volume" />`;
+    }
+    if (componentName === 'LiquidGlassButton') {
+      return `${importLine}\n\n<LiquidGlassButton>Continue</LiquidGlassButton>`;
+    }
+    return `${importLine}\n\n<${componentName} />`;
   }
 
   if (VOID_COMPONENTS.has(componentName)) {

@@ -1,6 +1,7 @@
 {
   "component": "EditMenu",
   "category": "Navigation",
+  "package": "@larose-ui/react",
   "import": "import { EditMenu } from '@larose-ui/react';",
   "props": [
     {
@@ -79,7 +80,56 @@
       "inherited": false
     }
   ],
-  "examples": [],
+  "examples": [
+    {
+      "id": "CompactSelectedText",
+      "title": "Compact (touch and hold)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"CompactSelectedText\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "ContextPointer",
+      "title": "Context menu (pointer)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"ContextPointer\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "AddressSelection",
+      "title": "Address (contextual actions)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"AddressSelection\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "NoSelection",
+      "title": "No selection",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"NoSelection\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "CustomFormatCommands",
+      "title": "Custom format commands",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"CustomFormatCommands\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "CopyStaticText",
+      "title": "Copy static text",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"CopyStaticText\" for full example.",
+      "composite": true
+    }
+  ],
   "accessibility": [
     "Supports ARIA attributes via standard HTML element props."
   ],

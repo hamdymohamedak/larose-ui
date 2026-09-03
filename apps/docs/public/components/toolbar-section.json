@@ -1,0 +1,25 @@
+{
+  "component": "ToolbarSection",
+  "category": "Toolbar",
+  "package": "@larose-ui/react",
+  "import": "import { ToolbarSection } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "collapsible",
+      "type": "boolean",
+      "required": false,
+      "description": "Center items collapse into the system overflow menu when space is tight.",
+      "inherited": false
+    },
+    {
+      "name": "placement",
+      "type": "ToolbarSectionPlacement",
+      "required": true,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

@@ -86,7 +86,7 @@ function LaRoseDecorator({
 
 const preview: Preview = {
   parameters: {
-    controls: { expanded: false },
+    controls: { expanded: true, sort: 'requiredFirst' },
     docs: { autodocs: 'tag' },
     actions: { argTypesRegex: '^on[A-Z].*' },
   },

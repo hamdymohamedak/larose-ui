@@ -18,6 +18,7 @@ export interface ButtonTokens {
   secondaryBg: string;
   secondaryBorder: string;
   plainColor: string;
+  onPrimaryColor: string;
   minHitRegion: string;
   visionHitRegion: string;
   squareSize: string;
@@ -49,6 +50,7 @@ export function getButtonTokens(mode: ThemeMode): ButtonTokens {
       secondaryBg: 'rgb(118 118 128 / 0.24)',
       secondaryBorder: 'transparent',
       plainColor: '#0a84ff',
+      onPrimaryColor: '#ffffff',
       minHitRegion: '2.75rem',
       visionHitRegion: '3.75rem',
       squareSize: '1.75rem',
@@ -75,6 +77,7 @@ export function getButtonTokens(mode: ThemeMode): ButtonTokens {
     secondaryBg: 'rgb(118 118 128 / 0.12)',
     secondaryBorder: 'transparent',
     plainColor: '#0071e3',
+    onPrimaryColor: '#ffffff',
     minHitRegion: '2.75rem',
     visionHitRegion: '3.75rem',
     squareSize: '1.75rem',
@@ -102,6 +105,7 @@ export function buttonTokensToCSSVariables(tokens: ButtonTokens): Record<string,
     '--lr-button-secondary-bg': tokens.secondaryBg,
     '--lr-button-secondary-border': tokens.secondaryBorder,
     '--lr-button-plain-color': tokens.plainColor,
+    '--lr-button-on-primary-color': tokens.onPrimaryColor,
     '--lr-button-min-hit-region': tokens.minHitRegion,
     '--lr-button-vision-hit-region': tokens.visionHitRegion,
     '--lr-button-square-size': tokens.squareSize,

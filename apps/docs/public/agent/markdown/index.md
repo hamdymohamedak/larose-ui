@@ -22,7 +22,7 @@ Apple-inspired by default. Fully customizable by architecture.
 - @larose-ui/offline: Offline request queue with sync and conflict handling.
 - @larose-ui/permissions: Authorization-aware UI with RBAC/ABAC patterns.
 - @larose-ui/primitives: Headless menu keyboard, type-ahead, and accelerator behavior.
-- @larose-ui/react: Production-ready React components with built-in UI states.
+- @larose-ui/react: Production-ready React components with built-in UI states and LiquidGlass refraction surfaces.
 - @larose-ui/runtime: Unified runtime — theme, i18n, permissions, network, and session.
 - @larose-ui/runtime-core: Framework-agnostic runtime store, host detection, and i18n.
 - @larose-ui/styles: Framework-agnostic component CSS from the design system.
@@ -34,6 +34,11 @@ Apple-inspired by default. Fully customizable by architecture.
 - @larose-ui/vue: Vue 3 components — thin adapter over shared styles and runtime-core.
 
 ## Components
+- AcceleratorProvider (Other) — 1 documented props
+- Accordion (Content) — 5 documented props
+- AccordionContent (Content) — 0 documented props
+- AccordionItem (Content) — 2 documented props
+- AccordionTrigger (Content) — 0 documented props
 - ActivityShareButton (Actions) — 5 documented props
 - ActivityView (Sharing) — 8 documented props
 - Alert (Feedback) — 2 documented props
@@ -44,6 +49,8 @@ Apple-inspired by default. Fully customizable by architecture.
 - Breadcrumb (Navigation) — 2 documented props
 - Button (Actions) — 15 documented props
 - ButtonGroup (Actions) — 3 documented props
+- CalendarGrid (Forms) — 4 documented props
+- CaptionButton (Other) — 3 documented props
 - Card (Layout) — 3 documented props
 - Chart (Data) — 16 documented props
 - Checkbox (Forms) — 4 documented props
@@ -56,13 +63,17 @@ Apple-inspired by default. Fully customizable by architecture.
 - DataTable (Data) — 11 documented props
 - DatePicker (Forms) — 7 documented props
 - DateRangePicker (Forms) — 13 documented props
+- DateTimePicker (Forms) — 15 documented props
 - Dialog (Overlay) — 8 documented props
 - DisclosureButton (Content) — 7 documented props
+- DisclosureGroup (Content) — 5 documented props
+- DisclosureList (Content) — 2 documented props
 - DisclosureTriangle (Content) — 5 documented props
 - DockBar (Navigation) — 1 documented props
 - DockMenu (Navigation) — 10 documented props
 - DocumentLauncher (Files) — 7 documented props
 - DocumentToolbar (Files) — 8 documented props
+- DRAG_START_THRESHOLD_PX (Other) — 0 documented props
 - DragDropList (DragDrop) — 4 documented props
 - Draggable (DragDrop) — 6 documented props
 - Drawer (Overlay) — 10 documented props
@@ -73,7 +84,10 @@ Apple-inspired by default. Fully customizable by architecture.
 - FileBrowser (Files) — 11 documented props
 - FilePreview (Files) — 3 documented props
 - FileUpload (Forms) — 8 documented props
-- FormContinue (Forms) — 1 documented props
+- Header (Navigation) — 0 documented props
+- HeaderActions (Other) — 0 documented props
+- HeaderBrand (Other) — 0 documented props
+- HeaderTitle (Other) — 0 documented props
 - HelpButton (Actions) — 1 documented props
 - HomeScreenQuickActions (Platform) — 9 documented props
 - ImageButton (Content) — 3 documented props
@@ -82,15 +96,30 @@ Apple-inspired by default. Fully customizable by architecture.
 - ImageWell (Content) — 6 documented props
 - Input (Forms) — 13 documented props
 - Label (Content) — 4 documented props
-- LaRoseProvider (Other) — 0 documented props
+- LIQUID_GLASS_OPTICS_DEFAULTS (Other) — 0 documented props
+- LIQUID_GLASS_PRESETS (Other) — 0 documented props
+- LIQUID_GLASS_SWITCH_ACTIVE_GREEN (Other) — 0 documented props
+- LIQUID_GLASS_SWITCH_TRACK_GLASS (Other) — 0 documented props
+- LiquidGlass (Glass) — 0 documented props
+- LiquidGlassButton (Glass) — 6 documented props
+- LiquidGlassCheckbox (Glass) — 10 documented props
+- LiquidGlassProgress (Glass) — 9 documented props
+- LiquidGlassRange (Glass) — 12 documented props
+- LiquidGlassSwitch (Glass) — 12 documented props
+- LiquidGlassTabBar (Glass) — 14 documented props
+- LiquidGlassTopBar (Glass) — 17 documented props
 - List (Data) — 2 documented props
 - ListRow (Data) — 8 documented props
 - ListSection (Data) — 2 documented props
 - Lockup (Layout) — 5 documented props
+- LockupCard (Other) — 2 documented props
+- LockupRow (Other) — 2 documented props
 - Menu (Navigation) — 11 documented props
 - MenuBar (Navigation) — 13 documented props
 - MenuBarExtra (Navigation) — 7 documented props
+- MnemonicLabel (Other) — 3 documented props
 - Modal (Overlay) — 9 documented props
+- Monogram (Other) — 2 documented props
 - MorePullDownButton (Navigation) — 0 documented props
 - Ornament (Layout) — 0 documented props
 - OrnamentButton (Layout) — 1 documented props
@@ -99,8 +128,10 @@ Apple-inspired by default. Fully customizable by architecture.
 - OutlineViewToolbar (Data) — 4 documented props
 - Pagination (Navigation) — 7 documented props
 - PathControl (Navigation) — 8 documented props
+- Picker (Forms) — 12 documented props
 - Popover (Overlay) — 8 documented props
 - PopUpButton (Navigation) — 9 documented props
+- Poster (Other) — 2 documented props
 - Progress (Feedback) — 6 documented props
 - PullDownButton (Navigation) — 9 documented props
 - Radio (Forms) — 4 documented props
@@ -108,21 +139,46 @@ Apple-inspired by default. Fully customizable by architecture.
 - Select (Forms) — 9 documented props
 - Skeleton (Feedback) — 4 documented props
 - Spinner (Feedback) — 2 documented props
+- SplitView (Layout) — 6 documented props
+- SplitViewPane (Layout) — 9 documented props
 - SplitViewToolbar (Layout) — 1 documented props
 - SquareButton (Actions) — 3 documented props
 - Switch (Forms) — 6 documented props
+- SYSTEM_ACTIVITY_IDS (Other) — 0 documented props
 - Table (Data) — 12 documented props
+- Tabs (Navigation) — 3 documented props
+- TabsList (Navigation) — 1 documented props
+- TabsPanel (Navigation) — 1 documented props
+- TabsTrigger (Navigation) — 2 documented props
+- TabView (Navigation) — 7 documented props
+- TabViewList (Navigation) — 1 documented props
+- TabViewPanel (Navigation) — 1 documented props
+- TabViewTab (Navigation) — 3 documented props
 - Textarea (Forms) — 7 documented props
 - TextView (Content) — 4 documented props
+- ThemeCustomizationContext (Other) — 0 documented props
 - TimePicker (Forms) — 7 documented props
-- ToastProvider (Feedback) — 1 documented props
 - TokenField (Forms) — 9 documented props
+- Toolbar (Toolbar) — 4 documented props
+- ToolbarBackButton (Toolbar) — 2 documented props
+- ToolbarCloseButton (Toolbar) — 1 documented props
+- ToolbarDocumentMenu (Toolbar) — 4 documented props
+- ToolbarFixedSpace (Toolbar) — 0 documented props
+- ToolbarGroup (Toolbar) — 0 documented props
+- ToolbarItem (Toolbar) — 6 documented props
+- ToolbarMoreButton (Toolbar) — 4 documented props
+- ToolbarProminentButton (Toolbar) — 1 documented props
+- ToolbarSearch (Toolbar) — 3 documented props
+- ToolbarSection (Toolbar) — 2 documented props
+- ToolbarTitle (Toolbar) — 1 documented props
 - Tooltip (Feedback) — 2 documented props
 - Typography (Content) — 2 documented props
 - UnsavedIndicator (Files) — 2 documented props
 - WebView (Content) — 7 documented props
 - WebViewNavigation (Content) — 6 documented props
 - WebViewShell (Content) — 2 documented props
+- WheelColumn (Forms) — 5 documented props
+- WheelPicker (Forms) — 6 documented props
 
 ## Guides
 - Architecture: /docs/guides/architecture

@@ -1,6 +1,7 @@
 {
   "component": "DockMenu",
   "category": "Navigation",
+  "package": "@larose-ui/react",
   "import": "import { DockMenu } from '@larose-ui/react';",
   "props": [
     {
@@ -67,7 +68,40 @@
       "inherited": false
     }
   ],
-  "examples": [],
+  "examples": [
+    {
+      "id": "SafariRunning",
+      "title": "Safari (running)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"SafariRunning\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "MailRunning",
+      "title": "Mail (running)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"MailRunning\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "AppNotRunning",
+      "title": "App not running",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"AppNotRunning\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "HomeScreenQuickActionsStory",
+      "title": "Home Screen quick actions",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"HomeScreenQuickActionsStory\" for full example.",
+      "composite": true
+    }
+  ],
   "accessibility": [],
   "anatomy": null,
   "playground": null

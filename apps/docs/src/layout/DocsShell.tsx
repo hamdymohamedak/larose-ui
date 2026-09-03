@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState, type ReactNode } from 'react';
-import { Outlet, useLocation } from 'react-router-dom';
+import { Link, Outlet, useLocation } from 'react-router-dom';
 import {
   Button,
   Header,
@@ -16,14 +16,13 @@ import { CommandSearch, useCommandPalette } from '@/components/CommandSearch';
 import { DocsNavLink } from '@/components/DocsNavLink';
 import { DocsErrorBoundary } from '@/components/DocsErrorBoundary';
 import { DocsOverviewNav } from '@/components/DocsOverviewNav';
+import { DocsThemeSwitch } from '@/components/DocsThemeSwitch';
 import { FrameworkSelector } from '@/components/FrameworkSelector';
 import { filterNavigation, findDocsPageTitle } from '@/navigation';
-import { useDocsTheme } from '@/theme/DocsThemeProvider';
 
 export function DocsShell({ children }: { children?: ReactNode }) {
   const location = useLocation();
   const isOverview = location.pathname === '/';
-  const { theme, toggleTheme } = useDocsTheme();
   const [query, setQuery] = useState('');
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const { open, setOpen, close } = useCommandPalette();
@@ -83,8 +82,10 @@ export function DocsShell({ children }: { children?: ReactNode }) {
       <div id="docs-sidebar" className="docs-sidebar-panel">
         <Sidebar platform="macos" glass className="docs-sidebar" aria-label="Documentation sidebar">
           <SidebarHeader>
-            <span className="docs-sidebar-brand">laRose UI</span>
-            <span className="docs-sidebar-brand-sub">Design System Docs</span>
+            <Link to="/" className="docs-sidebar-brand-link">
+              <span className="docs-sidebar-brand">laRose UI</span>
+              <span className="docs-sidebar-brand-sub">Design System Docs</span>
+            </Link>
           </SidebarHeader>
           <SidebarSearch
             placeholder="Search docs…"
@@ -150,12 +151,7 @@ export function DocsShell({ children }: { children?: ReactNode }) {
               <span className="docs-header-search-full">Search ⌘K</span>
               <span className="docs-header-search-short">Search</span>
             </Button>
-            <Button variant="outline" size="sm" onClick={toggleTheme} aria-pressed={theme === 'dark'}>
-              <span className="docs-header-theme-full">
-                {theme === 'dark' ? 'Light mode' : 'Dark mode'}
-              </span>
-              <span className="docs-header-theme-short">{theme === 'dark' ? 'Light' : 'Dark'}</span>
-            </Button>
+            <DocsThemeSwitch labelVariant="full" />
             <Button
               className="docs-header-action--secondary"
               variant="outline"

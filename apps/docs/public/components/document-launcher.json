@@ -1,6 +1,7 @@
 {
   "component": "DocumentLauncher",
   "category": "Files",
+  "package": "@larose-ui/react",
   "import": "import { DocumentLauncher } from '@larose-ui/react';",
   "props": [
     {

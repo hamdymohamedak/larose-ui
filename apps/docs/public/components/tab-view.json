@@ -1,0 +1,109 @@
+{
+  "component": "TabView",
+  "category": "Navigation",
+  "package": "@larose-ui/react",
+  "import": "import { TabView } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "'aria-label'",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "defaultValue",
+      "type": "string",
+      "required": false,
+      "default": "''",
+      "inherited": false
+    },
+    {
+      "name": "inset",
+      "type": "boolean",
+      "required": false,
+      "default": "true",
+      "inherited": false
+    },
+    {
+      "name": "onValueChange",
+      "type": "(value: string) => void",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "showTabs",
+      "type": "boolean",
+      "required": false,
+      "default": "true",
+      "inherited": false
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "variant",
+      "type": "TabViewVariant",
+      "required": false,
+      "default": "'bordered'",
+      "inherited": false
+    }
+  ],
+  "examples": [
+    {
+      "id": "Bordered",
+      "title": "Bordered",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"Bordered\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "Bezeled",
+      "title": "Bezeled",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"Bezeled\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "BorderlessHiddenTabs",
+      "title": "Borderless with hidden tabs",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"BorderlessHiddenTabs\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "SixTabLimit",
+      "title": "Six tab guidance",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"SixTabLimit\" for full example.",
+      "composite": true
+    }
+  ],
+  "accessibility": [
+    "Supports ARIA attributes via standard HTML element props."
+  ],
+  "anatomy": {
+    "summary": "macOS-style tab view with closable tabs and overflow handling.",
+    "structure": [
+      "TabView",
+      "TabViewList",
+      "TabViewTab",
+      "TabViewPanel"
+    ],
+    "composition": "Use for document-style interfaces with multiple open views.",
+    "slots": [
+      "children"
+    ],
+    "states": [
+      "default",
+      "active tab"
+    ]
+  },
+  "playground": null
+}

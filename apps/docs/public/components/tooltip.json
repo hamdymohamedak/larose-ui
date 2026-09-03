@@ -1,6 +1,7 @@
 {
   "component": "Tooltip",
   "category": "Feedback",
+  "package": "@larose-ui/react",
   "import": "import { Tooltip } from '@larose-ui/react';",
   "props": [
     {
@@ -18,22 +19,6 @@
   ],
   "examples": [
     {
-      "id": "ExpansionTooltip",
-      "title": "Expansion Tooltip",
-      "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"ExpansionTooltip\" for full example.",
-      "composite": true
-    },
-    {
-      "id": "TooltipStory",
-      "title": "Tooltip",
-      "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"TooltipStory\" for full example.",
-      "composite": true
-    },
-    {
       "id": "TooltipDefault",
       "title": "Tooltip Default",
       "kind": "basic",
@@ -48,7 +33,7 @@
       "props": {
         "content": "Export employees as CSV"
       },
-      "code": "<Tooltip\n  content=\"Export employees as CSV\"\n>Example</Tooltip>"
+      "code": "import { Tooltip } from '@larose-ui/react';\n\n<Tooltip\n  content=\"Export employees as CSV\"\n>Example</Tooltip>"
     },
     {
       "id": "OnText",
@@ -58,7 +43,7 @@
         "content": "Last updated 2 hours ago",
         "textDecoration": "underline dotted"
       },
-      "code": "<Tooltip\n  content=\"Last updated 2 hours ago\"\n  textDecoration=\"underline dotted\"\n>Example</Tooltip>"
+      "code": "import { Tooltip } from '@larose-ui/react';\n\n<Tooltip\n  content=\"Last updated 2 hours ago\"\n  textDecoration=\"underline dotted\"\n>Example</Tooltip>"
     },
     {
       "id": "LongContent",
@@ -67,7 +52,7 @@
       "props": {
         "content": "Keyboard shortcut: ⌘ + Shift + E"
       },
-      "code": "<Tooltip\n  content=\"Keyboard shortcut: ⌘ + Shift + E\"\n>Example</Tooltip>"
+      "code": "import { Tooltip } from '@larose-ui/react';\n\n<Tooltip\n  content=\"Keyboard shortcut: ⌘ + Shift + E\"\n>Example</Tooltip>"
     }
   ],
   "accessibility": [],

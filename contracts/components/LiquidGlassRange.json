@@ -1,0 +1,121 @@
+{
+  "name": "LiquidGlassRange",
+  "version": "1",
+  "framework": "react",
+  "props": [
+    {
+      "name": "'aria-label'",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "borderRadius",
+      "type": "number",
+      "required": false,
+      "default": "LIQUID_GLASS_PRESETS.slider.borderRadius"
+    },
+    {
+      "name": "defaultValue",
+      "type": "number",
+      "required": false,
+      "default": "50"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    },
+    {
+      "name": "fillColor",
+      "type": "string",
+      "required": false,
+      "default": "'rgba(255"
+    },
+    {
+      "name": "max",
+      "type": "number",
+      "required": false,
+      "default": "== min) return 0;"
+    },
+    {
+      "name": "min",
+      "type": "number",
+      "required": false,
+      "default": "0"
+    },
+    {
+      "name": "step",
+      "type": "number",
+      "required": false,
+      "default": "1"
+    },
+    {
+      "name": "thumbSize",
+      "type": "number",
+      "required": false,
+      "default": "28",
+      "description": "Thumb diameter in px."
+    },
+    {
+      "name": "trackHeight",
+      "type": "number",
+      "required": false,
+      "default": "8",
+      "description": "Track height in px."
+    },
+    {
+      "name": "value",
+      "type": "number",
+      "required": false,
+      "default": "controlledValue ?? internalValue;"
+    },
+    {
+      "name": "width",
+      "type": "number | string",
+      "required": false,
+      "default": "'100%'"
+    }
+  ],
+  "events": [
+    {
+      "name": "onChange",
+      "payload": "(value: number) => void"
+    }
+  ],
+  "slots": [],
+  "states": [
+    "default",
+    "disabled"
+  ],
+  "defaults": {
+    "borderRadius": "LIQUID_GLASS_PRESETS.slider.borderRadius",
+    "defaultValue": "50",
+    "disabled": "false",
+    "fillColor": "'rgba(255",
+    "max": "== min) return 0;",
+    "min": "0",
+    "step": "1",
+    "thumbSize": "28",
+    "trackHeight": "8",
+    "value": "controlledValue ?? internalValue;",
+    "width": "'100%'"
+  },
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  },
+  "controlled": [
+    "value"
+  ],
+  "uncontrolled": [
+    "value"
+  ]
+}

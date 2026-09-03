@@ -1,0 +1,37 @@
+{
+  "component": "CalendarGrid",
+  "category": "Forms",
+  "package": "@larose-ui/react",
+  "import": "import { CalendarGrid } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "locale",
+      "type": "string",
+      "required": false,
+      "default": "'en'",
+      "inherited": false
+    },
+    {
+      "name": "maxDate",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "minDate",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

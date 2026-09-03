@@ -1,5 +1,25 @@
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
+import { isGlassDocComponent } from './glass-components.mjs';
+
+/**
+ * @param {string} dir
+ * @returns {string[]}
+ */
+function collectStoryFiles(dir) {
+  if (!existsSync(dir)) return [];
+  /** @type {string[]} */
+  const files = [];
+  for (const entry of readdirSync(dir, { withFileTypes: true })) {
+    const full = join(dir, entry.name);
+    if (entry.isDirectory()) {
+      files.push(...collectStoryFiles(full));
+    } else if (entry.name.endsWith('.stories.tsx')) {
+      files.push(full);
+    }
+  }
+  return files;
+}
 
 /**
  * @param {string} root
@@ -13,13 +33,21 @@ export function buildStoryExamplesIndex(root, componentNames) {
   /** @type {Record<string, import('./docs-types.mjs').DocsExampleEntry[]>} */
   const index = Object.fromEntries(componentNames.map((name) => [name, []]));
 
-  const files = readdirSync(storiesDir).filter((file) => file.endsWith('.stories.tsx'));
+  const files = collectStoryFiles(storiesDir);
 
-  for (const file of files) {
-    const source = readFileSync(join(storiesDir, file), 'utf8');
+  for (const filePath of files) {
+    const source = readFileSync(filePath, 'utf8');
     const metaComponent = extractMetaComponent(source);
     const titleComponent = extractTitleComponent(source);
-    const primary = metaComponent && nameSet.has(metaComponent) ? metaComponent : null;
+    const fileComponent = inferComponentFromFileName(filePath);
+    const primary =
+      metaComponent && nameSet.has(metaComponent)
+        ? metaComponent
+        : fileComponent && nameSet.has(fileComponent)
+          ? fileComponent
+          : titleComponent && nameSet.has(titleComponent)
+            ? titleComponent
+            : null;
 
     const stories = parseStoriesFromSource(source, primary ?? titleComponent ?? 'Component');
 
@@ -54,6 +82,16 @@ export function parseStoryExamples(root, componentName) {
 }
 
 /**
+ * @param {string} filePath
+ */
+function inferComponentFromFileName(filePath) {
+  const base = filePath.split('/').pop()?.replace(/\.stories\.tsx$/, '') ?? '';
+  if (/^LiquidGlass[A-Z]/.test(base)) return base;
+  if (base === 'GlassLensLab') return 'LiquidGlass';
+  return /^[A-Z]/.test(base) ? base : null;
+}
+
+/**
  * @param {string} source
  */
 function extractMetaComponent(source) {
@@ -75,6 +113,7 @@ function extractTitleComponent(source) {
  */
 function normalizeComponentName(label) {
   const cleaned = label.trim().replace(/\s+/g, '');
+  if (/^LiquidGlass/.test(cleaned)) return cleaned;
   if (/^[A-Z]/.test(cleaned)) return cleaned;
   return cleaned
     .split(/[^A-Za-z0-9]+/)
@@ -131,7 +170,11 @@ function parseStoriesFromSource(source, defaultComponent) {
  * @param {string} storySource
  * @param {Set<string>} nameSet
  */
-function inferComponentForStory(story, _storySource, nameSet) {
+function inferComponentForStory(story, storySource, nameSet) {
+  const storyComponent = storySource.match(/component:\s*(\w+)/)?.[1];
+  if (storyComponent && nameSet.has(storyComponent)) return storyComponent;
+  const renderComponent = storySource.match(/render:[\s\S]*?<([A-Z][A-Za-z0-9]*)\b/)?.[1];
+  if (renderComponent && nameSet.has(renderComponent)) return renderComponent;
   return inferFromExportName(story.id, nameSet);
 }
 
@@ -156,7 +199,8 @@ function inferFromExportName(exportName, nameSet) {
     if (exportName === name) return name;
     if (exportName.startsWith(name)) return name;
     if (exportName.endsWith(name)) return name;
-    if (new RegExp(`^${name}(Default|Story|Example|Group)?$`).test(exportName)) return name;
+    if (new RegExp(`^${name}(Default|Story|Example|Group|Playground)?$`).test(exportName)) return name;
+    if (name.startsWith('LiquidGlass') && exportName.includes(name.replace('LiquidGlass', ''))) return name;
   }
   return null;
 }
@@ -224,7 +268,10 @@ function classifyExample(exportName, title) {
  * @param {Record<string, string | number | boolean>} props
  */
 function generateExampleCode(componentName, props) {
-  const voidElements = new Set(['Spinner', 'Skeleton', 'Progress']);
+  const voidElements = new Set(['Spinner', 'Skeleton', 'Progress', 'LiquidGlassProgress']);
+  const importFrom = isGlassDocComponent(componentName)
+    ? '@larose-ui/react'
+    : '@larose-ui/react';
   const propEntries = Object.entries(props).filter(([key]) => key !== 'children');
   const propLines = propEntries.map(([key, value]) => {
     if (typeof value === 'string') return `  ${key}="${value}"`;
@@ -233,12 +280,12 @@ function generateExampleCode(componentName, props) {
   });
 
   const child = typeof props.children === 'string' ? props.children : 'Example';
-  if (voidElements.has(componentName)) {
-    return `<${componentName}${propLines.length ? `\n${propLines.join('\n')}\n` : ' '}/>`;
-  }
+  const tag =
+    voidElements.has(componentName)
+      ? `<${componentName}${propLines.length ? `\n${propLines.join('\n')}\n` : ' '}/>`
+      : `<${componentName}${propLines.length ? `\n${propLines.join('\n')}\n` : ''}>${child}</${componentName}>`;
 
-  const open = `<${componentName}${propLines.length ? `\n${propLines.join('\n')}\n` : ''}>`;
-  return `${open}${child}</${componentName}>`;
+  return `import { ${componentName} } from '${importFrom}';\n\n${tag}`;
 }
 
 /**

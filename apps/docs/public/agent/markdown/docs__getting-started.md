@@ -57,8 +57,34 @@ import '@larose-ui/tokens/styles.css';
 </LaRoseProvider>
 ```
 
+## Liquid glass (`@larose-ui/react`)
+
+For displacement-mapped refraction surfaces — tab bars, top bars, switches, sliders, and custom shells:
+
+```bash
+pnpm add @larose-ui/react @larose-ui/tokens
+```
+
+```tsx
+import {
+  LiquidGlassTabBar,
+  LiquidGlassButton,
+  LiquidGlassSwitch,
+} from '@larose-ui/react';
+
+<LiquidGlassTabBar
+  items={[
+    { key: 'home', label: 'Home', icon: <HomeIcon /> },
+    { key: 'search', label: 'Search', icon: <SearchIcon /> },
+  ]}
+  defaultActiveKey="home"
+/>
+```
+
+Browse the **Glass** category under [Components](/docs/components) for the full LiquidGlass API.
+
 ## Next steps
 
-- Read the [Customization](/docs/design/customization) guide for theming
-- Browse [Button](/docs/components/button), [Input](/docs/components/input), and [Modal](/docs/components/modal) docs
+- Read the [Customization](/docs/guides/customization) guide for theming
+- Browse [Button](/docs/components/button), [LiquidGlassButton](/docs/components/liquid-glass-button), and [CommandPalette](/docs/components/command-palette) docs
 - Open Storybook locally with `pnpm dev` from the monorepo root

@@ -13,6 +13,7 @@ export interface DocsComponentEntry {
   id: string;
   name: string;
   category: string;
+  package?: 'react';
 }
 
 export interface DocsGuideEntry {
@@ -238,13 +239,14 @@ export const docsPackages: DocsPackageEntry[] = [
   {
     "id": "react",
     "name": "@larose-ui/react",
-    "tagline": "Production-ready React components with built-in UI states.",
+    "tagline": "Production-ready React components with built-in UI states and LiquidGlass refraction surfaces.",
     "peer": "react >=18",
-    "example": "import { Button, Card, Input } from '@larose-ui/react';\nimport '@larose-ui/tokens/styles.css';\nimport '@larose-ui/styles/styles.css';\nimport '@larose-ui/react/styles.css';",
+    "example": "import { Button, LiquidGlass, LiquidGlassTabBar } from '@larose-ui/react';\nimport '@larose-ui/tokens/styles.css';\nimport '@larose-ui/styles/styles.css';\nimport '@larose-ui/react/styles.css';",
     "features": [
       "Form controls, overlays, navigation, data display",
-      "Token-driven styling",
-      "Customization hooks"
+      "LiquidGlass TabBar, TopBar, Button, Switch, Range, Checkbox, Progress",
+      "SVG displacement refraction on Chromium with blur fallback",
+      "Token-driven styling and customization hooks"
     ]
   },
   {
@@ -353,449 +355,874 @@ export const docsPackages: DocsPackageEntry[] = [
 
 export const docsComponents: DocsComponentEntry[] = [
   {
+    "id": "accelerator-provider",
+    "name": "AcceleratorProvider",
+    "category": "Other",
+    "package": "react"
+  },
+  {
+    "id": "accordion",
+    "name": "Accordion",
+    "category": "Content",
+    "package": "react"
+  },
+  {
+    "id": "accordion-content",
+    "name": "AccordionContent",
+    "category": "Content",
+    "package": "react"
+  },
+  {
+    "id": "accordion-item",
+    "name": "AccordionItem",
+    "category": "Content",
+    "package": "react"
+  },
+  {
+    "id": "accordion-trigger",
+    "name": "AccordionTrigger",
+    "category": "Content",
+    "package": "react"
+  },
+  {
     "id": "activity-share-button",
     "name": "ActivityShareButton",
-    "category": "Actions"
+    "category": "Actions",
+    "package": "react"
   },
   {
     "id": "activity-view",
     "name": "ActivityView",
-    "category": "Sharing"
+    "category": "Sharing",
+    "package": "react"
   },
   {
     "id": "alert",
     "name": "Alert",
-    "category": "Feedback"
+    "category": "Feedback",
+    "package": "react"
   },
   {
     "id": "alert-dialog",
     "name": "AlertDialog",
-    "category": "Feedback"
+    "category": "Feedback",
+    "package": "react"
   },
   {
     "id": "async-button",
     "name": "AsyncButton",
-    "category": "Actions"
+    "category": "Actions",
+    "package": "react"
   },
   {
     "id": "badge",
     "name": "Badge",
-    "category": "Feedback"
+    "category": "Feedback",
+    "package": "react"
   },
   {
     "id": "box",
     "name": "Box",
-    "category": "Layout"
+    "category": "Layout",
+    "package": "react"
   },
   {
     "id": "breadcrumb",
     "name": "Breadcrumb",
-    "category": "Navigation"
+    "category": "Navigation",
+    "package": "react"
   },
   {
     "id": "button",
     "name": "Button",
-    "category": "Actions"
+    "category": "Actions",
+    "package": "react"
   },
   {
     "id": "button-group",
     "name": "ButtonGroup",
-    "category": "Actions"
+    "category": "Actions",
+    "package": "react"
+  },
+  {
+    "id": "calendar-grid",
+    "name": "CalendarGrid",
+    "category": "Forms",
+    "package": "react"
+  },
+  {
+    "id": "caption-button",
+    "name": "CaptionButton",
+    "category": "Other",
+    "package": "react"
   },
   {
     "id": "card",
     "name": "Card",
-    "category": "Layout"
+    "category": "Layout",
+    "package": "react"
   },
   {
     "id": "chart",
     "name": "Chart",
-    "category": "Data"
+    "category": "Data",
+    "package": "react"
   },
   {
     "id": "checkbox",
     "name": "Checkbox",
-    "category": "Forms"
+    "category": "Forms",
+    "package": "react"
   },
   {
     "id": "collaboration-button",
     "name": "CollaborationButton",
-    "category": "Actions"
+    "category": "Actions",
+    "package": "react"
   },
   {
     "id": "collaboration-popover",
     "name": "CollaborationPopover",
-    "category": "Sharing"
+    "category": "Sharing",
+    "package": "react"
   },
   {
     "id": "collection",
     "name": "Collection",
-    "category": "Layout"
+    "category": "Layout",
+    "package": "react"
   },
   {
     "id": "column-view",
     "name": "ColumnView",
-    "category": "Layout"
+    "category": "Layout",
+    "package": "react"
   },
   {
     "id": "command-palette",
     "name": "CommandPalette",
-    "category": "Overlay"
+    "category": "Overlay",
+    "package": "react"
   },
   {
     "id": "context-menu",
     "name": "ContextMenu",
-    "category": "Overlay"
+    "category": "Overlay",
+    "package": "react"
   },
   {
     "id": "data-table",
     "name": "DataTable",
-    "category": "Data"
+    "category": "Data",
+    "package": "react"
   },
   {
     "id": "date-picker",
     "name": "DatePicker",
-    "category": "Forms"
+    "category": "Forms",
+    "package": "react"
   },
   {
     "id": "date-range-picker",
     "name": "DateRangePicker",
-    "category": "Forms"
+    "category": "Forms",
+    "package": "react"
+  },
+  {
+    "id": "date-time-picker",
+    "name": "DateTimePicker",
+    "category": "Forms",
+    "package": "react"
   },
   {
     "id": "dialog",
     "name": "Dialog",
-    "category": "Overlay"
+    "category": "Overlay",
+    "package": "react"
   },
   {
     "id": "disclosure-button",
     "name": "DisclosureButton",
-    "category": "Content"
+    "category": "Content",
+    "package": "react"
+  },
+  {
+    "id": "disclosure-group",
+    "name": "DisclosureGroup",
+    "category": "Content",
+    "package": "react"
+  },
+  {
+    "id": "disclosure-list",
+    "name": "DisclosureList",
+    "category": "Content",
+    "package": "react"
   },
   {
     "id": "disclosure-triangle",
     "name": "DisclosureTriangle",
-    "category": "Content"
+    "category": "Content",
+    "package": "react"
   },
   {
     "id": "dock-bar",
     "name": "DockBar",
-    "category": "Navigation"
+    "category": "Navigation",
+    "package": "react"
   },
   {
     "id": "dock-menu",
     "name": "DockMenu",
-    "category": "Navigation"
+    "category": "Navigation",
+    "package": "react"
   },
   {
     "id": "document-launcher",
     "name": "DocumentLauncher",
-    "category": "Files"
+    "category": "Files",
+    "package": "react"
   },
   {
     "id": "document-toolbar",
     "name": "DocumentToolbar",
-    "category": "Files"
+    "category": "Files",
+    "package": "react"
+  },
+  {
+    "id": "drag-start-threshold-px",
+    "name": "DRAG_START_THRESHOLD_PX",
+    "category": "Other",
+    "package": "react"
   },
   {
     "id": "drag-drop-list",
     "name": "DragDropList",
-    "category": "DragDrop"
+    "category": "DragDrop",
+    "package": "react"
   },
   {
     "id": "draggable",
     "name": "Draggable",
-    "category": "DragDrop"
+    "category": "DragDrop",
+    "package": "react"
   },
   {
     "id": "drawer",
     "name": "Drawer",
-    "category": "Overlay"
+    "category": "Overlay",
+    "package": "react"
   },
   {
     "id": "drop-zone",
     "name": "DropZone",
-    "category": "DragDrop"
+    "category": "DragDrop",
+    "package": "react"
   },
   {
     "id": "edit-menu",
     "name": "EditMenu",
-    "category": "Navigation"
+    "category": "Navigation",
+    "package": "react"
   },
   {
     "id": "edit-menu-selection",
     "name": "EditMenuSelection",
-    "category": "Other"
+    "category": "Other",
+    "package": "react"
   },
   {
     "id": "empty-state",
     "name": "EmptyState",
-    "category": "Feedback"
+    "category": "Feedback",
+    "package": "react"
   },
   {
     "id": "file-browser",
     "name": "FileBrowser",
-    "category": "Files"
+    "category": "Files",
+    "package": "react"
   },
   {
     "id": "file-preview",
     "name": "FilePreview",
-    "category": "Files"
+    "category": "Files",
+    "package": "react"
   },
   {
     "id": "file-upload",
     "name": "FileUpload",
-    "category": "Forms"
+    "category": "Forms",
+    "package": "react"
   },
   {
-    "id": "form-continue",
-    "name": "FormContinue",
-    "category": "Forms"
+    "id": "header",
+    "name": "Header",
+    "category": "Navigation",
+    "package": "react"
+  },
+  {
+    "id": "header-actions",
+    "name": "HeaderActions",
+    "category": "Other",
+    "package": "react"
+  },
+  {
+    "id": "header-brand",
+    "name": "HeaderBrand",
+    "category": "Other",
+    "package": "react"
+  },
+  {
+    "id": "header-title",
+    "name": "HeaderTitle",
+    "category": "Other",
+    "package": "react"
   },
   {
     "id": "help-button",
     "name": "HelpButton",
-    "category": "Actions"
+    "category": "Actions",
+    "package": "react"
   },
   {
     "id": "home-screen-quick-actions",
     "name": "HomeScreenQuickActions",
-    "category": "Platform"
+    "category": "Platform",
+    "package": "react"
   },
   {
     "id": "image-button",
     "name": "ImageButton",
-    "category": "Content"
+    "category": "Content",
+    "package": "react"
   },
   {
     "id": "image-overlay",
     "name": "ImageOverlay",
-    "category": "Content"
+    "category": "Content",
+    "package": "react"
   },
   {
     "id": "image-view",
     "name": "ImageView",
-    "category": "Content"
+    "category": "Content",
+    "package": "react"
   },
   {
     "id": "image-well",
     "name": "ImageWell",
-    "category": "Content"
+    "category": "Content",
+    "package": "react"
   },
   {
     "id": "input",
     "name": "Input",
-    "category": "Forms"
+    "category": "Forms",
+    "package": "react"
   },
   {
     "id": "label",
     "name": "Label",
-    "category": "Content"
+    "category": "Content",
+    "package": "react"
   },
   {
-    "id": "la-rose-provider",
-    "name": "LaRoseProvider",
-    "category": "Other"
+    "id": "liquid-glass-optics-defaults",
+    "name": "LIQUID_GLASS_OPTICS_DEFAULTS",
+    "category": "Other",
+    "package": "react"
+  },
+  {
+    "id": "liquid-glass-presets",
+    "name": "LIQUID_GLASS_PRESETS",
+    "category": "Other",
+    "package": "react"
+  },
+  {
+    "id": "liquid-glass-switch-active-green",
+    "name": "LIQUID_GLASS_SWITCH_ACTIVE_GREEN",
+    "category": "Other",
+    "package": "react"
+  },
+  {
+    "id": "liquid-glass-switch-track-glass",
+    "name": "LIQUID_GLASS_SWITCH_TRACK_GLASS",
+    "category": "Other",
+    "package": "react"
+  },
+  {
+    "id": "liquid-glass",
+    "name": "LiquidGlass",
+    "category": "Glass",
+    "package": "react"
+  },
+  {
+    "id": "liquid-glass-button",
+    "name": "LiquidGlassButton",
+    "category": "Glass",
+    "package": "react"
+  },
+  {
+    "id": "liquid-glass-checkbox",
+    "name": "LiquidGlassCheckbox",
+    "category": "Glass",
+    "package": "react"
+  },
+  {
+    "id": "liquid-glass-progress",
+    "name": "LiquidGlassProgress",
+    "category": "Glass",
+    "package": "react"
+  },
+  {
+    "id": "liquid-glass-range",
+    "name": "LiquidGlassRange",
+    "category": "Glass",
+    "package": "react"
+  },
+  {
+    "id": "liquid-glass-switch",
+    "name": "LiquidGlassSwitch",
+    "category": "Glass",
+    "package": "react"
+  },
+  {
+    "id": "liquid-glass-tab-bar",
+    "name": "LiquidGlassTabBar",
+    "category": "Glass",
+    "package": "react"
+  },
+  {
+    "id": "liquid-glass-top-bar",
+    "name": "LiquidGlassTopBar",
+    "category": "Glass",
+    "package": "react"
   },
   {
     "id": "list",
     "name": "List",
-    "category": "Data"
+    "category": "Data",
+    "package": "react"
   },
   {
     "id": "list-row",
     "name": "ListRow",
-    "category": "Data"
+    "category": "Data",
+    "package": "react"
   },
   {
     "id": "list-section",
     "name": "ListSection",
-    "category": "Data"
+    "category": "Data",
+    "package": "react"
   },
   {
     "id": "lockup",
     "name": "Lockup",
-    "category": "Layout"
+    "category": "Layout",
+    "package": "react"
+  },
+  {
+    "id": "lockup-card",
+    "name": "LockupCard",
+    "category": "Other",
+    "package": "react"
+  },
+  {
+    "id": "lockup-row",
+    "name": "LockupRow",
+    "category": "Other",
+    "package": "react"
   },
   {
     "id": "menu",
     "name": "Menu",
-    "category": "Navigation"
+    "category": "Navigation",
+    "package": "react"
   },
   {
     "id": "menu-bar",
     "name": "MenuBar",
-    "category": "Navigation"
+    "category": "Navigation",
+    "package": "react"
   },
   {
     "id": "menu-bar-extra",
     "name": "MenuBarExtra",
-    "category": "Navigation"
+    "category": "Navigation",
+    "package": "react"
+  },
+  {
+    "id": "mnemonic-label",
+    "name": "MnemonicLabel",
+    "category": "Other",
+    "package": "react"
   },
   {
     "id": "modal",
     "name": "Modal",
-    "category": "Overlay"
+    "category": "Overlay",
+    "package": "react"
+  },
+  {
+    "id": "monogram",
+    "name": "Monogram",
+    "category": "Other",
+    "package": "react"
   },
   {
     "id": "more-pull-down-button",
     "name": "MorePullDownButton",
-    "category": "Navigation"
+    "category": "Navigation",
+    "package": "react"
   },
   {
     "id": "ornament",
     "name": "Ornament",
-    "category": "Layout"
+    "category": "Layout",
+    "package": "react"
   },
   {
     "id": "ornament-button",
     "name": "OrnamentButton",
-    "category": "Layout"
+    "category": "Layout",
+    "package": "react"
   },
   {
     "id": "ornament-window",
     "name": "OrnamentWindow",
-    "category": "Layout"
+    "category": "Layout",
+    "package": "react"
   },
   {
     "id": "outline-view",
     "name": "OutlineView",
-    "category": "Data"
+    "category": "Data",
+    "package": "react"
   },
   {
     "id": "outline-view-toolbar",
     "name": "OutlineViewToolbar",
-    "category": "Data"
+    "category": "Data",
+    "package": "react"
   },
   {
     "id": "pagination",
     "name": "Pagination",
-    "category": "Navigation"
+    "category": "Navigation",
+    "package": "react"
   },
   {
     "id": "path-control",
     "name": "PathControl",
-    "category": "Navigation"
+    "category": "Navigation",
+    "package": "react"
+  },
+  {
+    "id": "picker",
+    "name": "Picker",
+    "category": "Forms",
+    "package": "react"
   },
   {
     "id": "popover",
     "name": "Popover",
-    "category": "Overlay"
+    "category": "Overlay",
+    "package": "react"
   },
   {
     "id": "pop-up-button",
     "name": "PopUpButton",
-    "category": "Navigation"
+    "category": "Navigation",
+    "package": "react"
+  },
+  {
+    "id": "poster",
+    "name": "Poster",
+    "category": "Other",
+    "package": "react"
   },
   {
     "id": "progress",
     "name": "Progress",
-    "category": "Feedback"
+    "category": "Feedback",
+    "package": "react"
   },
   {
     "id": "pull-down-button",
     "name": "PullDownButton",
-    "category": "Navigation"
+    "category": "Navigation",
+    "package": "react"
   },
   {
     "id": "radio",
     "name": "Radio",
-    "category": "Forms"
+    "category": "Forms",
+    "package": "react"
   },
   {
     "id": "secure-field",
     "name": "SecureField",
-    "category": "Forms"
+    "category": "Forms",
+    "package": "react"
   },
   {
     "id": "select",
     "name": "Select",
-    "category": "Forms"
+    "category": "Forms",
+    "package": "react"
   },
   {
     "id": "skeleton",
     "name": "Skeleton",
-    "category": "Feedback"
+    "category": "Feedback",
+    "package": "react"
   },
   {
     "id": "spinner",
     "name": "Spinner",
-    "category": "Feedback"
+    "category": "Feedback",
+    "package": "react"
+  },
+  {
+    "id": "split-view",
+    "name": "SplitView",
+    "category": "Layout",
+    "package": "react"
+  },
+  {
+    "id": "split-view-pane",
+    "name": "SplitViewPane",
+    "category": "Layout",
+    "package": "react"
   },
   {
     "id": "split-view-toolbar",
     "name": "SplitViewToolbar",
-    "category": "Layout"
+    "category": "Layout",
+    "package": "react"
   },
   {
     "id": "square-button",
     "name": "SquareButton",
-    "category": "Actions"
+    "category": "Actions",
+    "package": "react"
   },
   {
     "id": "switch",
     "name": "Switch",
-    "category": "Forms"
+    "category": "Forms",
+    "package": "react"
+  },
+  {
+    "id": "system-activity-ids",
+    "name": "SYSTEM_ACTIVITY_IDS",
+    "category": "Other",
+    "package": "react"
   },
   {
     "id": "table",
     "name": "Table",
-    "category": "Data"
+    "category": "Data",
+    "package": "react"
+  },
+  {
+    "id": "tabs",
+    "name": "Tabs",
+    "category": "Navigation",
+    "package": "react"
+  },
+  {
+    "id": "tabs-list",
+    "name": "TabsList",
+    "category": "Navigation",
+    "package": "react"
+  },
+  {
+    "id": "tabs-panel",
+    "name": "TabsPanel",
+    "category": "Navigation",
+    "package": "react"
+  },
+  {
+    "id": "tabs-trigger",
+    "name": "TabsTrigger",
+    "category": "Navigation",
+    "package": "react"
+  },
+  {
+    "id": "tab-view",
+    "name": "TabView",
+    "category": "Navigation",
+    "package": "react"
+  },
+  {
+    "id": "tab-view-list",
+    "name": "TabViewList",
+    "category": "Navigation",
+    "package": "react"
+  },
+  {
+    "id": "tab-view-panel",
+    "name": "TabViewPanel",
+    "category": "Navigation",
+    "package": "react"
+  },
+  {
+    "id": "tab-view-tab",
+    "name": "TabViewTab",
+    "category": "Navigation",
+    "package": "react"
   },
   {
     "id": "textarea",
     "name": "Textarea",
-    "category": "Forms"
+    "category": "Forms",
+    "package": "react"
   },
   {
     "id": "text-view",
     "name": "TextView",
-    "category": "Content"
+    "category": "Content",
+    "package": "react"
+  },
+  {
+    "id": "theme-customization-context",
+    "name": "ThemeCustomizationContext",
+    "category": "Other",
+    "package": "react"
   },
   {
     "id": "time-picker",
     "name": "TimePicker",
-    "category": "Forms"
-  },
-  {
-    "id": "toast-provider",
-    "name": "ToastProvider",
-    "category": "Feedback"
+    "category": "Forms",
+    "package": "react"
   },
   {
     "id": "token-field",
     "name": "TokenField",
-    "category": "Forms"
+    "category": "Forms",
+    "package": "react"
+  },
+  {
+    "id": "toolbar",
+    "name": "Toolbar",
+    "category": "Toolbar",
+    "package": "react"
+  },
+  {
+    "id": "toolbar-back-button",
+    "name": "ToolbarBackButton",
+    "category": "Toolbar",
+    "package": "react"
+  },
+  {
+    "id": "toolbar-close-button",
+    "name": "ToolbarCloseButton",
+    "category": "Toolbar",
+    "package": "react"
+  },
+  {
+    "id": "toolbar-document-menu",
+    "name": "ToolbarDocumentMenu",
+    "category": "Toolbar",
+    "package": "react"
+  },
+  {
+    "id": "toolbar-fixed-space",
+    "name": "ToolbarFixedSpace",
+    "category": "Toolbar",
+    "package": "react"
+  },
+  {
+    "id": "toolbar-group",
+    "name": "ToolbarGroup",
+    "category": "Toolbar",
+    "package": "react"
+  },
+  {
+    "id": "toolbar-item",
+    "name": "ToolbarItem",
+    "category": "Toolbar",
+    "package": "react"
+  },
+  {
+    "id": "toolbar-more-button",
+    "name": "ToolbarMoreButton",
+    "category": "Toolbar",
+    "package": "react"
+  },
+  {
+    "id": "toolbar-prominent-button",
+    "name": "ToolbarProminentButton",
+    "category": "Toolbar",
+    "package": "react"
+  },
+  {
+    "id": "toolbar-search",
+    "name": "ToolbarSearch",
+    "category": "Toolbar",
+    "package": "react"
+  },
+  {
+    "id": "toolbar-section",
+    "name": "ToolbarSection",
+    "category": "Toolbar",
+    "package": "react"
+  },
+  {
+    "id": "toolbar-title",
+    "name": "ToolbarTitle",
+    "category": "Toolbar",
+    "package": "react"
   },
   {
     "id": "tooltip",
     "name": "Tooltip",
-    "category": "Feedback"
+    "category": "Feedback",
+    "package": "react"
   },
   {
     "id": "typography",
     "name": "Typography",
-    "category": "Content"
+    "category": "Content",
+    "package": "react"
   },
   {
     "id": "unsaved-indicator",
     "name": "UnsavedIndicator",
-    "category": "Files"
+    "category": "Files",
+    "package": "react"
   },
   {
     "id": "web-view",
     "name": "WebView",
-    "category": "Content"
+    "category": "Content",
+    "package": "react"
   },
   {
     "id": "web-view-navigation",
     "name": "WebViewNavigation",
-    "category": "Content"
+    "category": "Content",
+    "package": "react"
   },
   {
     "id": "web-view-shell",
     "name": "WebViewShell",
-    "category": "Content"
+    "category": "Content",
+    "package": "react"
+  },
+  {
+    "id": "wheel-column",
+    "name": "WheelColumn",
+    "category": "Forms",
+    "package": "react"
+  },
+  {
+    "id": "wheel-picker",
+    "name": "WheelPicker",
+    "category": "Forms",
+    "package": "react"
   }
 ];
 
@@ -885,12 +1312,14 @@ export const docsComponentCategories = [
   "Feedback",
   "Files",
   "Forms",
+  "Glass",
   "Layout",
   "Navigation",
   "Other",
   "Overlay",
   "Platform",
-  "Sharing"
+  "Sharing",
+  "Toolbar"
 ];
 
 export function findPackage(id: string): DocsPackageEntry | undefined {

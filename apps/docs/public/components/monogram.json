@@ -1,0 +1,24 @@
+{
+  "component": "Monogram",
+  "category": "Other",
+  "package": "@larose-ui/react",
+  "import": "import { Monogram } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "imageUrl",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "required": true,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

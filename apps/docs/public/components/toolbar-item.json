@@ -1,0 +1,48 @@
+{
+  "component": "ToolbarItem",
+  "category": "Toolbar",
+  "package": "@larose-ui/react",
+  "import": "import { ToolbarItem } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "collapsible",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "icon",
+      "type": "ReactNode",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "prominent",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "showLabel",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

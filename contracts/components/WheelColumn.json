@@ -2,7 +2,45 @@
   "name": "WheelColumn",
   "version": "1",
   "framework": "react",
-  "props": [],
-  "events": [],
-  "keyboard": {}
+  "props": [
+    {
+      "name": "columnFlex",
+      "type": "number",
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "default": "false"
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "options",
+      "type": "PickerOption[]",
+      "required": true
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "required": true
+    }
+  ],
+  "events": [
+    {
+      "name": "onChange",
+      "payload": "(value: string) => void"
+    }
+  ],
+  "defaults": {
+    "disabled": "false"
+  },
+  "keyboard": {},
+  "controlled": [
+    "value"
+  ]
 }

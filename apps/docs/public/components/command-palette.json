@@ -1,6 +1,7 @@
 {
   "component": "CommandPalette",
   "category": "Overlay",
+  "package": "@larose-ui/react",
   "import": "import { CommandPalette } from '@larose-ui/react';",
   "props": [
     {
@@ -50,6 +51,23 @@
       "props": {},
       "code": "<CommandPaletteDemo />",
       "composite": true
+    },
+    {
+      "id": "Playground",
+      "title": "Playground",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"Playground\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "Closed",
+      "title": "Closed",
+      "kind": "advanced",
+      "props": {
+        "open": false
+      },
+      "code": "import { CommandPalette } from '@larose-ui/react';\n\n<CommandPalette\n  open={false}\n>Example</CommandPalette>"
     }
   ],
   "accessibility": [

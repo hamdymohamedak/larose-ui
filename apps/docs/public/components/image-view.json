@@ -1,6 +1,7 @@
 {
   "component": "ImageView",
   "category": "Content",
+  "package": "@larose-ui/react",
   "import": "import { ImageView } from '@larose-ui/react';",
   "props": [
     {
@@ -56,7 +57,48 @@
       "inherited": false
     }
   ],
-  "examples": [],
+  "examples": [
+    {
+      "id": "FitModes",
+      "title": "Fit Modes",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"FitModes\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "TextOverlay",
+      "title": "Text Overlay",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"TextOverlay\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "AnimatedSequence",
+      "title": "Animated Sequence",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"AnimatedSequence\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "ImageWellStory",
+      "title": "Image Well",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"ImageWellStory\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "ImageButtonStory",
+      "title": "Image Button",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"ImageButtonStory\" for full example.",
+      "composite": true
+    }
+  ],
   "accessibility": [],
   "anatomy": null,
   "playground": null

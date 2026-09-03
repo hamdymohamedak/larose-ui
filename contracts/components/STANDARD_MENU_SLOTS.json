@@ -1,0 +1,8 @@
+{
+  "name": "STANDARD_MENU_SLOTS",
+  "version": "1",
+  "framework": "react",
+  "props": [],
+  "events": [],
+  "keyboard": {}
+}

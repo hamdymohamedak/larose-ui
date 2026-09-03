@@ -1,0 +1,30 @@
+{
+  "component": "TabViewTab",
+  "category": "Navigation",
+  "package": "@larose-ui/react",
+  "import": "import { TabViewTab } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "required": true,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

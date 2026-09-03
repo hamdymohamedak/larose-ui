@@ -1,107 +1,98 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { useMemo } from 'react';
-import { getCachedDisplacementMap } from '@larose-ui/glass';
-import type { LiquidGlassProps } from '@larose-ui/glass';
-import { Glass } from '@larose-ui/glass/react';
-import { GlassStoryScene } from './glass/GlassStoryScene';
+import { useMemo, useState } from 'react';
+import { buildLiquidGlassDisplacementMap } from '@larose-ui/react';
+import { LiquidGlass } from '@larose-ui/react';
+import { GlassScrollTestScene } from './glass/GlassScrollTestScene';
+import {
+  liquidGlassSurfaceArgTypes,
+  liquidGlassSurfaceDefaults,
+  prepareSurfaceProps,
+} from './glass/liquidGlassStoryControls';
 
-const defaultLens: Required<
-  Pick<
-    LiquidGlassProps,
-    | 'width'
-    | 'height'
-    | 'borderRadius'
-    | 'scale'
-    | 'depth'
-    | 'curvature'
-    | 'splay'
-    | 'chroma'
-    | 'blur'
-    | 'glow'
-    | 'edgeHighlight'
-    | 'specularAngle'
-  >
-> = {
-  width: 200,
-  height: 72,
-  borderRadius: 36,
-  scale: 1,
-  depth: 10,
-  curvature: 40,
-  splay: 1,
-  chroma: 0.08,
-  blur: 0,
-  glow: 0.1,
-  edgeHighlight: 0.55,
-  specularAngle: 45,
-};
+type LensLabArgs = typeof liquidGlassSurfaceDefaults;
 
-const meta: Meta<typeof LensLab> = {
+const meta: Meta<LensLabArgs> = {
   title: 'Glass/Lens Lab',
-  component: LensLab,
-  parameters: { layout: 'fullscreen' },
-  argTypes: {
-    width: { control: { type: 'range', min: 40, max: 400, step: 1 } },
-    height: { control: { type: 'range', min: 24, max: 200, step: 1 } },
-    borderRadius: { control: { type: 'range', min: 0, max: 120, step: 1 } },
-    scale: { control: { type: 'range', min: 0.05, max: 2, step: 0.01 } },
-    depth: { control: { type: 'range', min: 1, max: 24, step: 1 } },
-    curvature: { control: { type: 'range', min: 0, max: 100, step: 1 } },
-    splay: { control: { type: 'range', min: 0.1, max: 3, step: 0.05 } },
-    chroma: { control: { type: 'range', min: 0, max: 1, step: 0.01 } },
-    blur: { control: { type: 'range', min: 0, max: 8, step: 0.1 } },
-    glow: { control: { type: 'range', min: 0, max: 1, step: 0.01 } },
-    edgeHighlight: { control: { type: 'range', min: 0, max: 1, step: 0.01 } },
-    specularAngle: { control: { type: 'range', min: 0, max: 360, step: 1 } },
+  parameters: {
+    layout: 'fullscreen',
+    controls: { expanded: true, sort: 'requiredFirst' },
+    docs: {
+      description: {
+        component:
+          'Interactive lab for the shared liquid glass optics — tune geometry and every optical prop, with a live displacement map preview.',
+      },
+    },
   },
-  args: defaultLens,
+  argTypes: liquidGlassSurfaceArgTypes,
+  args: liquidGlassSurfaceDefaults,
 };
 
 export default meta;
-type Story = StoryObj<typeof defaultLens>;
+type Story = StoryObj<LensLabArgs>;
 
-function LensLab(props: typeof defaultLens) {
-  const lens = useMemo(() => ({ ...props }), [props]);
-  const map = useMemo(() => getCachedDisplacementMap(lens), [lens]);
+function LensLab(args: LensLabArgs) {
+  const { label, ...raw } = args;
+  const glassProps = prepareSurfaceProps(raw);
+  const { width, height, borderRadius, bezelWidth, refractionStrength, ...optics } = glassProps;
+
+  const [mapUrl, setMapUrl] = useState('');
+
+  const previewMap = useMemo(() => {
+    if (mapUrl) return mapUrl;
+    return buildLiquidGlassDisplacementMap({
+      width: width as number,
+      height: height as number,
+      borderRadius: borderRadius as number,
+      bezelWidth: (bezelWidth as number) ?? 20,
+      refractionStrength: (refractionStrength as number) ?? 1,
+    });
+  }, [mapUrl, width, height, borderRadius, bezelWidth, refractionStrength]);
 
   return (
-    <GlassStoryScene showHint={false}>
-      <div style={{ display: 'flex', gap: '2rem', alignItems: 'flex-start', flexWrap: 'wrap' }}>
-        <div>
-          <p style={{ margin: '0 0 0.5rem', fontSize: '0.75rem', fontWeight: 600, color: '#4338ca' }}>
-            Refracted result
-          </p>
-          <Glass lens={lens}>
-            <span style={{ position: 'relative', zIndex: 1, fontWeight: 600, fontSize: '0.875rem' }}>
-              Liquid glass
-            </span>
-          </Glass>
-        </div>
-        <div>
-          <p style={{ margin: '0 0 0.5rem', fontSize: '0.75rem', fontWeight: 600, color: '#4338ca' }}>
-            Displacement map
-          </p>
-          <div
-            style={{
-              width: lens.width,
-              height: lens.height,
-              borderRadius: lens.borderRadius,
-              overflow: 'hidden',
-              border: '1px solid rgb(0 0 0 / 0.15)',
-              background: '#2a2a2e',
-            }}
-          >
-            <img
-              src={map.dataUrl}
-              alt="Displacement map preview"
-              width={lens.width}
-              height={lens.height}
-              style={{ display: 'block', width: '100%', height: '100%', imageRendering: 'pixelated' }}
-            />
+    <GlassScrollTestScene contentPaddingBottom={80}>
+      <div
+        style={{
+          position: 'fixed',
+          inset: 0,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '80px 24px 24px',
+          pointerEvents: 'none',
+        }}
+      >
+        <div
+          style={{
+            display: 'flex',
+            gap: '2rem',
+            alignItems: 'flex-start',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            pointerEvents: 'auto',
+            maxWidth: 720,
+          }}
+        >
+          <div>
+            <p style={{ margin: '0 0 0.5rem', fontSize: '0.75rem', fontWeight: 600, color: '#B9B3D6' }}>
+              Live refraction
+            </p>
+            <LiquidGlass
+              {...optics}
+              width={width}
+              height={height}
+              borderRadius={borderRadius}
+              bezelWidth={bezelWidth}
+              refractionStrength={refractionStrength}
+              onDisplacementMapChange={setMapUrl}
+              style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+            >
+              <span style={{ fontWeight: 600, fontSize: '0.9375rem', color: '#fff' }}>{label}</span>
+            </LiquidGlass>
           </div>
+
         </div>
       </div>
-    </GlassStoryScene>
+    </GlassScrollTestScene>
   );
 }
 

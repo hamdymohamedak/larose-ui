@@ -1,6 +1,7 @@
 {
   "component": "ContextMenu",
   "category": "Overlay",
+  "package": "@larose-ui/react",
   "import": "import { ContextMenu } from '@larose-ui/react';",
   "props": [
     {
@@ -47,7 +48,32 @@
       "inherited": false
     }
   ],
-  "examples": [],
+  "examples": [
+    {
+      "id": "MailMessage",
+      "title": "Mail message",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"MailMessage\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "MultiSelectTitle",
+      "title": "Multi-select title",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"MultiSelectTitle\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "HiddenUnavailable",
+      "title": "Hidden Unavailable",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"HiddenUnavailable\" for full example.",
+      "composite": true
+    }
+  ],
   "accessibility": [],
   "anatomy": null,
   "playground": null

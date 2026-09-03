@@ -2,7 +2,24 @@
   "name": "MnemonicLabel",
   "version": "1",
   "framework": "react",
-  "props": [],
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "mnemonic",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "showAccessKey",
+      "type": "boolean",
+      "required": false,
+      "description": "When true, underline the access key character."
+    }
+  ],
   "events": [],
   "keyboard": {}
 }

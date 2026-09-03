@@ -1,6 +1,7 @@
 {
   "component": "EmptyState",
   "category": "Feedback",
+  "package": "@larose-ui/react",
   "import": "import { EmptyState } from '@larose-ui/react';",
   "props": [
     {
@@ -44,7 +45,7 @@
         "description": "Get started by creating your first employee record.",
         "actionLabel": "Add Employee"
       },
-      "code": "<EmptyState\n  title=\"No employees found\"\n  description=\"Get started by creating your first employee record.\"\n  actionLabel=\"Add Employee\"\n>Example</EmptyState>"
+      "code": "import { EmptyState } from '@larose-ui/react';\n\n<EmptyState\n  title=\"No employees found\"\n  description=\"Get started by creating your first employee record.\"\n  actionLabel=\"Add Employee\"\n>Example</EmptyState>"
     },
     {
       "id": "Offline",
@@ -55,7 +56,7 @@
         "description": "Changes will sync when you reconnect.",
         "state": "offline"
       },
-      "code": "<EmptyState\n  title=\"You are offline\"\n  description=\"Changes will sync when you reconnect.\"\n  state=\"offline\"\n>Example</EmptyState>"
+      "code": "import { EmptyState } from '@larose-ui/react';\n\n<EmptyState\n  title=\"You are offline\"\n  description=\"Changes will sync when you reconnect.\"\n  state=\"offline\"\n>Example</EmptyState>"
     },
     {
       "id": "Unauthorized",
@@ -67,7 +68,7 @@
         "state": "unauthorized",
         "actionLabel": "Go back"
       },
-      "code": "<EmptyState\n  title=\"Access denied\"\n  description=\"You don't have permission to view this resource.\"\n  state=\"unauthorized\"\n  actionLabel=\"Go back\"\n>Example</EmptyState>"
+      "code": "import { EmptyState } from '@larose-ui/react';\n\n<EmptyState\n  title=\"Access denied\"\n  description=\"You don't have permission to view this resource.\"\n  state=\"unauthorized\"\n  actionLabel=\"Go back\"\n>Example</EmptyState>"
     }
   ],
   "accessibility": [],

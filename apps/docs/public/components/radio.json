@@ -1,6 +1,7 @@
 {
   "component": "Radio",
   "category": "Forms",
+  "package": "@larose-ui/react",
   "import": "import { Radio } from '@larose-ui/react';",
   "props": [
     {
@@ -49,7 +50,7 @@
         "value": "starter",
         "defaultChecked": true
       },
-      "code": "<Radio\n  name=\"plan\"\n  label=\"Starter plan\"\n  value=\"starter\"\n  defaultChecked\n>Example</Radio>"
+      "code": "import { Radio } from '@larose-ui/react';\n\n<Radio\n  name=\"plan\"\n  label=\"Starter plan\"\n  value=\"starter\"\n  defaultChecked\n>Example</Radio>"
     },
     {
       "id": "WithHint",
@@ -61,7 +62,7 @@
         "value": "pro",
         "hint": "Includes advanced analytics"
       },
-      "code": "<Radio\n  name=\"plan\"\n  label=\"Pro plan\"\n  value=\"pro\"\n  hint=\"Includes advanced analytics\"\n>Example</Radio>"
+      "code": "import { Radio } from '@larose-ui/react';\n\n<Radio\n  name=\"plan\"\n  label=\"Pro plan\"\n  value=\"pro\"\n  hint=\"Includes advanced analytics\"\n>Example</Radio>"
     },
     {
       "id": "WithError",
@@ -73,7 +74,7 @@
         "value": "enterprise",
         "error": "Select a plan to continue"
       },
-      "code": "<Radio\n  name=\"plan\"\n  label=\"Enterprise plan\"\n  value=\"enterprise\"\n  error=\"Select a plan to continue\"\n>Example</Radio>"
+      "code": "import { Radio } from '@larose-ui/react';\n\n<Radio\n  name=\"plan\"\n  label=\"Enterprise plan\"\n  value=\"enterprise\"\n  error=\"Select a plan to continue\"\n>Example</Radio>"
     },
     {
       "id": "Disabled",
@@ -85,7 +86,7 @@
         "value": "legacy",
         "disabled": true
       },
-      "code": "<Radio\n  name=\"plan\"\n  label=\"Legacy plan\"\n  value=\"legacy\"\n  disabled\n>Example</Radio>"
+      "code": "import { Radio } from '@larose-ui/react';\n\n<Radio\n  name=\"plan\"\n  label=\"Legacy plan\"\n  value=\"legacy\"\n  disabled\n>Example</Radio>"
     },
     {
       "id": "Group",

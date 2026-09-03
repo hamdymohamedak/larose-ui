@@ -1,0 +1,43 @@
+{
+  "component": "WheelColumn",
+  "category": "Forms",
+  "package": "@larose-ui/react",
+  "import": "import { WheelColumn } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "columnFlex",
+      "type": "number",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "inherited": false
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "options",
+      "type": "PickerOption[]",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "required": true,
+      "inherited": false
+    }
+  ],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

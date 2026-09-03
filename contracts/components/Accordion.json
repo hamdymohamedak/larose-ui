@@ -38,6 +38,13 @@
       "payload": "(value: string[]) => void"
     }
   ],
+  "slots": [
+    "children"
+  ],
+  "states": [
+    "collapsed",
+    "expanded"
+  ],
   "defaults": {
     "collapsible": "false",
     "defaultValue": "[]",

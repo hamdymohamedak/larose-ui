@@ -2,7 +2,18 @@
   "name": "Collapse",
   "version": "1",
   "framework": "react",
-  "props": [],
+  "props": [
+    {
+      "name": "duration",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "open",
+      "type": "boolean",
+      "required": true
+    }
+  ],
   "events": [],
   "keyboard": {}
 }

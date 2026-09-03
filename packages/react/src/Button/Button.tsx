@@ -5,7 +5,11 @@ import { useComponentDefaults } from '../theme/useComponentDefaults';
 import { Spinner } from '../Spinner/Spinner';
 import { Tooltip } from '../Tooltip/Tooltip';
 import type { ButtonShape } from './types';
-import { formatButtonLabel, hasTextContent, resolveButtonShape } from './utils';
+import {
+  formatButtonLabel,
+  resolveButtonShape,
+  splitButtonChildren,
+} from './utils';
 import styles from '@larose-ui/styles/components/Button/Button.module.css';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -60,20 +64,21 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>((incomingProps,
     const isDisabled =
       disabled || uiState === 'loading' || uiState === 'disabled';
     const isLoading = uiState === 'loading';
-    const hasText = hasTextContent(children);
-    const hasIcon = Boolean(leftIcon || rightIcon);
+    const { text: childText, inlineIcons } = splitButtonChildren(children);
+    const hasText = childText !== null;
+    const hasLayoutIcon = Boolean(leftIcon || rightIcon);
     const resolvedShape = resolveButtonShape({
       shape,
       iconOnly,
       hasText: hasText && !isLoading,
-      hasIcon,
+      hasIcon: hasLayoutIcon,
     });
 
-    let label: ReactNode = children;
+    let label: ReactNode = childText;
     if (isLoading && loadingLabel) {
       label = loadingLabel;
-    } else if (typeof children === 'string') {
-      label = formatButtonLabel(children, opensAnotherView);
+    } else if (childText) {
+      label = formatButtonLabel(childText, opensAnotherView);
     }
 
     const resolvedVariant =
@@ -108,6 +113,12 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>((incomingProps,
         {(hasText || isLoading) && (
           <span className={styles.content}>{label}</span>
         )}
+        {!isLoading &&
+          inlineIcons.map((icon, index) => (
+            <span key={index} className={styles.icon} aria-hidden="true">
+              {icon}
+            </span>
+          ))}
         {!isLoading && rightIcon && (
           <span className={styles.icon}>{rightIcon}</span>
         )}

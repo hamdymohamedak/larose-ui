@@ -1,6 +1,7 @@
 {
   "component": "Switch",
   "category": "Forms",
+  "package": "@larose-ui/react",
   "import": "import { Switch } from '@larose-ui/react';",
   "props": [
     {
@@ -51,21 +52,13 @@
       "composite": true
     },
     {
-      "id": "SwitchStory",
-      "title": "Switch",
-      "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"SwitchStory\" for full example.",
-      "composite": true
-    },
-    {
       "id": "Default",
       "title": "Default",
       "kind": "basic",
       "props": {
         "label": "Email notifications"
       },
-      "code": "<Switch\n  label=\"Email notifications\"\n>Example</Switch>"
+      "code": "import { Switch } from '@larose-ui/react';\n\n<Switch\n  label=\"Email notifications\"\n>Example</Switch>"
     },
     {
       "id": "Checked",
@@ -75,7 +68,7 @@
         "label": "Push notifications",
         "defaultChecked": true
       },
-      "code": "<Switch\n  label=\"Push notifications\"\n  defaultChecked\n>Example</Switch>"
+      "code": "import { Switch } from '@larose-ui/react';\n\n<Switch\n  label=\"Push notifications\"\n  defaultChecked\n>Example</Switch>"
     },
     {
       "id": "WithHint",
@@ -85,7 +78,7 @@
         "label": "Marketing emails",
         "hint": "Receive occasional product announcements"
       },
-      "code": "<Switch\n  label=\"Marketing emails\"\n  hint=\"Receive occasional product announcements\"\n>Example</Switch>"
+      "code": "import { Switch } from '@larose-ui/react';\n\n<Switch\n  label=\"Marketing emails\"\n  hint=\"Receive occasional product announcements\"\n>Example</Switch>"
     },
     {
       "id": "Disabled",
@@ -95,7 +88,7 @@
         "label": "Beta features",
         "disabled": true
       },
-      "code": "<Switch\n  label=\"Beta features\"\n  disabled\n>Example</Switch>"
+      "code": "import { Switch } from '@larose-ui/react';\n\n<Switch\n  label=\"Beta features\"\n  disabled\n>Example</Switch>"
     },
     {
       "id": "SettingsStyle",

@@ -1,5 +1,12 @@
+import { Children, type ReactNode } from 'react';
 import type { ButtonShape } from './types';
-import type { ReactNode } from 'react';
+
+export interface SplitButtonChildrenResult {
+  /** Trimmed text label, if any. */
+  text: string | null;
+  /** Non-text nodes (e.g. inline SVG icons) rendered after the label. */
+  inlineIcons: ReactNode[];
+}
 
 export function formatButtonLabel(label: string, opensAnotherView = false): string {
   const trimmed = label.trim();
@@ -29,5 +36,26 @@ export function hasTextContent(children: ReactNode): boolean {
   if (Array.isArray(children)) {
     return children.some((child) => hasTextContent(child));
   }
-  return true;
+  return splitButtonChildren(children).text !== null;
+}
+
+/** Split mixed button children into a stable text label and trailing inline icons. */
+export function splitButtonChildren(children: ReactNode): SplitButtonChildrenResult {
+  const inlineIcons: ReactNode[] = [];
+  const textParts: string[] = [];
+
+  for (const child of Children.toArray(children)) {
+    if (typeof child === 'string' || typeof child === 'number') {
+      const trimmed = String(child).trim();
+      if (trimmed) textParts.push(trimmed);
+      continue;
+    }
+
+    inlineIcons.push(child);
+  }
+
+  return {
+    text: textParts.length > 0 ? textParts.join(' ') : null,
+    inlineIcons,
+  };
 }

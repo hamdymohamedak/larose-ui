@@ -1,0 +1,113 @@
+{
+  "component": "LiquidGlassCheckbox",
+  "category": "Glass",
+  "package": "@larose-ui/react",
+  "import": "import { LiquidGlassCheckbox } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "'aria-label'",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "borderRadius",
+      "type": "number",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "checkColor",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "checked",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "checkedTint",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "defaultChecked",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "label",
+      "type": "ReactNode",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "labelColor",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "size",
+      "type": "number",
+      "required": false,
+      "description": "Box size in px.",
+      "inherited": false
+    }
+  ],
+  "examples": [
+    {
+      "id": "CheckboxDefault",
+      "title": "Checkbox Default",
+      "kind": "basic",
+      "props": {},
+      "code": "<Checkbox label=\"I agree to the terms\" hint=\"Required before submitting\" />",
+      "composite": true
+    }
+  ],
+  "accessibility": [
+    "Supports ARIA attributes via standard HTML element props."
+  ],
+  "anatomy": {
+    "summary": "Checkbox with glass box, animated checkmark, and optional label.",
+    "structure": [
+      "Glass box",
+      "Check icon",
+      "Label"
+    ],
+    "composition": "Use in settings panels on glass or aurora backgrounds.",
+    "slots": [
+      "label"
+    ],
+    "states": [
+      "unchecked",
+      "checked",
+      "disabled"
+    ]
+  },
+  "playground": {
+    "label": {
+      "control": "text",
+      "default": "Enable liquid glass"
+    },
+    "defaultChecked": {
+      "control": "boolean",
+      "default": true
+    },
+    "disabled": {
+      "control": "boolean",
+      "default": false
+    }
+  }
+}

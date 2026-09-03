@@ -1,0 +1,11 @@
+{
+  "component": "LIQUID_GLASS_PRESETS",
+  "category": "Other",
+  "package": "@larose-ui/react",
+  "import": "import { LIQUID_GLASS_PRESETS } from '@larose-ui/react';",
+  "props": [],
+  "examples": [],
+  "accessibility": [],
+  "anatomy": null,
+  "playground": null
+}

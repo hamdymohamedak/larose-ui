@@ -1,6 +1,7 @@
 {
   "component": "Draggable",
   "category": "DragDrop",
+  "package": "@larose-ui/react",
   "import": "import { Draggable } from '@larose-ui/react';",
   "props": [
     {

@@ -3,6 +3,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { extractComponentContracts, listComponentNames } from './lib/extract-component-api.mjs';
 import { COMPONENT_ANATOMY } from './lib/docs-metadata.mjs';
+import { isGlassDocComponent } from './lib/glass-components.mjs';
 import {
   compareComponentContracts,
   validateComponentContractSchema,
@@ -31,18 +32,15 @@ if (canonicalFiles.length === 0) {
 const names = listComponentNames(root);
 const liveContracts = extractComponentContracts(root, names, COMPONENT_ANATOMY, 'react');
 
-const glassIndexPath = join(root, 'packages/glass/src/react/index.ts');
+const liquidGlassIndexPath = join(root, 'packages/react/src/LiquidGlass/index.ts');
 const glassNames = canonicalFiles
   .map((file) => file.replace(/\.json$/, ''))
-  .filter((name) => {
-    const canonical = JSON.parse(readFileSync(join(componentsDir, `${name}.json`), 'utf8'));
-    return canonical.package === '@larose-ui/glass/react';
-  });
+  .filter(isGlassDocComponent);
 
 if (glassNames.length > 0) {
   Object.assign(
     liveContracts,
-    extractComponentContracts(root, glassNames, COMPONENT_ANATOMY, 'react', glassIndexPath),
+    extractComponentContracts(root, glassNames, COMPONENT_ANATOMY, 'react', liquidGlassIndexPath),
   );
 }
 

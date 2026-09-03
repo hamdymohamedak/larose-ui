@@ -1,0 +1,8 @@
+{
+  "name": "MAX_TOOLBAR_TITLE_LENGTH",
+  "version": "1",
+  "framework": "react",
+  "props": [],
+  "events": [],
+  "keyboard": {}
+}

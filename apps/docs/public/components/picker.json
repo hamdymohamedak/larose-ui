@@ -1,0 +1,183 @@
+{
+  "component": "Picker",
+  "category": "Forms",
+  "package": "@larose-ui/react",
+  "import": "import { Picker } from '@larose-ui/react';",
+  "props": [
+    {
+      "name": "'aria-label'",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "columns",
+      "type": "PickerColumn[]",
+      "required": true,
+      "inherited": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "inherited": false
+    },
+    {
+      "name": "error",
+      "type": "string | null",
+      "required": false,
+      "default": "null",
+      "inherited": false
+    },
+    {
+      "name": "formatValue",
+      "type": "(value: PickerValue, columns: PickerColumn[]) => string",
+      "required": false,
+      "default": "defaultFormatValue",
+      "description": "Formats the compact trigger label from the current value.",
+      "inherited": false
+    },
+    {
+      "name": "hint",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "inputSize",
+      "type": "Size",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "loading",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "inherited": false
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "required": false,
+      "default": "'Select'",
+      "description": "Shown on the compact trigger when no selection exists.",
+      "inherited": false
+    },
+    {
+      "name": "state",
+      "type": "UIState",
+      "required": false,
+      "inherited": false
+    },
+    {
+      "name": "value",
+      "type": "PickerValue",
+      "required": true,
+      "inherited": false
+    }
+  ],
+  "examples": [
+    {
+      "id": "WheelStyle",
+      "title": "Wheels (multipart)",
+      "kind": "advanced",
+      "props": {},
+      "code": "<Picker\n        label=\"Country\"\n        style=\"wheels\"\n        columns={[{ id: 'country', label: 'Country', options: countries }]}\n        value={value}\n        onChange={setValue}\n      />",
+      "composite": true
+    },
+    {
+      "id": "CompactStyle",
+      "title": "Compact (popover)",
+      "kind": "advanced",
+      "props": {},
+      "code": "<Picker\n        label=\"Country\"\n        style=\"compact\"\n        columns={[{ id: 'country', label: 'Country', options: countries }]}\n        value={value}\n        onChange={setValue}\n      />",
+      "composite": true
+    },
+    {
+      "id": "DateWheels",
+      "title": "Date (wheels)",
+      "kind": "advanced",
+      "props": {},
+      "code": "<DateTimePicker\n        label=\"Due date\"\n        mode=\"date\"\n        style=\"wheels\"\n        value={value}\n        onChange={setValue}\n      />",
+      "composite": true
+    },
+    {
+      "id": "DateCompact",
+      "title": "Date (compact calendar)",
+      "kind": "advanced",
+      "props": {},
+      "code": "<DateTimePicker\n        label=\"Event date\"\n        mode=\"date\"\n        style=\"compact\"\n        value={value}\n        onChange={setValue}\n      />",
+      "composite": true
+    },
+    {
+      "id": "DateInline",
+      "title": "Date (inline calendar)",
+      "kind": "advanced",
+      "props": {},
+      "code": "<DateTimePicker\n        label=\"Trip date\"\n        mode=\"date\"\n        style=\"inline\"\n        value={value}\n        onChange={setValue}\n      />",
+      "composite": true
+    },
+    {
+      "id": "TimeWheels",
+      "title": "Time (wheels)",
+      "kind": "advanced",
+      "props": {},
+      "code": "<DateTimePicker\n        label=\"Meeting time\"\n        mode=\"time\"\n        style=\"wheels\"\n        minuteInterval={15}\n        value={value}\n        onChange={setValue}\n      />",
+      "composite": true
+    },
+    {
+      "id": "DateAndTimeCompact",
+      "title": "Date and time (compact)",
+      "kind": "advanced",
+      "props": {},
+      "code": "<DateTimePicker\n        label=\"Appointment\"\n        mode=\"datetime\"\n        style=\"compact\"\n        minuteInterval={5}\n        value={value}\n        onChange={setValue}\n      />",
+      "composite": true
+    },
+    {
+      "id": "CountdownTimer",
+      "title": "Countdown timer",
+      "kind": "advanced",
+      "props": {},
+      "code": "<DateTimePicker\n        label=\"Timer\"\n        mode=\"countdown\"\n        style=\"wheels\"\n        minuteInterval={1}\n        value={value}\n        onChange={setValue}\n      />",
+      "composite": true
+    },
+    {
+      "id": "LowLevelWheelPicker",
+      "title": "WheelPicker (low-level)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"LowLevelWheelPicker\" for full example.",
+      "composite": true
+    }
+  ],
+  "accessibility": [
+    "Supports ARIA attributes via standard HTML element props."
+  ],
+  "anatomy": {
+    "summary": "Picker covers date/time selection with wheel and calendar variants.",
+    "structure": [
+      "Picker",
+      "Trigger",
+      "Panel",
+      "CalendarGrid / WheelColumn"
+    ],
+    "composition": "Choose the picker variant matching platform expectations.",
+    "slots": [
+      "label",
+      "value"
+    ],
+    "states": [
+      "closed",
+      "open"
+    ]
+  },
+  "playground": null
+}
