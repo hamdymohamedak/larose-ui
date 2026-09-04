@@ -5,9 +5,9 @@
   "type": "module",
   "description": "Playwright critical-flow parity across React / Vue / Svelte sandboxes.",
   "scripts": {
-    "test": "playwright test",
+    "test:e2e": "playwright test",
     "test:ui": "playwright test --ui",
-    "install:browsers": "playwright install chromium"
+    "install:browsers": "playwright install --with-deps chromium"
   },
   "devDependencies": {
     "@playwright/test": "^1.51.0",

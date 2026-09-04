@@ -47,7 +47,7 @@ jobs:
         run: pnpm test
 
       - name: Install Playwright Chromium
-        run: pnpm --filter @larose-ui/sandbox-e2e exec playwright install --with-deps chromium
+        run: pnpm --filter @larose-ui/sandbox-e2e run install:browsers
 
       - name: Cross-framework parity E2E
         run: pnpm test:parity

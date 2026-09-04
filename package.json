@@ -34,7 +34,7 @@
     "sandbox:react": "pnpm --filter @larose-ui/sandbox-react dev",
     "sandbox:vue": "pnpm --filter @larose-ui/sandbox-vue dev",
     "sandbox:svelte": "pnpm --filter @larose-ui/sandbox-svelte dev",
-    "test:parity": "pnpm --filter @larose-ui/sandbox-e2e test",
+    "test:parity": "pnpm --filter @larose-ui/sandbox-e2e test:e2e",
     "demo": "pnpm --filter @larose-ui/sandbox-react dev",
     "webdocs": "pnpm --filter @larose-ui/docs dev",
     "webdocs:build": "pnpm --filter @larose-ui/docs build",
