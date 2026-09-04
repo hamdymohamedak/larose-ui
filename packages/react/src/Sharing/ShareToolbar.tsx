@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from 'react';
+import { useState, type CSSProperties, type ReactNode } from 'react';
 import { ShareButton } from './ShareButton';
 import { ShareSheet } from './ShareSheet';
 import { CollaborationButton } from './CollaborationButton';
@@ -29,6 +29,8 @@ export interface ShareToolbarProps {
   onMessage?: () => void;
   onVideo?: () => void;
   trailing?: ReactNode;
+  className?: string;
+  style?: CSSProperties;
 }
 
 const defaultShareSettings: ShareSettings = {
@@ -56,6 +58,8 @@ export function ShareToolbar({
   onMessage,
   onVideo,
   trailing,
+  className,
+  style,
 }: ShareToolbarProps) {
   const [shareOpen, setShareOpen] = useState(false);
   const [settings, setSettings] = useState(shareSettings);
@@ -66,7 +70,7 @@ export function ShareToolbar({
   };
 
   return (
-    <div className={styles.toolbar}>
+    <div className={[styles.toolbar, className].filter(Boolean).join(' ')} style={style}>
       <ShareButton onClick={() => setShareOpen(true)} />
 
       {collaborating && (

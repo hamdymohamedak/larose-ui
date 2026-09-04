@@ -1,7 +1,7 @@
 {
   "name": "AsyncButton",
   "version": "1",
-  "framework": "react",
+  "framework": "neutral",
   "props": [
     {
       "name": "action",

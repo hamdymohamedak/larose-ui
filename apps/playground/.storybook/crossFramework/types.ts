@@ -1,8 +1,9 @@
 import type { ArgTypes } from '@storybook/react';
 import type { ReactNode } from 'react';
 import type { Density, ThemeMode } from '@larose-ui/core';
+import type { StorybookFramework } from './frameworkSupport';
 
-export type StorybookFramework = 'react' | 'vue' | 'svelte';
+export type { StorybookFramework } from './frameworkSupport';
 
 export interface CrossFrameworkProviderContext {
   theme: ThemeMode;
@@ -34,12 +35,4 @@ export interface CrossFrameworkComponentDefinition {
     slotText: string | undefined,
     ctx: CrossFrameworkProviderContext,
   ) => ReactNode;
-}
-
-export function pickSupportedFramework(
-  requested: StorybookFramework,
-  supported: StorybookFramework[],
-): StorybookFramework {
-  if (supported.includes(requested)) return requested;
-  return supported.includes('react') ? 'react' : supported[0]!;
 }

@@ -31,20 +31,20 @@ pnpm run doctor   # quality gates
 ### Install
 
 ```bash
-pnpm add @larose-ui/runtime @larose-ui/react @larose-ui/tokens
+pnpm add @larose-ui/runtime-react @larose-ui/react @larose-ui/tokens
 ```
 
 Add intelligence packages as needed:
 
 ```bash
-pnpm add @larose-ui/data @larose-ui/forms @larose-ui/permissions
-pnpm add @larose-ui/observability @larose-ui/enterprise @larose-ui/ai
+pnpm add @larose-ui/data-react @larose-ui/forms-react @larose-ui/permissions-react
+pnpm add @larose-ui/observability-react @larose-ui/enterprise-react @larose-ui/ai-react
 ```
 
 ### Minimal app
 
 ```tsx
-import { LaRoseProvider } from '@larose-ui/runtime';
+import { LaRoseProvider } from '@larose-ui/runtime-react';
 import { Button, Card, Input } from '@larose-ui/react';
 import '@larose-ui/tokens/styles.css';
 
@@ -60,11 +60,11 @@ export function App() {
 }
 ```
 
-Toasts are available via `@larose-ui/runtime/toast`:
+Toasts are available via `@larose-ui/runtime-react/toast`:
 
 ```tsx
-import { LaRoseProvider } from '@larose-ui/runtime';
-import { useToast } from '@larose-ui/runtime/toast';
+import { LaRoseProvider } from '@larose-ui/runtime-react';
+import { useToast } from '@larose-ui/runtime-react/toast';
 
 function SaveButton() {
   const { toast } = useToast();
@@ -84,16 +84,16 @@ function SaveButton() {
 
 | Layer | Package | Key APIs |
 |-------|---------|----------|
-| Runtime | `@larose-ui/runtime` | `LaRoseProvider`, theme, i18n, network, offline, `useRuntime` |
-| Runtime toasts | `@larose-ui/runtime/toast` | `useToast`, `ToastProvider` |
+| Runtime | `@larose-ui/runtime-react` | `LaRoseProvider`, theme, i18n, network, offline, `useRuntime` |
+| Runtime toasts | `@larose-ui/runtime-react/toast` | `useToast`, `ToastProvider` |
 | Components | `@larose-ui/react` | Button, Input, Modal, Dialog, Card, … |
-| Permissions | `@larose-ui/permissions` | `<Can>`, `<Permission>`, `<Explainable>` |
-| Data | `@larose-ui/data` | `useQuery`, `DataView`, `SelfHealingError`, `useUndo` |
-| Forms | `@larose-ui/forms` | `<Form schema={...} />` |
-| Observability | `@larose-ui/observability` | `ObservedForm`, funnel metrics |
-| Enterprise | `@larose-ui/enterprise` | `AuditedInput`, `VersionProvider`, `SessionGuard` |
-| AI | `@larose-ui/ai` | `SmartTable`, `SmartForm`, custom `AIAdapter` |
-| DevTools | `@larose-ui/devtools` | `<DevToolsProvider />` (dev only) |
+| Permissions | `@larose-ui/permissions-react` | `<Can>`, `<Permission>`, `<Explainable>` |
+| Data | `@larose-ui/data-react` | `useQuery`, `DataView`, `SelfHealingError`, `useUndo` |
+| Forms | `@larose-ui/forms-react` | `<Form schema={...} />` |
+| Observability | `@larose-ui/observability-react` | `ObservedForm`, funnel metrics |
+| Enterprise | `@larose-ui/enterprise-react` | `AuditedInput`, `VersionProvider`, `SessionGuard` |
+| AI | `@larose-ui/ai-react` | `SmartTable`, `SmartForm`, custom `AIAdapter` |
+| DevTools | `@larose-ui/devtools-react` | `<DevToolsProvider />` (dev only) |
 
 See `apps/playground/stories/EmployeeCRUD.stories.tsx` for a full CRUD example with `DataView`, `Can`, `Form`, and `useUndo`.
 
@@ -108,31 +108,35 @@ pnpm dev   # http://localhost:6006
 | Package | Description |
 |---------|-------------|
 | `@larose-ui/core` | Types, async state machines, error classification |
+| `@larose-ui/liquid-glass-core` | Shared Liquid Glass optics / displacement engine |
+| `@larose-ui/component-logic` | Shared component utils / HIG helpers (framework-agnostic) |
+| `@larose-ui/forms-core` | Framework-agnostic form schema helpers |
+| `@larose-ui/data-core` | Framework-agnostic `apiFetch` client |
 | `@larose-ui/tokens` | Runtime design tokens with density and theming |
 | `@larose-ui/themes` | Named theme presets and tenant branding |
 | `@larose-ui/react` | React components with production UI states |
 | `@larose-ui/network` | Network condition detection (online/offline/slow) |
 | `@larose-ui/offline` | Offline request queue with sync and conflict handling |
-| `@larose-ui/runtime` | Provider tree — theme, i18n, network, offline, responsive |
-| `@larose-ui/permissions` | Can, Permission, RBAC/ABAC authorization UI |
-| `@larose-ui/data` | useQuery, useMutation, DataView, self-healing errors, undo |
-| `@larose-ui/forms` | Schema-driven forms with conditional fields |
-| `@larose-ui/observability` | Event tracking, funnel metrics, rage click detection |
+| `@larose-ui/runtime-react` | Provider tree — theme, i18n, network, offline, responsive |
+| `@larose-ui/permissions-react` | Can, Permission, RBAC/ABAC authorization UI |
+| `@larose-ui/data-react` | useQuery, useMutation, DataView, self-healing errors, undo |
+| `@larose-ui/forms-react` | Schema-driven forms with conditional fields |
+| `@larose-ui/observability-react` | Event tracking, funnel metrics, rage click detection |
 | `@larose-ui/contracts` | UI/API contract validation |
 | `@larose-ui/migration` | Deprecation scanning and migration reports |
-| `@larose-ui/testing` | `renderWithLaRose()`, test matrix utilities |
+| `@larose-ui/testing-react` | `renderWithLaRose()`, test matrix utilities |
 | `@larose-ui/cli` | `larose doctor`, `migrate`, `generate` |
-| `@larose-ui/devtools` | In-app runtime inspector (dev only) |
-| `@larose-ui/enterprise` | Audit trails, version compatibility, UI schema IaC |
-| `@larose-ui/ai` | SmartTable, SmartForm, pluggable AI adapters |
+| `@larose-ui/devtools-react` | In-app runtime inspector (dev only) |
+| `@larose-ui/enterprise-react` | Audit trails, version compatibility, UI schema IaC |
+| `@larose-ui/ai-react` | SmartTable, SmartForm, pluggable AI adapters |
 | `@larose-ui/accessibility` | Component source a11y scanner |
 
 ## Usage
 
 ```tsx
-import { LaRoseProvider } from '@larose-ui/runtime';
-import { DataView } from '@larose-ui/data';
-import { Can } from '@larose-ui/permissions';
+import { LaRoseProvider } from '@larose-ui/runtime-react';
+import { DataView } from '@larose-ui/data-react';
+import { Can } from '@larose-ui/permissions-react';
 import { Button, Card } from '@larose-ui/react';
 import '@larose-ui/tokens/styles.css';
 
@@ -195,7 +199,7 @@ pnpm run doctor           # verify after migration
 
 Common v1.0 changes:
 
-- Import `LaRoseProvider` from `@larose-ui/runtime` (not `@larose-ui/react`)
+- Import `LaRoseProvider` from `@larose-ui/runtime-react` (not `@larose-ui/react`)
 - Rename `--ui-color-*` tokens to `--lr-color-*`
 - Replace inline role checks with `<Can permission="...">`
 

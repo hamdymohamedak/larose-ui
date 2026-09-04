@@ -12,7 +12,7 @@ import {
   SidebarNav,
   Typography,
 } from '@larose-ui/react';
-import { LaRoseProvider } from '@larose-ui/runtime';
+import { LaRoseProvider } from '@larose-ui/runtime-react';
 
 function RefinedShell({ children }: { children: ReactNode }) {
   return (
@@ -33,6 +33,7 @@ function RefinedShell({ children }: { children: ReactNode }) {
 }
 
 const meta: Meta = {
+  tags: ['fw-react'],
   title: 'Design System/Refined Theme',
   parameters: { layout: 'fullscreen', laRose: { standalone: true } },
 };

@@ -14,6 +14,15 @@ describe('getTokens', () => {
     expect(tokens.colors.primary).toBe('#0a84ff');
   });
 
+  it('includes dark chrome tokens in CSS variables', () => {
+    const vars = tokensToCSSVariables(getTokens('dark'), 'comfortable', 'dark');
+    expect(vars['--lr-toolbar-bg']).toBe('rgb(30 30 30 / 0.72)');
+    expect(vars['--lr-sidebar-fg']).toBe('#f5f5f7');
+    expect(vars['--lr-menu-backdrop']).toBe('rgb(0 0 0 / 0.45)');
+    expect(vars['--lr-dock-bg']).toBe('rgb(44 44 46 / 0.72)');
+    expect(vars['--lr-color-on-accent']).toBe('#ffffff');
+  });
+
   it('includes button tokens in CSS variables', () => {
     const vars = tokensToCSSVariables(getTokens('light'), 'comfortable', 'light');
     expect(vars['--lr-button-height-md']).toBe('2.75rem');

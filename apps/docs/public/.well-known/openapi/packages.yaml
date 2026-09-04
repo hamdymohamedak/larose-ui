@@ -34,9 +34,7 @@ paths:
               - contracts
               - core
               - data
-              - desktop-core
               - devtools
-              - electron
               - enterprise
               - forms
               - migration
@@ -52,7 +50,6 @@ paths:
               - runtime-core
               - styles
               - svelte
-              - tauri
               - testing
               - themes
               - tokens

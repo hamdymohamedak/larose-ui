@@ -5,8 +5,15 @@ import {
   useId,
   useMemo,
   useState,
+  type CSSProperties,
+  type KeyboardEvent,
   type ReactNode,
 } from 'react';
+import {
+  createTabIds,
+  handleTabListKeyDown,
+  isTabSelected,
+} from '@larose-ui/primitives';
 import styles from '@larose-ui/styles/components/Tabs/Tabs.module.css';
 
 interface TabsContextValue {
@@ -31,6 +38,7 @@ export interface TabsProps {
   onValueChange?: (value: string) => void;
   children: ReactNode;
   className?: string;
+  style?: CSSProperties;
 }
 
 export function Tabs({
@@ -39,6 +47,7 @@ export function Tabs({
   onValueChange,
   children,
   className,
+  style,
 }: TabsProps) {
   const [internalValue, setInternalValue] = useState(defaultValue);
   const isControlled = value !== undefined;
@@ -64,19 +73,43 @@ export function Tabs({
 
   return (
     <TabsContext.Provider value={context}>
-      <div className={[styles.tabs, className].filter(Boolean).join(' ')}>{children}</div>
+      <div className={[styles.tabs, className].filter(Boolean).join(' ')} style={style}>
+        {children}
+      </div>
     </TabsContext.Provider>
   );
 }
 
 export interface TabsListProps {
   children: ReactNode;
+  className?: string;
+  style?: CSSProperties;
   'aria-label'?: string;
 }
 
-export function TabsList({ children, 'aria-label': ariaLabel = 'Tabs' }: TabsListProps) {
+export function TabsList({
+  children,
+  className,
+  style,
+  'aria-label': ariaLabel = 'Tabs',
+}: TabsListProps) {
+  const { value, onValueChange } = useTabsContext('TabsList');
+
+  const onKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    handleTabListKeyDown(event.nativeEvent, event.currentTarget, {
+      activeValue: value,
+      onValueChange,
+    });
+  };
+
   return (
-    <div className={styles.list} role="tablist" aria-label={ariaLabel}>
+    <div
+      className={[styles.list, className].filter(Boolean).join(' ')}
+      style={style}
+      role="tablist"
+      aria-label={ariaLabel}
+      onKeyDown={onKeyDown}
+    >
       {children}
     </div>
   );
@@ -86,24 +119,27 @@ export interface TabsTriggerProps {
   value: string;
   children: ReactNode;
   disabled?: boolean;
+  className?: string;
+  style?: CSSProperties;
 }
 
-export function TabsTrigger({ value, children, disabled }: TabsTriggerProps) {
+export function TabsTrigger({ value, children, disabled, className, style }: TabsTriggerProps) {
   const { value: activeValue, onValueChange, baseId } = useTabsContext('TabsTrigger');
-  const selected = activeValue === value;
-  const tabId = `${baseId}-tab-${value}`;
-  const panelId = `${baseId}-panel-${value}`;
+  const selected = isTabSelected(activeValue, value);
+  const { tabId, panelId } = createTabIds(baseId, value);
 
   return (
     <button
       type="button"
       id={tabId}
       role="tab"
-      className={styles.trigger}
+      className={[styles.trigger, className].filter(Boolean).join(' ')}
+      style={style}
       aria-selected={selected}
       aria-controls={panelId}
       tabIndex={selected ? 0 : -1}
       data-state={selected ? 'active' : 'inactive'}
+      data-value={value}
       disabled={disabled}
       onClick={() => onValueChange(value)}
     >
@@ -115,13 +151,14 @@ export function TabsTrigger({ value, children, disabled }: TabsTriggerProps) {
 export interface TabsPanelProps {
   value: string;
   children: ReactNode;
+  className?: string;
+  style?: CSSProperties;
 }
 
-export function TabsPanel({ value, children }: TabsPanelProps) {
+export function TabsPanel({ value, children, className, style }: TabsPanelProps) {
   const { value: activeValue, baseId } = useTabsContext('TabsPanel');
-  const selected = activeValue === value;
-  const tabId = `${baseId}-tab-${value}`;
-  const panelId = `${baseId}-panel-${value}`;
+  const selected = isTabSelected(activeValue, value);
+  const { tabId, panelId } = createTabIds(baseId, value);
 
   if (!selected) return null;
 
@@ -129,7 +166,8 @@ export function TabsPanel({ value, children }: TabsPanelProps) {
     <div
       id={panelId}
       role="tabpanel"
-      className={styles.panel}
+      className={[styles.panel, className].filter(Boolean).join(' ')}
+      style={style}
       aria-labelledby={tabId}
       tabIndex={0}
     >

@@ -56,17 +56,22 @@
       "id": "DatePickerDefault",
       "title": "Date Picker Default",
       "kind": "basic",
-      "props": {},
-      "code": "// See Storybook story \"DatePickerDefault\" for full example.",
-      "composite": true
+      "props": {
+        "label": "Start date",
+        "value": "2026-08-29",
+        "hint": "Uses native date input with laRose tokens"
+      },
+      "code": "import { DateTime } from '@larose-ui/react';\n\n<DateTime\n  label=\"Start date\"\n  value=\"2026-08-29\"\n  hint=\"Uses native date input with laRose tokens\"\n>Example</DateTime>"
     },
     {
       "id": "DatePickerError",
       "title": "Date Picker Error",
       "kind": "error",
-      "props": {},
-      "code": "// See Storybook story \"DatePickerError\" for full example.",
-      "composite": true
+      "props": {
+        "label": "Due date",
+        "error": "Due date is required"
+      },
+      "code": "import { DateTime } from '@larose-ui/react';\n\n<DateTime\n  label=\"Due date\"\n  error=\"Due date is required\"\n>Example</DateTime>"
     }
   ],
   "accessibility": [],

@@ -5,6 +5,7 @@ import {
   useId,
   useMemo,
   useState,
+  type CSSProperties,
   type ReactNode,
 } from 'react';
 import { Collapse } from '../Motion/Collapse';
@@ -45,6 +46,7 @@ export interface AccordionProps {
   onValueChange?: (value: string[]) => void;
   children: ReactNode;
   className?: string;
+  style?: CSSProperties;
 }
 
 export function Accordion({
@@ -55,6 +57,7 @@ export function Accordion({
   onValueChange,
   children,
   className,
+  style,
 }: AccordionProps) {
   const [internalValue, setInternalValue] = useState(defaultValue);
   const isControlled = value !== undefined;
@@ -100,7 +103,9 @@ export function Accordion({
 
   return (
     <AccordionContext.Provider value={context}>
-      <div className={[styles.accordion, className].filter(Boolean).join(' ')}>{children}</div>
+      <div className={[styles.accordion, className].filter(Boolean).join(' ')} style={style}>
+        {children}
+      </div>
     </AccordionContext.Provider>
   );
 }
@@ -109,12 +114,18 @@ export interface AccordionItemProps {
   value: string;
   children: ReactNode;
   disabled?: boolean;
+  className?: string;
+  style?: CSSProperties;
 }
 
-export function AccordionItem({ value, children, disabled }: AccordionItemProps) {
+export function AccordionItem({ value, children, disabled, className, style }: AccordionItemProps) {
   return (
     <AccordionItemContext.Provider value={value}>
-      <div className={styles.item} data-disabled={disabled ? 'true' : undefined}>
+      <div
+        className={[styles.item, className].filter(Boolean).join(' ')}
+        style={style}
+        data-disabled={disabled ? 'true' : undefined}
+      >
         {children}
       </div>
     </AccordionItemContext.Provider>
@@ -123,9 +134,11 @@ export function AccordionItem({ value, children, disabled }: AccordionItemProps)
 
 export interface AccordionTriggerProps {
   children: ReactNode;
+  className?: string;
+  style?: CSSProperties;
 }
 
-export function AccordionTrigger({ children }: AccordionTriggerProps) {
+export function AccordionTrigger({ children, className, style }: AccordionTriggerProps) {
   const itemValue = useAccordionItemContext('AccordionTrigger');
   const { openItems, toggleItem, baseId } = useAccordionContext('AccordionTrigger');
   const isOpen = openItems.has(itemValue);
@@ -136,7 +149,8 @@ export function AccordionTrigger({ children }: AccordionTriggerProps) {
     <button
       type="button"
       id={triggerId}
-      className={styles.trigger}
+      className={[styles.trigger, className].filter(Boolean).join(' ')}
+      style={style}
       aria-expanded={isOpen}
       aria-controls={panelId}
       data-state={isOpen ? 'open' : 'closed'}
@@ -152,9 +166,11 @@ export function AccordionTrigger({ children }: AccordionTriggerProps) {
 
 export interface AccordionContentProps {
   children: ReactNode;
+  className?: string;
+  style?: CSSProperties;
 }
 
-export function AccordionContent({ children }: AccordionContentProps) {
+export function AccordionContent({ children, className, style }: AccordionContentProps) {
   const itemValue = useAccordionItemContext('AccordionContent');
   const { openItems, baseId } = useAccordionContext('AccordionContent');
   const isOpen = openItems.has(itemValue);
@@ -166,7 +182,8 @@ export function AccordionContent({ children }: AccordionContentProps) {
       <div
         id={panelId}
         role="region"
-        className={styles.content}
+        className={[styles.content, className].filter(Boolean).join(' ')}
+        style={style}
         aria-labelledby={triggerId}
         data-state={isOpen ? 'open' : 'closed'}
       >

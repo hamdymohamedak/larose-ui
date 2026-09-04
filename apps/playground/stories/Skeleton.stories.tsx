@@ -4,7 +4,7 @@ import { Skeleton } from '@larose-ui/react';
 const meta: Meta<typeof Skeleton> = {
   title: 'Foundation/Skeleton',
   component: Skeleton,
-  tags: ['autodocs'],
+  tags: ['autodocs', 'fw-react', 'fw-vue', 'fw-svelte'],
 };
 
 export default meta;

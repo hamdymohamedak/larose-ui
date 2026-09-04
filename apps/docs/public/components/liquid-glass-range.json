@@ -95,9 +95,10 @@
       "id": "DateRangePickerDefault",
       "title": "Date Range Picker Default",
       "kind": "basic",
-      "props": {},
-      "code": "<DateRangeDemo />",
-      "composite": true
+      "props": {
+        "label": "Reporting period"
+      },
+      "code": "import { DateTime } from '@larose-ui/react';\n\n<DateTime\n  label=\"Reporting period\"\n>Example</DateTime>"
     }
   ],
   "accessibility": [

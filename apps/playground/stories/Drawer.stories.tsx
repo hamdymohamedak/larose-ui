@@ -5,7 +5,7 @@ import { Button, Drawer, Input } from '@larose-ui/react';
 const meta: Meta<typeof Drawer> = {
   title: 'Foundation/Drawer',
   component: Drawer,
-  tags: ['autodocs'],
+  tags: ['autodocs', 'fw-react', 'fw-vue', 'fw-svelte'],
   parameters: { layout: 'fullscreen' },
 };
 

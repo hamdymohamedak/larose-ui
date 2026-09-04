@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { LaRoseProvider } from '@larose-ui/runtime';
-import { SchemaRenderer, SensitiveAction, SessionGuard, notifySessionExpired } from '@larose-ui/enterprise';
+import { LaRoseProvider } from '@larose-ui/runtime-react';
+import { SchemaRenderer, SensitiveAction, SessionGuard, notifySessionExpired } from '@larose-ui/enterprise-react';
 import { Button, Card } from '@larose-ui/react';
 
 const employeeSchema = {
@@ -26,6 +26,7 @@ function SchemaDemo() {
 }
 
 const meta: Meta<typeof SchemaDemo> = {
+  tags: ['fw-react'],
   title: 'Enterprise/Schema',
   component: SchemaDemo,
   parameters: { laRose: { standalone: true } },

@@ -1,6 +1,6 @@
 # @larose-ui/next
 
-Thin Next.js / SSR integration for laRose UI. Components live in `@larose-ui/react` and `@larose-ui/runtime`.
+Thin Next.js / SSR integration for laRose UI. Components live in `@larose-ui/react` and `@larose-ui/runtime-react`.
 
 ## Exports
 

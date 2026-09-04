@@ -1,4 +1,4 @@
-import { useEffect, useState, type ReactNode } from 'react';
+import { useEffect, useState, type CSSProperties, type ReactNode } from 'react';
 import { useDragDropContext } from './DragDropContext';
 import type { DragItem, DropResult } from './types';
 import styles from '@larose-ui/styles/components/DragDrop/DragDrop.module.css';
@@ -11,6 +11,7 @@ export interface DropZoneProps<T = unknown> {
   onDrop: (result: DropResult<T>) => void | Promise<void>;
   children: ReactNode;
   className?: string;
+  style?: CSSProperties;
   showInvalidIndicator?: boolean;
   transferring?: boolean;
   transferringLabel?: string;
@@ -24,6 +25,7 @@ export function DropZone<T>({
   onDrop,
   children,
   className,
+  style,
   showInvalidIndicator = true,
   transferring = false,
   transferringLabel = 'Transferring…',
@@ -50,6 +52,7 @@ export function DropZone<T>({
     <div
       ref={setElement}
       className={[styles.dropZone, className].filter(Boolean).join(' ')}
+      style={style}
       data-state={state}
       data-disabled={disabled ? 'true' : undefined}
       aria-dropeffect={disabled ? 'none' : isActive ? 'move' : undefined}

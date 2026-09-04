@@ -13,6 +13,7 @@ export interface MenuTokens {
   shortcutColor: string;
   shortcutFontSize: string;
   shortcutSpacing: string;
+  backdropColor: string;
 }
 
 /**
@@ -34,6 +35,7 @@ export function getMenuTokens(mode: ThemeMode): MenuTokens {
       shortcutColor: 'rgb(255 255 255 / 0.45)',
       shortcutFontSize: '0.75rem',
       shortcutSpacing: '1.5rem',
+      backdropColor: 'rgb(0 0 0 / 0.45)',
     };
   }
 
@@ -50,6 +52,7 @@ export function getMenuTokens(mode: ThemeMode): MenuTokens {
     shortcutColor: 'rgb(0 0 0 / 0.45)',
     shortcutFontSize: '0.75rem',
     shortcutSpacing: '1.5rem',
+    backdropColor: 'rgb(0 0 0 / 0.12)',
   };
 }
 
@@ -67,5 +70,6 @@ export function menuTokensToCSSVariables(tokens: MenuTokens): Record<string, str
     '--lr-menu-shortcut-color': tokens.shortcutColor,
     '--lr-menu-shortcut-font-size': tokens.shortcutFontSize,
     '--lr-menu-shortcut-spacing': tokens.shortcutSpacing,
+    '--lr-menu-backdrop': tokens.backdropColor,
   };
 }

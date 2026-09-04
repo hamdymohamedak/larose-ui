@@ -81,25 +81,34 @@
       "id": "LargeLayout",
       "title": "Large (default)",
       "kind": "basic",
-      "props": {},
-      "code": "// See Storybook story \"LargeLayout\" for full example.",
-      "composite": true
+      "props": {
+        "open": true,
+        "layout": "large",
+        "title": "Edit"
+      },
+      "code": "import { Menu } from '@larose-ui/react';\n\n<Menu\n  open\n  layout=\"large\"\n  title=\"Edit\"\n>Example</Menu>"
     },
     {
       "id": "MediumLayout",
       "title": "Medium layout",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"MediumLayout\" for full example.",
-      "composite": true
+      "props": {
+        "open": true,
+        "layout": "medium",
+        "title": "Edit"
+      },
+      "code": "import { Menu } from '@larose-ui/react';\n\n<Menu\n  open\n  layout=\"medium\"\n  title=\"Edit\"\n>Example</Menu>"
     },
     {
       "id": "SmallLayout",
       "title": "Small layout",
       "kind": "variants",
-      "props": {},
-      "code": "<Menu layout=\"small\" open onOpenChange={() => undefined} entries={formatEntries} />",
-      "composite": true
+      "props": {
+        "open": true,
+        "layout": "small",
+        "title": "Edit"
+      },
+      "code": "import { Menu } from '@larose-ui/react';\n\n<Menu\n  open\n  layout=\"small\"\n  title=\"Edit\"\n>Example</Menu>"
     },
     {
       "id": "SubmenuAndToggles",

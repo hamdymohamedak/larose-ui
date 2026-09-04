@@ -250,7 +250,7 @@
 /* Destructive — filled (standalone prominent destructive actions) */
 .button[data-variant='destructive'] {
   background-color: var(--lr-button-destructive);
-  color: #ffffff;
+  color: var(--lr-button-on-primary-color);
 }
 
 .button[data-variant='destructive']:hover:not(:disabled) {

@@ -49,9 +49,10 @@
       "id": "SidebarDefault",
       "title": "Sidebar Default",
       "kind": "basic",
-      "props": {},
-      "code": "// See Storybook story \"SidebarDefault\" for full example.",
-      "composite": true
+      "props": {
+        "brand": "laRose"
+      },
+      "code": "import { AppShell } from '@larose-ui/react';\n\n<AppShell\n  brand=\"laRose\"\n>Example</AppShell>"
     },
     {
       "id": "AppShellLayout",
@@ -89,9 +90,11 @@
       "id": "PaginationDefault",
       "title": "Pagination Default",
       "kind": "basic",
-      "props": {},
-      "code": "<PaginationDemo />",
-      "composite": true
+      "props": {
+        "page": 1,
+        "totalPages": 12
+      },
+      "code": "import { DataDisplay } from '@larose-ui/react';\n\n<DataDisplay\n  page={1}\n  totalPages={12}\n>Example</DataDisplay>"
     },
     {
       "id": "Overview",

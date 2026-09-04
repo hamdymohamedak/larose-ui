@@ -30,9 +30,10 @@
       "id": "CollaborationButtonStory",
       "title": "Collaboration Button",
       "kind": "advanced",
-      "props": {},
-      "code": "<CollaborationButton collaborators={collaborators} />",
-      "composite": true
+      "props": {
+        "label": "Collaboration"
+      },
+      "code": "import { Collaboration&Sharing } from '@larose-ui/react';\n\n<Collaboration&Sharing\n  label=\"Collaboration\"\n>Example</Collaboration&Sharing>"
     }
   ],
   "accessibility": [],

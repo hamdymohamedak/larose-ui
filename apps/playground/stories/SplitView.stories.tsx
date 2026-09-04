@@ -55,6 +55,7 @@ function InspectorToggle() {
 
 const meta: Meta = {
   title: 'Foundation/Split Views',
+  tags: ['autodocs', 'fw-react'],
   parameters: { layout: 'padded' },
 };
 
@@ -62,6 +63,10 @@ export default meta;
 type Story = StoryObj;
 
 export const SidebarDetailInspector: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'splitView' } },
+  args: { orientation: 'horizontal', leftLabel: 'Mailboxes', rightLabel: 'Message' },
+
   name: 'Sidebar · content · inspector',
   render: function ThreePaneDemo() {
     const [selectedMailbox, setSelectedMailbox] = useState('inbox');
@@ -153,6 +158,10 @@ export const SidebarDetailInspector: Story = {
 };
 
 export const VerticalSplit: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'splitView' } },
+  args: { orientation: 'vertical', leftLabel: 'Navigator', rightLabel: 'Editor' },
+
   render: () => (
     <SplitView orientation="vertical" aria-label="Notes split view">
       <SplitViewPane id="navigator" label="Navigator" defaultSize={1}>
@@ -233,6 +242,10 @@ export const DragBetweenPanes: Story = {
 };
 
 export const CompactStack: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'splitView' } },
+  args: { orientation: 'horizontal', leftLabel: 'Mailboxes', rightLabel: 'Message' },
+
   render: function CompactDemo() {
     const [selected, setSelected] = useState('inbox');
     const label = mailboxes.find((mailbox) => mailbox.id === selected)?.label ?? 'Mailbox';

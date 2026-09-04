@@ -1,4 +1,4 @@
-import { useCallback, useLayoutEffect, useRef, useState } from 'react';
+import { useCallback, useLayoutEffect, useRef, useState, type CSSProperties } from 'react';
 import type { PickerColumn, PickerValue } from './types';
 import { columnsFromValues } from './utils';
 import { WheelColumn } from './WheelColumn';
@@ -14,6 +14,8 @@ export interface WheelPickerProps {
   inline?: boolean;
   /** Compact popover presentation — wheels fill the panel edge-to-edge. */
   compact?: boolean;
+  className?: string;
+  style?: CSSProperties;
   'aria-label'?: string;
 }
 
@@ -31,6 +33,8 @@ export function WheelPicker({
   disabled = false,
   inline = false,
   compact = false,
+  className,
+  style,
   'aria-label': ariaLabel = 'Picker',
 }: WheelPickerProps) {
   const probeRef = useRef<HTMLDivElement>(null);
@@ -73,7 +77,7 @@ export function WheelPicker({
 
   return (
     <WheelPickerRowHeightProvider value={rowHeight}>
-      <div className={wheelClassName} role="group" aria-label={ariaLabel}>
+      <div className={[wheelClassName, className].filter(Boolean).join(' ')} style={style} role="group" aria-label={ariaLabel}>
         <div ref={probeRef} className={styles.wheelMeasureProbe} aria-hidden="true">
           <div data-wheel-item="" className={styles.wheelItem}>
             <span className={styles.wheelItemLabel}>0</span>

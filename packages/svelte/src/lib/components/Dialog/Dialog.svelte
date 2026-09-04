@@ -16,6 +16,8 @@
     onclose?: () => void;
     onconfirm?: () => void;
     children?: Snippet;
+    class?: string;
+    style?: string;
   }
 
   let {
@@ -30,10 +32,12 @@
     onclose,
     onconfirm,
     children,
+    class: className,
+    style,
   }: Props = $props();
 </script>
 
-<Modal {open} {title} {description} {onclose}>
+<Modal {open} {title} {description} {onclose} class={className} {style}>
   {#if children}
     <div class={styles.body}>{@render children()}</div>
   {/if}

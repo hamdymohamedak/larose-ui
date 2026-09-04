@@ -73,25 +73,34 @@
       "id": "SafariRunning",
       "title": "Safari (running)",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"SafariRunning\" for full example.",
-      "composite": true
+      "props": {
+        "appName": "Safari",
+        "isRunning": true,
+        "open": true
+      },
+      "code": "import { DockMenu } from '@larose-ui/react';\n\n<DockMenu\n  appName=\"Safari\"\n  isRunning\n  open\n>Example</DockMenu>"
     },
     {
       "id": "MailRunning",
       "title": "Mail (running)",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"MailRunning\" for full example.",
-      "composite": true
+      "props": {
+        "appName": "Mail",
+        "isRunning": true,
+        "open": true
+      },
+      "code": "import { DockMenu } from '@larose-ui/react';\n\n<DockMenu\n  appName=\"Mail\"\n  isRunning\n  open\n>Example</DockMenu>"
     },
     {
       "id": "AppNotRunning",
       "title": "App not running",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"AppNotRunning\" for full example.",
-      "composite": true
+      "props": {
+        "appName": "Photos",
+        "isRunning": false,
+        "open": true
+      },
+      "code": "import { DockMenu } from '@larose-ui/react';\n\n<DockMenu\n  appName=\"Photos\"\n  isRunning={false}\n  open\n>Example</DockMenu>"
     },
     {
       "id": "HomeScreenQuickActionsStory",

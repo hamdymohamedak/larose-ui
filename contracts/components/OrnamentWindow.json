@@ -1,7 +1,7 @@
 {
   "name": "OrnamentWindow",
   "version": "1",
-  "framework": "react",
+  "framework": "neutral",
   "props": [
     {
       "name": "'aria-label'",
@@ -29,7 +29,7 @@
     },
     {
       "name": "ornament",
-      "type": "ReactNode",
+      "type": "Node",
       "required": false,
       "description": "Single ornament content (shortcut for one bottom ornament)."
     },

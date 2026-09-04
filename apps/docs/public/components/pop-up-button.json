@@ -68,17 +68,22 @@
       "id": "CalendarRepeat",
       "title": "Calendar repeat",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"CalendarRepeat\" for full example.",
-      "composite": true
+      "props": {
+        "label": "Repeat",
+        "value": "never"
+      },
+      "code": "import { PopUpButton } from '@larose-ui/react';\n\n<PopUpButton\n  label=\"Repeat\"\n  value=\"never\"\n>Example</PopUpButton>"
     },
     {
       "id": "WithDefault",
       "title": "Default selection",
       "kind": "basic",
-      "props": {},
-      "code": "<PopUpButton\n        label=\"Priority\"\n        options={[\n          { value: 'low', label: 'Low' },\n          { value: 'medium', label: 'Medium' },\n          { value: 'high', label: 'High' },\n        ]}\n        defaultValue=\"medium\"\n      />",
-      "composite": true
+      "props": {
+        "label": "Priority",
+        "value": "medium",
+        "defaultValue": "medium"
+      },
+      "code": "import { PopUpButton } from '@larose-ui/react';\n\n<PopUpButton\n  label=\"Priority\"\n  value=\"medium\"\n  defaultValue=\"medium\"\n>Example</PopUpButton>"
     },
     {
       "id": "DisabledOption",

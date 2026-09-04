@@ -43,7 +43,7 @@
   inset-inline: 0;
   bottom: 0;
   padding: var(--lr-space-4);
-  color: var(--lr-color-text-inverse);
+  color: var(--lr-color-on-accent, #ffffff);
   text-shadow: var(--lr-image-overlay-text-shadow);
 }
 

@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 import { EmptyState } from '../EmptyState/EmptyState';
 import { Skeleton } from '../Skeleton/Skeleton';
 import styles from '@larose-ui/styles/components/DataTable/DataTable.module.css';
@@ -23,6 +23,7 @@ export interface DataTableProps<T> {
   striped?: boolean;
   skeletonRows?: number;
   className?: string;
+  style?: CSSProperties;
 }
 
 function renderCell<T>(row: T, column: DataTableColumn<T>): ReactNode {
@@ -44,11 +45,13 @@ export function DataTable<T>({
   striped = false,
   skeletonRows = 3,
   className,
+  style,
 }: DataTableProps<T>) {
   if (loading) {
     return (
       <div
         className={[styles.wrapper, className].filter(Boolean).join(' ')}
+        style={style}
         data-state="loading"
         aria-busy="true"
         aria-label={ariaLabel ?? caption ?? 'Loading table'}
@@ -68,6 +71,7 @@ export function DataTable<T>({
     return (
       <div
         className={[styles.wrapper, className].filter(Boolean).join(' ')}
+        style={style}
         data-state="empty"
       >
         <div className={styles.empty}>
@@ -82,7 +86,7 @@ export function DataTable<T>({
   }
 
   return (
-    <div className={[styles.wrapper, className].filter(Boolean).join(' ')} data-state="ready">
+    <div className={[styles.wrapper, className].filter(Boolean).join(' ')} style={style} data-state="ready">
       <table className={styles.table} aria-label={ariaLabel}>
         {caption && <caption className={styles.caption}>{caption}</caption>}
         <thead>

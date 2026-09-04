@@ -9,9 +9,10 @@
       "id": "NowPlaying",
       "title": "Now Playing (bottom)",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"NowPlaying\" for full example.",
-      "composite": true
+      "props": {
+        "label": "Now Playing"
+      },
+      "code": "import { Ornament } from '@larose-ui/react';\n\n<Ornament\n  label=\"Now Playing\"\n>Example</Ornament>"
     },
     {
       "id": "ImmersiveHidden",

@@ -1,7 +1,7 @@
 {
   "name": "DisclosureButton",
   "version": "1",
-  "framework": "react",
+  "framework": "neutral",
   "props": [
     {
       "name": "'aria-label'",
@@ -16,7 +16,7 @@
     },
     {
       "name": "detail",
-      "type": "ReactNode",
+      "type": "Node",
       "required": false,
       "description": "Content revealed when expanded. Use only one disclosure button per view."
     },

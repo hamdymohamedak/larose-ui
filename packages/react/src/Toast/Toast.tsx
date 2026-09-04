@@ -4,6 +4,7 @@ import {
   useContext,
   useMemo,
   useState,
+  type CSSProperties,
   type ReactNode,
 } from 'react';
 import { createPortal } from 'react-dom';
@@ -11,6 +12,7 @@ import type { AlertVariant } from '../Alert/Alert';
 import { Presence } from '../Motion/Presence';
 import motionStyles from '@larose-ui/styles/components/Motion/motion.module.css';
 import styles from '@larose-ui/styles/components/Toast/Toast.module.css';
+import { getLaRosePortalTarget } from '@larose-ui/core';
 
 export type ToastVariant = AlertVariant;
 
@@ -19,6 +21,8 @@ export interface ToastInput {
   message: string;
   variant?: ToastVariant;
   duration?: number;
+  className?: string;
+  style?: CSSProperties;
 }
 
 export type ToastPlacement =
@@ -78,8 +82,7 @@ export function ToastProvider({
   return (
     <ToastContext.Provider value={value}>
       {children}
-      {createPortal(
-        <div
+      {createPortal(<div
           className={styles.viewport}
           data-placement={placement}
           aria-live="polite"
@@ -95,7 +98,7 @@ export function ToastProvider({
             />
           ))}
         </div>,
-        document.body,
+    getLaRosePortalTarget(),
       )}
     </ToastContext.Provider>
   );
@@ -127,7 +130,8 @@ function Toast({ item, placement, onDismiss, onExitComplete }: ToastProps) {
       onExitComplete={onExitComplete}
     >
       <div
-        className={[styles.toast, motionStyles.layoutItem].filter(Boolean).join(' ')}
+        className={[styles.toast, motionStyles.layoutItem, item.className].filter(Boolean).join(' ')}
+        style={item.style}
         data-variant={variant}
         data-placement={placement}
         role={variant === 'error' ? 'alert' : 'status'}

@@ -24,6 +24,7 @@ const moreEntries: MenuEntry[] = [
 
 const meta: Meta = {
   title: 'Foundation/Toolbars',
+  tags: ['autodocs', 'fw-react'],
   parameters: { layout: 'fullscreen' },
 };
 
@@ -31,6 +32,9 @@ export default meta;
 type Story = StoryObj;
 
 export const MacNotesStyle: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'toolbar' } },
+  args: { title: 'Notes', platform: 'macos' },
   name: 'macOS Notes (standard + More)',
   render: function MacToolbarDemo() {
     const [query, setQuery] = useState('');
@@ -98,6 +102,9 @@ export const MacNotesStyle: Story = {
 };
 
 export const IOSMailNavigation: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'toolbar' } },
+  args: { title: 'Inbox', platform: 'ios' },
   name: 'iOS navigation bar',
   render: () => (
     <Toolbar platform="ios" largeTitle aria-label="Inbox toolbar">
@@ -113,6 +120,9 @@ export const IOSMailNavigation: Story = {
 };
 
 export const VisionOSBottomBar: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'toolbar' } },
+  args: { title: 'Library', platform: 'visionos' },
   name: 'visionOS bottom toolbar',
   render: () => (
     <div style={{ minHeight: '16rem', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>

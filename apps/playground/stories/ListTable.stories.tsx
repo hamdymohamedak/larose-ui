@@ -63,6 +63,7 @@ const outlineData = [
 
 const meta: Meta = {
   title: 'Foundation/Lists & Tables',
+  tags: ['autodocs', 'fw-react'],
   parameters: { layout: 'padded' },
 };
 
@@ -70,6 +71,9 @@ export default meta;
 type Story = StoryObj;
 
 export const GroupedList: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'list' } },
+  args: { variant: 'grouped' },
   render: () => (
     <div style={{ maxWidth: '28rem' }}>
       <List aria-label="Settings">
@@ -86,6 +90,9 @@ export const GroupedList: Story = {
 };
 
 export const ListAccessories: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'list' } },
+  args: { variant: 'grouped' },
   render: () => (
     <Card title="Accessory types" padding="md">
       <List variant="plain">
@@ -109,6 +116,9 @@ export const ListAccessories: Story = {
 };
 
 export const SortableTable: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'table' } },
+  args: { caption: 'Team directory', selectedKey: '1' },
   render: function SortableTableDemo() {
     const [selectedKey, setSelectedKey] = useState('1');
     return (
@@ -146,6 +156,8 @@ export const SortableTable: Story = {
 };
 
 export const OutlineViewStory: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'outlineView' } },
   name: 'Outline view (legacy)',
   render: () => (
     <OutlineView data={outlineData} defaultExpandedIds={['docs', 'assets']} columns={['Kind', 'Size']} />

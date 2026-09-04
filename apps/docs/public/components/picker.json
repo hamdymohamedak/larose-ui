@@ -11,6 +11,13 @@
       "inherited": false
     },
     {
+      "name": "appearance",
+      "type": "PickerStyle",
+      "required": false,
+      "description": "Wheel vs compact appearance. Use with object `style` when you need both.",
+      "inherited": false
+    },
+    {
       "name": "columns",
       "type": "PickerColumn[]",
       "required": true,
@@ -89,17 +96,21 @@
       "id": "WheelStyle",
       "title": "Wheels (multipart)",
       "kind": "advanced",
-      "props": {},
-      "code": "<Picker\n        label=\"Country\"\n        style=\"wheels\"\n        columns={[{ id: 'country', label: 'Country', options: countries }]}\n        value={value}\n        onChange={setValue}\n      />",
-      "composite": true
+      "props": {
+        "label": "Country",
+        "appearance": "wheels"
+      },
+      "code": "import { Picker } from '@larose-ui/react';\n\n<Picker\n  label=\"Country\"\n  appearance=\"wheels\"\n>Example</Picker>"
     },
     {
       "id": "CompactStyle",
       "title": "Compact (popover)",
       "kind": "advanced",
-      "props": {},
-      "code": "<Picker\n        label=\"Country\"\n        style=\"compact\"\n        columns={[{ id: 'country', label: 'Country', options: countries }]}\n        value={value}\n        onChange={setValue}\n      />",
-      "composite": true
+      "props": {
+        "label": "Country",
+        "appearance": "compact"
+      },
+      "code": "import { Picker } from '@larose-ui/react';\n\n<Picker\n  label=\"Country\"\n  appearance=\"compact\"\n>Example</Picker>"
     },
     {
       "id": "DateWheels",

@@ -1,11 +1,11 @@
 {
   "name": "Label",
   "version": "1",
-  "framework": "react",
+  "framework": "neutral",
   "props": [
     {
       "name": "as",
-      "type": "ElementType",
+      "type": "ElementTag",
       "required": false
     },
     {

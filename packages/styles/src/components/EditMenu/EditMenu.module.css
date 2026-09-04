@@ -191,8 +191,8 @@
 }
 
 .selectionPreview[data-selected='true'] {
-  background: rgb(0 113 227 / 0.14);
-  outline: 1px solid rgb(0 113 227 / 0.35);
+  background: var(--lr-label-selection-bg);
+  outline: 1px solid color-mix(in srgb, var(--lr-color-primary) 35%, transparent);
 }
 
 @media (prefers-reduced-motion: reduce) {

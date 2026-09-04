@@ -17,7 +17,18 @@
       "inherited": false
     }
   ],
-  "examples": [],
+  "examples": [
+    {
+      "id": "BreadcrumbDefault",
+      "title": "Breadcrumb Default",
+      "kind": "basic",
+      "props": {
+        "label": "Home",
+        "href": "#"
+      },
+      "code": "import { DataDisplay } from '@larose-ui/react';\n\n<DataDisplay\n  label=\"Home\"\n  href=\"#\"\n>Example</DataDisplay>"
+    }
+  ],
   "accessibility": [
     "Supports ARIA attributes via standard HTML element props."
   ],

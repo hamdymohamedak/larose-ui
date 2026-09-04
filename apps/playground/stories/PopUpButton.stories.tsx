@@ -12,6 +12,7 @@ const repeatOptions = [
 
 const meta: Meta = {
   title: 'Foundation/Pop-up Buttons',
+  tags: ['autodocs', 'fw-react'],
   parameters: { layout: 'padded' },
 };
 
@@ -19,6 +20,13 @@ export default meta;
 type Story = StoryObj;
 
 export const CalendarRepeat: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'popUpButton' } },
+  args: {
+    label: "Repeat",
+    value: "never",
+  },
+
   name: 'Calendar repeat',
   render: function CalendarRepeatDemo() {
     const [repeat, setRepeat] = useState('never');
@@ -43,6 +51,15 @@ export const CalendarRepeat: Story = {
 };
 
 export const WithDefault: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'popUpButton' } },
+  args: {
+    label: "Priority",
+    value: "medium",
+    defaultValue: "medium",
+    options: [{"value": "low", "label": "Low"}, {"value": "medium", "label": "Medium"}, {"value": "high", "label": "High"}],
+  },
+
   name: 'Default selection',
   render: function DefaultDemo() {
     return (

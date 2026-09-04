@@ -1,4 +1,4 @@
-import { useEffect, useId, useState, type ReactNode } from 'react';
+import { useEffect, useId, useState, type CSSProperties, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import type {
   ShareAudience,
@@ -10,6 +10,7 @@ import type {
 import { formatSharePermissionSummary } from './utils';
 import { ChevronRightIcon } from './icons';
 import styles from '@larose-ui/styles/components/Sharing/Sharing.module.css';
+import { getLaRosePortalTarget } from '@larose-ui/core';
 
 export interface ShareSheetProps {
   open: boolean;
@@ -20,6 +21,8 @@ export interface ShareSheetProps {
   destinations?: ShareDestination[];
   permissionOptions?: SharePermissionOption[];
   footer?: ReactNode;
+  className?: string;
+  style?: CSSProperties;
 }
 
 const defaultDestinations: ShareDestination[] = [];
@@ -64,6 +67,8 @@ export function ShareSheet({
   destinations = defaultDestinations,
   permissionOptions = defaultPermissionOptions,
   footer,
+  className,
+  style,
 }: ShareSheetProps) {
   const titleId = useId();
   const [showPermissions, setShowPermissions] = useState(false);
@@ -91,8 +96,7 @@ export function ShareSheet({
     setShowPermissions(false);
   };
 
-  return createPortal(
-    <div
+  return createPortal(<div
       className={styles.sheetOverlay}
       role="presentation"
       onClick={(event) => {
@@ -100,7 +104,8 @@ export function ShareSheet({
       }}
     >
       <div
-        className={styles.sheet}
+        className={[styles.sheet, className].filter(Boolean).join(' ')}
+        style={style}
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
@@ -169,6 +174,6 @@ export function ShareSheet({
         {footer && <div className={styles.section}>{footer}</div>}
       </div>
     </div>,
-    document.body,
+    getLaRosePortalTarget(),
   );
 }

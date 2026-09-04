@@ -16,6 +16,7 @@ const sampleImage =
 
 const meta: Meta = {
   title: 'Foundation/Image Views',
+  tags: ['autodocs', 'fw-react'],
   parameters: { layout: 'padded' },
 };
 
@@ -23,6 +24,13 @@ export default meta;
 type Story = StoryObj;
 
 export const FitModes: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'imageView' } },
+  args: {
+    fit: "contain",
+    alt: "Sample contain",
+  },
+
   render: () => (
     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
       {(['contain', 'cover', 'fill'] as const).map((fit) => (
@@ -37,6 +45,9 @@ export const FitModes: Story = {
 };
 
 export const TextOverlay: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'imageView' } },
+  args: { alt: 'Product hero', fit: 'cover' },
   render: () => (
     <ImageOverlay
       src={sampleImage}
@@ -47,6 +58,9 @@ export const TextOverlay: Story = {
 };
 
 export const AnimatedSequence: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'imageView' } },
+  args: { alt: 'Loading animation', fit: 'contain' },
   render: () => (
     <Card title="Consistent frame dimensions" padding="md">
       <div style={{ height: '10rem' }}>
@@ -65,6 +79,9 @@ export const AnimatedSequence: Story = {
 
 export const ImageWellStory: Story = {
   name: 'Image Well',
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'imageWell' } },
+  args: { placeholder: 'Drop, paste, or click — press Delete to clear' },
   render: () => (
     <Card title="Editable image well" padding="md">
       <ImageWell label="Avatar" placeholder="Drop, paste, or click — press Delete to clear" />
@@ -74,6 +91,9 @@ export const ImageWellStory: Story = {
 
 export const ImageButtonStory: Story = {
   name: 'Image Button',
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'imageButton' } },
+  args: { src: sampleImage, alt: 'Open gallery' },
   render: () => (
     <ImageButton
       src={sampleImage}

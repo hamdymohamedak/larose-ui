@@ -12,6 +12,7 @@ IP: 192.168.1.42`;
 
 const meta: Meta = {
   title: 'Foundation/Text Views',
+  tags: ['autodocs', 'fw-react'],
   parameters: { layout: 'padded' },
 };
 
@@ -19,6 +20,14 @@ export default meta;
 type Story = StoryObj;
 
 export const ReadOnlySelectable: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'textView' } },
+  args: {
+    selectable: true,
+    value: "Release notes\\n\\nAutosave now preserves edits while you switch apps.",
+    maxHeight: "12rem",
+  },
+
   render: () => (
     <Card title="Selectable reference text" padding="md">
       <TextView selectable value={longCopy} maxHeight="12rem" />
@@ -30,6 +39,14 @@ export const ReadOnlySelectable: Story = {
 };
 
 export const Editable: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'textView' } },
+  args: {
+    editable: true,
+    value: "Write a longer note here…",
+    maxHeight: "14rem",
+  },
+
   render: function EditableDemo() {
     const [value, setValue] = useState('Write a longer note here…');
 

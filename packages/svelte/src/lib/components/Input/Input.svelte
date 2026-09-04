@@ -20,7 +20,12 @@
     inputSize?: Size;
     id?: string;
     type?: string;
+    autocomplete?: string;
+    spellcheck?: boolean;
+    placeholder?: string;
+    name?: string;
     class?: string;
+    style?: string;
     value?: string;
   }
 
@@ -36,7 +41,12 @@
     inputSize = 'md',
     id,
     type = 'text',
+    autocomplete,
+    spellcheck,
+    placeholder,
+    name,
     class: className,
+    style,
     value = $bindable(''),
   }: Props = $props();
 
@@ -53,6 +63,7 @@
     id,
     type,
     class: className,
+    style,
   }));
 
   let focused = $state(false);
@@ -77,6 +88,8 @@
   required={merged.required}
   htmlFor={inputId}
   uiState={uiState}
+  class={merged.class}
+  style={merged.style}
 >
   <div class={styles.inputContainer}>
     <div
@@ -90,6 +103,10 @@
         type={merged.type ?? 'text'}
         class={cn(styles.input, merged.class)}
         data-size={merged.inputSize ?? 'md'}
+        autocomplete={autocomplete as HTMLInputElement['autocomplete']}
+        spellcheck={spellcheck}
+        placeholder={placeholder}
+        name={name}
         bind:value
         disabled={merged.disabled || uiState === 'disabled'}
         readonly={merged.readOnly || uiState === 'readonly'}

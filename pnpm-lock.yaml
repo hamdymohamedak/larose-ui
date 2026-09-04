@@ -47,21 +47,21 @@ importers:
 
   apps/demo:
     dependencies:
-      '@larose-ui/data':
+      '@larose-ui/data-react':
         specifier: workspace:*
-        version: link:../../packages/data
-      '@larose-ui/forms':
+        version: link:../../packages/data-react
+      '@larose-ui/forms-react':
         specifier: workspace:*
-        version: link:../../packages/forms
-      '@larose-ui/permissions':
+        version: link:../../packages/forms-react
+      '@larose-ui/permissions-react':
         specifier: workspace:*
-        version: link:../../packages/permissions
+        version: link:../../packages/permissions-react
       '@larose-ui/react':
         specifier: workspace:*
         version: link:../../packages/react
-      '@larose-ui/runtime':
+      '@larose-ui/runtime-react':
         specifier: workspace:*
-        version: link:../../packages/runtime
+        version: link:../../packages/runtime-react
       '@larose-ui/tokens':
         specifier: workspace:*
         version: link:../../packages/tokens
@@ -96,9 +96,9 @@ importers:
       '@larose-ui/react':
         specifier: workspace:*
         version: link:../../packages/react
-      '@larose-ui/runtime':
+      '@larose-ui/runtime-react':
         specifier: workspace:*
-        version: link:../../packages/runtime
+        version: link:../../packages/runtime-react
       '@larose-ui/styles':
         specifier: workspace:*
         version: link:../../packages/styles
@@ -163,36 +163,36 @@ importers:
 
   apps/playground:
     dependencies:
-      '@larose-ui/ai':
+      '@larose-ui/ai-react':
         specifier: workspace:*
-        version: link:../../packages/ai
+        version: link:../../packages/ai-react
       '@larose-ui/core':
         specifier: workspace:*
         version: link:../../packages/core
-      '@larose-ui/data':
+      '@larose-ui/data-react':
         specifier: workspace:*
-        version: link:../../packages/data
-      '@larose-ui/devtools':
+        version: link:../../packages/data-react
+      '@larose-ui/devtools-react':
         specifier: workspace:*
-        version: link:../../packages/devtools
-      '@larose-ui/enterprise':
+        version: link:../../packages/devtools-react
+      '@larose-ui/enterprise-react':
         specifier: workspace:*
-        version: link:../../packages/enterprise
-      '@larose-ui/forms':
+        version: link:../../packages/enterprise-react
+      '@larose-ui/forms-react':
         specifier: workspace:*
-        version: link:../../packages/forms
-      '@larose-ui/observability':
+        version: link:../../packages/forms-react
+      '@larose-ui/observability-react':
         specifier: workspace:*
-        version: link:../../packages/observability
-      '@larose-ui/permissions':
+        version: link:../../packages/observability-react
+      '@larose-ui/permissions-react':
         specifier: workspace:*
-        version: link:../../packages/permissions
+        version: link:../../packages/permissions-react
       '@larose-ui/react':
         specifier: workspace:*
         version: link:../../packages/react
-      '@larose-ui/runtime':
+      '@larose-ui/runtime-react':
         specifier: workspace:*
-        version: link:../../packages/runtime
+        version: link:../../packages/runtime-react
       '@larose-ui/styles':
         specifier: workspace:*
         version: link:../../packages/styles
@@ -224,6 +224,12 @@ importers:
       '@storybook/addon-interactions':
         specifier: ^8.4.7
         version: 8.6.14(storybook@8.6.18(prettier@3.9.6))
+      '@storybook/core-events':
+        specifier: ^8.4.7
+        version: 8.6.14(storybook@8.6.18(prettier@3.9.6))
+      '@storybook/manager-api':
+        specifier: ^8.4.7
+        version: 8.6.18(storybook@8.6.18(prettier@3.9.6))
       '@storybook/react':
         specifier: ^8.4.7
         version: 8.6.18(@storybook/test@8.6.15(storybook@8.6.18(prettier@3.9.6)))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(storybook@8.6.18(prettier@3.9.6))(typescript@5.9.3)
@@ -248,6 +254,128 @@ importers:
       vite:
         specifier: ^6.0.3
         version: 6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)
+      vitest:
+        specifier: ^2.1.8
+        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
+
+  apps/sandbox-e2e:
+    devDependencies:
+      '@larose-ui/sandbox-shared':
+        specifier: workspace:*
+        version: link:../sandbox-shared
+      '@playwright/test':
+        specifier: ^1.51.0
+        version: 1.62.1
+
+  apps/sandbox-react:
+    dependencies:
+      '@larose-ui/react':
+        specifier: workspace:*
+        version: link:../../packages/react
+      '@larose-ui/runtime-react':
+        specifier: workspace:*
+        version: link:../../packages/runtime-react
+      '@larose-ui/sandbox-shared':
+        specifier: workspace:*
+        version: link:../sandbox-shared
+      '@larose-ui/styles':
+        specifier: workspace:*
+        version: link:../../packages/styles
+      '@larose-ui/tokens':
+        specifier: workspace:*
+        version: link:../../packages/tokens
+      react:
+        specifier: ^19.0.0
+        version: 19.2.8
+      react-dom:
+        specifier: ^19.0.0
+        version: 19.2.8(react@19.2.8)
+    devDependencies:
+      '@types/react':
+        specifier: ^19.0.0
+        version: 19.2.18
+      '@types/react-dom':
+        specifier: ^19.0.0
+        version: 19.2.5(@types/react@19.2.18)
+      '@vitejs/plugin-react':
+        specifier: ^4.3.4
+        version: 4.7.0(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+      vite:
+        specifier: ^6.0.3
+        version: 6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)
+
+  apps/sandbox-shared: {}
+
+  apps/sandbox-svelte:
+    dependencies:
+      '@larose-ui/runtime-svelte':
+        specifier: workspace:*
+        version: link:../../packages/runtime-svelte
+      '@larose-ui/sandbox-shared':
+        specifier: workspace:*
+        version: link:../sandbox-shared
+      '@larose-ui/styles':
+        specifier: workspace:*
+        version: link:../../packages/styles
+      '@larose-ui/svelte':
+        specifier: workspace:*
+        version: link:../../packages/svelte
+      '@larose-ui/tokens':
+        specifier: workspace:*
+        version: link:../../packages/tokens
+      svelte:
+        specifier: ^5.19.0
+        version: 5.57.0(@typescript-eslint/types@8.68.0)
+    devDependencies:
+      '@sveltejs/vite-plugin-svelte':
+        specifier: ^5.0.3
+        version: 5.1.1(svelte@5.57.0(@typescript-eslint/types@8.68.0))(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
+      svelte-check:
+        specifier: ^4.1.1
+        version: 4.7.6(picomatch@4.0.7)(svelte@5.57.0(@typescript-eslint/types@8.68.0))(typescript@5.9.3)
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+      vite:
+        specifier: ^6.0.3
+        version: 6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)
+
+  apps/sandbox-vue:
+    dependencies:
+      '@larose-ui/runtime-vue':
+        specifier: workspace:*
+        version: link:../../packages/runtime-vue
+      '@larose-ui/sandbox-shared':
+        specifier: workspace:*
+        version: link:../sandbox-shared
+      '@larose-ui/styles':
+        specifier: workspace:*
+        version: link:../../packages/styles
+      '@larose-ui/tokens':
+        specifier: workspace:*
+        version: link:../../packages/tokens
+      '@larose-ui/vue':
+        specifier: workspace:*
+        version: link:../../packages/vue
+      vue:
+        specifier: ^3.5.13
+        version: 3.5.42(typescript@5.9.3)
+    devDependencies:
+      '@vitejs/plugin-vue':
+        specifier: ^5.2.1
+        version: 5.2.4(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vue@3.5.42(typescript@5.9.3))
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+      vite:
+        specifier: ^6.0.3
+        version: 6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)
+      vue-tsc:
+        specifier: ^2.2.0
+        version: 2.2.12(typescript@5.9.3)
 
   packages/accessibility:
     dependencies:
@@ -265,20 +393,39 @@ importers:
         specifier: ^2.1.8
         version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
 
-  packages/ai:
+  packages/ai-core:
     dependencies:
-      '@larose-ui/forms':
+      '@larose-ui/core':
         specifier: workspace:*
-        version: link:../forms
-      '@larose-ui/permissions':
+        version: link:../core
+    devDependencies:
+      tsup:
+        specifier: ^8.3.5
+        version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+      vitest:
+        specifier: ^2.1.8
+        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
+
+  packages/ai-react:
+    dependencies:
+      '@larose-ui/ai-core':
         specifier: workspace:*
-        version: link:../permissions
+        version: link:../ai-core
+      '@larose-ui/forms-react':
+        specifier: workspace:*
+        version: link:../forms-react
+      '@larose-ui/permissions-react':
+        specifier: workspace:*
+        version: link:../permissions-react
       '@larose-ui/react':
         specifier: workspace:*
         version: link:../react
-      '@larose-ui/runtime':
+      '@larose-ui/runtime-react':
         specifier: workspace:*
-        version: link:../runtime
+        version: link:../runtime-react
     devDependencies:
       '@testing-library/jest-dom':
         specifier: ^6.6.3
@@ -311,6 +458,98 @@ importers:
         specifier: ^2.1.8
         version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
 
+  packages/ai-svelte:
+    dependencies:
+      '@larose-ui/ai-core':
+        specifier: workspace:*
+        version: link:../ai-core
+      '@larose-ui/forms-core':
+        specifier: workspace:*
+        version: link:../forms-core
+      '@larose-ui/forms-svelte':
+        specifier: workspace:*
+        version: link:../forms-svelte
+      '@larose-ui/permissions-svelte':
+        specifier: workspace:*
+        version: link:../permissions-svelte
+      '@larose-ui/runtime-svelte':
+        specifier: workspace:*
+        version: link:../runtime-svelte
+      '@larose-ui/svelte':
+        specifier: workspace:*
+        version: link:../svelte
+    devDependencies:
+      '@sveltejs/vite-plugin-svelte':
+        specifier: ^5.0.3
+        version: 5.1.1(svelte@5.57.0(@typescript-eslint/types@8.68.0))(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
+      jsdom:
+        specifier: ^25.0.1
+        version: 25.0.1
+      svelte:
+        specifier: ^5.19.0
+        version: 5.57.0(@typescript-eslint/types@8.68.0)
+      svelte-check:
+        specifier: ^4.1.1
+        version: 4.7.6(picomatch@4.0.7)(svelte@5.57.0(@typescript-eslint/types@8.68.0))(typescript@5.9.3)
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+      vite:
+        specifier: ^6.0.3
+        version: 6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)
+      vite-plugin-dts:
+        specifier: ^4.3.0
+        version: 4.5.4(@types/node@24.13.3)(rollup@4.63.1)(typescript@5.9.3)(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
+      vitest:
+        specifier: ^2.1.8
+        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
+
+  packages/ai-vue:
+    dependencies:
+      '@larose-ui/ai-core':
+        specifier: workspace:*
+        version: link:../ai-core
+      '@larose-ui/forms-core':
+        specifier: workspace:*
+        version: link:../forms-core
+      '@larose-ui/forms-vue':
+        specifier: workspace:*
+        version: link:../forms-vue
+      '@larose-ui/permissions-vue':
+        specifier: workspace:*
+        version: link:../permissions-vue
+      '@larose-ui/runtime-vue':
+        specifier: workspace:*
+        version: link:../runtime-vue
+      '@larose-ui/vue':
+        specifier: workspace:*
+        version: link:../vue
+    devDependencies:
+      '@vitejs/plugin-vue':
+        specifier: ^5.2.1
+        version: 5.2.4(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vue@3.5.42(typescript@5.9.3))
+      jsdom:
+        specifier: ^25.0.1
+        version: 25.0.1
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+      vite:
+        specifier: ^6.0.3
+        version: 6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)
+      vite-plugin-dts:
+        specifier: ^4.3.0
+        version: 4.5.4(@types/node@24.13.3)(rollup@4.63.1)(typescript@5.9.3)(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
+      vitest:
+        specifier: ^2.1.8
+        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
+      vue:
+        specifier: ^3.5.13
+        version: 3.5.42(typescript@5.9.3)
+      vue-tsc:
+        specifier: ^2.2.0
+        version: 2.2.12(typescript@5.9.3)
+
   packages/cli:
     dependencies:
       '@larose-ui/accessibility':
@@ -325,6 +564,28 @@ importers:
       '@larose-ui/quality-core':
         specifier: workspace:*
         version: link:../quality-core
+    devDependencies:
+      tsup:
+        specifier: ^8.3.5
+        version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+      vitest:
+        specifier: ^2.1.8
+        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
+
+  packages/component-logic:
+    dependencies:
+      '@larose-ui/core':
+        specifier: workspace:*
+        version: link:../core
+      '@larose-ui/primitives':
+        specifier: workspace:*
+        version: link:../primitives
+      '@larose-ui/tokens':
+        specifier: workspace:*
+        version: link:../tokens
     devDependencies:
       tsup:
         specifier: ^8.3.5
@@ -364,14 +625,33 @@ importers:
         specifier: ^2.1.8
         version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
 
-  packages/data:
+  packages/data-core:
     dependencies:
       '@larose-ui/core':
         specifier: workspace:*
         version: link:../core
-      '@larose-ui/permissions':
+    devDependencies:
+      tsup:
+        specifier: ^8.3.5
+        version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+      vitest:
+        specifier: ^2.1.8
+        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
+
+  packages/data-react:
+    dependencies:
+      '@larose-ui/core':
         specifier: workspace:*
-        version: link:../permissions
+        version: link:../core
+      '@larose-ui/data-core':
+        specifier: workspace:*
+        version: link:../data-core
+      '@larose-ui/permissions-react':
+        specifier: workspace:*
+        version: link:../permissions-react
     devDependencies:
       '@testing-library/jest-dom':
         specifier: ^6.6.3
@@ -401,79 +681,79 @@ importers:
         specifier: ^2.1.8
         version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
 
-  packages/desktop-core:
+  packages/data-svelte:
     dependencies:
       '@larose-ui/core':
         specifier: workspace:*
         version: link:../core
-      '@larose-ui/primitives':
+      '@larose-ui/data-core':
         specifier: workspace:*
-        version: link:../primitives
-      '@larose-ui/runtime-core':
-        specifier: workspace:*
-        version: link:../runtime-core
+        version: link:../data-core
     devDependencies:
-      tsup:
-        specifier: ^8.3.5
-        version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
+      '@sveltejs/vite-plugin-svelte':
+        specifier: ^5.0.3
+        version: 5.1.1(svelte@5.57.0(@typescript-eslint/types@8.68.0))(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
+      '@testing-library/svelte':
+        specifier: ^5.2.6
+        version: 5.4.2(svelte@5.57.0(@typescript-eslint/types@8.68.0))(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vitest@2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2))
+      jsdom:
+        specifier: ^25.0.1
+        version: 25.0.1
+      svelte:
+        specifier: ^5.19.0
+        version: 5.57.0(@typescript-eslint/types@8.68.0)
+      svelte-check:
+        specifier: ^4.1.1
+        version: 4.7.6(picomatch@4.0.7)(svelte@5.57.0(@typescript-eslint/types@8.68.0))(typescript@5.9.3)
       typescript:
         specifier: ^5.7.2
         version: 5.9.3
+      vite:
+        specifier: ^6.0.3
+        version: 6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)
+      vite-plugin-dts:
+        specifier: ^4.3.0
+        version: 4.5.4(@types/node@24.13.3)(rollup@4.63.1)(typescript@5.9.3)(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
       vitest:
         specifier: ^2.1.8
         version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
 
-  packages/devtools:
+  packages/data-vue:
     dependencies:
       '@larose-ui/core':
         specifier: workspace:*
         version: link:../core
-      '@larose-ui/devtools-core':
+      '@larose-ui/data-core':
         specifier: workspace:*
-        version: link:../devtools-core
-      '@larose-ui/observability':
-        specifier: workspace:*
-        version: link:../observability
-      '@larose-ui/runtime':
-        specifier: workspace:*
-        version: link:../runtime
+        version: link:../data-core
     devDependencies:
-      '@larose-ui/permissions':
-        specifier: workspace:*
-        version: link:../permissions
-      '@larose-ui/testing':
-        specifier: workspace:*
-        version: link:../testing
-      '@testing-library/jest-dom':
-        specifier: ^6.6.3
-        version: 6.10.0(@testing-library/dom@10.4.0)
-      '@testing-library/react':
-        specifier: ^16.1.0
-        version: 16.3.3(@testing-library/dom@10.4.0)(@types/react-dom@19.2.5(@types/react@19.2.18))(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
-      '@testing-library/user-event':
-        specifier: ^14.5.2
-        version: 14.6.6(@testing-library/dom@10.4.0)
-      '@vitejs/plugin-react':
-        specifier: ^4.3.4
-        version: 4.7.0(vite@7.3.6(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
+      '@vitejs/plugin-vue':
+        specifier: ^5.2.1
+        version: 5.2.4(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vue@3.5.42(typescript@5.9.3))
+      '@vue/test-utils':
+        specifier: ^2.4.6
+        version: 2.5.0(@vue/compiler-dom@3.5.42)(@vue/server-renderer@3.5.42)(vue@3.5.42(typescript@5.9.3))
       jsdom:
         specifier: ^25.0.1
         version: 25.0.1
-      react:
-        specifier: ^19.0.0
-        version: 19.2.8
-      react-dom:
-        specifier: ^19.0.0
-        version: 19.2.8(react@19.2.8)
-      tsup:
-        specifier: ^8.3.5
-        version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
       typescript:
         specifier: ^5.7.2
         version: 5.9.3
+      vite:
+        specifier: ^6.0.3
+        version: 6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)
+      vite-plugin-dts:
+        specifier: ^4.3.0
+        version: 4.5.4(@types/node@24.13.3)(rollup@4.63.1)(typescript@5.9.3)(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
       vitest:
         specifier: ^2.1.8
         version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
+      vue:
+        specifier: ^3.5.13
+        version: 3.5.42(typescript@5.9.3)
+      vue-tsc:
+        specifier: ^2.2.0
+        version: 2.2.12(typescript@5.9.3)
 
   packages/devtools-core:
     dependencies:
@@ -491,24 +771,42 @@ importers:
         specifier: ^2.1.8
         version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
 
-  packages/electron:
+  packages/devtools-react:
     dependencies:
-      '@larose-ui/desktop-core':
+      '@larose-ui/core':
         specifier: workspace:*
-        version: link:../desktop-core
-      '@larose-ui/runtime':
+        version: link:../core
+      '@larose-ui/devtools-core':
         specifier: workspace:*
-        version: link:../runtime
-      '@larose-ui/runtime-core':
+        version: link:../devtools-core
+      '@larose-ui/observability-react':
         specifier: workspace:*
-        version: link:../runtime-core
-      electron:
-        specifier: '>=28'
-        version: 44.1.0
+        version: link:../observability-react
+      '@larose-ui/runtime-react':
+        specifier: workspace:*
+        version: link:../runtime-react
     devDependencies:
-      '@types/react':
-        specifier: ^19.0.0
-        version: 19.2.18
+      '@larose-ui/permissions-react':
+        specifier: workspace:*
+        version: link:../permissions-react
+      '@larose-ui/testing-react':
+        specifier: workspace:*
+        version: link:../testing-react
+      '@testing-library/jest-dom':
+        specifier: ^6.6.3
+        version: 6.10.0(@testing-library/dom@10.4.0)
+      '@testing-library/react':
+        specifier: ^16.1.0
+        version: 16.3.3(@testing-library/dom@10.4.0)(@types/react-dom@19.2.5(@types/react@19.2.18))(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@testing-library/user-event':
+        specifier: ^14.5.2
+        version: 14.6.6(@testing-library/dom@10.4.0)
+      '@vitejs/plugin-react':
+        specifier: ^4.3.4
+        version: 4.7.0(vite@7.3.6(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
+      jsdom:
+        specifier: ^25.0.1
+        version: 25.0.1
       react:
         specifier: ^19.0.0
         version: 19.2.8
@@ -525,26 +823,128 @@ importers:
         specifier: ^2.1.8
         version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
 
-  packages/enterprise:
+  packages/devtools-svelte:
+    dependencies:
+      '@larose-ui/devtools-core':
+        specifier: workspace:*
+        version: link:../devtools-core
+      '@larose-ui/observability-svelte':
+        specifier: workspace:*
+        version: link:../observability-svelte
+      '@larose-ui/permissions-svelte':
+        specifier: workspace:*
+        version: link:../permissions-svelte
+      '@larose-ui/runtime-svelte':
+        specifier: workspace:*
+        version: link:../runtime-svelte
+    devDependencies:
+      '@sveltejs/vite-plugin-svelte':
+        specifier: ^5.0.3
+        version: 5.1.1(svelte@5.57.0(@typescript-eslint/types@8.68.0))(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
+      jsdom:
+        specifier: ^25.0.1
+        version: 25.0.1
+      svelte:
+        specifier: ^5.19.0
+        version: 5.57.0(@typescript-eslint/types@8.68.0)
+      svelte-check:
+        specifier: ^4.1.1
+        version: 4.7.6(picomatch@4.0.7)(svelte@5.57.0(@typescript-eslint/types@8.68.0))(typescript@5.9.3)
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+      vite:
+        specifier: ^6.0.3
+        version: 6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)
+      vite-plugin-dts:
+        specifier: ^4.3.0
+        version: 4.5.4(@types/node@24.13.3)(rollup@4.63.1)(typescript@5.9.3)(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
+      vitest:
+        specifier: ^2.1.8
+        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
+
+  packages/devtools-vue:
+    dependencies:
+      '@larose-ui/devtools-core':
+        specifier: workspace:*
+        version: link:../devtools-core
+      '@larose-ui/observability-vue':
+        specifier: workspace:*
+        version: link:../observability-vue
+      '@larose-ui/permissions-vue':
+        specifier: workspace:*
+        version: link:../permissions-vue
+      '@larose-ui/runtime-vue':
+        specifier: workspace:*
+        version: link:../runtime-vue
+    devDependencies:
+      '@vitejs/plugin-vue':
+        specifier: ^5.2.1
+        version: 5.2.4(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vue@3.5.42(typescript@5.9.3))
+      jsdom:
+        specifier: ^25.0.1
+        version: 25.0.1
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+      vite:
+        specifier: ^6.0.3
+        version: 6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)
+      vite-plugin-dts:
+        specifier: ^4.3.0
+        version: 4.5.4(@types/node@24.13.3)(rollup@4.63.1)(typescript@5.9.3)(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
+      vitest:
+        specifier: ^2.1.8
+        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
+      vue:
+        specifier: ^3.5.13
+        version: 3.5.42(typescript@5.9.3)
+      vue-tsc:
+        specifier: ^2.2.0
+        version: 2.2.12(typescript@5.9.3)
+
+  packages/enterprise-core:
     dependencies:
       '@larose-ui/core':
         specifier: workspace:*
         version: link:../core
-      '@larose-ui/forms':
+      '@larose-ui/forms-core':
         specifier: workspace:*
-        version: link:../forms
-      '@larose-ui/observability':
+        version: link:../forms-core
+    devDependencies:
+      tsup:
+        specifier: ^8.3.5
+        version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+      vitest:
+        specifier: ^2.1.8
+        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
+
+  packages/enterprise-react:
+    dependencies:
+      '@larose-ui/core':
         specifier: workspace:*
-        version: link:../observability
-      '@larose-ui/permissions':
+        version: link:../core
+      '@larose-ui/enterprise-core':
         specifier: workspace:*
-        version: link:../permissions
+        version: link:../enterprise-core
+      '@larose-ui/forms-react':
+        specifier: workspace:*
+        version: link:../forms-react
+      '@larose-ui/observability-react':
+        specifier: workspace:*
+        version: link:../observability-react
+      '@larose-ui/permissions-react':
+        specifier: workspace:*
+        version: link:../permissions-react
       '@larose-ui/react':
         specifier: workspace:*
         version: link:../react
-      '@larose-ui/runtime':
+      '@larose-ui/runtime-react':
         specifier: workspace:*
-        version: link:../runtime
+        version: link:../runtime-react
     devDependencies:
       '@testing-library/jest-dom':
         specifier: ^6.6.3
@@ -577,17 +977,130 @@ importers:
         specifier: ^2.1.8
         version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
 
-  packages/forms:
+  packages/enterprise-svelte:
     dependencies:
       '@larose-ui/core':
         specifier: workspace:*
         version: link:../core
-      '@larose-ui/data':
+      '@larose-ui/enterprise-core':
         specifier: workspace:*
-        version: link:../data
-      '@larose-ui/observability':
+        version: link:../enterprise-core
+      '@larose-ui/forms-svelte':
         specifier: workspace:*
-        version: link:../observability
+        version: link:../forms-svelte
+      '@larose-ui/observability-svelte':
+        specifier: workspace:*
+        version: link:../observability-svelte
+      '@larose-ui/permissions-svelte':
+        specifier: workspace:*
+        version: link:../permissions-svelte
+      '@larose-ui/runtime-svelte':
+        specifier: workspace:*
+        version: link:../runtime-svelte
+      '@larose-ui/svelte':
+        specifier: workspace:*
+        version: link:../svelte
+    devDependencies:
+      '@sveltejs/vite-plugin-svelte':
+        specifier: ^5.0.3
+        version: 5.1.1(svelte@5.57.0(@typescript-eslint/types@8.68.0))(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
+      jsdom:
+        specifier: ^25.0.1
+        version: 25.0.1
+      svelte:
+        specifier: ^5.19.0
+        version: 5.57.0(@typescript-eslint/types@8.68.0)
+      svelte-check:
+        specifier: ^4.1.1
+        version: 4.7.6(picomatch@4.0.7)(svelte@5.57.0(@typescript-eslint/types@8.68.0))(typescript@5.9.3)
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+      vite:
+        specifier: ^6.0.3
+        version: 6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)
+      vite-plugin-dts:
+        specifier: ^4.3.0
+        version: 4.5.4(@types/node@24.13.3)(rollup@4.63.1)(typescript@5.9.3)(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
+      vitest:
+        specifier: ^2.1.8
+        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
+
+  packages/enterprise-vue:
+    dependencies:
+      '@larose-ui/core':
+        specifier: workspace:*
+        version: link:../core
+      '@larose-ui/enterprise-core':
+        specifier: workspace:*
+        version: link:../enterprise-core
+      '@larose-ui/forms-vue':
+        specifier: workspace:*
+        version: link:../forms-vue
+      '@larose-ui/observability-vue':
+        specifier: workspace:*
+        version: link:../observability-vue
+      '@larose-ui/permissions-vue':
+        specifier: workspace:*
+        version: link:../permissions-vue
+      '@larose-ui/runtime-vue':
+        specifier: workspace:*
+        version: link:../runtime-vue
+      '@larose-ui/vue':
+        specifier: workspace:*
+        version: link:../vue
+    devDependencies:
+      '@vitejs/plugin-vue':
+        specifier: ^5.2.1
+        version: 5.2.4(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vue@3.5.42(typescript@5.9.3))
+      jsdom:
+        specifier: ^25.0.1
+        version: 25.0.1
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+      vite:
+        specifier: ^6.0.3
+        version: 6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)
+      vite-plugin-dts:
+        specifier: ^4.3.0
+        version: 4.5.4(@types/node@24.13.3)(rollup@4.63.1)(typescript@5.9.3)(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
+      vitest:
+        specifier: ^2.1.8
+        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
+      vue:
+        specifier: ^3.5.13
+        version: 3.5.42(typescript@5.9.3)
+      vue-tsc:
+        specifier: ^2.2.0
+        version: 2.2.12(typescript@5.9.3)
+
+  packages/forms-core:
+    devDependencies:
+      tsup:
+        specifier: ^8.3.5
+        version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+      vitest:
+        specifier: ^2.1.8
+        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
+
+  packages/forms-react:
+    dependencies:
+      '@larose-ui/core':
+        specifier: workspace:*
+        version: link:../core
+      '@larose-ui/data-react':
+        specifier: workspace:*
+        version: link:../data-react
+      '@larose-ui/forms-core':
+        specifier: workspace:*
+        version: link:../forms-core
+      '@larose-ui/observability-react':
+        specifier: workspace:*
+        version: link:../observability-react
       '@larose-ui/react':
         specifier: workspace:*
         version: link:../react
@@ -613,6 +1126,110 @@ importers:
       react-dom:
         specifier: ^19.0.0
         version: 19.2.8(react@19.2.8)
+      tsup:
+        specifier: ^8.3.5
+        version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+      vitest:
+        specifier: ^2.1.8
+        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
+
+  packages/forms-svelte:
+    dependencies:
+      '@larose-ui/core':
+        specifier: workspace:*
+        version: link:../core
+      '@larose-ui/data-core':
+        specifier: workspace:*
+        version: link:../data-core
+      '@larose-ui/forms-core':
+        specifier: workspace:*
+        version: link:../forms-core
+      '@larose-ui/observability-svelte':
+        specifier: workspace:*
+        version: link:../observability-svelte
+      '@larose-ui/svelte':
+        specifier: workspace:*
+        version: link:../svelte
+    devDependencies:
+      '@sveltejs/vite-plugin-svelte':
+        specifier: ^5.0.3
+        version: 5.1.1(svelte@5.57.0(@typescript-eslint/types@8.68.0))(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
+      '@testing-library/svelte':
+        specifier: ^5.2.6
+        version: 5.4.2(svelte@5.57.0(@typescript-eslint/types@8.68.0))(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vitest@2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2))
+      jsdom:
+        specifier: ^25.0.1
+        version: 25.0.1
+      svelte:
+        specifier: ^5.19.0
+        version: 5.57.0(@typescript-eslint/types@8.68.0)
+      svelte-check:
+        specifier: ^4.1.1
+        version: 4.7.6(picomatch@4.0.7)(svelte@5.57.0(@typescript-eslint/types@8.68.0))(typescript@5.9.3)
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+      vite:
+        specifier: ^6.0.3
+        version: 6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)
+      vite-plugin-dts:
+        specifier: ^4.3.0
+        version: 4.5.4(@types/node@24.13.3)(rollup@4.63.1)(typescript@5.9.3)(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
+      vitest:
+        specifier: ^2.1.8
+        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
+
+  packages/forms-vue:
+    dependencies:
+      '@larose-ui/core':
+        specifier: workspace:*
+        version: link:../core
+      '@larose-ui/data-core':
+        specifier: workspace:*
+        version: link:../data-core
+      '@larose-ui/forms-core':
+        specifier: workspace:*
+        version: link:../forms-core
+      '@larose-ui/observability-vue':
+        specifier: workspace:*
+        version: link:../observability-vue
+      '@larose-ui/vue':
+        specifier: workspace:*
+        version: link:../vue
+    devDependencies:
+      '@vitejs/plugin-vue':
+        specifier: ^5.2.1
+        version: 5.2.4(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vue@3.5.42(typescript@5.9.3))
+      '@vue/test-utils':
+        specifier: ^2.4.6
+        version: 2.5.0(@vue/compiler-dom@3.5.42)(@vue/server-renderer@3.5.42)(vue@3.5.42(typescript@5.9.3))
+      jsdom:
+        specifier: ^25.0.1
+        version: 25.0.1
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+      vite:
+        specifier: ^6.0.3
+        version: 6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)
+      vite-plugin-dts:
+        specifier: ^4.3.0
+        version: 4.5.4(@types/node@24.13.3)(rollup@4.63.1)(typescript@5.9.3)(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
+      vitest:
+        specifier: ^2.1.8
+        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
+      vue:
+        specifier: ^3.5.13
+        version: 3.5.42(typescript@5.9.3)
+      vue-tsc:
+        specifier: ^2.2.0
+        version: 2.2.12(typescript@5.9.3)
+
+  packages/liquid-glass-core:
+    devDependencies:
       tsup:
         specifier: ^8.3.5
         version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
@@ -656,9 +1273,9 @@ importers:
       '@larose-ui/react':
         specifier: workspace:*
         version: link:../react
-      '@larose-ui/runtime':
+      '@larose-ui/runtime-react':
         specifier: workspace:*
-        version: link:../runtime
+        version: link:../runtime-react
     devDependencies:
       '@testing-library/react':
         specifier: ^16.1.0
@@ -668,7 +1285,7 @@ importers:
         version: 19.2.18
       next:
         specifier: ^15.1.0
-        version: 15.5.24(@types/node@24.13.3)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+        version: 15.5.24(@playwright/test@1.62.1)(@types/node@24.13.3)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       react:
         specifier: ^19.0.0
         version: 19.2.8
@@ -690,6 +1307,9 @@ importers:
       '@larose-ui/core':
         specifier: workspace:*
         version: link:../core
+      '@larose-ui/runtime-vue':
+        specifier: workspace:*
+        version: link:../runtime-vue
       '@larose-ui/vue':
         specifier: workspace:*
         version: link:../vue
@@ -713,7 +1333,23 @@ importers:
         specifier: ^2.1.8
         version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
 
-  packages/observability:
+  packages/observability-core:
+    dependencies:
+      '@larose-ui/core':
+        specifier: workspace:*
+        version: link:../core
+    devDependencies:
+      tsup:
+        specifier: ^8.3.5
+        version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+      vitest:
+        specifier: ^2.1.8
+        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
+
+  packages/observability-react:
     dependencies:
       '@larose-ui/core':
         specifier: workspace:*
@@ -753,21 +1389,73 @@ importers:
         specifier: ^2.1.8
         version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
 
-  packages/observability-core:
+  packages/observability-svelte:
     dependencies:
-      '@larose-ui/core':
+      '@larose-ui/observability-core':
         specifier: workspace:*
-        version: link:../core
+        version: link:../observability-core
     devDependencies:
-      tsup:
-        specifier: ^8.3.5
-        version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
+      '@sveltejs/vite-plugin-svelte':
+        specifier: ^5.0.3
+        version: 5.1.1(svelte@5.57.0(@typescript-eslint/types@8.68.0))(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
+      '@testing-library/svelte':
+        specifier: ^5.2.6
+        version: 5.4.2(svelte@5.57.0(@typescript-eslint/types@8.68.0))(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vitest@2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2))
+      jsdom:
+        specifier: ^25.0.1
+        version: 25.0.1
+      svelte:
+        specifier: ^5.19.0
+        version: 5.57.0(@typescript-eslint/types@8.68.0)
+      svelte-check:
+        specifier: ^4.1.1
+        version: 4.7.6(picomatch@4.0.7)(svelte@5.57.0(@typescript-eslint/types@8.68.0))(typescript@5.9.3)
       typescript:
         specifier: ^5.7.2
         version: 5.9.3
+      vite:
+        specifier: ^6.0.3
+        version: 6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)
+      vite-plugin-dts:
+        specifier: ^4.3.0
+        version: 4.5.4(@types/node@24.13.3)(rollup@4.63.1)(typescript@5.9.3)(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
       vitest:
         specifier: ^2.1.8
         version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
+
+  packages/observability-vue:
+    dependencies:
+      '@larose-ui/observability-core':
+        specifier: workspace:*
+        version: link:../observability-core
+    devDependencies:
+      '@vitejs/plugin-vue':
+        specifier: ^5.2.1
+        version: 5.2.4(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vue@3.5.42(typescript@5.9.3))
+      '@vue/test-utils':
+        specifier: ^2.4.6
+        version: 2.5.0(@vue/compiler-dom@3.5.42)(@vue/server-renderer@3.5.42)(vue@3.5.42(typescript@5.9.3))
+      jsdom:
+        specifier: ^25.0.1
+        version: 25.0.1
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+      vite:
+        specifier: ^6.0.3
+        version: 6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)
+      vite-plugin-dts:
+        specifier: ^4.3.0
+        version: 4.5.4(@types/node@24.13.3)(rollup@4.63.1)(typescript@5.9.3)(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
+      vitest:
+        specifier: ^2.1.8
+        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
+      vue:
+        specifier: ^3.5.13
+        version: 3.5.42(typescript@5.9.3)
+      vue-tsc:
+        specifier: ^2.2.0
+        version: 2.2.12(typescript@5.9.3)
 
   packages/offline:
     dependencies:
@@ -785,7 +1473,23 @@ importers:
         specifier: ^2.1.8
         version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
 
-  packages/permissions:
+  packages/permissions-core:
+    dependencies:
+      '@larose-ui/core':
+        specifier: workspace:*
+        version: link:../core
+    devDependencies:
+      tsup:
+        specifier: ^8.3.5
+        version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+      vitest:
+        specifier: ^2.1.8
+        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
+
+  packages/permissions-react:
     dependencies:
       '@larose-ui/core':
         specifier: workspace:*
@@ -822,21 +1526,79 @@ importers:
         specifier: ^2.1.8
         version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
 
-  packages/permissions-core:
+  packages/permissions-svelte:
     dependencies:
       '@larose-ui/core':
         specifier: workspace:*
         version: link:../core
+      '@larose-ui/permissions-core':
+        specifier: workspace:*
+        version: link:../permissions-core
     devDependencies:
-      tsup:
-        specifier: ^8.3.5
-        version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
+      '@sveltejs/vite-plugin-svelte':
+        specifier: ^5.0.3
+        version: 5.1.1(svelte@5.57.0(@typescript-eslint/types@8.68.0))(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
+      '@testing-library/svelte':
+        specifier: ^5.2.6
+        version: 5.4.2(svelte@5.57.0(@typescript-eslint/types@8.68.0))(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vitest@2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2))
+      jsdom:
+        specifier: ^25.0.1
+        version: 25.0.1
+      svelte:
+        specifier: ^5.19.0
+        version: 5.57.0(@typescript-eslint/types@8.68.0)
+      svelte-check:
+        specifier: ^4.1.1
+        version: 4.7.6(picomatch@4.0.7)(svelte@5.57.0(@typescript-eslint/types@8.68.0))(typescript@5.9.3)
       typescript:
         specifier: ^5.7.2
         version: 5.9.3
+      vite:
+        specifier: ^6.0.3
+        version: 6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)
+      vite-plugin-dts:
+        specifier: ^4.3.0
+        version: 4.5.4(@types/node@24.13.3)(rollup@4.63.1)(typescript@5.9.3)(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
       vitest:
         specifier: ^2.1.8
         version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
+
+  packages/permissions-vue:
+    dependencies:
+      '@larose-ui/core':
+        specifier: workspace:*
+        version: link:../core
+      '@larose-ui/permissions-core':
+        specifier: workspace:*
+        version: link:../permissions-core
+    devDependencies:
+      '@vitejs/plugin-vue':
+        specifier: ^5.2.1
+        version: 5.2.4(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vue@3.5.42(typescript@5.9.3))
+      '@vue/test-utils':
+        specifier: ^2.4.6
+        version: 2.5.0(@vue/compiler-dom@3.5.42)(@vue/server-renderer@3.5.42)(vue@3.5.42(typescript@5.9.3))
+      jsdom:
+        specifier: ^25.0.1
+        version: 25.0.1
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+      vite:
+        specifier: ^6.0.3
+        version: 6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)
+      vite-plugin-dts:
+        specifier: ^4.3.0
+        version: 4.5.4(@types/node@24.13.3)(rollup@4.63.1)(typescript@5.9.3)(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
+      vitest:
+        specifier: ^2.1.8
+        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
+      vue:
+        specifier: ^3.5.13
+        version: 3.5.42(typescript@5.9.3)
+      vue-tsc:
+        specifier: ^2.2.0
+        version: 2.2.12(typescript@5.9.3)
 
   packages/primitives:
     dependencies:
@@ -844,6 +1606,9 @@ importers:
         specifier: workspace:*
         version: link:../core
     devDependencies:
+      jsdom:
+        specifier: ^25.0.1
+        version: 25.0.1
       tsup:
         specifier: ^8.3.5
         version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
@@ -868,9 +1633,15 @@ importers:
 
   packages/react:
     dependencies:
+      '@larose-ui/component-logic':
+        specifier: workspace:*
+        version: link:../component-logic
       '@larose-ui/core':
         specifier: workspace:*
         version: link:../core
+      '@larose-ui/liquid-glass-core':
+        specifier: workspace:*
+        version: link:../liquid-glass-core
       '@larose-ui/primitives':
         specifier: workspace:*
         version: link:../primitives
@@ -915,7 +1686,29 @@ importers:
         specifier: ^2.1.8
         version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
 
-  packages/runtime:
+  packages/runtime-core:
+    dependencies:
+      '@larose-ui/core':
+        specifier: workspace:*
+        version: link:../core
+      '@larose-ui/themes':
+        specifier: workspace:*
+        version: link:../themes
+      '@larose-ui/tokens':
+        specifier: workspace:*
+        version: link:../tokens
+    devDependencies:
+      tsup:
+        specifier: ^8.3.5
+        version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+      vitest:
+        specifier: ^2.1.8
+        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
+
+  packages/runtime-react:
     dependencies:
       '@larose-ui/core':
         specifier: workspace:*
@@ -923,15 +1716,15 @@ importers:
       '@larose-ui/network':
         specifier: workspace:*
         version: link:../network
-      '@larose-ui/observability':
+      '@larose-ui/observability-react':
         specifier: workspace:*
-        version: link:../observability
+        version: link:../observability-react
       '@larose-ui/offline':
         specifier: workspace:*
         version: link:../offline
-      '@larose-ui/permissions':
+      '@larose-ui/permissions-react':
         specifier: workspace:*
-        version: link:../permissions
+        version: link:../permissions-react
       '@larose-ui/runtime-core':
         specifier: workspace:*
         version: link:../runtime-core
@@ -973,11 +1766,26 @@ importers:
         specifier: ^2.1.8
         version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
 
-  packages/runtime-core:
+  packages/runtime-svelte:
     dependencies:
       '@larose-ui/core':
         specifier: workspace:*
         version: link:../core
+      '@larose-ui/network':
+        specifier: workspace:*
+        version: link:../network
+      '@larose-ui/observability-svelte':
+        specifier: workspace:*
+        version: link:../observability-svelte
+      '@larose-ui/offline':
+        specifier: workspace:*
+        version: link:../offline
+      '@larose-ui/permissions-svelte':
+        specifier: workspace:*
+        version: link:../permissions-svelte
+      '@larose-ui/runtime-core':
+        specifier: workspace:*
+        version: link:../runtime-core
       '@larose-ui/themes':
         specifier: workspace:*
         version: link:../themes
@@ -985,15 +1793,88 @@ importers:
         specifier: workspace:*
         version: link:../tokens
     devDependencies:
-      tsup:
-        specifier: ^8.3.5
-        version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
+      '@larose-ui/svelte':
+        specifier: workspace:*
+        version: link:../svelte
+      '@sveltejs/vite-plugin-svelte':
+        specifier: ^5.0.3
+        version: 5.1.1(svelte@5.57.0(@typescript-eslint/types@8.68.0))(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
+      jsdom:
+        specifier: ^25.0.1
+        version: 25.0.1
+      svelte:
+        specifier: ^5.19.0
+        version: 5.57.0(@typescript-eslint/types@8.68.0)
+      svelte-check:
+        specifier: ^4.1.1
+        version: 4.7.6(picomatch@4.0.7)(svelte@5.57.0(@typescript-eslint/types@8.68.0))(typescript@5.9.3)
       typescript:
         specifier: ^5.7.2
         version: 5.9.3
+      vite:
+        specifier: ^6.0.3
+        version: 6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)
+      vite-plugin-dts:
+        specifier: ^4.3.0
+        version: 4.5.4(@types/node@24.13.3)(rollup@4.63.1)(typescript@5.9.3)(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
       vitest:
         specifier: ^2.1.8
         version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
+
+  packages/runtime-vue:
+    dependencies:
+      '@larose-ui/core':
+        specifier: workspace:*
+        version: link:../core
+      '@larose-ui/network':
+        specifier: workspace:*
+        version: link:../network
+      '@larose-ui/observability-vue':
+        specifier: workspace:*
+        version: link:../observability-vue
+      '@larose-ui/offline':
+        specifier: workspace:*
+        version: link:../offline
+      '@larose-ui/permissions-vue':
+        specifier: workspace:*
+        version: link:../permissions-vue
+      '@larose-ui/runtime-core':
+        specifier: workspace:*
+        version: link:../runtime-core
+      '@larose-ui/themes':
+        specifier: workspace:*
+        version: link:../themes
+      '@larose-ui/tokens':
+        specifier: workspace:*
+        version: link:../tokens
+    devDependencies:
+      '@larose-ui/vue':
+        specifier: workspace:*
+        version: link:../vue
+      '@vitejs/plugin-vue':
+        specifier: ^5.2.1
+        version: 5.2.4(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vue@3.5.42(typescript@5.9.3))
+      jsdom:
+        specifier: ^25.0.1
+        version: 25.0.1
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+      vite:
+        specifier: ^6.0.3
+        version: 6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)
+      vite-plugin-dts:
+        specifier: ^4.3.0
+        version: 4.5.4(@types/node@24.13.3)(rollup@4.63.1)(typescript@5.9.3)(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
+      vitest:
+        specifier: ^2.1.8
+        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
+      vue:
+        specifier: ^3.5.13
+        version: 3.5.42(typescript@5.9.3)
+      vue-tsc:
+        specifier: ^2.2.0
+        version: 2.2.12(typescript@5.9.3)
 
   packages/styles:
     dependencies:
@@ -1013,9 +1894,15 @@ importers:
 
   packages/svelte:
     dependencies:
+      '@larose-ui/component-logic':
+        specifier: workspace:*
+        version: link:../component-logic
       '@larose-ui/core':
         specifier: workspace:*
         version: link:../core
+      '@larose-ui/liquid-glass-core':
+        specifier: workspace:*
+        version: link:../liquid-glass-core
       '@larose-ui/primitives':
         specifier: workspace:*
         version: link:../primitives
@@ -1063,30 +1950,24 @@ importers:
         specifier: ^2.1.8
         version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
 
-  packages/tauri:
+  packages/sveltekit:
     dependencies:
-      '@larose-ui/desktop-core':
+      '@larose-ui/styles':
         specifier: workspace:*
-        version: link:../desktop-core
-      '@larose-ui/runtime':
+        version: link:../styles
+      '@larose-ui/svelte':
         specifier: workspace:*
-        version: link:../runtime
-      '@larose-ui/runtime-core':
+        version: link:../svelte
+      '@larose-ui/tokens':
         specifier: workspace:*
-        version: link:../runtime-core
-      '@tauri-apps/api':
-        specifier: '>=2'
-        version: 2.11.1
+        version: link:../tokens
+      '@sveltejs/kit':
+        specifier: ^2.0.0
+        version: 2.70.3(@sveltejs/vite-plugin-svelte@5.1.1(svelte@5.57.0(@typescript-eslint/types@8.68.0))(vite@7.3.6(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(svelte@5.57.0(@typescript-eslint/types@8.68.0))(typescript@5.9.3)(vite@7.3.6(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
     devDependencies:
-      '@types/react':
-        specifier: ^19.0.0
-        version: 19.2.18
-      react:
-        specifier: ^19.0.0
-        version: 19.2.8
-      react-dom:
-        specifier: ^19.0.0
-        version: 19.2.8(react@19.2.8)
+      svelte:
+        specifier: ^5.19.0
+        version: 5.57.0(@typescript-eslint/types@8.68.0)
       tsup:
         specifier: ^8.3.5
         version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
@@ -1097,14 +1978,29 @@ importers:
         specifier: ^2.1.8
         version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
 
-  packages/testing:
+  packages/testing-core:
+    devDependencies:
+      tsup:
+        specifier: ^8.3.5
+        version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+      vitest:
+        specifier: ^2.1.8
+        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
+
+  packages/testing-react:
     dependencies:
       '@larose-ui/core':
         specifier: workspace:*
         version: link:../core
-      '@larose-ui/runtime':
+      '@larose-ui/runtime-react':
         specifier: workspace:*
-        version: link:../runtime
+        version: link:../runtime-react
+      '@larose-ui/testing-core':
+        specifier: workspace:*
+        version: link:../testing-core
     devDependencies:
       '@testing-library/jest-dom':
         specifier: ^6.6.3
@@ -1133,6 +2029,56 @@ importers:
       vitest:
         specifier: ^2.1.8
         version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
+
+  packages/testing-svelte:
+    dependencies:
+      '@larose-ui/testing-core':
+        specifier: workspace:*
+        version: link:../testing-core
+    devDependencies:
+      '@testing-library/svelte':
+        specifier: ^5.2.6
+        version: 5.4.2(svelte@5.57.0(@typescript-eslint/types@8.68.0))(vite@7.3.6(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vitest@2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2))
+      jsdom:
+        specifier: ^25.0.1
+        version: 25.0.1
+      svelte:
+        specifier: ^5.19.0
+        version: 5.57.0(@typescript-eslint/types@8.68.0)
+      tsup:
+        specifier: ^8.3.5
+        version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+      vitest:
+        specifier: ^2.1.8
+        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
+
+  packages/testing-vue:
+    dependencies:
+      '@larose-ui/testing-core':
+        specifier: workspace:*
+        version: link:../testing-core
+    devDependencies:
+      '@vue/test-utils':
+        specifier: ^2.4.6
+        version: 2.5.0(@vue/compiler-dom@3.5.42)(@vue/server-renderer@3.5.42)(vue@3.5.42(typescript@5.9.3))
+      jsdom:
+        specifier: ^25.0.1
+        version: 25.0.1
+      tsup:
+        specifier: ^8.3.5
+        version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+      vitest:
+        specifier: ^2.1.8
+        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
+      vue:
+        specifier: ^3.5.13
+        version: 3.5.42(typescript@5.9.3)
 
   packages/themes:
     dependencies:
@@ -1171,9 +2117,15 @@ importers:
 
   packages/vue:
     dependencies:
+      '@larose-ui/component-logic':
+        specifier: workspace:*
+        version: link:../component-logic
       '@larose-ui/core':
         specifier: workspace:*
         version: link:../core
+      '@larose-ui/liquid-glass-core':
+        specifier: workspace:*
+        version: link:../liquid-glass-core
       '@larose-ui/primitives':
         specifier: workspace:*
         version: link:../primitives
@@ -1477,14 +2429,6 @@ packages:
 
   '@dxup/unimport@0.1.2':
     resolution: {integrity: sha512-/B8YJGPzaYq1NbsQmwgP8EZqg40NpTw4ZB3suuI0TplbxKHeK94jeaawLmVhCv+YwUnOpiWEz9U6SeThku/8JQ==}
-
-  '@electron-internal/extract-zip@1.0.5':
-    resolution: {integrity: sha512-+bqFCP98pLI0Tt0XQo1TmlXtwjWchISndDOxCkEcIuUgXWpBnLyRI+2DU+mesvnMMX6L1XDqYNA0lXNDHd/yiA==}
-    engines: {node: '>=22.12.0'}
-
-  '@electron/get@5.1.0':
-    resolution: {integrity: sha512-3kSBtG8ObcTVfXanm5vVJ6UnBLEVmVsRk1M+vGqCuMBV+XLCbJYuWQful+yIy0GQDsSlK0kHEriEHn7SPk4EnA==}
-    engines: {node: '>=22.12.0'}
 
   '@emnapi/runtime@1.11.3':
     resolution: {integrity: sha512-Xz4Tpyki7XyrpbUK1jR1AhdAdaXyhhY4lZ3neLodmhpuWfy2PAQN5B46sAiU4liOXGLkHypn/qU+jvfWSCYYLA==}
@@ -2891,6 +3835,11 @@ packages:
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
 
+  '@playwright/test@1.62.1':
+    resolution: {integrity: sha512-DTcUc8qii+cpHvtOwggMtBRMjKZHXYWdw8syRYu2vtzuq4Wxphqq4NfCs5Zt44L6mA8rfDfj+PHnxFc/FeK6mQ==}
+    engines: {node: '>=20'}
+    hasBin: true
+
   '@polka/url@1.0.0-next.29':
     resolution: {integrity: sha512-wwQAWhWSuHaag8c4q/KN/vCoeOJYshAIvMQwD4GpSb3OiZklFfvAgmj0VCBBImRpuF/aFgIRzllXlVX93Jevww==}
 
@@ -3156,6 +4105,9 @@ packages:
   '@speed-highlight/core@1.2.24':
     resolution: {integrity: sha512-qeW2e1l78afw8VhRPfPQ1Gjj+KU5XFQ/OFV5ti6eTa9bruO7mJyZtA4vw0ofqmA3tKCkROE9xLk3VZoeRc98nw==}
 
+  '@standard-schema/spec@1.1.0':
+    resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
+
   '@storybook/addon-actions@8.6.14':
     resolution: {integrity: sha512-mDQxylxGGCQSK7tJPkD144J8jWh9IU9ziJMHfB84PKpI/V5ZgqMDnpr2bssTrUaGDqU5e1/z8KcRF+Melhs9pQ==}
     peerDependencies:
@@ -3231,6 +4183,11 @@ packages:
 
   '@storybook/components@8.6.18':
     resolution: {integrity: sha512-55yViiZzPS/cPBuOeW4QGxGqrusjXVyxuknmbYCIwDtFyyvI/CgbjXRHdxNBaIjz+IlftxvBmmSaOqFG5+/dkA==}
+    peerDependencies:
+      storybook: ^8.2.0 || ^8.3.0-0 || ^8.4.0-0 || ^8.5.0-0 || ^8.6.0-0
+
+  '@storybook/core-events@8.6.14':
+    resolution: {integrity: sha512-RrJ95u3HuIE4Nk8VmZP0tc/u0vYoE2v9fYlMw6K2GUSExzKDITs3voy6WMIY7Q3qbQun8XUXVlmqkuFzTEy/pA==}
     peerDependencies:
       storybook: ^8.2.0 || ^8.3.0-0 || ^8.4.0-0 || ^8.5.0-0 || ^8.6.0-0
 
@@ -3344,6 +4301,22 @@ packages:
     peerDependencies:
       acorn: ^8.9.0
 
+  '@sveltejs/kit@2.70.3':
+    resolution: {integrity: sha512-UDvEYuZqAMbfB/oXIoqKvbKcb7YczK5zYrzmsGV1zRJk03jntwp8dXiYoIJotxAndsKvcPFtx9H1GRSKFdSHgg==}
+    engines: {node: '>=18.13'}
+    hasBin: true
+    peerDependencies:
+      '@opentelemetry/api': ^1.0.0
+      '@sveltejs/vite-plugin-svelte': ^3.0.0 || ^4.0.0-next.1 || ^5.0.0 || ^6.0.0-next.0 || ^7.0.0
+      svelte: ^4.0.0 || ^5.0.0-next.0
+      typescript: ^5.3.3 || ^6.0.0
+      vite: ^5.0.3 || ^6.0.0 || ^7.0.0-beta.0 || ^8.0.0
+    peerDependenciesMeta:
+      '@opentelemetry/api':
+        optional: true
+      typescript:
+        optional: true
+
   '@sveltejs/load-config@0.2.3':
     resolution: {integrity: sha512-VT3qmUb8pRV2QrZjd8iAmtg8lf4W0TIjZbvXtz5MKei/q96teWZgGJyyidJzOjzZzvdq616eSRVeMYIQChUTAQ==}
     engines: {node: '>= 18.0.0'}
@@ -3365,9 +4338,6 @@ packages:
 
   '@swc/helpers@0.5.15':
     resolution: {integrity: sha512-JQ5TuMi45Owi4/BIMAJBoSQoOJu12oOk/gADqlcUL9JEdHB8vyjUSsxqeNXnmXHjYKMi2WcYtezGEEhqUI/E2g==}
-
-  '@tauri-apps/api@2.11.1':
-    resolution: {integrity: sha512-M2FPuYND2m+wh5hfW9ZpSdxMPdEJovPBWwoHJmwUpysTYNHaOkVFN419m/K0LIgjb/7KU2vBgsUepJWugQCvAA==}
 
   '@testing-library/dom@10.4.0':
     resolution: {integrity: sha512-pemlzrSESWbdAloYml3bAJMEfNh1Z7EduzqPKprCH5S341frlpYnUEW0H72dLxa6IsYr+mPno20GiSm+h9dEdQ==}
@@ -3483,6 +4453,9 @@ packages:
 
   '@types/chai@5.2.3':
     resolution: {integrity: sha512-Mw558oeA9fFbv65/y4mHtXDs9bPnFMZAL/jxdPFUpOHHIXX91mcgEHbS5Lahr+pwZFR8A7GQleRWeI6cGFC2UA==}
+
+  '@types/cookie@0.6.0':
+    resolution: {integrity: sha512-4Kh9a6B2bQciAhf7FSuMRRkUWecJgJu9nPnx3yzpsfXX/c50REIqpHY4C82bXP90qrLtXtkDxTZosYO3UpOwlA==}
 
   '@types/debug@4.1.13':
     resolution: {integrity: sha512-KSVgmQmzMwPlmtljOomayoR89W4FynCAi3E8PPs7vmDVPe84hT+vGPKkJfThkmXs0x0jAaa9U8uW8bbfyS2fWw==}
@@ -4325,6 +5298,10 @@ packages:
   cookie-es@3.1.1:
     resolution: {integrity: sha512-UaXxwISYJPTr9hwQxMFYZ7kNhSXboMXP+Z3TRX6f1/NyaGPfuNUZOWP1pUEb75B2HjfklIYLVRfWiFZJyC6Npg==}
 
+  cookie@0.6.0:
+    resolution: {integrity: sha512-U71cyTamuh1CRNCfpGY6to28lxvNwPG4Guz/EVjgf3Jmzv0vlDp1atT9eS5dDjMYHucpHbWns6Lwf3BKz6svdw==}
+    engines: {node: '>= 0.6'}
+
   cookie@1.1.1:
     resolution: {integrity: sha512-ei8Aos7ja0weRpFzJnEA9UHJ/7XQmqglbRwnf2ATjcB9Wq874VKH9kfjjirM6UhU2/E5fFYadylyhFldcqSidQ==}
     engines: {node: '>=18'}
@@ -4590,11 +5567,6 @@ packages:
   electron-to-chromium@1.5.416:
     resolution: {integrity: sha512-K6bvB2BjnNrugtIih6ewlbBI9DXa976jIdiIlRLHhBoEI9a4JaQjjHyF+A1IQI543aQYR4LnmOrT/K5fZj0aPA==}
 
-  electron@44.1.0:
-    resolution: {integrity: sha512-kmLg8axOg22DC3fXx5NCwBYW8fx0rK2zzJ3Tf67GjNCkxfoxEcd+yo0QfDjlBtHJs3xeA8fTg64b6iVzFTVErg==}
-    engines: {node: '>= 22.12.0'}
-    hasBin: true
-
   emoji-regex@10.6.0:
     resolution: {integrity: sha512-toUI84YS5YmxW219erniWD0CIVOo46xGKColeNQRgOzDorgBi1v4D71/OFzgD9GO2UGKIv1C3Sp8DAn0+j5w7A==}
 
@@ -4627,10 +5599,6 @@ packages:
   entities@7.0.1:
     resolution: {integrity: sha512-TWrgLOFUQTH994YUyl1yT4uyavY5nNB5muff+RtWaqNVCAK408b5ZnnbNAUEWLTCpum9w6arT70i1XdQ4UeOPA==}
     engines: {node: '>=0.12'}
-
-  env-paths@3.0.0:
-    resolution: {integrity: sha512-dtJUTepzMW3Lm/NPxRf3wP4642UWhjL2sQxc+ym2YMj1m/H2zDNQOlezafzkHwn6sMstjHTwG6iQQsctDW/b1A==}
-    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
   error-stack-parser-es@1.0.5:
     resolution: {integrity: sha512-5qucVt2XcuGMcEGgWI7i+yZpmpByQ8J1lHhcL7PwqCwu9FPP3VUXzT4ltHe5i2z9dePwEHcDVOAfSnHsOlCXRA==}
@@ -4941,6 +5909,11 @@ packages:
   fs-extra@8.1.0:
     resolution: {integrity: sha512-yhlQgA6mnOJUKOsRUFsgJdQCvkKhcz8tlZG5HBQfReYZy46OwLcY+Zia0mtdHsOo9y/hP+CxMN0TU9QxoOtG4g==}
     engines: {node: '>=6 <7 || >=8'}
+
+  fsevents@2.3.2:
+    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
+    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
+    os: [darwin]
 
   fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
@@ -6108,6 +7081,16 @@ packages:
   pkg-types@2.3.1:
     resolution: {integrity: sha512-y+ichcgc2LrADuhLNAx8DFjVfgz91pRxfZdI3UDhxHvcVEZsenLO+7XaU5vOp0u/7V/wZ+plyuQxtrDlZJ+yeg==}
 
+  playwright-core@1.62.1:
+    resolution: {integrity: sha512-wPYSwEBJY9GHraISXqyqtx0na0LpO3XEX7jNDhntbex7tzUS7kLnZsOlFruFJB4Hi/rhDMjXGqHewDZ68nYZVw==}
+    engines: {node: '>=20'}
+    hasBin: true
+
+  playwright@1.62.1:
+    resolution: {integrity: sha512-0M+L3LAD8/nm554LOla9Ayx0j0tmFZ0FBcoQ7F1VuVHpM/XpiC8RcDzBQB8W5+hA8L22THxELzeF+2WcUzvcLg==}
+    engines: {node: '>=20'}
+    hasBin: true
+
   polished@4.3.1:
     resolution: {integrity: sha512-OBatVyC/N7SCW/FaDHrSd+vn0o5cS855TOmYi4OkdWUMSJCET/xip//ch8xGUvtr3i44X9LVyWwQlRMTN3pwSA==}
     engines: {node: '>=10'}
@@ -6355,10 +7338,6 @@ packages:
   process@0.11.10:
     resolution: {integrity: sha512-cdGef/drWFoydD1JsMzuFf8100nZl+GT+yacc2bEced5f9Rjk4z+WtFUTBu9PhOi9j/jfmBPu0mMEY4wIdAF8A==}
     engines: {node: '>= 0.6.0'}
-
-  progress@2.0.3:
-    resolution: {integrity: sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==}
-    engines: {node: '>=0.4.0'}
 
   proper-lockfile@4.1.2:
     resolution: {integrity: sha512-TjNPblN4BwAWMXU8s9AEz4JmQxnD1NNL7bNOY/AKUzyamc379FWASUhc/K1pL2noVb+XmZKLL68cjzLsiOAMaA==}
@@ -6644,6 +7623,9 @@ packages:
   set-cookie-parser@2.7.2:
     resolution: {integrity: sha512-oeM1lpU/UvhTxw+g3cIfxXHyJRc/uidd3yK1P242gzHds0udQBYzs3y8j4gCCW+ZJ7ad0yctld8RYO+bdurlvw==}
 
+  set-cookie-parser@3.1.2:
+    resolution: {integrity: sha512-5/r/lTwbJ3zQ+qwdUFZYeRNqda7P5HD8zQKqlSjdGt1/S0cjLAphHusj4Y58ahDtWn/g32xrIS58/ikOvwl0Lw==}
+
   set-function-length@1.2.2:
     resolution: {integrity: sha512-pgRc4hJ4/sNjWCSS9AmnS40x3bNMDTknHgL5UaMBTMyJnU90EgWh1Rz+MC9eFu4BuN/UwZjKQuY/1v3rM7HMfg==}
     engines: {node: '>= 0.4'}
@@ -6863,10 +7845,6 @@ packages:
     resolution: {integrity: sha512-DhuTmvZWux4H1UOnWMB3sk0sbaCVOoQZjv8u1rDoTV0HTdGem9hkAZtl4JZy8P2z4Bg0nT+YMeOFyVr4zcG5Tw==}
     engines: {node: '>=16 || 14 >=14.17'}
     hasBin: true
-
-  sumchecker@3.0.1:
-    resolution: {integrity: sha512-MvjXzkz/BOfyVDkG0oFOtBxHX2u3gKbMHIF/dXblZsgD3BWOFLmHovIpZY7BykJdAjcqRCBi1WYBNdEC9yI7vg==}
-    engines: {node: '>= 8.0'}
 
   supports-color@10.2.2:
     resolution: {integrity: sha512-SS+jx45GF1QjgEXQx4NJZV9ImqmO2NPz5FNsIHrsDjh2YsHnawpan7SNQ1o8NuhrbHZy9AZhIoCUiCeaW/C80g==}
@@ -7119,10 +8097,6 @@ packages:
 
   undici-types@7.18.2:
     resolution: {integrity: sha512-AsuCzffGHJybSaRrmr5eHr81mwJU3kjw6M+uprWvCXiNeN9SOGwQ3Jn8jb8m3Z6izVgknn1R0FTCEAP2QrLY/w==}
-
-  undici@7.29.0:
-    resolution: {integrity: sha512-IDxfleLmmbSskfWSUATiN1nfn2rDuvnMOqb5CWR92iIfojA0Ud+ulOAAEQ57LPr9rWmsreUyf5lwyao+7GNNVw==}
-    engines: {node: '>=20.18.1'}
 
   unenv@2.0.0-rc.24:
     resolution: {integrity: sha512-i7qRCmY42zmCwnYlh9H2SvLEypEFGye5iRmEMKjcGi7zk9UquigRjFtTLz0TYqr0ZGLZhaMHl/foy1bZR+Cwlw==}
@@ -8161,21 +9135,6 @@ snapshots:
       - webpack
 
   '@dxup/unimport@0.1.2': {}
-
-  '@electron-internal/extract-zip@1.0.5': {}
-
-  '@electron/get@5.1.0':
-    dependencies:
-      debug: 4.4.3
-      env-paths: 3.0.0
-      graceful-fs: 4.2.11
-      progress: 2.0.3
-      semver: 7.8.5
-      sumchecker: 3.0.1
-    optionalDependencies:
-      undici: 7.29.0
-    transitivePeerDependencies:
-      - supports-color
 
   '@emnapi/runtime@1.11.3':
     dependencies:
@@ -9420,6 +10379,10 @@ snapshots:
   '@pkgjs/parseargs@0.11.0':
     optional: true
 
+  '@playwright/test@1.62.1':
+    dependencies:
+      playwright: 1.62.1
+
   '@polka/url@1.0.0-next.29': {}
 
   '@poppinss/colors@4.1.6':
@@ -9627,6 +10590,8 @@ snapshots:
 
   '@speed-highlight/core@1.2.24': {}
 
+  '@standard-schema/spec@1.1.0': {}
+
   '@storybook/addon-actions@8.6.14(storybook@8.6.18(prettier@3.9.6))':
     dependencies:
       '@storybook/global': 5.0.0
@@ -9732,6 +10697,10 @@ snapshots:
       vite: 6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)
 
   '@storybook/components@8.6.18(storybook@8.6.18(prettier@3.9.6))':
+    dependencies:
+      storybook: 8.6.18(prettier@3.9.6)
+
+  '@storybook/core-events@8.6.14(storybook@8.6.18(prettier@3.9.6))':
     dependencies:
       storybook: 8.6.18(prettier@3.9.6)
 
@@ -9872,6 +10841,26 @@ snapshots:
     dependencies:
       acorn: 8.18.0
 
+  '@sveltejs/kit@2.70.3(@sveltejs/vite-plugin-svelte@5.1.1(svelte@5.57.0(@typescript-eslint/types@8.68.0))(vite@7.3.6(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(svelte@5.57.0(@typescript-eslint/types@8.68.0))(typescript@5.9.3)(vite@7.3.6(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))':
+    dependencies:
+      '@standard-schema/spec': 1.1.0
+      '@sveltejs/acorn-typescript': 1.0.13(acorn@8.18.0)
+      '@sveltejs/vite-plugin-svelte': 5.1.1(svelte@5.57.0(@typescript-eslint/types@8.68.0))(vite@7.3.6(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
+      '@types/cookie': 0.6.0
+      acorn: 8.18.0
+      cookie: 0.6.0
+      devalue: 5.9.2
+      esm-env: 1.2.2
+      kleur: 4.1.5
+      magic-string: 0.30.21
+      mrmime: 2.0.1
+      set-cookie-parser: 3.1.2
+      sirv: 3.0.2
+      svelte: 5.57.0(@typescript-eslint/types@8.68.0)
+      vite: 7.3.6(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)
+    optionalDependencies:
+      typescript: 5.9.3
+
   '@sveltejs/load-config@0.2.3': {}
 
   '@sveltejs/vite-plugin-svelte-inspector@4.0.1(@sveltejs/vite-plugin-svelte@5.1.1(svelte@5.57.0(@typescript-eslint/types@8.68.0))(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(svelte@5.57.0(@typescript-eslint/types@8.68.0))(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))':
@@ -9880,6 +10869,15 @@ snapshots:
       debug: 4.4.3
       svelte: 5.57.0(@typescript-eslint/types@8.68.0)
       vite: 6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)
+    transitivePeerDependencies:
+      - supports-color
+
+  '@sveltejs/vite-plugin-svelte-inspector@4.0.1(@sveltejs/vite-plugin-svelte@5.1.1(svelte@5.57.0(@typescript-eslint/types@8.68.0))(vite@7.3.6(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(svelte@5.57.0(@typescript-eslint/types@8.68.0))(vite@7.3.6(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))':
+    dependencies:
+      '@sveltejs/vite-plugin-svelte': 5.1.1(svelte@5.57.0(@typescript-eslint/types@8.68.0))(vite@7.3.6(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
+      debug: 4.4.3
+      svelte: 5.57.0(@typescript-eslint/types@8.68.0)
+      vite: 7.3.6(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -9896,11 +10894,22 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@sveltejs/vite-plugin-svelte@5.1.1(svelte@5.57.0(@typescript-eslint/types@8.68.0))(vite@7.3.6(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))':
+    dependencies:
+      '@sveltejs/vite-plugin-svelte-inspector': 4.0.1(@sveltejs/vite-plugin-svelte@5.1.1(svelte@5.57.0(@typescript-eslint/types@8.68.0))(vite@7.3.6(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(svelte@5.57.0(@typescript-eslint/types@8.68.0))(vite@7.3.6(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
+      debug: 4.4.3
+      deepmerge: 4.3.1
+      kleur: 4.1.5
+      magic-string: 0.30.21
+      svelte: 5.57.0(@typescript-eslint/types@8.68.0)
+      vite: 7.3.6(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)
+      vitefu: 1.1.3(vite@7.3.6(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
+    transitivePeerDependencies:
+      - supports-color
+
   '@swc/helpers@0.5.15':
     dependencies:
       tslib: 2.8.1
-
-  '@tauri-apps/api@2.11.1': {}
 
   '@testing-library/dom@10.4.0':
     dependencies:
@@ -9954,6 +10963,15 @@ snapshots:
       svelte: 5.57.0(@typescript-eslint/types@8.68.0)
     optionalDependencies:
       vite: 6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)
+      vitest: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
+
+  '@testing-library/svelte@5.4.2(svelte@5.57.0(@typescript-eslint/types@8.68.0))(vite@7.3.6(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vitest@2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2))':
+    dependencies:
+      '@testing-library/dom': 10.4.0
+      '@testing-library/svelte-core': 1.1.3(svelte@5.57.0(@typescript-eslint/types@8.68.0))
+      svelte: 5.57.0(@typescript-eslint/types@8.68.0)
+    optionalDependencies:
+      vite: 7.3.6(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)
       vitest: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
 
   '@testing-library/user-event@14.5.2(@testing-library/dom@10.4.0)':
@@ -10014,6 +11032,8 @@ snapshots:
       '@types/deep-eql': 4.0.2
       assertion-error: 2.0.1
 
+  '@types/cookie@0.6.0': {}
+
   '@types/debug@4.1.13':
     dependencies:
       '@types/ms': 2.1.0
@@ -10055,6 +11075,7 @@ snapshots:
   '@types/node@24.13.3':
     dependencies:
       undici-types: 7.18.2
+    optional: true
 
   '@types/react-dom@19.2.5(@types/react@19.2.18)':
     dependencies:
@@ -10966,6 +11987,8 @@ snapshots:
 
   cookie-es@3.1.1: {}
 
+  cookie@0.6.0: {}
+
   cookie@1.1.1: {}
 
   core-util-is@1.0.3: {}
@@ -11199,14 +12222,6 @@ snapshots:
 
   electron-to-chromium@1.5.416: {}
 
-  electron@44.1.0:
-    dependencies:
-      '@electron-internal/extract-zip': 1.0.5
-      '@electron/get': 5.1.0
-      '@types/node': 24.13.3
-    transitivePeerDependencies:
-      - supports-color
-
   emoji-regex@10.6.0: {}
 
   emoji-regex@8.0.0: {}
@@ -11230,8 +12245,6 @@ snapshots:
   entities@6.0.1: {}
 
   entities@7.0.1: {}
-
-  env-paths@3.0.0: {}
 
   error-stack-parser-es@1.0.5: {}
 
@@ -11671,6 +12684,9 @@ snapshots:
       graceful-fs: 4.2.11
       jsonfile: 4.0.0
       universalify: 0.1.2
+
+  fsevents@2.3.2:
+    optional: true
 
   fsevents@2.3.3:
     optional: true
@@ -12828,7 +13844,7 @@ snapshots:
 
   natural-compare@1.4.0: {}
 
-  next@15.5.24(@types/node@24.13.3)(react-dom@19.2.8(react@19.2.8))(react@19.2.8):
+  next@15.5.24(@playwright/test@1.62.1)(@types/node@24.13.3)(react-dom@19.2.8(react@19.2.8))(react@19.2.8):
     dependencies:
       '@next/env': 15.5.24
       '@swc/helpers': 0.5.15
@@ -12846,6 +13862,7 @@ snapshots:
       '@next/swc-linux-x64-musl': 15.5.24
       '@next/swc-win32-arm64-msvc': 15.5.24
       '@next/swc-win32-x64-msvc': 15.5.24
+      '@playwright/test': 1.62.1
       sharp: 0.35.4(@types/node@24.13.3)
     transitivePeerDependencies:
       - '@babel/core'
@@ -13373,6 +14390,14 @@ snapshots:
       exsolve: 1.1.1
       pathe: 2.0.3
 
+  playwright-core@1.62.1: {}
+
+  playwright@1.62.1:
+    dependencies:
+      playwright-core: 1.62.1
+    optionalDependencies:
+      fsevents: 2.3.2
+
   polished@4.3.1:
     dependencies:
       '@babel/runtime': 7.29.7
@@ -13582,8 +14607,6 @@ snapshots:
   process-nextick-args@2.0.1: {}
 
   process@0.11.10: {}
-
-  progress@2.0.3: {}
 
   proper-lockfile@4.1.2:
     dependencies:
@@ -13959,6 +14982,8 @@ snapshots:
 
   set-cookie-parser@2.7.2: {}
 
+  set-cookie-parser@3.1.2: {}
+
   set-function-length@1.2.2:
     dependencies:
       define-data-property: 1.1.4
@@ -14193,12 +15218,6 @@ snapshots:
       pirates: 4.0.7
       tinyglobby: 0.2.17
       ts-interface-checker: 0.1.13
-
-  sumchecker@3.0.1:
-    dependencies:
-      debug: 4.4.3
-    transitivePeerDependencies:
-      - supports-color
 
   supports-color@10.2.2: {}
 
@@ -14467,9 +15486,7 @@ snapshots:
 
   undici-types@6.21.0: {}
 
-  undici-types@7.18.2: {}
-
-  undici@7.29.0:
+  undici-types@7.18.2:
     optional: true
 
   unenv@2.0.0-rc.24:
@@ -14846,6 +15863,10 @@ snapshots:
   vitefu@1.1.3(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)):
     optionalDependencies:
       vite: 6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)
+
+  vitefu@1.1.3(vite@7.3.6(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)):
+    optionalDependencies:
+      vite: 7.3.6(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)
 
   vitest@2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2):
     dependencies:

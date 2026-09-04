@@ -1,4 +1,4 @@
-import type { MouseEvent, ReactNode } from 'react';
+import type { CSSProperties, MouseEvent, ReactNode } from 'react';
 import type { ListAccessory } from './types';
 import { truncateMiddle } from './utils';
 import styles from '@larose-ui/styles/components/ListTable/ListTable.module.css';
@@ -13,6 +13,8 @@ export interface ListRowProps {
   truncate?: 'end' | 'middle';
   onPress?: () => void;
   onInfo?: (event: MouseEvent<HTMLButtonElement>) => void;
+  className?: string;
+  style?: CSSProperties;
 }
 
 function Accessory({ type }: { type: ListAccessory }) {
@@ -31,6 +33,8 @@ export function ListRow({
   truncate = 'end',
   onPress,
   onInfo,
+  className,
+  style,
 }: ListRowProps) {
   const displayTitle = truncate === 'middle' ? truncateMiddle(title) : title;
 
@@ -38,7 +42,8 @@ export function ListRow({
     <li>
       <button
         type="button"
-        className={styles.row}
+        className={[styles.row, className].filter(Boolean).join(' ')}
+        style={style}
         data-selected={selected ? 'true' : undefined}
         disabled={disabled}
         onClick={onPress}

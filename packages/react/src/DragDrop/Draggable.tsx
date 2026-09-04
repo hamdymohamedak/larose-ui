@@ -4,11 +4,12 @@ import {
   useState,
   type PointerEvent as ReactPointerEvent,
   type ReactNode,
+  type CSSProperties,
 } from 'react';
 import { DRAG_START_THRESHOLD_PX } from '@larose-ui/tokens';
+import { shouldBeginDrag } from '@larose-ui/primitives';
 import { useDragDropContext } from './DragDropContext';
 import type { DragItem } from './types';
-import { distance } from './utils';
 import styles from '@larose-ui/styles/components/DragDrop/DragDrop.module.css';
 
 export interface DraggableProps<T = unknown> {
@@ -21,6 +22,7 @@ export interface DraggableProps<T = unknown> {
   disabled?: boolean;
   children: ReactNode;
   className?: string;
+  style?: CSSProperties;
 }
 
 export function Draggable<T>({
@@ -33,6 +35,7 @@ export function Draggable<T>({
   disabled = false,
   children,
   className,
+  style,
 }: DraggableProps<T>) {
   const {
     session,
@@ -109,14 +112,16 @@ export function Draggable<T>({
     if (!pending || !originRef.current) return;
     if (event.pointerId !== originRef.current.pointerId) return;
 
-    const moved = distance(
-      originRef.current.x,
-      originRef.current.y,
-      event.clientX,
-      event.clientY,
-    );
-
-    if (!session && moved >= DRAG_START_THRESHOLD_PX) {
+    if (
+      !session &&
+      shouldBeginDrag(
+        originRef.current.x,
+        originRef.current.y,
+        event.clientX,
+        event.clientY,
+        DRAG_START_THRESHOLD_PX,
+      )
+    ) {
       beginPointerDrag(
         buildItem(),
         event.pointerId,
@@ -148,6 +153,7 @@ export function Draggable<T>({
     <div
       ref={ref}
       className={[styles.draggable, className].filter(Boolean).join(' ')}
+      style={style}
       data-dragging={isDragging ? 'true' : undefined}
       data-disabled={disabled ? 'true' : undefined}
       aria-grabbed={isDragging ? true : undefined}

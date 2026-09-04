@@ -1,7 +1,7 @@
 {
   "name": "@larose-ui/primitives",
   "version": "0.2.0",
-  "description": "Headless interactive behavior for laRose UI — menus, type-ahead, keyboard",
+  "description": "Headless interactive behavior for laRose UI — menus, focus trap, tabs, disclosure, selection, drag-drop sessions",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -31,6 +31,7 @@
     "@larose-ui/core": "workspace:*"
   },
   "devDependencies": {
+    "jsdom": "^25.0.1",
     "tsup": "^8.3.5",
     "typescript": "^5.7.2",
     "vitest": "^2.1.8"

@@ -1,7 +1,7 @@
 {
   "name": "PullDownButton",
   "version": "1",
-  "framework": "react",
+  "framework": "neutral",
   "props": [
     {
       "name": "destructiveConfirmation",
@@ -21,7 +21,7 @@
     },
     {
       "name": "icon",
-      "type": "ReactNode",
+      "type": "Node",
       "required": false
     },
     {

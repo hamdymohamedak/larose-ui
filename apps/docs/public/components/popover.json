@@ -70,10 +70,14 @@
       "title": "Default",
       "kind": "basic",
       "props": {
+        "side": "bottom",
+        "open": true,
+        "triggerLabel": "Show info",
+        "contentText": "Popovers present supplementary content anchored to a trigger.",
         "margin": 0,
         "maxWidth": 220
       },
-      "code": "import { Popover } from '@larose-ui/react';\n\n<Popover\n  margin={0}\n  maxWidth={220}\n>Example</Popover>"
+      "code": "import { Popover } from '@larose-ui/react';\n\n<Popover\n  side=\"bottom\"\n  open\n  triggerLabel=\"Show info\"\n  contentText=\"Popovers present supplementary content anchored to a trigger.\"\n  margin={0}\n  maxWidth={220}\n>Example</Popover>"
     },
     {
       "id": "Top",
@@ -81,9 +85,12 @@
       "kind": "advanced",
       "props": {
         "side": "top",
+        "open": true,
+        "triggerLabel": "Top popover",
+        "contentText": "Appears above the trigger.",
         "margin": 0
       },
-      "code": "import { Popover } from '@larose-ui/react';\n\n<Popover\n  side=\"top\"\n  margin={0}\n>Example</Popover>"
+      "code": "import { Popover } from '@larose-ui/react';\n\n<Popover\n  side=\"top\"\n  open\n  triggerLabel=\"Top popover\"\n  contentText=\"Appears above the trigger.\"\n  margin={0}\n>Example</Popover>"
     },
     {
       "id": "WithActions",

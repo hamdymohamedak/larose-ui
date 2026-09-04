@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { AdaptiveTable, useI18n, useNetwork, useBreakpoint } from '@larose-ui/runtime';
+import { AdaptiveTable, useI18n, useNetwork, useBreakpoint } from '@larose-ui/runtime-react';
 import { Badge } from '@larose-ui/react';
 
 interface Employee {
@@ -46,6 +46,7 @@ function RuntimeDemo() {
 }
 
 const meta: Meta = {
+  tags: ['fw-react'],
   title: 'Runtime/AdaptiveTable',
   component: RuntimeDemo,
   parameters: { layout: 'padded', laRose: { runtime: true } },

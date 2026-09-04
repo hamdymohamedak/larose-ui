@@ -3,6 +3,7 @@
 Category: Forms
 
 ## Props
+- `appearance` (DateTimePickerStyle) — Compact / wheels / inline / automatic. Use with object `style` when you need both.
 - `disabled` (boolean)
 - `error` (string | null)
 - `hint` (string)

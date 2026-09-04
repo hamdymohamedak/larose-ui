@@ -1,7 +1,7 @@
 {
   "name": "Ornament",
   "version": "1",
-  "framework": "react",
+  "framework": "neutral",
   "props": [],
   "events": [],
   "keyboard": {}

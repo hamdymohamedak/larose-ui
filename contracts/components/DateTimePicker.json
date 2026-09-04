@@ -1,8 +1,14 @@
 {
   "name": "DateTimePicker",
   "version": "1",
-  "framework": "react",
+  "framework": "neutral",
   "props": [
+    {
+      "name": "appearance",
+      "type": "DateTimePickerStyle",
+      "required": false,
+      "description": "Compact / wheels / inline / automatic. Use with object `style` when you need both."
+    },
     {
       "name": "disabled",
       "type": "boolean",

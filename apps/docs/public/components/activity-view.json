@@ -59,17 +59,23 @@
       "id": "NotesShareSheet",
       "title": "Notes share sheet",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"NotesShareSheet\" for full example.",
-      "composite": true
+      "props": {
+        "open": true,
+        "title": "Share Note",
+        "presentation": "sheet"
+      },
+      "code": "import { ActivityView } from '@larose-ui/react';\n\n<ActivityView\n  open\n  title=\"Share Note\"\n  presentation=\"sheet\"\n>Example</ActivityView>"
     },
     {
       "id": "PhotoAppActivities",
       "title": "App-specific activities",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"PhotoAppActivities\" for full example.",
-      "composite": true
+      "props": {
+        "open": true,
+        "title": "Share Photo",
+        "presentation": "sheet"
+      },
+      "code": "import { ActivityView } from '@larose-ui/react';\n\n<ActivityView\n  open\n  title=\"Share Photo\"\n  presentation=\"sheet\"\n>Example</ActivityView>"
     },
     {
       "id": "CustomActionTitle",

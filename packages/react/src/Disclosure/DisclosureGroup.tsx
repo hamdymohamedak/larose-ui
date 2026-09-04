@@ -1,4 +1,4 @@
-import { useCallback, useId, useState, type ReactNode } from 'react';
+import { useCallback, useId, useState, type CSSProperties, type ReactNode } from 'react';
 import { DisclosureTriangle } from './DisclosureTriangle';
 import styles from '@larose-ui/styles/components/Disclosure/Disclosure.module.css';
 
@@ -9,6 +9,8 @@ export interface DisclosureGroupProps {
   onExpandedChange?: (expanded: boolean) => void;
   children: ReactNode;
   disabled?: boolean;
+  className?: string;
+  style?: CSSProperties;
 }
 
 /**
@@ -29,6 +31,8 @@ export interface DisclosureListItem {
 export interface DisclosureListProps {
   items: DisclosureListItem[];
   defaultExpandedIds?: string[];
+  className?: string;
+  style?: CSSProperties;
 }
 
 function DisclosureListNode({
@@ -82,7 +86,7 @@ function DisclosureListNode({
 }
 
 /** Finder-style hierarchical list with disclosure triangles. */
-export function DisclosureList({ items, defaultExpandedIds = [] }: DisclosureListProps) {
+export function DisclosureList({ items, defaultExpandedIds = [], className, style }: DisclosureListProps) {
   const listId = useId();
   const [expandedIds, setExpandedIds] = useState(() => new Set(defaultExpandedIds));
 
@@ -96,7 +100,12 @@ export function DisclosureList({ items, defaultExpandedIds = [] }: DisclosureLis
   }, []);
 
   return (
-    <ul id={listId} className={styles.nestedList} aria-label="Disclosure list">
+    <ul
+      id={listId}
+      className={[styles.nestedList, className].filter(Boolean).join(' ')}
+      style={style}
+      aria-label="Disclosure list"
+    >
       {items.map((item) => (
         <DisclosureListNode
           key={item.id}

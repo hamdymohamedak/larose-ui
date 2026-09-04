@@ -38,7 +38,7 @@ export const docsPackages: DocsPackageEntry[] = [
     "name": "@larose-ui/ai",
     "tagline": "Permission-bound AI for SmartTable and SmartForm.",
     "peer": "react >=18",
-    "example": "import { SmartTable, AIProvider } from '@larose-ui/ai';",
+    "example": "import { SmartTable, AIProvider } from '@larose-ui/ai-react';",
     "features": [
       "Natural-language filtering",
       "Permission-gated AI actions"
@@ -82,7 +82,7 @@ export const docsPackages: DocsPackageEntry[] = [
     "name": "@larose-ui/data",
     "tagline": "Backend-aware data fetching with self-healing errors.",
     "peer": "react >=18",
-    "example": "import { DataView } from '@larose-ui/data';\n\n<DataView url=\"/api/employees\">{(rows) => <Table data={rows} />}</DataView>",
+    "example": "import { DataView } from '@larose-ui/data-react';\n\n<DataView url=\"/api/employees\">{(rows) => <Table data={rows} />}</DataView>",
     "features": [
       "useQuery, useMutation, DataView",
       "Self-healing errors",
@@ -90,21 +90,11 @@ export const docsPackages: DocsPackageEntry[] = [
     ]
   },
   {
-    "id": "desktop-core",
-    "name": "@larose-ui/desktop-core",
-    "tagline": "Desktop host utilities — native menus, accelerators, window chrome.",
-    "example": "import { registerHost, mapMenuBarToNative } from '@larose-ui/desktop-core';",
-    "features": [
-      "Electron/Tauri host registration",
-      "Native menu mapping"
-    ]
-  },
-  {
     "id": "devtools",
     "name": "@larose-ui/devtools",
     "tagline": "In-app runtime inspector for development.",
     "peer": "react >=18",
-    "example": "import { DevToolsProvider } from '@larose-ui/devtools';",
+    "example": "import { DevToolsProvider } from '@larose-ui/devtools-react';",
     "features": [
       "Runtime context panel",
       "Event timeline",
@@ -112,22 +102,11 @@ export const docsPackages: DocsPackageEntry[] = [
     ]
   },
   {
-    "id": "electron",
-    "name": "@larose-ui/electron",
-    "tagline": "Electron adapter for laRose desktop apps.",
-    "peer": "electron >=28, react >=18",
-    "example": "import { LaRoseElectronRoot } from '@larose-ui/electron/client';",
-    "features": [
-      "Host bootstrap",
-      "Native menu templates"
-    ]
-  },
-  {
     "id": "enterprise",
     "name": "@larose-ui/enterprise",
     "tagline": "Enterprise patterns — audit trails, session guards, schema IaC.",
     "peer": "react >=18",
-    "example": "import { SessionGuard, AuditedInput } from '@larose-ui/enterprise';",
+    "example": "import { SessionGuard, AuditedInput } from '@larose-ui/enterprise-react';",
     "features": [
       "Audit trails",
       "Session expiry",
@@ -139,7 +118,7 @@ export const docsPackages: DocsPackageEntry[] = [
     "name": "@larose-ui/forms",
     "tagline": "Schema-driven forms with validation and conditional fields.",
     "peer": "react >=18",
-    "example": "import { Form } from '@larose-ui/forms';\n\n<Form schema={{ id: 'user', fields: [{ name: 'email', type: 'text', label: 'Email' }] }} />",
+    "example": "import { Form } from '@larose-ui/forms-react';\n\n<Form schema={{ id: 'user', fields: [{ name: 'email', type: 'text', label: 'Email' }] }} />",
     "features": [
       "Declarative schemas",
       "Conditional visibility",
@@ -196,7 +175,7 @@ export const docsPackages: DocsPackageEntry[] = [
     "name": "@larose-ui/observability",
     "tagline": "UX observability — journeys, funnels, and rage-click analysis.",
     "peer": "react >=18",
-    "example": "import { useJourneyPage } from '@larose-ui/observability';\n\nuseJourneyPage('employees');",
+    "example": "import { useJourneyPage } from '@larose-ui/observability-react';\n\nuseJourneyPage('employees');",
     "features": [
       "Journey tracking",
       "Form funnel metrics",
@@ -219,7 +198,7 @@ export const docsPackages: DocsPackageEntry[] = [
     "name": "@larose-ui/permissions",
     "tagline": "Authorization-aware UI with RBAC/ABAC patterns.",
     "peer": "react >=18",
-    "example": "import { Can } from '@larose-ui/permissions';\n\n<Can permission=\"employees.delete\"><DeleteButton /></Can>",
+    "example": "import { Can } from '@larose-ui/permissions-react';\n\n<Can permission=\"employees.delete\"><DeleteButton /></Can>",
     "features": [
       "Can and Permission components",
       "Explainable blocked actions"
@@ -254,7 +233,7 @@ export const docsPackages: DocsPackageEntry[] = [
     "name": "@larose-ui/runtime",
     "tagline": "Unified runtime — theme, i18n, permissions, network, and session.",
     "peer": "react >=18",
-    "example": "import { LaRoseProvider } from '@larose-ui/runtime';\n\n<LaRoseProvider theme=\"light\" locale=\"en\" permissions={['app.read']}>\n  <App />\n</LaRoseProvider>",
+    "example": "import { LaRoseProvider } from '@larose-ui/runtime-react';\n\n<LaRoseProvider theme=\"light\" locale=\"en\" permissions={['app.read']}>\n  <App />\n</LaRoseProvider>",
     "features": [
       "LaRoseProvider composes runtime contexts",
       "useRuntime, useSession, useTheme",
@@ -295,22 +274,11 @@ export const docsPackages: DocsPackageEntry[] = [
     ]
   },
   {
-    "id": "tauri",
-    "name": "@larose-ui/tauri",
-    "tagline": "Tauri adapter for laRose desktop webviews.",
-    "peer": "react >=18",
-    "example": "import { LaRoseTauriRoot } from '@larose-ui/tauri/client';",
-    "features": [
-      "Host bootstrap",
-      "Tauri menu helpers"
-    ]
-  },
-  {
     "id": "testing",
     "name": "@larose-ui/testing",
     "tagline": "Test utilities with full laRose runtime context.",
     "peer": "react >=18",
-    "example": "import { renderWithLaRose } from '@larose-ui/testing';\n\nrenderWithLaRose(<App />, { permissions: ['app.read'] });",
+    "example": "import { renderWithLaRose } from '@larose-ui/testing-react';\n\nrenderWithLaRose(<App />, { permissions: ['app.read'] });",
     "features": [
       "renderWithLaRose wrapper",
       "Test matrix scenarios"
@@ -589,12 +557,6 @@ export const docsComponents: DocsComponentEntry[] = [
     "package": "react"
   },
   {
-    "id": "drag-start-threshold-px",
-    "name": "DRAG_START_THRESHOLD_PX",
-    "category": "Other",
-    "package": "react"
-  },
-  {
     "id": "drag-drop-list",
     "name": "DragDropList",
     "category": "DragDrop",
@@ -724,30 +686,6 @@ export const docsComponents: DocsComponentEntry[] = [
     "id": "label",
     "name": "Label",
     "category": "Content",
-    "package": "react"
-  },
-  {
-    "id": "liquid-glass-optics-defaults",
-    "name": "LIQUID_GLASS_OPTICS_DEFAULTS",
-    "category": "Other",
-    "package": "react"
-  },
-  {
-    "id": "liquid-glass-presets",
-    "name": "LIQUID_GLASS_PRESETS",
-    "category": "Other",
-    "package": "react"
-  },
-  {
-    "id": "liquid-glass-switch-active-green",
-    "name": "LIQUID_GLASS_SWITCH_ACTIVE_GREEN",
-    "category": "Other",
-    "package": "react"
-  },
-  {
-    "id": "liquid-glass-switch-track-glass",
-    "name": "LIQUID_GLASS_SWITCH_TRACK_GLASS",
-    "category": "Other",
     "package": "react"
   },
   {
@@ -1015,12 +953,6 @@ export const docsComponents: DocsComponentEntry[] = [
     "package": "react"
   },
   {
-    "id": "system-activity-ids",
-    "name": "SYSTEM_ACTIVITY_IDS",
-    "category": "Other",
-    "package": "react"
-  },
-  {
     "id": "table",
     "name": "Table",
     "category": "Data",
@@ -1195,24 +1127,6 @@ export const docsComponents: DocsComponentEntry[] = [
     "package": "react"
   },
   {
-    "id": "web-view",
-    "name": "WebView",
-    "category": "Content",
-    "package": "react"
-  },
-  {
-    "id": "web-view-navigation",
-    "name": "WebViewNavigation",
-    "category": "Content",
-    "package": "react"
-  },
-  {
-    "id": "web-view-shell",
-    "name": "WebViewShell",
-    "category": "Content",
-    "package": "react"
-  },
-  {
     "id": "wheel-column",
     "name": "WheelColumn",
     "category": "Forms",
@@ -1251,11 +1165,6 @@ export const docsGuides: DocsGuideEntry[] = [
     "id": "nuxt",
     "title": "Nuxt",
     "file": "docs/ecosystem/NUXT.md"
-  },
-  {
-    "id": "desktop",
-    "title": "Desktop integration",
-    "file": "docs/ecosystem/DESKTOP.md"
   },
   {
     "id": "runtime",

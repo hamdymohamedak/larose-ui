@@ -152,6 +152,7 @@ export function PathControl({
   onChoose,
   onDropPath,
   className,
+  style,
   'aria-label': ariaLabel = 'Path',
 }: PathControlProps) {
   if (segments.length === 0) return null;
@@ -159,6 +160,7 @@ export function PathControl({
   return (
     <nav
       className={[styles.pathControl, className].filter(Boolean).join(' ')}
+      style={style}
       aria-label={ariaLabel}
       data-variant={variant}
     >

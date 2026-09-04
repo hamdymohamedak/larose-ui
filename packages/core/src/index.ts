@@ -291,6 +291,14 @@ export {
 
 export { sanitizeNavigationUrl, isSafeRedirectPath } from './security/url';
 
+export {
+  LAROSE_PROVIDER_ATTR,
+  LAROSE_PORTAL_ROOT_ATTR,
+  LAROSE_PORTAL_SELECTOR,
+  getLaRosePortalTarget,
+  mergeDefinedProps,
+} from './dom/portal';
+
 export type {
   Accelerator,
   AcceleratorConflict,

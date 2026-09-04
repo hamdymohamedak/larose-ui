@@ -30,6 +30,7 @@ export function TokenField({
   delimiters = [','],
   onContextMenuEntries,
   className,
+  style,
   'aria-label': ariaLabel = 'Token field',
 }: TokenFieldProps) {
   const [internalTokens, setInternalTokens] = useState<TokenFieldToken[]>(defaultTokens);
@@ -84,7 +85,7 @@ export function TokenField({
   };
 
   return (
-    <div className={[styles.field, className].filter(Boolean).join(' ')} aria-label={ariaLabel}>
+    <div className={[styles.field, className].filter(Boolean).join(' ')} style={style} aria-label={ariaLabel}>
       {tokens.map((token) => {
         const body = (
           <span key={token.id} className={styles.token}>

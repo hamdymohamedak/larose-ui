@@ -17,7 +17,7 @@ const ARCHITECTURE = `
         ├── LiquidGlass* (displacement + optics)
         │
         ↓
-@larose-ui/runtime
+@larose-ui/runtime-react
         │
         ├── permissions
         ├── data

@@ -31,6 +31,7 @@ function InboxIcon() {
 
 const meta: Meta = {
   title: 'Foundation/Navigation and Search',
+  tags: ['autodocs', 'fw-react'],
   parameters: { layout: 'padded' },
 };
 
@@ -47,6 +48,13 @@ const pathSegments = [
 
 export const PathControlStandard: Story = {
   name: 'Path control (standard)',
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'pathControl' } },
+  args: {
+    variant: "standard",
+    selectedId: "file",
+  },
+
   render: () => (
     <PathControl
       segments={pathSegments}
@@ -59,6 +67,13 @@ export const PathControlStandard: Story = {
 
 export const PathControlPopup: Story = {
   name: 'Path control (pop-up)',
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'pathControl' } },
+  args: {
+    variant: "popup",
+    selectedId: "file",
+  },
+
   render: () => (
     <PathControl
       segments={pathSegments}
@@ -72,6 +87,13 @@ export const PathControlPopup: Story = {
 
 export const SearchFieldMail: Story = {
   name: 'Search field with scope and tokens',
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'searchField' } },
+  args: {
+    value: "Design",
+    placeholder: "Search",
+  },
+
   render: function SearchDemo() {
     const [query, setQuery] = useState('Design');
     const [scope, setScope] = useState('all');
@@ -104,6 +126,10 @@ export const SearchFieldMail: Story = {
 
 export const SidebarMail: Story = {
   name: 'Sidebar with search and disclosure',
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'sidebar' } },
+  args: { brand: 'Mail' },
+
   render: () => (
     <div style={{ display: 'flex', minHeight: '18rem', border: '1px solid rgb(0 0 0 / 0.08)', borderRadius: '0.75rem' }}>
       <Sidebar platform="ipados">
@@ -130,6 +156,9 @@ export const SidebarMail: Story = {
 
 export const TokenFieldMail: Story = {
   name: 'Token field (macOS Mail)',
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'tokenField' } },
+
   render: function TokenDemo() {
     const [tokens, setTokens] = useState([{ id: '1', label: 'Juan Chavez' }]);
     return (
@@ -143,7 +172,7 @@ export const TokenFieldMail: Story = {
             { id: 't', label: 'Tim Cook' },
           ]}
           onContextMenuEntries={(token) => [
-            { id: 'vip', label: `Mark ${token.label} as VIP` },
+            { id: 'vip', label: 'Mark ' + token.label + ' as VIP' },
             { id: 'card', label: 'Open Contact Card' },
           ]}
         />

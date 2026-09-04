@@ -8,11 +8,16 @@ import {
 } from 'react';
 import { createPortal } from 'react-dom';
 import type { ComponentMotionOverride } from '@larose-ui/themes';
+import {
+  activateOverlayFocus,
+  focusFirst,
+} from '@larose-ui/primitives';
 import { useComponentDefaults } from '../theme/useComponentDefaults';
 import { useComponentMotion } from '../theme/useComponentMotion';
 import { usePresence } from '../Motion/usePresence';
 import motionStyles from '@larose-ui/styles/components/Motion/motion.module.css';
 import styles from '@larose-ui/styles/components/Drawer/Drawer.module.css';
+import { getLaRosePortalTarget } from '@larose-ui/core';
 
 export type DrawerSide = 'left' | 'right';
 
@@ -53,28 +58,19 @@ export function Drawer(incomingProps: DrawerProps) {
   } = useComponentDefaults('Drawer', incomingProps);
 
   const panelRef = useRef<HTMLDivElement>(null);
-  const previousFocus = useRef<HTMLElement | null>(null);
   const { phase, shouldRender, onAnimationEnd } = usePresence({ present: open });
   const { style: motionStyle } = useComponentMotion('Drawer', motion);
 
   useEffect(() => {
     if (!open) return;
-
-    previousFocus.current = document.activeElement as HTMLElement;
-    panelRef.current?.focus();
-
-    const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
-    };
-
-    document.addEventListener('keydown', onKeyDown);
-    document.body.style.overflow = 'hidden';
-
-    return () => {
-      document.removeEventListener('keydown', onKeyDown);
-      document.body.style.overflow = '';
-      previousFocus.current?.focus();
-    };
+    if (!focusFirst(panelRef.current)) {
+      panelRef.current?.focus();
+    }
+    return activateOverlayFocus({
+      container: panelRef.current,
+      onEscape: onClose,
+      autoFocus: false,
+    });
   }, [open, onClose]);
 
   if (!shouldRender) return null;
@@ -105,8 +101,7 @@ export function Drawer(incomingProps: DrawerProps) {
     .filter(Boolean)
     .join(' ');
 
-  return createPortal(
-    <div
+  return createPortal(<div
       className={backdropClass}
       style={{ ...motionStyle, ...overlayStyle, ...style }}
       onClick={handleOverlayClick}
@@ -141,6 +136,6 @@ export function Drawer(incomingProps: DrawerProps) {
         <div className={styles.content}>{children}</div>
       </aside>
     </div>,
-    document.body,
+    getLaRosePortalTarget(),
   );
 }

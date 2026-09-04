@@ -1,7 +1,7 @@
 {
   "name": "HomeScreenQuickActions",
   "version": "1",
-  "framework": "react",
+  "framework": "neutral",
   "props": [
     {
       "name": "actions",
@@ -15,7 +15,7 @@
     },
     {
       "name": "icon",
-      "type": "ReactNode",
+      "type": "Node",
       "required": true
     },
     {

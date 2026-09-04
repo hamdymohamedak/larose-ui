@@ -76,7 +76,7 @@
   border-radius: var(--lr-radius-full);
   border: 2px solid var(--lr-color-surface-elevated);
   background: var(--lr-color-primary);
-  color: var(--lr-color-text-inverse);
+  color: var(--lr-color-on-accent, var(--lr-button-on-primary-color));
   font-size: 0.6875rem;
   font-weight: var(--lr-font-weight-semibold);
   overflow: hidden;

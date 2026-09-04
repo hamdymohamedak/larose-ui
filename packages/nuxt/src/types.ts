@@ -1,11 +1,18 @@
-import type { Density, ThemeMode } from '@larose-ui/core';
+import type { Density, Environment, ThemeMode } from '@larose-ui/core';
 import type { LaRoseAppearance } from './themeScript';
+
+export type LaRoseLocale = 'en' | 'ar' | 'de';
 
 export interface LaRosePublicRuntimeConfig {
   theme: ThemeMode;
   density: Density;
   tenantId?: string;
-  runtime: boolean | Record<string, unknown>;
+  appearance?: LaRoseAppearance;
+  enableToasts?: boolean;
+  locale?: LaRoseLocale;
+  environment?: Environment;
+  /** @deprecated Full stack is always composed by runtime-vue LaRoseProvider. */
+  runtime?: boolean | Record<string, unknown>;
 }
 
 export interface ModuleOptions {
@@ -18,9 +25,12 @@ export interface ModuleOptions {
   theme?: ThemeMode;
   density?: Density;
   tenantId?: string;
-  /** Enable RuntimeProvider inside LaRoseApp when true or pass initial context object. */
+  enableToasts?: boolean;
+  locale?: LaRoseLocale;
+  environment?: Environment;
+  /** @deprecated Full stack is always composed by runtime-vue LaRoseProvider. */
   runtime?: boolean | Record<string, unknown>;
-  /** Transpile @larose-ui/vue for SSR/Vite. */
+  /** Transpile @larose-ui/vue and @larose-ui/runtime-vue for SSR/Vite. */
   transpile?: boolean;
 }
 

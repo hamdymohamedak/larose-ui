@@ -19,6 +19,7 @@ const photos = [
 
 const meta: Meta = {
   title: 'Foundation/Drag and Drop',
+  tags: ['autodocs', 'fw-react'],
   parameters: { layout: 'padded' },
 };
 
@@ -26,6 +27,9 @@ export default meta;
 type Story = StoryObj;
 
 export const ReorderableList: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'dragDropList' } },
+
   render: function ReorderableListDemo() {
     const [items, setItems] = useState<DragDropListItem[]>([
       { id: '1', label: 'Review designs' },

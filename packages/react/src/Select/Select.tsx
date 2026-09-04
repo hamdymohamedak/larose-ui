@@ -38,6 +38,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
       inputSize = 'md',
       className,
       id,
+      style,
       ...props
     },
     ref,
@@ -54,6 +55,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
         required={required}
         htmlFor={inputId}
         uiState={uiState}
+        style={style}
       >
         <div className={styles.inputContainer}>
           <select

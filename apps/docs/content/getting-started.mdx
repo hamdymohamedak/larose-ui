@@ -11,7 +11,7 @@ pnpm add @larose-ui/react @larose-ui/tokens
 For runtime features (network, offline, toasts, permissions):
 
 ```bash
-pnpm add @larose-ui/runtime @larose-ui/permissions
+pnpm add @larose-ui/runtime-react @larose-ui/permissions-react
 ```
 
 ## Minimal app
@@ -19,7 +19,7 @@ pnpm add @larose-ui/runtime @larose-ui/permissions
 Import global styles once, then render components inside the provider:
 
 ```tsx
-import { LaRoseProvider } from '@larose-ui/runtime';
+import { LaRoseProvider } from '@larose-ui/runtime-react';
 import { Button, Card, Input } from '@larose-ui/react';
 import '@larose-ui/tokens/styles.css';
 import '@larose-ui/react/styles.css';
@@ -41,7 +41,7 @@ export function App() {
 For production SaaS apps, use the full runtime provider:
 
 ```tsx
-import { LaRoseProvider } from '@larose-ui/runtime';
+import { LaRoseProvider } from '@larose-ui/runtime-react';
 import { Button, Card } from '@larose-ui/react';
 import '@larose-ui/tokens/styles.css';
 

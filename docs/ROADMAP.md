@@ -13,10 +13,10 @@
 | Feature flag evaluators | Done |
 | Network state extensions | Done |
 | Tenant resolver | Done |
-| Toast decoupling (`@larose-ui/runtime/toast`) | Done |
+| Toast decoupling (`@larose-ui/runtime-react/toast`) | Done |
 | Planning docs | Done |
 
-**Exit criteria:** Full quality gate pass, documented examples. Toast moved to `@larose-ui/runtime/toast` (migration: update imports).
+**Exit criteria:** Full quality gate pass, documented examples. Toast moved to `@larose-ui/runtime-react/toast` (migration: update imports).
 
 ## Phase 2: DevTools 2.0 — Complete
 

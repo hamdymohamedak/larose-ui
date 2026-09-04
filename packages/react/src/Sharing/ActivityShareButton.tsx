@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, type CSSProperties } from 'react';
 import { ActivityView } from './ActivityView';
 import { ShareButton } from './ShareButton';
 import type { ActivityItem } from './types';
@@ -12,6 +12,8 @@ export interface ActivityShareButtonProps {
   onActivitySelect?: (activity: ActivityItem) => void;
   /** Uses popover on wide viewports and sheet on compact widths when auto. */
   presentation?: 'sheet' | 'popover' | 'auto';
+  className?: string;
+  style?: CSSProperties;
 }
 
 /**
@@ -24,6 +26,8 @@ export function ActivityShareButton({
   title,
   onActivitySelect,
   presentation = 'auto',
+  className,
+  style,
 }: ActivityShareButtonProps) {
   const [open, setOpen] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -35,7 +39,7 @@ export function ActivityShareButton({
       : presentation;
 
   return (
-    <span className={styles.wrapper}>
+    <span className={[styles.wrapper, className].filter(Boolean).join(' ')} style={style}>
       <ShareButton
         ref={buttonRef}
         label={label}

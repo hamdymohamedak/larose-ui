@@ -1,13 +1,32 @@
-export { default as Badge } from '../../../packages/vue/src/components/Badge/Badge.vue';
-export { default as Button } from '../../../packages/vue/src/components/Button/Button.vue';
-export { default as Label } from '../../../packages/vue/src/components/Label/Label.vue';
-export { default as Spinner } from '../../../packages/vue/src/components/Spinner/Spinner.vue';
-export { default as Input } from '../../../packages/vue/src/components/Input/Input.vue';
-export { default as Textarea } from '../../../packages/vue/src/components/Textarea/Textarea.vue';
-export { default as Checkbox } from '../../../packages/vue/src/components/Checkbox/Checkbox.vue';
-export { default as Radio } from '../../../packages/vue/src/components/Radio/Radio.vue';
-export { default as Switch } from '../../../packages/vue/src/components/Switch/Switch.vue';
-export { default as Select } from '../../../packages/vue/src/components/Select/Select.vue';
-export { default as Progress } from '../../../packages/vue/src/components/Progress/Progress.vue';
-export { default as Alert } from '../../../packages/vue/src/components/Alert/Alert.vue';
-export { default as Card } from '../../../packages/vue/src/components/Card/Card.vue';
+/**
+ * Vue mounts for cross-framework Storybook.
+ * Package components are code-generated; demos stay hand-written.
+ */
+export * from './generated/vuePackageComponents';
+
+export { default as CardDemo } from './CardDemo.vue';
+export { default as TabViewDemo } from './TabViewDemo.vue';
+export { default as ListDemo } from './ListDemo.vue';
+export { default as SplitViewDemo } from './SplitViewDemo.vue';
+export { default as PopoverDemo } from './PopoverDemo.vue';
+export { default as TabsDemo } from './TabsDemo.vue';
+export { default as SidebarDemo } from './SidebarDemo.vue';
+export { default as HeaderDemo } from './HeaderDemo.vue';
+export { default as ToastDemo } from './ToastDemo.vue';
+export { default as AccordionDemo } from './AccordionDemo.vue';
+export { default as ShortcutLabDemo } from './ShortcutLabDemo.vue';
+export { default as MenuDemo } from './MenuDemo.vue';
+export { default as ButtonGroupDemo } from './ButtonGroupDemo.vue';
+export { default as SquareButtonsDemo } from './SquareButtonsDemo.vue';
+export { default as DisclosureButtonDemo } from './DisclosureButtonDemo.vue';
+export { default as DisclosureGroupDemo } from './DisclosureGroupDemo.vue';
+export { default as TableDemo } from './TableDemo.vue';
+export { default as CollaborationPopoverDemo } from './CollaborationPopoverDemo.vue';
+export { default as DocumentWorkspaceDemo } from './DocumentWorkspaceDemo.vue';
+export { default as UnsavedIndicatorsDemo } from './UnsavedIndicatorsDemo.vue';
+export { default as GlassScrollScene } from './GlassScrollScene.vue';
+export { default as LiquidGlassSurfaceDemo } from './LiquidGlassSurfaceDemo.vue';
+export { default as LiquidGlassButtonDemo } from './LiquidGlassButtonDemo.vue';
+export { default as LiquidGlassTabBarDemo } from './LiquidGlassTabBarDemo.vue';
+export { default as LiquidGlassTopBarDemo } from './LiquidGlassTopBarDemo.vue';
+export { default as LiquidGlassAllControlsDemo } from './LiquidGlassAllControlsDemo.vue';

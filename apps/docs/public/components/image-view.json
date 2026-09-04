@@ -62,41 +62,49 @@
       "id": "FitModes",
       "title": "Fit Modes",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"FitModes\" for full example.",
-      "composite": true
+      "props": {
+        "fit": "contain",
+        "alt": "Sample contain"
+      },
+      "code": "import { ImageView } from '@larose-ui/react';\n\n<ImageView\n  fit=\"contain\"\n  alt=\"Sample contain\"\n>Example</ImageView>"
     },
     {
       "id": "TextOverlay",
       "title": "Text Overlay",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"TextOverlay\" for full example.",
-      "composite": true
+      "props": {
+        "alt": "Product hero",
+        "fit": "cover"
+      },
+      "code": "import { ImageView } from '@larose-ui/react';\n\n<ImageView\n  alt=\"Product hero\"\n  fit=\"cover\"\n>Example</ImageView>"
     },
     {
       "id": "AnimatedSequence",
       "title": "Animated Sequence",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"AnimatedSequence\" for full example.",
-      "composite": true
+      "props": {
+        "alt": "Loading animation",
+        "fit": "contain"
+      },
+      "code": "import { ImageView } from '@larose-ui/react';\n\n<ImageView\n  alt=\"Loading animation\"\n  fit=\"contain\"\n>Example</ImageView>"
     },
     {
       "id": "ImageWellStory",
       "title": "Image Well",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"ImageWellStory\" for full example.",
-      "composite": true
+      "props": {
+        "placeholder": "Drop, paste, or click — press Delete to clear"
+      },
+      "code": "import { ImageView } from '@larose-ui/react';\n\n<ImageView\n  placeholder=\"Drop, paste, or click — press Delete to clear\"\n>Example</ImageView>"
     },
     {
       "id": "ImageButtonStory",
       "title": "Image Button",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"ImageButtonStory\" for full example.",
-      "composite": true
+      "props": {
+        "alt": "Open gallery"
+      },
+      "code": "import { ImageView } from '@larose-ui/react';\n\n<ImageView\n  alt=\"Open gallery\"\n>Example</ImageView>"
     }
   ],
   "accessibility": [],

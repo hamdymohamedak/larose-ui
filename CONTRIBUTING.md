@@ -27,6 +27,8 @@ Useful commands during development:
 | `pnpm lint` | ESLint |
 | `pnpm typecheck` | TypeScript across the monorepo |
 | `pnpm run doctor` | Quality gates (deprecations, contracts, a11y) |
+| `make contribute-list` | List packages for contribution scaffolds |
+| `make contribute NAME=X PACKAGE=react` | Scaffold new component/module stubs |
 | `make test-all` | Full CI suite locally |
 
 ## Branch workflow
@@ -40,11 +42,42 @@ CI runs on pushes and pull requests to `dev`. Releases are published only when c
 
 ## Making changes
 
+### Scaffold a new component (contributors)
+
+Use the contribute CLI as a **guided workflow** — it creates stubs and prints a checklist. You still write the real implementation.
+
+```bash
+# See targets + optional flags
+make contribute-list
+
+# Recommended: React + Vue + Svelte adapters + shared CSS once
+make contribute NAME=StatusPill PACKAGE=all
+
+# Single package
+make contribute NAME=StatusPill PACKAGE=react
+
+# Optional extras (never default)
+make contribute NAME=StatusPill PACKAGE=all WITH_STORY=1
+make contribute NAME=StatusPill PACKAGE=all SANDBOX_HOOK=forms
+make contribute NAME=StatusPill PACKAGE=all SCENARIO=my-flow
+
+# Or via the CLI directly
+pnpm --filter @larose-ui/cli build
+node packages/cli/dist/cli.js contribute component StatusPill --package all --dry-run
+```
+
+**Workflow:** Core → Styles → Adapters → Vitest → Story → Sandbox (if needed) → Playwright (if critical) → Contracts → Changeset
+
+**Sandbox rule of thumb:** simple components need Story + Vitest only; integration-critical components hook an existing kitchen-sink scenario (`forms` / `overlays` / …); portal/focus/keyboard/runtime flows may need a shared scenario + Playwright. Do **not** create per-component sandboxes.
+
+The command prints created paths, next steps, and a contributor checklist. It refuses to overwrite existing files and checks that the package source layout exists first.
+
 ### Packages and apps
 
-- **`packages/*`** — publishable libraries (`@larose-ui/react`, `@larose-ui/runtime`, etc.)
-- **`apps/playground`** — Storybook; add or update stories for UI changes
-- **`apps/demo`** — integration demo app
+- **`packages/*`** — publishable libraries (`@larose-ui/react`, `@larose-ui/runtime-react`, etc.)
+- **`apps/playground`** — Storybook; docs / visual catalog (not multi-framework parity authority)
+- **`apps/sandbox-{react,vue,svelte}`** — kitchen-sink consumer apps for real integration QA
+- **`apps/sandbox-e2e`** — Playwright critical-flow parity (`pnpm test:parity`)
 
 After changing a component in `@larose-ui/react`, rebuild if Storybook reads from `dist`:
 
@@ -58,6 +91,33 @@ pnpm --filter @larose-ui/react build
 - Keep diffs focused; avoid unrelated refactors.
 - Run `pnpm lint` before pushing.
 - Fix type errors — `pnpm typecheck` must pass.
+
+### No logic duplication across frameworks (required)
+
+Shared behavior must **not** be copy-pasted into React, Vue, and Svelte.
+
+| Kind of code | Where it belongs |
+|--------------|------------------|
+| Pure utils, defaults, engines, state machines | `@larose-ui/core`, `@larose-ui/primitives`, `@larose-ui/component-logic`, `@larose-ui/liquid-glass-core`, or another `*-core` package |
+| Menu / keyboard / type-ahead | `@larose-ui/primitives` |
+| Domain utils (Toolbar, AlertDialog, Chart, …) | `@larose-ui/component-logic` |
+| Form schema / validation (no UI) | `@larose-ui/forms-core` |
+| Data client / fetch helpers (no UI) | `@larose-ui/data-core` |
+| Permissions / ABAC (no UI) | `@larose-ui/permissions-core` |
+| Observability collectors | `@larose-ui/observability-core` |
+| Runtime store / host / i18n helpers | `@larose-ui/runtime-core` |
+| AI intents / runtime | `@larose-ui/ai-core` |
+| Enterprise version / schema / audit model | `@larose-ui/enterprise-core` |
+| Test matrix scenarios | `@larose-ui/testing-core` |
+| Liquid Glass optics / displacement | `@larose-ui/liquid-glass-core` |
+| CSS / visual tokens | `@larose-ui/styles`, `@larose-ui/tokens` |
+| Framework rendering only | `@larose-ui/react`, `@larose-ui/vue`, `@larose-ui/svelte` (+ `*-vue` / `*-svelte` / React intelligence adapters) |
+
+**Hard rule:** packages named `*-core` (and other framework-agnostic packages listed in `scripts/check-framework-neutrality.mjs`) must not depend on or import `react`, `vue`, or `svelte`. Run `pnpm check:framework-neutrality` before PRs that touch cores.
+
+**Do not** add a new `utils.ts`, engine file, or pure helper in one UI package and then duplicate it in the others. Extract shared logic first, then thin adapters that import it.
+
+Framework packages may keep thin re-export shims for public API stability, but the implementation must live in one shared place. React is **one adapter among three**, not the source of truth for platform logic.
 
 ### Tests
 
@@ -130,6 +190,8 @@ Run this before merging significant work when possible.
 ## Documentation
 
 - Architecture: [`docs/architecture/ARCHITECTURE.md`](docs/architecture/ARCHITECTURE.md)
+- Versioning: [`docs/architecture/VERSIONING.md`](docs/architecture/VERSIONING.md)
+- Product positioning: [`docs/architecture/PRODUCT_POSITIONING.md`](docs/architecture/PRODUCT_POSITIONING.md)
 - Runtime: [`docs/runtime/RUNTIME_2.md`](docs/runtime/RUNTIME_2.md)
 - Migration: [`docs/ecosystem/MIGRATION.md`](docs/ecosystem/MIGRATION.md)
 - Design language: [`docs/design/REFINED_DESIGN_LANGUAGE.md`](docs/design/REFINED_DESIGN_LANGUAGE.md)

@@ -4,7 +4,7 @@ Foundational AI layer with strict permission boundaries.
 
 ## Current State
 
-- `@larose-ui/ai`: SmartTable, SmartForm, mock + HTTP adapters
+- `@larose-ui/ai-react`: SmartTable, SmartForm, mock + HTTP adapters
 - **Intent pipeline** — `parseIntent()`, `sanitizePrompt()`
 - **Permission-bound execution** — `createAIRuntime()` gates every action
 - **AIProvider** — wires runtime to `usePermissions()` from laRose
@@ -19,8 +19,8 @@ import {
   SmartForm,
   createHttpAdapter,
   createMockAdapter,
-} from '@larose-ui/ai';
-import { LaRoseProvider } from '@larose-ui/runtime';
+} from '@larose-ui/ai-react';
+import { LaRoseProvider } from '@larose-ui/runtime-react';
 
 const adapter = createHttpAdapter({
   baseUrl: 'https://api.example.com',

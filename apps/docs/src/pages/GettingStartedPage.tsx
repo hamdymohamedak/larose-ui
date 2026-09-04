@@ -1,5 +1,5 @@
 import { Button, Badge, Card, Input } from '@larose-ui/react';
-import { LaRoseProvider } from '@larose-ui/runtime';
+import { LaRoseProvider } from '@larose-ui/runtime-react';
 import { FrameworkCodeTabs } from '@/components/FrameworkCodeTabs';
 import { FrameworkSelector } from '@/components/FrameworkSelector';
 import { PreviewFrame } from '@/components/PreviewFrame';
@@ -176,8 +176,7 @@ export function GettingStartedPage() {
       <section style={{ marginTop: '3rem' }}>
         <h2>Platform-specific setup</h2>
         <p style={{ color: 'var(--lr-color-text-muted)', marginBottom: '1rem' }}>
-          Using a meta-framework or deploying to desktop? These adapters add SSR safety,
-          auto-imports, and native platform integration.
+          Using a meta-framework? These adapters add SSR safety and auto-imports for Next.js and Nuxt.
         </p>
 
         <div className="docs-callout-grid">
@@ -209,21 +208,6 @@ export function GettingStartedPage() {
               onClick={() => navigate('/docs/guides/nuxt')}
             >
               Nuxt guide →
-            </Button>
-          </div>
-          <div className="docs-callout">
-            <h3>Electron / Tauri</h3>
-            <p>
-              Desktop adapters share native menus, accelerator bindings, and OS-aware theming
-              across Electron and Tauri.
-            </p>
-            <Button
-              variant="ghost"
-              size="sm"
-              style={{ marginTop: '0.75rem' }}
-              onClick={() => navigate('/docs/guides/desktop')}
-            >
-              Desktop guide →
             </Button>
           </div>
         </div>

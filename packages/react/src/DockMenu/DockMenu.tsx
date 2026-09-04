@@ -7,8 +7,10 @@ import {
   useState,
   type MouseEvent as ReactMouseEvent,
   type ReactNode,
+  type CSSProperties,
 } from 'react';
 import { ContextualMenuPortal } from '../Motion/OverlayPortal';
+import { mergeStyles } from '../shared/styleProps';
 import type { ContextMenuEntry, ContextMenuItemConfig } from '../ContextMenu/types';
 import { canShowDisabledItem, isItem } from '../ContextMenu/utils';
 import type { DockMenuPosition, DockWindow } from './types';
@@ -29,6 +31,8 @@ export interface DockMenuProps {
   onEntrySelect?: (entry: ContextMenuItemConfig) => void;
   open?: boolean;
   onOpenChange?: (open: boolean) => void;
+  className?: string;
+  style?: CSSProperties;
 }
 
 function DockMenuItemRow({
@@ -74,6 +78,8 @@ export function DockMenu({
   onEntrySelect,
   open,
   onOpenChange,
+  className,
+  style,
 }: DockMenuProps) {
   const menuId = useId();
   const iconRef = useRef<HTMLButtonElement>(null);
@@ -143,7 +149,8 @@ export function DockMenu({
       <button
         ref={iconRef}
         type="button"
-        className={styles.iconButton}
+        className={[styles.iconButton, className].filter(Boolean).join(' ')}
+        style={style}
         aria-label={appName}
         aria-haspopup="menu"
         aria-expanded={isOpen}
@@ -163,7 +170,7 @@ export function DockMenu({
         surfaceClassName={styles.menu}
         surfaceRole="menu"
         aria-label={`${appName} Dock menu`}
-        surfaceStyle={{ left: position.x, top: position.y }}
+        surfaceStyle={mergeStyles({ left: position.x, top: position.y }, style)}
         onSurfaceClick={(event) => event.stopPropagation()}
       >
         <ul className={styles.list}>
@@ -188,13 +195,25 @@ export function DockMenu({
 
 export interface DockBarProps {
   children: ReactNode;
+  className?: string;
+  style?: CSSProperties;
   'aria-label'?: string;
 }
 
 /** Visual dock strip for grouping app icons in demos. */
-export function DockBar({ children, 'aria-label': ariaLabel = 'Dock' }: DockBarProps) {
+export function DockBar({
+  children,
+  className,
+  style,
+  'aria-label': ariaLabel = 'Dock',
+}: DockBarProps) {
   return (
-    <div className={styles.dockBar} role="toolbar" aria-label={ariaLabel}>
+    <div
+      className={[styles.dockBar, className].filter(Boolean).join(' ')}
+      style={style}
+      role="toolbar"
+      aria-label={ariaLabel}
+    >
       {children}
     </div>
   );

@@ -1,4 +1,4 @@
-import type { ElementType, ReactNode } from 'react';
+import type { CSSProperties, ElementType, ReactNode } from 'react';
 import type { LabelImportance } from './types';
 import styles from '@larose-ui/styles/components/Label/Label.module.css';
 
@@ -10,6 +10,7 @@ export interface LabelProps {
   children: ReactNode;
   as?: ElementType;
   className?: string;
+  style?: CSSProperties;
   mono?: boolean;
 }
 
@@ -23,11 +24,13 @@ export function Label({
   children,
   as: Component = 'span',
   className,
+  style,
   mono = false,
 }: LabelProps) {
   return (
     <Component
       className={[styles.root, styles[importance], className].filter(Boolean).join(' ')}
+      style={style}
       data-importance={importance}
       data-selectable={selectable ? 'true' : undefined}
       data-mono={mono ? 'true' : undefined}

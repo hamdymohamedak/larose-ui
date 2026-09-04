@@ -2,6 +2,7 @@ import { Children, type CSSProperties, type ReactNode } from 'react';
 import { Lockup, type LockupProps } from './Lockup';
 import type { LockupAxis } from './types';
 import { formatRating, getInitials } from './utils';
+import { mergeStyles } from '../shared/styleProps';
 import styles from '@larose-ui/styles/components/Lockup/Lockup.module.css';
 
 export interface LockupCardProps extends Omit<LockupProps, 'children'> {
@@ -119,14 +120,22 @@ export interface LockupRowProps {
   children: ReactNode;
   itemWidth?: string;
   axis?: LockupAxis;
+  className?: string;
+  style?: CSSProperties;
 }
 
 /** Row of equally sized lockups with adequate spacing. */
-export function LockupRow({ children, itemWidth = '10rem', axis = 'horizontal' }: LockupRowProps) {
+export function LockupRow({
+  children,
+  itemWidth = '10rem',
+  axis = 'horizontal',
+  className,
+  style,
+}: LockupRowProps) {
   return (
     <div
-      className={styles.row}
-      style={{ '--lr-lockup-item-width': itemWidth } as CSSProperties}
+      className={[styles.row, className].filter(Boolean).join(' ')}
+      style={mergeStyles({ '--lr-lockup-item-width': itemWidth } as CSSProperties, style)}
       data-axis={axis}
     >
       {Children.map(children, (child, index) => (

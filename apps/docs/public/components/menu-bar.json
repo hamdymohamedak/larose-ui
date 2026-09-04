@@ -94,17 +94,22 @@
       "id": "MenuBarGlobalShortcuts",
       "title": "Menu bar (global shortcuts)",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"MenuBarGlobalShortcuts\" for full example.",
-      "composite": true
+      "props": {
+        "appName": "laRose",
+        "revealed": true
+      },
+      "code": "import { Accelerators } from '@larose-ui/react';\n\n<Accelerators\n  appName=\"laRose\"\n  revealed\n>Example</Accelerators>"
     },
     {
       "id": "MacOSStandard",
       "title": "macOS standard menus",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"MacOSStandard\" for full example.",
-      "composite": true
+      "props": {
+        "appName": "laRose",
+        "platform": "macos",
+        "revealed": true
+      },
+      "code": "import { MenuBar } from '@larose-ui/react';\n\n<MenuBar\n  appName=\"laRose\"\n  platform=\"macos\"\n  revealed\n>Example</MenuBar>"
     },
     {
       "id": "IPadOSHiddenUntilRevealed",

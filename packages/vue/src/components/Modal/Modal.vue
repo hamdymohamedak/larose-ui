@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref, watch } from 'vue';
+import { computed, ref, watch, type CSSProperties } from 'vue';
 import { Teleport } from 'vue';
+import { activateOverlayFocus } from '@larose-ui/primitives';
 import styles from '@larose-ui/styles/components/Modal/Modal.module.css';
 import { cn } from '../../utils/cn';
 import { useComponentDefaults } from '../../composables/useComponentDefaults';
@@ -12,6 +13,7 @@ const props = withDefaults(
     description?: string;
     closeOnOverlay?: boolean;
     class?: string;
+    style?: CSSProperties;
     overlayClass?: string;
     contentClass?: string;
   }>(),
@@ -20,53 +22,34 @@ const props = withDefaults(
   },
 );
 
-const merged = useComponentDefaults('Modal', props);
+const merged = computed(() => useComponentDefaults('Modal', props));
 const emit = defineEmits<{ close: [] }>();
 
 const dialogRef = ref<HTMLDivElement | null>(null);
-let previousFocus: HTMLElement | null = null;
 
 function onClose() {
   emit('close');
 }
 
 function onOverlayClick() {
-  if (merged.closeOnOverlay) onClose();
-}
-
-function onKeyDown(event: KeyboardEvent) {
-  if (event.key === 'Escape') onClose();
+  if (merged.value.closeOnOverlay !== false) onClose();
 }
 
 watch(
-  () => merged.open,
-  (open) => {
+  () => merged.value.open,
+  (open, _prev, onCleanup) => {
     if (!open) return;
-    previousFocus = document.activeElement as HTMLElement;
-    requestAnimationFrame(() => {
-      const focusable = dialogRef.value?.querySelector<HTMLElement>(
-        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
-      );
-      focusable?.focus();
+    const deactivate = activateOverlayFocus({
+      container: dialogRef.value,
+      onEscape: onClose,
     });
-    document.body.style.overflow = 'hidden';
+    onCleanup(() => deactivate());
   },
-  { immediate: true },
 );
-
-onMounted(() => {
-  document.addEventListener('keydown', onKeyDown);
-});
-
-onUnmounted(() => {
-  document.removeEventListener('keydown', onKeyDown);
-  document.body.style.overflow = '';
-  previousFocus?.focus();
-});
 </script>
 
 <template>
-  <Teleport v-if="merged.open" to="body">
+  <Teleport v-if="merged.open" to="[data-lr-portal-root], [data-lr-provider], body">
     <div :class="cn(styles.overlay, merged.overlayClass)" @click.self="onOverlayClick">
       <div
         ref="dialogRef"
@@ -75,6 +58,7 @@ onUnmounted(() => {
         :aria-labelledby="merged.title ? 'larose-modal-title' : undefined"
         :aria-describedby="merged.description ? 'larose-modal-description' : undefined"
         :class="cn(styles.dialog, merged.class)"
+        :style="merged.style"
       >
         <div :class="cn(styles.content, merged.contentClass)">
           <header v-if="merged.title || merged.description" :class="styles.header">

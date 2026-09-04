@@ -1,7 +1,9 @@
 import { createPortal } from 'react-dom';
 import type { CSSProperties, ReactNode } from 'react';
+import { getLaRosePortalTarget } from '@larose-ui/core';
 import { usePresence } from './usePresence';
 import motionStyles from '@larose-ui/styles/components/Motion/motion.module.css';
+import { mergeStyles } from '../shared/styleProps';
 
 export type OverlayPlacement = 'top' | 'bottom';
 
@@ -85,7 +87,7 @@ export function ContextualMenuPortal({
         {children}
       </div>
     </>,
-    document.body,
+    getLaRosePortalTarget(),
   );
 }
 
@@ -93,16 +95,18 @@ export interface OverlayBackdropProps {
   open: boolean;
   className?: string;
   onClose?: () => void;
+  style?: CSSProperties;
 }
 
 /** @deprecated Prefer ContextualMenuPortal for menus with a shared lifecycle. */
-export function OverlayBackdrop({ open, className, onClose }: OverlayBackdropProps) {
+export function OverlayBackdrop({ open, className, style, onClose }: OverlayBackdropProps) {
   const { phase, shouldRender } = usePresence({ present: open });
   if (!shouldRender) return null;
 
   return (
     <div
       className={[className, backdropClass(phase)].filter(Boolean).join(' ')}
+      style={style}
       role="presentation"
       onClick={onClose}
       data-presence={phase}
@@ -163,6 +167,8 @@ export interface OverlayPortalProps {
   onClose: () => void;
   placement?: OverlayPlacement;
   backdropClassName?: string;
+  className?: string;
+  style?: CSSProperties;
   children: ReactNode;
 }
 
@@ -172,6 +178,8 @@ export function OverlayPortal({
   onClose,
   placement = 'bottom',
   backdropClassName,
+  className,
+  style,
   children,
 }: OverlayPortalProps) {
   return (
@@ -180,7 +188,8 @@ export function OverlayPortal({
       onClose={onClose}
       placement={placement}
       backdropClassName={backdropClassName}
-      surfaceStyle={{ display: 'contents' }}
+      surfaceClassName={className}
+      surfaceStyle={mergeStyles({ display: 'contents' }, style)}
     >
       {children}
     </ContextualMenuPortal>

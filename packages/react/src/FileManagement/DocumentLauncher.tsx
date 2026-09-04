@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 import { Button } from '../Button/Button';
 import { FileBrowser, type FileBrowserProps } from './FileBrowser';
 import styles from '@larose-ui/styles/components/FileManagement/FileManagement.module.css';
@@ -11,6 +11,8 @@ export interface DocumentLauncherProps extends Omit<FileBrowserProps, 'toolbar'>
   onSecondaryAction?: () => void;
   background?: ReactNode;
   accessories?: ReactNode;
+  className?: string;
+  style?: CSSProperties;
 }
 
 /**
@@ -25,10 +27,12 @@ export function DocumentLauncher({
   onSecondaryAction,
   background,
   accessories,
+  className,
+  style,
   ...browserProps
 }: DocumentLauncherProps) {
   return (
-    <div className={styles.launcher}>
+    <div className={[styles.launcher, className].filter(Boolean).join(' ')} style={style}>
       <div className={styles.launcherHero}>
         {background ?? <div className={styles.launcherBackground} aria-hidden="true" />}
         {accessories}

@@ -1,16 +1,16 @@
-import type { ButtonHTMLAttributes, CSSProperties, ReactNode } from 'react';
+import type { ButtonHTMLAttributes, ReactNode } from 'react';
 import { LIQUID_GLASS_PRESETS } from '../engine/defaults';
-import type { LiquidGlassOptics } from '../engine/types';
+import type { LiquidGlassChromeProps, LiquidGlassOptics } from '../engine/types';
 import { LiquidGlass } from '../core/LiquidGlass';
 
 export interface LiquidGlassButtonProps
   extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'style'>,
-    LiquidGlassOptics {
+    LiquidGlassOptics,
+    LiquidGlassChromeProps {
   children: ReactNode;
   width?: number | string;
   height?: number | string;
   borderRadius?: number;
-  style?: CSSProperties;
   /** Text/icon colour. @default #ffffff */
   color?: string;
   /** Font size. @default 0.9375rem */

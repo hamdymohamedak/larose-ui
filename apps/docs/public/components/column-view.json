@@ -37,8 +37,7 @@
       "title": "Column View Browser",
       "kind": "advanced",
       "props": {},
-      "code": "<ColumnView data={hierarchy} initialPath={['icloud', 'design']} />",
-      "composite": true
+      "code": "import { Layout } from '@larose-ui/react';\n\n<Layout>Example</Layout>"
     }
   ],
   "accessibility": [

@@ -4,6 +4,7 @@ import {
   useMemo,
   useState,
   type KeyboardEvent,
+  type CSSProperties,
 } from 'react';
 import type { OutlineColumn, OutlineNode, SortDirection } from './types';
 import {
@@ -42,6 +43,8 @@ export interface OutlineViewProps {
   editableColumns?: string[];
   onCellEdit?: (nodeId: string, columnKey: string, value: string) => void;
   searchQuery?: string;
+  className?: string;
+  style?: CSSProperties;
   'aria-label'?: string;
 }
 
@@ -82,6 +85,8 @@ export function OutlineView({
   editableColumns = [],
   onCellEdit,
   searchQuery = '',
+  className,
+  style,
   'aria-label': ariaLabel = 'Outline view',
 }: OutlineViewProps) {
   const normalizedColumns = useMemo(() => normalizeOutlineColumns(columns), [columns]);
@@ -250,7 +255,7 @@ export function OutlineView({
   const columnKeys = [PRIMARY_COLUMN_KEY, ...normalizedColumns.map((column) => column.key)];
 
   return (
-    <div className={styles.outlineWrap}>
+    <div className={[styles.outlineWrap, className].filter(Boolean).join(' ')} style={style}>
       <table className={styles.table} aria-label={ariaLabel}>
         <colgroup>
           {columnKeys.map((key) => (

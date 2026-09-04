@@ -1,0 +1,206 @@
+/* Shared chrome for framework sandboxes — not product UI. */
+:root {
+  --sbx-bg: #f4f6f8;
+  --sbx-panel: #ffffff;
+  --sbx-border: #d8dee6;
+  --sbx-text: #1a2332;
+  --sbx-muted: #5b6b7c;
+  --sbx-accent: #0b6bcb;
+  --sbx-accent-soft: #e8f1fb;
+  --sbx-radius: 12px;
+  --sbx-font: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root,
+#app {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--sbx-font);
+  color: var(--sbx-text);
+  background:
+    radial-gradient(circle at 12% 8%, #dbeafe 0%, transparent 42%),
+    radial-gradient(circle at 88% 0%, #e2e8f0 0%, transparent 36%),
+    var(--sbx-bg);
+}
+
+.sbx-root {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-height: 100vh;
+}
+
+.sbx-nav {
+  border-right: 1px solid var(--sbx-border);
+  background: color-mix(in srgb, var(--sbx-panel) 92%, transparent);
+  backdrop-filter: blur(10px);
+  padding: 1.25rem 1rem;
+}
+
+.sbx-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-bottom: 1.5rem;
+  padding: 0 0.5rem;
+}
+
+.sbx-brand strong {
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+}
+
+.sbx-brand span {
+  color: var(--sbx-muted);
+  font-size: 0.75rem;
+}
+
+.sbx-nav a {
+  display: block;
+  padding: 0.55rem 0.65rem;
+  margin-bottom: 0.25rem;
+  border-radius: 8px;
+  color: var(--sbx-text);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.sbx-nav a:hover {
+  background: var(--sbx-accent-soft);
+}
+
+.sbx-nav a[aria-current='page'] {
+  background: var(--sbx-accent);
+  color: #fff;
+}
+
+.sbx-main {
+  padding: 1.5rem 1.75rem 2.5rem;
+}
+
+.sbx-banner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--sbx-border);
+  border-radius: var(--sbx-radius);
+  background: var(--sbx-panel);
+}
+
+.sbx-banner h1 {
+  margin: 0;
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+}
+
+.sbx-banner p {
+  margin: 0.25rem 0 0;
+  color: var(--sbx-muted);
+  font-size: 0.85rem;
+  max-width: 42rem;
+}
+
+.sbx-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  background: var(--sbx-accent-soft);
+  color: var(--sbx-accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.sbx-stage {
+  border: 1px solid var(--sbx-border);
+  border-radius: var(--sbx-radius);
+  background: var(--sbx-panel);
+  overflow: hidden;
+  min-height: 28rem;
+}
+
+.sbx-stage-pad {
+  padding: 1.25rem;
+}
+
+.sbx-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sbx-muted {
+  color: var(--sbx-muted);
+  font-size: 0.9rem;
+}
+
+/* Liquid Glass kitchen sink — refraction needs a rich backdrop. */
+.sbx-glass-scene {
+  position: relative;
+  min-height: 36rem;
+  padding: 1.25rem 1.25rem 6rem;
+  overflow: hidden;
+  color: #f3f1fa;
+  background:
+    radial-gradient(60% 45% at 15% 10%, #8b6bff 0%, transparent 65%),
+    radial-gradient(55% 40% at 85% 15%, #3fe0d0 0%, transparent 60%),
+    radial-gradient(65% 55% at 50% 100%, #ff5fa2 0%, transparent 65%),
+    #100b22;
+}
+
+.sbx-glass-scene .sbx-muted {
+  color: #b9b3d6;
+}
+
+.sbx-glass-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.sbx-glass-card-copy h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f3f1fa;
+}
+
+.sbx-glass-card-copy p {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: #b9b3d6;
+}
+
+.sbx-glass-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: #e8e4f4;
+  font-size: 0.8125rem;
+}
+
+@media (max-width: 800px) {
+  .sbx-root {
+    grid-template-columns: 1fr;
+  }
+
+  .sbx-nav {
+    border-right: none;
+    border-bottom: 1px solid var(--sbx-border);
+  }
+}

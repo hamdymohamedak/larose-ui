@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 import type { LockupAxis } from './types';
 import styles from '@larose-ui/styles/components/Lockup/Lockup.module.css';
 
@@ -12,6 +12,7 @@ export interface LockupProps {
   onBlur?: () => void;
   onClick?: () => void;
   className?: string;
+  style?: CSSProperties;
   'aria-label'?: string;
 }
 
@@ -29,12 +30,14 @@ export function Lockup({
   onBlur,
   onClick,
   className,
+  style,
   'aria-label': ariaLabel,
 }: LockupProps) {
   return (
     <button
       type="button"
       className={[styles.lockup, className].filter(Boolean).join(' ')}
+      style={style}
       data-axis={axis}
       data-focused={focused ? 'true' : undefined}
       aria-label={ariaLabel}

@@ -5,7 +5,7 @@ import { Button, Input, Modal } from '@larose-ui/react';
 const meta: Meta<typeof Modal> = {
   title: 'Foundation/Modal',
   component: Modal,
-  tags: ['autodocs'],
+  tags: ['autodocs', 'fw-react', 'fw-vue', 'fw-svelte'],
   parameters: { layout: 'centered' },
 };
 

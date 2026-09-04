@@ -33,7 +33,8 @@ const RULES = [
   },
   {
     id: 'img-alt',
-    pattern: /<img(?![^>]*\balt=)/,
+    // Match JSX/HTML `alt=` and Svelte shorthand `{alt}`
+    pattern: /<img(?![^>]*(?:\balt=|\{alt\}))/,
     message: 'Image missing alt attribute',
     fix: 'Add alt="" for decorative or descriptive alt text',
     severity: 'error' as const,

@@ -54,6 +54,15 @@ Thumbs.db
 
 # --- Auto-generated package docs (see scripts/generate-package-readmes.mjs) --
 packages/**/README.md
+contracts/README.md
+
+# --- Product docs / agent-facing markdown (large token cost; not day-to-day code) -
+docs/
+apps/docs/content/
+apps/docs/public/agent/
+apps/docs/public/.well-known/
+apps/docs/src/data/*.generated.ts
 
 # --- Legal / metadata not needed while coding --------------------------------
 LICENSE
+CODE_OF_CONDUCT.md

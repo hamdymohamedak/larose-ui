@@ -1,5 +1,16 @@
-import { useCallback, useEffect, useMemo, useRef, useState, type KeyboardEvent } from 'react';
-import { STANDARD_ACCELERATORS } from '@larose-ui/core';
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+  type CSSProperties,
+  type KeyboardEvent,
+} from 'react';
+import { createPortal } from 'react-dom';
+import { STANDARD_ACCELERATORS, getLaRosePortalTarget } from '@larose-ui/core';
+import { activateOverlayFocus } from '@larose-ui/primitives';
 import { useAccelerator } from '../accelerator';
 import styles from '@larose-ui/styles/components/CommandPalette/CommandPalette.module.css';
 
@@ -17,6 +28,8 @@ export interface CommandPaletteProps {
   items: CommandPaletteItem[];
   placeholder?: string;
   emptyMessage?: string;
+  className?: string;
+  style?: CSSProperties;
   'aria-label'?: string;
 }
 
@@ -26,17 +39,35 @@ function matchesQuery(item: CommandPaletteItem, query: string): boolean {
   return haystack.includes(query.toLowerCase());
 }
 
+function groupItems(items: CommandPaletteItem[]): Array<[string, CommandPaletteItem[]]> {
+  const grouped = items.reduce<Record<string, CommandPaletteItem[]>>((acc, item) => {
+    const group = item.group ?? 'Commands';
+    acc[group] = acc[group] ?? [];
+    acc[group]!.push(item);
+    return acc;
+  }, {});
+  return Object.entries(grouped);
+}
+
 export function CommandPalette({
   open,
   onOpenChange,
   items,
   placeholder = 'Search commands…',
   emptyMessage = 'No commands found',
+  className,
+  style,
   'aria-label': ariaLabel = 'Command palette',
 }: CommandPaletteProps) {
   const [query, setQuery] = useState('');
   const [activeIndex, setActiveIndex] = useState(0);
+  const [portalTarget, setPortalTarget] = useState<HTMLElement | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    setPortalTarget(getLaRosePortalTarget());
+  }, []);
 
   const filtered = useMemo(
     () => items.filter((item) => matchesQuery(item, query.trim())),
@@ -57,11 +88,23 @@ export function CommandPalette({
     [close],
   );
 
+  const closeRef = useRef(close);
+  closeRef.current = close;
+
   useEffect(() => {
     if (!open) return;
     setQuery('');
     setActiveIndex(0);
-    inputRef.current?.focus();
+    const focusId = window.requestAnimationFrame(() => inputRef.current?.focus());
+    const deactivate = activateOverlayFocus({
+      container: dialogRef.current,
+      onEscape: () => closeRef.current(),
+      autoFocus: false,
+    });
+    return () => {
+      window.cancelAnimationFrame(focusId);
+      deactivate();
+    };
   }, [open]);
 
   useEffect(() => {
@@ -77,7 +120,7 @@ export function CommandPalette({
 
   const handleNavigationKeyDown = useCallback(
     (event: KeyboardEvent<HTMLElement>) => {
-      const items = filteredRef.current;
+      const nextItems = filteredRef.current;
       const current = activeIndexRef.current;
 
       if (event.key === 'Escape') {
@@ -88,21 +131,21 @@ export function CommandPalette({
 
       if (event.key === 'ArrowDown') {
         event.preventDefault();
-        setActiveIndex((index) => (index + 1) % Math.max(items.length, 1));
+        setActiveIndex((index) => (index + 1) % Math.max(nextItems.length, 1));
         return;
       }
 
       if (event.key === 'ArrowUp') {
         event.preventDefault();
         setActiveIndex(
-          (index) => (index - 1 + Math.max(items.length, 1)) % Math.max(items.length, 1),
+          (index) => (index - 1 + Math.max(nextItems.length, 1)) % Math.max(nextItems.length, 1),
         );
         return;
       }
 
-      if (event.key === 'Enter' && items[current]) {
+      if (event.key === 'Enter' && nextItems[current]) {
         event.preventDefault();
-        selectItem(items[current]!);
+        selectItem(nextItems[current]!);
       }
     },
     [close, selectItem],
@@ -116,35 +159,24 @@ export function CommandPalette({
     active?.scrollIntoView?.({ block: 'nearest' });
   }, [activeIndex, filtered, open]);
 
-  useEffect(() => {
-    if (!open) return undefined;
+  if (!open || !portalTarget) return null;
 
-    const onKeyDown = (event: globalThis.KeyboardEvent) => {
-      if (event.key !== 'Escape') return;
-      if (event.target instanceof Element && event.target.closest('[role="dialog"]')) return;
-      event.preventDefault();
-      close();
-    };
-
-    window.addEventListener('keydown', onKeyDown);
-    return () => window.removeEventListener('keydown', onKeyDown);
-  }, [close, open]);
-
-  if (!open) return null;
-
-  const grouped = filtered.reduce<Record<string, CommandPaletteItem[]>>((acc, item) => {
-    const group = item.group ?? 'Commands';
-    acc[group] = acc[group] ?? [];
-    acc[group]!.push(item);
-    return acc;
-  }, {});
-
+  const grouped = groupItems(filtered);
   let itemIndex = -1;
 
-  return (
-    <div className={styles.overlay} onClick={close}>
+  return createPortal(
+    <div
+      className={[styles.overlay, className].filter(Boolean).join(' ')}
+      style={style}
+      role="presentation"
+      onClick={(event) => {
+        if (event.target === event.currentTarget) close();
+      }}
+    >
       <div
+        ref={dialogRef}
         role="dialog"
+        aria-modal="true"
         aria-label={ariaLabel}
         className={styles.dialog}
         onClick={(event) => event.stopPropagation()}
@@ -179,13 +211,14 @@ export function CommandPalette({
               {emptyMessage}
             </li>
           ) : (
-            Object.entries(grouped).map(([group, groupItems]) => (
-              <li key={group} role="presentation">
+            grouped.map(([group, groupItems]) => (
+              <li key={group} className={styles.group} role="presentation">
                 <div className={styles.groupLabel}>{group}</div>
                 <ul role="group" aria-label={group}>
                   {groupItems.map((item) => {
                     itemIndex += 1;
                     const isActive = itemIndex === activeIndex;
+                    const indexForItem = itemIndex;
                     return (
                       <li key={item.id} role="presentation">
                         <button
@@ -195,7 +228,7 @@ export function CommandPalette({
                           aria-selected={isActive}
                           className={styles.item}
                           data-state={isActive ? 'active' : 'inactive'}
-                          onMouseEnter={() => setActiveIndex(itemIndex)}
+                          onMouseEnter={() => setActiveIndex(indexForItem)}
                           onClick={() => selectItem(item)}
                         >
                           {item.label}
@@ -209,7 +242,8 @@ export function CommandPalette({
           )}
         </ul>
       </div>
-    </div>
+    </div>,
+    portalTarget,
   );
 }
 

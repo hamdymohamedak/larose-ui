@@ -79,9 +79,20 @@
       "id": "ShareButtonOnly",
       "title": "Share Button Only",
       "kind": "advanced",
-      "props": {},
-      "code": "<ShareButton />",
-      "composite": true
+      "props": {
+        "label": "Share"
+      },
+      "code": "import { Collaboration&Sharing } from '@larose-ui/react';\n\n<Collaboration&Sharing\n  label=\"Share\"\n>Example</Collaboration&Sharing>"
+    },
+    {
+      "id": "OrnamentButton",
+      "title": "OrnamentButton",
+      "kind": "advanced",
+      "props": {
+        "children": "OrnamentButton",
+        "active": false
+      },
+      "code": "import { Discovered } from '@larose-ui/react';\n\n<Discovered\n  active={false}\n>OrnamentButton</Discovered>"
     }
   ],
   "accessibility": [],

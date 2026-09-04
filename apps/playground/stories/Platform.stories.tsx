@@ -1,19 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useEffect } from 'react';
-import { LaRoseProvider, Feature } from '@larose-ui/runtime';
-import { Can } from '@larose-ui/permissions';
-import { DataView } from '@larose-ui/data';
-import { Form } from '@larose-ui/forms';
-import { SmartTable } from '@larose-ui/ai';
+import { LaRoseProvider, Feature } from '@larose-ui/runtime-react';
+import { Can } from '@larose-ui/permissions-react';
+import { DataView } from '@larose-ui/data-react';
+import { Form } from '@larose-ui/forms-react';
+import { SmartTable } from '@larose-ui/ai-react';
 import {
   AuditProvider,
   AuditedInput,
   VersionProvider,
   SensitiveAction,
   SessionGuard,
-} from '@larose-ui/enterprise';
-import { DevToolsProvider } from '@larose-ui/devtools';
-import { useObservability } from '@larose-ui/observability';
+} from '@larose-ui/enterprise-react';
+import { DevToolsProvider } from '@larose-ui/devtools-react';
+import { useObservability } from '@larose-ui/observability-react';
 import { Card, Badge } from '@larose-ui/react';
 import {
   installEmployeeMock,
@@ -125,6 +125,7 @@ function PlatformDemo() {
 }
 
 const meta: Meta<typeof PlatformDemo> = {
+  tags: ['fw-react'],
   title: 'Platform/Full Demo',
   component: PlatformDemo,
   parameters: { layout: 'padded', laRose: { standalone: true } },

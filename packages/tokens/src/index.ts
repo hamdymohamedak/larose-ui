@@ -6,7 +6,6 @@ import { dataEntryTokensToCSSVariables, getDataEntryTokens } from './data-entry-
 import { fileManagementTokensToCSSVariables, getFileManagementTokens } from './file-management-tokens';
 import { imageViewTokensToCSSVariables, getImageViewTokens } from './image-view-tokens';
 import { textViewTokensToCSSVariables, getTextViewTokens } from './text-view-tokens';
-import { webViewTokensToCSSVariables, getWebViewTokens } from './web-view-tokens';
 import { boxTokensToCSSVariables, getBoxTokens } from './box-tokens';
 import { collectionTokensToCSSVariables, getCollectionTokens } from './collection-tokens';
 import { columnViewTokensToCSSVariables, getColumnViewTokens } from './column-view-tokens';
@@ -102,8 +101,6 @@ export { getImageViewTokens, imageViewTokensToCSSVariables } from './image-view-
 export type { ImageViewTokens } from './image-view-tokens';
 export { getTextViewTokens, textViewTokensToCSSVariables } from './text-view-tokens';
 export type { TextViewTokens } from './text-view-tokens';
-export { getWebViewTokens, webViewTokensToCSSVariables } from './web-view-tokens';
-export type { WebViewTokens } from './web-view-tokens';
 export { getBoxTokens, boxTokensToCSSVariables } from './box-tokens';
 export type { BoxTokens } from './box-tokens';
 export { getCollectionTokens, collectionTokensToCSSVariables } from './collection-tokens';
@@ -354,6 +351,7 @@ function createBaseTokenSet(mode: ThemeMode): TokenSet {
     text: '#1d1d1f',
     textMuted: '#5c5c60',
     textInverse: '#ffffff',
+    onAccent: '#ffffff',
     ...(mode === 'dark'
       ? {
           primary: '#0a84ff',
@@ -367,6 +365,7 @@ function createBaseTokenSet(mode: ThemeMode): TokenSet {
           text: '#f5f5f7',
           textMuted: '#98989d',
           textInverse: '#1c1c1e',
+          onAccent: '#ffffff',
         }
       : {}),
   };
@@ -467,7 +466,6 @@ export function tokensToCSSVariables(
   Object.assign(vars, fileManagementTokensToCSSVariables(getFileManagementTokens(mode)));
   Object.assign(vars, imageViewTokensToCSSVariables(getImageViewTokens(mode)));
   Object.assign(vars, textViewTokensToCSSVariables(getTextViewTokens(mode)));
-  Object.assign(vars, webViewTokensToCSSVariables(getWebViewTokens(mode)));
   Object.assign(vars, boxTokensToCSSVariables(getBoxTokens(mode)));
   Object.assign(vars, collectionTokensToCSSVariables(getCollectionTokens(mode)));
   Object.assign(vars, columnViewTokensToCSSVariables(getColumnViewTokens(mode)));
@@ -521,6 +519,11 @@ export interface ApplyThemeOptions {
   brandColors?: Partial<ColorTokens>;
   componentTokenOverrides?: ComponentTokenOverrides;
   presetId?: string;
+  /**
+   * Mirror tokens onto `document.documentElement` so portaled overlays
+   * (menus, dialogs, toasts) inherit the active theme. Defaults to true.
+   */
+  syncDocument?: boolean;
 }
 
 export function resolveThemeCSSVariables(options: ApplyThemeOptions): Record<string, string> {
@@ -543,7 +546,7 @@ export function resolveThemeCSSVariables(options: ApplyThemeOptions): Record<str
   });
 }
 
-export function applyResolvedTheme(element: HTMLElement, options: ApplyThemeOptions): void {
+function writeThemeToElement(element: HTMLElement, options: ApplyThemeOptions): void {
   const density = options.density ?? 'comfortable';
   const vars = resolveThemeCSSVariables(options);
 
@@ -553,9 +556,21 @@ export function applyResolvedTheme(element: HTMLElement, options: ApplyThemeOpti
 
   element.dataset.lrTheme = options.mode;
   element.dataset.lrDensity = density;
+  element.style.colorScheme = options.mode;
 
   if (options.presetId) {
     element.dataset.lrThemePreset = options.presetId;
+  }
+}
+
+export function applyResolvedTheme(element: HTMLElement, options: ApplyThemeOptions): void {
+  writeThemeToElement(element, options);
+
+  if (options.syncDocument === false || typeof document === 'undefined') return;
+
+  const root = document.documentElement;
+  if (element !== root) {
+    writeThemeToElement(root, options);
   }
 }
 

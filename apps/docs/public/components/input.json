@@ -149,9 +149,12 @@
       "id": "Secure",
       "title": "Secure",
       "kind": "advanced",
-      "props": {},
-      "code": "<SecureField label=\"Password\" required hint=\"Never prepopulated\" />",
-      "composite": true
+      "props": {
+        "label": "Password",
+        "required": true,
+        "hint": "Never prepopulated"
+      },
+      "code": "import { Input } from '@larose-ui/react';\n\n<Input\n  label=\"Password\"\n  required\n  hint=\"Never prepopulated\"\n>Example</Input>"
     },
     {
       "id": "Loading",

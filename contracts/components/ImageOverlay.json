@@ -1,11 +1,11 @@
 {
   "name": "ImageOverlay",
   "version": "1",
-  "framework": "react",
+  "framework": "neutral",
   "props": [
     {
       "name": "overlay",
-      "type": "ReactNode",
+      "type": "Node",
       "required": true
     }
   ],

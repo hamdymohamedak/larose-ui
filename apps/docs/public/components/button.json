@@ -190,9 +190,11 @@
       "id": "StyleNotSize",
       "title": "Style, not size",
       "kind": "sizes",
-      "props": {},
-      "code": "// See Storybook story \"StyleNotSize\" for full example.",
-      "composite": true
+      "props": {
+        "orientation": "horizontal",
+        "ariaLabel": "Save options"
+      },
+      "code": "import { Button } from '@larose-ui/react';\n\n<Button\n  orientation=\"horizontal\"\n  ariaLabel=\"Save options\"\n>Example</Button>"
     },
     {
       "id": "AlertActions",
@@ -206,17 +208,22 @@
       "id": "VisionOSStack",
       "title": "visionOS vertical stack",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"VisionOSStack\" for full example.",
-      "composite": true
+      "props": {
+        "orientation": "vertical",
+        "ariaLabel": "Scene actions"
+      },
+      "code": "import { Button } from '@larose-ui/react';\n\n<Button\n  orientation=\"vertical\"\n  ariaLabel=\"Scene actions\"\n>Example</Button>"
     },
     {
       "id": "WatchFullWidth",
       "title": "watchOS full width",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"WatchFullWidth\" for full example.",
-      "composite": true
+      "props": {
+        "orientation": "vertical",
+        "fullWidth": true,
+        "ariaLabel": "Workout actions"
+      },
+      "code": "import { Button } from '@larose-ui/react';\n\n<Button\n  orientation=\"vertical\"\n  fullWidth\n  ariaLabel=\"Workout actions\"\n>Example</Button>"
     },
     {
       "id": "SquareButtons",

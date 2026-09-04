@@ -80,25 +80,29 @@
       "id": "DataTableDefault",
       "title": "Data Table Default",
       "kind": "basic",
-      "props": {},
-      "code": "// See Storybook story \"DataTableDefault\" for full example.",
-      "composite": true
+      "props": {
+        "caption": "Employees",
+        "striped": true
+      },
+      "code": "import { DataDisplay } from '@larose-ui/react';\n\n<DataDisplay\n  caption=\"Employees\"\n  striped\n>Example</DataDisplay>"
     },
     {
       "id": "DataTableLoading",
       "title": "Data Table Loading",
       "kind": "loading",
-      "props": {},
-      "code": "// See Storybook story \"DataTableLoading\" for full example.",
-      "composite": true
+      "props": {
+        "loading": true
+      },
+      "code": "import { DataDisplay } from '@larose-ui/react';\n\n<DataDisplay\n  loading\n>Example</DataDisplay>"
     },
     {
       "id": "DataTableEmpty",
       "title": "Data Table Empty",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"DataTableEmpty\" for full example.",
-      "composite": true
+      "props": {
+        "emptyTitle": "No employees"
+      },
+      "code": "import { DataDisplay } from '@larose-ui/react';\n\n<DataDisplay\n  emptyTitle=\"No employees\"\n>Example</DataDisplay>"
     }
   ],
   "accessibility": [

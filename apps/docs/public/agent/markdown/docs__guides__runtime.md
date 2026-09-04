@@ -2,7 +2,7 @@
 
 # Runtime 2.0 Specification
 
-Phase 1 delivers a unified frontend operating environment via `@larose-ui/runtime` and `@larose-ui/core`.
+Phase 1 delivers a unified frontend operating environment via `@larose-ui/runtime-react` / `runtime-vue` / `runtime-svelte` and `@larose-ui/core`.
 
 ## Goals
 
@@ -36,10 +36,10 @@ interface LaRoseRuntimeContext {
 
 | API | Package | Purpose |
 |-----|---------|---------|
-| `useRuntime()` | `@larose-ui/runtime` | Full context snapshot |
-| `useRuntimeSelector(fn)` | `@larose-ui/runtime` | Derived slice |
-| `useRuntimeEvents()` | `@larose-ui/runtime` | Timeline + emit |
-| `useSession()` | `@larose-ui/runtime` | Session state |
+| `useRuntime()` | `@larose-ui/runtime-react` | Full context snapshot |
+| `useRuntimeSelector(fn)` | `@larose-ui/runtime-react` | Derived slice |
+| `useRuntimeEvents()` | `@larose-ui/runtime-react` | Timeline + emit |
+| `useSession()` | `@larose-ui/runtime-react` | Session state |
 | `createRuntimeEventBus()` | `@larose-ui/core` | Event bus factory |
 | `createSessionStateMachine()` | `@larose-ui/core` | Session transitions |
 | `createPercentageRolloutEvaluator()` | `@larose-ui/core` | Feature rollout |

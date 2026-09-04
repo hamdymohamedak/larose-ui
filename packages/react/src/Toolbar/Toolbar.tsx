@@ -45,16 +45,21 @@ function ToolbarFixedSpace() {
   return <span className={styles.fixedSpace} aria-hidden="true" />;
 }
 
-function ToolbarGroup({ children, className }: ToolbarGroupProps) {
+function ToolbarGroup({ children, className, style }: ToolbarGroupProps) {
   const platform = useToolbarPlatform();
   return (
-    <div className={[styles.group, className].filter(Boolean).join(' ')} data-platform={platform} role="group">
+    <div
+      className={[styles.group, className].filter(Boolean).join(' ')}
+      style={style}
+      data-platform={platform}
+      role="group"
+    >
       {children}
     </div>
   );
 }
 
-function ToolbarTitle({ children, large = false, className }: ToolbarTitleProps) {
+function ToolbarTitle({ children, large = false, className, style }: ToolbarTitleProps) {
   useEffect(() => {
     warnIfToolbarTitleTooLong(children);
   }, [children]);
@@ -62,6 +67,7 @@ function ToolbarTitle({ children, large = false, className }: ToolbarTitleProps)
   return (
     <span
       className={[styles.title, large ? styles.titleLarge : undefined, className].filter(Boolean).join(' ')}
+      style={style}
       title={children}
     >
       {truncateToolbarTitle(children, large ? 40 : 15)}
@@ -77,12 +83,13 @@ function ToolbarItem({
   disabled = false,
   onClick,
   className,
+  style,
 }: ToolbarItemProps) {
   const platform = useToolbarPlatform();
 
   if (prominent) {
     return (
-      <ToolbarProminentButton onClick={onClick} disabled={disabled} className={className}>
+      <ToolbarProminentButton onClick={onClick} disabled={disabled} className={className} style={style}>
         {label}
       </ToolbarProminentButton>
     );
@@ -92,6 +99,7 @@ function ToolbarItem({
     <button
       type="button"
       className={[styles.item, className].filter(Boolean).join(' ')}
+      style={style}
       data-platform={platform}
       data-show-label={showLabel ? 'true' : undefined}
       aria-label={showLabel ? undefined : label}
@@ -149,9 +157,10 @@ function ToolbarSearch({
   onChange,
   'aria-label': ariaLabel = 'Search',
   className,
+  style,
 }: ToolbarSearchProps) {
   return (
-    <label className={[styles.searchWrap, className].filter(Boolean).join(' ')}>
+    <label className={[styles.searchWrap, className].filter(Boolean).join(' ')} style={style}>
       <SearchIcon />
       <input
         type="search"
@@ -170,11 +179,13 @@ function ToolbarProminentButton({
   onClick,
   disabled,
   className,
+  style,
 }: ToolbarProminentButtonProps) {
   return (
     <button
       type="button"
       className={[styles.prominent, className].filter(Boolean).join(' ')}
+      style={style}
       disabled={disabled}
       onClick={onClick}
     >
@@ -264,7 +275,7 @@ function isToolbarItemElement(child: ReactNode): child is ReactElement<ToolbarIt
   return isValidElement(child) && child.type === ToolbarItem;
 }
 
-function ToolbarSection({ placement, collapsible = placement === 'center', children, className }: ToolbarSectionProps) {
+function ToolbarSection({ placement, collapsible = placement === 'center', children, className, style }: ToolbarSectionProps) {
   const platform = useToolbarPlatform();
   const containerRef = useRef<HTMLDivElement>(null);
   const measureRef = useRef<HTMLDivElement>(null);
@@ -352,7 +363,7 @@ function ToolbarSection({ placement, collapsible = placement === 'center', child
   });
 
   return (
-    <div className={[sectionClass, className].filter(Boolean).join(' ')} ref={containerRef}>
+    <div className={[sectionClass, className].filter(Boolean).join(' ')} style={style} ref={containerRef}>
       {collapsible && shouldUseSystemOverflow(platform ?? 'macos') && (
         <div className={styles.measureRow} ref={measureRef} aria-hidden="true">
           {collapsibleItems.map((child) =>
@@ -380,6 +391,7 @@ export function Toolbar({
   placement,
   hidden = false,
   className,
+  style,
   children,
   'aria-label': ariaLabel,
 }: ToolbarProps) {
@@ -402,6 +414,7 @@ export function Toolbar({
         role="toolbar"
         aria-label={ariaLabel ?? (title ? `${title} toolbar` : 'Toolbar')}
         className={[styles.toolbar, className].filter(Boolean).join(' ')}
+        style={style}
         data-platform={platform}
         data-placement={resolvedPlacement}
         data-large-title={largeTitle ? 'true' : undefined}

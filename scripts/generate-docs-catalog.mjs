@@ -121,23 +121,6 @@ import '@larose-ui/styles/styles.css';`,
     example: `export default defineNuxtConfig({ modules: ['@larose-ui/nuxt'] });`,
     features: ['Auto-imports', 'SSR theme script', 'LaRoseApp shell'],
   },
-  'desktop-core': {
-    tagline: 'Desktop host utilities — native menus, accelerators, window chrome.',
-    example: `import { registerHost, mapMenuBarToNative } from '@larose-ui/desktop-core';`,
-    features: ['Electron/Tauri host registration', 'Native menu mapping'],
-  },
-  electron: {
-    tagline: 'Electron adapter for laRose desktop apps.',
-    peer: 'electron >=28, react >=18',
-    example: `import { LaRoseElectronRoot } from '@larose-ui/electron/client';`,
-    features: ['Host bootstrap', 'Native menu templates'],
-  },
-  tauri: {
-    tagline: 'Tauri adapter for laRose desktop webviews.',
-    peer: 'react >=18',
-    example: `import { LaRoseTauriRoot } from '@larose-ui/tauri/client';`,
-    features: ['Host bootstrap', 'Tauri menu helpers'],
-  },
   network: {
     tagline: 'Network condition detection for adaptive UI.',
     example: `import { createNetworkMonitor } from '@larose-ui/network';
@@ -156,7 +139,7 @@ await queue.enqueue({ url: '/api/items', method: 'POST', body: { name: 'Draft' }
   runtime: {
     tagline: 'Unified runtime — theme, i18n, permissions, network, and session.',
     peer: 'react >=18',
-    example: `import { LaRoseProvider } from '@larose-ui/runtime';
+    example: `import { LaRoseProvider } from '@larose-ui/runtime-react';
 
 <LaRoseProvider theme="light" locale="en" permissions={['app.read']}>
   <App />
@@ -166,7 +149,7 @@ await queue.enqueue({ url: '/api/items', method: 'POST', body: { name: 'Draft' }
   permissions: {
     tagline: 'Authorization-aware UI with RBAC/ABAC patterns.',
     peer: 'react >=18',
-    example: `import { Can } from '@larose-ui/permissions';
+    example: `import { Can } from '@larose-ui/permissions-react';
 
 <Can permission="employees.delete"><DeleteButton /></Can>`,
     features: ['Can and Permission components', 'Explainable blocked actions'],
@@ -174,7 +157,7 @@ await queue.enqueue({ url: '/api/items', method: 'POST', body: { name: 'Draft' }
   data: {
     tagline: 'Backend-aware data fetching with self-healing errors.',
     peer: 'react >=18',
-    example: `import { DataView } from '@larose-ui/data';
+    example: `import { DataView } from '@larose-ui/data-react';
 
 <DataView url="/api/employees">{(rows) => <Table data={rows} />}</DataView>`,
     features: ['useQuery, useMutation, DataView', 'Self-healing errors', 'useUndo'],
@@ -182,7 +165,7 @@ await queue.enqueue({ url: '/api/items', method: 'POST', body: { name: 'Draft' }
   forms: {
     tagline: 'Schema-driven forms with validation and conditional fields.',
     peer: 'react >=18',
-    example: `import { Form } from '@larose-ui/forms';
+    example: `import { Form } from '@larose-ui/forms-react';
 
 <Form schema={{ id: 'user', fields: [{ name: 'email', type: 'text', label: 'Email' }] }} />`,
     features: ['Declarative schemas', 'Conditional visibility', 'Observability integration'],
@@ -190,7 +173,7 @@ await queue.enqueue({ url: '/api/items', method: 'POST', body: { name: 'Draft' }
   observability: {
     tagline: 'UX observability — journeys, funnels, and rage-click analysis.',
     peer: 'react >=18',
-    example: `import { useJourneyPage } from '@larose-ui/observability';
+    example: `import { useJourneyPage } from '@larose-ui/observability-react';
 
 useJourneyPage('employees');`,
     features: ['Journey tracking', 'Form funnel metrics', 'Rage click analysis'],
@@ -210,7 +193,7 @@ validateContract(uiSchema, apiSchema);`,
   testing: {
     tagline: 'Test utilities with full laRose runtime context.',
     peer: 'react >=18',
-    example: `import { renderWithLaRose } from '@larose-ui/testing';
+    example: `import { renderWithLaRose } from '@larose-ui/testing-react';
 
 renderWithLaRose(<App />, { permissions: ['app.read'] });`,
     features: ['renderWithLaRose wrapper', 'Test matrix scenarios'],
@@ -223,19 +206,19 @@ renderWithLaRose(<App />, { permissions: ['app.read'] });`,
   devtools: {
     tagline: 'In-app runtime inspector for development.',
     peer: 'react >=18',
-    example: `import { DevToolsProvider } from '@larose-ui/devtools';`,
+    example: `import { DevToolsProvider } from '@larose-ui/devtools-react';`,
     features: ['Runtime context panel', 'Event timeline', 'Component inspector'],
   },
   enterprise: {
     tagline: 'Enterprise patterns — audit trails, session guards, schema IaC.',
     peer: 'react >=18',
-    example: `import { SessionGuard, AuditedInput } from '@larose-ui/enterprise';`,
+    example: `import { SessionGuard, AuditedInput } from '@larose-ui/enterprise-react';`,
     features: ['Audit trails', 'Session expiry', 'UI schema renderer'],
   },
   ai: {
     tagline: 'Permission-bound AI for SmartTable and SmartForm.',
     peer: 'react >=18',
-    example: `import { SmartTable, AIProvider } from '@larose-ui/ai';`,
+    example: `import { SmartTable, AIProvider } from '@larose-ui/ai-react';`,
     features: ['Natural-language filtering', 'Permission-gated AI actions'],
   },
   accessibility: {
@@ -251,7 +234,6 @@ const GUIDES = [
   { id: 'svelte', title: 'Svelte 5', file: 'docs/ecosystem/SVELTE.md' },
   { id: 'nextjs', title: 'Next.js', file: 'docs/ecosystem/NEXTJS.md' },
   { id: 'nuxt', title: 'Nuxt', file: 'docs/ecosystem/NUXT.md' },
-  { id: 'desktop', title: 'Desktop integration', file: 'docs/ecosystem/DESKTOP.md' },
   { id: 'runtime', title: 'Runtime', file: 'docs/runtime/RUNTIME_2.md' },
   { id: 'customization', title: 'Customization', file: 'docs/design/CUSTOMIZATION.md' },
   { id: 'motion', title: 'Motion system', file: 'docs/design/MOTION_SYSTEM.md' },
@@ -266,7 +248,7 @@ const GUIDES = [
 const reactIndexPath = join(root, 'packages/react/src/index.ts');
 const liquidGlassIndexPath = join(root, 'packages/react/src/LiquidGlass/index.ts');
 const skipPattern =
-  /^(format|resolve|prepare|build|create|apply|get|use|clamp|warn|truncate|sort|filter|flatten|collect|normalize|merge|tokenize|count|default|MAX_|MIN_|STANDARD_|DEFAULT_|PATH_|LAROSE_|BackChevron|Close|Compose|Share|Sidebar|DocumentMenu|Search|Overflow|buildMinute|buildMonth|buildDay|formatDate|parseISO|toISO|snapMinute|resolveAutomatic|createApp|createFile|createEdit|createFormat|createView|createWindow|createHelp|createDefault|createPhoto|entriesFrom|toolbarActions|quickActionsTo|LaRoseProvider|MotionProvider|ToastProvider|DragDropProvider|Presence|Collapse|Can|Permission|DataView|Form|SmartTable|AIProvider|DevToolsProvider|SessionGuard|AuditedInput|UISchemaRenderer|LaRoseElectronRoot|LaRoseTauriRoot)/;
+  /^(format|resolve|prepare|build|create|apply|get|use|clamp|warn|truncate|sort|filter|flatten|collect|normalize|merge|tokenize|count|default|MAX_|MIN_|STANDARD_|DEFAULT_|PATH_|LAROSE_|BackChevron|Close|Compose|Share|Sidebar|DocumentMenu|Search|Overflow|buildMinute|buildMonth|buildDay|formatDate|parseISO|toISO|snapMinute|resolveAutomatic|createApp|createFile|createEdit|createFormat|createView|createWindow|createHelp|createDefault|createPhoto|entriesFrom|toolbarActions|quickActionsTo|LaRoseProvider|MotionProvider|ToastProvider|DragDropProvider|Presence|Collapse|Can|Permission|DataView|Form|SmartTable|AIProvider|DevToolsProvider|SessionGuard|AuditedInput|UISchemaRenderer)/;
 
 const reactComponentNames = parseComponentExportsFromIndex(reactIndexPath);
 const glassComponentNames = reactComponentNames.filter(isGlassDocComponent);
@@ -290,7 +272,7 @@ const categoryMap = {
     'LiquidGlassCheckbox',
   ],
   Data: ['DataTable', 'List', 'ListSection', 'ListRow', 'Table', 'OutlineView', 'OutlineViewToolbar', 'Chart'],
-  Content: ['Typography', 'Label', 'DisclosureTriangle', 'DisclosureButton', 'DisclosureGroup', 'DisclosureList', 'ImageView', 'ImageOverlay', 'ImageWell', 'ImageButton', 'TextView', 'WebView', 'WebViewShell', 'WebViewNavigation', 'Accordion', 'AccordionItem', 'AccordionTrigger', 'AccordionContent'],
+  Content: ['Typography', 'Label', 'DisclosureTriangle', 'DisclosureButton', 'DisclosureGroup', 'DisclosureList', 'ImageView', 'ImageOverlay', 'ImageWell', 'ImageButton', 'TextView', 'Accordion', 'AccordionItem', 'AccordionTrigger', 'AccordionContent'],
   Sharing: ['ShareSheet', 'CollaborationPopover', 'ShareToolbar', 'ActivityView'],
   Search: ['SearchField', 'SearchScopeBar', 'SearchTokenChip'],
   Files: ['DocumentToolbar', 'FileBrowser', 'FilePreview', 'UnsavedIndicator', 'DocumentLauncher'],

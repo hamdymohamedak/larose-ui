@@ -95,6 +95,7 @@ export function MenuBar({
   onRevealChange,
   showAppleMenu = platform === 'macos',
   className,
+  style,
   onMenuAction,
   enableGlobalShortcuts = true,
   enableTypeAhead = true,
@@ -240,6 +241,7 @@ export function MenuBar({
         role="menubar"
         aria-label={`${appName} menu bar`}
         className={[styles.menuBar, className].filter(Boolean).join(' ')}
+        style={style}
         data-platform={platform}
         data-hidden={platform === 'ipados' ? (!isRevealed).toString() : undefined}
         onPointerEnter={revealFromEdge}

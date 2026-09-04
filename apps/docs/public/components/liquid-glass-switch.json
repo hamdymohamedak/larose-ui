@@ -87,9 +87,12 @@
       "id": "SwitchDefault",
       "title": "Switch Default",
       "kind": "basic",
-      "props": {},
-      "code": "<Switch label=\"Email notifications\" defaultChecked hint=\"Receive product updates\" />",
-      "composite": true
+      "props": {
+        "label": "Email notifications",
+        "checked": true,
+        "hint": "Receive product updates"
+      },
+      "code": "import { FormControls } from '@larose-ui/react';\n\n<FormControls\n  label=\"Email notifications\"\n  checked\n  hint=\"Receive product updates\"\n>Example</FormControls>"
     }
   ],
   "accessibility": [

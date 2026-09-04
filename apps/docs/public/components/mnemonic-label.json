@@ -24,7 +24,20 @@
       "inherited": false
     }
   ],
-  "examples": [],
+  "examples": [
+    {
+      "id": "MnemonicLabel",
+      "title": "MnemonicLabel",
+      "kind": "advanced",
+      "props": {
+        "children": "MnemonicLabel",
+        "label": "MnemonicLabel",
+        "mnemonic": "MnemonicLabel",
+        "showAccessKey": false
+      },
+      "code": "import { Discovered } from '@larose-ui/react';\n\n<Discovered\n  label=\"MnemonicLabel\"\n  mnemonic=\"MnemonicLabel\"\n  showAccessKey={false}\n>MnemonicLabel</Discovered>"
+    }
+  ],
   "accessibility": [],
   "anatomy": null,
   "playground": null

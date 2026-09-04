@@ -1,5 +1,11 @@
 # @larose-ui/tokens
 
+## Unreleased
+
+### Minor Changes
+
+- Remove WebView design tokens.
+
 ## 0.1.3
 
 ### Patch Changes

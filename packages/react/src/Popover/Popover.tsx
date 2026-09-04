@@ -4,8 +4,10 @@ import {
   useId,
   useRef,
   useState,
+  type CSSProperties,
   type ReactNode,
 } from 'react';
+import { activateOverlayFocus } from '@larose-ui/primitives';
 import { Presence } from '../Motion/Presence';
 import styles from '@larose-ui/styles/components/Popover/Popover.module.css';
 
@@ -20,6 +22,8 @@ export interface PopoverProps {
   side?: PopoverSide;
   /** Extra class names for the floating panel element. */
   panelClassName?: string;
+  className?: string;
+  style?: CSSProperties;
   'aria-label'?: string;
 }
 
@@ -31,6 +35,8 @@ export function Popover({
   onOpenChange,
   side = 'bottom',
   panelClassName,
+  className,
+  style,
   'aria-label': ariaLabel = 'Popover',
 }: PopoverProps) {
   const [internalOpen, setInternalOpen] = useState(defaultOpen);
@@ -38,6 +44,7 @@ export function Popover({
   const isOpen = isControlled ? open : internalOpen;
   const popoverId = useId();
   const rootRef = useRef<HTMLSpanElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
 
   const setOpen = useCallback(
     (next: boolean) => {
@@ -56,20 +63,21 @@ export function Popover({
       }
     };
 
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') setOpen(false);
-    };
-
     document.addEventListener('mousedown', onPointerDown);
-    document.addEventListener('keydown', onKeyDown);
+    const deactivate = activateOverlayFocus({
+      container: panelRef.current,
+      onEscape: () => setOpen(false),
+      lockScroll: false,
+    });
+
     return () => {
       document.removeEventListener('mousedown', onPointerDown);
-      document.removeEventListener('keydown', onKeyDown);
+      deactivate();
     };
   }, [isOpen, setOpen]);
 
   return (
-    <span ref={rootRef} className={styles.wrapper}>
+    <span ref={rootRef} className={[styles.wrapper, className].filter(Boolean).join(' ')} style={style}>
       <span
         onClick={() => setOpen(!isOpen)}
         aria-expanded={isOpen}
@@ -79,6 +87,7 @@ export function Popover({
       </span>
       <Presence present={isOpen} variant="popover" placement={side}>
         <div
+          ref={panelRef}
           id={popoverId}
           role="dialog"
           aria-label={ariaLabel}

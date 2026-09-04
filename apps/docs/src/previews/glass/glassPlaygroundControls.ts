@@ -97,6 +97,7 @@ export const GLASS_PLAYGROUND_CONFIG: Record<string, GlassPlaygroundConfig> = {
       width: { control: 'range', default: 280, min: 120, max: 480, step: 4, category: 'Geometry' },
       height: { control: 'range', default: 120, min: 48, max: 240, step: 4, category: 'Geometry' },
       borderRadius: { control: 'range', default: 36, min: 0, max: 80, step: 1, category: 'Geometry' },
+      as: { control: 'text', default: 'div', category: 'Chrome', label: 'as' },
       ...opticsControls(),
     },
   },

@@ -6,6 +6,7 @@ import {
   useRef,
   useState,
   type ReactNode,
+  type CSSProperties,
 } from 'react';
 import { Presence } from '../Motion/Presence';
 import type { CollaborationAction, Collaborator } from './types';
@@ -24,6 +25,8 @@ export interface CollaborationPopoverProps {
   open?: boolean;
   defaultOpen?: boolean;
   onOpenChange?: (open: boolean) => void;
+  className?: string;
+  style?: CSSProperties;
 }
 
 /**
@@ -41,6 +44,8 @@ export function CollaborationPopover({
   open,
   defaultOpen = false,
   onOpenChange,
+  className,
+  style,
 }: CollaborationPopoverProps) {
   const [internalOpen, setInternalOpen] = useState(defaultOpen);
   const isControlled = open !== undefined;
@@ -95,7 +100,7 @@ export function CollaborationPopover({
   }, [isOpen, collaborators.length, actions.length]);
 
   return (
-    <span ref={rootRef} className={styles.wrapper}>
+    <span ref={rootRef} className={[styles.wrapper, className].filter(Boolean).join(' ')} style={style}>
       <span
         onClick={() => setOpen(!isOpen)}
         aria-expanded={isOpen}

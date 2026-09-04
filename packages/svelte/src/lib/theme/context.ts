@@ -1,4 +1,5 @@
 import { getContext } from 'svelte';
+import { mergeDefinedProps } from '@larose-ui/core';
 import { createTheme } from '@larose-ui/themes';
 import type { ComponentConfiguration, LaRoseTheme, ResolvedLaRoseTheme } from '@larose-ui/themes';
 import type { ComponentDefaultPropsMap } from '@larose-ui/themes';
@@ -38,6 +39,9 @@ export function getComponentDefaults<
   TProps extends Partial<ComponentDefaultPropsMap[TName]>,
 >(component: TName, props: TProps): TProps {
   const { components } = getThemeCustomization();
-  const defaults = components[component]?.defaultProps ?? {};
-  return { ...defaults, ...props };
+  const defaults = (components[component]?.defaultProps ?? {}) as Partial<TProps>;
+  return mergeDefinedProps(
+    defaults as Record<string, unknown>,
+    props as Record<string, unknown>,
+  ) as TProps;
 }

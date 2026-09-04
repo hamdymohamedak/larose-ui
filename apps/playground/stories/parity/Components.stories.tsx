@@ -3,7 +3,7 @@ import { crossFrameworkRegistry } from '../../.storybook/crossFramework/registry
 
 const meta: Meta = {
   title: 'Parity/Components',
-  tags: ['autodocs'],
+  tags: ['autodocs', 'fw-react', 'fw-vue', 'fw-svelte'],
   parameters: {
     docs: {
       description: {

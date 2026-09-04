@@ -1,7 +1,7 @@
 {
   "name": "Modal",
   "version": "1",
-  "framework": "react",
+  "framework": "neutral",
   "props": [
     {
       "name": "closeOnOverlay",
@@ -15,7 +15,7 @@
     },
     {
       "name": "contentStyle",
-      "type": "CSSProperties",
+      "type": "Style",
       "required": false
     },
     {
@@ -45,7 +45,7 @@
     },
     {
       "name": "overlayStyle",
-      "type": "CSSProperties",
+      "type": "Style",
       "required": false
     }
   ],

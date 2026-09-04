@@ -1,7 +1,7 @@
 {
   "name": "Draggable",
   "version": "1",
-  "framework": "react",
+  "framework": "neutral",
   "props": [
     {
       "name": "data",
@@ -21,7 +21,7 @@
     },
     {
       "name": "preview",
-      "type": "ReactNode",
+      "type": "Node",
       "required": false
     },
     {

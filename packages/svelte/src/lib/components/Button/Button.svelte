@@ -24,15 +24,60 @@
     tooltip?: string;
     type?: 'button' | 'submit' | 'reset';
     class?: string;
+    style?: string;
     onclick?: (event: MouseEvent) => void;
     children?: Snippet;
     leftIcon?: Snippet;
     rightIcon?: Snippet;
   }
 
-  let props: Props = $props();
+  let {
+    variant = 'primary',
+    size = 'md',
+    buttonRole = 'normal',
+    shape,
+    state,
+    loading = false,
+    loadingLabel,
+    error = null,
+    disabled = false,
+    iconOnly = false,
+    fullWidth = false,
+    flexible = false,
+    tooltip,
+    type = 'button',
+    class: className,
+    style,
+    onclick,
+    children,
+    leftIcon,
+    rightIcon,
+  }: Props = $props();
 
-  const merged = $derived(getComponentDefaults('Button', props));
+  const merged = $derived(
+    getComponentDefaults('Button', {
+      variant,
+      size,
+      buttonRole,
+      shape,
+      state,
+      loading,
+      loadingLabel,
+      error,
+      disabled,
+      iconOnly,
+      fullWidth,
+      flexible,
+      tooltip,
+      type,
+      class: className,
+      style,
+      onclick,
+      children,
+      leftIcon,
+      rightIcon,
+    }),
+  );
   const uiState = $derived(
     resolveUIState({
       state: merged.state,
@@ -58,13 +103,14 @@
   const resolvedVariant = $derived(
     merged.buttonRole === 'primary' && merged.variant !== 'destructive'
       ? 'primary'
-      : merged.variant,
+      : (merged.variant ?? 'primary'),
   );
 </script>
 
 <button
   type={merged.type ?? 'button'}
   class={cn(styles.button, merged.class)}
+  style={merged.style}
   data-variant={resolvedVariant}
   data-size={merged.size ?? 'md'}
   data-shape={resolvedShape}

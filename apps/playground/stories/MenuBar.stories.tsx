@@ -1,11 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
-import {
-  MenuBar,
-  Typography,
-  type MenuBarDocumentContext,
-  type MenuBarExtraConfig,
-} from '@larose-ui/react';
+import { MenuBar, Typography } from '@larose-ui/react';
 import { DEMO_ACCELERATORS } from './demoAccelerators';
 
 function WifiIcon() {
@@ -24,6 +19,7 @@ function WifiIcon() {
 
 const meta: Meta = {
   title: 'Foundation/Menu Bar',
+  tags: ['autodocs', 'fw-react'],
   parameters: { layout: 'fullscreen' },
 };
 
@@ -32,9 +28,12 @@ type Story = StoryObj;
 
 export const MacOSStandard: Story = {
   name: 'macOS standard menus',
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'menuBar' } },
+  args: { appName: 'laRose', platform: 'macos', revealed: true },
   render: function MacOSMenuBarDemo() {
     const [lastAction, setLastAction] = useState('Choose a menu item');
-    const [context, setContext] = useState<MenuBarDocumentContext>({
+    const [context, setContext] = useState({
       isDocumentOpen: true,
       isDirty: true,
       hasTabs: true,
@@ -45,8 +44,7 @@ export const MacOSStandard: Story = {
       hasSelection: true,
       canPaste: true,
     });
-
-    const extras: MenuBarExtraConfig[] = [
+    const extras = [
       {
         id: 'wifi',
         label: 'Wi-Fi status',
@@ -54,7 +52,7 @@ export const MacOSStandard: Story = {
         entries: [
           { id: 'network-1', label: 'Home Network', selected: true },
           { id: 'network-2', label: 'Office Network' },
-          { type: 'separator' },
+          { type: 'separator' as const },
           { id: 'network-settings', label: 'Network Settings…' },
         ],
       },

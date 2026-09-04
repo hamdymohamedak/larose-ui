@@ -46,5 +46,6 @@ export { supportsLiquidGlassRefraction } from './engine/detect';
 export type {
   LiquidGlassOptics,
   LiquidGlassGeometry,
+  LiquidGlassChromeProps,
   ResolvedLiquidGlassOptics,
 } from './engine/types';

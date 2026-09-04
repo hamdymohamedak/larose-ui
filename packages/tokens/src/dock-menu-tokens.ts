@@ -6,6 +6,7 @@ export interface DockMenuTokens {
   dockHeight: string;
   dockRadius: string;
   quickActionIconSize: string;
+  background: string;
 }
 
 /**
@@ -13,13 +14,23 @@ export interface DockMenuTokens {
  * @see https://developer.apple.com/design/human-interface-guidelines/dock-menus
  */
 export function getDockMenuTokens(mode: ThemeMode): DockMenuTokens {
-  void mode;
+  if (mode === 'dark') {
+    return {
+      iconSize: '3.25rem',
+      menuOffset: '0.5rem',
+      dockHeight: '4.25rem',
+      dockRadius: '1rem',
+      quickActionIconSize: '3.5rem',
+      background: 'rgb(44 44 46 / 0.72)',
+    };
+  }
   return {
     iconSize: '3.25rem',
     menuOffset: '0.5rem',
     dockHeight: '4.25rem',
     dockRadius: '1rem',
     quickActionIconSize: '3.5rem',
+    background: 'rgb(255 255 255 / 0.55)',
   };
 }
 
@@ -29,6 +40,7 @@ export function dockMenuTokensToCSSVariables(tokens: DockMenuTokens): Record<str
     '--lr-dock-menu-offset': tokens.menuOffset,
     '--lr-dock-height': tokens.dockHeight,
     '--lr-dock-radius': tokens.dockRadius,
+    '--lr-dock-bg': tokens.background,
     '--lr-quick-action-icon-size': tokens.quickActionIconSize,
   };
 }

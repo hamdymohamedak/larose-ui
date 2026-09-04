@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 import type { UIState } from '@larose-ui/core';
 import styles from '@larose-ui/styles/components/DataEntry/FieldShell.module.css';
 
@@ -10,6 +10,8 @@ export interface FieldShellProps {
   htmlFor?: string;
   uiState?: UIState;
   children: ReactNode;
+  className?: string;
+  style?: CSSProperties;
 }
 
 export function FieldShell({
@@ -20,11 +22,17 @@ export function FieldShell({
   htmlFor,
   uiState = 'idle',
   children,
+  className,
+  style,
 }: FieldShellProps) {
   const errorMessage = typeof error === 'string' ? error : null;
 
   return (
-    <div className={styles.wrapper} data-state={uiState}>
+    <div
+      className={[styles.wrapper, className].filter(Boolean).join(' ')}
+      style={style}
+      data-state={uiState}
+    >
       {label && (
         <label htmlFor={htmlFor} className={styles.label}>
           {label}

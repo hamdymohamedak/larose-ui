@@ -1,5 +1,6 @@
 import type { CSSProperties } from 'react';
 import type { CollectionItem, CollectionLayout } from './types';
+import { mergeStyles } from '../shared/styleProps';
 import styles from '@larose-ui/styles/components/Layout/Layout.module.css';
 
 export interface CollectionProps {
@@ -9,6 +10,8 @@ export interface CollectionProps {
   selectedId?: string;
   onSelect?: (item: CollectionItem) => void;
   ariaLabel?: string;
+  className?: string;
+  style?: CSSProperties;
 }
 
 /**
@@ -22,12 +25,17 @@ export function Collection({
   selectedId,
   onSelect,
   ariaLabel = 'Collection',
+  className,
+  style,
 }: CollectionProps) {
   return (
     <div
-      className={styles.collection}
+      className={[styles.collection, className].filter(Boolean).join(' ')}
       data-layout={layout}
-      style={layout === 'grid' ? ({ '--lr-collection-columns': String(columns) } as CSSProperties) : undefined}
+      style={mergeStyles(
+        layout === 'grid' ? ({ '--lr-collection-columns': String(columns) } as CSSProperties) : undefined,
+        style,
+      )}
       role="list"
       aria-label={ariaLabel}
     >

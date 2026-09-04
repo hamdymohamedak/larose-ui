@@ -32,9 +32,10 @@
       "props": {
         "title": "Employee Profile",
         "description": "Manage employee information",
-        "children": "Ahmed Mohamed — Software Engineer"
+        "children": "Ahmed Mohamed — Software Engineer",
+        "footerLabel": "Edit"
       },
-      "code": "import { Card } from '@larose-ui/react';\n\n<Card\n  title=\"Employee Profile\"\n  description=\"Manage employee information\"\n>Ahmed Mohamed — Software Engineer</Card>"
+      "code": "import { Card } from '@larose-ui/react';\n\n<Card\n  title=\"Employee Profile\"\n  description=\"Manage employee information\"\n  footerLabel=\"Edit\"\n>Ahmed Mohamed — Software Engineer</Card>"
     },
     {
       "id": "WithBadge",
@@ -72,9 +73,10 @@
       "id": "SecurePasswordField",
       "title": "Secure Password Field",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"SecurePasswordField\" for full example.",
-      "composite": true
+      "props": {
+        "label": "Password"
+      },
+      "code": "import { EnteringData } from '@larose-ui/react';\n\n<EnteringData\n  label=\"Password\"\n>Example</EnteringData>"
     },
     {
       "id": "PasteAndDrop",
@@ -88,9 +90,11 @@
       "id": "ContinueWhenComplete",
       "title": "Continue When Complete",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"ContinueWhenComplete\" for full example.",
-      "composite": true
+      "props": {
+        "complete": true,
+        "label": "Continue"
+      },
+      "code": "import { EnteringData } from '@larose-ui/react';\n\n<EnteringData\n  complete\n  label=\"Continue\"\n>Example</EnteringData>"
     },
     {
       "id": "ExpansionTooltip",
@@ -104,25 +108,33 @@
       "id": "DisclosureButtonStory",
       "title": "Disclosure button",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"DisclosureButtonStory\" for full example.",
-      "composite": true
+      "props": {
+        "defaultExpanded": false,
+        "label": "Save document"
+      },
+      "code": "import { Disclosure&Labels } from '@larose-ui/react';\n\n<Disclosure&Labels\n  defaultExpanded={false}\n  label=\"Save document\"\n>Example</Disclosure&Labels>"
     },
     {
       "id": "LabelImportance",
       "title": "Label Importance",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"LabelImportance\" for full example.",
-      "composite": true
+      "props": {
+        "label": "Primary information",
+        "importance": "primary"
+      },
+      "code": "import { Disclosure&Labels } from '@larose-ui/react';\n\n<Disclosure&Labels\n  label=\"Primary information\"\n  importance=\"primary\"\n>Example</Disclosure&Labels>"
     },
     {
       "id": "SelectableLabel",
       "title": "Selectable Label",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"SelectableLabel\" for full example.",
-      "composite": true
+      "props": {
+        "label": "Error E-1042 · IP 192.168.1.42 · Serial LR-2026-0830",
+        "importance": "secondary",
+        "selectable": true,
+        "mono": true
+      },
+      "code": "import { Disclosure&Labels } from '@larose-ui/react';\n\n<Disclosure&Labels\n  label=\"Error E-1042 · IP 192.168.1.42 · Serial LR-2026-0830\"\n  importance=\"secondary\"\n  selectable\n  mono\n>Example</Disclosure&Labels>"
     },
     {
       "id": "UnsavedChanges",
@@ -136,25 +148,30 @@
       "id": "ImportWithFileUpload",
       "title": "Import With File Upload",
       "kind": "loading",
-      "props": {},
-      "code": "// See Storybook story \"ImportWithFileUpload\" for full example.",
-      "composite": true
+      "props": {
+        "label": "Import document",
+        "hint": "PDF, Pages, or Numbers"
+      },
+      "code": "import { FileManagement } from '@larose-ui/react';\n\n<FileManagement\n  label=\"Import document\"\n  hint=\"PDF, Pages, or Numbers\"\n>Example</FileManagement>"
     },
     {
       "id": "ListAccessories",
       "title": "List Accessories",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"ListAccessories\" for full example.",
-      "composite": true
+      "props": {
+        "variant": "grouped"
+      },
+      "code": "import { Lists&Tables } from '@larose-ui/react';\n\n<Lists&Tables\n  variant=\"grouped\"\n>Example</Lists&Tables>"
     },
     {
       "id": "DocumentToolbar",
       "title": "Document Toolbar",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"DocumentToolbar\" for full example.",
-      "composite": true
+      "props": {
+        "shareTitle": "Share Quarterly Plan",
+        "collaborating": true
+      },
+      "code": "import { Collaboration&Sharing } from '@larose-ui/react';\n\n<Collaboration&Sharing\n  shareTitle=\"Share Quarterly Plan\"\n  collaborating\n>Example</Collaboration&Sharing>"
     }
   ],
   "accessibility": [],

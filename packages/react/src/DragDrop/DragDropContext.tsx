@@ -8,8 +8,16 @@ import {
   type ReactNode,
 } from 'react';
 import { DRAG_START_THRESHOLD_PX } from '@larose-ui/tokens';
+import {
+  appendDragItem,
+  buildDropResult,
+  createDragSession,
+  findDropTarget,
+  moveDragSession,
+  zonesFromElements,
+  type DragItem as CoreDragItem,
+} from '@larose-ui/primitives';
 import type { DragItem, DragSession, DropResult, DropTargetState } from './types';
-import { acceptsDragType, resolveDropOperation } from './utils';
 import { DragPreviewLayer } from './DragPreview';
 
 export interface DropZoneRegistration<T = unknown> {
@@ -66,51 +74,35 @@ export function DragDropProvider({ children }: DragDropProviderProps) {
     };
   }, []);
 
-  const findTarget = useCallback((x: number, y: number, items: DragItem[]) => {
-    for (const zone of zonesRef.current.values()) {
-      const el = zone.element;
-      if (!el) continue;
-      const rect = el.getBoundingClientRect();
-      const inside =
-        x >= rect.left && x <= rect.right && y >= rect.top && y <= rect.bottom;
-      if (!inside) continue;
-
-      const typeOk = items.every((item) => acceptsDragType(zone.accepts, item.type));
-      const customOk = zone.canDrop ? zone.canDrop(items) : true;
-      return { zoneId: zone.id, valid: typeOk && customOk };
-    }
-    return null;
+  const findTarget = useCallback((x: number, y: number, items: CoreDragItem[]) => {
+    return findDropTarget(
+      zonesFromElements(
+        Array.from(zonesRef.current.values()).map((zone) => ({
+          id: zone.id,
+          accepts: zone.accepts,
+          canDrop: zone.canDrop
+            ? (coreItems: CoreDragItem[]) => zone.canDrop!(coreItems as DragItem[])
+            : undefined,
+          element: zone.element,
+        })),
+      ),
+      x,
+      y,
+      items,
+    );
   }, []);
 
   const beginPointerDrag = useCallback(
-    (
-      item: DragItem,
-      pointerId: number,
-      x: number,
-      y: number,
-      _element: HTMLElement,
-    ) => {
+    (item: DragItem, pointerId: number, x: number, y: number, _element: HTMLElement) => {
       setRevertPreview(false);
-      setSession({
-        items: [item],
-        sourceId: item.sourceId,
-        pointerId,
-        startX: x,
-        startY: y,
-        x,
-        y,
-      });
+      setSession(createDragSession(item, pointerId, x, y));
       setTarget(null);
     },
     [],
   );
 
   const addItemToSession = useCallback((item: DragItem) => {
-    setSession((current) => {
-      if (!current) return current;
-      if (current.items.some((entry) => entry.id === item.id)) return current;
-      return { ...current, items: [...current.items, item] };
-    });
+    setSession((current) => (current ? appendDragItem(current, item) : current));
   }, []);
 
   const updatePointer = useCallback(
@@ -118,7 +110,7 @@ export function DragDropProvider({ children }: DragDropProviderProps) {
       setSession((current) => {
         if (!current) return current;
         setTarget(findTarget(x, y, current.items));
-        return { ...current, x, y };
+        return moveDragSession(current, x, y);
       });
     },
     [findTarget],
@@ -142,18 +134,7 @@ export function DragDropProvider({ children }: DragDropProviderProps) {
         return;
       }
 
-      const operation = resolveDropOperation(
-        current.sourceId,
-        zone.id,
-        optionKey,
-      );
-
-      await zone.onDrop({
-        items: current.items,
-        sourceId: current.sourceId,
-        destinationId: zone.id,
-        operation,
-      });
+      await zone.onDrop(buildDropResult(current, zone.id, optionKey));
 
       setSession(null);
       setTarget(null);

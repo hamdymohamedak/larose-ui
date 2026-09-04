@@ -79,9 +79,11 @@
       "id": "FileBrowserStory",
       "title": "File Browser Story",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"FileBrowserStory\" for full example.",
-      "composite": true
+      "props": {
+        "activeTab": "recents",
+        "showExtensions": false
+      },
+      "code": "import { FileManagement } from '@larose-ui/react';\n\n<FileManagement\n  activeTab=\"recents\"\n  showExtensions={false}\n>Example</FileManagement>"
     }
   ],
   "accessibility": [],

@@ -13,6 +13,7 @@
     name?: string;
     value?: string;
     class?: string;
+    style?: string;
     group?: string;
     onchange?: (event: Event) => void;
   }
@@ -27,6 +28,7 @@
     name,
     value = '',
     class: className,
+    style,
     group = $bindable(''),
     onchange,
   }: Props = $props();
@@ -34,7 +36,7 @@
   const inputId = $derived(id ?? label.toLowerCase().replace(/\s+/g, '-'));
 </script>
 
-<div class={styles.wrapper} data-state={error ? 'error' : 'default'}>
+<div class={styles.wrapper} {style} data-state={error ? 'error' : 'default'}>
   <label for={inputId} class={styles.row}>
     <input
       id={inputId}

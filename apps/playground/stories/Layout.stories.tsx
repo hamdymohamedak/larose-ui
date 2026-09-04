@@ -62,6 +62,7 @@ const hierarchy: ColumnViewNode[] = [
 
 const metaDef: Meta = {
   title: 'Foundation/Layout',
+  tags: ['autodocs', 'fw-react'],
   parameters: { layout: 'padded' },
 };
 
@@ -69,6 +70,9 @@ export default metaDef;
 type Story = StoryObj;
 
 export const BoxSecondary: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'box' } },
+  args: { title: 'Export options', variant: 'secondary' },
   render: () => (
     <Box title="Delivery options" variant="secondary">
       <Typography role="body">Express shipping arrives tomorrow.</Typography>
@@ -80,6 +84,9 @@ export const BoxSecondary: Story = {
 };
 
 export const BoxSettingsStyle: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'box' } },
+  args: { title: 'Sound', variant: 'secondary', settingsStyle: true },
   render: () => (
     <Box title="Notifications" titlePosition="above" settingsStyle variant="tertiary">
       <Switch label="Product updates" defaultChecked />
@@ -89,6 +96,9 @@ export const BoxSettingsStyle: Story = {
 };
 
 export const CollectionGrid: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'collection' } },
+  args: { layout: 'grid', columns: 4 },
   render: function CollectionGridDemo() {
     const [selectedId, setSelectedId] = useState('1');
     return (
@@ -98,11 +108,17 @@ export const CollectionGrid: Story = {
 };
 
 export const CollectionRow: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'collection' } },
+  args: { layout: 'row' },
   render: () => (
     <Collection items={photos.slice(0, 5)} layout="row" ariaLabel="Recent albums" />
   ),
 };
 
 export const ColumnViewBrowser: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'columnView' } },
+  args: { initialPath: ['icloud', 'design'] },
   render: () => <ColumnView data={hierarchy} initialPath={['icloud', 'design']} />,
 };

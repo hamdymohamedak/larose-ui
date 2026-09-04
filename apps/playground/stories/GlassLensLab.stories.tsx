@@ -13,6 +13,7 @@ type LensLabArgs = typeof liquidGlassSurfaceDefaults;
 
 const meta: Meta<LensLabArgs> = {
   title: 'Glass/Lens Lab',
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
   parameters: {
     layout: 'fullscreen',
     controls: { expanded: true, sort: 'requiredFirst' },
@@ -97,5 +98,7 @@ function LensLab(args: LensLabArgs) {
 }
 
 export const Playground: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'liquidGlass' } },
   render: (args) => <LensLab {...args} />,
 };

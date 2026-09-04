@@ -1,1 +1,8 @@
-/* Component styles load via CSS module imports from @larose-ui/react source in dev. */
+/**
+ * Stub for `@larose-ui/react/styles.css` in Storybook source mode.
+ *
+ * Shared design-system CSS is loaded from `@larose-ui/styles/styles.css`
+ * (packages/styles/dist/styles.css). Component CSS modules still load
+ * per-import for HMR; the aggregate file guarantees Vue/Svelte mounts
+ * never render without scoped rules that React CSF already pulled in.
+ */

@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react';
 import styles from '@larose-ui/styles/components/Breadcrumb/Breadcrumb.module.css';
 import { sanitizeNavigationUrl } from '@larose-ui/core';
 
@@ -10,12 +11,23 @@ export interface BreadcrumbItem {
 
 export interface BreadcrumbProps {
   items: BreadcrumbItem[];
+  className?: string;
+  style?: CSSProperties;
   'aria-label'?: string;
 }
 
-export function Breadcrumb({ items, 'aria-label': ariaLabel = 'Breadcrumb' }: BreadcrumbProps) {
+export function Breadcrumb({
+  items,
+  className,
+  style,
+  'aria-label': ariaLabel = 'Breadcrumb',
+}: BreadcrumbProps) {
   return (
-    <nav className={styles.nav} aria-label={ariaLabel}>
+    <nav
+      className={[styles.nav, className].filter(Boolean).join(' ')}
+      style={style}
+      aria-label={ariaLabel}
+    >
       <ol className={styles.list}>
         {items.map((item, index) => {
           const isLast = index === items.length - 1;

@@ -335,7 +335,7 @@
 
 .dayButton[data-selected='true'] {
   background: var(--lr-color-primary);
-  color: var(--lr-color-text-inverse);
+  color: var(--lr-color-on-accent, var(--lr-button-on-primary-color));
 }
 
 .dayButton[data-outside='true'] {

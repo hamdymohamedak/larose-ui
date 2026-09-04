@@ -11,8 +11,10 @@ import {
   type MouseEvent as ReactMouseEvent,
   type ReactElement,
   type ReactNode,
+  type CSSProperties,
 } from 'react';
 import { ContextualMenuPortal } from '../Motion/OverlayPortal';
+import { mergeStyles } from '../shared/styleProps';
 import type {
   EditMenuContext,
   EditMenuInputMode,
@@ -50,6 +52,8 @@ export interface EditMenuProps {
   /** Touch-and-hold / long-press to reveal compact edit menu. */
   longPress?: boolean;
   dimBackground?: boolean;
+  className?: string;
+  style?: CSSProperties;
 }
 
 function ChevronIcon() {
@@ -185,6 +189,8 @@ export function EditMenu({
   onStandardAction,
   longPress = true,
   dimBackground = true,
+  className,
+  style,
 }: EditMenuProps) {
   const menuId = useId();
   const triggerRef = useRef<HTMLSpanElement>(null);
@@ -329,7 +335,7 @@ export function EditMenu({
 
   return (
     <>
-      <span ref={triggerRef} className={styles.triggerWrap}>
+      <span ref={triggerRef} className={[styles.triggerWrap, className].filter(Boolean).join(' ')} style={style}>
         {bindTrigger(children as ReactElement<Record<string, unknown>>)}
       </span>
       <ContextualMenuPortal
@@ -342,11 +348,14 @@ export function EditMenu({
         surfaceRole={showCompact ? 'toolbar' : undefined}
         aria-label="Edit menu"
         data-placement={position.placement}
-        surfaceStyle={{
-          left: position.x,
-          top: position.y,
-          ['--lr-edit-menu-pointer-x' as string]: `${position.pointerOffset}px`,
-        }}
+        surfaceStyle={mergeStyles(
+          {
+            left: position.x,
+            top: position.y,
+            ['--lr-edit-menu-pointer-x' as string]: `${position.pointerOffset}px`,
+          },
+          style,
+        )}
       >
         <EditMenuPointer placement={position.placement} />
         {showCompact ? (

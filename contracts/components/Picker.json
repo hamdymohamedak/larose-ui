@@ -1,12 +1,18 @@
 {
   "name": "Picker",
   "version": "1",
-  "framework": "react",
+  "framework": "neutral",
   "props": [
     {
       "name": "'aria-label'",
       "type": "string",
       "required": false
+    },
+    {
+      "name": "appearance",
+      "type": "PickerStyle",
+      "required": false,
+      "description": "Wheel vs compact appearance. Use with object `style` when you need both."
     },
     {
       "name": "columns",

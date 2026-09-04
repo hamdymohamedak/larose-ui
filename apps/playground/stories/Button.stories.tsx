@@ -24,7 +24,13 @@ function ShareGlyph() {
 const meta: Meta<typeof Button> = {
   title: 'Foundation/Button',
   component: Button,
-  tags: ['autodocs'],
+  tags: ['autodocs', 'fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: {
+    laRose: {
+      crossFramework: 'button',
+      displayName: 'Foundation/Button',
+    },
+  },
   argTypes: {
     variant: {
       control: 'select',
@@ -91,6 +97,7 @@ export const OpensAnotherView: Story = {
 };
 
 export const IconOnly: Story = {
+  tags: ['fw-react'],
   render: () => (
     <Button
       shape="circle"
@@ -105,6 +112,9 @@ export const IconOnly: Story = {
 
 export const StyleNotSize: Story = {
   name: 'Style, not size',
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'buttonGroup' } },
+  args: { orientation: 'horizontal', ariaLabel: 'Save options' } as never,
   render: () => (
     <ButtonGroup aria-label="Save options">
       <Button variant="primary" buttonRole="primary">
@@ -120,6 +130,7 @@ export const StyleNotSize: Story = {
 
 /** Apple HIG alert pattern: nondestructive primary, plain destructive, cancel. */
 export const AlertActions: Story = {
+  tags: ['fw-react'],
   render: () => (
     <div
       style={{
@@ -160,6 +171,9 @@ export const AlertActions: Story = {
 
 export const VisionOSStack: Story = {
   name: 'visionOS vertical stack',
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'buttonGroup' } },
+  args: { orientation: 'vertical', ariaLabel: 'Scene actions' } as never,
   render: () => (
     <ButtonGroup orientation="vertical" aria-label="Scene actions">
       <Button shape="roundedRect" variant="primary">
@@ -177,6 +191,9 @@ export const VisionOSStack: Story = {
 
 export const WatchFullWidth: Story = {
   name: 'watchOS full width',
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'buttonGroup' } },
+  args: { orientation: 'vertical', fullWidth: true, ariaLabel: 'Workout actions' } as never,
   render: () => (
     <div style={{ maxWidth: '12rem' }}>
       <ButtonGroup orientation="vertical" fullWidth aria-label="Workout actions">
@@ -193,6 +210,8 @@ export const WatchFullWidth: Story = {
 
 export const SquareButtons: Story = {
   name: 'Square buttons (in-view)',
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'squareButton' } },
   render: () => (
     <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
       <SquareButton icon="+" aria-label="Add row" tooltip="Add row" onClick={() => undefined} />
@@ -205,6 +224,7 @@ export const SquareButtons: Story = {
 };
 
 export const AllVariants: Story = {
+  tags: ['fw-react'],
   render: () => (
     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', alignItems: 'center' }}>
       <Button variant="primary">Primary</Button>
@@ -217,6 +237,7 @@ export const AllVariants: Story = {
 };
 
 export const Sizes: Story = {
+  tags: ['fw-react'],
   render: () => (
     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', alignItems: 'center' }}>
       <Button size="sm">Small</Button>

@@ -5,6 +5,7 @@ import {
   type TextareaHTMLAttributes,
 } from 'react';
 import type { TypographyRole } from '@larose-ui/core';
+import { mergeStyles } from '../shared/styleProps';
 import styles from '@larose-ui/styles/components/TextView/TextView.module.css';
 
 export interface TextViewProps extends Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, 'readOnly'> {
@@ -34,20 +35,22 @@ export const TextView = forwardRef<HTMLTextAreaElement, TextViewProps>(
       defaultValue,
       disabled,
       inputMode,
+      style,
       ...props
     },
     ref,
   ) => {
-    const style = maxHeight
+    const maxHeightStyle = maxHeight
       ? ({ '--lr-text-view-max-height': maxHeight } as CSSProperties)
       : undefined;
+    const mergedStyle = mergeStyles(maxHeightStyle, style);
 
     if (editable) {
       return (
         <div
           className={[styles.view, styles.scrollable, className].filter(Boolean).join(' ')}
           data-lr-type={typographyRole}
-          style={style}
+          style={mergedStyle}
         >
           <textarea
             ref={ref}
@@ -67,7 +70,7 @@ export const TextView = forwardRef<HTMLTextAreaElement, TextViewProps>(
         className={[styles.view, styles.display, styles.scrollable, className].filter(Boolean).join(' ')}
         data-lr-type={typographyRole}
         data-selectable={selectable ? 'true' : 'false'}
-        style={style}
+        style={mergedStyle}
         aria-readonly="true"
       >
         {children ?? value ?? defaultValue}

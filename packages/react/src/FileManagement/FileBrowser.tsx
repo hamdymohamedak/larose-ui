@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 import type { FileBrowserItem, FileBrowserTab, FileSyncStatus } from './types';
 import {
   formatDisplayName,
@@ -22,6 +22,8 @@ export interface FileBrowserProps {
   acceptTypes?: string[];
   emptyLabel?: string;
   toolbar?: ReactNode;
+  className?: string;
+  style?: CSSProperties;
 }
 
 const tabs: { id: FileBrowserTab; label: string }[] = [
@@ -57,12 +59,18 @@ export function FileBrowser({
   acceptTypes,
   emptyLabel = 'No documents in this location.',
   toolbar,
+  className,
+  style,
 }: FileBrowserProps) {
   const tabbed = filterFilesByTab(files, activeTab);
   const visible = filterFilesByType(tabbed, acceptTypes);
 
   return (
-    <section className={styles.browser} aria-label="File browser">
+    <section
+      className={[styles.browser, className].filter(Boolean).join(' ')}
+      style={style}
+      aria-label="File browser"
+    >
       <div className={styles.browserHeader}>
         <div className={styles.tabList} role="tablist" aria-label="File locations">
           {tabs.map((tab) => (

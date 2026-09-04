@@ -3,13 +3,13 @@ import {
   useMemo,
   useState,
   type ChangeEvent,
-  type CSSProperties,
 } from 'react';
 import { LIQUID_GLASS_PRESETS } from '../engine/defaults';
-import type { LiquidGlassOptics } from '../engine/types';
+import type { LiquidGlassChromeProps, LiquidGlassOptics } from '../engine/types';
 import { LiquidGlass } from '../core/LiquidGlass';
 
-export interface LiquidGlassRangeProps extends LiquidGlassOptics {
+export interface LiquidGlassRangeProps
+  extends LiquidGlassOptics, LiquidGlassChromeProps {
   value?: number;
   defaultValue?: number;
   min?: number;
@@ -24,8 +24,6 @@ export interface LiquidGlassRangeProps extends LiquidGlassOptics {
   thumbSize?: number;
   borderRadius?: number;
   fillColor?: string;
-  className?: string;
-  style?: CSSProperties;
   'aria-label'?: string;
 }
 

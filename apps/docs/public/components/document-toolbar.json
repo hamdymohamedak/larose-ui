@@ -58,9 +58,11 @@
       "id": "DocumentToolbarStory",
       "title": "Create & Open",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"DocumentToolbarStory\" for full example.",
-      "composite": true
+      "props": {
+        "newLabel": "New Document",
+        "openLabel": "Open Recent"
+      },
+      "code": "import { FileManagement } from '@larose-ui/react';\n\n<FileManagement\n  newLabel=\"New Document\"\n  openLabel=\"Open Recent\"\n>Example</FileManagement>"
     }
   ],
   "accessibility": [],

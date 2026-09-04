@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 
 export type PathControlVariant = 'standard' | 'popup';
 
@@ -18,5 +18,6 @@ export interface PathControlProps {
   onChoose?: () => void;
   onDropPath?: (segments: PathSegment[]) => void;
   className?: string;
+  style?: CSSProperties;
   'aria-label'?: string;
 }

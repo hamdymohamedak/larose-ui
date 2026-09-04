@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, type CSSProperties } from 'react';
 import styles from '@larose-ui/styles/components/Pagination/Pagination.module.css';
 
 type PageItem = number | 'ellipsis';
@@ -48,6 +48,7 @@ export interface PaginationProps {
   nextLabel?: string;
   'aria-label'?: string;
   className?: string;
+  style?: CSSProperties;
 }
 
 export function Pagination({
@@ -59,6 +60,7 @@ export function Pagination({
   nextLabel = 'Next page',
   'aria-label': ariaLabel = 'Pagination',
   className,
+  style,
 }: PaginationProps) {
   const items = useMemo(
     () => getPageItems(page, totalPages, siblingCount),
@@ -68,7 +70,11 @@ export function Pagination({
   if (totalPages < 1) return null;
 
   return (
-    <nav className={[styles.pagination, className].filter(Boolean).join(' ')} aria-label={ariaLabel}>
+    <nav
+      className={[styles.pagination, className].filter(Boolean).join(' ')}
+      style={style}
+      aria-label={ariaLabel}
+    >
       <button
         type="button"
         className={styles.pageButton}

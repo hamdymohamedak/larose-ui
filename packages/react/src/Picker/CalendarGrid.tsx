@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, type CSSProperties } from 'react';
 import { monthMatrix, parseISODate, toISODate, weekdayLabels } from './utils';
 import styles from '@larose-ui/styles/components/Picker/Picker.module.css';
 
@@ -8,6 +8,8 @@ export interface CalendarGridProps {
   locale?: string;
   minDate?: string;
   maxDate?: string;
+  className?: string;
+  style?: CSSProperties;
 }
 
 export function CalendarGrid({
@@ -16,6 +18,8 @@ export function CalendarGrid({
   locale = 'en',
   minDate,
   maxDate,
+  className,
+  style,
 }: CalendarGridProps) {
   const parsed = parseISODate(value);
   const [visibleYear, setVisibleYear] = useState(parsed.year);
@@ -45,7 +49,7 @@ export function CalendarGrid({
   };
 
   return (
-    <div className={styles.calendar}>
+    <div className={[styles.calendar, className].filter(Boolean).join(' ')} style={style}>
       <div className={styles.calendarHeader}>
         <button
           type="button"

@@ -5,8 +5,10 @@ import {
   useMemo,
   useRef,
   useState,
+  type CSSProperties,
 } from 'react';
 import { ContextualMenuPortal } from '../Motion/OverlayPortal';
+import { mergeStyles } from '../shared/styleProps';
 import type { PopUpCustomOption, PopUpOption } from './types';
 import {
   buildPopUpMenuEntries,
@@ -28,6 +30,8 @@ export interface PopUpButtonProps {
   explanatoryText?: string;
   disabled?: boolean;
   id?: string;
+  className?: string;
+  style?: CSSProperties;
 }
 
 function ChevronDown() {
@@ -53,6 +57,8 @@ export function PopUpButton({
   explanatoryText,
   disabled = false,
   id,
+  className,
+  style,
 }: PopUpButtonProps) {
   const menuId = useId();
   const triggerRef = useRef<HTMLButtonElement>(null);
@@ -112,7 +118,7 @@ export function PopUpButton({
   const triggerId = id ?? `popup-${menuId}`;
 
   return (
-    <div className={styles.wrap}>
+    <div className={[styles.wrap, className].filter(Boolean).join(' ')} style={style}>
       {(label || explanatoryText) && (
         <div className={styles.labelRow}>
           {label && (
@@ -148,7 +154,7 @@ export function PopUpButton({
         surfaceClassName={styles.menuPanel}
         surfaceRole="listbox"
         aria-label={label ?? 'Options'}
-        surfaceStyle={{ left: position.x, top: position.y }}
+        surfaceStyle={mergeStyles({ left: position.x, top: position.y }, style)}
         onSurfaceClick={(event) => event.stopPropagation()}
       >
         <ul className={styles.list}>

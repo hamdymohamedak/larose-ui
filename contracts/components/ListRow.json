@@ -1,7 +1,7 @@
 {
   "name": "ListRow",
   "version": "1",
-  "framework": "react",
+  "framework": "neutral",
   "props": [
     {
       "name": "accessory",
@@ -15,12 +15,12 @@
     },
     {
       "name": "leading",
-      "type": "ReactNode",
+      "type": "Node",
       "required": false
     },
     {
       "name": "onInfo",
-      "type": "(event: MouseEvent<HTMLButtonElement>) => void",
+      "type": "(event: MouseEvent) => void",
       "required": false
     },
     {
@@ -47,7 +47,7 @@
   "events": [
     {
       "name": "onInfo",
-      "payload": "(event: MouseEvent<HTMLButtonElement>) => void"
+      "payload": "(event: MouseEvent) => void"
     },
     {
       "name": "onPress",

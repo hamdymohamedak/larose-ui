@@ -11,14 +11,14 @@ export interface CheckboxProps extends Omit<InputHTMLAttributes<HTMLInputElement
 
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
   (
-    { label, hint, error = null, disabled, boxSize = 'md', className, id, ...props },
+    { label, hint, error = null, disabled, boxSize = 'md', className, style, id, ...props },
     ref,
   ) => {
     const inputId = id ?? label.toLowerCase().replace(/\s+/g, '-');
     const errorMessage = typeof error === 'string' ? error : null;
 
     return (
-      <div className={styles.wrapper} data-state={errorMessage ? 'error' : 'default'}>
+      <div className={styles.wrapper} style={style} data-state={errorMessage ? 'error' : 'default'}>
         <label htmlFor={inputId} className={styles.row}>
           <input
             ref={ref}

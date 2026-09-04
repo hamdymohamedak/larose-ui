@@ -2,12 +2,12 @@
 
 # Nuxt Integration
 
-`@larose-ui/nuxt` is a thin Nuxt module over `@larose-ui/vue`. It does not duplicate components.
+`@larose-ui/nuxt` is a thin Nuxt module over `@larose-ui/vue` + `@larose-ui/runtime-vue`. It does not duplicate components.
 
 ## Install
 
 ```bash
-pnpm add @larose-ui/nuxt @larose-ui/vue
+pnpm add @larose-ui/nuxt @larose-ui/vue @larose-ui/runtime-vue
 ```
 
 ## Configure
@@ -22,7 +22,6 @@ export default defineNuxtConfig({
     appearance: 'system',
     themeScript: true,
     css: true,
-    runtime: { locale: 'en' },
   },
 });
 ```
@@ -33,12 +32,12 @@ Module options (`laRose` key):
 |--------|---------|-------------|
 | `css` | `true` | Adds tokens + shared component CSS |
 | `themeScript` | `true` | Pre-hydration theme bootstrap script |
-| `appearance` | `system` | `light` / `dark` / `system` for theme script |
-| `theme` | `light` | Passed to `LaRoseProvider` |
+| `appearance` | `system` | `light` / `dark` / `system` for theme script + provider |
+| `theme` | `light` | Passed to runtime `LaRoseProvider` |
 | `density` | `comfortable` | UI density |
 | `tenantId` | — | Optional tenant marker |
-| `runtime` | `false` | `true` or initial context object for `RuntimeProvider` |
-| `transpile` | `true` | Transpile `@larose-ui/vue` for SSR |
+| `enableToasts` | `true` | Mount toast host via runtime provider |
+| `transpile` | `true` | Transpile `@larose-ui/vue` + `@larose-ui/runtime-vue` for SSR |
 
 ## App shell
 

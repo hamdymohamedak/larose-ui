@@ -6,6 +6,7 @@ import {
   useState,
   type ReactElement,
   type ReactNode,
+  type CSSProperties,
 } from 'react';
 import { Dialog } from '../Dialog/Dialog';
 import { LONG_PRESS_MS } from '../ContextMenu/utils';
@@ -41,6 +42,8 @@ export interface PullDownButtonProps {
   /** Safari-style touch-and-hold to reveal the menu. */
   longPress?: boolean;
   icon?: ReactNode;
+  className?: string;
+  style?: CSSProperties;
 }
 
 function ChevronDown() {
@@ -75,6 +78,8 @@ export function PullDownButton({
   disabled = false,
   longPress = false,
   icon,
+  className,
+  style,
 }: PullDownButtonProps) {
   const longPressTimer = useRef<number | null>(null);
   const [open, setOpen] = useState(false);
@@ -143,9 +148,11 @@ export function PullDownButton({
       className={[
         styles.trigger,
         variant === 'more' ? styles.moreTrigger : undefined,
+        className,
       ]
         .filter(Boolean)
         .join(' ')}
+      style={style}
       disabled={disabled}
       aria-label={variant === 'more' ? triggerLabel : undefined}
       onPointerDown={(event) => {

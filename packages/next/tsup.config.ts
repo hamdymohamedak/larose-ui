@@ -8,5 +8,5 @@ export default defineConfig({
   format: ['esm'],
   dts: true,
   clean: true,
-  external: ['react', 'react-dom', 'next', 'next/script', '@larose-ui/react', '@larose-ui/runtime'],
+  external: ['react', 'react-dom', 'next', 'next/script', '@larose-ui/react', '@larose-ui/runtime-react'],
 });

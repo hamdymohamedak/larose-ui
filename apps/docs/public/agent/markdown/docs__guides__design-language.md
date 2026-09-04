@@ -27,7 +27,7 @@ Refined prioritizes:
 ## Quick start
 
 ```tsx
-import { LaRoseProvider } from '@larose-ui/runtime';
+import { LaRoseProvider } from '@larose-ui/runtime-react';
 import '@larose-ui/tokens/styles.css';
 import '@larose-ui/react/styles.css';
 
@@ -108,4 +108,4 @@ Do not redistribute SF Pro, SF Arabic, SF Symbols, or Apple UI assets in laRose 
 
 - `@larose-ui/tokens` — primitives and CSS variables
 - `@larose-ui/themes` — preset definitions including `refined`
-- `@larose-ui/runtime` — `LaRoseProvider` with `themePreset` and `appearance`
+- `@larose-ui/runtime-react` — `LaRoseProvider` with `themePreset` and `appearance`

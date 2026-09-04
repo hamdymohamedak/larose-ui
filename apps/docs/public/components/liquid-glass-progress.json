@@ -76,17 +76,24 @@
       "id": "ProgressDefault",
       "title": "Progress Default",
       "kind": "basic",
-      "props": {},
-      "code": "<Progress value={65} label=\"Profile completion\" showValue />",
-      "composite": true
+      "props": {
+        "value": 65,
+        "label": "Profile completion",
+        "showValue": true
+      },
+      "code": "import { FormControls } from '@larose-ui/react';\n\n<FormControls\n  value={65}\n  label=\"Profile completion\"\n  showValue\n>Example</FormControls>"
     },
     {
       "id": "ProgressSuccess",
       "title": "Progress Success",
       "kind": "advanced",
-      "props": {},
-      "code": "<Progress value={100} label=\"Upload complete\" variant=\"success\" showValue />",
-      "composite": true
+      "props": {
+        "value": 100,
+        "label": "Upload complete",
+        "variant": "success",
+        "showValue": true
+      },
+      "code": "import { FormControls } from '@larose-ui/react';\n\n<FormControls\n  value={100}\n  label=\"Upload complete\"\n  variant=\"success\"\n  showValue\n>Example</FormControls>"
     }
   ],
   "accessibility": [

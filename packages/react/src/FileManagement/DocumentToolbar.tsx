@@ -1,4 +1,5 @@
 import { Button } from '../Button/Button';
+import type { CSSProperties } from 'react';
 import { PlusIcon } from './icons';
 import styles from '@larose-ui/styles/components/FileManagement/FileManagement.module.css';
 
@@ -11,6 +12,8 @@ export interface DocumentToolbarProps {
   saveLabel?: string;
   canSave?: boolean;
   showAddButton?: boolean;
+  className?: string;
+  style?: CSSProperties;
 }
 
 /**
@@ -26,9 +29,16 @@ export function DocumentToolbar({
   saveLabel = 'Save',
   canSave = true,
   showAddButton = true,
+  className,
+  style,
 }: DocumentToolbarProps) {
   return (
-    <div className={styles.toolbar} role="toolbar" aria-label="Document actions">
+    <div
+      className={[styles.toolbar, className].filter(Boolean).join(' ')}
+      style={style}
+      role="toolbar"
+      aria-label="Document actions"
+    >
       {showAddButton && onNew && (
         <Button
           size="md"

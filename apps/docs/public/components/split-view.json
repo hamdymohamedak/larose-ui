@@ -48,17 +48,23 @@
       "id": "SidebarDetailInspector",
       "title": "Sidebar · content · inspector",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"SidebarDetailInspector\" for full example.",
-      "composite": true
+      "props": {
+        "orientation": "horizontal",
+        "leftLabel": "Mailboxes",
+        "rightLabel": "Message"
+      },
+      "code": "import { SplitView } from '@larose-ui/react';\n\n<SplitView\n  orientation=\"horizontal\"\n  leftLabel=\"Mailboxes\"\n  rightLabel=\"Message\"\n>Example</SplitView>"
     },
     {
       "id": "VerticalSplit",
       "title": "Vertical Split",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"VerticalSplit\" for full example.",
-      "composite": true
+      "props": {
+        "orientation": "vertical",
+        "leftLabel": "Navigator",
+        "rightLabel": "Editor"
+      },
+      "code": "import { SplitView } from '@larose-ui/react';\n\n<SplitView\n  orientation=\"vertical\"\n  leftLabel=\"Navigator\"\n  rightLabel=\"Editor\"\n>Example</SplitView>"
     },
     {
       "id": "DragBetweenPanes",
@@ -72,9 +78,12 @@
       "id": "CompactStack",
       "title": "Compact Stack",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"CompactStack\" for full example.",
-      "composite": true
+      "props": {
+        "orientation": "horizontal",
+        "leftLabel": "Mailboxes",
+        "rightLabel": "Message"
+      },
+      "code": "import { SplitView } from '@larose-ui/react';\n\n<SplitView\n  orientation=\"horizontal\"\n  leftLabel=\"Mailboxes\"\n  rightLabel=\"Message\"\n>Example</SplitView>"
     }
   ],
   "accessibility": [

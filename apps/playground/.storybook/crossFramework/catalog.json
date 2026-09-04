@@ -1,0 +1,1454 @@
+{
+  "generatedAt": "2026-09-04T14:20:09.708Z",
+  "sharedCount": 153,
+  "handWrittenCount": 104,
+  "autoScaffoldCount": 2,
+  "uncoveredRootCount": 12,
+  "needsDemoCount": 10,
+  "exportsByFramework": {
+    "react": 165,
+    "vue": 155,
+    "svelte": 155
+  },
+  "components": [
+    {
+      "name": "AcceleratorProvider",
+      "id": "acceleratorProvider",
+      "kind": "skip",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "Accordion",
+      "id": "accordion",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "AccordionContent",
+      "id": "accordionContent",
+      "kind": "compound",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "AccordionItem",
+      "id": "accordionItem",
+      "kind": "compound",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "AccordionTrigger",
+      "id": "accordionTrigger",
+      "kind": "compound",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "ActivityShareButton",
+      "id": "activityShareButton",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "ActivityView",
+      "id": "activityView",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "Alert",
+      "id": "alert",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "AlertDialog",
+      "id": "alertDialog",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "AsyncButton",
+      "id": "asyncButton",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "BackChevronIcon",
+      "id": "backChevronIcon",
+      "kind": "icon",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "Badge",
+      "id": "badge",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "Box",
+      "id": "box",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "Breadcrumb",
+      "id": "breadcrumb",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "Button",
+      "id": "button",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "ButtonGroup",
+      "id": "buttonGroup",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "CalendarGrid",
+      "id": "calendarGrid",
+      "kind": "root",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": true
+    },
+    {
+      "name": "CaptionButton",
+      "id": "captionButton",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "Card",
+      "id": "card",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "Chart",
+      "id": "chart",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "Checkbox",
+      "id": "checkbox",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "CloseIcon",
+      "id": "closeIcon",
+      "kind": "icon",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "CollaborationButton",
+      "id": "collaborationButton",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "CollaborationPopover",
+      "id": "collaborationPopover",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "Collection",
+      "id": "collection",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "ColumnView",
+      "id": "columnView",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "CommandPalette",
+      "id": "commandPalette",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "ComposeIcon",
+      "id": "composeIcon",
+      "kind": "icon",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "ContextMenu",
+      "id": "contextMenu",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "DataTable",
+      "id": "dataTable",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "DatePicker",
+      "id": "datePicker",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "DateRangePicker",
+      "id": "dateRangePicker",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "DateTimePicker",
+      "id": "dateTimePicker",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "Dialog",
+      "id": "dialog",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "DisclosureButton",
+      "id": "disclosureButton",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "DisclosureGroup",
+      "id": "disclosureGroup",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "DisclosureList",
+      "id": "disclosureList",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "DisclosureTriangle",
+      "id": "disclosureTriangle",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "DockBar",
+      "id": "dockBar",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "DockMenu",
+      "id": "dockMenu",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "DocumentLauncher",
+      "id": "documentLauncher",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "DocumentMenuIcon",
+      "id": "documentMenuIcon",
+      "kind": "icon",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "DocumentToolbar",
+      "id": "documentToolbar",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "DragDropList",
+      "id": "dragDropList",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "DragDropProvider",
+      "id": "dragDropProvider",
+      "kind": "skip",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "Draggable",
+      "id": "draggable",
+      "kind": "root",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": true
+    },
+    {
+      "name": "Drawer",
+      "id": "drawer",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "DropZone",
+      "id": "dropZone",
+      "kind": "root",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": true
+    },
+    {
+      "name": "EditMenu",
+      "id": "editMenu",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "EditMenuSelection",
+      "id": "editMenuSelection",
+      "kind": "compound",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "EmptyState",
+      "id": "emptyState",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "FileBrowser",
+      "id": "fileBrowser",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "FilePreview",
+      "id": "filePreview",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "FileUpload",
+      "id": "fileUpload",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "FormContinue",
+      "id": "formContinue",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "Header",
+      "id": "header",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "HeaderActions",
+      "id": "headerActions",
+      "kind": "compound",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "HeaderBrand",
+      "id": "headerBrand",
+      "kind": "compound",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "HeaderTitle",
+      "id": "headerTitle",
+      "kind": "compound",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "HelpButton",
+      "id": "helpButton",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "HomeScreenQuickActions",
+      "id": "homeScreenQuickActions",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "ImageButton",
+      "id": "imageButton",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "ImageOverlay",
+      "id": "imageOverlay",
+      "kind": "root",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": true
+    },
+    {
+      "name": "ImageView",
+      "id": "imageView",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "ImageWell",
+      "id": "imageWell",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "Input",
+      "id": "input",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "Label",
+      "id": "label",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "LaRoseProvider",
+      "id": "laRoseProvider",
+      "kind": "skip",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "List",
+      "id": "list",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "ListRow",
+      "id": "listRow",
+      "kind": "compound",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "ListSection",
+      "id": "listSection",
+      "kind": "compound",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "Lockup",
+      "id": "lockup",
+      "kind": "root",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": true
+    },
+    {
+      "name": "LockupCard",
+      "id": "lockupCard",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "LockupRow",
+      "id": "lockupRow",
+      "kind": "compound",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "Menu",
+      "id": "menu",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "MenuBar",
+      "id": "menuBar",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "MenuBarExtra",
+      "id": "menuBarExtra",
+      "kind": "compound",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "MnemonicLabel",
+      "id": "mnemonicLabel",
+      "kind": "root",
+      "covered": false,
+      "autoScaffold": true,
+      "needsDemo": false
+    },
+    {
+      "name": "Modal",
+      "id": "modal",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "Monogram",
+      "id": "monogram",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "MorePullDownButton",
+      "id": "morePullDownButton",
+      "kind": "root",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": true
+    },
+    {
+      "name": "Ornament",
+      "id": "ornament",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "OrnamentButton",
+      "id": "ornamentButton",
+      "kind": "root",
+      "covered": false,
+      "autoScaffold": true,
+      "needsDemo": false
+    },
+    {
+      "name": "OrnamentWindow",
+      "id": "ornamentWindow",
+      "kind": "root",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": true
+    },
+    {
+      "name": "OutlineView",
+      "id": "outlineView",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "OutlineViewToolbar",
+      "id": "outlineViewToolbar",
+      "kind": "compound",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "OverflowIcon",
+      "id": "overflowIcon",
+      "kind": "icon",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "Pagination",
+      "id": "pagination",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "PathControl",
+      "id": "pathControl",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "Picker",
+      "id": "picker",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "Popover",
+      "id": "popover",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "PopUpButton",
+      "id": "popUpButton",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "Poster",
+      "id": "poster",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "Progress",
+      "id": "progress",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "PullDownButton",
+      "id": "pullDownButton",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "Radio",
+      "id": "radio",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "SearchField",
+      "id": "searchField",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "SearchIcon",
+      "id": "searchIcon",
+      "kind": "icon",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "SearchScopeBar",
+      "id": "searchScopeBar",
+      "kind": "root",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": true
+    },
+    {
+      "name": "SearchTokenChip",
+      "id": "searchTokenChip",
+      "kind": "root",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": true
+    },
+    {
+      "name": "SecureField",
+      "id": "secureField",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "Select",
+      "id": "select",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "ShareButton",
+      "id": "shareButton",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "ShareIcon",
+      "id": "shareIcon",
+      "kind": "icon",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "ShareSheet",
+      "id": "shareSheet",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "ShareToolbar",
+      "id": "shareToolbar",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "Sidebar",
+      "id": "sidebar",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "SidebarDisclosureSection",
+      "id": "sidebarDisclosureSection",
+      "kind": "compound",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "SidebarGroup",
+      "id": "sidebarGroup",
+      "kind": "compound",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "SidebarHeader",
+      "id": "sidebarHeader",
+      "kind": "compound",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "SidebarIcon",
+      "id": "sidebarIcon",
+      "kind": "icon",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "SidebarItem",
+      "id": "sidebarItem",
+      "kind": "compound",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "SidebarNav",
+      "id": "sidebarNav",
+      "kind": "compound",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "SidebarSearch",
+      "id": "sidebarSearch",
+      "kind": "compound",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "SidebarToggle",
+      "id": "sidebarToggle",
+      "kind": "compound",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "Skeleton",
+      "id": "skeleton",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "Spinner",
+      "id": "spinner",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "SplitView",
+      "id": "splitView",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "SplitViewPane",
+      "id": "splitViewPane",
+      "kind": "compound",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "SplitViewToolbar",
+      "id": "splitViewToolbar",
+      "kind": "compound",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "SquareButton",
+      "id": "squareButton",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "Switch",
+      "id": "switch",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "Table",
+      "id": "table",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "Tabs",
+      "id": "tabs",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "TabsList",
+      "id": "tabsList",
+      "kind": "compound",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "TabsPanel",
+      "id": "tabsPanel",
+      "kind": "compound",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "TabsTrigger",
+      "id": "tabsTrigger",
+      "kind": "compound",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "TabView",
+      "id": "tabView",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "TabViewList",
+      "id": "tabViewList",
+      "kind": "compound",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "TabViewPanel",
+      "id": "tabViewPanel",
+      "kind": "compound",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "TabViewTab",
+      "id": "tabViewTab",
+      "kind": "compound",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "Textarea",
+      "id": "textarea",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "TextView",
+      "id": "textView",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "TimePicker",
+      "id": "timePicker",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "ToastProvider",
+      "id": "toastProvider",
+      "kind": "skip",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "TokenField",
+      "id": "tokenField",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "Toolbar",
+      "id": "toolbar",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "ToolbarBackButton",
+      "id": "toolbarBackButton",
+      "kind": "compound",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "ToolbarCloseButton",
+      "id": "toolbarCloseButton",
+      "kind": "compound",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "ToolbarDocumentMenu",
+      "id": "toolbarDocumentMenu",
+      "kind": "compound",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "ToolbarFixedSpace",
+      "id": "toolbarFixedSpace",
+      "kind": "compound",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "ToolbarGroup",
+      "id": "toolbarGroup",
+      "kind": "compound",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "ToolbarItem",
+      "id": "toolbarItem",
+      "kind": "compound",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "ToolbarMoreButton",
+      "id": "toolbarMoreButton",
+      "kind": "compound",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "ToolbarProminentButton",
+      "id": "toolbarProminentButton",
+      "kind": "compound",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "ToolbarSearch",
+      "id": "toolbarSearch",
+      "kind": "compound",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "ToolbarSection",
+      "id": "toolbarSection",
+      "kind": "compound",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "ToolbarTitle",
+      "id": "toolbarTitle",
+      "kind": "compound",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "Tooltip",
+      "id": "tooltip",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "Typography",
+      "id": "typography",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "UnsavedIndicator",
+      "id": "unsavedIndicator",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
+      "name": "WheelColumn",
+      "id": "wheelColumn",
+      "kind": "root",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": true
+    },
+    {
+      "name": "WheelPicker",
+      "id": "wheelPicker",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    }
+  ],
+  "autoScaffold": [
+    {
+      "name": "MnemonicLabel",
+      "id": "mnemonicLabel",
+      "kind": "root",
+      "covered": false,
+      "autoScaffold": true,
+      "needsDemo": false
+    },
+    {
+      "name": "OrnamentButton",
+      "id": "ornamentButton",
+      "kind": "root",
+      "covered": false,
+      "autoScaffold": true,
+      "needsDemo": false
+    }
+  ],
+  "uncoveredRoots": [
+    {
+      "name": "CalendarGrid",
+      "id": "calendarGrid",
+      "kind": "root",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": true
+    },
+    {
+      "name": "Draggable",
+      "id": "draggable",
+      "kind": "root",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": true
+    },
+    {
+      "name": "DropZone",
+      "id": "dropZone",
+      "kind": "root",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": true
+    },
+    {
+      "name": "ImageOverlay",
+      "id": "imageOverlay",
+      "kind": "root",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": true
+    },
+    {
+      "name": "Lockup",
+      "id": "lockup",
+      "kind": "root",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": true
+    },
+    {
+      "name": "MnemonicLabel",
+      "id": "mnemonicLabel",
+      "kind": "root",
+      "covered": false,
+      "autoScaffold": true,
+      "needsDemo": false
+    },
+    {
+      "name": "MorePullDownButton",
+      "id": "morePullDownButton",
+      "kind": "root",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": true
+    },
+    {
+      "name": "OrnamentButton",
+      "id": "ornamentButton",
+      "kind": "root",
+      "covered": false,
+      "autoScaffold": true,
+      "needsDemo": false
+    },
+    {
+      "name": "OrnamentWindow",
+      "id": "ornamentWindow",
+      "kind": "root",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": true
+    },
+    {
+      "name": "SearchScopeBar",
+      "id": "searchScopeBar",
+      "kind": "root",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": true
+    },
+    {
+      "name": "SearchTokenChip",
+      "id": "searchTokenChip",
+      "kind": "root",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": true
+    },
+    {
+      "name": "WheelColumn",
+      "id": "wheelColumn",
+      "kind": "root",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": true
+    }
+  ],
+  "needsDemo": [
+    {
+      "name": "CalendarGrid",
+      "id": "calendarGrid",
+      "kind": "root",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": true
+    },
+    {
+      "name": "Draggable",
+      "id": "draggable",
+      "kind": "root",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": true
+    },
+    {
+      "name": "DropZone",
+      "id": "dropZone",
+      "kind": "root",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": true
+    },
+    {
+      "name": "ImageOverlay",
+      "id": "imageOverlay",
+      "kind": "root",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": true
+    },
+    {
+      "name": "Lockup",
+      "id": "lockup",
+      "kind": "root",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": true
+    },
+    {
+      "name": "MorePullDownButton",
+      "id": "morePullDownButton",
+      "kind": "root",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": true
+    },
+    {
+      "name": "OrnamentWindow",
+      "id": "ornamentWindow",
+      "kind": "root",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": true
+    },
+    {
+      "name": "SearchScopeBar",
+      "id": "searchScopeBar",
+      "kind": "root",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": true
+    },
+    {
+      "name": "SearchTokenChip",
+      "id": "searchTokenChip",
+      "kind": "root",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": true
+    },
+    {
+      "name": "WheelColumn",
+      "id": "wheelColumn",
+      "kind": "root",
+      "covered": false,
+      "autoScaffold": false,
+      "needsDemo": true
+    }
+  ],
+  "generated": {
+    "vuePackageComponents": 155,
+    "sveltePackageComponents": 163,
+    "autoRegistryEntries": 2,
+    "scaffolds": [
+      {
+        "id": "mnemonicLabel",
+        "name": "MnemonicLabel",
+        "mode": "slot"
+      },
+      {
+        "id": "ornamentButton",
+        "name": "OrnamentButton",
+        "mode": "slot"
+      }
+    ]
+  }
+}

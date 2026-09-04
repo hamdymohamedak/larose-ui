@@ -48,6 +48,7 @@ const mailEntries = (hasSelection: boolean): ContextMenuEntry[] => [
 
 const meta: Meta = {
   title: 'Foundation/Context Menus',
+  tags: ['autodocs', 'fw-react'],
   parameters: { layout: 'padded' },
 };
 
@@ -55,6 +56,9 @@ export default meta;
 type Story = StoryObj;
 
 export const MailMessage: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'contextMenu' } },
+  args: { open: true, title: 'Message' },
   name: 'Mail message',
   render: function MailMessageDemo() {
     const [lastAction, setLastAction] = useState('Secondary-click a message');
@@ -93,6 +97,9 @@ export const MailMessage: Story = {
 };
 
 export const MultiSelectTitle: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'contextMenu' } },
+  args: { open: true, title: '3 items' },
   name: 'Multi-select title',
   render: () => (
     <ContextMenu

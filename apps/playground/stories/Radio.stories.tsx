@@ -4,7 +4,12 @@ import { Radio } from '@larose-ui/react';
 const meta: Meta<typeof Radio> = {
   title: 'Foundation/Radio',
   component: Radio,
-  tags: ['autodocs'],
+  tags: ['autodocs', 'fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: {
+    laRose: {
+      crossFramework: 'radio',
+    },
+  },
   argTypes: {
     boxSize: { control: 'select', options: ['sm', 'md', 'lg'] },
   },
@@ -50,6 +55,7 @@ export const Disabled: Story = {
 };
 
 export const Group: Story = {
+  tags: ['fw-react'],
   render: () => (
     <fieldset style={{ border: 'none', padding: 0, margin: 0 }}>
       <legend style={{ marginBottom: '0.75rem', fontWeight: 600 }}>Billing plan</legend>

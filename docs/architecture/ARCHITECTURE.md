@@ -7,22 +7,18 @@ laRose is a **UI Operating System** for modern SaaS applications — not a compo
 ```text
                     laRose UI OS
                          │
+              Shared cores (*-core, primitives, …)
+                         │
         ┌────────────────┼────────────────┐
         │                │                │
-     UI Layer       Intelligence        Runtime
-        │                │                │
-   @larose-ui/react   @larose-ui/data      @larose-ui/runtime
-   Components      @larose-ui/forms     Theme, Tenant, Session
-   @larose-ui/styles @larose-ui/permissions Feature Flags, i18n
-        │           @larose-ui/ai         Network, Offline
+   React adapters   Vue adapters     Svelte adapters
+   react / runtime  vue (+ runtime)  svelte (+ runtime)
+   forms / data /   *-vue packages   *-svelte packages
+   ai / enterprise  …
         │                │                │
         └────────────────┼────────────────┘
                          │
-                   Observability
-                   @larose-ui/observability
-                         │
-                    Quality Engine
-              Doctor + CLI + Testing + A11y
+              Observability + Quality (cores + adapters)
 ```
 
 ## Shared styles
@@ -38,32 +34,79 @@ import '@larose-ui/styles/styles.css';
 
 ## Runtime core
 
-Framework-independent runtime logic lives in `@larose-ui/runtime-core` (store, bridges, tenant, i18n, host detection). `@larose-ui/runtime` is the React adapter (`LaRoseProvider`, hooks) and mounts `AcceleratorProvider` from `@larose-ui/react`.
+Framework-independent runtime logic lives in `@larose-ui/runtime-core` (store, bridges, tenant, i18n, host detection). Each adapter mounts a full `LaRoseProvider`:
 
-The lightweight `LaRoseProvider` in `@larose-ui/react` remains for theme/motion-only setups without the full runtime stack.
+- `@larose-ui/runtime-react` — theme, toast, accelerator (`@larose-ui/react`), permissions, observability, network, offline
+- `@larose-ui/runtime-vue` — same composition over `@larose-ui/vue`
+- `@larose-ui/runtime-svelte` — same composition over `@larose-ui/svelte`
+
+Lightweight theme-only `LaRoseProvider`s remain in the UI packages for apps that do not need the full runtime stack.
 
 ## Component contracts
 
-Canonical component APIs live in `contracts/components/*.json`, validated by `@larose-ui/contracts` and `larose doctor`. Regenerate from React with:
+Canonical component APIs live in `contracts/components/*.json` as **framework-neutral** contracts (`framework: "neutral"`). Types are normalized away from framework specifics (`ReactNode` → `Node`, `CSSProperties` → `Style`, etc.). Constant exports (`MAX_*`, `STANDARD_*`, SCREAMING_SNAKE) are excluded — contracts cover real components only.
+
+Validated by `@larose-ui/contracts` and `larose doctor`. The JSON files are the source of truth; adapters must conform. Regenerate / refresh Props samples with:
 
 ```bash
 pnpm generate:contracts
+pnpm generate:contracts --from=react   # optional Props sample adapter
+```
+
+Vue and Svelte adapters should conform to the same JSON; Doctor compares live extraction and export presence against these files.
+
+## Cross-framework Storybook registry
+
+Playground parity mounts live in `apps/playground/.storybook/crossFramework/`. Prefer:
+
+- `defineSlotParity` — text-slot components (Button, Badge, Typography, …)
+- `definePropsParity` — prop-only controls (Input, Switch, Spinner, …), with optional `withNoopHandlers` / `wrapReact`
+
+Domain modules under `registry/`:
+
+- `defaults.ts` — shared fixtures
+- `foundation.tsx` — compact `defineSlotParity` / `definePropsParity` definitions
+- `liquidGlass.tsx` — Liquid Glass surfaces / chrome (`defineCustomParity`)
+- `menus.tsx` — Menu, ContextMenu, Dock, CommandPalette, …
+- `document.tsx` — DocumentToolbar, FileBrowser, DocumentWorkspace, …
+- `demos.tsx` — remaining composite scenes (overlays, lists, sharing demos)
+- `registry.tsx` — merges all domain registries
+
+Generate a tooling manifest with:
+
+```bash
+pnpm generate:cross-framework-manifest
 ```
 
 ## Headless primitives
 
-Interactive behavior lives in `@larose-ui/primitives` (menu type-ahead, keyboard, mnemonics). `@larose-ui/react` is a thin rendering adapter.
+Interactive behavior lives in `@larose-ui/primitives` (menu type-ahead, keyboard, focus trap, tabs, disclosure, selection, drag-drop sessions). Framework packages are thin rendering adapters.
+
+## Liquid Glass engine
+
+Optics, displacement maps, refraction detection, and shared Liquid Glass types live in `@larose-ui/liquid-glass-core`. React, Vue, and Svelte adapters import that package — they must not reimplement the engine.
+
+## Shared component logic
+
+HIG helpers, validators, and domain transforms (`utils.ts`) live in `@larose-ui/component-logic`. Framework packages re-export thin shims — do not copy-paste utils across React/Vue/Svelte.
 
 ## Intelligence core adapters
 
-Framework-independent quality and telemetry logic lives in `-core` packages. React adapters re-export for backward compatibility:
+Framework-independent quality and telemetry logic lives in `-core` packages. Framework packages are thin adapters:
 
-| Core | React adapter |
-|------|----------------|
-| `@larose-ui/observability-core` | `@larose-ui/observability` |
-| `@larose-ui/permissions-core` | `@larose-ui/permissions` |
-| `@larose-ui/devtools-core` | `@larose-ui/devtools` |
+| Core | Adapters |
+|------|----------|
+| `@larose-ui/observability-core` | `observability-react` / `observability-vue` / `observability-svelte` |
+| `@larose-ui/devtools-core` | `devtools-react` / `devtools-vue` / `devtools-svelte` (Fiber = React-only) |
 | `@larose-ui/quality-core` | `@larose-ui/cli` (doctor runner) |
+| `@larose-ui/permissions-core` | `permissions-react` / `permissions-vue` / `permissions-svelte` |
+| `@larose-ui/forms-core` | `forms-react` / `forms-vue` / `forms-svelte` |
+| `@larose-ui/data-core` | `data-react` / `data-vue` / `data-svelte` |
+| `@larose-ui/runtime-core` | `runtime-react` / `runtime-vue` / `runtime-svelte` |
+| `@larose-ui/ai-core` | `ai-react` / `ai-vue` / `ai-svelte` |
+| `@larose-ui/enterprise-core` | `enterprise-react` / `enterprise-vue` / `enterprise-svelte` |
+| `@larose-ui/testing-core` | `testing-react` / `testing-vue` / `testing-svelte` |
+| `@larose-ui/liquid-glass-core` | `react` / `vue` / `svelte` LiquidGlass adapters |
 
 Doctor reads `larose.config.json` for framework-specific component and story paths. Add Vue/Svelte targets there when those bindings exist.
 
@@ -72,15 +115,14 @@ Doctor reads `larose.config.json` for framework-specific component and story pat
 | Package | Role |
 |---------|------|
 | `@larose-ui/next` | Next.js / SSR helpers — CSS paths, theme bootstrap script, `LaRoseRoot` client boundary |
-| `@larose-ui/vue` | Vue 3 components + `LaRoseProvider` + `RuntimeProvider` |
+| `@larose-ui/vue` | Vue 3 components + theme `LaRoseProvider` |
 | `@larose-ui/nuxt` | Nuxt module — CSS, theme script, `LaRoseApp`, auto-imports |
-| `@larose-ui/svelte` | Svelte 5 components + `LaRoseProvider` + `RuntimeProvider` |
-| `@larose-ui/desktop-core` | Host registration, native menu mapping, window chrome tokens |
-| `@larose-ui/electron` | Electron bootstrap, native menu templates, `LaRoseElectronRoot` |
-| `@larose-ui/tauri` | Tauri bootstrap, native menu templates, `LaRoseTauriRoot` |
+| `@larose-ui/svelte` | Svelte 5 components + theme `LaRoseProvider` |
+| `@larose-ui/sveltekit` | SvelteKit helpers — CSS paths + theme bootstrap script |
+| `@larose-ui/runtime-react` / `runtime-vue` / `runtime-svelte` | Equal runtime adapters over `runtime-core` |
 | TanStack Start | Same React packages; see [TANSTACK_START.md](../ecosystem/TANSTACK_START.md) |
 
-See [VUE.md](../ecosystem/VUE.md), [NEXTJS.md](../ecosystem/NEXTJS.md), [SVELTE.md](../ecosystem/SVELTE.md), and [DESKTOP.md](../ecosystem/DESKTOP.md). Framework packages do not duplicate components — they consume shared styles, tokens, primitives, and runtime-core.
+See [VUE.md](../ecosystem/VUE.md), [NEXTJS.md](../ecosystem/NEXTJS.md), and [SVELTE.md](../ecosystem/SVELTE.md). Framework packages do not duplicate components — they consume shared styles, tokens, primitives, and runtime-core.
 
 ## Package Rules
 
@@ -90,6 +132,7 @@ See [VUE.md](../ecosystem/VUE.md), [NEXTJS.md](../ecosystem/NEXTJS.md), [SVELTE.
 4. Runtime orchestrates; domain packages implement
 5. DevTools and CLI are leaf packages
 6. `-core` packages must not depend on React, Vue, or Svelte
+7. Shared logic (utils, engines, state machines) must not be duplicated across framework packages — extract to a shared package first
 
 ## Runtime ↔ DevTools ↔ Doctor Triad
 
@@ -100,12 +143,17 @@ Every detectable issue must be auditable by **Doctor** in CI.
 
 See [RUNTIME_2.md](../runtime/RUNTIME_2.md) for Runtime 2.0 design.
 
+## Versioning and product direction
+
+- Versioning policy: [VERSIONING.md](./VERSIONING.md)
+- Multi-framework product positioning: [PRODUCT_POSITIONING.md](./PRODUCT_POSITIONING.md)
+
 ## Examples
 
 ### Basic
 
 ```tsx
-import { LaRoseProvider } from '@larose-ui/runtime';
+import { LaRoseProvider } from '@larose-ui/runtime-react';
 import { Button } from '@larose-ui/react';
 
 <LaRoseProvider locale="en" permissions={['app.read']}>

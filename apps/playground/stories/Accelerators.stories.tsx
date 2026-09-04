@@ -17,6 +17,7 @@ import { DEMO_ACCELERATORS } from './demoAccelerators';
 
 const meta: Meta = {
   title: 'Foundation/Accelerators',
+  tags: ['autodocs', 'fw-react'],
   parameters: {
     layout: 'fullscreen',
     docs: {
@@ -130,6 +131,8 @@ function useActionLog() {
 
 export const ShortcutLab: Story = {
   name: 'Shortcut lab',
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'shortcutLab', displayName: 'Foundation/Accelerators' } },
   render: function ShortcutLabDemo() {
     const { events, log } = useActionLog();
     const [menuOpen, setMenuOpen] = useState(false);
@@ -284,6 +287,10 @@ export const ShortcutLab: Story = {
 };
 
 export const MenuBarGlobalShortcuts: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'menuBar' } },
+  args: { appName: 'laRose', revealed: true },
+
   name: 'Menu bar (global shortcuts)',
   render: function MenuBarShortcutDemo() {
     const { events, log } = useActionLog();
@@ -369,6 +376,10 @@ export const MenuBarGlobalShortcuts: Story = {
 };
 
 export const MenuAlwaysOpen: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'menu' } },
+  args: { open: true, layout: 'large', title: 'Edit' },
+
   name: 'Menu (always open)',
   render: function MenuOpenDemo() {
     const { events, log } = useActionLog();

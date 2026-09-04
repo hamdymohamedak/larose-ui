@@ -1,4 +1,4 @@
-import { useId, useMemo } from 'react';
+import { useId, useMemo, type CSSProperties } from 'react';
 import type { Size, UIState } from '@larose-ui/core';
 import { resolveUIState } from '@larose-ui/core';
 import { FieldShell } from '../DataEntry/FieldShell';
@@ -6,13 +6,17 @@ import { fieldIdFromLabel } from '../DataEntry/utils';
 import { Popover } from '../Popover/Popover';
 import type { PickerColumn, PickerStyle, PickerValue } from './types';
 import { WheelPicker } from './WheelPicker';
+import { resolvePickerChrome } from './chrome';
 import styles from '@larose-ui/styles/components/Picker/Picker.module.css';
 
 export interface PickerProps {
   columns: PickerColumn[];
   value: PickerValue;
   onChange: (value: PickerValue) => void;
-  style?: PickerStyle;
+  /** Wheel vs compact appearance. Use with object `style` when you need both. */
+  appearance?: PickerStyle;
+  /** Appearance string (`wheels` / `compact`) or inline CSS. */
+  style?: PickerStyle | CSSProperties;
   label?: string;
   hint?: string;
   error?: string | null;
@@ -24,6 +28,7 @@ export interface PickerProps {
   placeholder?: string;
   /** Formats the compact trigger label from the current value. */
   formatValue?: (value: PickerValue, columns: PickerColumn[]) => string;
+  className?: string;
   'aria-label'?: string;
 }
 
@@ -45,7 +50,8 @@ export function Picker({
   columns,
   value,
   onChange,
-  style = 'wheels',
+  appearance,
+  style,
   label,
   hint,
   error = null,
@@ -54,8 +60,14 @@ export function Picker({
   disabled = false,
   placeholder = 'Select',
   formatValue = defaultFormatValue,
+  className,
   'aria-label': ariaLabel,
 }: PickerProps) {
+  const { appearance: pickerAppearance, css } = resolvePickerChrome(
+    appearance,
+    style,
+    'wheels',
+  );
   const fieldId = useId();
   const inputId = label ? fieldIdFromLabel(label) : fieldId;
   const uiState = resolveUIState({ state, loading, error, disabled });
@@ -73,12 +85,12 @@ export function Picker({
       value={value}
       onChange={onChange}
       disabled={isDisabled}
-      compact={style === 'compact'}
+      compact={pickerAppearance === 'compact'}
       aria-label={ariaLabel ?? label ?? 'Picker'}
     />
   );
 
-  if (style === 'compact') {
+  if (pickerAppearance === 'compact') {
     return (
       <FieldShell
         label={label}
@@ -86,6 +98,8 @@ export function Picker({
         error={errorMessage}
         htmlFor={inputId}
         uiState={uiState}
+        className={className}
+        style={css}
       >
         <div className={styles.compactField}>
           <Popover
@@ -114,7 +128,15 @@ export function Picker({
   }
 
   return (
-    <FieldShell label={label} hint={hint} error={errorMessage} htmlFor={inputId} uiState={uiState}>
+      <FieldShell
+        label={label}
+        hint={hint}
+        error={errorMessage}
+        htmlFor={inputId}
+        uiState={uiState}
+        className={className}
+        style={css}
+      >
       <div className={styles.picker}>{wheels}</div>
     </FieldShell>
   );

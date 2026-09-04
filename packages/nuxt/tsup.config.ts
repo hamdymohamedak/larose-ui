@@ -5,5 +5,5 @@ export default defineConfig({
   format: ['esm'],
   dts: true,
   clean: true,
-  external: ['@larose-ui/vue', '@nuxt/kit', 'nuxt'],
+  external: ['@larose-ui/vue', '@larose-ui/runtime-vue', '@nuxt/kit', 'nuxt'],
 });

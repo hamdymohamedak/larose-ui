@@ -43,11 +43,15 @@ const config: StorybookConfig = {
         alias: [
           {
             find: '@larose-ui/react/styles.css',
+            // Aggregate react CSS is unused in source-mode Storybook; modules load per component.
+            // Keep a stub so preview can import the package path without a missing file.
             replacement: stylesStub,
           },
           {
             find: '@larose-ui/styles/styles.css',
-            replacement: stylesStub,
+            // Always load the pre-scoped design-system CSS so Vue/Svelte mounts
+            // are never missing rules that React CSF already pulled via modules.
+            replacement: join(repoRoot, 'packages/styles/dist/styles.css'),
           },
           {
             find: '@larose-ui/tokens/styles.css',
@@ -74,7 +78,7 @@ const config: StorybookConfig = {
       },
       optimizeDeps: {
         exclude: [
-          '@larose-ui/runtime',
+          '@larose-ui/runtime-react',
           '@larose-ui/vue',
           '@larose-ui/svelte',
           '@larose-ui/styles',
@@ -82,12 +86,12 @@ const config: StorybookConfig = {
           '@larose-ui/primitives',
           '@larose-ui/core',
           '@larose-ui/tokens',
-          '@larose-ui/data',
-          '@larose-ui/forms',
+          '@larose-ui/data-react',
+          '@larose-ui/forms-react',
           '@larose-ui/network',
           '@larose-ui/offline',
-          '@larose-ui/permissions',
-          '@larose-ui/observability',
+          '@larose-ui/permissions-react',
+          '@larose-ui/observability-react',
         ],
         include: ['vue', 'svelte', '@larose-ui/react'],
       },

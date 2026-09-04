@@ -4,7 +4,12 @@ import { Badge } from '@larose-ui/react';
 const meta: Meta<typeof Badge> = {
   title: 'Foundation/Badge',
   component: Badge,
-  tags: ['autodocs'],
+  tags: ['autodocs', 'fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: {
+    laRose: {
+      crossFramework: 'badge',
+    },
+  },
   argTypes: {
     variant: {
       control: 'select',
@@ -37,6 +42,7 @@ export const Error: Story = {
 };
 
 export const AllVariants: Story = {
+  tags: ['fw-react'],
   render: () => (
     <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
       <Badge>Default</Badge>

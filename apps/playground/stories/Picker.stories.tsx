@@ -18,6 +18,7 @@ const countries = [
 
 const meta: Meta = {
   title: 'Foundation/Pickers',
+  tags: ['autodocs', 'fw-react'],
   parameters: { layout: 'centered' },
 };
 
@@ -25,6 +26,14 @@ export default meta;
 type Story = StoryObj;
 
 export const WheelStyle: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'picker' } },
+  args: {
+    label: "Country",
+    appearance: "wheels",
+    value: {"country": "eg"},
+  },
+
   name: 'Wheels (multipart)',
   render: function WheelPickerDemo() {
     const [value, setValue] = useState<PickerValue>({ country: 'eg' });
@@ -42,6 +51,14 @@ export const WheelStyle: Story = {
 };
 
 export const CompactStyle: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'picker' } },
+  args: {
+    label: "Country",
+    appearance: "compact",
+    value: {"country": "de"},
+  },
+
   name: 'Compact (popover)',
   render: function CompactPickerDemo() {
     const [value, setValue] = useState<PickerValue>({ country: 'de' });

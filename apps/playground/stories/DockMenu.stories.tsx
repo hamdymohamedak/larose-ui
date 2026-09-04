@@ -26,6 +26,7 @@ const safariWindows: DockWindow[] = [
 
 const meta: Meta = {
   title: 'Foundation/Dock Menus',
+  tags: ['autodocs', 'fw-react'],
   parameters: { layout: 'centered' },
 };
 
@@ -33,6 +34,9 @@ export default meta;
 type Story = StoryObj;
 
 export const SafariRunning: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'dockMenu' } },
+  args: { appName: 'Safari', isRunning: true, open: true },
   name: 'Safari (running)',
   render: function SafariRunningDemo() {
     const [lastAction, setLastAction] = useState('Secondary-click the Safari icon in the Dock');
@@ -65,6 +69,9 @@ export const SafariRunning: Story = {
 };
 
 export const MailRunning: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'dockMenu' } },
+  args: { appName: 'Mail', isRunning: true, open: true },
   name: 'Mail (running)',
   render: function MailRunningDemo() {
     const [lastAction, setLastAction] = useState('Secondary-click the Mail icon');
@@ -97,6 +104,9 @@ export const MailRunning: Story = {
 };
 
 export const AppNotRunning: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'dockMenu' } },
+  args: { appName: 'Photos', isRunning: false, open: true },
   name: 'App not running',
   render: function AppNotRunningDemo() {
     const [lastAction, setLastAction] = useState('Secondary-click a quit app icon');

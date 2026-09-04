@@ -4,7 +4,7 @@ import { EmptyState } from '@larose-ui/react';
 const meta: Meta<typeof EmptyState> = {
   title: 'Foundation/EmptyState',
   component: EmptyState,
-  tags: ['autodocs'],
+  tags: ['autodocs', 'fw-react', 'fw-vue', 'fw-svelte'],
 };
 
 export default meta;

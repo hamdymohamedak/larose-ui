@@ -49,6 +49,7 @@ const sampleFiles: FileBrowserItem[] = [
 
 const meta: Meta = {
   title: 'Foundation/File Management',
+  tags: ['autodocs', 'fw-react'],
   parameters: { layout: 'padded' },
 };
 
@@ -57,6 +58,12 @@ type Story = StoryObj;
 
 export const DocumentToolbarStory: Story = {
   name: 'Create & Open',
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'documentToolbar' } },
+  args: {
+    newLabel: 'New Document',
+    openLabel: 'Open Recent',
+  },
   render: () => (
     <DocumentToolbar
       onNew={() => undefined}
@@ -69,6 +76,9 @@ export const DocumentToolbarStory: Story = {
 };
 
 export const FileBrowserStory: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'fileBrowser' } },
+  args: { activeTab: 'recents', showExtensions: false },
   render: function FileBrowserDemo() {
     const [tab, setTab] = useState<'recents' | 'shared' | 'browse'>('recents');
     const [showExtensions, setShowExtensions] = useState(false);
@@ -90,6 +100,8 @@ export const FileBrowserStory: Story = {
 };
 
 export const QuickLookPreview: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'filePreview' } },
   render: () => (
     <FilePreview
       source={{
@@ -102,6 +114,8 @@ export const QuickLookPreview: Story = {
 };
 
 export const UnsavedChanges: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'unsavedIndicators' } },
   render: () => (
     <Card title="Autosave vs manual save" padding="md">
       <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
@@ -114,6 +128,13 @@ export const UnsavedChanges: Story = {
 };
 
 export const DocumentLauncherStory: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'documentLauncher' } },
+  args: {
+    appTitle: 'Pages',
+    primaryActionLabel: 'Start Writing',
+    secondaryActionLabel: 'Choose a Template',
+  },
   render: function LauncherDemo() {
     const [showExtensions, setShowExtensions] = useState(false);
 
@@ -133,6 +154,9 @@ export const DocumentLauncherStory: Story = {
 };
 
 export const DocumentWorkspace: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'documentWorkspace' } },
+  args: { title: 'Product Roadmap' },
   render: function WorkspaceDemo() {
     const [edited, setEdited] = useState(true);
     const [autosave, setAutosave] = useState(true);
@@ -174,6 +198,13 @@ export const DocumentWorkspace: Story = {
 };
 
 export const ImportWithFileUpload: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'fileUpload' } },
+  args: {
+    label: 'Import document',
+    hint: 'PDF, Pages, or Numbers',
+  },
+
   render: () => (
     <Card title="Import attachment" padding="md">
       <FileUpload

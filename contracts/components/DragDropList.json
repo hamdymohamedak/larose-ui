@@ -1,7 +1,7 @@
 {
   "name": "DragDropList",
   "version": "1",
-  "framework": "react",
+  "framework": "neutral",
   "props": [
     {
       "name": "items",
@@ -15,7 +15,7 @@
     },
     {
       "name": "renderItem",
-      "type": "(item: DragDropListItem) => ReactNode",
+      "type": "(item: DragDropListItem) => Node",
       "required": false
     },
     {

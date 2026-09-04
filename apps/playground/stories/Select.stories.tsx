@@ -11,7 +11,12 @@ const departmentOptions = [
 const meta: Meta<typeof Select> = {
   title: 'Foundation/Select',
   component: Select,
-  tags: ['autodocs'],
+  tags: ['autodocs', 'fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: {
+    laRose: {
+      crossFramework: 'select',
+    },
+  },
   argTypes: {
     inputSize: { control: 'select', options: ['sm', 'md', 'lg'] },
     state: { control: 'select', options: ['idle', 'loading', 'disabled', 'error', 'readonly'] },

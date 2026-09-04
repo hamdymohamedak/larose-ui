@@ -17,9 +17,11 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "AccordionDefault",
       "title": "Accordion Default",
       "kind": "basic",
-      "props": {},
-      "code": "// See Storybook story \"AccordionDefault\" for full example.",
-      "composite": true
+      "props": {
+        "type": "single",
+        "collapsible": true
+      },
+      "code": "import { DataDisplay } from '@larose-ui/react';\n\n<DataDisplay\n  type=\"single\"\n  collapsible\n>Example</DataDisplay>"
     },
     {
       "id": "AccordionCollapse",
@@ -39,17 +41,23 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "NotesShareSheet",
       "title": "Notes share sheet",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"NotesShareSheet\" for full example.",
-      "composite": true
+      "props": {
+        "open": true,
+        "title": "Share Note",
+        "presentation": "sheet"
+      },
+      "code": "import { ActivityView } from '@larose-ui/react';\n\n<ActivityView\n  open\n  title=\"Share Note\"\n  presentation=\"sheet\"\n>Example</ActivityView>"
     },
     {
       "id": "PhotoAppActivities",
       "title": "App-specific activities",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"PhotoAppActivities\" for full example.",
-      "composite": true
+      "props": {
+        "open": true,
+        "title": "Share Photo",
+        "presentation": "sheet"
+      },
+      "code": "import { ActivityView } from '@larose-ui/react';\n\n<ActivityView\n  open\n  title=\"Share Photo\"\n  presentation=\"sheet\"\n>Example</ActivityView>"
     },
     {
       "id": "CustomActionTitle",
@@ -230,28 +238,46 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "DisclosureTriangleStory",
       "title": "Disclosure triangle",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"DisclosureTriangleStory\" for full example.",
-      "composite": true
+      "props": {
+        "label": "Advanced options",
+        "expanded": false
+      },
+      "code": "import { Disclosure&Labels } from '@larose-ui/react';\n\n<Disclosure&Labels\n  label=\"Advanced options\"\n  expanded={false}\n>Example</Disclosure&Labels>"
     },
     {
       "id": "BoxSecondary",
       "title": "Box Secondary",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"BoxSecondary\" for full example.",
-      "composite": true
+      "props": {
+        "title": "Export options",
+        "variant": "secondary"
+      },
+      "code": "import { Layout } from '@larose-ui/react';\n\n<Layout\n  title=\"Export options\"\n  variant=\"secondary\"\n>Example</Layout>"
     },
     {
       "id": "BoxSettingsStyle",
       "title": "Box Settings Style",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"BoxSettingsStyle\" for full example.",
-      "composite": true
+      "props": {
+        "title": "Sound",
+        "variant": "secondary",
+        "settingsStyle": true
+      },
+      "code": "import { Layout } from '@larose-ui/react';\n\n<Layout\n  title=\"Sound\"\n  variant=\"secondary\"\n  settingsStyle\n>Example</Layout>"
     }
   ],
-  "Breadcrumb": [],
+  "Breadcrumb": [
+    {
+      "id": "BreadcrumbDefault",
+      "title": "Breadcrumb Default",
+      "kind": "basic",
+      "props": {
+        "label": "Home",
+        "href": "#"
+      },
+      "code": "import { DataDisplay } from '@larose-ui/react';\n\n<DataDisplay\n  label=\"Home\"\n  href=\"#\"\n>Example</DataDisplay>"
+    }
+  ],
   "Button": [
     {
       "id": "Primary",
@@ -340,9 +366,11 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "StyleNotSize",
       "title": "Style, not size",
       "kind": "sizes",
-      "props": {},
-      "code": "// See Storybook story \"StyleNotSize\" for full example.",
-      "composite": true
+      "props": {
+        "orientation": "horizontal",
+        "ariaLabel": "Save options"
+      },
+      "code": "import { Button } from '@larose-ui/react';\n\n<Button\n  orientation=\"horizontal\"\n  ariaLabel=\"Save options\"\n>Example</Button>"
     },
     {
       "id": "AlertActions",
@@ -356,17 +384,22 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "VisionOSStack",
       "title": "visionOS vertical stack",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"VisionOSStack\" for full example.",
-      "composite": true
+      "props": {
+        "orientation": "vertical",
+        "ariaLabel": "Scene actions"
+      },
+      "code": "import { Button } from '@larose-ui/react';\n\n<Button\n  orientation=\"vertical\"\n  ariaLabel=\"Scene actions\"\n>Example</Button>"
     },
     {
       "id": "WatchFullWidth",
       "title": "watchOS full width",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"WatchFullWidth\" for full example.",
-      "composite": true
+      "props": {
+        "orientation": "vertical",
+        "fullWidth": true,
+        "ariaLabel": "Workout actions"
+      },
+      "code": "import { Button } from '@larose-ui/react';\n\n<Button\n  orientation=\"vertical\"\n  fullWidth\n  ariaLabel=\"Workout actions\"\n>Example</Button>"
     },
     {
       "id": "SquareButtons",
@@ -412,9 +445,10 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "props": {
         "title": "Employee Profile",
         "description": "Manage employee information",
-        "children": "Ahmed Mohamed — Software Engineer"
+        "children": "Ahmed Mohamed — Software Engineer",
+        "footerLabel": "Edit"
       },
-      "code": "import { Card } from '@larose-ui/react';\n\n<Card\n  title=\"Employee Profile\"\n  description=\"Manage employee information\"\n>Ahmed Mohamed — Software Engineer</Card>"
+      "code": "import { Card } from '@larose-ui/react';\n\n<Card\n  title=\"Employee Profile\"\n  description=\"Manage employee information\"\n  footerLabel=\"Edit\"\n>Ahmed Mohamed — Software Engineer</Card>"
     },
     {
       "id": "WithBadge",
@@ -452,9 +486,10 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "SecurePasswordField",
       "title": "Secure Password Field",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"SecurePasswordField\" for full example.",
-      "composite": true
+      "props": {
+        "label": "Password"
+      },
+      "code": "import { EnteringData } from '@larose-ui/react';\n\n<EnteringData\n  label=\"Password\"\n>Example</EnteringData>"
     },
     {
       "id": "PasteAndDrop",
@@ -468,9 +503,11 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "ContinueWhenComplete",
       "title": "Continue When Complete",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"ContinueWhenComplete\" for full example.",
-      "composite": true
+      "props": {
+        "complete": true,
+        "label": "Continue"
+      },
+      "code": "import { EnteringData } from '@larose-ui/react';\n\n<EnteringData\n  complete\n  label=\"Continue\"\n>Example</EnteringData>"
     },
     {
       "id": "ExpansionTooltip",
@@ -484,25 +521,33 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "DisclosureButtonStory",
       "title": "Disclosure button",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"DisclosureButtonStory\" for full example.",
-      "composite": true
+      "props": {
+        "defaultExpanded": false,
+        "label": "Save document"
+      },
+      "code": "import { Disclosure&Labels } from '@larose-ui/react';\n\n<Disclosure&Labels\n  defaultExpanded={false}\n  label=\"Save document\"\n>Example</Disclosure&Labels>"
     },
     {
       "id": "LabelImportance",
       "title": "Label Importance",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"LabelImportance\" for full example.",
-      "composite": true
+      "props": {
+        "label": "Primary information",
+        "importance": "primary"
+      },
+      "code": "import { Disclosure&Labels } from '@larose-ui/react';\n\n<Disclosure&Labels\n  label=\"Primary information\"\n  importance=\"primary\"\n>Example</Disclosure&Labels>"
     },
     {
       "id": "SelectableLabel",
       "title": "Selectable Label",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"SelectableLabel\" for full example.",
-      "composite": true
+      "props": {
+        "label": "Error E-1042 · IP 192.168.1.42 · Serial LR-2026-0830",
+        "importance": "secondary",
+        "selectable": true,
+        "mono": true
+      },
+      "code": "import { Disclosure&Labels } from '@larose-ui/react';\n\n<Disclosure&Labels\n  label=\"Error E-1042 · IP 192.168.1.42 · Serial LR-2026-0830\"\n  importance=\"secondary\"\n  selectable\n  mono\n>Example</Disclosure&Labels>"
     },
     {
       "id": "UnsavedChanges",
@@ -516,25 +561,30 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "ImportWithFileUpload",
       "title": "Import With File Upload",
       "kind": "loading",
-      "props": {},
-      "code": "// See Storybook story \"ImportWithFileUpload\" for full example.",
-      "composite": true
+      "props": {
+        "label": "Import document",
+        "hint": "PDF, Pages, or Numbers"
+      },
+      "code": "import { FileManagement } from '@larose-ui/react';\n\n<FileManagement\n  label=\"Import document\"\n  hint=\"PDF, Pages, or Numbers\"\n>Example</FileManagement>"
     },
     {
       "id": "ListAccessories",
       "title": "List Accessories",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"ListAccessories\" for full example.",
-      "composite": true
+      "props": {
+        "variant": "grouped"
+      },
+      "code": "import { Lists&Tables } from '@larose-ui/react';\n\n<Lists&Tables\n  variant=\"grouped\"\n>Example</Lists&Tables>"
     },
     {
       "id": "DocumentToolbar",
       "title": "Document Toolbar",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"DocumentToolbar\" for full example.",
-      "composite": true
+      "props": {
+        "shareTitle": "Share Quarterly Plan",
+        "collaborating": true
+      },
+      "code": "import { Collaboration&Sharing } from '@larose-ui/react';\n\n<Collaboration&Sharing\n  shareTitle=\"Share Quarterly Plan\"\n  collaborating\n>Example</Collaboration&Sharing>"
     }
   ],
   "Chart": [
@@ -649,9 +699,11 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "CheckboxDefault",
       "title": "Checkbox Default",
       "kind": "basic",
-      "props": {},
-      "code": "<Checkbox label=\"I agree to the terms\" hint=\"Required before submitting\" />",
-      "composite": true
+      "props": {
+        "label": "I agree to the terms",
+        "hint": "Required before submitting"
+      },
+      "code": "import { FormControls } from '@larose-ui/react';\n\n<FormControls\n  label=\"I agree to the terms\"\n  hint=\"Required before submitting\"\n>Example</FormControls>"
     }
   ],
   "CollaborationButton": [
@@ -659,9 +711,10 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "CollaborationButtonStory",
       "title": "Collaboration Button",
       "kind": "advanced",
-      "props": {},
-      "code": "<CollaborationButton collaborators={collaborators} />",
-      "composite": true
+      "props": {
+        "label": "Collaboration"
+      },
+      "code": "import { Collaboration&Sharing } from '@larose-ui/react';\n\n<Collaboration&Sharing\n  label=\"Collaboration\"\n>Example</Collaboration&Sharing>"
     }
   ],
   "CollaborationPopover": [
@@ -669,9 +722,10 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "CollaborationPopoverStory",
       "title": "Collaboration Popover",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"CollaborationPopoverStory\" for full example.",
-      "composite": true
+      "props": {
+        "defaultOpen": true
+      },
+      "code": "import { Collaboration&Sharing } from '@larose-ui/react';\n\n<Collaboration&Sharing\n  defaultOpen\n>Example</Collaboration&Sharing>"
     }
   ],
   "Collection": [
@@ -679,17 +733,20 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "CollectionGrid",
       "title": "Collection Grid",
       "kind": "advanced",
-      "props": {},
-      "code": "<Collection items={photos} layout=\"grid\" columns={4} selectedId={selectedId} onSelect={(item) => setSelectedId(item.id)} />",
-      "composite": true
+      "props": {
+        "layout": "grid",
+        "columns": 4
+      },
+      "code": "import { Layout } from '@larose-ui/react';\n\n<Layout\n  layout=\"grid\"\n  columns={4}\n>Example</Layout>"
     },
     {
       "id": "CollectionRow",
       "title": "Collection Row",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"CollectionRow\" for full example.",
-      "composite": true
+      "props": {
+        "layout": "row"
+      },
+      "code": "import { Layout } from '@larose-ui/react';\n\n<Layout\n  layout=\"row\"\n>Example</Layout>"
     }
   ],
   "ColumnView": [
@@ -698,8 +755,7 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "title": "Column View Browser",
       "kind": "advanced",
       "props": {},
-      "code": "<ColumnView data={hierarchy} initialPath={['icloud', 'design']} />",
-      "composite": true
+      "code": "import { Layout } from '@larose-ui/react';\n\n<Layout>Example</Layout>"
     }
   ],
   "CommandPalette": [
@@ -707,9 +763,10 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "CommandPaletteDefault",
       "title": "Command Palette Default",
       "kind": "basic",
-      "props": {},
-      "code": "<CommandPaletteDemo />",
-      "composite": true
+      "props": {
+        "open": true
+      },
+      "code": "import { AppShell } from '@larose-ui/react';\n\n<AppShell\n  open\n>Example</AppShell>"
     },
     {
       "id": "Playground",
@@ -734,17 +791,21 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "MailMessage",
       "title": "Mail message",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"MailMessage\" for full example.",
-      "composite": true
+      "props": {
+        "open": true,
+        "title": "Message"
+      },
+      "code": "import { ContextMenu } from '@larose-ui/react';\n\n<ContextMenu\n  open\n  title=\"Message\"\n>Example</ContextMenu>"
     },
     {
       "id": "MultiSelectTitle",
       "title": "Multi-select title",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"MultiSelectTitle\" for full example.",
-      "composite": true
+      "props": {
+        "open": true,
+        "title": "3 items"
+      },
+      "code": "import { ContextMenu } from '@larose-ui/react';\n\n<ContextMenu\n  open\n  title=\"3 items\"\n>Example</ContextMenu>"
     },
     {
       "id": "HiddenUnavailable",
@@ -760,25 +821,29 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "DataTableDefault",
       "title": "Data Table Default",
       "kind": "basic",
-      "props": {},
-      "code": "// See Storybook story \"DataTableDefault\" for full example.",
-      "composite": true
+      "props": {
+        "caption": "Employees",
+        "striped": true
+      },
+      "code": "import { DataDisplay } from '@larose-ui/react';\n\n<DataDisplay\n  caption=\"Employees\"\n  striped\n>Example</DataDisplay>"
     },
     {
       "id": "DataTableLoading",
       "title": "Data Table Loading",
       "kind": "loading",
-      "props": {},
-      "code": "// See Storybook story \"DataTableLoading\" for full example.",
-      "composite": true
+      "props": {
+        "loading": true
+      },
+      "code": "import { DataDisplay } from '@larose-ui/react';\n\n<DataDisplay\n  loading\n>Example</DataDisplay>"
     },
     {
       "id": "DataTableEmpty",
       "title": "Data Table Empty",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"DataTableEmpty\" for full example.",
-      "composite": true
+      "props": {
+        "emptyTitle": "No employees"
+      },
+      "code": "import { DataDisplay } from '@larose-ui/react';\n\n<DataDisplay\n  emptyTitle=\"No employees\"\n>Example</DataDisplay>"
     }
   ],
   "DatePicker": [
@@ -786,17 +851,22 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "DatePickerDefault",
       "title": "Date Picker Default",
       "kind": "basic",
-      "props": {},
-      "code": "// See Storybook story \"DatePickerDefault\" for full example.",
-      "composite": true
+      "props": {
+        "label": "Start date",
+        "value": "2026-08-29",
+        "hint": "Uses native date input with laRose tokens"
+      },
+      "code": "import { DateTime } from '@larose-ui/react';\n\n<DateTime\n  label=\"Start date\"\n  value=\"2026-08-29\"\n  hint=\"Uses native date input with laRose tokens\"\n>Example</DateTime>"
     },
     {
       "id": "DatePickerError",
       "title": "Date Picker Error",
       "kind": "error",
-      "props": {},
-      "code": "// See Storybook story \"DatePickerError\" for full example.",
-      "composite": true
+      "props": {
+        "label": "Due date",
+        "error": "Due date is required"
+      },
+      "code": "import { DateTime } from '@larose-ui/react';\n\n<DateTime\n  label=\"Due date\"\n  error=\"Due date is required\"\n>Example</DateTime>"
     }
   ],
   "DateRangePicker": [],
@@ -825,9 +895,11 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "DisclosureGroupStory",
       "title": "Disclosure group",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"DisclosureGroupStory\" for full example.",
-      "composite": true
+      "props": {
+        "label": "Delivery details",
+        "defaultExpanded": true
+      },
+      "code": "import { Disclosure&Labels } from '@larose-ui/react';\n\n<Disclosure&Labels\n  label=\"Delivery details\"\n  defaultExpanded\n>Example</Disclosure&Labels>"
     }
   ],
   "DisclosureList": [
@@ -847,25 +919,34 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "SafariRunning",
       "title": "Safari (running)",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"SafariRunning\" for full example.",
-      "composite": true
+      "props": {
+        "appName": "Safari",
+        "isRunning": true,
+        "open": true
+      },
+      "code": "import { DockMenu } from '@larose-ui/react';\n\n<DockMenu\n  appName=\"Safari\"\n  isRunning\n  open\n>Example</DockMenu>"
     },
     {
       "id": "MailRunning",
       "title": "Mail (running)",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"MailRunning\" for full example.",
-      "composite": true
+      "props": {
+        "appName": "Mail",
+        "isRunning": true,
+        "open": true
+      },
+      "code": "import { DockMenu } from '@larose-ui/react';\n\n<DockMenu\n  appName=\"Mail\"\n  isRunning\n  open\n>Example</DockMenu>"
     },
     {
       "id": "AppNotRunning",
       "title": "App not running",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"AppNotRunning\" for full example.",
-      "composite": true
+      "props": {
+        "appName": "Photos",
+        "isRunning": false,
+        "open": true
+      },
+      "code": "import { DockMenu } from '@larose-ui/react';\n\n<DockMenu\n  appName=\"Photos\"\n  isRunning={false}\n  open\n>Example</DockMenu>"
     },
     {
       "id": "HomeScreenQuickActionsStory",
@@ -881,9 +962,12 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "DocumentLauncherStory",
       "title": "Document Launcher Story",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"DocumentLauncherStory\" for full example.",
-      "composite": true
+      "props": {
+        "appTitle": "Pages",
+        "primaryActionLabel": "Start Writing",
+        "secondaryActionLabel": "Choose a Template"
+      },
+      "code": "import { FileManagement } from '@larose-ui/react';\n\n<FileManagement\n  appTitle=\"Pages\"\n  primaryActionLabel=\"Start Writing\"\n  secondaryActionLabel=\"Choose a Template\"\n>Example</FileManagement>"
     }
   ],
   "DocumentToolbar": [
@@ -891,12 +975,13 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "DocumentToolbarStory",
       "title": "Create & Open",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"DocumentToolbarStory\" for full example.",
-      "composite": true
+      "props": {
+        "newLabel": "New Document",
+        "openLabel": "Open Recent"
+      },
+      "code": "import { FileManagement } from '@larose-ui/react';\n\n<FileManagement\n  newLabel=\"New Document\"\n  openLabel=\"Open Recent\"\n>Example</FileManagement>"
     }
   ],
-  "DRAG_START_THRESHOLD_PX": [],
   "DragDropList": [],
   "Draggable": [],
   "Drawer": [
@@ -923,17 +1008,27 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "CompactSelectedText",
       "title": "Compact (touch and hold)",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"CompactSelectedText\" for full example.",
-      "composite": true
+      "props": {
+        "open": true,
+        "variant": "compact",
+        "hasSelection": true,
+        "canPaste": true,
+        "isEditable": true
+      },
+      "code": "import { EditMenu } from '@larose-ui/react';\n\n<EditMenu\n  open\n  variant=\"compact\"\n  hasSelection\n  canPaste\n  isEditable\n>Example</EditMenu>"
     },
     {
       "id": "ContextPointer",
       "title": "Context menu (pointer)",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"ContextPointer\" for full example.",
-      "composite": true
+      "props": {
+        "open": true,
+        "variant": "context",
+        "hasSelection": true,
+        "canPaste": true,
+        "isEditable": true
+      },
+      "code": "import { EditMenu } from '@larose-ui/react';\n\n<EditMenu\n  open\n  variant=\"context\"\n  hasSelection\n  canPaste\n  isEditable\n>Example</EditMenu>"
     },
     {
       "id": "AddressSelection",
@@ -947,9 +1042,14 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "NoSelection",
       "title": "No selection",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"NoSelection\" for full example.",
-      "composite": true
+      "props": {
+        "open": true,
+        "variant": "compact",
+        "hasSelection": false,
+        "canPaste": true,
+        "isEditable": true
+      },
+      "code": "import { EditMenu } from '@larose-ui/react';\n\n<EditMenu\n  open\n  variant=\"compact\"\n  hasSelection={false}\n  canPaste\n  isEditable\n>Example</EditMenu>"
     },
     {
       "id": "CustomFormatCommands",
@@ -1010,9 +1110,11 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "FileBrowserStory",
       "title": "File Browser Story",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"FileBrowserStory\" for full example.",
-      "composite": true
+      "props": {
+        "activeTab": "recents",
+        "showExtensions": false
+      },
+      "code": "import { FileManagement } from '@larose-ui/react';\n\n<FileManagement\n  activeTab=\"recents\"\n  showExtensions={false}\n>Example</FileManagement>"
     }
   ],
   "FilePreview": [
@@ -1030,9 +1132,10 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "FileUploadDefault",
       "title": "File Upload Default",
       "kind": "basic",
-      "props": {},
-      "code": "// See Storybook story \"FileUploadDefault\" for full example.",
-      "composite": true
+      "props": {
+        "label": "Upload files"
+      },
+      "code": "import { AppShell } from '@larose-ui/react';\n\n<AppShell\n  label=\"Upload files\"\n>Example</AppShell>"
     }
   ],
   "Header": [
@@ -1040,25 +1143,30 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "HeaderDefault",
       "title": "Header Default",
       "kind": "basic",
-      "props": {},
-      "code": "// See Storybook story \"HeaderDefault\" for full example.",
-      "composite": true
+      "props": {
+        "title": "Employees",
+        "brand": "laRose"
+      },
+      "code": "import { AppShell } from '@larose-ui/react';\n\n<AppShell\n  title=\"Employees\"\n  brand=\"laRose\"\n>Example</AppShell>"
     },
     {
       "id": "HeaderWithTitle",
       "title": "Header With Title",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"HeaderWithTitle\" for full example.",
-      "composite": true
+      "props": {
+        "title": "Dashboard",
+        "brand": "laRose"
+      },
+      "code": "import { AppShell } from '@larose-ui/react';\n\n<AppShell\n  title=\"Dashboard\"\n  brand=\"laRose\"\n>Example</AppShell>"
     },
     {
       "id": "DocumentWorkspace",
       "title": "Document Workspace",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"DocumentWorkspace\" for full example.",
-      "composite": true
+      "props": {
+        "title": "Product Roadmap"
+      },
+      "code": "import { FileManagement } from '@larose-ui/react';\n\n<FileManagement\n  title=\"Product Roadmap\"\n>Example</FileManagement>"
     }
   ],
   "HeaderActions": [],
@@ -1070,9 +1178,11 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "MailActions",
       "title": "Mail",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"MailActions\" for full example.",
-      "composite": true
+      "props": {
+        "appName": "Mail",
+        "open": true
+      },
+      "code": "import { HomeScreenQuickActions } from '@larose-ui/react';\n\n<HomeScreenQuickActions\n  appName=\"Mail\"\n  open\n>Example</HomeScreenQuickActions>"
     },
     {
       "id": "MapsActions",
@@ -1106,41 +1216,49 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "FitModes",
       "title": "Fit Modes",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"FitModes\" for full example.",
-      "composite": true
+      "props": {
+        "fit": "contain",
+        "alt": "Sample contain"
+      },
+      "code": "import { ImageView } from '@larose-ui/react';\n\n<ImageView\n  fit=\"contain\"\n  alt=\"Sample contain\"\n>Example</ImageView>"
     },
     {
       "id": "TextOverlay",
       "title": "Text Overlay",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"TextOverlay\" for full example.",
-      "composite": true
+      "props": {
+        "alt": "Product hero",
+        "fit": "cover"
+      },
+      "code": "import { ImageView } from '@larose-ui/react';\n\n<ImageView\n  alt=\"Product hero\"\n  fit=\"cover\"\n>Example</ImageView>"
     },
     {
       "id": "AnimatedSequence",
       "title": "Animated Sequence",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"AnimatedSequence\" for full example.",
-      "composite": true
+      "props": {
+        "alt": "Loading animation",
+        "fit": "contain"
+      },
+      "code": "import { ImageView } from '@larose-ui/react';\n\n<ImageView\n  alt=\"Loading animation\"\n  fit=\"contain\"\n>Example</ImageView>"
     },
     {
       "id": "ImageWellStory",
       "title": "Image Well",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"ImageWellStory\" for full example.",
-      "composite": true
+      "props": {
+        "placeholder": "Drop, paste, or click — press Delete to clear"
+      },
+      "code": "import { ImageView } from '@larose-ui/react';\n\n<ImageView\n  placeholder=\"Drop, paste, or click — press Delete to clear\"\n>Example</ImageView>"
     },
     {
       "id": "ImageButtonStory",
       "title": "Image Button",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"ImageButtonStory\" for full example.",
-      "composite": true
+      "props": {
+        "alt": "Open gallery"
+      },
+      "code": "import { ImageView } from '@larose-ui/react';\n\n<ImageView\n  alt=\"Open gallery\"\n>Example</ImageView>"
     }
   ],
   "ImageWell": [],
@@ -1205,9 +1323,12 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "Secure",
       "title": "Secure",
       "kind": "advanced",
-      "props": {},
-      "code": "<SecureField label=\"Password\" required hint=\"Never prepopulated\" />",
-      "composite": true
+      "props": {
+        "label": "Password",
+        "required": true,
+        "hint": "Never prepopulated"
+      },
+      "code": "import { Input } from '@larose-ui/react';\n\n<Input\n  label=\"Password\"\n  required\n  hint=\"Never prepopulated\"\n>Example</Input>"
     },
     {
       "id": "Loading",
@@ -1255,10 +1376,6 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
     }
   ],
   "Label": [],
-  "LIQUID_GLASS_OPTICS_DEFAULTS": [],
-  "LIQUID_GLASS_PRESETS": [],
-  "LIQUID_GLASS_SWITCH_ACTIVE_GREEN": [],
-  "LIQUID_GLASS_SWITCH_TRACK_GLASS": [],
   "LiquidGlass": [
     {
       "id": "NaturalLanguageFilter",
@@ -1304,9 +1421,10 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "SidebarDefault",
       "title": "Sidebar Default",
       "kind": "basic",
-      "props": {},
-      "code": "// See Storybook story \"SidebarDefault\" for full example.",
-      "composite": true
+      "props": {
+        "brand": "laRose"
+      },
+      "code": "import { AppShell } from '@larose-ui/react';\n\n<AppShell\n  brand=\"laRose\"\n>Example</AppShell>"
     },
     {
       "id": "AppShellLayout",
@@ -1344,9 +1462,11 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "PaginationDefault",
       "title": "Pagination Default",
       "kind": "basic",
-      "props": {},
-      "code": "<PaginationDemo />",
-      "composite": true
+      "props": {
+        "page": 1,
+        "totalPages": 12
+      },
+      "code": "import { DataDisplay } from '@larose-ui/react';\n\n<DataDisplay\n  page={1}\n  totalPages={12}\n>Example</DataDisplay>"
     },
     {
       "id": "Overview",
@@ -1418,9 +1538,20 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "ShareButtonOnly",
       "title": "Share Button Only",
       "kind": "advanced",
-      "props": {},
-      "code": "<ShareButton />",
-      "composite": true
+      "props": {
+        "label": "Share"
+      },
+      "code": "import { Collaboration&Sharing } from '@larose-ui/react';\n\n<Collaboration&Sharing\n  label=\"Share\"\n>Example</Collaboration&Sharing>"
+    },
+    {
+      "id": "OrnamentButton",
+      "title": "OrnamentButton",
+      "kind": "advanced",
+      "props": {
+        "children": "OrnamentButton",
+        "active": false
+      },
+      "code": "import { Discovered } from '@larose-ui/react';\n\n<Discovered\n  active={false}\n>OrnamentButton</Discovered>"
     }
   ],
   "LiquidGlassCheckbox": [
@@ -1428,9 +1559,11 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "CheckboxDefault",
       "title": "Checkbox Default",
       "kind": "basic",
-      "props": {},
-      "code": "<Checkbox label=\"I agree to the terms\" hint=\"Required before submitting\" />",
-      "composite": true
+      "props": {
+        "label": "I agree to the terms",
+        "hint": "Required before submitting"
+      },
+      "code": "import { FormControls } from '@larose-ui/react';\n\n<FormControls\n  label=\"I agree to the terms\"\n  hint=\"Required before submitting\"\n>Example</FormControls>"
     }
   ],
   "LiquidGlassProgress": [
@@ -1438,17 +1571,24 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "ProgressDefault",
       "title": "Progress Default",
       "kind": "basic",
-      "props": {},
-      "code": "<Progress value={65} label=\"Profile completion\" showValue />",
-      "composite": true
+      "props": {
+        "value": 65,
+        "label": "Profile completion",
+        "showValue": true
+      },
+      "code": "import { FormControls } from '@larose-ui/react';\n\n<FormControls\n  value={65}\n  label=\"Profile completion\"\n  showValue\n>Example</FormControls>"
     },
     {
       "id": "ProgressSuccess",
       "title": "Progress Success",
       "kind": "advanced",
-      "props": {},
-      "code": "<Progress value={100} label=\"Upload complete\" variant=\"success\" showValue />",
-      "composite": true
+      "props": {
+        "value": 100,
+        "label": "Upload complete",
+        "variant": "success",
+        "showValue": true
+      },
+      "code": "import { FormControls } from '@larose-ui/react';\n\n<FormControls\n  value={100}\n  label=\"Upload complete\"\n  variant=\"success\"\n  showValue\n>Example</FormControls>"
     }
   ],
   "LiquidGlassRange": [
@@ -1456,9 +1596,10 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "DateRangePickerDefault",
       "title": "Date Range Picker Default",
       "kind": "basic",
-      "props": {},
-      "code": "<DateRangeDemo />",
-      "composite": true
+      "props": {
+        "label": "Reporting period"
+      },
+      "code": "import { DateTime } from '@larose-ui/react';\n\n<DateTime\n  label=\"Reporting period\"\n>Example</DateTime>"
     }
   ],
   "LiquidGlassSwitch": [
@@ -1466,9 +1607,12 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "SwitchDefault",
       "title": "Switch Default",
       "kind": "basic",
-      "props": {},
-      "code": "<Switch label=\"Email notifications\" defaultChecked hint=\"Receive product updates\" />",
-      "composite": true
+      "props": {
+        "label": "Email notifications",
+        "checked": true,
+        "hint": "Receive product updates"
+      },
+      "code": "import { FormControls } from '@larose-ui/react';\n\n<FormControls\n  label=\"Email notifications\"\n  checked\n  hint=\"Receive product updates\"\n>Example</FormControls>"
     }
   ],
   "LiquidGlassTabBar": [
@@ -1591,9 +1735,10 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "GroupedList",
       "title": "Grouped List",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"GroupedList\" for full example.",
-      "composite": true
+      "props": {
+        "variant": "grouped"
+      },
+      "code": "import { Lists&Tables } from '@larose-ui/react';\n\n<Lists&Tables\n  variant=\"grouped\"\n>Example</Lists&Tables>"
     },
     {
       "id": "MiddleTruncation",
@@ -1619,17 +1764,21 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "CaptionButtonGrid",
       "title": "Caption Button Grid",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"CaptionButtonGrid\" for full example.",
-      "composite": true
+      "props": {
+        "title": "Movies",
+        "subtitle": "Browse",
+        "label": "Movies"
+      },
+      "code": "import { Lockup } from '@larose-ui/react';\n\n<Lockup\n  title=\"Movies\"\n  subtitle=\"Browse\"\n  label=\"Movies\"\n>Example</Lockup>"
     },
     {
       "id": "VerticalMonograms",
-      "title": "Vertical Monograms",
+      "title": "Sara Ali",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"VerticalMonograms\" for full example.",
-      "composite": true
+      "props": {
+        "name": "Sara Ali"
+      },
+      "code": "import { Lockup } from '@larose-ui/react';\n\n<Lockup\n  name=\"Sara Ali\"\n>Example</Lockup>"
     }
   ],
   "LockupCard": [],
@@ -1639,25 +1788,34 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "LargeLayout",
       "title": "Large (default)",
       "kind": "basic",
-      "props": {},
-      "code": "// See Storybook story \"LargeLayout\" for full example.",
-      "composite": true
+      "props": {
+        "open": true,
+        "layout": "large",
+        "title": "Edit"
+      },
+      "code": "import { Menu } from '@larose-ui/react';\n\n<Menu\n  open\n  layout=\"large\"\n  title=\"Edit\"\n>Example</Menu>"
     },
     {
       "id": "MediumLayout",
       "title": "Medium layout",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"MediumLayout\" for full example.",
-      "composite": true
+      "props": {
+        "open": true,
+        "layout": "medium",
+        "title": "Edit"
+      },
+      "code": "import { Menu } from '@larose-ui/react';\n\n<Menu\n  open\n  layout=\"medium\"\n  title=\"Edit\"\n>Example</Menu>"
     },
     {
       "id": "SmallLayout",
       "title": "Small layout",
       "kind": "variants",
-      "props": {},
-      "code": "<Menu layout=\"small\" open onOpenChange={() => undefined} entries={formatEntries} />",
-      "composite": true
+      "props": {
+        "open": true,
+        "layout": "small",
+        "title": "Edit"
+      },
+      "code": "import { Menu } from '@larose-ui/react';\n\n<Menu\n  open\n  layout=\"small\"\n  title=\"Edit\"\n>Example</Menu>"
     },
     {
       "id": "SubmenuAndToggles",
@@ -1681,17 +1839,22 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "MenuBarGlobalShortcuts",
       "title": "Menu bar (global shortcuts)",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"MenuBarGlobalShortcuts\" for full example.",
-      "composite": true
+      "props": {
+        "appName": "laRose",
+        "revealed": true
+      },
+      "code": "import { Accelerators } from '@larose-ui/react';\n\n<Accelerators\n  appName=\"laRose\"\n  revealed\n>Example</Accelerators>"
     },
     {
       "id": "MacOSStandard",
       "title": "macOS standard menus",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"MacOSStandard\" for full example.",
-      "composite": true
+      "props": {
+        "appName": "laRose",
+        "platform": "macos",
+        "revealed": true
+      },
+      "code": "import { MenuBar } from '@larose-ui/react';\n\n<MenuBar\n  appName=\"laRose\"\n  platform=\"macos\"\n  revealed\n>Example</MenuBar>"
     },
     {
       "id": "IPadOSHiddenUntilRevealed",
@@ -1711,7 +1874,20 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
     }
   ],
   "MenuBarExtra": [],
-  "MnemonicLabel": [],
+  "MnemonicLabel": [
+    {
+      "id": "MnemonicLabel",
+      "title": "MnemonicLabel",
+      "kind": "advanced",
+      "props": {
+        "children": "MnemonicLabel",
+        "label": "MnemonicLabel",
+        "mnemonic": "MnemonicLabel",
+        "showAccessKey": false
+      },
+      "code": "import { Discovered } from '@larose-ui/react';\n\n<Discovered\n  label=\"MnemonicLabel\"\n  mnemonic=\"MnemonicLabel\"\n  showAccessKey={false}\n>MnemonicLabel</Discovered>"
+    }
+  ],
   "Modal": [
     {
       "id": "Default",
@@ -1745,9 +1921,10 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "NowPlaying",
       "title": "Now Playing (bottom)",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"NowPlaying\" for full example.",
-      "composite": true
+      "props": {
+        "label": "Now Playing"
+      },
+      "code": "import { Ornament } from '@larose-ui/react';\n\n<Ornament\n  label=\"Now Playing\"\n>Example</Ornament>"
     },
     {
       "id": "ImmersiveHidden",
@@ -1809,17 +1986,21 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "PathControlStandard",
       "title": "Path control (standard)",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"PathControlStandard\" for full example.",
-      "composite": true
+      "props": {
+        "variant": "standard",
+        "selectedId": "file"
+      },
+      "code": "import { NavigationandSearch } from '@larose-ui/react';\n\n<NavigationandSearch\n  variant=\"standard\"\n  selectedId=\"file\"\n>Example</NavigationandSearch>"
     },
     {
       "id": "PathControlPopup",
       "title": "Path control (pop-up)",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"PathControlPopup\" for full example.",
-      "composite": true
+      "props": {
+        "variant": "popup",
+        "selectedId": "file"
+      },
+      "code": "import { NavigationandSearch } from '@larose-ui/react';\n\n<NavigationandSearch\n  variant=\"popup\"\n  selectedId=\"file\"\n>Example</NavigationandSearch>"
     }
   ],
   "Picker": [
@@ -1827,17 +2008,21 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "WheelStyle",
       "title": "Wheels (multipart)",
       "kind": "advanced",
-      "props": {},
-      "code": "<Picker\n        label=\"Country\"\n        style=\"wheels\"\n        columns={[{ id: 'country', label: 'Country', options: countries }]}\n        value={value}\n        onChange={setValue}\n      />",
-      "composite": true
+      "props": {
+        "label": "Country",
+        "appearance": "wheels"
+      },
+      "code": "import { Picker } from '@larose-ui/react';\n\n<Picker\n  label=\"Country\"\n  appearance=\"wheels\"\n>Example</Picker>"
     },
     {
       "id": "CompactStyle",
       "title": "Compact (popover)",
       "kind": "advanced",
-      "props": {},
-      "code": "<Picker\n        label=\"Country\"\n        style=\"compact\"\n        columns={[{ id: 'country', label: 'Country', options: countries }]}\n        value={value}\n        onChange={setValue}\n      />",
-      "composite": true
+      "props": {
+        "label": "Country",
+        "appearance": "compact"
+      },
+      "code": "import { Picker } from '@larose-ui/react';\n\n<Picker\n  label=\"Country\"\n  appearance=\"compact\"\n>Example</Picker>"
     },
     {
       "id": "DateWheels",
@@ -1910,10 +2095,14 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "title": "Default",
       "kind": "basic",
       "props": {
+        "side": "bottom",
+        "open": true,
+        "triggerLabel": "Show info",
+        "contentText": "Popovers present supplementary content anchored to a trigger.",
         "margin": 0,
         "maxWidth": 220
       },
-      "code": "import { Popover } from '@larose-ui/react';\n\n<Popover\n  margin={0}\n  maxWidth={220}\n>Example</Popover>"
+      "code": "import { Popover } from '@larose-ui/react';\n\n<Popover\n  side=\"bottom\"\n  open\n  triggerLabel=\"Show info\"\n  contentText=\"Popovers present supplementary content anchored to a trigger.\"\n  margin={0}\n  maxWidth={220}\n>Example</Popover>"
     },
     {
       "id": "Top",
@@ -1921,9 +2110,12 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "kind": "advanced",
       "props": {
         "side": "top",
+        "open": true,
+        "triggerLabel": "Top popover",
+        "contentText": "Appears above the trigger.",
         "margin": 0
       },
-      "code": "import { Popover } from '@larose-ui/react';\n\n<Popover\n  side=\"top\"\n  margin={0}\n>Example</Popover>"
+      "code": "import { Popover } from '@larose-ui/react';\n\n<Popover\n  side=\"top\"\n  open\n  triggerLabel=\"Top popover\"\n  contentText=\"Appears above the trigger.\"\n  margin={0}\n>Example</Popover>"
     },
     {
       "id": "WithActions",
@@ -1939,17 +2131,22 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "CalendarRepeat",
       "title": "Calendar repeat",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"CalendarRepeat\" for full example.",
-      "composite": true
+      "props": {
+        "label": "Repeat",
+        "value": "never"
+      },
+      "code": "import { PopUpButton } from '@larose-ui/react';\n\n<PopUpButton\n  label=\"Repeat\"\n  value=\"never\"\n>Example</PopUpButton>"
     },
     {
       "id": "WithDefault",
       "title": "Default selection",
       "kind": "basic",
-      "props": {},
-      "code": "<PopUpButton\n        label=\"Priority\"\n        options={[\n          { value: 'low', label: 'Low' },\n          { value: 'medium', label: 'Medium' },\n          { value: 'high', label: 'High' },\n        ]}\n        defaultValue=\"medium\"\n      />",
-      "composite": true
+      "props": {
+        "label": "Priority",
+        "value": "medium",
+        "defaultValue": "medium"
+      },
+      "code": "import { PopUpButton } from '@larose-ui/react';\n\n<PopUpButton\n  label=\"Priority\"\n  value=\"medium\"\n  defaultValue=\"medium\"\n>Example</PopUpButton>"
     },
     {
       "id": "DisabledOption",
@@ -1966,17 +2163,24 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "ProgressDefault",
       "title": "Progress Default",
       "kind": "basic",
-      "props": {},
-      "code": "<Progress value={65} label=\"Profile completion\" showValue />",
-      "composite": true
+      "props": {
+        "value": 65,
+        "label": "Profile completion",
+        "showValue": true
+      },
+      "code": "import { FormControls } from '@larose-ui/react';\n\n<FormControls\n  value={65}\n  label=\"Profile completion\"\n  showValue\n>Example</FormControls>"
     },
     {
       "id": "ProgressSuccess",
       "title": "Progress Success",
       "kind": "advanced",
-      "props": {},
-      "code": "<Progress value={100} label=\"Upload complete\" variant=\"success\" showValue />",
-      "composite": true
+      "props": {
+        "value": 100,
+        "label": "Upload complete",
+        "variant": "success",
+        "showValue": true
+      },
+      "code": "import { FormControls } from '@larose-ui/react';\n\n<FormControls\n  value={100}\n  label=\"Upload complete\"\n  variant=\"success\"\n  showValue\n>Example</FormControls>"
     },
     {
       "id": "Default",
@@ -2031,9 +2235,10 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "AddMenu",
       "title": "Add",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"AddMenu\" for full example.",
-      "composite": true
+      "props": {
+        "label": "Add"
+      },
+      "code": "import { PullDownButton } from '@larose-ui/react';\n\n<PullDownButton\n  label=\"Add\"\n>Example</PullDownButton>"
     },
     {
       "id": "SortMenu",
@@ -2063,11 +2268,15 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
   "Radio": [
     {
       "id": "RadioGroup",
-      "title": "Radio Group",
+      "title": "plan",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"RadioGroup\" for full example.",
-      "composite": true
+      "props": {
+        "label": "Starter",
+        "name": "plan",
+        "value": "starter",
+        "defaultChecked": true
+      },
+      "code": "import { FormControls } from '@larose-ui/react';\n\n<FormControls\n  label=\"Starter\"\n  name=\"plan\"\n  value=\"starter\"\n  defaultChecked\n>Example</FormControls>"
     },
     {
       "id": "Default",
@@ -2132,9 +2341,11 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "SelectDefault",
       "title": "Select Default",
       "kind": "basic",
-      "props": {},
-      "code": "// See Storybook story \"SelectDefault\" for full example.",
-      "composite": true
+      "props": {
+        "label": "Engineering",
+        "value": "eng"
+      },
+      "code": "import { FormControls } from '@larose-ui/react';\n\n<FormControls\n  label=\"Engineering\"\n  value=\"eng\"\n>Example</FormControls>"
     },
     {
       "id": "Default",
@@ -2215,17 +2426,23 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "SidebarDetailInspector",
       "title": "Sidebar · content · inspector",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"SidebarDetailInspector\" for full example.",
-      "composite": true
+      "props": {
+        "orientation": "horizontal",
+        "leftLabel": "Mailboxes",
+        "rightLabel": "Message"
+      },
+      "code": "import { SplitView } from '@larose-ui/react';\n\n<SplitView\n  orientation=\"horizontal\"\n  leftLabel=\"Mailboxes\"\n  rightLabel=\"Message\"\n>Example</SplitView>"
     },
     {
       "id": "VerticalSplit",
       "title": "Vertical Split",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"VerticalSplit\" for full example.",
-      "composite": true
+      "props": {
+        "orientation": "vertical",
+        "leftLabel": "Navigator",
+        "rightLabel": "Editor"
+      },
+      "code": "import { SplitView } from '@larose-ui/react';\n\n<SplitView\n  orientation=\"vertical\"\n  leftLabel=\"Navigator\"\n  rightLabel=\"Editor\"\n>Example</SplitView>"
     },
     {
       "id": "DragBetweenPanes",
@@ -2239,9 +2456,12 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "CompactStack",
       "title": "Compact Stack",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"CompactStack\" for full example.",
-      "composite": true
+      "props": {
+        "orientation": "horizontal",
+        "leftLabel": "Mailboxes",
+        "rightLabel": "Message"
+      },
+      "code": "import { SplitView } from '@larose-ui/react';\n\n<SplitView\n  orientation=\"horizontal\"\n  leftLabel=\"Mailboxes\"\n  rightLabel=\"Message\"\n>Example</SplitView>"
     }
   ],
   "SplitViewPane": [],
@@ -2252,9 +2472,12 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "SwitchDefault",
       "title": "Switch Default",
       "kind": "basic",
-      "props": {},
-      "code": "<Switch label=\"Email notifications\" defaultChecked hint=\"Receive product updates\" />",
-      "composite": true
+      "props": {
+        "label": "Email notifications",
+        "checked": true,
+        "hint": "Receive product updates"
+      },
+      "code": "import { FormControls } from '@larose-ui/react';\n\n<FormControls\n  label=\"Email notifications\"\n  checked\n  hint=\"Receive product updates\"\n>Example</FormControls>"
     },
     {
       "id": "Default",
@@ -2304,15 +2527,16 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "composite": true
     }
   ],
-  "SYSTEM_ACTIVITY_IDS": [],
   "Table": [
     {
       "id": "SortableTable",
       "title": "Sortable Table",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"SortableTable\" for full example.",
-      "composite": true
+      "props": {
+        "caption": "Team directory",
+        "selectedKey": "1"
+      },
+      "code": "import { Lists&Tables } from '@larose-ui/react';\n\n<Lists&Tables\n  caption=\"Team directory\"\n  selectedKey=\"1\"\n>Example</Lists&Tables>"
     }
   ],
   "Tabs": [
@@ -2320,9 +2544,10 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "TabsDefault",
       "title": "Tabs Default",
       "kind": "basic",
-      "props": {},
-      "code": "// See Storybook story \"TabsDefault\" for full example.",
-      "composite": true
+      "props": {
+        "defaultValue": "profile"
+      },
+      "code": "import { Overlays } from '@larose-ui/react';\n\n<Overlays\n  defaultValue=\"profile\"\n>Example</Overlays>"
     }
   ],
   "TabsList": [],
@@ -2333,25 +2558,32 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "Bordered",
       "title": "Bordered",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"Bordered\" for full example.",
-      "composite": true
+      "props": {
+        "variant": "bordered",
+        "defaultValue": "general"
+      },
+      "code": "import { TabView } from '@larose-ui/react';\n\n<TabView\n  variant=\"bordered\"\n  defaultValue=\"general\"\n>Example</TabView>"
     },
     {
       "id": "Bezeled",
       "title": "Bezeled",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"Bezeled\" for full example.",
-      "composite": true
+      "props": {
+        "variant": "bezeled",
+        "defaultValue": "general"
+      },
+      "code": "import { TabView } from '@larose-ui/react';\n\n<TabView\n  variant=\"bezeled\"\n  defaultValue=\"general\"\n>Example</TabView>"
     },
     {
       "id": "BorderlessHiddenTabs",
       "title": "Borderless with hidden tabs",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"BorderlessHiddenTabs\" for full example.",
-      "composite": true
+      "props": {
+        "variant": "borderless",
+        "showTabs": false,
+        "defaultValue": "general"
+      },
+      "code": "import { TabView } from '@larose-ui/react';\n\n<TabView\n  variant=\"borderless\"\n  showTabs={false}\n  defaultValue=\"general\"\n>Example</TabView>"
     },
     {
       "id": "SixTabLimit",
@@ -2370,9 +2602,11 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "TextareaDefault",
       "title": "Textarea Default",
       "kind": "basic",
-      "props": {},
-      "code": "<Textarea label=\"Description\" placeholder=\"Enter details...\" />",
-      "composite": true
+      "props": {
+        "label": "Description",
+        "placeholder": "Enter details..."
+      },
+      "code": "import { FormControls } from '@larose-ui/react';\n\n<FormControls\n  label=\"Description\"\n  placeholder=\"Enter details...\"\n>Example</FormControls>"
     },
     {
       "id": "Default",
@@ -2434,17 +2668,23 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "ReadOnlySelectable",
       "title": "Read Only Selectable",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"ReadOnlySelectable\" for full example.",
-      "composite": true
+      "props": {
+        "selectable": true,
+        "value": "Release notes\\\\n\\\\nAutosave now preserves edits while you switch apps.",
+        "maxHeight": "12rem"
+      },
+      "code": "import { TextView } from '@larose-ui/react';\n\n<TextView\n  selectable\n  value=\"Release notes\\\\n\\\\nAutosave now preserves edits while you switch apps.\"\n  maxHeight=\"12rem\"\n>Example</TextView>"
     },
     {
       "id": "Editable",
       "title": "Editable",
       "kind": "advanced",
-      "props": {},
-      "code": "<Card title=\"Editable text view\" padding=\"md\">\n        <TextView\n          editable\n          value={value}\n          onChange={(event) => setValue(event.target.value)}\n          maxHeight=\"14rem\"\n          inputMode=\"text\"\n        />\n      </Card>",
-      "composite": true
+      "props": {
+        "editable": true,
+        "value": "Write a longer note here…",
+        "maxHeight": "14rem"
+      },
+      "code": "import { TextView } from '@larose-ui/react';\n\n<TextView\n  editable\n  value=\"Write a longer note here…\"\n  maxHeight=\"14rem\"\n>Example</TextView>"
     },
     {
       "id": "RichDisplay",
@@ -2461,9 +2701,11 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "TimePickerDefault",
       "title": "Time Picker Default",
       "kind": "basic",
-      "props": {},
-      "code": "<TimePicker label=\"Meeting time\" value=\"09:30\" />",
-      "composite": true
+      "props": {
+        "label": "Meeting time",
+        "value": "09:30"
+      },
+      "code": "import { DateTime } from '@larose-ui/react';\n\n<DateTime\n  label=\"Meeting time\"\n  value=\"09:30\"\n>Example</DateTime>"
     }
   ],
   "TokenField": [
@@ -2481,25 +2723,31 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "MacNotesStyle",
       "title": "macOS Notes (standard + More)",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"MacNotesStyle\" for full example.",
-      "composite": true
+      "props": {
+        "title": "Notes",
+        "platform": "macos"
+      },
+      "code": "import { Toolbar } from '@larose-ui/react';\n\n<Toolbar\n  title=\"Notes\"\n  platform=\"macos\"\n>Example</Toolbar>"
     },
     {
       "id": "IOSMailNavigation",
       "title": "iOS navigation bar",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"IOSMailNavigation\" for full example.",
-      "composite": true
+      "props": {
+        "title": "Inbox",
+        "platform": "ios"
+      },
+      "code": "import { Toolbar } from '@larose-ui/react';\n\n<Toolbar\n  title=\"Inbox\"\n  platform=\"ios\"\n>Example</Toolbar>"
     },
     {
       "id": "VisionOSBottomBar",
       "title": "visionOS bottom toolbar",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"VisionOSBottomBar\" for full example.",
-      "composite": true
+      "props": {
+        "title": "Library",
+        "platform": "visionos"
+      },
+      "code": "import { Toolbar } from '@larose-ui/react';\n\n<Toolbar\n  title=\"Library\"\n  platform=\"visionos\"\n>Example</Toolbar>"
     },
     {
       "id": "TrailingProminentAction",
@@ -2534,9 +2782,11 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "TooltipDefault",
       "title": "Tooltip Default",
       "kind": "basic",
-      "props": {},
-      "code": "// See Storybook story \"TooltipDefault\" for full example.",
-      "composite": true
+      "props": {
+        "content": "Export employees as CSV",
+        "label": "Export"
+      },
+      "code": "import { Overlays } from '@larose-ui/react';\n\n<Overlays\n  content=\"Export employees as CSV\"\n  label=\"Export\"\n>Example</Overlays>"
     },
     {
       "id": "Default",
@@ -2580,48 +2830,15 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
       "id": "MenuAlwaysOpen",
       "title": "Menu (always open)",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"MenuAlwaysOpen\" for full example.",
-      "composite": true
+      "props": {
+        "open": true,
+        "layout": "large",
+        "title": "Edit"
+      },
+      "code": "import { Accelerators } from '@larose-ui/react';\n\n<Accelerators\n  open\n  layout=\"large\"\n  title=\"Edit\"\n>Example</Accelerators>"
     }
   ],
   "UnsavedIndicator": [],
-  "WebView": [
-    {
-      "id": "EmbeddedHtml",
-      "title": "Embedded HTML (Mail-style)",
-      "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"EmbeddedHtml\" for full example.",
-      "composite": true
-    },
-    {
-      "id": "BriefWebsiteAccess",
-      "title": "Brief Website Access",
-      "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"BriefWebsiteAccess\" for full example.",
-      "composite": true
-    },
-    {
-      "id": "WithNavigation",
-      "title": "With Navigation",
-      "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"WithNavigation\" for full example.",
-      "composite": true
-    },
-    {
-      "id": "NavigationOnly",
-      "title": "Navigation Only",
-      "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"NavigationOnly\" for full example.",
-      "composite": true
-    }
-  ],
-  "WebViewNavigation": [],
-  "WebViewShell": [],
   "WheelColumn": [],
   "WheelPicker": []
 };

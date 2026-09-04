@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 import styles from '@larose-ui/styles/components/Alert/Alert.module.css';
 
 export type AlertVariant = 'info' | 'success' | 'warning' | 'error';
@@ -8,6 +8,8 @@ export interface AlertProps {
   title?: string;
   children: ReactNode;
   onDismiss?: () => void;
+  className?: string;
+  style?: CSSProperties;
 }
 
 export function Alert({
@@ -15,10 +17,13 @@ export function Alert({
   title,
   children,
   onDismiss,
+  className,
+  style,
 }: AlertProps) {
   return (
     <div
-      className={styles.alert}
+      className={[styles.alert, className].filter(Boolean).join(' ')}
+      style={style}
       data-variant={variant}
       role="alert"
     >

@@ -1,4 +1,5 @@
 import { parseMnemonicLabel, resolveMnemonicKey } from '@larose-ui/core';
+import type { CSSProperties } from 'react';
 import styles from '@larose-ui/styles/components/Menu/Menu.module.css';
 
 export interface MnemonicLabelProps {
@@ -7,6 +8,7 @@ export interface MnemonicLabelProps {
   /** When true, underline the access key character. */
   showAccessKey?: boolean;
   className?: string;
+  style?: CSSProperties;
 }
 
 /**
@@ -17,22 +19,23 @@ export function MnemonicLabel({
   mnemonic,
   showAccessKey = false,
   className,
+  style,
 }: MnemonicLabelProps) {
   const parsed = parseMnemonicLabel(label);
   const accessKey = resolveMnemonicKey(label, mnemonic) ?? parsed.mnemonicKey;
   const display = parsed.displayLabel;
 
   if (!showAccessKey || !accessKey) {
-    return <span className={className}>{display}</span>;
+    return <span className={className} style={style}>{display}</span>;
   }
 
   const index = display.toLowerCase().indexOf(accessKey.toLowerCase());
   if (index === -1) {
-    return <span className={className}>{display}</span>;
+    return <span className={className} style={style}>{display}</span>;
   }
 
   return (
-    <span className={className}>
+    <span className={className} style={style}>
       {display.slice(0, index)}
       <span className={styles.mnemonicChar}>{display.charAt(index)}</span>
       {display.slice(index + 1)}

@@ -4,7 +4,12 @@ import { Spinner } from '@larose-ui/react';
 const meta: Meta<typeof Spinner> = {
   title: 'Foundation/Spinner',
   component: Spinner,
-  tags: ['autodocs'],
+  tags: ['autodocs', 'fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: {
+    laRose: {
+      crossFramework: 'spinner',
+    },
+  },
 };
 
 export default meta;

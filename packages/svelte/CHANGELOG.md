@@ -1,5 +1,11 @@
 # @larose-ui/svelte
 
+## Unreleased
+
+### Minor Changes
+
+- Remove WebView components to match React web-first surface.
+
 ## 0.2.0
 
 ### Minor Changes

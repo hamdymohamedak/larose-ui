@@ -20,7 +20,7 @@
       "type": "skill-md",
       "description": "Explore laRose UI monorepo packages, integration paths, and package-specific docs. Use when choosing @larose-ui packages or comparing React, Vue, and Svelte adapters.",
       "url": "https://hamdymohamedak.github.io/larose-ui/.well-known/agent-skills/larose-ui-packages/SKILL.md",
-      "digest": "sha256:db53f6c6e4710f4e11d411b9f88acbe11b3486330ca1b8217973b978b4cbd10e"
+      "digest": "sha256:21844e5a38edb2e36734de16471ce6ef4a7a3501782b926ea0407323c6f07802"
     }
   ]
 }

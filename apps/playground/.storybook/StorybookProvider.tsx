@@ -6,7 +6,7 @@ import {
 import type { Density, Environment, ThemeMode } from '@larose-ui/core';
 
 const RuntimeLaRoseProvider = lazy(() =>
-  import('@larose-ui/runtime').then((module) => ({ default: module.LaRoseProvider })),
+  import('@larose-ui/runtime-react').then((module) => ({ default: module.LaRoseProvider })),
 );
 
 export type StorybookLocale = 'en' | 'ar' | 'de';

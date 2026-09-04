@@ -12,6 +12,7 @@ type SurfaceArgs = typeof liquidGlassSurfaceDefaults;
 
 const meta: Meta<SurfaceArgs> = {
   title: 'Glass/LiquidGlass/Surface',
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
   parameters: {
     layout: 'fullscreen',
     controls: { expanded: true, sort: 'requiredFirst' },

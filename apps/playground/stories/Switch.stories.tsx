@@ -4,7 +4,12 @@ import { Switch } from '@larose-ui/react';
 const meta: Meta<typeof Switch> = {
   title: 'Foundation/Switch',
   component: Switch,
-  tags: ['autodocs'],
+  tags: ['autodocs', 'fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: {
+    laRose: {
+      crossFramework: 'switch',
+    },
+  },
   argTypes: {
     switchSize: { control: 'select', options: ['sm', 'md', 'lg'] },
   },
@@ -41,6 +46,7 @@ export const Disabled: Story = {
 };
 
 export const SettingsStyle: Story = {
+  tags: ['fw-react'],
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', maxWidth: 360 }}>
       <Switch label="Dark mode" defaultChecked />

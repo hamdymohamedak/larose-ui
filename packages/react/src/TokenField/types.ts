@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 import type { MenuEntry } from '../Menu/types';
 
 export interface TokenFieldToken {
@@ -18,5 +18,6 @@ export interface TokenFieldProps {
   delimiters?: string[];
   onContextMenuEntries?: (token: TokenFieldToken) => MenuEntry[];
   className?: string;
+  style?: CSSProperties;
   'aria-label'?: string;
 }

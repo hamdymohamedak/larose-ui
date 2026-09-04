@@ -5,6 +5,13 @@
   "import": "import { DateTimePicker } from '@larose-ui/react';",
   "props": [
     {
+      "name": "appearance",
+      "type": "DateTimePickerStyle",
+      "required": false,
+      "description": "Compact / wheels / inline / automatic. Use with object `style` when you need both.",
+      "inherited": false
+    },
+    {
       "name": "disabled",
       "type": "boolean",
       "required": false,

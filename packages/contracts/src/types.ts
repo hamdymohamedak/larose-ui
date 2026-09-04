@@ -51,7 +51,7 @@ export interface ComponentContractKeyboard {
 export interface ComponentContract {
   name: string;
   version?: string;
-  /** Source framework used to author the contract (neutral = hand-written). */
+  /** Canonical contracts are framework-agnostic (`neutral`). Adapters may still tag `react`/`vue`/`svelte`. */
   framework?: 'react' | 'vue' | 'svelte' | 'neutral';
   props: ComponentContractProp[];
   events: ComponentContractEvent[];

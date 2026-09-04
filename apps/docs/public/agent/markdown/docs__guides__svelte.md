@@ -5,7 +5,8 @@
 `@larose-ui/svelte` provides Svelte 5 bindings over the shared laRose platform.
 
 ```text
-@larose-ui/core → tokens → styles → themes → primitives → runtime-core
+@larose-ui/core → tokens → styles → themes → primitives
+→ component-logic → liquid-glass-core → runtime-core
                               ↓
                       @larose-ui/svelte
 ```
@@ -41,25 +42,30 @@ mount(App, { target: document.getElementById('app')! });
 
 ## Runtime
 
+For the full platform stack (theme, toast, accelerator, i18n, permissions, network, offline):
+
 ```svelte
 <script lang="ts">
-  import { LaRoseProvider, RuntimeProvider } from '@larose-ui/svelte';
+  import { LaRoseProvider } from '@larose-ui/runtime-svelte';
+  import { Button } from '@larose-ui/svelte';
 </script>
 
-<LaRoseProvider>
-  <RuntimeProvider initialContext={{ locale: 'en' }}>
-    {@render children()}
-  </RuntimeProvider>
+<LaRoseProvider theme="light" appearance="system" locale="en">
+  <Button variant="primary">Save</Button>
 </LaRoseProvider>
 ```
 
-Use `getRuntimeContext()` in child components to read or patch runtime state.
+Theme-only apps can keep using `LaRoseProvider` from `@larose-ui/svelte`. Use `getRuntimeContext()` from `@larose-ui/runtime-svelte` in child components to read or patch runtime state.
 
 ## Components
 
-Foundation set (mirrors `@larose-ui/vue`):
+The Svelte package mirrors the React / Vue component surface (actions, forms, overlays, menus, toolbar, Liquid Glass, …). Shared logic comes from `@larose-ui/primitives`, `@larose-ui/component-logic`, and `@larose-ui/liquid-glass-core`.
 
-Button, Input, Textarea, Select, Checkbox, Radio, Switch, Badge, Label, Spinner, Progress, Alert, Card, Modal, Dialog, FieldShell
+Intelligence packages:
+
+- Cores: `@larose-ui/forms-core` / `@larose-ui/data-core` / `@larose-ui/permissions-core` / `@larose-ui/observability-core`
+- Svelte adapters: `@larose-ui/forms-svelte`, `@larose-ui/data-svelte`, `@larose-ui/permissions-svelte`, `@larose-ui/observability-svelte`
+- React adapters remain available for React apps
 
 ## Bindings
 
@@ -68,6 +74,7 @@ Form controls use `$bindable` props:
 ```svelte
 <script lang="ts">
   let email = $state('');
+  let enabled = $state(false);
 </script>
 
 <Input bind:value={email} label="Email" />

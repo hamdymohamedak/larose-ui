@@ -25,6 +25,7 @@
     inputSize?: Size;
     id?: string;
     class?: string;
+    style?: string;
     value?: string;
   }
 
@@ -41,6 +42,7 @@
     inputSize = 'md',
     id,
     class: className,
+    style,
     value = $bindable(''),
   }: Props = $props();
 
@@ -56,6 +58,8 @@
   {required}
   htmlFor={inputId}
   {uiState}
+  class={className}
+  {style}
 >
   <div class={styles.inputContainer}>
     <select

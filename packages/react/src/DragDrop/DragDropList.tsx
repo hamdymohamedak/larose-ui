@@ -1,4 +1,4 @@
-import { useCallback, useState, type ReactNode } from 'react';
+import { useCallback, useState, type CSSProperties, type ReactNode } from 'react';
 import { DragDropProvider } from './DragDropContext';
 import { Draggable } from './Draggable';
 import { DropZone } from './DropZone';
@@ -16,6 +16,8 @@ export interface DragDropListProps {
   items: DragDropListItem[];
   onReorder: (items: DragDropListItem[]) => void;
   renderItem?: (item: DragDropListItem) => ReactNode;
+  className?: string;
+  style?: CSSProperties;
 }
 
 function DragDropListInner({
@@ -23,6 +25,8 @@ function DragDropListInner({
   items,
   onReorder,
   renderItem,
+  className,
+  style,
 }: DragDropListProps) {
   const [transferring, setTransferring] = useState(false);
 
@@ -57,6 +61,8 @@ function DragDropListInner({
       onDrop={handleDrop}
       transferring={transferring}
       transferringLabel="Moving item…"
+      className={className}
+      style={style}
     >
       <ul className={styles.list} role="list">
         {items.map((item) => (

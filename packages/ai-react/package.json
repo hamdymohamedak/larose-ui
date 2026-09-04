@@ -1,0 +1,68 @@
+{
+  "name": "@larose-ui/ai-react",
+  "version": "1.0.0",
+  "description": "React AI UI adapter for laRose — SmartTable/SmartForm over @larose-ui/ai-core",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@larose-ui/ai-core": "workspace:*",
+    "@larose-ui/react": "workspace:*",
+    "@larose-ui/forms-react": "workspace:*",
+    "@larose-ui/permissions-react": "workspace:*",
+    "@larose-ui/runtime-react": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "@larose-ui/permissions-react": "workspace:*"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@testing-library/user-event": "^14.5.2",
+    "@vitejs/plugin-react": "^4.3.4",
+    "jsdom": "^25.0.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hamdymohamedak/larose-ui.git",
+    "directory": "packages/ai-react"
+  },
+  "keywords": [
+    "larose",
+    "react",
+    "ui-platform",
+    "design-system",
+    "saas"
+  ],
+  "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/ai#readme",
+  "bugs": {
+    "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  }
+}

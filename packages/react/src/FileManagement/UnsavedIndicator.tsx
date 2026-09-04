@@ -1,4 +1,5 @@
 import { documentTitleWithEditedSuffix } from './utils';
+import type { CSSProperties } from 'react';
 import styles from '@larose-ui/styles/components/FileManagement/FileManagement.module.css';
 
 export interface UnsavedIndicatorProps {
@@ -6,6 +7,8 @@ export interface UnsavedIndicatorProps {
   edited?: boolean;
   /** When false, show the unsaved dot (manual save mode). */
   autosaveEnabled?: boolean;
+  className?: string;
+  style?: CSSProperties;
 }
 
 /**
@@ -16,12 +19,14 @@ export function UnsavedIndicator({
   title,
   edited = false,
   autosaveEnabled = true,
+  className,
+  style,
 }: UnsavedIndicatorProps) {
   const showDot = edited && !autosaveEnabled;
   const displayTitle = documentTitleWithEditedSuffix(title, edited, autosaveEnabled);
 
   return (
-    <span className={styles.unsaved}>
+    <span className={[styles.unsaved, className].filter(Boolean).join(' ')} style={style}>
       <span
         className={styles.unsavedDot}
         data-hidden={showDot ? 'false' : 'true'}

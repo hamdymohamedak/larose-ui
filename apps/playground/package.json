@@ -9,19 +9,20 @@
     "prebuild": "turbo run build --filter=@larose-ui/playground^...",
     "build": "storybook build",
     "typecheck": "tsc --noEmit",
+    "test": "vitest run",
     "clean": "rm -rf storybook-static"
   },
   "dependencies": {
     "@larose-ui/core": "workspace:*",
-    "@larose-ui/data": "workspace:*",
-    "@larose-ui/forms": "workspace:*",
-    "@larose-ui/observability": "workspace:*",
-    "@larose-ui/permissions": "workspace:*",
-    "@larose-ui/ai": "workspace:*",
-    "@larose-ui/devtools": "workspace:*",
-    "@larose-ui/enterprise": "workspace:*",
+    "@larose-ui/data-react": "workspace:*",
+    "@larose-ui/forms-react": "workspace:*",
+    "@larose-ui/observability-react": "workspace:*",
+    "@larose-ui/permissions-react": "workspace:*",
+    "@larose-ui/ai-react": "workspace:*",
+    "@larose-ui/devtools-react": "workspace:*",
+    "@larose-ui/enterprise-react": "workspace:*",
     "@larose-ui/react": "workspace:*",
-    "@larose-ui/runtime": "workspace:*",
+    "@larose-ui/runtime-react": "workspace:*",
     "@larose-ui/styles": "workspace:*",
     "@larose-ui/tokens": "workspace:*",
     "@larose-ui/vue": "workspace:*",
@@ -34,6 +35,8 @@
   "devDependencies": {
     "@storybook/addon-essentials": "^8.4.7",
     "@storybook/addon-interactions": "^8.4.7",
+    "@storybook/core-events": "^8.4.7",
+    "@storybook/manager-api": "^8.4.7",
     "@storybook/react": "^8.4.7",
     "@storybook/react-vite": "^8.4.7",
     "@storybook/test": "^8.4.7",
@@ -41,6 +44,7 @@
     "@vitejs/plugin-vue": "^5.2.1",
     "storybook": "^8.4.7",
     "typescript": "^5.7.2",
-    "vite": "^6.0.3"
+    "vite": "^6.0.3",
+    "vitest": "^2.1.8"
   }
 }

@@ -1,4 +1,4 @@
-import { useCallback, useId, useRef, useState, type DragEvent } from 'react';
+import { useCallback, useId, useRef, useState, type CSSProperties, type DragEvent } from 'react';
 import styles from '@larose-ui/styles/components/FileUpload/FileUpload.module.css';
 
 export interface FileUploadProps {
@@ -11,6 +11,7 @@ export interface FileUploadProps {
   buttonLabel?: string;
   onFilesChange?: (files: File[]) => void;
   className?: string;
+  style?: CSSProperties;
 }
 
 export function FileUpload({
@@ -23,6 +24,7 @@ export function FileUpload({
   buttonLabel = 'Choose files or drag here',
   onFilesChange,
   className,
+  style,
 }: FileUploadProps) {
   const inputId = useId();
   const inputRef = useRef<HTMLInputElement>(null);
@@ -57,7 +59,11 @@ export function FileUpload({
   );
 
   return (
-    <div className={[styles.wrapper, className].filter(Boolean).join(' ')} data-state={uiState}>
+    <div
+      className={[styles.wrapper, className].filter(Boolean).join(' ')}
+      style={style}
+      data-state={uiState}
+    >
       {label && (
         <span id={`${inputId}-label`} className={styles.label}>
           {label}

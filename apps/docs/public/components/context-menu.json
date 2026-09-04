@@ -53,17 +53,21 @@
       "id": "MailMessage",
       "title": "Mail message",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"MailMessage\" for full example.",
-      "composite": true
+      "props": {
+        "open": true,
+        "title": "Message"
+      },
+      "code": "import { ContextMenu } from '@larose-ui/react';\n\n<ContextMenu\n  open\n  title=\"Message\"\n>Example</ContextMenu>"
     },
     {
       "id": "MultiSelectTitle",
       "title": "Multi-select title",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"MultiSelectTitle\" for full example.",
-      "composite": true
+      "props": {
+        "open": true,
+        "title": "3 items"
+      },
+      "code": "import { ContextMenu } from '@larose-ui/react';\n\n<ContextMenu\n  open\n  title=\"3 items\"\n>Example</ContextMenu>"
     },
     {
       "id": "HiddenUnavailable",

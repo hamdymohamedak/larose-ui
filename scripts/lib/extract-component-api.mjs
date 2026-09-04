@@ -1,4 +1,4 @@
-import { readFileSync, existsSync } from 'node:fs';
+import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import ts from 'typescript';
 import { toComponentContract } from './component-contract.mjs';
@@ -88,7 +88,8 @@ export function extractComponentApi(root, componentNames, indexPath = join(root,
 }
 
 /**
- * Extract framework-neutral component contracts from the React implementation.
+ * Extract framework-neutral component contracts by sampling Props types from an adapter index.
+ * The resulting JSON is canonical (`framework: "neutral"`); the adapter is only a Props sample source.
  * @param {string} root
  * @param {string[]} componentNames
  * @param {Record<string, { slots?: string[]; states?: string[] }>} [anatomy]
@@ -172,14 +173,25 @@ function parsePropsExports(indexPath) {
 }
 
 /**
+ * Prefer the canonical contracts catalog; fall back to a Props-sample adapter index.
  * @param {string} root
  * @returns {string[]}
  */
 export function listComponentNames(root) {
-  const reactRoot = join(root, 'packages/react');
-  const indexPath = join(reactRoot, 'src/index.ts');
-  const reactNames = parseComponentExportsFromIndex(indexPath);
-  return [...new Set(reactNames)].sort((a, b) => a.localeCompare(b));
+  const contractsDir = join(root, 'contracts/components');
+  if (existsSync(contractsDir)) {
+    const fromContracts = readdirSync(contractsDir)
+      .filter((file) => file.endsWith('.json'))
+      .map((file) => file.replace(/\.json$/, ''));
+    if (fromContracts.length > 0) {
+      return [...new Set(fromContracts)].sort((a, b) => a.localeCompare(b));
+    }
+  }
+
+  const indexPath = join(root, 'packages/react/src/index.ts');
+  return [...new Set(parseComponentExportsFromIndex(indexPath))].sort((a, b) =>
+    a.localeCompare(b),
+  );
 }
 
 /**

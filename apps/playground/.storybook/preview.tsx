@@ -3,10 +3,13 @@ import { memo, type ComponentType } from 'react';
 import '@larose-ui/tokens/styles.css';
 import '@larose-ui/styles/styles.css';
 import '@larose-ui/react/styles.css';
+import './preview.css';
 import {
   renderCrossFrameworkStory,
-  renderReactOnlyFrameworkGuard,
+  renderFrameworkAvailabilityGuard,
+  resolveCrossFrameworkId,
 } from './crossFramework/CrossFrameworkStory';
+import { readToolbarFramework } from './crossFramework/frameworkSupport';
 import { StorybookProvider, type StorybookLocale } from './StorybookProvider';
 
 const StoryFrame = memo(function StoryFrame({
@@ -36,25 +39,61 @@ function LaRoseDecorator({
   Story: ComponentType;
   context: StoryContext;
 }) {
-  const crossFrameworkId = context.parameters.laRose?.crossFramework as string | undefined;
+  const explicitCrossFrameworkId = context.parameters.laRose?.crossFramework as
+    | string
+    | undefined;
+  const crossFrameworkId = resolveCrossFrameworkId(context);
   const standalone = context.parameters.laRose?.standalone === true;
   const useRuntime = context.parameters.laRose?.runtime === true;
   const fullscreen = context.parameters.layout === 'fullscreen';
 
-  if (crossFrameworkId) {
+  const unavailable = renderFrameworkAvailabilityGuard(context);
+  if (unavailable) {
+    return <StoryFrame fullscreen={fullscreen}>{unavailable}</StoryFrame>;
+  }
+
+  // Vue/Svelte: mount real package via registry (explicit param or title map).
+  // Never fall through to React CSF — that looked like a silent React stand-in.
+  const toolbarFramework = readToolbarFramework(context.globals);
+  if (toolbarFramework !== 'react') {
+    if (crossFrameworkId) {
+      const crossFrameworkStory = renderCrossFrameworkStory(context);
+      if (crossFrameworkStory) {
+        return <StoryFrame fullscreen={fullscreen}>{crossFrameworkStory}</StoryFrame>;
+      }
+    }
+    const displayName =
+      (context.parameters.laRose?.displayName as string | undefined) ?? context.title;
+    return (
+      <StoryFrame fullscreen={fullscreen}>
+        {renderFrameworkAvailabilityGuard({
+          ...context,
+          // Force the unsupported panel even when tags claimed support but mount is missing.
+          parameters: {
+            ...context.parameters,
+            laRose: {
+              ...(context.parameters.laRose as object),
+              frameworks: ['react'],
+              displayName,
+            },
+          },
+        })}
+      </StoryFrame>
+    );
+  }
+
+  if (explicitCrossFrameworkId && !context.component) {
     const crossFrameworkStory = renderCrossFrameworkStory(context);
     if (crossFrameworkStory) {
       return <StoryFrame fullscreen={fullscreen}>{crossFrameworkStory}</StoryFrame>;
     }
   }
 
-  const storyContent = (
+  const wrappedStory = (
     <StoryFrame fullscreen={fullscreen}>
       <Story />
     </StoryFrame>
   );
-
-  const wrappedStory = renderReactOnlyFrameworkGuard(context, storyContent);
 
   if (standalone) {
     return wrappedStory;
@@ -85,6 +124,7 @@ function LaRoseDecorator({
 }
 
 const preview: Preview = {
+  tags: ['fw-react'],
   parameters: {
     controls: { expanded: true, sort: 'requiredFirst' },
     docs: { autodocs: 'tag' },
@@ -100,14 +140,15 @@ const preview: Preview = {
   decorators: [(Story, context) => <LaRoseDecorator Story={Story} context={context} />],
   globalTypes: {
     framework: {
-      description: 'Component implementation framework (Parity stories)',
+      description:
+        'Optional Storybook mount preview for Vue/Svelte. For multi-framework visual QA use the sandboxes (pnpm sandbox:react|vue|svelte) — Storybook is docs/catalog/React-oriented, not the QA source of truth.',
       toolbar: {
         title: 'Framework',
         icon: 'batchaccept',
         items: [
           { value: 'react', title: 'React' },
-          { value: 'vue', title: 'Vue 3' },
-          { value: 'svelte', title: 'Svelte 5' },
+          { value: 'vue', title: 'Vue 3 (preview)' },
+          { value: 'svelte', title: 'Svelte 5 (preview)' },
         ],
         dynamicTitle: true,
       },

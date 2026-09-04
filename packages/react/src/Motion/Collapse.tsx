@@ -13,6 +13,7 @@ import {
   type SpringPresetName,
 } from '@larose-ui/core';
 import { useMotion } from './MotionContext';
+import { mergeStyles } from '../shared/styleProps';
 
 export interface UseSpringAnimationOptions {
   target: number;
@@ -109,6 +110,7 @@ export interface CollapseProps {
   open: boolean;
   children: ReactNode;
   className?: string;
+  style?: CSSProperties;
   duration?: string;
 }
 
@@ -116,7 +118,7 @@ export interface CollapseProps {
  * Height-based expand/collapse with measured content height.
  * Uses transform-friendly opacity + grid technique where possible.
  */
-export function Collapse({ open, children, className, duration }: CollapseProps) {
+export function Collapse({ open, children, className, style, duration }: CollapseProps) {
   const { motionEnabled } = useMotion();
   const contentRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState<number | 'auto'>(open ? 'auto' : 0);
@@ -164,15 +166,18 @@ export function Collapse({ open, children, className, duration }: CollapseProps)
       className={className}
       data-collapse={phase}
       aria-hidden={!open && phase === 'closed'}
-      style={{
-        overflow: 'hidden',
-        height: height === 'auto' ? 'auto' : `${height}px`,
-        visibility: !open && phase === 'closed' ? 'hidden' : 'visible',
-        transition:
-          motionEnabled && phase === 'animating'
-            ? `height ${transitionDuration} var(--lr-motion-spring-gentle)`
-            : undefined,
-      }}
+      style={mergeStyles(
+        {
+          overflow: 'hidden',
+          height: height === 'auto' ? 'auto' : `${height}px`,
+          visibility: !open && phase === 'closed' ? 'hidden' : 'visible',
+          transition:
+            motionEnabled && phase === 'animating'
+              ? `height ${transitionDuration} var(--lr-motion-spring-gentle)`
+              : undefined,
+        },
+        style,
+      )}
       onTransitionEnd={(e) => {
         if (e.propertyName !== 'height') return;
         if (!open && height === 0) setPhase('closed');

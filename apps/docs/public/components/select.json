@@ -69,9 +69,11 @@
       "id": "SelectDefault",
       "title": "Select Default",
       "kind": "basic",
-      "props": {},
-      "code": "// See Storybook story \"SelectDefault\" for full example.",
-      "composite": true
+      "props": {
+        "label": "Engineering",
+        "value": "eng"
+      },
+      "code": "import { FormControls } from '@larose-ui/react';\n\n<FormControls\n  label=\"Engineering\"\n  value=\"eng\"\n>Example</FormControls>"
     },
     {
       "id": "Default",

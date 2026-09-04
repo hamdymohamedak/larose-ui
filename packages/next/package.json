@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@larose-ui/react": "workspace:*",
-    "@larose-ui/runtime": "workspace:*"
+    "@larose-ui/runtime-react": "workspace:*"
   },
   "peerDependencies": {
     "next": ">=14",

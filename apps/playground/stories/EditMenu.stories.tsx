@@ -9,6 +9,7 @@ import {
 
 const meta: Meta = {
   title: 'Foundation/Edit Menus',
+  tags: ['autodocs', 'fw-react'],
   parameters: { layout: 'padded' },
 };
 
@@ -16,6 +17,9 @@ export default meta;
 type Story = StoryObj;
 
 export const CompactSelectedText: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'editMenu' } },
+  args: { open: true, variant: 'compact', context: { hasSelection: true, canPaste: true, isEditable: true } },
   name: 'Compact (touch and hold)',
   render: function CompactDemo() {
     const [lastAction, setLastAction] = useState('Touch and hold selected text');
@@ -47,6 +51,9 @@ export const CompactSelectedText: Story = {
 };
 
 export const ContextPointer: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'editMenu' } },
+  args: { open: true, variant: 'context', context: { hasSelection: true, canPaste: true, isEditable: true } },
   name: 'Context menu (pointer)',
   render: function ContextDemo() {
     const [lastAction, setLastAction] = useState('Secondary-click selected text');
@@ -109,6 +116,9 @@ export const AddressSelection: Story = {
 };
 
 export const NoSelection: Story = {
+  tags: ['fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: { laRose: { crossFramework: 'editMenu' } },
+  args: { open: true, variant: 'compact', context: { hasSelection: false, canPaste: true, isEditable: true } },
   name: 'No selection',
   render: function NoSelectionDemo() {
     const [lastAction, setLastAction] = useState('Touch and hold without a selection');

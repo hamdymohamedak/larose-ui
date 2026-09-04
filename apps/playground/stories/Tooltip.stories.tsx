@@ -4,7 +4,7 @@ import { Button, Tooltip } from '@larose-ui/react';
 const meta: Meta<typeof Tooltip> = {
   title: 'Foundation/Tooltip',
   component: Tooltip,
-  tags: ['autodocs'],
+  tags: ['autodocs', 'fw-react', 'fw-vue', 'fw-svelte'],
   parameters: { layout: 'centered' },
 };
 

@@ -3,6 +3,12 @@ import { mount } from '@vue/test-utils';
 import Badge from './components/Badge/Badge.vue';
 import Button from './components/Button/Button.vue';
 import LaRoseProvider from './provider/LaRoseProvider.vue';
+import LiquidGlassButton from './LiquidGlass/Button/LiquidGlassButton.vue';
+import Tabs from './components/Tabs/Tabs.vue';
+import TabsList from './components/Tabs/TabsList.vue';
+import TabsTrigger from './components/Tabs/TabsTrigger.vue';
+import TabsPanel from './components/Tabs/TabsPanel.vue';
+import { squircleHeightFn } from './LiquidGlass/engine/displacement-map';
 
 describe('Badge', () => {
   it('renders slot content', () => {
@@ -41,5 +47,47 @@ describe('LaRoseProvider', () => {
       slots: { default: '<span>child</span>' },
     });
     expect(wrapper.find('[data-lr-provider]').exists()).toBe(true);
+  });
+});
+
+describe('LiquidGlass', () => {
+  it('shares the same squircle engine as React', () => {
+    expect(squircleHeightFn(0)).toBe(0);
+    expect(squircleHeightFn(1)).toBe(1);
+  });
+
+  it('renders a liquid glass button', () => {
+    const wrapper = mount(LiquidGlassButton, {
+      slots: { default: 'Glass' },
+    });
+    expect(wrapper.text()).toContain('Glass');
+    expect(wrapper.find('button').exists()).toBe(true);
+  });
+});
+
+describe('Tabs', () => {
+  it('activates the next tab with ArrowRight', async () => {
+    const wrapper = mount(Tabs, {
+      props: { defaultValue: 'one' },
+      slots: {
+        default: `
+          <TabsList>
+            <TabsTrigger value="one">One</TabsTrigger>
+            <TabsTrigger value="two">Two</TabsTrigger>
+          </TabsList>
+          <TabsPanel value="one">Panel one</TabsPanel>
+          <TabsPanel value="two">Panel two</TabsPanel>
+        `,
+      },
+      global: {
+        components: { TabsList, TabsTrigger, TabsPanel },
+      },
+    });
+
+    const list = wrapper.find('[role="tablist"]');
+    await list.trigger('keydown', { key: 'ArrowRight' });
+    expect(wrapper.find('[role="tab"][data-value="two"]').attributes('aria-selected')).toBe(
+      'true',
+    );
   });
 });

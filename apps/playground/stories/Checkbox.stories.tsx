@@ -4,7 +4,12 @@ import { Checkbox } from '@larose-ui/react';
 const meta: Meta<typeof Checkbox> = {
   title: 'Foundation/Checkbox',
   component: Checkbox,
-  tags: ['autodocs'],
+  tags: ['autodocs', 'fw-react', 'fw-vue', 'fw-svelte'],
+  parameters: {
+    laRose: {
+      crossFramework: 'checkbox',
+    },
+  },
   argTypes: {
     boxSize: { control: 'select', options: ['sm', 'md', 'lg'] },
   },

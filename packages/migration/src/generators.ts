@@ -11,9 +11,9 @@ function slug(name: string): string {
 
 export function generateForm(name: string, options: GeneratorOptions = {}): string {
   const id = options.resource ?? slug(name);
-  return `import { Form } from '@larose-ui/forms';
-import { LaRoseProvider } from '@larose-ui/runtime';
-import { Can } from '@larose-ui/permissions';
+  return `import { Form } from '@larose-ui/forms-react';
+import { LaRoseProvider } from '@larose-ui/runtime-react';
+import { Can } from '@larose-ui/permissions-react';
 
 const ${name}Schema = {
   id: '${id}',
@@ -39,9 +39,9 @@ export function generatePage(name: string, options: GeneratorOptions = {}): stri
   const resource = options.resource ?? slug(name);
   const permission = options.permissionPrefix ?? resource;
 
-  return `import { LaRoseProvider } from '@larose-ui/runtime';
-import { DataView } from '@larose-ui/data';
-import { useJourneyPage } from '@larose-ui/observability';
+  return `import { LaRoseProvider } from '@larose-ui/runtime-react';
+import { DataView } from '@larose-ui/data-react';
+import { useJourneyPage } from '@larose-ui/observability-react';
 
 export function ${name}Page() {
   useJourneyPage('${resource}');
@@ -62,12 +62,12 @@ export function generateFeature(name: string, options: GeneratorOptions = {}): s
   const permission = options.permissionPrefix ?? resource;
   const pascal = name.replace(/(^\w|-\w)/g, (m) => m.replace('-', '').toUpperCase());
 
-  return `import { LaRoseProvider } from '@larose-ui/runtime';
-import { DataView } from '@larose-ui/data';
-import { SmartTable } from '@larose-ui/ai';
-import { DevToolsProvider } from '@larose-ui/devtools';
-import { useJourneyPage } from '@larose-ui/observability';
-import { Can } from '@larose-ui/permissions';
+  return `import { LaRoseProvider } from '@larose-ui/runtime-react';
+import { DataView } from '@larose-ui/data-react';
+import { SmartTable } from '@larose-ui/ai-react';
+import { DevToolsProvider } from '@larose-ui/devtools-react';
+import { useJourneyPage } from '@larose-ui/observability-react';
+import { Can } from '@larose-ui/permissions-react';
 import { Card } from '@larose-ui/react';
 
 interface ${pascal}Row {

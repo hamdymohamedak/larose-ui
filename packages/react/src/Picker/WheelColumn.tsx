@@ -11,6 +11,7 @@ import { useMotion } from '../Motion/MotionContext';
 import type { PickerOption } from './types';
 import { getWheelItemVisual, useWheelPhysics } from './useWheelPhysics';
 import { useWheelPickerRowHeight } from './WheelPickerContext';
+import { mergeStyles } from '../shared/styleProps';
 import styles from '@larose-ui/styles/components/Picker/Picker.module.css';
 
 export interface WheelColumnProps {
@@ -21,6 +22,8 @@ export interface WheelColumnProps {
   onChange: (value: string) => void;
   disabled?: boolean;
   columnFlex?: number;
+  className?: string;
+  style?: CSSProperties;
 }
 
 function measureRowHeight(viewport: HTMLElement): number | null {
@@ -38,6 +41,8 @@ export function WheelColumn({
   onChange,
   disabled = false,
   columnFlex,
+  className,
+  style,
 }: WheelColumnProps) {
   const viewportRef = useRef<HTMLDivElement>(null);
   const labelId = useId();
@@ -118,10 +123,10 @@ export function WheelColumn({
 
   return (
     <div
-      className={styles.wheelColumn}
+      className={[styles.wheelColumn, className].filter(Boolean).join(' ')}
       role="group"
       aria-labelledby={label ? labelId : undefined}
-      style={columnStyle}
+      style={mergeStyles(columnStyle, style)}
     >
       {label && (
         <span id={labelId} className={styles.wheelLabel}>

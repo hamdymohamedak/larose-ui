@@ -1,7 +1,7 @@
 {
   "name": "@larose-ui/cli",
   "version": "0.2.0",
-  "description": "CLI for laRose UI platform — doctor, migrate, generate",
+  "description": "CLI for laRose UI platform — doctor, migrate, generate, contribute",
   "type": "module",
   "bin": {
     "larose": "./dist/cli.js"

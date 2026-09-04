@@ -9,6 +9,7 @@ import { Tooltip } from '@larose-ui/react';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@larose-ui/react';
 
 const meta: Meta = {
+  tags: ['fw-react'],
   title: 'Design System/Motion',
   parameters: {
     layout: 'padded',

@@ -1,7 +1,7 @@
 {
   "name": "TabViewPanel",
   "version": "1",
-  "framework": "react",
+  "framework": "neutral",
   "props": [
     {
       "name": "value",

@@ -5,11 +5,13 @@
   interface Props {
     size?: Size;
     label?: string;
+    class?: string;
+    style?: string;
   }
 
-  let { size = 'md', label = 'Loading' }: Props = $props();
+  let { size = 'md', label = 'Loading', class: className, style }: Props = $props();
 </script>
 
-<span class={styles.spinner} data-size={size} role="status" aria-label={label}>
+<span class={[styles.spinner, className].filter(Boolean).join(' ')} {style} data-size={size} role="status" aria-label={label}>
   <span class={styles.circle} aria-hidden="true"></span>
 </span>

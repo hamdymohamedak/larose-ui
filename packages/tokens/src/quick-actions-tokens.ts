@@ -11,7 +11,16 @@ export interface QuickActionsTokens {
 
 /** Apple HIG-inspired Home Screen quick action tokens (iOS/iPadOS). */
 export function getQuickActionsTokens(mode: ThemeMode): QuickActionsTokens {
-  void mode;
+  if (mode === 'dark') {
+    return {
+      iconSize: '3.75rem',
+      rowMinHeight: '2.75rem',
+      menuMinWidth: '15rem',
+      menuRadius: '0.875rem',
+      menuShadow: '0 12px 40px rgb(0 0 0 / 0.45)',
+      actionIconSize: '1.375rem',
+    };
+  }
   return {
     iconSize: '3.75rem',
     rowMinHeight: '2.75rem',

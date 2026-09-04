@@ -6,27 +6,40 @@
   align-items: flex-start;
   justify-content: center;
   padding: 10vh var(--lr-space-4) var(--lr-space-4);
-  background: rgb(15 23 42 / 0.45);
+  background: var(--lr-surface-overlay, var(--lr-modal-overlay, rgb(0 0 0 / 0.35)));
 }
 
 .dialog {
   width: min(32rem, 100%);
-  border: 1px solid var(--lr-color-border);
-  border-radius: var(--lr-radius-lg);
-  background: var(--lr-color-surface-elevated);
-  box-shadow: var(--lr-shadow-lg);
+  border: 1px solid var(--lr-color-border, rgb(0 0 0 / 0.12));
+  border-radius: var(--lr-radius-lg, 0.75rem);
+  background: var(--lr-color-surface-elevated, #ffffff);
+  box-shadow: var(--lr-shadow-lg, 0 12px 28px rgb(0 0 0 / 0.18));
   overflow: hidden;
 }
 
 .search {
+  display: block;
+  box-sizing: border-box;
   width: 100%;
-  padding: var(--lr-space-4);
+  margin: 0;
+  padding: var(--lr-space-4, 1rem);
   border: none;
-  border-bottom: 1px solid var(--lr-color-border);
+  border-bottom: 1px solid var(--lr-color-border, rgb(0 0 0 / 0.12));
+  border-radius: 0;
   background: transparent;
-  color: var(--lr-color-text);
-  font-family: var(--lr-font-family-sans);
-  font-size: var(--lr-font-size-md);
+  color: var(--lr-color-text, #111827);
+  font-family: var(--lr-font-family-sans, system-ui, sans-serif);
+  font-size: var(--lr-font-size-md, 1rem);
+  line-height: 1.4;
+  appearance: none;
+}
+
+.search::-webkit-search-decoration,
+.search::-webkit-search-cancel-button,
+.search::-webkit-search-results-button,
+.search::-webkit-search-results-decoration {
+  display: none;
 }
 
 .search:focus {
@@ -34,37 +47,58 @@
 }
 
 .search:focus-visible {
-  outline: 2px solid var(--lr-color-primary);
+  outline: 2px solid var(--lr-color-primary, #0284c7);
   outline-offset: -2px;
 }
 
 .list {
   max-height: 18rem;
+  overflow-x: hidden;
   overflow-y: auto;
   margin: 0;
-  padding: var(--lr-space-2);
+  padding: var(--lr-space-2, 0.5rem);
+  list-style: none;
+}
+
+.list ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.group {
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
 .groupLabel {
-  padding: var(--lr-space-2) var(--lr-space-3);
-  font-family: var(--lr-font-family-sans);
-  font-size: var(--lr-font-size-xs);
-  font-weight: var(--lr-font-weight-semibold);
-  color: var(--lr-color-text-muted);
+  display: block;
+  padding: var(--lr-space-2, 0.5rem) var(--lr-space-3, 0.75rem);
+  font-family: var(--lr-font-family-sans, system-ui, sans-serif);
+  font-size: var(--lr-font-size-xs, 0.75rem);
+  font-weight: var(--lr-font-weight-semibold, 600);
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+  color: var(--lr-color-text-muted, #6b7280);
   text-transform: uppercase;
 }
 
 .item {
   display: flex;
+  align-items: center;
+  gap: var(--lr-space-3, 0.75rem);
+  box-sizing: border-box;
   width: 100%;
-  padding: var(--lr-space-2) var(--lr-space-3);
+  margin: 0;
+  padding: var(--lr-space-2, 0.5rem) var(--lr-space-3, 0.75rem);
   border: none;
-  border-radius: var(--lr-radius-sm);
+  border-radius: var(--lr-radius-sm, 0.375rem);
   background: transparent;
-  color: var(--lr-color-text);
-  font-family: var(--lr-font-family-sans);
-  font-size: var(--lr-font-size-sm);
+  color: var(--lr-color-text, #111827);
+  font-family: var(--lr-font-family-sans, system-ui, sans-serif);
+  font-size: var(--lr-font-size-sm, 0.875rem);
+  line-height: 1.35;
   text-align: start;
   cursor: pointer;
   transition:
@@ -77,18 +111,19 @@
 }
 
 .item[data-state='active'] {
-  background: var(--lr-color-primary);
-  color: var(--lr-color-text-inverse);
+  background: var(--lr-color-primary, #0284c7);
+  color: var(--lr-color-on-accent, var(--lr-button-on-primary-color, #ffffff));
 }
 
 .item:focus-visible {
-  outline: 2px solid var(--lr-color-primary);
+  outline: 2px solid var(--lr-color-primary, #0284c7);
   outline-offset: 2px;
 }
 
 .empty {
-  padding: var(--lr-space-4);
-  color: var(--lr-color-text-muted);
-  font-family: var(--lr-font-family-sans);
-  font-size: var(--lr-font-size-sm);
+  margin: 0;
+  padding: var(--lr-space-4, 1rem);
+  color: var(--lr-color-text-muted, #6b7280);
+  font-family: var(--lr-font-family-sans, system-ui, sans-serif);
+  font-size: var(--lr-font-size-sm, 0.875rem);
 }
