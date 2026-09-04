@@ -3909,3 +3909,111 @@ html[data-docs-theme='dark'] .docs-framework-pills {
 html[data-docs-theme='dark'] .docs-callout {
   background: color-mix(in srgb, var(--lr-color-surface-muted) 80%, var(--lr-color-background));
 }
+
+/* ── Packages hub ── */
+.docs-pkg-hub__hero {
+  margin-bottom: 2rem;
+  max-width: 46rem;
+}
+
+.docs-pkg-hub__hero h1 {
+  margin: 0.5rem 0 0.75rem;
+}
+
+.docs-pkg-section {
+  margin: 2.5rem 0;
+}
+
+.docs-pkg-layer-blurb,
+.docs-pkg-when,
+.docs-pkg-note {
+  color: var(--lr-color-text-muted);
+  font-size: 0.9375rem;
+  margin: 0.35rem 0 1rem;
+}
+
+.docs-pkg-stacks {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.docs-pkg-stack-card {
+  border: 1px solid var(--lr-color-border);
+  border-radius: var(--lr-radius-lg);
+  background: var(--lr-color-surface);
+  padding: 1rem 1.1rem 0.75rem;
+}
+
+.docs-pkg-stack-card h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+}
+
+.docs-pkg-stack-card p {
+  margin: 0 0 0.75rem;
+  color: var(--lr-color-text-muted);
+  font-size: 0.875rem;
+}
+
+.docs-pkg-filters,
+.docs-pkg-manager-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.docs-pkg-filters button,
+.docs-pkg-manager-tabs button {
+  appearance: none;
+  border: 1px solid var(--lr-color-border);
+  background: var(--lr-color-surface);
+  color: var(--lr-color-text);
+  border-radius: 999px;
+  padding: 0.35rem 0.85rem;
+  font: inherit;
+  font-size: 0.8125rem;
+  cursor: pointer;
+}
+
+.docs-pkg-filters button.is-active,
+.docs-pkg-manager-tabs button.is-active {
+  background: var(--lr-color-text);
+  color: var(--lr-color-background);
+  border-color: transparent;
+}
+
+.docs-pkg-detail__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.docs-pkg-detail__role {
+  font-size: 1.05rem;
+  margin: 0.25rem 0 0.75rem;
+}
+
+.docs-pkg-fw-installs {
+  margin-top: 1rem;
+}
+
+.docs-pkg-fw-label {
+  font-size: 0.8125rem;
+  color: var(--lr-color-text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.docs-home-glass-strip {
+  margin: 2rem 0 2.5rem;
+  border-radius: var(--lr-radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--lr-color-border);
+}
+
+.docs-home-glass-strip .docs-sb-canvas,
+.docs-home-glass-strip .docs-glass-scene {
+  min-height: 220px;
+}

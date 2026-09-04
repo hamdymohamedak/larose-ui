@@ -1,9 +1,13 @@
 import { useNavigate } from 'react-router-dom';
-import { Button } from '@larose-ui/react';
+import {
+  Button,
+  LiquidGlassTabBar,
+} from '@larose-ui/react';
 import {
   ArrowRight,
   Box,
   Layers,
+  Package,
   Palette,
   Sparkles,
   Zap,
@@ -11,7 +15,15 @@ import {
 } from 'lucide-react';
 import { FrameworkSelector } from '@/components/FrameworkSelector';
 import { docsComponents, docsGuides, docsPackages } from '@/data/catalog.generated';
-import { PARITY_COMPONENTS } from '@/lib/frameworks';
+import { getInstallCommand, PARITY_COMPONENTS } from '@/lib/frameworks';
+import { useDocsFramework } from '@/theme/FrameworkProvider';
+import { LiquidGlassPreviewScene } from '@/previews/glass/LiquidGlassPreviewScene';
+import {
+  IconHome,
+  IconProfile,
+  IconSearch,
+  IconSettings,
+} from '@/previews/glass/glassPreviewIcons';
 
 interface Feature {
   Icon: LucideIcon;
@@ -24,10 +36,15 @@ const FRAMEWORKS = ['React', 'Vue 3', 'Svelte 5', 'TypeScript'] as const;
 
 const FEATURES: Feature[] = [
   {
+    Icon: Package,
+    title: 'Modular packages, clear installs',
+    desc: 'Install tokens + your UI adapter, then add runtime or intelligence packages only when you need them — no mega-bundle.',
+    wide: true,
+  },
+  {
     Icon: Layers,
     title: '140+ production components',
     desc: 'Buttons, forms, navigation, data display, and the LiquidGlass family — accessibility and polish built in.',
-    wide: true,
   },
   {
     Icon: Palette,
@@ -37,24 +54,20 @@ const FEATURES: Feature[] = [
   {
     Icon: Zap,
     title: 'React · Vue 3 · Svelte 5',
-    desc: 'One API, three frameworks. Ship the same experience regardless of stack.',
+    desc: 'Shared cores with thin adapters. Ship the same experience regardless of stack.',
   },
   {
     Icon: Sparkles,
     title: 'Liquid glass engine',
-    desc: 'Displacement-mapped refraction via @larose-ui/react — TabBar, TopBar, switches, sliders, and more.',
+    desc: 'Displacement-mapped refraction across TabBar, TopBar, Button, Switch, Range, and more.',
     wide: true,
   },
 ];
 
-const STEPS = [
-  { title: 'Install', code: 'pnpm add @larose-ui/react' },
-  { title: 'Wrap your app', code: '<LaRoseProvider theme="light">' },
-  { title: 'Compose UI', code: '<Button variant="primary">Ship</Button>' },
-] as const;
-
 export function HomePage() {
   const navigate = useNavigate();
+  const { framework } = useDocsFramework();
+  const install = getInstallCommand(framework, undefined, 'runtime');
 
   return (
     <div className="docs-home-v3">
@@ -75,8 +88,8 @@ export function HomePage() {
           </h1>
 
           <p className="docs-hero-v3__lead">
-            laRose UI is a complete interface layer — components, tokens, motion, and a
-            cross-framework runtime for teams building polished products at speed.
+            laRose UI is a modular interface layer — components, tokens, motion, and a cross-framework
+            runtime. Install only what your stack needs.
           </p>
 
           <div className="docs-hero-v3__frameworks" role="list" aria-label="Supported frameworks">
@@ -96,14 +109,41 @@ export function HomePage() {
             >
               Start building
             </Button>
-            <Button size="lg" variant="outline" onClick={() => navigate('/docs/components')}>
-              Browse components
+            <Button size="lg" variant="outline" onClick={() => navigate('/docs/packages')}>
+              Explore packages
             </Button>
           </div>
 
           <p className="docs-hero-v3__meta">
-            Open source · MIT · Monorepo with {docsPackages.length} packages
+            Open source · MIT · {docsPackages.length} packages · {docsComponents.length} components
           </p>
+        </div>
+      </section>
+
+      <section className="docs-band-v3">
+        <div className="docs-band-v3__inner">
+          <header className="docs-band-v3__header">
+            <p className="docs-band-v3__kicker">Signature surface</p>
+            <h2>LiquidGlass in the browser</h2>
+            <p>Live refraction from the same packages you install — TabBar, TopBar, and glass controls.</p>
+          </header>
+          <div className="docs-home-glass-strip">
+            <LiquidGlassPreviewScene layout="bottom-bar">
+              <LiquidGlassTabBar
+                position="absolute"
+                bottom={18}
+                items={[
+                  { key: 'home', label: 'Home', icon: <IconHome />, ariaLabel: 'Home' },
+                  { key: 'search', label: 'Search', icon: <IconSearch />, ariaLabel: 'Search' },
+                  { key: 'profile', label: 'Profile', icon: <IconProfile />, ariaLabel: 'Profile' },
+                  { key: 'settings', label: 'Settings', icon: <IconSettings />, ariaLabel: 'Settings' },
+                ]}
+                defaultActiveKey="home"
+                maxWidth={380}
+                style={{ pointerEvents: 'auto' }}
+              />
+            </LiquidGlassPreviewScene>
+          </div>
         </div>
       </section>
 
@@ -113,8 +153,8 @@ export function HomePage() {
             <p className="docs-band-v3__kicker">Platform</p>
             <h2>Everything you need to ship a credible product UI</h2>
             <p>
-              Skip months of design decisions. Start from a system that already feels native on
-              macOS, iOS, and the web.
+              Skip months of design decisions. Start from a system that already feels native — then
+              layer optional packages for data, forms, AI, and enterprise.
             </p>
           </header>
 
@@ -139,22 +179,42 @@ export function HomePage() {
         <div className="docs-band-v3__inner">
           <header className="docs-band-v3__header">
             <p className="docs-band-v3__kicker">Quick start</p>
-            <h2>Up and running in three steps</h2>
-            <p>Install once, wrap your app, and compose with production-ready primitives.</p>
+            <h2>Pick a framework, install a stack</h2>
+            <p>Commands update with the framework selector. Full details live in Getting started and Packages.</p>
           </header>
 
+          <div className="docs-band-v3__cta" style={{ marginBottom: '1.25rem' }}>
+            <FrameworkSelector />
+          </div>
+
           <ol className="docs-timeline-v3">
-            {STEPS.map((step, index) => (
-              <li key={step.title} className="docs-timeline-v3__item">
-                <div className="docs-timeline-v3__marker">{index + 1}</div>
-                <div className="docs-timeline-v3__body">
-                  <h3>{step.title}</h3>
-                  <pre className="docs-timeline-v3__code">
-                    <code>{step.code}</code>
-                  </pre>
-                </div>
-              </li>
-            ))}
+            <li className="docs-timeline-v3__item">
+              <div className="docs-timeline-v3__marker">1</div>
+              <div className="docs-timeline-v3__body">
+                <h3>Install</h3>
+                <pre className="docs-timeline-v3__code">
+                  <code>{install}</code>
+                </pre>
+              </div>
+            </li>
+            <li className="docs-timeline-v3__item">
+              <div className="docs-timeline-v3__marker">2</div>
+              <div className="docs-timeline-v3__body">
+                <h3>Import CSS + wrap</h3>
+                <pre className="docs-timeline-v3__code">
+                  <code>{"import '@larose-ui/tokens/styles.css';\\nimport '@larose-ui/styles/styles.css';"}</code>
+                </pre>
+              </div>
+            </li>
+            <li className="docs-timeline-v3__item">
+              <div className="docs-timeline-v3__marker">3</div>
+              <div className="docs-timeline-v3__body">
+                <h3>Compose UI</h3>
+                <pre className="docs-timeline-v3__code">
+                  <code>{'<Button variant="primary">Ship</Button>'}</code>
+                </pre>
+              </div>
+            </li>
           </ol>
 
           <div className="docs-band-v3__cta">
@@ -162,7 +222,9 @@ export function HomePage() {
               Read the full guide
               <ArrowRight size={16} aria-hidden />
             </Button>
-            <FrameworkSelector />
+            <Button variant="outline" onClick={() => navigate('/docs/packages')}>
+              All package installs
+            </Button>
           </div>
         </div>
       </section>
@@ -200,6 +262,9 @@ export function HomePage() {
           <nav className="docs-footer-v3__links" aria-label="Footer">
             <button type="button" onClick={() => navigate('/docs/getting-started')}>
               Getting started
+            </button>
+            <button type="button" onClick={() => navigate('/docs/packages')}>
+              Packages
             </button>
             <button type="button" onClick={() => navigate('/changelog')}>
               Changelog

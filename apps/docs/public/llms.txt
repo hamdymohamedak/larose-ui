@@ -4,31 +4,61 @@ Apple-inspired by default. Fully customizable by architecture.
 
 ## Packages
 - @larose-ui/accessibility: Accessibility utilities and component source scanners.
-- @larose-ui/ai: Permission-bound AI for SmartTable and SmartForm.
+- @larose-ui/ai-core: Framework-agnostic AI runtime, intents, and adapters.
+- @larose-ui/ai-react: Permission-bound AI for SmartTable and SmartForm.
+- @larose-ui/ai-svelte: Permission-bound AI for SmartTable and SmartForm.
+- @larose-ui/ai-vue: Permission-bound AI for SmartTable and SmartForm.
 - @larose-ui/cli: CLI for quality gates, migration, and code generation.
+- @larose-ui/component-logic: Shared framework-agnostic component helpers and domain utils.
 - @larose-ui/contracts: Validate UI schemas against API contracts in CI.
 - @larose-ui/core: Framework-agnostic types, state machines, and runtime contracts.
-- @larose-ui/data: Backend-aware data fetching with self-healing errors.
-- @larose-ui/devtools: In-app runtime inspector for development.
-- @larose-ui/enterprise: Enterprise patterns — audit trails, session guards, schema IaC.
-- @larose-ui/forms: Schema-driven forms with validation and conditional fields.
+- @larose-ui/data-core: Framework-agnostic data client helpers for laRose UI.
+- @larose-ui/data-react: Backend-aware data fetching with self-healing errors.
+- @larose-ui/data-svelte: Backend-aware data fetching with self-healing errors.
+- @larose-ui/data-vue: Backend-aware data fetching with self-healing errors.
+- @larose-ui/devtools-core: Framework-agnostic DevTools analytics for laRose UI.
+- @larose-ui/devtools-react: In-app runtime inspector for development.
+- @larose-ui/devtools-svelte: In-app runtime inspector for development.
+- @larose-ui/devtools-vue: In-app runtime inspector for development.
+- @larose-ui/enterprise-core: Framework-agnostic enterprise helpers (version, UI schema, audit).
+- @larose-ui/enterprise-react: Enterprise patterns — audit trails, session guards, schema IaC.
+- @larose-ui/enterprise-svelte: Enterprise patterns — audit trails, session guards, schema IaC.
+- @larose-ui/enterprise-vue: Enterprise patterns — audit trails, session guards, schema IaC.
+- @larose-ui/forms-core: Framework-agnostic form schema helpers for laRose UI.
+- @larose-ui/forms-react: Schema-driven forms with validation and conditional fields.
+- @larose-ui/forms-svelte: Schema-driven forms with validation and conditional fields.
+- @larose-ui/forms-vue: Schema-driven forms with validation and conditional fields.
+- @larose-ui/liquid-glass-core: Framework-agnostic Liquid Glass optics engine.
 - @larose-ui/migration: Codemods, generators, and release intelligence.
 - @larose-ui/network: Network condition detection for adaptive UI.
 - @larose-ui/next: Next.js integration — SSR theme script and LaRoseRoot boundary.
 - @larose-ui/nuxt: Nuxt module for CSS injection, theme script, and Vue providers.
-- @larose-ui/observability: UX observability — journeys, funnels, and rage-click analysis.
+- @larose-ui/observability-core: Framework-agnostic UX observability model and collectors.
+- @larose-ui/observability-react: UX observability — journeys, funnels, and rage-click analysis.
+- @larose-ui/observability-svelte: UX observability — journeys, funnels, and rage-click analysis.
+- @larose-ui/observability-vue: UX observability — journeys, funnels, and rage-click analysis.
 - @larose-ui/offline: Offline request queue with sync and conflict handling.
-- @larose-ui/permissions: Authorization-aware UI with RBAC/ABAC patterns.
-- @larose-ui/primitives: Headless menu keyboard, type-ahead, and accelerator behavior.
-- @larose-ui/react: Production-ready React components with built-in UI states and LiquidGlass refraction surfaces.
-- @larose-ui/runtime: Unified runtime — theme, i18n, permissions, network, and session.
+- @larose-ui/permissions-core: Framework-agnostic permission evaluation for laRose UI.
+- @larose-ui/permissions-react: Authorization-aware UI with RBAC/ABAC patterns.
+- @larose-ui/permissions-svelte: Authorization-aware UI with RBAC/ABAC patterns.
+- @larose-ui/permissions-vue: Authorization-aware UI with RBAC/ABAC patterns.
+- @larose-ui/primitives: Headless interactive behavior for menus, focus, tabs, and selection.
+- @larose-ui/quality-core: Framework-agnostic quality scoring and doctor diagnostics.
+- @larose-ui/react: Production-ready React components with LiquidGlass refraction surfaces.
 - @larose-ui/runtime-core: Framework-agnostic runtime store, host detection, and i18n.
+- @larose-ui/runtime-react: Full LaRoseProvider — theme, toast, accelerators, network, offline, i18n.
+- @larose-ui/runtime-svelte: Full LaRoseProvider — theme, toast, accelerators, network, offline, i18n.
+- @larose-ui/runtime-vue: Full LaRoseProvider — theme, toast, accelerators, network, offline, i18n.
 - @larose-ui/styles: Framework-agnostic component CSS from the design system.
 - @larose-ui/svelte: Svelte 5 components with runes and shared laRose styles.
-- @larose-ui/testing: Test utilities with full laRose runtime context.
+- @larose-ui/sveltekit: SvelteKit integration — SSR CSS, theme bootstrap, app root.
+- @larose-ui/testing-core: Framework-agnostic test matrix helpers for laRose UI.
+- @larose-ui/testing-react: Testing utilities with full laRose runtime context.
+- @larose-ui/testing-svelte: Testing utilities with full laRose runtime context.
+- @larose-ui/testing-vue: Testing utilities with full laRose runtime context.
 - @larose-ui/themes: Named theme presets and tenant branding helpers.
 - @larose-ui/tokens: Runtime design tokens as CSS custom properties.
-- @larose-ui/vue: Vue 3 components — thin adapter over shared styles and runtime-core.
+- @larose-ui/vue: Vue 3 components — thin adapter over shared styles and primitives.
 
 ## Components
 - AcceleratorProvider (Other) — 1 documented props

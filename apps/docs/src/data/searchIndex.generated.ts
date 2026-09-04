@@ -19,11 +19,35 @@ export const docsSearchIndex = [
     "excerpt": "Accessibility utilities and component source scanners."
   },
   {
-    "id": "package:ai",
-    "title": "@larose-ui/ai",
+    "id": "package:ai-core",
+    "title": "@larose-ui/ai-core",
     "type": "package",
-    "path": "/docs/packages/ai",
-    "keywords": "@larose-ui/ai Permission-bound AI for SmartTable and SmartForm. Natural-language filtering Permission-gated AI actions",
+    "path": "/docs/packages/ai-core",
+    "keywords": "@larose-ui/ai-core Framework-agnostic AI runtime, intents, and adapters. Natural-language filtering Permission-gated AI actions SmartTable / SmartForm",
+    "excerpt": "Framework-agnostic AI runtime, intents, and adapters."
+  },
+  {
+    "id": "package:ai-react",
+    "title": "@larose-ui/ai-react",
+    "type": "package",
+    "path": "/docs/packages/ai-react",
+    "keywords": "@larose-ui/ai-react Permission-bound AI for SmartTable and SmartForm. Natural-language filtering Permission-gated AI actions SmartTable / SmartForm",
+    "excerpt": "Permission-bound AI for SmartTable and SmartForm."
+  },
+  {
+    "id": "package:ai-svelte",
+    "title": "@larose-ui/ai-svelte",
+    "type": "package",
+    "path": "/docs/packages/ai-svelte",
+    "keywords": "@larose-ui/ai-svelte Permission-bound AI for SmartTable and SmartForm. Natural-language filtering Permission-gated AI actions SmartTable / SmartForm",
+    "excerpt": "Permission-bound AI for SmartTable and SmartForm."
+  },
+  {
+    "id": "package:ai-vue",
+    "title": "@larose-ui/ai-vue",
+    "type": "package",
+    "path": "/docs/packages/ai-vue",
+    "keywords": "@larose-ui/ai-vue Permission-bound AI for SmartTable and SmartForm. Natural-language filtering Permission-gated AI actions SmartTable / SmartForm",
     "excerpt": "Permission-bound AI for SmartTable and SmartForm."
   },
   {
@@ -31,8 +55,16 @@ export const docsSearchIndex = [
     "title": "@larose-ui/cli",
     "type": "package",
     "path": "/docs/packages/cli",
-    "keywords": "@larose-ui/cli CLI for quality gates, migration, and code generation. larose doctor larose migrate larose generate",
+    "keywords": "@larose-ui/cli CLI for quality gates, migration, and code generation. larose doctor larose migrate larose generate larose contribute",
     "excerpt": "CLI for quality gates, migration, and code generation."
+  },
+  {
+    "id": "package:component-logic",
+    "title": "@larose-ui/component-logic",
+    "type": "package",
+    "path": "/docs/packages/component-logic",
+    "keywords": "@larose-ui/component-logic Shared framework-agnostic component helpers and domain utils. Shared utils Parity-safe logic for multi-framework adapters",
+    "excerpt": "Shared framework-agnostic component helpers and domain utils."
   },
   {
     "id": "package:contracts",
@@ -51,36 +83,140 @@ export const docsSearchIndex = [
     "excerpt": "Framework-agnostic types, state machines, and runtime contracts."
   },
   {
-    "id": "package:data",
-    "title": "@larose-ui/data",
+    "id": "package:data-core",
+    "title": "@larose-ui/data-core",
     "type": "package",
-    "path": "/docs/packages/data",
-    "keywords": "@larose-ui/data Backend-aware data fetching with self-healing errors. useQuery, useMutation, DataView Self-healing errors useUndo",
+    "path": "/docs/packages/data-core",
+    "keywords": "@larose-ui/data-core Framework-agnostic data client helpers for laRose UI. useQuery / createQuery useMutation DataView useUndo Self-healing errors",
+    "excerpt": "Framework-agnostic data client helpers for laRose UI."
+  },
+  {
+    "id": "package:data-react",
+    "title": "@larose-ui/data-react",
+    "type": "package",
+    "path": "/docs/packages/data-react",
+    "keywords": "@larose-ui/data-react Backend-aware data fetching with self-healing errors. useQuery / createQuery useMutation DataView useUndo Self-healing errors",
     "excerpt": "Backend-aware data fetching with self-healing errors."
   },
   {
-    "id": "package:devtools",
-    "title": "@larose-ui/devtools",
+    "id": "package:data-svelte",
+    "title": "@larose-ui/data-svelte",
     "type": "package",
-    "path": "/docs/packages/devtools",
-    "keywords": "@larose-ui/devtools In-app runtime inspector for development. Runtime context panel Event timeline Component inspector",
+    "path": "/docs/packages/data-svelte",
+    "keywords": "@larose-ui/data-svelte Backend-aware data fetching with self-healing errors. useQuery / createQuery useMutation DataView useUndo Self-healing errors",
+    "excerpt": "Backend-aware data fetching with self-healing errors."
+  },
+  {
+    "id": "package:data-vue",
+    "title": "@larose-ui/data-vue",
+    "type": "package",
+    "path": "/docs/packages/data-vue",
+    "keywords": "@larose-ui/data-vue Backend-aware data fetching with self-healing errors. useQuery / createQuery useMutation DataView useUndo Self-healing errors",
+    "excerpt": "Backend-aware data fetching with self-healing errors."
+  },
+  {
+    "id": "package:devtools-core",
+    "title": "@larose-ui/devtools-core",
+    "type": "package",
+    "path": "/docs/packages/devtools-core",
+    "keywords": "@larose-ui/devtools-core Framework-agnostic DevTools analytics for laRose UI. Runtime context panel Event timeline Component inspector",
+    "excerpt": "Framework-agnostic DevTools analytics for laRose UI."
+  },
+  {
+    "id": "package:devtools-react",
+    "title": "@larose-ui/devtools-react",
+    "type": "package",
+    "path": "/docs/packages/devtools-react",
+    "keywords": "@larose-ui/devtools-react In-app runtime inspector for development. Runtime context panel Event timeline Component inspector",
     "excerpt": "In-app runtime inspector for development."
   },
   {
-    "id": "package:enterprise",
-    "title": "@larose-ui/enterprise",
+    "id": "package:devtools-svelte",
+    "title": "@larose-ui/devtools-svelte",
     "type": "package",
-    "path": "/docs/packages/enterprise",
-    "keywords": "@larose-ui/enterprise Enterprise patterns — audit trails, session guards, schema IaC. Audit trails Session expiry UI schema renderer",
+    "path": "/docs/packages/devtools-svelte",
+    "keywords": "@larose-ui/devtools-svelte In-app runtime inspector for development. Runtime context panel Event timeline Component inspector",
+    "excerpt": "In-app runtime inspector for development."
+  },
+  {
+    "id": "package:devtools-vue",
+    "title": "@larose-ui/devtools-vue",
+    "type": "package",
+    "path": "/docs/packages/devtools-vue",
+    "keywords": "@larose-ui/devtools-vue In-app runtime inspector for development. Runtime context panel Event timeline Component inspector",
+    "excerpt": "In-app runtime inspector for development."
+  },
+  {
+    "id": "package:enterprise-core",
+    "title": "@larose-ui/enterprise-core",
+    "type": "package",
+    "path": "/docs/packages/enterprise-core",
+    "keywords": "@larose-ui/enterprise-core Framework-agnostic enterprise helpers (version, UI schema, audit). Audit trails Session expiry UI schema renderer",
+    "excerpt": "Framework-agnostic enterprise helpers (version, UI schema, audit)."
+  },
+  {
+    "id": "package:enterprise-react",
+    "title": "@larose-ui/enterprise-react",
+    "type": "package",
+    "path": "/docs/packages/enterprise-react",
+    "keywords": "@larose-ui/enterprise-react Enterprise patterns — audit trails, session guards, schema IaC. Audit trails Session expiry UI schema renderer",
     "excerpt": "Enterprise patterns — audit trails, session guards, schema IaC."
   },
   {
-    "id": "package:forms",
-    "title": "@larose-ui/forms",
+    "id": "package:enterprise-svelte",
+    "title": "@larose-ui/enterprise-svelte",
     "type": "package",
-    "path": "/docs/packages/forms",
-    "keywords": "@larose-ui/forms Schema-driven forms with validation and conditional fields. Declarative schemas Conditional visibility Observability integration",
+    "path": "/docs/packages/enterprise-svelte",
+    "keywords": "@larose-ui/enterprise-svelte Enterprise patterns — audit trails, session guards, schema IaC. Audit trails Session expiry UI schema renderer",
+    "excerpt": "Enterprise patterns — audit trails, session guards, schema IaC."
+  },
+  {
+    "id": "package:enterprise-vue",
+    "title": "@larose-ui/enterprise-vue",
+    "type": "package",
+    "path": "/docs/packages/enterprise-vue",
+    "keywords": "@larose-ui/enterprise-vue Enterprise patterns — audit trails, session guards, schema IaC. Audit trails Session expiry UI schema renderer",
+    "excerpt": "Enterprise patterns — audit trails, session guards, schema IaC."
+  },
+  {
+    "id": "package:forms-core",
+    "title": "@larose-ui/forms-core",
+    "type": "package",
+    "path": "/docs/packages/forms-core",
+    "keywords": "@larose-ui/forms-core Framework-agnostic form schema helpers for laRose UI. Declarative schemas Conditional visibility Validation Observability hooks",
+    "excerpt": "Framework-agnostic form schema helpers for laRose UI."
+  },
+  {
+    "id": "package:forms-react",
+    "title": "@larose-ui/forms-react",
+    "type": "package",
+    "path": "/docs/packages/forms-react",
+    "keywords": "@larose-ui/forms-react Schema-driven forms with validation and conditional fields. Declarative schemas Conditional visibility Validation Observability hooks",
     "excerpt": "Schema-driven forms with validation and conditional fields."
+  },
+  {
+    "id": "package:forms-svelte",
+    "title": "@larose-ui/forms-svelte",
+    "type": "package",
+    "path": "/docs/packages/forms-svelte",
+    "keywords": "@larose-ui/forms-svelte Schema-driven forms with validation and conditional fields. Declarative schemas Conditional visibility Validation Observability hooks",
+    "excerpt": "Schema-driven forms with validation and conditional fields."
+  },
+  {
+    "id": "package:forms-vue",
+    "title": "@larose-ui/forms-vue",
+    "type": "package",
+    "path": "/docs/packages/forms-vue",
+    "keywords": "@larose-ui/forms-vue Schema-driven forms with validation and conditional fields. Declarative schemas Conditional visibility Validation Observability hooks",
+    "excerpt": "Schema-driven forms with validation and conditional fields."
+  },
+  {
+    "id": "package:liquid-glass-core",
+    "title": "@larose-ui/liquid-glass-core",
+    "type": "package",
+    "path": "/docs/packages/liquid-glass-core",
+    "keywords": "@larose-ui/liquid-glass-core Framework-agnostic Liquid Glass optics engine. SVG displacement refraction Blur fallbacks Shared optics config",
+    "excerpt": "Framework-agnostic Liquid Glass optics engine."
   },
   {
     "id": "package:migration",
@@ -115,11 +251,35 @@ export const docsSearchIndex = [
     "excerpt": "Nuxt module for CSS injection, theme script, and Vue providers."
   },
   {
-    "id": "package:observability",
-    "title": "@larose-ui/observability",
+    "id": "package:observability-core",
+    "title": "@larose-ui/observability-core",
     "type": "package",
-    "path": "/docs/packages/observability",
-    "keywords": "@larose-ui/observability UX observability — journeys, funnels, and rage-click analysis. Journey tracking Form funnel metrics Rage click analysis",
+    "path": "/docs/packages/observability-core",
+    "keywords": "@larose-ui/observability-core Framework-agnostic UX observability model and collectors. Journey tracking Form funnel metrics Rage click analysis",
+    "excerpt": "Framework-agnostic UX observability model and collectors."
+  },
+  {
+    "id": "package:observability-react",
+    "title": "@larose-ui/observability-react",
+    "type": "package",
+    "path": "/docs/packages/observability-react",
+    "keywords": "@larose-ui/observability-react UX observability — journeys, funnels, and rage-click analysis. Journey tracking Form funnel metrics Rage click analysis",
+    "excerpt": "UX observability — journeys, funnels, and rage-click analysis."
+  },
+  {
+    "id": "package:observability-svelte",
+    "title": "@larose-ui/observability-svelte",
+    "type": "package",
+    "path": "/docs/packages/observability-svelte",
+    "keywords": "@larose-ui/observability-svelte UX observability — journeys, funnels, and rage-click analysis. Journey tracking Form funnel metrics Rage click analysis",
+    "excerpt": "UX observability — journeys, funnels, and rage-click analysis."
+  },
+  {
+    "id": "package:observability-vue",
+    "title": "@larose-ui/observability-vue",
+    "type": "package",
+    "path": "/docs/packages/observability-vue",
+    "keywords": "@larose-ui/observability-vue UX observability — journeys, funnels, and rage-click analysis. Journey tracking Form funnel metrics Rage click analysis",
     "excerpt": "UX observability — journeys, funnels, and rage-click analysis."
   },
   {
@@ -131,11 +291,35 @@ export const docsSearchIndex = [
     "excerpt": "Offline request queue with sync and conflict handling."
   },
   {
-    "id": "package:permissions",
-    "title": "@larose-ui/permissions",
+    "id": "package:permissions-core",
+    "title": "@larose-ui/permissions-core",
     "type": "package",
-    "path": "/docs/packages/permissions",
-    "keywords": "@larose-ui/permissions Authorization-aware UI with RBAC/ABAC patterns. Can and Permission components Explainable blocked actions",
+    "path": "/docs/packages/permissions-core",
+    "keywords": "@larose-ui/permissions-core Framework-agnostic permission evaluation for laRose UI. Can / Permission components Explainable blocked actions RBAC/ABAC helpers",
+    "excerpt": "Framework-agnostic permission evaluation for laRose UI."
+  },
+  {
+    "id": "package:permissions-react",
+    "title": "@larose-ui/permissions-react",
+    "type": "package",
+    "path": "/docs/packages/permissions-react",
+    "keywords": "@larose-ui/permissions-react Authorization-aware UI with RBAC/ABAC patterns. Can / Permission components Explainable blocked actions RBAC/ABAC helpers",
+    "excerpt": "Authorization-aware UI with RBAC/ABAC patterns."
+  },
+  {
+    "id": "package:permissions-svelte",
+    "title": "@larose-ui/permissions-svelte",
+    "type": "package",
+    "path": "/docs/packages/permissions-svelte",
+    "keywords": "@larose-ui/permissions-svelte Authorization-aware UI with RBAC/ABAC patterns. Can / Permission components Explainable blocked actions RBAC/ABAC helpers",
+    "excerpt": "Authorization-aware UI with RBAC/ABAC patterns."
+  },
+  {
+    "id": "package:permissions-vue",
+    "title": "@larose-ui/permissions-vue",
+    "type": "package",
+    "path": "/docs/packages/permissions-vue",
+    "keywords": "@larose-ui/permissions-vue Authorization-aware UI with RBAC/ABAC patterns. Can / Permission components Explainable blocked actions RBAC/ABAC helpers",
     "excerpt": "Authorization-aware UI with RBAC/ABAC patterns."
   },
   {
@@ -143,32 +327,56 @@ export const docsSearchIndex = [
     "title": "@larose-ui/primitives",
     "type": "package",
     "path": "/docs/packages/primitives",
-    "keywords": "@larose-ui/primitives Headless menu keyboard, type-ahead, and accelerator behavior. Menu keyboard navigation Type-ahead Mnemonic bindings",
-    "excerpt": "Headless menu keyboard, type-ahead, and accelerator behavior."
+    "keywords": "@larose-ui/primitives Headless interactive behavior for menus, focus, tabs, and selection. Menu keyboard navigation Type-ahead Mnemonic bindings Focus trap helpers",
+    "excerpt": "Headless interactive behavior for menus, focus, tabs, and selection."
+  },
+  {
+    "id": "package:quality-core",
+    "title": "@larose-ui/quality-core",
+    "type": "package",
+    "path": "/docs/packages/quality-core",
+    "keywords": "@larose-ui/quality-core Framework-agnostic quality scoring and doctor diagnostics. Quality scoring Doctor diagnostic primitives",
+    "excerpt": "Framework-agnostic quality scoring and doctor diagnostics."
   },
   {
     "id": "package:react",
     "title": "@larose-ui/react",
     "type": "package",
     "path": "/docs/packages/react",
-    "keywords": "@larose-ui/react Production-ready React components with built-in UI states and LiquidGlass refraction surfaces. Form controls, overlays, navigation, data display LiquidGlass TabBar, TopBar, Button, Switch, Range, Checkbox, Progress SVG displacement refraction on Chromium with blur fallback Token-driven styling and customization hooks",
-    "excerpt": "Production-ready React components with built-in UI states and LiquidGlass refraction surfaces."
-  },
-  {
-    "id": "package:runtime",
-    "title": "@larose-ui/runtime",
-    "type": "package",
-    "path": "/docs/packages/runtime",
-    "keywords": "@larose-ui/runtime Unified runtime — theme, i18n, permissions, network, and session. LaRoseProvider composes runtime contexts useRuntime, useSession, useTheme Toast subpath",
-    "excerpt": "Unified runtime — theme, i18n, permissions, network, and session."
+    "keywords": "@larose-ui/react Production-ready React components with LiquidGlass refraction surfaces. Form controls, overlays, navigation, data display LiquidGlass TabBar, TopBar, Button, Switch, Range, Checkbox, Progress SVG displacement refraction on Chromium with blur fallback Token-driven styling and customization hooks",
+    "excerpt": "Production-ready React components with LiquidGlass refraction surfaces."
   },
   {
     "id": "package:runtime-core",
     "title": "@larose-ui/runtime-core",
     "type": "package",
     "path": "/docs/packages/runtime-core",
-    "keywords": "@larose-ui/runtime-core Framework-agnostic runtime store, host detection, and i18n. Runtime store Host capabilities Tenant and session bridges",
+    "keywords": "@larose-ui/runtime-core Framework-agnostic runtime store, host detection, and i18n. LaRoseProvider composes runtime contexts Theme, toast, accelerators Network + offline bridges i18n / locale",
     "excerpt": "Framework-agnostic runtime store, host detection, and i18n."
+  },
+  {
+    "id": "package:runtime-react",
+    "title": "@larose-ui/runtime-react",
+    "type": "package",
+    "path": "/docs/packages/runtime-react",
+    "keywords": "@larose-ui/runtime-react Full LaRoseProvider — theme, toast, accelerators, network, offline, i18n. LaRoseProvider composes runtime contexts Theme, toast, accelerators Network + offline bridges i18n / locale",
+    "excerpt": "Full LaRoseProvider — theme, toast, accelerators, network, offline, i18n."
+  },
+  {
+    "id": "package:runtime-svelte",
+    "title": "@larose-ui/runtime-svelte",
+    "type": "package",
+    "path": "/docs/packages/runtime-svelte",
+    "keywords": "@larose-ui/runtime-svelte Full LaRoseProvider — theme, toast, accelerators, network, offline, i18n. LaRoseProvider composes runtime contexts Theme, toast, accelerators Network + offline bridges i18n / locale",
+    "excerpt": "Full LaRoseProvider — theme, toast, accelerators, network, offline, i18n."
+  },
+  {
+    "id": "package:runtime-vue",
+    "title": "@larose-ui/runtime-vue",
+    "type": "package",
+    "path": "/docs/packages/runtime-vue",
+    "keywords": "@larose-ui/runtime-vue Full LaRoseProvider — theme, toast, accelerators, network, offline, i18n. LaRoseProvider composes runtime contexts Theme, toast, accelerators Network + offline bridges i18n / locale",
+    "excerpt": "Full LaRoseProvider — theme, toast, accelerators, network, offline, i18n."
   },
   {
     "id": "package:styles",
@@ -183,16 +391,48 @@ export const docsSearchIndex = [
     "title": "@larose-ui/svelte",
     "type": "package",
     "path": "/docs/packages/svelte",
-    "keywords": "@larose-ui/svelte Svelte 5 components with runes and shared laRose styles. Svelte 5 runes Shared design tokens Foundation parity components",
+    "keywords": "@larose-ui/svelte Svelte 5 components with runes and shared laRose styles. Svelte 5 runes Shared design tokens Foundation parity components LiquidGlass family",
     "excerpt": "Svelte 5 components with runes and shared laRose styles."
   },
   {
-    "id": "package:testing",
-    "title": "@larose-ui/testing",
+    "id": "package:sveltekit",
+    "title": "@larose-ui/sveltekit",
     "type": "package",
-    "path": "/docs/packages/testing",
-    "keywords": "@larose-ui/testing Test utilities with full laRose runtime context. renderWithLaRose wrapper Test matrix scenarios",
-    "excerpt": "Test utilities with full laRose runtime context."
+    "path": "/docs/packages/sveltekit",
+    "keywords": "@larose-ui/sveltekit SvelteKit integration — SSR CSS, theme bootstrap, app root. SSR CSS injection Theme bootstrap App root helpers",
+    "excerpt": "SvelteKit integration — SSR CSS, theme bootstrap, app root."
+  },
+  {
+    "id": "package:testing-core",
+    "title": "@larose-ui/testing-core",
+    "type": "package",
+    "path": "/docs/packages/testing-core",
+    "keywords": "@larose-ui/testing-core Framework-agnostic test matrix helpers for laRose UI. renderWithLaRose / framework wrappers Test matrix scenarios",
+    "excerpt": "Framework-agnostic test matrix helpers for laRose UI."
+  },
+  {
+    "id": "package:testing-react",
+    "title": "@larose-ui/testing-react",
+    "type": "package",
+    "path": "/docs/packages/testing-react",
+    "keywords": "@larose-ui/testing-react Testing utilities with full laRose runtime context. renderWithLaRose / framework wrappers Test matrix scenarios",
+    "excerpt": "Testing utilities with full laRose runtime context."
+  },
+  {
+    "id": "package:testing-svelte",
+    "title": "@larose-ui/testing-svelte",
+    "type": "package",
+    "path": "/docs/packages/testing-svelte",
+    "keywords": "@larose-ui/testing-svelte Testing utilities with full laRose runtime context. renderWithLaRose / framework wrappers Test matrix scenarios",
+    "excerpt": "Testing utilities with full laRose runtime context."
+  },
+  {
+    "id": "package:testing-vue",
+    "title": "@larose-ui/testing-vue",
+    "type": "package",
+    "path": "/docs/packages/testing-vue",
+    "keywords": "@larose-ui/testing-vue Testing utilities with full laRose runtime context. renderWithLaRose / framework wrappers Test matrix scenarios",
+    "excerpt": "Testing utilities with full laRose runtime context."
   },
   {
     "id": "package:themes",
@@ -215,8 +455,8 @@ export const docsSearchIndex = [
     "title": "@larose-ui/vue",
     "type": "package",
     "path": "/docs/packages/vue",
-    "keywords": "@larose-ui/vue Vue 3 components — thin adapter over shared styles and runtime-core. Foundation parity set with React Composition API providers Shared CSS modules",
-    "excerpt": "Vue 3 components — thin adapter over shared styles and runtime-core."
+    "keywords": "@larose-ui/vue Vue 3 components — thin adapter over shared styles and primitives. Foundation parity set with React Composition API providers Shared CSS modules LiquidGlass family",
+    "excerpt": "Vue 3 components — thin adapter over shared styles and primitives."
   },
   {
     "id": "component:accelerator-provider",

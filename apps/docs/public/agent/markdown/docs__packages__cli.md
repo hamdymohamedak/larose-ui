@@ -6,3 +6,4 @@ CLI for quality gates, migration, and code generation.
 - larose doctor
 - larose migrate
 - larose generate
+- larose contribute

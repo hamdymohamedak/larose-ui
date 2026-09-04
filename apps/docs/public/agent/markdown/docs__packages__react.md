@@ -1,6 +1,6 @@
 # @larose-ui/react
 
-Production-ready React components with built-in UI states and LiquidGlass refraction surfaces.
+Production-ready React components with LiquidGlass refraction surfaces.
 
 ## Features
 - Form controls, overlays, navigation, data display

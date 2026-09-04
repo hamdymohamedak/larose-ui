@@ -3,6 +3,7 @@
 Framework-agnostic runtime store, host detection, and i18n.
 
 ## Features
-- Runtime store
-- Host capabilities
-- Tenant and session bridges
+- LaRoseProvider composes runtime contexts
+- Theme, toast, accelerators
+- Network + offline bridges
+- i18n / locale

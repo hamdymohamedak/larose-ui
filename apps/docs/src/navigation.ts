@@ -26,6 +26,7 @@ export const docsNavigation: DocsNavSection[] = [
     items: [
       { label: 'Overview', path: '/' },
       { label: 'Getting started', path: '/docs/getting-started' },
+      { label: 'Packages', path: '/docs/packages' },
     ],
   },
 
