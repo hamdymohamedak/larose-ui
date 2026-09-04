@@ -14,6 +14,7 @@ export const SANDBOX_HOOK_TARGETS = [
   'toast',
   'theme',
   'accelerators',
+  'liquid-glass',
 ] as const;
 
 export type SandboxHookTarget = (typeof SANDBOX_HOOK_TARGETS)[number];
@@ -191,6 +192,7 @@ export function sandboxHookFilePaths(target: SandboxHookTarget): string[] {
     toast: 'Toast.tsx',
     theme: 'Theme.tsx',
     accelerators: 'Accelerators.tsx',
+    'liquid-glass': 'LiquidGlass.tsx',
   };
   return [
     `apps/sandbox-react/src/scenarios/${reactShort[target]}`,

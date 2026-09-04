@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 import { LIQUID_GLASS_PRESETS } from '../engine/defaults';
-import type { LiquidGlassChromeProps, LiquidGlassGeometry, LiquidGlassOptics } from '../engine/types';
+import type { LiquidGlassChromeProps, LiquidGlassOptics } from '../engine/types';
 import LiquidGlass from '../core/LiquidGlass.vue';
+import { normalizeGlassStyle } from '../core/normalizeGlassStyle';
 import {
   LIQUID_GLASS_SWITCH_ACTIVE_GREEN,
   LIQUID_GLASS_SWITCH_TRACK_GLASS,
@@ -11,7 +12,6 @@ import {
 const props = withDefaults(
   defineProps<
     LiquidGlassOptics &
-      LiquidGlassGeometry &
       LiquidGlassChromeProps & {
         checked?: boolean;
         defaultChecked?: boolean;
@@ -20,6 +20,7 @@ const props = withDefaults(
         height?: number;
         thumbSize?: number;
         padding?: number;
+        borderRadius?: number;
         activeTrackTint?: string;
         inactiveTrackTint?: string;
         thumbTint?: string;
@@ -27,7 +28,10 @@ const props = withDefaults(
       }
   >(),
   {
+    // undefined — not false — so omitted `checked` stays uncontrolled (Vue Boolean cast).
+    checked: undefined,
     defaultChecked: false,
+    disabled: false,
     width: 52,
     height: 32,
     thumbSize: 28,
@@ -39,20 +43,38 @@ const props = withDefaults(
     shadowIntensity: LIQUID_GLASS_PRESETS.switch.shadowIntensity,
   },
 );
+
 const emit = defineEmits<{ change: [checked: boolean] }>();
-const radius = computed(() => props.borderRadius);
 const internalChecked = ref(props.defaultChecked);
-const isOn = computed(() => props.checked ?? internalChecked.value);
+const isControlled = computed(() => props.checked !== undefined);
+const isOn = computed(() => (isControlled.value ? !!props.checked : internalChecked.value));
 const travel = computed(() => Math.max(0, props.width - props.thumbSize - props.padding * 2));
 const trackTint = computed(() => {
   if (!isOn.value) return props.inactiveTrackTint ?? props.tint;
   if (props.activeTrackTint === LIQUID_GLASS_SWITCH_TRACK_GLASS) return props.tint;
   return props.activeTrackTint;
 });
+const thumbBezel = computed(() => Math.max(8, props.bezelWidth - 2));
+const thumbDisplacement = computed(() => props.displacementScale + 4);
+const rootStyle = computed(() =>
+  normalizeGlassStyle({
+    position: 'relative',
+    width: props.width,
+    height: props.height,
+    padding: 0,
+    border: 'none',
+    background: 'none',
+    cursor: props.disabled ? 'not-allowed' : 'pointer',
+    opacity: props.disabled ? 0.5 : 1,
+    WebkitTapHighlightColor: 'transparent',
+    ...props.style,
+  }),
+);
+
 function toggle() {
   if (props.disabled) return;
   const next = !isOn.value;
-  if (props.checked === undefined) internalChecked.value = next;
+  if (!isControlled.value) internalChecked.value = next;
   emit('change', next);
 }
 </script>
@@ -65,10 +87,57 @@ function toggle() {
     :aria-label="ariaLabel"
     :disabled="disabled"
     :class="className"
-    :style="{ position: 'relative', width: `${width}px`, height: `${height}px`, padding: 0, border: 'none', background: 'none', cursor: disabled ? 'not-allowed' : 'pointer', opacity: disabled ? 0.5 : 1, ...style }"
+    :style="rootStyle"
     @click="toggle"
   >
-    <LiquidGlass :width="width" :height="height" :border-radius="radius" :displacement-scale="displacementScale" :bezel-width="bezelWidth" :shadow-intensity="shadowIntensity" :tint="trackTint" :tint-fallback="tintFallback" :blur="blur" :saturation="saturation" :refraction-strength="refractionStrength" :show-specular="showSpecular" :style="{ position: 'absolute', inset: 0, pointerEvents: 'none' }" />
-    <LiquidGlass :width="thumbSize" :height="thumbSize" :border-radius="999" :displacement-scale="displacementScale + 4" :bezel-width="Math.max(8, bezelWidth - 2)" :shadow-intensity="shadowIntensity" :tint="thumbTint ?? tint" :tint-fallback="tintFallback" :blur="blur" :saturation="saturation" :refraction-strength="refractionStrength" :show-specular="showSpecular" :style="{ position: 'absolute', top: `${padding}px`, left: `${padding}px`, transform: `translateX(${isOn ? travel : 0}px)`, transition: 'transform 0.32s cubic-bezier(0.34, 1.45, 0.64, 1)', pointerEvents: 'none' }" />
+    <LiquidGlass
+      :width="width"
+      :height="height"
+      :border-radius="borderRadius"
+      :displacement-scale="displacementScale"
+      :bezel-width="bezelWidth"
+      :shadow-intensity="shadowIntensity"
+      :blur="blur"
+      :saturation="saturation"
+      :refraction-strength="refractionStrength"
+      :show-specular="showSpecular"
+      :specular-angle="specularAngle"
+      :specular-top-opacity="specularTopOpacity"
+      :specular-edge-opacity="specularEdgeOpacity"
+      :inner-top-highlight="innerTopHighlight"
+      :inner-bottom-shadow="innerBottomShadow"
+      :border-color="borderColor"
+      :tint="trackTint"
+      :tint-fallback="tintFallback"
+      :style="{ position: 'absolute', inset: 0, pointerEvents: 'none' }"
+    />
+    <LiquidGlass
+      :width="thumbSize"
+      :height="thumbSize"
+      :border-radius="999"
+      :displacement-scale="thumbDisplacement"
+      :bezel-width="thumbBezel"
+      :shadow-intensity="shadowIntensity"
+      :blur="blur"
+      :saturation="saturation"
+      :refraction-strength="refractionStrength"
+      :show-specular="showSpecular"
+      :specular-angle="specularAngle"
+      :specular-top-opacity="specularTopOpacity"
+      :specular-edge-opacity="specularEdgeOpacity"
+      :inner-top-highlight="innerTopHighlight"
+      :inner-bottom-shadow="innerBottomShadow"
+      :border-color="borderColor"
+      :tint="thumbTint ?? tint"
+      :tint-fallback="tintFallback"
+      :style="{
+        position: 'absolute',
+        top: `${padding}px`,
+        left: `${padding}px`,
+        transform: `translateX(${isOn ? travel : 0}px)`,
+        transition: 'transform 0.32s cubic-bezier(0.34, 1.45, 0.64, 1)',
+        pointerEvents: 'none',
+      }"
+    />
   </button>
 </template>

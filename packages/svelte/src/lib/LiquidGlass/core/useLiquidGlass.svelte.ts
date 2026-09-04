@@ -8,11 +8,13 @@ export interface UseLiquidGlassOptions extends LiquidGlassOptics {
   onDisplacementMapChange?: (dataUrl: string) => void;
 }
 
+let filterIdCounter = 0;
+
 export function createLiquidGlassRuntime(
   getOptions: () => UseLiquidGlassOptions,
   getShell: () => HTMLElement | null,
 ) {
-  const filterId = `lgf-${Math.random().toString(36).slice(2, 10)}`;
+  const filterId = `lgf-${++filterIdCounter}`;
   const supportsRefraction = supportsLiquidGlassRefraction();
   let mapDataUrl = $state('');
 
@@ -36,8 +38,13 @@ export function createLiquidGlassRuntime(
   }
 
   $effect(() => {
-    getOptions();
+    const options = getOptions();
     getShell();
+    // Track resolved optics deps like React's useLayoutEffect dependency list.
+    const resolved = resolveLiquidGlassOptics(options);
+    void resolved.bezelWidth;
+    void resolved.refractionStrength;
+    void options.borderRadius;
     if (!supportsRefraction) return;
     rebuildMap();
     const el = getShell();

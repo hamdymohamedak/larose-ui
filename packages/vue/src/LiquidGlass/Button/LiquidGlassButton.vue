@@ -68,7 +68,9 @@ withDefaults(
       color,
       fontSize,
       fontWeight,
+      letterSpacing: '-0.01em',
       padding: '0 1.25rem',
+      WebkitTapHighlightColor: 'transparent',
       ...style,
     }"
     v-bind="$attrs"

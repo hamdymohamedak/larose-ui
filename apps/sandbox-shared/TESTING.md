@@ -35,7 +35,7 @@ Multi-framework UI OS needs **layered** verification. Sandboxes alone are not en
 ```
 apps/sandbox-react|vue|svelte
   #/home #/navigation #/command #/overlays
-  #/toast #/theme #/forms #/accelerators
+  #/toast #/theme #/forms #/accelerators #/liquid-glass
 ```
 
 Same scenario ids and user intent across frameworks. Do **not** add `sandbox-button`, `sandbox-dialog`, …

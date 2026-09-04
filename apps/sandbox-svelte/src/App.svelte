@@ -8,6 +8,7 @@
   import ThemeScenario from './scenarios/ThemeScenario.svelte';
   import FormsScenario from './scenarios/FormsScenario.svelte';
   import AcceleratorsScenario from './scenarios/AcceleratorsScenario.svelte';
+  import LiquidGlassScenario from './scenarios/LiquidGlassScenario.svelte';
 
   function readRoute() {
     const hash = window.location.hash.replace(/^#\/?/, '');
@@ -64,6 +65,8 @@
         <FormsScenario />
       {:else if route === 'accelerators'}
         <AcceleratorsScenario />
+      {:else if route === 'liquid-glass'}
+        <LiquidGlassScenario />
       {:else}
         <HomeScenario />
       {/if}

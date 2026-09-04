@@ -5,3 +5,17 @@ dist
 .DS_Store
 storybook-static
 coverage
+test-results
+playwright-report
+blob-report
+*.tsbuildinfo
+.svelte-kit
+.next
+.nuxt
+.output
+.vite
+.vite-temp
+**/vitest.config.ts.timestamp-*.mjs
+**/vite.config.ts.timestamp-*.mjs
+.cursor/*.log
+.cursor/debug*.log

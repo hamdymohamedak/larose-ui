@@ -9,9 +9,11 @@ export interface UseLiquidGlassOptions extends LiquidGlassOptics {
   onDisplacementMapChange?: (dataUrl: string) => void;
 }
 
+let filterIdCounter = 0;
+
 export function useLiquidGlass(options: Ref<UseLiquidGlassOptions> | (() => UseLiquidGlassOptions)) {
   const read = () => (typeof options === 'function' ? options() : options.value);
-  const filterId = `lgf-${Math.random().toString(36).slice(2, 10)}`;
+  const filterId = `lgf-${++filterIdCounter}`;
   const shellRef = ref<HTMLElement | null>(null);
   const mapDataUrl = ref('');
   const supportsRefraction = supportsLiquidGlassRefraction();
@@ -45,9 +47,16 @@ export function useLiquidGlass(options: Ref<UseLiquidGlassOptions> | (() => UseL
     observer.observe(el);
   });
   onBeforeUnmount(() => observer?.disconnect());
-  watch(() => [read().borderRadius, read().bezelWidth, read().refractionStrength], () => {
-    if (supportsRefraction) rebuildMap();
-  });
+  watch(
+    () => [
+      read().borderRadius,
+      optics.value.bezelWidth,
+      optics.value.refractionStrength,
+    ],
+    () => {
+      if (supportsRefraction) rebuildMap();
+    },
+  );
 
   const backdropFilter = computed(() =>
     supportsRefraction

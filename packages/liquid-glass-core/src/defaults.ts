@@ -21,7 +21,10 @@ export const LIQUID_GLASS_OPTICS_DEFAULTS: ResolvedLiquidGlassOptics = {
 export function resolveLiquidGlassOptics(
   overrides?: LiquidGlassOptics,
 ): ResolvedLiquidGlassOptics {
-  return { ...LIQUID_GLASS_OPTICS_DEFAULTS, ...overrides };
+  const defined = Object.fromEntries(
+    Object.entries(overrides ?? {}).filter(([, value]) => value !== undefined),
+  ) as LiquidGlassOptics;
+  return { ...LIQUID_GLASS_OPTICS_DEFAULTS, ...defined };
 }
 
 /** Preset optics tuned for common component shapes. */

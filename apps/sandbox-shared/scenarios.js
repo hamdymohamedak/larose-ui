@@ -40,6 +40,12 @@ export const SCENARIOS = [
     title: 'Accelerators',
     description: 'Global keyboard accelerators via AcceleratorProvider.',
   },
+  {
+    id: 'liquid-glass',
+    title: 'Liquid Glass',
+    description:
+      'Surface, button, switch, checkbox, range, progress, top bar, and tab bar on a refraction backdrop.',
+  },
 ];
 
 /** Ports used by Playwright and docs — keep in sync with each sandbox vite.config. */

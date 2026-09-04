@@ -16,4 +16,4 @@ Storybook (`pnpm dev`) = documentation + catalog + React visual development — 
 
 ## Scenarios (aligned)
 
-`#/home` `#/navigation` `#/command` `#/overlays` `#/toast` `#/theme` `#/forms` `#/accelerators`
+`#/home` `#/navigation` `#/command` `#/overlays` `#/toast` `#/theme` `#/forms` `#/accelerators` `#/liquid-glass`

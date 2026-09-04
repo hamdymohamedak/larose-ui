@@ -9,6 +9,7 @@ import ToastScenario from './scenarios/ToastScenario.vue';
 import ThemeScenario from './scenarios/ThemeScenario.vue';
 import FormsScenario from './scenarios/FormsScenario.vue';
 import AcceleratorsScenario from './scenarios/AcceleratorsScenario.vue';
+import LiquidGlassScenario from './scenarios/LiquidGlassScenario.vue';
 
 function readRoute() {
   const hash = window.location.hash.replace(/^#\/?/, '');
@@ -60,6 +61,7 @@ const current = computed(() => SCENARIOS.find((s) => s.id === route.value) ?? SC
         <ThemeScenario v-else-if="route === 'theme'" />
         <FormsScenario v-else-if="route === 'forms'" />
         <AcceleratorsScenario v-else-if="route === 'accelerators'" />
+        <LiquidGlassScenario v-else-if="route === 'liquid-glass'" />
         <HomeScenario v-else />
       </div>
     </div>

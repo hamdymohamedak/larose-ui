@@ -3,6 +3,7 @@ import { computed, ref, type Component } from 'vue';
 import { LIQUID_GLASS_PRESETS } from '../engine/defaults';
 import type { LiquidGlassChromeProps, LiquidGlassOptics, LiquidGlassTabItem } from '../engine/types';
 import LiquidGlass from '../core/LiquidGlass.vue';
+import { normalizeGlassStyle } from '../core/normalizeGlassStyle';
 
 defineOptions({ inheritAttrs: false });
 
@@ -38,6 +39,8 @@ const props = withDefaults(
     inactiveColor: 'rgba(255, 255, 255, 0.55)',
     position: 'fixed',
     bottom: 22,
+    displacementScale: LIQUID_GLASS_PRESETS.tabBar.displacementScale,
+    bezelWidth: LIQUID_GLASS_PRESETS.tabBar.bezelWidth,
   },
 );
 
@@ -59,6 +62,29 @@ const isPositioned = computed(
 const bottomCss = computed(() =>
   typeof props.bottom === 'number' ? `${props.bottom}px` : props.bottom,
 );
+const resolvedDisplacement = computed(
+  () => props.displacementScale ?? LIQUID_GLASS_PRESETS.tabBar.displacementScale,
+);
+const resolvedBezel = computed(
+  () => props.bezelWidth ?? LIQUID_GLASS_PRESETS.tabBar.bezelWidth,
+);
+const wrapperStyle = computed(() =>
+  normalizeGlassStyle({
+    position: props.position,
+    ...(isPositioned.value
+      ? {
+          left: 0,
+          right: 0,
+          bottom: bottomCss.value,
+        }
+      : undefined),
+    display: 'flex',
+    justifyContent: 'center',
+    padding: isPositioned.value ? '0 20px' : undefined,
+    zIndex: isPositioned.value ? 10 : undefined,
+    pointerEvents: 'none',
+  }),
+);
 
 function select(key: string, disabled?: boolean) {
   if (disabled) return;
@@ -72,23 +98,7 @@ function itemIcon(item: LiquidGlassTabItem): Component | undefined {
 </script>
 
 <template>
-  <div
-    :style="{
-      position,
-      ...(isPositioned
-        ? {
-            left: 0,
-            right: 0,
-            bottom: bottomCss,
-            padding: '0 20px',
-            zIndex: 10,
-          }
-        : undefined),
-      display: 'flex',
-      justifyContent: 'center',
-      pointerEvents: 'none',
-    }"
-  >
+  <div :style="wrapperStyle">
     <LiquidGlass
       as="nav"
       aria-label="Primary navigation"
@@ -97,8 +107,8 @@ function itemIcon(item: LiquidGlassTabItem): Component | undefined {
       :max-width="maxWidth"
       :height="height"
       :border-radius="borderRadius"
-      :displacement-scale="displacementScale ?? LIQUID_GLASS_PRESETS.tabBar.displacementScale"
-      :bezel-width="bezelWidth ?? LIQUID_GLASS_PRESETS.tabBar.bezelWidth"
+      :displacement-scale="resolvedDisplacement"
+      :bezel-width="resolvedBezel"
       :blur="blur"
       :saturation="saturation"
       :tint="tint"
@@ -190,24 +200,24 @@ function itemIcon(item: LiquidGlassTabItem): Component | undefined {
           <span
             v-if="item.badge !== undefined"
             :aria-label="`${item.badge} notifications`"
-            style="
-              position: absolute;
-              top: 14%;
-              right: 20%;
-              min-width: 16px;
-              height: 16px;
-              border-radius: 999px;
-              background: #ff3b30;
-              color: #fff;
-              font-size: 9.5px;
-              font-weight: 700;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              padding: 0 4px;
-              line-height: 1;
-              pointer-events: none;
-            "
+            :style="{
+              position: 'absolute',
+              top: '14%',
+              right: '20%',
+              minWidth: '16px',
+              height: '16px',
+              borderRadius: 999,
+              background: '#ff3b30',
+              color: '#fff',
+              fontSize: '9.5px',
+              fontWeight: 700,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '0 4px',
+              lineHeight: 1,
+              pointerEvents: 'none',
+            }"
           >
             {{ item.badge }}
           </span>

@@ -20,6 +20,17 @@ describe('liquid-glass-core', () => {
     expect(resolved.saturation).toBe(LIQUID_GLASS_OPTICS_DEFAULTS.saturation);
   });
 
+  it('resolveLiquidGlassOptics ignores undefined overrides so defaults stay intact', () => {
+    const resolved = resolveLiquidGlassOptics({
+      showSpecular: undefined,
+      specularTopOpacity: undefined,
+      blur: 22,
+    });
+    expect(resolved.showSpecular).toBe(LIQUID_GLASS_OPTICS_DEFAULTS.showSpecular);
+    expect(resolved.specularTopOpacity).toBe(LIQUID_GLASS_OPTICS_DEFAULTS.specularTopOpacity);
+    expect(resolved.blur).toBe(22);
+  });
+
   it('supportsLiquidGlassRefraction returns a boolean', () => {
     expect(typeof supportsLiquidGlassRefraction()).toBe('boolean');
   });

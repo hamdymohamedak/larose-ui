@@ -8,6 +8,7 @@ import { ToastScenario } from './scenarios/Toast';
 import { ThemeScenario } from './scenarios/Theme';
 import { FormsScenario } from './scenarios/Forms';
 import { AcceleratorsScenario } from './scenarios/Accelerators';
+import { LiquidGlassScenario } from './scenarios/LiquidGlass';
 
 function readRoute(): string {
   const hash = window.location.hash.replace(/^#\/?/, '');
@@ -78,6 +79,8 @@ export function App() {
         return <FormsScenario />;
       case 'accelerators':
         return <AcceleratorsScenario />;
+      case 'liquid-glass':
+        return <LiquidGlassScenario />;
       default:
         return <HomeScenario />;
     }

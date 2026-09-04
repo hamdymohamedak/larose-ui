@@ -147,6 +147,53 @@ body {
   font-size: 0.9rem;
 }
 
+/* Liquid Glass kitchen sink — refraction needs a rich backdrop. */
+.sbx-glass-scene {
+  position: relative;
+  min-height: 36rem;
+  padding: 1.25rem 1.25rem 6rem;
+  overflow: hidden;
+  color: #f3f1fa;
+  background:
+    radial-gradient(60% 45% at 15% 10%, #8b6bff 0%, transparent 65%),
+    radial-gradient(55% 40% at 85% 15%, #3fe0d0 0%, transparent 60%),
+    radial-gradient(65% 55% at 50% 100%, #ff5fa2 0%, transparent 65%),
+    #100b22;
+}
+
+.sbx-glass-scene .sbx-muted {
+  color: #b9b3d6;
+}
+
+.sbx-glass-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.sbx-glass-card-copy h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f3f1fa;
+}
+
+.sbx-glass-card-copy p {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: #b9b3d6;
+}
+
+.sbx-glass-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: #e8e4f4;
+  font-size: 0.8125rem;
+}
+
 @media (max-width: 800px) {
   .sbx-root {
     grid-template-columns: 1fr;
