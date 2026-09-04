@@ -190,12 +190,19 @@ export const menusRegistry: Record<string, CrossFrameworkComponentDefinition> = 
         },
       };
     },
-    renderReact: (props) => (
-      <CommandPalette
-        {...(props as unknown as ComponentProps<typeof CommandPalette>)}
-        onOpenChange={() => undefined}
-      />
-    ),
+    renderReact: (props) => {
+      const {
+        ariaLabel,
+        ...rest
+      } = props as Record<string, unknown> & { ariaLabel?: string };
+      return (
+        <CommandPalette
+          {...(rest as unknown as ComponentProps<typeof CommandPalette>)}
+          aria-label={ariaLabel ?? 'Command palette'}
+          onOpenChange={() => undefined}
+        />
+      );
+    },
   }),
 
   homeScreenQuickActions: defineCustomParity({

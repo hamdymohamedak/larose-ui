@@ -1,7 +1,7 @@
 {
   "name": "@larose-ui/runtime-svelte",
   "version": "0.2.0",
-  "description": "Svelte 5 runtime adapter over runtime-core — network, offline, responsive, i18n, AdaptiveTable",
+  "description": "Svelte 5 runtime adapter — LaRoseProvider (theme, toast, accelerator, network, offline, i18n) over runtime-core",
   "type": "module",
   "svelte": "./dist/index.js",
   "main": "./dist/index.js",
@@ -12,6 +12,11 @@
       "types": "./dist/index.d.ts",
       "svelte": "./dist/index.js",
       "import": "./dist/index.js"
+    },
+    "./toast": {
+      "types": "./dist/toast/index.d.ts",
+      "svelte": "./dist/toast/index.js",
+      "import": "./dist/toast/index.js"
     }
   },
   "files": ["dist", "README.md"],
@@ -25,10 +30,23 @@
     "@larose-ui/core": "workspace:*",
     "@larose-ui/runtime-core": "workspace:*",
     "@larose-ui/network": "workspace:*",
-    "@larose-ui/offline": "workspace:*"
+    "@larose-ui/offline": "workspace:*",
+    "@larose-ui/themes": "workspace:*",
+    "@larose-ui/tokens": "workspace:*",
+    "@larose-ui/permissions-svelte": "workspace:*",
+    "@larose-ui/observability-svelte": "workspace:*"
   },
-  "peerDependencies": { "svelte": "^5.0.0" },
+  "peerDependencies": {
+    "@larose-ui/svelte": ">=0.2.0",
+    "svelte": "^5.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@larose-ui/svelte": {
+      "optional": true
+    }
+  },
   "devDependencies": {
+    "@larose-ui/svelte": "workspace:*",
     "@sveltejs/vite-plugin-svelte": "^5.0.3",
     "jsdom": "^25.0.1",
     "svelte": "^5.19.0",

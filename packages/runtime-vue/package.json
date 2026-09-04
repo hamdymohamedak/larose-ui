@@ -1,7 +1,7 @@
 {
   "name": "@larose-ui/runtime-vue",
   "version": "0.2.0",
-  "description": "Vue 3 runtime adapter over runtime-core — network, offline, responsive, i18n, AdaptiveTable",
+  "description": "Vue 3 runtime adapter — LaRoseProvider (theme, toast, accelerator, network, offline, i18n) over runtime-core",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -10,6 +10,10 @@
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
+    },
+    "./toast": {
+      "types": "./dist/toast/index.d.ts",
+      "import": "./dist/toast/index.js"
     }
   },
   "files": ["dist", "README.md"],
@@ -23,10 +27,23 @@
     "@larose-ui/core": "workspace:*",
     "@larose-ui/runtime-core": "workspace:*",
     "@larose-ui/network": "workspace:*",
-    "@larose-ui/offline": "workspace:*"
+    "@larose-ui/offline": "workspace:*",
+    "@larose-ui/themes": "workspace:*",
+    "@larose-ui/tokens": "workspace:*",
+    "@larose-ui/permissions-vue": "workspace:*",
+    "@larose-ui/observability-vue": "workspace:*"
   },
-  "peerDependencies": { "vue": "^3.5.0" },
+  "peerDependencies": {
+    "@larose-ui/vue": ">=0.2.0",
+    "vue": "^3.5.0"
+  },
+  "peerDependenciesMeta": {
+    "@larose-ui/vue": {
+      "optional": true
+    }
+  },
   "devDependencies": {
+    "@larose-ui/vue": "workspace:*",
     "@vitejs/plugin-vue": "^5.2.1",
     "jsdom": "^25.0.1",
     "typescript": "^5.7.2",

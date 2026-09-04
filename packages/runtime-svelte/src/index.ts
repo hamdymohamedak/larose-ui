@@ -91,3 +91,6 @@ export {
   type RuntimeContextValue,
 } from './runtime/context';
 export { default as RuntimeProvider } from './runtime/RuntimeProvider.svelte';
+
+export { default as LaRoseProvider } from './LaRoseProvider.svelte';
+export { default as OptionalToastProvider } from './toast/OptionalToastProvider.svelte';

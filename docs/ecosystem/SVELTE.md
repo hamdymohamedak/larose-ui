@@ -40,19 +40,20 @@ mount(App, { target: document.getElementById('app')! });
 
 ## Runtime
 
+For the full platform stack (theme, toast, accelerator, i18n, permissions, network, offline):
+
 ```svelte
 <script lang="ts">
-  import { LaRoseProvider, RuntimeProvider } from '@larose-ui/svelte';
+  import { LaRoseProvider } from '@larose-ui/runtime-svelte';
+  import { Button } from '@larose-ui/svelte';
 </script>
 
-<LaRoseProvider>
-  <RuntimeProvider initialContext={{ locale: 'en' }}>
-    {@render children()}
-  </RuntimeProvider>
+<LaRoseProvider theme="light" appearance="system" locale="en">
+  <Button variant="primary">Save</Button>
 </LaRoseProvider>
 ```
 
-Use `getRuntimeContext()` in child components to read or patch runtime state.
+Theme-only apps can keep using `LaRoseProvider` from `@larose-ui/svelte`. Use `getRuntimeContext()` from `@larose-ui/runtime-svelte` in child components to read or patch runtime state.
 
 ## Components
 

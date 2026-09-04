@@ -30,4 +30,4 @@ React Vue Svelte
 - We are **not** duplicating utils/engines into each framework package.
 - We are **not** treating React as the implicit home for new platform logic.
 
-See `docs/framework-neutrality-audit.md` and `maintenance.md`. Enforce with `pnpm check:framework-neutrality`.
+See `docs/framework-neutrality-audit.md`. Enforce with `pnpm check:framework-neutrality`.

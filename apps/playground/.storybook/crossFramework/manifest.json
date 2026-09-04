@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-03T23:14:19.868Z",
-  "count": 104,
+  "generatedAt": "2026-09-04T14:16:20.266Z",
+  "count": 106,
   "entries": [
     {
       "id": "accordion",
@@ -643,6 +643,16 @@
       ]
     },
     {
+      "id": "mnemonicLabel",
+      "displayName": "MnemonicLabel",
+      "componentName": "MnemonicLabel",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
       "id": "modal",
       "displayName": "Modal",
       "componentName": "Modal",
@@ -666,6 +676,16 @@
       "id": "ornament",
       "displayName": "Ornament",
       "componentName": "Ornament",
+      "frameworks": [
+        "react",
+        "vue",
+        "svelte"
+      ]
+    },
+    {
+      "id": "ornamentButton",
+      "displayName": "OrnamentButton",
+      "componentName": "OrnamentButton",
       "frameworks": [
         "react",
         "vue",

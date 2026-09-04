@@ -7,6 +7,7 @@ describe('@larose-ui/runtime-vue', () => {
     expect(runtimeVue.ResponsiveProvider).toBeTruthy();
     expect(runtimeVue.EnvironmentProvider).toBeTruthy();
     expect(runtimeVue.RuntimeProvider).toBeTruthy();
+    expect(runtimeVue.LaRoseProvider).toBeTruthy();
     expect(typeof runtimeVue.createRuntimeStore).toBe('function');
   });
 });

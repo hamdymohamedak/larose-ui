@@ -28,14 +28,14 @@ export default defineNuxtModule<ModuleOptions>({
     storageKey: 'larose-theme',
     theme: 'light',
     density: 'comfortable',
-    runtime: false,
+    runtime: true,
     transpile: true,
   },
   setup(options, nuxt) {
     const resolver = createResolver(import.meta.url);
 
     if (options.transpile) {
-      nuxt.options.build.transpile.push('@larose-ui/vue');
+      nuxt.options.build.transpile.push('@larose-ui/vue', '@larose-ui/runtime-vue');
     }
 
     if (options.css) {
@@ -49,7 +49,11 @@ export default defineNuxtModule<ModuleOptions>({
       theme: options.theme ?? 'light',
       density: options.density ?? 'comfortable',
       tenantId: options.tenantId,
-      runtime: options.runtime ?? false,
+      appearance: options.appearance ?? 'system',
+      enableToasts: options.enableToasts !== false,
+      locale: options.locale,
+      environment: options.environment,
+      runtime: options.runtime ?? true,
     };
 
     if (options.themeScript) {
@@ -73,11 +77,12 @@ export default defineNuxtModule<ModuleOptions>({
     });
 
     addImports([
-      { name: 'LaRoseProvider', from: '@larose-ui/vue' },
-      { name: 'RuntimeProvider', from: '@larose-ui/vue' },
-      { name: 'useRuntimeContext', from: '@larose-ui/vue' },
+      { name: 'LaRoseProvider', from: '@larose-ui/runtime-vue' },
+      { name: 'RuntimeProvider', from: '@larose-ui/runtime-vue' },
+      { name: 'useRuntimeContext', from: '@larose-ui/runtime-vue' },
       { name: 'useComponentDefaults', from: '@larose-ui/vue' },
       { name: 'useThemeCustomization', from: '@larose-ui/vue' },
+      { name: 'useToast', from: '@larose-ui/runtime-vue/toast' },
     ]);
   },
 });

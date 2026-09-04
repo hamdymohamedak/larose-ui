@@ -6,7 +6,14 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   plugins: [vue(), dts({ include: ['src'], rollupTypes: true })],
   build: {
-    lib: { entry: resolve(__dirname, 'src/index.ts'), formats: ['es'], fileName: 'index' },
+    lib: {
+      entry: {
+        index: resolve(__dirname, 'src/index.ts'),
+        'toast/index': resolve(__dirname, 'src/toast/index.ts'),
+      },
+      formats: ['es'],
+      fileName: (_format, entryName) => `${entryName}.js`,
+    },
     rollupOptions: {
       external: (id) => id === 'vue' || (/^@larose-ui\//.test(id) && !id.endsWith('.css')),
     },

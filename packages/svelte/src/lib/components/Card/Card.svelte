@@ -17,23 +17,31 @@
 
   let props: Props = $props();
   const merged = $derived(getComponentDefaults('Card', props));
+
+  /** Match React: convenience props + snippets compose together; children-only = composition passthrough. */
+  const usesConvenienceApi = $derived(
+    Boolean(merged.title || merged.description || merged.body || merged.footer),
+  );
 </script>
 
 <article class={cn(styles.card, merged.class)} style={merged.style} data-padding={merged.padding ?? 'md'}>
-  {#if merged.children}
-    {@render merged.children()}
-  {:else}
+  {#if usesConvenienceApi}
     {#if merged.title || merged.description}
       <header class={styles.header}>
         {#if merged.title}<h3 class={styles.title}>{merged.title}</h3>{/if}
         {#if merged.description}<p class={styles.description}>{merged.description}</p>{/if}
       </header>
     {/if}
-    {#if merged.body}
-      <div class={styles.body}>{@render merged.body()}</div>
+    {#if merged.children || merged.body}
+      <div class={styles.body}>
+        {#if merged.children}{@render merged.children()}{/if}
+        {#if merged.body}{@render merged.body()}{/if}
+      </div>
     {/if}
     {#if merged.footer}
       <footer class={styles.footer}>{@render merged.footer()}</footer>
     {/if}
+  {:else if merged.children}
+    {@render merged.children()}
   {/if}
 </article>

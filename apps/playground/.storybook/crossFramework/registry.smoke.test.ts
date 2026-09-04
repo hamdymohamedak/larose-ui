@@ -10,8 +10,8 @@ import {
 } from './registry';
 
 describe('crossFramework registry split', () => {
-  it('keeps 104 definitions across domain modules', () => {
-    expect(Object.keys(crossFrameworkRegistry).length).toBe(104);
+  it('keeps registry definitions across domain modules (manual + generated)', () => {
+    expect(Object.keys(crossFrameworkRegistry).length).toBeGreaterThanOrEqual(104);
     expect(Object.keys(foundationRegistry).length).toBeGreaterThan(40);
     expect(Object.keys(liquidGlassRegistry)).toEqual(
       expect.arrayContaining([

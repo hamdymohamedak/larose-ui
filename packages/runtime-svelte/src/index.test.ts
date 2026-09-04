@@ -7,6 +7,7 @@ describe('@larose-ui/runtime-svelte', () => {
     expect(runtimeSvelte.ResponsiveProvider).toBeTruthy();
     expect(runtimeSvelte.EnvironmentProvider).toBeTruthy();
     expect(runtimeSvelte.RuntimeProvider).toBeTruthy();
+    expect(runtimeSvelte.LaRoseProvider).toBeTruthy();
     expect(typeof runtimeSvelte.createRuntimeStore).toBe('function');
   });
 });

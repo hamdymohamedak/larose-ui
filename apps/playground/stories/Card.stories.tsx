@@ -1,7 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Card, Button, Badge } from '@larose-ui/react';
 
-const meta: Meta<typeof Card> = {
+type CardStoryArgs = React.ComponentProps<typeof Card> & {
+  footerLabel?: string;
+};
+
+const meta: Meta<CardStoryArgs> = {
   title: 'Foundation/Card',
   component: Card,
   tags: ['autodocs', 'fw-react', 'fw-vue', 'fw-svelte'],
@@ -10,18 +14,29 @@ const meta: Meta<typeof Card> = {
       crossFramework: 'card',
     },
   },
+  argTypes: {
+    footerLabel: { control: 'text' },
+  },
 };
 
 export default meta;
-type Story = StoryObj<typeof Card>;
+type Story = StoryObj<CardStoryArgs>;
 
 export const Default: Story = {
   args: {
     title: 'Employee Profile',
     description: 'Manage employee information',
     children: 'Ahmed Mohamed — Software Engineer',
-    footer: <Button size="sm">Edit</Button>,
+    footerLabel: 'Edit',
   },
+  render: ({ footerLabel, footer, children, ...cardProps }) => (
+    <Card
+      {...cardProps}
+      footer={footerLabel ? <Button size="sm">{footerLabel}</Button> : footer}
+    >
+      {children}
+    </Card>
+  ),
 };
 
 export const WithBadge: Story = {

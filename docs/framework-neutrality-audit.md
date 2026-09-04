@@ -1,6 +1,6 @@
 # Framework Neutrality Audit
 
-Updated after `*-react` rename + runtime network/offline parity.
+Updated after contracts-as-source-of-truth + runtime toast/theme/accelerator parity.
 
 ## Naming convention
 
@@ -31,15 +31,30 @@ UI component packages stay `@larose-ui/react` / `vue` / `svelte` (framework = pa
 |---------|:-----:|:---:|:------:|
 | AI SmartTable / SmartForm | `ai-react` | `ai-vue` | `ai-svelte` |
 | Enterprise UI | `enterprise-react` | `enterprise-vue` | `enterprise-svelte` |
-| Runtime (network, offline, AdaptiveTable, i18n, env, features) | `runtime-react` | `runtime-vue` | `runtime-svelte` |
+| Runtime (theme, toast, accelerator, network, offline, AdaptiveTable, i18n, env, features) | `runtime-react` | `runtime-vue` | `runtime-svelte` |
 | DevTools | `devtools-react` (+ Fiber) | `devtools-vue` | `devtools-svelte` |
 | Meta | `next` | `nuxt` | `sveltekit` |
 
 ## Intentional asymmetries
 
-1. React Fiber inspector only in `devtools-react`
-2. React `runtime-react` still has fuller toast/theme/accelerator composition with `@larose-ui/react`
-3. Contracts authoring still generated from React UI index (JSON contracts are neutral)
+1. **React Fiber inspector** only in `devtools-react` — Vue/Svelte use `data-lr-*` DOM metadata (Fiber is React-specific).
+2. **Liquid Glass / MotionProvider / Presence** remain richer on the React UI entry; shared glass cores stay framework-neutral.
+3. **Contract Props sampling** may use a TypeScript `*Props` reference adapter (`--from=react|vue|svelte|auto`) when refreshing JSON. The **canonical source of truth is `contracts/components/*.json`**, not any framework index.
+
+## Contracts
+
+```text
+Framework-neutral contract (JSON)
+         │
+   ┌─────┼─────┐
+   ▼     ▼     ▼
+React   Vue   Svelte
+```
+
+```bash
+pnpm generate:contracts              # refresh from catalog; sample Props via --from=
+pnpm generate:contracts --from=vue   # optional Props sample adapter
+```
 
 ## Enforce
 

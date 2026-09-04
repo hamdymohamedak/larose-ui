@@ -166,7 +166,7 @@ export function toComponentContract(componentName, api, anatomy = {}, framework 
   const contract = {
     name: componentName,
     version: '1',
-    // Canonical contracts are framework-neutral even when authored from React.
+    // Canonical contracts are framework-neutral. Props may be sampled from any adapter for authoring.
     framework: framework === 'react' ? 'neutral' : framework,
     props,
     events,

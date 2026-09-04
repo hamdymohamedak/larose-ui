@@ -1,19 +1,19 @@
 <script setup lang="ts">
-import { LaRoseProvider, RuntimeProvider } from '@larose-ui/vue';
-import type { Density, ThemeMode } from '@larose-ui/core';
+import { LaRoseProvider } from '@larose-ui/runtime-vue';
+import type { Density, Environment, ThemeMode } from '@larose-ui/core';
+import type { LaRoseLocale } from '../../types';
 
 interface LaRosePublicConfig {
   theme?: ThemeMode;
   density?: Density;
   tenantId?: string;
-  runtime?: boolean | Record<string, unknown>;
+  appearance?: 'light' | 'dark' | 'system';
+  enableToasts?: boolean;
+  locale?: LaRoseLocale;
+  environment?: Environment;
 }
 
 const config = useRuntimeConfig().public.laRose as LaRosePublicConfig;
-
-const runtimeEnabled = Boolean(config.runtime);
-const runtimeContext =
-  typeof config.runtime === 'object' && config.runtime !== null ? config.runtime : {};
 </script>
 
 <template>
@@ -21,10 +21,11 @@ const runtimeContext =
     :theme="config.theme"
     :density="config.density"
     :tenant-id="config.tenantId"
+    :appearance="config.appearance"
+    :enable-toasts="config.enableToasts !== false"
+    :locale="config.locale"
+    :environment="config.environment"
   >
-    <RuntimeProvider v-if="runtimeEnabled" :initial-context="runtimeContext">
-      <slot />
-    </RuntimeProvider>
-    <slot v-else />
+    <slot />
   </LaRoseProvider>
 </template>

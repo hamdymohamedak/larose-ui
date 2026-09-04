@@ -50,23 +50,22 @@ import { LaRoseProvider, Button } from '@larose-ui/vue';
 
 ## Runtime
 
-For tenant, locale, permissions, and runtime context:
+For the full platform stack (theme, toast, accelerator, i18n, permissions, network, offline):
 
 ```vue
 <script setup lang="ts">
-import { LaRoseProvider, RuntimeProvider } from '@larose-ui/vue';
+import { LaRoseProvider } from '@larose-ui/runtime-vue';
+import { Button } from '@larose-ui/vue';
 </script>
 
 <template>
-  <LaRoseProvider>
-    <RuntimeProvider :initial-context="{ locale: 'en' }">
-      <RouterView />
-    </RuntimeProvider>
+  <LaRoseProvider theme="light" appearance="system" locale="en">
+    <Button variant="primary">Save</Button>
   </LaRoseProvider>
 </template>
 ```
 
-Use `useRuntimeContext()` inside setup functions to read or patch runtime state.
+Theme-only apps can keep using `LaRoseProvider` from `@larose-ui/vue`. Use `useRuntimeContext()` from `@larose-ui/runtime-vue` inside setup to read or patch runtime state.
 
 ## Components
 

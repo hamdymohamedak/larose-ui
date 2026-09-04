@@ -34,21 +34,26 @@ import '@larose-ui/styles/styles.css';
 
 ## Runtime core
 
-Framework-independent runtime logic lives in `@larose-ui/runtime-core` (store, bridges, tenant, i18n, host detection). `@larose-ui/runtime-react` is the React adapter (`LaRoseProvider`, hooks) and mounts `AcceleratorProvider` from `@larose-ui/react`.
+Framework-independent runtime logic lives in `@larose-ui/runtime-core` (store, bridges, tenant, i18n, host detection). Each adapter mounts a full `LaRoseProvider`:
 
-The lightweight `LaRoseProvider` in `@larose-ui/react` remains for theme/motion-only setups without the full runtime stack.
+- `@larose-ui/runtime-react` — theme, toast, accelerator (`@larose-ui/react`), permissions, observability, network, offline
+- `@larose-ui/runtime-vue` — same composition over `@larose-ui/vue`
+- `@larose-ui/runtime-svelte` — same composition over `@larose-ui/svelte`
+
+Lightweight theme-only `LaRoseProvider`s remain in the UI packages for apps that do not need the full runtime stack.
 
 ## Component contracts
 
-Canonical component APIs live in `contracts/components/*.json` as **framework-neutral** contracts (`framework: "neutral"`). Types are normalized away from React (`ReactNode` → `Node`, `CSSProperties` → `Style`, etc.). Constant exports (`MAX_*`, `STANDARD_*`, SCREAMING_SNAKE) are excluded — contracts cover real components only.
+Canonical component APIs live in `contracts/components/*.json` as **framework-neutral** contracts (`framework: "neutral"`). Types are normalized away from framework specifics (`ReactNode` → `Node`, `CSSProperties` → `Style`, etc.). Constant exports (`MAX_*`, `STANDARD_*`, SCREAMING_SNAKE) are excluded — contracts cover real components only.
 
-Validated by `@larose-ui/contracts` and `larose doctor`. Regenerate from the React index (authoring source) with:
+Validated by `@larose-ui/contracts` and `larose doctor`. The JSON files are the source of truth; adapters must conform. Regenerate / refresh Props samples with:
 
 ```bash
 pnpm generate:contracts
+pnpm generate:contracts --from=react   # optional Props sample adapter
 ```
 
-Vue and Svelte adapters should conform to the same JSON; Doctor compares live extraction against these files.
+Vue and Svelte adapters should conform to the same JSON; Doctor compares live extraction and export presence against these files.
 
 ## Cross-framework Storybook registry
 

@@ -47,6 +47,29 @@
     );
   });
 
+  const grouped = $derived.by(() => {
+    const groups: Array<{
+      group: string;
+      items: Array<CommandPaletteItem & { flatIndex: number }>;
+    }> = [];
+    let flatIndex = 0;
+    const buckets = new Map<string, Array<CommandPaletteItem & { flatIndex: number }>>();
+
+    for (const item of filtered) {
+      const key = item.group ?? 'Commands';
+      let bucket = buckets.get(key);
+      if (!bucket) {
+        bucket = [];
+        buckets.set(key, bucket);
+        groups.push({ group: key, items: bucket });
+      }
+      bucket.push({ ...item, flatIndex });
+      flatIndex += 1;
+    }
+
+    return groups;
+  });
+
   function close() {
     onOpenChange?.(false);
     query = '';
@@ -111,27 +134,51 @@
       aria-modal="true"
       aria-label={ariaLabel}
     >
-      <input class={styles.search} {placeholder} bind:value={query} bind:this={inputEl} />
-      <div class={styles.list} role="listbox">
+      <input
+        type="search"
+        class={styles.search}
+        {placeholder}
+        bind:value={query}
+        bind:this={inputEl}
+        role="combobox"
+        aria-controls="larose-command-list"
+        aria-expanded={filtered.length > 0}
+        aria-activedescendant={
+          filtered[activeIndex] ? `larose-command-${filtered[activeIndex]!.id}` : undefined
+        }
+        aria-autocomplete="list"
+        oninput={() => (activeIndex = 0)}
+        onkeydown={onKeyDown}
+      />
+      <ul id="larose-command-list" class={styles.list} role="listbox" aria-label={ariaLabel}>
         {#if !filtered.length}
-          <p class={styles.empty}>{emptyMessage}</p>
+          <li class={styles.empty} role="presentation">{emptyMessage}</li>
         {:else}
-          {#each filtered as item, index (item.id)}
-            <button
-              type="button"
-              role="option"
-              aria-selected={index === activeIndex}
-              class={styles.item}
-              data-active={index === activeIndex ? 'true' : undefined}
-              onclick={() => select(item)}
-              onmouseenter={() => (activeIndex = index)}
-            >
-              {#if item.group}<span class={styles.groupLabel}>{item.group}</span>{/if}
-              {item.label}
-            </button>
+          {#each grouped as section (section.group)}
+            <li class={styles.group} role="presentation">
+              <div class={styles.groupLabel}>{section.group}</div>
+              <ul role="group" aria-label={section.group}>
+                {#each section.items as item (item.id)}
+                  <li role="presentation">
+                    <button
+                      id={`larose-command-${item.id}`}
+                      type="button"
+                      role="option"
+                      aria-selected={item.flatIndex === activeIndex}
+                      class={styles.item}
+                      data-state={item.flatIndex === activeIndex ? 'active' : 'inactive'}
+                      onclick={() => select(item)}
+                      onmouseenter={() => (activeIndex = item.flatIndex)}
+                    >
+                      {item.label}
+                    </button>
+                  </li>
+                {/each}
+              </ul>
+            </li>
           {/each}
         {/if}
-      </div>
+      </ul>
     </div>
   </div>
 {/if}

@@ -1,11 +1,16 @@
+import { GENERATED_STORY_TITLE_CROSS_FRAMEWORK } from './titleRegistry.generated';
+
 /**
  * Map Storybook `title` → cross-framework registry id when a story
  * hasn't set `parameters.laRose.crossFramework` explicitly.
  *
  * Only single-primary-component titles belong here. Multi-component
  * story files must set `parameters.laRose.crossFramework` per story.
+ *
+ * Auto-discovered titles live in `titleRegistry.generated.ts`.
  */
 export const STORY_TITLE_CROSS_FRAMEWORK: Record<string, string> = {
+  ...GENERATED_STORY_TITLE_CROSS_FRAMEWORK,
   'Foundation/Badge': 'badge',
   'Foundation/Button': 'button',
   'Foundation/Card': 'card',

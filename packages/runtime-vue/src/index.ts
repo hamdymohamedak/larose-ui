@@ -74,3 +74,7 @@ export {
   type RuntimeContextValue,
 } from './runtime/context';
 export { default as RuntimeProvider } from './runtime/RuntimeProvider.vue';
+
+export { default as LaRoseProvider } from './LaRoseProvider.vue';
+export type { LaRoseProviderProps, Appearance } from './LaRoseProvider.vue';
+export { default as OptionalToastProvider } from './toast/OptionalToastProvider.vue';

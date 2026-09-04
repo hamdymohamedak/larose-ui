@@ -64,7 +64,7 @@ import {
   DisclosureTriangle,
 } from '@larose-ui/react';
 import type { CrossFrameworkComponentDefinition } from '../types';
-import { defineSlotParity, definePropsParity } from '../defineParity';
+import { defineSlotParity, definePropsParity, defineCustomParity, slotFromArgs } from '../defineParity';
 import {
   DEFAULT_CHART_DATA,
   DEFAULT_COLLABORATORS,
@@ -259,16 +259,45 @@ export const foundationRegistry: Record<string, CrossFrameworkComponentDefinitio
     Component: Alert,
   }),
 
-  card: defineSlotParity({
+  card: defineCustomParity({
     id: 'card',
     displayName: 'Card',
-    defaultSlot: 'Card body content',
-    propKeys: ['title', 'description'],
+    // Demo host so Vue/Svelte can render a footer Button (React nodes are not serializable).
+    componentName: 'CardDemo',
     argTypes: {
       title: { control: 'text' },
       description: { control: 'text' },
+      children: { control: 'text' },
+      footerLabel: { control: 'text' },
     },
-    Component: Card,
+    mapArgs: (args) => ({
+      props: {
+        title: args.title,
+        description: args.description,
+        padding: args.padding ?? 'md',
+        bodyText: slotFromArgs(args, 'Card body content'),
+        footerLabel:
+          typeof args.footerLabel === 'string'
+            ? args.footerLabel
+            : args.footer != null
+              ? 'Edit'
+              : undefined,
+      },
+    }),
+    renderReact: (props) => (
+      <Card
+        title={props.title as string | undefined}
+        description={props.description as string | undefined}
+        padding={props.padding as 'none' | 'sm' | 'md' | 'lg' | undefined}
+        footer={
+          typeof props.footerLabel === 'string' ? (
+            <Button size="sm">{props.footerLabel}</Button>
+          ) : undefined
+        }
+      >
+        {String(props.bodyText ?? '')}
+      </Card>
+    ),
   }),
 
   skeleton: definePropsParity({

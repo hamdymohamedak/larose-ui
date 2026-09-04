@@ -1188,6 +1188,9 @@ importers:
       '@larose-ui/core':
         specifier: workspace:*
         version: link:../core
+      '@larose-ui/runtime-vue':
+        specifier: workspace:*
+        version: link:../runtime-vue
       '@larose-ui/vue':
         specifier: workspace:*
         version: link:../vue
@@ -1652,13 +1655,28 @@ importers:
       '@larose-ui/network':
         specifier: workspace:*
         version: link:../network
+      '@larose-ui/observability-svelte':
+        specifier: workspace:*
+        version: link:../observability-svelte
       '@larose-ui/offline':
         specifier: workspace:*
         version: link:../offline
+      '@larose-ui/permissions-svelte':
+        specifier: workspace:*
+        version: link:../permissions-svelte
       '@larose-ui/runtime-core':
         specifier: workspace:*
         version: link:../runtime-core
+      '@larose-ui/themes':
+        specifier: workspace:*
+        version: link:../themes
+      '@larose-ui/tokens':
+        specifier: workspace:*
+        version: link:../tokens
     devDependencies:
+      '@larose-ui/svelte':
+        specifier: workspace:*
+        version: link:../svelte
       '@sveltejs/vite-plugin-svelte':
         specifier: ^5.0.3
         version: 5.1.1(svelte@5.57.0(@typescript-eslint/types@8.68.0))(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
@@ -1692,13 +1710,28 @@ importers:
       '@larose-ui/network':
         specifier: workspace:*
         version: link:../network
+      '@larose-ui/observability-vue':
+        specifier: workspace:*
+        version: link:../observability-vue
       '@larose-ui/offline':
         specifier: workspace:*
         version: link:../offline
+      '@larose-ui/permissions-vue':
+        specifier: workspace:*
+        version: link:../permissions-vue
       '@larose-ui/runtime-core':
         specifier: workspace:*
         version: link:../runtime-core
+      '@larose-ui/themes':
+        specifier: workspace:*
+        version: link:../themes
+      '@larose-ui/tokens':
+        specifier: workspace:*
+        version: link:../tokens
     devDependencies:
+      '@larose-ui/vue':
+        specifier: workspace:*
+        version: link:../vue
       '@vitejs/plugin-vue':
         specifier: ^5.2.1
         version: 5.2.4(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vue@3.5.42(typescript@5.9.3))

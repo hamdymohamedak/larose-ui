@@ -37,6 +37,9 @@ jobs:
       - name: Framework neutrality
         run: pnpm check:framework-neutrality
 
+      - name: Storybook coverage
+        run: pnpm generate:storybook-parity && pnpm check:storybook-coverage
+
       - name: Typecheck
         run: pnpm typecheck
 

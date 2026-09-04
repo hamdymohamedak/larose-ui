@@ -25,6 +25,7 @@
   "dependencies": {
     "@larose-ui/core": "workspace:*",
     "@larose-ui/vue": "workspace:*",
+    "@larose-ui/runtime-vue": "workspace:*",
     "@nuxt/kit": "^3.15.1"
   },
   "peerDependencies": {
