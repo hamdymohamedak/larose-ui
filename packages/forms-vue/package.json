@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/forms-vue",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Vue 3 schema-driven forms adapter for laRose UI",
   "type": "module",
   "main": "./dist/index.js",
@@ -12,7 +12,10 @@
       "import": "./dist/index.js"
     }
   },
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "build": "vite build",
     "dev": "vite build --watch",
@@ -42,13 +45,21 @@
     "vue-tsc": "^2.2.0"
   },
   "license": "MIT",
-  "publishConfig": { "access": "public" },
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hamdymohamedak/larose-ui.git",
     "directory": "packages/forms-vue"
   },
-  "keywords": ["larose", "vue", "forms"],
+  "keywords": [
+    "larose",
+    "vue",
+    "forms"
+  ],
   "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/forms-vue#readme",
-  "bugs": { "url": "https://github.com/hamdymohamedak/larose-ui/issues" }
+  "bugs": {
+    "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  }
 }

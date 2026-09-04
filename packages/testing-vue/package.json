@@ -1,13 +1,21 @@
 {
   "name": "@larose-ui/testing-vue",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Vue 3 testing helpers for laRose UI",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" } },
-  "files": ["dist", "README.md"],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsup src/index.ts --format esm --dts --clean",
     "test": "vitest run",
@@ -22,7 +30,9 @@
     "@vue/test-utils": "^2.4.0"
   },
   "peerDependenciesMeta": {
-    "@vue/test-utils": { "optional": true }
+    "@vue/test-utils": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "@vue/test-utils": "^2.4.6",
@@ -33,7 +43,9 @@
     "vue": "^3.5.13"
   },
   "license": "MIT",
-  "publishConfig": { "access": "public" },
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hamdymohamedak/larose-ui.git",

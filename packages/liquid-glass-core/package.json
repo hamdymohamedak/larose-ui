@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/liquid-glass-core",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Framework-agnostic Liquid Glass optics engine for laRose UI",
   "type": "module",
   "main": "./dist/index.js",

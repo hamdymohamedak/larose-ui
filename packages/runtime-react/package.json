@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/runtime-react",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "React runtime adapter for laRose UI — theme, i18n, network, offline, responsive (logic in runtime-core)",
   "type": "module",
   "main": "./dist/index.js",
@@ -38,7 +38,7 @@
     "@larose-ui/observability-react": "workspace:*"
   },
   "peerDependencies": {
-    "@larose-ui/react": ">=0.2.0",
+    "@larose-ui/react": ">=0.3.0",
     "react": ">=18",
     "react-dom": ">=18"
   },

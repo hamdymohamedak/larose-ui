@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/devtools-svelte",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Svelte 5 DevTools panel (DOM protocol over data-lr-* + runtime context)",
   "type": "module",
   "svelte": "./dist/index.js",

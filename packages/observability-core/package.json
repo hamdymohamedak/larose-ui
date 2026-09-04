@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/observability-core",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Framework-agnostic UX observability model and collectors for laRose UI",
   "type": "module",
   "main": "./dist/index.js",

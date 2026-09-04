@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/forms-svelte",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Svelte 5 schema-driven forms adapter for laRose UI",
   "type": "module",
   "svelte": "./dist/index.js",
@@ -14,7 +14,10 @@
       "import": "./dist/index.js"
     }
   },
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "build": "vite build",
     "dev": "vite build --watch",
@@ -44,13 +47,21 @@
     "vitest": "^2.1.8"
   },
   "license": "MIT",
-  "publishConfig": { "access": "public" },
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hamdymohamedak/larose-ui.git",
     "directory": "packages/forms-svelte"
   },
-  "keywords": ["larose", "svelte", "forms"],
+  "keywords": [
+    "larose",
+    "svelte",
+    "forms"
+  ],
   "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/forms-svelte#readme",
-  "bugs": { "url": "https://github.com/hamdymohamedak/larose-ui/issues" }
+  "bugs": {
+    "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  }
 }

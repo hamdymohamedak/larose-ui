@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/enterprise-svelte",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Svelte 5 enterprise adapter — audit, schema, session, version over enterprise-core",
   "type": "module",
   "svelte": "./dist/index.js",
@@ -14,7 +14,10 @@
       "import": "./dist/index.js"
     }
   },
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "build": "vite build",
     "test": "vitest run",
@@ -30,7 +33,9 @@
     "@larose-ui/runtime-svelte": "workspace:*",
     "@larose-ui/svelte": "workspace:*"
   },
-  "peerDependencies": { "svelte": "^5.0.0" },
+  "peerDependencies": {
+    "svelte": "^5.0.0"
+  },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^5.0.3",
     "jsdom": "^25.0.1",
@@ -42,7 +47,9 @@
     "vitest": "^2.1.8"
   },
   "license": "MIT",
-  "publishConfig": { "access": "public" },
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hamdymohamedak/larose-ui.git",

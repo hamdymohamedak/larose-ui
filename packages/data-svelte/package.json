@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/data-svelte",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Svelte 5 data layer adapter for laRose UI (createQuery, createMutation, DataView, createUndo)",
   "type": "module",
   "svelte": "./dist/index.js",
@@ -14,7 +14,10 @@
       "import": "./dist/index.js"
     }
   },
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "build": "vite build",
     "dev": "vite build --watch",
@@ -41,13 +44,22 @@
     "vitest": "^2.1.8"
   },
   "license": "MIT",
-  "publishConfig": { "access": "public" },
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hamdymohamedak/larose-ui.git",
     "directory": "packages/data-svelte"
   },
-  "keywords": ["larose", "svelte", "data", "query"],
+  "keywords": [
+    "larose",
+    "svelte",
+    "data",
+    "query"
+  ],
   "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/data-svelte#readme",
-  "bugs": { "url": "https://github.com/hamdymohamedak/larose-ui/issues" }
+  "bugs": {
+    "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  }
 }

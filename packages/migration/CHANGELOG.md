@@ -1,5 +1,11 @@
 # @larose-ui/migration
 
+## 0.3.0
+
+### Minor Changes
+
+- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.
+
 ## Unreleased
 
 ### Minor Changes

@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/ai-core",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Framework-agnostic AI runtime, intents, and adapters for laRose UI",
   "type": "module",
   "main": "./dist/index.js",
@@ -12,7 +12,10 @@
       "import": "./dist/index.js"
     }
   },
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsup src/index.ts --format esm --dts --clean",
     "test": "vitest run",
@@ -28,11 +31,17 @@
     "vitest": "^2.1.8"
   },
   "license": "MIT",
-  "publishConfig": { "access": "public" },
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hamdymohamedak/larose-ui.git",
     "directory": "packages/ai-core"
   },
-  "keywords": ["larose", "ai", "framework-agnostic"]
+  "keywords": [
+    "larose",
+    "ai",
+    "framework-agnostic"
+  ]
 }

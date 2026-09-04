@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/component-logic",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Shared framework-agnostic component logic for laRose UI (utils, domain helpers)",
   "type": "module",
   "main": "./dist/index.js",

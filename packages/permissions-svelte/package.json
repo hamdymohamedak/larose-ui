@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/permissions-svelte",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Svelte 5 permissions adapter for laRose UI",
   "type": "module",
   "svelte": "./dist/index.js",
@@ -14,7 +14,10 @@
       "import": "./dist/index.js"
     }
   },
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "build": "vite build",
     "dev": "vite build --watch",
@@ -41,13 +44,22 @@
     "vitest": "^2.1.8"
   },
   "license": "MIT",
-  "publishConfig": { "access": "public" },
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hamdymohamedak/larose-ui.git",
     "directory": "packages/permissions-svelte"
   },
-  "keywords": ["larose", "svelte", "permissions", "authz"],
+  "keywords": [
+    "larose",
+    "svelte",
+    "permissions",
+    "authz"
+  ],
   "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/permissions-svelte#readme",
-  "bugs": { "url": "https://github.com/hamdymohamedak/larose-ui/issues" }
+  "bugs": {
+    "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  }
 }

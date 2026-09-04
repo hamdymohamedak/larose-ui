@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/data-react",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "React adapter — Backend-aware data layer for laRose UI platform",
   "type": "module",
   "main": "./dist/index.js",

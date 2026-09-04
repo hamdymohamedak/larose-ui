@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/permissions-core",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Framework-agnostic permission evaluation for laRose UI",
   "type": "module",
   "main": "./dist/index.js",

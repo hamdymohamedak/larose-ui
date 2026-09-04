@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/devtools-core",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Framework-agnostic DevTools analytics for laRose UI",
   "type": "module",
   "main": "./dist/index.js",

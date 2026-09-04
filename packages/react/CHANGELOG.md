@@ -1,5 +1,22 @@
 # @larose-ui/react
 
+## 0.3.0
+
+### Minor Changes
+
+- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.
+
+### Patch Changes
+
+- Updated dependencies [b11853a]
+  - @larose-ui/component-logic@0.3.0
+  - @larose-ui/core@0.3.0
+  - @larose-ui/liquid-glass-core@0.3.0
+  - @larose-ui/primitives@0.3.0
+  - @larose-ui/styles@0.3.0
+  - @larose-ui/themes@0.3.0
+  - @larose-ui/tokens@0.3.0
+
 ## Unreleased
 
 ### Minor Changes

@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/sveltekit",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "SvelteKit integration for laRose UI — SSR CSS, theme bootstrap, app root",
   "type": "module",
   "main": "./dist/index.js",

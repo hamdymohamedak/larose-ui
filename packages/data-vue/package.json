@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/data-vue",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Vue 3 data layer adapter for laRose UI (useQuery, useMutation, DataView, useUndo)",
   "type": "module",
   "main": "./dist/index.js",
@@ -12,7 +12,10 @@
       "import": "./dist/index.js"
     }
   },
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "build": "vite build",
     "dev": "vite build --watch",
@@ -39,13 +42,22 @@
     "vue-tsc": "^2.2.0"
   },
   "license": "MIT",
-  "publishConfig": { "access": "public" },
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hamdymohamedak/larose-ui.git",
     "directory": "packages/data-vue"
   },
-  "keywords": ["larose", "vue", "data", "useQuery"],
+  "keywords": [
+    "larose",
+    "vue",
+    "data",
+    "useQuery"
+  ],
   "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/data-vue#readme",
-  "bugs": { "url": "https://github.com/hamdymohamedak/larose-ui/issues" }
+  "bugs": {
+    "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  }
 }

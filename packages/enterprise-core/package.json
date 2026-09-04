@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/enterprise-core",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Framework-agnostic enterprise helpers (version, UI schema, audit model)",
   "type": "module",
   "main": "./dist/index.js",
@@ -12,7 +12,10 @@
       "import": "./dist/index.js"
     }
   },
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsup src/index.ts --format esm --dts --clean",
     "test": "vitest run",
@@ -29,11 +32,17 @@
     "vitest": "^2.1.8"
   },
   "license": "MIT",
-  "publishConfig": { "access": "public" },
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hamdymohamedak/larose-ui.git",
     "directory": "packages/enterprise-core"
   },
-  "keywords": ["larose", "enterprise", "framework-agnostic"]
+  "keywords": [
+    "larose",
+    "enterprise",
+    "framework-agnostic"
+  ]
 }

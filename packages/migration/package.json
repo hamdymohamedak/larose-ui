@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/migration",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Migration tools and deprecation detection for laRose",
   "type": "module",
   "main": "./dist/index.js",

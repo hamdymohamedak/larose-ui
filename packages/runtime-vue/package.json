@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/runtime-vue",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Vue 3 runtime adapter — LaRoseProvider (theme, toast, accelerator, network, offline, i18n) over runtime-core",
   "type": "module",
   "main": "./dist/index.js",
@@ -16,7 +16,10 @@
       "import": "./dist/toast/index.js"
     }
   },
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "build": "vite build",
     "test": "vitest run",
@@ -34,7 +37,7 @@
     "@larose-ui/observability-vue": "workspace:*"
   },
   "peerDependencies": {
-    "@larose-ui/vue": ">=0.2.0",
+    "@larose-ui/vue": ">=0.3.0",
     "vue": "^3.5.0"
   },
   "peerDependenciesMeta": {
@@ -54,7 +57,9 @@
     "vue-tsc": "^2.2.0"
   },
   "license": "MIT",
-  "publishConfig": { "access": "public" },
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hamdymohamedak/larose-ui.git",

@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/styles",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Shared component styles for laRose UI — framework-agnostic CSS from the design system",
   "type": "module",
   "main": "./dist/index.js",
@@ -16,8 +16,12 @@
   },
   "typesVersions": {
     "*": {
-      "components/*/*.module.css": ["./dist/css-modules.d.ts"],
-      "components/*/*/*.module.css": ["./dist/css-modules.d.ts"]
+      "components/*/*.module.css": [
+        "./dist/css-modules.d.ts"
+      ],
+      "components/*/*/*.module.css": [
+        "./dist/css-modules.d.ts"
+      ]
     }
   },
   "files": [
