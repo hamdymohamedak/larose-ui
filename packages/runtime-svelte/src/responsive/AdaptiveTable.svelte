@@ -10,6 +10,7 @@
   } from '@larose-ui/runtime-core';
   import { RESPONSIVE_CONTEXT } from './context';
   import { getI18n } from '../i18n/context';
+  import { getNetwork } from '../network/context';
   import type { Column } from './types';
 
   interface Props {
@@ -43,8 +44,9 @@
   });
 
   const { t } = getI18n();
+  const network = getNetwork();
   const showSkeleton = $derived(
-    loading || (networkCondition ? shouldUseSkeleton(networkCondition) : false),
+    loading || shouldUseSkeleton(networkCondition ?? network.condition),
   );
   const isMobile = $derived(breakpoint.isMobile || breakpoint.breakpoint === 'mobile');
   const visibleColumns = $derived(

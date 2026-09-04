@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { LaRoseProvider } from '@larose-ui/runtime';
-import { AuditProvider, AuditedInput, VersionProvider } from '@larose-ui/enterprise';
+import { LaRoseProvider } from '@larose-ui/runtime-react';
+import { AuditProvider, AuditedInput, VersionProvider } from '@larose-ui/enterprise-react';
 import { Card } from '@larose-ui/react';
 
 function AuditDemo() {

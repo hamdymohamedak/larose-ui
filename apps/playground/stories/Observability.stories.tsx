@@ -6,8 +6,8 @@ import {
   ObservedErrorBoundary,
   useObservability,
   useInteractionObserver,
-} from '@larose-ui/observability';
-import { Form } from '@larose-ui/forms';
+} from '@larose-ui/observability-react';
+import { Form } from '@larose-ui/forms-react';
 import { Button, Card } from '@larose-ui/react';
 
 function MetricsPanel() {

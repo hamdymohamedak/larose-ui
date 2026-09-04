@@ -47,9 +47,9 @@ function fixLaRoseProviderImport(source: string): CodemodResult {
     const reactParts = parts.filter((p: string) => p !== 'LaRoseProvider');
 
     changed = true;
-    transforms.push('import:LaRoseProvider→@larose-ui/runtime');
+    transforms.push('import:LaRoseProvider→@larose-ui/runtime-react');
 
-    const runtimeImport = "import { LaRoseProvider } from '@larose-ui/runtime';";
+    const runtimeImport = "import { LaRoseProvider } from '@larose-ui/runtime-react';";
     if (reactParts.length === 0) {
       return runtimeImport;
     }
@@ -68,15 +68,15 @@ function fixToastImport(source: string): CodemodResult {
 
   content = content.replace(regex, (_full, specifiers: string) => {
     changed = true;
-    transforms.push('import:useToast→@larose-ui/runtime/toast');
+    transforms.push('import:useToast→@larose-ui/runtime-react/toast');
     const parts = specifiers
       .split(',')
       .map((s: string) => s.trim())
       .filter(Boolean);
     const toastParts = parts.filter((p: string) => p !== 'useToast');
-    const toastImport = "import { useToast } from '@larose-ui/runtime/toast';";
+    const toastImport = "import { useToast } from '@larose-ui/runtime-react/toast';";
     if (toastParts.length === 0) return toastImport;
-    return `${toastImport}\nimport { ${toastParts.join(', ')} } from '@larose-ui/runtime';`;
+    return `${toastImport}\nimport { ${toastParts.join(', ')} } from '@larose-ui/runtime-react';`;
   });
 
   return { content, changed, transforms };

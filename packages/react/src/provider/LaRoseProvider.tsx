@@ -49,9 +49,9 @@ export interface LaRoseProviderProps extends LaRoseConfig {
 }
 
 /**
- * Lightweight theme + motion + accelerator provider for apps that do not use `@larose-ui/runtime`.
+ * Lightweight theme + motion + accelerator provider for apps that do not use `@larose-ui/runtime-react`.
  * For the full platform stack (i18n, permissions, network, offline, runtime context), use
- * `LaRoseProvider` from `@larose-ui/runtime` instead — it includes accelerators automatically.
+ * `LaRoseProvider` from `@larose-ui/runtime-react` instead — it includes accelerators automatically.
  */
 export function LaRoseProvider({
   children,

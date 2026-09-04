@@ -36,9 +36,9 @@ await queue.enqueue({ url: '/api/items', method: 'POST', body: { name: 'Draft' }
 | Layer | Packages |
 |-------|----------|
 | Foundation | `@larose-ui/core`, `@larose-ui/tokens`, `@larose-ui/react` |
-| Runtime | `@larose-ui/runtime`, `@larose-ui/network`, `@larose-ui/offline` |
-| Intelligence | `@larose-ui/data`, `@larose-ui/forms`, `@larose-ui/permissions` |
-| Platform | `@larose-ui/observability`, `@larose-ui/enterprise`, `@larose-ui/ai` |
+| Runtime | `@larose-ui/runtime-react`, `@larose-ui/network`, `@larose-ui/offline` |
+| Intelligence | `@larose-ui/data-react`, `@larose-ui/forms-react`, `@larose-ui/permissions-react` |
+| Platform | `@larose-ui/observability-react`, `@larose-ui/enterprise-react`, `@larose-ui/ai-react` |
 
 ## Documentation
 

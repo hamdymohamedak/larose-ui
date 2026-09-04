@@ -1,6 +1,6 @@
 'use client';
 
-import { LaRoseProvider, type LaRoseProviderProps } from '@larose-ui/runtime';
+import { LaRoseProvider, type LaRoseProviderProps } from '@larose-ui/runtime-react';
 
 export type LaRoseRootProps = LaRoseProviderProps;
 
@@ -12,4 +12,4 @@ export function LaRoseRoot(props: LaRoseRootProps) {
   return <LaRoseProvider {...props} />;
 }
 
-export { LaRoseProvider, type LaRoseProviderProps } from '@larose-ui/runtime';
+export { LaRoseProvider, type LaRoseProviderProps } from '@larose-ui/runtime-react';

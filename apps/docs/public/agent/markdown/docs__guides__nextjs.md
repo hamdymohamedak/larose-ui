@@ -7,7 +7,7 @@ laRose UI ships as React components with shared CSS. `@larose-ui/next` is a thin
 ## Install
 
 ```bash
-pnpm add @larose-ui/next @larose-ui/react @larose-ui/runtime @larose-ui/tokens
+pnpm add @larose-ui/next @larose-ui/react @larose-ui/runtime-react @larose-ui/tokens
 ```
 
 ## App Router (recommended)
@@ -52,7 +52,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
 }
 ```
 
-`LaRoseRoot` wraps `@larose-ui/runtime` `LaRoseProvider` (theme, i18n, permissions, network, offline, accelerators).
+`LaRoseRoot` wraps `@larose-ui/runtime-react` `LaRoseProvider` (theme, i18n, permissions, network, offline, accelerators).
 
 For theme/motion-only apps without the runtime stack:
 
@@ -137,7 +137,7 @@ Ensure `next.config` transpiles laRose workspace packages when linking locally:
 ```js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  transpilePackages: ['@larose-ui/react', '@larose-ui/runtime', '@larose-ui/next'],
+  transpilePackages: ['@larose-ui/react', '@larose-ui/runtime-react', '@larose-ui/next'],
 };
 
 export default nextConfig;

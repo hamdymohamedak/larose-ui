@@ -11,7 +11,7 @@ export const DEPRECATIONS: Deprecation[] = [
     id: 'role-check',
     pattern: /user\.role\s*===\s*['"]admin['"]/g,
     message: 'Inline role checks are deprecated',
-    replacement: 'Use <Can permission="..."> from @larose-ui/permissions',
+    replacement: 'Use <Can permission="..."> from @larose-ui/permissions-react',
     removedIn: '1.0.0',
   },
   {
@@ -25,15 +25,15 @@ export const DEPRECATIONS: Deprecation[] = [
     id: 'react-provider',
     pattern:
       /import\s+\{[^}]*\bLaRoseProvider\b[^}]*\}\s+from\s+['"]@larose-ui\/react['"]/g,
-    message: 'Import LaRoseProvider from @larose-ui/runtime instead',
-    replacement: "import { LaRoseProvider } from '@larose-ui/runtime'",
+    message: 'Import LaRoseProvider from @larose-ui/runtime-react instead',
+    replacement: "import { LaRoseProvider } from '@larose-ui/runtime-react'",
     removedIn: '0.2.0',
   },
   {
     id: 'runtime-toast',
     pattern: /import\s+\{([^}]*\buseToast\b[^}]*)\}\s+from\s+['"]@larose-ui\/runtime['"]/g,
-    message: 'Import useToast from @larose-ui/runtime/toast',
-    replacement: "import { useToast } from '@larose-ui/runtime/toast'",
+    message: 'Import useToast from @larose-ui/runtime-react/toast',
+    replacement: "import { useToast } from '@larose-ui/runtime-react/toast'",
     removedIn: '0.2.0',
   },
 ];

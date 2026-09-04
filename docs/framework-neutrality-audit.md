@@ -1,36 +1,45 @@
 # Framework Neutrality Audit
 
-Generated as Phase 1 of the framework-agnostic migration (`maintenance.md`).
-Updated after UI/runtime/devtools/meta parity pass.
+Updated after `*-react` rename + runtime network/offline parity.
 
-## Target
+## Naming convention
 
 ```text
-Shared cores (no React/Vue/Svelte)
-        │
-   ┌────┼────┐
-React  Vue  Svelte   ← adapters only
+*-core              shared logic (no framework)
+*-react / *-vue / *-svelte   equal adapters
 ```
 
-React must be **one of three adapters**, not the foundation.
+React is never the bare package name for platform adapters:
+
+| Old | New |
+|-----|-----|
+| `@larose-ui/data` | `@larose-ui/data-react` |
+| `@larose-ui/forms` | `@larose-ui/forms-react` |
+| `@larose-ui/permissions` | `@larose-ui/permissions-react` |
+| `@larose-ui/observability` | `@larose-ui/observability-react` |
+| `@larose-ui/ai` | `@larose-ui/ai-react` |
+| `@larose-ui/enterprise` | `@larose-ui/enterprise-react` |
+| `@larose-ui/testing` | `@larose-ui/testing-react` |
+| `@larose-ui/runtime` | `@larose-ui/runtime-react` |
+| `@larose-ui/devtools` | `@larose-ui/devtools-react` |
+
+UI component packages stay `@larose-ui/react` / `vue` / `svelte` (framework = package name).
 
 ## Platform surface parity
 
 | Surface | React | Vue | Svelte |
 |---------|:-----:|:---:|:------:|
-| AIProvider | yes | yes | yes |
-| SmartTable / SmartForm | yes | yes | yes |
-| AuditProvider + AuditedInput / AuditHistory / SchemaRenderer / SessionGuard / SensitiveAction / VersionProvider | yes | yes | yes |
-| Runtime (AdaptiveTable, Responsive, Env, I18n, Features, RuntimeProvider) | `@larose-ui/runtime` | `@larose-ui/runtime-vue` | `@larose-ui/runtime-svelte` |
-| DevTools panel (DOM protocol) | yes (+ Fiber) | `@larose-ui/devtools-vue` | `@larose-ui/devtools-svelte` |
-| Meta-framework | `@larose-ui/next` | `@larose-ui/nuxt` | `@larose-ui/sveltekit` |
+| AI SmartTable / SmartForm | `ai-react` | `ai-vue` | `ai-svelte` |
+| Enterprise UI | `enterprise-react` | `enterprise-vue` | `enterprise-svelte` |
+| Runtime (network, offline, AdaptiveTable, i18n, env, features) | `runtime-react` | `runtime-vue` | `runtime-svelte` |
+| DevTools | `devtools-react` (+ Fiber) | `devtools-vue` | `devtools-svelte` |
+| Meta | `next` | `nuxt` | `sveltekit` |
 
-## Remaining intentional asymmetries
+## Intentional asymmetries
 
-1. **React Fiber inspector** — only in `@larose-ui/devtools` (Vue/Svelte use `data-lr-*` DOM protocol)
-2. **Full `@larose-ui/runtime` stack** — React still has Network/Offline/Toast composition; Vue/Svelte cover the shared runtime-core surfaces used by AI/enterprise
-3. **Component package LOC** — adapters remain real renderers, not zero-logic shells
-4. **Contracts authoring** — still generated from React index (contracts JSON are neutral)
+1. React Fiber inspector only in `devtools-react`
+2. React `runtime-react` still has fuller toast/theme/accelerator composition with `@larose-ui/react`
+3. Contracts authoring still generated from React UI index (JSON contracts are neutral)
 
 ## Enforce
 

@@ -11,8 +11,8 @@ Safe automated transforms via `larose migrate --apply`:
 | Transform | Description |
 |-----------|-------------|
 | Token rename | `--ui-color-*` → `--lr-color-*` |
-| Provider import | `LaRoseProvider` from `@larose-ui/react` → `@larose-ui/runtime` |
-| Toast import | `useToast` from `@larose-ui/runtime` → `@larose-ui/runtime/toast` |
+| Provider import | `LaRoseProvider` from `@larose-ui/react` → `@larose-ui/runtime-react` |
+| Toast import | `useToast` from `@larose-ui/runtime-react` → `@larose-ui/runtime-react/toast` |
 
 ```bash
 pnpm migrate              # dry-run report

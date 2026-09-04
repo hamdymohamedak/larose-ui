@@ -43,7 +43,7 @@ Reduced motion zeroes all motion durations at the token level via `@media (prefe
 ## Global configuration
 
 ```tsx
-import { LaRoseProvider } from '@larose-ui/runtime';
+import { LaRoseProvider } from '@larose-ui/runtime-react';
 
 <LaRoseProvider
   motion={{
@@ -55,7 +55,7 @@ import { LaRoseProvider } from '@larose-ui/runtime';
 </LaRoseProvider>
 ```
 
-Runtime provider (`@larose-ui/runtime`) accepts the same `motion` prop.
+Runtime provider (`@larose-ui/runtime-react`) accepts the same `motion` prop.
 
 ## Presence
 

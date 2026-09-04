@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { LaRoseProvider } from '@larose-ui/runtime';
-import { AIProvider, SmartTable, SmartForm } from '@larose-ui/ai';
+import { LaRoseProvider } from '@larose-ui/runtime-react';
+import { AIProvider, SmartTable, SmartForm } from '@larose-ui/ai-react';
 import { Card } from '@larose-ui/react';
 
 const employees = [

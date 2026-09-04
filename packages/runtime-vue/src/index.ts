@@ -32,6 +32,40 @@ export { default as FeatureFlagProvider } from './features/FeatureFlagProvider.v
 export { default as Feature } from './features/Feature.vue';
 
 export {
+  useNetwork,
+  useNetworkMonitor,
+  provideNetwork,
+  NETWORK_KEY,
+  NETWORK_MONITOR_KEY,
+} from './network/context';
+export { default as NetworkProvider } from './network/NetworkProvider.vue';
+
+export {
+  useOffline,
+  useOptionalOffline,
+  provideOffline,
+  OFFLINE_KEY,
+  type OfflineContextValue,
+} from './offline/context';
+export { default as OfflineProvider } from './offline/OfflineProvider.vue';
+
+export {
+  createNetworkMonitor,
+  isSlowNetwork,
+  isOnlineNetwork,
+  isDegradedNetwork,
+  shouldUseSkeleton,
+  normalizeNetworkCondition,
+} from '@larose-ui/network';
+export type { NetworkState } from '@larose-ui/network';
+export { createOfflineQueue } from '@larose-ui/offline';
+export type {
+  QueuedRequest,
+  OfflineSyncStatus,
+  SyncResult,
+} from '@larose-ui/offline';
+
+export {
   useRuntimeContext,
   useOptionalRuntime,
   provideRuntime,

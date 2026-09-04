@@ -8,7 +8,7 @@ TanStack Start uses Vite + React SSR. laRose does **not** ship a separate compon
 @larose-ui/styles
 @larose-ui/primitives
 @larose-ui/react
-@larose-ui/runtime
+@larose-ui/runtime-react
 @larose-ui/runtime-core
 @larose-ui/next   ← theme script + CSS path helpers only
 ```
@@ -16,7 +16,7 @@ TanStack Start uses Vite + React SSR. laRose does **not** ship a separate compon
 ## Install
 
 ```bash
-pnpm add @larose-ui/react @larose-ui/runtime @larose-ui/tokens @larose-ui/next
+pnpm add @larose-ui/react @larose-ui/runtime-react @larose-ui/tokens @larose-ui/next
 ```
 
 ## CSS
@@ -86,7 +86,7 @@ Adjust `head`/`scripts` API to match your TanStack Start version — the goal is
 1. **Theme flash** — inject the laRose theme script in document `<head>` via `createLaRoseThemeScriptContent`.
 2. **Provider once** — mount `LaRoseRoot` at the root route, not per-page.
 3. **Client-only widgets** — Dialog, Menu, CommandPalette, and other interactive components must render under a client boundary (`'use client'` or TanStack Start client route modules).
-4. **Runtime state** — `@larose-ui/runtime-core` store is framework-agnostic; `@larose-ui/runtime` binds it to React via `useSyncExternalStore`.
+4. **Runtime state** — `@larose-ui/runtime-core` store is framework-agnostic; `@larose-ui/runtime-react` binds it to React via `useSyncExternalStore`.
 
 ## Runtime initialization
 
@@ -115,7 +115,7 @@ For SSR routes that never render menus on the server, no special handling is req
 
 - Run `larose doctor` in CI against the same monorepo or app root.
 - Configure framework paths in `larose.config.json` if component roots differ from defaults.
-- DevTools (`@larose-ui/devtools`) mount as a client-only panel inside `LaRoseRoot`.
+- DevTools (`@larose-ui/devtools-react`) mount as a client-only panel inside `LaRoseRoot`.
 
 ## Comparison with Next.js
 

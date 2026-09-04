@@ -19,9 +19,9 @@ React Vue Svelte
 |-------|--------|
 | Visual UI (components + CSS) | React, Vue, and Svelte |
 | Shared logic | `primitives`, `component-logic`, `liquid-glass-core`, `forms-core`, `data-core`, `permissions-core`, `observability-core`, `runtime-core`, `ai-core`, `enterprise-core`, `testing-core`, … |
-| Intelligence UI | React + Vue + Svelte adapters (`forms-*`, `data-*`, `permissions-*`, `observability-*`, `ai-*`, `enterprise-*`, `testing-*`) |
-| Runtime UI | `runtime-core` + `runtime` / `runtime-vue` / `runtime-svelte` |
-| DevTools | `devtools-core` + `devtools` / `devtools-vue` / `devtools-svelte` (Fiber = React-only) |
+| Intelligence UI | Equal adapters: `forms-react|vue|svelte`, `data-*`, `permissions-*`, `observability-*`, `ai-*`, `enterprise-*`, `testing-*` |
+| Runtime UI | `runtime-core` + `runtime-react` / `runtime-vue` / `runtime-svelte` |
+| DevTools | `devtools-core` + `devtools-react` / `devtools-vue` / `devtools-svelte` (Fiber = React-only) |
 | Meta-frameworks | `@larose-ui/next` · `@larose-ui/nuxt` · `@larose-ui/sveltekit` |
 
 ## What we are not doing

@@ -66,7 +66,7 @@ The command prints the paths of the component, test, and CSS files, plus package
 
 ### Packages and apps
 
-- **`packages/*`** — publishable libraries (`@larose-ui/react`, `@larose-ui/runtime`, etc.)
+- **`packages/*`** — publishable libraries (`@larose-ui/react`, `@larose-ui/runtime-react`, etc.)
 - **`apps/playground`** — Storybook; add or update stories for UI changes
 - **`apps/demo`** — integration demo app
 

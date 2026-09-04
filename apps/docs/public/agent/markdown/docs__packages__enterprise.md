@@ -1,4 +1,4 @@
-# @larose-ui/enterprise
+# @larose-ui/enterprise-react
 
 Enterprise patterns — audit trails, session guards, schema IaC.
 

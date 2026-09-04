@@ -48,6 +48,41 @@ export { default as FeatureFlagProvider } from './features/FeatureFlagProvider.s
 export { default as Feature } from './features/Feature.svelte';
 
 export {
+  createNetworkStore,
+  setNetworkContext,
+  getNetwork,
+  NETWORK_CONTEXT,
+  NETWORK_MONITOR_CONTEXT,
+} from './network/context';
+export { default as NetworkProvider } from './network/NetworkProvider.svelte';
+
+export {
+  createOfflineStore,
+  setOfflineContext,
+  getOffline,
+  getOptionalOffline,
+  OFFLINE_CONTEXT,
+  type OfflineContextValue,
+} from './offline/context';
+export { default as OfflineProvider } from './offline/OfflineProvider.svelte';
+
+export {
+  createNetworkMonitor,
+  isSlowNetwork,
+  isOnlineNetwork,
+  isDegradedNetwork,
+  shouldUseSkeleton,
+  normalizeNetworkCondition,
+} from '@larose-ui/network';
+export type { NetworkState } from '@larose-ui/network';
+export { createOfflineQueue } from '@larose-ui/offline';
+export type {
+  QueuedRequest,
+  OfflineSyncStatus,
+  SyncResult,
+} from '@larose-ui/offline';
+
+export {
   createRuntimeContext,
   setRuntimeContext,
   getRuntimeContext,

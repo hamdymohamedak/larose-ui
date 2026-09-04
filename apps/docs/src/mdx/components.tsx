@@ -8,7 +8,7 @@ import {
   Input,
   Typography,
 } from '@larose-ui/react';
-import { LaRoseProvider } from '@larose-ui/runtime';
+import { LaRoseProvider } from '@larose-ui/runtime-react';
 import { CodeBlock } from '@/components/CodeBlock';
 import { ModalPreview } from '@/previews/interactivePreviews';
 import { PreviewFrame } from '@/components/PreviewFrame';

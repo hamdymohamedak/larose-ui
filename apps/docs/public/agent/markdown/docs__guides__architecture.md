@@ -13,15 +13,15 @@ laRose is a **UI Operating System** for modern SaaS applications — not a compo
         │                │                │
      UI Layer       Intelligence        Runtime
         │                │                │
-   @larose-ui/react   @larose-ui/data      @larose-ui/runtime
-   Components      @larose-ui/forms     Theme, Tenant, Session
-   @larose-ui/styles @larose-ui/permissions Feature Flags, i18n
-        │           @larose-ui/ai         Network, Offline
+   @larose-ui/react   @larose-ui/data-react      @larose-ui/runtime-react
+   Components      @larose-ui/forms-react     Theme, Tenant, Session
+   @larose-ui/styles @larose-ui/permissions-react Feature Flags, i18n
+        │           @larose-ui/ai-react         Network, Offline
         │                │                │
         └────────────────┼────────────────┘
                          │
                    Observability
-                   @larose-ui/observability
+                   @larose-ui/observability-react
                          │
                     Quality Engine
               Doctor + CLI + Testing + A11y
@@ -40,7 +40,7 @@ import '@larose-ui/styles/styles.css';
 
 ## Runtime core
 
-Framework-independent runtime logic lives in `@larose-ui/runtime-core` (store, bridges, tenant, i18n, host detection). `@larose-ui/runtime` is the React adapter (`LaRoseProvider`, hooks) and mounts `AcceleratorProvider` from `@larose-ui/react`.
+Framework-independent runtime logic lives in `@larose-ui/runtime-core` (store, bridges, tenant, i18n, host detection). `@larose-ui/runtime-react` is the React adapter (`LaRoseProvider`, hooks) and mounts `AcceleratorProvider` from `@larose-ui/react`.
 
 The lightweight `LaRoseProvider` in `@larose-ui/react` remains for theme/motion-only setups without the full runtime stack.
 
@@ -62,9 +62,9 @@ Framework-independent quality and telemetry logic lives in `-core` packages. Rea
 
 | Core | React adapter |
 |------|----------------|
-| `@larose-ui/observability-core` | `@larose-ui/observability` |
-| `@larose-ui/permissions-core` | `@larose-ui/permissions` |
-| `@larose-ui/devtools-core` | `@larose-ui/devtools` |
+| `@larose-ui/observability-core` | `@larose-ui/observability-react` |
+| `@larose-ui/permissions-core` | `@larose-ui/permissions-react` |
+| `@larose-ui/devtools-core` | `@larose-ui/devtools-react` |
 | `@larose-ui/quality-core` | `@larose-ui/cli` (doctor runner) |
 
 Doctor reads `larose.config.json` for framework-specific component and story paths. Add Vue/Svelte targets there when those bindings exist.
@@ -104,7 +104,7 @@ See [RUNTIME_2.md](../runtime/RUNTIME_2.md) for Runtime 2.0 design.
 ### Basic
 
 ```tsx
-import { LaRoseProvider } from '@larose-ui/runtime';
+import { LaRoseProvider } from '@larose-ui/runtime-react';
 import { Button } from '@larose-ui/react';
 
 <LaRoseProvider locale="en" permissions={['app.read']}>

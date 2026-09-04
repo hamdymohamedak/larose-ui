@@ -11,11 +11,11 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@larose-ui/data": "workspace:*",
-    "@larose-ui/forms": "workspace:*",
-    "@larose-ui/permissions": "workspace:*",
+    "@larose-ui/data-react": "workspace:*",
+    "@larose-ui/forms-react": "workspace:*",
+    "@larose-ui/permissions-react": "workspace:*",
     "@larose-ui/react": "workspace:*",
-    "@larose-ui/runtime": "workspace:*",
+    "@larose-ui/runtime-react": "workspace:*",
     "@larose-ui/tokens": "workspace:*",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

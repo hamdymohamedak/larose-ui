@@ -12,9 +12,9 @@ describe('analyzeRelease', () => {
         publishConfig: { access: 'public' },
       },
       {
-        name: '@larose-ui/runtime',
+        name: '@larose-ui/runtime-react',
         version: '0.2.0',
-        directory: 'packages/runtime',
+        directory: 'packages/runtime-react',
         license: 'MIT',
         publishConfig: { access: 'public' },
       },
@@ -28,7 +28,7 @@ describe('analyzeRelease', () => {
 
     expect(report.aligned).toBe(false);
     expect(report.drift).toHaveLength(1);
-    expect(report.drift[0]?.name).toBe('@larose-ui/runtime');
+    expect(report.drift[0]?.name).toBe('@larose-ui/runtime-react');
   });
 
   it('flags missing publish metadata', () => {

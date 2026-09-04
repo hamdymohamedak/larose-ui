@@ -34,7 +34,7 @@ import '@larose-ui/styles/styles.css';
 
 ## Runtime core
 
-Framework-independent runtime logic lives in `@larose-ui/runtime-core` (store, bridges, tenant, i18n, host detection). `@larose-ui/runtime` is the React adapter (`LaRoseProvider`, hooks) and mounts `AcceleratorProvider` from `@larose-ui/react`.
+Framework-independent runtime logic lives in `@larose-ui/runtime-core` (store, bridges, tenant, i18n, host detection). `@larose-ui/runtime-react` is the React adapter (`LaRoseProvider`, hooks) and mounts `AcceleratorProvider` from `@larose-ui/react`.
 
 The lightweight `LaRoseProvider` in `@larose-ui/react` remains for theme/motion-only setups without the full runtime stack.
 
@@ -91,17 +91,16 @@ Framework-independent quality and telemetry logic lives in `-core` packages. Fra
 
 | Core | Adapters |
 |------|----------|
-| `@larose-ui/observability-core` | `observability` / `observability-vue` / `observability-svelte` |
-| `@larose-ui/devtools-core` | `devtools` (React inspector; fiber is React-specific) |
+| `@larose-ui/observability-core` | `observability-react` / `observability-vue` / `observability-svelte` |
+| `@larose-ui/devtools-core` | `devtools-react` / `devtools-vue` / `devtools-svelte` (Fiber = React-only) |
 | `@larose-ui/quality-core` | `@larose-ui/cli` (doctor runner) |
-| `@larose-ui/permissions-core` | `permissions` / `permissions-vue` / `permissions-svelte` |
-| `@larose-ui/forms-core` | `forms` / `forms-vue` / `forms-svelte` |
-| `@larose-ui/data-core` | `data` / `data-vue` / `data-svelte` |
-| `@larose-ui/runtime-core` | `runtime` (React); `runtime-vue`; `runtime-svelte` |
-| `@larose-ui/ai-core` | `ai` / `ai-vue` / `ai-svelte` |
-| `@larose-ui/enterprise-core` | `enterprise` / `enterprise-vue` / `enterprise-svelte` |
-| `@larose-ui/testing-core` | `testing` / `testing-vue` / `testing-svelte` |
-| `@larose-ui/devtools-core` | `devtools` / `devtools-vue` / `devtools-svelte` |
+| `@larose-ui/permissions-core` | `permissions-react` / `permissions-vue` / `permissions-svelte` |
+| `@larose-ui/forms-core` | `forms-react` / `forms-vue` / `forms-svelte` |
+| `@larose-ui/data-core` | `data-react` / `data-vue` / `data-svelte` |
+| `@larose-ui/runtime-core` | `runtime-react` / `runtime-vue` / `runtime-svelte` |
+| `@larose-ui/ai-core` | `ai-react` / `ai-vue` / `ai-svelte` |
+| `@larose-ui/enterprise-core` | `enterprise-react` / `enterprise-vue` / `enterprise-svelte` |
+| `@larose-ui/testing-core` | `testing-react` / `testing-vue` / `testing-svelte` |
 | `@larose-ui/liquid-glass-core` | `react` / `vue` / `svelte` LiquidGlass adapters |
 
 Doctor reads `larose.config.json` for framework-specific component and story paths. Add Vue/Svelte targets there when those bindings exist.
@@ -115,7 +114,7 @@ Doctor reads `larose.config.json` for framework-specific component and story pat
 | `@larose-ui/nuxt` | Nuxt module — CSS, theme script, `LaRoseApp`, auto-imports |
 | `@larose-ui/svelte` | Svelte 5 components + theme `LaRoseProvider` |
 | `@larose-ui/sveltekit` | SvelteKit helpers — CSS paths + theme bootstrap script |
-| `@larose-ui/runtime-vue` / `runtime-svelte` | Framework runtime adapters over `runtime-core` |
+| `@larose-ui/runtime-react` / `runtime-vue` / `runtime-svelte` | Equal runtime adapters over `runtime-core` |
 | TanStack Start | Same React packages; see [TANSTACK_START.md](../ecosystem/TANSTACK_START.md) |
 
 See [VUE.md](../ecosystem/VUE.md), [NEXTJS.md](../ecosystem/NEXTJS.md), and [SVELTE.md](../ecosystem/SVELTE.md). Framework packages do not duplicate components — they consume shared styles, tokens, primitives, and runtime-core.
@@ -149,7 +148,7 @@ See [RUNTIME_2.md](../runtime/RUNTIME_2.md) for Runtime 2.0 design.
 ### Basic
 
 ```tsx
-import { LaRoseProvider } from '@larose-ui/runtime';
+import { LaRoseProvider } from '@larose-ui/runtime-react';
 import { Button } from '@larose-ui/react';
 
 <LaRoseProvider locale="en" permissions={['app.read']}>

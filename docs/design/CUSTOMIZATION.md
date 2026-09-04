@@ -29,7 +29,7 @@ Higher layers win over lower layers **except** instance props, which always over
 ## 1. Default experience
 
 ```tsx
-import { LaRoseProvider } from '@larose-ui/runtime';
+import { LaRoseProvider } from '@larose-ui/runtime-react';
 
 <LaRoseProvider>
   <App />
@@ -54,7 +54,7 @@ This uses the Refined preset automatically.
 ## 3. Custom themes
 
 ```tsx
-import { LaRoseProvider } from '@larose-ui/runtime';
+import { LaRoseProvider } from '@larose-ui/runtime-react';
 import { createTheme } from '@larose-ui/themes';
 
 const customTheme = createTheme({

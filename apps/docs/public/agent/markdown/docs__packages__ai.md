@@ -1,4 +1,4 @@
-# @larose-ui/ai
+# @larose-ui/ai-react
 
 Permission-bound AI for SmartTable and SmartForm.
 

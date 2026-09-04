@@ -1,5 +1,5 @@
 import { Button, Badge, Card, Input } from '@larose-ui/react';
-import { LaRoseProvider } from '@larose-ui/runtime';
+import { LaRoseProvider } from '@larose-ui/runtime-react';
 import { FrameworkCodeTabs } from '@/components/FrameworkCodeTabs';
 import { FrameworkSelector } from '@/components/FrameworkSelector';
 import { PreviewFrame } from '@/components/PreviewFrame';

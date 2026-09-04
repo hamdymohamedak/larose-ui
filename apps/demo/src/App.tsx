@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import { LaRoseProvider } from '@larose-ui/runtime';
-import { useToast } from '@larose-ui/runtime/toast';
-import { Can } from '@larose-ui/permissions';
-import { DataView } from '@larose-ui/data';
-import { Form } from '@larose-ui/forms';
+import { LaRoseProvider } from '@larose-ui/runtime-react';
+import { useToast } from '@larose-ui/runtime-react/toast';
+import { Can } from '@larose-ui/permissions-react';
+import { DataView } from '@larose-ui/data-react';
+import { Form } from '@larose-ui/forms-react';
 import {
   Breadcrumb,
   Button,

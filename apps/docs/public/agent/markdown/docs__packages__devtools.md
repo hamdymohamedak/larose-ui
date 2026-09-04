@@ -1,4 +1,4 @@
-# @larose-ui/devtools
+# @larose-ui/devtools-react
 
 In-app runtime inspector for development.
 

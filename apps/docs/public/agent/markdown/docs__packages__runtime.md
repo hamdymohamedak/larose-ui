@@ -1,4 +1,4 @@
-# @larose-ui/runtime
+# @larose-ui/runtime-react
 
 Unified runtime — theme, i18n, permissions, network, and session.
 

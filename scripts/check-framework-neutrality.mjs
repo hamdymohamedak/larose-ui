@@ -38,7 +38,7 @@ const CORE_PACKAGES = new Set([
   'testing-core',
 ]);
 
-const FORBIDDEN = /^(react|react-dom|vue|svelte|@larose-ui\/(react|vue|svelte|runtime|forms|data|permissions|observability|ai|enterprise|testing|devtools|next|nuxt))$/;
+const FORBIDDEN = /^(react|react-dom|vue|svelte|@larose-ui\/(react|vue|svelte|runtime-react|forms-react|data-react|permissions-react|observability-react|ai-react|enterprise-react|testing-react|devtools-react|runtime|forms|data|permissions|observability|ai|enterprise|testing|devtools|next|nuxt|sveltekit))$/;
 
 const errors = [];
 

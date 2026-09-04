@@ -8,7 +8,7 @@ import {
   type ReactNode,
 } from 'react';
 import type { ThemeMode } from '@larose-ui/core';
-import { LaRoseProvider } from '@larose-ui/runtime';
+import { LaRoseProvider } from '@larose-ui/runtime-react';
 import { applyResolvedTheme } from '@larose-ui/tokens';
 import { resolveTheme } from '@larose-ui/themes';
 import { DOCS_SURFACE_MUTED, getDocsThemeConfig } from './docsThemeConfig';

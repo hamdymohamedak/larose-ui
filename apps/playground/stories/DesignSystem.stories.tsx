@@ -12,7 +12,7 @@ import {
   SidebarNav,
   Typography,
 } from '@larose-ui/react';
-import { LaRoseProvider } from '@larose-ui/runtime';
+import { LaRoseProvider } from '@larose-ui/runtime-react';
 
 function RefinedShell({ children }: { children: ReactNode }) {
   return (

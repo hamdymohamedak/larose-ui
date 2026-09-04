@@ -5,13 +5,13 @@
 > - [x] Phase 1 — Audit (`docs/framework-neutrality-audit.md`)
 > - [x] Phase 2 — Freeze (`pnpm check:framework-neutrality` + CONTRIBUTING hard rule)
 > - [x] Phase 3 — Shared engines (prior: liquid-glass / component-logic / primitives / forms / data)
-> - [x] Phase 4 — Platform neutrality + **adapter parity**: `runtime-vue`/`runtime-svelte`, AI Smart*, enterprise UI, `devtools-vue`/`devtools-svelte`, `@larose-ui/sveltekit`
+> - [x] Phase 4 — Platform neutrality + adapter parity + **`*-react` rename** (no bare React-default adapter names)
 > - [x] Phase 5–6 — Contracts + Storybook domain split (prior pass)
 > - [x] Phase 7 — Docs / positioning updated
 > - [x] Verification — cores + adapters build (parity packages)
 > - [ ] Phase 8 — Full monorepo `pnpm lint/typecheck/test/build/doctor:ci` on a clean agent
 >
-> Honest status: **React / Vue / Svelte share the same platform APIs** (AI, enterprise, runtime adapters, testing, observability, forms, data, permissions). Remaining asymmetry: React Fiber DevTools + fuller React `@larose-ui/runtime` Network/Offline/Toast composition.
+> Honest status: **Equal naming + equal platform APIs** (`data-react` / `data-vue` / `data-svelte`, …). Remaining asymmetry: React Fiber DevTools + fuller toast/theme composition in `runtime-react` with `@larose-ui/react`.
 
 ---
 
@@ -159,15 +159,15 @@ Audit and refactor every package where business logic or platform logic currentl
 
 Pay particular attention to:
 
-* `@larose-ui/data`
-* `@larose-ui/forms`
-* `@larose-ui/runtime`
-* `@larose-ui/permissions`
-* `@larose-ui/observability`
-* `@larose-ui/ai`
-* `@larose-ui/enterprise`
-* `@larose-ui/testing`
-* `@larose-ui/devtools`
+* `@larose-ui/data-react`
+* `@larose-ui/forms-react`
+* `@larose-ui/runtime-react`
+* `@larose-ui/permissions-react`
+* `@larose-ui/observability-react`
+* `@larose-ui/ai-react`
+* `@larose-ui/enterprise-react`
+* `@larose-ui/testing-react`
+* `@larose-ui/devtools-react`
 * `@larose-ui/next`
 
 For each package ask:

@@ -8,7 +8,7 @@ import {
   Select,
   Typography,
 } from '@larose-ui/react';
-import { LaRoseProvider } from '@larose-ui/runtime';
+import { LaRoseProvider } from '@larose-ui/runtime-react';
 import { CodeBlock } from '@/components/CodeBlock';
 import { CopyButton } from '@/components/CopyButton';
 import { PropsPlayground } from '@/components/PropsPlayground';
@@ -43,7 +43,7 @@ export function ThemeBuilderPage() {
   );
 
   const exportCode = `import { createTheme } from '@larose-ui/themes';
-import { LaRoseProvider } from '@larose-ui/runtime';
+import { LaRoseProvider } from '@larose-ui/runtime-react';
 import { Button, Card, Input } from '@larose-ui/react';
 
 const theme = createTheme({

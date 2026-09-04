@@ -47,21 +47,21 @@ importers:
 
   apps/demo:
     dependencies:
-      '@larose-ui/data':
+      '@larose-ui/data-react':
         specifier: workspace:*
-        version: link:../../packages/data
-      '@larose-ui/forms':
+        version: link:../../packages/data-react
+      '@larose-ui/forms-react':
         specifier: workspace:*
-        version: link:../../packages/forms
-      '@larose-ui/permissions':
+        version: link:../../packages/forms-react
+      '@larose-ui/permissions-react':
         specifier: workspace:*
-        version: link:../../packages/permissions
+        version: link:../../packages/permissions-react
       '@larose-ui/react':
         specifier: workspace:*
         version: link:../../packages/react
-      '@larose-ui/runtime':
+      '@larose-ui/runtime-react':
         specifier: workspace:*
-        version: link:../../packages/runtime
+        version: link:../../packages/runtime-react
       '@larose-ui/tokens':
         specifier: workspace:*
         version: link:../../packages/tokens
@@ -96,9 +96,9 @@ importers:
       '@larose-ui/react':
         specifier: workspace:*
         version: link:../../packages/react
-      '@larose-ui/runtime':
+      '@larose-ui/runtime-react':
         specifier: workspace:*
-        version: link:../../packages/runtime
+        version: link:../../packages/runtime-react
       '@larose-ui/styles':
         specifier: workspace:*
         version: link:../../packages/styles
@@ -163,36 +163,36 @@ importers:
 
   apps/playground:
     dependencies:
-      '@larose-ui/ai':
+      '@larose-ui/ai-react':
         specifier: workspace:*
-        version: link:../../packages/ai
+        version: link:../../packages/ai-react
       '@larose-ui/core':
         specifier: workspace:*
         version: link:../../packages/core
-      '@larose-ui/data':
+      '@larose-ui/data-react':
         specifier: workspace:*
-        version: link:../../packages/data
-      '@larose-ui/devtools':
+        version: link:../../packages/data-react
+      '@larose-ui/devtools-react':
         specifier: workspace:*
-        version: link:../../packages/devtools
-      '@larose-ui/enterprise':
+        version: link:../../packages/devtools-react
+      '@larose-ui/enterprise-react':
         specifier: workspace:*
-        version: link:../../packages/enterprise
-      '@larose-ui/forms':
+        version: link:../../packages/enterprise-react
+      '@larose-ui/forms-react':
         specifier: workspace:*
-        version: link:../../packages/forms
-      '@larose-ui/observability':
+        version: link:../../packages/forms-react
+      '@larose-ui/observability-react':
         specifier: workspace:*
-        version: link:../../packages/observability
-      '@larose-ui/permissions':
+        version: link:../../packages/observability-react
+      '@larose-ui/permissions-react':
         specifier: workspace:*
-        version: link:../../packages/permissions
+        version: link:../../packages/permissions-react
       '@larose-ui/react':
         specifier: workspace:*
         version: link:../../packages/react
-      '@larose-ui/runtime':
+      '@larose-ui/runtime-react':
         specifier: workspace:*
-        version: link:../../packages/runtime
+        version: link:../../packages/runtime-react
       '@larose-ui/styles':
         specifier: workspace:*
         version: link:../../packages/styles
@@ -274,23 +274,39 @@ importers:
         specifier: ^2.1.8
         version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
 
-  packages/ai:
+  packages/ai-core:
+    dependencies:
+      '@larose-ui/core':
+        specifier: workspace:*
+        version: link:../core
+    devDependencies:
+      tsup:
+        specifier: ^8.3.5
+        version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+      vitest:
+        specifier: ^2.1.8
+        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
+
+  packages/ai-react:
     dependencies:
       '@larose-ui/ai-core':
         specifier: workspace:*
         version: link:../ai-core
-      '@larose-ui/forms':
+      '@larose-ui/forms-react':
         specifier: workspace:*
-        version: link:../forms
-      '@larose-ui/permissions':
+        version: link:../forms-react
+      '@larose-ui/permissions-react':
         specifier: workspace:*
-        version: link:../permissions
+        version: link:../permissions-react
       '@larose-ui/react':
         specifier: workspace:*
         version: link:../react
-      '@larose-ui/runtime':
+      '@larose-ui/runtime-react':
         specifier: workspace:*
-        version: link:../runtime
+        version: link:../runtime-react
     devDependencies:
       '@testing-library/jest-dom':
         specifier: ^6.6.3
@@ -313,22 +329,6 @@ importers:
       react-dom:
         specifier: ^19.0.0
         version: 19.2.8(react@19.2.8)
-      tsup:
-        specifier: ^8.3.5
-        version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
-      typescript:
-        specifier: ^5.7.2
-        version: 5.9.3
-      vitest:
-        specifier: ^2.1.8
-        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
-
-  packages/ai-core:
-    dependencies:
-      '@larose-ui/core':
-        specifier: workspace:*
-        version: link:../core
-    devDependencies:
       tsup:
         specifier: ^8.3.5
         version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
@@ -506,7 +506,23 @@ importers:
         specifier: ^2.1.8
         version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
 
-  packages/data:
+  packages/data-core:
+    dependencies:
+      '@larose-ui/core':
+        specifier: workspace:*
+        version: link:../core
+    devDependencies:
+      tsup:
+        specifier: ^8.3.5
+        version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+      vitest:
+        specifier: ^2.1.8
+        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
+
+  packages/data-react:
     dependencies:
       '@larose-ui/core':
         specifier: workspace:*
@@ -514,9 +530,9 @@ importers:
       '@larose-ui/data-core':
         specifier: workspace:*
         version: link:../data-core
-      '@larose-ui/permissions':
+      '@larose-ui/permissions-react':
         specifier: workspace:*
-        version: link:../permissions
+        version: link:../permissions-react
     devDependencies:
       '@testing-library/jest-dom':
         specifier: ^6.6.3
@@ -536,22 +552,6 @@ importers:
       react-dom:
         specifier: ^19.0.0
         version: 19.2.8(react@19.2.8)
-      tsup:
-        specifier: ^8.3.5
-        version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
-      typescript:
-        specifier: ^5.7.2
-        version: 5.9.3
-      vitest:
-        specifier: ^2.1.8
-        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
-
-  packages/data-core:
-    dependencies:
-      '@larose-ui/core':
-        specifier: workspace:*
-        version: link:../core
-    devDependencies:
       tsup:
         specifier: ^8.3.5
         version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
@@ -636,7 +636,23 @@ importers:
         specifier: ^2.2.0
         version: 2.2.12(typescript@5.9.3)
 
-  packages/devtools:
+  packages/devtools-core:
+    dependencies:
+      '@larose-ui/observability-core':
+        specifier: workspace:*
+        version: link:../observability-core
+    devDependencies:
+      tsup:
+        specifier: ^8.3.5
+        version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+      vitest:
+        specifier: ^2.1.8
+        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
+
+  packages/devtools-react:
     dependencies:
       '@larose-ui/core':
         specifier: workspace:*
@@ -644,19 +660,19 @@ importers:
       '@larose-ui/devtools-core':
         specifier: workspace:*
         version: link:../devtools-core
-      '@larose-ui/observability':
+      '@larose-ui/observability-react':
         specifier: workspace:*
-        version: link:../observability
-      '@larose-ui/runtime':
+        version: link:../observability-react
+      '@larose-ui/runtime-react':
         specifier: workspace:*
-        version: link:../runtime
+        version: link:../runtime-react
     devDependencies:
-      '@larose-ui/permissions':
+      '@larose-ui/permissions-react':
         specifier: workspace:*
-        version: link:../permissions
-      '@larose-ui/testing':
+        version: link:../permissions-react
+      '@larose-ui/testing-react':
         specifier: workspace:*
-        version: link:../testing
+        version: link:../testing-react
       '@testing-library/jest-dom':
         specifier: ^6.6.3
         version: 6.10.0(@testing-library/dom@10.4.0)
@@ -678,22 +694,6 @@ importers:
       react-dom:
         specifier: ^19.0.0
         version: 19.2.8(react@19.2.8)
-      tsup:
-        specifier: ^8.3.5
-        version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
-      typescript:
-        specifier: ^5.7.2
-        version: 5.9.3
-      vitest:
-        specifier: ^2.1.8
-        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
-
-  packages/devtools-core:
-    dependencies:
-      '@larose-ui/observability-core':
-        specifier: workspace:*
-        version: link:../observability-core
-    devDependencies:
       tsup:
         specifier: ^8.3.5
         version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
@@ -784,7 +784,26 @@ importers:
         specifier: ^2.2.0
         version: 2.2.12(typescript@5.9.3)
 
-  packages/enterprise:
+  packages/enterprise-core:
+    dependencies:
+      '@larose-ui/core':
+        specifier: workspace:*
+        version: link:../core
+      '@larose-ui/forms-core':
+        specifier: workspace:*
+        version: link:../forms-core
+    devDependencies:
+      tsup:
+        specifier: ^8.3.5
+        version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+      vitest:
+        specifier: ^2.1.8
+        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
+
+  packages/enterprise-react:
     dependencies:
       '@larose-ui/core':
         specifier: workspace:*
@@ -792,21 +811,21 @@ importers:
       '@larose-ui/enterprise-core':
         specifier: workspace:*
         version: link:../enterprise-core
-      '@larose-ui/forms':
+      '@larose-ui/forms-react':
         specifier: workspace:*
-        version: link:../forms
-      '@larose-ui/observability':
+        version: link:../forms-react
+      '@larose-ui/observability-react':
         specifier: workspace:*
-        version: link:../observability
-      '@larose-ui/permissions':
+        version: link:../observability-react
+      '@larose-ui/permissions-react':
         specifier: workspace:*
-        version: link:../permissions
+        version: link:../permissions-react
       '@larose-ui/react':
         specifier: workspace:*
         version: link:../react
-      '@larose-ui/runtime':
+      '@larose-ui/runtime-react':
         specifier: workspace:*
-        version: link:../runtime
+        version: link:../runtime-react
     devDependencies:
       '@testing-library/jest-dom':
         specifier: ^6.6.3
@@ -829,25 +848,6 @@ importers:
       react-dom:
         specifier: ^19.0.0
         version: 19.2.8(react@19.2.8)
-      tsup:
-        specifier: ^8.3.5
-        version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
-      typescript:
-        specifier: ^5.7.2
-        version: 5.9.3
-      vitest:
-        specifier: ^2.1.8
-        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
-
-  packages/enterprise-core:
-    dependencies:
-      '@larose-ui/core':
-        specifier: workspace:*
-        version: link:../core
-      '@larose-ui/forms-core':
-        specifier: workspace:*
-        version: link:../forms-core
-    devDependencies:
       tsup:
         specifier: ^8.3.5
         version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
@@ -956,20 +956,32 @@ importers:
         specifier: ^2.2.0
         version: 2.2.12(typescript@5.9.3)
 
-  packages/forms:
+  packages/forms-core:
+    devDependencies:
+      tsup:
+        specifier: ^8.3.5
+        version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+      vitest:
+        specifier: ^2.1.8
+        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
+
+  packages/forms-react:
     dependencies:
       '@larose-ui/core':
         specifier: workspace:*
         version: link:../core
-      '@larose-ui/data':
+      '@larose-ui/data-react':
         specifier: workspace:*
-        version: link:../data
+        version: link:../data-react
       '@larose-ui/forms-core':
         specifier: workspace:*
         version: link:../forms-core
-      '@larose-ui/observability':
+      '@larose-ui/observability-react':
         specifier: workspace:*
-        version: link:../observability
+        version: link:../observability-react
       '@larose-ui/react':
         specifier: workspace:*
         version: link:../react
@@ -995,18 +1007,6 @@ importers:
       react-dom:
         specifier: ^19.0.0
         version: 19.2.8(react@19.2.8)
-      tsup:
-        specifier: ^8.3.5
-        version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
-      typescript:
-        specifier: ^5.7.2
-        version: 5.9.3
-      vitest:
-        specifier: ^2.1.8
-        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
-
-  packages/forms-core:
-    devDependencies:
       tsup:
         specifier: ^8.3.5
         version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
@@ -1154,9 +1154,9 @@ importers:
       '@larose-ui/react':
         specifier: workspace:*
         version: link:../react
-      '@larose-ui/runtime':
+      '@larose-ui/runtime-react':
         specifier: workspace:*
-        version: link:../runtime
+        version: link:../runtime-react
     devDependencies:
       '@testing-library/react':
         specifier: ^16.1.0
@@ -1211,7 +1211,23 @@ importers:
         specifier: ^2.1.8
         version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
 
-  packages/observability:
+  packages/observability-core:
+    dependencies:
+      '@larose-ui/core':
+        specifier: workspace:*
+        version: link:../core
+    devDependencies:
+      tsup:
+        specifier: ^8.3.5
+        version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+      vitest:
+        specifier: ^2.1.8
+        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
+
+  packages/observability-react:
     dependencies:
       '@larose-ui/core':
         specifier: workspace:*
@@ -1241,22 +1257,6 @@ importers:
       react-dom:
         specifier: ^19.0.0
         version: 19.2.8(react@19.2.8)
-      tsup:
-        specifier: ^8.3.5
-        version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
-      typescript:
-        specifier: ^5.7.2
-        version: 5.9.3
-      vitest:
-        specifier: ^2.1.8
-        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
-
-  packages/observability-core:
-    dependencies:
-      '@larose-ui/core':
-        specifier: workspace:*
-        version: link:../core
-    devDependencies:
       tsup:
         specifier: ^8.3.5
         version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
@@ -1351,7 +1351,23 @@ importers:
         specifier: ^2.1.8
         version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
 
-  packages/permissions:
+  packages/permissions-core:
+    dependencies:
+      '@larose-ui/core':
+        specifier: workspace:*
+        version: link:../core
+    devDependencies:
+      tsup:
+        specifier: ^8.3.5
+        version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+      vitest:
+        specifier: ^2.1.8
+        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
+
+  packages/permissions-react:
     dependencies:
       '@larose-ui/core':
         specifier: workspace:*
@@ -1378,22 +1394,6 @@ importers:
       react-dom:
         specifier: ^19.0.0
         version: 19.2.8(react@19.2.8)
-      tsup:
-        specifier: ^8.3.5
-        version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
-      typescript:
-        specifier: ^5.7.2
-        version: 5.9.3
-      vitest:
-        specifier: ^2.1.8
-        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
-
-  packages/permissions-core:
-    dependencies:
-      '@larose-ui/core':
-        specifier: workspace:*
-        version: link:../core
-    devDependencies:
       tsup:
         specifier: ^8.3.5
         version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
@@ -1564,7 +1564,29 @@ importers:
         specifier: ^2.1.8
         version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
 
-  packages/runtime:
+  packages/runtime-core:
+    dependencies:
+      '@larose-ui/core':
+        specifier: workspace:*
+        version: link:../core
+      '@larose-ui/themes':
+        specifier: workspace:*
+        version: link:../themes
+      '@larose-ui/tokens':
+        specifier: workspace:*
+        version: link:../tokens
+    devDependencies:
+      tsup:
+        specifier: ^8.3.5
+        version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+      vitest:
+        specifier: ^2.1.8
+        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
+
+  packages/runtime-react:
     dependencies:
       '@larose-ui/core':
         specifier: workspace:*
@@ -1572,15 +1594,15 @@ importers:
       '@larose-ui/network':
         specifier: workspace:*
         version: link:../network
-      '@larose-ui/observability':
+      '@larose-ui/observability-react':
         specifier: workspace:*
-        version: link:../observability
+        version: link:../observability-react
       '@larose-ui/offline':
         specifier: workspace:*
         version: link:../offline
-      '@larose-ui/permissions':
+      '@larose-ui/permissions-react':
         specifier: workspace:*
-        version: link:../permissions
+        version: link:../permissions-react
       '@larose-ui/runtime-core':
         specifier: workspace:*
         version: link:../runtime-core
@@ -1622,28 +1644,6 @@ importers:
         specifier: ^2.1.8
         version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
 
-  packages/runtime-core:
-    dependencies:
-      '@larose-ui/core':
-        specifier: workspace:*
-        version: link:../core
-      '@larose-ui/themes':
-        specifier: workspace:*
-        version: link:../themes
-      '@larose-ui/tokens':
-        specifier: workspace:*
-        version: link:../tokens
-    devDependencies:
-      tsup:
-        specifier: ^8.3.5
-        version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
-      typescript:
-        specifier: ^5.7.2
-        version: 5.9.3
-      vitest:
-        specifier: ^2.1.8
-        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
-
   packages/runtime-svelte:
     dependencies:
       '@larose-ui/core':
@@ -1652,6 +1652,9 @@ importers:
       '@larose-ui/network':
         specifier: workspace:*
         version: link:../network
+      '@larose-ui/offline':
+        specifier: workspace:*
+        version: link:../offline
       '@larose-ui/runtime-core':
         specifier: workspace:*
         version: link:../runtime-core
@@ -1689,6 +1692,9 @@ importers:
       '@larose-ui/network':
         specifier: workspace:*
         version: link:../network
+      '@larose-ui/offline':
+        specifier: workspace:*
+        version: link:../offline
       '@larose-ui/runtime-core':
         specifier: workspace:*
         version: link:../runtime-core
@@ -1820,14 +1826,26 @@ importers:
         specifier: ^2.1.8
         version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
 
-  packages/testing:
+  packages/testing-core:
+    devDependencies:
+      tsup:
+        specifier: ^8.3.5
+        version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
+      vitest:
+        specifier: ^2.1.8
+        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
+
+  packages/testing-react:
     dependencies:
       '@larose-ui/core':
         specifier: workspace:*
         version: link:../core
-      '@larose-ui/runtime':
+      '@larose-ui/runtime-react':
         specifier: workspace:*
-        version: link:../runtime
+        version: link:../runtime-react
       '@larose-ui/testing-core':
         specifier: workspace:*
         version: link:../testing-core
@@ -1850,18 +1868,6 @@ importers:
       react-dom:
         specifier: ^19.0.0
         version: 19.2.8(react@19.2.8)
-      tsup:
-        specifier: ^8.3.5
-        version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)
-      typescript:
-        specifier: ^5.7.2
-        version: 5.9.3
-      vitest:
-        specifier: ^2.1.8
-        version: 2.1.9(@types/node@24.13.3)(jsdom@25.0.1)(terser@5.51.2)
-
-  packages/testing-core:
-    devDependencies:
       tsup:
         specifier: ^8.3.5
         version: 8.5.1(@microsoft/api-extractor@7.59.0(@types/node@24.13.3))(jiti@2.7.0)(postcss@8.5.26)(typescript@5.9.3)(yaml@2.9.0)

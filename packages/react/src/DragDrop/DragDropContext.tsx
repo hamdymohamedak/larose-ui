@@ -15,6 +15,7 @@ import {
   findDropTarget,
   moveDragSession,
   zonesFromElements,
+  type DragItem as CoreDragItem,
 } from '@larose-ui/primitives';
 import type { DragItem, DragSession, DropResult, DropTargetState } from './types';
 import { DragPreviewLayer } from './DragPreview';
@@ -73,8 +74,22 @@ export function DragDropProvider({ children }: DragDropProviderProps) {
     };
   }, []);
 
-  const findTarget = useCallback((x: number, y: number, items: DragItem[]) => {
-    return findDropTarget(zonesFromElements(zonesRef.current.values()), x, y, items);
+  const findTarget = useCallback((x: number, y: number, items: CoreDragItem[]) => {
+    return findDropTarget(
+      zonesFromElements(
+        Array.from(zonesRef.current.values()).map((zone) => ({
+          id: zone.id,
+          accepts: zone.accepts,
+          canDrop: zone.canDrop
+            ? (coreItems: CoreDragItem[]) => zone.canDrop!(coreItems as DragItem[])
+            : undefined,
+          element: zone.element,
+        })),
+      ),
+      x,
+      y,
+      items,
+    );
   }, []);
 
   const beginPointerDrag = useCallback(

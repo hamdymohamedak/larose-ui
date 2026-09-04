@@ -93,7 +93,7 @@ await queue.enqueue({ url: '/api/items', method: 'POST', body: { name: 'Draft' }
   runtime: {
     tagline: 'Unified runtime — theme, i18n, permissions, network, and session.',
     peer: 'react >=18',
-    example: `import { LaRoseProvider, useRuntime, Feature } from '@larose-ui/runtime';
+    example: `import { LaRoseProvider, useRuntime, Feature } from '@larose-ui/runtime-react';
 
 <LaRoseProvider theme="light" locale="en" permissions={['app.read']}>
   <App />
@@ -102,14 +102,14 @@ await queue.enqueue({ url: '/api/items', method: 'POST', body: { name: 'Draft' }
       '`LaRoseProvider` composes all runtime contexts',
       '`useRuntime()`, `useSession()`, `useTheme()`, `useNetwork()`',
       'Feature flags, tenant resolver, AdaptiveTable',
-      'Toast subpath: `@larose-ui/runtime/toast`',
+      'Toast subpath: `@larose-ui/runtime-react/toast`',
     ],
     docs: `${REPO}/blob/main/docs/runtime/RUNTIME_2.md`,
   },
   permissions: {
     tagline: 'Authorization-aware UI with RBAC/ABAC patterns.',
     peer: 'react >=18',
-    example: `import { Can } from '@larose-ui/permissions';
+    example: `import { Can } from '@larose-ui/permissions-react';
 
 <Can permission="employees.delete" fallback="disabled">
   <DeleteButton />
@@ -123,7 +123,7 @@ await queue.enqueue({ url: '/api/items', method: 'POST', body: { name: 'Draft' }
   data: {
     tagline: 'Backend-aware data fetching with self-healing errors.',
     peer: 'react >=18',
-    example: `import { DataView } from '@larose-ui/data';
+    example: `import { DataView } from '@larose-ui/data-react';
 
 <DataView url="/api/employees" permission="employees.read">
   {(rows) => <EmployeeTable data={rows} />}
@@ -137,7 +137,7 @@ await queue.enqueue({ url: '/api/items', method: 'POST', body: { name: 'Draft' }
   forms: {
     tagline: 'Schema-driven forms with validation and conditional fields.',
     peer: 'react >=18',
-    example: `import { Form } from '@larose-ui/forms';
+    example: `import { Form } from '@larose-ui/forms-react';
 
 <Form
   schema={{ id: 'user', fields: [{ name: 'email', type: 'text', label: 'Email', required: true }] }}
@@ -152,7 +152,7 @@ await queue.enqueue({ url: '/api/items', method: 'POST', body: { name: 'Draft' }
   observability: {
     tagline: 'UX observability — journeys, funnels, and rage-click analysis.',
     peer: 'react >=18',
-    example: `import { useJourneyPage, ObservedForm } from '@larose-ui/observability';
+    example: `import { useJourneyPage, ObservedForm } from '@larose-ui/observability-react';
 
 function Page() {
   useJourneyPage('employees');
@@ -193,7 +193,7 @@ const code = runGenerator('feature', 'EmployeeList');`,
   testing: {
     tagline: 'Test utilities with full laRose runtime context.',
     peer: 'react >=18',
-    example: `import { renderWithLaRose } from '@larose-ui/testing';
+    example: `import { renderWithLaRose } from '@larose-ui/testing-react';
 
 renderWithLaRose(<EmployeeTable />, {
   permissions: ['employees.read'],
@@ -221,7 +221,7 @@ larose generate feature EmployeeList ./EmployeeList.tsx`,
   devtools: {
     tagline: 'In-app runtime inspector for development.',
     peer: 'react >=18',
-    example: `import { DevToolsProvider } from '@larose-ui/devtools';
+    example: `import { DevToolsProvider } from '@larose-ui/devtools-react';
 
 <LaRoseProvider>
   <DevToolsProvider />
@@ -238,7 +238,7 @@ larose generate feature EmployeeList ./EmployeeList.tsx`,
   enterprise: {
     tagline: 'Enterprise patterns — audit trails, session guards, schema IaC.',
     peer: 'react >=18',
-    example: `import { SessionGuard, AuditedInput, AuditProvider } from '@larose-ui/enterprise';
+    example: `import { SessionGuard, AuditedInput, AuditProvider } from '@larose-ui/enterprise-react';
 
 <SessionGuard loginUrl="/login">
   <AuditProvider actor="admin@acme.com">
@@ -255,7 +255,7 @@ larose generate feature EmployeeList ./EmployeeList.tsx`,
   ai: {
     tagline: 'Permission-bound AI for SmartTable and SmartForm.',
     peer: 'react >=18',
-    example: `import { SmartTable, AIProvider, createHttpAdapter } from '@larose-ui/ai';
+    example: `import { SmartTable, AIProvider, createHttpAdapter } from '@larose-ui/ai-react';
 
 <AIProvider adapter={createHttpAdapter({ baseUrl: 'https://api.example.com' })}>
   <SmartTable readPermission="employees.read" data={rows} columns={columns} keyExtractor={(r) => r.id} />

@@ -1,4 +1,4 @@
-# @larose-ui/permissions
+# @larose-ui/permissions-react
 
 Authorization-aware UI with RBAC/ABAC patterns.
 

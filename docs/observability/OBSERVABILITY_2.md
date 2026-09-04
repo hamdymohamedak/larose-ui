@@ -15,8 +15,8 @@ UX Intelligence correlating User → Session → Page → Component → Interact
 ## Integration
 
 ```tsx
-import { LaRoseProvider } from '@larose-ui/runtime';
-import { useJourneyPage } from '@larose-ui/observability';
+import { LaRoseProvider } from '@larose-ui/runtime-react';
+import { useJourneyPage } from '@larose-ui/observability-react';
 
 function EmployeesPage() {
   useJourneyPage('employees');

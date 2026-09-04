@@ -26,8 +26,8 @@ Use this skill when selecting or integrating packages from the laRose UI monorep
 | `@larose-ui/svelte` | Svelte 5 components |
 | `@larose-ui/tokens` | Design tokens as CSS variables |
 | `@larose-ui/themes` | Theme presets and branding |
-| `@larose-ui/runtime` | Theme, i18n, permissions, network |
-| `@larose-ui/forms` | Schema-driven forms |
+| `@larose-ui/runtime-react` | Theme, i18n, permissions, network |
+| `@larose-ui/forms-react` | Schema-driven forms |
 | `@larose-ui/migration` | Codemods and upgrade tooling |
 
 ## Workflow

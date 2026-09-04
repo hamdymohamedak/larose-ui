@@ -1,4 +1,4 @@
-# @larose-ui/testing
+# @larose-ui/testing-react
 
 Test utilities with full laRose runtime context.
 

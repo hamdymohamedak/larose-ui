@@ -4,6 +4,7 @@ import { shouldUseSkeleton } from '@larose-ui/network';
 import type { NetworkCondition } from '@larose-ui/core';
 import { useBreakpoint } from './context';
 import { useI18n } from '../i18n/context';
+import { useNetwork } from '../network/context';
 import type { Column } from './types';
 
 const props = withDefaults(
@@ -20,11 +21,12 @@ const props = withDefaults(
 
 const breakpoint = useBreakpoint();
 const { t } = useI18n();
+const network = useNetwork();
 
 const showSkeleton = computed(
   () =>
     props.loading ||
-    (props.networkCondition ? shouldUseSkeleton(props.networkCondition) : false),
+    shouldUseSkeleton(props.networkCondition ?? network.condition),
 );
 
 const isMobile = computed(() => breakpoint.isMobile || breakpoint.breakpoint === 'mobile');
