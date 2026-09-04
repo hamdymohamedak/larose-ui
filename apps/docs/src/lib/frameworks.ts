@@ -40,15 +40,27 @@ export function frameworkLanguage(framework: DocsFramework): string {
   return 'tsx';
 }
 
-export function getInstallCommand(framework: DocsFramework, _componentName?: string): string {
+export type InstallStackMode = 'ui' | 'runtime';
+
+export function getInstallCommand(
+  framework: DocsFramework,
+  _componentName?: string,
+  stack: InstallStackMode = 'ui',
+): string {
   const base = '@larose-ui/tokens @larose-ui/styles';
   if (framework === 'vue') {
-    return `pnpm add @larose-ui/vue ${base}`;
+    return stack === 'runtime'
+      ? `pnpm add @larose-ui/vue @larose-ui/runtime-vue ${base}`
+      : `pnpm add @larose-ui/vue ${base}`;
   }
   if (framework === 'svelte') {
-    return `pnpm add @larose-ui/svelte ${base}`;
+    return stack === 'runtime'
+      ? `pnpm add @larose-ui/svelte @larose-ui/runtime-svelte ${base}`
+      : `pnpm add @larose-ui/svelte ${base}`;
   }
-  return `pnpm add @larose-ui/react ${base}`;
+  return stack === 'runtime'
+    ? `pnpm add @larose-ui/react @larose-ui/runtime-react ${base}`
+    : `pnpm add @larose-ui/react ${base}`;
 }
 
 export function getImportCode(componentName: string, framework: DocsFramework): string {
@@ -206,4 +218,16 @@ export function App() {
     </LaRoseProvider>
   );
 }`;
+}
+
+
+export function getCssImportOrder(framework: DocsFramework): string {
+  const lines = [
+    "import '@larose-ui/tokens/styles.css';",
+    "import '@larose-ui/styles/styles.css';",
+  ];
+  if (framework === 'react') {
+    lines.push("import '@larose-ui/react/styles.css';");
+  }
+  return lines.join('\n');
 }

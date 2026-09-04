@@ -4,6 +4,7 @@ import { DocsThemeSwitch } from '@/components/DocsThemeSwitch';
 
 const LINKS = [
   { label: 'Components', path: '/docs/components' },
+  { label: 'Packages', path: '/docs/packages' },
   { label: 'Guides', path: '/docs/guides' },
   { label: 'Design', path: '/docs/design/tokens' },
   { label: 'Playground', path: '/docs/playground' },

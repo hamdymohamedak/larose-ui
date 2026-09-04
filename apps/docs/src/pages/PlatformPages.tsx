@@ -3,54 +3,76 @@ import { Badge, Card, Typography } from '@larose-ui/react';
 import { MarkdownContent } from '@/components/MarkdownContent';
 import { docsChangelog } from '@/data/changelog.generated';
 import { docsPackages } from '@/data/catalog.generated';
+import { PACKAGE_LAYERS } from '@/lib/packages';
 import { guideSources } from '@/content/guides';
 
 const ARCHITECTURE = `
-# laRose UI Operating System
+# laRose UI architecture
+
+laRose is **modular by design**. Apps do not install a single mega-package — they compose a small stack for their framework, then opt into intelligence packages.
 
 \`\`\`text
-@larose-ui/react
+Foundation (always)
+  @larose-ui/tokens
+  @larose-ui/styles
         │
-        ├── @larose-ui/core
-        ├── @larose-ui/tokens
-        ├── @larose-ui/themes
-        ├── LiquidGlass* (displacement + optics)
+Framework UI (pick one)
+  @larose-ui/react  |  @larose-ui/vue  |  @larose-ui/svelte
         │
-        ↓
-@larose-ui/runtime-react
+Runtime (recommended for apps)
+  @larose-ui/runtime-react|vue|svelte
         │
-        ├── permissions
-        ├── data
-        ├── observability
-        └── offline
+        ├── network / offline (transitive)
+        │
+Intelligence (opt-in)
+  data-* · forms-* · permissions-* · observability-*
+  ai-* · enterprise-* · devtools-*
+        │
+Meta-frameworks
+  @larose-ui/next · @larose-ui/nuxt · @larose-ui/sveltekit
 \`\`\`
 
-## Package relationships
+## Mental model
 
-- **react** — production UI components (140+ documented), including LiquidGlass TabBar, TopBar, Button, Switch, Range, Checkbox, Progress
-- **tokens** — CSS custom properties and component token registries
-- **themes** — \`createTheme\`, presets, component defaults
-- **runtime** — network, session, permissions, toasts
-- **data / forms / ai / enterprise** — higher-level SaaS capabilities
+- **Install adapters**, not \`*-core\` packages — cores ship transitively unless you are building custom adapters.
+- **UI-only** stack = components + tokens + styles.
+- **Full runtime** adds toast, network, offline, and i18n via \`runtime-*\`.
+- See the [Packages hub](/docs/packages) for every install command and when to use each package.
 `;
 
 export function ArchitecturePage() {
   return (
     <div className="docs-content">
       <MarkdownContent source={ARCHITECTURE} />
-      <h2>Packages in this monorepo</h2>
-      <div className="docs-index-grid">
-        {docsPackages.map((pkg) => (
-          <Card key={pkg.id} title={pkg.name} padding="md">
-            <Typography muted className="docs-card-copy">
-              {pkg.tagline}
-            </Typography>
-            <Link className="docs-card-link" to={`/docs/packages/${pkg.id}`}>
-              View package
-            </Link>
-          </Card>
-        ))}
-      </div>
+      <p>
+        <Link className="docs-card-link" to="/docs/packages">
+          Open Packages hub →
+        </Link>
+      </p>
+      <h2>Packages by layer</h2>
+      {PACKAGE_LAYERS.map((layer) => {
+        const pkgs = docsPackages
+          .filter((pkg) => pkg.layer === layer.id)
+          .sort((a, b) => a.name.localeCompare(b.name));
+        return (
+          <section key={layer.id} className="docs-pkg-section">
+            <h3>{layer.label}</h3>
+            <p className="docs-pkg-layer-blurb">{layer.blurb}</p>
+            <div className="docs-index-grid">
+              {pkgs.map((pkg) => (
+                <Card key={pkg.id} title={pkg.name} padding="md">
+                  <Typography muted className="docs-card-copy">
+                    {pkg.role}
+                  </Typography>
+                  <Link className="docs-card-link" to={`/docs/packages/${pkg.id}`}>
+                    View package
+                  </Link>
+                </Card>
+              ))}
+            </div>
+          </section>
+        );
+      })}
     </div>
   );
 }

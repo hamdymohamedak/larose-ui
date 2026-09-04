@@ -5,6 +5,26 @@
 import type { ReactNode } from 'react';
 import {
   ActivityShareButton,
+  SplitView,
+  SplitViewPane,
+  Tabs,
+  TabsList,
+  TabsPanel,
+  TabsTrigger,
+  TabView,
+  TabViewList,
+  TabViewPanel,
+  TabViewTab,
+  Toolbar,
+  ToolbarBackButton,
+  ToolbarGroup,
+  ToolbarItem,
+  ToolbarSection,
+  ToolbarTitle,
+  AccordionTrigger,
+  AccordionItem,
+  AccordionContent,
+  Accordion,
   ActivityView,
   Alert,
   AsyncButton,
@@ -126,6 +146,102 @@ const menuEntries = [
   { type: 'separator' as const, id: 'sep' },
   { type: 'item' as const, id: 'delete', label: 'Delete', destructive: true },
 ];
+
+
+function renderAccordionPreview() {
+  return (
+    <PreviewFrame layout="block" title="Accordion">
+      <Accordion type="single" collapsible defaultValue={['shipping']}>
+        <AccordionItem value="shipping">
+          <AccordionTrigger>Shipping</AccordionTrigger>
+          <AccordionContent>Delivered in 2–4 business days with tracking.</AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="returns">
+          <AccordionTrigger>Returns</AccordionTrigger>
+          <AccordionContent>Free returns within 30 days of delivery.</AccordionContent>
+        </AccordionItem>
+      </Accordion>
+    </PreviewFrame>
+  );
+}
+
+function renderTabsPreview() {
+  return (
+    <PreviewFrame layout="block" title="Tabs">
+      <Tabs defaultValue="overview">
+        <TabsList aria-label="Example tabs">
+          <TabsTrigger value="overview">Overview</TabsTrigger>
+          <TabsTrigger value="activity">Activity</TabsTrigger>
+          <TabsTrigger value="settings">Settings</TabsTrigger>
+        </TabsList>
+        <TabsPanel value="overview">Team overview and recent changes.</TabsPanel>
+        <TabsPanel value="activity">Activity feed for this workspace.</TabsPanel>
+        <TabsPanel value="settings">Workspace preferences.</TabsPanel>
+      </Tabs>
+    </PreviewFrame>
+  );
+}
+
+function renderTabViewPreview() {
+  return (
+    <PreviewFrame layout="block" title="TabView">
+      <TabView defaultValue="inbox">
+        <TabViewList>
+          <TabViewTab value="inbox" label="Inbox" />
+          <TabViewTab value="sent" label="Sent" />
+          <TabViewTab value="archive" label="Archive" />
+        </TabViewList>
+        <TabViewPanel value="inbox">Unread messages appear here.</TabViewPanel>
+        <TabViewPanel value="sent">Sent messages.</TabViewPanel>
+        <TabViewPanel value="archive">Archived threads.</TabViewPanel>
+      </TabView>
+    </PreviewFrame>
+  );
+}
+
+function renderToolbarPreview() {
+  return (
+    <PreviewFrame layout="block" title="Toolbar">
+      <Toolbar aria-label="Editor toolbar">
+        <Toolbar.Leading>
+          <ToolbarBackButton aria-label="Back" />
+          <ToolbarTitle>Document</ToolbarTitle>
+        </Toolbar.Leading>
+        <Toolbar.Trailing>
+          <ToolbarGroup>
+            <ToolbarItem>
+              <Button size="sm">Share</Button>
+            </ToolbarItem>
+          </ToolbarGroup>
+        </Toolbar.Trailing>
+      </Toolbar>
+    </PreviewFrame>
+  );
+}
+
+function renderSplitViewPreview() {
+  return (
+    <PreviewFrame layout="block" title="SplitView">
+      <div style={{ height: 220, border: '1px solid var(--lr-color-border)', borderRadius: 12, overflow: 'hidden' }}>
+        <SplitView orientation="horizontal" aria-label="Demo split">
+          <SplitViewPane id="sidebar" minSize={120} defaultSize={0.32}>
+            <div style={{ padding: 12 }}>
+              <Typography role="title">Sidebar</Typography>
+              <Typography muted>Navigation pane</Typography>
+            </div>
+          </SplitViewPane>
+          <SplitViewPane id="main" minSize={160} defaultSize={0.68}>
+            <div style={{ padding: 12 }}>
+              <Typography role="title">Main</Typography>
+              <Typography muted>Primary content pane</Typography>
+            </div>
+          </SplitViewPane>
+        </SplitView>
+      </div>
+    </PreviewFrame>
+  );
+}
+
 
 export const STATIC_PREVIEWS: Record<string, () => ReactNode> = {
   ActivityShareButton: () => (
@@ -743,6 +859,42 @@ export const STATIC_PREVIEWS: Record<string, () => ReactNode> = {
       </div>
     </PreviewFrame>
   ),
+
+  Accordion: () => renderAccordionPreview(),
+  AccordionItem: () => renderAccordionPreview(),
+  AccordionTrigger: () => renderAccordionPreview(),
+  AccordionContent: () => renderAccordionPreview(),
+
+  Tabs: () => renderTabsPreview(),
+  TabsList: () => renderTabsPreview(),
+  TabsTrigger: () => renderTabsPreview(),
+  TabsPanel: () => renderTabsPreview(),
+
+  TabView: () => renderTabViewPreview(),
+  TabViewList: () => renderTabViewPreview(),
+  TabViewTab: () => renderTabViewPreview(),
+  TabViewPanel: () => renderTabViewPreview(),
+
+  Toolbar: () => renderToolbarPreview(),
+  ToolbarBackButton: () => renderToolbarPreview(),
+  ToolbarGroup: () => renderToolbarPreview(),
+  ToolbarItem: () => renderToolbarPreview(),
+  ToolbarSection: () => renderToolbarPreview(),
+  ToolbarTitle: () => renderToolbarPreview(),
+  ToolbarCloseButton: () => renderToolbarPreview(),
+  ToolbarDocumentMenu: () => renderToolbarPreview(),
+  ToolbarFixedSpace: () => renderToolbarPreview(),
+  ToolbarMoreButton: () => renderToolbarPreview(),
+  ToolbarProminentButton: () => renderToolbarPreview(),
+  ToolbarSearch: () => renderToolbarPreview(),
+
+  SplitView: () => renderSplitViewPreview(),
+  SplitViewPane: () => renderSplitViewPreview(),
+
+  HeaderBrand: () => STATIC_PREVIEWS.Header?.() ?? null,
+  HeaderTitle: () => STATIC_PREVIEWS.Header?.() ?? null,
+  HeaderActions: () => STATIC_PREVIEWS.Header?.() ?? null,
+
   ...GLASS_STATIC_PREVIEWS,
 };
 

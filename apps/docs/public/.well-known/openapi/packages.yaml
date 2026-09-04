@@ -29,28 +29,58 @@ paths:
             type: string
             enum:
               - accessibility
-              - ai
+              - ai-core
+              - ai-react
+              - ai-svelte
+              - ai-vue
               - cli
+              - component-logic
               - contracts
               - core
-              - data
-              - devtools
-              - enterprise
-              - forms
+              - data-core
+              - data-react
+              - data-svelte
+              - data-vue
+              - devtools-core
+              - devtools-react
+              - devtools-svelte
+              - devtools-vue
+              - enterprise-core
+              - enterprise-react
+              - enterprise-svelte
+              - enterprise-vue
+              - forms-core
+              - forms-react
+              - forms-svelte
+              - forms-vue
+              - liquid-glass-core
               - migration
               - network
               - next
               - nuxt
-              - observability
+              - observability-core
+              - observability-react
+              - observability-svelte
+              - observability-vue
               - offline
-              - permissions
+              - permissions-core
+              - permissions-react
+              - permissions-svelte
+              - permissions-vue
               - primitives
+              - quality-core
               - react
-              - runtime
               - runtime-core
+              - runtime-react
+              - runtime-svelte
+              - runtime-vue
               - styles
               - svelte
-              - testing
+              - sveltekit
+              - testing-core
+              - testing-react
+              - testing-svelte
+              - testing-vue
               - themes
               - tokens
               - vue

@@ -1,6 +1,6 @@
-# @larose-ui/runtime-core
+# @larose-ui/runtime-vue
 
-Framework-agnostic runtime store, host detection, and i18n.
+Full LaRoseProvider — theme, toast, accelerators, network, offline, i18n.
 
 ## Features
 - LaRoseProvider composes runtime contexts

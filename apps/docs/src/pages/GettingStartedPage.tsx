@@ -1,50 +1,43 @@
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button, Badge, Card, Input } from '@larose-ui/react';
 import { LaRoseProvider } from '@larose-ui/runtime-react';
 import { FrameworkCodeTabs } from '@/components/FrameworkCodeTabs';
 import { FrameworkSelector } from '@/components/FrameworkSelector';
 import { PreviewFrame } from '@/components/PreviewFrame';
 import {
+  getCssImportOrder,
   getGettingStartedExample,
   getInstallCommand,
   getProviderSetup,
+  type InstallStackMode,
 } from '@/lib/frameworks';
 import { useDocsFramework } from '@/theme/FrameworkProvider';
-import { useNavigate } from 'react-router-dom';
-
-const STEPS = [
-  {
-    n: 1,
-    title: 'Install the package',
-    hint: (fw: string) =>
-      fw === 'vue'
-        ? 'Adds @larose-ui/vue plus shared tokens and styles.'
-        : fw === 'svelte'
-          ? 'Adds @larose-ui/svelte plus shared tokens and styles.'
-          : 'Adds the React package plus shared tokens and styles.',
-  },
-  {
-    n: 2,
-    title: 'Set up your provider',
-    hint: () =>
-      'Import the CSS once, then wrap your root component with the framework provider. This activates theming and design tokens.',
-  },
-  {
-    n: 3,
-    title: 'Use your first component',
-    hint: () =>
-      'Import any component from the package and drop it into your JSX, template, or Svelte file. It renders correctly with zero extra styling.',
-  },
-];
 
 export function GettingStartedPage() {
   const { framework } = useDocsFramework();
   const navigate = useNavigate();
+  const [stack, setStack] = useState<InstallStackMode>('runtime');
+
+  const runtimePkg =
+    framework === 'vue'
+      ? '@larose-ui/runtime-vue'
+      : framework === 'svelte'
+        ? '@larose-ui/runtime-svelte'
+        : '@larose-ui/runtime-react';
+  const uiPkg =
+    framework === 'vue' ? '@larose-ui/vue' : framework === 'svelte' ? '@larose-ui/svelte' : '@larose-ui/react';
 
   const snippets = {
     install: {
-      react: getInstallCommand('react'),
-      vue: getInstallCommand('vue'),
-      svelte: getInstallCommand('svelte'),
+      react: getInstallCommand('react', undefined, stack),
+      vue: getInstallCommand('vue', undefined, stack),
+      svelte: getInstallCommand('svelte', undefined, stack),
+    },
+    css: {
+      react: getCssImportOrder('react'),
+      vue: getCssImportOrder('vue'),
+      svelte: getCssImportOrder('svelte'),
     },
     setup: {
       react: getProviderSetup('react'),
@@ -60,58 +53,77 @@ export function GettingStartedPage() {
 
   return (
     <div className="docs-gs">
-
-      {/* ——— Hero ——— */}
       <div className="docs-gs__hero">
         <Badge variant="info">Start here</Badge>
         <h1>Getting started</h1>
         <p>
-          Three steps from zero to your first laRose UI component in the browser.
-          Choose your framework below — all code samples update automatically.
+          laRose ships as focused packages — not one mega-install. Pick your framework, choose a UI-only
+          or full-runtime stack, then add intelligence packages when you need them.
         </p>
 
         <div className="docs-gs__fw-bar">
           <p className="docs-gs__fw-label">I am using…</p>
           <FrameworkSelector />
         </div>
+
+        <div className="docs-gs__stack" role="group" aria-label="Install stack">
+          <p className="docs-gs__fw-label">Install stack</p>
+          <div className="docs-pkg-filters">
+            <button
+              type="button"
+              className={stack === 'ui' ? 'is-active' : undefined}
+              onClick={() => setStack('ui')}
+            >
+              UI only
+            </button>
+            <button
+              type="button"
+              className={stack === 'runtime' ? 'is-active' : undefined}
+              onClick={() => setStack('runtime')}
+            >
+              Full runtime
+            </button>
+          </div>
+          <p className="docs-pkg-note">
+            UI only installs {uiPkg} with tokens and styles. Full runtime also adds {runtimePkg} for
+            toast, network, offline, and i18n.
+          </p>
+        </div>
       </div>
 
-      {/* ——— Step wizard ——— */}
       <div className="docs-gs__steps">
-
-        {/* Step 1 */}
         <div className="docs-gs__step">
           <div className="docs-gs__step-connector">
             <div className="docs-gs__step-num">1</div>
             <div className="docs-gs__step-line" />
           </div>
           <div className="docs-gs__step-body">
-            <h3>Install the package</h3>
+            <h3>Install the stack</h3>
             <p className="docs-gs__step-hint">
-              {STEPS[0]!.hint(framework)}
+              {stack === 'runtime'
+                ? `Adds ${uiPkg} plus ${runtimePkg} with shared tokens and styles.`
+                : `Adds ${uiPkg} plus shared tokens and styles.`}
             </p>
             <FrameworkCodeTabs showSelector={false} snippets={snippets.install} title="Terminal" />
           </div>
         </div>
 
-        {/* Step 2 */}
         <div className="docs-gs__step">
           <div className="docs-gs__step-connector">
             <div className="docs-gs__step-num">2</div>
             <div className="docs-gs__step-line" />
           </div>
           <div className="docs-gs__step-body">
-            <h3>Set up your provider</h3>
+            <h3>Import CSS, then wrap your app</h3>
             <p className="docs-gs__step-hint">
-              Import the CSS once at the top of your app, then wrap your root component with the
-              provider. This enables theming, design tokens, and component context — nothing works
-              without it.
+              Always import tokens before styles. For full platform features, wrap the root with the
+              runtime provider.
             </p>
-            <FrameworkCodeTabs showSelector={false} snippets={snippets.setup} />
+            <FrameworkCodeTabs showSelector={false} snippets={snippets.css} title="CSS order" />
+            <FrameworkCodeTabs showSelector={false} snippets={snippets.setup} title="Provider" />
           </div>
         </div>
 
-        {/* Step 3 */}
         <div className="docs-gs__step">
           <div className="docs-gs__step-connector">
             <div className="docs-gs__step-num">3</div>
@@ -120,16 +132,21 @@ export function GettingStartedPage() {
           <div className="docs-gs__step-body">
             <h3>Use your first component</h3>
             <p className="docs-gs__step-hint">
-              Import any component and drop it into your template. Here&apos;s a complete example
-              with a Card, Input, and two Buttons — the same code works across all frameworks.
+              Import any component from the UI package. Need forms, data, or AI later? Add those from
+              the Packages hub.
             </p>
             <FrameworkCodeTabs showSelector={false} snippets={snippets.usage} />
-
             <PreviewFrame title="Live result">
               <LaRoseProvider theme="light">
                 <Card title="Getting started demo" padding="md">
-                  <p style={{ margin: '0 0 0.875rem', fontSize: '0.9rem', color: 'var(--lr-color-text-muted)' }}>
-                    This is rendered by laRose UI. No extra CSS, no extra config.
+                  <p
+                    style={{
+                      margin: '0 0 0.875rem',
+                      fontSize: '0.9rem',
+                      color: 'var(--lr-color-text-muted)',
+                    }}
+                  >
+                    Rendered by laRose UI — modular packages, one design system.
                   </p>
                   <Input label="Your name" placeholder="Enter your name…" />
                   <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.75rem' }}>
@@ -142,76 +159,36 @@ export function GettingStartedPage() {
           </div>
         </div>
 
-        {/* Step 4 – done! */}
         <div className="docs-gs__step">
           <div className="docs-gs__step-connector">
-            <div className="docs-gs__step-num" style={{ background: 'var(--lr-color-primary)', color: '#fff', border: 'none' }}>
+            <div
+              className="docs-gs__step-num"
+              style={{ background: 'var(--lr-color-primary)', color: '#fff', border: 'none' }}
+            >
               ✓
             </div>
           </div>
           <div className="docs-gs__step-body">
-            <h3>You're set up 🎉</h3>
+            <h3>Next steps</h3>
             <p className="docs-gs__step-hint">
-              Any component from the catalog works exactly the same way. Head to the component
-              browser and find the one you need — each page shows the exact import and usage code.
+              Browse components for imports and live previews, or open the Packages hub for every
+              install command and when to use each package.
             </p>
-
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-              <Button onClick={() => navigate('/docs/components')}>
-                Browse components →
+              <Button onClick={() => navigate('/docs/packages')}>Explore packages</Button>
+              <Button variant="outline" onClick={() => navigate('/docs/components')}>
+                Browse components
               </Button>
-              <Button variant="outline" onClick={() => navigate('/docs/design/theme-builder')}>
-                Customize theme
+              <Button variant="ghost" onClick={() => navigate('/docs/guides/nextjs')}>
+                Next.js / Nuxt / SvelteKit
               </Button>
-              <Button variant="ghost" onClick={() => navigate('/docs/guides')}>
-                Read guides
-              </Button>
+              <Link className="docs-card-link" to="/docs/packages/react">
+                @larose-ui/react details
+              </Link>
             </div>
           </div>
         </div>
-
       </div>
-
-      {/* ——— Host-specific tips ——— */}
-      <section style={{ marginTop: '3rem' }}>
-        <h2>Platform-specific setup</h2>
-        <p style={{ color: 'var(--lr-color-text-muted)', marginBottom: '1rem' }}>
-          Using a meta-framework? These adapters add SSR safety and auto-imports for Next.js and Nuxt.
-        </p>
-
-        <div className="docs-callout-grid">
-          <div className="docs-callout">
-            <h3>Next.js</h3>
-            <p>
-              The <code>@larose-ui/next</code> adapter provides SSR-safe providers and a theme
-              bootstrap script that prevents flash.
-            </p>
-            <Button
-              variant="ghost"
-              size="sm"
-              style={{ marginTop: '0.75rem' }}
-              onClick={() => navigate('/docs/guides/nextjs')}
-            >
-              Next.js guide →
-            </Button>
-          </div>
-          <div className="docs-callout">
-            <h3>Nuxt</h3>
-            <p>
-              The <code>@larose-ui/nuxt</code> module injects CSS, the theme script, and
-              auto-imports every component — zero manual setup.
-            </p>
-            <Button
-              variant="ghost"
-              size="sm"
-              style={{ marginTop: '0.75rem' }}
-              onClick={() => navigate('/docs/guides/nuxt')}
-            >
-              Nuxt guide →
-            </Button>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

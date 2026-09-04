@@ -4,9 +4,16 @@ export interface DocsPackageEntry {
   id: string;
   name: string;
   tagline: string;
+  role: string;
+  whenToInstall: string;
+  layer: 'foundation' | 'ui' | 'runtime' | 'intelligence' | 'meta' | 'tooling';
+  consumerFacing: boolean;
   example: string;
   features: string[];
   peer?: string;
+  install?: { any?: string; react?: string; vue?: string; svelte?: string };
+  related?: string[];
+  transitiveNote?: string;
 }
 
 export interface DocsComponentEntry {
@@ -27,198 +34,1041 @@ export const docsPackages: DocsPackageEntry[] = [
     "id": "accessibility",
     "name": "@larose-ui/accessibility",
     "tagline": "Accessibility utilities and component source scanners.",
+    "role": "Static a11y heuristics for components and docs.",
+    "whenToInstall": "CI / doctor pipelines — not required at runtime.",
+    "layer": "tooling",
+    "consumerFacing": true,
     "example": "import { scanComponentSource } from '@larose-ui/accessibility';",
     "features": [
       "Static a11y heuristics",
       "Integrated with larose doctor"
+    ],
+    "install": {
+      "any": "pnpm add @larose-ui/accessibility"
+    },
+    "related": [
+      "cli",
+      "quality-core"
     ]
   },
   {
-    "id": "ai",
-    "name": "@larose-ui/ai",
+    "id": "ai-core",
+    "name": "@larose-ui/ai-core",
+    "tagline": "Framework-agnostic AI runtime, intents, and adapters.",
+    "role": "AI-assisted UI (framework-agnostic core)",
+    "whenToInstall": "Only if you are building a custom adapter or reusing the core without UI. App code should install a framework adapter instead.",
+    "layer": "intelligence",
+    "consumerFacing": false,
+    "example": "import { /* AI runtime */ } from '@larose-ui/ai-core';",
+    "features": [
+      "Natural-language filtering",
+      "Permission-gated AI actions",
+      "SmartTable / SmartForm"
+    ],
+    "install": {
+      "any": "pnpm add @larose-ui/ai-core"
+    },
+    "related": [
+      "ai-react",
+      "ai-vue",
+      "ai-svelte"
+    ],
+    "transitiveNote": "Comes transitively with @larose-ui/ai-react|vue|svelte."
+  },
+  {
+    "id": "ai-react",
+    "name": "@larose-ui/ai-react",
     "tagline": "Permission-bound AI for SmartTable and SmartForm.",
+    "role": "AI-assisted UI for React",
+    "whenToInstall": "When you need NL filtering / SmartTable / SmartForm with permission gates.",
+    "layer": "intelligence",
+    "consumerFacing": true,
     "peer": "react >=18",
     "example": "import { SmartTable, AIProvider } from '@larose-ui/ai-react';",
     "features": [
       "Natural-language filtering",
-      "Permission-gated AI actions"
+      "Permission-gated AI actions",
+      "SmartTable / SmartForm"
+    ],
+    "install": {
+      "react": "pnpm add @larose-ui/ai-react @larose-ui/react",
+      "any": "pnpm add @larose-ui/ai-react @larose-ui/react"
+    },
+    "related": [
+      "ai-core",
+      "ai-vue",
+      "ai-svelte"
+    ]
+  },
+  {
+    "id": "ai-svelte",
+    "name": "@larose-ui/ai-svelte",
+    "tagline": "Permission-bound AI for SmartTable and SmartForm.",
+    "role": "AI-assisted UI for Svelte 5",
+    "whenToInstall": "When you need NL filtering / SmartTable / SmartForm with permission gates.",
+    "layer": "intelligence",
+    "consumerFacing": true,
+    "peer": "svelte >=5",
+    "example": "import { SmartTable, AIProvider } from '@larose-ui/ai-svelte';",
+    "features": [
+      "Natural-language filtering",
+      "Permission-gated AI actions",
+      "SmartTable / SmartForm"
+    ],
+    "install": {
+      "svelte": "pnpm add @larose-ui/ai-svelte @larose-ui/svelte",
+      "any": "pnpm add @larose-ui/ai-svelte @larose-ui/svelte"
+    },
+    "related": [
+      "ai-core",
+      "ai-react",
+      "ai-vue"
+    ]
+  },
+  {
+    "id": "ai-vue",
+    "name": "@larose-ui/ai-vue",
+    "tagline": "Permission-bound AI for SmartTable and SmartForm.",
+    "role": "AI-assisted UI for Vue 3",
+    "whenToInstall": "When you need NL filtering / SmartTable / SmartForm with permission gates.",
+    "layer": "intelligence",
+    "consumerFacing": true,
+    "peer": "vue >=3.5",
+    "example": "import { SmartTable, AIProvider } from '@larose-ui/ai-vue';",
+    "features": [
+      "Natural-language filtering",
+      "Permission-gated AI actions",
+      "SmartTable / SmartForm"
+    ],
+    "install": {
+      "vue": "pnpm add @larose-ui/ai-vue @larose-ui/vue",
+      "any": "pnpm add @larose-ui/ai-vue @larose-ui/vue"
+    },
+    "related": [
+      "ai-core",
+      "ai-react",
+      "ai-svelte"
     ]
   },
   {
     "id": "cli",
     "name": "@larose-ui/cli",
     "tagline": "CLI for quality gates, migration, and code generation.",
-    "example": "larose doctor --ci",
+    "role": "larose doctor / migrate / generate / contribute.",
+    "whenToInstall": "Dev tooling — quality gates and scaffolds in CI or local.",
+    "layer": "tooling",
+    "consumerFacing": true,
+    "example": "pnpm add -D @larose-ui/cli\nlarose doctor --ci",
     "features": [
       "larose doctor",
       "larose migrate",
-      "larose generate"
+      "larose generate",
+      "larose contribute"
+    ],
+    "install": {
+      "any": "pnpm add -D @larose-ui/cli"
+    },
+    "related": [
+      "migration",
+      "contracts",
+      "accessibility",
+      "quality-core"
     ]
+  },
+  {
+    "id": "component-logic",
+    "name": "@larose-ui/component-logic",
+    "tagline": "Shared framework-agnostic component helpers and domain utils.",
+    "role": "Pure helpers shared by React/Vue/Svelte component adapters.",
+    "whenToInstall": "Almost never as a direct dependency — used internally by UI packages.",
+    "layer": "foundation",
+    "consumerFacing": false,
+    "example": "import { /* domain helpers */ } from '@larose-ui/component-logic';",
+    "features": [
+      "Shared utils",
+      "Parity-safe logic for multi-framework adapters"
+    ],
+    "install": {
+      "any": "pnpm add @larose-ui/component-logic"
+    },
+    "related": [
+      "primitives",
+      "react",
+      "vue",
+      "svelte"
+    ],
+    "transitiveNote": "Comes with UI packages."
   },
   {
     "id": "contracts",
     "name": "@larose-ui/contracts",
     "tagline": "Validate UI schemas against API contracts in CI.",
+    "role": "Contract validation for forms/UI schemas vs APIs.",
+    "whenToInstall": "CI quality — used heavily by larose doctor.",
+    "layer": "tooling",
+    "consumerFacing": true,
     "example": "import { validateContract } from '@larose-ui/contracts';\n\nvalidateContract(uiSchema, apiSchema);",
     "features": [
       "Field mismatch detection",
       "Used by larose doctor"
+    ],
+    "install": {
+      "any": "pnpm add @larose-ui/contracts"
+    },
+    "related": [
+      "cli",
+      "quality-core"
     ]
   },
   {
     "id": "core",
     "name": "@larose-ui/core",
     "tagline": "Framework-agnostic types, state machines, and runtime contracts.",
+    "role": "Shared TypeScript contracts and state helpers used across the platform.",
+    "whenToInstall": "Rarely needed directly — most apps get types via UI or runtime packages.",
+    "layer": "foundation",
+    "consumerFacing": false,
     "example": "import { createAsyncStateMachine, classifyHttpError } from '@larose-ui/core';\n\nconst machine = createAsyncStateMachine();\nmachine.send({ type: 'START' });",
     "features": [
       "Shared TypeScript types (`UIState`, `AsyncState`, `Environment`)",
       "Async state machine factory",
       "HTTP error classification",
       "Runtime event bus and session state machine"
-    ]
+    ],
+    "install": {
+      "any": "pnpm add @larose-ui/core"
+    },
+    "related": [
+      "tokens",
+      "runtime-core",
+      "react"
+    ],
+    "transitiveNote": "Pulled in by most @larose-ui packages."
   },
   {
-    "id": "data",
-    "name": "@larose-ui/data",
+    "id": "data-core",
+    "name": "@larose-ui/data-core",
+    "tagline": "Framework-agnostic data client helpers for laRose UI.",
+    "role": "Data fetching / mutations / undo (framework-agnostic core)",
+    "whenToInstall": "Only if you are building a custom adapter or reusing the core without UI. App code should install a framework adapter instead.",
+    "layer": "intelligence",
+    "consumerFacing": false,
+    "example": "import { /* data helpers */ } from '@larose-ui/data-core';",
+    "features": [
+      "useQuery / createQuery",
+      "useMutation",
+      "DataView",
+      "useUndo",
+      "Self-healing errors"
+    ],
+    "install": {
+      "any": "pnpm add @larose-ui/data-core"
+    },
+    "related": [
+      "data-react",
+      "data-vue",
+      "data-svelte",
+      "forms-react",
+      "forms-vue",
+      "forms-svelte"
+    ],
+    "transitiveNote": "Comes transitively with @larose-ui/data-react|vue|svelte."
+  },
+  {
+    "id": "data-react",
+    "name": "@larose-ui/data-react",
     "tagline": "Backend-aware data fetching with self-healing errors.",
+    "role": "Data fetching / mutations / undo for React",
+    "whenToInstall": "When components need query/mutation helpers or DataView against your API.",
+    "layer": "intelligence",
+    "consumerFacing": true,
     "peer": "react >=18",
     "example": "import { DataView } from '@larose-ui/data-react';\n\n<DataView url=\"/api/employees\">{(rows) => <Table data={rows} />}</DataView>",
     "features": [
-      "useQuery, useMutation, DataView",
-      "Self-healing errors",
-      "useUndo"
+      "useQuery / createQuery",
+      "useMutation",
+      "DataView",
+      "useUndo",
+      "Self-healing errors"
+    ],
+    "install": {
+      "react": "pnpm add @larose-ui/data-react @larose-ui/react",
+      "any": "pnpm add @larose-ui/data-react @larose-ui/react"
+    },
+    "related": [
+      "data-core",
+      "data-vue",
+      "data-svelte",
+      "forms-react",
+      "forms-vue",
+      "forms-svelte"
     ]
   },
   {
-    "id": "devtools",
-    "name": "@larose-ui/devtools",
+    "id": "data-svelte",
+    "name": "@larose-ui/data-svelte",
+    "tagline": "Backend-aware data fetching with self-healing errors.",
+    "role": "Data fetching / mutations / undo for Svelte 5",
+    "whenToInstall": "When components need query/mutation helpers or DataView against your API.",
+    "layer": "intelligence",
+    "consumerFacing": true,
+    "peer": "svelte >=5",
+    "example": "import { DataView } from '@larose-ui/data-svelte';\n\n<DataView url=\"/api/employees\">{(rows) => <Table data={rows} />}</DataView>",
+    "features": [
+      "useQuery / createQuery",
+      "useMutation",
+      "DataView",
+      "useUndo",
+      "Self-healing errors"
+    ],
+    "install": {
+      "svelte": "pnpm add @larose-ui/data-svelte @larose-ui/svelte",
+      "any": "pnpm add @larose-ui/data-svelte @larose-ui/svelte"
+    },
+    "related": [
+      "data-core",
+      "data-react",
+      "data-vue",
+      "forms-react",
+      "forms-vue",
+      "forms-svelte"
+    ]
+  },
+  {
+    "id": "data-vue",
+    "name": "@larose-ui/data-vue",
+    "tagline": "Backend-aware data fetching with self-healing errors.",
+    "role": "Data fetching / mutations / undo for Vue 3",
+    "whenToInstall": "When components need query/mutation helpers or DataView against your API.",
+    "layer": "intelligence",
+    "consumerFacing": true,
+    "peer": "vue >=3.5",
+    "example": "import { DataView } from '@larose-ui/data-vue';\n\n<DataView url=\"/api/employees\">{(rows) => <Table data={rows} />}</DataView>",
+    "features": [
+      "useQuery / createQuery",
+      "useMutation",
+      "DataView",
+      "useUndo",
+      "Self-healing errors"
+    ],
+    "install": {
+      "vue": "pnpm add @larose-ui/data-vue @larose-ui/vue",
+      "any": "pnpm add @larose-ui/data-vue @larose-ui/vue"
+    },
+    "related": [
+      "data-core",
+      "data-react",
+      "data-svelte",
+      "forms-react",
+      "forms-vue",
+      "forms-svelte"
+    ]
+  },
+  {
+    "id": "devtools-core",
+    "name": "@larose-ui/devtools-core",
+    "tagline": "Framework-agnostic DevTools analytics for laRose UI.",
+    "role": "In-app DevTools panel (framework-agnostic core)",
+    "whenToInstall": "Only if you are building a custom adapter or reusing the core without UI. App code should install a framework adapter instead.",
+    "layer": "tooling",
+    "consumerFacing": false,
+    "example": "import { /* analytics */ } from '@larose-ui/devtools-core';",
+    "features": [
+      "Runtime context panel",
+      "Event timeline",
+      "Component inspector"
+    ],
+    "install": {
+      "any": "pnpm add @larose-ui/devtools-core"
+    },
+    "related": [
+      "devtools-react",
+      "devtools-vue",
+      "devtools-svelte"
+    ],
+    "transitiveNote": "Comes transitively with @larose-ui/devtools-react|vue|svelte."
+  },
+  {
+    "id": "devtools-react",
+    "name": "@larose-ui/devtools-react",
     "tagline": "In-app runtime inspector for development.",
+    "role": "In-app DevTools panel for React (dev)",
+    "whenToInstall": "Dev-only — inspect runtime context, events, and component trees.",
+    "layer": "tooling",
+    "consumerFacing": true,
     "peer": "react >=18",
     "example": "import { DevToolsProvider } from '@larose-ui/devtools-react';",
     "features": [
       "Runtime context panel",
       "Event timeline",
       "Component inspector"
+    ],
+    "install": {
+      "react": "pnpm add @larose-ui/devtools-react @larose-ui/react",
+      "any": "pnpm add @larose-ui/devtools-react @larose-ui/react"
+    },
+    "related": [
+      "devtools-core",
+      "devtools-vue",
+      "devtools-svelte"
     ]
   },
   {
-    "id": "enterprise",
-    "name": "@larose-ui/enterprise",
+    "id": "devtools-svelte",
+    "name": "@larose-ui/devtools-svelte",
+    "tagline": "In-app runtime inspector for development.",
+    "role": "In-app DevTools panel for Svelte 5 (dev)",
+    "whenToInstall": "Dev-only — inspect runtime context, events, and component trees.",
+    "layer": "tooling",
+    "consumerFacing": true,
+    "peer": "svelte >=5",
+    "example": "import { DevToolsProvider } from '@larose-ui/devtools-svelte';",
+    "features": [
+      "Runtime context panel",
+      "Event timeline",
+      "Component inspector"
+    ],
+    "install": {
+      "svelte": "pnpm add @larose-ui/devtools-svelte @larose-ui/svelte",
+      "any": "pnpm add @larose-ui/devtools-svelte @larose-ui/svelte"
+    },
+    "related": [
+      "devtools-core",
+      "devtools-react",
+      "devtools-vue"
+    ]
+  },
+  {
+    "id": "devtools-vue",
+    "name": "@larose-ui/devtools-vue",
+    "tagline": "In-app runtime inspector for development.",
+    "role": "In-app DevTools panel for Vue 3 (dev)",
+    "whenToInstall": "Dev-only — inspect runtime context, events, and component trees.",
+    "layer": "tooling",
+    "consumerFacing": true,
+    "peer": "vue >=3.5",
+    "example": "import { DevToolsProvider } from '@larose-ui/devtools-vue';",
+    "features": [
+      "Runtime context panel",
+      "Event timeline",
+      "Component inspector"
+    ],
+    "install": {
+      "vue": "pnpm add @larose-ui/devtools-vue @larose-ui/vue",
+      "any": "pnpm add @larose-ui/devtools-vue @larose-ui/vue"
+    },
+    "related": [
+      "devtools-core",
+      "devtools-react",
+      "devtools-svelte"
+    ]
+  },
+  {
+    "id": "enterprise-core",
+    "name": "@larose-ui/enterprise-core",
+    "tagline": "Framework-agnostic enterprise helpers (version, UI schema, audit).",
+    "role": "Enterprise audit / session / schema UI (framework-agnostic core)",
+    "whenToInstall": "Only if you are building a custom adapter or reusing the core without UI. App code should install a framework adapter instead.",
+    "layer": "intelligence",
+    "consumerFacing": false,
+    "example": "import { /* enterprise model */ } from '@larose-ui/enterprise-core';",
+    "features": [
+      "Audit trails",
+      "Session expiry",
+      "UI schema renderer"
+    ],
+    "install": {
+      "any": "pnpm add @larose-ui/enterprise-core"
+    },
+    "related": [
+      "enterprise-react",
+      "enterprise-vue",
+      "enterprise-svelte"
+    ],
+    "transitiveNote": "Comes transitively with @larose-ui/enterprise-react|vue|svelte."
+  },
+  {
+    "id": "enterprise-react",
+    "name": "@larose-ui/enterprise-react",
     "tagline": "Enterprise patterns — audit trails, session guards, schema IaC.",
+    "role": "Enterprise audit / session / schema UI for React",
+    "whenToInstall": "When you need audit trails, session expiry, or UI-schema rendering.",
+    "layer": "intelligence",
+    "consumerFacing": true,
     "peer": "react >=18",
     "example": "import { SessionGuard, AuditedInput } from '@larose-ui/enterprise-react';",
     "features": [
       "Audit trails",
       "Session expiry",
       "UI schema renderer"
+    ],
+    "install": {
+      "react": "pnpm add @larose-ui/enterprise-react @larose-ui/react",
+      "any": "pnpm add @larose-ui/enterprise-react @larose-ui/react"
+    },
+    "related": [
+      "enterprise-core",
+      "enterprise-vue",
+      "enterprise-svelte"
     ]
   },
   {
-    "id": "forms",
-    "name": "@larose-ui/forms",
+    "id": "enterprise-svelte",
+    "name": "@larose-ui/enterprise-svelte",
+    "tagline": "Enterprise patterns — audit trails, session guards, schema IaC.",
+    "role": "Enterprise audit / session / schema UI for Svelte 5",
+    "whenToInstall": "When you need audit trails, session expiry, or UI-schema rendering.",
+    "layer": "intelligence",
+    "consumerFacing": true,
+    "peer": "svelte >=5",
+    "example": "import { SessionGuard, AuditedInput } from '@larose-ui/enterprise-svelte';",
+    "features": [
+      "Audit trails",
+      "Session expiry",
+      "UI schema renderer"
+    ],
+    "install": {
+      "svelte": "pnpm add @larose-ui/enterprise-svelte @larose-ui/svelte",
+      "any": "pnpm add @larose-ui/enterprise-svelte @larose-ui/svelte"
+    },
+    "related": [
+      "enterprise-core",
+      "enterprise-react",
+      "enterprise-vue"
+    ]
+  },
+  {
+    "id": "enterprise-vue",
+    "name": "@larose-ui/enterprise-vue",
+    "tagline": "Enterprise patterns — audit trails, session guards, schema IaC.",
+    "role": "Enterprise audit / session / schema UI for Vue 3",
+    "whenToInstall": "When you need audit trails, session expiry, or UI-schema rendering.",
+    "layer": "intelligence",
+    "consumerFacing": true,
+    "peer": "vue >=3.5",
+    "example": "import { SessionGuard, AuditedInput } from '@larose-ui/enterprise-vue';",
+    "features": [
+      "Audit trails",
+      "Session expiry",
+      "UI schema renderer"
+    ],
+    "install": {
+      "vue": "pnpm add @larose-ui/enterprise-vue @larose-ui/vue",
+      "any": "pnpm add @larose-ui/enterprise-vue @larose-ui/vue"
+    },
+    "related": [
+      "enterprise-core",
+      "enterprise-react",
+      "enterprise-svelte"
+    ]
+  },
+  {
+    "id": "forms-core",
+    "name": "@larose-ui/forms-core",
+    "tagline": "Framework-agnostic form schema helpers for laRose UI.",
+    "role": "Declarative schema forms (framework-agnostic core)",
+    "whenToInstall": "Only if you are building a custom adapter or reusing the core without UI. App code should install a framework adapter instead.",
+    "layer": "intelligence",
+    "consumerFacing": false,
+    "example": "import { /* schema helpers */ } from '@larose-ui/forms-core';",
+    "features": [
+      "Declarative schemas",
+      "Conditional visibility",
+      "Validation",
+      "Observability hooks"
+    ],
+    "install": {
+      "any": "pnpm add @larose-ui/forms-core"
+    },
+    "related": [
+      "forms-react",
+      "forms-vue",
+      "forms-svelte"
+    ],
+    "transitiveNote": "Comes transitively with @larose-ui/forms-react|vue|svelte."
+  },
+  {
+    "id": "forms-react",
+    "name": "@larose-ui/forms-react",
     "tagline": "Schema-driven forms with validation and conditional fields.",
+    "role": "Declarative schema forms for React",
+    "whenToInstall": "When you want forms defined by schema rather than hand-wired fields.",
+    "layer": "intelligence",
+    "consumerFacing": true,
     "peer": "react >=18",
     "example": "import { Form } from '@larose-ui/forms-react';\n\n<Form schema={{ id: 'user', fields: [{ name: 'email', type: 'text', label: 'Email' }] }} />",
     "features": [
       "Declarative schemas",
       "Conditional visibility",
-      "Observability integration"
+      "Validation",
+      "Observability hooks"
+    ],
+    "install": {
+      "react": "pnpm add @larose-ui/forms-react @larose-ui/react",
+      "any": "pnpm add @larose-ui/forms-react @larose-ui/react"
+    },
+    "related": [
+      "forms-core",
+      "forms-vue",
+      "forms-svelte"
     ]
+  },
+  {
+    "id": "forms-svelte",
+    "name": "@larose-ui/forms-svelte",
+    "tagline": "Schema-driven forms with validation and conditional fields.",
+    "role": "Declarative schema forms for Svelte 5",
+    "whenToInstall": "When you want forms defined by schema rather than hand-wired fields.",
+    "layer": "intelligence",
+    "consumerFacing": true,
+    "peer": "svelte >=5",
+    "example": "import { Form } from '@larose-ui/forms-svelte';\n\n<Form schema={{ id: 'user', fields: [{ name: 'email', type: 'text', label: 'Email' }] }} />",
+    "features": [
+      "Declarative schemas",
+      "Conditional visibility",
+      "Validation",
+      "Observability hooks"
+    ],
+    "install": {
+      "svelte": "pnpm add @larose-ui/forms-svelte @larose-ui/svelte",
+      "any": "pnpm add @larose-ui/forms-svelte @larose-ui/svelte"
+    },
+    "related": [
+      "forms-core",
+      "forms-react",
+      "forms-vue"
+    ]
+  },
+  {
+    "id": "forms-vue",
+    "name": "@larose-ui/forms-vue",
+    "tagline": "Schema-driven forms with validation and conditional fields.",
+    "role": "Declarative schema forms for Vue 3",
+    "whenToInstall": "When you want forms defined by schema rather than hand-wired fields.",
+    "layer": "intelligence",
+    "consumerFacing": true,
+    "peer": "vue >=3.5",
+    "example": "import { Form } from '@larose-ui/forms-vue';\n\n<Form schema={{ id: 'user', fields: [{ name: 'email', type: 'text', label: 'Email' }] }} />",
+    "features": [
+      "Declarative schemas",
+      "Conditional visibility",
+      "Validation",
+      "Observability hooks"
+    ],
+    "install": {
+      "vue": "pnpm add @larose-ui/forms-vue @larose-ui/vue",
+      "any": "pnpm add @larose-ui/forms-vue @larose-ui/vue"
+    },
+    "related": [
+      "forms-core",
+      "forms-react",
+      "forms-svelte"
+    ]
+  },
+  {
+    "id": "liquid-glass-core",
+    "name": "@larose-ui/liquid-glass-core",
+    "tagline": "Framework-agnostic Liquid Glass optics engine.",
+    "role": "Displacement / refraction math and CSS plumbing for LiquidGlass surfaces.",
+    "whenToInstall": "Only for custom glass surfaces outside the UI adapters.",
+    "layer": "foundation",
+    "consumerFacing": false,
+    "example": "import { /* optics helpers */ } from '@larose-ui/liquid-glass-core';",
+    "features": [
+      "SVG displacement refraction",
+      "Blur fallbacks",
+      "Shared optics config"
+    ],
+    "install": {
+      "any": "pnpm add @larose-ui/liquid-glass-core"
+    },
+    "related": [
+      "react",
+      "vue",
+      "svelte",
+      "styles"
+    ],
+    "transitiveNote": "Pulled in by LiquidGlass components in @larose-ui/react|vue|svelte."
   },
   {
     "id": "migration",
     "name": "@larose-ui/migration",
     "tagline": "Codemods, generators, and release intelligence.",
+    "role": "Migration helpers and deprecation detection.",
+    "whenToInstall": "Upgrading between laRose majors or applying codemods.",
+    "layer": "tooling",
+    "consumerFacing": true,
     "example": "larose migrate --to 1.0.0 --apply",
     "features": [
       "Safe codemods",
       "Scaffolds",
       "Release reports"
+    ],
+    "install": {
+      "any": "pnpm add @larose-ui/migration"
+    },
+    "related": [
+      "cli"
     ]
   },
   {
     "id": "network",
     "name": "@larose-ui/network",
     "tagline": "Network condition detection for adaptive UI.",
+    "role": "Detect online / offline / slow and recommend loading patterns.",
+    "whenToInstall": "Usually via runtime-* — install directly only for custom hosts.",
+    "layer": "runtime",
+    "consumerFacing": false,
     "example": "import { createNetworkMonitor } from '@larose-ui/network';\n\nconst monitor = createNetworkMonitor();\nmonitor.subscribe((state) => console.log(state.condition));",
     "features": [
       "Online, offline, slow detection",
       "Skeleton vs spinner recommendations"
-    ]
+    ],
+    "install": {
+      "any": "pnpm add @larose-ui/network"
+    },
+    "related": [
+      "offline",
+      "runtime-core",
+      "runtime-react",
+      "runtime-vue",
+      "runtime-svelte"
+    ],
+    "transitiveNote": "Included when you install runtime-react|vue|svelte."
   },
   {
     "id": "next",
     "name": "@larose-ui/next",
     "tagline": "Next.js integration — SSR theme script and LaRoseRoot boundary.",
+    "role": "Next.js SSR bootstrap for React + laRose.",
+    "whenToInstall": "Using Next.js App Router or Pages with laRose React.",
+    "layer": "meta",
+    "consumerFacing": true,
     "peer": "next >=14, react >=18",
     "example": "import { LaRoseRoot, createLaRoseThemeScriptContent } from '@larose-ui/next';",
     "features": [
       "SSR-safe providers",
       "Theme bootstrap script",
       "CSS path helpers"
+    ],
+    "install": {
+      "react": "pnpm add @larose-ui/next @larose-ui/react @larose-ui/runtime-react @larose-ui/tokens @larose-ui/styles",
+      "any": "pnpm add @larose-ui/next @larose-ui/react @larose-ui/runtime-react @larose-ui/tokens @larose-ui/styles"
+    },
+    "related": [
+      "react",
+      "runtime-react",
+      "tokens",
+      "styles"
     ]
   },
   {
     "id": "nuxt",
     "name": "@larose-ui/nuxt",
     "tagline": "Nuxt module for CSS injection, theme script, and Vue providers.",
+    "role": "Nuxt module wiring for Vue + laRose.",
+    "whenToInstall": "Using Nuxt 3+ with @larose-ui/vue.",
+    "layer": "meta",
+    "consumerFacing": true,
     "peer": "nuxt >=3.10",
     "example": "export default defineNuxtConfig({ modules: ['@larose-ui/nuxt'] });",
     "features": [
       "Auto-imports",
       "SSR theme script",
       "LaRoseApp shell"
+    ],
+    "install": {
+      "vue": "pnpm add @larose-ui/nuxt @larose-ui/vue @larose-ui/runtime-vue",
+      "any": "pnpm add @larose-ui/nuxt @larose-ui/vue @larose-ui/runtime-vue"
+    },
+    "related": [
+      "vue",
+      "runtime-vue",
+      "tokens",
+      "styles"
     ]
   },
   {
-    "id": "observability",
-    "name": "@larose-ui/observability",
+    "id": "observability-core",
+    "name": "@larose-ui/observability-core",
+    "tagline": "Framework-agnostic UX observability model and collectors.",
+    "role": "Product UX analytics (framework-agnostic core)",
+    "whenToInstall": "Only if you are building a custom adapter or reusing the core without UI. App code should install a framework adapter instead.",
+    "layer": "intelligence",
+    "consumerFacing": false,
+    "example": "import { /* collectors */ } from '@larose-ui/observability-core';",
+    "features": [
+      "Journey tracking",
+      "Form funnel metrics",
+      "Rage click analysis"
+    ],
+    "install": {
+      "any": "pnpm add @larose-ui/observability-core"
+    },
+    "related": [
+      "observability-react",
+      "observability-vue",
+      "observability-svelte"
+    ],
+    "transitiveNote": "Comes transitively with @larose-ui/observability-react|vue|svelte."
+  },
+  {
+    "id": "observability-react",
+    "name": "@larose-ui/observability-react",
     "tagline": "UX observability — journeys, funnels, and rage-click analysis.",
+    "role": "Product UX analytics for React",
+    "whenToInstall": "When you want journey / funnel / rage-click insights wired into the UI.",
+    "layer": "intelligence",
+    "consumerFacing": true,
     "peer": "react >=18",
     "example": "import { useJourneyPage } from '@larose-ui/observability-react';\n\nuseJourneyPage('employees');",
     "features": [
       "Journey tracking",
       "Form funnel metrics",
       "Rage click analysis"
+    ],
+    "install": {
+      "react": "pnpm add @larose-ui/observability-react @larose-ui/react",
+      "any": "pnpm add @larose-ui/observability-react @larose-ui/react"
+    },
+    "related": [
+      "observability-core",
+      "observability-vue",
+      "observability-svelte"
+    ]
+  },
+  {
+    "id": "observability-svelte",
+    "name": "@larose-ui/observability-svelte",
+    "tagline": "UX observability — journeys, funnels, and rage-click analysis.",
+    "role": "Product UX analytics for Svelte 5",
+    "whenToInstall": "When you want journey / funnel / rage-click insights wired into the UI.",
+    "layer": "intelligence",
+    "consumerFacing": true,
+    "peer": "svelte >=5",
+    "example": "import { useJourneyPage } from '@larose-ui/observability-svelte';\n\nuseJourneyPage('employees');",
+    "features": [
+      "Journey tracking",
+      "Form funnel metrics",
+      "Rage click analysis"
+    ],
+    "install": {
+      "svelte": "pnpm add @larose-ui/observability-svelte @larose-ui/svelte",
+      "any": "pnpm add @larose-ui/observability-svelte @larose-ui/svelte"
+    },
+    "related": [
+      "observability-core",
+      "observability-react",
+      "observability-vue"
+    ]
+  },
+  {
+    "id": "observability-vue",
+    "name": "@larose-ui/observability-vue",
+    "tagline": "UX observability — journeys, funnels, and rage-click analysis.",
+    "role": "Product UX analytics for Vue 3",
+    "whenToInstall": "When you want journey / funnel / rage-click insights wired into the UI.",
+    "layer": "intelligence",
+    "consumerFacing": true,
+    "peer": "vue >=3.5",
+    "example": "import { useJourneyPage } from '@larose-ui/observability-vue';\n\nuseJourneyPage('employees');",
+    "features": [
+      "Journey tracking",
+      "Form funnel metrics",
+      "Rage click analysis"
+    ],
+    "install": {
+      "vue": "pnpm add @larose-ui/observability-vue @larose-ui/vue",
+      "any": "pnpm add @larose-ui/observability-vue @larose-ui/vue"
+    },
+    "related": [
+      "observability-core",
+      "observability-react",
+      "observability-svelte"
     ]
   },
   {
     "id": "offline",
     "name": "@larose-ui/offline",
     "tagline": "Offline request queue with sync and conflict handling.",
+    "role": "Queue mutations while offline and sync when connectivity returns.",
+    "whenToInstall": "Usually via runtime-* — install directly for custom offline hosts.",
+    "layer": "runtime",
+    "consumerFacing": false,
     "example": "import { createOfflineQueue } from '@larose-ui/offline';\n\nawait queue.enqueue({ url: '/api/items', method: 'POST', body: { name: 'Draft' } });",
     "features": [
       "Persistent queue",
       "Automatic sync when online",
       "Retry and conflict detection"
-    ]
+    ],
+    "install": {
+      "any": "pnpm add @larose-ui/offline"
+    },
+    "related": [
+      "network",
+      "runtime-core",
+      "runtime-react",
+      "runtime-vue",
+      "runtime-svelte"
+    ],
+    "transitiveNote": "Included when you install runtime-react|vue|svelte."
   },
   {
-    "id": "permissions",
-    "name": "@larose-ui/permissions",
+    "id": "permissions-core",
+    "name": "@larose-ui/permissions-core",
+    "tagline": "Framework-agnostic permission evaluation for laRose UI.",
+    "role": "Permission-gated UI (framework-agnostic core)",
+    "whenToInstall": "Only if you are building a custom adapter or reusing the core without UI. App code should install a framework adapter instead.",
+    "layer": "intelligence",
+    "consumerFacing": false,
+    "example": "import { /* evaluate permissions */ } from '@larose-ui/permissions-core';",
+    "features": [
+      "Can / Permission components",
+      "Explainable blocked actions",
+      "RBAC/ABAC helpers"
+    ],
+    "install": {
+      "any": "pnpm add @larose-ui/permissions-core"
+    },
+    "related": [
+      "permissions-react",
+      "permissions-vue",
+      "permissions-svelte"
+    ],
+    "transitiveNote": "Comes transitively with @larose-ui/permissions-react|vue|svelte."
+  },
+  {
+    "id": "permissions-react",
+    "name": "@larose-ui/permissions-react",
     "tagline": "Authorization-aware UI with RBAC/ABAC patterns.",
+    "role": "Permission-gated UI for React",
+    "whenToInstall": "When actions or views must respect roles/permissions.",
+    "layer": "intelligence",
+    "consumerFacing": true,
     "peer": "react >=18",
     "example": "import { Can } from '@larose-ui/permissions-react';\n\n<Can permission=\"employees.delete\"><DeleteButton /></Can>",
     "features": [
-      "Can and Permission components",
-      "Explainable blocked actions"
+      "Can / Permission components",
+      "Explainable blocked actions",
+      "RBAC/ABAC helpers"
+    ],
+    "install": {
+      "react": "pnpm add @larose-ui/permissions-react @larose-ui/react",
+      "any": "pnpm add @larose-ui/permissions-react @larose-ui/react"
+    },
+    "related": [
+      "permissions-core",
+      "permissions-vue",
+      "permissions-svelte"
+    ]
+  },
+  {
+    "id": "permissions-svelte",
+    "name": "@larose-ui/permissions-svelte",
+    "tagline": "Authorization-aware UI with RBAC/ABAC patterns.",
+    "role": "Permission-gated UI for Svelte 5",
+    "whenToInstall": "When actions or views must respect roles/permissions.",
+    "layer": "intelligence",
+    "consumerFacing": true,
+    "peer": "svelte >=5",
+    "example": "import { Can } from '@larose-ui/permissions-svelte';\n\n<Can permission=\"employees.delete\"><DeleteButton /></Can>",
+    "features": [
+      "Can / Permission components",
+      "Explainable blocked actions",
+      "RBAC/ABAC helpers"
+    ],
+    "install": {
+      "svelte": "pnpm add @larose-ui/permissions-svelte @larose-ui/svelte",
+      "any": "pnpm add @larose-ui/permissions-svelte @larose-ui/svelte"
+    },
+    "related": [
+      "permissions-core",
+      "permissions-react",
+      "permissions-vue"
+    ]
+  },
+  {
+    "id": "permissions-vue",
+    "name": "@larose-ui/permissions-vue",
+    "tagline": "Authorization-aware UI with RBAC/ABAC patterns.",
+    "role": "Permission-gated UI for Vue 3",
+    "whenToInstall": "When actions or views must respect roles/permissions.",
+    "layer": "intelligence",
+    "consumerFacing": true,
+    "peer": "vue >=3.5",
+    "example": "import { Can } from '@larose-ui/permissions-vue';\n\n<Can permission=\"employees.delete\"><DeleteButton /></Can>",
+    "features": [
+      "Can / Permission components",
+      "Explainable blocked actions",
+      "RBAC/ABAC helpers"
+    ],
+    "install": {
+      "vue": "pnpm add @larose-ui/permissions-vue @larose-ui/vue",
+      "any": "pnpm add @larose-ui/permissions-vue @larose-ui/vue"
+    },
+    "related": [
+      "permissions-core",
+      "permissions-react",
+      "permissions-svelte"
     ]
   },
   {
     "id": "primitives",
     "name": "@larose-ui/primitives",
-    "tagline": "Headless menu keyboard, type-ahead, and accelerator behavior.",
+    "tagline": "Headless interactive behavior for menus, focus, tabs, and selection.",
+    "role": "Framework-agnostic interaction logic (no visual chrome).",
+    "whenToInstall": "Only when building custom headless widgets on laRose primitives.",
+    "layer": "foundation",
+    "consumerFacing": false,
     "example": "import { handleMenuKeyboard } from '@larose-ui/primitives';",
     "features": [
       "Menu keyboard navigation",
       "Type-ahead",
-      "Mnemonic bindings"
-    ]
+      "Mnemonic bindings",
+      "Focus trap helpers"
+    ],
+    "install": {
+      "any": "pnpm add @larose-ui/primitives"
+    },
+    "related": [
+      "component-logic",
+      "react",
+      "vue",
+      "svelte"
+    ],
+    "transitiveNote": "Comes with UI packages."
+  },
+  {
+    "id": "quality-core",
+    "name": "@larose-ui/quality-core",
+    "tagline": "Framework-agnostic quality scoring and doctor diagnostics.",
+    "role": "Shared diagnostics model for larose doctor.",
+    "whenToInstall": "Almost never directly — used by the CLI.",
+    "layer": "tooling",
+    "consumerFacing": false,
+    "example": "import { /* quality scoring */ } from '@larose-ui/quality-core';",
+    "features": [
+      "Quality scoring",
+      "Doctor diagnostic primitives"
+    ],
+    "install": {
+      "any": "pnpm add @larose-ui/quality-core"
+    },
+    "related": [
+      "cli",
+      "contracts",
+      "accessibility"
+    ],
+    "transitiveNote": "Used internally by @larose-ui/cli."
   },
   {
     "id": "react",
     "name": "@larose-ui/react",
-    "tagline": "Production-ready React components with built-in UI states and LiquidGlass refraction surfaces.",
+    "tagline": "Production-ready React components with LiquidGlass refraction surfaces.",
+    "role": "Primary React UI kit (buttons, forms, overlays, navigation, glass).",
+    "whenToInstall": "Building a React app — start here with tokens + styles.",
+    "layer": "ui",
+    "consumerFacing": true,
     "peer": "react >=18",
     "example": "import { Button, LiquidGlass, LiquidGlassTabBar } from '@larose-ui/react';\nimport '@larose-ui/tokens/styles.css';\nimport '@larose-ui/styles/styles.css';\nimport '@larose-ui/react/styles.css';",
     "features": [
@@ -226,97 +1076,391 @@ export const docsPackages: DocsPackageEntry[] = [
       "LiquidGlass TabBar, TopBar, Button, Switch, Range, Checkbox, Progress",
       "SVG displacement refraction on Chromium with blur fallback",
       "Token-driven styling and customization hooks"
-    ]
-  },
-  {
-    "id": "runtime",
-    "name": "@larose-ui/runtime",
-    "tagline": "Unified runtime — theme, i18n, permissions, network, and session.",
-    "peer": "react >=18",
-    "example": "import { LaRoseProvider } from '@larose-ui/runtime-react';\n\n<LaRoseProvider theme=\"light\" locale=\"en\" permissions={['app.read']}>\n  <App />\n</LaRoseProvider>",
-    "features": [
-      "LaRoseProvider composes runtime contexts",
-      "useRuntime, useSession, useTheme",
-      "Toast subpath"
+    ],
+    "install": {
+      "react": "pnpm add @larose-ui/react @larose-ui/tokens @larose-ui/styles",
+      "any": "pnpm add @larose-ui/react @larose-ui/tokens @larose-ui/styles"
+    },
+    "related": [
+      "tokens",
+      "styles",
+      "runtime-react",
+      "liquid-glass-core",
+      "next"
     ]
   },
   {
     "id": "runtime-core",
     "name": "@larose-ui/runtime-core",
     "tagline": "Framework-agnostic runtime store, host detection, and i18n.",
+    "role": "Application runtime provider stack (framework-agnostic core)",
+    "whenToInstall": "Only if you are building a custom adapter or reusing the core without UI. App code should install a framework adapter instead.",
+    "layer": "runtime",
+    "consumerFacing": false,
     "example": "import { createRuntimeStore, detectHostEnvironment } from '@larose-ui/runtime-core';",
     "features": [
-      "Runtime store",
-      "Host capabilities",
-      "Tenant and session bridges"
+      "LaRoseProvider composes runtime contexts",
+      "Theme, toast, accelerators",
+      "Network + offline bridges",
+      "i18n / locale"
+    ],
+    "install": {
+      "any": "pnpm add @larose-ui/runtime-core"
+    },
+    "related": [
+      "runtime-react",
+      "runtime-vue",
+      "runtime-svelte",
+      "network",
+      "offline",
+      "react",
+      "vue",
+      "svelte"
+    ],
+    "transitiveNote": "Comes transitively with @larose-ui/runtime-react|vue|svelte."
+  },
+  {
+    "id": "runtime-react",
+    "name": "@larose-ui/runtime-react",
+    "tagline": "Full LaRoseProvider — theme, toast, accelerators, network, offline, i18n.",
+    "role": "Application runtime provider stack for React",
+    "whenToInstall": "When you need theme + toast + network/offline + i18n (not just themed components).",
+    "layer": "runtime",
+    "consumerFacing": true,
+    "peer": "react >=18",
+    "example": "import { LaRoseProvider } from '@larose-ui/runtime-react';\n\n<LaRoseProvider theme=\"light\" locale=\"en\">\n  <App />\n</LaRoseProvider>",
+    "features": [
+      "LaRoseProvider composes runtime contexts",
+      "Theme, toast, accelerators",
+      "Network + offline bridges",
+      "i18n / locale"
+    ],
+    "install": {
+      "react": "pnpm add @larose-ui/runtime-react @larose-ui/react @larose-ui/tokens @larose-ui/styles",
+      "any": "pnpm add @larose-ui/runtime-react @larose-ui/react @larose-ui/tokens @larose-ui/styles"
+    },
+    "related": [
+      "runtime-core",
+      "runtime-vue",
+      "runtime-svelte",
+      "network",
+      "offline",
+      "react",
+      "vue",
+      "svelte"
+    ]
+  },
+  {
+    "id": "runtime-svelte",
+    "name": "@larose-ui/runtime-svelte",
+    "tagline": "Full LaRoseProvider — theme, toast, accelerators, network, offline, i18n.",
+    "role": "Application runtime provider stack for Svelte 5",
+    "whenToInstall": "When you need theme + toast + network/offline + i18n (not just themed components).",
+    "layer": "runtime",
+    "consumerFacing": true,
+    "peer": "svelte >=5",
+    "example": "import { LaRoseProvider } from '@larose-ui/runtime-svelte';\n\n<LaRoseProvider theme=\"light\">\n  <slot />\n</LaRoseProvider>",
+    "features": [
+      "LaRoseProvider composes runtime contexts",
+      "Theme, toast, accelerators",
+      "Network + offline bridges",
+      "i18n / locale"
+    ],
+    "install": {
+      "svelte": "pnpm add @larose-ui/runtime-svelte @larose-ui/svelte @larose-ui/tokens @larose-ui/styles",
+      "any": "pnpm add @larose-ui/runtime-svelte @larose-ui/svelte @larose-ui/tokens @larose-ui/styles"
+    },
+    "related": [
+      "runtime-core",
+      "runtime-react",
+      "runtime-vue",
+      "network",
+      "offline",
+      "react",
+      "vue",
+      "svelte"
+    ]
+  },
+  {
+    "id": "runtime-vue",
+    "name": "@larose-ui/runtime-vue",
+    "tagline": "Full LaRoseProvider — theme, toast, accelerators, network, offline, i18n.",
+    "role": "Application runtime provider stack for Vue 3",
+    "whenToInstall": "When you need theme + toast + network/offline + i18n (not just themed components).",
+    "layer": "runtime",
+    "consumerFacing": true,
+    "peer": "vue >=3.5",
+    "example": "import { LaRoseProvider } from '@larose-ui/runtime-vue';\n\n// wrap app root with LaRoseProvider",
+    "features": [
+      "LaRoseProvider composes runtime contexts",
+      "Theme, toast, accelerators",
+      "Network + offline bridges",
+      "i18n / locale"
+    ],
+    "install": {
+      "vue": "pnpm add @larose-ui/runtime-vue @larose-ui/vue @larose-ui/tokens @larose-ui/styles",
+      "any": "pnpm add @larose-ui/runtime-vue @larose-ui/vue @larose-ui/tokens @larose-ui/styles"
+    },
+    "related": [
+      "runtime-core",
+      "runtime-react",
+      "runtime-svelte",
+      "network",
+      "offline",
+      "react",
+      "vue",
+      "svelte"
     ]
   },
   {
     "id": "styles",
     "name": "@larose-ui/styles",
     "tagline": "Framework-agnostic component CSS from the design system.",
+    "role": "Shared visual styles consumed by React, Vue, and Svelte adapters.",
+    "whenToInstall": "Always with UI packages — import after tokens.",
+    "layer": "foundation",
+    "consumerFacing": true,
     "example": "import '@larose-ui/tokens/styles.css';\nimport '@larose-ui/styles/styles.css';",
     "features": [
       "CSS modules consumed by React, Vue, and Svelte",
       "Single visual language"
+    ],
+    "install": {
+      "any": "pnpm add @larose-ui/styles @larose-ui/tokens"
+    },
+    "related": [
+      "tokens",
+      "react",
+      "vue",
+      "svelte"
     ]
   },
   {
     "id": "svelte",
     "name": "@larose-ui/svelte",
     "tagline": "Svelte 5 components with runes and shared laRose styles.",
+    "role": "Svelte 5 UI kit with runes-based APIs and shared design system.",
+    "whenToInstall": "Building a Svelte 5 app — pair with tokens + styles.",
+    "layer": "ui",
+    "consumerFacing": true,
     "peer": "svelte >=5",
     "example": "import { LaRoseProvider, Button } from '@larose-ui/svelte';\nimport '@larose-ui/tokens/styles.css';\nimport '@larose-ui/styles/styles.css';",
     "features": [
       "Svelte 5 runes",
       "Shared design tokens",
-      "Foundation parity components"
+      "Foundation parity components",
+      "LiquidGlass family"
+    ],
+    "install": {
+      "svelte": "pnpm add @larose-ui/svelte @larose-ui/tokens @larose-ui/styles",
+      "any": "pnpm add @larose-ui/svelte @larose-ui/tokens @larose-ui/styles"
+    },
+    "related": [
+      "tokens",
+      "styles",
+      "runtime-svelte",
+      "sveltekit"
     ]
   },
   {
-    "id": "testing",
-    "name": "@larose-ui/testing",
-    "tagline": "Test utilities with full laRose runtime context.",
+    "id": "sveltekit",
+    "name": "@larose-ui/sveltekit",
+    "tagline": "SvelteKit integration — SSR CSS, theme bootstrap, app root.",
+    "role": "SvelteKit helpers for SSR-safe laRose setup.",
+    "whenToInstall": "Using SvelteKit with @larose-ui/svelte.",
+    "layer": "meta",
+    "consumerFacing": true,
+    "peer": "svelte >=5, @sveltejs/kit",
+    "example": "import { /* SSR helpers */ } from '@larose-ui/sveltekit';",
+    "features": [
+      "SSR CSS injection",
+      "Theme bootstrap",
+      "App root helpers"
+    ],
+    "install": {
+      "svelte": "pnpm add @larose-ui/sveltekit @larose-ui/svelte @larose-ui/runtime-svelte @larose-ui/tokens @larose-ui/styles",
+      "any": "pnpm add @larose-ui/sveltekit @larose-ui/svelte @larose-ui/runtime-svelte @larose-ui/tokens @larose-ui/styles"
+    },
+    "related": [
+      "svelte",
+      "runtime-svelte",
+      "tokens",
+      "styles"
+    ]
+  },
+  {
+    "id": "testing-core",
+    "name": "@larose-ui/testing-core",
+    "tagline": "Framework-agnostic test matrix helpers for laRose UI.",
+    "role": "Test helpers / render wrappers (framework-agnostic core)",
+    "whenToInstall": "Only if you are building a custom adapter or reusing the core without UI. App code should install a framework adapter instead.",
+    "layer": "tooling",
+    "consumerFacing": false,
+    "example": "import { /* matrix helpers */ } from '@larose-ui/testing-core';",
+    "features": [
+      "renderWithLaRose / framework wrappers",
+      "Test matrix scenarios"
+    ],
+    "install": {
+      "any": "pnpm add @larose-ui/testing-core"
+    },
+    "related": [
+      "testing-react",
+      "testing-vue",
+      "testing-svelte"
+    ],
+    "transitiveNote": "Comes transitively with @larose-ui/testing-react|vue|svelte."
+  },
+  {
+    "id": "testing-react",
+    "name": "@larose-ui/testing-react",
+    "tagline": "Testing utilities with full laRose runtime context.",
+    "role": "Test helpers / render wrappers for React",
+    "whenToInstall": "When writing unit or component tests against laRose providers.",
+    "layer": "tooling",
+    "consumerFacing": true,
     "peer": "react >=18",
     "example": "import { renderWithLaRose } from '@larose-ui/testing-react';\n\nrenderWithLaRose(<App />, { permissions: ['app.read'] });",
     "features": [
-      "renderWithLaRose wrapper",
+      "renderWithLaRose / framework wrappers",
       "Test matrix scenarios"
+    ],
+    "install": {
+      "react": "pnpm add @larose-ui/testing-react @larose-ui/react",
+      "any": "pnpm add @larose-ui/testing-react @larose-ui/react"
+    },
+    "related": [
+      "testing-core",
+      "testing-vue",
+      "testing-svelte"
+    ]
+  },
+  {
+    "id": "testing-svelte",
+    "name": "@larose-ui/testing-svelte",
+    "tagline": "Testing utilities with full laRose runtime context.",
+    "role": "Test helpers / render wrappers for Svelte 5",
+    "whenToInstall": "When writing unit or component tests against laRose providers.",
+    "layer": "tooling",
+    "consumerFacing": true,
+    "peer": "svelte >=5",
+    "example": "import { /* test helpers */ } from '@larose-ui/testing-svelte';",
+    "features": [
+      "renderWithLaRose / framework wrappers",
+      "Test matrix scenarios"
+    ],
+    "install": {
+      "svelte": "pnpm add @larose-ui/testing-svelte @larose-ui/svelte",
+      "any": "pnpm add @larose-ui/testing-svelte @larose-ui/svelte"
+    },
+    "related": [
+      "testing-core",
+      "testing-react",
+      "testing-vue"
+    ]
+  },
+  {
+    "id": "testing-vue",
+    "name": "@larose-ui/testing-vue",
+    "tagline": "Testing utilities with full laRose runtime context.",
+    "role": "Test helpers / render wrappers for Vue 3",
+    "whenToInstall": "When writing unit or component tests against laRose providers.",
+    "layer": "tooling",
+    "consumerFacing": true,
+    "peer": "vue >=3.5",
+    "example": "import { /* test helpers */ } from '@larose-ui/testing-vue';",
+    "features": [
+      "renderWithLaRose / framework wrappers",
+      "Test matrix scenarios"
+    ],
+    "install": {
+      "vue": "pnpm add @larose-ui/testing-vue @larose-ui/vue",
+      "any": "pnpm add @larose-ui/testing-vue @larose-ui/vue"
+    },
+    "related": [
+      "testing-core",
+      "testing-react",
+      "testing-svelte"
     ]
   },
   {
     "id": "themes",
     "name": "@larose-ui/themes",
     "tagline": "Named theme presets and tenant branding helpers.",
+    "role": "Preset themes and helpers to apply brand overrides at runtime.",
+    "whenToInstall": "When you need named presets or multi-tenant branding beyond light/dark.",
+    "layer": "foundation",
+    "consumerFacing": true,
     "example": "import { createTheme } from '@larose-ui/themes';\n\nconst theme = createTheme({ preset: 'refined', colors: { primary: '#6C5CE7' } });",
     "features": [
       "Built-in presets",
       "Runtime theme application",
       "Component token overrides"
+    ],
+    "install": {
+      "any": "pnpm add @larose-ui/themes @larose-ui/tokens"
+    },
+    "related": [
+      "tokens",
+      "runtime-react",
+      "runtime-vue",
+      "runtime-svelte"
     ]
   },
   {
     "id": "tokens",
     "name": "@larose-ui/tokens",
     "tagline": "Runtime design tokens as CSS custom properties.",
+    "role": "Design tokens (color, space, type, motion) exposed as CSS variables.",
+    "whenToInstall": "Always — import `@larose-ui/tokens/styles.css` in every app.",
+    "layer": "foundation",
+    "consumerFacing": true,
     "example": "import '@larose-ui/tokens/styles.css';\nimport { getTokens, tokensToCSSVariables } from '@larose-ui/tokens';\n\nconst vars = tokensToCSSVariables(getTokens('light'));",
     "features": [
       "Light and dark palettes",
       "Density scaling",
       "Runtime CSS variables",
       "Tenant brand overrides"
+    ],
+    "install": {
+      "any": "pnpm add @larose-ui/tokens",
+      "react": "pnpm add @larose-ui/react @larose-ui/tokens @larose-ui/styles",
+      "vue": "pnpm add @larose-ui/vue @larose-ui/tokens @larose-ui/styles",
+      "svelte": "pnpm add @larose-ui/svelte @larose-ui/tokens @larose-ui/styles"
+    },
+    "related": [
+      "styles",
+      "themes",
+      "react",
+      "vue",
+      "svelte"
     ]
   },
   {
     "id": "vue",
     "name": "@larose-ui/vue",
-    "tagline": "Vue 3 components — thin adapter over shared styles and runtime-core.",
+    "tagline": "Vue 3 components — thin adapter over shared styles and primitives.",
+    "role": "Vue 3 UI kit with Composition API providers and shared CSS.",
+    "whenToInstall": "Building a Vue 3 app — pair with tokens + styles.",
+    "layer": "ui",
+    "consumerFacing": true,
     "peer": "vue >=3.5",
     "example": "import { LaRoseProvider, Button, Input } from '@larose-ui/vue';\nimport '@larose-ui/tokens/styles.css';\nimport '@larose-ui/styles/styles.css';",
     "features": [
       "Foundation parity set with React",
       "Composition API providers",
-      "Shared CSS modules"
+      "Shared CSS modules",
+      "LiquidGlass family"
+    ],
+    "install": {
+      "vue": "pnpm add @larose-ui/vue @larose-ui/tokens @larose-ui/styles",
+      "any": "pnpm add @larose-ui/vue @larose-ui/tokens @larose-ui/styles"
+    },
+    "related": [
+      "tokens",
+      "styles",
+      "runtime-vue",
+      "nuxt"
     ]
   }
 ];

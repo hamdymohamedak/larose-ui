@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { Badge, Card, Typography } from '@larose-ui/react';
 import { ApiReference } from '@/components/ApiReference';
@@ -32,6 +33,14 @@ import {
   getUsageCode,
   PARITY_COMPONENTS,
 } from '@/lib/frameworks';
+import type { DocsFramework } from '@/lib/frameworks';
+import {
+  findRelatedPackages,
+  INSTALL_STACKS,
+  PACKAGE_LAYERS,
+  resolveInstallCommand,
+} from '@/lib/packages';
+import { useDocsFramework } from '@/theme/FrameworkProvider';
 import { isGlassDocComponent } from '@/lib/glassComponents';
 import { GLASS_COMPONENT_COPY } from '@/previews/glass/glassComponentCopy';
 
@@ -75,63 +84,225 @@ export function GuidesIndexPage() {
 export function PackagePage() {
   const { packageId } = useParams();
   const pkg = packageId ? findPackage(packageId) : undefined;
+  const { framework } = useDocsFramework();
+  const [manager, setManager] = useState<'pnpm' | 'npm' | 'yarn'>('pnpm');
 
   if (!pkg) {
     return <Navigate to="/docs/packages" replace />;
   }
 
+  const related = findRelatedPackages(pkg);
+  const installCmd = resolveInstallCommand(
+    pkg,
+    pkg.install?.[framework] ? framework : undefined,
+    manager,
+  );
+  const layerLabel = PACKAGE_LAYERS.find((entry) => entry.id === pkg.layer)?.label ?? pkg.layer;
+
   return (
-    <div className="docs-content">
-      <Badge variant="info">{pkg.name}</Badge>
-      <h1>{pkg.name}</h1>
-      <p>{pkg.tagline}</p>
-      {pkg.peer ? (
-        <p>
-          <strong>Peer dependency:</strong> <code>{pkg.peer}</code>
-        </p>
+    <div className="docs-content docs-pkg-detail">
+      <div className="docs-pkg-detail__hero">
+        <div className="docs-pkg-detail__badges">
+          <Badge variant="info">{pkg.name}</Badge>
+          <Badge variant="default">{layerLabel}</Badge>
+          {pkg.consumerFacing ? (
+            <Badge variant="success">Install in apps</Badge>
+          ) : (
+            <Badge variant="warning">Usually transitive</Badge>
+          )}
+        </div>
+        <h1>{pkg.name}</h1>
+        <p className="docs-pkg-detail__role">{pkg.role}</p>
+        <p>{pkg.tagline}</p>
+      </div>
+
+      <section className="docs-pkg-section">
+        <h2>When to install</h2>
+        <p>{pkg.whenToInstall}</p>
+        {pkg.transitiveNote ? <p className="docs-pkg-note">{pkg.transitiveNote}</p> : null}
+        {pkg.peer ? (
+          <p>
+            <strong>Peer dependency:</strong> <code>{pkg.peer}</code>
+          </p>
+        ) : null}
+      </section>
+
+      <section className="docs-pkg-section">
+        <h2>Install</h2>
+        <div className="docs-pkg-manager-tabs" role="tablist" aria-label="Package manager">
+          {(['pnpm', 'npm', 'yarn'] as const).map((id) => (
+            <button
+              key={id}
+              type="button"
+              role="tab"
+              aria-selected={manager === id}
+              className={manager === id ? 'is-active' : undefined}
+              onClick={() => setManager(id)}
+            >
+              {id}
+            </button>
+          ))}
+        </div>
+        <CodeBlock language="bash" code={installCmd} title="Install" />
+        {pkg.install?.react || pkg.install?.vue || pkg.install?.svelte ? (
+          <div className="docs-pkg-fw-installs">
+            <p className="docs-pkg-fw-label">Framework-specific</p>
+            <FrameworkSelector />
+            <CodeBlock
+              language="bash"
+              code={resolveInstallCommand(pkg, framework, manager)}
+              title={`${framework} install`}
+            />
+          </div>
+        ) : null}
+      </section>
+
+      <section className="docs-pkg-section">
+        <h2>Usage</h2>
+        <CodeBlock
+          code={pkg.example}
+          language={pkg.example.includes('<') ? 'tsx' : pkg.example.includes('defineNuxt') ? 'ts' : 'bash'}
+          title="Quick start"
+        />
+      </section>
+
+      <section className="docs-pkg-section">
+        <h2>What it provides</h2>
+        <ul>
+          {pkg.features.map((feature) => (
+            <li key={feature}>{feature}</li>
+          ))}
+        </ul>
+      </section>
+
+      {related.length > 0 ? (
+        <section className="docs-pkg-section">
+          <h2>Related packages</h2>
+          <div className="docs-index-grid">
+            {related.map((entry) => (
+              <Card key={entry.id} title={entry.name} padding="md">
+                <Typography muted className="docs-card-copy">
+                  {entry.role}
+                </Typography>
+                <Link className="docs-card-link" to={`/docs/packages/${entry.id}`}>
+                  View package
+                </Link>
+              </Card>
+            ))}
+          </div>
+        </section>
       ) : null}
-
-      <h2>Install</h2>
-      <CodeBlock language="bash" code={`pnpm add ${pkg.name}`} title="Install" />
-
-      <h2>Usage</h2>
-      <CodeBlock
-        code={pkg.example}
-        language={pkg.example.includes('<') ? 'tsx' : 'bash'}
-        title="Quick start"
-      />
-
-      <h2>Features</h2>
-      <ul>
-        {pkg.features.map((feature) => (
-          <li key={feature}>{feature}</li>
-        ))}
-      </ul>
     </div>
   );
 }
 
 export function PackagesIndexPage() {
+  const [filter, setFilter] = useState<'all' | 'consumer' | DocsFramework>('all');
+
+  const stacks =
+    filter === 'all' || filter === 'consumer'
+      ? INSTALL_STACKS
+      : INSTALL_STACKS.filter((stack) => stack.framework === filter);
+
+  const visible = docsPackages.filter((pkg) => {
+    if (filter === 'consumer') return pkg.consumerFacing;
+    if (filter === 'react') {
+      return pkg.id === 'react' || pkg.id.endsWith('-react') || pkg.id === 'next' || ['tokens', 'styles', 'themes'].includes(pkg.id);
+    }
+    if (filter === 'vue') {
+      return pkg.id === 'vue' || pkg.id.endsWith('-vue') || pkg.id === 'nuxt' || ['tokens', 'styles', 'themes'].includes(pkg.id);
+    }
+    if (filter === 'svelte') {
+      return (
+        pkg.id === 'svelte' ||
+        pkg.id.endsWith('-svelte') ||
+        pkg.id === 'sveltekit' ||
+        ['tokens', 'styles', 'themes'].includes(pkg.id)
+      );
+    }
+    return true;
+  });
+
   return (
-    <div className="docs-content">
-      <h1>Packages</h1>
-      <p>All publishable packages in the laRose monorepo.</p>
-      <div className="docs-index-grid">
-        {docsPackages.map((pkg) => (
-          <Card key={pkg.id} title={pkg.name} padding="md">
-            <Typography muted className="docs-card-copy">
-              {pkg.tagline}
-            </Typography>
-            <Link className="docs-card-link" to={`/docs/packages/${pkg.id}`}>
-              View package
-            </Link>
-          </Card>
+    <div className="docs-content docs-pkg-hub">
+      <header className="docs-pkg-hub__hero">
+        <Badge variant="info">Packages</Badge>
+        <h1>Install what you need</h1>
+        <p>
+          laRose is modular on purpose — there is no single mega-package. You load{' '}
+          <strong>tokens + styles</strong>, pick a <strong>UI adapter</strong> for your framework, then
+          add <strong>runtime</strong> or <strong>intelligence</strong> packages only when you need them.
+        </p>
+      </header>
+
+      <section className="docs-pkg-section">
+        <h2>Starter stacks</h2>
+        <p>Copy the stack that matches your app. Add intelligence packages later from the catalog below.</p>
+        <div className="docs-pkg-stacks">
+          {stacks.map((stack) => (
+            <article key={stack.id} className="docs-pkg-stack-card">
+              <h3>{stack.title}</h3>
+              <p>{stack.description}</p>
+              <CodeBlock language="bash" code={stack.command} title="Install" />
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <div className="docs-pkg-filters" role="toolbar" aria-label="Filter packages">
+        {(
+          [
+            ['all', 'All'],
+            ['consumer', 'App-facing'],
+            ['react', 'React'],
+            ['vue', 'Vue'],
+            ['svelte', 'Svelte'],
+          ] as const
+        ).map(([id, label]) => (
+          <button
+            key={id}
+            type="button"
+            className={filter === id ? 'is-active' : undefined}
+            onClick={() => setFilter(id)}
+          >
+            {label}
+          </button>
         ))}
       </div>
+
+      {PACKAGE_LAYERS.map((layer) => {
+        const pkgs = visible
+          .filter((pkg) => pkg.layer === layer.id)
+          .sort((a, b) => a.name.localeCompare(b.name));
+        if (pkgs.length === 0) return null;
+        return (
+          <section key={layer.id} className="docs-pkg-section">
+            <h2>{layer.label}</h2>
+            <p className="docs-pkg-layer-blurb">{layer.blurb}</p>
+            <div className="docs-index-grid">
+              {pkgs.map((pkg) => (
+                <Card key={pkg.id} title={pkg.name} padding="md">
+                  <Typography muted className="docs-card-copy">
+                    {pkg.role}
+                  </Typography>
+                  <p className="docs-pkg-when">{pkg.whenToInstall}</p>
+                  <CodeBlock
+                    language="bash"
+                    code={resolveInstallCommand(pkg)}
+                    title="Install"
+                  />
+                  <Link className="docs-card-link" to={`/docs/packages/${pkg.id}`}>
+                    Package details
+                  </Link>
+                </Card>
+              ))}
+            </div>
+          </section>
+        );
+      })}
     </div>
   );
 }
-
 
 function buildUsageSnippets(name: string) {
   return {
