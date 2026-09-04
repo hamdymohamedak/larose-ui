@@ -52,6 +52,24 @@ export const docsChangelog: DocsChangelogEntry[] = [
   },
   {
     "package": "@larose-ui/ai-react",
+    "version": "2.0.0",
+    "heading": "2.0.0",
+    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/ai-core@0.3.0\n  - @larose-ui/forms-react@0.3.0\n  - @larose-ui/permissions-react@0.3.0\n  - @larose-ui/react@0.3.0\n  - @larose-ui/runtime-react@2.0.0"
+  },
+  {
+    "package": "@larose-ui/devtools-react",
+    "version": "2.0.0",
+    "heading": "2.0.0",
+    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/core@0.3.0\n  - @larose-ui/devtools-core@0.3.0\n  - @larose-ui/observability-react@0.3.0\n  - @larose-ui/permissions-react@0.3.0\n  - @larose-ui/runtime-react@2.0.0"
+  },
+  {
+    "package": "@larose-ui/runtime-react",
+    "version": "2.0.0",
+    "heading": "2.0.0",
+    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/core@0.3.0\n  - @larose-ui/network@0.3.0\n  - @larose-ui/observability-react@0.3.0\n  - @larose-ui/offline@0.3.0\n  - @larose-ui/permissions-react@0.3.0\n  - @larose-ui/react@0.3.0\n  - @larose-ui/runtime-core@0.3.0\n  - @larose-ui/themes@0.3.0\n  - @larose-ui/tokens@0.3.0"
+  },
+  {
+    "package": "@larose-ui/ai-react",
     "version": "1.0.0",
     "heading": "1.0.0",
     "body": "### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/react@0.2.0\n  - @larose-ui/runtime@1.0.0\n  - @larose-ui/permissions@0.2.0\n  - @larose-ui/forms@0.1.2"
@@ -69,183 +87,165 @@ export const docsChangelog: DocsChangelogEntry[] = [
     "body": "### Minor Changes\n\n- e989652: Evolve laRose into a framework-agnostic UI operating system: extract shared styles to `@larose-ui/styles`, add Vue 3 and Svelte 5 parity adapters, Next/Nuxt/Electron/Tauri/desktop-core integrations, runtime-core and contracts packages, cross-framework Storybook parity toolbar, AlertDialog focus-ring fix, docs site redesign with beginner-friendly onboarding, and CI/build fixes.\n\n### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/react@0.2.0\n  - @laros"
   },
   {
+    "package": "@larose-ui/runtime-svelte",
+    "version": "1.0.0",
+    "heading": "1.0.0",
+    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/core@0.3.0\n  - @larose-ui/network@0.3.0\n  - @larose-ui/observability-svelte@0.3.0\n  - @larose-ui/offline@0.3.0\n  - @larose-ui/permissions-svelte@0.3.0\n  - @larose-ui/runtime-core@0.3.0\n  - @larose-ui/svelte@0.3.0\n  - @larose-ui/themes@0.3.0\n  - @larose-ui/tokens@0.3.0"
+  },
+  {
+    "package": "@larose-ui/runtime-vue",
+    "version": "1.0.0",
+    "heading": "1.0.0",
+    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/core@0.3.0\n  - @larose-ui/network@0.3.0\n  - @larose-ui/observability-vue@0.3.0\n  - @larose-ui/offline@0.3.0\n  - @larose-ui/permissions-vue@0.3.0\n  - @larose-ui/runtime-core@0.3.0\n  - @larose-ui/themes@0.3.0\n  - @larose-ui/tokens@0.3.0\n  - @larose-ui/vue@0.3.0"
+  },
+  {
+    "package": "@larose-ui/accessibility",
+    "version": "0.3.0",
+    "heading": "0.3.0",
+    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/core@0.3.0"
+  },
+  {
+    "package": "@larose-ui/ai-core",
+    "version": "0.3.0",
+    "heading": "0.3.0",
+    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/core@0.3.0"
+  },
+  {
+    "package": "@larose-ui/ai-svelte",
+    "version": "0.3.0",
+    "heading": "0.3.0",
+    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/ai-core@0.3.0\n  - @larose-ui/forms-core@0.3.0\n  - @larose-ui/forms-svelte@0.3.0\n  - @larose-ui/permissions-svelte@0.3.0\n  - @larose-ui/runtime-svelte@1.0.0\n  - @larose-ui/svelte@0.3.0"
+  },
+  {
+    "package": "@larose-ui/ai-vue",
+    "version": "0.3.0",
+    "heading": "0.3.0",
+    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/ai-core@0.3.0\n  - @larose-ui/forms-core@0.3.0\n  - @larose-ui/forms-vue@0.3.0\n  - @larose-ui/permissions-vue@0.3.0\n  - @larose-ui/runtime-vue@1.0.0\n  - @larose-ui/vue@0.3.0"
+  },
+  {
     "package": "@larose-ui/cli",
-    "version": "0.2.0",
-    "heading": "0.2.0",
-    "body": "### Minor Changes\n\n- e989652: Evolve laRose into a framework-agnostic UI operating system: extract shared styles to `@larose-ui/styles`, add Vue 3 and Svelte 5 parity adapters, Next/Nuxt/Electron/Tauri/desktop-core integrations, runtime-core and contracts packages, cross-framework Storybook parity toolbar, AlertDialog focus-ring fix, docs site redesign with beginner-friendly onboarding, and CI/build fixes.\n\n### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/contracts@0.2.0\n  - @l"
+    "version": "0.3.0",
+    "heading": "0.3.0",
+    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/accessibility@0.3.0\n  - @larose-ui/contracts@0.3.0\n  - @larose-ui/migration@0.3.0\n  - @larose-ui/quality-core@0.3.0"
+  },
+  {
+    "package": "@larose-ui/component-logic",
+    "version": "0.3.0",
+    "heading": "0.3.0",
+    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/core@0.3.0\n  - @larose-ui/primitives@0.3.0\n  - @larose-ui/tokens@0.3.0"
   },
   {
     "package": "@larose-ui/contracts",
-    "version": "0.2.0",
-    "heading": "0.2.0",
-    "body": "### Minor Changes\n\n- e989652: Evolve laRose into a framework-agnostic UI operating system: extract shared styles to `@larose-ui/styles`, add Vue 3 and Svelte 5 parity adapters, Next/Nuxt/Electron/Tauri/desktop-core integrations, runtime-core and contracts packages, cross-framework Storybook parity toolbar, AlertDialog focus-ring fix, docs site redesign with beginner-friendly onboarding, and CI/build fixes.\n\n### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/core@0.2.0"
+    "version": "0.3.0",
+    "heading": "0.3.0",
+    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/core@0.3.0"
   },
   {
     "package": "@larose-ui/core",
-    "version": "0.2.0",
-    "heading": "0.2.0",
-    "body": "### Minor Changes\n\n- e989652: Evolve laRose into a framework-agnostic UI operating system: extract shared styles to `@larose-ui/styles`, add Vue 3 and Svelte 5 parity adapters, Next/Nuxt/Electron/Tauri/desktop-core integrations, runtime-core and contracts packages, cross-framework Storybook parity toolbar, AlertDialog focus-ring fix, docs site redesign with beginner-friendly onboarding, and CI/build fixes."
+    "version": "0.3.0",
+    "heading": "0.3.0",
+    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup."
+  },
+  {
+    "package": "@larose-ui/data-core",
+    "version": "0.3.0",
+    "heading": "0.3.0",
+    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/core@0.3.0"
   },
   {
     "package": "@larose-ui/data-react",
-    "version": "0.2.0",
-    "heading": "0.2.0",
-    "body": "### Minor Changes\n\n- e989652: Evolve laRose into a framework-agnostic UI operating system: extract shared styles to `@larose-ui/styles`, add Vue 3 and Svelte 5 parity adapters, Next/Nuxt/Electron/Tauri/desktop-core integrations, runtime-core and contracts packages, cross-framework Storybook parity toolbar, AlertDialog focus-ring fix, docs site redesign with beginner-friendly onboarding, and CI/build fixes.\n\n### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/core@0.2.0\n  - @larose"
+    "version": "0.3.0",
+    "heading": "0.3.0",
+    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/core@0.3.0\n  - @larose-ui/data-core@0.3.0\n  - @larose-ui/permissions-react@0.3.0"
+  },
+  {
+    "package": "@larose-ui/data-svelte",
+    "version": "0.3.0",
+    "heading": "0.3.0",
+    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/core@0.3.0\n  - @larose-ui/data-core@0.3.0"
+  },
+  {
+    "package": "@larose-ui/data-vue",
+    "version": "0.3.0",
+    "heading": "0.3.0",
+    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/core@0.3.0\n  - @larose-ui/data-core@0.3.0"
   },
   {
     "package": "@larose-ui/devtools-core",
-    "version": "0.2.0",
-    "heading": "0.2.0",
-    "body": "### Minor Changes\n\n- e989652: Evolve laRose into a framework-agnostic UI operating system: extract shared styles to `@larose-ui/styles`, add Vue 3 and Svelte 5 parity adapters, Next/Nuxt/Electron/Tauri/desktop-core integrations, runtime-core and contracts packages, cross-framework Storybook parity toolbar, AlertDialog focus-ring fix, docs site redesign with beginner-friendly onboarding, and CI/build fixes.\n\n### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/observability-core@0.2"
+    "version": "0.3.0",
+    "heading": "0.3.0",
+    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/observability-core@0.3.0"
+  },
+  {
+    "package": "@larose-ui/devtools-svelte",
+    "version": "0.3.0",
+    "heading": "0.3.0",
+    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/devtools-core@0.3.0\n  - @larose-ui/observability-svelte@0.3.0\n  - @larose-ui/permissions-svelte@0.3.0\n  - @larose-ui/runtime-svelte@1.0.0"
+  },
+  {
+    "package": "@larose-ui/devtools-vue",
+    "version": "0.3.0",
+    "heading": "0.3.0",
+    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/devtools-core@0.3.0\n  - @larose-ui/observability-vue@0.3.0\n  - @larose-ui/permissions-vue@0.3.0\n  - @larose-ui/runtime-vue@1.0.0"
+  },
+  {
+    "package": "@larose-ui/enterprise-core",
+    "version": "0.3.0",
+    "heading": "0.3.0",
+    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/core@0.3.0\n  - @larose-ui/forms-core@0.3.0"
   },
   {
     "package": "@larose-ui/enterprise-react",
-    "version": "0.2.0",
-    "heading": "0.2.0",
-    "body": "### Minor Changes\n\n- e989652: Evolve laRose into a framework-agnostic UI operating system: extract shared styles to `@larose-ui/styles`, add Vue 3 and Svelte 5 parity adapters, Next/Nuxt/Electron/Tauri/desktop-core integrations, runtime-core and contracts packages, cross-framework Storybook parity toolbar, AlertDialog focus-ring fix, docs site redesign with beginner-friendly onboarding, and CI/build fixes.\n\n### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/react@0.2.0\n  - @laros"
+    "version": "0.3.0",
+    "heading": "0.3.0",
+    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/core@0.3.0\n  - @larose-ui/enterprise-core@0.3.0\n  - @larose-ui/forms-react@0.3.0\n  - @larose-ui/observability-react@0.3.0\n  - @larose-ui/permissions-react@0.3.0\n  - @larose-ui/react@0.3.0\n  - @larose-ui/runtime-react@2.0.0"
+  },
+  {
+    "package": "@larose-ui/enterprise-svelte",
+    "version": "0.3.0",
+    "heading": "0.3.0",
+    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/core@0.3.0\n  - @larose-ui/enterprise-core@0.3.0\n  - @larose-ui/forms-svelte@0.3.0\n  - @larose-ui/observability-svelte@0.3.0\n  - @larose-ui/permissions-svelte@0.3.0\n  - @larose-ui/runtime-svelte@1.0.0\n  - @larose-ui/svelte@0.3.0"
+  },
+  {
+    "package": "@larose-ui/enterprise-vue",
+    "version": "0.3.0",
+    "heading": "0.3.0",
+    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/core@0.3.0\n  - @larose-ui/enterprise-core@0.3.0\n  - @larose-ui/forms-vue@0.3.0\n  - @larose-ui/observability-vue@0.3.0\n  - @larose-ui/permissions-vue@0.3.0\n  - @larose-ui/runtime-vue@1.0.0\n  - @larose-ui/vue@0.3.0"
+  },
+  {
+    "package": "@larose-ui/forms-core",
+    "version": "0.3.0",
+    "heading": "0.3.0",
+    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup."
+  },
+  {
+    "package": "@larose-ui/forms-react",
+    "version": "0.3.0",
+    "heading": "0.3.0",
+    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/core@0.3.0\n  - @larose-ui/data-react@0.3.0\n  - @larose-ui/forms-core@0.3.0\n  - @larose-ui/observability-react@0.3.0\n  - @larose-ui/react@0.3.0"
+  },
+  {
+    "package": "@larose-ui/forms-svelte",
+    "version": "0.3.0",
+    "heading": "0.3.0",
+    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/core@0.3.0\n  - @larose-ui/data-core@0.3.0\n  - @larose-ui/forms-core@0.3.0\n  - @larose-ui/observability-svelte@0.3.0\n  - @larose-ui/svelte@0.3.0"
+  },
+  {
+    "package": "@larose-ui/forms-vue",
+    "version": "0.3.0",
+    "heading": "0.3.0",
+    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/core@0.3.0\n  - @larose-ui/data-core@0.3.0\n  - @larose-ui/forms-core@0.3.0\n  - @larose-ui/observability-vue@0.3.0\n  - @larose-ui/vue@0.3.0"
+  },
+  {
+    "package": "@larose-ui/liquid-glass-core",
+    "version": "0.3.0",
+    "heading": "0.3.0",
+    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup."
   },
   {
     "package": "@larose-ui/migration",
-    "version": "0.2.0",
-    "heading": "0.2.0",
-    "body": "### Minor Changes\n\n- e989652: Evolve laRose into a framework-agnostic UI operating system: extract shared styles to `@larose-ui/styles`, add Vue 3 and Svelte 5 parity adapters, Next/Nuxt/Electron/Tauri/desktop-core integrations, runtime-core and contracts packages, cross-framework Storybook parity toolbar, AlertDialog focus-ring fix, docs site redesign with beginner-friendly onboarding, and CI/build fixes."
-  },
-  {
-    "package": "@larose-ui/next",
-    "version": "0.2.0",
-    "heading": "0.2.0",
-    "body": "### Minor Changes\n\n- e989652: Evolve laRose into a framework-agnostic UI operating system: extract shared styles to `@larose-ui/styles`, add Vue 3 and Svelte 5 parity adapters, Next/Nuxt/Electron/Tauri/desktop-core integrations, runtime-core and contracts packages, cross-framework Storybook parity toolbar, AlertDialog focus-ring fix, docs site redesign with beginner-friendly onboarding, and CI/build fixes.\n\n### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/react@0.2.0\n  - @laros"
-  },
-  {
-    "package": "@larose-ui/nuxt",
-    "version": "0.2.0",
-    "heading": "0.2.0",
-    "body": "### Minor Changes\n\n- e989652: Evolve laRose into a framework-agnostic UI operating system: extract shared styles to `@larose-ui/styles`, add Vue 3 and Svelte 5 parity adapters, Next/Nuxt/Electron/Tauri/desktop-core integrations, runtime-core and contracts packages, cross-framework Storybook parity toolbar, AlertDialog focus-ring fix, docs site redesign with beginner-friendly onboarding, and CI/build fixes.\n\n### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/vue@0.2.0\n  - @larose-"
-  },
-  {
-    "package": "@larose-ui/observability-core",
-    "version": "0.2.0",
-    "heading": "0.2.0",
-    "body": "### Minor Changes\n\n- e989652: Evolve laRose into a framework-agnostic UI operating system: extract shared styles to `@larose-ui/styles`, add Vue 3 and Svelte 5 parity adapters, Next/Nuxt/Electron/Tauri/desktop-core integrations, runtime-core and contracts packages, cross-framework Storybook parity toolbar, AlertDialog focus-ring fix, docs site redesign with beginner-friendly onboarding, and CI/build fixes.\n\n### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/core@0.2.0"
-  },
-  {
-    "package": "@larose-ui/observability-react",
-    "version": "0.2.0",
-    "heading": "0.2.0",
-    "body": "### Minor Changes\n\n- e989652: Evolve laRose into a framework-agnostic UI operating system: extract shared styles to `@larose-ui/styles`, add Vue 3 and Svelte 5 parity adapters, Next/Nuxt/Electron/Tauri/desktop-core integrations, runtime-core and contracts packages, cross-framework Storybook parity toolbar, AlertDialog focus-ring fix, docs site redesign with beginner-friendly onboarding, and CI/build fixes.\n\n### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/core@0.2.0\n  - @larose"
-  },
-  {
-    "package": "@larose-ui/permissions-core",
-    "version": "0.2.0",
-    "heading": "0.2.0",
-    "body": "### Minor Changes\n\n- e989652: Evolve laRose into a framework-agnostic UI operating system: extract shared styles to `@larose-ui/styles`, add Vue 3 and Svelte 5 parity adapters, Next/Nuxt/Electron/Tauri/desktop-core integrations, runtime-core and contracts packages, cross-framework Storybook parity toolbar, AlertDialog focus-ring fix, docs site redesign with beginner-friendly onboarding, and CI/build fixes.\n\n### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/core@0.2.0"
-  },
-  {
-    "package": "@larose-ui/permissions-react",
-    "version": "0.2.0",
-    "heading": "0.2.0",
-    "body": "### Minor Changes\n\n- e989652: Evolve laRose into a framework-agnostic UI operating system: extract shared styles to `@larose-ui/styles`, add Vue 3 and Svelte 5 parity adapters, Next/Nuxt/Electron/Tauri/desktop-core integrations, runtime-core and contracts packages, cross-framework Storybook parity toolbar, AlertDialog focus-ring fix, docs site redesign with beginner-friendly onboarding, and CI/build fixes.\n\n### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/core@0.2.0\n  - @larose"
-  },
-  {
-    "package": "@larose-ui/primitives",
-    "version": "0.2.0",
-    "heading": "0.2.0",
-    "body": "### Minor Changes\n\n- e989652: Evolve laRose into a framework-agnostic UI operating system: extract shared styles to `@larose-ui/styles`, add Vue 3 and Svelte 5 parity adapters, Next/Nuxt/Electron/Tauri/desktop-core integrations, runtime-core and contracts packages, cross-framework Storybook parity toolbar, AlertDialog focus-ring fix, docs site redesign with beginner-friendly onboarding, and CI/build fixes.\n\n### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/core@0.2.0"
-  },
-  {
-    "package": "@larose-ui/quality-core",
-    "version": "0.2.0",
-    "heading": "0.2.0",
-    "body": "### Minor Changes\n\n- e989652: Evolve laRose into a framework-agnostic UI operating system: extract shared styles to `@larose-ui/styles`, add Vue 3 and Svelte 5 parity adapters, Next/Nuxt/Electron/Tauri/desktop-core integrations, runtime-core and contracts packages, cross-framework Storybook parity toolbar, AlertDialog focus-ring fix, docs site redesign with beginner-friendly onboarding, and CI/build fixes."
-  },
-  {
-    "package": "@larose-ui/react",
-    "version": "0.2.0",
-    "heading": "0.2.0",
-    "body": "### Minor Changes\n\n- e989652: Evolve laRose into a framework-agnostic UI operating system: extract shared styles to `@larose-ui/styles`, add Vue 3 and Svelte 5 parity adapters, Next/Nuxt/Electron/Tauri/desktop-core integrations, runtime-core and contracts packages, cross-framework Storybook parity toolbar, AlertDialog focus-ring fix, docs site redesign with beginner-friendly onboarding, and CI/build fixes.\n\n### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/styles@0.2.0\n  - @laro"
-  },
-  {
-    "package": "@larose-ui/runtime-core",
-    "version": "0.2.0",
-    "heading": "0.2.0",
-    "body": "### Minor Changes\n\n- e989652: Evolve laRose into a framework-agnostic UI operating system: extract shared styles to `@larose-ui/styles`, add Vue 3 and Svelte 5 parity adapters, Next/Nuxt/Electron/Tauri/desktop-core integrations, runtime-core and contracts packages, cross-framework Storybook parity toolbar, AlertDialog focus-ring fix, docs site redesign with beginner-friendly onboarding, and CI/build fixes.\n\n### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/core@0.2.0\n  - @larose"
-  },
-  {
-    "package": "@larose-ui/styles",
-    "version": "0.2.0",
-    "heading": "0.2.0",
-    "body": "### Minor Changes\n\n- e989652: Evolve laRose into a framework-agnostic UI operating system: extract shared styles to `@larose-ui/styles`, add Vue 3 and Svelte 5 parity adapters, Next/Nuxt/Electron/Tauri/desktop-core integrations, runtime-core and contracts packages, cross-framework Storybook parity toolbar, AlertDialog focus-ring fix, docs site redesign with beginner-friendly onboarding, and CI/build fixes.\n\n### Patch Changes\n\n- @larose-ui/tokens@0.1.2"
-  },
-  {
-    "package": "@larose-ui/svelte",
-    "version": "0.2.0",
-    "heading": "0.2.0",
-    "body": "### Minor Changes\n\n- e989652: Evolve laRose into a framework-agnostic UI operating system: extract shared styles to `@larose-ui/styles`, add Vue 3 and Svelte 5 parity adapters, Next/Nuxt/Electron/Tauri/desktop-core integrations, runtime-core and contracts packages, cross-framework Storybook parity toolbar, AlertDialog focus-ring fix, docs site redesign with beginner-friendly onboarding, and CI/build fixes.\n\n### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/styles@0.2.0\n  - @laro"
-  },
-  {
-    "package": "@larose-ui/testing-react",
-    "version": "0.2.0",
-    "heading": "0.2.0",
-    "body": "### Minor Changes\n\n- e989652: Evolve laRose into a framework-agnostic UI operating system: extract shared styles to `@larose-ui/styles`, add Vue 3 and Svelte 5 parity adapters, Next/Nuxt/Electron/Tauri/desktop-core integrations, runtime-core and contracts packages, cross-framework Storybook parity toolbar, AlertDialog focus-ring fix, docs site redesign with beginner-friendly onboarding, and CI/build fixes.\n\n### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/runtime@1.0.0\n  - @lar"
-  },
-  {
-    "package": "@larose-ui/vue",
-    "version": "0.2.0",
-    "heading": "0.2.0",
-    "body": "### Minor Changes\n\n- e989652: Evolve laRose into a framework-agnostic UI operating system: extract shared styles to `@larose-ui/styles`, add Vue 3 and Svelte 5 parity adapters, Next/Nuxt/Electron/Tauri/desktop-core integrations, runtime-core and contracts packages, cross-framework Storybook parity toolbar, AlertDialog focus-ring fix, docs site redesign with beginner-friendly onboarding, and CI/build fixes.\n\n### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/styles@0.2.0\n  - @laro"
-  },
-  {
-    "package": "@larose-ui/accessibility",
-    "version": "0.1.3",
-    "heading": "0.1.3",
-    "body": "### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/core@0.2.0"
-  },
-  {
-    "package": "@larose-ui/forms-react",
-    "version": "0.1.3",
-    "heading": "0.1.3",
-    "body": "### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/react@0.2.0\n  - @larose-ui/core@0.2.0\n  - @larose-ui/observability@0.2.0\n  - @larose-ui/data@0.2.0"
-  },
-  {
-    "package": "@larose-ui/network",
-    "version": "0.1.3",
-    "heading": "0.1.3",
-    "body": "### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/core@0.2.0"
-  },
-  {
-    "package": "@larose-ui/offline",
-    "version": "0.1.3",
-    "heading": "0.1.3",
-    "body": "### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/core@0.2.0"
-  },
-  {
-    "package": "@larose-ui/themes",
-    "version": "0.1.3",
-    "heading": "0.1.3",
-    "body": "### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/core@0.2.0\n  - @larose-ui/tokens@0.1.3"
-  },
-  {
-    "package": "@larose-ui/tokens",
-    "version": "0.1.3",
-    "heading": "0.1.3",
-    "body": "### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/core@0.2.0"
-  },
-  {
-    "package": "@larose-ui/accessibility",
-    "version": "0.1.2",
-    "heading": "0.1.2",
-    "body": "### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/core@0.2.0"
-  },
-  {
-    "package": "@larose-ui/forms-react",
-    "version": "0.1.2",
-    "heading": "0.1.2",
-    "body": "### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/react@0.2.0\n  - @larose-ui/core@0.2.0\n  - @larose-ui/observability@0.2.0\n  - @larose-ui/data@0.2.0"
-  },
-  {
-    "package": "@larose-ui/network",
-    "version": "0.1.2",
-    "heading": "0.1.2",
-    "body": "### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/core@0.2.0"
+    "version": "0.3.0",
+    "heading": "0.3.0",
+    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup."
   }
 ];

@@ -1,7 +1,7 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/v1/server-card.schema.json",
   "name": "io.github.hamdymohamedak/larose-ui-docs",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "MCP access to laRose UI documentation, components, packages, and guides.",
   "title": "laRose UI Documentation",
   "websiteUrl": "https://hamdymohamedak.github.io/larose-ui",
@@ -12,7 +12,7 @@
   },
   "serverInfo": {
     "name": "laRose UI Documentation MCP",
-    "version": "0.1.1"
+    "version": "0.1.2"
   },
   "transport": {
     "type": "streamable-http",
