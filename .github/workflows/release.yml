@@ -3,6 +3,7 @@ name: Release
 on:
   push:
     branches: [main]
+  workflow_dispatch:
 
 concurrency:
   group: release-${{ github.ref }}
@@ -46,11 +47,19 @@ jobs:
           if [ "${count}" -gt 0 ]; then
             echo "Pending changesets: ${count}"
           else
-            echo "No pending changesets — skipping release."
+            echo "No pending changesets — will still attempt publish for unpublished versions."
           fi
 
-      - name: Version, publish, and push
+      - name: Version packages
         if: steps.changesets.outputs.count != '0'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          pnpm changeset version
+
+      - name: Publish to npm
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -59,9 +68,16 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          pnpm changeset version
+          # Ensure scoped packages publish publicly (required for first publish).
+          printf '%s\n' '//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}' 'access=public' >> .npmrc
+
+          # Publishes only versions that are not yet on the registry.
           pnpm changeset publish
 
-          git add -A
-          git commit -m "chore: release packages"
-          git push origin HEAD:main --follow-tags
+          if [ -n "$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m "chore: release packages"
+            git push origin HEAD:main --follow-tags
+          else
+            git push origin HEAD:main --follow-tags || true
+          fi
