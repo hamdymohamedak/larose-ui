@@ -86,9 +86,11 @@
       "id": "SortableTable",
       "title": "Sortable Table",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"SortableTable\" for full example.",
-      "composite": true
+      "props": {
+        "caption": "Team directory",
+        "selectedKey": "1"
+      },
+      "code": "import { Lists&Tables } from '@larose-ui/react';\n\n<Lists&Tables\n  caption=\"Team directory\"\n  selectedKey=\"1\"\n>Example</Lists&Tables>"
     }
   ],
   "accessibility": [

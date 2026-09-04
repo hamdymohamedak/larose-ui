@@ -1,0 +1,12 @@
+{
+  "name": "@larose-ui/sandbox-shared",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Shared Vite aliases and chrome for framework sandboxes (multi-framework visual QA).",
+  "exports": {
+    "./laroseVite.mjs": "./laroseVite.mjs",
+    "./scenarios.js": "./scenarios.js",
+    "./chrome.css": "./chrome.css"
+  }
+}

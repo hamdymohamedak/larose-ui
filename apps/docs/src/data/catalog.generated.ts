@@ -35,7 +35,7 @@ export const docsPackages: DocsPackageEntry[] = [
   },
   {
     "id": "ai",
-    "name": "@larose-ui/ai-react",
+    "name": "@larose-ui/ai",
     "tagline": "Permission-bound AI for SmartTable and SmartForm.",
     "peer": "react >=18",
     "example": "import { SmartTable, AIProvider } from '@larose-ui/ai-react';",
@@ -79,7 +79,7 @@ export const docsPackages: DocsPackageEntry[] = [
   },
   {
     "id": "data",
-    "name": "@larose-ui/data-react",
+    "name": "@larose-ui/data",
     "tagline": "Backend-aware data fetching with self-healing errors.",
     "peer": "react >=18",
     "example": "import { DataView } from '@larose-ui/data-react';\n\n<DataView url=\"/api/employees\">{(rows) => <Table data={rows} />}</DataView>",
@@ -91,7 +91,7 @@ export const docsPackages: DocsPackageEntry[] = [
   },
   {
     "id": "devtools",
-    "name": "@larose-ui/devtools-react",
+    "name": "@larose-ui/devtools",
     "tagline": "In-app runtime inspector for development.",
     "peer": "react >=18",
     "example": "import { DevToolsProvider } from '@larose-ui/devtools-react';",
@@ -103,7 +103,7 @@ export const docsPackages: DocsPackageEntry[] = [
   },
   {
     "id": "enterprise",
-    "name": "@larose-ui/enterprise-react",
+    "name": "@larose-ui/enterprise",
     "tagline": "Enterprise patterns — audit trails, session guards, schema IaC.",
     "peer": "react >=18",
     "example": "import { SessionGuard, AuditedInput } from '@larose-ui/enterprise-react';",
@@ -115,7 +115,7 @@ export const docsPackages: DocsPackageEntry[] = [
   },
   {
     "id": "forms",
-    "name": "@larose-ui/forms-react",
+    "name": "@larose-ui/forms",
     "tagline": "Schema-driven forms with validation and conditional fields.",
     "peer": "react >=18",
     "example": "import { Form } from '@larose-ui/forms-react';\n\n<Form schema={{ id: 'user', fields: [{ name: 'email', type: 'text', label: 'Email' }] }} />",
@@ -172,7 +172,7 @@ export const docsPackages: DocsPackageEntry[] = [
   },
   {
     "id": "observability",
-    "name": "@larose-ui/observability-react",
+    "name": "@larose-ui/observability",
     "tagline": "UX observability — journeys, funnels, and rage-click analysis.",
     "peer": "react >=18",
     "example": "import { useJourneyPage } from '@larose-ui/observability-react';\n\nuseJourneyPage('employees');",
@@ -195,7 +195,7 @@ export const docsPackages: DocsPackageEntry[] = [
   },
   {
     "id": "permissions",
-    "name": "@larose-ui/permissions-react",
+    "name": "@larose-ui/permissions",
     "tagline": "Authorization-aware UI with RBAC/ABAC patterns.",
     "peer": "react >=18",
     "example": "import { Can } from '@larose-ui/permissions-react';\n\n<Can permission=\"employees.delete\"><DeleteButton /></Can>",
@@ -230,7 +230,7 @@ export const docsPackages: DocsPackageEntry[] = [
   },
   {
     "id": "runtime",
-    "name": "@larose-ui/runtime-react",
+    "name": "@larose-ui/runtime",
     "tagline": "Unified runtime — theme, i18n, permissions, network, and session.",
     "peer": "react >=18",
     "example": "import { LaRoseProvider } from '@larose-ui/runtime-react';\n\n<LaRoseProvider theme=\"light\" locale=\"en\" permissions={['app.read']}>\n  <App />\n</LaRoseProvider>",
@@ -275,7 +275,7 @@ export const docsPackages: DocsPackageEntry[] = [
   },
   {
     "id": "testing",
-    "name": "@larose-ui/testing-react",
+    "name": "@larose-ui/testing",
     "tagline": "Test utilities with full laRose runtime context.",
     "peer": "react >=18",
     "example": "import { renderWithLaRose } from '@larose-ui/testing-react';\n\nrenderWithLaRose(<App />, { permissions: ['app.read'] });",
@@ -557,12 +557,6 @@ export const docsComponents: DocsComponentEntry[] = [
     "package": "react"
   },
   {
-    "id": "drag-start-threshold-px",
-    "name": "DRAG_START_THRESHOLD_PX",
-    "category": "Other",
-    "package": "react"
-  },
-  {
     "id": "drag-drop-list",
     "name": "DragDropList",
     "category": "DragDrop",
@@ -692,30 +686,6 @@ export const docsComponents: DocsComponentEntry[] = [
     "id": "label",
     "name": "Label",
     "category": "Content",
-    "package": "react"
-  },
-  {
-    "id": "liquid-glass-optics-defaults",
-    "name": "LIQUID_GLASS_OPTICS_DEFAULTS",
-    "category": "Other",
-    "package": "react"
-  },
-  {
-    "id": "liquid-glass-presets",
-    "name": "LIQUID_GLASS_PRESETS",
-    "category": "Other",
-    "package": "react"
-  },
-  {
-    "id": "liquid-glass-switch-active-green",
-    "name": "LIQUID_GLASS_SWITCH_ACTIVE_GREEN",
-    "category": "Other",
-    "package": "react"
-  },
-  {
-    "id": "liquid-glass-switch-track-glass",
-    "name": "LIQUID_GLASS_SWITCH_TRACK_GLASS",
-    "category": "Other",
     "package": "react"
   },
   {
@@ -980,12 +950,6 @@ export const docsComponents: DocsComponentEntry[] = [
     "id": "switch",
     "name": "Switch",
     "category": "Forms",
-    "package": "react"
-  },
-  {
-    "id": "system-activity-ids",
-    "name": "SYSTEM_ACTIVITY_IDS",
-    "category": "Other",
     "package": "react"
   },
   {

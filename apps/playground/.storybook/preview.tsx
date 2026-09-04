@@ -141,14 +141,14 @@ const preview: Preview = {
   globalTypes: {
     framework: {
       description:
-        'Mount the real package for this story. Vue 3 / Svelte 5 hide React-only platform demos (AI, Enterprise, Motion, Observability, …) and jump to a supported Foundation/Glass story.',
+        'Optional Storybook mount preview for Vue/Svelte. For multi-framework visual QA use the sandboxes (pnpm sandbox:react|vue|svelte) — Storybook is docs/catalog/React-oriented, not the QA source of truth.',
       toolbar: {
         title: 'Framework',
         icon: 'batchaccept',
         items: [
           { value: 'react', title: 'React' },
-          { value: 'vue', title: 'Vue 3' },
-          { value: 'svelte', title: 'Svelte 5' },
+          { value: 'vue', title: 'Vue 3 (preview)' },
+          { value: 'svelte', title: 'Svelte 5 (preview)' },
         ],
         dynamicTitle: true,
       },

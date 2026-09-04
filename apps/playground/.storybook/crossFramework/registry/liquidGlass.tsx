@@ -53,7 +53,7 @@ const TOP_BAR_ITEMS = [
 
 function resolveTabItems(tabPreset: unknown): LiquidGlassTabItem[] {
   const key = typeof tabPreset === 'string' ? tabPreset : 'full';
-  return TAB_PRESETS[key] ?? TAB_PRESETS.full;
+  return TAB_PRESETS[key] ?? TAB_PRESETS.full ?? [];
 }
 
 export const liquidGlassRegistry: Record<string, CrossFrameworkComponentDefinition> = {

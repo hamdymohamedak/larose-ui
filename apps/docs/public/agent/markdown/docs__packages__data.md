@@ -1,4 +1,4 @@
-# @larose-ui/data-react
+# @larose-ui/data
 
 Backend-aware data fetching with self-healing errors.
 

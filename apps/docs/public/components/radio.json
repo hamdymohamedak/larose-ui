@@ -34,11 +34,15 @@
   "examples": [
     {
       "id": "RadioGroup",
-      "title": "Radio Group",
+      "title": "plan",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"RadioGroup\" for full example.",
-      "composite": true
+      "props": {
+        "label": "Starter",
+        "name": "plan",
+        "value": "starter",
+        "defaultChecked": true
+      },
+      "code": "import { FormControls } from '@larose-ui/react';\n\n<FormControls\n  label=\"Starter\"\n  name=\"plan\"\n  value=\"starter\"\n  defaultChecked\n>Example</FormControls>"
     },
     {
       "id": "Default",

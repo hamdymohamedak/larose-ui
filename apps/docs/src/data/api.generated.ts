@@ -2571,11 +2571,6 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
     ],
     "accessibility": []
   },
-  "DRAG_START_THRESHOLD_PX": {
-    "props": [],
-    "events": [],
-    "accessibility": []
-  },
   "DragDropList": {
     "props": [
       {
@@ -3787,26 +3782,6 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "inherited": true
       }
     ],
-    "events": [],
-    "accessibility": []
-  },
-  "LIQUID_GLASS_OPTICS_DEFAULTS": {
-    "props": [],
-    "events": [],
-    "accessibility": []
-  },
-  "LIQUID_GLASS_PRESETS": {
-    "props": [],
-    "events": [],
-    "accessibility": []
-  },
-  "LIQUID_GLASS_SWITCH_ACTIVE_GREEN": {
-    "props": [],
-    "events": [],
-    "accessibility": []
-  },
-  "LIQUID_GLASS_SWITCH_TRACK_GLASS": {
-    "props": [],
     "events": [],
     "accessibility": []
   },
@@ -6671,11 +6646,6 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
     "accessibility": [
       "Uses native or laRose-managed focus rings and disabled states."
     ]
-  },
-  "SYSTEM_ACTIVITY_IDS": {
-    "props": [],
-    "events": [],
-    "accessibility": []
   },
   "Table": {
     "props": [

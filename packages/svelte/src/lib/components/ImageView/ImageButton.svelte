@@ -15,5 +15,5 @@
 </script>
 
 <button type="button" class={cn(styles.imageButton, className)} {style} aria-label={ariaLabel ?? alt} {onclick}>
-  <img {src} {alt} class={styles.imageButtonImage} />
+  <img {src} alt={alt} class={styles.imageButtonImage} />
 </button>

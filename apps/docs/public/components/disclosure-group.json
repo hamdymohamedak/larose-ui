@@ -40,9 +40,11 @@
       "id": "DisclosureGroupStory",
       "title": "Disclosure group",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"DisclosureGroupStory\" for full example.",
-      "composite": true
+      "props": {
+        "label": "Delivery details",
+        "defaultExpanded": true
+      },
+      "code": "import { Disclosure&Labels } from '@larose-ui/react';\n\n<Disclosure&Labels\n  label=\"Delivery details\"\n  defaultExpanded\n>Example</Disclosure&Labels>"
     }
   ],
   "accessibility": [],

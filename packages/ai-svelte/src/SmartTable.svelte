@@ -1,21 +1,10 @@
 <script lang="ts" generics="T">
   import { AdaptiveTable, type Column } from '@larose-ui/runtime-svelte';
   import { Input, Button } from '@larose-ui/svelte';
-  import type { AIAdapter } from '@larose-ui/ai-core';
   import { createMockAdapter } from '@larose-ui/ai-core';
   import { getSmartAIRuntime } from './getSmartAIRuntime';
+  import type { SmartTableProps } from './SmartTable.types';
   import styles from './SmartTable.module.css';
-
-  interface Props {
-    data: T[];
-    columns: Column<T>[];
-    keyExtractor: (row: T) => string;
-    loading?: boolean;
-    emptyMessage?: string;
-    adapter?: AIAdapter;
-    filterPlaceholder?: string;
-    readPermission?: string;
-  }
 
   let {
     data,
@@ -26,7 +15,7 @@
     adapter = createMockAdapter(),
     filterPlaceholder = 'Ask in natural language… e.g. "Show employees late more than 3 times"',
     readPermission = 'employees.read',
-  }: Props = $props();
+  }: SmartTableProps<T> = $props();
 
   const runtime = getSmartAIRuntime(adapter);
   let query = $state('');
@@ -43,7 +32,7 @@
     const execution = await runtime.filterTable(
       query,
       data as Array<Record<string, unknown>>,
-      columns.map((c) => ({ key: c.key, header: c.header })),
+      columns.map((c: Column<T>) => ({ key: c.key, header: c.header })),
       readPermission,
     );
 
@@ -64,7 +53,7 @@
       label="Smart filter"
       placeholder={filterPlaceholder}
       bind:value={query}
-      onkeydown={(e) => {
+      onkeydown={(e: KeyboardEvent) => {
         if (e.key === 'Enter') void applyQuery();
       }}
     />

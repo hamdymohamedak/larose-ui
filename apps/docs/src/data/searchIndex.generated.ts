@@ -20,10 +20,10 @@ export const docsSearchIndex = [
   },
   {
     "id": "package:ai",
-    "title": "@larose-ui/ai-react",
+    "title": "@larose-ui/ai",
     "type": "package",
-    "path": "/docs/packages/ai-react",
-    "keywords": "@larose-ui/ai-react Permission-bound AI for SmartTable and SmartForm. Natural-language filtering Permission-gated AI actions",
+    "path": "/docs/packages/ai",
+    "keywords": "@larose-ui/ai Permission-bound AI for SmartTable and SmartForm. Natural-language filtering Permission-gated AI actions",
     "excerpt": "Permission-bound AI for SmartTable and SmartForm."
   },
   {
@@ -52,34 +52,34 @@ export const docsSearchIndex = [
   },
   {
     "id": "package:data",
-    "title": "@larose-ui/data-react",
+    "title": "@larose-ui/data",
     "type": "package",
-    "path": "/docs/packages/data-react",
-    "keywords": "@larose-ui/data-react Backend-aware data fetching with self-healing errors. useQuery, useMutation, DataView Self-healing errors useUndo",
+    "path": "/docs/packages/data",
+    "keywords": "@larose-ui/data Backend-aware data fetching with self-healing errors. useQuery, useMutation, DataView Self-healing errors useUndo",
     "excerpt": "Backend-aware data fetching with self-healing errors."
   },
   {
     "id": "package:devtools",
-    "title": "@larose-ui/devtools-react",
+    "title": "@larose-ui/devtools",
     "type": "package",
-    "path": "/docs/packages/devtools-react",
-    "keywords": "@larose-ui/devtools-react In-app runtime inspector for development. Runtime context panel Event timeline Component inspector",
+    "path": "/docs/packages/devtools",
+    "keywords": "@larose-ui/devtools In-app runtime inspector for development. Runtime context panel Event timeline Component inspector",
     "excerpt": "In-app runtime inspector for development."
   },
   {
     "id": "package:enterprise",
-    "title": "@larose-ui/enterprise-react",
+    "title": "@larose-ui/enterprise",
     "type": "package",
-    "path": "/docs/packages/enterprise-react",
-    "keywords": "@larose-ui/enterprise-react Enterprise patterns — audit trails, session guards, schema IaC. Audit trails Session expiry UI schema renderer",
+    "path": "/docs/packages/enterprise",
+    "keywords": "@larose-ui/enterprise Enterprise patterns — audit trails, session guards, schema IaC. Audit trails Session expiry UI schema renderer",
     "excerpt": "Enterprise patterns — audit trails, session guards, schema IaC."
   },
   {
     "id": "package:forms",
-    "title": "@larose-ui/forms-react",
+    "title": "@larose-ui/forms",
     "type": "package",
-    "path": "/docs/packages/forms-react",
-    "keywords": "@larose-ui/forms-react Schema-driven forms with validation and conditional fields. Declarative schemas Conditional visibility Observability integration",
+    "path": "/docs/packages/forms",
+    "keywords": "@larose-ui/forms Schema-driven forms with validation and conditional fields. Declarative schemas Conditional visibility Observability integration",
     "excerpt": "Schema-driven forms with validation and conditional fields."
   },
   {
@@ -116,10 +116,10 @@ export const docsSearchIndex = [
   },
   {
     "id": "package:observability",
-    "title": "@larose-ui/observability-react",
+    "title": "@larose-ui/observability",
     "type": "package",
-    "path": "/docs/packages/observability-react",
-    "keywords": "@larose-ui/observability-react UX observability — journeys, funnels, and rage-click analysis. Journey tracking Form funnel metrics Rage click analysis",
+    "path": "/docs/packages/observability",
+    "keywords": "@larose-ui/observability UX observability — journeys, funnels, and rage-click analysis. Journey tracking Form funnel metrics Rage click analysis",
     "excerpt": "UX observability — journeys, funnels, and rage-click analysis."
   },
   {
@@ -132,10 +132,10 @@ export const docsSearchIndex = [
   },
   {
     "id": "package:permissions",
-    "title": "@larose-ui/permissions-react",
+    "title": "@larose-ui/permissions",
     "type": "package",
-    "path": "/docs/packages/permissions-react",
-    "keywords": "@larose-ui/permissions-react Authorization-aware UI with RBAC/ABAC patterns. Can and Permission components Explainable blocked actions",
+    "path": "/docs/packages/permissions",
+    "keywords": "@larose-ui/permissions Authorization-aware UI with RBAC/ABAC patterns. Can and Permission components Explainable blocked actions",
     "excerpt": "Authorization-aware UI with RBAC/ABAC patterns."
   },
   {
@@ -156,10 +156,10 @@ export const docsSearchIndex = [
   },
   {
     "id": "package:runtime",
-    "title": "@larose-ui/runtime-react",
+    "title": "@larose-ui/runtime",
     "type": "package",
-    "path": "/docs/packages/runtime-react",
-    "keywords": "@larose-ui/runtime-react Unified runtime — theme, i18n, permissions, network, and session. LaRoseProvider composes runtime contexts useRuntime, useSession, useTheme Toast subpath",
+    "path": "/docs/packages/runtime",
+    "keywords": "@larose-ui/runtime Unified runtime — theme, i18n, permissions, network, and session. LaRoseProvider composes runtime contexts useRuntime, useSession, useTheme Toast subpath",
     "excerpt": "Unified runtime — theme, i18n, permissions, network, and session."
   },
   {
@@ -188,10 +188,10 @@ export const docsSearchIndex = [
   },
   {
     "id": "package:testing",
-    "title": "@larose-ui/testing-react",
+    "title": "@larose-ui/testing",
     "type": "package",
-    "path": "/docs/packages/testing-react",
-    "keywords": "@larose-ui/testing-react Test utilities with full laRose runtime context. renderWithLaRose wrapper Test matrix scenarios",
+    "path": "/docs/packages/testing",
+    "keywords": "@larose-ui/testing Test utilities with full laRose runtime context. renderWithLaRose wrapper Test matrix scenarios",
     "excerpt": "Test utilities with full laRose runtime context."
   },
   {
@@ -1111,8 +1111,8 @@ export const docsSearchIndex = [
     "title": "Button — Style, not size",
     "type": "example",
     "path": "/docs/components/button#examples",
-    "keywords": "Button Style, not size sizes {}",
-    "excerpt": "// See Storybook story \"StyleNotSize\" for full example."
+    "keywords": "Button Style, not size sizes {\"orientation\":\"horizontal\",\"ariaLabel\":\"Save options\"}",
+    "excerpt": "import { Button } from '@larose-ui/react';\n\n<Button\n  orientation=\"horizontal\"\n  ariaLabel=\"Save options\"\n>Example</Butt"
   },
   {
     "id": "example:button:AlertActions",
@@ -1127,16 +1127,16 @@ export const docsSearchIndex = [
     "title": "Button — visionOS vertical stack",
     "type": "example",
     "path": "/docs/components/button#examples",
-    "keywords": "Button visionOS vertical stack advanced {}",
-    "excerpt": "// See Storybook story \"VisionOSStack\" for full example."
+    "keywords": "Button visionOS vertical stack advanced {\"orientation\":\"vertical\",\"ariaLabel\":\"Scene actions\"}",
+    "excerpt": "import { Button } from '@larose-ui/react';\n\n<Button\n  orientation=\"vertical\"\n  ariaLabel=\"Scene actions\"\n>Example</Butto"
   },
   {
     "id": "example:button:WatchFullWidth",
     "title": "Button — watchOS full width",
     "type": "example",
     "path": "/docs/components/button#examples",
-    "keywords": "Button watchOS full width advanced {}",
-    "excerpt": "// See Storybook story \"WatchFullWidth\" for full example."
+    "keywords": "Button watchOS full width advanced {\"orientation\":\"vertical\",\"fullWidth\":true,\"ariaLabel\":\"Workout actions\"}",
+    "excerpt": "import { Button } from '@larose-ui/react';\n\n<Button\n  orientation=\"vertical\"\n  fullWidth\n  ariaLabel=\"Workout actions\"\n>"
   },
   {
     "id": "example:button:SquareButtons",
@@ -1311,8 +1311,8 @@ export const docsSearchIndex = [
     "title": "Card — Default",
     "type": "example",
     "path": "/docs/components/card#examples",
-    "keywords": "Card Default basic {\"title\":\"Employee Profile\",\"description\":\"Manage employee information\",\"children\":\"Ahmed Mohamed — Software Engineer\"}",
-    "excerpt": "import { Card } from '@larose-ui/react';\n\n<Card\n  title=\"Employee Profile\"\n  description=\"Manage employee information\"\n>"
+    "keywords": "Card Default basic {\"title\":\"Employee Profile\",\"description\":\"Manage employee information\",\"children\":\"Ahmed Mohamed — Software Engineer\",\"footerLabel\":\"Edit\"}",
+    "excerpt": "import { Card } from '@larose-ui/react';\n\n<Card\n  title=\"Employee Profile\"\n  description=\"Manage employee information\"\n "
   },
   {
     "id": "example:card:WithBadge",
@@ -1367,8 +1367,8 @@ export const docsSearchIndex = [
     "title": "Card — Continue When Complete",
     "type": "example",
     "path": "/docs/components/card#examples",
-    "keywords": "Card Continue When Complete advanced {}",
-    "excerpt": "// See Storybook story \"ContinueWhenComplete\" for full example."
+    "keywords": "Card Continue When Complete advanced {\"complete\":true,\"label\":\"Continue\"}",
+    "excerpt": "import { EnteringData } from '@larose-ui/react';\n\n<EnteringData\n  complete\n  label=\"Continue\"\n>Example</EnteringData>"
   },
   {
     "id": "example:card:ExpansionTooltip",
@@ -1383,24 +1383,24 @@ export const docsSearchIndex = [
     "title": "Card — Disclosure button",
     "type": "example",
     "path": "/docs/components/card#examples",
-    "keywords": "Card Disclosure button advanced {}",
-    "excerpt": "// See Storybook story \"DisclosureButtonStory\" for full example."
+    "keywords": "Card Disclosure button advanced {\"defaultExpanded\":false,\"label\":\"Save document\"}",
+    "excerpt": "import { Disclosure&Labels } from '@larose-ui/react';\n\n<Disclosure&Labels\n  defaultExpanded={false}\n  label=\"Save docume"
   },
   {
     "id": "example:card:LabelImportance",
     "title": "Card — Label Importance",
     "type": "example",
     "path": "/docs/components/card#examples",
-    "keywords": "Card Label Importance advanced {}",
-    "excerpt": "// See Storybook story \"LabelImportance\" for full example."
+    "keywords": "Card Label Importance advanced {\"label\":\"Primary information\",\"importance\":\"primary\"}",
+    "excerpt": "import { Disclosure&Labels } from '@larose-ui/react';\n\n<Disclosure&Labels\n  label=\"Primary information\"\n  importance=\"pr"
   },
   {
     "id": "example:card:SelectableLabel",
     "title": "Card — Selectable Label",
     "type": "example",
     "path": "/docs/components/card#examples",
-    "keywords": "Card Selectable Label advanced {}",
-    "excerpt": "// See Storybook story \"SelectableLabel\" for full example."
+    "keywords": "Card Selectable Label advanced {\"label\":\"Error E-1042 · IP 192.168.1.42 · Serial LR-2026-0830\",\"importance\":\"secondary\",\"selectable\":true,\"mono\":true}",
+    "excerpt": "import { Disclosure&Labels } from '@larose-ui/react';\n\n<Disclosure&Labels\n  label=\"Error E-1042 · IP 192.168.1.42 · Seri"
   },
   {
     "id": "example:card:UnsavedChanges",
@@ -1431,8 +1431,8 @@ export const docsSearchIndex = [
     "title": "Card — Document Toolbar",
     "type": "example",
     "path": "/docs/components/card#examples",
-    "keywords": "Card Document Toolbar advanced {}",
-    "excerpt": "// See Storybook story \"DocumentToolbar\" for full example."
+    "keywords": "Card Document Toolbar advanced {\"shareTitle\":\"Share Quarterly Plan\",\"collaborating\":true}",
+    "excerpt": "import { Collaboration&Sharing } from '@larose-ui/react';\n\n<Collaboration&Sharing\n  shareTitle=\"Share Quarterly Plan\"\n  "
   },
   {
     "id": "component:chart",
@@ -1735,8 +1735,8 @@ export const docsSearchIndex = [
     "title": "CollaborationButton — Collaboration Button",
     "type": "example",
     "path": "/docs/components/collaboration-button#examples",
-    "keywords": "CollaborationButton Collaboration Button advanced {}",
-    "excerpt": "<CollaborationButton collaborators={collaborators} />"
+    "keywords": "CollaborationButton Collaboration Button advanced {\"label\":\"Collaboration\"}",
+    "excerpt": "import { Collaboration&Sharing } from '@larose-ui/react';\n\n<Collaboration&Sharing\n  label=\"Collaboration\"\n>Example</Coll"
   },
   {
     "id": "component:collaboration-popover",
@@ -1831,8 +1831,8 @@ export const docsSearchIndex = [
     "title": "CollaborationPopover — Collaboration Popover",
     "type": "example",
     "path": "/docs/components/collaboration-popover#examples",
-    "keywords": "CollaborationPopover Collaboration Popover advanced {}",
-    "excerpt": "// See Storybook story \"CollaborationPopoverStory\" for full example."
+    "keywords": "CollaborationPopover Collaboration Popover advanced {\"defaultOpen\":true}",
+    "excerpt": "import { Collaboration&Sharing } from '@larose-ui/react';\n\n<Collaboration&Sharing\n  defaultOpen\n>Example</Collaboration&"
   },
   {
     "id": "component:collection",
@@ -1895,16 +1895,16 @@ export const docsSearchIndex = [
     "title": "Collection — Collection Grid",
     "type": "example",
     "path": "/docs/components/collection#examples",
-    "keywords": "Collection Collection Grid advanced {}",
-    "excerpt": "<Collection items={photos} layout=\"grid\" columns={4} selectedId={selectedId} onSelect={(item) => setSelectedId(item.id)}"
+    "keywords": "Collection Collection Grid advanced {\"layout\":\"grid\",\"columns\":4}",
+    "excerpt": "import { Layout } from '@larose-ui/react';\n\n<Layout\n  layout=\"grid\"\n  columns={4}\n>Example</Layout>"
   },
   {
     "id": "example:collection:CollectionRow",
     "title": "Collection — Collection Row",
     "type": "example",
     "path": "/docs/components/collection#examples",
-    "keywords": "Collection Collection Row advanced {}",
-    "excerpt": "// See Storybook story \"CollectionRow\" for full example."
+    "keywords": "Collection Collection Row advanced {\"layout\":\"row\"}",
+    "excerpt": "import { Layout } from '@larose-ui/react';\n\n<Layout\n  layout=\"row\"\n>Example</Layout>"
   },
   {
     "id": "component:column-view",
@@ -1952,7 +1952,7 @@ export const docsSearchIndex = [
     "type": "example",
     "path": "/docs/components/column-view#examples",
     "keywords": "ColumnView Column View Browser advanced {}",
-    "excerpt": "<ColumnView data={hierarchy} initialPath={['icloud', 'design']} />"
+    "excerpt": "import { Layout } from '@larose-ui/react';\n\n<Layout>Example</Layout>"
   },
   {
     "id": "component:command-palette",
@@ -2775,8 +2775,8 @@ export const docsSearchIndex = [
     "title": "DisclosureGroup — Disclosure group",
     "type": "example",
     "path": "/docs/components/disclosure-group#examples",
-    "keywords": "DisclosureGroup Disclosure group advanced {}",
-    "excerpt": "// See Storybook story \"DisclosureGroupStory\" for full example."
+    "keywords": "DisclosureGroup Disclosure group advanced {\"label\":\"Delivery details\",\"defaultExpanded\":true}",
+    "excerpt": "import { Disclosure&Labels } from '@larose-ui/react';\n\n<Disclosure&Labels\n  label=\"Delivery details\"\n  defaultExpanded\n>"
   },
   {
     "id": "component:disclosure-list",
@@ -3063,8 +3063,8 @@ export const docsSearchIndex = [
     "title": "DocumentLauncher — Document Launcher Story",
     "type": "example",
     "path": "/docs/components/document-launcher#examples",
-    "keywords": "DocumentLauncher Document Launcher Story advanced {}",
-    "excerpt": "// See Storybook story \"DocumentLauncherStory\" for full example."
+    "keywords": "DocumentLauncher Document Launcher Story advanced {\"appTitle\":\"Pages\",\"primaryActionLabel\":\"Start Writing\",\"secondaryActionLabel\":\"Choose a Template\"}",
+    "excerpt": "import { FileManagement } from '@larose-ui/react';\n\n<FileManagement\n  appTitle=\"Pages\"\n  primaryActionLabel=\"Start Writi"
   },
   {
     "id": "component:document-toolbar",
@@ -3143,16 +3143,8 @@ export const docsSearchIndex = [
     "title": "DocumentToolbar — Create & Open",
     "type": "example",
     "path": "/docs/components/document-toolbar#examples",
-    "keywords": "DocumentToolbar Create & Open advanced {}",
-    "excerpt": "// See Storybook story \"DocumentToolbarStory\" for full example."
-  },
-  {
-    "id": "component:drag-start-threshold-px",
-    "title": "DRAG_START_THRESHOLD_PX",
-    "type": "component",
-    "path": "/docs/components/drag-start-threshold-px",
-    "keywords": "DRAG_START_THRESHOLD_PX Other",
-    "excerpt": "Other component from @larose-ui/react"
+    "keywords": "DocumentToolbar Create & Open advanced {\"newLabel\":\"New Document\",\"openLabel\":\"Open Recent\"}",
+    "excerpt": "import { FileManagement } from '@larose-ui/react';\n\n<FileManagement\n  newLabel=\"New Document\"\n  openLabel=\"Open Recent\"\n"
   },
   {
     "id": "component:drag-drop-list",
@@ -3751,8 +3743,8 @@ export const docsSearchIndex = [
     "title": "FileBrowser — File Browser Story",
     "type": "example",
     "path": "/docs/components/file-browser#examples",
-    "keywords": "FileBrowser File Browser Story advanced {}",
-    "excerpt": "// See Storybook story \"FileBrowserStory\" for full example."
+    "keywords": "FileBrowser File Browser Story advanced {\"activeTab\":\"recents\",\"showExtensions\":false}",
+    "excerpt": "import { FileManagement } from '@larose-ui/react';\n\n<FileManagement\n  activeTab=\"recents\"\n  showExtensions={false}\n>Exam"
   },
   {
     "id": "component:file-preview",
@@ -3903,8 +3895,8 @@ export const docsSearchIndex = [
     "title": "Header — Document Workspace",
     "type": "example",
     "path": "/docs/components/header#examples",
-    "keywords": "Header Document Workspace advanced {}",
-    "excerpt": "// See Storybook story \"DocumentWorkspace\" for full example."
+    "keywords": "Header Document Workspace advanced {\"title\":\"Product Roadmap\"}",
+    "excerpt": "import { FileManagement } from '@larose-ui/react';\n\n<FileManagement\n  title=\"Product Roadmap\"\n>Example</FileManagement>"
   },
   {
     "id": "component:header-actions",
@@ -4191,32 +4183,32 @@ export const docsSearchIndex = [
     "title": "ImageView — Text Overlay",
     "type": "example",
     "path": "/docs/components/image-view#examples",
-    "keywords": "ImageView Text Overlay advanced {}",
-    "excerpt": "// See Storybook story \"TextOverlay\" for full example."
+    "keywords": "ImageView Text Overlay advanced {\"alt\":\"Product hero\",\"fit\":\"cover\"}",
+    "excerpt": "import { ImageView } from '@larose-ui/react';\n\n<ImageView\n  alt=\"Product hero\"\n  fit=\"cover\"\n>Example</ImageView>"
   },
   {
     "id": "example:image-view:AnimatedSequence",
     "title": "ImageView — Animated Sequence",
     "type": "example",
     "path": "/docs/components/image-view#examples",
-    "keywords": "ImageView Animated Sequence advanced {}",
-    "excerpt": "// See Storybook story \"AnimatedSequence\" for full example."
+    "keywords": "ImageView Animated Sequence advanced {\"alt\":\"Loading animation\",\"fit\":\"contain\"}",
+    "excerpt": "import { ImageView } from '@larose-ui/react';\n\n<ImageView\n  alt=\"Loading animation\"\n  fit=\"contain\"\n>Example</ImageView>"
   },
   {
     "id": "example:image-view:ImageWellStory",
     "title": "ImageView — Image Well",
     "type": "example",
     "path": "/docs/components/image-view#examples",
-    "keywords": "ImageView Image Well advanced {}",
-    "excerpt": "// See Storybook story \"ImageWellStory\" for full example."
+    "keywords": "ImageView Image Well advanced {\"placeholder\":\"Drop, paste, or click — press Delete to clear\"}",
+    "excerpt": "import { ImageView } from '@larose-ui/react';\n\n<ImageView\n  placeholder=\"Drop, paste, or click — press Delete to clear\"\n"
   },
   {
     "id": "example:image-view:ImageButtonStory",
     "title": "ImageView — Image Button",
     "type": "example",
     "path": "/docs/components/image-view#examples",
-    "keywords": "ImageView Image Button advanced {}",
-    "excerpt": "// See Storybook story \"ImageButtonStory\" for full example."
+    "keywords": "ImageView Image Button advanced {\"alt\":\"Open gallery\"}",
+    "excerpt": "import { ImageView } from '@larose-ui/react';\n\n<ImageView\n  alt=\"Open gallery\"\n>Example</ImageView>"
   },
   {
     "id": "component:image-well",
@@ -4431,8 +4423,8 @@ export const docsSearchIndex = [
     "title": "Input — Secure",
     "type": "example",
     "path": "/docs/components/input#examples",
-    "keywords": "Input Secure advanced {}",
-    "excerpt": "<SecureField label=\"Password\" required hint=\"Never prepopulated\" />"
+    "keywords": "Input Secure advanced {\"label\":\"Password\",\"required\":true,\"hint\":\"Never prepopulated\"}",
+    "excerpt": "import { Input } from '@larose-ui/react';\n\n<Input\n  label=\"Password\"\n  required\n  hint=\"Never prepopulated\"\n>Example</In"
   },
   {
     "id": "example:input:Loading",
@@ -4505,38 +4497,6 @@ export const docsSearchIndex = [
     "path": "/docs/components/label#api",
     "keywords": "Label selectable boolean Allow selecting/copying useful static text.",
     "excerpt": "Allow selecting/copying useful static text."
-  },
-  {
-    "id": "component:liquid-glass-optics-defaults",
-    "title": "LIQUID_GLASS_OPTICS_DEFAULTS",
-    "type": "component",
-    "path": "/docs/components/liquid-glass-optics-defaults",
-    "keywords": "LIQUID_GLASS_OPTICS_DEFAULTS Other",
-    "excerpt": "Other component from @larose-ui/react"
-  },
-  {
-    "id": "component:liquid-glass-presets",
-    "title": "LIQUID_GLASS_PRESETS",
-    "type": "component",
-    "path": "/docs/components/liquid-glass-presets",
-    "keywords": "LIQUID_GLASS_PRESETS Other",
-    "excerpt": "Other component from @larose-ui/react"
-  },
-  {
-    "id": "component:liquid-glass-switch-active-green",
-    "title": "LIQUID_GLASS_SWITCH_ACTIVE_GREEN",
-    "type": "component",
-    "path": "/docs/components/liquid-glass-switch-active-green",
-    "keywords": "LIQUID_GLASS_SWITCH_ACTIVE_GREEN Other",
-    "excerpt": "Other component from @larose-ui/react"
-  },
-  {
-    "id": "component:liquid-glass-switch-track-glass",
-    "title": "LIQUID_GLASS_SWITCH_TRACK_GLASS",
-    "type": "component",
-    "path": "/docs/components/liquid-glass-switch-track-glass",
-    "keywords": "LIQUID_GLASS_SWITCH_TRACK_GLASS Other",
-    "excerpt": "Other component from @larose-ui/react"
   },
   {
     "id": "component:liquid-glass",
@@ -4761,6 +4721,14 @@ export const docsSearchIndex = [
     "path": "/docs/components/liquid-glass-button#examples",
     "keywords": "LiquidGlassButton Share Button Only advanced {\"label\":\"Share\"}",
     "excerpt": "import { Collaboration&Sharing } from '@larose-ui/react';\n\n<Collaboration&Sharing\n  label=\"Share\"\n>Example</Collaboratio"
+  },
+  {
+    "id": "example:liquid-glass-button:OrnamentButton",
+    "title": "LiquidGlassButton — OrnamentButton",
+    "type": "example",
+    "path": "/docs/components/liquid-glass-button#examples",
+    "keywords": "LiquidGlassButton OrnamentButton advanced {\"children\":\"OrnamentButton\",\"active\":false}",
+    "excerpt": "import { Discovered } from '@larose-ui/react';\n\n<Discovered\n  active={false}\n>OrnamentButton</Discovered>"
   },
   {
     "id": "component:liquid-glass-checkbox",
@@ -5719,8 +5687,8 @@ export const docsSearchIndex = [
     "title": "Lockup — Caption Button Grid",
     "type": "example",
     "path": "/docs/components/lockup#examples",
-    "keywords": "Lockup Caption Button Grid advanced {}",
-    "excerpt": "// See Storybook story \"CaptionButtonGrid\" for full example."
+    "keywords": "Lockup Caption Button Grid advanced {\"title\":\"Movies\",\"subtitle\":\"Browse\",\"label\":\"Movies\"}",
+    "excerpt": "import { Lockup } from '@larose-ui/react';\n\n<Lockup\n  title=\"Movies\"\n  subtitle=\"Browse\"\n  label=\"Movies\"\n>Example</Lock"
   },
   {
     "id": "example:lockup:VerticalMonograms",
@@ -6153,6 +6121,14 @@ export const docsSearchIndex = [
     "path": "/docs/components/mnemonic-label#api",
     "keywords": "MnemonicLabel showAccessKey boolean When true, underline the access key character.",
     "excerpt": "When true, underline the access key character."
+  },
+  {
+    "id": "example:mnemonic-label:MnemonicLabel",
+    "title": "MnemonicLabel — MnemonicLabel",
+    "type": "example",
+    "path": "/docs/components/mnemonic-label#examples",
+    "keywords": "MnemonicLabel MnemonicLabel advanced {\"children\":\"MnemonicLabel\",\"label\":\"MnemonicLabel\",\"mnemonic\":\"MnemonicLabel\",\"showAccessKey\":false}",
+    "excerpt": "import { Discovered } from '@larose-ui/react';\n\n<Discovered\n  label=\"MnemonicLabel\"\n  mnemonic=\"MnemonicLabel\"\n  showAcc"
   },
   {
     "id": "component:modal",
@@ -7468,11 +7444,11 @@ export const docsSearchIndex = [
   },
   {
     "id": "example:radio:RadioGroup",
-    "title": "Radio — Radio Group",
+    "title": "Radio — plan",
     "type": "example",
     "path": "/docs/components/radio#examples",
-    "keywords": "Radio Radio Group advanced {}",
-    "excerpt": "// See Storybook story \"RadioGroup\" for full example."
+    "keywords": "Radio plan advanced {\"label\":\"Starter\",\"name\":\"plan\",\"value\":\"starter\",\"defaultChecked\":true}",
+    "excerpt": "import { FormControls } from '@larose-ui/react';\n\n<FormControls\n  label=\"Starter\"\n  name=\"plan\"\n  value=\"starter\"\n  defa"
   },
   {
     "id": "example:radio:Default",
@@ -8051,14 +8027,6 @@ export const docsSearchIndex = [
     "excerpt": "// See Storybook story \"SettingsStyle\" for full example."
   },
   {
-    "id": "component:system-activity-ids",
-    "title": "SYSTEM_ACTIVITY_IDS",
-    "type": "component",
-    "path": "/docs/components/system-activity-ids",
-    "keywords": "SYSTEM_ACTIVITY_IDS Other",
-    "excerpt": "Other component from @larose-ui/react"
-  },
-  {
     "id": "component:table",
     "title": "Table",
     "type": "component",
@@ -8167,8 +8135,8 @@ export const docsSearchIndex = [
     "title": "Table — Sortable Table",
     "type": "example",
     "path": "/docs/components/table#examples",
-    "keywords": "Table Sortable Table advanced {}",
-    "excerpt": "// See Storybook story \"SortableTable\" for full example."
+    "keywords": "Table Sortable Table advanced {\"caption\":\"Team directory\",\"selectedKey\":\"1\"}",
+    "excerpt": "import { Lists&Tables } from '@larose-ui/react';\n\n<Lists&Tables\n  caption=\"Team directory\"\n  selectedKey=\"1\"\n>Example</L"
   },
   {
     "id": "component:tabs",
@@ -9359,7 +9327,7 @@ export const docsSearchIndex = [
     "title": "Architecture",
     "type": "guide",
     "path": "/docs/guides/architecture",
-    "keywords": "Architecture # laRose Architecture\n\nlaRose is a **UI Operating System** for modern SaaS applications — not a component library.\n\n## Layer Model\n\n```text\n                    laRose UI OS\n                         │\n        ┌────────────────┼────────────────┐\n        │                │                │\n     UI Layer       Intelligence        Runtime\n        │                │                │\n   @larose-ui/react   @larose-ui/data-react      @larose-ui/runtime\n   Components      @larose-ui/forms-react     Theme, Tenant, Session\n   @larose-ui/styles @larose-ui/permissions-react Feature Flags, i18n\n        │           @larose-ui/ai-react         Network, Offline\n        │                │                │\n        └────────────────┼────────────────┘\n                         │\n                   Observability\n                   @larose-ui/observability\n                         │\n                    Quality Engine\n              Doctor + CLI + Testing + A11y\n```\n\n## Shared styles\n\nComponent CSS lives in `@larose-ui/styles` (framework-agnostic). Import tokens first, then shared component styles:\n\n```ts\nimport '@larose-ui/tokens/styles.css';\nimport '@larose-ui/styles/styles.css';\n```\n\n`@larose-ui/react/styles.css` remains available for backward compatibility.\n\n## Runtime core\n\nFramework-independent runtime logic lives in `@larose-ui/runtime-core` (store, bridges, tenant, i18n, host detection). `@larose-ui/runtime-react` is the React adapter (`LaRoseProvider`, hooks) and mounts `AcceleratorProvider` from `@larose-ui/react`.\n\nThe lightweight `LaRoseProvider` in `@larose-ui/react` remains for theme/motion-only setups without the full runtime stack.\n\n## Component contracts\n\nCanonical component APIs live in `contracts/components/*.json`, validated by `@larose-ui/contracts` and `larose doctor`. Regenerate from React with:\n\n```bash\npnpm generate:contracts\n```\n\n## Headless primitives\n\nInteractive behavior lives in `@larose-ui/primitives` (menu type-ahead, keyboard, mnemonics). `@larose-ui/react` is a thin rendering adapter.\n\n##",
+    "keywords": "Architecture # laRose Architecture\n\nlaRose is a **UI Operating System** for modern SaaS applications — not a component library.\n\n## Layer Model\n\n```text\n                    laRose UI OS\n                         │\n              Shared cores (*-core, primitives, …)\n                         │\n        ┌────────────────┼────────────────┐\n        │                │                │\n   React adapters   Vue adapters     Svelte adapters\n   react / runtime  vue (+ runtime)  svelte (+ runtime)\n   forms / data /   *-vue packages   *-svelte packages\n   ai / enterprise  …\n        │                │                │\n        └────────────────┼────────────────┘\n                         │\n              Observability + Quality (cores + adapters)\n```\n\n## Shared styles\n\nComponent CSS lives in `@larose-ui/styles` (framework-agnostic). Import tokens first, then shared component styles:\n\n```ts\nimport '@larose-ui/tokens/styles.css';\nimport '@larose-ui/styles/styles.css';\n```\n\n`@larose-ui/react/styles.css` remains available for backward compatibility.\n\n## Runtime core\n\nFramework-independent runtime logic lives in `@larose-ui/runtime-core` (store, bridges, tenant, i18n, host detection). Each adapter mounts a full `LaRoseProvider`:\n\n- `@larose-ui/runtime-react` — theme, toast, accelerator (`@larose-ui/react`), permissions, observability, network, offline\n- `@larose-ui/runtime-vue` — same composition over `@larose-ui/vue`\n- `@larose-ui/runtime-svelte` — same composition over `@larose-ui/svelte`\n\nLightweight theme-only `LaRoseProvider`s remain in the UI packages for apps that do not need the full runtime stack.\n\n## Component contracts\n\nCanonical component APIs live in `contracts/components/*.json` as **framework-neutral** contracts (`framework: \"neutral\"`). Types are normalized away from framework specifics (`ReactNode` → `Node`, `CSSProperties` → `Style`, etc.). Constant exports (`MAX_*`, `STANDARD_*`, SCREAMING_SNAKE) are excluded — contracts cover real components only.\n\nValidated by `@larose-ui/contracts`",
     "excerpt": "laRose Architecture\n\nlaRose is a **UI Operating System** for modern SaaS applications — not a component library.\n\nLayer Model\n\n```text\n                    laRos"
   },
   {
@@ -9367,7 +9335,7 @@ export const docsSearchIndex = [
     "title": "Vue 3",
     "type": "guide",
     "path": "/docs/guides/vue",
-    "keywords": "Vue 3 # Vue 3 Integration\n\n`@larose-ui/vue` provides Vue 3 bindings over the same framework-agnostic platform as React:\n\n```text\n@larose-ui/core\n@larose-ui/tokens\n@larose-ui/styles\n@larose-ui/primitives\n@larose-ui/themes\n@larose-ui/runtime-core\n        ↓\n@larose-ui/vue\n```\n\nComponents reuse **shared CSS modules** from `@larose-ui/styles` — one visual language, no duplicated design system.\n\n## Install\n\n```bash\npnpm add @larose-ui/vue @larose-ui/tokens\n```\n\n## Setup\n\n```ts\n// main.ts\nimport { createApp } from 'vue';\nimport App from './App.vue';\nimport '@larose-ui/tokens/styles.css';\nimport '@larose-ui/styles/styles.css';\n\ncreateApp(App).mount('#app');\n```\n\n```vue\n<!-- App.vue -->\n<script setup lang=\"ts\">\nimport { LaRoseProvider, Button } from '@larose-ui/vue';\n</script>\n\n<template>\n  <LaRoseProvider theme=\"light\">\n    <Button variant=\"primary\">Save</Button>\n  </LaRoseProvider>\n</template>\n```\n\n## Runtime\n\nFor tenant, locale, permissions, and runtime context:\n\n```vue\n<script setup lang=\"ts\">\nimport { LaRoseProvider, RuntimeProvider } from '@larose-ui/vue';\n</script>\n\n<template>\n  <LaRoseProvider>\n    <RuntimeProvider :initial-context=\"{ locale: 'en' }\">\n      <RouterView />\n    </RuntimeProvider>\n  </LaRoseProvider>\n</template>\n```\n\nUse `useRuntimeContext()` inside setup functions to read or patch runtime state.\n\n## Initial component set\n\nFoundation components available in v0.1.1:\n\n- **Actions:** Button\n- **Forms:** Input, Textarea, Select, Checkbox, Radio, Switch, FieldShell\n- **Feedback:** Alert, Progress, Spinner, Badge, Label\n- **Layout:** Card, Modal, Dialog\n\nMenu, Tabs, Tooltip, and CommandPalette will follow the same adapter pattern using `@larose-ui/primitives`.\n\n## v-model\n\nForm controls support Vue `v-model` / `modelValue`:\n\n```vue\n<Input v-model=\"email\" label=\"Email\" />\n<Switch v-model=\"enabled\" label=\"Notifications\" />\n```\n\n## Nuxt\n\nUse `@larose-ui/nuxt` for SSR-specific wiring — CSS injection, theme bootstrap script, and `LaRoseApp` shell. See [NUXT.md](../ecosy",
+    "keywords": "Vue 3 # Vue 3 Integration\n\n`@larose-ui/vue` provides Vue 3 bindings over the same framework-agnostic platform as React:\n\n```text\n@larose-ui/core\n@larose-ui/tokens\n@larose-ui/styles\n@larose-ui/primitives\n@larose-ui/component-logic\n@larose-ui/liquid-glass-core\n@larose-ui/themes\n@larose-ui/runtime-core\n        ↓\n@larose-ui/vue\n```\n\nComponents reuse **shared CSS modules** from `@larose-ui/styles`, shared utils from `@larose-ui/component-logic`, and interaction helpers from `@larose-ui/primitives` — one visual language, no duplicated design system logic.\n\n## Install\n\n```bash\npnpm add @larose-ui/vue @larose-ui/tokens\n```\n\n## Setup\n\n```ts\n// main.ts\nimport { createApp } from 'vue';\nimport App from './App.vue';\nimport '@larose-ui/tokens/styles.css';\nimport '@larose-ui/styles/styles.css';\n\ncreateApp(App).mount('#app');\n```\n\n```vue\n<!-- App.vue -->\n<script setup lang=\"ts\">\nimport { LaRoseProvider, Button } from '@larose-ui/vue';\n</script>\n\n<template>\n  <LaRoseProvider theme=\"light\">\n    <Button variant=\"primary\">Save</Button>\n  </LaRoseProvider>\n</template>\n```\n\n## Runtime\n\nFor the full platform stack (theme, toast, accelerator, i18n, permissions, network, offline):\n\n```vue\n<script setup lang=\"ts\">\nimport { LaRoseProvider } from '@larose-ui/runtime-vue';\nimport { Button } from '@larose-ui/vue';\n</script>\n\n<template>\n  <LaRoseProvider theme=\"light\" appearance=\"system\" locale=\"en\">\n    <Button variant=\"primary\">Save</Button>\n  </LaRoseProvider>\n</template>\n```\n\nTheme-only apps can keep using `LaRoseProvider` from `@larose-ui/vue`. Use `useRuntimeContext()` from `@larose-ui/runtime-vue` inside setup to read or patch runtime state.\n\n## Components\n\nThe Vue package mirrors the React component surface, including:\n\n- **Actions:** Button, ButtonGroup, AsyncButton, HelpButton, SquareButton\n- **Forms / data entry:** Input, Textarea, Select, Checkbox, Radio, Switch, FieldShell, SecureField, TokenField, …\n- **Feedback:** Alert, AlertDialog, Progress, Spinner, Badge, Label, Toast\n- **Navigation ",
     "excerpt": "Vue 3 Integration\n\n`@larose-ui/vue` provides Vue 3 bindings over the same framework-agnostic platform as React:\n\n```text\n@larose-ui/core\n@larose-ui/tokens\n@laro"
   },
   {
@@ -9375,7 +9343,7 @@ export const docsSearchIndex = [
     "title": "Svelte 5",
     "type": "guide",
     "path": "/docs/guides/svelte",
-    "keywords": "Svelte 5 # Svelte Integration\n\n`@larose-ui/svelte` provides Svelte 5 bindings over the shared laRose platform.\n\n```text\n@larose-ui/core → tokens → styles → themes → primitives → runtime-core\n                              ↓\n                      @larose-ui/svelte\n```\n\n## Install\n\n```bash\npnpm add @larose-ui/svelte @larose-ui/tokens\n```\n\n## Setup\n\n```ts\n// main.ts\nimport '@larose-ui/tokens/styles.css';\nimport '@larose-ui/styles/styles.css';\nimport { mount } from 'svelte';\nimport App from './App.svelte';\n\nmount(App, { target: document.getElementById('app')! });\n```\n\n```svelte\n<!-- App.svelte -->\n<script lang=\"ts\">\n  import { LaRoseProvider, Button } from '@larose-ui/svelte';\n</script>\n\n<LaRoseProvider theme=\"light\">\n  <Button variant=\"primary\">Save</Button>\n</LaRoseProvider>\n```\n\n## Runtime\n\n```svelte\n<script lang=\"ts\">\n  import { LaRoseProvider, RuntimeProvider } from '@larose-ui/svelte';\n</script>\n\n<LaRoseProvider>\n  <RuntimeProvider initialContext={{ locale: 'en' }}>\n    {@render children()}\n  </RuntimeProvider>\n</LaRoseProvider>\n```\n\nUse `getRuntimeContext()` in child components to read or patch runtime state.\n\n## Components\n\nFoundation set (mirrors `@larose-ui/vue`):\n\nButton, Input, Textarea, Select, Checkbox, Radio, Switch, Badge, Label, Spinner, Progress, Alert, Card, Modal, Dialog, FieldShell\n\n## Bindings\n\nForm controls use `$bindable` props:\n\n```svelte\n<script lang=\"ts\">\n  let email = $state('');\n</script>\n\n<Input bind:value={email} label=\"Email\" />\n<Switch bind:checked={enabled} label=\"Notifications\" />\n```\n\n## Snippets\n\nPass content with Svelte 5 snippets:\n\n```svelte\n<Button variant=\"primary\">\n  {#snippet children()}Save{/snippet}\n</Button>\n```\n\nOr as default slot content between tags when supported by your bundler.\n\nSee also [VUE.md](./VUE.md) for shared platform concepts.\n",
+    "keywords": "Svelte 5 # Svelte Integration\n\n`@larose-ui/svelte` provides Svelte 5 bindings over the shared laRose platform.\n\n```text\n@larose-ui/core → tokens → styles → themes → primitives\n→ component-logic → liquid-glass-core → runtime-core\n                              ↓\n                      @larose-ui/svelte\n```\n\n## Install\n\n```bash\npnpm add @larose-ui/svelte @larose-ui/tokens\n```\n\n## Setup\n\n```ts\n// main.ts\nimport '@larose-ui/tokens/styles.css';\nimport '@larose-ui/styles/styles.css';\nimport { mount } from 'svelte';\nimport App from './App.svelte';\n\nmount(App, { target: document.getElementById('app')! });\n```\n\n```svelte\n<!-- App.svelte -->\n<script lang=\"ts\">\n  import { LaRoseProvider, Button } from '@larose-ui/svelte';\n</script>\n\n<LaRoseProvider theme=\"light\">\n  <Button variant=\"primary\">Save</Button>\n</LaRoseProvider>\n```\n\n## Runtime\n\nFor the full platform stack (theme, toast, accelerator, i18n, permissions, network, offline):\n\n```svelte\n<script lang=\"ts\">\n  import { LaRoseProvider } from '@larose-ui/runtime-svelte';\n  import { Button } from '@larose-ui/svelte';\n</script>\n\n<LaRoseProvider theme=\"light\" appearance=\"system\" locale=\"en\">\n  <Button variant=\"primary\">Save</Button>\n</LaRoseProvider>\n```\n\nTheme-only apps can keep using `LaRoseProvider` from `@larose-ui/svelte`. Use `getRuntimeContext()` from `@larose-ui/runtime-svelte` in child components to read or patch runtime state.\n\n## Components\n\nThe Svelte package mirrors the React / Vue component surface (actions, forms, overlays, menus, toolbar, Liquid Glass, …). Shared logic comes from `@larose-ui/primitives`, `@larose-ui/component-logic`, and `@larose-ui/liquid-glass-core`.\n\nIntelligence packages:\n\n- Cores: `@larose-ui/forms-core` / `@larose-ui/data-core` / `@larose-ui/permissions-core` / `@larose-ui/observability-core`\n- Svelte adapters: `@larose-ui/forms-svelte`, `@larose-ui/data-svelte`, `@larose-ui/permissions-svelte`, `@larose-ui/observability-svelte`\n- React adapters remain available for React apps\n\n## Bindings\n\nForm contro",
     "excerpt": "Svelte Integration\n\n`@larose-ui/svelte` provides Svelte 5 bindings over the shared laRose platform.\n\n```text\n@larose-ui/core → tokens → styles → themes → primit"
   },
   {
@@ -9383,7 +9351,7 @@ export const docsSearchIndex = [
     "title": "Next.js",
     "type": "guide",
     "path": "/docs/guides/nextjs",
-    "keywords": "Next.js # Next.js Integration\n\nlaRose UI ships as React components with shared CSS. `@larose-ui/next` is a thin integration layer — it does not duplicate components.\n\n## Install\n\n```bash\npnpm add @larose-ui/next @larose-ui/react @larose-ui/runtime-react @larose-ui/tokens\n```\n\n## App Router (recommended)\n\n### 1. Root layout — CSS (Server Component)\n\n```tsx\n// app/layout.tsx\nimport '@larose-ui/tokens/styles.css';\nimport '@larose-ui/react/styles.css';\nimport { LaRoseThemeScript } from '@larose-ui/next/client';\nimport { Providers } from './providers';\n\nexport default function RootLayout({ children }: { children: React.ReactNode }) {\n  return (\n    <html lang=\"en\" suppressHydrationWarning>\n      <body>\n        <LaRoseThemeScript appearance=\"system\" />\n        <Providers>{children}</Providers>\n      </body>\n    </html>\n  );\n}\n```\n\nUse `suppressHydrationWarning` on `<html>` when using system appearance — the pre-hydration script may set `data-lr-theme` before React mounts.\n\n### 2. Providers — client boundary\n\n```tsx\n// app/providers.tsx\n'use client';\n\nimport { LaRoseRoot } from '@larose-ui/next/client';\n\nexport function Providers({ children }: { children: React.ReactNode }) {\n  return (\n    <LaRoseRoot locale=\"en\" permissions={['app.read']} appearance=\"system\">\n      {children}\n    </LaRoseRoot>\n  );\n}\n```\n\n`LaRoseRoot` wraps `@larose-ui/runtime-react` `LaRoseProvider` (theme, i18n, permissions, network, offline, accelerators).\n\nFor theme/motion-only apps without the runtime stack:\n\n```tsx\nimport { LaRoseRootLight } from '@larose-ui/next/client';\n\n<LaRoseRootLight theme=\"light\">{children}</LaRoseRootLight>\n```\n\n### 3. Interactive components\n\nImport laRose components in Client Components:\n\n```tsx\n'use client';\n\nimport { Button, Dialog } from '@larose-ui/react';\n```\n\nServer Components can render static markup, but interactive laRose components require `'use client'`.\n\n## Pages Router\n\n```tsx\n// pages/_app.tsx\nimport '@larose-ui/tokens/styles.css';\nimport '@larose-ui/react/styles.css';\nimport ty",
+    "keywords": "Next.js # Next.js Integration\n\nlaRose UI ships as React components with shared CSS. `@larose-ui/next` is a thin integration layer — it does not duplicate components.\n\n## Install\n\n```bash\npnpm add @larose-ui/next @larose-ui/react @larose-ui/runtime-react @larose-ui/tokens\n```\n\n## App Router (recommended)\n\n### 1. Root layout — CSS (Server Component)\n\n```tsx\n// app/layout.tsx\nimport '@larose-ui/tokens/styles.css';\nimport '@larose-ui/react/styles.css';\nimport { LaRoseThemeScript } from '@larose-ui/next/client';\nimport { Providers } from './providers';\n\nexport default function RootLayout({ children }: { children: React.ReactNode }) {\n  return (\n    <html lang=\"en\" suppressHydrationWarning>\n      <body>\n        <LaRoseThemeScript appearance=\"system\" />\n        <Providers>{children}</Providers>\n      </body>\n    </html>\n  );\n}\n```\n\nUse `suppressHydrationWarning` on `<html>` when using system appearance — the pre-hydration script may set `data-lr-theme` before React mounts.\n\n### 2. Providers — client boundary\n\n```tsx\n// app/providers.tsx\n'use client';\n\nimport { LaRoseRoot } from '@larose-ui/next/client';\n\nexport function Providers({ children }: { children: React.ReactNode }) {\n  return (\n    <LaRoseRoot locale=\"en\" permissions={['app.read']} appearance=\"system\">\n      {children}\n    </LaRoseRoot>\n  );\n}\n```\n\n`LaRoseRoot` wraps `@larose-ui/runtime-react` `LaRoseProvider` (theme, i18n, permissions, network, offline, accelerators).\n\nFor theme/motion-only apps without the runtime stack:\n\n```tsx\nimport { LaRoseRootLight } from '@larose-ui/next/client';\n\n<LaRoseRootLight theme=\"light\">{children}</LaRoseRootLight>\n```\n\n### 3. Interactive components\n\nImport laRose components in Client Components:\n\n```tsx\n'use client';\n\nimport { Button, Dialog } from '@larose-ui/react';\n```\n\nServer Components can render static markup, but interactive laRose components require `'use client'`.\n\n## Pages Router\n\n```tsx\n// pages/_app.tsx\nimport '@larose-ui/tokens/styles.css';\nimport '@larose-ui/react/styles.css",
     "excerpt": "Next.js Integration\n\nlaRose UI ships as React components with shared CSS. `@larose-ui/next` is a thin integration layer — it does not duplicate components.\n\nIns"
   },
   {
@@ -9391,23 +9359,23 @@ export const docsSearchIndex = [
     "title": "Nuxt",
     "type": "guide",
     "path": "/docs/guides/nuxt",
-    "keywords": "Nuxt # Nuxt Integration\n\n`@larose-ui/nuxt` is a thin Nuxt module over `@larose-ui/vue`. It does not duplicate components.\n\n## Install\n\n```bash\npnpm add @larose-ui/nuxt @larose-ui/vue\n```\n\n## Configure\n\n```ts\n// nuxt.config.ts\nexport default defineNuxtConfig({\n  modules: ['@larose-ui/nuxt'],\n  laRose: {\n    theme: 'light',\n    density: 'comfortable',\n    appearance: 'system',\n    themeScript: true,\n    css: true,\n    runtime: { locale: 'en' },\n  },\n});\n```\n\nModule options (`laRose` key):\n\n| Option | Default | Description |\n|--------|---------|-------------|\n| `css` | `true` | Adds tokens + shared component CSS |\n| `themeScript` | `true` | Pre-hydration theme bootstrap script |\n| `appearance` | `system` | `light` / `dark` / `system` for theme script |\n| `theme` | `light` | Passed to `LaRoseProvider` |\n| `density` | `comfortable` | UI density |\n| `tenantId` | — | Optional tenant marker |\n| `runtime` | `false` | `true` or initial context object for `RuntimeProvider` |\n| `transpile` | `true` | Transpile `@larose-ui/vue` for SSR |\n\n## App shell\n\nWrap your app once in `app.vue`:\n\n```vue\n<template>\n  <LaRoseApp>\n    <NuxtPage />\n  </LaRoseApp>\n</template>\n```\n\n`LaRoseApp` is auto-registered globally and reads `runtimeConfig.public.laRose`.\n\n## Components\n\nImport from `@larose-ui/vue` (auto-imports also register provider composables):\n\n```vue\n<script setup lang=\"ts\">\nimport { Button, Input } from '@larose-ui/vue';\n\nconst email = ref('');\n</script>\n\n<template>\n  <Input v-model=\"email\" label=\"Email\" />\n  <Button variant=\"primary\">Save</Button>\n</template>\n```\n\n## SSR notes\n\n1. Keep interactive laRose components in client-only islands when they rely on `window` (rare for foundation components).\n2. The theme bootstrap script runs in `<head>` before Vue hydrates.\n3. Permission checks remain UX-only — enforce authorization on the server.\n\nSee also [VUE.md](./VUE.md).\n",
-    "excerpt": "Nuxt Integration\n\n`@larose-ui/nuxt` is a thin Nuxt module over `@larose-ui/vue`. It does not duplicate components.\n\nInstall\n\n```bash\npnpm add @larose-ui/nuxt @l"
+    "keywords": "Nuxt # Nuxt Integration\n\n`@larose-ui/nuxt` is a thin Nuxt module over `@larose-ui/vue` + `@larose-ui/runtime-vue`. It does not duplicate components.\n\n## Install\n\n```bash\npnpm add @larose-ui/nuxt @larose-ui/vue @larose-ui/runtime-vue\n```\n\n## Configure\n\n```ts\n// nuxt.config.ts\nexport default defineNuxtConfig({\n  modules: ['@larose-ui/nuxt'],\n  laRose: {\n    theme: 'light',\n    density: 'comfortable',\n    appearance: 'system',\n    themeScript: true,\n    css: true,\n  },\n});\n```\n\nModule options (`laRose` key):\n\n| Option | Default | Description |\n|--------|---------|-------------|\n| `css` | `true` | Adds tokens + shared component CSS |\n| `themeScript` | `true` | Pre-hydration theme bootstrap script |\n| `appearance` | `system` | `light` / `dark` / `system` for theme script + provider |\n| `theme` | `light` | Passed to runtime `LaRoseProvider` |\n| `density` | `comfortable` | UI density |\n| `tenantId` | — | Optional tenant marker |\n| `enableToasts` | `true` | Mount toast host via runtime provider |\n| `transpile` | `true` | Transpile `@larose-ui/vue` + `@larose-ui/runtime-vue` for SSR |\n\n## App shell\n\nWrap your app once in `app.vue`:\n\n```vue\n<template>\n  <LaRoseApp>\n    <NuxtPage />\n  </LaRoseApp>\n</template>\n```\n\n`LaRoseApp` is auto-registered globally and reads `runtimeConfig.public.laRose`.\n\n## Components\n\nImport from `@larose-ui/vue` (auto-imports also register provider composables):\n\n```vue\n<script setup lang=\"ts\">\nimport { Button, Input } from '@larose-ui/vue';\n\nconst email = ref('');\n</script>\n\n<template>\n  <Input v-model=\"email\" label=\"Email\" />\n  <Button variant=\"primary\">Save</Button>\n</template>\n```\n\n## SSR notes\n\n1. Keep interactive laRose components in client-only islands when they rely on `window` (rare for foundation components).\n2. The theme bootstrap script runs in `<head>` before Vue hydrates.\n3. Permission checks remain UX-only — enforce authorization on the server.\n\nSee also [VUE.md](./VUE.md).\n",
+    "excerpt": "Nuxt Integration\n\n`@larose-ui/nuxt` is a thin Nuxt module over `@larose-ui/vue` + `@larose-ui/runtime-vue`. It does not duplicate components.\n\nInstall\n\n```bash"
   },
   {
     "id": "guide:runtime",
     "title": "Runtime",
     "type": "guide",
     "path": "/docs/guides/runtime",
-    "keywords": "Runtime # Runtime 2.0 Specification\n\nPhase 1 delivers a unified frontend operating environment via `@larose-ui/runtime-react` and `@larose-ui/core`.\n\n## Goals\n\n- Single inspectable context: `useRuntime()`\n- Chronological event bus for DevTools timeline\n- Session, tenant, version, timezone, accessibility in runtime\n- Feature flag evaluators with rollout support\n- Backward-compatible additive API\n\n## Unified Context\n\n```typescript\ninterface LaRoseRuntimeContext {\n  environment: Environment;\n  tenant: TenantContext | null;\n  user: UserContext | null;\n  session: SessionState;\n  permissions: PermissionSnapshot;\n  features: FeatureFlagSnapshot;\n  network: NetworkSnapshot;\n  offline: OfflineSnapshot;\n  locale: LocaleSnapshot;\n  timezone: string;\n  theme: ThemeSnapshot;\n  accessibility: A11yPreferences;\n  version: VersionMatrix;\n}\n```\n\n## Public API\n\n| API | Package | Purpose |\n|-----|---------|---------|\n| `useRuntime()` | `@larose-ui/runtime-react` | Full context snapshot |\n| `useRuntimeSelector(fn)` | `@larose-ui/runtime-react` | Derived slice |\n| `useRuntimeEvents()` | `@larose-ui/runtime-react` | Timeline + emit |\n| `useSession()` | `@larose-ui/runtime-react` | Session state |\n| `createRuntimeEventBus()` | `@larose-ui/core` | Event bus factory |\n| `createSessionStateMachine()` | `@larose-ui/core` | Session transitions |\n| `createPercentageRolloutEvaluator()` | `@larose-ui/core` | Feature rollout |\n\n## Provider Tree\n\n```text\nRuntimeContextProvider\n  └── ThemeProvider\n        └── ObservabilityProvider\n              └── I18nProvider\n                    └── PermissionProvider\n                          └── FeatureFlagProvider\n                                └── EnvironmentProvider\n                                      └── ResponsiveProvider\n                                            └── NetworkProvider\n                                                  └── OfflineProvider\n                                                        └── RuntimeBridge\n                                                        └── Session",
-    "excerpt": "Runtime 2.0 Specification\n\nPhase 1 delivers a unified frontend operating environment via `@larose-ui/runtime-react` and `@larose-ui/core`.\n\nGoals\n\n- Single inspectabl"
+    "keywords": "Runtime # Runtime 2.0 Specification\n\nPhase 1 delivers a unified frontend operating environment via `@larose-ui/runtime-react` / `runtime-vue` / `runtime-svelte` and `@larose-ui/core`.\n\n## Goals\n\n- Single inspectable context: `useRuntime()`\n- Chronological event bus for DevTools timeline\n- Session, tenant, version, timezone, accessibility in runtime\n- Feature flag evaluators with rollout support\n- Backward-compatible additive API\n\n## Unified Context\n\n```typescript\ninterface LaRoseRuntimeContext {\n  environment: Environment;\n  tenant: TenantContext | null;\n  user: UserContext | null;\n  session: SessionState;\n  permissions: PermissionSnapshot;\n  features: FeatureFlagSnapshot;\n  network: NetworkSnapshot;\n  offline: OfflineSnapshot;\n  locale: LocaleSnapshot;\n  timezone: string;\n  theme: ThemeSnapshot;\n  accessibility: A11yPreferences;\n  version: VersionMatrix;\n}\n```\n\n## Public API\n\n| API | Package | Purpose |\n|-----|---------|---------|\n| `useRuntime()` | `@larose-ui/runtime-react` | Full context snapshot |\n| `useRuntimeSelector(fn)` | `@larose-ui/runtime-react` | Derived slice |\n| `useRuntimeEvents()` | `@larose-ui/runtime-react` | Timeline + emit |\n| `useSession()` | `@larose-ui/runtime-react` | Session state |\n| `createRuntimeEventBus()` | `@larose-ui/core` | Event bus factory |\n| `createSessionStateMachine()` | `@larose-ui/core` | Session transitions |\n| `createPercentageRolloutEvaluator()` | `@larose-ui/core` | Feature rollout |\n\n## Provider Tree\n\n```text\nRuntimeContextProvider\n  └── ThemeProvider\n        └── ObservabilityProvider\n              └── I18nProvider\n                    └── PermissionProvider\n                          └── FeatureFlagProvider\n                                └── EnvironmentProvider\n                                      └── ResponsiveProvider\n                                            └── NetworkProvider\n                                                  └── OfflineProvider\n                                                        └── RuntimeBridge\n  ",
+    "excerpt": "Runtime 2.0 Specification\n\nPhase 1 delivers a unified frontend operating environment via `@larose-ui/runtime-react` / `runtime-vue` / `runtime-svelte` and `@lar"
   },
   {
     "id": "guide:customization",
     "title": "Customization",
     "type": "guide",
     "path": "/docs/guides/customization",
-    "keywords": "Customization # laRose Customization Architecture\n\nlaRose is **beautiful by default** and **customizable by design**.\n\nThe default experience is the Apple-inspired **Refined** preset. No configuration is required to get the current laRose look and feel.\n\n## Customization hierarchy\n\n```text\nLibrary defaults\n      ↓\nTheme preset (refined, ocean, forest, sunset, …)\n      ↓\nGlobal theme tokens\n      ↓\nComponent tokens\n      ↓\nComponent defaults\n      ↓\nInstance props\n      ↓\nResolved CSS variables\n      ↓\nComponents\n```\n\nHigher layers win over lower layers **except** instance props, which always override component defaults.\n\n## 1. Default experience\n\n```tsx\nimport { LaRoseProvider } from '@larose-ui/runtime-react';\n\n<LaRoseProvider>\n  <App />\n</LaRoseProvider>\n```\n\nThis uses the Refined preset automatically.\n\n## 2. Small overrides (~10%)\n\n```tsx\n<LaRoseProvider\n  themeConfig={{\n    colors: { primary: '#6C5CE7' },\n    radius: { md: '10px' },\n  }}\n>\n  <App />\n</LaRoseProvider>\n```\n\n## 3. Custom themes\n\n```tsx\nimport { LaRoseProvider } from '@larose-ui/runtime-react';\nimport { createTheme } from '@larose-ui/themes';\n\nconst customTheme = createTheme({\n  base: 'refined',\n  colors: {\n    primary: '#6C5CE7',\n    secondary: '#00CEC9',\n  },\n  radius: {\n    sm: '2px',\n    md: '4px',\n    lg: '8px',\n  },\n  typography: {\n    fontFamily: 'Inter, system-ui, sans-serif',\n  },\n  motion: {\n    preset: 'snappy',\n    duration: { normal: '180ms' },\n  },\n});\n\n<LaRoseProvider themeConfig={customTheme}>\n  <App />\n</LaRoseProvider>\n```\n\n## 4. Component tokens\n\nComponent tokens control visual properties for a specific component family.\n\n```tsx\n<LaRoseProvider\n  components={{\n    Button: {\n      tokens: {\n        radius: '4px',\n        heightMd: '42px',\n      },\n    },\n    Card: {\n      tokens: {\n        radius: '8px',\n        shadow: 'none',\n      },\n    },\n    Modal: {\n      tokens: {\n        radius: '20px',\n      },\n    },\n  }}\n>\n  <App />\n</LaRoseProvider>\n```\n\nSupported component token namespaces:\n\n- `Button`\n- `Inpu",
+    "keywords": "Customization # laRose Customization Architecture\n\nlaRose is **beautiful by default** and **customizable by design**.\n\nThe default experience is the Apple-inspired **Refined** preset. No configuration is required to get the current laRose look and feel.\n\n## Customization hierarchy\n\n```text\nLibrary defaults\n      ↓\nTheme preset (refined, ocean, forest, sunset, …)\n      ↓\nGlobal theme tokens\n      ↓\nComponent tokens\n      ↓\nComponent defaults\n      ↓\nInstance props\n      ↓\nResolved CSS variables\n      ↓\nComponents\n```\n\nHigher layers win over lower layers **except** instance props, which always override component defaults.\n\n## 1. Default experience\n\n```tsx\nimport { LaRoseProvider } from '@larose-ui/runtime-react';\n\n<LaRoseProvider>\n  <App />\n</LaRoseProvider>\n```\n\nThis uses the Refined preset automatically.\n\n## 2. Small overrides (~10%)\n\n```tsx\n<LaRoseProvider\n  themeConfig={{\n    colors: { primary: '#6C5CE7' },\n    radius: { md: '10px' },\n  }}\n>\n  <App />\n</LaRoseProvider>\n```\n\n## 3. Custom themes\n\n```tsx\nimport { LaRoseProvider } from '@larose-ui/runtime-react';\nimport { createTheme } from '@larose-ui/themes';\n\nconst customTheme = createTheme({\n  base: 'refined',\n  colors: {\n    primary: '#6C5CE7',\n    secondary: '#00CEC9',\n  },\n  radius: {\n    sm: '2px',\n    md: '4px',\n    lg: '8px',\n  },\n  typography: {\n    fontFamily: 'Inter, system-ui, sans-serif',\n  },\n  motion: {\n    preset: 'snappy',\n    duration: { normal: '180ms' },\n  },\n});\n\n<LaRoseProvider themeConfig={customTheme}>\n  <App />\n</LaRoseProvider>\n```\n\n## 4. Component tokens\n\nComponent tokens control visual properties for a specific component family.\n\n```tsx\n<LaRoseProvider\n  components={{\n    Button: {\n      tokens: {\n        radius: '4px',\n        heightMd: '42px',\n      },\n    },\n    Card: {\n      tokens: {\n        radius: '8px',\n        shadow: 'none',\n      },\n    },\n    Modal: {\n      tokens: {\n        radius: '20px',\n      },\n    },\n  }}\n>\n  <App />\n</LaRoseProvider>\n```\n\nSupported component token namespaces:\n\n- `But",
     "excerpt": "laRose Customization Architecture\n\nlaRose is **beautiful by default** and **customizable by design**.\n\nThe default experience is the Apple-inspired **Refined**"
   },
   {
@@ -9415,7 +9383,7 @@ export const docsSearchIndex = [
     "title": "Motion system",
     "type": "guide",
     "path": "/docs/guides/motion",
-    "keywords": "Motion system # laRose Motion System\n\nApple-inspired motion for laRose UI — calm, responsive, natural, and precise.\n\n## Philosophy\n\nMotion answers one of:\n\n1. Where did this come from?\n2. Where did this go?\n3. What changed?\n4. What did the user interact with?\n5. What should the user focus on?\n\nIf an animation does not answer one of these, reconsider it.\n\n## Architecture\n\n```text\nMotion System\n├── Motion Tokens (@larose-ui/tokens)     — CSS variables, durations, easings, springs\n├── Spring Physics (@larose-ui/core)      — stiffness, damping, interruptible simulation\n├── Motion Primitives (@larose-ui/react)  — Presence, Collapse, MotionProvider\n└── Component integration                 — Toast, Modal, Drawer, Popover, etc.\n```\n\n## Motion tokens\n\nImported via `@larose-ui/tokens/styles.css`:\n\n| Token | Purpose |\n|-------|---------|\n| `--lr-motion-duration-*` | instant, fast, normal, slow, enter, exit, layout |\n| `--lr-motion-easing-*` | standard, enter, exit, emphasized |\n| `--lr-motion-spring-*` | snappy, smooth, gentle, responsive, bouncy |\n| `--lr-motion-distance-*` | xs, sm, md translation distances |\n| `--lr-motion-scale-*` | enter, exit, press, modal-enter scales |\n\nReduced motion zeroes all motion durations at the token level via `@media (prefers-reduced-motion: reduce)`.\n\n## Global configuration\n\n```tsx\nimport { LaRoseProvider } from '@larose-ui/runtime-react';\n\n<LaRoseProvider\n  motion={{\n    preset: 'smooth',        // snappy | smooth | gentle | responsive | bouncy | none\n    reducedMotion: 'system', // system | always | never\n  }}\n>\n  {children}\n</LaRoseProvider>\n```\n\nRuntime provider (`@larose-ui/runtime-react`) accepts the same `motion` prop.\n\n## Presence\n\nUse `Presence` for enter/exit mount cycles:\n\n```tsx\nimport { Presence } from '@larose-ui/react';\n\n<Presence present={open} variant=\"popover\" placement=\"bottom\">\n  <div className={styles.panel}>{content}</div>\n</Presence>\n```\n\nVariants: `fade`, `fade-scale`, `modal`, `backdrop`, `toast`, `popover`, `drawer-left`, `drawer-right`.\n\n#",
+    "keywords": "Motion system # laRose Motion System\n\nApple-inspired motion for laRose UI — calm, responsive, natural, and precise.\n\n## Philosophy\n\nMotion answers one of:\n\n1. Where did this come from?\n2. Where did this go?\n3. What changed?\n4. What did the user interact with?\n5. What should the user focus on?\n\nIf an animation does not answer one of these, reconsider it.\n\n## Architecture\n\n```text\nMotion System\n├── Motion Tokens (@larose-ui/tokens)     — CSS variables, durations, easings, springs\n├── Spring Physics (@larose-ui/core)      — stiffness, damping, interruptible simulation\n├── Motion Primitives (@larose-ui/react)  — Presence, Collapse, MotionProvider\n└── Component integration                 — Toast, Modal, Drawer, Popover, etc.\n```\n\n## Motion tokens\n\nImported via `@larose-ui/tokens/styles.css`:\n\n| Token | Purpose |\n|-------|---------|\n| `--lr-motion-duration-*` | instant, fast, normal, slow, enter, exit, layout |\n| `--lr-motion-easing-*` | standard, enter, exit, emphasized |\n| `--lr-motion-spring-*` | snappy, smooth, gentle, responsive, bouncy |\n| `--lr-motion-distance-*` | xs, sm, md translation distances |\n| `--lr-motion-scale-*` | enter, exit, press, modal-enter scales |\n\nReduced motion zeroes all motion durations at the token level via `@media (prefers-reduced-motion: reduce)`.\n\n## Global configuration\n\n```tsx\nimport { LaRoseProvider } from '@larose-ui/runtime-react';\n\n<LaRoseProvider\n  motion={{\n    preset: 'smooth',        // snappy | smooth | gentle | responsive | bouncy | none\n    reducedMotion: 'system', // system | always | never\n  }}\n>\n  {children}\n</LaRoseProvider>\n```\n\nRuntime provider (`@larose-ui/runtime-react`) accepts the same `motion` prop.\n\n## Presence\n\nUse `Presence` for enter/exit mount cycles:\n\n```tsx\nimport { Presence } from '@larose-ui/react';\n\n<Presence present={open} variant=\"popover\" placement=\"bottom\">\n  <div className={styles.panel}>{content}</div>\n</Presence>\n```\n\nVariants: `fade`, `fade-scale`, `modal`, `backdrop`, `toast`, `popover`, `drawer-left`, `drawe",
     "excerpt": "laRose Motion System\n\nApple-inspired motion for laRose UI — calm, responsive, natural, and precise.\n\nPhilosophy\n\nMotion answers one of:\n\n1. Where did this come"
   },
   {
@@ -9423,7 +9391,7 @@ export const docsSearchIndex = [
     "title": "Refined design language",
     "type": "guide",
     "path": "/docs/guides/design-language",
-    "keywords": "Refined design language # Refined Design Language\n\n> **Apple-inspired, not an Apple/macOS clone.**\n\nThe **Refined** preset is an optional design language for laRose UI. It translates principles from [Apple Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/design-principles) into a **cross-platform, token-driven system** suitable for modern SaaS products.\n\n## Philosophy\n\nRefined prioritizes:\n\n- **Restraint** — calm neutrals, subtle elevation, no decorative glass everywhere\n- **Hierarchy** — semantic typography, surfaces, and spacing\n- **Precision** — tactile controls with subtle motion\n- **Accessibility** — contrast, keyboard focus, reduced motion, RTL\n- **Adaptability** — tenant branding, light/dark/system appearance\n\n## When to use\n\n| Use Refined | Use Default |\n|-------------|-------------|\n| Premium dashboards, desktop-first apps | Maximum compatibility, minimal visual opinion |\n| Product teams wanting a polished native feel | Heavy tenant brand customization on base tokens |\n| Internal tools with macOS-like navigation | Legacy apps that depend on current default colors |\n\n## Quick start\n\n```tsx\nimport { LaRoseProvider } from '@larose-ui/runtime-react';\nimport '@larose-ui/tokens/styles.css';\nimport '@larose-ui/react/styles.css';\n\n<LaRoseProvider themePreset=\"refined\" appearance=\"system\">\n  <App />\n</LaRoseProvider>\n```\n\n## Surface system\n\nSurfaces are semantic layers — not decoration.\n\n| Surface | Use case |\n|---------|----------|\n| `solid` | Base panels, forms |\n| `secondary` | Grouped background areas |\n| `elevated` | Cards (default) |\n| `floating` | Modals, dialogs |\n| `glass` | Command palette, overlays (with solid fallback) |\n\n```tsx\n<Card surface=\"elevated\" />\n<Modal surface=\"floating\" />\n```\n\nGlass uses `backdrop-filter` when supported; otherwise falls back to `--lr-surface-elevated`.\n\n## Typography\n\nSemantic roles map to CSS variables (`--lr-type-*`):\n\n`display` · `largeTitle` · `title` · `headline` · `body` · `callout` · `subheadline` · `footno",
+    "keywords": "Refined design language # Refined Design Language\n\n> **Apple-inspired, not an Apple/macOS clone.**\n\nThe **Refined** preset is an optional design language for laRose UI. It translates principles from [Apple Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/design-principles) into a **cross-platform, token-driven system** suitable for modern SaaS products.\n\n## Philosophy\n\nRefined prioritizes:\n\n- **Restraint** — calm neutrals, subtle elevation, no decorative glass everywhere\n- **Hierarchy** — semantic typography, surfaces, and spacing\n- **Precision** — tactile controls with subtle motion\n- **Accessibility** — contrast, keyboard focus, reduced motion, RTL\n- **Adaptability** — tenant branding, light/dark/system appearance\n\n## When to use\n\n| Use Refined | Use Default |\n|-------------|-------------|\n| Premium dashboards, desktop-first apps | Maximum compatibility, minimal visual opinion |\n| Product teams wanting a polished native feel | Heavy tenant brand customization on base tokens |\n| Internal tools with macOS-like navigation | Legacy apps that depend on current default colors |\n\n## Quick start\n\n```tsx\nimport { LaRoseProvider } from '@larose-ui/runtime-react';\nimport '@larose-ui/tokens/styles.css';\nimport '@larose-ui/react/styles.css';\n\n<LaRoseProvider themePreset=\"refined\" appearance=\"system\">\n  <App />\n</LaRoseProvider>\n```\n\n## Surface system\n\nSurfaces are semantic layers — not decoration.\n\n| Surface | Use case |\n|---------|----------|\n| `solid` | Base panels, forms |\n| `secondary` | Grouped background areas |\n| `elevated` | Cards (default) |\n| `floating` | Modals, dialogs |\n| `glass` | Command palette, overlays (with solid fallback) |\n\n```tsx\n<Card surface=\"elevated\" />\n<Modal surface=\"floating\" />\n```\n\nGlass uses `backdrop-filter` when supported; otherwise falls back to `--lr-surface-elevated`.\n\n## Typography\n\nSemantic roles map to CSS variables (`--lr-type-*`):\n\n`display` · `largeTitle` · `title` · `headline` · `body` · `callout` · `subheadline` · `",
     "excerpt": "Refined Design Language\n\n> **Apple-inspired, not an Apple/macOS clone.**\n\nThe **Refined** preset is an optional design language for laRose UI. It translates pri"
   },
   {
@@ -9448,15 +9416,15 @@ export const docsSearchIndex = [
     "type": "guide",
     "path": "/docs/guides/ai",
     "keywords": "AI runtime # AI Runtime (Phase 5)\n\nFoundational AI layer with strict permission boundaries.\n\n## Current State\n\n- `@larose-ui/ai-react`: SmartTable, SmartForm, mock + HTTP adapters\n- **Intent pipeline** — `parseIntent()`, `sanitizePrompt()`\n- **Permission-bound execution** — `createAIRuntime()` gates every action\n- **AIProvider** — wires runtime to `usePermissions()` from laRose\n- **HTTP adapter** — `createHttpAdapter()` with mock fallback\n\n## Usage\n\n```tsx\nimport {\n  AIProvider,\n  SmartTable,\n  SmartForm,\n  createHttpAdapter,\n  createMockAdapter,\n} from '@larose-ui/ai-react';\nimport { LaRoseProvider } from '@larose-ui/runtime-react';\n\nconst adapter = createHttpAdapter({\n  baseUrl: 'https://api.example.com',\n  fallback: createMockAdapter(),\n});\n\n<LaRoseProvider permissions={['employees.read', 'employees.write']}>\n  <AIProvider adapter={adapter} onAudit={(e) => console.debug(e)}>\n    <SmartTable readPermission=\"employees.read\" {...tableProps} />\n    <SmartForm writePermission=\"employees.write\" {...formProps} />\n  </AIProvider>\n</LaRoseProvider>\n```\n\nSmartTable/SmartForm work without `AIProvider` when nested in `LaRoseProvider` — they use `useSmartAIRuntime()` which reads permissions automatically.\n\n## Security Rule\n\nAI execution paths never bypass user permissions. Backend remains source of truth; HTTP adapter forwards prompts to your API — do not expose secrets in the client adapter.\n\n## API Endpoints (HTTP adapter)\n\n| Endpoint | Body | Response |\n|----------|------|----------|\n| `POST /api/ai/table-filter` | `{ query, columns, sample }` | `TableFilterResult` |\n| `POST /api/ai/form-populate` | `{ query, fields }` | `FormFillResult` |\n",
-    "excerpt": "AI Runtime (Phase 5)\n\nFoundational AI layer with strict permission boundaries.\n\nCurrent State\n\n- `@larose-ui/ai-react`: SmartTable, SmartForm, mock + HTTP adapters\n-"
+    "excerpt": "AI Runtime (Phase 5)\n\nFoundational AI layer with strict permission boundaries.\n\nCurrent State\n\n- `@larose-ui/ai-react`: SmartTable, SmartForm, mock + HTTP adapt"
   },
   {
     "id": "guide:migration",
     "title": "Migration & CLI",
     "type": "guide",
     "path": "/docs/guides/migration",
-    "keywords": "Migration & CLI # Migration & Ecosystem (Phase 6)\n\nTools for upgrading laRose apps and coordinating monorepo releases.\n\n## Codemods\n\nSafe automated transforms via `larose migrate --apply`:\n\n| Transform | Description |\n|-----------|-------------|\n| Token rename | `--ui-color-*` → `--lr-color-*` |\n| Provider import | `LaRoseProvider` from `@larose-ui/react` → `@larose-ui/runtime-react` |\n| Toast import | `useToast` from `@larose-ui/runtime-react` → `@larose-ui/runtime-react/toast` |\n\n```bash\npnpm migrate              # dry-run report\npnpm migrate:apply        # apply codemods\n```\n\n## Generators\n\nRuntime 2.0-aware scaffolds:\n\n```bash\nlarose generate form Employee ./EmployeeForm.tsx\nlarose generate page Employees ./EmployeesPage.tsx\nlarose generate feature EmployeeList ./EmployeeListFeature.tsx\n```\n\nGenerated features include `LaRoseProvider`, permissions, journey tracking, DevTools, and SmartTable where appropriate.\n\n## Release intelligence\n\n```bash\npnpm release:report\nlarose release --json\n```\n\nReports version alignment across publishable `@larose-ui/*` packages, publish metadata gaps, and release recommendations.\n\n## Package\n\nAll APIs live in `@larose-ui/migration` and are re-exported through the `larose` CLI.\n",
-    "excerpt": "Migration & Ecosystem (Phase 6)\n\nTools for upgrading laRose apps and coordinating monorepo releases.\n\nCodemods\n\nSafe automated transforms via `larose migrate --"
+    "keywords": "Migration & CLI # Migration & Ecosystem (Phase 6)\n\nTools for upgrading laRose apps and coordinating monorepo releases.\n\n## Adapter package rename (`*-react`)\n\nPlatform adapters are no longer React-default bare names. Update imports:\n\n| Old | New |\n|-----|-----|\n| `@larose-ui/data` | `@larose-ui/data-react` |\n| `@larose-ui/forms` | `@larose-ui/forms-react` |\n| `@larose-ui/permissions` | `@larose-ui/permissions-react` |\n| `@larose-ui/observability` | `@larose-ui/observability-react` |\n| `@larose-ui/ai` | `@larose-ui/ai-react` |\n| `@larose-ui/enterprise` | `@larose-ui/enterprise-react` |\n| `@larose-ui/testing` | `@larose-ui/testing-react` |\n| `@larose-ui/runtime` | `@larose-ui/runtime-react` |\n| `@larose-ui/devtools` | `@larose-ui/devtools-react` |\n\nVue / Svelte keep `*-vue` / `*-svelte`. Shared logic stays in `*-core`.\n\n## Codemods\n\nSafe automated transforms via `larose migrate --apply`:\n\n| Transform | Description |\n|-----------|-------------|\n| Token rename | `--ui-color-*` → `--lr-color-*` |\n| Provider import | `LaRoseProvider` from `@larose-ui/react` → `@larose-ui/runtime-react` |\n| Toast import | `useToast` from `@larose-ui/runtime-react` → `@larose-ui/runtime-react/toast` |\n\n```bash\npnpm migrate              # dry-run report\npnpm migrate:apply        # apply codemods\n```\n\n## Generators\n\nRuntime 2.0-aware scaffolds:\n\n```bash\nlarose generate form Employee ./EmployeeForm.tsx\nlarose generate page Employees ./EmployeesPage.tsx\nlarose generate feature EmployeeList ./EmployeeListFeature.tsx\n```\n\nGenerated features include `LaRoseProvider`, permissions, journey tracking, DevTools, and SmartTable where appropriate.\n\n## Release intelligence\n\n```bash\npnpm release:report\nlarose release --json\n```\n\nReports version alignment across publishable `@larose-ui/*` packages, publish metadata gaps, and release recommendations.\n\n## Package\n\nAll APIs live in `@larose-ui/migration` and are re-exported through the `larose` CLI.\n",
+    "excerpt": "Migration & Ecosystem (Phase 6)\n\nTools for upgrading laRose apps and coordinating monorepo releases.\n\nAdapter package rename (`*-react`)\n\nPlatform adapters are"
   },
   {
     "id": "guide:roadmap",

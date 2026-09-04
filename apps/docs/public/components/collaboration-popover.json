@@ -73,9 +73,10 @@
       "id": "CollaborationPopoverStory",
       "title": "Collaboration Popover",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"CollaborationPopoverStory\" for full example.",
-      "composite": true
+      "props": {
+        "defaultOpen": true
+      },
+      "code": "import { Collaboration&Sharing } from '@larose-ui/react';\n\n<Collaboration&Sharing\n  defaultOpen\n>Example</Collaboration&Sharing>"
     }
   ],
   "accessibility": [],

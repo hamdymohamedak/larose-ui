@@ -1,4 +1,4 @@
-# @larose-ui/forms-react
+# @larose-ui/forms
 
 Schema-driven forms with validation and conditional fields.
 

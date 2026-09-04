@@ -52,7 +52,7 @@ export const MacOSStandard: Story = {
         entries: [
           { id: 'network-1', label: 'Home Network', selected: true },
           { id: 'network-2', label: 'Office Network' },
-          { type: 'separator' },
+          { type: 'separator' as const },
           { id: 'network-settings', label: 'Network Settings…' },
         ],
       },

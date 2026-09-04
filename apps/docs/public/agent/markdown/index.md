@@ -70,7 +70,6 @@ Apple-inspired by default. Fully customizable by architecture.
 - DockMenu (Navigation) — 10 documented props
 - DocumentLauncher (Files) — 7 documented props
 - DocumentToolbar (Files) — 8 documented props
-- DRAG_START_THRESHOLD_PX (Other) — 0 documented props
 - DragDropList (DragDrop) — 4 documented props
 - Draggable (DragDrop) — 6 documented props
 - Drawer (Overlay) — 10 documented props
@@ -93,10 +92,6 @@ Apple-inspired by default. Fully customizable by architecture.
 - ImageWell (Content) — 6 documented props
 - Input (Forms) — 13 documented props
 - Label (Content) — 4 documented props
-- LIQUID_GLASS_OPTICS_DEFAULTS (Other) — 0 documented props
-- LIQUID_GLASS_PRESETS (Other) — 0 documented props
-- LIQUID_GLASS_SWITCH_ACTIVE_GREEN (Other) — 0 documented props
-- LIQUID_GLASS_SWITCH_TRACK_GLASS (Other) — 0 documented props
 - LiquidGlass (Glass) — 0 documented props
 - LiquidGlassButton (Glass) — 6 documented props
 - LiquidGlassCheckbox (Glass) — 10 documented props
@@ -141,7 +136,6 @@ Apple-inspired by default. Fully customizable by architecture.
 - SplitViewToolbar (Layout) — 1 documented props
 - SquareButton (Actions) — 3 documented props
 - Switch (Forms) — 6 documented props
-- SYSTEM_ACTIVITY_IDS (Other) — 0 documented props
 - Table (Data) — 12 documented props
 - Tabs (Navigation) — 3 documented props
 - TabsList (Navigation) — 1 documented props

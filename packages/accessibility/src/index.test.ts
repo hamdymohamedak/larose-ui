@@ -22,4 +22,15 @@ describe('scanComponentSource', () => {
     });
     expect(report).toContain('FAIL');
   });
+
+  it('flags img without alt', () => {
+    const result = scanComponentSource('<img src="/photo.jpg" />');
+    expect(result.passed).toBe(false);
+    expect(result.violations[0]?.rule).toBe('img-alt');
+  });
+
+  it('accepts JSX alt and Svelte {alt} shorthand', () => {
+    expect(scanComponentSource('<img src="/a.jpg" alt="" />').passed).toBe(true);
+    expect(scanComponentSource('<img {src} {alt} class="x" />').passed).toBe(true);
+  });
 });

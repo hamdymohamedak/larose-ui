@@ -48,9 +48,12 @@
       "id": "CaptionButtonGrid",
       "title": "Caption Button Grid",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"CaptionButtonGrid\" for full example.",
-      "composite": true
+      "props": {
+        "title": "Movies",
+        "subtitle": "Browse",
+        "label": "Movies"
+      },
+      "code": "import { Lockup } from '@larose-ui/react';\n\n<Lockup\n  title=\"Movies\"\n  subtitle=\"Browse\"\n  label=\"Movies\"\n>Example</Lockup>"
     },
     {
       "id": "VerticalMonograms",

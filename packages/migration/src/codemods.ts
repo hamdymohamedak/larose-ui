@@ -61,7 +61,7 @@ function fixLaRoseProviderImport(source: string): CodemodResult {
 
 function fixToastImport(source: string): CodemodResult {
   const regex =
-    /import\s+\{([^}]*\buseToast\b[^}]*)\}\s+from\s+['"]@larose-ui\/runtime['"]\s*;?/g;
+    /import\s+\{([^}]*\buseToast\b[^}]*)\}\s+from\s+['"]@larose-ui\/runtime(?:-react)?['"]\s*;?/g;
   let content = source;
   let changed = false;
   const transforms: string[] = [];
@@ -73,10 +73,10 @@ function fixToastImport(source: string): CodemodResult {
       .split(',')
       .map((s: string) => s.trim())
       .filter(Boolean);
-    const toastParts = parts.filter((p: string) => p !== 'useToast');
+    const remaining = parts.filter((p: string) => p !== 'useToast');
     const toastImport = "import { useToast } from '@larose-ui/runtime-react/toast';";
-    if (toastParts.length === 0) return toastImport;
-    return `${toastImport}\nimport { ${toastParts.join(', ')} } from '@larose-ui/runtime-react';`;
+    if (remaining.length === 0) return toastImport;
+    return `${toastImport}\nimport { ${remaining.join(', ')} } from '@larose-ui/runtime-react';`;
   });
 
   return { content, changed, transforms };

@@ -44,31 +44,40 @@ CI runs on pushes and pull requests to `dev`. Releases are published only when c
 
 ### Scaffold a new component (contributors)
 
-Use the contribute CLI to create stub folders/files only — you still write the real implementation.
+Use the contribute CLI as a **guided workflow** — it creates stubs and prints a checklist. You still write the real implementation.
 
 ```bash
-# See which packages support UI vs module scaffolds
+# See targets + optional flags
 make contribute-list
 
-# React UI component → adapter + test + shared CSS + CHANGELOG Unreleased entry
+# Recommended: React + Vue + Svelte adapters + shared CSS once
+make contribute NAME=StatusPill PACKAGE=all
+
+# Single package
 make contribute NAME=StatusPill PACKAGE=react
 
-# Vue / Svelte
-make contribute NAME=StatusPill PACKAGE=vue
-make contribute NAME=StatusPill PACKAGE=svelte
+# Optional extras (never default)
+make contribute NAME=StatusPill PACKAGE=all WITH_STORY=1
+make contribute NAME=StatusPill PACKAGE=all SANDBOX_HOOK=forms
+make contribute NAME=StatusPill PACKAGE=all SCENARIO=my-flow
 
-# Or via the CLI directly (build CLI first if needed)
+# Or via the CLI directly
 pnpm --filter @larose-ui/cli build
-node packages/cli/dist/cli.js contribute component StatusPill --package react --dry-run
+node packages/cli/dist/cli.js contribute component StatusPill --package all --dry-run
 ```
 
-The command prints the paths of the component, test, and CSS files, plus package-specific build/test tips. It refuses to overwrite existing files and checks that the package source layout exists first.
+**Workflow:** Core → Styles → Adapters → Vitest → Story → Sandbox (if needed) → Playwright (if critical) → Contracts → Changeset
+
+**Sandbox rule of thumb:** simple components need Story + Vitest only; integration-critical components hook an existing kitchen-sink scenario (`forms` / `overlays` / …); portal/focus/keyboard/runtime flows may need a shared scenario + Playwright. Do **not** create per-component sandboxes.
+
+The command prints created paths, next steps, and a contributor checklist. It refuses to overwrite existing files and checks that the package source layout exists first.
 
 ### Packages and apps
 
 - **`packages/*`** — publishable libraries (`@larose-ui/react`, `@larose-ui/runtime-react`, etc.)
-- **`apps/playground`** — Storybook; add or update stories for UI changes
-- **`apps/demo`** — integration demo app
+- **`apps/playground`** — Storybook; docs / visual catalog (not multi-framework parity authority)
+- **`apps/sandbox-{react,vue,svelte}`** — kitchen-sink consumer apps for real integration QA
+- **`apps/sandbox-e2e`** — Playwright critical-flow parity (`pnpm test:parity`)
 
 After changing a component in `@larose-ui/react`, rebuild if Storybook reads from `dist`:
 

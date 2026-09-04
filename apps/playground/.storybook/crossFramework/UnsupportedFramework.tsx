@@ -42,9 +42,10 @@ export function UnsupportedFrameworkPanel({
         stand-in.
       </p>
       <p style={{ margin: '0.75rem 0 0' }}>
-        Switch the Framework toolbar back to React, or pick a story tagged for{' '}
-        {requestedLabel} (Foundation / Glass / Parity). Changing the toolbar also jumps away from
-        React-only demos automatically.
+        Switch the Framework toolbar back to React, or pick a story tagged for {requestedLabel}{' '}
+        (Foundation / Glass / Parity). For real multi-framework visual QA, use the sandboxes:{' '}
+        <code>pnpm sandbox:react</code>, <code>pnpm sandbox:vue</code>,{' '}
+        <code>pnpm sandbox:svelte</code>.
       </p>
     </div>
   );

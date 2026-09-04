@@ -29,9 +29,10 @@
       "id": "DocumentWorkspace",
       "title": "Document Workspace",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"DocumentWorkspace\" for full example.",
-      "composite": true
+      "props": {
+        "title": "Product Roadmap"
+      },
+      "code": "import { FileManagement } from '@larose-ui/react';\n\n<FileManagement\n  title=\"Product Roadmap\"\n>Example</FileManagement>"
     }
   ],
   "accessibility": [],

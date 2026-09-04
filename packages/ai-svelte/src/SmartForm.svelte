@@ -59,7 +59,7 @@
       label="Smart populate"
       placeholder={promptPlaceholder}
       bind:value={prompt}
-      onkeydown={(e) => {
+      onkeydown={(e: KeyboardEvent) => {
         if (e.key === 'Enter') void populate();
       }}
     />

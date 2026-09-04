@@ -15,7 +15,7 @@
 </script>
 
 <div class={cn(styles.overlay, className)} {style}>
-  <img {src} {alt} class={styles.overlayImage} />
+  <img {src} alt={alt} class={styles.overlayImage} />
   <div class={styles.overlayScrim} aria-hidden="true"></div>
   <div class={styles.overlayContent}>{#if children}{@render children()}{/if}</div>
 </div>

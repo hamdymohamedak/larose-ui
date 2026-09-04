@@ -31,7 +31,7 @@ export const DEPRECATIONS: Deprecation[] = [
   },
   {
     id: 'runtime-toast',
-    pattern: /import\s+\{([^}]*\buseToast\b[^}]*)\}\s+from\s+['"]@larose-ui\/runtime['"]/g,
+    pattern: /import\s+\{([^}]*\buseToast\b[^}]*)\}\s+from\s+['"]@larose-ui\/runtime(?:-react)?['"]/g,
     message: 'Import useToast from @larose-ui/runtime-react/toast',
     replacement: "import { useToast } from '@larose-ui/runtime-react/toast'",
     removedIn: '0.2.0',
@@ -153,6 +153,24 @@ export {
   type ScaffoldKind,
   type ScaffoldPlan,
 } from './componentScaffold';
+
+export {
+  ALL_UI_PACKAGE_IDS,
+  CONTRIBUTE_CHECKLIST,
+  CONTRIBUTE_SANDBOX_RULES,
+  CONTRIBUTE_WORKFLOW_ORDER,
+  SANDBOX_HOOK_TARGETS,
+  formatContributeChecklist,
+  isSandboxHookTarget,
+  normalizeScenarioId,
+  planContributeExtras,
+  resolvePackageIds,
+  sandboxHookFilePaths,
+  scenarioIdToPascal,
+  type ContributeExtrasOptions,
+  type ContributeExtrasPlan,
+  type SandboxHookTarget,
+} from './contributeWorkflow';
 
 export {
   analyzeRelease,

@@ -1,0 +1,16 @@
+{
+  "name": "@larose-ui/sandbox-e2e",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Playwright critical-flow parity across React / Vue / Svelte sandboxes.",
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "install:browsers": "playwright install chromium"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.51.0",
+    "@larose-ui/sandbox-shared": "workspace:*"
+  }
+}

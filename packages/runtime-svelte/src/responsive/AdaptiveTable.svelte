@@ -2,7 +2,6 @@
   import { getContext } from 'svelte';
   import type { Readable } from 'svelte/store';
   import { shouldUseSkeleton } from '@larose-ui/network';
-  import type { NetworkCondition } from '@larose-ui/core';
   import {
     buildResponsiveSnapshot,
     defaultBreakpoints,
@@ -11,16 +10,7 @@
   import { RESPONSIVE_CONTEXT } from './context';
   import { getI18n } from '../i18n/context';
   import { getNetwork } from '../network/context';
-  import type { Column } from './types';
-
-  interface Props {
-    data: T[];
-    columns: Column<T>[];
-    keyExtractor: (row: T) => string;
-    loading?: boolean;
-    emptyMessage?: string;
-    networkCondition?: NetworkCondition;
-  }
+  import type { AdaptiveTableProps } from './types';
 
   let {
     data,
@@ -29,7 +19,7 @@
     loading = false,
     emptyMessage,
     networkCondition,
-  }: Props = $props();
+  }: AdaptiveTableProps<T> = $props();
 
   const responsiveStore = getContext<Readable<ResponsiveSnapshot> | undefined>(RESPONSIVE_CONTEXT);
   let breakpoint = $state<ResponsiveSnapshot>(

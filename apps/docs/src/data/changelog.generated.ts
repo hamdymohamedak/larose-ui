@@ -123,19 +123,13 @@ export const docsChangelog: DocsChangelogEntry[] = [
     "body": "### Minor Changes\n\n- e989652: Evolve laRose into a framework-agnostic UI operating system: extract shared styles to `@larose-ui/styles`, add Vue 3 and Svelte 5 parity adapters, Next/Nuxt/Electron/Tauri/desktop-core integrations, runtime-core and contracts packages, cross-framework Storybook parity toolbar, AlertDialog focus-ring fix, docs site redesign with beginner-friendly onboarding, and CI/build fixes.\n\n### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/vue@0.2.0\n  - @larose-"
   },
   {
-    "package": "@larose-ui/observability-react",
-    "version": "0.2.0",
-    "heading": "0.2.0",
-    "body": "### Minor Changes\n\n- e989652: Evolve laRose into a framework-agnostic UI operating system: extract shared styles to `@larose-ui/styles`, add Vue 3 and Svelte 5 parity adapters, Next/Nuxt/Electron/Tauri/desktop-core integrations, runtime-core and contracts packages, cross-framework Storybook parity toolbar, AlertDialog focus-ring fix, docs site redesign with beginner-friendly onboarding, and CI/build fixes.\n\n### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/core@0.2.0\n  - @larose"
-  },
-  {
     "package": "@larose-ui/observability-core",
     "version": "0.2.0",
     "heading": "0.2.0",
     "body": "### Minor Changes\n\n- e989652: Evolve laRose into a framework-agnostic UI operating system: extract shared styles to `@larose-ui/styles`, add Vue 3 and Svelte 5 parity adapters, Next/Nuxt/Electron/Tauri/desktop-core integrations, runtime-core and contracts packages, cross-framework Storybook parity toolbar, AlertDialog focus-ring fix, docs site redesign with beginner-friendly onboarding, and CI/build fixes.\n\n### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/core@0.2.0"
   },
   {
-    "package": "@larose-ui/permissions-react",
+    "package": "@larose-ui/observability-react",
     "version": "0.2.0",
     "heading": "0.2.0",
     "body": "### Minor Changes\n\n- e989652: Evolve laRose into a framework-agnostic UI operating system: extract shared styles to `@larose-ui/styles`, add Vue 3 and Svelte 5 parity adapters, Next/Nuxt/Electron/Tauri/desktop-core integrations, runtime-core and contracts packages, cross-framework Storybook parity toolbar, AlertDialog focus-ring fix, docs site redesign with beginner-friendly onboarding, and CI/build fixes.\n\n### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/core@0.2.0\n  - @larose"
@@ -145,6 +139,12 @@ export const docsChangelog: DocsChangelogEntry[] = [
     "version": "0.2.0",
     "heading": "0.2.0",
     "body": "### Minor Changes\n\n- e989652: Evolve laRose into a framework-agnostic UI operating system: extract shared styles to `@larose-ui/styles`, add Vue 3 and Svelte 5 parity adapters, Next/Nuxt/Electron/Tauri/desktop-core integrations, runtime-core and contracts packages, cross-framework Storybook parity toolbar, AlertDialog focus-ring fix, docs site redesign with beginner-friendly onboarding, and CI/build fixes.\n\n### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/core@0.2.0"
+  },
+  {
+    "package": "@larose-ui/permissions-react",
+    "version": "0.2.0",
+    "heading": "0.2.0",
+    "body": "### Minor Changes\n\n- e989652: Evolve laRose into a framework-agnostic UI operating system: extract shared styles to `@larose-ui/styles`, add Vue 3 and Svelte 5 parity adapters, Next/Nuxt/Electron/Tauri/desktop-core integrations, runtime-core and contracts packages, cross-framework Storybook parity toolbar, AlertDialog focus-ring fix, docs site redesign with beginner-friendly onboarding, and CI/build fixes.\n\n### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/core@0.2.0\n  - @larose"
   },
   {
     "package": "@larose-ui/primitives",

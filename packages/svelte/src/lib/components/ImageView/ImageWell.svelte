@@ -29,7 +29,7 @@
 
 <label class={cn(styles.well, className)} {style} for={inputId}>
   {#if src}
-    <img {src} {alt} />
+    <img {src} alt={alt} />
   {:else}
     <span class={styles.wellPlaceholder}>{placeholder}</span>
   {/if}

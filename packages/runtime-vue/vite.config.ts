@@ -4,7 +4,7 @@ import dts from 'vite-plugin-dts';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  plugins: [vue(), dts({ include: ['src'], rollupTypes: true })],
+  plugins: [vue(), dts({ include: ['src'], rollupTypes: false })],
   build: {
     lib: {
       entry: {

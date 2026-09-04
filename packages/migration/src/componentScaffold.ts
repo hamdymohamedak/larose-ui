@@ -67,10 +67,14 @@ export interface ScaffoldPlan {
 }
 
 const UI_TIPS_SHARED = [
+  'Workflow: Core → Styles → Adapters → Vitest → Story → Sandbox (if needed) → Playwright (if critical) → Contracts → Changeset',
   'Implement the stub — do not leave TODO UI in a PR.',
+  'Put shared behavior in *-core / component-logic / primitives — thin adapters only in react/vue/svelte.',
   'Shared CSS lives in @larose-ui/styles (framework-agnostic).',
+  'Vitest first (package tests); Storybook is docs/visual — not multi-framework parity authority.',
+  'Sandbox only if integration-critical: hook an existing kitchen-sink scenario (--with-sandbox-hook forms|overlays|…), never a per-component sandbox.',
+  'Playwright (pnpm test:parity) only for critical flows: portal / focus / keyboard / runtime.',
   'After real props exist: pnpm generate:contracts',
-  'Add a Storybook story under apps/playground/stories/ and update quality/visual-baseline.json',
   'Run pnpm changeset (minor) before opening a PR to dev',
 ];
 
@@ -94,8 +98,9 @@ export const PACKAGE_PROFILES: Record<string, PackageProfile> = {
     },
     tips: [
       ...UI_TIPS_SHARED,
+      'Parity scaffold: make contribute NAME=X PACKAGE=all',
       'Rebuild styles if CSS changed: pnpm --filter @larose-ui/styles build',
-      'Preview in Storybook: pnpm dev',
+      'Optional: --with-story · Preview: pnpm sandbox:react | pnpm dev',
     ],
   },
   vue: {
@@ -494,13 +499,16 @@ export function planComponentScaffold(
 
 export function formatPackageList(profiles: PackageProfile[] = listPackageProfiles()): string {
   const lines = [
-    'laRose contribution targets',
+    'laRose contribution targets (guided workflow)',
+    '',
+    'Workflow: Core → Styles → Adapters → Vitest → Story → Sandbox (if needed) → Playwright (if critical) → Contracts → Changeset',
     '',
     'UI component packages (creates adapter + shared CSS + test):',
   ];
   for (const p of profiles.filter((x) => x.kind === 'ui-component')) {
     lines.push(`  ${p.id.padEnd(12)} ${p.summary}`);
   }
+  lines.push(`  ${'all'.padEnd(12)} React + Vue + Svelte adapters (shared CSS once)`);
   const modules = profiles.filter((x) => x.kind === 'module');
   if (modules.length > 0) {
     lines.push('', 'Module packages (creates TS module + test, no CSS):');
@@ -513,9 +521,17 @@ export function formatPackageList(profiles: PackageProfile[] = listPackageProfil
     'Any other packages/* id works as a generic module scaffold.',
     '',
     'Usage:',
-    '  make contribute NAME=StatusPill PACKAGE=react',
-    '  larose contribute component StatusPill --package vue',
+    '  make contribute NAME=StatusPill PACKAGE=all',
+    '  make contribute NAME=StatusPill PACKAGE=react WITH_STORY=1',
+    '  make contribute NAME=StatusPill PACKAGE=all SANDBOX_HOOK=forms',
+    '  make contribute NAME=StatusPill PACKAGE=all SCENARIO=my-flow',
+    '  larose contribute component StatusPill --package all --with-story',
     '  larose contribute list',
+    '',
+    'Optional flags (never default):',
+    '  --with-story              Storybook stub under apps/playground/stories/',
+    '  --with-sandbox-hook <id>  TODO mount comment in existing scenario (forms|overlays|…)',
+    '  --scenario <flow-id>      New shared kitchen-sink flow (not per-component)',
   );
   return lines.join('\n');
 }
@@ -552,7 +568,11 @@ export function appendChangelogUnreleased(existing: string, message: string): st
   return lines.join('\n');
 }
 
-export function formatContributeReport(plan: ScaffoldPlan, created: string[]): string {
+export function formatContributeReport(
+  plan: ScaffoldPlan,
+  created: string[],
+  options: { extrasNotes?: string[]; appendix?: string[] } = {},
+): string {
   const lines = [
     `✓ Scaffolded ${plan.name} in ${plan.npmName} (${plan.kind})`,
     '',
@@ -571,6 +591,15 @@ export function formatContributeReport(plan: ScaffoldPlan, created: string[]): s
     lines.push(`Styles:    ${plan.displayPaths.styles}`);
   }
 
-  lines.push('', 'Next steps for contributors:', ...plan.nextSteps.map((s) => `  • ${s}`));
+  lines.push('', 'Next steps:', ...plan.nextSteps.map((s) => `  • ${s}`));
+
+  if (options.extrasNotes?.length) {
+    lines.push('', 'Extras:', ...options.extrasNotes.map((s) => `  • ${s}`));
+  }
+
+  if (options.appendix?.length) {
+    lines.push('', ...options.appendix);
+  }
+
   return lines.join('\n');
 }

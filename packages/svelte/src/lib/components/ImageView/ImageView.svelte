@@ -48,7 +48,7 @@
   <div class={cn(styles.frame, frameClass)} style={frameStyle} data-background={background}>
     <img
       src={activeSrc}
-      {alt}
+      alt={alt}
       class={cn(styles.image, className)}
       style={`object-fit:${fit};object-position:${objectPosition};${style ?? ''}`}
     />

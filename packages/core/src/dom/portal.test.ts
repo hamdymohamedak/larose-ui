@@ -9,7 +9,7 @@ import {
 describe('mergeDefinedProps', () => {
   it('keeps defaults when incoming values are undefined', () => {
     expect(
-      mergeDefinedProps(
+      mergeDefinedProps<{ variant: string; size: string; loading?: boolean }>(
         { variant: 'primary', size: 'md' },
         { variant: undefined, size: 'lg', loading: true },
       ),

@@ -30,7 +30,12 @@
     "generate:storybook-parity": "node scripts/generate-storybook-parity.mjs && node scripts/generate-cross-framework-manifest.mjs",
     "check:framework-neutrality": "node scripts/check-framework-neutrality.mjs",
     "check:storybook-coverage": "node scripts/check-storybook-coverage.mjs",
-    "demo": "pnpm --filter @larose-ui/demo dev",
+    "sandbox": "node -e \"console.log('Sandboxes (multi-framework visual QA):\\n  pnpm sandbox:react   → http://localhost:5173\\n  pnpm sandbox:vue     → http://localhost:5174\\n  pnpm sandbox:svelte  → http://localhost:5175\\n\\nPlaywright critical flows: pnpm test:parity\\nArchitecture: apps/sandbox-shared/TESTING.md\\nStorybook (docs/catalog): pnpm dev')\"",
+    "sandbox:react": "pnpm --filter @larose-ui/sandbox-react dev",
+    "sandbox:vue": "pnpm --filter @larose-ui/sandbox-vue dev",
+    "sandbox:svelte": "pnpm --filter @larose-ui/sandbox-svelte dev",
+    "test:parity": "pnpm --filter @larose-ui/sandbox-e2e test",
+    "demo": "pnpm --filter @larose-ui/sandbox-react dev",
     "webdocs": "pnpm --filter @larose-ui/docs dev",
     "webdocs:build": "pnpm --filter @larose-ui/docs build",
     "clean": "turbo run clean && rm -rf node_modules"

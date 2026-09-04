@@ -1,5 +1,5 @@
 <script setup lang="ts" generic="T">
-import { ref, watch } from 'vue';
+import { ref, shallowRef, watch } from 'vue';
 import { AdaptiveTable, type Column } from '@larose-ui/runtime-vue';
 import { Input, Button } from '@larose-ui/vue';
 import type { AIAdapter } from '@larose-ui/ai-core';
@@ -30,7 +30,8 @@ const runtime = useSmartAIRuntimeComputed(props.adapter);
 const query = ref('');
 const explanation = ref<string | null>(null);
 const denial = ref<string | null>(null);
-const filtered = ref<T[]>([...props.data]);
+// shallowRef keeps generic row type T (deep ref unwraps to UnwrapRefSimple<T>)
+const filtered = shallowRef<T[]>([...props.data]);
 
 watch(
   () => props.data,

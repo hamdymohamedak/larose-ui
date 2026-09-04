@@ -35,7 +35,6 @@ export function AuditProvider({ actor = 'system', children }: AuditProviderProps
       getHistory: (field, resourceId) => store.getHistory(field, resourceId),
     }),
     // tick refreshes when the store mutates
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     [store, tick],
   );
 

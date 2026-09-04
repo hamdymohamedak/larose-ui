@@ -2,7 +2,7 @@
 
 # Runtime 2.0 Specification
 
-Phase 1 delivers a unified frontend operating environment via `@larose-ui/runtime-react` and `@larose-ui/core`.
+Phase 1 delivers a unified frontend operating environment via `@larose-ui/runtime-react` / `runtime-vue` / `runtime-svelte` and `@larose-ui/core`.
 
 ## Goals
 

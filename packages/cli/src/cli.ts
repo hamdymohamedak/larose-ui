@@ -42,14 +42,19 @@ Usage:
   larose generate page Name     Generate page scaffold
   larose generate feature Name  Generate full feature scaffold
   larose contribute list                    List contribution package targets
-  larose contribute component Name --package react
-       Scaffold a new component/module stub for contributors
+  larose contribute component Name --package react|vue|svelte|all
+       Guided scaffold: adapters + styles + checklist
        Flags: --dry-run  --skip-styles  --skip-changelog  --skip-index
+              --with-story
+              --with-sandbox-hook <forms|overlays|...>
+              --scenario <flow-id>
   larose release                Monorepo release readiness report
   larose release --json         JSON release report
 
 Makefile shortcuts:
-  make contribute NAME=StatusPill PACKAGE=react
+  make contribute NAME=StatusPill PACKAGE=all
+  make contribute NAME=StatusPill PACKAGE=react WITH_STORY=1
+  make contribute NAME=X PACKAGE=all SANDBOX_HOOK=forms
   make contribute-list
 `);
 }
@@ -109,7 +114,7 @@ async function main() {
         const packageId = flagValue('--package') ?? flagValue('-p') ?? flagValue('--to');
         if (!name || !packageId) {
           console.error(
-            'Usage: larose contribute component <Name> --package <react|vue|svelte|...>',
+            'Usage: larose contribute component <Name> --package <react|vue|svelte|all|...>',
           );
           process.exit(1);
         }
@@ -119,6 +124,9 @@ async function main() {
             skipStyles: hasFlag('--skip-styles'),
             skipChangelog: hasFlag('--skip-changelog'),
             skipIndex: hasFlag('--skip-index'),
+            withStory: hasFlag('--with-story'),
+            sandboxHook: flagValue('--with-sandbox-hook'),
+            scenario: flagValue('--scenario'),
           });
           console.log(result.report);
         } catch (err) {

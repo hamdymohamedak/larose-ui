@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue';
+import { computed, ref, watch, type CSSProperties } from 'vue';
 import { Teleport } from 'vue';
 import { activateOverlayFocus } from '@larose-ui/primitives';
 import styles from '@larose-ui/styles/components/Modal/Modal.module.css';
@@ -13,6 +13,7 @@ const props = withDefaults(
     description?: string;
     closeOnOverlay?: boolean;
     class?: string;
+    style?: CSSProperties;
     overlayClass?: string;
     contentClass?: string;
   }>(),
@@ -21,7 +22,7 @@ const props = withDefaults(
   },
 );
 
-const merged = useComponentDefaults('Modal', props);
+const merged = computed(() => useComponentDefaults('Modal', props));
 const emit = defineEmits<{ close: [] }>();
 
 const dialogRef = ref<HTMLDivElement | null>(null);
@@ -31,26 +32,19 @@ function onClose() {
 }
 
 function onOverlayClick() {
-  if (merged.closeOnOverlay) onClose();
+  if (merged.value.closeOnOverlay !== false) onClose();
 }
 
 watch(
-  () => merged.open,
+  () => merged.value.open,
   (open, _prev, onCleanup) => {
     if (!open) return;
-    let deactivate: (() => void) | null = null;
-    const frame = requestAnimationFrame(() => {
-      deactivate = activateOverlayFocus({
-        container: dialogRef.value,
-        onEscape: onClose,
-      });
+    const deactivate = activateOverlayFocus({
+      container: dialogRef.value,
+      onEscape: onClose,
     });
-    onCleanup(() => {
-      cancelAnimationFrame(frame);
-      deactivate?.();
-    });
+    onCleanup(() => deactivate());
   },
-  { immediate: true },
 );
 </script>
 
@@ -64,6 +58,7 @@ watch(
         :aria-labelledby="merged.title ? 'larose-modal-title' : undefined"
         :aria-describedby="merged.description ? 'larose-modal-description' : undefined"
         :class="cn(styles.dialog, merged.class)"
+        :style="merged.style"
       >
         <div :class="cn(styles.content, merged.contentClass)">
           <header v-if="merged.title || merged.description" :class="styles.header">

@@ -1,5 +1,6 @@
 import type { ArgTypes } from '@storybook/react';
 import { fn } from '@storybook/test';
+import type { ElementType } from 'react';
 import { LIQUID_GLASS_OPTICS_DEFAULTS } from '@larose-ui/react';
 import type { LiquidGlassOptics } from '@larose-ui/react';
 import {
@@ -414,7 +415,7 @@ export const liquidGlassSurfaceArgTypes: ArgTypes = {
 
 export const liquidGlassSurfaceDefaults = {
   label: 'Liquid glass',
-  as: 'div',
+  as: 'div' as ElementType,
   width: 280,
   height: 120,
   borderRadius: 36,
@@ -445,8 +446,17 @@ export function stripZeroGeometry<T extends Record<string, unknown>>(props: T): 
 }
 
 /** Prepare surface/lens-lab args for `<LiquidGlass />` (no implicit actions). */
-export function prepareSurfaceProps<T extends Record<string, unknown>>(props: T): T {
-  return stripZeroGeometry(stripStorybookCallbacks(props));
+export function prepareSurfaceProps<T extends Record<string, unknown>>(
+  props: T,
+): Omit<T, 'as'> & { as?: ElementType } {
+  const next = stripZeroGeometry(stripStorybookCallbacks(props));
+  const asValue = next.as;
+  const as =
+    typeof asValue === 'string' || typeof asValue === 'function' || asValue == null
+      ? (asValue as ElementType | undefined)
+      : undefined;
+  const { as: _as, ...rest } = next;
+  return { ...rest, ...(as !== undefined ? { as } : {}) } as Omit<T, 'as'> & { as?: ElementType };
 }
 
 // ─── Form controls ────────────────────────────────────────────────────────────

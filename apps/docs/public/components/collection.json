@@ -46,17 +46,20 @@
       "id": "CollectionGrid",
       "title": "Collection Grid",
       "kind": "advanced",
-      "props": {},
-      "code": "<Collection items={photos} layout=\"grid\" columns={4} selectedId={selectedId} onSelect={(item) => setSelectedId(item.id)} />",
-      "composite": true
+      "props": {
+        "layout": "grid",
+        "columns": 4
+      },
+      "code": "import { Layout } from '@larose-ui/react';\n\n<Layout\n  layout=\"grid\"\n  columns={4}\n>Example</Layout>"
     },
     {
       "id": "CollectionRow",
       "title": "Collection Row",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"CollectionRow\" for full example.",
-      "composite": true
+      "props": {
+        "layout": "row"
+      },
+      "code": "import { Layout } from '@larose-ui/react';\n\n<Layout\n  layout=\"row\"\n>Example</Layout>"
     }
   ],
   "accessibility": [

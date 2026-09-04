@@ -150,5 +150,7 @@ export const BreadcrumbDefault: StoryObj = {
       { label: 'Ahmed', current: true },
     ],
   },
-  render: (args) => <Breadcrumb items={args.items as never} />,
+  render: (args) => (
+    <Breadcrumb items={(args as { items: Array<{ label: string; href?: string; current?: boolean }> }).items as never} />
+  ),
 };

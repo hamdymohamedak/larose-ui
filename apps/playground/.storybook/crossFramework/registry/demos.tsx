@@ -10,6 +10,7 @@ import {
   ButtonGroup,
   Card,
   CollaborationPopover,
+  CollaborationButton,
   ColumnView,
   DataTable,
   Dialog,

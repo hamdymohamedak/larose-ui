@@ -1,4 +1,4 @@
-# @larose-ui/observability-react
+# @larose-ui/observability
 
 UX observability — journeys, funnels, and rage-click analysis.
 

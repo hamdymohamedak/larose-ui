@@ -52,9 +52,12 @@
       "id": "DocumentLauncherStory",
       "title": "Document Launcher Story",
       "kind": "advanced",
-      "props": {},
-      "code": "// See Storybook story \"DocumentLauncherStory\" for full example.",
-      "composite": true
+      "props": {
+        "appTitle": "Pages",
+        "primaryActionLabel": "Start Writing",
+        "secondaryActionLabel": "Choose a Template"
+      },
+      "code": "import { FileManagement } from '@larose-ui/react';\n\n<FileManagement\n  appTitle=\"Pages\"\n  primaryActionLabel=\"Start Writing\"\n  secondaryActionLabel=\"Choose a Template\"\n>Example</FileManagement>"
     }
   ],
   "accessibility": [],

@@ -1,4 +1,4 @@
-import { inject, provide, type InjectionKey, ref, onMounted, onUnmounted, type Ref } from 'vue';
+import { inject, provide, type InjectionKey, ref, type Ref } from 'vue';
 import {
   createNetworkMonitor,
   type NetworkMonitor,
@@ -31,7 +31,7 @@ export function provideNetwork(monitor?: NetworkMonitor): {
   const state = ref<NetworkState>(defaultNetworkState);
   const networkMonitor = monitor ?? createNetworkMonitor();
   let unsubscribe: (() => void) | undefined;
-  let owned = !monitor;
+  const owned = !monitor;
 
   const onFailure = () => networkMonitor.reportFailure();
   const onSuccess = () => networkMonitor.reportSuccess();

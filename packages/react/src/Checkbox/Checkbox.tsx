@@ -1,4 +1,4 @@
-import { forwardRef, type CSSProperties, type InputHTMLAttributes } from 'react';
+import { forwardRef, type InputHTMLAttributes } from 'react';
 import type { Size } from '@larose-ui/core';
 import styles from '@larose-ui/styles/components/Checkbox/Checkbox.module.css';
 
