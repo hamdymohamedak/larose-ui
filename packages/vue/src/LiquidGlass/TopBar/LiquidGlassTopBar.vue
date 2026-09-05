@@ -93,6 +93,51 @@ function select(key: string, disabled?: boolean) {
 function itemIcon(item: VueLiquidGlassTopBarItem): Component | VNode | undefined {
   return item.icon;
 }
+
+const navTrackStyle = computed((): CSSProperties =>
+  normalizeGlassStyle({
+    display: 'flex',
+    alignItems: 'center',
+    justifySelf: 'center',
+    gap: 2,
+    padding: 3,
+    borderRadius: 999,
+    background: props.navTrackBackground,
+    boxShadow: 'inset 0 0 0 1px rgba(255,255,255,0.10)',
+  }),
+);
+
+function itemStyle(item: VueLiquidGlassTopBarItem): CSSProperties {
+  const active = item.key === current.value;
+  return normalizeGlassStyle({
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 6,
+    height: 32,
+    padding: '0 16px',
+    borderRadius: 999,
+    border: 'none',
+    appearance: 'none',
+    WebkitAppearance: 'none',
+    background: active ? props.navActiveBackground : 'transparent',
+    boxShadow: active
+      ? 'inset 0 0 0 1px rgba(255,255,255,0.22), 0 1px 4px rgba(0,0,0,0.12)'
+      : 'none',
+    color: active ? props.activeColor : props.inactiveColor,
+    fontSize: '0.8125rem',
+    fontWeight: active ? 600 : 500,
+    letterSpacing: '-0.01em',
+    lineHeight: 1,
+    cursor: item.disabled ? 'not-allowed' : 'pointer',
+    opacity: item.disabled ? 0.4 : 1,
+    fontFamily: 'inherit',
+    transition:
+      'background 0.22s cubic-bezier(0.2, 0.9, 0.25, 1.1), color 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease',
+    transform: active ? 'scale(1)' : 'scale(0.98)',
+    WebkitTapHighlightColor: 'transparent',
+  });
+}
 </script>
 
 <template>
@@ -151,16 +196,7 @@ function itemIcon(item: VueLiquidGlassTopBarItem): Component | VNode | undefined
         v-if="items.length"
         role="tablist"
         aria-label="Sections"
-        :style="{
-          display: 'flex',
-          alignItems: 'center',
-          justifySelf: 'center',
-          gap: '2px',
-          padding: '3px',
-          borderRadius: 999,
-          background: navTrackBackground,
-          boxShadow: 'inset 0 0 0 1px rgba(255,255,255,0.10)',
-        }"
+        :style="navTrackStyle"
       >
         <button
           v-for="item in items"
@@ -170,33 +206,7 @@ function itemIcon(item: VueLiquidGlassTopBarItem): Component | VNode | undefined
           :aria-selected="item.key === current"
           :aria-label="item.ariaLabel ?? item.label"
           :disabled="item.disabled"
-          :style="{
-            display: 'inline-flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '6px',
-            height: '32px',
-            padding: '0 16px',
-            borderRadius: 999,
-            border: 'none',
-            background: item.key === current ? navActiveBackground : 'transparent',
-            boxShadow:
-              item.key === current
-                ? 'inset 0 0 0 1px rgba(255,255,255,0.22), 0 1px 4px rgba(0,0,0,0.12)'
-                : 'none',
-            color: item.key === current ? activeColor : inactiveColor,
-            fontSize: '0.8125rem',
-            fontWeight: item.key === current ? 600 : 500,
-            letterSpacing: '-0.01em',
-            lineHeight: 1,
-            cursor: item.disabled ? 'not-allowed' : 'pointer',
-            opacity: item.disabled ? 0.4 : 1,
-            fontFamily: 'inherit',
-            transition:
-              'background 0.22s cubic-bezier(0.2, 0.9, 0.25, 1.1), color 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease',
-            transform: item.key === current ? 'scale(1)' : 'scale(0.98)',
-            WebkitTapHighlightColor: 'transparent',
-          }"
+          :style="itemStyle(item)"
           @click="select(item.key, item.disabled)"
         >
           <component :is="itemIcon(item)" v-if="item.icon" />
