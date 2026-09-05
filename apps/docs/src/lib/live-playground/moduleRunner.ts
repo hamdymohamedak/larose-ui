@@ -39,7 +39,6 @@ export function evaluateCjs(
     return resolved;
   };
 
-  // eslint-disable-next-line no-new-func -- intentional live-eval sandbox for docs demos
   const runner = new Function(
     'exports',
     'require',
