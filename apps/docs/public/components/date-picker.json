@@ -9,46 +9,53 @@
       "type": "string | null",
       "required": false,
       "default": "null",
-      "inherited": false
+      "inherited": false,
+      "example": "null"
     },
     {
       "name": "hint",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "inputSize",
       "type": "Size",
       "required": false,
       "default": "'md'",
-      "inherited": false
+      "inherited": false,
+      "example": "'md'"
     },
     {
       "name": "label",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "loading",
       "type": "boolean",
       "required": false,
       "default": "false",
-      "inherited": false
+      "inherited": false,
+      "example": "false"
     },
     {
       "name": "state",
       "type": "UIState",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "value",
       "type": "string",
       "required": false,
       "default": "''",
-      "inherited": false
+      "inherited": false,
+      "example": "''"
     }
   ],
   "examples": [

@@ -9,40 +9,46 @@
       "type": "string",
       "required": false,
       "default": "'image/*'",
-      "inherited": false
+      "inherited": false,
+      "example": "'image/*'"
     },
     {
       "name": "disabled",
       "type": "boolean",
       "required": false,
       "default": "false",
-      "inherited": false
+      "inherited": false,
+      "example": "false"
     },
     {
       "name": "label",
       "type": "string",
       "required": false,
       "default": "'Image'",
-      "inherited": false
+      "inherited": false,
+      "example": "'Image'"
     },
     {
       "name": "onImageChange",
       "type": "(file: File | null, previewUrl: string | null) => void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "placeholder",
       "type": "string",
       "required": false,
       "default": "'Drop an image",
-      "inherited": false
+      "inherited": false,
+      "example": "'Drop an image"
     },
     {
       "name": "src",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     }
   ],
   "examples": [],

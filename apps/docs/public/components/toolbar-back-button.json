@@ -9,13 +9,15 @@
       "type": "string",
       "required": false,
       "description": "visionOS reveals label on look — optional visible companion text.",
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "disabled",
       "type": "boolean",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     }
   ],
   "examples": [],

@@ -8,56 +8,65 @@
       "name": "actions",
       "type": "QuickActionItem[]",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "appName",
       "type": "string",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "icon",
       "type": "ReactNode",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "iconPlacement",
       "type": "QuickActionIconPlacement",
       "required": false,
       "description": "Icon appears on leading or trailing edge depending on Home Screen position.",
-      "inherited": false
+      "inherited": false,
+      "example": "\"md\""
     },
     {
       "name": "includeSystemActions",
       "type": "boolean",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "onActionSelect",
       "type": "(action: QuickActionItem) => void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "onOpenChange",
       "type": "(open: boolean) => void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "open",
       "type": "boolean",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "systemActions",
       "type": "QuickActionItem[]",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     }
   ],
   "examples": [

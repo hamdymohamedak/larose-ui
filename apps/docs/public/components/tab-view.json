@@ -8,47 +8,54 @@
       "name": "'aria-label'",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "defaultValue",
       "type": "string",
       "required": false,
       "default": "''",
-      "inherited": false
+      "inherited": false,
+      "example": "''"
     },
     {
       "name": "inset",
       "type": "boolean",
       "required": false,
       "default": "true",
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "onValueChange",
       "type": "(value: string) => void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "showTabs",
       "type": "boolean",
       "required": false,
       "default": "true",
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "value",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "variant",
       "type": "TabViewVariant",
       "required": false,
       "default": "'bordered'",
-      "inherited": false
+      "inherited": false,
+      "example": "'bordered'"
     }
   ],
   "examples": [

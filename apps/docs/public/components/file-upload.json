@@ -8,53 +8,61 @@
       "name": "accept",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "buttonLabel",
       "type": "string",
       "required": false,
       "default": "'Choose files or drag here'",
-      "inherited": false
+      "inherited": false,
+      "example": "'Choose files or drag here'"
     },
     {
       "name": "disabled",
       "type": "boolean",
       "required": false,
       "default": "false",
-      "inherited": false
+      "inherited": false,
+      "example": "false"
     },
     {
       "name": "error",
       "type": "string | null",
       "required": false,
       "default": "null",
-      "inherited": false
+      "inherited": false,
+      "example": "null"
     },
     {
       "name": "hint",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "label",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "multiple",
       "type": "boolean",
       "required": false,
       "default": "false",
-      "inherited": false
+      "inherited": false,
+      "example": "false"
     },
     {
       "name": "onFilesChange",
       "type": "(files: File[]) => void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     }
   ],
   "examples": [

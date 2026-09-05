@@ -8,27 +8,31 @@
       "name": "'aria-label'",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "largeTitle",
       "type": "boolean",
       "required": false,
       "description": "iOS large title that collapses when scrolling.",
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "placement",
       "type": "ToolbarPlacement",
       "required": false,
       "description": "visionOS and watchOS placement.",
-      "inherited": false
+      "inherited": false,
+      "example": "\"md\""
     },
     {
       "name": "platform",
       "type": "ToolbarPlatform",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     }
   ],
   "examples": [

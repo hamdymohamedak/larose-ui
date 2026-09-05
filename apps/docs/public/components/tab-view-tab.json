@@ -8,19 +8,22 @@
       "name": "disabled",
       "type": "boolean",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "label",
       "type": "string",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "value",
       "type": "string",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     }
   ],
   "examples": [],

@@ -8,7 +8,8 @@
       "name": "disabled",
       "type": "boolean",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     }
   ],
   "examples": [],

@@ -8,13 +8,15 @@
       "name": "as",
       "type": "ElementType",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "muted",
       "type": "boolean",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     }
   ],
   "examples": [

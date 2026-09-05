@@ -8,37 +8,43 @@
       "name": "ariaLabel",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "columns",
       "type": "number",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "0"
     },
     {
       "name": "items",
       "type": "CollectionItem[]",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "layout",
       "type": "CollectionLayout",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "onSelect",
       "type": "(item: CollectionItem) => void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "selectedId",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     }
   ],
   "examples": [

@@ -9,97 +9,112 @@
       "type": "ButtonRole",
       "required": false,
       "description": "Apple HIG semantic role — affects appearance in alerts and sheets.",
-      "inherited": false
+      "inherited": false,
+      "example": "\"md\""
     },
     {
       "name": "error",
       "type": "string | null",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "flexible",
       "type": "boolean",
       "required": false,
       "description": "macOS flexible-height push button for multi-line content.",
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "fullWidth",
       "type": "boolean",
       "required": false,
       "description": "watchOS-style full-width primary actions.",
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "iconOnly",
       "type": "boolean",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "leftIcon",
       "type": "ReactNode",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "loading",
       "type": "boolean",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "loadingLabel",
       "type": "string",
       "required": false,
       "description": "Alternative label shown while loading (Apple HIG activity indicator pattern).",
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "opensAnotherView",
       "type": "boolean",
       "required": false,
       "description": "macOS: append trailing ellipsis when the button opens another view.",
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "rightIcon",
       "type": "ReactNode",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "shape",
       "type": "ButtonShape",
       "required": false,
       "description": "Capsule (default), circle (icon-only), or roundedRect (vertical stacks).",
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "size",
       "type": "Size",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"md\""
     },
     {
       "name": "state",
       "type": "UIState",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "tooltip",
       "type": "string",
       "required": false,
       "description": "macOS / visionOS hover tooltip.",
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "variant",
       "type": "Variant",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"md\""
     }
   ],
   "examples": [

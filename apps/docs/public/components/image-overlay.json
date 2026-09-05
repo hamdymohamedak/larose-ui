@@ -8,7 +8,8 @@
       "name": "overlay",
       "type": "ReactNode",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     }
   ],
   "examples": [],

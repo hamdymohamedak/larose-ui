@@ -21,6 +21,7 @@ export interface DocsComponentEntry {
   name: string;
   category: string;
   package?: 'react';
+  frameworks: Array<'react' | 'vue' | 'svelte'>;
 }
 
 export interface DocsGuideEntry {
@@ -1470,817 +1471,1495 @@ export const docsComponents: DocsComponentEntry[] = [
     "id": "accelerator-provider",
     "name": "AcceleratorProvider",
     "category": "Other",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "accordion",
     "name": "Accordion",
     "category": "Content",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "accordion-content",
     "name": "AccordionContent",
     "category": "Content",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "accordion-item",
     "name": "AccordionItem",
     "category": "Content",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "accordion-trigger",
     "name": "AccordionTrigger",
     "category": "Content",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "activity-share-button",
     "name": "ActivityShareButton",
     "category": "Actions",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "activity-view",
     "name": "ActivityView",
     "category": "Sharing",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "alert",
     "name": "Alert",
     "category": "Feedback",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "alert-dialog",
     "name": "AlertDialog",
     "category": "Feedback",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "async-button",
     "name": "AsyncButton",
     "category": "Actions",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "badge",
     "name": "Badge",
     "category": "Feedback",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "box",
     "name": "Box",
     "category": "Layout",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "breadcrumb",
     "name": "Breadcrumb",
     "category": "Navigation",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "button",
     "name": "Button",
     "category": "Actions",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "button-group",
     "name": "ButtonGroup",
     "category": "Actions",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "calendar-grid",
     "name": "CalendarGrid",
     "category": "Forms",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "caption-button",
     "name": "CaptionButton",
     "category": "Other",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "card",
     "name": "Card",
     "category": "Layout",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "chart",
     "name": "Chart",
     "category": "Data",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "checkbox",
     "name": "Checkbox",
     "category": "Forms",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "collaboration-button",
     "name": "CollaborationButton",
     "category": "Actions",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "collaboration-popover",
     "name": "CollaborationPopover",
     "category": "Sharing",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "collection",
     "name": "Collection",
     "category": "Layout",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "column-view",
     "name": "ColumnView",
     "category": "Layout",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "command-palette",
     "name": "CommandPalette",
     "category": "Overlay",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "context-menu",
     "name": "ContextMenu",
     "category": "Overlay",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "data-table",
     "name": "DataTable",
     "category": "Data",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "date-picker",
     "name": "DatePicker",
     "category": "Forms",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "date-range-picker",
     "name": "DateRangePicker",
     "category": "Forms",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "date-time-picker",
     "name": "DateTimePicker",
     "category": "Forms",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "dialog",
     "name": "Dialog",
     "category": "Overlay",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "disclosure-button",
     "name": "DisclosureButton",
     "category": "Content",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "disclosure-group",
     "name": "DisclosureGroup",
     "category": "Content",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "disclosure-list",
     "name": "DisclosureList",
     "category": "Content",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "disclosure-triangle",
     "name": "DisclosureTriangle",
     "category": "Content",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "dock-bar",
     "name": "DockBar",
     "category": "Navigation",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "dock-menu",
     "name": "DockMenu",
     "category": "Navigation",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "document-launcher",
     "name": "DocumentLauncher",
     "category": "Files",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "document-toolbar",
     "name": "DocumentToolbar",
     "category": "Files",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "drag-drop-list",
     "name": "DragDropList",
     "category": "DragDrop",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "draggable",
     "name": "Draggable",
     "category": "DragDrop",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "drawer",
     "name": "Drawer",
     "category": "Overlay",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "drop-zone",
     "name": "DropZone",
     "category": "DragDrop",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "edit-menu",
     "name": "EditMenu",
     "category": "Navigation",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "edit-menu-selection",
     "name": "EditMenuSelection",
     "category": "Other",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "empty-state",
     "name": "EmptyState",
     "category": "Feedback",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "file-browser",
     "name": "FileBrowser",
     "category": "Files",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "file-preview",
     "name": "FilePreview",
     "category": "Files",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "file-upload",
     "name": "FileUpload",
     "category": "Forms",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "header",
     "name": "Header",
     "category": "Navigation",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "header-actions",
     "name": "HeaderActions",
     "category": "Other",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "header-brand",
     "name": "HeaderBrand",
     "category": "Other",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "header-title",
     "name": "HeaderTitle",
     "category": "Other",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "help-button",
     "name": "HelpButton",
     "category": "Actions",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "home-screen-quick-actions",
     "name": "HomeScreenQuickActions",
     "category": "Platform",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "image-button",
     "name": "ImageButton",
     "category": "Content",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "image-overlay",
     "name": "ImageOverlay",
     "category": "Content",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "image-view",
     "name": "ImageView",
     "category": "Content",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "image-well",
     "name": "ImageWell",
     "category": "Content",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "input",
     "name": "Input",
     "category": "Forms",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "label",
     "name": "Label",
     "category": "Content",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "liquid-glass",
     "name": "LiquidGlass",
     "category": "Glass",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "liquid-glass-button",
     "name": "LiquidGlassButton",
     "category": "Glass",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "liquid-glass-checkbox",
     "name": "LiquidGlassCheckbox",
     "category": "Glass",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "liquid-glass-progress",
     "name": "LiquidGlassProgress",
     "category": "Glass",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "liquid-glass-range",
     "name": "LiquidGlassRange",
     "category": "Glass",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "liquid-glass-switch",
     "name": "LiquidGlassSwitch",
     "category": "Glass",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "liquid-glass-tab-bar",
     "name": "LiquidGlassTabBar",
     "category": "Glass",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "liquid-glass-top-bar",
     "name": "LiquidGlassTopBar",
     "category": "Glass",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "list",
     "name": "List",
     "category": "Data",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "list-row",
     "name": "ListRow",
     "category": "Data",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "list-section",
     "name": "ListSection",
     "category": "Data",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "lockup",
     "name": "Lockup",
     "category": "Layout",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "lockup-card",
     "name": "LockupCard",
     "category": "Other",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "lockup-row",
     "name": "LockupRow",
     "category": "Other",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "menu",
     "name": "Menu",
     "category": "Navigation",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "menu-bar",
     "name": "MenuBar",
     "category": "Navigation",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "menu-bar-extra",
     "name": "MenuBarExtra",
     "category": "Navigation",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "mnemonic-label",
     "name": "MnemonicLabel",
     "category": "Other",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "modal",
     "name": "Modal",
     "category": "Overlay",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "monogram",
     "name": "Monogram",
     "category": "Other",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "more-pull-down-button",
     "name": "MorePullDownButton",
     "category": "Navigation",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "ornament",
     "name": "Ornament",
     "category": "Layout",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "ornament-button",
     "name": "OrnamentButton",
     "category": "Layout",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "ornament-window",
     "name": "OrnamentWindow",
     "category": "Layout",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "outline-view",
     "name": "OutlineView",
     "category": "Data",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "outline-view-toolbar",
     "name": "OutlineViewToolbar",
     "category": "Data",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "pagination",
     "name": "Pagination",
     "category": "Navigation",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "path-control",
     "name": "PathControl",
     "category": "Navigation",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "picker",
     "name": "Picker",
     "category": "Forms",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "popover",
     "name": "Popover",
     "category": "Overlay",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "pop-up-button",
     "name": "PopUpButton",
     "category": "Navigation",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "poster",
     "name": "Poster",
     "category": "Other",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "progress",
     "name": "Progress",
     "category": "Feedback",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "pull-down-button",
     "name": "PullDownButton",
     "category": "Navigation",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "radio",
     "name": "Radio",
     "category": "Forms",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "secure-field",
     "name": "SecureField",
     "category": "Forms",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "select",
     "name": "Select",
     "category": "Forms",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "skeleton",
     "name": "Skeleton",
     "category": "Feedback",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "spinner",
     "name": "Spinner",
     "category": "Feedback",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "split-view",
     "name": "SplitView",
     "category": "Layout",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "split-view-pane",
     "name": "SplitViewPane",
     "category": "Layout",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "split-view-toolbar",
     "name": "SplitViewToolbar",
     "category": "Layout",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "square-button",
     "name": "SquareButton",
     "category": "Actions",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "switch",
     "name": "Switch",
     "category": "Forms",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "table",
     "name": "Table",
     "category": "Data",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "tabs",
     "name": "Tabs",
     "category": "Navigation",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "tabs-list",
     "name": "TabsList",
     "category": "Navigation",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "tabs-panel",
     "name": "TabsPanel",
     "category": "Navigation",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "tabs-trigger",
     "name": "TabsTrigger",
     "category": "Navigation",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "tab-view",
     "name": "TabView",
     "category": "Navigation",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "tab-view-list",
     "name": "TabViewList",
     "category": "Navigation",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "tab-view-panel",
     "name": "TabViewPanel",
     "category": "Navigation",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "tab-view-tab",
     "name": "TabViewTab",
     "category": "Navigation",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "textarea",
     "name": "Textarea",
     "category": "Forms",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "text-view",
     "name": "TextView",
     "category": "Content",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "theme-customization-context",
     "name": "ThemeCustomizationContext",
     "category": "Other",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react"
+    ]
   },
   {
     "id": "time-picker",
     "name": "TimePicker",
     "category": "Forms",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "token-field",
     "name": "TokenField",
     "category": "Forms",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "toolbar",
     "name": "Toolbar",
     "category": "Toolbar",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "toolbar-back-button",
     "name": "ToolbarBackButton",
     "category": "Toolbar",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "toolbar-close-button",
     "name": "ToolbarCloseButton",
     "category": "Toolbar",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "toolbar-document-menu",
     "name": "ToolbarDocumentMenu",
     "category": "Toolbar",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "toolbar-fixed-space",
     "name": "ToolbarFixedSpace",
     "category": "Toolbar",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "toolbar-group",
     "name": "ToolbarGroup",
     "category": "Toolbar",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "toolbar-item",
     "name": "ToolbarItem",
     "category": "Toolbar",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "toolbar-more-button",
     "name": "ToolbarMoreButton",
     "category": "Toolbar",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "toolbar-prominent-button",
     "name": "ToolbarProminentButton",
     "category": "Toolbar",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "toolbar-search",
     "name": "ToolbarSearch",
     "category": "Toolbar",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "toolbar-section",
     "name": "ToolbarSection",
     "category": "Toolbar",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "toolbar-title",
     "name": "ToolbarTitle",
     "category": "Toolbar",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "tooltip",
     "name": "Tooltip",
     "category": "Feedback",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "typography",
     "name": "Typography",
     "category": "Content",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "unsaved-indicator",
     "name": "UnsavedIndicator",
     "category": "Files",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "wheel-column",
     "name": "WheelColumn",
     "category": "Forms",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   },
   {
     "id": "wheel-picker",
     "name": "WheelPicker",
     "category": "Forms",
-    "package": "react"
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
   }
 ];
 

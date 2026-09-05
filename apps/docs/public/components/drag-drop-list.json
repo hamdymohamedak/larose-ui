@@ -8,26 +8,30 @@
       "name": "items",
       "type": "DragDropListItem[]",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "onReorder",
       "type": "(items: DragDropListItem[]) => void",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "renderItem",
       "type": "(item: DragDropListItem) => ReactNode",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "zoneId",
       "type": "string",
       "required": false,
       "default": "'list'",
-      "inherited": false
+      "inherited": false,
+      "example": "'list'"
     }
   ],
   "examples": [],

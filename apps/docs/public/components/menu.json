@@ -8,72 +8,83 @@
       "name": "dimBackground",
       "type": "boolean",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "enableMnemonics",
       "type": "boolean",
       "required": false,
       "description": "Enable Alt+key mnemonics while open. Defaults to true.",
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "enableShortcuts",
       "type": "boolean",
       "required": false,
       "description": "When true, keyboard shortcuts activate menu items while open. Defaults to true.",
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "enableTypeAhead",
       "type": "boolean",
       "required": false,
       "description": "Enable type-ahead letter matching while open. Defaults to true.",
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "entries",
       "type": "MenuEntry[]",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "layout",
       "type": "MenuLayout",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "mnemonicVisible",
       "type": "boolean",
       "required": false,
       "description": "When true, underline mnemonic access keys in labels.",
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "onEntrySelect",
       "type": "(entry: MenuItemConfig) => boolean | void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "onOpenChange",
       "type": "(open: boolean) => void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "open",
       "type": "boolean",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "optionKey",
       "type": "boolean",
       "required": false,
       "description": "Passed from MenuBar for Option-key alternate accelerators.",
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     }
   ],
   "examples": [

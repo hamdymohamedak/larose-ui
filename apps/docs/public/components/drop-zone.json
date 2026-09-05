@@ -8,47 +8,54 @@
       "name": "accepts",
       "type": "string | string[]",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "canDrop",
       "type": "(items: DragItem<T>[]) => boolean",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "disabled",
       "type": "boolean",
       "required": false,
       "default": "false",
-      "inherited": false
+      "inherited": false,
+      "example": "false"
     },
     {
       "name": "onDrop",
       "type": "(result: DropResult<T>) => void | Promise<void>",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "showInvalidIndicator",
       "type": "boolean",
       "required": false,
       "default": "true",
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "transferring",
       "type": "boolean",
       "required": false,
       "default": "false",
-      "inherited": false
+      "inherited": false,
+      "example": "false"
     },
     {
       "name": "transferringLabel",
       "type": "string",
       "required": false,
       "default": "'Transferring…'",
-      "inherited": false
+      "inherited": false,
+      "example": "'Transferring…'"
     }
   ],
   "examples": [],

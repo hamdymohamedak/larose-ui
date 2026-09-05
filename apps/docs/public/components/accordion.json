@@ -9,33 +9,38 @@
       "type": "boolean",
       "required": false,
       "default": "false",
-      "inherited": false
+      "inherited": false,
+      "example": "false"
     },
     {
       "name": "defaultValue",
       "type": "string[]",
       "required": false,
       "default": "[]",
-      "inherited": false
+      "inherited": false,
+      "example": "[]"
     },
     {
       "name": "onValueChange",
       "type": "(value: string[]) => void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "type",
       "type": "'single' | 'multiple'",
       "required": false,
       "default": "== 'single') {",
-      "inherited": false
+      "inherited": false,
+      "example": "== 'single') {"
     },
     {
       "name": "value",
       "type": "string[]",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     }
   ],
   "examples": [

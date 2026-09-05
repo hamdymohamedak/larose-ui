@@ -8,85 +8,98 @@
       "name": "appName",
       "type": "string",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "appSpecificMenus",
       "type": "MenuBarMenuConfig[]",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "enableGlobalShortcuts",
       "type": "boolean",
       "required": false,
       "description": "Register top-level menu accelerators globally. Defaults to true.",
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "enableMnemonics",
       "type": "boolean",
       "required": false,
       "description": "Enable Alt+key mnemonics on Windows/Linux. Defaults to true on non-macOS.",
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "enableTypeAhead",
       "type": "boolean",
       "required": false,
       "description": "Enable type-ahead letter matching in open menus. Defaults to true.",
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "extras",
       "type": "MenuBarExtraConfig[]",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "menus",
       "type": "MenuBarMenuConfig[]",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "onMenuAction",
       "type": "(menuId: string, entryId: string) => void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "onRevealChange",
       "type": "(revealed: boolean) => void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "platform",
       "type": "MenuBarPlatform",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "revealed",
       "type": "boolean",
       "required": false,
       "description": "iPadOS: bar hidden until revealed at the top edge.",
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "showAppleMenu",
       "type": "boolean",
       "required": false,
       "description": "macOS: show a read-only Apple menu stub (system-provided on real macOS).",
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "standardOptions",
       "type": "StandardMenuBarOptions",
       "required": false,
       "description": "Used when `menus` is omitted to build the standard HIG menu set.",
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     }
   ],
   "examples": [

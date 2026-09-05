@@ -8,49 +8,57 @@
       "name": "cancelLabel",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "confirmLabel",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "description",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "loading",
       "type": "boolean",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "onClose",
       "type": "() => void",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "onConfirm",
       "type": "() => void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "open",
       "type": "boolean",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "variant",
       "type": "'default' | 'destructive'",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"default\""
     }
   ],
   "examples": [

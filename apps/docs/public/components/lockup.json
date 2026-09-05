@@ -8,31 +8,36 @@
       "name": "'aria-label'",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "axis",
       "type": "LockupAxis",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "focused",
       "type": "boolean",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "footer",
       "type": "ReactNode",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "header",
       "type": "ReactNode",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     }
   ],
   "examples": [

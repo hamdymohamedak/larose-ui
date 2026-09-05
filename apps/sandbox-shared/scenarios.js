@@ -46,6 +46,11 @@ export const SCENARIOS = [
     description:
       'Surface, button, switch, checkbox, range, progress, top bar, and tab bar on a refraction backdrop.',
   },
+  {
+    id: 'card',
+    title: 'Card',
+    description: 'Card component with title, description, and content.',
+  },
 ];
 
 /** Ports used by Playwright and docs — keep in sync with each sandbox vite.config. */

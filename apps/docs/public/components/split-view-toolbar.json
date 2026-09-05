@@ -9,7 +9,8 @@
       "type": "ReactNode",
       "required": false,
       "description": "Optional actions rendered before pane restore buttons.",
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     }
   ],
   "examples": [],

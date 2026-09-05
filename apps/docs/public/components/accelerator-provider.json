@@ -8,7 +8,8 @@
       "name": "platform",
       "type": "AcceleratorPlatform",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     }
   ],
   "examples": [],

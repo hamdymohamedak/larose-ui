@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref, type Component } from 'vue';
+import { computed, ref, type Component, type CSSProperties } from 'vue';
 import { LIQUID_GLASS_PRESETS } from '../engine/defaults';
 import type { LiquidGlassChromeProps, LiquidGlassOptics, LiquidGlassTabItem } from '../engine/types';
 import LiquidGlass from '../core/LiquidGlass.vue';
@@ -95,6 +95,89 @@ function select(key: string, disabled?: boolean) {
 function itemIcon(item: LiquidGlassTabItem): Component | undefined {
   return item.icon as Component | undefined;
 }
+
+const indicatorStyle = computed((): CSSProperties =>
+  normalizeGlassStyle({
+    position: 'absolute',
+    top: props.indicatorPadding,
+    bottom: props.indicatorPadding,
+    left: props.indicatorPadding,
+    width: indicatorWidth.value,
+    borderRadius: 999,
+    background: props.indicatorBackground,
+    boxShadow: `inset 0 0 0 1px ${props.indicatorBorderColor}`,
+    transition: 'transform 0.42s cubic-bezier(0.2, 0.9, 0.25, 1.15)',
+    transform: indicatorTranslate.value,
+    pointerEvents: 'none',
+  }),
+);
+
+function tabButtonStyle(item: LiquidGlassTabItem): CSSProperties {
+  const active = item.key === current.value;
+  return normalizeGlassStyle({
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: item.label ? 3 : 0,
+    background: 'none',
+    border: 'none',
+    appearance: 'none',
+    WebkitAppearance: 'none',
+    color: active ? props.activeColor : props.inactiveColor,
+    padding: 0,
+    cursor: item.disabled ? 'not-allowed' : 'pointer',
+    WebkitTapHighlightColor: 'transparent',
+    opacity: item.disabled ? 0.4 : 1,
+    position: 'relative',
+    transition: 'color 0.28s ease',
+    fontFamily: 'inherit',
+  });
+}
+
+function iconWrapStyle(item: LiquidGlassTabItem): CSSProperties {
+  const active = item.key === current.value;
+  return normalizeGlassStyle({
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 24,
+    height: 24,
+    transition: 'transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
+    transform: active ? 'translateY(-1px) scale(1.08)' : 'none',
+  });
+}
+
+function labelStyle(item: LiquidGlassTabItem): CSSProperties {
+  return normalizeGlassStyle({
+    fontSize: 10,
+    fontWeight: item.key === current.value ? 600 : 500,
+    letterSpacing: '0.01em',
+    lineHeight: 1,
+  });
+}
+
+const badgeStyle = computed((): CSSProperties =>
+  normalizeGlassStyle({
+    position: 'absolute',
+    top: '14%',
+    right: '20%',
+    minWidth: 16,
+    height: 16,
+    borderRadius: 999,
+    background: '#ff3b30',
+    color: '#fff',
+    fontSize: 9.5,
+    fontWeight: 700,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: '0 4px',
+    lineHeight: 1,
+    pointerEvents: 'none',
+  }),
+);
 </script>
 
 <template>
@@ -127,19 +210,7 @@ function itemIcon(item: LiquidGlassTabItem): Component | undefined {
       <div
         v-if="showIndicator && activeIndex >= 0"
         aria-hidden="true"
-        :style="{
-          position: 'absolute',
-          top: `${indicatorPadding}px`,
-          bottom: `${indicatorPadding}px`,
-          left: `${indicatorPadding}px`,
-          width: indicatorWidth,
-          borderRadius: 999,
-          background: indicatorBackground,
-          boxShadow: `inset 0 0 0 1px ${indicatorBorderColor}`,
-          transition: 'transform 0.42s cubic-bezier(0.2, 0.9, 0.25, 1.15)',
-          transform: indicatorTranslate,
-          pointerEvents: 'none',
-        }"
+        :style="indicatorStyle"
       />
 
       <div role="tablist" style="display: flex; width: 100%; height: 100%">
@@ -151,73 +222,21 @@ function itemIcon(item: LiquidGlassTabItem): Component | undefined {
           :aria-selected="item.key === current"
           :aria-label="item.ariaLabel ?? item.label ?? item.key"
           :disabled="item.disabled"
-          :style="{
-            flex: 1,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: item.label ? '3px' : 0,
-            background: 'none',
-            border: 'none',
-            color: item.key === current ? activeColor : inactiveColor,
-            padding: 0,
-            cursor: item.disabled ? 'not-allowed' : 'pointer',
-            WebkitTapHighlightColor: 'transparent',
-            opacity: item.disabled ? 0.4 : 1,
-            position: 'relative',
-            transition: 'color 0.28s ease',
-            fontFamily: 'inherit',
-          }"
+          :style="tabButtonStyle(item)"
           @click="select(item.key, item.disabled)"
         >
-          <span
-            :style="{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: '24px',
-              height: '24px',
-              transition: 'transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
-              transform: item.key === current ? 'translateY(-1px) scale(1.08)' : 'none',
-            }"
-          >
+          <span :style="iconWrapStyle(item)">
             <slot name="icon" :item="item" :active="item.key === current">
               <component :is="itemIcon(item)" v-if="item.icon" />
             </slot>
           </span>
-          <span
-            v-if="item.label != null"
-            :style="{
-              fontSize: '10px',
-              fontWeight: item.key === current ? 600 : 500,
-              letterSpacing: '0.01em',
-              lineHeight: 1,
-            }"
-          >
+          <span v-if="item.label != null" :style="labelStyle(item)">
             {{ item.label }}
           </span>
           <span
             v-if="item.badge !== undefined"
             :aria-label="`${item.badge} notifications`"
-            :style="{
-              position: 'absolute',
-              top: '14%',
-              right: '20%',
-              minWidth: '16px',
-              height: '16px',
-              borderRadius: 999,
-              background: '#ff3b30',
-              color: '#fff',
-              fontSize: '9.5px',
-              fontWeight: 700,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              padding: '0 4px',
-              lineHeight: 1,
-              pointerEvents: 'none',
-            }"
+            :style="badgeStyle"
           >
             {{ item.badge }}
           </span>

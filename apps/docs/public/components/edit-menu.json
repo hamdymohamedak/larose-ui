@@ -8,76 +8,88 @@
       "name": "context",
       "type": "EditMenuContext",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "customActions",
       "type": "EditMenuItemConfig[]",
       "required": false,
       "description": "Custom commands listed near related system-provided ones.",
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "dimBackground",
       "type": "boolean",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "includeStandardActions",
       "type": "boolean",
       "required": false,
       "description": "Include standard Cut, Copy, Paste, etc. Defaults to true.",
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "inputMode",
       "type": "EditMenuInputMode",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "longPress",
       "type": "boolean",
       "required": false,
       "description": "Touch-and-hold / long-press to reveal compact edit menu.",
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "onAction",
       "type": "(actionId: string) => void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "onOpenChange",
       "type": "(open: boolean) => void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "onStandardAction",
       "type": "(actionId: StandardEditActionId) => void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "open",
       "type": "boolean",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "placement",
       "type": "'above' | 'below' | 'auto'",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"above\""
     },
     {
       "name": "variant",
       "type": "EditMenuVariant",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"md\""
     }
   ],
   "examples": [

@@ -8,70 +8,81 @@
       "name": "acceptTypes",
       "type": "string[]",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "activeTab",
       "type": "FileBrowserTab",
       "required": false,
       "default": "'recents'",
-      "inherited": false
+      "inherited": false,
+      "example": "'recents'"
     },
     {
       "name": "emptyLabel",
       "type": "string",
       "required": false,
       "default": "'No documents in this location.'",
-      "inherited": false
+      "inherited": false,
+      "example": "'No documents in this location.'"
     },
     {
       "name": "files",
       "type": "FileBrowserItem[]",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "onOpen",
       "type": "(file: FileBrowserItem) => void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "onSelect",
       "type": "(file: FileBrowserItem) => void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "onShowExtensionsChange",
       "type": "(show: boolean) => void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "onTabChange",
       "type": "(tab: FileBrowserTab) => void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "selectedId",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "showExtensions",
       "type": "boolean",
       "required": false,
       "default": "false",
-      "inherited": false
+      "inherited": false,
+      "example": "false"
     },
     {
       "name": "toolbar",
       "type": "ReactNode",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     }
   ],
   "examples": [

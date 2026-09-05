@@ -9,26 +9,30 @@
       "type": "string",
       "required": false,
       "default": "'Column view'",
-      "inherited": false
+      "inherited": false,
+      "example": "'Column view'"
     },
     {
       "name": "data",
       "type": "ColumnViewNode[]",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "initialPath",
       "type": "string[]",
       "required": false,
       "default": "[]",
-      "inherited": false
+      "inherited": false,
+      "example": "[]"
     },
     {
       "name": "onPathChange",
       "type": "(path: string[]) => void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     }
   ],
   "examples": [

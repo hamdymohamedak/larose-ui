@@ -9,45 +9,52 @@
       "type": "boolean",
       "required": false,
       "default": "true",
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "enableTypeAhead",
       "type": "boolean",
       "required": false,
       "default": "true",
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "isOpen",
       "type": "boolean",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "mnemonicVisible",
       "type": "boolean",
       "required": false,
       "default": "false",
-      "inherited": false
+      "inherited": false,
+      "example": "false"
     },
     {
       "name": "onAction",
       "type": "(entry: MenuItemConfig) => void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "onOpenChange",
       "type": "(open: boolean) => void",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "optionKey",
       "type": "boolean",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     }
   ],
   "examples": [],

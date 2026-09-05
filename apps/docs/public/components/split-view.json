@@ -8,39 +8,45 @@
       "name": "'aria-label'",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "compactMode",
       "type": "SplitCompactMode",
       "required": false,
       "default": "'side-by-side'",
-      "inherited": false
+      "inherited": false,
+      "example": "'side-by-side'"
     },
     {
       "name": "onSizesChange",
       "type": "(sizes: number[]) => void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "orientation",
       "type": "SplitOrientation",
       "required": false,
       "default": "'horizontal'",
-      "inherited": false
+      "inherited": false,
+      "example": "'horizontal'"
     },
     {
       "name": "storageKey",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "toolbar",
       "type": "ReactNode",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     }
   ],
   "examples": [

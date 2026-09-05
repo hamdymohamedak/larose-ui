@@ -8,56 +8,65 @@
       "name": "'aria-label'",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "defaultTokens",
       "type": "TokenFieldToken[]",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "delimiters",
       "type": "string[]",
       "required": false,
       "description": "Keys that convert current text into a token (default: comma).",
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "onContextMenuEntries",
       "type": "(token: TokenFieldToken) => MenuEntry[]",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "onTokensChange",
       "type": "(tokens: TokenFieldToken[]) => void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "placeholder",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "suggestionDelayMs",
       "type": "number",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "0"
     },
     {
       "name": "suggestions",
       "type": "TokenFieldToken[]",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "tokens",
       "type": "TokenFieldToken[]",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     }
   ],
   "examples": [

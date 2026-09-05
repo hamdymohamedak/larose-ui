@@ -9,20 +9,23 @@
       "type": "string",
       "required": false,
       "description": "High-level summary for assistive technologies (Apple Audio Graphs pattern).",
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "annotation",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "data",
       "type": "ChartDataPoint[]",
       "required": false,
       "description": "Single-series shorthand.",
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "height",
@@ -30,7 +33,8 @@
       "required": false,
       "default": "220",
       "description": "Plot height in CSS pixels.",
-      "inherited": false
+      "inherited": false,
+      "example": "220"
     },
     {
       "name": "interactive",
@@ -38,7 +42,8 @@
       "required": false,
       "default": "false",
       "description": "Enable plot-area scrubbing with crosshair.",
-      "inherited": false
+      "inherited": false,
+      "example": "false"
     },
     {
       "name": "mark",
@@ -46,26 +51,30 @@
       "required": false,
       "default": "'bar'",
       "description": "Chart mark type — bar, line, or point.",
-      "inherited": false
+      "inherited": false,
+      "example": "'bar'"
     },
     {
       "name": "onPointFocus",
       "type": "(point: ChartDataPoint, seriesId: string, index: number) => void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "series",
       "type": "ChartSeries[]",
       "required": false,
       "description": "One or more data series.",
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "showLegend",
       "type": "boolean",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "showPoints",
@@ -73,7 +82,8 @@
       "required": false,
       "default": "mark === 'line'",
       "description": "Combine line marks with point marks. Default true for line charts.",
-      "inherited": false
+      "inherited": false,
+      "example": "mark === 'line'"
     },
     {
       "name": "stacked",
@@ -81,7 +91,8 @@
       "required": false,
       "default": "false",
       "description": "Stack bar marks when multiple series are present.",
-      "inherited": false
+      "inherited": false,
+      "example": "false"
     },
     {
       "name": "stackGap",
@@ -89,25 +100,29 @@
       "required": false,
       "default": "2",
       "description": "Gap between stacked bar segments (Apple HIG visual separation).",
-      "inherited": false
+      "inherited": false,
+      "example": "2"
     },
     {
       "name": "subtitle",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "xAxis",
       "type": "ChartAxisConfig",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "yAxis",
       "type": "ChartAxisConfig",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "yAxisTrailing",
@@ -115,7 +130,8 @@
       "required": false,
       "default": "false",
       "description": "Y axis on trailing edge (right in LTR) for layout alignment.",
-      "inherited": false
+      "inherited": false,
+      "example": "false"
     }
   ],
   "examples": [

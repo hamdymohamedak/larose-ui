@@ -8,32 +8,37 @@
       "name": "'aria-label'",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "padding",
       "type": "'sm' | 'md' | 'lg'",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"sm\""
     },
     {
       "name": "settingsStyle",
       "type": "boolean",
       "required": false,
       "description": "macOS settings panes append a colon to the title.",
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "titlePosition",
       "type": "BoxTitlePosition",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "variant",
       "type": "BoxVariant",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"md\""
     }
   ],
   "examples": [

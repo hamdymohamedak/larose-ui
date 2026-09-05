@@ -8,32 +8,37 @@
       "name": "activities",
       "type": "ActivityItem[]",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "excludedActivityIds",
       "type": "string[]",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "label",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "onActivitySelect",
       "type": "(activity: ActivityItem) => void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "presentation",
       "type": "'sheet' | 'popover' | 'auto'",
       "required": false,
       "description": "Uses popover on wide viewports and sheet on compact widths when auto.",
-      "inherited": false
+      "inherited": false,
+      "example": "\"sheet\""
     }
   ],
   "examples": [],

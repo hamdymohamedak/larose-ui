@@ -8,47 +8,54 @@
       "name": "'aria-label'",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "defaultExpanded",
       "type": "boolean",
       "required": false,
       "default": "false",
-      "inherited": false
+      "inherited": false,
+      "example": "false"
     },
     {
       "name": "detail",
       "type": "ReactNode",
       "required": false,
       "description": "Content revealed when expanded. Use only one disclosure button per view.",
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "disabled",
       "type": "boolean",
       "required": false,
       "default": "false",
-      "inherited": false
+      "inherited": false,
+      "example": "false"
     },
     {
       "name": "expanded",
       "type": "boolean",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "label",
       "type": "string",
       "required": false,
       "description": "Visible label for the adjacent control region.",
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "onExpandedChange",
       "type": "(expanded: boolean) => void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     }
   ],
   "examples": [],

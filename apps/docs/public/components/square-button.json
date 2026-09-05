@@ -9,7 +9,8 @@
       "type": "ReactNode",
       "required": true,
       "description": "Symbol or icon — square buttons use icons, not text labels.",
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "pressed",
@@ -17,13 +18,15 @@
       "required": false,
       "default": "false",
       "description": "Toggle or pop-up behavior is handled by the parent; appearance only.",
-      "inherited": false
+      "inherited": false,
+      "example": "false"
     },
     {
       "name": "tooltip",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     }
   ],
   "examples": [],

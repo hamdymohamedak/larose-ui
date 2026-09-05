@@ -1,0 +1,5 @@
+{
+  "react": "import { useState } from 'react';\nimport { Button, Dialog } from '@larose-ui/react';\n\nexport default function App() {\n  const [open, setOpen] = useState(true);\n  return (\n    <>\n      <Button onClick={() => setOpen(true)}>Open dialog</Button>\n      <Dialog open={open} onClose={() => setOpen(false)} title=\"Dialog\">\n        <p>Live editable dialog example.</p>\n      </Dialog>\n    </>\n  );\n}\n",
+  "vue": "<script setup lang=\"ts\">\nimport { ref } from 'vue';\nimport { Button, Dialog } from '@larose-ui/vue';\nconst open = ref(true);\n</script>\n\n<template>\n  <Button @click=\"open = true\">Open dialog</Button>\n  <Dialog :open=\"open\" title=\"Dialog\" @close=\"open = false\">\n    <p>Live editable dialog example.</p>\n  </Dialog>\n</template>\n",
+  "svelte": "<script lang=\"ts\">\n  import { Button, Dialog } from '@larose-ui/svelte';\n  let open = $state(true);\n</script>\n\n<Button onclick={() => (open = true)}>Open dialog</Button>\n<Dialog {open} title=\"Dialog\" onclose={() => (open = false)}>\n  <p>Live editable dialog example.</p>\n</Dialog>\n"
+}

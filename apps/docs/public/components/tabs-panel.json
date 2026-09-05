@@ -8,7 +8,8 @@
       "name": "value",
       "type": "string",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     }
   ],
   "examples": [],

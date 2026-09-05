@@ -8,52 +8,60 @@
       "name": "'aria-label'",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "content",
       "type": "ReactNode",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "defaultOpen",
       "type": "boolean",
       "required": false,
       "default": "false",
-      "inherited": false
+      "inherited": false,
+      "example": "false"
     },
     {
       "name": "onOpenChange",
       "type": "(open: boolean) => void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "open",
       "type": "boolean",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "panelClassName",
       "type": "string",
       "required": false,
       "description": "Extra class names for the floating panel element.",
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "side",
       "type": "PopoverSide",
       "required": false,
       "default": "'bottom'",
-      "inherited": false
+      "inherited": false,
+      "example": "'bottom'"
     },
     {
       "name": "trigger",
       "type": "ReactNode",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     }
   ],
   "examples": [

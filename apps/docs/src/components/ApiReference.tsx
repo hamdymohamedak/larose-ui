@@ -1,5 +1,7 @@
 import { Typography } from '@larose-ui/react';
 import type { DocsComponentApi } from '@/data/api.generated';
+import type { DocsFramework } from '@/lib/frameworks';
+import { useDocsFramework } from '@/theme/FrameworkProvider';
 
 interface ApiReferenceProps {
   api: DocsComponentApi;
@@ -7,7 +9,15 @@ interface ApiReferenceProps {
   packageName?: string;
 }
 
-export function ApiReference({ api, componentName, packageName = '@larose-ui/react' }: ApiReferenceProps) {
+function packageForFramework(framework: DocsFramework): string {
+  if (framework === 'vue') return '@larose-ui/vue';
+  if (framework === 'svelte') return '@larose-ui/svelte';
+  return '@larose-ui/react';
+}
+
+export function ApiReference({ api, componentName, packageName }: ApiReferenceProps) {
+  const { framework } = useDocsFramework();
+  const resolvedPackage = packageName ?? packageForFramework(framework);
   const ownProps = api.props.filter((prop) => !prop.inherited);
   const inheritedProps = api.props.filter((prop) => prop.inherited);
 
@@ -15,7 +25,8 @@ export function ApiReference({ api, componentName, packageName = '@larose-ui/rea
     <section id="api" className="docs-api-section">
       <h2>API</h2>
       <p>
-        Extracted from <code>{componentName}Props</code> in <code>{packageName}</code>.
+        Props for <code>{componentName}</code> in <code>{resolvedPackage}</code>
+        {framework !== 'react' ? ' (shared contract; TypeScript sample from React where noted).' : '.'}
       </p>
 
       <PropTable title="Props" rows={ownProps} />
@@ -73,6 +84,7 @@ function PropTable({
             <th>Prop</th>
             <th>Type</th>
             {!compact ? <th>Default</th> : null}
+            {!compact ? <th>Example</th> : null}
             <th>Required</th>
             {!compact ? <th>Description</th> : null}
           </tr>
@@ -88,6 +100,9 @@ function PropTable({
               </td>
               {!compact ? (
                 <td>{row.default ? <code>{row.default}</code> : '—'}</td>
+              ) : null}
+              {!compact ? (
+                <td>{row.example && row.example !== '—' ? <code>{row.example}</code> : '—'}</td>
               ) : null}
               <td>{row.required ? 'Yes' : 'No'}</td>
               {!compact ? <td>{row.description ?? '—'}</td> : null}

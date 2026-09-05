@@ -9,33 +9,38 @@
       "type": "boolean",
       "required": false,
       "default": "false",
-      "inherited": false
+      "inherited": false,
+      "example": "false"
     },
     {
       "name": "disabled",
       "type": "boolean",
       "required": false,
       "default": "false",
-      "inherited": false
+      "inherited": false,
+      "example": "false"
     },
     {
       "name": "expanded",
       "type": "boolean",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "label",
       "type": "string",
       "required": true,
       "description": "Describes what is disclosed, e.g. \"Advanced options\".",
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "onExpandedChange",
       "type": "(expanded: boolean) => void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     }
   ],
   "examples": [],

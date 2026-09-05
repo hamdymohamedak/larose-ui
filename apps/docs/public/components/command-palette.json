@@ -8,39 +8,45 @@
       "name": "'aria-label'",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "emptyMessage",
       "type": "string",
       "required": false,
       "default": "'No commands found'",
-      "inherited": false
+      "inherited": false,
+      "example": "'No commands found'"
     },
     {
       "name": "items",
       "type": "CommandPaletteItem[]",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "onOpenChange",
       "type": "(open: boolean) => void",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "open",
       "type": "boolean",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "placeholder",
       "type": "string",
       "required": false,
       "default": "'Search commands…'",
-      "inherited": false
+      "inherited": false,
+      "example": "'Search commands…'"
     }
   ],
   "examples": [

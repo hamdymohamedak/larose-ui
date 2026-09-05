@@ -8,49 +8,57 @@
       "name": "accessory",
       "type": "ListAccessory",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "disabled",
       "type": "boolean",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "leading",
       "type": "ReactNode",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "onInfo",
       "type": "(event: MouseEvent<HTMLButtonElement>) => void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "onPress",
       "type": "() => void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "selected",
       "type": "boolean",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "subtitle",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "truncate",
       "type": "'end' | 'middle'",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"end\""
     }
   ],
   "examples": [],
