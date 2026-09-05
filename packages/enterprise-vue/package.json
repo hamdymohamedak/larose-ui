@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/enterprise-vue",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Vue 3 enterprise adapter — audit, schema, session, version over enterprise-core",
   "type": "module",
   "main": "./dist/index.js",

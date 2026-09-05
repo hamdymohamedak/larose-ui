@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/forms-vue",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Vue 3 schema-driven forms adapter for laRose UI",
   "type": "module",
   "main": "./dist/index.js",

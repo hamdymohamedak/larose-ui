@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/ai-vue",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Vue 3 AI adapter for laRose UI — AIProvider, SmartTable, SmartForm over ai-core",
   "type": "module",
   "main": "./dist/index.js",

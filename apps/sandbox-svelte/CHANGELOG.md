@@ -1,5 +1,12 @@
 # @larose-ui/sandbox-svelte
 
+## 0.0.2
+
+### Patch Changes
+
+- Updated dependencies [5400097]
+  - @larose-ui/sandbox-shared@0.1.0
+
 ## 0.0.1
 
 ### Patch Changes

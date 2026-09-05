@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/runtime-vue",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Vue 3 runtime adapter — LaRoseProvider (theme, toast, accelerator, network, offline, i18n) over runtime-core",
   "type": "module",
   "main": "./dist/index.js",
@@ -37,7 +37,7 @@
     "@larose-ui/observability-vue": "workspace:*"
   },
   "peerDependencies": {
-    "@larose-ui/vue": ">=0.3.0",
+    "@larose-ui/vue": ">=0.4.0",
     "vue": "^3.5.0"
   },
   "peerDependenciesMeta": {

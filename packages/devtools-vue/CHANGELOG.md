@@ -1,5 +1,11 @@
 # @larose-ui/devtools-vue
 
+## 0.3.1
+
+### Patch Changes
+
+- @larose-ui/runtime-vue@2.0.0
+
 ## 0.3.0
 
 ### Minor Changes
