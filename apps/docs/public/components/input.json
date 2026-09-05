@@ -9,83 +9,96 @@
       "type": "boolean",
       "required": false,
       "description": "Accept plain-text drops into the field.",
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "error",
       "type": "string | null",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "expansionTooltip",
       "type": "boolean",
       "required": false,
       "description": "macOS-style expansion tooltip when truncated text overflows the field.",
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "format",
       "type": "FieldFormat",
       "required": false,
       "description": "Formats numeric values on blur (currency, percent, number).",
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "formatOptions",
       "type": "FormatFieldOptions",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "hint",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "inputSize",
       "type": "Size",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"md\""
     },
     {
       "name": "label",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "loading",
       "type": "boolean",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "required",
       "type": "boolean",
       "required": false,
       "description": "Shows a required indicator and sets the native required attribute.",
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "state",
       "type": "UIState",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "validate",
       "type": "FieldValidator",
       "required": false,
       "description": "Validates on blur or change and surfaces inline feedback immediately.",
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "validateOn",
       "type": "'blur' | 'change'",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"blur\""
     }
   ],
   "examples": [

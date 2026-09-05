@@ -8,38 +8,44 @@
       "name": "checked",
       "type": "boolean",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "defaultChecked",
       "type": "boolean",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "hint",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "label",
       "type": "string",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "onCheckedChange",
       "type": "(checked: boolean) => void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "switchSize",
       "type": "Size",
       "required": false,
       "default": "'md'",
-      "inherited": false
+      "inherited": false,
+      "example": "'md'"
     }
   ],
   "examples": [

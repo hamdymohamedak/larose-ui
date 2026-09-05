@@ -8,13 +8,15 @@
       "name": "rating",
       "type": "number",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "0"
     },
     {
       "name": "review",
       "type": "string",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     }
   ],
   "examples": [],

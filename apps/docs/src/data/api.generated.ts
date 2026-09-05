@@ -5,6 +5,7 @@ export interface DocsPropEntry {
   type: string;
   required: boolean;
   default?: string;
+  example?: string;
   description?: string;
   inherited?: boolean;
 }
@@ -19,16 +20,18 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
   "AcceleratorProvider": {
     "props": [
       {
-        "name": "platform",
-        "type": "AcceleratorPlatform",
-        "required": false,
-        "inherited": false
-      },
-      {
         "name": "children",
         "type": "ReactNode",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
+      },
+      {
+        "name": "platform",
+        "type": "AcceleratorPlatform",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -37,55 +40,63 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
   "Accordion": {
     "props": [
       {
+        "name": "children",
+        "type": "ReactNode",
+        "required": true,
+        "inherited": true,
+        "example": "—"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
         "name": "collapsible",
         "type": "boolean",
         "required": false,
         "default": "false",
-        "inherited": false
+        "inherited": false,
+        "example": "false"
       },
       {
         "name": "defaultValue",
         "type": "string[]",
         "required": false,
         "default": "[]",
-        "inherited": false
+        "inherited": false,
+        "example": "[]"
       },
       {
         "name": "onValueChange",
         "type": "(value: string[]) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "type",
         "type": "'single' | 'multiple'",
         "required": false,
         "default": "== 'single') {",
-        "inherited": false
+        "inherited": false,
+        "example": "== 'single') {"
       },
       {
         "name": "value",
         "type": "string[]",
         "required": false,
-        "inherited": false
-      },
-      {
-        "name": "children",
-        "type": "ReactNode",
-        "required": true,
-        "inherited": true
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
-      },
-      {
-        "name": "style",
-        "type": "CSSProperties",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "—"
       }
     ],
     "events": [
@@ -93,7 +104,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onValueChange",
         "type": "(value: string[]) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": []
@@ -104,19 +116,22 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "children",
         "type": "ReactNode",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -125,34 +140,39 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
   "AccordionItem": {
     "props": [
       {
-        "name": "disabled",
-        "type": "boolean",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "value",
-        "type": "string",
-        "required": true,
-        "inherited": false
-      },
-      {
         "name": "children",
         "type": "ReactNode",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "required": true,
+        "inherited": false,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -164,19 +184,22 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "children",
         "type": "ReactNode",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -188,50 +211,58 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "activities",
         "type": "ActivityItem[]",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "excludedActivityIds",
         "type": "string[]",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "label",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "onActivitySelect",
         "type": "(activity: ActivityItem) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "presentation",
         "type": "'sheet' | 'popover' | 'auto'",
         "required": false,
         "description": "Uses popover on wide viewports and sheet on compact widths when auto.",
-        "inherited": false
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "\"sheet\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "title",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [
@@ -239,7 +270,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onActivitySelect",
         "type": "(activity: ActivityItem) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": []
@@ -250,68 +282,79 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "activities",
         "type": "ActivityItem[]",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "anchorRef",
         "type": "React.RefObject<HTMLElement | null>",
         "required": false,
         "description": "Used for popover positioning when presentation is popover.",
-        "inherited": false
-      },
-      {
-        "name": "excludedActivityIds",
-        "type": "string[]",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "footer",
-        "type": "ReactNode",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "onActivitySelect",
-        "type": "(activity: ActivityItem) => void",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "onClose",
-        "type": "() => void",
-        "required": true,
-        "inherited": false
-      },
-      {
-        "name": "open",
-        "type": "boolean",
-        "required": true,
-        "inherited": false
-      },
-      {
-        "name": "presentation",
-        "type": "ActivityPresentation",
-        "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "excludedActivityIds",
+        "type": "string[]",
+        "required": false,
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "footer",
+        "type": "ReactNode",
+        "required": false,
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "onActivitySelect",
+        "type": "(activity: ActivityItem) => void",
+        "required": false,
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "onClose",
+        "type": "() => void",
+        "required": true,
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "open",
+        "type": "boolean",
+        "required": true,
+        "inherited": false,
+        "example": "true"
+      },
+      {
+        "name": "presentation",
+        "type": "ActivityPresentation",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "title",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [
@@ -319,13 +362,15 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onActivitySelect",
         "type": "(activity: ActivityItem) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onClose",
         "type": "() => void",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": []
@@ -333,40 +378,46 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
   "Alert": {
     "props": [
       {
-        "name": "onDismiss",
-        "type": "() => void",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "variant",
-        "type": "AlertVariant",
-        "required": false,
-        "inherited": false
-      },
-      {
         "name": "children",
         "type": "ReactNode",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "onDismiss",
+        "type": "() => void",
+        "required": false,
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "title",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "variant",
+        "type": "AlertVariant",
+        "required": false,
+        "inherited": false,
+        "example": "\"md\""
       }
     ],
     "events": [
@@ -374,7 +425,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onDismiss",
         "type": "() => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": [
@@ -387,93 +439,108 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "accessory",
         "type": "ReactNode",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "actions",
         "type": "AlertDialogAction[]",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "defaultActionId",
         "type": "string",
         "required": false,
         "description": "When unset, no button receives default keyboard focus styling.",
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "helpUrl",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "icon",
         "type": "ReactNode",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "message",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "onOpenChange",
         "type": "(open: boolean) => void",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "open",
         "type": "boolean",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "presentation",
         "type": "AlertDialogPresentation",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "showCautionIcon",
         "type": "boolean",
         "required": false,
         "description": "Use sparingly for unexpected data loss.",
-        "inherited": false
-      },
-      {
-        "name": "suppression",
-        "type": "AlertDialogSuppression",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "textField",
-        "type": "AlertDialogTextField",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "suppression",
+        "type": "AlertDialogSuppression",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "textField",
+        "type": "AlertDialogTextField",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "title",
         "type": "string",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [
@@ -481,7 +548,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onOpenChange",
         "type": "(open: boolean) => void",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": [
@@ -494,39 +562,45 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "action",
         "type": "() => Promise<void>",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": true,
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "onError",
         "type": "(error: unknown) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onSuccess",
         "type": "() => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "size",
         "type": "Size",
         "required": false,
         "default": "'md'",
-        "inherited": false
+        "inherited": false,
+        "example": "'md'"
       },
       {
         "name": "variant",
         "type": "Variant",
         "required": false,
         "default": "'primary'",
-        "inherited": false
-      },
-      {
-        "name": "children",
-        "type": "ReactNode",
-        "required": true,
-        "inherited": true
+        "inherited": false,
+        "example": "'primary'"
       }
     ],
     "events": [
@@ -534,13 +608,15 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onError",
         "type": "(error: unknown) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onSuccess",
         "type": "() => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": [
@@ -550,28 +626,32 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
   "Badge": {
     "props": [
       {
-        "name": "variant",
-        "type": "BadgeVariant",
-        "required": false,
-        "inherited": false
-      },
-      {
         "name": "children",
         "type": "ReactNode",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "variant",
+        "type": "BadgeVariant",
+        "required": false,
+        "inherited": false,
+        "example": "\"md\""
       }
     ],
     "events": [],
@@ -585,56 +665,65 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "'aria-label'",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": true,
+        "inherited": true,
+        "example": "—"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "padding",
         "type": "'sm' | 'md' | 'lg'",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"sm\""
       },
       {
         "name": "settingsStyle",
         "type": "boolean",
         "required": false,
         "description": "macOS settings panes append a colon to the title.",
-        "inherited": false
-      },
-      {
-        "name": "titlePosition",
-        "type": "BoxTitlePosition",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "variant",
-        "type": "BoxVariant",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "children",
-        "type": "ReactNode",
-        "required": true,
-        "inherited": true
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "title",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "titlePosition",
+        "type": "BoxTitlePosition",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "variant",
+        "type": "BoxVariant",
+        "required": false,
+        "inherited": false,
+        "example": "\"md\""
       }
     ],
     "events": [],
@@ -648,27 +737,31 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "'aria-label'",
         "type": "string",
         "required": false,
-        "inherited": false
-      },
-      {
-        "name": "items",
-        "type": "BreadcrumbItem[]",
-        "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
         "default": "{styles.separator",
-        "inherited": true
+        "inherited": true,
+        "example": "{styles.separator"
+      },
+      {
+        "name": "items",
+        "type": "BreadcrumbItem[]",
+        "required": true,
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "default": "{style",
-        "inherited": true
+        "inherited": true,
+        "example": "{style"
       }
     ],
     "events": [],
@@ -683,97 +776,112 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "ButtonRole",
         "required": false,
         "description": "Apple HIG semantic role — affects appearance in alerts and sheets.",
-        "inherited": false
+        "inherited": false,
+        "example": "\"md\""
       },
       {
         "name": "error",
         "type": "string | null",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "flexible",
         "type": "boolean",
         "required": false,
         "description": "macOS flexible-height push button for multi-line content.",
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "fullWidth",
         "type": "boolean",
         "required": false,
         "description": "watchOS-style full-width primary actions.",
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "iconOnly",
         "type": "boolean",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "leftIcon",
         "type": "ReactNode",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "loading",
         "type": "boolean",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "loadingLabel",
         "type": "string",
         "required": false,
         "description": "Alternative label shown while loading (Apple HIG activity indicator pattern).",
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "opensAnotherView",
         "type": "boolean",
         "required": false,
         "description": "macOS: append trailing ellipsis when the button opens another view.",
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "rightIcon",
         "type": "ReactNode",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "shape",
         "type": "ButtonShape",
         "required": false,
         "description": "Capsule (default), circle (icon-only), or roundedRect (vertical stacks).",
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "size",
         "type": "Size",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"md\""
       },
       {
         "name": "state",
         "type": "UIState",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "tooltip",
         "type": "string",
         "required": false,
         "description": "macOS / visionOS hover tooltip.",
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "variant",
         "type": "Variant",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"md\""
       }
     ],
     "events": [],
@@ -789,39 +897,45 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "'aria-label'",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": true,
+        "inherited": true,
+        "example": "—"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "fullWidth",
         "type": "boolean",
         "required": false,
         "description": "Full-width buttons for watchOS-style primary actions.",
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "orientation",
         "type": "'horizontal' | 'vertical'",
         "required": false,
         "description": "Horizontal row (default) or vertical stack for visionOS guidance.",
-        "inherited": false
-      },
-      {
-        "name": "children",
-        "type": "ReactNode",
-        "required": true,
-        "inherited": true
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "\"horizontal\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -832,47 +946,54 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
   "CalendarGrid": {
     "props": [
       {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
         "name": "locale",
         "type": "string",
         "required": false,
         "default": "'en'",
-        "inherited": false
+        "inherited": false,
+        "example": "'en'"
       },
       {
         "name": "maxDate",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "minDate",
         "type": "string",
         "required": false,
-        "inherited": false
-      },
-      {
-        "name": "value",
-        "type": "string",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "onChange",
         "type": "(isoDate: string) => void",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
       }
     ],
     "events": [
@@ -880,7 +1001,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onChange",
         "type": "(isoDate: string) => void",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       }
     ],
     "accessibility": []
@@ -891,25 +1013,29 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "imageUrl",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "label",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "subtitle",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "title",
         "type": "string",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -918,49 +1044,56 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
   "Card": {
     "props": [
       {
-        "name": "description",
-        "type": "string",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "footer",
-        "type": "ReactNode",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "padding",
-        "type": "'none' | 'sm' | 'md' | 'lg'",
-        "required": false,
-        "default": "'md'",
-        "inherited": false
-      },
-      {
         "name": "children",
         "type": "ReactNode",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
         "default": "{mergeClassName(styles.footer",
-        "inherited": true
+        "inherited": true,
+        "example": "{mergeClassName(styles.footer"
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "footer",
+        "type": "ReactNode",
+        "required": false,
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "padding",
+        "type": "'none' | 'sm' | 'md' | 'lg'",
+        "required": false,
+        "default": "'md'",
+        "inherited": false,
+        "example": "'md'"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "default": "{style",
-        "inherited": true
+        "inherited": true,
+        "example": "{style"
       },
       {
         "name": "title",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -973,20 +1106,30 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "description": "High-level summary for assistive technologies (Apple Audio Graphs pattern).",
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "annotation",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "data",
         "type": "ChartDataPoint[]",
         "required": false,
         "description": "Single-series shorthand.",
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "height",
@@ -994,7 +1137,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "220",
         "description": "Plot height in CSS pixels.",
-        "inherited": false
+        "inherited": false,
+        "example": "220"
       },
       {
         "name": "interactive",
@@ -1002,7 +1146,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "false",
         "description": "Enable plot-area scrubbing with crosshair.",
-        "inherited": false
+        "inherited": false,
+        "example": "false"
       },
       {
         "name": "mark",
@@ -1010,26 +1155,30 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "'bar'",
         "description": "Chart mark type — bar, line, or point.",
-        "inherited": false
+        "inherited": false,
+        "example": "'bar'"
       },
       {
         "name": "onPointFocus",
         "type": "(point: ChartDataPoint, seriesId: string, index: number) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "series",
         "type": "ChartSeries[]",
         "required": false,
         "description": "One or more data series.",
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "showLegend",
         "type": "boolean",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "showPoints",
@@ -1037,7 +1186,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "mark === 'line'",
         "description": "Combine line marks with point marks. Default true for line charts.",
-        "inherited": false
+        "inherited": false,
+        "example": "mark === 'line'"
       },
       {
         "name": "stacked",
@@ -1045,7 +1195,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "false",
         "description": "Stack bar marks when multiple series are present.",
-        "inherited": false
+        "inherited": false,
+        "example": "false"
       },
       {
         "name": "stackGap",
@@ -1053,25 +1204,43 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "2",
         "description": "Gap between stacked bar segments (Apple HIG visual separation).",
-        "inherited": false
+        "inherited": false,
+        "example": "2"
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "subtitle",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "xAxis",
         "type": "ChartAxisConfig",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "yAxis",
         "type": "ChartAxisConfig",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "yAxisTrailing",
@@ -1079,25 +1248,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "false",
         "description": "Y axis on trailing edge (right in LTR) for layout alignment.",
-        "inherited": false
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
-      },
-      {
-        "name": "style",
-        "type": "CSSProperties",
-        "required": false,
-        "inherited": true
-      },
-      {
-        "name": "title",
-        "type": "string",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "false"
       }
     ],
     "events": [
@@ -1105,7 +1257,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onPointFocus",
         "type": "(point: ChartDataPoint, seriesId: string, index: number) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": []
@@ -1117,26 +1270,30 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "Size",
         "required": false,
         "default": "'md'",
-        "inherited": false
+        "inherited": false,
+        "example": "'md'"
       },
       {
         "name": "error",
         "type": "string | null",
         "required": false,
         "default": "null",
-        "inherited": false
+        "inherited": false,
+        "example": "null"
       },
       {
         "name": "hint",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "label",
         "type": "string",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -1150,21 +1307,24 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "collaborators",
         "type": "Collaborator[]",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "label",
         "type": "string",
         "required": false,
         "default": "'Collaboration'",
-        "inherited": false
+        "inherited": false,
+        "example": "'Collaboration'"
       },
       {
         "name": "maxVisible",
         "type": "number",
         "required": false,
         "default": "3",
-        "inherited": false
+        "inherited": false,
+        "example": "3"
       }
     ],
     "events": [],
@@ -1177,75 +1337,87 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CollaborationAction[]",
         "required": false,
         "default": "[]",
-        "inherited": false
+        "inherited": false,
+        "example": "[]"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "collaborators",
         "type": "Collaborator[]",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "defaultOpen",
         "type": "boolean",
         "required": false,
         "default": "false",
-        "inherited": false
+        "inherited": false,
+        "example": "false"
       },
       {
         "name": "manageLabel",
         "type": "string",
         "required": false,
         "default": "'Manage Shared File'",
-        "inherited": false
+        "inherited": false,
+        "example": "'Manage Shared File'"
       },
       {
         "name": "onManage",
         "type": "() => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onMessage",
         "type": "() => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onOpenChange",
         "type": "(open: boolean) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onVideo",
         "type": "() => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "open",
         "type": "boolean",
         "required": false,
-        "inherited": false
-      },
-      {
-        "name": "trigger",
-        "type": "ReactNode",
-        "required": true,
-        "inherited": false
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "trigger",
+        "type": "ReactNode",
+        "required": true,
+        "inherited": false,
+        "example": "—"
       }
     ],
     "events": [
@@ -1253,25 +1425,29 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onManage",
         "type": "() => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onMessage",
         "type": "() => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onOpenChange",
         "type": "(open: boolean) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onVideo",
         "type": "() => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": []
@@ -1282,49 +1458,57 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "ariaLabel",
         "type": "string",
         "required": false,
-        "inherited": false
-      },
-      {
-        "name": "columns",
-        "type": "number",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "items",
-        "type": "CollectionItem[]",
-        "required": true,
-        "inherited": false
-      },
-      {
-        "name": "layout",
-        "type": "CollectionLayout",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "onSelect",
-        "type": "(item: CollectionItem) => void",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "selectedId",
-        "type": "string",
-        "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "columns",
+        "type": "number",
+        "required": false,
+        "inherited": false,
+        "example": "0"
+      },
+      {
+        "name": "items",
+        "type": "CollectionItem[]",
+        "required": true,
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "layout",
+        "type": "CollectionLayout",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "onSelect",
+        "type": "(item: CollectionItem) => void",
+        "required": false,
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "selectedId",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [
@@ -1332,7 +1516,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onSelect",
         "type": "(item: CollectionItem) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": [
@@ -1346,38 +1531,44 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "default": "'Column view'",
-        "inherited": false
+        "inherited": false,
+        "example": "'Column view'"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "data",
         "type": "ColumnViewNode[]",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "initialPath",
         "type": "string[]",
         "required": false,
         "default": "[]",
-        "inherited": false
+        "inherited": false,
+        "example": "[]"
       },
       {
         "name": "onPathChange",
         "type": "(path: string[]) => void",
         "required": false,
-        "inherited": false
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [
@@ -1385,7 +1576,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onPathChange",
         "type": "(path: string[]) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": [
@@ -1398,51 +1590,59 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "'aria-label'",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "emptyMessage",
         "type": "string",
         "required": false,
         "default": "'No commands found'",
-        "inherited": false
+        "inherited": false,
+        "example": "'No commands found'"
       },
       {
         "name": "items",
         "type": "CommandPaletteItem[]",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onOpenChange",
         "type": "(open: boolean) => void",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "open",
         "type": "boolean",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "placeholder",
         "type": "string",
         "required": false,
         "default": "'Search commands…'",
-        "inherited": false
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "'Search commands…'"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [
@@ -1450,7 +1650,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onOpenChange",
         "type": "(open: boolean) => void",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": [
@@ -1461,71 +1662,82 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
   "ContextMenu": {
     "props": [
       {
+        "name": "children",
+        "type": "ReactElement",
+        "required": true,
+        "inherited": true,
+        "example": "—"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
         "name": "dimBackground",
         "type": "boolean",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "entries",
         "type": "ContextMenuEntry[]",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "longPress",
         "type": "boolean",
         "required": false,
         "description": "Enable long-press / touch-and-hold in addition to secondary click.",
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "onEntrySelect",
         "type": "(entry: ContextMenuItemConfig) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onOpenChange",
         "type": "(open: boolean) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "open",
         "type": "boolean",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "preview",
         "type": "ReactNode",
         "required": false,
-        "inherited": false
-      },
-      {
-        "name": "children",
-        "type": "ReactElement",
-        "required": true,
-        "inherited": true
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "title",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [
@@ -1533,13 +1745,15 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onEntrySelect",
         "type": "(entry: ContextMenuItemConfig) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onOpenChange",
         "type": "(open: boolean) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": []
@@ -1550,85 +1764,98 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "'aria-label'",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "caption",
         "type": "string",
         "required": false,
-        "inherited": false
-      },
-      {
-        "name": "columns",
-        "type": "DataTableColumn<T>[]",
-        "required": true,
-        "inherited": false
-      },
-      {
-        "name": "data",
-        "type": "T[]",
-        "required": true,
-        "inherited": false
-      },
-      {
-        "name": "emptyDescription",
-        "type": "string",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "emptyMessage",
-        "type": "string",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "emptyTitle",
-        "type": "string",
-        "required": false,
-        "default": "'No data'",
-        "inherited": false
-      },
-      {
-        "name": "keyExtractor",
-        "type": "(row: T) => string",
-        "required": true,
-        "inherited": false
-      },
-      {
-        "name": "loading",
-        "type": "boolean",
-        "required": false,
-        "default": "false",
-        "inherited": false
-      },
-      {
-        "name": "skeletonRows",
-        "type": "number",
-        "required": false,
-        "default": "3",
-        "inherited": false
-      },
-      {
-        "name": "striped",
-        "type": "boolean",
-        "required": false,
-        "default": "false",
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
         "default": "{[styles.wrapper",
-        "inherited": true
+        "inherited": true,
+        "example": "{[styles.wrapper"
+      },
+      {
+        "name": "columns",
+        "type": "DataTableColumn<T>[]",
+        "required": true,
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "data",
+        "type": "T[]",
+        "required": true,
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "emptyDescription",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "emptyMessage",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "emptyTitle",
+        "type": "string",
+        "required": false,
+        "default": "'No data'",
+        "inherited": false,
+        "example": "'No data'"
+      },
+      {
+        "name": "keyExtractor",
+        "type": "(row: T) => string",
+        "required": true,
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "loading",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "inherited": false,
+        "example": "false"
+      },
+      {
+        "name": "skeletonRows",
+        "type": "number",
+        "required": false,
+        "default": "3",
+        "inherited": false,
+        "example": "3"
+      },
+      {
+        "name": "striped",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "inherited": false,
+        "example": "false"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "default": "{style",
-        "inherited": true
+        "inherited": true,
+        "example": "{style"
       }
     ],
     "events": [],
@@ -1643,52 +1870,60 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string | null",
         "required": false,
         "default": "null",
-        "inherited": false
+        "inherited": false,
+        "example": "null"
       },
       {
         "name": "hint",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "inputSize",
         "type": "Size",
         "required": false,
         "default": "'md'",
-        "inherited": false
+        "inherited": false,
+        "example": "'md'"
       },
       {
         "name": "label",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "loading",
         "type": "boolean",
         "required": false,
         "default": "false",
-        "inherited": false
+        "inherited": false,
+        "example": "false"
+      },
+      {
+        "name": "onChange",
+        "type": "(value: string) => void",
+        "required": false,
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "state",
         "type": "UIState",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "value",
         "type": "string",
         "required": false,
         "default": "''",
-        "inherited": false
-      },
-      {
-        "name": "onChange",
-        "type": "(value: string) => void",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "''"
       }
     ],
     "events": [
@@ -1696,7 +1931,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onChange",
         "type": "(value: string) => void",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       }
     ],
     "accessibility": []
@@ -1704,112 +1940,129 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
   "DateRangePicker": {
     "props": [
       {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
         "name": "disabled",
         "type": "boolean",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "endLabel",
         "type": "string",
         "required": false,
         "default": "'End date'",
-        "inherited": false
+        "inherited": false,
+        "example": "'End date'"
       },
       {
         "name": "error",
         "type": "string | null",
         "required": false,
         "default": "null",
-        "inherited": false
+        "inherited": false,
+        "example": "null"
       },
       {
         "name": "hint",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "inputSize",
         "type": "Size",
         "required": false,
         "default": "'md'",
-        "inherited": false
+        "inherited": false,
+        "example": "'md'"
       },
       {
         "name": "label",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "loading",
         "type": "boolean",
         "required": false,
         "default": "false",
-        "inherited": false
+        "inherited": false,
+        "example": "false"
       },
       {
         "name": "max",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "min",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "onChange",
+        "type": "(value: DateRange) => void",
+        "required": false,
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "readOnly",
         "type": "boolean",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "startLabel",
         "type": "string",
         "required": false,
         "default": "'Start date'",
-        "inherited": false
+        "inherited": false,
+        "example": "'Start date'"
       },
       {
         "name": "state",
         "type": "UIState",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "value",
         "type": "DateRange",
         "required": false,
         "default": "{ startDate: ''",
-        "inherited": false
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
-      },
-      {
-        "name": "id",
-        "type": "string",
-        "required": false,
-        "inherited": true
-      },
-      {
-        "name": "onChange",
-        "type": "(value: DateRange) => void",
-        "required": false,
-        "inherited": true
-      },
-      {
-        "name": "style",
-        "type": "CSSProperties",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "{ startDate: ''"
       }
     ],
     "events": [
@@ -1817,7 +2070,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onChange",
         "type": "(value: DateRange) => void",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       }
     ],
     "accessibility": []
@@ -1829,117 +2083,136 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "DateTimePickerStyle",
         "required": false,
         "description": "Compact / wheels / inline / automatic. Use with object `style` when you need both.",
-        "inherited": false
-      },
-      {
-        "name": "disabled",
-        "type": "boolean",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "error",
-        "type": "string | null",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "hint",
-        "type": "string",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "inputSize",
-        "type": "Size",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "label",
-        "type": "string",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "loading",
-        "type": "boolean",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "locale",
-        "type": "string",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "maxDate",
-        "type": "string",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "minDate",
-        "type": "string",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "minuteInterval",
-        "type": "number",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "mode",
-        "type": "DateTimePickerMode",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "state",
-        "type": "UIState",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "use12Hour",
-        "type": "boolean",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "value",
-        "type": "DateTimeValue",
-        "required": false,
-        "default": "{",
-        "inherited": false
-      },
-      {
-        "name": "yearRange",
-        "type": "{ start: number; end: number }",
-        "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "inherited": false,
+        "example": "true"
+      },
+      {
+        "name": "error",
+        "type": "string | null",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "hint",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "inputSize",
+        "type": "Size",
+        "required": false,
+        "inherited": false,
+        "example": "\"md\""
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "loading",
+        "type": "boolean",
+        "required": false,
+        "inherited": false,
+        "example": "true"
+      },
+      {
+        "name": "locale",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "maxDate",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "minDate",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "minuteInterval",
+        "type": "number",
+        "required": false,
+        "inherited": false,
+        "example": "0"
+      },
+      {
+        "name": "mode",
+        "type": "DateTimePickerMode",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "onChange",
         "type": "(value: DateTimeValue) => void",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
+      },
+      {
+        "name": "state",
+        "type": "UIState",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "style",
         "type": "DateTimePickerStyle | CSSProperties",
         "required": false,
         "description": "Appearance string or inline CSS.",
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "use12Hour",
+        "type": "boolean",
+        "required": false,
+        "inherited": false,
+        "example": "true"
+      },
+      {
+        "name": "value",
+        "type": "DateTimeValue",
+        "required": false,
+        "default": "{",
+        "inherited": false,
+        "example": "{"
+      },
+      {
+        "name": "yearRange",
+        "type": "{ start: number; end: number }",
+        "required": false,
+        "inherited": false,
+        "example": "—"
       }
     ],
     "events": [
@@ -1947,7 +2220,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onChange",
         "type": "(value: DateTimeValue) => void",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       }
     ],
     "accessibility": []
@@ -1958,73 +2232,85 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "cancelLabel",
         "type": "string",
         "required": false,
-        "inherited": false
-      },
-      {
-        "name": "confirmLabel",
-        "type": "string",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "description",
-        "type": "string",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "loading",
-        "type": "boolean",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "onClose",
-        "type": "() => void",
-        "required": true,
-        "inherited": false
-      },
-      {
-        "name": "onConfirm",
-        "type": "() => void",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "open",
-        "type": "boolean",
-        "required": true,
-        "inherited": false
-      },
-      {
-        "name": "variant",
-        "type": "'default' | 'destructive'",
-        "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "children",
         "type": "ReactNode",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "confirmLabel",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "loading",
+        "type": "boolean",
+        "required": false,
+        "inherited": false,
+        "example": "true"
+      },
+      {
+        "name": "onClose",
+        "type": "() => void",
+        "required": true,
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "onConfirm",
+        "type": "() => void",
+        "required": false,
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "open",
+        "type": "boolean",
+        "required": true,
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "title",
         "type": "string",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "variant",
+        "type": "'default' | 'destructive'",
+        "required": false,
+        "inherited": false,
+        "example": "\"default\""
       }
     ],
     "events": [
@@ -2032,13 +2318,15 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onClose",
         "type": "() => void",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onConfirm",
         "type": "() => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": [
@@ -2052,66 +2340,76 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "'aria-label'",
         "type": "string",
         "required": false,
-        "inherited": false
-      },
-      {
-        "name": "defaultExpanded",
-        "type": "boolean",
-        "required": false,
-        "default": "false",
-        "inherited": false
-      },
-      {
-        "name": "detail",
-        "type": "ReactNode",
-        "required": false,
-        "description": "Content revealed when expanded. Use only one disclosure button per view.",
-        "inherited": false
-      },
-      {
-        "name": "disabled",
-        "type": "boolean",
-        "required": false,
-        "default": "false",
-        "inherited": false
-      },
-      {
-        "name": "expanded",
-        "type": "boolean",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "label",
-        "type": "string",
-        "required": false,
-        "description": "Visible label for the adjacent control region.",
-        "inherited": false
-      },
-      {
-        "name": "onExpandedChange",
-        "type": "(expanded: boolean) => void",
-        "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "children",
         "type": "ReactNode",
         "required": true,
         "description": "Control placed beside the disclosure button, e.g. Save As field.",
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "defaultExpanded",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "inherited": false,
+        "example": "false"
+      },
+      {
+        "name": "detail",
+        "type": "ReactNode",
+        "required": false,
+        "description": "Content revealed when expanded. Use only one disclosure button per view.",
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "inherited": false,
+        "example": "false"
+      },
+      {
+        "name": "expanded",
+        "type": "boolean",
+        "required": false,
+        "inherited": false,
+        "example": "true"
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": false,
+        "description": "Visible label for the adjacent control region.",
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "onExpandedChange",
+        "type": "(expanded: boolean) => void",
+        "required": false,
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [
@@ -2119,7 +2417,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onExpandedChange",
         "type": "(expanded: boolean) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": [
@@ -2129,52 +2428,60 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
   "DisclosureGroup": {
     "props": [
       {
-        "name": "defaultExpanded",
-        "type": "boolean",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "disabled",
-        "type": "boolean",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "expanded",
-        "type": "boolean",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "label",
-        "type": "string",
-        "required": true,
-        "inherited": false
-      },
-      {
-        "name": "onExpandedChange",
-        "type": "(expanded: boolean) => void",
-        "required": false,
-        "inherited": false
-      },
-      {
         "name": "children",
         "type": "ReactNode",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "defaultExpanded",
+        "type": "boolean",
+        "required": false,
+        "inherited": false,
+        "example": "true"
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "inherited": false,
+        "example": "true"
+      },
+      {
+        "name": "expanded",
+        "type": "boolean",
+        "required": false,
+        "inherited": false,
+        "example": "true"
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": true,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "onExpandedChange",
+        "type": "(expanded: boolean) => void",
+        "required": false,
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [
@@ -2182,7 +2489,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onExpandedChange",
         "type": "(expanded: boolean) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": []
@@ -2190,28 +2498,32 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
   "DisclosureList": {
     "props": [
       {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
         "name": "defaultExpandedIds",
         "type": "string[]",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "items",
         "type": "DisclosureListItem[]",
         "required": true,
-        "inherited": false
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -2220,55 +2532,63 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
   "DisclosureTriangle": {
     "props": [
       {
+        "name": "children",
+        "type": "ReactNode",
+        "required": false,
+        "inherited": true,
+        "example": "—"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
         "name": "defaultExpanded",
         "type": "boolean",
         "required": false,
         "default": "false",
-        "inherited": false
+        "inherited": false,
+        "example": "false"
       },
       {
         "name": "disabled",
         "type": "boolean",
         "required": false,
         "default": "false",
-        "inherited": false
+        "inherited": false,
+        "example": "false"
       },
       {
         "name": "expanded",
         "type": "boolean",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "label",
         "type": "string",
         "required": true,
         "description": "Describes what is disclosed, e.g. \"Advanced options\".",
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "onExpandedChange",
         "type": "(expanded: boolean) => void",
         "required": false,
-        "inherited": false
-      },
-      {
-        "name": "children",
-        "type": "ReactNode",
-        "required": false,
-        "inherited": true
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [
@@ -2276,7 +2596,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onExpandedChange",
         "type": "(expanded: boolean) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": []
@@ -2287,25 +2608,29 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "'aria-label'",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "children",
         "type": "ReactNode",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -2319,76 +2644,88 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "appName",
         "type": "string",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "closedEntries",
         "type": "ContextMenuEntry[]",
         "required": false,
         "description": "Actions when the app is not running (e.g. Open).",
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "icon",
         "type": "ReactNode",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "isRunning",
         "type": "boolean",
         "required": false,
         "description": "Whether the app is currently running (shows window list + running actions).",
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "onEntrySelect",
         "type": "(entry: ContextMenuItemConfig) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onOpenChange",
         "type": "(open: boolean) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onWindowSelect",
         "type": "(window: DockWindow) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "open",
         "type": "boolean",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "openWindows",
         "type": "DockWindow[]",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "runningEntries",
         "type": "ContextMenuEntry[]",
         "required": false,
         "description": "High-value actions when the app is running (e.g. New Window, Get New Mail).",
-        "inherited": false
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [
@@ -2396,19 +2733,22 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onEntrySelect",
         "type": "(entry: ContextMenuItemConfig) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onOpenChange",
         "type": "(open: boolean) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onWindowSelect",
         "type": "(window: DockWindow) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": []
@@ -2419,55 +2759,64 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "accessories",
         "type": "ReactNode",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "appTitle",
         "type": "string",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "background",
         "type": "ReactNode",
         "required": false,
-        "inherited": false
-      },
-      {
-        "name": "onPrimaryAction",
-        "type": "() => void",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "onSecondaryAction",
-        "type": "() => void",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "primaryActionLabel",
-        "type": "string",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "secondaryActionLabel",
-        "type": "string",
-        "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "onPrimaryAction",
+        "type": "() => void",
+        "required": false,
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "onSecondaryAction",
+        "type": "() => void",
+        "required": false,
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "primaryActionLabel",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "secondaryActionLabel",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [
@@ -2475,13 +2824,15 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onPrimaryAction",
         "type": "() => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onSecondaryAction",
         "type": "() => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": []
@@ -2492,61 +2843,71 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "canSave",
         "type": "boolean",
         "required": false,
-        "inherited": false
-      },
-      {
-        "name": "newLabel",
-        "type": "string",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "onNew",
-        "type": "() => void",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "onOpen",
-        "type": "() => void",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "onSave",
-        "type": "() => void",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "openLabel",
-        "type": "string",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "saveLabel",
-        "type": "string",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "showAddButton",
-        "type": "boolean",
-        "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "newLabel",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "onNew",
+        "type": "() => void",
+        "required": false,
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "onOpen",
+        "type": "() => void",
+        "required": false,
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "onSave",
+        "type": "() => void",
+        "required": false,
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "openLabel",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "saveLabel",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "showAddButton",
+        "type": "boolean",
+        "required": false,
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [
@@ -2554,19 +2915,22 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onNew",
         "type": "() => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onOpen",
         "type": "() => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onSave",
         "type": "() => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": []
@@ -2574,41 +2938,47 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
   "DragDropList": {
     "props": [
       {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
         "name": "items",
         "type": "DragDropListItem[]",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onReorder",
         "type": "(items: DragDropListItem[]) => void",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "renderItem",
         "type": "(item: DragDropListItem) => ReactNode",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "zoneId",
         "type": "string",
         "required": false,
         "default": "'list'",
-        "inherited": false
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
-      },
-      {
-        "name": "style",
-        "type": "CSSProperties",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "'list'"
       }
     ],
     "events": [
@@ -2616,7 +2986,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onReorder",
         "type": "(items: DragDropListItem[]) => void",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": []
@@ -2624,65 +2995,75 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
   "Draggable": {
     "props": [
       {
+        "name": "children",
+        "type": "ReactNode",
+        "required": true,
+        "inherited": true,
+        "example": "—"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
         "name": "data",
         "type": "T",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "disabled",
         "type": "boolean",
         "required": false,
         "default": "false",
-        "inherited": false
-      },
-      {
-        "name": "label",
-        "type": "string",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "preview",
-        "type": "ReactNode",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "sourceId",
-        "type": "string",
-        "required": true,
-        "inherited": false
-      },
-      {
-        "name": "type",
-        "type": "string",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "children",
-        "type": "ReactNode",
-        "required": true,
-        "inherited": true
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "false"
       },
       {
         "name": "id",
         "type": "string",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "preview",
+        "type": "ReactNode",
+        "required": false,
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "sourceId",
+        "type": "string",
+        "required": true,
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "type",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -2691,88 +3072,102 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
   "Drawer": {
     "props": [
       {
-        "name": "closeOnOverlay",
-        "type": "boolean",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "description",
-        "type": "string",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "motion",
-        "type": "ComponentMotionOverride",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "onClose",
-        "type": "() => void",
-        "required": true,
-        "inherited": false
-      },
-      {
-        "name": "open",
-        "type": "boolean",
-        "required": true,
-        "inherited": false
-      },
-      {
-        "name": "overlayClassName",
-        "type": "string",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "overlayStyle",
-        "type": "CSSProperties",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "panelClassName",
-        "type": "string",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "panelStyle",
-        "type": "CSSProperties",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "side",
-        "type": "DrawerSide",
-        "required": false,
-        "inherited": false
-      },
-      {
         "name": "children",
         "type": "ReactNode",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "closeOnOverlay",
+        "type": "boolean",
+        "required": false,
+        "inherited": false,
+        "example": "true"
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "motion",
+        "type": "ComponentMotionOverride",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "onClose",
+        "type": "() => void",
+        "required": true,
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "open",
+        "type": "boolean",
+        "required": true,
+        "inherited": false,
+        "example": "true"
+      },
+      {
+        "name": "overlayClassName",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "overlayStyle",
+        "type": "CSSProperties",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "panelClassName",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "panelStyle",
+        "type": "CSSProperties",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "side",
+        "type": "DrawerSide",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "title",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [
@@ -2780,7 +3175,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onClose",
         "type": "() => void",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": [
@@ -2793,71 +3189,82 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "accepts",
         "type": "string | string[]",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "canDrop",
         "type": "(items: DragItem<T>[]) => boolean",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": true,
+        "inherited": true,
+        "example": "—"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "disabled",
         "type": "boolean",
         "required": false,
         "default": "false",
-        "inherited": false
+        "inherited": false,
+        "example": "false"
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": true,
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "onDrop",
         "type": "(result: DropResult<T>) => void | Promise<void>",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "showInvalidIndicator",
         "type": "boolean",
         "required": false,
         "default": "true",
-        "inherited": false
+        "inherited": false,
+        "example": "true"
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "transferring",
         "type": "boolean",
         "required": false,
         "default": "false",
-        "inherited": false
+        "inherited": false,
+        "example": "false"
       },
       {
         "name": "transferringLabel",
         "type": "string",
         "required": false,
         "default": "'Transferring…'",
-        "inherited": false
-      },
-      {
-        "name": "children",
-        "type": "ReactNode",
-        "required": true,
-        "inherited": true
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
-      },
-      {
-        "name": "id",
-        "type": "string",
-        "required": true,
-        "inherited": true
-      },
-      {
-        "name": "style",
-        "type": "CSSProperties",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "'Transferring…'"
       }
     ],
     "events": [
@@ -2865,7 +3272,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onDrop",
         "type": "(result: DropResult<T>) => void | Promise<void>",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": []
@@ -2873,97 +3281,112 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
   "EditMenu": {
     "props": [
       {
+        "name": "children",
+        "type": "ReactElement",
+        "required": true,
+        "inherited": true,
+        "example": "—"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
         "name": "context",
         "type": "EditMenuContext",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "customActions",
         "type": "EditMenuItemConfig[]",
         "required": false,
         "description": "Custom commands listed near related system-provided ones.",
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "dimBackground",
         "type": "boolean",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "includeStandardActions",
         "type": "boolean",
         "required": false,
         "description": "Include standard Cut, Copy, Paste, etc. Defaults to true.",
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "inputMode",
         "type": "EditMenuInputMode",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "longPress",
         "type": "boolean",
         "required": false,
         "description": "Touch-and-hold / long-press to reveal compact edit menu.",
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "onAction",
         "type": "(actionId: string) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onOpenChange",
         "type": "(open: boolean) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onStandardAction",
         "type": "(actionId: StandardEditActionId) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "open",
         "type": "boolean",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "placement",
         "type": "'above' | 'below' | 'auto'",
         "required": false,
-        "inherited": false
-      },
-      {
-        "name": "variant",
-        "type": "EditMenuVariant",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "children",
-        "type": "ReactElement",
-        "required": true,
-        "inherited": true
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "\"above\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "variant",
+        "type": "EditMenuVariant",
+        "required": false,
+        "inherited": false,
+        "example": "\"md\""
       }
     ],
     "events": [
@@ -2971,19 +3394,22 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onAction",
         "type": "(actionId: string) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onOpenChange",
         "type": "(open: boolean) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onStandardAction",
         "type": "(actionId: StandardEditActionId) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": [
@@ -3001,49 +3427,57 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "actionLabel",
         "type": "string",
         "required": false,
-        "inherited": false
-      },
-      {
-        "name": "description",
-        "type": "string",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "icon",
-        "type": "ReactNode",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "onAction",
-        "type": "() => void",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "state",
-        "type": "UIState",
-        "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "icon",
+        "type": "ReactNode",
+        "required": false,
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "onAction",
+        "type": "() => void",
+        "required": false,
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "state",
+        "type": "UIState",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "title",
         "type": "string",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [
@@ -3051,7 +3485,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onAction",
         "type": "() => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": []
@@ -3062,84 +3497,97 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "acceptTypes",
         "type": "string[]",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "activeTab",
         "type": "FileBrowserTab",
         "required": false,
         "default": "'recents'",
-        "inherited": false
-      },
-      {
-        "name": "emptyLabel",
-        "type": "string",
-        "required": false,
-        "default": "'No documents in this location.'",
-        "inherited": false
-      },
-      {
-        "name": "files",
-        "type": "FileBrowserItem[]",
-        "required": true,
-        "inherited": false
-      },
-      {
-        "name": "onOpen",
-        "type": "(file: FileBrowserItem) => void",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "onSelect",
-        "type": "(file: FileBrowserItem) => void",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "onShowExtensionsChange",
-        "type": "(show: boolean) => void",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "onTabChange",
-        "type": "(tab: FileBrowserTab) => void",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "selectedId",
-        "type": "string",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "showExtensions",
-        "type": "boolean",
-        "required": false,
-        "default": "false",
-        "inherited": false
-      },
-      {
-        "name": "toolbar",
-        "type": "ReactNode",
-        "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "'recents'"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
         "default": "{styles.syncBadge",
-        "inherited": true
+        "inherited": true,
+        "example": "{styles.syncBadge"
+      },
+      {
+        "name": "emptyLabel",
+        "type": "string",
+        "required": false,
+        "default": "'No documents in this location.'",
+        "inherited": false,
+        "example": "'No documents in this location.'"
+      },
+      {
+        "name": "files",
+        "type": "FileBrowserItem[]",
+        "required": true,
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "onOpen",
+        "type": "(file: FileBrowserItem) => void",
+        "required": false,
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "onSelect",
+        "type": "(file: FileBrowserItem) => void",
+        "required": false,
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "onShowExtensionsChange",
+        "type": "(show: boolean) => void",
+        "required": false,
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "onTabChange",
+        "type": "(tab: FileBrowserTab) => void",
+        "required": false,
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "selectedId",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "showExtensions",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "inherited": false,
+        "example": "false"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "default": "{style",
-        "inherited": true
+        "inherited": true,
+        "example": "{style"
+      },
+      {
+        "name": "toolbar",
+        "type": "ReactNode",
+        "required": false,
+        "inherited": false,
+        "example": "—"
       }
     ],
     "events": [
@@ -3147,25 +3595,29 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onOpen",
         "type": "(file: FileBrowserItem) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onSelect",
         "type": "(file: FileBrowserItem) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onShowExtensionsChange",
         "type": "(show: boolean) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onTabChange",
         "type": "(tab: FileBrowserTab) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": []
@@ -3173,34 +3625,39 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
   "FilePreview": {
     "props": [
       {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
         "name": "closeLabel",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "onClose",
         "type": "() => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "source",
         "type": "FilePreviewSource",
         "required": true,
-        "inherited": false
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [
@@ -3208,7 +3665,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onClose",
         "type": "() => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": []
@@ -3219,65 +3677,75 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "accept",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "buttonLabel",
         "type": "string",
         "required": false,
         "default": "'Choose files or drag here'",
-        "inherited": false
+        "inherited": false,
+        "example": "'Choose files or drag here'"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "disabled",
         "type": "boolean",
         "required": false,
         "default": "false",
-        "inherited": false
+        "inherited": false,
+        "example": "false"
       },
       {
         "name": "error",
         "type": "string | null",
         "required": false,
         "default": "null",
-        "inherited": false
+        "inherited": false,
+        "example": "null"
       },
       {
         "name": "hint",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "label",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "multiple",
         "type": "boolean",
         "required": false,
         "default": "false",
-        "inherited": false
+        "inherited": false,
+        "example": "false"
       },
       {
         "name": "onFilesChange",
         "type": "(files: File[]) => void",
         "required": false,
-        "inherited": false
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [
@@ -3285,7 +3753,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onFilesChange",
         "type": "(files: File[]) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": []
@@ -3296,19 +3765,22 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "children",
         "type": "ReactNode",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -3320,19 +3792,22 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "children",
         "type": "ReactNode",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -3344,19 +3819,22 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "children",
         "type": "ReactNode",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -3368,19 +3846,22 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "children",
         "type": "ReactNode",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -3393,7 +3874,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "description": "Brief phrase explaining what help covers (macOS / visionOS tooltip).",
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -3405,68 +3887,79 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "actions",
         "type": "QuickActionItem[]",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "appName",
         "type": "string",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "icon",
         "type": "ReactNode",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "iconPlacement",
         "type": "QuickActionIconPlacement",
         "required": false,
         "description": "Icon appears on leading or trailing edge depending on Home Screen position.",
-        "inherited": false
+        "inherited": false,
+        "example": "\"md\""
       },
       {
         "name": "includeSystemActions",
         "type": "boolean",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "onActionSelect",
         "type": "(action: QuickActionItem) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onOpenChange",
         "type": "(open: boolean) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "open",
         "type": "boolean",
         "required": false,
-        "inherited": false
-      },
-      {
-        "name": "systemActions",
-        "type": "QuickActionItem[]",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "systemActions",
+        "type": "QuickActionItem[]",
+        "required": false,
+        "inherited": false,
+        "example": "—"
       }
     ],
     "events": [
@@ -3474,13 +3967,15 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onActionSelect",
         "type": "(action: QuickActionItem) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onOpenChange",
         "type": "(open: boolean) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": []
@@ -3491,19 +3986,22 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "alt",
         "type": "string",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "imageProps",
         "type": "Omit<ImgHTMLAttributes<HTMLImageElement>, 'src' | 'alt'>",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "src",
         "type": "string",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -3515,7 +4013,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "overlay",
         "type": "ReactNode",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "events": [],
@@ -3527,53 +4026,61 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "alt",
         "type": "string",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "background",
         "type": "ImageBackground",
         "required": false,
         "default": "'opaque'",
-        "inherited": false
+        "inherited": false,
+        "example": "'opaque'"
       },
       {
         "name": "fit",
         "type": "ImageFit",
         "required": false,
         "default": "'contain'",
-        "inherited": false
+        "inherited": false,
+        "example": "'contain'"
       },
       {
         "name": "frameClassName",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "frameStyle",
         "type": "CSSProperties",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "objectPosition",
         "type": "string",
         "required": false,
         "default": "'center'",
-        "inherited": false
+        "inherited": false,
+        "example": "'center'"
       },
       {
         "name": "sequence",
         "type": "ImageFrameSequence",
         "required": false,
         "description": "Animated image sequence — frames should share dimensions when possible.",
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "src",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -3586,52 +4093,60 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "default": "'image/*'",
-        "inherited": false
+        "inherited": false,
+        "example": "'image/*'"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "disabled",
         "type": "boolean",
         "required": false,
         "default": "false",
-        "inherited": false
+        "inherited": false,
+        "example": "false"
       },
       {
         "name": "label",
         "type": "string",
         "required": false,
         "default": "'Image'",
-        "inherited": false
+        "inherited": false,
+        "example": "'Image'"
       },
       {
         "name": "onImageChange",
         "type": "(file: File | null, previewUrl: string | null) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "placeholder",
         "type": "string",
         "required": false,
         "default": "'Drop an image",
-        "inherited": false
+        "inherited": false,
+        "example": "'Drop an image"
       },
       {
         "name": "src",
         "type": "string",
         "required": false,
-        "inherited": false
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [
@@ -3639,7 +4154,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onImageChange",
         "type": "(file: File | null, previewUrl: string | null) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": []
@@ -3651,83 +4167,96 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "boolean",
         "required": false,
         "description": "Accept plain-text drops into the field.",
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "error",
         "type": "string | null",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "expansionTooltip",
         "type": "boolean",
         "required": false,
         "description": "macOS-style expansion tooltip when truncated text overflows the field.",
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "format",
         "type": "FieldFormat",
         "required": false,
         "description": "Formats numeric values on blur (currency, percent, number).",
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "formatOptions",
         "type": "FormatFieldOptions",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "hint",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "inputSize",
         "type": "Size",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"md\""
       },
       {
         "name": "label",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "loading",
         "type": "boolean",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "required",
         "type": "boolean",
         "required": false,
         "description": "Shows a required indicator and sets the native required attribute.",
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "state",
         "type": "UIState",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "validate",
         "type": "FieldValidator",
         "required": false,
         "description": "Validates on blur or change and surfaces inline feedback immediately.",
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "validateOn",
         "type": "'blur' | 'change'",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"blur\""
       }
     ],
     "events": [],
@@ -3741,63 +4270,365 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "as",
         "type": "ElementType",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": true,
+        "inherited": true,
+        "example": "—"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "importance",
         "type": "LabelImportance",
         "required": false,
         "description": "System label color indicating relative importance.",
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "mono",
         "type": "boolean",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "selectable",
         "type": "boolean",
         "required": false,
         "description": "Allow selecting/copying useful static text.",
-        "inherited": false
-      },
-      {
-        "name": "children",
-        "type": "ReactNode",
-        "required": true,
-        "inherited": true
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [],
     "accessibility": []
   },
   "LiquidGlass": {
-    "props": [],
-    "events": [],
+    "props": [
+      {
+        "name": "aria-label",
+        "type": "string",
+        "required": true,
+        "description": "Accessible label (recommended for nav/header).",
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "as",
+        "type": "string",
+        "required": false,
+        "default": "'div'",
+        "description": "HTML tag name for the glass shell (`div`, `footer`, `nav`, …).",
+        "inherited": false,
+        "example": "'div'"
+      },
+      {
+        "name": "bezelWidth",
+        "type": "number",
+        "required": false,
+        "default": "20",
+        "description": "Refracting bezel band width in px.",
+        "inherited": false,
+        "example": "20"
+      },
+      {
+        "name": "blur",
+        "type": "number",
+        "required": false,
+        "default": "18",
+        "description": "Backdrop blur radius in px (non-Chromium fallback).",
+        "inherited": false,
+        "example": "18"
+      },
+      {
+        "name": "borderColor",
+        "type": "string",
+        "required": false,
+        "default": "rgba(255,255,255,0.35)",
+        "description": "Inset border colour.",
+        "inherited": false,
+        "example": "rgba(255,255,255,0.35)"
+      },
+      {
+        "name": "borderRadius",
+        "type": "number",
+        "required": false,
+        "default": "30",
+        "description": "Corner radius in px.",
+        "inherited": false,
+        "example": "30"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "displacementScale",
+        "type": "number",
+        "required": false,
+        "default": "34",
+        "description": "feDisplacementMap scale — higher = stronger refraction.",
+        "inherited": false,
+        "example": "34"
+      },
+      {
+        "name": "height",
+        "type": "number | string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "innerBottomShadow",
+        "type": "number",
+        "required": false,
+        "default": "0.20",
+        "description": "Inner bottom shadow fog opacity.",
+        "inherited": false,
+        "example": "0.20"
+      },
+      {
+        "name": "innerTopHighlight",
+        "type": "number",
+        "required": false,
+        "default": "0.35",
+        "description": "1px inner top highlight opacity.",
+        "inherited": false,
+        "example": "0.35"
+      },
+      {
+        "name": "maxHeight",
+        "type": "number | string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "maxWidth",
+        "type": "number | string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "minHeight",
+        "type": "number | string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "minWidth",
+        "type": "number | string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "onDisplacementMapChange",
+        "type": "(dataUrl: string) => void",
+        "required": false,
+        "description": "Expose the displacement map data URL (for debug / lens lab).",
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "refractionStrength",
+        "type": "number",
+        "required": false,
+        "default": "1",
+        "description": "Raw displacement magnitude multiplier (0–2).",
+        "inherited": false,
+        "example": "1"
+      },
+      {
+        "name": "saturation",
+        "type": "number",
+        "required": false,
+        "default": "1.5",
+        "description": "Backdrop saturation multiplier.",
+        "inherited": false,
+        "example": "1.5"
+      },
+      {
+        "name": "shadowIntensity",
+        "type": "number",
+        "required": false,
+        "default": "1",
+        "description": "Drop shadow intensity (0 = off).",
+        "inherited": false,
+        "example": "1"
+      },
+      {
+        "name": "showSpecular",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "description": "Show conic-gradient specular rim.",
+        "inherited": false,
+        "example": "true"
+      },
+      {
+        "name": "specularAngle",
+        "type": "number",
+        "required": false,
+        "default": "200",
+        "description": "Specular conic-gradient start angle (deg).",
+        "inherited": false,
+        "example": "200"
+      },
+      {
+        "name": "specularEdgeOpacity",
+        "type": "number",
+        "required": false,
+        "default": "0.55",
+        "description": "Specular edge/wing opacity.",
+        "inherited": false,
+        "example": "0.55"
+      },
+      {
+        "name": "specularTopOpacity",
+        "type": "number",
+        "required": false,
+        "default": "0.85",
+        "description": "Brightest specular peak opacity.",
+        "inherited": false,
+        "example": "0.85"
+      },
+      {
+        "name": "style",
+        "type": "LiquidGlassStyle",
+        "required": false,
+        "description": "Inline CSS merged onto the surface. Flex / grid / padding apply to inner content.",
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "tint",
+        "type": "string",
+        "required": false,
+        "default": "rgba(255,255,255,0.10)",
+        "description": "Glass fill on Chromium (SVG refraction path).",
+        "inherited": false,
+        "example": "rgba(255,255,255,0.10)"
+      },
+      {
+        "name": "tintFallback",
+        "type": "string",
+        "required": false,
+        "default": "rgba(255,255,255,0.14)",
+        "description": "Glass fill on non-Chromium fallback.",
+        "inherited": false,
+        "example": "rgba(255,255,255,0.14)"
+      },
+      {
+        "name": "width",
+        "type": "number | string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      }
+    ],
+    "events": [
+      {
+        "name": "onDisplacementMapChange",
+        "type": "(dataUrl: string) => void",
+        "required": false,
+        "description": "Expose the displacement map data URL (for debug / lens lab).",
+        "inherited": false,
+        "example": "—"
+      }
+    ],
     "accessibility": []
   },
   "LiquidGlassButton": {
     "props": [
       {
+        "name": "aria-label",
+        "type": "string",
+        "required": true,
+        "description": "Accessible label (recommended for nav/header).",
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "as",
+        "type": "string",
+        "required": false,
+        "default": "'div'",
+        "description": "HTML tag name for the glass shell (`div`, `footer`, `nav`, …).",
+        "inherited": false,
+        "example": "'div'"
+      },
+      {
+        "name": "bezelWidth",
+        "type": "number",
+        "required": false,
+        "default": "20",
+        "description": "Refracting bezel band width in px.",
+        "inherited": false,
+        "example": "20"
+      },
+      {
+        "name": "blur",
+        "type": "number",
+        "required": false,
+        "default": "18",
+        "description": "Backdrop blur radius in px (non-Chromium fallback).",
+        "inherited": false,
+        "example": "18"
+      },
+      {
+        "name": "borderColor",
+        "type": "string",
+        "required": false,
+        "default": "rgba(255,255,255,0.35)",
+        "description": "Inset border colour.",
+        "inherited": false,
+        "example": "rgba(255,255,255,0.35)"
+      },
+      {
         "name": "borderRadius",
         "type": "number",
         "required": false,
         "default": "LIQUID_GLASS_PRESETS.button.borderRadius",
-        "inherited": false
+        "inherited": false,
+        "example": "LIQUID_GLASS_PRESETS.button.borderRadius"
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": true,
+        "inherited": true,
+        "example": "—"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "color",
@@ -3805,7 +4636,17 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "'#ffffff'",
         "description": "Text/icon colour.",
-        "inherited": false
+        "inherited": false,
+        "example": "'#ffffff'"
+      },
+      {
+        "name": "displacementScale",
+        "type": "number",
+        "required": false,
+        "default": "34",
+        "description": "feDisplacementMap scale — higher = stronger refraction.",
+        "inherited": false,
+        "example": "34"
       },
       {
         "name": "fontSize",
@@ -3813,7 +4654,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "'0.9375rem'",
         "description": "Font size.",
-        "inherited": false
+        "inherited": false,
+        "example": "'0.9375rem'"
       },
       {
         "name": "fontWeight",
@@ -3821,30 +4663,179 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "500",
         "description": "Font weight.",
-        "inherited": false
+        "inherited": false,
+        "example": "500"
       },
       {
         "name": "height",
         "type": "number | string",
         "required": false,
-        "default": "48",
-        "inherited": false
+        "inherited": false,
+        "example": "48",
+        "default": "48"
+      },
+      {
+        "name": "innerBottomShadow",
+        "type": "number",
+        "required": false,
+        "default": "0.20",
+        "description": "Inner bottom shadow fog opacity.",
+        "inherited": false,
+        "example": "0.20"
+      },
+      {
+        "name": "innerTopHighlight",
+        "type": "number",
+        "required": false,
+        "default": "0.35",
+        "description": "1px inner top highlight opacity.",
+        "inherited": false,
+        "example": "0.35"
+      },
+      {
+        "name": "maxHeight",
+        "type": "number | string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "maxWidth",
+        "type": "number | string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "minHeight",
+        "type": "number | string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "minWidth",
+        "type": "number | string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "onDisplacementMapChange",
+        "type": "(dataUrl: string) => void",
+        "required": false,
+        "description": "Expose the displacement map data URL (for debug / lens lab).",
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "refractionStrength",
+        "type": "number",
+        "required": false,
+        "default": "1",
+        "description": "Raw displacement magnitude multiplier (0–2).",
+        "inherited": false,
+        "example": "1"
+      },
+      {
+        "name": "saturation",
+        "type": "number",
+        "required": false,
+        "default": "1.5",
+        "description": "Backdrop saturation multiplier.",
+        "inherited": false,
+        "example": "1.5"
+      },
+      {
+        "name": "shadowIntensity",
+        "type": "number",
+        "required": false,
+        "default": "1",
+        "description": "Drop shadow intensity (0 = off).",
+        "inherited": false,
+        "example": "1"
+      },
+      {
+        "name": "showSpecular",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "description": "Show conic-gradient specular rim.",
+        "inherited": false,
+        "example": "true"
+      },
+      {
+        "name": "specularAngle",
+        "type": "number",
+        "required": false,
+        "default": "200",
+        "description": "Specular conic-gradient start angle (deg).",
+        "inherited": false,
+        "example": "200"
+      },
+      {
+        "name": "specularEdgeOpacity",
+        "type": "number",
+        "required": false,
+        "default": "0.55",
+        "description": "Specular edge/wing opacity.",
+        "inherited": false,
+        "example": "0.55"
+      },
+      {
+        "name": "specularTopOpacity",
+        "type": "number",
+        "required": false,
+        "default": "0.85",
+        "description": "Brightest specular peak opacity.",
+        "inherited": false,
+        "example": "0.85"
+      },
+      {
+        "name": "style",
+        "type": "LiquidGlassStyle",
+        "required": false,
+        "description": "Inline CSS merged onto the surface. Flex / grid / padding apply to inner content.",
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "tint",
+        "type": "string",
+        "required": false,
+        "default": "rgba(255,255,255,0.10)",
+        "description": "Glass fill on Chromium (SVG refraction path).",
+        "inherited": false,
+        "example": "rgba(255,255,255,0.10)"
+      },
+      {
+        "name": "tintFallback",
+        "type": "string",
+        "required": false,
+        "default": "rgba(255,255,255,0.14)",
+        "description": "Glass fill on non-Chromium fallback.",
+        "inherited": false,
+        "example": "rgba(255,255,255,0.14)"
       },
       {
         "name": "width",
         "type": "number | string",
         "required": false,
-        "default": "140",
-        "inherited": false
-      },
-      {
-        "name": "children",
-        "type": "ReactNode",
-        "required": true,
-        "inherited": true
+        "inherited": false,
+        "example": "140",
+        "default": "140"
       }
     ],
-    "events": [],
+    "events": [
+      {
+        "name": "onDisplacementMapChange",
+        "type": "(dataUrl: string) => void",
+        "required": false,
+        "description": "Expose the displacement map data URL (for debug / lens lab).",
+        "inherited": false,
+        "example": "—"
+      }
+    ],
     "accessibility": []
   },
   "LiquidGlassCheckbox": {
@@ -3853,68 +4844,288 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "'aria-label'",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "as",
+        "type": "string",
+        "required": false,
+        "default": "'div'",
+        "description": "HTML tag name for the glass shell (`div`, `footer`, `nav`, …).",
+        "inherited": false,
+        "example": "'div'"
+      },
+      {
+        "name": "bezelWidth",
+        "type": "number",
+        "required": false,
+        "default": "20",
+        "description": "Refracting bezel band width in px.",
+        "inherited": false,
+        "example": "20"
+      },
+      {
+        "name": "blur",
+        "type": "number",
+        "required": false,
+        "default": "18",
+        "description": "Backdrop blur radius in px (non-Chromium fallback).",
+        "inherited": false,
+        "example": "18"
+      },
+      {
+        "name": "borderColor",
+        "type": "string",
+        "required": false,
+        "default": "rgba(255,255,255,0.35)",
+        "description": "Inset border colour.",
+        "inherited": false,
+        "example": "rgba(255,255,255,0.35)"
       },
       {
         "name": "borderRadius",
         "type": "number",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "0"
       },
       {
         "name": "checkColor",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "checked",
         "type": "boolean",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "checkedTint",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "defaultChecked",
         "type": "boolean",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "disabled",
         "type": "boolean",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "true"
+      },
+      {
+        "name": "displacementScale",
+        "type": "number",
+        "required": false,
+        "default": "34",
+        "description": "feDisplacementMap scale — higher = stronger refraction.",
+        "inherited": false,
+        "example": "34"
+      },
+      {
+        "name": "height",
+        "type": "number | string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "innerBottomShadow",
+        "type": "number",
+        "required": false,
+        "default": "0.20",
+        "description": "Inner bottom shadow fog opacity.",
+        "inherited": false,
+        "example": "0.20"
+      },
+      {
+        "name": "innerTopHighlight",
+        "type": "number",
+        "required": false,
+        "default": "0.35",
+        "description": "1px inner top highlight opacity.",
+        "inherited": false,
+        "example": "0.35"
       },
       {
         "name": "label",
         "type": "ReactNode",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "labelColor",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "maxHeight",
+        "type": "number | string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "maxWidth",
+        "type": "number | string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "minHeight",
+        "type": "number | string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "minWidth",
+        "type": "number | string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "onChange",
+        "type": "(checked: boolean) => void",
+        "required": false,
+        "inherited": true,
+        "example": "—"
+      },
+      {
+        "name": "onDisplacementMapChange",
+        "type": "(dataUrl: string) => void",
+        "required": false,
+        "description": "Expose the displacement map data URL (for debug / lens lab).",
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "refractionStrength",
+        "type": "number",
+        "required": false,
+        "default": "1",
+        "description": "Raw displacement magnitude multiplier (0–2).",
+        "inherited": false,
+        "example": "1"
+      },
+      {
+        "name": "saturation",
+        "type": "number",
+        "required": false,
+        "default": "1.5",
+        "description": "Backdrop saturation multiplier.",
+        "inherited": false,
+        "example": "1.5"
+      },
+      {
+        "name": "shadowIntensity",
+        "type": "number",
+        "required": false,
+        "default": "1",
+        "description": "Drop shadow intensity (0 = off).",
+        "inherited": false,
+        "example": "1"
+      },
+      {
+        "name": "showSpecular",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "description": "Show conic-gradient specular rim.",
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "size",
         "type": "number",
         "required": false,
         "description": "Box size in px.",
-        "inherited": false
+        "inherited": false,
+        "example": "0"
       },
       {
-        "name": "onChange",
-        "type": "(checked: boolean) => void",
+        "name": "specularAngle",
+        "type": "number",
         "required": false,
-        "inherited": true
+        "default": "200",
+        "description": "Specular conic-gradient start angle (deg).",
+        "inherited": false,
+        "example": "200"
+      },
+      {
+        "name": "specularEdgeOpacity",
+        "type": "number",
+        "required": false,
+        "default": "0.55",
+        "description": "Specular edge/wing opacity.",
+        "inherited": false,
+        "example": "0.55"
+      },
+      {
+        "name": "specularTopOpacity",
+        "type": "number",
+        "required": false,
+        "default": "0.85",
+        "description": "Brightest specular peak opacity.",
+        "inherited": false,
+        "example": "0.85"
+      },
+      {
+        "name": "style",
+        "type": "LiquidGlassStyle",
+        "required": false,
+        "description": "Inline CSS merged onto the surface. Flex / grid / padding apply to inner content.",
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "tint",
+        "type": "string",
+        "required": false,
+        "default": "rgba(255,255,255,0.10)",
+        "description": "Glass fill on Chromium (SVG refraction path).",
+        "inherited": false,
+        "example": "rgba(255,255,255,0.10)"
+      },
+      {
+        "name": "tintFallback",
+        "type": "string",
+        "required": false,
+        "default": "rgba(255,255,255,0.14)",
+        "description": "Glass fill on non-Chromium fallback.",
+        "inherited": false,
+        "example": "rgba(255,255,255,0.14)"
+      },
+      {
+        "name": "width",
+        "type": "number | string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
       }
     ],
     "events": [
@@ -3922,7 +5133,16 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onChange",
         "type": "(checked: boolean) => void",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
+      },
+      {
+        "name": "onDisplacementMapChange",
+        "type": "(dataUrl: string) => void",
+        "required": false,
+        "description": "Expose the displacement map data URL (for debug / lens lab).",
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": [
@@ -3935,36 +5155,93 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "'aria-label'",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "as",
+        "type": "string",
+        "required": false,
+        "default": "'div'",
+        "description": "HTML tag name for the glass shell (`div`, `footer`, `nav`, …).",
+        "inherited": false,
+        "example": "'div'"
+      },
+      {
+        "name": "bezelWidth",
+        "type": "number",
+        "required": false,
+        "default": "20",
+        "description": "Refracting bezel band width in px.",
+        "inherited": false,
+        "example": "20"
+      },
+      {
+        "name": "blur",
+        "type": "number",
+        "required": false,
+        "default": "18",
+        "description": "Backdrop blur radius in px (non-Chromium fallback).",
+        "inherited": false,
+        "example": "18"
+      },
+      {
+        "name": "borderColor",
+        "type": "string",
+        "required": false,
+        "default": "rgba(255,255,255,0.35)",
+        "description": "Inset border colour.",
+        "inherited": false,
+        "example": "rgba(255,255,255,0.35)"
       },
       {
         "name": "borderRadius",
         "type": "number",
         "required": false,
         "default": "{borderRadius",
-        "inherited": false
+        "inherited": false,
+        "example": "{borderRadius"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "displacementScale",
+        "type": "number",
+        "required": false,
+        "default": "34",
+        "description": "feDisplacementMap scale — higher = stronger refraction.",
+        "inherited": false,
+        "example": "34"
       },
       {
         "name": "fillColor",
         "type": "string",
         "required": false,
         "default": "'rgba(255",
-        "inherited": false
+        "inherited": false,
+        "example": "'rgba(255"
       },
       {
         "name": "fillGlow",
         "type": "string",
         "required": false,
         "default": "'rgba(255",
-        "inherited": false
+        "inherited": false,
+        "example": "'rgba(255"
       },
       {
         "name": "height",
         "type": "number",
         "required": false,
+        "inherited": false,
+        "example": "\"100%\"",
         "default": "\"100%\"",
-        "description": "Track height in px.",
-        "inherited": false
+        "description": "Track height in px."
       },
       {
         "name": "indeterminate",
@@ -3972,7 +5249,26 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "false",
         "description": "Indeterminate loading state.",
-        "inherited": false
+        "inherited": false,
+        "example": "false"
+      },
+      {
+        "name": "innerBottomShadow",
+        "type": "number",
+        "required": false,
+        "default": "0.20",
+        "description": "Inner bottom shadow fog opacity.",
+        "inherited": false,
+        "example": "0.20"
+      },
+      {
+        "name": "innerTopHighlight",
+        "type": "number",
+        "required": false,
+        "default": "0.35",
+        "description": "1px inner top highlight opacity.",
+        "inherited": false,
+        "example": "0.35"
       },
       {
         "name": "max",
@@ -3980,7 +5276,133 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "100",
         "description": "Maximum value.",
-        "inherited": false
+        "inherited": false,
+        "example": "100"
+      },
+      {
+        "name": "maxHeight",
+        "type": "number | string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "maxWidth",
+        "type": "number | string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "minHeight",
+        "type": "number | string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "minWidth",
+        "type": "number | string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "onDisplacementMapChange",
+        "type": "(dataUrl: string) => void",
+        "required": false,
+        "description": "Expose the displacement map data URL (for debug / lens lab).",
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "refractionStrength",
+        "type": "number",
+        "required": false,
+        "default": "1",
+        "description": "Raw displacement magnitude multiplier (0–2).",
+        "inherited": false,
+        "example": "1"
+      },
+      {
+        "name": "saturation",
+        "type": "number",
+        "required": false,
+        "default": "1.5",
+        "description": "Backdrop saturation multiplier.",
+        "inherited": false,
+        "example": "1.5"
+      },
+      {
+        "name": "shadowIntensity",
+        "type": "number",
+        "required": false,
+        "default": "1",
+        "description": "Drop shadow intensity (0 = off).",
+        "inherited": false,
+        "example": "1"
+      },
+      {
+        "name": "showSpecular",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "description": "Show conic-gradient specular rim.",
+        "inherited": false,
+        "example": "true"
+      },
+      {
+        "name": "specularAngle",
+        "type": "number",
+        "required": false,
+        "default": "200",
+        "description": "Specular conic-gradient start angle (deg).",
+        "inherited": false,
+        "example": "200"
+      },
+      {
+        "name": "specularEdgeOpacity",
+        "type": "number",
+        "required": false,
+        "default": "0.55",
+        "description": "Specular edge/wing opacity.",
+        "inherited": false,
+        "example": "0.55"
+      },
+      {
+        "name": "specularTopOpacity",
+        "type": "number",
+        "required": false,
+        "default": "0.85",
+        "description": "Brightest specular peak opacity.",
+        "inherited": false,
+        "example": "0.85"
+      },
+      {
+        "name": "style",
+        "type": "LiquidGlassStyle",
+        "required": false,
+        "description": "Inline CSS merged onto the surface. Flex / grid / padding apply to inner content.",
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "tint",
+        "type": "string",
+        "required": false,
+        "default": "rgba(255,255,255,0.10)",
+        "description": "Glass fill on Chromium (SVG refraction path).",
+        "inherited": false,
+        "example": "rgba(255,255,255,0.10)"
+      },
+      {
+        "name": "tintFallback",
+        "type": "string",
+        "required": false,
+        "default": "rgba(255,255,255,0.14)",
+        "description": "Glass fill on non-Chromium fallback.",
+        "inherited": false,
+        "example": "rgba(255,255,255,0.14)"
       },
       {
         "name": "value",
@@ -3988,17 +5410,28 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "0",
         "description": "Current value.",
-        "inherited": false
+        "inherited": false,
+        "example": "0"
       },
       {
         "name": "width",
         "type": "number | string",
         "required": false,
-        "default": "\"100%\"",
-        "inherited": false
+        "inherited": false,
+        "example": "\"100%\"",
+        "default": "\"100%\""
       }
     ],
-    "events": [],
+    "events": [
+      {
+        "name": "onDisplacementMapChange",
+        "type": "(dataUrl: string) => void",
+        "required": false,
+        "description": "Expose the displacement map data URL (for debug / lens lab).",
+        "inherited": false,
+        "example": "—"
+      }
+    ],
     "accessibility": [
       "Supports ARIA attributes via standard HTML element props."
     ]
@@ -4009,56 +5442,255 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "'aria-label'",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "as",
+        "type": "string",
+        "required": false,
+        "default": "'div'",
+        "description": "HTML tag name for the glass shell (`div`, `footer`, `nav`, …).",
+        "inherited": false,
+        "example": "'div'"
+      },
+      {
+        "name": "bezelWidth",
+        "type": "number",
+        "required": false,
+        "default": "20",
+        "description": "Refracting bezel band width in px.",
+        "inherited": false,
+        "example": "20"
+      },
+      {
+        "name": "blur",
+        "type": "number",
+        "required": false,
+        "default": "18",
+        "description": "Backdrop blur radius in px (non-Chromium fallback).",
+        "inherited": false,
+        "example": "18"
+      },
+      {
+        "name": "borderColor",
+        "type": "string",
+        "required": false,
+        "default": "rgba(255,255,255,0.35)",
+        "description": "Inset border colour.",
+        "inherited": false,
+        "example": "rgba(255,255,255,0.35)"
       },
       {
         "name": "borderRadius",
         "type": "number",
         "required": false,
         "default": "LIQUID_GLASS_PRESETS.slider.borderRadius",
-        "inherited": false
+        "inherited": false,
+        "example": "LIQUID_GLASS_PRESETS.slider.borderRadius"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "defaultValue",
         "type": "number",
         "required": false,
         "default": "50",
-        "inherited": false
+        "inherited": false,
+        "example": "50"
       },
       {
         "name": "disabled",
         "type": "boolean",
         "required": false,
         "default": "false",
-        "inherited": false
+        "inherited": false,
+        "example": "false"
+      },
+      {
+        "name": "displacementScale",
+        "type": "number",
+        "required": false,
+        "default": "34",
+        "description": "feDisplacementMap scale — higher = stronger refraction.",
+        "inherited": false,
+        "example": "34"
       },
       {
         "name": "fillColor",
         "type": "string",
         "required": false,
         "default": "'rgba(255",
-        "inherited": false
+        "inherited": false,
+        "example": "'rgba(255"
+      },
+      {
+        "name": "height",
+        "type": "number | string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "innerBottomShadow",
+        "type": "number",
+        "required": false,
+        "default": "0.20",
+        "description": "Inner bottom shadow fog opacity.",
+        "inherited": false,
+        "example": "0.20"
+      },
+      {
+        "name": "innerTopHighlight",
+        "type": "number",
+        "required": false,
+        "default": "0.35",
+        "description": "1px inner top highlight opacity.",
+        "inherited": false,
+        "example": "0.35"
       },
       {
         "name": "max",
         "type": "number",
         "required": false,
         "default": "== min) return 0;",
-        "inherited": false
+        "inherited": false,
+        "example": "== min) return 0;"
+      },
+      {
+        "name": "maxHeight",
+        "type": "number | string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "maxWidth",
+        "type": "number | string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "min",
         "type": "number",
         "required": false,
         "default": "0",
-        "inherited": false
+        "inherited": false,
+        "example": "0"
+      },
+      {
+        "name": "minHeight",
+        "type": "number | string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "minWidth",
+        "type": "number | string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "onChange",
+        "type": "(value: number) => void",
+        "required": false,
+        "inherited": true,
+        "example": "—"
+      },
+      {
+        "name": "onDisplacementMapChange",
+        "type": "(dataUrl: string) => void",
+        "required": false,
+        "description": "Expose the displacement map data URL (for debug / lens lab).",
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "refractionStrength",
+        "type": "number",
+        "required": false,
+        "default": "1",
+        "description": "Raw displacement magnitude multiplier (0–2).",
+        "inherited": false,
+        "example": "1"
+      },
+      {
+        "name": "saturation",
+        "type": "number",
+        "required": false,
+        "default": "1.5",
+        "description": "Backdrop saturation multiplier.",
+        "inherited": false,
+        "example": "1.5"
+      },
+      {
+        "name": "shadowIntensity",
+        "type": "number",
+        "required": false,
+        "default": "1",
+        "description": "Drop shadow intensity (0 = off).",
+        "inherited": false,
+        "example": "1"
+      },
+      {
+        "name": "showSpecular",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "description": "Show conic-gradient specular rim.",
+        "inherited": false,
+        "example": "true"
+      },
+      {
+        "name": "specularAngle",
+        "type": "number",
+        "required": false,
+        "default": "200",
+        "description": "Specular conic-gradient start angle (deg).",
+        "inherited": false,
+        "example": "200"
+      },
+      {
+        "name": "specularEdgeOpacity",
+        "type": "number",
+        "required": false,
+        "default": "0.55",
+        "description": "Specular edge/wing opacity.",
+        "inherited": false,
+        "example": "0.55"
+      },
+      {
+        "name": "specularTopOpacity",
+        "type": "number",
+        "required": false,
+        "default": "0.85",
+        "description": "Brightest specular peak opacity.",
+        "inherited": false,
+        "example": "0.85"
       },
       {
         "name": "step",
         "type": "number",
         "required": false,
         "default": "1",
-        "inherited": false
+        "inherited": false,
+        "example": "1"
+      },
+      {
+        "name": "style",
+        "type": "LiquidGlassStyle",
+        "required": false,
+        "description": "Inline CSS merged onto the surface. Flex / grid / padding apply to inner content.",
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "thumbSize",
@@ -4066,7 +5698,26 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "28",
         "description": "Thumb diameter in px.",
-        "inherited": false
+        "inherited": false,
+        "example": "28"
+      },
+      {
+        "name": "tint",
+        "type": "string",
+        "required": false,
+        "default": "rgba(255,255,255,0.10)",
+        "description": "Glass fill on Chromium (SVG refraction path).",
+        "inherited": false,
+        "example": "rgba(255,255,255,0.10)"
+      },
+      {
+        "name": "tintFallback",
+        "type": "string",
+        "required": false,
+        "default": "rgba(255,255,255,0.14)",
+        "description": "Glass fill on non-Chromium fallback.",
+        "inherited": false,
+        "example": "rgba(255,255,255,0.14)"
       },
       {
         "name": "trackHeight",
@@ -4074,27 +5725,24 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "8",
         "description": "Track height in px.",
-        "inherited": false
+        "inherited": false,
+        "example": "8"
       },
       {
         "name": "value",
         "type": "number",
         "required": false,
         "default": "controlledValue ?? internalValue;",
-        "inherited": false
+        "inherited": false,
+        "example": "controlledValue ?? internalValue;"
       },
       {
         "name": "width",
         "type": "number | string",
         "required": false,
-        "default": "'100%'",
-        "inherited": false
-      },
-      {
-        "name": "onChange",
-        "type": "(value: number) => void",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "'100%'",
+        "default": "'100%'"
       }
     ],
     "events": [
@@ -4102,7 +5750,16 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onChange",
         "type": "(value: number) => void",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
+      },
+      {
+        "name": "onDisplacementMapChange",
+        "type": "(dataUrl: string) => void",
+        "required": false,
+        "description": "Expose the displacement map data URL (for debug / lens lab).",
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": [
@@ -4115,84 +5772,292 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "'aria-label'",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "activeTrackTint",
         "type": "LiquidGlassSwitchActiveTrackTint",
         "required": false,
         "description": "Active track tint when on. Defaults to iOS-style green.\nPass `'glass'` () for liquid glass only, or any CSS color.",
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "as",
+        "type": "string",
+        "required": false,
+        "default": "'div'",
+        "description": "HTML tag name for the glass shell (`div`, `footer`, `nav`, …).",
+        "inherited": false,
+        "example": "'div'"
+      },
+      {
+        "name": "bezelWidth",
+        "type": "number",
+        "required": false,
+        "default": "20",
+        "description": "Refracting bezel band width in px.",
+        "inherited": false,
+        "example": "20"
+      },
+      {
+        "name": "blur",
+        "type": "number",
+        "required": false,
+        "default": "18",
+        "description": "Backdrop blur radius in px (non-Chromium fallback).",
+        "inherited": false,
+        "example": "18"
+      },
+      {
+        "name": "borderColor",
+        "type": "string",
+        "required": false,
+        "default": "rgba(255,255,255,0.35)",
+        "description": "Inset border colour.",
+        "inherited": false,
+        "example": "rgba(255,255,255,0.35)"
       },
       {
         "name": "borderRadius",
         "type": "number",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "0"
       },
       {
         "name": "checked",
         "type": "boolean",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "true"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "defaultChecked",
         "type": "boolean",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "disabled",
         "type": "boolean",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "true"
+      },
+      {
+        "name": "displacementScale",
+        "type": "number",
+        "required": false,
+        "default": "34",
+        "description": "feDisplacementMap scale — higher = stronger refraction.",
+        "inherited": false,
+        "example": "34"
       },
       {
         "name": "height",
         "type": "number",
         "required": false,
-        "description": "Track height in px.",
-        "inherited": false
+        "inherited": false,
+        "example": "0",
+        "description": "Track height in px."
       },
       {
         "name": "inactiveTrackTint",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "innerBottomShadow",
+        "type": "number",
+        "required": false,
+        "default": "0.20",
+        "description": "Inner bottom shadow fog opacity.",
+        "inherited": false,
+        "example": "0.20"
+      },
+      {
+        "name": "innerTopHighlight",
+        "type": "number",
+        "required": false,
+        "default": "0.35",
+        "description": "1px inner top highlight opacity.",
+        "inherited": false,
+        "example": "0.35"
+      },
+      {
+        "name": "maxHeight",
+        "type": "number | string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "maxWidth",
+        "type": "number | string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "minHeight",
+        "type": "number | string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "minWidth",
+        "type": "number | string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "onChange",
+        "type": "(checked: boolean) => void",
+        "required": false,
+        "inherited": true,
+        "example": "—"
+      },
+      {
+        "name": "onDisplacementMapChange",
+        "type": "(dataUrl: string) => void",
+        "required": false,
+        "description": "Expose the displacement map data URL (for debug / lens lab).",
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "padding",
         "type": "number",
         "required": false,
         "description": "Track padding around thumb.",
-        "inherited": false
+        "inherited": false,
+        "example": "0"
+      },
+      {
+        "name": "refractionStrength",
+        "type": "number",
+        "required": false,
+        "default": "1",
+        "description": "Raw displacement magnitude multiplier (0–2).",
+        "inherited": false,
+        "example": "1"
+      },
+      {
+        "name": "saturation",
+        "type": "number",
+        "required": false,
+        "default": "1.5",
+        "description": "Backdrop saturation multiplier.",
+        "inherited": false,
+        "example": "1.5"
+      },
+      {
+        "name": "shadowIntensity",
+        "type": "number",
+        "required": false,
+        "default": "1",
+        "description": "Drop shadow intensity (0 = off).",
+        "inherited": false,
+        "example": "1"
+      },
+      {
+        "name": "showSpecular",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "description": "Show conic-gradient specular rim.",
+        "inherited": false,
+        "example": "true"
+      },
+      {
+        "name": "specularAngle",
+        "type": "number",
+        "required": false,
+        "default": "200",
+        "description": "Specular conic-gradient start angle (deg).",
+        "inherited": false,
+        "example": "200"
+      },
+      {
+        "name": "specularEdgeOpacity",
+        "type": "number",
+        "required": false,
+        "default": "0.55",
+        "description": "Specular edge/wing opacity.",
+        "inherited": false,
+        "example": "0.55"
+      },
+      {
+        "name": "specularTopOpacity",
+        "type": "number",
+        "required": false,
+        "default": "0.85",
+        "description": "Brightest specular peak opacity.",
+        "inherited": false,
+        "example": "0.85"
+      },
+      {
+        "name": "style",
+        "type": "LiquidGlassStyle",
+        "required": false,
+        "description": "Inline CSS merged onto the surface. Flex / grid / padding apply to inner content.",
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "thumbSize",
         "type": "number",
         "required": false,
         "description": "Thumb diameter in px.",
-        "inherited": false
+        "inherited": false,
+        "example": "0"
       },
       {
         "name": "thumbTint",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "tint",
+        "type": "string",
+        "required": false,
+        "default": "rgba(255,255,255,0.10)",
+        "description": "Glass fill on Chromium (SVG refraction path).",
+        "inherited": false,
+        "example": "rgba(255,255,255,0.10)"
+      },
+      {
+        "name": "tintFallback",
+        "type": "string",
+        "required": false,
+        "default": "rgba(255,255,255,0.14)",
+        "description": "Glass fill on non-Chromium fallback.",
+        "inherited": false,
+        "example": "rgba(255,255,255,0.14)"
       },
       {
         "name": "width",
         "type": "number",
         "required": false,
-        "description": "Track width in px.",
-        "inherited": false
-      },
-      {
-        "name": "onChange",
-        "type": "(checked: boolean) => void",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "0",
+        "description": "Track width in px."
       }
     ],
     "events": [
@@ -4200,7 +6065,16 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onChange",
         "type": "(checked: boolean) => void",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
+      },
+      {
+        "name": "onDisplacementMapChange",
+        "type": "(dataUrl: string) => void",
+        "required": false,
+        "description": "Expose the displacement map data URL (for debug / lens lab).",
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": [
@@ -4214,102 +6088,320 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "default": "'#ffffff'",
-        "inherited": false
+        "inherited": false,
+        "example": "'#ffffff'"
       },
       {
         "name": "activeKey",
         "type": "string",
         "required": false,
         "default": "controlledActiveKey ?? internalActiveKey;",
-        "inherited": false
+        "inherited": false,
+        "example": "controlledActiveKey ?? internalActiveKey;"
+      },
+      {
+        "name": "aria-label",
+        "type": "string",
+        "required": true,
+        "description": "Accessible label (recommended for nav/header).",
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "as",
+        "type": "string",
+        "required": false,
+        "default": "'div'",
+        "description": "HTML tag name for the glass shell (`div`, `footer`, `nav`, …).",
+        "inherited": false,
+        "example": "'div'"
+      },
+      {
+        "name": "bezelWidth",
+        "type": "number",
+        "required": false,
+        "default": "20",
+        "description": "Refracting bezel band width in px.",
+        "inherited": false,
+        "example": "20"
+      },
+      {
+        "name": "blur",
+        "type": "number",
+        "required": false,
+        "default": "18",
+        "description": "Backdrop blur radius in px (non-Chromium fallback).",
+        "inherited": false,
+        "example": "18"
+      },
+      {
+        "name": "borderColor",
+        "type": "string",
+        "required": false,
+        "default": "rgba(255,255,255,0.35)",
+        "description": "Inset border colour.",
+        "inherited": false,
+        "example": "rgba(255,255,255,0.35)"
       },
       {
         "name": "borderRadius",
         "type": "number",
         "required": false,
         "default": "LIQUID_GLASS_PRESETS.tabBar.borderRadius",
-        "inherited": false
+        "inherited": false,
+        "example": "LIQUID_GLASS_PRESETS.tabBar.borderRadius"
       },
       {
         "name": "bottom",
         "type": "number | string",
         "required": false,
         "default": "22",
-        "inherited": false
+        "inherited": false,
+        "example": "22"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "defaultActiveKey",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "displacementScale",
+        "type": "number",
+        "required": false,
+        "default": "34",
+        "description": "feDisplacementMap scale — higher = stronger refraction.",
+        "inherited": false,
+        "example": "34"
       },
       {
         "name": "height",
         "type": "number",
         "required": false,
-        "default": "64",
-        "inherited": false
+        "inherited": false,
+        "example": "64",
+        "default": "64"
       },
       {
         "name": "inactiveColor",
         "type": "string",
         "required": false,
         "default": "'rgba(255",
-        "inherited": false
+        "inherited": false,
+        "example": "'rgba(255"
       },
       {
         "name": "indicatorBackground",
         "type": "string",
         "required": false,
         "default": "'rgba(255",
-        "inherited": false
+        "inherited": false,
+        "example": "'rgba(255"
       },
       {
         "name": "indicatorBorderColor",
         "type": "string",
         "required": false,
         "default": "'rgba(255",
-        "inherited": false
+        "inherited": false,
+        "example": "'rgba(255"
       },
       {
         "name": "indicatorPadding",
         "type": "number",
         "required": false,
         "default": "8",
-        "inherited": false
+        "inherited": false,
+        "example": "8"
+      },
+      {
+        "name": "innerBottomShadow",
+        "type": "number",
+        "required": false,
+        "default": "0.20",
+        "description": "Inner bottom shadow fog opacity.",
+        "inherited": false,
+        "example": "0.20"
+      },
+      {
+        "name": "innerTopHighlight",
+        "type": "number",
+        "required": false,
+        "default": "0.35",
+        "description": "1px inner top highlight opacity.",
+        "inherited": false,
+        "example": "0.35"
       },
       {
         "name": "items",
         "type": "LiquidGlassTabItem[]",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "maxHeight",
+        "type": "number | string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "maxWidth",
         "type": "number",
         "required": false,
-        "default": "420",
-        "inherited": false
+        "inherited": false,
+        "example": "420",
+        "default": "420"
+      },
+      {
+        "name": "minHeight",
+        "type": "number | string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "minWidth",
+        "type": "number | string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "onChange",
+        "type": "(key: string) => void",
+        "required": false,
+        "inherited": true,
+        "example": "—"
+      },
+      {
+        "name": "onDisplacementMapChange",
+        "type": "(dataUrl: string) => void",
+        "required": false,
+        "description": "Expose the displacement map data URL (for debug / lens lab).",
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "position",
         "type": "'fixed' | 'absolute' | 'relative' | 'static'",
         "required": false,
         "default": "'fixed'",
-        "inherited": false
+        "inherited": false,
+        "example": "'fixed'"
+      },
+      {
+        "name": "refractionStrength",
+        "type": "number",
+        "required": false,
+        "default": "1",
+        "description": "Raw displacement magnitude multiplier (0–2).",
+        "inherited": false,
+        "example": "1"
+      },
+      {
+        "name": "saturation",
+        "type": "number",
+        "required": false,
+        "default": "1.5",
+        "description": "Backdrop saturation multiplier.",
+        "inherited": false,
+        "example": "1.5"
+      },
+      {
+        "name": "shadowIntensity",
+        "type": "number",
+        "required": false,
+        "default": "1",
+        "description": "Drop shadow intensity (0 = off).",
+        "inherited": false,
+        "example": "1"
       },
       {
         "name": "showIndicator",
         "type": "boolean",
         "required": false,
         "default": "true",
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
-        "name": "onChange",
-        "type": "(key: string) => void",
+        "name": "showSpecular",
+        "type": "boolean",
         "required": false,
-        "inherited": true
+        "default": "true",
+        "description": "Show conic-gradient specular rim.",
+        "inherited": false,
+        "example": "true"
+      },
+      {
+        "name": "specularAngle",
+        "type": "number",
+        "required": false,
+        "default": "200",
+        "description": "Specular conic-gradient start angle (deg).",
+        "inherited": false,
+        "example": "200"
+      },
+      {
+        "name": "specularEdgeOpacity",
+        "type": "number",
+        "required": false,
+        "default": "0.55",
+        "description": "Specular edge/wing opacity.",
+        "inherited": false,
+        "example": "0.55"
+      },
+      {
+        "name": "specularTopOpacity",
+        "type": "number",
+        "required": false,
+        "default": "0.85",
+        "description": "Brightest specular peak opacity.",
+        "inherited": false,
+        "example": "0.85"
+      },
+      {
+        "name": "style",
+        "type": "LiquidGlassStyle",
+        "required": false,
+        "description": "Inline CSS merged onto the surface. Flex / grid / padding apply to inner content.",
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "tint",
+        "type": "string",
+        "required": false,
+        "default": "rgba(255,255,255,0.10)",
+        "description": "Glass fill on Chromium (SVG refraction path).",
+        "inherited": false,
+        "example": "rgba(255,255,255,0.10)"
+      },
+      {
+        "name": "tintFallback",
+        "type": "string",
+        "required": false,
+        "default": "rgba(255,255,255,0.14)",
+        "description": "Glass fill on non-Chromium fallback.",
+        "inherited": false,
+        "example": "rgba(255,255,255,0.14)"
+      },
+      {
+        "name": "width",
+        "type": "number | string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
       }
     ],
     "events": [
@@ -4317,7 +6409,16 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onChange",
         "type": "(key: string) => void",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
+      },
+      {
+        "name": "onDisplacementMapChange",
+        "type": "(dataUrl: string) => void",
+        "required": false,
+        "description": "Expose the displacement map data URL (for debug / lens lab).",
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": []
@@ -4329,61 +6430,176 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "default": "'#ffffff'",
-        "inherited": false
+        "inherited": false,
+        "example": "'#ffffff'"
       },
       {
         "name": "activeKey",
         "type": "string",
         "required": false,
         "default": "controlledActiveKey ?? internalActiveKey;",
-        "inherited": false
+        "inherited": false,
+        "example": "controlledActiveKey ?? internalActiveKey;"
+      },
+      {
+        "name": "aria-label",
+        "type": "string",
+        "required": true,
+        "description": "Accessible label (recommended for nav/header).",
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "as",
+        "type": "string",
+        "required": false,
+        "default": "'div'",
+        "description": "HTML tag name for the glass shell (`div`, `footer`, `nav`, …).",
+        "inherited": false,
+        "example": "'div'"
+      },
+      {
+        "name": "bezelWidth",
+        "type": "number",
+        "required": false,
+        "default": "20",
+        "description": "Refracting bezel band width in px.",
+        "inherited": false,
+        "example": "20"
+      },
+      {
+        "name": "blur",
+        "type": "number",
+        "required": false,
+        "default": "18",
+        "description": "Backdrop blur radius in px (non-Chromium fallback).",
+        "inherited": false,
+        "example": "18"
+      },
+      {
+        "name": "borderColor",
+        "type": "string",
+        "required": false,
+        "default": "rgba(255,255,255,0.35)",
+        "description": "Inset border colour.",
+        "inherited": false,
+        "example": "rgba(255,255,255,0.35)"
       },
       {
         "name": "borderRadius",
         "type": "number",
         "required": false,
         "default": "borderRadiusProp ?? (isFloating ? LIQUID_GLASS_PRESETS.topBar.borderRadius : 0);",
-        "inherited": false
+        "inherited": false,
+        "example": "borderRadiusProp ?? (isFloating ? LIQUID_GLASS_PRESETS.topBar.borderRadius : 0);"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "defaultActiveKey",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "displacementScale",
+        "type": "number",
+        "required": false,
+        "default": "34",
+        "description": "feDisplacementMap scale — higher = stronger refraction.",
+        "inherited": false,
+        "example": "34"
       },
       {
         "name": "height",
         "type": "number",
         "required": false,
-        "default": "56",
-        "inherited": false
+        "inherited": false,
+        "example": "56",
+        "default": "56"
       },
       {
         "name": "inactiveColor",
         "type": "string",
         "required": false,
         "default": "'rgba(255",
-        "inherited": false
+        "inherited": false,
+        "example": "'rgba(255"
+      },
+      {
+        "name": "innerBottomShadow",
+        "type": "number",
+        "required": false,
+        "default": "0.20",
+        "description": "Inner bottom shadow fog opacity.",
+        "inherited": false,
+        "example": "0.20"
+      },
+      {
+        "name": "innerTopHighlight",
+        "type": "number",
+        "required": false,
+        "default": "0.35",
+        "description": "1px inner top highlight opacity.",
+        "inherited": false,
+        "example": "0.35"
       },
       {
         "name": "insetX",
         "type": "number",
         "required": false,
         "default": "insetXProp ?? (isFloating ? 16 : 0);",
-        "inherited": false
+        "inherited": false,
+        "example": "insetXProp ?? (isFloating ? 16 : 0);"
       },
       {
         "name": "items",
         "type": "LiquidGlassTopBarItem[]",
         "required": false,
         "default": "[]",
-        "inherited": false
+        "inherited": false,
+        "example": "[]"
       },
       {
         "name": "logo",
         "type": "ReactNode",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "maxHeight",
+        "type": "number | string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "maxWidth",
+        "type": "number | string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "minHeight",
+        "type": "number | string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "minWidth",
+        "type": "number | string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "navActiveBackground",
@@ -4391,7 +6607,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "'rgba(255",
         "description": "Active nav pill background.",
-        "inherited": false
+        "inherited": false,
+        "example": "'rgba(255"
       },
       {
         "name": "navTrackBackground",
@@ -4399,41 +6616,158 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "'rgba(255",
         "description": "Background of the segmented nav track.",
-        "inherited": false
+        "inherited": false,
+        "example": "'rgba(255"
+      },
+      {
+        "name": "onChange",
+        "type": "(key: string) => void",
+        "required": false,
+        "inherited": true,
+        "example": "—"
+      },
+      {
+        "name": "onDisplacementMapChange",
+        "type": "(dataUrl: string) => void",
+        "required": false,
+        "description": "Expose the displacement map data URL (for debug / lens lab).",
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "paddingX",
         "type": "number",
         "required": false,
         "default": "16",
-        "inherited": false
+        "inherited": false,
+        "example": "16"
       },
       {
         "name": "position",
         "type": "'fixed' | 'absolute' | 'relative' | 'sticky' | 'static'",
         "required": false,
         "default": "'fixed'",
-        "inherited": false
+        "inherited": false,
+        "example": "'fixed'"
+      },
+      {
+        "name": "refractionStrength",
+        "type": "number",
+        "required": false,
+        "default": "1",
+        "description": "Raw displacement magnitude multiplier (0–2).",
+        "inherited": false,
+        "example": "1"
+      },
+      {
+        "name": "saturation",
+        "type": "number",
+        "required": false,
+        "default": "1.5",
+        "description": "Backdrop saturation multiplier.",
+        "inherited": false,
+        "example": "1.5"
+      },
+      {
+        "name": "shadowIntensity",
+        "type": "number",
+        "required": false,
+        "default": "1",
+        "description": "Drop shadow intensity (0 = off).",
+        "inherited": false,
+        "example": "1"
+      },
+      {
+        "name": "showSpecular",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "description": "Show conic-gradient specular rim.",
+        "inherited": false,
+        "example": "true"
+      },
+      {
+        "name": "specularAngle",
+        "type": "number",
+        "required": false,
+        "default": "200",
+        "description": "Specular conic-gradient start angle (deg).",
+        "inherited": false,
+        "example": "200"
+      },
+      {
+        "name": "specularEdgeOpacity",
+        "type": "number",
+        "required": false,
+        "default": "0.55",
+        "description": "Specular edge/wing opacity.",
+        "inherited": false,
+        "example": "0.55"
+      },
+      {
+        "name": "specularTopOpacity",
+        "type": "number",
+        "required": false,
+        "default": "0.85",
+        "description": "Brightest specular peak opacity.",
+        "inherited": false,
+        "example": "0.85"
+      },
+      {
+        "name": "style",
+        "type": "LiquidGlassStyle",
+        "required": false,
+        "description": "Inline CSS merged onto the surface. Flex / grid / padding apply to inner content.",
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "tint",
+        "type": "string",
+        "required": false,
+        "default": "rgba(255,255,255,0.10)",
+        "description": "Glass fill on Chromium (SVG refraction path).",
+        "inherited": false,
+        "example": "rgba(255,255,255,0.10)"
+      },
+      {
+        "name": "tintFallback",
+        "type": "string",
+        "required": false,
+        "default": "rgba(255,255,255,0.14)",
+        "description": "Glass fill on non-Chromium fallback.",
+        "inherited": false,
+        "example": "rgba(255,255,255,0.14)"
+      },
+      {
+        "name": "title",
+        "type": "ReactNode",
+        "required": false,
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "titleColor",
         "type": "string",
         "required": false,
         "default": "'#ffffff'",
-        "inherited": false
+        "inherited": false,
+        "example": "'#ffffff'"
       },
       {
         "name": "top",
         "type": "number | string",
         "required": false,
         "default": "topProp ?? (isFloating ? 14 : 0);",
-        "inherited": false
+        "inherited": false,
+        "example": "topProp ?? (isFloating ? 14 : 0);"
       },
       {
         "name": "trailing",
         "type": "ReactNode",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "variant",
@@ -4441,19 +6775,15 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "'floating'",
         "description": "`floating` — inset pill bar with rounded corners (modern macOS/iOS style).\n`edge` — full-bleed bar flush with the viewport top.",
-        "inherited": false
+        "inherited": false,
+        "example": "'floating'"
       },
       {
-        "name": "onChange",
-        "type": "(key: string) => void",
+        "name": "width",
+        "type": "number | string",
         "required": false,
-        "inherited": true
-      },
-      {
-        "name": "title",
-        "type": "ReactNode",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "\"example\""
       }
     ],
     "events": [
@@ -4461,7 +6791,16 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onChange",
         "type": "(key: string) => void",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
+      },
+      {
+        "name": "onDisplacementMapChange",
+        "type": "(dataUrl: string) => void",
+        "required": false,
+        "description": "Expose the displacement map data URL (for debug / lens lab).",
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": [
@@ -4474,31 +6813,36 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "'aria-label'",
         "type": "string",
         "required": false,
-        "inherited": false
-      },
-      {
-        "name": "variant",
-        "type": "ListVariant",
-        "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "children",
         "type": "ReactNode",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "variant",
+        "type": "ListVariant",
+        "required": false,
+        "inherited": false,
+        "example": "\"md\""
       }
     ],
     "events": [],
@@ -4512,67 +6856,78 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "accessory",
         "type": "ListAccessory",
         "required": false,
-        "inherited": false
-      },
-      {
-        "name": "disabled",
-        "type": "boolean",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "leading",
-        "type": "ReactNode",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "onInfo",
-        "type": "(event: MouseEvent<HTMLButtonElement>) => void",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "onPress",
-        "type": "() => void",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "selected",
-        "type": "boolean",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "subtitle",
-        "type": "string",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "truncate",
-        "type": "'end' | 'middle'",
-        "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "inherited": false,
+        "example": "true"
+      },
+      {
+        "name": "leading",
+        "type": "ReactNode",
+        "required": false,
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "onInfo",
+        "type": "(event: MouseEvent<HTMLButtonElement>) => void",
+        "required": false,
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "onPress",
+        "type": "() => void",
+        "required": false,
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "selected",
+        "type": "boolean",
+        "required": false,
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "subtitle",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "title",
         "type": "string",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "truncate",
+        "type": "'end' | 'middle'",
+        "required": false,
+        "inherited": false,
+        "example": "\"end\""
       }
     ],
     "events": [
@@ -4580,13 +6935,15 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onInfo",
         "type": "(event: MouseEvent<HTMLButtonElement>) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onPress",
         "type": "() => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": []
@@ -4594,34 +6951,39 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
   "ListSection": {
     "props": [
       {
-        "name": "footer",
-        "type": "string",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "header",
-        "type": "string",
-        "required": false,
-        "inherited": false
-      },
-      {
         "name": "children",
         "type": "ReactNode",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "footer",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "header",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -4633,67 +6995,78 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "'aria-label'",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "axis",
         "type": "LockupAxis",
         "required": false,
-        "inherited": false
-      },
-      {
-        "name": "focused",
-        "type": "boolean",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "footer",
-        "type": "ReactNode",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "header",
-        "type": "ReactNode",
-        "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "children",
         "type": "ReactNode",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "focused",
+        "type": "boolean",
+        "required": false,
+        "inherited": false,
+        "example": "true"
+      },
+      {
+        "name": "footer",
+        "type": "ReactNode",
+        "required": false,
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "header",
+        "type": "ReactNode",
+        "required": false,
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onBlur",
         "type": "() => void",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "onClick",
         "type": "() => void",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "onFocus",
         "type": "() => void",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [
@@ -4701,19 +7074,22 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onBlur",
         "type": "() => void",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "onClick",
         "type": "() => void",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "onFocus",
         "type": "() => void",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       }
     ],
     "accessibility": [
@@ -4726,19 +7102,22 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "rating",
         "type": "number",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "0"
       },
       {
         "name": "review",
         "type": "string",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "title",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -4750,31 +7129,36 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "axis",
         "type": "LockupAxis",
         "required": false,
-        "inherited": false
-      },
-      {
-        "name": "itemWidth",
-        "type": "string",
-        "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "children",
         "type": "ReactNode",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "itemWidth",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -4783,99 +7167,114 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
   "Menu": {
     "props": [
       {
+        "name": "children",
+        "type": "ReactElement",
+        "required": false,
+        "inherited": true,
+        "example": "—"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
         "name": "dimBackground",
         "type": "boolean",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "enableMnemonics",
         "type": "boolean",
         "required": false,
         "description": "Enable Alt+key mnemonics while open. Defaults to true.",
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "enableShortcuts",
         "type": "boolean",
         "required": false,
         "description": "When true, keyboard shortcuts activate menu items while open. Defaults to true.",
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "enableTypeAhead",
         "type": "boolean",
         "required": false,
         "description": "Enable type-ahead letter matching while open. Defaults to true.",
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "entries",
         "type": "MenuEntry[]",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "layout",
         "type": "MenuLayout",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "mnemonicVisible",
         "type": "boolean",
         "required": false,
         "description": "When true, underline mnemonic access keys in labels.",
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "onEntrySelect",
         "type": "(entry: MenuItemConfig) => boolean | void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onOpenChange",
         "type": "(open: boolean) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "open",
         "type": "boolean",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "optionKey",
         "type": "boolean",
         "required": false,
         "description": "Passed from MenuBar for Option-key alternate accelerators.",
-        "inherited": false
-      },
-      {
-        "name": "children",
-        "type": "ReactElement",
-        "required": false,
-        "inherited": true
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "title",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [
@@ -4883,13 +7282,15 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onEntrySelect",
         "type": "(entry: MenuItemConfig) => boolean | void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onOpenChange",
         "type": "(open: boolean) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": []
@@ -4900,97 +7301,112 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "appName",
         "type": "string",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "appSpecificMenus",
         "type": "MenuBarMenuConfig[]",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "enableGlobalShortcuts",
         "type": "boolean",
         "required": false,
         "description": "Register top-level menu accelerators globally. Defaults to true.",
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "enableMnemonics",
         "type": "boolean",
         "required": false,
         "description": "Enable Alt+key mnemonics on Windows/Linux. Defaults to true on non-macOS.",
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "enableTypeAhead",
         "type": "boolean",
         "required": false,
         "description": "Enable type-ahead letter matching in open menus. Defaults to true.",
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "extras",
         "type": "MenuBarExtraConfig[]",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "menus",
         "type": "MenuBarMenuConfig[]",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onMenuAction",
         "type": "(menuId: string, entryId: string) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onRevealChange",
         "type": "(revealed: boolean) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "platform",
         "type": "MenuBarPlatform",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "revealed",
         "type": "boolean",
         "required": false,
         "description": "iPadOS: bar hidden until revealed at the top edge.",
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "showAppleMenu",
         "type": "boolean",
         "required": false,
         "description": "macOS: show a read-only Apple menu stub (system-provided on real macOS).",
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "standardOptions",
         "type": "StandardMenuBarOptions",
         "required": false,
         "description": "Used when `menus` is omitted to build the standard HIG menu set.",
-        "inherited": false
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [
@@ -4998,13 +7414,15 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onMenuAction",
         "type": "(menuId: string, entryId: string) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onRevealChange",
         "type": "(revealed: boolean) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": []
@@ -5012,61 +7430,70 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
   "MenuBarExtra": {
     "props": [
       {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
         "name": "enableMnemonics",
         "type": "boolean",
         "required": false,
         "default": "true",
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "enableTypeAhead",
         "type": "boolean",
         "required": false,
         "default": "true",
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "isOpen",
         "type": "boolean",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "mnemonicVisible",
         "type": "boolean",
         "required": false,
         "default": "false",
-        "inherited": false
+        "inherited": false,
+        "example": "false"
       },
       {
         "name": "onAction",
         "type": "(entry: MenuItemConfig) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onOpenChange",
         "type": "(open: boolean) => void",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "optionKey",
         "type": "boolean",
         "required": true,
-        "inherited": false
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [
@@ -5074,13 +7501,15 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onAction",
         "type": "(entry: MenuItemConfig) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onOpenChange",
         "type": "(open: boolean) => void",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": []
@@ -5088,35 +7517,40 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
   "MnemonicLabel": {
     "props": [
       {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
         "name": "label",
         "type": "string",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "mnemonic",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "showAccessKey",
         "type": "boolean",
         "required": false,
         "description": "When true, underline the access key character.",
-        "inherited": false
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -5125,82 +7559,95 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
   "Modal": {
     "props": [
       {
-        "name": "closeOnOverlay",
-        "type": "boolean",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "contentClassName",
-        "type": "string",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "contentStyle",
-        "type": "CSSProperties",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "description",
-        "type": "string",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "motion",
-        "type": "ComponentMotionOverride",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "onClose",
-        "type": "() => void",
-        "required": true,
-        "inherited": false
-      },
-      {
-        "name": "open",
-        "type": "boolean",
-        "required": true,
-        "inherited": false
-      },
-      {
-        "name": "overlayClassName",
-        "type": "string",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "overlayStyle",
-        "type": "CSSProperties",
-        "required": false,
-        "inherited": false
-      },
-      {
         "name": "children",
         "type": "ReactNode",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "closeOnOverlay",
+        "type": "boolean",
+        "required": false,
+        "inherited": false,
+        "example": "true"
+      },
+      {
+        "name": "contentClassName",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "contentStyle",
+        "type": "CSSProperties",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "motion",
+        "type": "ComponentMotionOverride",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "onClose",
+        "type": "() => void",
+        "required": true,
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "open",
+        "type": "boolean",
+        "required": true,
+        "inherited": false,
+        "example": "true"
+      },
+      {
+        "name": "overlayClassName",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "overlayStyle",
+        "type": "CSSProperties",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "title",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [
@@ -5208,7 +7655,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onClose",
         "type": "() => void",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": [
@@ -5221,19 +7669,22 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "imageUrl",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "name",
         "type": "string",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "role",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -5250,19 +7701,22 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "children",
         "type": "ReactNode",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -5274,7 +7728,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "active",
         "type": "boolean",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       }
     ],
     "events": [],
@@ -5286,21 +7741,38 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "'aria-label'",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "alignment",
         "type": "OrnamentContentAlignment",
         "required": false,
         "default": "'center'",
-        "inherited": false
+        "inherited": false,
+        "example": "'center'"
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": true,
+        "inherited": true,
+        "example": "—"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "edge",
         "type": "OrnamentEdge",
         "required": false,
         "default": "'bottom'",
-        "inherited": false
+        "inherited": false,
+        "example": "'bottom'"
       },
       {
         "name": "immersive",
@@ -5308,45 +7780,38 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "false",
         "description": "When true, automatic visibility hides ornaments (e.g. full-screen media).",
-        "inherited": false
+        "inherited": false,
+        "example": "false"
       },
       {
         "name": "ornament",
         "type": "ReactNode",
         "required": false,
         "description": "Single ornament content (shortcut for one bottom ornament).",
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "ornaments",
         "type": "OrnamentConfig[]",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "visibility",
         "type": "OrnamentVisibility",
         "required": false,
         "default": "'visible'",
-        "inherited": false
-      },
-      {
-        "name": "children",
-        "type": "ReactNode",
-        "required": true,
-        "inherited": true
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
-      },
-      {
-        "name": "style",
-        "type": "CSSProperties",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "'visible'"
       }
     ],
     "events": [],
@@ -5360,144 +7825,166 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "'aria-label'",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "alternatingRows",
         "type": "boolean",
         "required": false,
         "default": "true",
-        "inherited": false
+        "inherited": false,
+        "example": "true"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "columns",
         "type": "Array<string | OutlineColumn>",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "data",
         "type": "OutlineNode[]",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "defaultExpandedIds",
         "type": "string[]",
         "required": false,
         "default": "[]",
-        "inherited": false
+        "inherited": false,
+        "example": "[]"
       },
       {
         "name": "defaultSortDirection",
         "type": "SortDirection",
         "required": false,
         "default": "'asc'",
-        "inherited": false
+        "inherited": false,
+        "example": "'asc'"
       },
       {
         "name": "defaultSortKey",
         "type": "string",
         "required": false,
         "default": "PRIMARY_COLUMN_KEY",
-        "inherited": false
+        "inherited": false,
+        "example": "PRIMARY_COLUMN_KEY"
       },
       {
         "name": "editableColumns",
         "type": "string[]",
         "required": false,
         "default": "[]",
-        "inherited": false
+        "inherited": false,
+        "example": "[]"
       },
       {
         "name": "expandedIds",
         "type": "string[]",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onCellEdit",
         "type": "(nodeId: string, columnKey: string, value: string) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onExpandedChange",
         "type": "(expandedIds: string[]) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onRowDoubleClick",
         "type": "(node: OutlineNode) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onSelect",
         "type": "(node: OutlineNode) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "primaryColumnHeader",
         "type": "string",
         "required": false,
         "default": "'Name'",
-        "inherited": false
+        "inherited": false,
+        "example": "'Name'"
       },
       {
         "name": "resizableColumns",
         "type": "boolean",
         "required": false,
         "default": "true",
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "searchQuery",
         "type": "string",
         "required": false,
         "default": "''",
-        "inherited": false
+        "inherited": false,
+        "example": "''"
       },
       {
         "name": "selectedId",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "sortable",
         "type": "boolean",
         "required": false,
         "default": "true",
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "storageKey",
         "type": "string",
         "required": false,
         "description": "Persist expansion state across sessions (localStorage).",
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "truncate",
         "type": "'middle' | 'end'",
         "required": false,
         "default": "'end'",
-        "inherited": false
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
-      },
-      {
-        "name": "style",
-        "type": "CSSProperties",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "'end'"
       }
     ],
     "events": [
@@ -5505,25 +7992,29 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onCellEdit",
         "type": "(nodeId: string, columnKey: string, value: string) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onExpandedChange",
         "type": "(expandedIds: string[]) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onRowDoubleClick",
         "type": "(node: OutlineNode) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onSelect",
         "type": "(node: OutlineNode) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": [
@@ -5536,37 +8027,43 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "'aria-label'",
         "type": "string",
         "required": false,
-        "inherited": false
-      },
-      {
-        "name": "onSearchChange",
-        "type": "(query: string) => void",
-        "required": true,
-        "inherited": false
-      },
-      {
-        "name": "placeholder",
-        "type": "string",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "searchQuery",
-        "type": "string",
-        "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "onSearchChange",
+        "type": "(query: string) => void",
+        "required": true,
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "placeholder",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "searchQuery",
+        "type": "string",
+        "required": true,
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [
@@ -5574,7 +8071,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onSearchChange",
         "type": "(query: string) => void",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": [
@@ -5587,55 +8085,64 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "'aria-label'",
         "type": "string",
         "required": false,
-        "inherited": false
-      },
-      {
-        "name": "nextLabel",
-        "type": "string",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "onPageChange",
-        "type": "(page: number) => void",
-        "required": true,
-        "inherited": false
-      },
-      {
-        "name": "page",
-        "type": "number",
-        "required": true,
-        "inherited": false
-      },
-      {
-        "name": "previousLabel",
-        "type": "string",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "siblingCount",
-        "type": "number",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "totalPages",
-        "type": "number",
-        "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "nextLabel",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "onPageChange",
+        "type": "(page: number) => void",
+        "required": true,
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "page",
+        "type": "number",
+        "required": true,
+        "inherited": false,
+        "example": "0"
+      },
+      {
+        "name": "previousLabel",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "siblingCount",
+        "type": "number",
+        "required": false,
+        "inherited": false,
+        "example": "0"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "totalPages",
+        "type": "number",
+        "required": true,
+        "inherited": false,
+        "example": "0"
       }
     ],
     "events": [
@@ -5643,7 +8150,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onPageChange",
         "type": "(page: number) => void",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": [
@@ -5656,62 +8164,72 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "'aria-label'",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "editable",
         "type": "boolean",
         "required": false,
         "description": "macOS: allow drag-and-drop to select a new path item.",
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "onChoose",
         "type": "() => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onDropPath",
         "type": "(segments: PathSegment[]) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onSegmentSelect",
         "type": "(segment: PathSegment) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "segments",
         "type": "PathSegment[]",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "selectedId",
         "type": "string",
         "required": false,
-        "inherited": false
-      },
-      {
-        "name": "variant",
-        "type": "PathControlVariant",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "variant",
+        "type": "PathControlVariant",
+        "required": false,
+        "inherited": false,
+        "example": "\"md\""
       }
     ],
     "events": [
@@ -5719,19 +8237,22 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onChoose",
         "type": "() => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onDropPath",
         "type": "(segments: PathSegment[]) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onSegmentSelect",
         "type": "(segment: PathSegment) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": [
@@ -5744,34 +8265,46 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "'aria-label'",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "appearance",
         "type": "PickerStyle",
         "required": false,
         "description": "Wheel vs compact appearance. Use with object `style` when you need both.",
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "columns",
         "type": "PickerColumn[]",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "disabled",
         "type": "boolean",
         "required": false,
         "default": "false",
-        "inherited": false
+        "inherited": false,
+        "example": "false"
       },
       {
         "name": "error",
         "type": "string | null",
         "required": false,
         "default": "null",
-        "inherited": false
+        "inherited": false,
+        "example": "null"
       },
       {
         "name": "formatValue",
@@ -5779,32 +8312,44 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "defaultFormatValue",
         "description": "Formats the compact trigger label from the current value.",
-        "inherited": false
+        "inherited": false,
+        "example": "defaultFormatValue"
       },
       {
         "name": "hint",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "inputSize",
         "type": "Size",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"md\""
       },
       {
         "name": "label",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "loading",
         "type": "boolean",
         "required": false,
         "default": "false",
-        "inherited": false
+        "inherited": false,
+        "example": "false"
+      },
+      {
+        "name": "onChange",
+        "type": "(value: PickerValue) => void",
+        "required": true,
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "placeholder",
@@ -5812,38 +8357,30 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "'Select'",
         "description": "Shown on the compact trigger when no selection exists.",
-        "inherited": false
+        "inherited": false,
+        "example": "'Select'"
       },
       {
         "name": "state",
         "type": "UIState",
         "required": false,
-        "inherited": false
-      },
-      {
-        "name": "value",
-        "type": "PickerValue",
-        "required": true,
-        "inherited": false
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
-      },
-      {
-        "name": "onChange",
-        "type": "(value: PickerValue) => void",
-        "required": true,
-        "inherited": true
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "style",
         "type": "PickerStyle | CSSProperties",
         "required": false,
         "description": "Appearance string (`wheels` / `compact`) or inline CSS.",
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "value",
+        "type": "PickerValue",
+        "required": true,
+        "inherited": false,
+        "example": "\"example\""
       }
     ],
     "events": [
@@ -5851,7 +8388,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onChange",
         "type": "(value: PickerValue) => void",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       }
     ],
     "accessibility": [
@@ -5864,64 +8402,74 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "'aria-label'",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "content",
         "type": "ReactNode",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "defaultOpen",
         "type": "boolean",
         "required": false,
         "default": "false",
-        "inherited": false
+        "inherited": false,
+        "example": "false"
       },
       {
         "name": "onOpenChange",
         "type": "(open: boolean) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "open",
         "type": "boolean",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "panelClassName",
         "type": "string",
         "required": false,
         "description": "Extra class names for the floating panel element.",
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "side",
         "type": "PopoverSide",
         "required": false,
         "default": "'bottom'",
-        "inherited": false
-      },
-      {
-        "name": "trigger",
-        "type": "ReactNode",
-        "required": true,
-        "inherited": false
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "'bottom'"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "trigger",
+        "type": "ReactNode",
+        "required": true,
+        "inherited": false,
+        "example": "—"
       }
     ],
     "events": [
@@ -5929,7 +8477,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onOpenChange",
         "type": "(open: boolean) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": [
@@ -5940,80 +8489,92 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
   "PopUpButton": {
     "props": [
       {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
         "name": "customOption",
         "type": "PopUpCustomOption",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "defaultValue",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "disabled",
         "type": "boolean",
         "required": false,
         "default": "false",
-        "inherited": false
+        "inherited": false,
+        "example": "false"
       },
       {
         "name": "explanatoryText",
         "type": "string",
         "required": false,
         "description": "Optional explanatory text below the control.",
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "label",
         "type": "string",
         "required": false,
         "description": "Introductory label describing the control (Calendar-style).",
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "onValueChange",
         "type": "(value: string) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "options",
         "type": "PopUpOption[]",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "placeholder",
         "type": "string",
         "required": false,
         "default": "'Select…'",
-        "inherited": false
-      },
-      {
-        "name": "value",
-        "type": "string",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
-      },
-      {
-        "name": "id",
-        "type": "string",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "'Select…'"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
       }
     ],
     "events": [
@@ -6021,7 +8582,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onValueChange",
         "type": "(value: string) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": []
@@ -6032,19 +8594,22 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "imageUrl",
         "type": "string",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "subtitle",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "title",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -6053,52 +8618,60 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
   "Progress": {
     "props": [
       {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
         "name": "label",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "max",
         "type": "number",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "0"
       },
       {
         "name": "showValue",
         "type": "boolean",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "state",
         "type": "UIState",
         "required": false,
-        "inherited": false
-      },
-      {
-        "name": "value",
-        "type": "number",
-        "required": true,
-        "inherited": false
-      },
-      {
-        "name": "variant",
-        "type": "ProgressVariant",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "value",
+        "type": "number",
+        "required": true,
+        "inherited": false,
+        "example": "0"
+      },
+      {
+        "name": "variant",
+        "type": "ProgressVariant",
+        "required": false,
+        "inherited": false,
+        "example": "\"md\""
       }
     ],
     "events": [],
@@ -6109,36 +8682,48 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
   "PullDownButton": {
     "props": [
       {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
         "name": "destructiveConfirmation",
         "type": "PullDownDestructiveConfirmation",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "disabled",
         "type": "boolean",
         "required": false,
         "default": "false",
-        "inherited": false
+        "inherited": false,
+        "example": "false"
       },
       {
         "name": "entries",
         "type": "PullDownEntry[]",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "icon",
         "type": "ReactNode",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "label",
         "type": "string",
         "required": false,
         "description": "Button label (required unless variant is \"more\").",
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "longPress",
@@ -6146,39 +8731,38 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "false",
         "description": "Safari-style touch-and-hold to reveal the menu.",
-        "inherited": false
+        "inherited": false,
+        "example": "false"
       },
       {
         "name": "menuTitle",
         "type": "string",
         "required": false,
         "description": "Optional menu title — use only when it adds meaning.",
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "onAction",
         "type": "(entry: MenuItemConfig) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "variant",
         "type": "PullDownButtonVariant",
         "required": false,
         "default": "'default'",
-        "inherited": false
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
-      },
-      {
-        "name": "style",
-        "type": "CSSProperties",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "'default'"
       }
     ],
     "events": [
@@ -6186,7 +8770,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onAction",
         "type": "(entry: MenuItemConfig) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": [
@@ -6200,26 +8785,30 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "Size",
         "required": false,
         "default": "'md'",
-        "inherited": false
+        "inherited": false,
+        "example": "'md'"
       },
       {
         "name": "error",
         "type": "string | null",
         "required": false,
         "default": "null",
-        "inherited": false
+        "inherited": false,
+        "example": "null"
       },
       {
         "name": "hint",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "label",
         "type": "string",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -6239,59 +8828,68 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string | null",
         "required": false,
         "default": "null",
-        "inherited": false
+        "inherited": false,
+        "example": "null"
       },
       {
         "name": "hint",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "inputSize",
         "type": "Size",
         "required": false,
         "default": "'md'",
-        "inherited": false
+        "inherited": false,
+        "example": "'md'"
       },
       {
         "name": "label",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "loading",
         "type": "boolean",
         "required": false,
         "default": "false",
-        "inherited": false
+        "inherited": false,
+        "example": "false"
       },
       {
         "name": "options",
         "type": "SelectOption[]",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "placeholder",
         "type": "string",
         "required": false,
         "default": "'Select...'",
-        "inherited": false
+        "inherited": false,
+        "example": "'Select...'"
       },
       {
         "name": "required",
         "type": "boolean",
         "required": false,
         "default": "false",
-        "inherited": false
+        "inherited": false,
+        "example": "false"
       },
       {
         "name": "state",
         "type": "UIState",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -6302,46 +8900,52 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
   "Skeleton": {
     "props": [
       {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "default": "{[styles.group",
+        "inherited": true,
+        "example": "{[styles.group"
+      },
+      {
         "name": "height",
         "type": "string | number",
         "required": false,
         "default": "'1rem'",
-        "inherited": false
+        "inherited": false,
+        "example": "'1rem'"
       },
       {
         "name": "lines",
         "type": "number",
         "required": false,
         "default": "1",
-        "inherited": false
-      },
-      {
-        "name": "variant",
-        "type": "'text' | 'circular' | 'rectangular'",
-        "required": false,
-        "default": "'text'",
-        "inherited": false
-      },
-      {
-        "name": "width",
-        "type": "string | number",
-        "required": false,
-        "default": "'100%'",
-        "inherited": false
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "default": "{[styles.group",
-        "inherited": true
+        "inherited": false,
+        "example": "1"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "default": "{style",
-        "inherited": true
+        "inherited": true,
+        "example": "{style"
+      },
+      {
+        "name": "variant",
+        "type": "'text' | 'circular' | 'rectangular'",
+        "required": false,
+        "default": "'text'",
+        "inherited": false,
+        "example": "'text'"
+      },
+      {
+        "name": "width",
+        "type": "string | number",
+        "required": false,
+        "default": "'100%'",
+        "inherited": false,
+        "example": "'100%'"
       }
     ],
     "events": [],
@@ -6352,28 +8956,32 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
   "Spinner": {
     "props": [
       {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
         "name": "label",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "size",
         "type": "Size",
         "required": false,
-        "inherited": false
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "\"md\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -6385,57 +8993,66 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "'aria-label'",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": true,
+        "inherited": true,
+        "example": "—"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "compactMode",
         "type": "SplitCompactMode",
         "required": false,
         "default": "'side-by-side'",
-        "inherited": false
+        "inherited": false,
+        "example": "'side-by-side'"
       },
       {
         "name": "onSizesChange",
         "type": "(sizes: number[]) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "orientation",
         "type": "SplitOrientation",
         "required": false,
         "default": "'horizontal'",
-        "inherited": false
+        "inherited": false,
+        "example": "'horizontal'"
       },
       {
         "name": "storageKey",
         "type": "string",
         "required": false,
-        "inherited": false
-      },
-      {
-        "name": "toolbar",
-        "type": "ReactNode",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "children",
-        "type": "ReactNode",
-        "required": true,
-        "inherited": true
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "toolbar",
+        "type": "ReactNode",
+        "required": false,
+        "inherited": false,
+        "example": "—"
       }
     ],
     "events": [
@@ -6443,7 +9060,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onSizesChange",
         "type": "(sizes: number[]) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": [
@@ -6456,73 +9074,85 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "'aria-label'",
         "type": "string",
         "required": false,
-        "inherited": false
-      },
-      {
-        "name": "collapsible",
-        "type": "boolean",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "defaultSize",
-        "type": "number",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "defaultVisible",
-        "type": "boolean",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "label",
-        "type": "string",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "maxSize",
-        "type": "number",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "minSize",
-        "type": "number",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "onVisibleChange",
-        "type": "(visible: boolean) => void",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "visible",
-        "type": "boolean",
-        "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "children",
         "type": "ReactNode",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "collapsible",
+        "type": "boolean",
+        "required": false,
+        "inherited": false,
+        "example": "true"
+      },
+      {
+        "name": "defaultSize",
+        "type": "number",
+        "required": false,
+        "inherited": false,
+        "example": "0"
+      },
+      {
+        "name": "defaultVisible",
+        "type": "boolean",
+        "required": false,
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "id",
         "type": "string",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "maxSize",
+        "type": "number",
+        "required": false,
+        "inherited": false,
+        "example": "0"
+      },
+      {
+        "name": "minSize",
+        "type": "number",
+        "required": false,
+        "inherited": false,
+        "example": "0"
+      },
+      {
+        "name": "onVisibleChange",
+        "type": "(visible: boolean) => void",
+        "required": false,
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "visible",
+        "type": "boolean",
+        "required": false,
+        "inherited": false,
+        "example": "true"
       }
     ],
     "events": [
@@ -6530,7 +9160,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onVisibleChange",
         "type": "(visible: boolean) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": [
@@ -6544,19 +9175,22 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "ReactNode",
         "required": false,
         "description": "Optional actions rendered before pane restore buttons.",
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -6569,7 +9203,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "ReactNode",
         "required": true,
         "description": "Symbol or icon — square buttons use icons, not text labels.",
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "pressed",
@@ -6577,13 +9212,15 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "false",
         "description": "Toggle or pop-up behavior is handled by the parent; appearance only.",
-        "inherited": false
+        "inherited": false,
+        "example": "false"
       },
       {
         "name": "tooltip",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -6595,44 +9232,51 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "checked",
         "type": "boolean",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "defaultChecked",
         "type": "boolean",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "hint",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "label",
         "type": "string",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "onCheckedChange",
         "type": "(checked: boolean) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "switchSize",
         "type": "Size",
         "required": false,
         "default": "'md'",
-        "inherited": false
-      },
-      {
-        "name": "style",
-        "type": "CSSProperties",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "'md'"
       }
     ],
     "events": [
@@ -6640,7 +9284,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onCheckedChange",
         "type": "(checked: boolean) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": [
@@ -6653,89 +9298,103 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "'aria-label'",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "alternatingRows",
         "type": "boolean",
         "required": false,
         "default": "true",
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "caption",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "columns",
         "type": "TableColumn<T>[]",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "data",
         "type": "T[]",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "defaultSortDirection",
         "type": "SortDirection",
         "required": false,
         "default": "'asc'",
-        "inherited": false
+        "inherited": false,
+        "example": "'asc'"
       },
       {
         "name": "defaultSortKey",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "keyExtractor",
         "type": "(row: T) => string",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onSelectRow",
         "type": "(row: T) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "resizableColumns",
         "type": "boolean",
         "required": false,
         "default": "true",
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "selectedKey",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "selectionMode",
         "type": "TableSelectionMode",
         "required": false,
         "default": "'none'",
-        "inherited": false
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "'none'"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [
@@ -6743,7 +9402,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onSelectRow",
         "type": "(row: T) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": [
@@ -6753,41 +9413,47 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
   "Tabs": {
     "props": [
       {
-        "name": "defaultValue",
-        "type": "string",
-        "required": false,
-        "default": "''",
-        "inherited": false
-      },
-      {
-        "name": "onValueChange",
-        "type": "(value: string) => void",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "value",
-        "type": "string",
-        "required": false,
-        "inherited": false
-      },
-      {
         "name": "children",
         "type": "ReactNode",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "defaultValue",
+        "type": "string",
+        "required": false,
+        "default": "''",
+        "inherited": false,
+        "example": "''"
+      },
+      {
+        "name": "onValueChange",
+        "type": "(value: string) => void",
+        "required": false,
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
       }
     ],
     "events": [
@@ -6795,7 +9461,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onValueChange",
         "type": "(value: string) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": []
@@ -6806,25 +9473,29 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "'aria-label'",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "children",
         "type": "ReactNode",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -6835,28 +9506,32 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
   "TabsPanel": {
     "props": [
       {
-        "name": "value",
-        "type": "string",
-        "required": true,
-        "inherited": false
-      },
-      {
         "name": "children",
         "type": "ReactNode",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "required": true,
+        "inherited": false,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -6865,34 +9540,39 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
   "TabsTrigger": {
     "props": [
       {
-        "name": "disabled",
-        "type": "boolean",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "value",
-        "type": "string",
-        "required": true,
-        "inherited": false
-      },
-      {
         "name": "children",
         "type": "ReactNode",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "required": true,
+        "inherited": false,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -6904,65 +9584,75 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "'aria-label'",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": true,
+        "inherited": true,
+        "example": "—"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "defaultValue",
         "type": "string",
         "required": false,
         "default": "''",
-        "inherited": false
+        "inherited": false,
+        "example": "''"
       },
       {
         "name": "inset",
         "type": "boolean",
         "required": false,
         "default": "true",
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "onValueChange",
         "type": "(value: string) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "showTabs",
         "type": "boolean",
         "required": false,
         "default": "true",
-        "inherited": false
+        "inherited": false,
+        "example": "true"
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "value",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "variant",
         "type": "TabViewVariant",
         "required": false,
         "default": "'bordered'",
-        "inherited": false
-      },
-      {
-        "name": "children",
-        "type": "ReactNode",
-        "required": true,
-        "inherited": true
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
-      },
-      {
-        "name": "style",
-        "type": "CSSProperties",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "'bordered'"
       }
     ],
     "events": [
@@ -6970,7 +9660,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onValueChange",
         "type": "(value: string) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": [
@@ -6983,25 +9674,29 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "'aria-label'",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "children",
         "type": "ReactNode",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -7012,28 +9707,32 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
   "TabViewPanel": {
     "props": [
       {
-        "name": "value",
-        "type": "string",
-        "required": true,
-        "inherited": false
-      },
-      {
         "name": "children",
         "type": "ReactNode",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "required": true,
+        "inherited": false,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -7042,34 +9741,39 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
   "TabViewTab": {
     "props": [
       {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
         "name": "disabled",
         "type": "boolean",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "label",
         "type": "string",
         "required": true,
-        "inherited": false
-      },
-      {
-        "name": "value",
-        "type": "string",
-        "required": true,
-        "inherited": false
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "required": true,
+        "inherited": false,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -7082,46 +9786,53 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string | null",
         "required": false,
         "default": "null",
-        "inherited": false
+        "inherited": false,
+        "example": "null"
       },
       {
         "name": "hint",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "inputSize",
         "type": "Size",
         "required": false,
         "default": "'md'",
-        "inherited": false
+        "inherited": false,
+        "example": "'md'"
       },
       {
         "name": "label",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "loading",
         "type": "boolean",
         "required": false,
         "default": "false",
-        "inherited": false
+        "inherited": false,
+        "example": "false"
       },
       {
         "name": "required",
         "type": "boolean",
         "required": false,
         "default": "false",
-        "inherited": false
+        "inherited": false,
+        "example": "false"
       },
       {
         "name": "state",
         "type": "UIState",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -7130,18 +9841,27 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
   "TextView": {
     "props": [
       {
+        "name": "children",
+        "type": "ReactNode",
+        "required": false,
+        "inherited": true,
+        "example": "—"
+      },
+      {
         "name": "editable",
         "type": "boolean",
         "required": false,
         "default": "false",
         "description": "When true, shows a keyboard-capable editor.",
-        "inherited": false
+        "inherited": false,
+        "example": "false"
       },
       {
         "name": "maxHeight",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "selectable",
@@ -7149,20 +9869,16 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "true",
         "description": "Allows selecting/copying useful text in read-only mode.",
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "typographyRole",
         "type": "TypographyRole",
         "required": false,
         "default": "'body'",
-        "inherited": false
-      },
-      {
-        "name": "children",
-        "type": "ReactNode",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "'body'"
       }
     ],
     "events": [],
@@ -7180,52 +9896,60 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string | null",
         "required": false,
         "default": "null",
-        "inherited": false
+        "inherited": false,
+        "example": "null"
       },
       {
         "name": "hint",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "inputSize",
         "type": "Size",
         "required": false,
         "default": "'md'",
-        "inherited": false
+        "inherited": false,
+        "example": "'md'"
       },
       {
         "name": "label",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "loading",
         "type": "boolean",
         "required": false,
         "default": "false",
-        "inherited": false
+        "inherited": false,
+        "example": "false"
+      },
+      {
+        "name": "onChange",
+        "type": "(value: string) => void",
+        "required": false,
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "state",
         "type": "UIState",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "value",
         "type": "string",
         "required": false,
         "default": "''",
-        "inherited": false
-      },
-      {
-        "name": "onChange",
-        "type": "(value: string) => void",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "''"
       }
     ],
     "events": [
@@ -7233,7 +9957,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onChange",
         "type": "(value: string) => void",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       }
     ],
     "accessibility": []
@@ -7244,68 +9969,79 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "'aria-label'",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "defaultTokens",
         "type": "TokenFieldToken[]",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "delimiters",
         "type": "string[]",
         "required": false,
         "description": "Keys that convert current text into a token (default: comma).",
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onContextMenuEntries",
         "type": "(token: TokenFieldToken) => MenuEntry[]",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onTokensChange",
         "type": "(tokens: TokenFieldToken[]) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "placeholder",
         "type": "string",
         "required": false,
-        "inherited": false
-      },
-      {
-        "name": "suggestionDelayMs",
-        "type": "number",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "suggestions",
-        "type": "TokenFieldToken[]",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "tokens",
-        "type": "TokenFieldToken[]",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "suggestionDelayMs",
+        "type": "number",
+        "required": false,
+        "inherited": false,
+        "example": "0"
+      },
+      {
+        "name": "suggestions",
+        "type": "TokenFieldToken[]",
+        "required": false,
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "tokens",
+        "type": "TokenFieldToken[]",
+        "required": false,
+        "inherited": false,
+        "example": "—"
       }
     ],
     "events": [
@@ -7313,13 +10049,15 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onContextMenuEntries",
         "type": "(token: TokenFieldToken) => MenuEntry[]",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onTokensChange",
         "type": "(tokens: TokenFieldToken[]) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": [
@@ -7332,59 +10070,68 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "'aria-label'",
         "type": "string",
         "required": false,
-        "inherited": false
-      },
-      {
-        "name": "largeTitle",
-        "type": "boolean",
-        "required": false,
-        "description": "iOS large title that collapses when scrolling.",
-        "inherited": false
-      },
-      {
-        "name": "placement",
-        "type": "ToolbarPlacement",
-        "required": false,
-        "description": "visionOS and watchOS placement.",
-        "inherited": false
-      },
-      {
-        "name": "platform",
-        "type": "ToolbarPlatform",
-        "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "children",
         "type": "ReactNode",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "hidden",
         "type": "boolean",
         "required": false,
         "description": "Hide toolbar for distraction-free experience.",
-        "inherited": true
+        "inherited": true,
+        "example": "true"
+      },
+      {
+        "name": "largeTitle",
+        "type": "boolean",
+        "required": false,
+        "description": "iOS large title that collapses when scrolling.",
+        "inherited": false,
+        "example": "true"
+      },
+      {
+        "name": "placement",
+        "type": "ToolbarPlacement",
+        "required": false,
+        "description": "visionOS and watchOS placement.",
+        "inherited": false,
+        "example": "\"md\""
+      },
+      {
+        "name": "platform",
+        "type": "ToolbarPlatform",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "title",
         "type": "string",
         "required": false,
         "description": "Concise view title — aim for under 15 characters.",
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -7399,19 +10146,22 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "description": "visionOS reveals label on look — optional visible companion text.",
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "disabled",
         "type": "boolean",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "onClick",
         "type": "() => void",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       }
     ],
     "events": [
@@ -7419,7 +10169,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onClick",
         "type": "() => void",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       }
     ],
     "accessibility": []
@@ -7430,13 +10181,15 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "disabled",
         "type": "boolean",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "onClick",
         "type": "() => void",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       }
     ],
     "events": [
@@ -7444,7 +10197,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onClick",
         "type": "() => void",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       }
     ],
     "accessibility": []
@@ -7455,25 +10209,29 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "disabled",
         "type": "boolean",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "entries",
         "type": "MenuEntry[]",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "label",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "onAction",
         "type": "(entryId: string) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "events": [
@@ -7481,7 +10239,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onAction",
         "type": "(entryId: string) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": []
@@ -7497,19 +10256,22 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "children",
         "type": "ReactNode",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -7518,64 +10280,74 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
   "ToolbarItem": {
     "props": [
       {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
         "name": "collapsible",
         "type": "boolean",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "disabled",
         "type": "boolean",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "icon",
         "type": "ReactNode",
         "required": false,
-        "inherited": false
-      },
-      {
-        "name": "label",
-        "type": "string",
-        "required": true,
-        "inherited": false
-      },
-      {
-        "name": "prominent",
-        "type": "boolean",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "showLabel",
-        "type": "boolean",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "id",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": true,
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "onClick",
         "type": "() => void",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
+      },
+      {
+        "name": "prominent",
+        "type": "boolean",
+        "required": false,
+        "inherited": false,
+        "example": "true"
+      },
+      {
+        "name": "showLabel",
+        "type": "boolean",
+        "required": false,
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [
@@ -7583,7 +10355,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onClick",
         "type": "() => void",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       }
     ],
     "accessibility": []
@@ -7594,25 +10367,29 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "'aria-label'",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "disabled",
         "type": "boolean",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "entries",
         "type": "MenuEntry[]",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "onAction",
         "type": "(entryId: string) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "events": [
@@ -7620,7 +10397,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onAction",
         "type": "(entryId: string) => void",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       }
     ],
     "accessibility": [
@@ -7630,34 +10408,39 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
   "ToolbarProminentButton": {
     "props": [
       {
-        "name": "disabled",
-        "type": "boolean",
-        "required": false,
-        "inherited": false
-      },
-      {
         "name": "children",
         "type": "string",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "onClick",
         "type": "() => void",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [
@@ -7665,7 +10448,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onClick",
         "type": "() => void",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       }
     ],
     "accessibility": []
@@ -7676,37 +10460,43 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "'aria-label'",
         "type": "string",
         "required": false,
-        "inherited": false
-      },
-      {
-        "name": "placeholder",
-        "type": "string",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "value",
-        "type": "string",
-        "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "onChange",
         "type": "(value: string) => void",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
+      },
+      {
+        "name": "placeholder",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
       }
     ],
     "events": [
@@ -7714,7 +10504,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onChange",
         "type": "(value: string) => void",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       }
     ],
     "accessibility": [
@@ -7724,35 +10515,40 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
   "ToolbarSection": {
     "props": [
       {
-        "name": "collapsible",
-        "type": "boolean",
-        "required": false,
-        "description": "Center items collapse into the system overflow menu when space is tight.",
-        "inherited": false
-      },
-      {
-        "name": "placement",
-        "type": "ToolbarSectionPlacement",
-        "required": true,
-        "inherited": false
-      },
-      {
         "name": "children",
         "type": "ReactNode",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "collapsible",
+        "type": "boolean",
+        "required": false,
+        "description": "Center items collapse into the system overflow menu when space is tight.",
+        "inherited": false,
+        "example": "true"
+      },
+      {
+        "name": "placement",
+        "type": "ToolbarSectionPlacement",
+        "required": true,
+        "inherited": false,
+        "example": "\"md\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -7761,28 +10557,32 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
   "ToolbarTitle": {
     "props": [
       {
-        "name": "large",
-        "type": "boolean",
-        "required": false,
-        "inherited": false
-      },
-      {
         "name": "children",
         "type": "string",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "large",
+        "type": "boolean",
+        "required": false,
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -7791,34 +10591,39 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
   "Tooltip": {
     "props": [
       {
-        "name": "content",
-        "type": "ReactNode",
-        "required": true,
-        "inherited": false
-      },
-      {
-        "name": "side",
-        "type": "TooltipSide",
-        "required": false,
-        "inherited": false
-      },
-      {
         "name": "children",
         "type": "ReactNode",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "content",
+        "type": "ReactNode",
+        "required": true,
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "side",
+        "type": "TooltipSide",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -7830,37 +10635,43 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "as",
         "type": "ElementType",
         "required": false,
-        "inherited": false
-      },
-      {
-        "name": "muted",
-        "type": "boolean",
-        "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "children",
         "type": "ReactNode",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "muted",
+        "type": "boolean",
+        "required": false,
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "role",
         "type": "TypographyRole",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"md\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -7873,31 +10684,36 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "boolean",
         "required": false,
         "description": "When false, show the unsaved dot (manual save mode).",
-        "inherited": false
-      },
-      {
-        "name": "edited",
-        "type": "boolean",
-        "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "edited",
+        "type": "boolean",
+        "required": false,
+        "inherited": false,
+        "example": "true"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "title",
         "type": "string",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
       }
     ],
     "events": [],
@@ -7906,59 +10722,68 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
   "WheelColumn": {
     "props": [
       {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
         "name": "columnFlex",
         "type": "number",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "0"
       },
       {
         "name": "disabled",
         "type": "boolean",
         "required": false,
         "default": "false",
-        "inherited": false
-      },
-      {
-        "name": "label",
-        "type": "string",
-        "required": false,
-        "inherited": false
-      },
-      {
-        "name": "options",
-        "type": "PickerOption[]",
-        "required": true,
-        "inherited": false
-      },
-      {
-        "name": "value",
-        "type": "string",
-        "required": true,
-        "inherited": false
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "false"
       },
       {
         "name": "id",
         "type": "string",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "\"example\""
       },
       {
         "name": "onChange",
         "type": "(value: string) => void",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
+      },
+      {
+        "name": "options",
+        "type": "PickerOption[]",
+        "required": true,
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "required": true,
+        "inherited": false,
+        "example": "\"example\""
       }
     ],
     "events": [
@@ -7966,7 +10791,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onChange",
         "type": "(value: string) => void",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       }
     ],
     "accessibility": []
@@ -7977,13 +10803,22 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "'aria-label'",
         "type": "string",
         "required": false,
-        "inherited": false
+        "inherited": false,
+        "example": "\"example\""
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "\"example\""
       },
       {
         "name": "columns",
         "type": "PickerColumn[]",
         "required": true,
-        "inherited": false
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "compact",
@@ -7991,14 +10826,16 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "false",
         "description": "Compact popover presentation — wheels fill the panel edge-to-edge.",
-        "inherited": false
+        "inherited": false,
+        "example": "false"
       },
       {
         "name": "disabled",
         "type": "boolean",
         "required": false,
         "default": "false",
-        "inherited": false
+        "inherited": false,
+        "example": "false"
       },
       {
         "name": "inline",
@@ -8006,31 +10843,29 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "false",
         "description": "Removes chrome for embedding in inline layouts.",
-        "inherited": false
-      },
-      {
-        "name": "value",
-        "type": "PickerValue",
-        "required": true,
-        "inherited": false
-      },
-      {
-        "name": "className",
-        "type": "string",
-        "required": false,
-        "inherited": true
+        "inherited": false,
+        "example": "false"
       },
       {
         "name": "onChange",
         "type": "(value: PickerValue) => void",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "inherited": true
+        "inherited": true,
+        "example": "\"example\""
+      },
+      {
+        "name": "value",
+        "type": "PickerValue",
+        "required": true,
+        "inherited": false,
+        "example": "\"example\""
       }
     ],
     "events": [
@@ -8038,7 +10873,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "onChange",
         "type": "(value: PickerValue) => void",
         "required": true,
-        "inherited": true
+        "inherited": true,
+        "example": "—"
       }
     ],
     "accessibility": [

@@ -8,37 +8,43 @@
       "name": "label",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "max",
       "type": "number",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "0"
     },
     {
       "name": "showValue",
       "type": "boolean",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "state",
       "type": "UIState",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "value",
       "type": "number",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "0"
     },
     {
       "name": "variant",
       "type": "ProgressVariant",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"md\""
     }
   ],
   "examples": [

@@ -8,19 +8,22 @@
       "name": "alt",
       "type": "string",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "imageProps",
       "type": "Omit<ImgHTMLAttributes<HTMLImageElement>, 'src' | 'alt'>",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "src",
       "type": "string",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     }
   ],
   "examples": [],

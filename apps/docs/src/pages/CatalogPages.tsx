@@ -6,18 +6,15 @@ import { CodeBlock } from '@/components/CodeBlock';
 import { ComponentAnatomySection } from '@/components/ComponentAnatomySection';
 import { ComponentExamples } from '@/components/ComponentExamples';
 import { GlassComponentIntro } from '@/components/GlassComponentIntro';
-import { ComponentPreview } from '@/components/ComponentPreview';
 import { FrameworkCodeTabs } from '@/components/FrameworkCodeTabs';
 import { FrameworkSelector } from '@/components/FrameworkSelector';
-import { GlassPropsPlayground } from '@/components/GlassPropsPlayground';
-import { StoryCanvas } from '@/components/StoryCanvas';
+import { LiveFrameworkPlayground } from '@/components/LiveFrameworkPlayground';
 import { MarkdownContent } from '@/components/MarkdownContent';
-import { PropsPlayground } from '@/components/PropsPlayground';
 import { guideSources } from '@/content/guides';
 import { getComponentApi } from '@/data/api.generated';
 import { getComponentExamples } from '@/data/examples.generated';
-import { componentAnatomy, playgroundControls } from '@/data/playground.generated';
-import { getGlassPlaygroundConfig } from '@/previews/glass/glassPlaygroundControls';
+import { componentAnatomy } from '@/data/playground.generated';
+import { getPlaygroundSeed } from '@/data/playgroundSeeds.generated';
 import {
   docsComponentCategories,
   docsComponents,
@@ -305,6 +302,14 @@ export function PackagesIndexPage() {
 }
 
 function buildUsageSnippets(name: string) {
+  const seed = getPlaygroundSeed(name);
+  if (seed) {
+    return {
+      react: seed.react,
+      vue: seed.vue ?? getUsageCode(name, 'vue'),
+      svelte: seed.svelte ?? getUsageCode(name, 'svelte'),
+    };
+  }
   return {
     react: getUsageCode(name, 'react'),
     vue: getUsageCode(name, 'vue'),
@@ -330,13 +335,11 @@ export function ComponentDocPage() {
 
   const api = getComponentApi(component.name);
   const examples = getComponentExamples(component.name);
-  const controls = playgroundControls[component.name];
   const anatomy = componentAnatomy[component.name];
   const supported = getSupportedFrameworks(component.name);
   const isParity = PARITY_COMPONENTS.has(component.name);
   const isGlass = isGlassDocComponent(component.name);
   const glassCopy = GLASS_COMPONENT_COPY[component.name];
-  const glassPlayground = isGlass ? getGlassPlaygroundConfig(component.name) : undefined;
 
   return (
     <div className="docs-content docs-component-page docs-sb-page">
@@ -353,7 +356,9 @@ export function ComponentDocPage() {
               ? 'Liquid glass component from @larose-ui/react — displacement-mapped refraction with full optics tuning.'
               : isParity
                 ? 'Foundation component with shared API across React, Vue 3, and Svelte 5.'
-                : 'React component from @larose-ui/react with live preview and Storybook-aligned examples.')}
+                : supported.length > 1
+                ? 'Live editable demo across React, Vue 3, and Svelte 5 — switch frameworks, edit the code, reset anytime.'
+                : 'Live editable React demo with props API and Storybook-aligned examples.')}
         </p>
         <FrameworkSelector supported={supported} />
       </header>
@@ -361,25 +366,12 @@ export function ComponentDocPage() {
       {isGlass ? <GlassComponentIntro componentName={component.name} /> : null}
 
       <section className="docs-sb-page__primary">
-        <h2 className="docs-sb-page__section-label">Preview</h2>
-        {glassPlayground ? (
-          <GlassPropsPlayground
-            componentName={component.name}
-            controls={glassPlayground.controls}
-          />
-        ) : controls ? (
-          <PropsPlayground componentName={component.name} controls={controls} />
-        ) : (
-          <StoryCanvas
-            storyName="Preview"
-            showToolbar={false}
-            padded={!isGlass}
-            centered={!isGlass}
-            variant={isGlass ? 'glass' : 'default'}
-          >
-            <ComponentPreview slug={component.id} />
-          </StoryCanvas>
-        )}
+        <h2 className="docs-sb-page__section-label">Live playground</h2>
+        <LiveFrameworkPlayground
+          componentName={component.name}
+          supported={supported}
+          seeds={getPlaygroundSeed(component.name)}
+        />
       </section>
 
       <section className="docs-sb-page__usage">
@@ -420,7 +412,6 @@ export function ComponentDocPage() {
         <ApiReference
           api={api}
           componentName={component.name}
-          packageName="@larose-ui/react"
         />
       ) : null}
       {anatomy ? <ComponentAnatomySection anatomy={anatomy} /> : null}
@@ -434,10 +425,9 @@ export function ComponentsIndexPage() {
       <header className="docs-sb-page__header">
         <h1>Components</h1>
         <p className="docs-sb-page__lede">
-          {docsComponents.length} components from the laRose catalog — each page mirrors Storybook
-          with live preview, usage code, and story variants.{' '}
-          <strong>{PARITY_COMPONENTS.size}</strong> foundation components ship for React, Vue, and
-          Svelte.
+          {docsComponents.length} components with a live code playground — edit React, Vue, or
+          Svelte demos and reset anytime.{' '}
+          <strong>{PARITY_COMPONENTS.size}</strong> components ship across React, Vue, and Svelte.
         </p>
         <FrameworkSelector />
       </header>

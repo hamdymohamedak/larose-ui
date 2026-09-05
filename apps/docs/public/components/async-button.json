@@ -8,33 +8,38 @@
       "name": "action",
       "type": "() => Promise<void>",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "onError",
       "type": "(error: unknown) => void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "onSuccess",
       "type": "() => void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "size",
       "type": "Size",
       "required": false,
       "default": "'md'",
-      "inherited": false
+      "inherited": false,
+      "example": "'md'"
     },
     {
       "name": "variant",
       "type": "Variant",
       "required": false,
       "default": "'primary'",
-      "inherited": false
+      "inherited": false,
+      "example": "'primary'"
     }
   ],
   "examples": [],

@@ -9,13 +9,15 @@
       "type": "boolean",
       "required": false,
       "description": "When false, show the unsaved dot (manual save mode).",
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "edited",
       "type": "boolean",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     }
   ],
   "examples": [],

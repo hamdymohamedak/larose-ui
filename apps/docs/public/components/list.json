@@ -8,13 +8,15 @@
       "name": "'aria-label'",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "variant",
       "type": "ListVariant",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"md\""
     }
   ],
   "examples": [

@@ -9,25 +9,29 @@
       "type": "string",
       "required": false,
       "default": "'en'",
-      "inherited": false
+      "inherited": false,
+      "example": "'en'"
     },
     {
       "name": "maxDate",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "minDate",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "value",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     }
   ],
   "examples": [],

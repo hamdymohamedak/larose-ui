@@ -8,21 +8,24 @@
       "name": "collaborators",
       "type": "Collaborator[]",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "label",
       "type": "string",
       "required": false,
       "default": "'Collaboration'",
-      "inherited": false
+      "inherited": false,
+      "example": "'Collaboration'"
     },
     {
       "name": "maxVisible",
       "type": "number",
       "required": false,
       "default": "3",
-      "inherited": false
+      "inherited": false,
+      "example": "3"
     }
   ],
   "examples": [

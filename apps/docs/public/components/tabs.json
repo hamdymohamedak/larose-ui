@@ -9,19 +9,22 @@
       "type": "string",
       "required": false,
       "default": "''",
-      "inherited": false
+      "inherited": false,
+      "example": "''"
     },
     {
       "name": "onValueChange",
       "type": "(value: string) => void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "value",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     }
   ],
   "examples": [

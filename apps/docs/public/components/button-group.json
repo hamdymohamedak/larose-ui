@@ -8,21 +8,24 @@
       "name": "'aria-label'",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "fullWidth",
       "type": "boolean",
       "required": false,
       "description": "Full-width buttons for watchOS-style primary actions.",
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "orientation",
       "type": "'horizontal' | 'vertical'",
       "required": false,
       "description": "Horizontal row (default) or vertical stack for visionOS guidance.",
-      "inherited": false
+      "inherited": false,
+      "example": "\"horizontal\""
     }
   ],
   "examples": [],

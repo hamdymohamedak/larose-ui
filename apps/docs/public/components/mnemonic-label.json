@@ -8,20 +8,23 @@
       "name": "label",
       "type": "string",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "mnemonic",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "showAccessKey",
       "type": "boolean",
       "required": false,
       "description": "When true, underline the access key character.",
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     }
   ],
   "examples": [

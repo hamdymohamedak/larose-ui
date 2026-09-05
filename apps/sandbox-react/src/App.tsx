@@ -9,7 +9,7 @@ import { ThemeScenario } from './scenarios/Theme';
 import { FormsScenario } from './scenarios/Forms';
 import { AcceleratorsScenario } from './scenarios/Accelerators';
 import { LiquidGlassScenario } from './scenarios/LiquidGlass';
-
+import { CardScenario } from './scenarios/Card';
 function readRoute(): string {
   const hash = window.location.hash.replace(/^#\/?/, '');
   if (hash === 'shell' || hash === 'command-palette') {
@@ -81,6 +81,8 @@ export function App() {
         return <AcceleratorsScenario />;
       case 'liquid-glass':
         return <LiquidGlassScenario />;
+      case 'card':
+        return <CardScenario />;
       default:
         return <HomeScenario />;
     }

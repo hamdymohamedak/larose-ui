@@ -40,4 +40,17 @@ export default defineConfig({
       allow: [path.join(rootDir, '../..')],
     },
   },
+  optimizeDeps: {
+    include: [
+      'vue',
+      'svelte',
+      'sucrase',
+      '@vue/compiler-sfc',
+      '@larose-ui/vue',
+      '@larose-ui/svelte',
+    ],
+  },
+  define: {
+    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV ?? 'development'),
+  },
 });

@@ -9,63 +9,73 @@
       "type": "CollaborationAction[]",
       "required": false,
       "default": "[]",
-      "inherited": false
+      "inherited": false,
+      "example": "[]"
     },
     {
       "name": "collaborators",
       "type": "Collaborator[]",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "defaultOpen",
       "type": "boolean",
       "required": false,
       "default": "false",
-      "inherited": false
+      "inherited": false,
+      "example": "false"
     },
     {
       "name": "manageLabel",
       "type": "string",
       "required": false,
       "default": "'Manage Shared File'",
-      "inherited": false
+      "inherited": false,
+      "example": "'Manage Shared File'"
     },
     {
       "name": "onManage",
       "type": "() => void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "onMessage",
       "type": "() => void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "onOpenChange",
       "type": "(open: boolean) => void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "onVideo",
       "type": "() => void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "open",
       "type": "boolean",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "trigger",
       "type": "ReactNode",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     }
   ],
   "examples": [

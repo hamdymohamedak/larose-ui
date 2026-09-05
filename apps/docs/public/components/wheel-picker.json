@@ -8,13 +8,15 @@
       "name": "'aria-label'",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "columns",
       "type": "PickerColumn[]",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "compact",
@@ -22,14 +24,16 @@
       "required": false,
       "default": "false",
       "description": "Compact popover presentation — wheels fill the panel edge-to-edge.",
-      "inherited": false
+      "inherited": false,
+      "example": "false"
     },
     {
       "name": "disabled",
       "type": "boolean",
       "required": false,
       "default": "false",
-      "inherited": false
+      "inherited": false,
+      "example": "false"
     },
     {
       "name": "inline",
@@ -37,13 +41,15 @@
       "required": false,
       "default": "false",
       "description": "Removes chrome for embedding in inline layouts.",
-      "inherited": false
+      "inherited": false,
+      "example": "false"
     },
     {
       "name": "value",
       "type": "PickerValue",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     }
   ],
   "examples": [],

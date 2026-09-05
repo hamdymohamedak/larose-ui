@@ -8,64 +8,74 @@
       "name": "appName",
       "type": "string",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "closedEntries",
       "type": "ContextMenuEntry[]",
       "required": false,
       "description": "Actions when the app is not running (e.g. Open).",
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "icon",
       "type": "ReactNode",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "isRunning",
       "type": "boolean",
       "required": false,
       "description": "Whether the app is currently running (shows window list + running actions).",
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "onEntrySelect",
       "type": "(entry: ContextMenuItemConfig) => void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "onOpenChange",
       "type": "(open: boolean) => void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "onWindowSelect",
       "type": "(window: DockWindow) => void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "open",
       "type": "boolean",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "openWindows",
       "type": "DockWindow[]",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "runningEntries",
       "type": "ContextMenuEntry[]",
       "required": false,
       "description": "High-value actions when the app is running (e.g. New Window, Get New Mail).",
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     }
   ],
   "examples": [

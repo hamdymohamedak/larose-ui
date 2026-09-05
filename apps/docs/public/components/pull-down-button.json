@@ -8,33 +8,38 @@
       "name": "destructiveConfirmation",
       "type": "PullDownDestructiveConfirmation",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "disabled",
       "type": "boolean",
       "required": false,
       "default": "false",
-      "inherited": false
+      "inherited": false,
+      "example": "false"
     },
     {
       "name": "entries",
       "type": "PullDownEntry[]",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "icon",
       "type": "ReactNode",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "label",
       "type": "string",
       "required": false,
       "description": "Button label (required unless variant is \"more\").",
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "longPress",
@@ -42,27 +47,31 @@
       "required": false,
       "default": "false",
       "description": "Safari-style touch-and-hold to reveal the menu.",
-      "inherited": false
+      "inherited": false,
+      "example": "false"
     },
     {
       "name": "menuTitle",
       "type": "string",
       "required": false,
       "description": "Optional menu title — use only when it adds meaning.",
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "onAction",
       "type": "(entry: MenuItemConfig) => void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "variant",
       "type": "PullDownButtonVariant",
       "required": false,
       "default": "'default'",
-      "inherited": false
+      "inherited": false,
+      "example": "'default'"
     }
   ],
   "examples": [

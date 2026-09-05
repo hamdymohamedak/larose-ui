@@ -1,4 +1,5 @@
 import { isGlassDocComponent } from '@/lib/glassComponents';
+import { docsComponents, findComponent } from '@/data/catalog.generated';
 
 export type DocsFramework = 'react' | 'vue' | 'svelte';
 
@@ -8,29 +9,18 @@ export const DOCS_FRAMEWORKS: { id: DocsFramework; label: string }[] = [
   { id: 'svelte', label: 'Svelte 5' },
 ];
 
-/** Components with React, Vue, and Svelte bindings in the monorepo. */
-export const PARITY_COMPONENTS = new Set([
-  'Spinner',
-  'Badge',
-  'Label',
-  'Button',
-  'Input',
-  'Textarea',
-  'Checkbox',
-  'Radio',
-  'Switch',
-  'Select',
-  'Progress',
-  'Alert',
-  'Card',
-  'Modal',
-  'Dialog',
-]);
+/** @deprecated Prefer component.frameworks from the catalog — kept for badge copy. */
+export const PARITY_COMPONENTS = new Set(
+  docsComponents.filter((c) => (c.frameworks?.length ?? 0) >= 3).map((c) => c.name),
+);
 
 export function getSupportedFrameworks(componentName: string): DocsFramework[] {
-  if (PARITY_COMPONENTS.has(componentName)) {
-    return ['react', 'vue', 'svelte'];
-  }
+  const fromCatalog = docsComponents.find((entry) => entry.name === componentName)?.frameworks;
+  if (fromCatalog?.length) return fromCatalog;
+  const byId = findComponent(
+    componentName.replace(/([a-z0-9])([A-Z])/g, '$1-$2').replace(/_/g, '-').toLowerCase(),
+  );
+  if (byId?.frameworks?.length) return byId.frameworks;
   return ['react'];
 }
 

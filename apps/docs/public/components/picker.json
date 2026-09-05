@@ -8,34 +8,39 @@
       "name": "'aria-label'",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "appearance",
       "type": "PickerStyle",
       "required": false,
       "description": "Wheel vs compact appearance. Use with object `style` when you need both.",
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "columns",
       "type": "PickerColumn[]",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "disabled",
       "type": "boolean",
       "required": false,
       "default": "false",
-      "inherited": false
+      "inherited": false,
+      "example": "false"
     },
     {
       "name": "error",
       "type": "string | null",
       "required": false,
       "default": "null",
-      "inherited": false
+      "inherited": false,
+      "example": "null"
     },
     {
       "name": "formatValue",
@@ -43,32 +48,37 @@
       "required": false,
       "default": "defaultFormatValue",
       "description": "Formats the compact trigger label from the current value.",
-      "inherited": false
+      "inherited": false,
+      "example": "defaultFormatValue"
     },
     {
       "name": "hint",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "inputSize",
       "type": "Size",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"md\""
     },
     {
       "name": "label",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "loading",
       "type": "boolean",
       "required": false,
       "default": "false",
-      "inherited": false
+      "inherited": false,
+      "example": "false"
     },
     {
       "name": "placeholder",
@@ -76,19 +86,22 @@
       "required": false,
       "default": "'Select'",
       "description": "Shown on the compact trigger when no selection exists.",
-      "inherited": false
+      "inherited": false,
+      "example": "'Select'"
     },
     {
       "name": "state",
       "type": "UIState",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "value",
       "type": "PickerValue",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     }
   ],
   "examples": [

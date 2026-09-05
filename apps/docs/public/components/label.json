@@ -8,27 +8,31 @@
       "name": "as",
       "type": "ElementType",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "importance",
       "type": "LabelImportance",
       "required": false,
       "description": "System label color indicating relative importance.",
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "mono",
       "type": "boolean",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "selectable",
       "type": "boolean",
       "required": false,
       "description": "Allow selecting/copying useful static text.",
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     }
   ],
   "examples": [],

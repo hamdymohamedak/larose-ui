@@ -9,26 +9,30 @@
       "type": "Size",
       "required": false,
       "default": "'md'",
-      "inherited": false
+      "inherited": false,
+      "example": "'md'"
     },
     {
       "name": "error",
       "type": "string | null",
       "required": false,
       "default": "null",
-      "inherited": false
+      "inherited": false,
+      "example": "null"
     },
     {
       "name": "hint",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "label",
       "type": "string",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     }
   ],
   "examples": [

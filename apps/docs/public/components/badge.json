@@ -8,7 +8,8 @@
       "name": "variant",
       "type": "BadgeVariant",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"md\""
     }
   ],
   "examples": [

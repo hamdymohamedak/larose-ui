@@ -8,13 +8,15 @@
       "name": "defaultExpandedIds",
       "type": "string[]",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "items",
       "type": "DisclosureListItem[]",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     }
   ],
   "examples": [

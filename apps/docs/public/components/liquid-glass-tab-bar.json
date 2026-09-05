@@ -9,96 +9,313 @@
       "type": "string",
       "required": false,
       "default": "'#ffffff'",
-      "inherited": false
+      "inherited": false,
+      "example": "'#ffffff'"
     },
     {
       "name": "activeKey",
       "type": "string",
       "required": false,
       "default": "controlledActiveKey ?? internalActiveKey;",
-      "inherited": false
+      "inherited": false,
+      "example": "controlledActiveKey ?? internalActiveKey;"
+    },
+    {
+      "name": "aria-label",
+      "type": "string",
+      "required": true,
+      "description": "Accessible label (recommended for nav/header).",
+      "inherited": false,
+      "example": "\"example\""
+    },
+    {
+      "name": "as",
+      "type": "string",
+      "required": false,
+      "default": "'div'",
+      "description": "HTML tag name for the glass shell (`div`, `footer`, `nav`, …).",
+      "inherited": false,
+      "example": "'div'"
+    },
+    {
+      "name": "bezelWidth",
+      "type": "number",
+      "required": false,
+      "default": "20",
+      "description": "Refracting bezel band width in px.",
+      "inherited": false,
+      "example": "20"
+    },
+    {
+      "name": "blur",
+      "type": "number",
+      "required": false,
+      "default": "18",
+      "description": "Backdrop blur radius in px (non-Chromium fallback).",
+      "inherited": false,
+      "example": "18"
+    },
+    {
+      "name": "borderColor",
+      "type": "string",
+      "required": false,
+      "default": "rgba(255,255,255,0.35)",
+      "description": "Inset border colour.",
+      "inherited": false,
+      "example": "rgba(255,255,255,0.35)"
     },
     {
       "name": "borderRadius",
       "type": "number",
       "required": false,
       "default": "LIQUID_GLASS_PRESETS.tabBar.borderRadius",
-      "inherited": false
+      "inherited": false,
+      "example": "LIQUID_GLASS_PRESETS.tabBar.borderRadius"
     },
     {
       "name": "bottom",
       "type": "number | string",
       "required": false,
       "default": "22",
-      "inherited": false
+      "inherited": false,
+      "example": "22"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "defaultActiveKey",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
+    },
+    {
+      "name": "displacementScale",
+      "type": "number",
+      "required": false,
+      "default": "34",
+      "description": "feDisplacementMap scale — higher = stronger refraction.",
+      "inherited": false,
+      "example": "34"
     },
     {
       "name": "height",
       "type": "number",
       "required": false,
-      "default": "64",
-      "inherited": false
+      "inherited": false,
+      "example": "64",
+      "default": "64"
     },
     {
       "name": "inactiveColor",
       "type": "string",
       "required": false,
       "default": "'rgba(255",
-      "inherited": false
+      "inherited": false,
+      "example": "'rgba(255"
     },
     {
       "name": "indicatorBackground",
       "type": "string",
       "required": false,
       "default": "'rgba(255",
-      "inherited": false
+      "inherited": false,
+      "example": "'rgba(255"
     },
     {
       "name": "indicatorBorderColor",
       "type": "string",
       "required": false,
       "default": "'rgba(255",
-      "inherited": false
+      "inherited": false,
+      "example": "'rgba(255"
     },
     {
       "name": "indicatorPadding",
       "type": "number",
       "required": false,
       "default": "8",
-      "inherited": false
+      "inherited": false,
+      "example": "8"
+    },
+    {
+      "name": "innerBottomShadow",
+      "type": "number",
+      "required": false,
+      "default": "0.20",
+      "description": "Inner bottom shadow fog opacity.",
+      "inherited": false,
+      "example": "0.20"
+    },
+    {
+      "name": "innerTopHighlight",
+      "type": "number",
+      "required": false,
+      "default": "0.35",
+      "description": "1px inner top highlight opacity.",
+      "inherited": false,
+      "example": "0.35"
     },
     {
       "name": "items",
       "type": "LiquidGlassTabItem[]",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
+    },
+    {
+      "name": "maxHeight",
+      "type": "number | string",
+      "required": false,
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "maxWidth",
       "type": "number",
       "required": false,
-      "default": "420",
-      "inherited": false
+      "inherited": false,
+      "example": "420",
+      "default": "420"
+    },
+    {
+      "name": "minHeight",
+      "type": "number | string",
+      "required": false,
+      "inherited": false,
+      "example": "\"example\""
+    },
+    {
+      "name": "minWidth",
+      "type": "number | string",
+      "required": false,
+      "inherited": false,
+      "example": "\"example\""
+    },
+    {
+      "name": "onDisplacementMapChange",
+      "type": "(dataUrl: string) => void",
+      "required": false,
+      "description": "Expose the displacement map data URL (for debug / lens lab).",
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "position",
       "type": "'fixed' | 'absolute' | 'relative' | 'static'",
       "required": false,
       "default": "'fixed'",
-      "inherited": false
+      "inherited": false,
+      "example": "'fixed'"
+    },
+    {
+      "name": "refractionStrength",
+      "type": "number",
+      "required": false,
+      "default": "1",
+      "description": "Raw displacement magnitude multiplier (0–2).",
+      "inherited": false,
+      "example": "1"
+    },
+    {
+      "name": "saturation",
+      "type": "number",
+      "required": false,
+      "default": "1.5",
+      "description": "Backdrop saturation multiplier.",
+      "inherited": false,
+      "example": "1.5"
+    },
+    {
+      "name": "shadowIntensity",
+      "type": "number",
+      "required": false,
+      "default": "1",
+      "description": "Drop shadow intensity (0 = off).",
+      "inherited": false,
+      "example": "1"
     },
     {
       "name": "showIndicator",
       "type": "boolean",
       "required": false,
       "default": "true",
-      "inherited": false
+      "inherited": false,
+      "example": "true"
+    },
+    {
+      "name": "showSpecular",
+      "type": "boolean",
+      "required": false,
+      "default": "true",
+      "description": "Show conic-gradient specular rim.",
+      "inherited": false,
+      "example": "true"
+    },
+    {
+      "name": "specularAngle",
+      "type": "number",
+      "required": false,
+      "default": "200",
+      "description": "Specular conic-gradient start angle (deg).",
+      "inherited": false,
+      "example": "200"
+    },
+    {
+      "name": "specularEdgeOpacity",
+      "type": "number",
+      "required": false,
+      "default": "0.55",
+      "description": "Specular edge/wing opacity.",
+      "inherited": false,
+      "example": "0.55"
+    },
+    {
+      "name": "specularTopOpacity",
+      "type": "number",
+      "required": false,
+      "default": "0.85",
+      "description": "Brightest specular peak opacity.",
+      "inherited": false,
+      "example": "0.85"
+    },
+    {
+      "name": "style",
+      "type": "LiquidGlassStyle",
+      "required": false,
+      "description": "Inline CSS merged onto the surface. Flex / grid / padding apply to inner content.",
+      "inherited": false,
+      "example": "\"example\""
+    },
+    {
+      "name": "tint",
+      "type": "string",
+      "required": false,
+      "default": "rgba(255,255,255,0.10)",
+      "description": "Glass fill on Chromium (SVG refraction path).",
+      "inherited": false,
+      "example": "rgba(255,255,255,0.10)"
+    },
+    {
+      "name": "tintFallback",
+      "type": "string",
+      "required": false,
+      "default": "rgba(255,255,255,0.14)",
+      "description": "Glass fill on non-Chromium fallback.",
+      "inherited": false,
+      "example": "rgba(255,255,255,0.14)"
+    },
+    {
+      "name": "width",
+      "type": "number | string",
+      "required": false,
+      "inherited": false,
+      "example": "\"example\""
     }
   ],
   "examples": [

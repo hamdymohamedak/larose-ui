@@ -8,77 +8,89 @@
       "name": "'aria-label'",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "alternatingRows",
       "type": "boolean",
       "required": false,
       "default": "true",
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "caption",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "columns",
       "type": "TableColumn<T>[]",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "data",
       "type": "T[]",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "defaultSortDirection",
       "type": "SortDirection",
       "required": false,
       "default": "'asc'",
-      "inherited": false
+      "inherited": false,
+      "example": "'asc'"
     },
     {
       "name": "defaultSortKey",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "keyExtractor",
       "type": "(row: T) => string",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "onSelectRow",
       "type": "(row: T) => void",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "resizableColumns",
       "type": "boolean",
       "required": false,
       "default": "true",
-      "inherited": false
+      "inherited": false,
+      "example": "true"
     },
     {
       "name": "selectedKey",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "selectionMode",
       "type": "TableSelectionMode",
       "required": false,
       "default": "'none'",
-      "inherited": false
+      "inherited": false,
+      "example": "'none'"
     }
   ],
   "examples": [

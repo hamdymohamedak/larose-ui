@@ -8,53 +8,61 @@
       "name": "alt",
       "type": "string",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "background",
       "type": "ImageBackground",
       "required": false,
       "default": "'opaque'",
-      "inherited": false
+      "inherited": false,
+      "example": "'opaque'"
     },
     {
       "name": "fit",
       "type": "ImageFit",
       "required": false,
       "default": "'contain'",
-      "inherited": false
+      "inherited": false,
+      "example": "'contain'"
     },
     {
       "name": "frameClassName",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "frameStyle",
       "type": "CSSProperties",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "objectPosition",
       "type": "string",
       "required": false,
       "default": "'center'",
-      "inherited": false
+      "inherited": false,
+      "example": "'center'"
     },
     {
       "name": "sequence",
       "type": "ImageFrameSequence",
       "required": false,
       "description": "Animated image sequence — frames should share dimensions when possible.",
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "src",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     }
   ],
   "examples": [

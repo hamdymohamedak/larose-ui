@@ -463,7 +463,7 @@ export const docsSearchIndex = [
     "title": "AcceleratorProvider",
     "type": "component",
     "path": "/docs/components/accelerator-provider",
-    "keywords": "AcceleratorProvider Other AcceleratorProvider.platform AcceleratorPlatform AcceleratorProvider.children ReactNode",
+    "keywords": "AcceleratorProvider Other AcceleratorProvider.children ReactNode AcceleratorProvider.platform AcceleratorPlatform",
     "excerpt": "Other component from @larose-ui/react"
   },
   {
@@ -479,7 +479,7 @@ export const docsSearchIndex = [
     "title": "Accordion",
     "type": "component",
     "path": "/docs/components/accordion",
-    "keywords": "Accordion Content Accordion.collapsible boolean Accordion.defaultValue string[] Accordion.onValueChange (value: string[]) => void Accordion.type 'single' | 'multiple' Accordion.value string[] Accordion.children ReactNode Accordion.className string Accordion.style CSSProperties",
+    "keywords": "Accordion Content Accordion.children ReactNode Accordion.className string Accordion.collapsible boolean Accordion.defaultValue string[] Accordion.onValueChange (value: string[]) => void Accordion.style CSSProperties Accordion.type 'single' | 'multiple' Accordion.value string[]",
     "excerpt": "Content component from @larose-ui/react"
   },
   {
@@ -551,7 +551,7 @@ export const docsSearchIndex = [
     "title": "AccordionItem",
     "type": "component",
     "path": "/docs/components/accordion-item",
-    "keywords": "AccordionItem Content AccordionItem.disabled boolean AccordionItem.value string AccordionItem.children ReactNode AccordionItem.className string AccordionItem.style CSSProperties",
+    "keywords": "AccordionItem Content AccordionItem.children ReactNode AccordionItem.className string AccordionItem.disabled boolean AccordionItem.style CSSProperties AccordionItem.value string",
     "excerpt": "Content component from @larose-ui/react"
   },
   {
@@ -583,7 +583,7 @@ export const docsSearchIndex = [
     "title": "ActivityShareButton",
     "type": "component",
     "path": "/docs/components/activity-share-button",
-    "keywords": "ActivityShareButton Actions ActivityShareButton.activities ActivityItem[] ActivityShareButton.excludedActivityIds string[] ActivityShareButton.label string ActivityShareButton.onActivitySelect (activity: ActivityItem) => void ActivityShareButton.presentation 'sheet' | 'popover' | 'auto' ActivityShareButton.className string ActivityShareButton.style CSSProperties ActivityShareButton.title string",
+    "keywords": "ActivityShareButton Actions ActivityShareButton.activities ActivityItem[] ActivityShareButton.className string ActivityShareButton.excludedActivityIds string[] ActivityShareButton.label string ActivityShareButton.onActivitySelect (activity: ActivityItem) => void ActivityShareButton.presentation 'sheet' | 'popover' | 'auto' ActivityShareButton.style CSSProperties ActivityShareButton.title string",
     "excerpt": "Actions component from @larose-ui/react"
   },
   {
@@ -631,7 +631,7 @@ export const docsSearchIndex = [
     "title": "ActivityView",
     "type": "component",
     "path": "/docs/components/activity-view",
-    "keywords": "ActivityView Sharing ActivityView.activities ActivityItem[] ActivityView.anchorRef React.RefObject<HTMLElement | null> ActivityView.excludedActivityIds string[] ActivityView.footer ReactNode ActivityView.onActivitySelect (activity: ActivityItem) => void ActivityView.onClose () => void ActivityView.open boolean ActivityView.presentation ActivityPresentation ActivityView.className string ActivityView.style CSSProperties ActivityView.title string",
+    "keywords": "ActivityView Sharing ActivityView.activities ActivityItem[] ActivityView.anchorRef React.RefObject<HTMLElement | null> ActivityView.className string ActivityView.excludedActivityIds string[] ActivityView.footer ReactNode ActivityView.onActivitySelect (activity: ActivityItem) => void ActivityView.onClose () => void ActivityView.open boolean ActivityView.presentation ActivityPresentation ActivityView.style CSSProperties ActivityView.title string",
     "excerpt": "Sharing component from @larose-ui/react"
   },
   {
@@ -735,7 +735,7 @@ export const docsSearchIndex = [
     "title": "Alert",
     "type": "component",
     "path": "/docs/components/alert",
-    "keywords": "Alert Feedback Alert.onDismiss () => void Alert.variant AlertVariant Alert.children ReactNode Alert.className string Alert.style CSSProperties Alert.title string",
+    "keywords": "Alert Feedback Alert.children ReactNode Alert.className string Alert.onDismiss () => void Alert.style CSSProperties Alert.title string Alert.variant AlertVariant",
     "excerpt": "Feedback component from @larose-ui/react"
   },
   {
@@ -839,7 +839,7 @@ export const docsSearchIndex = [
     "title": "AlertDialog",
     "type": "component",
     "path": "/docs/components/alert-dialog",
-    "keywords": "AlertDialog Feedback AlertDialog.accessory ReactNode AlertDialog.actions AlertDialogAction[] AlertDialog.defaultActionId string AlertDialog.helpUrl string AlertDialog.icon ReactNode AlertDialog.message string AlertDialog.onOpenChange (open: boolean) => void AlertDialog.open boolean AlertDialog.presentation AlertDialogPresentation AlertDialog.showCautionIcon boolean AlertDialog.suppression AlertDialogSuppression AlertDialog.textField AlertDialogTextField AlertDialog.className string AlertDialog.style CSSProperties AlertDialog.title string",
+    "keywords": "AlertDialog Feedback AlertDialog.accessory ReactNode AlertDialog.actions AlertDialogAction[] AlertDialog.className string AlertDialog.defaultActionId string AlertDialog.helpUrl string AlertDialog.icon ReactNode AlertDialog.message string AlertDialog.onOpenChange (open: boolean) => void AlertDialog.open boolean AlertDialog.presentation AlertDialogPresentation AlertDialog.showCautionIcon boolean AlertDialog.style CSSProperties AlertDialog.suppression AlertDialogSuppression AlertDialog.textField AlertDialogTextField AlertDialog.title string",
     "excerpt": "Feedback component from @larose-ui/react"
   },
   {
@@ -943,7 +943,7 @@ export const docsSearchIndex = [
     "title": "AsyncButton",
     "type": "component",
     "path": "/docs/components/async-button",
-    "keywords": "AsyncButton Actions AsyncButton.action () => Promise<void> AsyncButton.onError (error: unknown) => void AsyncButton.onSuccess () => void AsyncButton.size Size AsyncButton.variant Variant AsyncButton.children ReactNode",
+    "keywords": "AsyncButton Actions AsyncButton.action () => Promise<void> AsyncButton.children ReactNode AsyncButton.onError (error: unknown) => void AsyncButton.onSuccess () => void AsyncButton.size Size AsyncButton.variant Variant",
     "excerpt": "Actions component from @larose-ui/react"
   },
   {
@@ -991,7 +991,7 @@ export const docsSearchIndex = [
     "title": "Badge",
     "type": "component",
     "path": "/docs/components/badge",
-    "keywords": "Badge Feedback Badge.variant BadgeVariant Badge.children ReactNode Badge.className string Badge.style CSSProperties",
+    "keywords": "Badge Feedback Badge.children ReactNode Badge.className string Badge.style CSSProperties Badge.variant BadgeVariant",
     "excerpt": "Feedback component from @larose-ui/react"
   },
   {
@@ -1055,7 +1055,7 @@ export const docsSearchIndex = [
     "title": "Box",
     "type": "component",
     "path": "/docs/components/box",
-    "keywords": "Box Layout Box.'aria-label' string Box.padding 'sm' | 'md' | 'lg' Box.settingsStyle boolean Box.titlePosition BoxTitlePosition Box.variant BoxVariant Box.children ReactNode Box.className string Box.style CSSProperties Box.title string",
+    "keywords": "Box Layout Box.'aria-label' string Box.children ReactNode Box.className string Box.padding 'sm' | 'md' | 'lg' Box.settingsStyle boolean Box.style CSSProperties Box.title string Box.titlePosition BoxTitlePosition Box.variant BoxVariant",
     "excerpt": "Layout component from @larose-ui/react"
   },
   {
@@ -1127,7 +1127,7 @@ export const docsSearchIndex = [
     "title": "Breadcrumb",
     "type": "component",
     "path": "/docs/components/breadcrumb",
-    "keywords": "Breadcrumb Navigation Breadcrumb.'aria-label' string Breadcrumb.items BreadcrumbItem[] Breadcrumb.className string Breadcrumb.style CSSProperties",
+    "keywords": "Breadcrumb Navigation Breadcrumb.'aria-label' string Breadcrumb.className string Breadcrumb.items BreadcrumbItem[] Breadcrumb.style CSSProperties",
     "excerpt": "Navigation component from @larose-ui/react"
   },
   {
@@ -1415,7 +1415,7 @@ export const docsSearchIndex = [
     "title": "ButtonGroup",
     "type": "component",
     "path": "/docs/components/button-group",
-    "keywords": "ButtonGroup Actions ButtonGroup.'aria-label' string ButtonGroup.fullWidth boolean ButtonGroup.orientation 'horizontal' | 'vertical' ButtonGroup.children ReactNode ButtonGroup.className string ButtonGroup.style CSSProperties",
+    "keywords": "ButtonGroup Actions ButtonGroup.'aria-label' string ButtonGroup.children ReactNode ButtonGroup.className string ButtonGroup.fullWidth boolean ButtonGroup.orientation 'horizontal' | 'vertical' ButtonGroup.style CSSProperties",
     "excerpt": "Actions component from @larose-ui/react"
   },
   {
@@ -1447,7 +1447,7 @@ export const docsSearchIndex = [
     "title": "CalendarGrid",
     "type": "component",
     "path": "/docs/components/calendar-grid",
-    "keywords": "CalendarGrid Forms CalendarGrid.locale string CalendarGrid.maxDate string CalendarGrid.minDate string CalendarGrid.value string CalendarGrid.className string CalendarGrid.onChange (isoDate: string) => void CalendarGrid.style CSSProperties",
+    "keywords": "CalendarGrid Forms CalendarGrid.className string CalendarGrid.locale string CalendarGrid.maxDate string CalendarGrid.minDate string CalendarGrid.onChange (isoDate: string) => void CalendarGrid.style CSSProperties CalendarGrid.value string",
     "excerpt": "Forms component from @larose-ui/react"
   },
   {
@@ -1519,7 +1519,7 @@ export const docsSearchIndex = [
     "title": "Card",
     "type": "component",
     "path": "/docs/components/card",
-    "keywords": "Card Layout Card.description string Card.footer ReactNode Card.padding 'none' | 'sm' | 'md' | 'lg' Card.children ReactNode Card.className string Card.style CSSProperties Card.title string",
+    "keywords": "Card Layout Card.children ReactNode Card.className string Card.description string Card.footer ReactNode Card.padding 'none' | 'sm' | 'md' | 'lg' Card.style CSSProperties Card.title string",
     "excerpt": "Layout component from @larose-ui/react"
   },
   {
@@ -1679,7 +1679,7 @@ export const docsSearchIndex = [
     "title": "Chart",
     "type": "component",
     "path": "/docs/components/chart",
-    "keywords": "Chart Data Chart.accessibilitySummary string Chart.annotation string Chart.data ChartDataPoint[] Chart.height number Chart.interactive boolean Chart.mark ChartMark Chart.onPointFocus (point: ChartDataPoint, seriesId: string, index: number) => void Chart.series ChartSeries[] Chart.showLegend boolean Chart.showPoints boolean Chart.stacked boolean Chart.stackGap number Chart.subtitle string Chart.xAxis ChartAxisConfig Chart.yAxis ChartAxisConfig Chart.yAxisTrailing boolean Chart.className string Chart.style CSSProperties Chart.title string",
+    "keywords": "Chart Data Chart.accessibilitySummary string Chart.annotation string Chart.className string Chart.data ChartDataPoint[] Chart.height number Chart.interactive boolean Chart.mark ChartMark Chart.onPointFocus (point: ChartDataPoint, seriesId: string, index: number) => void Chart.series ChartSeries[] Chart.showLegend boolean Chart.showPoints boolean Chart.stacked boolean Chart.stackGap number Chart.style CSSProperties Chart.subtitle string Chart.title string Chart.xAxis ChartAxisConfig Chart.yAxis ChartAxisConfig Chart.yAxisTrailing boolean",
     "excerpt": "Data component from @larose-ui/react"
   },
   {
@@ -1983,7 +1983,7 @@ export const docsSearchIndex = [
     "title": "CollaborationPopover",
     "type": "component",
     "path": "/docs/components/collaboration-popover",
-    "keywords": "CollaborationPopover Sharing CollaborationPopover.actions CollaborationAction[] CollaborationPopover.collaborators Collaborator[] CollaborationPopover.defaultOpen boolean CollaborationPopover.manageLabel string CollaborationPopover.onManage () => void CollaborationPopover.onMessage () => void CollaborationPopover.onOpenChange (open: boolean) => void CollaborationPopover.onVideo () => void CollaborationPopover.open boolean CollaborationPopover.trigger ReactNode CollaborationPopover.className string CollaborationPopover.style CSSProperties",
+    "keywords": "CollaborationPopover Sharing CollaborationPopover.actions CollaborationAction[] CollaborationPopover.className string CollaborationPopover.collaborators Collaborator[] CollaborationPopover.defaultOpen boolean CollaborationPopover.manageLabel string CollaborationPopover.onManage () => void CollaborationPopover.onMessage () => void CollaborationPopover.onOpenChange (open: boolean) => void CollaborationPopover.onVideo () => void CollaborationPopover.open boolean CollaborationPopover.style CSSProperties CollaborationPopover.trigger ReactNode",
     "excerpt": "Sharing component from @larose-ui/react"
   },
   {
@@ -2079,7 +2079,7 @@ export const docsSearchIndex = [
     "title": "Collection",
     "type": "component",
     "path": "/docs/components/collection",
-    "keywords": "Collection Layout Collection.ariaLabel string Collection.columns number Collection.items CollectionItem[] Collection.layout CollectionLayout Collection.onSelect (item: CollectionItem) => void Collection.selectedId string Collection.className string Collection.style CSSProperties",
+    "keywords": "Collection Layout Collection.ariaLabel string Collection.className string Collection.columns number Collection.items CollectionItem[] Collection.layout CollectionLayout Collection.onSelect (item: CollectionItem) => void Collection.selectedId string Collection.style CSSProperties",
     "excerpt": "Layout component from @larose-ui/react"
   },
   {
@@ -2151,7 +2151,7 @@ export const docsSearchIndex = [
     "title": "ColumnView",
     "type": "component",
     "path": "/docs/components/column-view",
-    "keywords": "ColumnView Layout ColumnView.ariaLabel string ColumnView.data ColumnViewNode[] ColumnView.initialPath string[] ColumnView.onPathChange (path: string[]) => void ColumnView.className string ColumnView.style CSSProperties",
+    "keywords": "ColumnView Layout ColumnView.ariaLabel string ColumnView.className string ColumnView.data ColumnViewNode[] ColumnView.initialPath string[] ColumnView.onPathChange (path: string[]) => void ColumnView.style CSSProperties",
     "excerpt": "Layout component from @larose-ui/react"
   },
   {
@@ -2199,7 +2199,7 @@ export const docsSearchIndex = [
     "title": "CommandPalette",
     "type": "component",
     "path": "/docs/components/command-palette",
-    "keywords": "CommandPalette Overlay CommandPalette.'aria-label' string CommandPalette.emptyMessage string CommandPalette.items CommandPaletteItem[] CommandPalette.onOpenChange (open: boolean) => void CommandPalette.open boolean CommandPalette.placeholder string CommandPalette.className string CommandPalette.style CSSProperties",
+    "keywords": "CommandPalette Overlay CommandPalette.'aria-label' string CommandPalette.className string CommandPalette.emptyMessage string CommandPalette.items CommandPaletteItem[] CommandPalette.onOpenChange (open: boolean) => void CommandPalette.open boolean CommandPalette.placeholder string CommandPalette.style CSSProperties",
     "excerpt": "Overlay component from @larose-ui/react"
   },
   {
@@ -2279,7 +2279,7 @@ export const docsSearchIndex = [
     "title": "ContextMenu",
     "type": "component",
     "path": "/docs/components/context-menu",
-    "keywords": "ContextMenu Overlay ContextMenu.dimBackground boolean ContextMenu.entries ContextMenuEntry[] ContextMenu.longPress boolean ContextMenu.onEntrySelect (entry: ContextMenuItemConfig) => void ContextMenu.onOpenChange (open: boolean) => void ContextMenu.open boolean ContextMenu.preview ReactNode ContextMenu.children ReactElement ContextMenu.className string ContextMenu.style CSSProperties ContextMenu.title string",
+    "keywords": "ContextMenu Overlay ContextMenu.children ReactElement ContextMenu.className string ContextMenu.dimBackground boolean ContextMenu.entries ContextMenuEntry[] ContextMenu.longPress boolean ContextMenu.onEntrySelect (entry: ContextMenuItemConfig) => void ContextMenu.onOpenChange (open: boolean) => void ContextMenu.open boolean ContextMenu.preview ReactNode ContextMenu.style CSSProperties ContextMenu.title string",
     "excerpt": "Overlay component from @larose-ui/react"
   },
   {
@@ -2367,7 +2367,7 @@ export const docsSearchIndex = [
     "title": "DataTable",
     "type": "component",
     "path": "/docs/components/data-table",
-    "keywords": "DataTable Data DataTable.'aria-label' string DataTable.caption string DataTable.columns DataTableColumn<T>[] DataTable.data T[] DataTable.emptyDescription string DataTable.emptyMessage string DataTable.emptyTitle string DataTable.keyExtractor (row: T) => string DataTable.loading boolean DataTable.skeletonRows number DataTable.striped boolean DataTable.className string DataTable.style CSSProperties",
+    "keywords": "DataTable Data DataTable.'aria-label' string DataTable.caption string DataTable.className string DataTable.columns DataTableColumn<T>[] DataTable.data T[] DataTable.emptyDescription string DataTable.emptyMessage string DataTable.emptyTitle string DataTable.keyExtractor (row: T) => string DataTable.loading boolean DataTable.skeletonRows number DataTable.striped boolean DataTable.style CSSProperties",
     "excerpt": "Data component from @larose-ui/react"
   },
   {
@@ -2487,7 +2487,7 @@ export const docsSearchIndex = [
     "title": "DatePicker",
     "type": "component",
     "path": "/docs/components/date-picker",
-    "keywords": "DatePicker Forms DatePicker.error string | null DatePicker.hint string DatePicker.inputSize Size DatePicker.label string DatePicker.loading boolean DatePicker.state UIState DatePicker.value string DatePicker.onChange (value: string) => void",
+    "keywords": "DatePicker Forms DatePicker.error string | null DatePicker.hint string DatePicker.inputSize Size DatePicker.label string DatePicker.loading boolean DatePicker.onChange (value: string) => void DatePicker.state UIState DatePicker.value string",
     "excerpt": "Forms component from @larose-ui/react"
   },
   {
@@ -2567,7 +2567,7 @@ export const docsSearchIndex = [
     "title": "DateRangePicker",
     "type": "component",
     "path": "/docs/components/date-range-picker",
-    "keywords": "DateRangePicker Forms DateRangePicker.disabled boolean DateRangePicker.endLabel string DateRangePicker.error string | null DateRangePicker.hint string DateRangePicker.inputSize Size DateRangePicker.label string DateRangePicker.loading boolean DateRangePicker.max string DateRangePicker.min string DateRangePicker.readOnly boolean DateRangePicker.startLabel string DateRangePicker.state UIState DateRangePicker.value DateRange DateRangePicker.className string DateRangePicker.id string DateRangePicker.onChange (value: DateRange) => void DateRangePicker.style CSSProperties",
+    "keywords": "DateRangePicker Forms DateRangePicker.className string DateRangePicker.disabled boolean DateRangePicker.endLabel string DateRangePicker.error string | null DateRangePicker.hint string DateRangePicker.id string DateRangePicker.inputSize Size DateRangePicker.label string DateRangePicker.loading boolean DateRangePicker.max string DateRangePicker.min string DateRangePicker.onChange (value: DateRange) => void DateRangePicker.readOnly boolean DateRangePicker.startLabel string DateRangePicker.state UIState DateRangePicker.style CSSProperties DateRangePicker.value DateRange",
     "excerpt": "Forms component from @larose-ui/react"
   },
   {
@@ -2679,7 +2679,7 @@ export const docsSearchIndex = [
     "title": "DateTimePicker",
     "type": "component",
     "path": "/docs/components/date-time-picker",
-    "keywords": "DateTimePicker Forms DateTimePicker.appearance DateTimePickerStyle DateTimePicker.disabled boolean DateTimePicker.error string | null DateTimePicker.hint string DateTimePicker.inputSize Size DateTimePicker.label string DateTimePicker.loading boolean DateTimePicker.locale string DateTimePicker.maxDate string DateTimePicker.minDate string DateTimePicker.minuteInterval number DateTimePicker.mode DateTimePickerMode DateTimePicker.state UIState DateTimePicker.use12Hour boolean DateTimePicker.value DateTimeValue DateTimePicker.yearRange { start: number; end: number } DateTimePicker.className string DateTimePicker.onChange (value: DateTimeValue) => void DateTimePicker.style DateTimePickerStyle | CSSProperties",
+    "keywords": "DateTimePicker Forms DateTimePicker.appearance DateTimePickerStyle DateTimePicker.className string DateTimePicker.disabled boolean DateTimePicker.error string | null DateTimePicker.hint string DateTimePicker.inputSize Size DateTimePicker.label string DateTimePicker.loading boolean DateTimePicker.locale string DateTimePicker.maxDate string DateTimePicker.minDate string DateTimePicker.minuteInterval number DateTimePicker.mode DateTimePickerMode DateTimePicker.onChange (value: DateTimeValue) => void DateTimePicker.state UIState DateTimePicker.style DateTimePickerStyle | CSSProperties DateTimePicker.use12Hour boolean DateTimePicker.value DateTimeValue DateTimePicker.yearRange { start: number; end: number }",
     "excerpt": "Forms component from @larose-ui/react"
   },
   {
@@ -2815,7 +2815,7 @@ export const docsSearchIndex = [
     "title": "Dialog",
     "type": "component",
     "path": "/docs/components/dialog",
-    "keywords": "Dialog Overlay Dialog.cancelLabel string Dialog.confirmLabel string Dialog.description string Dialog.loading boolean Dialog.onClose () => void Dialog.onConfirm () => void Dialog.open boolean Dialog.variant 'default' | 'destructive' Dialog.children ReactNode Dialog.className string Dialog.style CSSProperties Dialog.title string",
+    "keywords": "Dialog Overlay Dialog.cancelLabel string Dialog.children ReactNode Dialog.className string Dialog.confirmLabel string Dialog.description string Dialog.loading boolean Dialog.onClose () => void Dialog.onConfirm () => void Dialog.open boolean Dialog.style CSSProperties Dialog.title string Dialog.variant 'default' | 'destructive'",
     "excerpt": "Overlay component from @larose-ui/react"
   },
   {
@@ -2903,7 +2903,7 @@ export const docsSearchIndex = [
     "title": "DisclosureButton",
     "type": "component",
     "path": "/docs/components/disclosure-button",
-    "keywords": "DisclosureButton Content DisclosureButton.'aria-label' string DisclosureButton.defaultExpanded boolean DisclosureButton.detail ReactNode DisclosureButton.disabled boolean DisclosureButton.expanded boolean DisclosureButton.label string DisclosureButton.onExpandedChange (expanded: boolean) => void DisclosureButton.children ReactNode DisclosureButton.className string DisclosureButton.style CSSProperties",
+    "keywords": "DisclosureButton Content DisclosureButton.'aria-label' string DisclosureButton.children ReactNode DisclosureButton.className string DisclosureButton.defaultExpanded boolean DisclosureButton.detail ReactNode DisclosureButton.disabled boolean DisclosureButton.expanded boolean DisclosureButton.label string DisclosureButton.onExpandedChange (expanded: boolean) => void DisclosureButton.style CSSProperties",
     "excerpt": "Content component from @larose-ui/react"
   },
   {
@@ -2967,7 +2967,7 @@ export const docsSearchIndex = [
     "title": "DisclosureGroup",
     "type": "component",
     "path": "/docs/components/disclosure-group",
-    "keywords": "DisclosureGroup Content DisclosureGroup.defaultExpanded boolean DisclosureGroup.disabled boolean DisclosureGroup.expanded boolean DisclosureGroup.label string DisclosureGroup.onExpandedChange (expanded: boolean) => void DisclosureGroup.children ReactNode DisclosureGroup.className string DisclosureGroup.style CSSProperties",
+    "keywords": "DisclosureGroup Content DisclosureGroup.children ReactNode DisclosureGroup.className string DisclosureGroup.defaultExpanded boolean DisclosureGroup.disabled boolean DisclosureGroup.expanded boolean DisclosureGroup.label string DisclosureGroup.onExpandedChange (expanded: boolean) => void DisclosureGroup.style CSSProperties",
     "excerpt": "Content component from @larose-ui/react"
   },
   {
@@ -3023,7 +3023,7 @@ export const docsSearchIndex = [
     "title": "DisclosureList",
     "type": "component",
     "path": "/docs/components/disclosure-list",
-    "keywords": "DisclosureList Content DisclosureList.defaultExpandedIds string[] DisclosureList.items DisclosureListItem[] DisclosureList.className string DisclosureList.style CSSProperties",
+    "keywords": "DisclosureList Content DisclosureList.className string DisclosureList.defaultExpandedIds string[] DisclosureList.items DisclosureListItem[] DisclosureList.style CSSProperties",
     "excerpt": "Content component from @larose-ui/react"
   },
   {
@@ -3055,7 +3055,7 @@ export const docsSearchIndex = [
     "title": "DisclosureTriangle",
     "type": "component",
     "path": "/docs/components/disclosure-triangle",
-    "keywords": "DisclosureTriangle Content DisclosureTriangle.defaultExpanded boolean DisclosureTriangle.disabled boolean DisclosureTriangle.expanded boolean DisclosureTriangle.label string DisclosureTriangle.onExpandedChange (expanded: boolean) => void DisclosureTriangle.children ReactNode DisclosureTriangle.className string DisclosureTriangle.style CSSProperties",
+    "keywords": "DisclosureTriangle Content DisclosureTriangle.children ReactNode DisclosureTriangle.className string DisclosureTriangle.defaultExpanded boolean DisclosureTriangle.disabled boolean DisclosureTriangle.expanded boolean DisclosureTriangle.label string DisclosureTriangle.onExpandedChange (expanded: boolean) => void DisclosureTriangle.style CSSProperties",
     "excerpt": "Content component from @larose-ui/react"
   },
   {
@@ -3119,7 +3119,7 @@ export const docsSearchIndex = [
     "title": "DockMenu",
     "type": "component",
     "path": "/docs/components/dock-menu",
-    "keywords": "DockMenu Navigation DockMenu.appName string DockMenu.closedEntries ContextMenuEntry[] DockMenu.icon ReactNode DockMenu.isRunning boolean DockMenu.onEntrySelect (entry: ContextMenuItemConfig) => void DockMenu.onOpenChange (open: boolean) => void DockMenu.onWindowSelect (window: DockWindow) => void DockMenu.open boolean DockMenu.openWindows DockWindow[] DockMenu.runningEntries ContextMenuEntry[] DockMenu.className string DockMenu.style CSSProperties",
+    "keywords": "DockMenu Navigation DockMenu.appName string DockMenu.className string DockMenu.closedEntries ContextMenuEntry[] DockMenu.icon ReactNode DockMenu.isRunning boolean DockMenu.onEntrySelect (entry: ContextMenuItemConfig) => void DockMenu.onOpenChange (open: boolean) => void DockMenu.onWindowSelect (window: DockWindow) => void DockMenu.open boolean DockMenu.openWindows DockWindow[] DockMenu.runningEntries ContextMenuEntry[] DockMenu.style CSSProperties",
     "excerpt": "Navigation component from @larose-ui/react"
   },
   {
@@ -3239,7 +3239,7 @@ export const docsSearchIndex = [
     "title": "DocumentLauncher",
     "type": "component",
     "path": "/docs/components/document-launcher",
-    "keywords": "DocumentLauncher Files DocumentLauncher.accessories ReactNode DocumentLauncher.appTitle string DocumentLauncher.background ReactNode DocumentLauncher.onPrimaryAction () => void DocumentLauncher.onSecondaryAction () => void DocumentLauncher.primaryActionLabel string DocumentLauncher.secondaryActionLabel string DocumentLauncher.className string DocumentLauncher.style CSSProperties",
+    "keywords": "DocumentLauncher Files DocumentLauncher.accessories ReactNode DocumentLauncher.appTitle string DocumentLauncher.background ReactNode DocumentLauncher.className string DocumentLauncher.onPrimaryAction () => void DocumentLauncher.onSecondaryAction () => void DocumentLauncher.primaryActionLabel string DocumentLauncher.secondaryActionLabel string DocumentLauncher.style CSSProperties",
     "excerpt": "Files component from @larose-ui/react"
   },
   {
@@ -3311,7 +3311,7 @@ export const docsSearchIndex = [
     "title": "DocumentToolbar",
     "type": "component",
     "path": "/docs/components/document-toolbar",
-    "keywords": "DocumentToolbar Files DocumentToolbar.canSave boolean DocumentToolbar.newLabel string DocumentToolbar.onNew () => void DocumentToolbar.onOpen () => void DocumentToolbar.onSave () => void DocumentToolbar.openLabel string DocumentToolbar.saveLabel string DocumentToolbar.showAddButton boolean DocumentToolbar.className string DocumentToolbar.style CSSProperties",
+    "keywords": "DocumentToolbar Files DocumentToolbar.canSave boolean DocumentToolbar.className string DocumentToolbar.newLabel string DocumentToolbar.onNew () => void DocumentToolbar.onOpen () => void DocumentToolbar.onSave () => void DocumentToolbar.openLabel string DocumentToolbar.saveLabel string DocumentToolbar.showAddButton boolean DocumentToolbar.style CSSProperties",
     "excerpt": "Files component from @larose-ui/react"
   },
   {
@@ -3391,7 +3391,7 @@ export const docsSearchIndex = [
     "title": "DragDropList",
     "type": "component",
     "path": "/docs/components/drag-drop-list",
-    "keywords": "DragDropList DragDrop DragDropList.items DragDropListItem[] DragDropList.onReorder (items: DragDropListItem[]) => void DragDropList.renderItem (item: DragDropListItem) => ReactNode DragDropList.zoneId string DragDropList.className string DragDropList.style CSSProperties",
+    "keywords": "DragDropList DragDrop DragDropList.className string DragDropList.items DragDropListItem[] DragDropList.onReorder (items: DragDropListItem[]) => void DragDropList.renderItem (item: DragDropListItem) => ReactNode DragDropList.style CSSProperties DragDropList.zoneId string",
     "excerpt": "DragDrop component from @larose-ui/react"
   },
   {
@@ -3431,7 +3431,7 @@ export const docsSearchIndex = [
     "title": "Draggable",
     "type": "component",
     "path": "/docs/components/draggable",
-    "keywords": "Draggable DragDrop Draggable.data T Draggable.disabled boolean Draggable.label string Draggable.preview ReactNode Draggable.sourceId string Draggable.type string Draggable.children ReactNode Draggable.className string Draggable.id string Draggable.style CSSProperties",
+    "keywords": "Draggable DragDrop Draggable.children ReactNode Draggable.className string Draggable.data T Draggable.disabled boolean Draggable.id string Draggable.label string Draggable.preview ReactNode Draggable.sourceId string Draggable.style CSSProperties Draggable.type string",
     "excerpt": "DragDrop component from @larose-ui/react"
   },
   {
@@ -3487,7 +3487,7 @@ export const docsSearchIndex = [
     "title": "Drawer",
     "type": "component",
     "path": "/docs/components/drawer",
-    "keywords": "Drawer Overlay Drawer.closeOnOverlay boolean Drawer.description string Drawer.motion ComponentMotionOverride Drawer.onClose () => void Drawer.open boolean Drawer.overlayClassName string Drawer.overlayStyle CSSProperties Drawer.panelClassName string Drawer.panelStyle CSSProperties Drawer.side DrawerSide Drawer.children ReactNode Drawer.className string Drawer.style CSSProperties Drawer.title string",
+    "keywords": "Drawer Overlay Drawer.children ReactNode Drawer.className string Drawer.closeOnOverlay boolean Drawer.description string Drawer.motion ComponentMotionOverride Drawer.onClose () => void Drawer.open boolean Drawer.overlayClassName string Drawer.overlayStyle CSSProperties Drawer.panelClassName string Drawer.panelStyle CSSProperties Drawer.side DrawerSide Drawer.style CSSProperties Drawer.title string",
     "excerpt": "Overlay component from @larose-ui/react"
   },
   {
@@ -3591,7 +3591,7 @@ export const docsSearchIndex = [
     "title": "DropZone",
     "type": "component",
     "path": "/docs/components/drop-zone",
-    "keywords": "DropZone DragDrop DropZone.accepts string | string[] DropZone.canDrop (items: DragItem<T>[]) => boolean DropZone.disabled boolean DropZone.onDrop (result: DropResult<T>) => void | Promise<void> DropZone.showInvalidIndicator boolean DropZone.transferring boolean DropZone.transferringLabel string DropZone.children ReactNode DropZone.className string DropZone.id string DropZone.style CSSProperties",
+    "keywords": "DropZone DragDrop DropZone.accepts string | string[] DropZone.canDrop (items: DragItem<T>[]) => boolean DropZone.children ReactNode DropZone.className string DropZone.disabled boolean DropZone.id string DropZone.onDrop (result: DropResult<T>) => void | Promise<void> DropZone.showInvalidIndicator boolean DropZone.style CSSProperties DropZone.transferring boolean DropZone.transferringLabel string",
     "excerpt": "DragDrop component from @larose-ui/react"
   },
   {
@@ -3655,7 +3655,7 @@ export const docsSearchIndex = [
     "title": "EditMenu",
     "type": "component",
     "path": "/docs/components/edit-menu",
-    "keywords": "EditMenu Navigation EditMenu.context EditMenuContext EditMenu.customActions EditMenuItemConfig[] EditMenu.dimBackground boolean EditMenu.includeStandardActions boolean EditMenu.inputMode EditMenuInputMode EditMenu.longPress boolean EditMenu.onAction (actionId: string) => void EditMenu.onOpenChange (open: boolean) => void EditMenu.onStandardAction (actionId: StandardEditActionId) => void EditMenu.open boolean EditMenu.placement 'above' | 'below' | 'auto' EditMenu.variant EditMenuVariant EditMenu.children ReactElement EditMenu.className string EditMenu.style CSSProperties",
+    "keywords": "EditMenu Navigation EditMenu.children ReactElement EditMenu.className string EditMenu.context EditMenuContext EditMenu.customActions EditMenuItemConfig[] EditMenu.dimBackground boolean EditMenu.includeStandardActions boolean EditMenu.inputMode EditMenuInputMode EditMenu.longPress boolean EditMenu.onAction (actionId: string) => void EditMenu.onOpenChange (open: boolean) => void EditMenu.onStandardAction (actionId: StandardEditActionId) => void EditMenu.open boolean EditMenu.placement 'above' | 'below' | 'auto' EditMenu.style CSSProperties EditMenu.variant EditMenuVariant",
     "excerpt": "Navigation component from @larose-ui/react"
   },
   {
@@ -3815,7 +3815,7 @@ export const docsSearchIndex = [
     "title": "EmptyState",
     "type": "component",
     "path": "/docs/components/empty-state",
-    "keywords": "EmptyState Feedback EmptyState.actionLabel string EmptyState.description string EmptyState.icon ReactNode EmptyState.onAction () => void EmptyState.state UIState EmptyState.className string EmptyState.style CSSProperties EmptyState.title string",
+    "keywords": "EmptyState Feedback EmptyState.actionLabel string EmptyState.className string EmptyState.description string EmptyState.icon ReactNode EmptyState.onAction () => void EmptyState.state UIState EmptyState.style CSSProperties EmptyState.title string",
     "excerpt": "Feedback component from @larose-ui/react"
   },
   {
@@ -3887,7 +3887,7 @@ export const docsSearchIndex = [
     "title": "FileBrowser",
     "type": "component",
     "path": "/docs/components/file-browser",
-    "keywords": "FileBrowser Files FileBrowser.acceptTypes string[] FileBrowser.activeTab FileBrowserTab FileBrowser.emptyLabel string FileBrowser.files FileBrowserItem[] FileBrowser.onOpen (file: FileBrowserItem) => void FileBrowser.onSelect (file: FileBrowserItem) => void FileBrowser.onShowExtensionsChange (show: boolean) => void FileBrowser.onTabChange (tab: FileBrowserTab) => void FileBrowser.selectedId string FileBrowser.showExtensions boolean FileBrowser.toolbar ReactNode FileBrowser.className string FileBrowser.style CSSProperties",
+    "keywords": "FileBrowser Files FileBrowser.acceptTypes string[] FileBrowser.activeTab FileBrowserTab FileBrowser.className string FileBrowser.emptyLabel string FileBrowser.files FileBrowserItem[] FileBrowser.onOpen (file: FileBrowserItem) => void FileBrowser.onSelect (file: FileBrowserItem) => void FileBrowser.onShowExtensionsChange (show: boolean) => void FileBrowser.onTabChange (tab: FileBrowserTab) => void FileBrowser.selectedId string FileBrowser.showExtensions boolean FileBrowser.style CSSProperties FileBrowser.toolbar ReactNode",
     "excerpt": "Files component from @larose-ui/react"
   },
   {
@@ -3991,7 +3991,7 @@ export const docsSearchIndex = [
     "title": "FilePreview",
     "type": "component",
     "path": "/docs/components/file-preview",
-    "keywords": "FilePreview Files FilePreview.closeLabel string FilePreview.onClose () => void FilePreview.source FilePreviewSource FilePreview.className string FilePreview.style CSSProperties",
+    "keywords": "FilePreview Files FilePreview.className string FilePreview.closeLabel string FilePreview.onClose () => void FilePreview.source FilePreviewSource FilePreview.style CSSProperties",
     "excerpt": "Files component from @larose-ui/react"
   },
   {
@@ -4031,7 +4031,7 @@ export const docsSearchIndex = [
     "title": "FileUpload",
     "type": "component",
     "path": "/docs/components/file-upload",
-    "keywords": "FileUpload Forms FileUpload.accept string FileUpload.buttonLabel string FileUpload.disabled boolean FileUpload.error string | null FileUpload.hint string FileUpload.label string FileUpload.multiple boolean FileUpload.onFilesChange (files: File[]) => void FileUpload.className string FileUpload.style CSSProperties",
+    "keywords": "FileUpload Forms FileUpload.accept string FileUpload.buttonLabel string FileUpload.className string FileUpload.disabled boolean FileUpload.error string | null FileUpload.hint string FileUpload.label string FileUpload.multiple boolean FileUpload.onFilesChange (files: File[]) => void FileUpload.style CSSProperties",
     "excerpt": "Forms component from @larose-ui/react"
   },
   {
@@ -4183,7 +4183,7 @@ export const docsSearchIndex = [
     "title": "HomeScreenQuickActions",
     "type": "component",
     "path": "/docs/components/home-screen-quick-actions",
-    "keywords": "HomeScreenQuickActions Platform HomeScreenQuickActions.actions QuickActionItem[] HomeScreenQuickActions.appName string HomeScreenQuickActions.icon ReactNode HomeScreenQuickActions.iconPlacement QuickActionIconPlacement HomeScreenQuickActions.includeSystemActions boolean HomeScreenQuickActions.onActionSelect (action: QuickActionItem) => void HomeScreenQuickActions.onOpenChange (open: boolean) => void HomeScreenQuickActions.open boolean HomeScreenQuickActions.systemActions QuickActionItem[] HomeScreenQuickActions.className string HomeScreenQuickActions.style CSSProperties",
+    "keywords": "HomeScreenQuickActions Platform HomeScreenQuickActions.actions QuickActionItem[] HomeScreenQuickActions.appName string HomeScreenQuickActions.className string HomeScreenQuickActions.icon ReactNode HomeScreenQuickActions.iconPlacement QuickActionIconPlacement HomeScreenQuickActions.includeSystemActions boolean HomeScreenQuickActions.onActionSelect (action: QuickActionItem) => void HomeScreenQuickActions.onOpenChange (open: boolean) => void HomeScreenQuickActions.open boolean HomeScreenQuickActions.style CSSProperties HomeScreenQuickActions.systemActions QuickActionItem[]",
     "excerpt": "Platform component from @larose-ui/react"
   },
   {
@@ -4455,7 +4455,7 @@ export const docsSearchIndex = [
     "title": "ImageWell",
     "type": "component",
     "path": "/docs/components/image-well",
-    "keywords": "ImageWell Content ImageWell.accept string ImageWell.disabled boolean ImageWell.label string ImageWell.onImageChange (file: File | null, previewUrl: string | null) => void ImageWell.placeholder string ImageWell.src string ImageWell.className string ImageWell.style CSSProperties",
+    "keywords": "ImageWell Content ImageWell.accept string ImageWell.className string ImageWell.disabled boolean ImageWell.label string ImageWell.onImageChange (file: File | null, previewUrl: string | null) => void ImageWell.placeholder string ImageWell.src string ImageWell.style CSSProperties",
     "excerpt": "Content component from @larose-ui/react"
   },
   {
@@ -4703,7 +4703,7 @@ export const docsSearchIndex = [
     "title": "Label",
     "type": "component",
     "path": "/docs/components/label",
-    "keywords": "Label Content Label.as ElementType Label.importance LabelImportance Label.mono boolean Label.selectable boolean Label.children ReactNode Label.className string Label.style CSSProperties",
+    "keywords": "Label Content Label.as ElementType Label.children ReactNode Label.className string Label.importance LabelImportance Label.mono boolean Label.selectable boolean Label.style CSSProperties",
     "excerpt": "Content component from @larose-ui/react"
   },
   {
@@ -4743,8 +4743,224 @@ export const docsSearchIndex = [
     "title": "LiquidGlass",
     "type": "component",
     "path": "/docs/components/liquid-glass",
-    "keywords": "LiquidGlass Glass",
+    "keywords": "LiquidGlass Glass LiquidGlass.aria-label string LiquidGlass.as string LiquidGlass.bezelWidth number LiquidGlass.blur number LiquidGlass.borderColor string LiquidGlass.borderRadius number LiquidGlass.className string LiquidGlass.displacementScale number LiquidGlass.height number | string LiquidGlass.innerBottomShadow number LiquidGlass.innerTopHighlight number LiquidGlass.maxHeight number | string LiquidGlass.maxWidth number | string LiquidGlass.minHeight number | string LiquidGlass.minWidth number | string LiquidGlass.onDisplacementMapChange (dataUrl: string) => void LiquidGlass.refractionStrength number LiquidGlass.saturation number LiquidGlass.shadowIntensity number LiquidGlass.showSpecular boolean LiquidGlass.specularAngle number LiquidGlass.specularEdgeOpacity number LiquidGlass.specularTopOpacity number LiquidGlass.style LiquidGlassStyle LiquidGlass.tint string LiquidGlass.tintFallback string LiquidGlass.width number | string",
     "excerpt": "Glass component from @larose-ui/react"
+  },
+  {
+    "id": "prop:liquid-glass:aria-label",
+    "title": "LiquidGlass.aria-label",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass#api",
+    "keywords": "LiquidGlass aria-label string Accessible label (recommended for nav/header).",
+    "excerpt": "Accessible label (recommended for nav/header)."
+  },
+  {
+    "id": "prop:liquid-glass:as",
+    "title": "LiquidGlass.as",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass#api",
+    "keywords": "LiquidGlass as string HTML tag name for the glass shell (`div`, `footer`, `nav`, …).",
+    "excerpt": "HTML tag name for the glass shell (`div`, `footer`, `nav`, …)."
+  },
+  {
+    "id": "prop:liquid-glass:bezelWidth",
+    "title": "LiquidGlass.bezelWidth",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass#api",
+    "keywords": "LiquidGlass bezelWidth number Refracting bezel band width in px.",
+    "excerpt": "Refracting bezel band width in px."
+  },
+  {
+    "id": "prop:liquid-glass:blur",
+    "title": "LiquidGlass.blur",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass#api",
+    "keywords": "LiquidGlass blur number Backdrop blur radius in px (non-Chromium fallback).",
+    "excerpt": "Backdrop blur radius in px (non-Chromium fallback)."
+  },
+  {
+    "id": "prop:liquid-glass:borderColor",
+    "title": "LiquidGlass.borderColor",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass#api",
+    "keywords": "LiquidGlass borderColor string Inset border colour.",
+    "excerpt": "Inset border colour."
+  },
+  {
+    "id": "prop:liquid-glass:borderRadius",
+    "title": "LiquidGlass.borderRadius",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass#api",
+    "keywords": "LiquidGlass borderRadius number Corner radius in px.",
+    "excerpt": "Corner radius in px."
+  },
+  {
+    "id": "prop:liquid-glass:className",
+    "title": "LiquidGlass.className",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass#api",
+    "keywords": "LiquidGlass className string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:liquid-glass:displacementScale",
+    "title": "LiquidGlass.displacementScale",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass#api",
+    "keywords": "LiquidGlass displacementScale number feDisplacementMap scale — higher = stronger refraction.",
+    "excerpt": "feDisplacementMap scale — higher = stronger refraction."
+  },
+  {
+    "id": "prop:liquid-glass:height",
+    "title": "LiquidGlass.height",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass#api",
+    "keywords": "LiquidGlass height number | string ",
+    "excerpt": "number | string"
+  },
+  {
+    "id": "prop:liquid-glass:innerBottomShadow",
+    "title": "LiquidGlass.innerBottomShadow",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass#api",
+    "keywords": "LiquidGlass innerBottomShadow number Inner bottom shadow fog opacity.",
+    "excerpt": "Inner bottom shadow fog opacity."
+  },
+  {
+    "id": "prop:liquid-glass:innerTopHighlight",
+    "title": "LiquidGlass.innerTopHighlight",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass#api",
+    "keywords": "LiquidGlass innerTopHighlight number 1px inner top highlight opacity.",
+    "excerpt": "1px inner top highlight opacity."
+  },
+  {
+    "id": "prop:liquid-glass:maxHeight",
+    "title": "LiquidGlass.maxHeight",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass#api",
+    "keywords": "LiquidGlass maxHeight number | string ",
+    "excerpt": "number | string"
+  },
+  {
+    "id": "prop:liquid-glass:maxWidth",
+    "title": "LiquidGlass.maxWidth",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass#api",
+    "keywords": "LiquidGlass maxWidth number | string ",
+    "excerpt": "number | string"
+  },
+  {
+    "id": "prop:liquid-glass:minHeight",
+    "title": "LiquidGlass.minHeight",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass#api",
+    "keywords": "LiquidGlass minHeight number | string ",
+    "excerpt": "number | string"
+  },
+  {
+    "id": "prop:liquid-glass:minWidth",
+    "title": "LiquidGlass.minWidth",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass#api",
+    "keywords": "LiquidGlass minWidth number | string ",
+    "excerpt": "number | string"
+  },
+  {
+    "id": "prop:liquid-glass:onDisplacementMapChange",
+    "title": "LiquidGlass.onDisplacementMapChange",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass#api",
+    "keywords": "LiquidGlass onDisplacementMapChange (dataUrl: string) => void Expose the displacement map data URL (for debug / lens lab).",
+    "excerpt": "Expose the displacement map data URL (for debug / lens lab)."
+  },
+  {
+    "id": "prop:liquid-glass:refractionStrength",
+    "title": "LiquidGlass.refractionStrength",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass#api",
+    "keywords": "LiquidGlass refractionStrength number Raw displacement magnitude multiplier (0–2).",
+    "excerpt": "Raw displacement magnitude multiplier (0–2)."
+  },
+  {
+    "id": "prop:liquid-glass:saturation",
+    "title": "LiquidGlass.saturation",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass#api",
+    "keywords": "LiquidGlass saturation number Backdrop saturation multiplier.",
+    "excerpt": "Backdrop saturation multiplier."
+  },
+  {
+    "id": "prop:liquid-glass:shadowIntensity",
+    "title": "LiquidGlass.shadowIntensity",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass#api",
+    "keywords": "LiquidGlass shadowIntensity number Drop shadow intensity (0 = off).",
+    "excerpt": "Drop shadow intensity (0 = off)."
+  },
+  {
+    "id": "prop:liquid-glass:showSpecular",
+    "title": "LiquidGlass.showSpecular",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass#api",
+    "keywords": "LiquidGlass showSpecular boolean Show conic-gradient specular rim.",
+    "excerpt": "Show conic-gradient specular rim."
+  },
+  {
+    "id": "prop:liquid-glass:specularAngle",
+    "title": "LiquidGlass.specularAngle",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass#api",
+    "keywords": "LiquidGlass specularAngle number Specular conic-gradient start angle (deg).",
+    "excerpt": "Specular conic-gradient start angle (deg)."
+  },
+  {
+    "id": "prop:liquid-glass:specularEdgeOpacity",
+    "title": "LiquidGlass.specularEdgeOpacity",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass#api",
+    "keywords": "LiquidGlass specularEdgeOpacity number Specular edge/wing opacity.",
+    "excerpt": "Specular edge/wing opacity."
+  },
+  {
+    "id": "prop:liquid-glass:specularTopOpacity",
+    "title": "LiquidGlass.specularTopOpacity",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass#api",
+    "keywords": "LiquidGlass specularTopOpacity number Brightest specular peak opacity.",
+    "excerpt": "Brightest specular peak opacity."
+  },
+  {
+    "id": "prop:liquid-glass:style",
+    "title": "LiquidGlass.style",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass#api",
+    "keywords": "LiquidGlass style LiquidGlassStyle Inline CSS merged onto the surface. Flex / grid / padding apply to inner content.",
+    "excerpt": "Inline CSS merged onto the surface. Flex / grid / padding apply to inner content."
+  },
+  {
+    "id": "prop:liquid-glass:tint",
+    "title": "LiquidGlass.tint",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass#api",
+    "keywords": "LiquidGlass tint string Glass fill on Chromium (SVG refraction path).",
+    "excerpt": "Glass fill on Chromium (SVG refraction path)."
+  },
+  {
+    "id": "prop:liquid-glass:tintFallback",
+    "title": "LiquidGlass.tintFallback",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass#api",
+    "keywords": "LiquidGlass tintFallback string Glass fill on non-Chromium fallback.",
+    "excerpt": "Glass fill on non-Chromium fallback."
+  },
+  {
+    "id": "prop:liquid-glass:width",
+    "title": "LiquidGlass.width",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass#api",
+    "keywords": "LiquidGlass width number | string ",
+    "excerpt": "number | string"
   },
   {
     "id": "example:liquid-glass:NaturalLanguageFilter",
@@ -4879,8 +5095,48 @@ export const docsSearchIndex = [
     "title": "LiquidGlassButton",
     "type": "component",
     "path": "/docs/components/liquid-glass-button",
-    "keywords": "LiquidGlassButton Glass LiquidGlassButton.borderRadius number LiquidGlassButton.color string LiquidGlassButton.fontSize string | number LiquidGlassButton.fontWeight number LiquidGlassButton.height number | string LiquidGlassButton.width number | string LiquidGlassButton.children ReactNode",
+    "keywords": "LiquidGlassButton Glass LiquidGlassButton.aria-label string LiquidGlassButton.as string LiquidGlassButton.bezelWidth number LiquidGlassButton.blur number LiquidGlassButton.borderColor string LiquidGlassButton.borderRadius number LiquidGlassButton.children ReactNode LiquidGlassButton.className string LiquidGlassButton.color string LiquidGlassButton.displacementScale number LiquidGlassButton.fontSize string | number LiquidGlassButton.fontWeight number LiquidGlassButton.height number | string LiquidGlassButton.innerBottomShadow number LiquidGlassButton.innerTopHighlight number LiquidGlassButton.maxHeight number | string LiquidGlassButton.maxWidth number | string LiquidGlassButton.minHeight number | string LiquidGlassButton.minWidth number | string LiquidGlassButton.onDisplacementMapChange (dataUrl: string) => void LiquidGlassButton.refractionStrength number LiquidGlassButton.saturation number LiquidGlassButton.shadowIntensity number LiquidGlassButton.showSpecular boolean LiquidGlassButton.specularAngle number LiquidGlassButton.specularEdgeOpacity number LiquidGlassButton.specularTopOpacity number LiquidGlassButton.style LiquidGlassStyle LiquidGlassButton.tint string LiquidGlassButton.tintFallback string LiquidGlassButton.width number | string",
     "excerpt": "Glass component from @larose-ui/react"
+  },
+  {
+    "id": "prop:liquid-glass-button:aria-label",
+    "title": "LiquidGlassButton.aria-label",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-button#api",
+    "keywords": "LiquidGlassButton aria-label string Accessible label (recommended for nav/header).",
+    "excerpt": "Accessible label (recommended for nav/header)."
+  },
+  {
+    "id": "prop:liquid-glass-button:as",
+    "title": "LiquidGlassButton.as",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-button#api",
+    "keywords": "LiquidGlassButton as string HTML tag name for the glass shell (`div`, `footer`, `nav`, …).",
+    "excerpt": "HTML tag name for the glass shell (`div`, `footer`, `nav`, …)."
+  },
+  {
+    "id": "prop:liquid-glass-button:bezelWidth",
+    "title": "LiquidGlassButton.bezelWidth",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-button#api",
+    "keywords": "LiquidGlassButton bezelWidth number Refracting bezel band width in px.",
+    "excerpt": "Refracting bezel band width in px."
+  },
+  {
+    "id": "prop:liquid-glass-button:blur",
+    "title": "LiquidGlassButton.blur",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-button#api",
+    "keywords": "LiquidGlassButton blur number Backdrop blur radius in px (non-Chromium fallback).",
+    "excerpt": "Backdrop blur radius in px (non-Chromium fallback)."
+  },
+  {
+    "id": "prop:liquid-glass-button:borderColor",
+    "title": "LiquidGlassButton.borderColor",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-button#api",
+    "keywords": "LiquidGlassButton borderColor string Inset border colour.",
+    "excerpt": "Inset border colour."
   },
   {
     "id": "prop:liquid-glass-button:borderRadius",
@@ -4891,12 +5147,28 @@ export const docsSearchIndex = [
     "excerpt": "number"
   },
   {
+    "id": "prop:liquid-glass-button:className",
+    "title": "LiquidGlassButton.className",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-button#api",
+    "keywords": "LiquidGlassButton className string ",
+    "excerpt": "string"
+  },
+  {
     "id": "prop:liquid-glass-button:color",
     "title": "LiquidGlassButton.color",
     "type": "prop",
     "path": "/docs/components/liquid-glass-button#api",
     "keywords": "LiquidGlassButton color string Text/icon colour.",
     "excerpt": "Text/icon colour."
+  },
+  {
+    "id": "prop:liquid-glass-button:displacementScale",
+    "title": "LiquidGlassButton.displacementScale",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-button#api",
+    "keywords": "LiquidGlassButton displacementScale number feDisplacementMap scale — higher = stronger refraction.",
+    "excerpt": "feDisplacementMap scale — higher = stronger refraction."
   },
   {
     "id": "prop:liquid-glass-button:fontSize",
@@ -4921,6 +5193,142 @@ export const docsSearchIndex = [
     "path": "/docs/components/liquid-glass-button#api",
     "keywords": "LiquidGlassButton height number | string ",
     "excerpt": "number | string"
+  },
+  {
+    "id": "prop:liquid-glass-button:innerBottomShadow",
+    "title": "LiquidGlassButton.innerBottomShadow",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-button#api",
+    "keywords": "LiquidGlassButton innerBottomShadow number Inner bottom shadow fog opacity.",
+    "excerpt": "Inner bottom shadow fog opacity."
+  },
+  {
+    "id": "prop:liquid-glass-button:innerTopHighlight",
+    "title": "LiquidGlassButton.innerTopHighlight",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-button#api",
+    "keywords": "LiquidGlassButton innerTopHighlight number 1px inner top highlight opacity.",
+    "excerpt": "1px inner top highlight opacity."
+  },
+  {
+    "id": "prop:liquid-glass-button:maxHeight",
+    "title": "LiquidGlassButton.maxHeight",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-button#api",
+    "keywords": "LiquidGlassButton maxHeight number | string ",
+    "excerpt": "number | string"
+  },
+  {
+    "id": "prop:liquid-glass-button:maxWidth",
+    "title": "LiquidGlassButton.maxWidth",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-button#api",
+    "keywords": "LiquidGlassButton maxWidth number | string ",
+    "excerpt": "number | string"
+  },
+  {
+    "id": "prop:liquid-glass-button:minHeight",
+    "title": "LiquidGlassButton.minHeight",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-button#api",
+    "keywords": "LiquidGlassButton minHeight number | string ",
+    "excerpt": "number | string"
+  },
+  {
+    "id": "prop:liquid-glass-button:minWidth",
+    "title": "LiquidGlassButton.minWidth",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-button#api",
+    "keywords": "LiquidGlassButton minWidth number | string ",
+    "excerpt": "number | string"
+  },
+  {
+    "id": "prop:liquid-glass-button:onDisplacementMapChange",
+    "title": "LiquidGlassButton.onDisplacementMapChange",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-button#api",
+    "keywords": "LiquidGlassButton onDisplacementMapChange (dataUrl: string) => void Expose the displacement map data URL (for debug / lens lab).",
+    "excerpt": "Expose the displacement map data URL (for debug / lens lab)."
+  },
+  {
+    "id": "prop:liquid-glass-button:refractionStrength",
+    "title": "LiquidGlassButton.refractionStrength",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-button#api",
+    "keywords": "LiquidGlassButton refractionStrength number Raw displacement magnitude multiplier (0–2).",
+    "excerpt": "Raw displacement magnitude multiplier (0–2)."
+  },
+  {
+    "id": "prop:liquid-glass-button:saturation",
+    "title": "LiquidGlassButton.saturation",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-button#api",
+    "keywords": "LiquidGlassButton saturation number Backdrop saturation multiplier.",
+    "excerpt": "Backdrop saturation multiplier."
+  },
+  {
+    "id": "prop:liquid-glass-button:shadowIntensity",
+    "title": "LiquidGlassButton.shadowIntensity",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-button#api",
+    "keywords": "LiquidGlassButton shadowIntensity number Drop shadow intensity (0 = off).",
+    "excerpt": "Drop shadow intensity (0 = off)."
+  },
+  {
+    "id": "prop:liquid-glass-button:showSpecular",
+    "title": "LiquidGlassButton.showSpecular",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-button#api",
+    "keywords": "LiquidGlassButton showSpecular boolean Show conic-gradient specular rim.",
+    "excerpt": "Show conic-gradient specular rim."
+  },
+  {
+    "id": "prop:liquid-glass-button:specularAngle",
+    "title": "LiquidGlassButton.specularAngle",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-button#api",
+    "keywords": "LiquidGlassButton specularAngle number Specular conic-gradient start angle (deg).",
+    "excerpt": "Specular conic-gradient start angle (deg)."
+  },
+  {
+    "id": "prop:liquid-glass-button:specularEdgeOpacity",
+    "title": "LiquidGlassButton.specularEdgeOpacity",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-button#api",
+    "keywords": "LiquidGlassButton specularEdgeOpacity number Specular edge/wing opacity.",
+    "excerpt": "Specular edge/wing opacity."
+  },
+  {
+    "id": "prop:liquid-glass-button:specularTopOpacity",
+    "title": "LiquidGlassButton.specularTopOpacity",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-button#api",
+    "keywords": "LiquidGlassButton specularTopOpacity number Brightest specular peak opacity.",
+    "excerpt": "Brightest specular peak opacity."
+  },
+  {
+    "id": "prop:liquid-glass-button:style",
+    "title": "LiquidGlassButton.style",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-button#api",
+    "keywords": "LiquidGlassButton style LiquidGlassStyle Inline CSS merged onto the surface. Flex / grid / padding apply to inner content.",
+    "excerpt": "Inline CSS merged onto the surface. Flex / grid / padding apply to inner content."
+  },
+  {
+    "id": "prop:liquid-glass-button:tint",
+    "title": "LiquidGlassButton.tint",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-button#api",
+    "keywords": "LiquidGlassButton tint string Glass fill on Chromium (SVG refraction path).",
+    "excerpt": "Glass fill on Chromium (SVG refraction path)."
+  },
+  {
+    "id": "prop:liquid-glass-button:tintFallback",
+    "title": "LiquidGlassButton.tintFallback",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-button#api",
+    "keywords": "LiquidGlassButton tintFallback string Glass fill on non-Chromium fallback.",
+    "excerpt": "Glass fill on non-Chromium fallback."
   },
   {
     "id": "prop:liquid-glass-button:width",
@@ -4975,7 +5383,7 @@ export const docsSearchIndex = [
     "title": "LiquidGlassCheckbox",
     "type": "component",
     "path": "/docs/components/liquid-glass-checkbox",
-    "keywords": "LiquidGlassCheckbox Glass LiquidGlassCheckbox.'aria-label' string LiquidGlassCheckbox.borderRadius number LiquidGlassCheckbox.checkColor string LiquidGlassCheckbox.checked boolean LiquidGlassCheckbox.checkedTint string LiquidGlassCheckbox.defaultChecked boolean LiquidGlassCheckbox.disabled boolean LiquidGlassCheckbox.label ReactNode LiquidGlassCheckbox.labelColor string LiquidGlassCheckbox.size number LiquidGlassCheckbox.onChange (checked: boolean) => void",
+    "keywords": "LiquidGlassCheckbox Glass LiquidGlassCheckbox.'aria-label' string LiquidGlassCheckbox.as string LiquidGlassCheckbox.bezelWidth number LiquidGlassCheckbox.blur number LiquidGlassCheckbox.borderColor string LiquidGlassCheckbox.borderRadius number LiquidGlassCheckbox.checkColor string LiquidGlassCheckbox.checked boolean LiquidGlassCheckbox.checkedTint string LiquidGlassCheckbox.className string LiquidGlassCheckbox.defaultChecked boolean LiquidGlassCheckbox.disabled boolean LiquidGlassCheckbox.displacementScale number LiquidGlassCheckbox.height number | string LiquidGlassCheckbox.innerBottomShadow number LiquidGlassCheckbox.innerTopHighlight number LiquidGlassCheckbox.label ReactNode LiquidGlassCheckbox.labelColor string LiquidGlassCheckbox.maxHeight number | string LiquidGlassCheckbox.maxWidth number | string LiquidGlassCheckbox.minHeight number | string LiquidGlassCheckbox.minWidth number | string LiquidGlassCheckbox.onChange (checked: boolean) => void LiquidGlassCheckbox.onDisplacementMapChange (dataUrl: string) => void LiquidGlassCheckbox.refractionStrength number LiquidGlassCheckbox.saturation number LiquidGlassCheckbox.shadowIntensity number LiquidGlassCheckbox.showSpecular boolean LiquidGlassCheckbox.size number LiquidGlassCheckbox.specularAngle number LiquidGlassCheckbox.specularEdgeOpacity number LiquidGlassCheckbox.specularTopOpacity number LiquidGlassCheckbox.style LiquidGlassStyle LiquidGlassCheckbox.tint string LiquidGlassCheckbox.tintFallback string LiquidGlassCheckbox.width number | string",
     "excerpt": "Glass component from @larose-ui/react"
   },
   {
@@ -4985,6 +5393,38 @@ export const docsSearchIndex = [
     "path": "/docs/components/liquid-glass-checkbox#api",
     "keywords": "LiquidGlassCheckbox 'aria-label' string ",
     "excerpt": "string"
+  },
+  {
+    "id": "prop:liquid-glass-checkbox:as",
+    "title": "LiquidGlassCheckbox.as",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-checkbox#api",
+    "keywords": "LiquidGlassCheckbox as string HTML tag name for the glass shell (`div`, `footer`, `nav`, …).",
+    "excerpt": "HTML tag name for the glass shell (`div`, `footer`, `nav`, …)."
+  },
+  {
+    "id": "prop:liquid-glass-checkbox:bezelWidth",
+    "title": "LiquidGlassCheckbox.bezelWidth",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-checkbox#api",
+    "keywords": "LiquidGlassCheckbox bezelWidth number Refracting bezel band width in px.",
+    "excerpt": "Refracting bezel band width in px."
+  },
+  {
+    "id": "prop:liquid-glass-checkbox:blur",
+    "title": "LiquidGlassCheckbox.blur",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-checkbox#api",
+    "keywords": "LiquidGlassCheckbox blur number Backdrop blur radius in px (non-Chromium fallback).",
+    "excerpt": "Backdrop blur radius in px (non-Chromium fallback)."
+  },
+  {
+    "id": "prop:liquid-glass-checkbox:borderColor",
+    "title": "LiquidGlassCheckbox.borderColor",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-checkbox#api",
+    "keywords": "LiquidGlassCheckbox borderColor string Inset border colour.",
+    "excerpt": "Inset border colour."
   },
   {
     "id": "prop:liquid-glass-checkbox:borderRadius",
@@ -5019,6 +5459,14 @@ export const docsSearchIndex = [
     "excerpt": "string"
   },
   {
+    "id": "prop:liquid-glass-checkbox:className",
+    "title": "LiquidGlassCheckbox.className",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-checkbox#api",
+    "keywords": "LiquidGlassCheckbox className string ",
+    "excerpt": "string"
+  },
+  {
     "id": "prop:liquid-glass-checkbox:defaultChecked",
     "title": "LiquidGlassCheckbox.defaultChecked",
     "type": "prop",
@@ -5033,6 +5481,38 @@ export const docsSearchIndex = [
     "path": "/docs/components/liquid-glass-checkbox#api",
     "keywords": "LiquidGlassCheckbox disabled boolean ",
     "excerpt": "boolean"
+  },
+  {
+    "id": "prop:liquid-glass-checkbox:displacementScale",
+    "title": "LiquidGlassCheckbox.displacementScale",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-checkbox#api",
+    "keywords": "LiquidGlassCheckbox displacementScale number feDisplacementMap scale — higher = stronger refraction.",
+    "excerpt": "feDisplacementMap scale — higher = stronger refraction."
+  },
+  {
+    "id": "prop:liquid-glass-checkbox:height",
+    "title": "LiquidGlassCheckbox.height",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-checkbox#api",
+    "keywords": "LiquidGlassCheckbox height number | string ",
+    "excerpt": "number | string"
+  },
+  {
+    "id": "prop:liquid-glass-checkbox:innerBottomShadow",
+    "title": "LiquidGlassCheckbox.innerBottomShadow",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-checkbox#api",
+    "keywords": "LiquidGlassCheckbox innerBottomShadow number Inner bottom shadow fog opacity.",
+    "excerpt": "Inner bottom shadow fog opacity."
+  },
+  {
+    "id": "prop:liquid-glass-checkbox:innerTopHighlight",
+    "title": "LiquidGlassCheckbox.innerTopHighlight",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-checkbox#api",
+    "keywords": "LiquidGlassCheckbox innerTopHighlight number 1px inner top highlight opacity.",
+    "excerpt": "1px inner top highlight opacity."
   },
   {
     "id": "prop:liquid-glass-checkbox:label",
@@ -5051,12 +5531,140 @@ export const docsSearchIndex = [
     "excerpt": "string"
   },
   {
+    "id": "prop:liquid-glass-checkbox:maxHeight",
+    "title": "LiquidGlassCheckbox.maxHeight",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-checkbox#api",
+    "keywords": "LiquidGlassCheckbox maxHeight number | string ",
+    "excerpt": "number | string"
+  },
+  {
+    "id": "prop:liquid-glass-checkbox:maxWidth",
+    "title": "LiquidGlassCheckbox.maxWidth",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-checkbox#api",
+    "keywords": "LiquidGlassCheckbox maxWidth number | string ",
+    "excerpt": "number | string"
+  },
+  {
+    "id": "prop:liquid-glass-checkbox:minHeight",
+    "title": "LiquidGlassCheckbox.minHeight",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-checkbox#api",
+    "keywords": "LiquidGlassCheckbox minHeight number | string ",
+    "excerpt": "number | string"
+  },
+  {
+    "id": "prop:liquid-glass-checkbox:minWidth",
+    "title": "LiquidGlassCheckbox.minWidth",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-checkbox#api",
+    "keywords": "LiquidGlassCheckbox minWidth number | string ",
+    "excerpt": "number | string"
+  },
+  {
+    "id": "prop:liquid-glass-checkbox:onDisplacementMapChange",
+    "title": "LiquidGlassCheckbox.onDisplacementMapChange",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-checkbox#api",
+    "keywords": "LiquidGlassCheckbox onDisplacementMapChange (dataUrl: string) => void Expose the displacement map data URL (for debug / lens lab).",
+    "excerpt": "Expose the displacement map data URL (for debug / lens lab)."
+  },
+  {
+    "id": "prop:liquid-glass-checkbox:refractionStrength",
+    "title": "LiquidGlassCheckbox.refractionStrength",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-checkbox#api",
+    "keywords": "LiquidGlassCheckbox refractionStrength number Raw displacement magnitude multiplier (0–2).",
+    "excerpt": "Raw displacement magnitude multiplier (0–2)."
+  },
+  {
+    "id": "prop:liquid-glass-checkbox:saturation",
+    "title": "LiquidGlassCheckbox.saturation",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-checkbox#api",
+    "keywords": "LiquidGlassCheckbox saturation number Backdrop saturation multiplier.",
+    "excerpt": "Backdrop saturation multiplier."
+  },
+  {
+    "id": "prop:liquid-glass-checkbox:shadowIntensity",
+    "title": "LiquidGlassCheckbox.shadowIntensity",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-checkbox#api",
+    "keywords": "LiquidGlassCheckbox shadowIntensity number Drop shadow intensity (0 = off).",
+    "excerpt": "Drop shadow intensity (0 = off)."
+  },
+  {
+    "id": "prop:liquid-glass-checkbox:showSpecular",
+    "title": "LiquidGlassCheckbox.showSpecular",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-checkbox#api",
+    "keywords": "LiquidGlassCheckbox showSpecular boolean Show conic-gradient specular rim.",
+    "excerpt": "Show conic-gradient specular rim."
+  },
+  {
     "id": "prop:liquid-glass-checkbox:size",
     "title": "LiquidGlassCheckbox.size",
     "type": "prop",
     "path": "/docs/components/liquid-glass-checkbox#api",
     "keywords": "LiquidGlassCheckbox size number Box size in px.",
     "excerpt": "Box size in px."
+  },
+  {
+    "id": "prop:liquid-glass-checkbox:specularAngle",
+    "title": "LiquidGlassCheckbox.specularAngle",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-checkbox#api",
+    "keywords": "LiquidGlassCheckbox specularAngle number Specular conic-gradient start angle (deg).",
+    "excerpt": "Specular conic-gradient start angle (deg)."
+  },
+  {
+    "id": "prop:liquid-glass-checkbox:specularEdgeOpacity",
+    "title": "LiquidGlassCheckbox.specularEdgeOpacity",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-checkbox#api",
+    "keywords": "LiquidGlassCheckbox specularEdgeOpacity number Specular edge/wing opacity.",
+    "excerpt": "Specular edge/wing opacity."
+  },
+  {
+    "id": "prop:liquid-glass-checkbox:specularTopOpacity",
+    "title": "LiquidGlassCheckbox.specularTopOpacity",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-checkbox#api",
+    "keywords": "LiquidGlassCheckbox specularTopOpacity number Brightest specular peak opacity.",
+    "excerpt": "Brightest specular peak opacity."
+  },
+  {
+    "id": "prop:liquid-glass-checkbox:style",
+    "title": "LiquidGlassCheckbox.style",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-checkbox#api",
+    "keywords": "LiquidGlassCheckbox style LiquidGlassStyle Inline CSS merged onto the surface. Flex / grid / padding apply to inner content.",
+    "excerpt": "Inline CSS merged onto the surface. Flex / grid / padding apply to inner content."
+  },
+  {
+    "id": "prop:liquid-glass-checkbox:tint",
+    "title": "LiquidGlassCheckbox.tint",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-checkbox#api",
+    "keywords": "LiquidGlassCheckbox tint string Glass fill on Chromium (SVG refraction path).",
+    "excerpt": "Glass fill on Chromium (SVG refraction path)."
+  },
+  {
+    "id": "prop:liquid-glass-checkbox:tintFallback",
+    "title": "LiquidGlassCheckbox.tintFallback",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-checkbox#api",
+    "keywords": "LiquidGlassCheckbox tintFallback string Glass fill on non-Chromium fallback.",
+    "excerpt": "Glass fill on non-Chromium fallback."
+  },
+  {
+    "id": "prop:liquid-glass-checkbox:width",
+    "title": "LiquidGlassCheckbox.width",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-checkbox#api",
+    "keywords": "LiquidGlassCheckbox width number | string ",
+    "excerpt": "number | string"
   },
   {
     "id": "example:liquid-glass-checkbox:CheckboxDefault",
@@ -5071,7 +5679,7 @@ export const docsSearchIndex = [
     "title": "LiquidGlassProgress",
     "type": "component",
     "path": "/docs/components/liquid-glass-progress",
-    "keywords": "LiquidGlassProgress Glass LiquidGlassProgress.'aria-label' string LiquidGlassProgress.borderRadius number LiquidGlassProgress.fillColor string LiquidGlassProgress.fillGlow string LiquidGlassProgress.height number LiquidGlassProgress.indeterminate boolean LiquidGlassProgress.max number LiquidGlassProgress.value number LiquidGlassProgress.width number | string",
+    "keywords": "LiquidGlassProgress Glass LiquidGlassProgress.'aria-label' string LiquidGlassProgress.as string LiquidGlassProgress.bezelWidth number LiquidGlassProgress.blur number LiquidGlassProgress.borderColor string LiquidGlassProgress.borderRadius number LiquidGlassProgress.className string LiquidGlassProgress.displacementScale number LiquidGlassProgress.fillColor string LiquidGlassProgress.fillGlow string LiquidGlassProgress.height number LiquidGlassProgress.indeterminate boolean LiquidGlassProgress.innerBottomShadow number LiquidGlassProgress.innerTopHighlight number LiquidGlassProgress.max number LiquidGlassProgress.maxHeight number | string LiquidGlassProgress.maxWidth number | string LiquidGlassProgress.minHeight number | string LiquidGlassProgress.minWidth number | string LiquidGlassProgress.onDisplacementMapChange (dataUrl: string) => void LiquidGlassProgress.refractionStrength number LiquidGlassProgress.saturation number LiquidGlassProgress.shadowIntensity number LiquidGlassProgress.showSpecular boolean LiquidGlassProgress.specularAngle number LiquidGlassProgress.specularEdgeOpacity number LiquidGlassProgress.specularTopOpacity number LiquidGlassProgress.style LiquidGlassStyle LiquidGlassProgress.tint string LiquidGlassProgress.tintFallback string LiquidGlassProgress.value number LiquidGlassProgress.width number | string",
     "excerpt": "Glass component from @larose-ui/react"
   },
   {
@@ -5083,12 +5691,60 @@ export const docsSearchIndex = [
     "excerpt": "string"
   },
   {
+    "id": "prop:liquid-glass-progress:as",
+    "title": "LiquidGlassProgress.as",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-progress#api",
+    "keywords": "LiquidGlassProgress as string HTML tag name for the glass shell (`div`, `footer`, `nav`, …).",
+    "excerpt": "HTML tag name for the glass shell (`div`, `footer`, `nav`, …)."
+  },
+  {
+    "id": "prop:liquid-glass-progress:bezelWidth",
+    "title": "LiquidGlassProgress.bezelWidth",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-progress#api",
+    "keywords": "LiquidGlassProgress bezelWidth number Refracting bezel band width in px.",
+    "excerpt": "Refracting bezel band width in px."
+  },
+  {
+    "id": "prop:liquid-glass-progress:blur",
+    "title": "LiquidGlassProgress.blur",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-progress#api",
+    "keywords": "LiquidGlassProgress blur number Backdrop blur radius in px (non-Chromium fallback).",
+    "excerpt": "Backdrop blur radius in px (non-Chromium fallback)."
+  },
+  {
+    "id": "prop:liquid-glass-progress:borderColor",
+    "title": "LiquidGlassProgress.borderColor",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-progress#api",
+    "keywords": "LiquidGlassProgress borderColor string Inset border colour.",
+    "excerpt": "Inset border colour."
+  },
+  {
     "id": "prop:liquid-glass-progress:borderRadius",
     "title": "LiquidGlassProgress.borderRadius",
     "type": "prop",
     "path": "/docs/components/liquid-glass-progress#api",
     "keywords": "LiquidGlassProgress borderRadius number ",
     "excerpt": "number"
+  },
+  {
+    "id": "prop:liquid-glass-progress:className",
+    "title": "LiquidGlassProgress.className",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-progress#api",
+    "keywords": "LiquidGlassProgress className string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:liquid-glass-progress:displacementScale",
+    "title": "LiquidGlassProgress.displacementScale",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-progress#api",
+    "keywords": "LiquidGlassProgress displacementScale number feDisplacementMap scale — higher = stronger refraction.",
+    "excerpt": "feDisplacementMap scale — higher = stronger refraction."
   },
   {
     "id": "prop:liquid-glass-progress:fillColor",
@@ -5123,12 +5779,148 @@ export const docsSearchIndex = [
     "excerpt": "Indeterminate loading state."
   },
   {
+    "id": "prop:liquid-glass-progress:innerBottomShadow",
+    "title": "LiquidGlassProgress.innerBottomShadow",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-progress#api",
+    "keywords": "LiquidGlassProgress innerBottomShadow number Inner bottom shadow fog opacity.",
+    "excerpt": "Inner bottom shadow fog opacity."
+  },
+  {
+    "id": "prop:liquid-glass-progress:innerTopHighlight",
+    "title": "LiquidGlassProgress.innerTopHighlight",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-progress#api",
+    "keywords": "LiquidGlassProgress innerTopHighlight number 1px inner top highlight opacity.",
+    "excerpt": "1px inner top highlight opacity."
+  },
+  {
     "id": "prop:liquid-glass-progress:max",
     "title": "LiquidGlassProgress.max",
     "type": "prop",
     "path": "/docs/components/liquid-glass-progress#api",
     "keywords": "LiquidGlassProgress max number Maximum value.",
     "excerpt": "Maximum value."
+  },
+  {
+    "id": "prop:liquid-glass-progress:maxHeight",
+    "title": "LiquidGlassProgress.maxHeight",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-progress#api",
+    "keywords": "LiquidGlassProgress maxHeight number | string ",
+    "excerpt": "number | string"
+  },
+  {
+    "id": "prop:liquid-glass-progress:maxWidth",
+    "title": "LiquidGlassProgress.maxWidth",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-progress#api",
+    "keywords": "LiquidGlassProgress maxWidth number | string ",
+    "excerpt": "number | string"
+  },
+  {
+    "id": "prop:liquid-glass-progress:minHeight",
+    "title": "LiquidGlassProgress.minHeight",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-progress#api",
+    "keywords": "LiquidGlassProgress minHeight number | string ",
+    "excerpt": "number | string"
+  },
+  {
+    "id": "prop:liquid-glass-progress:minWidth",
+    "title": "LiquidGlassProgress.minWidth",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-progress#api",
+    "keywords": "LiquidGlassProgress minWidth number | string ",
+    "excerpt": "number | string"
+  },
+  {
+    "id": "prop:liquid-glass-progress:onDisplacementMapChange",
+    "title": "LiquidGlassProgress.onDisplacementMapChange",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-progress#api",
+    "keywords": "LiquidGlassProgress onDisplacementMapChange (dataUrl: string) => void Expose the displacement map data URL (for debug / lens lab).",
+    "excerpt": "Expose the displacement map data URL (for debug / lens lab)."
+  },
+  {
+    "id": "prop:liquid-glass-progress:refractionStrength",
+    "title": "LiquidGlassProgress.refractionStrength",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-progress#api",
+    "keywords": "LiquidGlassProgress refractionStrength number Raw displacement magnitude multiplier (0–2).",
+    "excerpt": "Raw displacement magnitude multiplier (0–2)."
+  },
+  {
+    "id": "prop:liquid-glass-progress:saturation",
+    "title": "LiquidGlassProgress.saturation",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-progress#api",
+    "keywords": "LiquidGlassProgress saturation number Backdrop saturation multiplier.",
+    "excerpt": "Backdrop saturation multiplier."
+  },
+  {
+    "id": "prop:liquid-glass-progress:shadowIntensity",
+    "title": "LiquidGlassProgress.shadowIntensity",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-progress#api",
+    "keywords": "LiquidGlassProgress shadowIntensity number Drop shadow intensity (0 = off).",
+    "excerpt": "Drop shadow intensity (0 = off)."
+  },
+  {
+    "id": "prop:liquid-glass-progress:showSpecular",
+    "title": "LiquidGlassProgress.showSpecular",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-progress#api",
+    "keywords": "LiquidGlassProgress showSpecular boolean Show conic-gradient specular rim.",
+    "excerpt": "Show conic-gradient specular rim."
+  },
+  {
+    "id": "prop:liquid-glass-progress:specularAngle",
+    "title": "LiquidGlassProgress.specularAngle",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-progress#api",
+    "keywords": "LiquidGlassProgress specularAngle number Specular conic-gradient start angle (deg).",
+    "excerpt": "Specular conic-gradient start angle (deg)."
+  },
+  {
+    "id": "prop:liquid-glass-progress:specularEdgeOpacity",
+    "title": "LiquidGlassProgress.specularEdgeOpacity",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-progress#api",
+    "keywords": "LiquidGlassProgress specularEdgeOpacity number Specular edge/wing opacity.",
+    "excerpt": "Specular edge/wing opacity."
+  },
+  {
+    "id": "prop:liquid-glass-progress:specularTopOpacity",
+    "title": "LiquidGlassProgress.specularTopOpacity",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-progress#api",
+    "keywords": "LiquidGlassProgress specularTopOpacity number Brightest specular peak opacity.",
+    "excerpt": "Brightest specular peak opacity."
+  },
+  {
+    "id": "prop:liquid-glass-progress:style",
+    "title": "LiquidGlassProgress.style",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-progress#api",
+    "keywords": "LiquidGlassProgress style LiquidGlassStyle Inline CSS merged onto the surface. Flex / grid / padding apply to inner content.",
+    "excerpt": "Inline CSS merged onto the surface. Flex / grid / padding apply to inner content."
+  },
+  {
+    "id": "prop:liquid-glass-progress:tint",
+    "title": "LiquidGlassProgress.tint",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-progress#api",
+    "keywords": "LiquidGlassProgress tint string Glass fill on Chromium (SVG refraction path).",
+    "excerpt": "Glass fill on Chromium (SVG refraction path)."
+  },
+  {
+    "id": "prop:liquid-glass-progress:tintFallback",
+    "title": "LiquidGlassProgress.tintFallback",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-progress#api",
+    "keywords": "LiquidGlassProgress tintFallback string Glass fill on non-Chromium fallback.",
+    "excerpt": "Glass fill on non-Chromium fallback."
   },
   {
     "id": "prop:liquid-glass-progress:value",
@@ -5167,7 +5959,7 @@ export const docsSearchIndex = [
     "title": "LiquidGlassRange",
     "type": "component",
     "path": "/docs/components/liquid-glass-range",
-    "keywords": "LiquidGlassRange Glass LiquidGlassRange.'aria-label' string LiquidGlassRange.borderRadius number LiquidGlassRange.defaultValue number LiquidGlassRange.disabled boolean LiquidGlassRange.fillColor string LiquidGlassRange.max number LiquidGlassRange.min number LiquidGlassRange.step number LiquidGlassRange.thumbSize number LiquidGlassRange.trackHeight number LiquidGlassRange.value number LiquidGlassRange.width number | string LiquidGlassRange.onChange (value: number) => void",
+    "keywords": "LiquidGlassRange Glass LiquidGlassRange.'aria-label' string LiquidGlassRange.as string LiquidGlassRange.bezelWidth number LiquidGlassRange.blur number LiquidGlassRange.borderColor string LiquidGlassRange.borderRadius number LiquidGlassRange.className string LiquidGlassRange.defaultValue number LiquidGlassRange.disabled boolean LiquidGlassRange.displacementScale number LiquidGlassRange.fillColor string LiquidGlassRange.height number | string LiquidGlassRange.innerBottomShadow number LiquidGlassRange.innerTopHighlight number LiquidGlassRange.max number LiquidGlassRange.maxHeight number | string LiquidGlassRange.maxWidth number | string LiquidGlassRange.min number LiquidGlassRange.minHeight number | string LiquidGlassRange.minWidth number | string LiquidGlassRange.onChange (value: number) => void LiquidGlassRange.onDisplacementMapChange (dataUrl: string) => void LiquidGlassRange.refractionStrength number LiquidGlassRange.saturation number LiquidGlassRange.shadowIntensity number LiquidGlassRange.showSpecular boolean LiquidGlassRange.specularAngle number LiquidGlassRange.specularEdgeOpacity number LiquidGlassRange.specularTopOpacity number LiquidGlassRange.step number LiquidGlassRange.style LiquidGlassStyle LiquidGlassRange.thumbSize number LiquidGlassRange.tint string LiquidGlassRange.tintFallback string LiquidGlassRange.trackHeight number LiquidGlassRange.value number LiquidGlassRange.width number | string",
     "excerpt": "Glass component from @larose-ui/react"
   },
   {
@@ -5179,12 +5971,52 @@ export const docsSearchIndex = [
     "excerpt": "string"
   },
   {
+    "id": "prop:liquid-glass-range:as",
+    "title": "LiquidGlassRange.as",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-range#api",
+    "keywords": "LiquidGlassRange as string HTML tag name for the glass shell (`div`, `footer`, `nav`, …).",
+    "excerpt": "HTML tag name for the glass shell (`div`, `footer`, `nav`, …)."
+  },
+  {
+    "id": "prop:liquid-glass-range:bezelWidth",
+    "title": "LiquidGlassRange.bezelWidth",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-range#api",
+    "keywords": "LiquidGlassRange bezelWidth number Refracting bezel band width in px.",
+    "excerpt": "Refracting bezel band width in px."
+  },
+  {
+    "id": "prop:liquid-glass-range:blur",
+    "title": "LiquidGlassRange.blur",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-range#api",
+    "keywords": "LiquidGlassRange blur number Backdrop blur radius in px (non-Chromium fallback).",
+    "excerpt": "Backdrop blur radius in px (non-Chromium fallback)."
+  },
+  {
+    "id": "prop:liquid-glass-range:borderColor",
+    "title": "LiquidGlassRange.borderColor",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-range#api",
+    "keywords": "LiquidGlassRange borderColor string Inset border colour.",
+    "excerpt": "Inset border colour."
+  },
+  {
     "id": "prop:liquid-glass-range:borderRadius",
     "title": "LiquidGlassRange.borderRadius",
     "type": "prop",
     "path": "/docs/components/liquid-glass-range#api",
     "keywords": "LiquidGlassRange borderRadius number ",
     "excerpt": "number"
+  },
+  {
+    "id": "prop:liquid-glass-range:className",
+    "title": "LiquidGlassRange.className",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-range#api",
+    "keywords": "LiquidGlassRange className string ",
+    "excerpt": "string"
   },
   {
     "id": "prop:liquid-glass-range:defaultValue",
@@ -5203,12 +6035,44 @@ export const docsSearchIndex = [
     "excerpt": "boolean"
   },
   {
+    "id": "prop:liquid-glass-range:displacementScale",
+    "title": "LiquidGlassRange.displacementScale",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-range#api",
+    "keywords": "LiquidGlassRange displacementScale number feDisplacementMap scale — higher = stronger refraction.",
+    "excerpt": "feDisplacementMap scale — higher = stronger refraction."
+  },
+  {
     "id": "prop:liquid-glass-range:fillColor",
     "title": "LiquidGlassRange.fillColor",
     "type": "prop",
     "path": "/docs/components/liquid-glass-range#api",
     "keywords": "LiquidGlassRange fillColor string ",
     "excerpt": "string"
+  },
+  {
+    "id": "prop:liquid-glass-range:height",
+    "title": "LiquidGlassRange.height",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-range#api",
+    "keywords": "LiquidGlassRange height number | string ",
+    "excerpt": "number | string"
+  },
+  {
+    "id": "prop:liquid-glass-range:innerBottomShadow",
+    "title": "LiquidGlassRange.innerBottomShadow",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-range#api",
+    "keywords": "LiquidGlassRange innerBottomShadow number Inner bottom shadow fog opacity.",
+    "excerpt": "Inner bottom shadow fog opacity."
+  },
+  {
+    "id": "prop:liquid-glass-range:innerTopHighlight",
+    "title": "LiquidGlassRange.innerTopHighlight",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-range#api",
+    "keywords": "LiquidGlassRange innerTopHighlight number 1px inner top highlight opacity.",
+    "excerpt": "1px inner top highlight opacity."
   },
   {
     "id": "prop:liquid-glass-range:max",
@@ -5219,12 +6083,108 @@ export const docsSearchIndex = [
     "excerpt": "number"
   },
   {
+    "id": "prop:liquid-glass-range:maxHeight",
+    "title": "LiquidGlassRange.maxHeight",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-range#api",
+    "keywords": "LiquidGlassRange maxHeight number | string ",
+    "excerpt": "number | string"
+  },
+  {
+    "id": "prop:liquid-glass-range:maxWidth",
+    "title": "LiquidGlassRange.maxWidth",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-range#api",
+    "keywords": "LiquidGlassRange maxWidth number | string ",
+    "excerpt": "number | string"
+  },
+  {
     "id": "prop:liquid-glass-range:min",
     "title": "LiquidGlassRange.min",
     "type": "prop",
     "path": "/docs/components/liquid-glass-range#api",
     "keywords": "LiquidGlassRange min number ",
     "excerpt": "number"
+  },
+  {
+    "id": "prop:liquid-glass-range:minHeight",
+    "title": "LiquidGlassRange.minHeight",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-range#api",
+    "keywords": "LiquidGlassRange minHeight number | string ",
+    "excerpt": "number | string"
+  },
+  {
+    "id": "prop:liquid-glass-range:minWidth",
+    "title": "LiquidGlassRange.minWidth",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-range#api",
+    "keywords": "LiquidGlassRange minWidth number | string ",
+    "excerpt": "number | string"
+  },
+  {
+    "id": "prop:liquid-glass-range:onDisplacementMapChange",
+    "title": "LiquidGlassRange.onDisplacementMapChange",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-range#api",
+    "keywords": "LiquidGlassRange onDisplacementMapChange (dataUrl: string) => void Expose the displacement map data URL (for debug / lens lab).",
+    "excerpt": "Expose the displacement map data URL (for debug / lens lab)."
+  },
+  {
+    "id": "prop:liquid-glass-range:refractionStrength",
+    "title": "LiquidGlassRange.refractionStrength",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-range#api",
+    "keywords": "LiquidGlassRange refractionStrength number Raw displacement magnitude multiplier (0–2).",
+    "excerpt": "Raw displacement magnitude multiplier (0–2)."
+  },
+  {
+    "id": "prop:liquid-glass-range:saturation",
+    "title": "LiquidGlassRange.saturation",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-range#api",
+    "keywords": "LiquidGlassRange saturation number Backdrop saturation multiplier.",
+    "excerpt": "Backdrop saturation multiplier."
+  },
+  {
+    "id": "prop:liquid-glass-range:shadowIntensity",
+    "title": "LiquidGlassRange.shadowIntensity",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-range#api",
+    "keywords": "LiquidGlassRange shadowIntensity number Drop shadow intensity (0 = off).",
+    "excerpt": "Drop shadow intensity (0 = off)."
+  },
+  {
+    "id": "prop:liquid-glass-range:showSpecular",
+    "title": "LiquidGlassRange.showSpecular",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-range#api",
+    "keywords": "LiquidGlassRange showSpecular boolean Show conic-gradient specular rim.",
+    "excerpt": "Show conic-gradient specular rim."
+  },
+  {
+    "id": "prop:liquid-glass-range:specularAngle",
+    "title": "LiquidGlassRange.specularAngle",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-range#api",
+    "keywords": "LiquidGlassRange specularAngle number Specular conic-gradient start angle (deg).",
+    "excerpt": "Specular conic-gradient start angle (deg)."
+  },
+  {
+    "id": "prop:liquid-glass-range:specularEdgeOpacity",
+    "title": "LiquidGlassRange.specularEdgeOpacity",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-range#api",
+    "keywords": "LiquidGlassRange specularEdgeOpacity number Specular edge/wing opacity.",
+    "excerpt": "Specular edge/wing opacity."
+  },
+  {
+    "id": "prop:liquid-glass-range:specularTopOpacity",
+    "title": "LiquidGlassRange.specularTopOpacity",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-range#api",
+    "keywords": "LiquidGlassRange specularTopOpacity number Brightest specular peak opacity.",
+    "excerpt": "Brightest specular peak opacity."
   },
   {
     "id": "prop:liquid-glass-range:step",
@@ -5235,12 +6195,36 @@ export const docsSearchIndex = [
     "excerpt": "number"
   },
   {
+    "id": "prop:liquid-glass-range:style",
+    "title": "LiquidGlassRange.style",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-range#api",
+    "keywords": "LiquidGlassRange style LiquidGlassStyle Inline CSS merged onto the surface. Flex / grid / padding apply to inner content.",
+    "excerpt": "Inline CSS merged onto the surface. Flex / grid / padding apply to inner content."
+  },
+  {
     "id": "prop:liquid-glass-range:thumbSize",
     "title": "LiquidGlassRange.thumbSize",
     "type": "prop",
     "path": "/docs/components/liquid-glass-range#api",
     "keywords": "LiquidGlassRange thumbSize number Thumb diameter in px.",
     "excerpt": "Thumb diameter in px."
+  },
+  {
+    "id": "prop:liquid-glass-range:tint",
+    "title": "LiquidGlassRange.tint",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-range#api",
+    "keywords": "LiquidGlassRange tint string Glass fill on Chromium (SVG refraction path).",
+    "excerpt": "Glass fill on Chromium (SVG refraction path)."
+  },
+  {
+    "id": "prop:liquid-glass-range:tintFallback",
+    "title": "LiquidGlassRange.tintFallback",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-range#api",
+    "keywords": "LiquidGlassRange tintFallback string Glass fill on non-Chromium fallback.",
+    "excerpt": "Glass fill on non-Chromium fallback."
   },
   {
     "id": "prop:liquid-glass-range:trackHeight",
@@ -5279,7 +6263,7 @@ export const docsSearchIndex = [
     "title": "LiquidGlassSwitch",
     "type": "component",
     "path": "/docs/components/liquid-glass-switch",
-    "keywords": "LiquidGlassSwitch Glass LiquidGlassSwitch.'aria-label' string LiquidGlassSwitch.activeTrackTint LiquidGlassSwitchActiveTrackTint LiquidGlassSwitch.borderRadius number LiquidGlassSwitch.checked boolean LiquidGlassSwitch.defaultChecked boolean LiquidGlassSwitch.disabled boolean LiquidGlassSwitch.height number LiquidGlassSwitch.inactiveTrackTint string LiquidGlassSwitch.padding number LiquidGlassSwitch.thumbSize number LiquidGlassSwitch.thumbTint string LiquidGlassSwitch.width number LiquidGlassSwitch.onChange (checked: boolean) => void",
+    "keywords": "LiquidGlassSwitch Glass LiquidGlassSwitch.'aria-label' string LiquidGlassSwitch.activeTrackTint LiquidGlassSwitchActiveTrackTint LiquidGlassSwitch.as string LiquidGlassSwitch.bezelWidth number LiquidGlassSwitch.blur number LiquidGlassSwitch.borderColor string LiquidGlassSwitch.borderRadius number LiquidGlassSwitch.checked boolean LiquidGlassSwitch.className string LiquidGlassSwitch.defaultChecked boolean LiquidGlassSwitch.disabled boolean LiquidGlassSwitch.displacementScale number LiquidGlassSwitch.height number LiquidGlassSwitch.inactiveTrackTint string LiquidGlassSwitch.innerBottomShadow number LiquidGlassSwitch.innerTopHighlight number LiquidGlassSwitch.maxHeight number | string LiquidGlassSwitch.maxWidth number | string LiquidGlassSwitch.minHeight number | string LiquidGlassSwitch.minWidth number | string LiquidGlassSwitch.onChange (checked: boolean) => void LiquidGlassSwitch.onDisplacementMapChange (dataUrl: string) => void LiquidGlassSwitch.padding number LiquidGlassSwitch.refractionStrength number LiquidGlassSwitch.saturation number LiquidGlassSwitch.shadowIntensity number LiquidGlassSwitch.showSpecular boolean LiquidGlassSwitch.specularAngle number LiquidGlassSwitch.specularEdgeOpacity number LiquidGlassSwitch.specularTopOpacity number LiquidGlassSwitch.style LiquidGlassStyle LiquidGlassSwitch.thumbSize number LiquidGlassSwitch.thumbTint string LiquidGlassSwitch.tint string LiquidGlassSwitch.tintFallback string LiquidGlassSwitch.width number",
     "excerpt": "Glass component from @larose-ui/react"
   },
   {
@@ -5299,6 +6283,38 @@ export const docsSearchIndex = [
     "excerpt": "Active track tint when on. Defaults to iOS-style green.\nPass `'glass'` () for liquid glass only, or any CSS color."
   },
   {
+    "id": "prop:liquid-glass-switch:as",
+    "title": "LiquidGlassSwitch.as",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-switch#api",
+    "keywords": "LiquidGlassSwitch as string HTML tag name for the glass shell (`div`, `footer`, `nav`, …).",
+    "excerpt": "HTML tag name for the glass shell (`div`, `footer`, `nav`, …)."
+  },
+  {
+    "id": "prop:liquid-glass-switch:bezelWidth",
+    "title": "LiquidGlassSwitch.bezelWidth",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-switch#api",
+    "keywords": "LiquidGlassSwitch bezelWidth number Refracting bezel band width in px.",
+    "excerpt": "Refracting bezel band width in px."
+  },
+  {
+    "id": "prop:liquid-glass-switch:blur",
+    "title": "LiquidGlassSwitch.blur",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-switch#api",
+    "keywords": "LiquidGlassSwitch blur number Backdrop blur radius in px (non-Chromium fallback).",
+    "excerpt": "Backdrop blur radius in px (non-Chromium fallback)."
+  },
+  {
+    "id": "prop:liquid-glass-switch:borderColor",
+    "title": "LiquidGlassSwitch.borderColor",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-switch#api",
+    "keywords": "LiquidGlassSwitch borderColor string Inset border colour.",
+    "excerpt": "Inset border colour."
+  },
+  {
     "id": "prop:liquid-glass-switch:borderRadius",
     "title": "LiquidGlassSwitch.borderRadius",
     "type": "prop",
@@ -5313,6 +6329,14 @@ export const docsSearchIndex = [
     "path": "/docs/components/liquid-glass-switch#api",
     "keywords": "LiquidGlassSwitch checked boolean ",
     "excerpt": "boolean"
+  },
+  {
+    "id": "prop:liquid-glass-switch:className",
+    "title": "LiquidGlassSwitch.className",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-switch#api",
+    "keywords": "LiquidGlassSwitch className string ",
+    "excerpt": "string"
   },
   {
     "id": "prop:liquid-glass-switch:defaultChecked",
@@ -5331,6 +6355,14 @@ export const docsSearchIndex = [
     "excerpt": "boolean"
   },
   {
+    "id": "prop:liquid-glass-switch:displacementScale",
+    "title": "LiquidGlassSwitch.displacementScale",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-switch#api",
+    "keywords": "LiquidGlassSwitch displacementScale number feDisplacementMap scale — higher = stronger refraction.",
+    "excerpt": "feDisplacementMap scale — higher = stronger refraction."
+  },
+  {
     "id": "prop:liquid-glass-switch:height",
     "title": "LiquidGlassSwitch.height",
     "type": "prop",
@@ -5347,12 +6379,132 @@ export const docsSearchIndex = [
     "excerpt": "string"
   },
   {
+    "id": "prop:liquid-glass-switch:innerBottomShadow",
+    "title": "LiquidGlassSwitch.innerBottomShadow",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-switch#api",
+    "keywords": "LiquidGlassSwitch innerBottomShadow number Inner bottom shadow fog opacity.",
+    "excerpt": "Inner bottom shadow fog opacity."
+  },
+  {
+    "id": "prop:liquid-glass-switch:innerTopHighlight",
+    "title": "LiquidGlassSwitch.innerTopHighlight",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-switch#api",
+    "keywords": "LiquidGlassSwitch innerTopHighlight number 1px inner top highlight opacity.",
+    "excerpt": "1px inner top highlight opacity."
+  },
+  {
+    "id": "prop:liquid-glass-switch:maxHeight",
+    "title": "LiquidGlassSwitch.maxHeight",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-switch#api",
+    "keywords": "LiquidGlassSwitch maxHeight number | string ",
+    "excerpt": "number | string"
+  },
+  {
+    "id": "prop:liquid-glass-switch:maxWidth",
+    "title": "LiquidGlassSwitch.maxWidth",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-switch#api",
+    "keywords": "LiquidGlassSwitch maxWidth number | string ",
+    "excerpt": "number | string"
+  },
+  {
+    "id": "prop:liquid-glass-switch:minHeight",
+    "title": "LiquidGlassSwitch.minHeight",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-switch#api",
+    "keywords": "LiquidGlassSwitch minHeight number | string ",
+    "excerpt": "number | string"
+  },
+  {
+    "id": "prop:liquid-glass-switch:minWidth",
+    "title": "LiquidGlassSwitch.minWidth",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-switch#api",
+    "keywords": "LiquidGlassSwitch minWidth number | string ",
+    "excerpt": "number | string"
+  },
+  {
+    "id": "prop:liquid-glass-switch:onDisplacementMapChange",
+    "title": "LiquidGlassSwitch.onDisplacementMapChange",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-switch#api",
+    "keywords": "LiquidGlassSwitch onDisplacementMapChange (dataUrl: string) => void Expose the displacement map data URL (for debug / lens lab).",
+    "excerpt": "Expose the displacement map data URL (for debug / lens lab)."
+  },
+  {
     "id": "prop:liquid-glass-switch:padding",
     "title": "LiquidGlassSwitch.padding",
     "type": "prop",
     "path": "/docs/components/liquid-glass-switch#api",
     "keywords": "LiquidGlassSwitch padding number Track padding around thumb.",
     "excerpt": "Track padding around thumb."
+  },
+  {
+    "id": "prop:liquid-glass-switch:refractionStrength",
+    "title": "LiquidGlassSwitch.refractionStrength",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-switch#api",
+    "keywords": "LiquidGlassSwitch refractionStrength number Raw displacement magnitude multiplier (0–2).",
+    "excerpt": "Raw displacement magnitude multiplier (0–2)."
+  },
+  {
+    "id": "prop:liquid-glass-switch:saturation",
+    "title": "LiquidGlassSwitch.saturation",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-switch#api",
+    "keywords": "LiquidGlassSwitch saturation number Backdrop saturation multiplier.",
+    "excerpt": "Backdrop saturation multiplier."
+  },
+  {
+    "id": "prop:liquid-glass-switch:shadowIntensity",
+    "title": "LiquidGlassSwitch.shadowIntensity",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-switch#api",
+    "keywords": "LiquidGlassSwitch shadowIntensity number Drop shadow intensity (0 = off).",
+    "excerpt": "Drop shadow intensity (0 = off)."
+  },
+  {
+    "id": "prop:liquid-glass-switch:showSpecular",
+    "title": "LiquidGlassSwitch.showSpecular",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-switch#api",
+    "keywords": "LiquidGlassSwitch showSpecular boolean Show conic-gradient specular rim.",
+    "excerpt": "Show conic-gradient specular rim."
+  },
+  {
+    "id": "prop:liquid-glass-switch:specularAngle",
+    "title": "LiquidGlassSwitch.specularAngle",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-switch#api",
+    "keywords": "LiquidGlassSwitch specularAngle number Specular conic-gradient start angle (deg).",
+    "excerpt": "Specular conic-gradient start angle (deg)."
+  },
+  {
+    "id": "prop:liquid-glass-switch:specularEdgeOpacity",
+    "title": "LiquidGlassSwitch.specularEdgeOpacity",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-switch#api",
+    "keywords": "LiquidGlassSwitch specularEdgeOpacity number Specular edge/wing opacity.",
+    "excerpt": "Specular edge/wing opacity."
+  },
+  {
+    "id": "prop:liquid-glass-switch:specularTopOpacity",
+    "title": "LiquidGlassSwitch.specularTopOpacity",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-switch#api",
+    "keywords": "LiquidGlassSwitch specularTopOpacity number Brightest specular peak opacity.",
+    "excerpt": "Brightest specular peak opacity."
+  },
+  {
+    "id": "prop:liquid-glass-switch:style",
+    "title": "LiquidGlassSwitch.style",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-switch#api",
+    "keywords": "LiquidGlassSwitch style LiquidGlassStyle Inline CSS merged onto the surface. Flex / grid / padding apply to inner content.",
+    "excerpt": "Inline CSS merged onto the surface. Flex / grid / padding apply to inner content."
   },
   {
     "id": "prop:liquid-glass-switch:thumbSize",
@@ -5369,6 +6521,22 @@ export const docsSearchIndex = [
     "path": "/docs/components/liquid-glass-switch#api",
     "keywords": "LiquidGlassSwitch thumbTint string ",
     "excerpt": "string"
+  },
+  {
+    "id": "prop:liquid-glass-switch:tint",
+    "title": "LiquidGlassSwitch.tint",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-switch#api",
+    "keywords": "LiquidGlassSwitch tint string Glass fill on Chromium (SVG refraction path).",
+    "excerpt": "Glass fill on Chromium (SVG refraction path)."
+  },
+  {
+    "id": "prop:liquid-glass-switch:tintFallback",
+    "title": "LiquidGlassSwitch.tintFallback",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-switch#api",
+    "keywords": "LiquidGlassSwitch tintFallback string Glass fill on non-Chromium fallback.",
+    "excerpt": "Glass fill on non-Chromium fallback."
   },
   {
     "id": "prop:liquid-glass-switch:width",
@@ -5391,7 +6559,7 @@ export const docsSearchIndex = [
     "title": "LiquidGlassTabBar",
     "type": "component",
     "path": "/docs/components/liquid-glass-tab-bar",
-    "keywords": "LiquidGlassTabBar Glass LiquidGlassTabBar.activeColor string LiquidGlassTabBar.activeKey string LiquidGlassTabBar.borderRadius number LiquidGlassTabBar.bottom number | string LiquidGlassTabBar.defaultActiveKey string LiquidGlassTabBar.height number LiquidGlassTabBar.inactiveColor string LiquidGlassTabBar.indicatorBackground string LiquidGlassTabBar.indicatorBorderColor string LiquidGlassTabBar.indicatorPadding number LiquidGlassTabBar.items LiquidGlassTabItem[] LiquidGlassTabBar.maxWidth number LiquidGlassTabBar.position 'fixed' | 'absolute' | 'relative' | 'static' LiquidGlassTabBar.showIndicator boolean LiquidGlassTabBar.onChange (key: string) => void",
+    "keywords": "LiquidGlassTabBar Glass LiquidGlassTabBar.activeColor string LiquidGlassTabBar.activeKey string LiquidGlassTabBar.aria-label string LiquidGlassTabBar.as string LiquidGlassTabBar.bezelWidth number LiquidGlassTabBar.blur number LiquidGlassTabBar.borderColor string LiquidGlassTabBar.borderRadius number LiquidGlassTabBar.bottom number | string LiquidGlassTabBar.className string LiquidGlassTabBar.defaultActiveKey string LiquidGlassTabBar.displacementScale number LiquidGlassTabBar.height number LiquidGlassTabBar.inactiveColor string LiquidGlassTabBar.indicatorBackground string LiquidGlassTabBar.indicatorBorderColor string LiquidGlassTabBar.indicatorPadding number LiquidGlassTabBar.innerBottomShadow number LiquidGlassTabBar.innerTopHighlight number LiquidGlassTabBar.items LiquidGlassTabItem[] LiquidGlassTabBar.maxHeight number | string LiquidGlassTabBar.maxWidth number LiquidGlassTabBar.minHeight number | string LiquidGlassTabBar.minWidth number | string LiquidGlassTabBar.onChange (key: string) => void LiquidGlassTabBar.onDisplacementMapChange (dataUrl: string) => void LiquidGlassTabBar.position 'fixed' | 'absolute' | 'relative' | 'static' LiquidGlassTabBar.refractionStrength number LiquidGlassTabBar.saturation number LiquidGlassTabBar.shadowIntensity number LiquidGlassTabBar.showIndicator boolean LiquidGlassTabBar.showSpecular boolean LiquidGlassTabBar.specularAngle number LiquidGlassTabBar.specularEdgeOpacity number LiquidGlassTabBar.specularTopOpacity number LiquidGlassTabBar.style LiquidGlassStyle LiquidGlassTabBar.tint string LiquidGlassTabBar.tintFallback string LiquidGlassTabBar.width number | string",
     "excerpt": "Glass component from @larose-ui/react"
   },
   {
@@ -5411,6 +6579,46 @@ export const docsSearchIndex = [
     "excerpt": "string"
   },
   {
+    "id": "prop:liquid-glass-tab-bar:aria-label",
+    "title": "LiquidGlassTabBar.aria-label",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-tab-bar#api",
+    "keywords": "LiquidGlassTabBar aria-label string Accessible label (recommended for nav/header).",
+    "excerpt": "Accessible label (recommended for nav/header)."
+  },
+  {
+    "id": "prop:liquid-glass-tab-bar:as",
+    "title": "LiquidGlassTabBar.as",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-tab-bar#api",
+    "keywords": "LiquidGlassTabBar as string HTML tag name for the glass shell (`div`, `footer`, `nav`, …).",
+    "excerpt": "HTML tag name for the glass shell (`div`, `footer`, `nav`, …)."
+  },
+  {
+    "id": "prop:liquid-glass-tab-bar:bezelWidth",
+    "title": "LiquidGlassTabBar.bezelWidth",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-tab-bar#api",
+    "keywords": "LiquidGlassTabBar bezelWidth number Refracting bezel band width in px.",
+    "excerpt": "Refracting bezel band width in px."
+  },
+  {
+    "id": "prop:liquid-glass-tab-bar:blur",
+    "title": "LiquidGlassTabBar.blur",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-tab-bar#api",
+    "keywords": "LiquidGlassTabBar blur number Backdrop blur radius in px (non-Chromium fallback).",
+    "excerpt": "Backdrop blur radius in px (non-Chromium fallback)."
+  },
+  {
+    "id": "prop:liquid-glass-tab-bar:borderColor",
+    "title": "LiquidGlassTabBar.borderColor",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-tab-bar#api",
+    "keywords": "LiquidGlassTabBar borderColor string Inset border colour.",
+    "excerpt": "Inset border colour."
+  },
+  {
     "id": "prop:liquid-glass-tab-bar:borderRadius",
     "title": "LiquidGlassTabBar.borderRadius",
     "type": "prop",
@@ -5427,12 +6635,28 @@ export const docsSearchIndex = [
     "excerpt": "number | string"
   },
   {
+    "id": "prop:liquid-glass-tab-bar:className",
+    "title": "LiquidGlassTabBar.className",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-tab-bar#api",
+    "keywords": "LiquidGlassTabBar className string ",
+    "excerpt": "string"
+  },
+  {
     "id": "prop:liquid-glass-tab-bar:defaultActiveKey",
     "title": "LiquidGlassTabBar.defaultActiveKey",
     "type": "prop",
     "path": "/docs/components/liquid-glass-tab-bar#api",
     "keywords": "LiquidGlassTabBar defaultActiveKey string ",
     "excerpt": "string"
+  },
+  {
+    "id": "prop:liquid-glass-tab-bar:displacementScale",
+    "title": "LiquidGlassTabBar.displacementScale",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-tab-bar#api",
+    "keywords": "LiquidGlassTabBar displacementScale number feDisplacementMap scale — higher = stronger refraction.",
+    "excerpt": "feDisplacementMap scale — higher = stronger refraction."
   },
   {
     "id": "prop:liquid-glass-tab-bar:height",
@@ -5475,12 +6699,36 @@ export const docsSearchIndex = [
     "excerpt": "number"
   },
   {
+    "id": "prop:liquid-glass-tab-bar:innerBottomShadow",
+    "title": "LiquidGlassTabBar.innerBottomShadow",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-tab-bar#api",
+    "keywords": "LiquidGlassTabBar innerBottomShadow number Inner bottom shadow fog opacity.",
+    "excerpt": "Inner bottom shadow fog opacity."
+  },
+  {
+    "id": "prop:liquid-glass-tab-bar:innerTopHighlight",
+    "title": "LiquidGlassTabBar.innerTopHighlight",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-tab-bar#api",
+    "keywords": "LiquidGlassTabBar innerTopHighlight number 1px inner top highlight opacity.",
+    "excerpt": "1px inner top highlight opacity."
+  },
+  {
     "id": "prop:liquid-glass-tab-bar:items",
     "title": "LiquidGlassTabBar.items",
     "type": "prop",
     "path": "/docs/components/liquid-glass-tab-bar#api",
     "keywords": "LiquidGlassTabBar items LiquidGlassTabItem[] ",
     "excerpt": "LiquidGlassTabItem[] (required)"
+  },
+  {
+    "id": "prop:liquid-glass-tab-bar:maxHeight",
+    "title": "LiquidGlassTabBar.maxHeight",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-tab-bar#api",
+    "keywords": "LiquidGlassTabBar maxHeight number | string ",
+    "excerpt": "number | string"
   },
   {
     "id": "prop:liquid-glass-tab-bar:maxWidth",
@@ -5491,6 +6739,30 @@ export const docsSearchIndex = [
     "excerpt": "number"
   },
   {
+    "id": "prop:liquid-glass-tab-bar:minHeight",
+    "title": "LiquidGlassTabBar.minHeight",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-tab-bar#api",
+    "keywords": "LiquidGlassTabBar minHeight number | string ",
+    "excerpt": "number | string"
+  },
+  {
+    "id": "prop:liquid-glass-tab-bar:minWidth",
+    "title": "LiquidGlassTabBar.minWidth",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-tab-bar#api",
+    "keywords": "LiquidGlassTabBar minWidth number | string ",
+    "excerpt": "number | string"
+  },
+  {
+    "id": "prop:liquid-glass-tab-bar:onDisplacementMapChange",
+    "title": "LiquidGlassTabBar.onDisplacementMapChange",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-tab-bar#api",
+    "keywords": "LiquidGlassTabBar onDisplacementMapChange (dataUrl: string) => void Expose the displacement map data URL (for debug / lens lab).",
+    "excerpt": "Expose the displacement map data URL (for debug / lens lab)."
+  },
+  {
     "id": "prop:liquid-glass-tab-bar:position",
     "title": "LiquidGlassTabBar.position",
     "type": "prop",
@@ -5499,12 +6771,100 @@ export const docsSearchIndex = [
     "excerpt": "'fixed' | 'absolute' | 'relative' | 'static'"
   },
   {
+    "id": "prop:liquid-glass-tab-bar:refractionStrength",
+    "title": "LiquidGlassTabBar.refractionStrength",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-tab-bar#api",
+    "keywords": "LiquidGlassTabBar refractionStrength number Raw displacement magnitude multiplier (0–2).",
+    "excerpt": "Raw displacement magnitude multiplier (0–2)."
+  },
+  {
+    "id": "prop:liquid-glass-tab-bar:saturation",
+    "title": "LiquidGlassTabBar.saturation",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-tab-bar#api",
+    "keywords": "LiquidGlassTabBar saturation number Backdrop saturation multiplier.",
+    "excerpt": "Backdrop saturation multiplier."
+  },
+  {
+    "id": "prop:liquid-glass-tab-bar:shadowIntensity",
+    "title": "LiquidGlassTabBar.shadowIntensity",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-tab-bar#api",
+    "keywords": "LiquidGlassTabBar shadowIntensity number Drop shadow intensity (0 = off).",
+    "excerpt": "Drop shadow intensity (0 = off)."
+  },
+  {
     "id": "prop:liquid-glass-tab-bar:showIndicator",
     "title": "LiquidGlassTabBar.showIndicator",
     "type": "prop",
     "path": "/docs/components/liquid-glass-tab-bar#api",
     "keywords": "LiquidGlassTabBar showIndicator boolean ",
     "excerpt": "boolean"
+  },
+  {
+    "id": "prop:liquid-glass-tab-bar:showSpecular",
+    "title": "LiquidGlassTabBar.showSpecular",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-tab-bar#api",
+    "keywords": "LiquidGlassTabBar showSpecular boolean Show conic-gradient specular rim.",
+    "excerpt": "Show conic-gradient specular rim."
+  },
+  {
+    "id": "prop:liquid-glass-tab-bar:specularAngle",
+    "title": "LiquidGlassTabBar.specularAngle",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-tab-bar#api",
+    "keywords": "LiquidGlassTabBar specularAngle number Specular conic-gradient start angle (deg).",
+    "excerpt": "Specular conic-gradient start angle (deg)."
+  },
+  {
+    "id": "prop:liquid-glass-tab-bar:specularEdgeOpacity",
+    "title": "LiquidGlassTabBar.specularEdgeOpacity",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-tab-bar#api",
+    "keywords": "LiquidGlassTabBar specularEdgeOpacity number Specular edge/wing opacity.",
+    "excerpt": "Specular edge/wing opacity."
+  },
+  {
+    "id": "prop:liquid-glass-tab-bar:specularTopOpacity",
+    "title": "LiquidGlassTabBar.specularTopOpacity",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-tab-bar#api",
+    "keywords": "LiquidGlassTabBar specularTopOpacity number Brightest specular peak opacity.",
+    "excerpt": "Brightest specular peak opacity."
+  },
+  {
+    "id": "prop:liquid-glass-tab-bar:style",
+    "title": "LiquidGlassTabBar.style",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-tab-bar#api",
+    "keywords": "LiquidGlassTabBar style LiquidGlassStyle Inline CSS merged onto the surface. Flex / grid / padding apply to inner content.",
+    "excerpt": "Inline CSS merged onto the surface. Flex / grid / padding apply to inner content."
+  },
+  {
+    "id": "prop:liquid-glass-tab-bar:tint",
+    "title": "LiquidGlassTabBar.tint",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-tab-bar#api",
+    "keywords": "LiquidGlassTabBar tint string Glass fill on Chromium (SVG refraction path).",
+    "excerpt": "Glass fill on Chromium (SVG refraction path)."
+  },
+  {
+    "id": "prop:liquid-glass-tab-bar:tintFallback",
+    "title": "LiquidGlassTabBar.tintFallback",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-tab-bar#api",
+    "keywords": "LiquidGlassTabBar tintFallback string Glass fill on non-Chromium fallback.",
+    "excerpt": "Glass fill on non-Chromium fallback."
+  },
+  {
+    "id": "prop:liquid-glass-tab-bar:width",
+    "title": "LiquidGlassTabBar.width",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-tab-bar#api",
+    "keywords": "LiquidGlassTabBar width number | string ",
+    "excerpt": "number | string"
   },
   {
     "id": "example:liquid-glass-tab-bar:Playground",
@@ -5559,7 +6919,7 @@ export const docsSearchIndex = [
     "title": "LiquidGlassTopBar",
     "type": "component",
     "path": "/docs/components/liquid-glass-top-bar",
-    "keywords": "LiquidGlassTopBar Glass LiquidGlassTopBar.activeColor string LiquidGlassTopBar.activeKey string LiquidGlassTopBar.borderRadius number LiquidGlassTopBar.defaultActiveKey string LiquidGlassTopBar.height number LiquidGlassTopBar.inactiveColor string LiquidGlassTopBar.insetX number LiquidGlassTopBar.items LiquidGlassTopBarItem[] LiquidGlassTopBar.logo ReactNode LiquidGlassTopBar.navActiveBackground string LiquidGlassTopBar.navTrackBackground string LiquidGlassTopBar.paddingX number LiquidGlassTopBar.position 'fixed' | 'absolute' | 'relative' | 'sticky' | 'static' LiquidGlassTopBar.titleColor string LiquidGlassTopBar.top number | string LiquidGlassTopBar.trailing ReactNode LiquidGlassTopBar.variant LiquidGlassTopBarVariant LiquidGlassTopBar.onChange (key: string) => void LiquidGlassTopBar.title ReactNode",
+    "keywords": "LiquidGlassTopBar Glass LiquidGlassTopBar.activeColor string LiquidGlassTopBar.activeKey string LiquidGlassTopBar.aria-label string LiquidGlassTopBar.as string LiquidGlassTopBar.bezelWidth number LiquidGlassTopBar.blur number LiquidGlassTopBar.borderColor string LiquidGlassTopBar.borderRadius number LiquidGlassTopBar.className string LiquidGlassTopBar.defaultActiveKey string LiquidGlassTopBar.displacementScale number LiquidGlassTopBar.height number LiquidGlassTopBar.inactiveColor string LiquidGlassTopBar.innerBottomShadow number LiquidGlassTopBar.innerTopHighlight number LiquidGlassTopBar.insetX number LiquidGlassTopBar.items LiquidGlassTopBarItem[] LiquidGlassTopBar.logo ReactNode LiquidGlassTopBar.maxHeight number | string LiquidGlassTopBar.maxWidth number | string LiquidGlassTopBar.minHeight number | string LiquidGlassTopBar.minWidth number | string LiquidGlassTopBar.navActiveBackground string LiquidGlassTopBar.navTrackBackground string LiquidGlassTopBar.onChange (key: string) => void LiquidGlassTopBar.onDisplacementMapChange (dataUrl: string) => void LiquidGlassTopBar.paddingX number LiquidGlassTopBar.position 'fixed' | 'absolute' | 'relative' | 'sticky' | 'static' LiquidGlassTopBar.refractionStrength number LiquidGlassTopBar.saturation number LiquidGlassTopBar.shadowIntensity number LiquidGlassTopBar.showSpecular boolean LiquidGlassTopBar.specularAngle number LiquidGlassTopBar.specularEdgeOpacity number LiquidGlassTopBar.specularTopOpacity number LiquidGlassTopBar.style LiquidGlassStyle LiquidGlassTopBar.tint string LiquidGlassTopBar.tintFallback string LiquidGlassTopBar.title ReactNode LiquidGlassTopBar.titleColor string LiquidGlassTopBar.top number | string LiquidGlassTopBar.trailing ReactNode LiquidGlassTopBar.variant LiquidGlassTopBarVariant LiquidGlassTopBar.width number | string",
     "excerpt": "Glass component from @larose-ui/react"
   },
   {
@@ -5579,6 +6939,46 @@ export const docsSearchIndex = [
     "excerpt": "string"
   },
   {
+    "id": "prop:liquid-glass-top-bar:aria-label",
+    "title": "LiquidGlassTopBar.aria-label",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar aria-label string Accessible label (recommended for nav/header).",
+    "excerpt": "Accessible label (recommended for nav/header)."
+  },
+  {
+    "id": "prop:liquid-glass-top-bar:as",
+    "title": "LiquidGlassTopBar.as",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar as string HTML tag name for the glass shell (`div`, `footer`, `nav`, …).",
+    "excerpt": "HTML tag name for the glass shell (`div`, `footer`, `nav`, …)."
+  },
+  {
+    "id": "prop:liquid-glass-top-bar:bezelWidth",
+    "title": "LiquidGlassTopBar.bezelWidth",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar bezelWidth number Refracting bezel band width in px.",
+    "excerpt": "Refracting bezel band width in px."
+  },
+  {
+    "id": "prop:liquid-glass-top-bar:blur",
+    "title": "LiquidGlassTopBar.blur",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar blur number Backdrop blur radius in px (non-Chromium fallback).",
+    "excerpt": "Backdrop blur radius in px (non-Chromium fallback)."
+  },
+  {
+    "id": "prop:liquid-glass-top-bar:borderColor",
+    "title": "LiquidGlassTopBar.borderColor",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar borderColor string Inset border colour.",
+    "excerpt": "Inset border colour."
+  },
+  {
     "id": "prop:liquid-glass-top-bar:borderRadius",
     "title": "LiquidGlassTopBar.borderRadius",
     "type": "prop",
@@ -5587,12 +6987,28 @@ export const docsSearchIndex = [
     "excerpt": "number"
   },
   {
+    "id": "prop:liquid-glass-top-bar:className",
+    "title": "LiquidGlassTopBar.className",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar className string ",
+    "excerpt": "string"
+  },
+  {
     "id": "prop:liquid-glass-top-bar:defaultActiveKey",
     "title": "LiquidGlassTopBar.defaultActiveKey",
     "type": "prop",
     "path": "/docs/components/liquid-glass-top-bar#api",
     "keywords": "LiquidGlassTopBar defaultActiveKey string ",
     "excerpt": "string"
+  },
+  {
+    "id": "prop:liquid-glass-top-bar:displacementScale",
+    "title": "LiquidGlassTopBar.displacementScale",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar displacementScale number feDisplacementMap scale — higher = stronger refraction.",
+    "excerpt": "feDisplacementMap scale — higher = stronger refraction."
   },
   {
     "id": "prop:liquid-glass-top-bar:height",
@@ -5609,6 +7025,22 @@ export const docsSearchIndex = [
     "path": "/docs/components/liquid-glass-top-bar#api",
     "keywords": "LiquidGlassTopBar inactiveColor string ",
     "excerpt": "string"
+  },
+  {
+    "id": "prop:liquid-glass-top-bar:innerBottomShadow",
+    "title": "LiquidGlassTopBar.innerBottomShadow",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar innerBottomShadow number Inner bottom shadow fog opacity.",
+    "excerpt": "Inner bottom shadow fog opacity."
+  },
+  {
+    "id": "prop:liquid-glass-top-bar:innerTopHighlight",
+    "title": "LiquidGlassTopBar.innerTopHighlight",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar innerTopHighlight number 1px inner top highlight opacity.",
+    "excerpt": "1px inner top highlight opacity."
   },
   {
     "id": "prop:liquid-glass-top-bar:insetX",
@@ -5635,6 +7067,38 @@ export const docsSearchIndex = [
     "excerpt": "ReactNode"
   },
   {
+    "id": "prop:liquid-glass-top-bar:maxHeight",
+    "title": "LiquidGlassTopBar.maxHeight",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar maxHeight number | string ",
+    "excerpt": "number | string"
+  },
+  {
+    "id": "prop:liquid-glass-top-bar:maxWidth",
+    "title": "LiquidGlassTopBar.maxWidth",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar maxWidth number | string ",
+    "excerpt": "number | string"
+  },
+  {
+    "id": "prop:liquid-glass-top-bar:minHeight",
+    "title": "LiquidGlassTopBar.minHeight",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar minHeight number | string ",
+    "excerpt": "number | string"
+  },
+  {
+    "id": "prop:liquid-glass-top-bar:minWidth",
+    "title": "LiquidGlassTopBar.minWidth",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar minWidth number | string ",
+    "excerpt": "number | string"
+  },
+  {
     "id": "prop:liquid-glass-top-bar:navActiveBackground",
     "title": "LiquidGlassTopBar.navActiveBackground",
     "type": "prop",
@@ -5651,6 +7115,14 @@ export const docsSearchIndex = [
     "excerpt": "Background of the segmented nav track."
   },
   {
+    "id": "prop:liquid-glass-top-bar:onDisplacementMapChange",
+    "title": "LiquidGlassTopBar.onDisplacementMapChange",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar onDisplacementMapChange (dataUrl: string) => void Expose the displacement map data URL (for debug / lens lab).",
+    "excerpt": "Expose the displacement map data URL (for debug / lens lab)."
+  },
+  {
     "id": "prop:liquid-glass-top-bar:paddingX",
     "title": "LiquidGlassTopBar.paddingX",
     "type": "prop",
@@ -5665,6 +7137,86 @@ export const docsSearchIndex = [
     "path": "/docs/components/liquid-glass-top-bar#api",
     "keywords": "LiquidGlassTopBar position 'fixed' | 'absolute' | 'relative' | 'sticky' | 'static' ",
     "excerpt": "'fixed' | 'absolute' | 'relative' | 'sticky' | 'static'"
+  },
+  {
+    "id": "prop:liquid-glass-top-bar:refractionStrength",
+    "title": "LiquidGlassTopBar.refractionStrength",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar refractionStrength number Raw displacement magnitude multiplier (0–2).",
+    "excerpt": "Raw displacement magnitude multiplier (0–2)."
+  },
+  {
+    "id": "prop:liquid-glass-top-bar:saturation",
+    "title": "LiquidGlassTopBar.saturation",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar saturation number Backdrop saturation multiplier.",
+    "excerpt": "Backdrop saturation multiplier."
+  },
+  {
+    "id": "prop:liquid-glass-top-bar:shadowIntensity",
+    "title": "LiquidGlassTopBar.shadowIntensity",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar shadowIntensity number Drop shadow intensity (0 = off).",
+    "excerpt": "Drop shadow intensity (0 = off)."
+  },
+  {
+    "id": "prop:liquid-glass-top-bar:showSpecular",
+    "title": "LiquidGlassTopBar.showSpecular",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar showSpecular boolean Show conic-gradient specular rim.",
+    "excerpt": "Show conic-gradient specular rim."
+  },
+  {
+    "id": "prop:liquid-glass-top-bar:specularAngle",
+    "title": "LiquidGlassTopBar.specularAngle",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar specularAngle number Specular conic-gradient start angle (deg).",
+    "excerpt": "Specular conic-gradient start angle (deg)."
+  },
+  {
+    "id": "prop:liquid-glass-top-bar:specularEdgeOpacity",
+    "title": "LiquidGlassTopBar.specularEdgeOpacity",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar specularEdgeOpacity number Specular edge/wing opacity.",
+    "excerpt": "Specular edge/wing opacity."
+  },
+  {
+    "id": "prop:liquid-glass-top-bar:specularTopOpacity",
+    "title": "LiquidGlassTopBar.specularTopOpacity",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar specularTopOpacity number Brightest specular peak opacity.",
+    "excerpt": "Brightest specular peak opacity."
+  },
+  {
+    "id": "prop:liquid-glass-top-bar:style",
+    "title": "LiquidGlassTopBar.style",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar style LiquidGlassStyle Inline CSS merged onto the surface. Flex / grid / padding apply to inner content.",
+    "excerpt": "Inline CSS merged onto the surface. Flex / grid / padding apply to inner content."
+  },
+  {
+    "id": "prop:liquid-glass-top-bar:tint",
+    "title": "LiquidGlassTopBar.tint",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar tint string Glass fill on Chromium (SVG refraction path).",
+    "excerpt": "Glass fill on Chromium (SVG refraction path)."
+  },
+  {
+    "id": "prop:liquid-glass-top-bar:tintFallback",
+    "title": "LiquidGlassTopBar.tintFallback",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar tintFallback string Glass fill on non-Chromium fallback.",
+    "excerpt": "Glass fill on non-Chromium fallback."
   },
   {
     "id": "prop:liquid-glass-top-bar:titleColor",
@@ -5697,6 +7249,14 @@ export const docsSearchIndex = [
     "path": "/docs/components/liquid-glass-top-bar#api",
     "keywords": "LiquidGlassTopBar variant LiquidGlassTopBarVariant `floating` — inset pill bar with rounded corners (modern macOS/iOS style).\n`edge` — full-bleed bar flush with the viewport top.",
     "excerpt": "`floating` — inset pill bar with rounded corners (modern macOS/iOS style).\n`edge` — full-bleed bar flush with the viewport top."
+  },
+  {
+    "id": "prop:liquid-glass-top-bar:width",
+    "title": "LiquidGlassTopBar.width",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar width number | string ",
+    "excerpt": "number | string"
   },
   {
     "id": "example:liquid-glass-top-bar:Playground",
@@ -5735,7 +7295,7 @@ export const docsSearchIndex = [
     "title": "List",
     "type": "component",
     "path": "/docs/components/list",
-    "keywords": "List Data List.'aria-label' string List.variant ListVariant List.children ReactNode List.className string List.style CSSProperties",
+    "keywords": "List Data List.'aria-label' string List.children ReactNode List.className string List.style CSSProperties List.variant ListVariant",
     "excerpt": "Data component from @larose-ui/react"
   },
   {
@@ -5775,7 +7335,7 @@ export const docsSearchIndex = [
     "title": "ListRow",
     "type": "component",
     "path": "/docs/components/list-row",
-    "keywords": "ListRow Data ListRow.accessory ListAccessory ListRow.disabled boolean ListRow.leading ReactNode ListRow.onInfo (event: MouseEvent<HTMLButtonElement>) => void ListRow.onPress () => void ListRow.selected boolean ListRow.subtitle string ListRow.truncate 'end' | 'middle' ListRow.className string ListRow.style CSSProperties ListRow.title string",
+    "keywords": "ListRow Data ListRow.accessory ListAccessory ListRow.className string ListRow.disabled boolean ListRow.leading ReactNode ListRow.onInfo (event: MouseEvent<HTMLButtonElement>) => void ListRow.onPress () => void ListRow.selected boolean ListRow.style CSSProperties ListRow.subtitle string ListRow.title string ListRow.truncate 'end' | 'middle'",
     "excerpt": "Data component from @larose-ui/react"
   },
   {
@@ -5847,7 +7407,7 @@ export const docsSearchIndex = [
     "title": "ListSection",
     "type": "component",
     "path": "/docs/components/list-section",
-    "keywords": "ListSection Data ListSection.footer string ListSection.header string ListSection.children ReactNode ListSection.className string ListSection.style CSSProperties",
+    "keywords": "ListSection Data ListSection.children ReactNode ListSection.className string ListSection.footer string ListSection.header string ListSection.style CSSProperties",
     "excerpt": "Data component from @larose-ui/react"
   },
   {
@@ -5871,7 +7431,7 @@ export const docsSearchIndex = [
     "title": "Lockup",
     "type": "component",
     "path": "/docs/components/lockup",
-    "keywords": "Lockup Layout Lockup.'aria-label' string Lockup.axis LockupAxis Lockup.focused boolean Lockup.footer ReactNode Lockup.header ReactNode Lockup.children ReactNode Lockup.className string Lockup.onBlur () => void Lockup.onClick () => void Lockup.onFocus () => void Lockup.style CSSProperties",
+    "keywords": "Lockup Layout Lockup.'aria-label' string Lockup.axis LockupAxis Lockup.children ReactNode Lockup.className string Lockup.focused boolean Lockup.footer ReactNode Lockup.header ReactNode Lockup.onBlur () => void Lockup.onClick () => void Lockup.onFocus () => void Lockup.style CSSProperties",
     "excerpt": "Layout component from @larose-ui/react"
   },
   {
@@ -5967,7 +7527,7 @@ export const docsSearchIndex = [
     "title": "LockupRow",
     "type": "component",
     "path": "/docs/components/lockup-row",
-    "keywords": "LockupRow Other LockupRow.axis LockupAxis LockupRow.itemWidth string LockupRow.children ReactNode LockupRow.className string LockupRow.style CSSProperties",
+    "keywords": "LockupRow Other LockupRow.axis LockupAxis LockupRow.children ReactNode LockupRow.className string LockupRow.itemWidth string LockupRow.style CSSProperties",
     "excerpt": "Other component from @larose-ui/react"
   },
   {
@@ -5991,7 +7551,7 @@ export const docsSearchIndex = [
     "title": "Menu",
     "type": "component",
     "path": "/docs/components/menu",
-    "keywords": "Menu Navigation Menu.dimBackground boolean Menu.enableMnemonics boolean Menu.enableShortcuts boolean Menu.enableTypeAhead boolean Menu.entries MenuEntry[] Menu.layout MenuLayout Menu.mnemonicVisible boolean Menu.onEntrySelect (entry: MenuItemConfig) => boolean | void Menu.onOpenChange (open: boolean) => void Menu.open boolean Menu.optionKey boolean Menu.children ReactElement Menu.className string Menu.style CSSProperties Menu.title string",
+    "keywords": "Menu Navigation Menu.children ReactElement Menu.className string Menu.dimBackground boolean Menu.enableMnemonics boolean Menu.enableShortcuts boolean Menu.enableTypeAhead boolean Menu.entries MenuEntry[] Menu.layout MenuLayout Menu.mnemonicVisible boolean Menu.onEntrySelect (entry: MenuItemConfig) => boolean | void Menu.onOpenChange (open: boolean) => void Menu.open boolean Menu.optionKey boolean Menu.style CSSProperties Menu.title string",
     "excerpt": "Navigation component from @larose-ui/react"
   },
   {
@@ -6127,7 +7687,7 @@ export const docsSearchIndex = [
     "title": "MenuBar",
     "type": "component",
     "path": "/docs/components/menu-bar",
-    "keywords": "MenuBar Navigation MenuBar.appName string MenuBar.appSpecificMenus MenuBarMenuConfig[] MenuBar.enableGlobalShortcuts boolean MenuBar.enableMnemonics boolean MenuBar.enableTypeAhead boolean MenuBar.extras MenuBarExtraConfig[] MenuBar.menus MenuBarMenuConfig[] MenuBar.onMenuAction (menuId: string, entryId: string) => void MenuBar.onRevealChange (revealed: boolean) => void MenuBar.platform MenuBarPlatform MenuBar.revealed boolean MenuBar.showAppleMenu boolean MenuBar.standardOptions StandardMenuBarOptions MenuBar.className string MenuBar.style CSSProperties",
+    "keywords": "MenuBar Navigation MenuBar.appName string MenuBar.appSpecificMenus MenuBarMenuConfig[] MenuBar.className string MenuBar.enableGlobalShortcuts boolean MenuBar.enableMnemonics boolean MenuBar.enableTypeAhead boolean MenuBar.extras MenuBarExtraConfig[] MenuBar.menus MenuBarMenuConfig[] MenuBar.onMenuAction (menuId: string, entryId: string) => void MenuBar.onRevealChange (revealed: boolean) => void MenuBar.platform MenuBarPlatform MenuBar.revealed boolean MenuBar.showAppleMenu boolean MenuBar.standardOptions StandardMenuBarOptions MenuBar.style CSSProperties",
     "excerpt": "Navigation component from @larose-ui/react"
   },
   {
@@ -6271,7 +7831,7 @@ export const docsSearchIndex = [
     "title": "MenuBarExtra",
     "type": "component",
     "path": "/docs/components/menu-bar-extra",
-    "keywords": "MenuBarExtra Navigation MenuBarExtra.enableMnemonics boolean MenuBarExtra.enableTypeAhead boolean MenuBarExtra.isOpen boolean MenuBarExtra.mnemonicVisible boolean MenuBarExtra.onAction (entry: MenuItemConfig) => void MenuBarExtra.onOpenChange (open: boolean) => void MenuBarExtra.optionKey boolean MenuBarExtra.className string MenuBarExtra.style CSSProperties",
+    "keywords": "MenuBarExtra Navigation MenuBarExtra.className string MenuBarExtra.enableMnemonics boolean MenuBarExtra.enableTypeAhead boolean MenuBarExtra.isOpen boolean MenuBarExtra.mnemonicVisible boolean MenuBarExtra.onAction (entry: MenuItemConfig) => void MenuBarExtra.onOpenChange (open: boolean) => void MenuBarExtra.optionKey boolean MenuBarExtra.style CSSProperties",
     "excerpt": "Navigation component from @larose-ui/react"
   },
   {
@@ -6335,7 +7895,7 @@ export const docsSearchIndex = [
     "title": "MnemonicLabel",
     "type": "component",
     "path": "/docs/components/mnemonic-label",
-    "keywords": "MnemonicLabel Other MnemonicLabel.label string MnemonicLabel.mnemonic string MnemonicLabel.showAccessKey boolean MnemonicLabel.className string MnemonicLabel.style CSSProperties",
+    "keywords": "MnemonicLabel Other MnemonicLabel.className string MnemonicLabel.label string MnemonicLabel.mnemonic string MnemonicLabel.showAccessKey boolean MnemonicLabel.style CSSProperties",
     "excerpt": "Other component from @larose-ui/react"
   },
   {
@@ -6375,7 +7935,7 @@ export const docsSearchIndex = [
     "title": "Modal",
     "type": "component",
     "path": "/docs/components/modal",
-    "keywords": "Modal Overlay Modal.closeOnOverlay boolean Modal.contentClassName string Modal.contentStyle CSSProperties Modal.description string Modal.motion ComponentMotionOverride Modal.onClose () => void Modal.open boolean Modal.overlayClassName string Modal.overlayStyle CSSProperties Modal.children ReactNode Modal.className string Modal.style CSSProperties Modal.title string",
+    "keywords": "Modal Overlay Modal.children ReactNode Modal.className string Modal.closeOnOverlay boolean Modal.contentClassName string Modal.contentStyle CSSProperties Modal.description string Modal.motion ComponentMotionOverride Modal.onClose () => void Modal.open boolean Modal.overlayClassName string Modal.overlayStyle CSSProperties Modal.style CSSProperties Modal.title string",
     "excerpt": "Overlay component from @larose-ui/react"
   },
   {
@@ -6559,7 +8119,7 @@ export const docsSearchIndex = [
     "title": "OrnamentWindow",
     "type": "component",
     "path": "/docs/components/ornament-window",
-    "keywords": "OrnamentWindow Layout OrnamentWindow.'aria-label' string OrnamentWindow.alignment OrnamentContentAlignment OrnamentWindow.edge OrnamentEdge OrnamentWindow.immersive boolean OrnamentWindow.ornament ReactNode OrnamentWindow.ornaments OrnamentConfig[] OrnamentWindow.visibility OrnamentVisibility OrnamentWindow.children ReactNode OrnamentWindow.className string OrnamentWindow.style CSSProperties",
+    "keywords": "OrnamentWindow Layout OrnamentWindow.'aria-label' string OrnamentWindow.alignment OrnamentContentAlignment OrnamentWindow.children ReactNode OrnamentWindow.className string OrnamentWindow.edge OrnamentEdge OrnamentWindow.immersive boolean OrnamentWindow.ornament ReactNode OrnamentWindow.ornaments OrnamentConfig[] OrnamentWindow.style CSSProperties OrnamentWindow.visibility OrnamentVisibility",
     "excerpt": "Layout component from @larose-ui/react"
   },
   {
@@ -6623,7 +8183,7 @@ export const docsSearchIndex = [
     "title": "OutlineView",
     "type": "component",
     "path": "/docs/components/outline-view",
-    "keywords": "OutlineView Data OutlineView.'aria-label' string OutlineView.alternatingRows boolean OutlineView.columns Array<string | OutlineColumn> OutlineView.data OutlineNode[] OutlineView.defaultExpandedIds string[] OutlineView.defaultSortDirection SortDirection OutlineView.defaultSortKey string OutlineView.editableColumns string[] OutlineView.expandedIds string[] OutlineView.onCellEdit (nodeId: string, columnKey: string, value: string) => void OutlineView.onExpandedChange (expandedIds: string[]) => void OutlineView.onRowDoubleClick (node: OutlineNode) => void OutlineView.onSelect (node: OutlineNode) => void OutlineView.primaryColumnHeader string OutlineView.resizableColumns boolean OutlineView.searchQuery string OutlineView.selectedId string OutlineView.sortable boolean OutlineView.storageKey string OutlineView.truncate 'middle' | 'end' OutlineView.className string OutlineView.style CSSProperties",
+    "keywords": "OutlineView Data OutlineView.'aria-label' string OutlineView.alternatingRows boolean OutlineView.className string OutlineView.columns Array<string | OutlineColumn> OutlineView.data OutlineNode[] OutlineView.defaultExpandedIds string[] OutlineView.defaultSortDirection SortDirection OutlineView.defaultSortKey string OutlineView.editableColumns string[] OutlineView.expandedIds string[] OutlineView.onCellEdit (nodeId: string, columnKey: string, value: string) => void OutlineView.onExpandedChange (expandedIds: string[]) => void OutlineView.onRowDoubleClick (node: OutlineNode) => void OutlineView.onSelect (node: OutlineNode) => void OutlineView.primaryColumnHeader string OutlineView.resizableColumns boolean OutlineView.searchQuery string OutlineView.selectedId string OutlineView.sortable boolean OutlineView.storageKey string OutlineView.style CSSProperties OutlineView.truncate 'middle' | 'end'",
     "excerpt": "Data component from @larose-ui/react"
   },
   {
@@ -6823,7 +8383,7 @@ export const docsSearchIndex = [
     "title": "OutlineViewToolbar",
     "type": "component",
     "path": "/docs/components/outline-view-toolbar",
-    "keywords": "OutlineViewToolbar Data OutlineViewToolbar.'aria-label' string OutlineViewToolbar.onSearchChange (query: string) => void OutlineViewToolbar.placeholder string OutlineViewToolbar.searchQuery string OutlineViewToolbar.className string OutlineViewToolbar.style CSSProperties",
+    "keywords": "OutlineViewToolbar Data OutlineViewToolbar.'aria-label' string OutlineViewToolbar.className string OutlineViewToolbar.onSearchChange (query: string) => void OutlineViewToolbar.placeholder string OutlineViewToolbar.searchQuery string OutlineViewToolbar.style CSSProperties",
     "excerpt": "Data component from @larose-ui/react"
   },
   {
@@ -6863,7 +8423,7 @@ export const docsSearchIndex = [
     "title": "Pagination",
     "type": "component",
     "path": "/docs/components/pagination",
-    "keywords": "Pagination Navigation Pagination.'aria-label' string Pagination.nextLabel string Pagination.onPageChange (page: number) => void Pagination.page number Pagination.previousLabel string Pagination.siblingCount number Pagination.totalPages number Pagination.className string Pagination.style CSSProperties",
+    "keywords": "Pagination Navigation Pagination.'aria-label' string Pagination.className string Pagination.nextLabel string Pagination.onPageChange (page: number) => void Pagination.page number Pagination.previousLabel string Pagination.siblingCount number Pagination.style CSSProperties Pagination.totalPages number",
     "excerpt": "Navigation component from @larose-ui/react"
   },
   {
@@ -6927,7 +8487,7 @@ export const docsSearchIndex = [
     "title": "PathControl",
     "type": "component",
     "path": "/docs/components/path-control",
-    "keywords": "PathControl Navigation PathControl.'aria-label' string PathControl.editable boolean PathControl.onChoose () => void PathControl.onDropPath (segments: PathSegment[]) => void PathControl.onSegmentSelect (segment: PathSegment) => void PathControl.segments PathSegment[] PathControl.selectedId string PathControl.variant PathControlVariant PathControl.className string PathControl.style CSSProperties",
+    "keywords": "PathControl Navigation PathControl.'aria-label' string PathControl.className string PathControl.editable boolean PathControl.onChoose () => void PathControl.onDropPath (segments: PathSegment[]) => void PathControl.onSegmentSelect (segment: PathSegment) => void PathControl.segments PathSegment[] PathControl.selectedId string PathControl.style CSSProperties PathControl.variant PathControlVariant",
     "excerpt": "Navigation component from @larose-ui/react"
   },
   {
@@ -7015,7 +8575,7 @@ export const docsSearchIndex = [
     "title": "Picker",
     "type": "component",
     "path": "/docs/components/picker",
-    "keywords": "Picker Forms Picker.'aria-label' string Picker.appearance PickerStyle Picker.columns PickerColumn[] Picker.disabled boolean Picker.error string | null Picker.formatValue (value: PickerValue, columns: PickerColumn[]) => string Picker.hint string Picker.inputSize Size Picker.label string Picker.loading boolean Picker.placeholder string Picker.state UIState Picker.value PickerValue Picker.className string Picker.onChange (value: PickerValue) => void Picker.style PickerStyle | CSSProperties",
+    "keywords": "Picker Forms Picker.'aria-label' string Picker.appearance PickerStyle Picker.className string Picker.columns PickerColumn[] Picker.disabled boolean Picker.error string | null Picker.formatValue (value: PickerValue, columns: PickerColumn[]) => string Picker.hint string Picker.inputSize Size Picker.label string Picker.loading boolean Picker.onChange (value: PickerValue) => void Picker.placeholder string Picker.state UIState Picker.style PickerStyle | CSSProperties Picker.value PickerValue",
     "excerpt": "Forms component from @larose-ui/react"
   },
   {
@@ -7199,7 +8759,7 @@ export const docsSearchIndex = [
     "title": "Popover",
     "type": "component",
     "path": "/docs/components/popover",
-    "keywords": "Popover Overlay Popover.'aria-label' string Popover.content ReactNode Popover.defaultOpen boolean Popover.onOpenChange (open: boolean) => void Popover.open boolean Popover.panelClassName string Popover.side PopoverSide Popover.trigger ReactNode Popover.className string Popover.style CSSProperties",
+    "keywords": "Popover Overlay Popover.'aria-label' string Popover.className string Popover.content ReactNode Popover.defaultOpen boolean Popover.onOpenChange (open: boolean) => void Popover.open boolean Popover.panelClassName string Popover.side PopoverSide Popover.style CSSProperties Popover.trigger ReactNode",
     "excerpt": "Overlay component from @larose-ui/react"
   },
   {
@@ -7303,7 +8863,7 @@ export const docsSearchIndex = [
     "title": "PopUpButton",
     "type": "component",
     "path": "/docs/components/pop-up-button",
-    "keywords": "PopUpButton Navigation PopUpButton.customOption PopUpCustomOption PopUpButton.defaultValue string PopUpButton.disabled boolean PopUpButton.explanatoryText string PopUpButton.label string PopUpButton.onValueChange (value: string) => void PopUpButton.options PopUpOption[] PopUpButton.placeholder string PopUpButton.value string PopUpButton.className string PopUpButton.id string PopUpButton.style CSSProperties",
+    "keywords": "PopUpButton Navigation PopUpButton.className string PopUpButton.customOption PopUpCustomOption PopUpButton.defaultValue string PopUpButton.disabled boolean PopUpButton.explanatoryText string PopUpButton.id string PopUpButton.label string PopUpButton.onValueChange (value: string) => void PopUpButton.options PopUpOption[] PopUpButton.placeholder string PopUpButton.style CSSProperties PopUpButton.value string",
     "excerpt": "Navigation component from @larose-ui/react"
   },
   {
@@ -7431,7 +8991,7 @@ export const docsSearchIndex = [
     "title": "Progress",
     "type": "component",
     "path": "/docs/components/progress",
-    "keywords": "Progress Feedback Progress.label string Progress.max number Progress.showValue boolean Progress.state UIState Progress.value number Progress.variant ProgressVariant Progress.className string Progress.style CSSProperties",
+    "keywords": "Progress Feedback Progress.className string Progress.label string Progress.max number Progress.showValue boolean Progress.state UIState Progress.style CSSProperties Progress.value number Progress.variant ProgressVariant",
     "excerpt": "Feedback component from @larose-ui/react"
   },
   {
@@ -7535,7 +9095,7 @@ export const docsSearchIndex = [
     "title": "PullDownButton",
     "type": "component",
     "path": "/docs/components/pull-down-button",
-    "keywords": "PullDownButton Navigation PullDownButton.destructiveConfirmation PullDownDestructiveConfirmation PullDownButton.disabled boolean PullDownButton.entries PullDownEntry[] PullDownButton.icon ReactNode PullDownButton.label string PullDownButton.longPress boolean PullDownButton.menuTitle string PullDownButton.onAction (entry: MenuItemConfig) => void PullDownButton.variant PullDownButtonVariant PullDownButton.className string PullDownButton.style CSSProperties",
+    "keywords": "PullDownButton Navigation PullDownButton.className string PullDownButton.destructiveConfirmation PullDownDestructiveConfirmation PullDownButton.disabled boolean PullDownButton.entries PullDownEntry[] PullDownButton.icon ReactNode PullDownButton.label string PullDownButton.longPress boolean PullDownButton.menuTitle string PullDownButton.onAction (entry: MenuItemConfig) => void PullDownButton.style CSSProperties PullDownButton.variant PullDownButtonVariant",
     "excerpt": "Navigation component from @larose-ui/react"
   },
   {
@@ -7879,7 +9439,7 @@ export const docsSearchIndex = [
     "title": "Skeleton",
     "type": "component",
     "path": "/docs/components/skeleton",
-    "keywords": "Skeleton Feedback Skeleton.height string | number Skeleton.lines number Skeleton.variant 'text' | 'circular' | 'rectangular' Skeleton.width string | number Skeleton.className string Skeleton.style CSSProperties",
+    "keywords": "Skeleton Feedback Skeleton.className string Skeleton.height string | number Skeleton.lines number Skeleton.style CSSProperties Skeleton.variant 'text' | 'circular' | 'rectangular' Skeleton.width string | number",
     "excerpt": "Feedback component from @larose-ui/react"
   },
   {
@@ -7927,7 +9487,7 @@ export const docsSearchIndex = [
     "title": "Spinner",
     "type": "component",
     "path": "/docs/components/spinner",
-    "keywords": "Spinner Feedback Spinner.label string Spinner.size Size Spinner.className string Spinner.style CSSProperties",
+    "keywords": "Spinner Feedback Spinner.className string Spinner.label string Spinner.size Size Spinner.style CSSProperties",
     "excerpt": "Feedback component from @larose-ui/react"
   },
   {
@@ -7951,7 +9511,7 @@ export const docsSearchIndex = [
     "title": "SplitView",
     "type": "component",
     "path": "/docs/components/split-view",
-    "keywords": "SplitView Layout SplitView.'aria-label' string SplitView.compactMode SplitCompactMode SplitView.onSizesChange (sizes: number[]) => void SplitView.orientation SplitOrientation SplitView.storageKey string SplitView.toolbar ReactNode SplitView.children ReactNode SplitView.className string SplitView.style CSSProperties",
+    "keywords": "SplitView Layout SplitView.'aria-label' string SplitView.children ReactNode SplitView.className string SplitView.compactMode SplitCompactMode SplitView.onSizesChange (sizes: number[]) => void SplitView.orientation SplitOrientation SplitView.storageKey string SplitView.style CSSProperties SplitView.toolbar ReactNode",
     "excerpt": "Layout component from @larose-ui/react"
   },
   {
@@ -8039,7 +9599,7 @@ export const docsSearchIndex = [
     "title": "SplitViewPane",
     "type": "component",
     "path": "/docs/components/split-view-pane",
-    "keywords": "SplitViewPane Layout SplitViewPane.'aria-label' string SplitViewPane.collapsible boolean SplitViewPane.defaultSize number SplitViewPane.defaultVisible boolean SplitViewPane.label string SplitViewPane.maxSize number SplitViewPane.minSize number SplitViewPane.onVisibleChange (visible: boolean) => void SplitViewPane.visible boolean SplitViewPane.children ReactNode SplitViewPane.className string SplitViewPane.id string",
+    "keywords": "SplitViewPane Layout SplitViewPane.'aria-label' string SplitViewPane.children ReactNode SplitViewPane.className string SplitViewPane.collapsible boolean SplitViewPane.defaultSize number SplitViewPane.defaultVisible boolean SplitViewPane.id string SplitViewPane.label string SplitViewPane.maxSize number SplitViewPane.minSize number SplitViewPane.onVisibleChange (visible: boolean) => void SplitViewPane.visible boolean",
     "excerpt": "Layout component from @larose-ui/react"
   },
   {
@@ -8167,7 +9727,7 @@ export const docsSearchIndex = [
     "title": "Switch",
     "type": "component",
     "path": "/docs/components/switch",
-    "keywords": "Switch Forms Switch.checked boolean Switch.defaultChecked boolean Switch.hint string Switch.label string Switch.onCheckedChange (checked: boolean) => void Switch.switchSize Size Switch.style CSSProperties",
+    "keywords": "Switch Forms Switch.checked boolean Switch.defaultChecked boolean Switch.hint string Switch.label string Switch.onCheckedChange (checked: boolean) => void Switch.style CSSProperties Switch.switchSize Size",
     "excerpt": "Forms component from @larose-ui/react"
   },
   {
@@ -8271,7 +9831,7 @@ export const docsSearchIndex = [
     "title": "Table",
     "type": "component",
     "path": "/docs/components/table",
-    "keywords": "Table Data Table.'aria-label' string Table.alternatingRows boolean Table.caption string Table.columns TableColumn<T>[] Table.data T[] Table.defaultSortDirection SortDirection Table.defaultSortKey string Table.keyExtractor (row: T) => string Table.onSelectRow (row: T) => void Table.resizableColumns boolean Table.selectedKey string Table.selectionMode TableSelectionMode Table.className string Table.style CSSProperties",
+    "keywords": "Table Data Table.'aria-label' string Table.alternatingRows boolean Table.caption string Table.className string Table.columns TableColumn<T>[] Table.data T[] Table.defaultSortDirection SortDirection Table.defaultSortKey string Table.keyExtractor (row: T) => string Table.onSelectRow (row: T) => void Table.resizableColumns boolean Table.selectedKey string Table.selectionMode TableSelectionMode Table.style CSSProperties",
     "excerpt": "Data component from @larose-ui/react"
   },
   {
@@ -8383,7 +9943,7 @@ export const docsSearchIndex = [
     "title": "Tabs",
     "type": "component",
     "path": "/docs/components/tabs",
-    "keywords": "Tabs Navigation Tabs.defaultValue string Tabs.onValueChange (value: string) => void Tabs.value string Tabs.children ReactNode Tabs.className string Tabs.style CSSProperties",
+    "keywords": "Tabs Navigation Tabs.children ReactNode Tabs.className string Tabs.defaultValue string Tabs.onValueChange (value: string) => void Tabs.style CSSProperties Tabs.value string",
     "excerpt": "Navigation component from @larose-ui/react"
   },
   {
@@ -8439,7 +9999,7 @@ export const docsSearchIndex = [
     "title": "TabsPanel",
     "type": "component",
     "path": "/docs/components/tabs-panel",
-    "keywords": "TabsPanel Navigation TabsPanel.value string TabsPanel.children ReactNode TabsPanel.className string TabsPanel.style CSSProperties",
+    "keywords": "TabsPanel Navigation TabsPanel.children ReactNode TabsPanel.className string TabsPanel.style CSSProperties TabsPanel.value string",
     "excerpt": "Navigation component from @larose-ui/react"
   },
   {
@@ -8455,7 +10015,7 @@ export const docsSearchIndex = [
     "title": "TabsTrigger",
     "type": "component",
     "path": "/docs/components/tabs-trigger",
-    "keywords": "TabsTrigger Navigation TabsTrigger.disabled boolean TabsTrigger.value string TabsTrigger.children ReactNode TabsTrigger.className string TabsTrigger.style CSSProperties",
+    "keywords": "TabsTrigger Navigation TabsTrigger.children ReactNode TabsTrigger.className string TabsTrigger.disabled boolean TabsTrigger.style CSSProperties TabsTrigger.value string",
     "excerpt": "Navigation component from @larose-ui/react"
   },
   {
@@ -8479,7 +10039,7 @@ export const docsSearchIndex = [
     "title": "TabView",
     "type": "component",
     "path": "/docs/components/tab-view",
-    "keywords": "TabView Navigation TabView.'aria-label' string TabView.defaultValue string TabView.inset boolean TabView.onValueChange (value: string) => void TabView.showTabs boolean TabView.value string TabView.variant TabViewVariant TabView.children ReactNode TabView.className string TabView.style CSSProperties",
+    "keywords": "TabView Navigation TabView.'aria-label' string TabView.children ReactNode TabView.className string TabView.defaultValue string TabView.inset boolean TabView.onValueChange (value: string) => void TabView.showTabs boolean TabView.style CSSProperties TabView.value string TabView.variant TabViewVariant",
     "excerpt": "Navigation component from @larose-ui/react"
   },
   {
@@ -8591,7 +10151,7 @@ export const docsSearchIndex = [
     "title": "TabViewPanel",
     "type": "component",
     "path": "/docs/components/tab-view-panel",
-    "keywords": "TabViewPanel Navigation TabViewPanel.value string TabViewPanel.children ReactNode TabViewPanel.className string TabViewPanel.style CSSProperties",
+    "keywords": "TabViewPanel Navigation TabViewPanel.children ReactNode TabViewPanel.className string TabViewPanel.style CSSProperties TabViewPanel.value string",
     "excerpt": "Navigation component from @larose-ui/react"
   },
   {
@@ -8607,7 +10167,7 @@ export const docsSearchIndex = [
     "title": "TabViewTab",
     "type": "component",
     "path": "/docs/components/tab-view-tab",
-    "keywords": "TabViewTab Navigation TabViewTab.disabled boolean TabViewTab.label string TabViewTab.value string TabViewTab.className string TabViewTab.style CSSProperties",
+    "keywords": "TabViewTab Navigation TabViewTab.className string TabViewTab.disabled boolean TabViewTab.label string TabViewTab.style CSSProperties TabViewTab.value string",
     "excerpt": "Navigation component from @larose-ui/react"
   },
   {
@@ -8751,7 +10311,7 @@ export const docsSearchIndex = [
     "title": "TextView",
     "type": "component",
     "path": "/docs/components/text-view",
-    "keywords": "TextView Content TextView.editable boolean TextView.maxHeight string TextView.selectable boolean TextView.typographyRole TypographyRole TextView.children ReactNode",
+    "keywords": "TextView Content TextView.children ReactNode TextView.editable boolean TextView.maxHeight string TextView.selectable boolean TextView.typographyRole TypographyRole",
     "excerpt": "Content component from @larose-ui/react"
   },
   {
@@ -8823,7 +10383,7 @@ export const docsSearchIndex = [
     "title": "TimePicker",
     "type": "component",
     "path": "/docs/components/time-picker",
-    "keywords": "TimePicker Forms TimePicker.error string | null TimePicker.hint string TimePicker.inputSize Size TimePicker.label string TimePicker.loading boolean TimePicker.state UIState TimePicker.value string TimePicker.onChange (value: string) => void",
+    "keywords": "TimePicker Forms TimePicker.error string | null TimePicker.hint string TimePicker.inputSize Size TimePicker.label string TimePicker.loading boolean TimePicker.onChange (value: string) => void TimePicker.state UIState TimePicker.value string",
     "excerpt": "Forms component from @larose-ui/react"
   },
   {
@@ -8895,7 +10455,7 @@ export const docsSearchIndex = [
     "title": "TokenField",
     "type": "component",
     "path": "/docs/components/token-field",
-    "keywords": "TokenField Forms TokenField.'aria-label' string TokenField.defaultTokens TokenFieldToken[] TokenField.delimiters string[] TokenField.onContextMenuEntries (token: TokenFieldToken) => MenuEntry[] TokenField.onTokensChange (tokens: TokenFieldToken[]) => void TokenField.placeholder string TokenField.suggestionDelayMs number TokenField.suggestions TokenFieldToken[] TokenField.tokens TokenFieldToken[] TokenField.className string TokenField.style CSSProperties",
+    "keywords": "TokenField Forms TokenField.'aria-label' string TokenField.className string TokenField.defaultTokens TokenFieldToken[] TokenField.delimiters string[] TokenField.onContextMenuEntries (token: TokenFieldToken) => MenuEntry[] TokenField.onTokensChange (tokens: TokenFieldToken[]) => void TokenField.placeholder string TokenField.style CSSProperties TokenField.suggestionDelayMs number TokenField.suggestions TokenFieldToken[] TokenField.tokens TokenFieldToken[]",
     "excerpt": "Forms component from @larose-ui/react"
   },
   {
@@ -8983,7 +10543,7 @@ export const docsSearchIndex = [
     "title": "Toolbar",
     "type": "component",
     "path": "/docs/components/toolbar",
-    "keywords": "Toolbar Toolbar Toolbar.'aria-label' string Toolbar.largeTitle boolean Toolbar.placement ToolbarPlacement Toolbar.platform ToolbarPlatform Toolbar.children ReactNode Toolbar.className string Toolbar.hidden boolean Toolbar.style CSSProperties Toolbar.title string",
+    "keywords": "Toolbar Toolbar Toolbar.'aria-label' string Toolbar.children ReactNode Toolbar.className string Toolbar.hidden boolean Toolbar.largeTitle boolean Toolbar.placement ToolbarPlacement Toolbar.platform ToolbarPlatform Toolbar.style CSSProperties Toolbar.title string",
     "excerpt": "Toolbar component from @larose-ui/react"
   },
   {
@@ -9159,7 +10719,7 @@ export const docsSearchIndex = [
     "title": "ToolbarItem",
     "type": "component",
     "path": "/docs/components/toolbar-item",
-    "keywords": "ToolbarItem Toolbar ToolbarItem.collapsible boolean ToolbarItem.disabled boolean ToolbarItem.icon ReactNode ToolbarItem.label string ToolbarItem.prominent boolean ToolbarItem.showLabel boolean ToolbarItem.className string ToolbarItem.id string ToolbarItem.onClick () => void ToolbarItem.style CSSProperties",
+    "keywords": "ToolbarItem Toolbar ToolbarItem.className string ToolbarItem.collapsible boolean ToolbarItem.disabled boolean ToolbarItem.icon ReactNode ToolbarItem.id string ToolbarItem.label string ToolbarItem.onClick () => void ToolbarItem.prominent boolean ToolbarItem.showLabel boolean ToolbarItem.style CSSProperties",
     "excerpt": "Toolbar component from @larose-ui/react"
   },
   {
@@ -9255,7 +10815,7 @@ export const docsSearchIndex = [
     "title": "ToolbarProminentButton",
     "type": "component",
     "path": "/docs/components/toolbar-prominent-button",
-    "keywords": "ToolbarProminentButton Toolbar ToolbarProminentButton.disabled boolean ToolbarProminentButton.children string ToolbarProminentButton.className string ToolbarProminentButton.onClick () => void ToolbarProminentButton.style CSSProperties",
+    "keywords": "ToolbarProminentButton Toolbar ToolbarProminentButton.children string ToolbarProminentButton.className string ToolbarProminentButton.disabled boolean ToolbarProminentButton.onClick () => void ToolbarProminentButton.style CSSProperties",
     "excerpt": "Toolbar component from @larose-ui/react"
   },
   {
@@ -9271,7 +10831,7 @@ export const docsSearchIndex = [
     "title": "ToolbarSearch",
     "type": "component",
     "path": "/docs/components/toolbar-search",
-    "keywords": "ToolbarSearch Toolbar ToolbarSearch.'aria-label' string ToolbarSearch.placeholder string ToolbarSearch.value string ToolbarSearch.className string ToolbarSearch.onChange (value: string) => void ToolbarSearch.style CSSProperties",
+    "keywords": "ToolbarSearch Toolbar ToolbarSearch.'aria-label' string ToolbarSearch.className string ToolbarSearch.onChange (value: string) => void ToolbarSearch.placeholder string ToolbarSearch.style CSSProperties ToolbarSearch.value string",
     "excerpt": "Toolbar component from @larose-ui/react"
   },
   {
@@ -9303,7 +10863,7 @@ export const docsSearchIndex = [
     "title": "ToolbarSection",
     "type": "component",
     "path": "/docs/components/toolbar-section",
-    "keywords": "ToolbarSection Toolbar ToolbarSection.collapsible boolean ToolbarSection.placement ToolbarSectionPlacement ToolbarSection.children ReactNode ToolbarSection.className string ToolbarSection.style CSSProperties",
+    "keywords": "ToolbarSection Toolbar ToolbarSection.children ReactNode ToolbarSection.className string ToolbarSection.collapsible boolean ToolbarSection.placement ToolbarSectionPlacement ToolbarSection.style CSSProperties",
     "excerpt": "Toolbar component from @larose-ui/react"
   },
   {
@@ -9327,7 +10887,7 @@ export const docsSearchIndex = [
     "title": "ToolbarTitle",
     "type": "component",
     "path": "/docs/components/toolbar-title",
-    "keywords": "ToolbarTitle Toolbar ToolbarTitle.large boolean ToolbarTitle.children string ToolbarTitle.className string ToolbarTitle.style CSSProperties",
+    "keywords": "ToolbarTitle Toolbar ToolbarTitle.children string ToolbarTitle.className string ToolbarTitle.large boolean ToolbarTitle.style CSSProperties",
     "excerpt": "Toolbar component from @larose-ui/react"
   },
   {
@@ -9343,7 +10903,7 @@ export const docsSearchIndex = [
     "title": "Tooltip",
     "type": "component",
     "path": "/docs/components/tooltip",
-    "keywords": "Tooltip Feedback Tooltip.content ReactNode Tooltip.side TooltipSide Tooltip.children ReactNode Tooltip.className string Tooltip.style CSSProperties",
+    "keywords": "Tooltip Feedback Tooltip.children ReactNode Tooltip.className string Tooltip.content ReactNode Tooltip.side TooltipSide Tooltip.style CSSProperties",
     "excerpt": "Feedback component from @larose-ui/react"
   },
   {
@@ -9399,7 +10959,7 @@ export const docsSearchIndex = [
     "title": "Typography",
     "type": "component",
     "path": "/docs/components/typography",
-    "keywords": "Typography Content Typography.as ElementType Typography.muted boolean Typography.children ReactNode Typography.className string Typography.role TypographyRole Typography.style CSSProperties",
+    "keywords": "Typography Content Typography.as ElementType Typography.children ReactNode Typography.className string Typography.muted boolean Typography.role TypographyRole Typography.style CSSProperties",
     "excerpt": "Content component from @larose-ui/react"
   },
   {
@@ -9439,7 +10999,7 @@ export const docsSearchIndex = [
     "title": "UnsavedIndicator",
     "type": "component",
     "path": "/docs/components/unsaved-indicator",
-    "keywords": "UnsavedIndicator Files UnsavedIndicator.autosaveEnabled boolean UnsavedIndicator.edited boolean UnsavedIndicator.className string UnsavedIndicator.style CSSProperties UnsavedIndicator.title string",
+    "keywords": "UnsavedIndicator Files UnsavedIndicator.autosaveEnabled boolean UnsavedIndicator.className string UnsavedIndicator.edited boolean UnsavedIndicator.style CSSProperties UnsavedIndicator.title string",
     "excerpt": "Files component from @larose-ui/react"
   },
   {
@@ -9463,7 +11023,7 @@ export const docsSearchIndex = [
     "title": "WheelColumn",
     "type": "component",
     "path": "/docs/components/wheel-column",
-    "keywords": "WheelColumn Forms WheelColumn.columnFlex number WheelColumn.disabled boolean WheelColumn.label string WheelColumn.options PickerOption[] WheelColumn.value string WheelColumn.className string WheelColumn.id string WheelColumn.onChange (value: string) => void WheelColumn.style CSSProperties",
+    "keywords": "WheelColumn Forms WheelColumn.className string WheelColumn.columnFlex number WheelColumn.disabled boolean WheelColumn.id string WheelColumn.label string WheelColumn.onChange (value: string) => void WheelColumn.options PickerOption[] WheelColumn.style CSSProperties WheelColumn.value string",
     "excerpt": "Forms component from @larose-ui/react"
   },
   {
@@ -9511,7 +11071,7 @@ export const docsSearchIndex = [
     "title": "WheelPicker",
     "type": "component",
     "path": "/docs/components/wheel-picker",
-    "keywords": "WheelPicker Forms WheelPicker.'aria-label' string WheelPicker.columns PickerColumn[] WheelPicker.compact boolean WheelPicker.disabled boolean WheelPicker.inline boolean WheelPicker.value PickerValue WheelPicker.className string WheelPicker.onChange (value: PickerValue) => void WheelPicker.style CSSProperties",
+    "keywords": "WheelPicker Forms WheelPicker.'aria-label' string WheelPicker.className string WheelPicker.columns PickerColumn[] WheelPicker.compact boolean WheelPicker.disabled boolean WheelPicker.inline boolean WheelPicker.onChange (value: PickerValue) => void WheelPicker.style CSSProperties WheelPicker.value PickerValue",
     "excerpt": "Forms component from @larose-ui/react"
   },
   {

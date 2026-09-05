@@ -8,71 +8,82 @@
       "name": "'aria-label'",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "caption",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "columns",
       "type": "DataTableColumn<T>[]",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "data",
       "type": "T[]",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "emptyDescription",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "emptyMessage",
       "type": "string",
       "required": false,
-      "inherited": false
+      "inherited": false,
+      "example": "\"example\""
     },
     {
       "name": "emptyTitle",
       "type": "string",
       "required": false,
       "default": "'No data'",
-      "inherited": false
+      "inherited": false,
+      "example": "'No data'"
     },
     {
       "name": "keyExtractor",
       "type": "(row: T) => string",
       "required": true,
-      "inherited": false
+      "inherited": false,
+      "example": "—"
     },
     {
       "name": "loading",
       "type": "boolean",
       "required": false,
       "default": "false",
-      "inherited": false
+      "inherited": false,
+      "example": "false"
     },
     {
       "name": "skeletonRows",
       "type": "number",
       "required": false,
       "default": "3",
-      "inherited": false
+      "inherited": false,
+      "example": "3"
     },
     {
       "name": "striped",
       "type": "boolean",
       "required": false,
       "default": "false",
-      "inherited": false
+      "inherited": false,
+      "example": "false"
     }
   ],
   "examples": [
