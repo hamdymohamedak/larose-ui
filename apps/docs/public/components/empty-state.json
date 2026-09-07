@@ -36,8 +36,9 @@
       "name": "state",
       "type": "UIState",
       "required": false,
+      "default": "'empty'",
       "inherited": false,
-      "example": "—"
+      "example": "'empty'"
     }
   ],
   "examples": [

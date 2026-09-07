@@ -16,15 +16,17 @@
       "name": "disabled",
       "type": "boolean",
       "required": false,
+      "default": "false",
       "inherited": false,
-      "example": "true"
+      "example": "false"
     },
     {
       "name": "error",
       "type": "string | null",
       "required": false,
+      "default": "null",
       "inherited": false,
-      "example": "—"
+      "example": "null"
     },
     {
       "name": "hint",
@@ -51,15 +53,17 @@
       "name": "loading",
       "type": "boolean",
       "required": false,
+      "default": "false",
       "inherited": false,
-      "example": "true"
+      "example": "false"
     },
     {
       "name": "locale",
       "type": "string",
       "required": false,
+      "default": "'en'",
       "inherited": false,
-      "example": "—"
+      "example": "'en'"
     },
     {
       "name": "maxDate",
@@ -79,15 +83,17 @@
       "name": "minuteInterval",
       "type": "number",
       "required": false,
+      "default": "1",
       "inherited": false,
-      "example": "0"
+      "example": "1"
     },
     {
       "name": "mode",
       "type": "DateTimePickerMode",
       "required": false,
+      "default": "'date'",
       "inherited": false,
-      "example": "—"
+      "example": "'date'"
     },
     {
       "name": "state",
@@ -100,14 +106,15 @@
       "name": "use12Hour",
       "type": "boolean",
       "required": false,
+      "default": "locale.startsWith('en')",
       "inherited": false,
-      "example": "true"
+      "example": "locale.startsWith('en')"
     },
     {
       "name": "value",
       "type": "DateTimeValue",
       "required": false,
-      "default": "{",
+      "default": "{}",
       "inherited": false,
       "example": "—"
     },
@@ -115,6 +122,7 @@
       "name": "yearRange",
       "type": "{ start: number; end: number }",
       "required": false,
+      "default": "{ start: new Date().getFullYear() - 5, end: new Date().getFullYear() + 5 }",
       "inherited": false,
       "example": "—"
     }

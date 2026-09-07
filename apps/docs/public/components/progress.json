@@ -15,22 +15,25 @@
       "name": "max",
       "type": "number",
       "required": false,
+      "default": "100",
       "inherited": false,
-      "example": "0"
+      "example": "100"
     },
     {
       "name": "showValue",
       "type": "boolean",
       "required": false,
+      "default": "false",
       "inherited": false,
-      "example": "true"
+      "example": "false"
     },
     {
       "name": "state",
       "type": "UIState",
       "required": false,
+      "default": "'idle'",
       "inherited": false,
-      "example": "—"
+      "example": "'idle'"
     },
     {
       "name": "value",
@@ -43,8 +46,9 @@
       "name": "variant",
       "type": "ProgressVariant",
       "required": false,
+      "default": "'default'",
       "inherited": false,
-      "example": "\"md\""
+      "example": "'default'"
     }
   ],
   "examples": [

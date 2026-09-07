@@ -87,9 +87,9 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "type",
         "type": "'single' | 'multiple'",
         "required": false,
-        "default": "== 'single') {",
+        "default": "'single'",
         "inherited": false,
-        "example": "\"single\""
+        "example": "'single'"
       },
       {
         "name": "value",
@@ -232,8 +232,9 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "label",
         "type": "string",
         "required": false,
+        "default": "'Share'",
         "inherited": false,
-        "example": "—"
+        "example": "'Share'"
       },
       {
         "name": "onActivitySelect",
@@ -246,9 +247,10 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "presentation",
         "type": "'sheet' | 'popover' | 'auto'",
         "required": false,
+        "default": "'auto'",
         "description": "Uses popover on wide viewports and sheet on compact widths when auto.",
         "inherited": false,
-        "example": "\"sheet\""
+        "example": "'auto'"
       },
       {
         "name": "style",
@@ -304,8 +306,9 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "excludedActivityIds",
         "type": "string[]",
         "required": false,
+        "default": "[]",
         "inherited": false,
-        "example": "—"
+        "example": "[]"
       },
       {
         "name": "footer",
@@ -339,8 +342,9 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "presentation",
         "type": "ActivityPresentation",
         "required": false,
+        "default": "'sheet'",
         "inherited": false,
-        "example": "—"
+        "example": "'sheet'"
       },
       {
         "name": "style",
@@ -416,8 +420,9 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "variant",
         "type": "AlertVariant",
         "required": false,
+        "default": "'info'",
         "inherited": false,
-        "example": "\"md\""
+        "example": "'info'"
       }
     ],
     "events": [
@@ -650,8 +655,9 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "variant",
         "type": "BadgeVariant",
         "required": false,
+        "default": "'default'",
         "inherited": false,
-        "example": "\"md\""
+        "example": "'default'"
       }
     ],
     "events": [],
@@ -686,16 +692,18 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "padding",
         "type": "'sm' | 'md' | 'lg'",
         "required": false,
+        "default": "'md'",
         "inherited": false,
-        "example": "\"sm\""
+        "example": "'md'"
       },
       {
         "name": "settingsStyle",
         "type": "boolean",
         "required": false,
+        "default": "false",
         "description": "macOS settings panes append a colon to the title.",
         "inherited": false,
-        "example": "true"
+        "example": "false"
       },
       {
         "name": "style",
@@ -715,15 +723,17 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "titlePosition",
         "type": "BoxTitlePosition",
         "required": false,
+        "default": "'inside'",
         "inherited": false,
-        "example": "—"
+        "example": "'inside'"
       },
       {
         "name": "variant",
         "type": "BoxVariant",
         "required": false,
+        "default": "'secondary'",
         "inherited": false,
-        "example": "\"md\""
+        "example": "'secondary'"
       }
     ],
     "events": [],
@@ -744,7 +754,6 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "className",
         "type": "string",
         "required": false,
-        "default": "{styles.separator",
         "inherited": true,
         "example": "—"
       },
@@ -759,7 +768,6 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "default": "{style",
         "inherited": true,
         "example": "—"
       }
@@ -918,17 +926,19 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "fullWidth",
         "type": "boolean",
         "required": false,
+        "default": "false",
         "description": "Full-width buttons for watchOS-style primary actions.",
         "inherited": false,
-        "example": "true"
+        "example": "false"
       },
       {
         "name": "orientation",
         "type": "'horizontal' | 'vertical'",
         "required": false,
+        "default": "'horizontal'",
         "description": "Horizontal row (default) or vertical stack for visionOS guidance.",
         "inherited": false,
-        "example": "\"horizontal\""
+        "example": "'horizontal'"
       },
       {
         "name": "style",
@@ -1458,8 +1468,9 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "ariaLabel",
         "type": "string",
         "required": false,
+        "default": "'Collection'",
         "inherited": false,
-        "example": "—"
+        "example": "'Collection'"
       },
       {
         "name": "className",
@@ -1472,8 +1483,9 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "columns",
         "type": "number",
         "required": false,
+        "default": "4",
         "inherited": false,
-        "example": "0"
+        "example": "4"
       },
       {
         "name": "items",
@@ -1486,8 +1498,9 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "layout",
         "type": "CollectionLayout",
         "required": false,
+        "default": "'grid'",
         "inherited": false,
-        "example": "—"
+        "example": "'grid'"
       },
       {
         "name": "onSelect",
@@ -1679,6 +1692,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "dimBackground",
         "type": "boolean",
         "required": false,
+        "default": "true",
         "inherited": false,
         "example": "true"
       },
@@ -1693,6 +1707,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "longPress",
         "type": "boolean",
         "required": false,
+        "default": "true",
         "description": "Enable long-press / touch-and-hold in addition to secondary click.",
         "inherited": false,
         "example": "true"
@@ -1778,7 +1793,6 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "className",
         "type": "string",
         "required": false,
-        "default": "{[styles.wrapper",
         "inherited": true,
         "example": "—"
       },
@@ -1853,7 +1867,6 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "default": "{style",
         "inherited": true,
         "example": "—"
       }
@@ -2060,7 +2073,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "value",
         "type": "DateRange",
         "required": false,
-        "default": "{ startDate: ''",
+        "default": "{ startDate: '', endDate: '' }",
         "inherited": false,
         "example": "—"
       }
@@ -2097,15 +2110,17 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "disabled",
         "type": "boolean",
         "required": false,
+        "default": "false",
         "inherited": false,
-        "example": "true"
+        "example": "false"
       },
       {
         "name": "error",
         "type": "string | null",
         "required": false,
+        "default": "null",
         "inherited": false,
-        "example": "—"
+        "example": "null"
       },
       {
         "name": "hint",
@@ -2132,15 +2147,17 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "loading",
         "type": "boolean",
         "required": false,
+        "default": "false",
         "inherited": false,
-        "example": "true"
+        "example": "false"
       },
       {
         "name": "locale",
         "type": "string",
         "required": false,
+        "default": "'en'",
         "inherited": false,
-        "example": "—"
+        "example": "'en'"
       },
       {
         "name": "maxDate",
@@ -2160,15 +2177,17 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "minuteInterval",
         "type": "number",
         "required": false,
+        "default": "1",
         "inherited": false,
-        "example": "0"
+        "example": "1"
       },
       {
         "name": "mode",
         "type": "DateTimePickerMode",
         "required": false,
+        "default": "'date'",
         "inherited": false,
-        "example": "—"
+        "example": "'date'"
       },
       {
         "name": "onChange",
@@ -2196,14 +2215,15 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "use12Hour",
         "type": "boolean",
         "required": false,
+        "default": "locale.startsWith('en')",
         "inherited": false,
-        "example": "true"
+        "example": "locale.startsWith('en')"
       },
       {
         "name": "value",
         "type": "DateTimeValue",
         "required": false,
-        "default": "{",
+        "default": "{}",
         "inherited": false,
         "example": "—"
       },
@@ -2211,6 +2231,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "yearRange",
         "type": "{ start: number; end: number }",
         "required": false,
+        "default": "{ start: new Date().getFullYear() - 5, end: new Date().getFullYear() + 5 }",
         "inherited": false,
         "example": "—"
       }
@@ -2232,8 +2253,9 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "cancelLabel",
         "type": "string",
         "required": false,
+        "default": "'Cancel'",
         "inherited": false,
-        "example": "—"
+        "example": "'Cancel'"
       },
       {
         "name": "children",
@@ -2253,8 +2275,9 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "confirmLabel",
         "type": "string",
         "required": false,
+        "default": "'Confirm'",
         "inherited": false,
-        "example": "—"
+        "example": "'Confirm'"
       },
       {
         "name": "description",
@@ -2309,8 +2332,9 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "variant",
         "type": "'default' | 'destructive'",
         "required": false,
+        "default": "'default'",
         "inherited": false,
-        "example": "\"default\""
+        "example": "'default'"
       }
     ],
     "events": [
@@ -2508,8 +2532,9 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "defaultExpandedIds",
         "type": "string[]",
         "required": false,
+        "default": "[]",
         "inherited": false,
-        "example": "—"
+        "example": "[]"
       },
       {
         "name": "items",
@@ -2658,9 +2683,10 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "closedEntries",
         "type": "ContextMenuEntry[]",
         "required": false,
+        "default": "[]",
         "description": "Actions when the app is not running (e.g. Open).",
         "inherited": false,
-        "example": "—"
+        "example": "[]"
       },
       {
         "name": "icon",
@@ -2673,6 +2699,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "isRunning",
         "type": "boolean",
         "required": false,
+        "default": "true",
         "description": "Whether the app is currently running (shows window list + running actions).",
         "inherited": false,
         "example": "true"
@@ -2709,16 +2736,18 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "openWindows",
         "type": "DockWindow[]",
         "required": false,
+        "default": "[]",
         "inherited": false,
-        "example": "—"
+        "example": "[]"
       },
       {
         "name": "runningEntries",
         "type": "ContextMenuEntry[]",
         "required": false,
+        "default": "[]",
         "description": "High-value actions when the app is running (e.g. New Window, Get New Mail).",
         "inherited": false,
-        "example": "—"
+        "example": "[]"
       },
       {
         "name": "style",
@@ -2801,15 +2830,17 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "primaryActionLabel",
         "type": "string",
         "required": false,
+        "default": "'Create Document'",
         "inherited": false,
-        "example": "—"
+        "example": "'Create Document'"
       },
       {
         "name": "secondaryActionLabel",
         "type": "string",
         "required": false,
+        "default": "'Choose Template'",
         "inherited": false,
-        "example": "—"
+        "example": "'Choose Template'"
       },
       {
         "name": "style",
@@ -2843,6 +2874,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "canSave",
         "type": "boolean",
         "required": false,
+        "default": "true",
         "inherited": false,
         "example": "true"
       },
@@ -2857,8 +2889,9 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "newLabel",
         "type": "string",
         "required": false,
+        "default": "'New'",
         "inherited": false,
-        "example": "—"
+        "example": "'New'"
       },
       {
         "name": "onNew",
@@ -2885,20 +2918,23 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "openLabel",
         "type": "string",
         "required": false,
+        "default": "'Open'",
         "inherited": false,
-        "example": "—"
+        "example": "'Open'"
       },
       {
         "name": "saveLabel",
         "type": "string",
         "required": false,
+        "default": "'Save'",
         "inherited": false,
-        "example": "—"
+        "example": "'Save'"
       },
       {
         "name": "showAddButton",
         "type": "boolean",
         "required": false,
+        "default": "true",
         "inherited": false,
         "example": "true"
       },
@@ -3305,14 +3341,16 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "customActions",
         "type": "EditMenuItemConfig[]",
         "required": false,
+        "default": "[]",
         "description": "Custom commands listed near related system-provided ones.",
         "inherited": false,
-        "example": "—"
+        "example": "[]"
       },
       {
         "name": "dimBackground",
         "type": "boolean",
         "required": false,
+        "default": "true",
         "inherited": false,
         "example": "true"
       },
@@ -3320,6 +3358,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "includeStandardActions",
         "type": "boolean",
         "required": false,
+        "default": "true",
         "description": "Include standard Cut, Copy, Paste, etc. Defaults to true.",
         "inherited": false,
         "example": "true"
@@ -3328,13 +3367,15 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "inputMode",
         "type": "EditMenuInputMode",
         "required": false,
+        "default": "'auto'",
         "inherited": false,
-        "example": "—"
+        "example": "'auto'"
       },
       {
         "name": "longPress",
         "type": "boolean",
         "required": false,
+        "default": "true",
         "description": "Touch-and-hold / long-press to reveal compact edit menu.",
         "inherited": false,
         "example": "true"
@@ -3371,8 +3412,9 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "placement",
         "type": "'above' | 'below' | 'auto'",
         "required": false,
+        "default": "'auto'",
         "inherited": false,
-        "example": "\"above\""
+        "example": "'auto'"
       },
       {
         "name": "style",
@@ -3385,8 +3427,9 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "variant",
         "type": "EditMenuVariant",
         "required": false,
+        "default": "'auto'",
         "inherited": false,
-        "example": "\"md\""
+        "example": "'auto'"
       }
     ],
     "events": [
@@ -3462,8 +3505,9 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "state",
         "type": "UIState",
         "required": false,
+        "default": "'empty'",
         "inherited": false,
-        "example": "—"
+        "example": "'empty'"
       },
       {
         "name": "style",
@@ -3512,7 +3556,6 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "className",
         "type": "string",
         "required": false,
-        "default": "{styles.syncBadge",
         "inherited": true,
         "example": "—"
       },
@@ -3578,7 +3621,6 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "default": "{style",
         "inherited": true,
         "example": "—"
       },
@@ -3635,8 +3677,9 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "closeLabel",
         "type": "string",
         "required": false,
+        "default": "'Close preview'",
         "inherited": false,
-        "example": "—"
+        "example": "'Close preview'"
       },
       {
         "name": "onClose",
@@ -3915,14 +3958,16 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "iconPlacement",
         "type": "QuickActionIconPlacement",
         "required": false,
+        "default": "'leading'",
         "description": "Icon appears on leading or trailing edge depending on Home Screen position.",
         "inherited": false,
-        "example": "\"md\""
+        "example": "'leading'"
       },
       {
         "name": "includeSystemActions",
         "type": "boolean",
         "required": false,
+        "default": "true",
         "inherited": false,
         "example": "true"
       },
@@ -4130,9 +4175,9 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "placeholder",
         "type": "string",
         "required": false,
-        "default": "'Drop an image",
+        "default": "'Drop an image, paste, or click to choose'",
         "inherited": false,
-        "example": "'Drop an image'"
+        "example": "'Drop an image, paste, or click to choose'"
       },
       {
         "name": "src",
@@ -4291,24 +4336,27 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "importance",
         "type": "LabelImportance",
         "required": false,
+        "default": "'primary'",
         "description": "System label color indicating relative importance.",
         "inherited": false,
-        "example": "\"primary\""
+        "example": "'primary'"
       },
       {
         "name": "mono",
         "type": "boolean",
         "required": false,
+        "default": "false",
         "inherited": false,
-        "example": "true"
+        "example": "false"
       },
       {
         "name": "selectable",
         "type": "boolean",
         "required": false,
+        "default": "false",
         "description": "Allow selecting/copying useful static text.",
         "inherited": false,
-        "example": "true"
+        "example": "false"
       },
       {
         "name": "style",
@@ -4887,6 +4935,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "borderRadius",
         "type": "number",
         "required": false,
+        "default": "LIQUID_GLASS_PRESETS.checkbox.borderRadius",
         "inherited": false,
         "example": "0"
       },
@@ -4894,8 +4943,9 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "checkColor",
         "type": "string",
         "required": false,
+        "default": "'#ffffff'",
         "inherited": false,
-        "example": "—"
+        "example": "'#ffffff'"
       },
       {
         "name": "checked",
@@ -4908,8 +4958,9 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "checkedTint",
         "type": "string",
         "required": false,
+        "default": "'rgba(52, 199, 89, 0.42)'",
         "inherited": false,
-        "example": "—"
+        "example": "'rgba(52, 199, 89, 0.42)'"
       },
       {
         "name": "className",
@@ -4922,15 +4973,17 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "defaultChecked",
         "type": "boolean",
         "required": false,
+        "default": "false",
         "inherited": false,
-        "example": "true"
+        "example": "false"
       },
       {
         "name": "disabled",
         "type": "boolean",
         "required": false,
+        "default": "false",
         "inherited": false,
-        "example": "true"
+        "example": "false"
       },
       {
         "name": "displacementScale",
@@ -4977,8 +5030,9 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "labelColor",
         "type": "string",
         "required": false,
+        "default": "'#ffffff'",
         "inherited": false,
-        "example": "—"
+        "example": "'#ffffff'"
       },
       {
         "name": "maxHeight",
@@ -5063,9 +5117,10 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "size",
         "type": "number",
         "required": false,
+        "default": "26",
         "description": "Box size in px.",
         "inherited": false,
-        "example": "0"
+        "example": "26"
       },
       {
         "name": "specularAngle",
@@ -5198,7 +5253,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "borderRadius",
         "type": "number",
         "required": false,
-        "default": "{borderRadius",
+        "default": "LIQUID_GLASS_PRESETS.progress.borderRadius",
         "inherited": false,
         "example": "0"
       },
@@ -5222,25 +5277,25 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "fillColor",
         "type": "string",
         "required": false,
-        "default": "'rgba(255",
+        "default": "'rgba(255, 255, 255, 0.55)'",
         "inherited": false,
-        "example": "'rgba(255'"
+        "example": "'rgba(255, 255, 255, 0.55)'"
       },
       {
         "name": "fillGlow",
         "type": "string",
         "required": false,
-        "default": "'rgba(255",
+        "default": "'rgba(255, 255, 255, 0.35)'",
         "inherited": false,
-        "example": "'rgba(255'"
+        "example": "'rgba(255, 255, 255, 0.35)'"
       },
       {
         "name": "height",
         "type": "number",
         "required": false,
         "inherited": false,
-        "example": "\"100%\"",
-        "default": "\"100%\"",
+        "example": "10",
+        "default": "10",
         "description": "Track height in px."
       },
       {
@@ -5418,8 +5473,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "number | string",
         "required": false,
         "inherited": false,
-        "example": "\"100%\"",
-        "default": "\"100%\""
+        "example": "'100%'",
+        "default": "'100%'"
       }
     ],
     "events": [
@@ -5525,9 +5580,9 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "fillColor",
         "type": "string",
         "required": false,
-        "default": "'rgba(255",
+        "default": "'rgba(255, 255, 255, 0.35)'",
         "inherited": false,
-        "example": "'rgba(255'"
+        "example": "'rgba(255, 255, 255, 0.35)'"
       },
       {
         "name": "height",
@@ -5558,9 +5613,9 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "max",
         "type": "number",
         "required": false,
-        "default": "== min) return 0;",
+        "default": "100",
         "inherited": false,
-        "example": "0"
+        "example": "100"
       },
       {
         "name": "maxHeight",
@@ -5732,7 +5787,6 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "value",
         "type": "number",
         "required": false,
-        "default": "controlledValue ?? internalValue;",
         "inherited": false,
         "example": "0"
       },
@@ -5779,6 +5833,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "activeTrackTint",
         "type": "LiquidGlassSwitchActiveTrackTint",
         "required": false,
+        "default": "LIQUID_GLASS_SWITCH_ACTIVE_GREEN",
         "description": "Active track tint when on. Defaults to iOS-style green.\nPass `'glass'` () for liquid glass only, or any CSS color.",
         "inherited": false,
         "example": "—"
@@ -5823,6 +5878,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "borderRadius",
         "type": "number",
         "required": false,
+        "default": "LIQUID_GLASS_PRESETS.switch.borderRadius",
         "inherited": false,
         "example": "0"
       },
@@ -5844,15 +5900,17 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "defaultChecked",
         "type": "boolean",
         "required": false,
+        "default": "false",
         "inherited": false,
-        "example": "true"
+        "example": "false"
       },
       {
         "name": "disabled",
         "type": "boolean",
         "required": false,
+        "default": "false",
         "inherited": false,
-        "example": "true"
+        "example": "false"
       },
       {
         "name": "displacementScale",
@@ -5868,7 +5926,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "number",
         "required": false,
         "inherited": false,
-        "example": "0",
+        "example": "32",
+        "default": "32",
         "description": "Track height in px."
       },
       {
@@ -5943,9 +6002,10 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "padding",
         "type": "number",
         "required": false,
+        "default": "2",
         "description": "Track padding around thumb.",
         "inherited": false,
-        "example": "0"
+        "example": "2"
       },
       {
         "name": "refractionStrength",
@@ -6022,9 +6082,10 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "thumbSize",
         "type": "number",
         "required": false,
+        "default": "28",
         "description": "Thumb diameter in px.",
         "inherited": false,
-        "example": "0"
+        "example": "28"
       },
       {
         "name": "thumbTint",
@@ -6056,7 +6117,8 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "number",
         "required": false,
         "inherited": false,
-        "example": "0",
+        "example": "52",
+        "default": "52",
         "description": "Track width in px."
       }
     ],
@@ -6095,7 +6157,6 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "activeKey",
         "type": "string",
         "required": false,
-        "default": "controlledActiveKey ?? internalActiveKey;",
         "inherited": false,
         "example": "—"
       },
@@ -6194,25 +6255,25 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "inactiveColor",
         "type": "string",
         "required": false,
-        "default": "'rgba(255",
+        "default": "'rgba(255, 255, 255, 0.55)'",
         "inherited": false,
-        "example": "'rgba(255'"
+        "example": "'rgba(255, 255, 255, 0.55)'"
       },
       {
         "name": "indicatorBackground",
         "type": "string",
         "required": false,
-        "default": "'rgba(255",
+        "default": "'rgba(255, 255, 255, 0.16)'",
         "inherited": false,
-        "example": "'rgba(255'"
+        "example": "'rgba(255, 255, 255, 0.16)'"
       },
       {
         "name": "indicatorBorderColor",
         "type": "string",
         "required": false,
-        "default": "'rgba(255",
+        "default": "'rgba(255, 255, 255, 0.28)'",
         "inherited": false,
-        "example": "'rgba(255'"
+        "example": "'rgba(255, 255, 255, 0.28)'"
       },
       {
         "name": "indicatorPadding",
@@ -6437,7 +6498,6 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "activeKey",
         "type": "string",
         "required": false,
-        "default": "controlledActiveKey ?? internalActiveKey;",
         "inherited": false,
         "example": "—"
       },
@@ -6489,7 +6549,6 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "borderRadius",
         "type": "number",
         "required": false,
-        "default": "borderRadiusProp ?? (isFloating ? LIQUID_GLASS_PRESETS.topBar.borderRadius : 0);",
         "inherited": false,
         "example": "0"
       },
@@ -6528,9 +6587,9 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "inactiveColor",
         "type": "string",
         "required": false,
-        "default": "'rgba(255",
+        "default": "'rgba(255, 255, 255, 0.62)'",
         "inherited": false,
-        "example": "'rgba(255'"
+        "example": "'rgba(255, 255, 255, 0.62)'"
       },
       {
         "name": "innerBottomShadow",
@@ -6554,7 +6613,6 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "insetX",
         "type": "number",
         "required": false,
-        "default": "insetXProp ?? (isFloating ? 16 : 0);",
         "inherited": false,
         "example": "0"
       },
@@ -6605,19 +6663,19 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "navActiveBackground",
         "type": "string",
         "required": false,
-        "default": "'rgba(255",
+        "default": "'rgba(255, 255, 255, 0.18)'",
         "description": "Active nav pill background.",
         "inherited": false,
-        "example": "'rgba(255'"
+        "example": "'rgba(255, 255, 255, 0.18)'"
       },
       {
         "name": "navTrackBackground",
         "type": "string",
         "required": false,
-        "default": "'rgba(255",
+        "default": "'rgba(255, 255, 255, 0.08)'",
         "description": "Background of the segmented nav track.",
         "inherited": false,
-        "example": "'rgba(255'"
+        "example": "'rgba(255, 255, 255, 0.08)'"
       },
       {
         "name": "onChange",
@@ -6758,7 +6816,6 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "top",
         "type": "number | string",
         "required": false,
-        "default": "topProp ?? (isFloating ? 14 : 0);",
         "inherited": false,
         "example": "—"
       },
@@ -6841,8 +6898,9 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "variant",
         "type": "ListVariant",
         "required": false,
+        "default": "'grouped'",
         "inherited": false,
-        "example": "\"md\""
+        "example": "'grouped'"
       }
     ],
     "events": [],
@@ -6856,8 +6914,9 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "accessory",
         "type": "ListAccessory",
         "required": false,
+        "default": "'none'",
         "inherited": false,
-        "example": "—"
+        "example": "'none'"
       },
       {
         "name": "className",
@@ -6870,8 +6929,9 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "disabled",
         "type": "boolean",
         "required": false,
+        "default": "false",
         "inherited": false,
-        "example": "true"
+        "example": "false"
       },
       {
         "name": "leading",
@@ -6898,8 +6958,9 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "selected",
         "type": "boolean",
         "required": false,
+        "default": "false",
         "inherited": false,
-        "example": "true"
+        "example": "false"
       },
       {
         "name": "style",
@@ -6926,8 +6987,9 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "truncate",
         "type": "'end' | 'middle'",
         "required": false,
+        "default": "'end'",
         "inherited": false,
-        "example": "\"end\""
+        "example": "'end'"
       }
     ],
     "events": [
@@ -7002,8 +7064,9 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "axis",
         "type": "LockupAxis",
         "required": false,
+        "default": "'horizontal'",
         "inherited": false,
-        "example": "—"
+        "example": "'horizontal'"
       },
       {
         "name": "children",
@@ -7023,8 +7086,9 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "focused",
         "type": "boolean",
         "required": false,
+        "default": "false",
         "inherited": false,
-        "example": "true"
+        "example": "false"
       },
       {
         "name": "footer",
@@ -7129,8 +7193,9 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "axis",
         "type": "LockupAxis",
         "required": false,
+        "default": "'horizontal'",
         "inherited": false,
-        "example": "—"
+        "example": "'horizontal'"
       },
       {
         "name": "children",
@@ -7150,8 +7215,9 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "itemWidth",
         "type": "string",
         "required": false,
+        "default": "'10rem'",
         "inherited": false,
-        "example": "—"
+        "example": "'10rem'"
       },
       {
         "name": "style",
@@ -7184,6 +7250,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "dimBackground",
         "type": "boolean",
         "required": false,
+        "default": "true",
         "inherited": false,
         "example": "true"
       },
@@ -7191,6 +7258,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "enableMnemonics",
         "type": "boolean",
         "required": false,
+        "default": "true",
         "description": "Enable Alt+key mnemonics while open. Defaults to true.",
         "inherited": false,
         "example": "true"
@@ -7199,6 +7267,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "enableShortcuts",
         "type": "boolean",
         "required": false,
+        "default": "true",
         "description": "When true, keyboard shortcuts activate menu items while open. Defaults to true.",
         "inherited": false,
         "example": "true"
@@ -7207,6 +7276,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "enableTypeAhead",
         "type": "boolean",
         "required": false,
+        "default": "true",
         "description": "Enable type-ahead letter matching while open. Defaults to true.",
         "inherited": false,
         "example": "true"
@@ -7222,16 +7292,18 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "layout",
         "type": "MenuLayout",
         "required": false,
+        "default": "'large'",
         "inherited": false,
-        "example": "—"
+        "example": "'large'"
       },
       {
         "name": "mnemonicVisible",
         "type": "boolean",
         "required": false,
+        "default": "false",
         "description": "When true, underline mnemonic access keys in labels.",
         "inherited": false,
-        "example": "true"
+        "example": "false"
       },
       {
         "name": "onEntrySelect",
@@ -7541,9 +7613,10 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "showAccessKey",
         "type": "boolean",
         "required": false,
+        "default": "false",
         "description": "When true, underline the access key character.",
         "inherited": false,
-        "example": "true"
+        "example": "false"
       },
       {
         "name": "style",
@@ -8048,8 +8121,9 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "placeholder",
         "type": "string",
         "required": false,
+        "default": "'Search'",
         "inherited": false,
-        "example": "—"
+        "example": "'Search'"
       },
       {
         "name": "searchQuery",
@@ -8099,8 +8173,9 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "nextLabel",
         "type": "string",
         "required": false,
+        "default": "'Next page'",
         "inherited": false,
-        "example": "—"
+        "example": "'Next page'"
       },
       {
         "name": "onPageChange",
@@ -8120,15 +8195,17 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "previousLabel",
         "type": "string",
         "required": false,
+        "default": "'Previous page'",
         "inherited": false,
-        "example": "—"
+        "example": "'Previous page'"
       },
       {
         "name": "siblingCount",
         "type": "number",
         "required": false,
+        "default": "1",
         "inherited": false,
-        "example": "0"
+        "example": "1"
       },
       {
         "name": "style",
@@ -8635,22 +8712,25 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "max",
         "type": "number",
         "required": false,
+        "default": "100",
         "inherited": false,
-        "example": "0"
+        "example": "100"
       },
       {
         "name": "showValue",
         "type": "boolean",
         "required": false,
+        "default": "false",
         "inherited": false,
-        "example": "true"
+        "example": "false"
       },
       {
         "name": "state",
         "type": "UIState",
         "required": false,
+        "default": "'idle'",
         "inherited": false,
-        "example": "—"
+        "example": "'idle'"
       },
       {
         "name": "style",
@@ -8670,8 +8750,9 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "variant",
         "type": "ProgressVariant",
         "required": false,
+        "default": "'default'",
         "inherited": false,
-        "example": "\"md\""
+        "example": "'default'"
       }
     ],
     "events": [],
@@ -8903,7 +8984,6 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "className",
         "type": "string",
         "required": false,
-        "default": "{[styles.group",
         "inherited": true,
         "example": "—"
       },
@@ -8927,7 +9007,6 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
-        "default": "{style",
         "inherited": true,
         "example": "—"
       },
@@ -8966,15 +9045,17 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "label",
         "type": "string",
         "required": false,
+        "default": "'Loading'",
         "inherited": false,
-        "example": "—"
+        "example": "'Loading'"
       },
       {
         "name": "size",
         "type": "Size",
         "required": false,
+        "default": "'md'",
         "inherited": false,
-        "example": "\"md\""
+        "example": "'md'"
       },
       {
         "name": "style",
@@ -10615,8 +10696,9 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "side",
         "type": "TooltipSide",
         "required": false,
+        "default": "'top'",
         "inherited": false,
-        "example": "—"
+        "example": "'top'"
       },
       {
         "name": "style",
@@ -10656,15 +10738,17 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "muted",
         "type": "boolean",
         "required": false,
+        "default": "false",
         "inherited": false,
-        "example": "true"
+        "example": "false"
       },
       {
         "name": "role",
         "type": "TypographyRole",
         "required": false,
+        "default": "'body'",
         "inherited": true,
-        "example": "\"body\""
+        "example": "'body'"
       },
       {
         "name": "style",
@@ -10683,6 +10767,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "autosaveEnabled",
         "type": "boolean",
         "required": false,
+        "default": "true",
         "description": "When false, show the unsaved dot (manual save mode).",
         "inherited": false,
         "example": "true"
@@ -10698,8 +10783,9 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "edited",
         "type": "boolean",
         "required": false,
+        "default": "false",
         "inherited": false,
-        "example": "true"
+        "example": "false"
       },
       {
         "name": "style",

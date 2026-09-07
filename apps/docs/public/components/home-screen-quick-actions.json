@@ -29,14 +29,16 @@
       "name": "iconPlacement",
       "type": "QuickActionIconPlacement",
       "required": false,
+      "default": "'leading'",
       "description": "Icon appears on leading or trailing edge depending on Home Screen position.",
       "inherited": false,
-      "example": "\"md\""
+      "example": "'leading'"
     },
     {
       "name": "includeSystemActions",
       "type": "boolean",
       "required": false,
+      "default": "true",
       "inherited": false,
       "example": "true"
     },

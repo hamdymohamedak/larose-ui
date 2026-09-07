@@ -6,7 +6,8 @@
     {
       "name": "defaultExpanded",
       "type": "boolean",
-      "required": false
+      "required": false,
+      "default": "true"
     },
     {
       "name": "label",
@@ -15,5 +16,8 @@
     }
   ],
   "events": [],
+  "defaults": {
+    "defaultExpanded": "true"
+  },
   "keyboard": {}
 }

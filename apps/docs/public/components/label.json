@@ -15,24 +15,27 @@
       "name": "importance",
       "type": "LabelImportance",
       "required": false,
+      "default": "'primary'",
       "description": "System label color indicating relative importance.",
       "inherited": false,
-      "example": "\"primary\""
+      "example": "'primary'"
     },
     {
       "name": "mono",
       "type": "boolean",
       "required": false,
+      "default": "false",
       "inherited": false,
-      "example": "true"
+      "example": "false"
     },
     {
       "name": "selectable",
       "type": "boolean",
       "required": false,
+      "default": "false",
       "description": "Allow selecting/copying useful static text.",
       "inherited": false,
-      "example": "true"
+      "example": "false"
     }
   ],
   "examples": [],

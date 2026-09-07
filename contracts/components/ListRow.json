@@ -6,12 +6,14 @@
     {
       "name": "accessory",
       "type": "ListAccessory",
-      "required": false
+      "required": false,
+      "default": "'none'"
     },
     {
       "name": "disabled",
       "type": "boolean",
-      "required": false
+      "required": false,
+      "default": "false"
     },
     {
       "name": "leading",
@@ -31,7 +33,8 @@
     {
       "name": "selected",
       "type": "boolean",
-      "required": false
+      "required": false,
+      "default": "false"
     },
     {
       "name": "subtitle",
@@ -41,7 +44,8 @@
     {
       "name": "truncate",
       "type": "'end' | 'middle'",
-      "required": false
+      "required": false,
+      "default": "'end'"
     }
   ],
   "events": [
@@ -54,5 +58,11 @@
       "payload": "() => void"
     }
   ],
+  "defaults": {
+    "accessory": "'none'",
+    "disabled": "false",
+    "selected": "false",
+    "truncate": "'end'"
+  },
   "keyboard": {}
 }

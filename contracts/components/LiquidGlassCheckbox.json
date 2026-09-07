@@ -11,12 +11,14 @@
     {
       "name": "borderRadius",
       "type": "number",
-      "required": false
+      "required": false,
+      "default": "LIQUID_GLASS_PRESETS.checkbox.borderRadius"
     },
     {
       "name": "checkColor",
       "type": "string",
-      "required": false
+      "required": false,
+      "default": "'#ffffff'"
     },
     {
       "name": "checked",
@@ -26,17 +28,20 @@
     {
       "name": "checkedTint",
       "type": "string",
-      "required": false
+      "required": false,
+      "default": "'rgba(52, 199, 89, 0.42)'"
     },
     {
       "name": "defaultChecked",
       "type": "boolean",
-      "required": false
+      "required": false,
+      "default": "false"
     },
     {
       "name": "disabled",
       "type": "boolean",
-      "required": false
+      "required": false,
+      "default": "false"
     },
     {
       "name": "label",
@@ -46,12 +51,14 @@
     {
       "name": "labelColor",
       "type": "string",
-      "required": false
+      "required": false,
+      "default": "'#ffffff'"
     },
     {
       "name": "size",
       "type": "number",
       "required": false,
+      "default": "26",
       "description": "Box size in px."
     }
   ],
@@ -69,6 +76,15 @@
     "checked",
     "disabled"
   ],
+  "defaults": {
+    "borderRadius": "LIQUID_GLASS_PRESETS.checkbox.borderRadius",
+    "checkColor": "'#ffffff'",
+    "checkedTint": "'rgba(52, 199, 89, 0.42)'",
+    "defaultChecked": "false",
+    "disabled": "false",
+    "labelColor": "'#ffffff'",
+    "size": "26"
+  },
   "accessibility": {
     "requirements": [
       "Supports ARIA attributes via standard HTML element props."

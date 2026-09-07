@@ -8,6 +8,7 @@
       "name": "dimBackground",
       "type": "boolean",
       "required": false,
+      "default": "true",
       "inherited": false,
       "example": "true"
     },
@@ -22,6 +23,7 @@
       "name": "longPress",
       "type": "boolean",
       "required": false,
+      "default": "true",
       "description": "Enable long-press / touch-and-hold in addition to secondary click.",
       "inherited": false,
       "example": "true"

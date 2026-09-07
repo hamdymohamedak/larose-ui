@@ -12,8 +12,7 @@
     {
       "name": "activeKey",
       "type": "string",
-      "required": false,
-      "default": "controlledActiveKey ?? internalActiveKey;"
+      "required": false
     },
     {
       "name": "borderRadius",
@@ -42,19 +41,19 @@
       "name": "inactiveColor",
       "type": "string",
       "required": false,
-      "default": "'rgba(255"
+      "default": "'rgba(255, 255, 255, 0.55)'"
     },
     {
       "name": "indicatorBackground",
       "type": "string",
       "required": false,
-      "default": "'rgba(255"
+      "default": "'rgba(255, 255, 255, 0.16)'"
     },
     {
       "name": "indicatorBorderColor",
       "type": "string",
       "required": false,
-      "default": "'rgba(255"
+      "default": "'rgba(255, 255, 255, 0.28)'"
     },
     {
       "name": "indicatorPadding",
@@ -101,13 +100,12 @@
   ],
   "defaults": {
     "activeColor": "'#ffffff'",
-    "activeKey": "controlledActiveKey ?? internalActiveKey;",
     "borderRadius": "LIQUID_GLASS_PRESETS.tabBar.borderRadius",
     "bottom": "22",
     "height": "64",
-    "inactiveColor": "'rgba(255",
-    "indicatorBackground": "'rgba(255",
-    "indicatorBorderColor": "'rgba(255",
+    "inactiveColor": "'rgba(255, 255, 255, 0.55)'",
+    "indicatorBackground": "'rgba(255, 255, 255, 0.16)'",
+    "indicatorBorderColor": "'rgba(255, 255, 255, 0.28)'",
     "indicatorPadding": "8",
     "maxWidth": "420",
     "position": "'fixed'",

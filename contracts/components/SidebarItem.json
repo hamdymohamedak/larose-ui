@@ -12,7 +12,8 @@
     {
       "name": "active",
       "type": "boolean",
-      "required": false
+      "required": false,
+      "default": "false"
     },
     {
       "name": "badge",
@@ -22,7 +23,8 @@
     {
       "name": "disabled",
       "type": "boolean",
-      "required": false
+      "required": false,
+      "default": "false"
     },
     {
       "name": "href",
@@ -41,5 +43,9 @@
       "payload": "() => void"
     }
   ],
+  "defaults": {
+    "active": "false",
+    "disabled": "false"
+  },
   "keyboard": {}
 }

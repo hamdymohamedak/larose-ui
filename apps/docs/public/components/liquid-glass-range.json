@@ -91,9 +91,9 @@
       "name": "fillColor",
       "type": "string",
       "required": false,
-      "default": "'rgba(255",
+      "default": "'rgba(255, 255, 255, 0.35)'",
       "inherited": false,
-      "example": "'rgba(255'"
+      "example": "'rgba(255, 255, 255, 0.35)'"
     },
     {
       "name": "height",
@@ -124,9 +124,9 @@
       "name": "max",
       "type": "number",
       "required": false,
-      "default": "== min) return 0;",
+      "default": "100",
       "inherited": false,
-      "example": "0"
+      "example": "100"
     },
     {
       "name": "maxHeight",
@@ -291,7 +291,6 @@
       "name": "value",
       "type": "number",
       "required": false,
-      "default": "controlledValue ?? internalValue;",
       "inherited": false,
       "example": "0"
     },

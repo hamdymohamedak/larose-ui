@@ -6,14 +6,20 @@
     {
       "name": "label",
       "type": "string",
-      "required": false
+      "required": false,
+      "default": "'Loading'"
     },
     {
       "name": "size",
       "type": "Size",
-      "required": false
+      "required": false,
+      "default": "'md'"
     }
   ],
   "events": [],
+  "defaults": {
+    "label": "'Loading'",
+    "size": "'md'"
+  },
   "keyboard": {}
 }

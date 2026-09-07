@@ -8,8 +8,9 @@
       "name": "closeLabel",
       "type": "string",
       "required": false,
+      "default": "'Close preview'",
       "inherited": false,
-      "example": "—"
+      "example": "'Close preview'"
     },
     {
       "name": "onClose",

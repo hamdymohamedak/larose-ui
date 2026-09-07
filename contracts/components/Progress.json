@@ -11,17 +11,20 @@
     {
       "name": "max",
       "type": "number",
-      "required": false
+      "required": false,
+      "default": "100"
     },
     {
       "name": "showValue",
       "type": "boolean",
-      "required": false
+      "required": false,
+      "default": "false"
     },
     {
       "name": "state",
       "type": "UIState",
-      "required": false
+      "required": false,
+      "default": "'idle'"
     },
     {
       "name": "value",
@@ -31,10 +34,17 @@
     {
       "name": "variant",
       "type": "ProgressVariant",
-      "required": false
+      "required": false,
+      "default": "'default'"
     }
   ],
   "events": [],
+  "defaults": {
+    "max": "100",
+    "showValue": "false",
+    "state": "'idle'",
+    "variant": "'default'"
+  },
   "accessibility": {
     "requirements": [
       "Supports ARIA attributes via standard HTML element props."

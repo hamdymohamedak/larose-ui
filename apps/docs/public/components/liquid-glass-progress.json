@@ -51,7 +51,7 @@
       "name": "borderRadius",
       "type": "number",
       "required": false,
-      "default": "{borderRadius",
+      "default": "LIQUID_GLASS_PRESETS.progress.borderRadius",
       "inherited": false,
       "example": "0"
     },
@@ -75,25 +75,25 @@
       "name": "fillColor",
       "type": "string",
       "required": false,
-      "default": "'rgba(255",
+      "default": "'rgba(255, 255, 255, 0.55)'",
       "inherited": false,
-      "example": "'rgba(255'"
+      "example": "'rgba(255, 255, 255, 0.55)'"
     },
     {
       "name": "fillGlow",
       "type": "string",
       "required": false,
-      "default": "'rgba(255",
+      "default": "'rgba(255, 255, 255, 0.35)'",
       "inherited": false,
-      "example": "'rgba(255'"
+      "example": "'rgba(255, 255, 255, 0.35)'"
     },
     {
       "name": "height",
       "type": "number",
       "required": false,
       "inherited": false,
-      "example": "\"100%\"",
-      "default": "\"100%\"",
+      "example": "10",
+      "default": "10",
       "description": "Track height in px."
     },
     {
@@ -271,8 +271,8 @@
       "type": "number | string",
       "required": false,
       "inherited": false,
-      "example": "\"100%\"",
-      "default": "\"100%\""
+      "example": "'100%'",
+      "default": "'100%'"
     }
   ],
   "examples": [

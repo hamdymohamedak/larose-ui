@@ -12,6 +12,7 @@
       "name": "glass",
       "type": "boolean",
       "required": false,
+      "default": "true",
       "description": "Allow content to extend beneath the sidebar (Liquid Glass)."
     },
     {
@@ -34,12 +35,14 @@
     {
       "name": "platform",
       "type": "SidebarPlatform",
-      "required": false
+      "required": false,
+      "default": "'macos'"
     },
     {
       "name": "size",
       "type": "SidebarSize",
-      "required": false
+      "required": false,
+      "default": "'medium'"
     }
   ],
   "events": [
@@ -48,6 +51,11 @@
       "payload": "(hidden: boolean) => void"
     }
   ],
+  "defaults": {
+    "glass": "true",
+    "platform": "'macos'",
+    "size": "'medium'"
+  },
   "accessibility": {
     "requirements": [
       "Supports ARIA attributes via standard HTML element props."

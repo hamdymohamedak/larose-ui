@@ -6,7 +6,8 @@
     {
       "name": "defaultExpandedIds",
       "type": "string[]",
-      "required": false
+      "required": false,
+      "default": "[]"
     },
     {
       "name": "items",
@@ -15,5 +16,8 @@
     }
   ],
   "events": [],
+  "defaults": {
+    "defaultExpandedIds": "[]"
+  },
   "keyboard": {}
 }

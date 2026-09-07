@@ -22,12 +22,14 @@
       "name": "iconPlacement",
       "type": "QuickActionIconPlacement",
       "required": false,
+      "default": "'leading'",
       "description": "Icon appears on leading or trailing edge depending on Home Screen position."
     },
     {
       "name": "includeSystemActions",
       "type": "boolean",
-      "required": false
+      "required": false,
+      "default": "true"
     },
     {
       "name": "onActionSelect",
@@ -60,6 +62,10 @@
       "payload": "(open: boolean) => void"
     }
   ],
+  "defaults": {
+    "iconPlacement": "'leading'",
+    "includeSystemActions": "true"
+  },
   "keyboard": {},
   "controlled": [
     "open"

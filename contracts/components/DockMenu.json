@@ -12,6 +12,7 @@
       "name": "closedEntries",
       "type": "ContextMenuEntry[]",
       "required": false,
+      "default": "[]",
       "description": "Actions when the app is not running (e.g. Open)."
     },
     {
@@ -23,6 +24,7 @@
       "name": "isRunning",
       "type": "boolean",
       "required": false,
+      "default": "true",
       "description": "Whether the app is currently running (shows window list + running actions)."
     },
     {
@@ -48,12 +50,14 @@
     {
       "name": "openWindows",
       "type": "DockWindow[]",
-      "required": false
+      "required": false,
+      "default": "[]"
     },
     {
       "name": "runningEntries",
       "type": "ContextMenuEntry[]",
       "required": false,
+      "default": "[]",
       "description": "High-value actions when the app is running (e.g. New Window, Get New Mail)."
     }
   ],
@@ -71,6 +75,12 @@
       "payload": "(window: DockWindow) => void"
     }
   ],
+  "defaults": {
+    "closedEntries": "[]",
+    "isRunning": "true",
+    "openWindows": "[]",
+    "runningEntries": "[]"
+  },
   "keyboard": {},
   "controlled": [
     "open"

@@ -16,7 +16,6 @@
       "name": "activeKey",
       "type": "string",
       "required": false,
-      "default": "controlledActiveKey ?? internalActiveKey;",
       "inherited": false,
       "example": "—"
     },
@@ -68,7 +67,6 @@
       "name": "borderRadius",
       "type": "number",
       "required": false,
-      "default": "borderRadiusProp ?? (isFloating ? LIQUID_GLASS_PRESETS.topBar.borderRadius : 0);",
       "inherited": false,
       "example": "0"
     },
@@ -107,9 +105,9 @@
       "name": "inactiveColor",
       "type": "string",
       "required": false,
-      "default": "'rgba(255",
+      "default": "'rgba(255, 255, 255, 0.62)'",
       "inherited": false,
-      "example": "'rgba(255'"
+      "example": "'rgba(255, 255, 255, 0.62)'"
     },
     {
       "name": "innerBottomShadow",
@@ -133,7 +131,6 @@
       "name": "insetX",
       "type": "number",
       "required": false,
-      "default": "insetXProp ?? (isFloating ? 16 : 0);",
       "inherited": false,
       "example": "0"
     },
@@ -184,19 +181,19 @@
       "name": "navActiveBackground",
       "type": "string",
       "required": false,
-      "default": "'rgba(255",
+      "default": "'rgba(255, 255, 255, 0.18)'",
       "description": "Active nav pill background.",
       "inherited": false,
-      "example": "'rgba(255'"
+      "example": "'rgba(255, 255, 255, 0.18)'"
     },
     {
       "name": "navTrackBackground",
       "type": "string",
       "required": false,
-      "default": "'rgba(255",
+      "default": "'rgba(255, 255, 255, 0.08)'",
       "description": "Background of the segmented nav track.",
       "inherited": false,
-      "example": "'rgba(255'"
+      "example": "'rgba(255, 255, 255, 0.08)'"
     },
     {
       "name": "onDisplacementMapChange",
@@ -323,7 +320,6 @@
       "name": "top",
       "type": "number | string",
       "required": false,
-      "default": "topProp ?? (isFloating ? 14 : 0);",
       "inherited": false,
       "example": "—"
     },

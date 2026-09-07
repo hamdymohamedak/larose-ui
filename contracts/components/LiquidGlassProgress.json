@@ -12,25 +12,25 @@
       "name": "borderRadius",
       "type": "number",
       "required": false,
-      "default": "{borderRadius"
+      "default": "LIQUID_GLASS_PRESETS.progress.borderRadius"
     },
     {
       "name": "fillColor",
       "type": "string",
       "required": false,
-      "default": "'rgba(255"
+      "default": "'rgba(255, 255, 255, 0.55)'"
     },
     {
       "name": "fillGlow",
       "type": "string",
       "required": false,
-      "default": "'rgba(255"
+      "default": "'rgba(255, 255, 255, 0.35)'"
     },
     {
       "name": "height",
       "type": "number",
       "required": false,
-      "default": "\"100%\"",
+      "default": "10",
       "description": "Track height in px."
     },
     {
@@ -58,7 +58,7 @@
       "name": "width",
       "type": "number | string",
       "required": false,
-      "default": "\"100%\""
+      "default": "'100%'"
     }
   ],
   "events": [],
@@ -68,14 +68,14 @@
     "indeterminate"
   ],
   "defaults": {
-    "borderRadius": "{borderRadius",
-    "fillColor": "'rgba(255",
-    "fillGlow": "'rgba(255",
-    "height": "\"100%\"",
+    "borderRadius": "LIQUID_GLASS_PRESETS.progress.borderRadius",
+    "fillColor": "'rgba(255, 255, 255, 0.55)'",
+    "fillGlow": "'rgba(255, 255, 255, 0.35)'",
+    "height": "10",
     "indeterminate": "false",
     "max": "100",
     "value": "0",
-    "width": "\"100%\""
+    "width": "'100%'"
   },
   "accessibility": {
     "requirements": [

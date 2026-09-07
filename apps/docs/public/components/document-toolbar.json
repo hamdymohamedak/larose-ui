@@ -8,6 +8,7 @@
       "name": "canSave",
       "type": "boolean",
       "required": false,
+      "default": "true",
       "inherited": false,
       "example": "true"
     },
@@ -15,8 +16,9 @@
       "name": "newLabel",
       "type": "string",
       "required": false,
+      "default": "'New'",
       "inherited": false,
-      "example": "—"
+      "example": "'New'"
     },
     {
       "name": "onNew",
@@ -43,20 +45,23 @@
       "name": "openLabel",
       "type": "string",
       "required": false,
+      "default": "'Open'",
       "inherited": false,
-      "example": "—"
+      "example": "'Open'"
     },
     {
       "name": "saveLabel",
       "type": "string",
       "required": false,
+      "default": "'Save'",
       "inherited": false,
-      "example": "—"
+      "example": "'Save'"
     },
     {
       "name": "showAddButton",
       "type": "boolean",
       "required": false,
+      "default": "true",
       "inherited": false,
       "example": "true"
     }

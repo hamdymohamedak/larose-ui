@@ -43,15 +43,17 @@
       "name": "primaryActionLabel",
       "type": "string",
       "required": false,
+      "default": "'Create Document'",
       "inherited": false,
-      "example": "—"
+      "example": "'Create Document'"
     },
     {
       "name": "secondaryActionLabel",
       "type": "string",
       "required": false,
+      "default": "'Choose Template'",
       "inherited": false,
-      "example": "—"
+      "example": "'Choose Template'"
     }
   ],
   "examples": [

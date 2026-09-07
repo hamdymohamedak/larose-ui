@@ -16,7 +16,6 @@
       "name": "activeKey",
       "type": "string",
       "required": false,
-      "default": "controlledActiveKey ?? internalActiveKey;",
       "inherited": false,
       "example": "—"
     },
@@ -115,25 +114,25 @@
       "name": "inactiveColor",
       "type": "string",
       "required": false,
-      "default": "'rgba(255",
+      "default": "'rgba(255, 255, 255, 0.55)'",
       "inherited": false,
-      "example": "'rgba(255'"
+      "example": "'rgba(255, 255, 255, 0.55)'"
     },
     {
       "name": "indicatorBackground",
       "type": "string",
       "required": false,
-      "default": "'rgba(255",
+      "default": "'rgba(255, 255, 255, 0.16)'",
       "inherited": false,
-      "example": "'rgba(255'"
+      "example": "'rgba(255, 255, 255, 0.16)'"
     },
     {
       "name": "indicatorBorderColor",
       "type": "string",
       "required": false,
-      "default": "'rgba(255",
+      "default": "'rgba(255, 255, 255, 0.28)'",
       "inherited": false,
-      "example": "'rgba(255'"
+      "example": "'rgba(255, 255, 255, 0.28)'"
     },
     {
       "name": "indicatorPadding",

@@ -15,17 +15,19 @@
       "name": "fullWidth",
       "type": "boolean",
       "required": false,
+      "default": "false",
       "description": "Full-width buttons for watchOS-style primary actions.",
       "inherited": false,
-      "example": "true"
+      "example": "false"
     },
     {
       "name": "orientation",
       "type": "'horizontal' | 'vertical'",
       "required": false,
+      "default": "'horizontal'",
       "description": "Horizontal row (default) or vertical stack for visionOS guidance.",
       "inherited": false,
-      "example": "\"horizontal\""
+      "example": "'horizontal'"
     }
   ],
   "examples": [],

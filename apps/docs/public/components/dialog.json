@@ -8,15 +8,17 @@
       "name": "cancelLabel",
       "type": "string",
       "required": false,
+      "default": "'Cancel'",
       "inherited": false,
-      "example": "—"
+      "example": "'Cancel'"
     },
     {
       "name": "confirmLabel",
       "type": "string",
       "required": false,
+      "default": "'Confirm'",
       "inherited": false,
-      "example": "—"
+      "example": "'Confirm'"
     },
     {
       "name": "description",
@@ -57,8 +59,9 @@
       "name": "variant",
       "type": "'default' | 'destructive'",
       "required": false,
+      "default": "'default'",
       "inherited": false,
-      "example": "\"default\""
+      "example": "'default'"
     }
   ],
   "examples": [

@@ -12,12 +12,14 @@
     {
       "name": "disabled",
       "type": "boolean",
-      "required": false
+      "required": false,
+      "default": "false"
     },
     {
       "name": "error",
       "type": "string | null",
-      "required": false
+      "required": false,
+      "default": "null"
     },
     {
       "name": "hint",
@@ -37,12 +39,14 @@
     {
       "name": "loading",
       "type": "boolean",
-      "required": false
+      "required": false,
+      "default": "false"
     },
     {
       "name": "locale",
       "type": "string",
-      "required": false
+      "required": false,
+      "default": "'en'"
     },
     {
       "name": "maxDate",
@@ -57,12 +61,14 @@
     {
       "name": "minuteInterval",
       "type": "number",
-      "required": false
+      "required": false,
+      "default": "1"
     },
     {
       "name": "mode",
       "type": "DateTimePickerMode",
-      "required": false
+      "required": false,
+      "default": "'date'"
     },
     {
       "name": "state",
@@ -72,18 +78,20 @@
     {
       "name": "use12Hour",
       "type": "boolean",
-      "required": false
+      "required": false,
+      "default": "locale.startsWith('en')"
     },
     {
       "name": "value",
       "type": "DateTimeValue",
       "required": false,
-      "default": "{"
+      "default": "{}"
     },
     {
       "name": "yearRange",
       "type": "{ start: number; end: number }",
-      "required": false
+      "required": false,
+      "default": "{ start: new Date().getFullYear() - 5, end: new Date().getFullYear() + 5 }"
     }
   ],
   "events": [
@@ -93,7 +101,15 @@
     }
   ],
   "defaults": {
-    "value": "{"
+    "disabled": "false",
+    "error": "null",
+    "loading": "false",
+    "locale": "'en'",
+    "minuteInterval": "1",
+    "mode": "'date'",
+    "use12Hour": "locale.startsWith('en')",
+    "value": "{}",
+    "yearRange": "{ start: new Date().getFullYear() - 5, end: new Date().getFullYear() + 5 }"
   },
   "keyboard": {},
   "controlled": [

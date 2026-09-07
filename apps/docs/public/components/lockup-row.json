@@ -8,15 +8,17 @@
       "name": "axis",
       "type": "LockupAxis",
       "required": false,
+      "default": "'horizontal'",
       "inherited": false,
-      "example": "—"
+      "example": "'horizontal'"
     },
     {
       "name": "itemWidth",
       "type": "string",
       "required": false,
+      "default": "'10rem'",
       "inherited": false,
-      "example": "—"
+      "example": "'10rem'"
     }
   ],
   "examples": [],

@@ -6,14 +6,20 @@
     {
       "name": "axis",
       "type": "LockupAxis",
-      "required": false
+      "required": false,
+      "default": "'horizontal'"
     },
     {
       "name": "itemWidth",
       "type": "string",
-      "required": false
+      "required": false,
+      "default": "'10rem'"
     }
   ],
   "events": [],
+  "defaults": {
+    "axis": "'horizontal'",
+    "itemWidth": "'10rem'"
+  },
   "keyboard": {}
 }

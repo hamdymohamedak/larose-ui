@@ -6,24 +6,28 @@
     {
       "name": "dimBackground",
       "type": "boolean",
-      "required": false
+      "required": false,
+      "default": "true"
     },
     {
       "name": "enableMnemonics",
       "type": "boolean",
       "required": false,
+      "default": "true",
       "description": "Enable Alt+key mnemonics while open. Defaults to true."
     },
     {
       "name": "enableShortcuts",
       "type": "boolean",
       "required": false,
+      "default": "true",
       "description": "When true, keyboard shortcuts activate menu items while open. Defaults to true."
     },
     {
       "name": "enableTypeAhead",
       "type": "boolean",
       "required": false,
+      "default": "true",
       "description": "Enable type-ahead letter matching while open. Defaults to true."
     },
     {
@@ -34,12 +38,14 @@
     {
       "name": "layout",
       "type": "MenuLayout",
-      "required": false
+      "required": false,
+      "default": "'large'"
     },
     {
       "name": "mnemonicVisible",
       "type": "boolean",
       "required": false,
+      "default": "false",
       "description": "When true, underline mnemonic access keys in labels."
     },
     {
@@ -74,6 +80,14 @@
       "payload": "(open: boolean) => void"
     }
   ],
+  "defaults": {
+    "dimBackground": "true",
+    "enableMnemonics": "true",
+    "enableShortcuts": "true",
+    "enableTypeAhead": "true",
+    "layout": "'large'",
+    "mnemonicVisible": "false"
+  },
   "keyboard": {
     "keys": [
       "Escape",

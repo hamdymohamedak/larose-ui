@@ -6,12 +6,14 @@
     {
       "name": "cancelLabel",
       "type": "string",
-      "required": false
+      "required": false,
+      "default": "'Cancel'"
     },
     {
       "name": "confirmLabel",
       "type": "string",
-      "required": false
+      "required": false,
+      "default": "'Confirm'"
     },
     {
       "name": "description",
@@ -41,7 +43,8 @@
     {
       "name": "variant",
       "type": "'default' | 'destructive'",
-      "required": false
+      "required": false,
+      "default": "'default'"
     }
   ],
   "events": [
@@ -61,6 +64,11 @@
     "closed",
     "open"
   ],
+  "defaults": {
+    "cancelLabel": "'Cancel'",
+    "confirmLabel": "'Confirm'",
+    "variant": "'default'"
+  },
   "accessibility": {
     "requirements": [
       "Supports ARIA attributes via standard HTML element props.",

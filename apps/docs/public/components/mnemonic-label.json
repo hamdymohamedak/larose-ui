@@ -22,9 +22,10 @@
       "name": "showAccessKey",
       "type": "boolean",
       "required": false,
+      "default": "false",
       "description": "When true, underline the access key character.",
       "inherited": false,
-      "example": "true"
+      "example": "false"
     }
   ],
   "examples": [

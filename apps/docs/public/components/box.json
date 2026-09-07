@@ -15,30 +15,34 @@
       "name": "padding",
       "type": "'sm' | 'md' | 'lg'",
       "required": false,
+      "default": "'md'",
       "inherited": false,
-      "example": "\"sm\""
+      "example": "'md'"
     },
     {
       "name": "settingsStyle",
       "type": "boolean",
       "required": false,
+      "default": "false",
       "description": "macOS settings panes append a colon to the title.",
       "inherited": false,
-      "example": "true"
+      "example": "false"
     },
     {
       "name": "titlePosition",
       "type": "BoxTitlePosition",
       "required": false,
+      "default": "'inside'",
       "inherited": false,
-      "example": "—"
+      "example": "'inside'"
     },
     {
       "name": "variant",
       "type": "BoxVariant",
       "required": false,
+      "default": "'secondary'",
       "inherited": false,
-      "example": "\"md\""
+      "example": "'secondary'"
     }
   ],
   "examples": [

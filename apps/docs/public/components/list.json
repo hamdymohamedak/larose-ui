@@ -15,8 +15,9 @@
       "name": "variant",
       "type": "ListVariant",
       "required": false,
+      "default": "'grouped'",
       "inherited": false,
-      "example": "\"md\""
+      "example": "'grouped'"
     }
   ],
   "examples": [

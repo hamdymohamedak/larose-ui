@@ -8,15 +8,17 @@
       "name": "accessory",
       "type": "ListAccessory",
       "required": false,
+      "default": "'none'",
       "inherited": false,
-      "example": "—"
+      "example": "'none'"
     },
     {
       "name": "disabled",
       "type": "boolean",
       "required": false,
+      "default": "false",
       "inherited": false,
-      "example": "true"
+      "example": "false"
     },
     {
       "name": "leading",
@@ -43,8 +45,9 @@
       "name": "selected",
       "type": "boolean",
       "required": false,
+      "default": "false",
       "inherited": false,
-      "example": "true"
+      "example": "false"
     },
     {
       "name": "subtitle",
@@ -57,8 +60,9 @@
       "name": "truncate",
       "type": "'end' | 'middle'",
       "required": false,
+      "default": "'end'",
       "inherited": false,
-      "example": "\"end\""
+      "example": "'end'"
     }
   ],
   "examples": [],

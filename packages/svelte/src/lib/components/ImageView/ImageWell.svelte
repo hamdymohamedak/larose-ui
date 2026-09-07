@@ -20,7 +20,7 @@
     disabled,
     class: className,
     style,
-    placeholder = 'Drop image',
+    placeholder = 'Drop an image, paste, or click to choose',
     onChange,
   }: Props = $props();
 

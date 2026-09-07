@@ -97,7 +97,7 @@
       "name": "value",
       "type": "DateRange",
       "required": false,
-      "default": "{ startDate: ''",
+      "default": "{ startDate: '', endDate: '' }",
       "inherited": false,
       "example": "—"
     }

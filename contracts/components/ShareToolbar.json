@@ -7,6 +7,7 @@
       "name": "collaborating",
       "type": "boolean",
       "required": false,
+      "default": "false",
       "description": "When true, shows the Collaboration button beside Share."
     },
     {
@@ -17,12 +18,14 @@
     {
       "name": "collaborators",
       "type": "Collaborator[]",
-      "required": false
+      "required": false,
+      "default": "[]"
     },
     {
       "name": "destinations",
       "type": "ShareDestination[]",
-      "required": false
+      "required": false,
+      "default": "defaultDestinations"
     },
     {
       "name": "manageLabel",
@@ -57,12 +60,14 @@
     {
       "name": "shareSettings",
       "type": "ShareSettings",
-      "required": false
+      "required": false,
+      "default": "defaultShareSettings"
     },
     {
       "name": "shareTitle",
       "type": "string",
       "required": false,
+      "default": "'Share Document'",
       "description": "Document or item title shown in the share sheet."
     },
     {
@@ -89,5 +94,12 @@
       "payload": "() => void"
     }
   ],
+  "defaults": {
+    "collaborating": "false",
+    "collaborators": "[]",
+    "destinations": "defaultDestinations",
+    "shareSettings": "defaultShareSettings",
+    "shareTitle": "'Share Document'"
+  },
   "keyboard": {}
 }

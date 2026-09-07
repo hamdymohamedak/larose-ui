@@ -17,7 +17,8 @@
     {
       "name": "excludedActivityIds",
       "type": "string[]",
-      "required": false
+      "required": false,
+      "default": "[]"
     },
     {
       "name": "footer",
@@ -42,7 +43,8 @@
     {
       "name": "presentation",
       "type": "ActivityPresentation",
-      "required": false
+      "required": false,
+      "default": "'sheet'"
     }
   ],
   "events": [
@@ -55,5 +57,9 @@
       "payload": "() => void"
     }
   ],
+  "defaults": {
+    "excludedActivityIds": "[]",
+    "presentation": "'sheet'"
+  },
   "keyboard": {}
 }

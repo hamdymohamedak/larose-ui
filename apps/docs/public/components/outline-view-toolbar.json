@@ -22,8 +22,9 @@
       "name": "placeholder",
       "type": "string",
       "required": false,
+      "default": "'Search'",
       "inherited": false,
-      "example": "—"
+      "example": "'Search'"
     },
     {
       "name": "searchQuery",

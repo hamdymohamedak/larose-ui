@@ -11,26 +11,36 @@
     {
       "name": "padding",
       "type": "'sm' | 'md' | 'lg'",
-      "required": false
+      "required": false,
+      "default": "'md'"
     },
     {
       "name": "settingsStyle",
       "type": "boolean",
       "required": false,
+      "default": "false",
       "description": "macOS settings panes append a colon to the title."
     },
     {
       "name": "titlePosition",
       "type": "BoxTitlePosition",
-      "required": false
+      "required": false,
+      "default": "'inside'"
     },
     {
       "name": "variant",
       "type": "BoxVariant",
-      "required": false
+      "required": false,
+      "default": "'secondary'"
     }
   ],
   "events": [],
+  "defaults": {
+    "padding": "'md'",
+    "settingsStyle": "false",
+    "titlePosition": "'inside'",
+    "variant": "'secondary'"
+  },
   "accessibility": {
     "requirements": [
       "Supports ARIA attributes via standard HTML element props."

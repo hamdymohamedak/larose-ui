@@ -8,8 +8,9 @@
       "name": "defaultExpandedIds",
       "type": "string[]",
       "required": false,
+      "default": "[]",
       "inherited": false,
-      "example": "—"
+      "example": "[]"
     },
     {
       "name": "items",

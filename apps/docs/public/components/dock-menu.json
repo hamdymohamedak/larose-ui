@@ -15,9 +15,10 @@
       "name": "closedEntries",
       "type": "ContextMenuEntry[]",
       "required": false,
+      "default": "[]",
       "description": "Actions when the app is not running (e.g. Open).",
       "inherited": false,
-      "example": "—"
+      "example": "[]"
     },
     {
       "name": "icon",
@@ -30,6 +31,7 @@
       "name": "isRunning",
       "type": "boolean",
       "required": false,
+      "default": "true",
       "description": "Whether the app is currently running (shows window list + running actions).",
       "inherited": false,
       "example": "true"
@@ -66,16 +68,18 @@
       "name": "openWindows",
       "type": "DockWindow[]",
       "required": false,
+      "default": "[]",
       "inherited": false,
-      "example": "—"
+      "example": "[]"
     },
     {
       "name": "runningEntries",
       "type": "ContextMenuEntry[]",
       "required": false,
+      "default": "[]",
       "description": "High-value actions when the app is running (e.g. New Window, Get New Mail).",
       "inherited": false,
-      "example": "—"
+      "example": "[]"
     }
   ],
   "examples": [

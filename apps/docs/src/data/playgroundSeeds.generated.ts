@@ -65,9 +65,9 @@ export const playgroundSeeds: Record<string, PlaygroundSeedEntry> = {
     "svelte": "<script lang=\"ts\">\n  import { Badge } from '@larose-ui/svelte';\n</script>\n\n<Badge\n  variant=\"info\"\n>\n  Beta\n</Badge>\n"
   },
   "Box": {
-    "react": "import { Box } from '@larose-ui/react';\n\nexport default function App() {\n  return <Box\n  padding=\"sm\"\n  settingsStyle\n  variant=\"primary\"\n/>;\n}\n",
-    "vue": "<script setup lang=\"ts\">\nimport { Box } from '@larose-ui/vue';\n</script>\n\n<template>\n  <Box\n  padding=\"sm\"\n  settingsStyle\n  variant=\"primary\"\n/>\n</template>\n",
-    "svelte": "<script lang=\"ts\">\n  import { Box } from '@larose-ui/svelte';\n</script>\n\n<Box\n  padding=\"sm\"\n  settingsStyle\n  variant=\"primary\"\n/>\n"
+    "react": "import { Box } from '@larose-ui/react';\n\nexport default function App() {\n  return <Box\n  padding=\"md\"\n  settingsStyle={false}\n  titlePosition=\"inside\"\n  variant=\"secondary\"\n/>;\n}\n",
+    "vue": "<script setup lang=\"ts\">\nimport { Box } from '@larose-ui/vue';\n</script>\n\n<template>\n  <Box\n  padding=\"md\"\n  :settingsStyle=\"false\"\n  titlePosition=\"inside\"\n  variant=\"secondary\"\n/>\n</template>\n",
+    "svelte": "<script lang=\"ts\">\n  import { Box } from '@larose-ui/svelte';\n</script>\n\n<Box\n  padding=\"md\"\n  settingsStyle={false}\n  titlePosition=\"inside\"\n  variant=\"secondary\"\n/>\n"
   },
   "Breadcrumb": {
     "react": "import { Breadcrumb } from '@larose-ui/react';\n\nexport default function App() {\n  return (\n    <Breadcrumb\n      items={[\n        { label: 'Home', href: '#' },\n        { label: 'Employees', href: '#' },\n        { label: 'Ahmed Mohamed', current: true },\n      ]}\n    />\n  );\n}\n",
@@ -80,9 +80,9 @@ export const playgroundSeeds: Record<string, PlaygroundSeedEntry> = {
     "svelte": "<script lang=\"ts\">\n  import { Button } from '@larose-ui/svelte';\n</script>\n\n<Button\n  variant=\"primary\"\n  size=\"md\"\n  shape=\"capsule\"\n  buttonRole=\"normal\"\n  loading={false}\n  fullWidth={false}\n>\n  Save changes\n</Button>\n"
   },
   "ButtonGroup": {
-    "react": "import { ButtonGroup } from '@larose-ui/react';\n\nexport default function App() {\n  return (\n    <ButtonGroup\n  fullWidth\n  orientation=\"horizontal\"\n>\n      Example\n    </ButtonGroup>\n  );\n}\n",
-    "vue": "<script setup lang=\"ts\">\nimport { ButtonGroup } from '@larose-ui/vue';\n</script>\n\n<template>\n  <ButtonGroup\n  fullWidth\n  orientation=\"horizontal\"\n>\n    Example\n  </ButtonGroup>\n</template>\n",
-    "svelte": "<script lang=\"ts\">\n  import { ButtonGroup } from '@larose-ui/svelte';\n</script>\n\n<ButtonGroup\n  fullWidth\n  orientation=\"horizontal\"\n>\n  Example\n</ButtonGroup>\n"
+    "react": "import { ButtonGroup } from '@larose-ui/react';\n\nexport default function App() {\n  return (\n    <ButtonGroup\n  fullWidth={false}\n  orientation=\"horizontal\"\n>\n      Example\n    </ButtonGroup>\n  );\n}\n",
+    "vue": "<script setup lang=\"ts\">\nimport { ButtonGroup } from '@larose-ui/vue';\n</script>\n\n<template>\n  <ButtonGroup\n  :fullWidth=\"false\"\n  orientation=\"horizontal\"\n>\n    Example\n  </ButtonGroup>\n</template>\n",
+    "svelte": "<script lang=\"ts\">\n  import { ButtonGroup } from '@larose-ui/svelte';\n</script>\n\n<ButtonGroup\n  fullWidth={false}\n  orientation=\"horizontal\"\n>\n  Example\n</ButtonGroup>\n"
   },
   "CalendarGrid": {
     "react": "import { CalendarGrid } from '@larose-ui/react';\n\nexport default function App() {\n  return <CalendarGrid\n  locale=\"en\"\n/>;\n}\n",
@@ -155,9 +155,9 @@ export const playgroundSeeds: Record<string, PlaygroundSeedEntry> = {
     "svelte": "<script lang=\"ts\">\n  import { DateRangePicker } from '@larose-ui/svelte';\n</script>\n\n<DateRangePicker\n  endLabel=\"End date\"\n  error={null}\n  inputSize=\"md\"\n  label=\"Example\"\n/>\n"
   },
   "DateTimePicker": {
-    "react": "import { DateTimePicker } from '@larose-ui/react';\n\nexport default function App() {\n  return <DateTimePicker\n  inputSize=\"md\"\n  label=\"Example\"\n  loading\n  minuteInterval={0}\n/>;\n}\n",
-    "vue": "<script setup lang=\"ts\">\nimport { DateTimePicker } from '@larose-ui/vue';\n</script>\n\n<template>\n  <DateTimePicker\n  inputSize=\"md\"\n  label=\"Example\"\n  loading\n  :minuteInterval=\"0\"\n/>\n</template>\n",
-    "svelte": "<script lang=\"ts\">\n  import { DateTimePicker } from '@larose-ui/svelte';\n</script>\n\n<DateTimePicker\n  inputSize=\"md\"\n  label=\"Example\"\n  loading\n  minuteInterval={0}\n/>\n"
+    "react": "import { DateTimePicker } from '@larose-ui/react';\n\nexport default function App() {\n  return <DateTimePicker\n  error={null}\n  inputSize=\"md\"\n  label=\"Example\"\n  loading={false}\n/>;\n}\n",
+    "vue": "<script setup lang=\"ts\">\nimport { DateTimePicker } from '@larose-ui/vue';\n</script>\n\n<template>\n  <DateTimePicker\n  :error=\"null\"\n  inputSize=\"md\"\n  label=\"Example\"\n  :loading=\"false\"\n/>\n</template>\n",
+    "svelte": "<script lang=\"ts\">\n  import { DateTimePicker } from '@larose-ui/svelte';\n</script>\n\n<DateTimePicker\n  error={null}\n  inputSize=\"md\"\n  label=\"Example\"\n  loading={false}\n/>\n"
   },
   "Dialog": {
     "react": "import { useState } from 'react';\nimport { Button, Dialog } from '@larose-ui/react';\n\nexport default function App() {\n  const [open, setOpen] = useState(true);\n  return (\n    <>\n      <Button onClick={() => setOpen(true)}>Open dialog</Button>\n      <Dialog open={open} onClose={() => setOpen(false)} title=\"Dialog\">\n        <p>Live editable dialog example.</p>\n      </Dialog>\n    </>\n  );\n}\n",
@@ -380,9 +380,9 @@ export const playgroundSeeds: Record<string, PlaygroundSeedEntry> = {
     "svelte": "<script lang=\"ts\">\n  import { LockupCard } from '@larose-ui/svelte';\n</script>\n\n<LockupCard\n  rating={0}\n>\n  Example\n</LockupCard>\n"
   },
   "LockupRow": {
-    "react": "import { LockupRow } from '@larose-ui/react';\n\nexport default function App() {\n  return (\n    <LockupRow >\n      Example\n    </LockupRow>\n  );\n}\n",
-    "vue": "<script setup lang=\"ts\">\nimport { LockupRow } from '@larose-ui/vue';\n</script>\n\n<template>\n  <LockupRow >\n    Example\n  </LockupRow>\n</template>\n",
-    "svelte": "<script lang=\"ts\">\n  import { LockupRow } from '@larose-ui/svelte';\n</script>\n\n<LockupRow >\n  Example\n</LockupRow>\n"
+    "react": "import { LockupRow } from '@larose-ui/react';\n\nexport default function App() {\n  return (\n    <LockupRow\n  axis=\"horizontal\"\n  itemWidth=\"10rem\"\n>\n      Example\n    </LockupRow>\n  );\n}\n",
+    "vue": "<script setup lang=\"ts\">\nimport { LockupRow } from '@larose-ui/vue';\n</script>\n\n<template>\n  <LockupRow\n  axis=\"horizontal\"\n  itemWidth=\"10rem\"\n>\n    Example\n  </LockupRow>\n</template>\n",
+    "svelte": "<script lang=\"ts\">\n  import { LockupRow } from '@larose-ui/svelte';\n</script>\n\n<LockupRow\n  axis=\"horizontal\"\n  itemWidth=\"10rem\"\n>\n  Example\n</LockupRow>\n"
   },
   "Menu": {
     "react": "import { Button, Menu } from '@larose-ui/react';\nimport { useState } from 'react';\n\nexport default function App() {\n  const [open, setOpen] = useState(false);\n  return (\n    <Menu\n      entries={[\n        { id: 'edit', label: 'Edit' },\n        { id: 'duplicate', label: 'Duplicate' },\n        { id: 'delete', label: 'Delete', destructive: true },\n      ]}\n      open={open}\n      onOpenChange={setOpen}\n    >\n      <Button variant=\"outline\">Actions</Button>\n    </Menu>\n  );\n}\n",
@@ -400,9 +400,9 @@ export const playgroundSeeds: Record<string, PlaygroundSeedEntry> = {
     "svelte": "<script lang=\"ts\">\n  import { MenuBarExtra } from '@larose-ui/svelte';\n\n  let open = $state(false);\n  const entries = [{ id: 'sync', label: 'Sync now' }];\n</script>\n\n<MenuBarExtra\n  id=\"sync\"\n  label=\"Sync\"\n  icon={'↻'}\n  {entries}\n  isOpen={open}\n  onOpenChange={(next) => (open = next)}\n  optionKey={false}\n/>\n"
   },
   "MnemonicLabel": {
-    "react": "import { MnemonicLabel } from '@larose-ui/react';\n\nexport default function App() {\n  return (\n    <MnemonicLabel\n  label=\"Example\"\n  showAccessKey\n>\n      Example\n    </MnemonicLabel>\n  );\n}\n",
-    "vue": "<script setup lang=\"ts\">\nimport { MnemonicLabel } from '@larose-ui/vue';\n</script>\n\n<template>\n  <MnemonicLabel\n  label=\"Example\"\n  showAccessKey\n>\n    Example\n  </MnemonicLabel>\n</template>\n",
-    "svelte": "<script lang=\"ts\">\n  import { MnemonicLabel } from '@larose-ui/svelte';\n</script>\n\n<MnemonicLabel\n  label=\"Example\"\n  showAccessKey\n>\n  Example\n</MnemonicLabel>\n"
+    "react": "import { MnemonicLabel } from '@larose-ui/react';\n\nexport default function App() {\n  return (\n    <MnemonicLabel\n  label=\"Example\"\n  showAccessKey={false}\n>\n      Example\n    </MnemonicLabel>\n  );\n}\n",
+    "vue": "<script setup lang=\"ts\">\nimport { MnemonicLabel } from '@larose-ui/vue';\n</script>\n\n<template>\n  <MnemonicLabel\n  label=\"Example\"\n  :showAccessKey=\"false\"\n>\n    Example\n  </MnemonicLabel>\n</template>\n",
+    "svelte": "<script lang=\"ts\">\n  import { MnemonicLabel } from '@larose-ui/svelte';\n</script>\n\n<MnemonicLabel\n  label=\"Example\"\n  showAccessKey={false}\n>\n  Example\n</MnemonicLabel>\n"
   },
   "Modal": {
     "react": "import { useState } from 'react';\nimport { Button, Modal } from '@larose-ui/react';\n\nexport default function App() {\n  const [open, setOpen] = useState(true);\n  return (\n    <>\n      <Button variant=\"primary\" onClick={() => setOpen(true)}>\n        Open modal\n      </Button>\n      <Modal open={open} onClose={() => setOpen(false)} title=\"Confirm\">\n        <p>Edit this demo to try Modal props.</p>\n        <Button variant=\"primary\" onClick={() => setOpen(false)}>\n          Done\n        </Button>\n      </Modal>\n    </>\n  );\n}\n",
@@ -445,9 +445,9 @@ export const playgroundSeeds: Record<string, PlaygroundSeedEntry> = {
     "svelte": "<script lang=\"ts\">\n  import { OutlineViewToolbar } from '@larose-ui/svelte';\n\n  let query = $state('');\n</script>\n\n<div style=\"width: 100%; max-width: 360px\">\n  <OutlineViewToolbar searchQuery={query} onSearchChange={(next) => (query = next)} placeholder=\"Search outline\" />\n</div>\n"
   },
   "Pagination": {
-    "react": "import { Pagination } from '@larose-ui/react';\n\nexport default function App() {\n  return <Pagination\n  page={3}\n  siblingCount={0}\n  totalPages={3}\n/>;\n}\n",
-    "vue": "<script setup lang=\"ts\">\nimport { Pagination } from '@larose-ui/vue';\n</script>\n\n<template>\n  <Pagination\n  :page=\"3\"\n  :siblingCount=\"0\"\n  :totalPages=\"3\"\n/>\n</template>\n",
-    "svelte": "<script lang=\"ts\">\n  import { Pagination } from '@larose-ui/svelte';\n</script>\n\n<Pagination\n  page={3}\n  siblingCount={0}\n  totalPages={3}\n/>\n"
+    "react": "import { Pagination } from '@larose-ui/react';\n\nexport default function App() {\n  return <Pagination\n  nextLabel=\"Next page\"\n  page={3}\n  previousLabel=\"Previous page\"\n  siblingCount={1}\n  totalPages={3}\n/>;\n}\n",
+    "vue": "<script setup lang=\"ts\">\nimport { Pagination } from '@larose-ui/vue';\n</script>\n\n<template>\n  <Pagination\n  nextLabel=\"Next page\"\n  :page=\"3\"\n  previousLabel=\"Previous page\"\n  :siblingCount=\"1\"\n  :totalPages=\"3\"\n/>\n</template>\n",
+    "svelte": "<script lang=\"ts\">\n  import { Pagination } from '@larose-ui/svelte';\n</script>\n\n<Pagination\n  nextLabel=\"Next page\"\n  page={3}\n  previousLabel=\"Previous page\"\n  siblingCount={1}\n  totalPages={3}\n/>\n"
   },
   "PathControl": {
     "react": "import { PathControl } from '@larose-ui/react';\n\nexport default function App() {\n  return (\n    <PathControl\n      segments={[\n        { id: 'home', label: 'Home' },\n        { id: 'employees', label: 'Employees' },\n        { id: 'ahmed', label: 'Ahmed' },\n      ]}\n    />\n  );\n}\n",

@@ -11,9 +11,13 @@
     {
       "name": "muted",
       "type": "boolean",
-      "required": false
+      "required": false,
+      "default": "false"
     }
   ],
   "events": [],
+  "defaults": {
+    "muted": "false"
+  },
   "keyboard": {}
 }

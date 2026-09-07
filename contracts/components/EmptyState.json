@@ -26,7 +26,8 @@
     {
       "name": "state",
       "type": "UIState",
-      "required": false
+      "required": false,
+      "default": "'empty'"
     }
   ],
   "events": [
@@ -35,5 +36,8 @@
       "payload": "() => void"
     }
   ],
+  "defaults": {
+    "state": "'empty'"
+  },
   "keyboard": {}
 }

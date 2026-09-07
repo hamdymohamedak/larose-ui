@@ -8,15 +8,17 @@
       "name": "ariaLabel",
       "type": "string",
       "required": false,
+      "default": "'Collection'",
       "inherited": false,
-      "example": "—"
+      "example": "'Collection'"
     },
     {
       "name": "columns",
       "type": "number",
       "required": false,
+      "default": "4",
       "inherited": false,
-      "example": "0"
+      "example": "4"
     },
     {
       "name": "items",
@@ -29,8 +31,9 @@
       "name": "layout",
       "type": "CollectionLayout",
       "required": false,
+      "default": "'grid'",
       "inherited": false,
-      "example": "—"
+      "example": "'grid'"
     },
     {
       "name": "onSelect",

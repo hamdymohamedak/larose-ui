@@ -15,8 +15,9 @@
       "name": "variant",
       "type": "AlertVariant",
       "required": false,
+      "default": "'info'",
       "inherited": false,
-      "example": "\"md\""
+      "example": "'info'"
     }
   ],
   "examples": [

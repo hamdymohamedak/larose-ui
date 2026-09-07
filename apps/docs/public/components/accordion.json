@@ -31,9 +31,9 @@
       "name": "type",
       "type": "'single' | 'multiple'",
       "required": false,
-      "default": "== 'single') {",
+      "default": "'single'",
       "inherited": false,
-      "example": "\"single\""
+      "example": "'single'"
     },
     {
       "name": "value",
