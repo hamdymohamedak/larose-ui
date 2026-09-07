@@ -1,5 +1,12 @@
 # @larose-ui/runtime-vue
 
+## 2.0.0
+
+### Patch Changes
+
+- Updated dependencies [5400097]
+  - @larose-ui/vue@0.4.0
+
 ## 1.0.0
 
 ### Minor Changes

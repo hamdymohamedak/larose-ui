@@ -1,5 +1,11 @@
 # @larose-ui/vue
 
+## 0.4.0
+
+### Minor Changes
+
+- 5400097: fix topBar %% tabBar
+
 ## 0.3.0
 
 ### Minor Changes

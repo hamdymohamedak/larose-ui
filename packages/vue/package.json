@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/vue",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Vue 3 components with the same design system as React and Svelte.",
   "type": "module",
   "main": "./dist/index.js",

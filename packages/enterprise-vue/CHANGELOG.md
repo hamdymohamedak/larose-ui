@@ -1,5 +1,14 @@
 # @larose-ui/enterprise-vue
 
+## 0.3.1
+
+### Patch Changes
+
+- Updated dependencies [5400097]
+  - @larose-ui/vue@0.4.0
+  - @larose-ui/forms-vue@0.3.1
+  - @larose-ui/runtime-vue@2.0.0
+
 ## 0.3.0
 
 ### Minor Changes
