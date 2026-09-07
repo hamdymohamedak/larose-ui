@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/devtools-vue",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "In-app runtime inspector for Vue (development only).",
   "type": "module",
   "main": "./dist/index.js",

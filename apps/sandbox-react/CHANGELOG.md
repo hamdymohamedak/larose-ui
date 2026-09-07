@@ -1,5 +1,18 @@
 # @larose-ui/sandbox-react
 
+## 0.1.1
+
+### Patch Changes
+
+- 5400097: fix topBar / tabBar Liquid Glass alignment in Vue sandbox demos.
+- Updated dependencies [14c415f]
+- Updated dependencies [5400097]
+  - @larose-ui/react@0.3.1
+  - @larose-ui/runtime-react@2.0.1
+  - @larose-ui/styles@0.3.1
+  - @larose-ui/tokens@0.3.1
+  - @larose-ui/sandbox-shared@0.1.1
+
 ## 0.1.0
 
 ### Minor Changes

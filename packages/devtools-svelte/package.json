@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/devtools-svelte",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "In-app runtime inspector for Svelte (development only).",
   "type": "module",
   "svelte": "./dist/index.js",

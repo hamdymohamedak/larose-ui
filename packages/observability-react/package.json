@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/observability-react",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "UX observability for React — journeys, funnels, rage clicks.",
   "type": "module",
   "main": "./dist/index.js",

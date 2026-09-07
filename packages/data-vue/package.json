@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/data-vue",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Vue data fetching with self-healing errors and undo.",
   "type": "module",
   "main": "./dist/index.js",

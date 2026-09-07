@@ -1,5 +1,26 @@
 # @larose-ui/vue
 
+## 0.4.1
+
+### Patch Changes
+
+- 14c415f: Clarify the public npm surface and ship the one-CSS install story.
+
+  - Mark building-block packages as internal (still published for transitive installs; not product docs).
+  - Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.
+  - Align package metadata, readmes, and docs install copy with the public vs internal split.
+
+- 5400097: fix topBar / tabBar Liquid Glass alignment in Vue sandbox demos.
+- Updated dependencies [14c415f]
+  - @larose-ui/component-logic@0.3.1
+  - @larose-ui/core@0.3.1
+  - @larose-ui/liquid-glass-core@0.3.1
+  - @larose-ui/primitives@0.3.1
+  - @larose-ui/runtime-core@0.3.1
+  - @larose-ui/styles@0.3.1
+  - @larose-ui/themes@0.3.1
+  - @larose-ui/tokens@0.3.1
+
 ## 0.4.0
 
 ### Minor Changes

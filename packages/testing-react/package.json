@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/testing-react",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "React test utilities with full laRose runtime context.",
   "type": "module",
   "main": "./dist/index.js",

@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/ai-react",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Permission-bound AI UI for React (SmartTable / SmartForm).",
   "type": "module",
   "main": "./dist/index.js",

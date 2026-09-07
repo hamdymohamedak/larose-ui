@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/runtime-react",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "App runtime for React — theme, i18n, network, offline, session.",
   "type": "module",
   "main": "./dist/index.js",
@@ -38,7 +38,7 @@
     "@larose-ui/observability-react": "workspace:*"
   },
   "peerDependencies": {
-    "@larose-ui/react": ">=0.3.0",
+    "@larose-ui/react": ">=0.3.1",
     "react": ">=18",
     "react-dom": ">=18"
   },

@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/devtools-core",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "[Internal] Framework-agnostic component performance helpers. Prefer @larose-ui/react, @larose-ui/vue, @larose-ui/svelte, or @larose-ui/runtime-* in apps.",
   "type": "module",
   "main": "./dist/index.js",

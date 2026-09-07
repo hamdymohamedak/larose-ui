@@ -69,6 +69,12 @@ export const docsChangelog: DocsChangelogEntry[] = [
     "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/core@0.3.0\n  - @larose-ui/network@0.3.0\n  - @larose-ui/observability-react@0.3.0\n  - @larose-ui/offline@0.3.0\n  - @larose-ui/permissions-react@0.3.0\n  - @larose-ui/react@0.3.0\n  - @larose-ui/runtime-core@0.3.0\n  - @larose-ui/themes@0.3.0\n  - @larose-ui/tokens@0.3.0"
   },
   {
+    "package": "@larose-ui/runtime-vue",
+    "version": "2.0.0",
+    "heading": "2.0.0",
+    "body": "### Patch Changes\n\n- Updated dependencies [5400097]\n  - @larose-ui/vue@0.4.0"
+  },
+  {
     "package": "@larose-ui/ai-react",
     "version": "1.0.0",
     "heading": "1.0.0",
@@ -97,6 +103,42 @@ export const docsChangelog: DocsChangelogEntry[] = [
     "version": "1.0.0",
     "heading": "1.0.0",
     "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/core@0.3.0\n  - @larose-ui/network@0.3.0\n  - @larose-ui/observability-vue@0.3.0\n  - @larose-ui/offline@0.3.0\n  - @larose-ui/permissions-vue@0.3.0\n  - @larose-ui/runtime-core@0.3.0\n  - @larose-ui/themes@0.3.0\n  - @larose-ui/tokens@0.3.0\n  - @larose-ui/vue@0.3.0"
+  },
+  {
+    "package": "@larose-ui/vue",
+    "version": "0.4.0",
+    "heading": "0.4.0",
+    "body": "### Minor Changes\n\n- 5400097: fix topBar %% tabBar"
+  },
+  {
+    "package": "@larose-ui/ai-vue",
+    "version": "0.3.1",
+    "heading": "0.3.1",
+    "body": "### Patch Changes\n\n- Updated dependencies [5400097]\n  - @larose-ui/vue@0.4.0\n  - @larose-ui/forms-vue@0.3.1\n  - @larose-ui/runtime-vue@2.0.0"
+  },
+  {
+    "package": "@larose-ui/devtools-vue",
+    "version": "0.3.1",
+    "heading": "0.3.1",
+    "body": "### Patch Changes\n\n- @larose-ui/runtime-vue@2.0.0"
+  },
+  {
+    "package": "@larose-ui/enterprise-vue",
+    "version": "0.3.1",
+    "heading": "0.3.1",
+    "body": "### Patch Changes\n\n- Updated dependencies [5400097]\n  - @larose-ui/vue@0.4.0\n  - @larose-ui/forms-vue@0.3.1\n  - @larose-ui/runtime-vue@2.0.0"
+  },
+  {
+    "package": "@larose-ui/forms-vue",
+    "version": "0.3.1",
+    "heading": "0.3.1",
+    "body": "### Patch Changes\n\n- Updated dependencies [5400097]\n  - @larose-ui/vue@0.4.0"
+  },
+  {
+    "package": "@larose-ui/nuxt",
+    "version": "0.3.1",
+    "heading": "0.3.1",
+    "body": "### Patch Changes\n\n- Updated dependencies [5400097]\n  - @larose-ui/vue@0.4.0\n  - @larose-ui/runtime-vue@2.0.0"
   },
   {
     "package": "@larose-ui/accessibility",
@@ -205,47 +247,5 @@ export const docsChangelog: DocsChangelogEntry[] = [
     "version": "0.3.0",
     "heading": "0.3.0",
     "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/core@0.3.0\n  - @larose-ui/enterprise-core@0.3.0\n  - @larose-ui/forms-svelte@0.3.0\n  - @larose-ui/observability-svelte@0.3.0\n  - @larose-ui/permissions-svelte@0.3.0\n  - @larose-ui/runtime-svelte@1.0.0\n  - @larose-ui/svelte@0.3.0"
-  },
-  {
-    "package": "@larose-ui/enterprise-vue",
-    "version": "0.3.0",
-    "heading": "0.3.0",
-    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/core@0.3.0\n  - @larose-ui/enterprise-core@0.3.0\n  - @larose-ui/forms-vue@0.3.0\n  - @larose-ui/observability-vue@0.3.0\n  - @larose-ui/permissions-vue@0.3.0\n  - @larose-ui/runtime-vue@1.0.0\n  - @larose-ui/vue@0.3.0"
-  },
-  {
-    "package": "@larose-ui/forms-core",
-    "version": "0.3.0",
-    "heading": "0.3.0",
-    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup."
-  },
-  {
-    "package": "@larose-ui/forms-react",
-    "version": "0.3.0",
-    "heading": "0.3.0",
-    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/core@0.3.0\n  - @larose-ui/data-react@0.3.0\n  - @larose-ui/forms-core@0.3.0\n  - @larose-ui/observability-react@0.3.0\n  - @larose-ui/react@0.3.0"
-  },
-  {
-    "package": "@larose-ui/forms-svelte",
-    "version": "0.3.0",
-    "heading": "0.3.0",
-    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/core@0.3.0\n  - @larose-ui/data-core@0.3.0\n  - @larose-ui/forms-core@0.3.0\n  - @larose-ui/observability-svelte@0.3.0\n  - @larose-ui/svelte@0.3.0"
-  },
-  {
-    "package": "@larose-ui/forms-vue",
-    "version": "0.3.0",
-    "heading": "0.3.0",
-    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/core@0.3.0\n  - @larose-ui/data-core@0.3.0\n  - @larose-ui/forms-core@0.3.0\n  - @larose-ui/observability-vue@0.3.0\n  - @larose-ui/vue@0.3.0"
-  },
-  {
-    "package": "@larose-ui/liquid-glass-core",
-    "version": "0.3.0",
-    "heading": "0.3.0",
-    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup."
-  },
-  {
-    "package": "@larose-ui/migration",
-    "version": "0.3.0",
-    "heading": "0.3.0",
-    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup."
   }
 ];

@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/next",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Next.js integration — SSR CSS and theme bootstrap without FOUC.",
   "type": "module",
   "main": "./dist/server.js",
