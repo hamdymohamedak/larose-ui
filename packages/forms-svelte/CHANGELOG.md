@@ -1,5 +1,22 @@
 # @larose-ui/forms-svelte
 
+## 0.3.2
+
+### Patch Changes
+
+- 63e3d3b: Improve npm package READMEs and point Homepage to the docs site.
+
+  - Remove the confusing "Recommended app stack" install list from package READMEs
+  - Set `homepage` to https://hamdymohamedak.github.io/larose-ui/ for all packages
+  - Align docs (architecture / Vue / Svelte / Next / design guides) with the one-CSS install story
+
+- Updated dependencies [63e3d3b]
+  - @larose-ui/core@0.3.2
+  - @larose-ui/data-core@0.3.2
+  - @larose-ui/forms-core@0.3.2
+  - @larose-ui/observability-svelte@0.3.2
+  - @larose-ui/svelte@0.3.2
+
 ## 0.3.1
 
 ### Patch Changes

@@ -1,5 +1,25 @@
 # @larose-ui/vue
 
+## 0.4.2
+
+### Patch Changes
+
+- 63e3d3b: Improve npm package READMEs and point Homepage to the docs site.
+
+  - Remove the confusing "Recommended app stack" install list from package READMEs
+  - Set `homepage` to https://hamdymohamedak.github.io/larose-ui/ for all packages
+  - Align docs (architecture / Vue / Svelte / Next / design guides) with the one-CSS install story
+
+- Updated dependencies [63e3d3b]
+  - @larose-ui/component-logic@0.3.2
+  - @larose-ui/core@0.3.2
+  - @larose-ui/liquid-glass-core@0.3.2
+  - @larose-ui/primitives@0.3.2
+  - @larose-ui/runtime-core@0.3.2
+  - @larose-ui/styles@0.3.2
+  - @larose-ui/themes@0.3.2
+  - @larose-ui/tokens@0.3.2
+
 ## 0.4.1
 
 ### Patch Changes

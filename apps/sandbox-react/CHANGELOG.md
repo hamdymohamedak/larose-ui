@@ -1,5 +1,15 @@
 # @larose-ui/sandbox-react
 
+## 0.1.2
+
+### Patch Changes
+
+- Updated dependencies [63e3d3b]
+  - @larose-ui/react@0.3.2
+  - @larose-ui/runtime-react@2.0.2
+  - @larose-ui/styles@0.3.2
+  - @larose-ui/tokens@0.3.2
+
 ## 0.1.1
 
 ### Patch Changes

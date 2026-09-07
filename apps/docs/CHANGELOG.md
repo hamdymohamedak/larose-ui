@@ -1,5 +1,19 @@
 # @larose-ui/docs
 
+## 0.2.2
+
+### Patch Changes
+
+- Updated dependencies [63e3d3b]
+  - @larose-ui/core@0.3.2
+  - @larose-ui/react@0.3.2
+  - @larose-ui/runtime-react@2.0.2
+  - @larose-ui/styles@0.3.2
+  - @larose-ui/svelte@0.3.2
+  - @larose-ui/themes@0.3.2
+  - @larose-ui/tokens@0.3.2
+  - @larose-ui/vue@0.4.2
+
 ## 0.2.1
 
 ### Patch Changes

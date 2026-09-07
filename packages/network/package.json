@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/network",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "[Internal] Network condition monitor consumed by runtime packages. Prefer @larose-ui/react, @larose-ui/vue, @larose-ui/svelte, or @larose-ui/runtime-* in apps.",
   "type": "module",
   "main": "./dist/index.js",

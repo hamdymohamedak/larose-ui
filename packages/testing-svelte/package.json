@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/testing-svelte",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Svelte test helpers aligned with the laRose matrix.",
   "type": "module",
   "main": "./dist/index.js",

@@ -1,5 +1,26 @@
 # @larose-ui/runtime-svelte
 
+## 1.0.2
+
+### Patch Changes
+
+- 63e3d3b: Improve npm package READMEs and point Homepage to the docs site.
+
+  - Remove the confusing "Recommended app stack" install list from package READMEs
+  - Set `homepage` to https://hamdymohamedak.github.io/larose-ui/ for all packages
+  - Align docs (architecture / Vue / Svelte / Next / design guides) with the one-CSS install story
+
+- Updated dependencies [63e3d3b]
+  - @larose-ui/core@0.3.2
+  - @larose-ui/network@0.3.2
+  - @larose-ui/observability-svelte@0.3.2
+  - @larose-ui/offline@0.3.2
+  - @larose-ui/permissions-svelte@0.3.2
+  - @larose-ui/runtime-core@0.3.2
+  - @larose-ui/svelte@0.3.2
+  - @larose-ui/themes@0.3.2
+  - @larose-ui/tokens@0.3.2
+
 ## 1.0.1
 
 ### Patch Changes

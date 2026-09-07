@@ -1,5 +1,15 @@
 # @larose-ui/sandbox-vue
 
+## 0.0.4
+
+### Patch Changes
+
+- Updated dependencies [63e3d3b]
+  - @larose-ui/runtime-vue@2.0.2
+  - @larose-ui/styles@0.3.2
+  - @larose-ui/tokens@0.3.2
+  - @larose-ui/vue@0.4.2
+
 ## 0.0.3
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @larose-ui/sandbox-svelte
 
+## 0.0.4
+
+### Patch Changes
+
+- Updated dependencies [63e3d3b]
+  - @larose-ui/runtime-svelte@1.0.2
+  - @larose-ui/styles@0.3.2
+  - @larose-ui/svelte@0.3.2
+  - @larose-ui/tokens@0.3.2
+
 ## 0.0.3
 
 ### Patch Changes

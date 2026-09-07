@@ -1,5 +1,18 @@
 # @larose-ui/testing-svelte
 
+## 0.3.2
+
+### Patch Changes
+
+- 63e3d3b: Improve npm package READMEs and point Homepage to the docs site.
+
+  - Remove the confusing "Recommended app stack" install list from package READMEs
+  - Set `homepage` to https://hamdymohamedak.github.io/larose-ui/ for all packages
+  - Align docs (architecture / Vue / Svelte / Next / design guides) with the one-CSS install story
+
+- Updated dependencies [63e3d3b]
+  - @larose-ui/testing-core@0.3.2
+
 ## 0.3.1
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/ai-vue",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Permission-bound AI UI for Vue (SmartTable / SmartForm).",
   "type": "module",
   "main": "./dist/index.js",

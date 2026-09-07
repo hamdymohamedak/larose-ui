@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/accessibility",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "[Internal] Static a11y source scanner used by `larose doctor`. Prefer @larose-ui/react, @larose-ui/vue, @larose-ui/svelte, or @larose-ui/runtime-* in apps.",
   "type": "module",
   "main": "./dist/index.js",

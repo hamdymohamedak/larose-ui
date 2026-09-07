@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/ai-svelte",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Permission-bound AI UI for Svelte (SmartTable / SmartForm).",
   "type": "module",
   "svelte": "./dist/index.js",

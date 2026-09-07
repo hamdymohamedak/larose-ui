@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/enterprise-vue",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Enterprise Vue patterns — audit, session guard, schema IaC.",
   "type": "module",
   "main": "./dist/index.js",

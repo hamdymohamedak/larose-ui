@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/observability-vue",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "UX observability for Vue — journeys, funnels, rage clicks.",
   "type": "module",
   "main": "./dist/index.js",

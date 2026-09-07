@@ -1,6 +1,6 @@
 {
   "name": "@larose-ui/observability-svelte",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "UX observability for Svelte — journeys, funnels, rage clicks.",
   "type": "module",
   "svelte": "./dist/index.js",
