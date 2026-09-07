@@ -1,7 +1,7 @@
 {
   "name": "@larose-ui/permissions-svelte",
   "version": "0.3.0",
-  "description": "Svelte 5 permissions adapter for laRose UI",
+  "description": "Authorization-aware Svelte UI (RBAC / ABAC).",
   "type": "module",
   "svelte": "./dist/index.js",
   "main": "./dist/index.js",
@@ -56,10 +56,15 @@
     "larose",
     "svelte",
     "permissions",
-    "authz"
+    "authz",
+    "larose-public"
   ],
   "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/permissions-svelte#readme",
   "bugs": {
     "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  },
+  "larose": {
+    "publicApi": true,
+    "layer": "feature"
   }
 }

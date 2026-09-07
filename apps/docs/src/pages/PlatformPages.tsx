@@ -12,9 +12,9 @@ const ARCHITECTURE = `
 laRose is **modular by design**. Apps do not install a single mega-package — they compose a small stack for their framework, then opt into intelligence packages.
 
 \`\`\`text
-Foundation (always)
-  @larose-ui/tokens
-  @larose-ui/styles
+Stylesheet (one import)
+  @larose-ui/styles  (or @larose-ui/react/styles.css)
+  tokens are bundled — no separate tokens install
         │
 Framework UI (pick one)
   @larose-ui/react  |  @larose-ui/vue  |  @larose-ui/svelte
@@ -35,7 +35,7 @@ Meta-frameworks
 ## Mental model
 
 - **Install adapters**, not \`*-core\` packages — cores ship transitively unless you are building custom adapters.
-- **UI-only** stack = components + tokens + styles.
+- **UI-only** stack = components + one stylesheet (tokens included).
 - **Full runtime** adds toast, network, offline, and i18n via \`runtime-*\`.
 - See the [Packages hub](/docs/packages) for every install command and when to use each package.
 `;

@@ -121,8 +121,15 @@ ${urls}
 `;
 }
 
-function buildCrawlRules(disallowedPaths) {
-  const lines = ['Allow: /'];
+function buildCrawlRules(disallowedPaths, prefix = '') {
+  const lines = [
+    'Allow: /',
+    `Allow: ${prefix}/sitemap.xml`,
+    `Allow: ${prefix}/llms.txt`,
+    `Allow: ${prefix}/.well-known/`,
+    `Allow: ${prefix}/docs/`,
+    `Allow: ${prefix}/agent/`,
+  ];
   for (const path of disallowedPaths) {
     lines.push(`Disallow: ${path}`);
   }
@@ -137,13 +144,17 @@ export function buildRobotsTxt(siteUrl, basePath) {
   const prefix = normalizeBasePath(basePath);
   const disallowedPaths = DISALLOWED_PATHS.map((path) => `${prefix}${path}`);
   const sitemapUrl = toCanonicalUrl(siteUrl, basePath, '/sitemap.xml');
-  const crawlRules = buildCrawlRules(disallowedPaths);
+  const crawlRules = buildCrawlRules(disallowedPaths, prefix);
   const blocks = [
     ['*', crawlRules],
     ...AI_CRAWLERS.map((agent) => [agent, crawlRules]),
   ];
 
-  const lines = ['# laRose UI Documentation — https://github.com/hamdymohamedak/larose-ui', ''];
+  const lines = [
+    '# laRose UI Documentation — https://github.com/hamdymohamedak/larose-ui',
+    '# RFC 9309 robots.txt + AI crawler rules + Content Signals',
+    '',
+  ];
 
   for (const [agent, rules] of blocks) {
     lines.push(`User-agent: ${agent}`);
@@ -872,13 +883,16 @@ export function buildJwks() {
  * @param {string} basePath
  */
 export function buildLinkHeaderValue(siteUrl, basePath) {
-  const prefix = normalizeBasePath(basePath);
+  const abs = (pathname) => toCanonicalUrl(siteUrl, basePath, pathname);
   const links = [
-    `<${prefix}/llms.txt>; rel="describedby"`,
-    `<${prefix}/.well-known/ai-catalog.json>; rel="ai-catalog"`,
-    `<${prefix}/.well-known/api-catalog>; rel="api-catalog"`,
-    `<${prefix}/sitemap.xml>; rel="sitemap"`,
-    `<${prefix}/docs/getting-started>; rel="service-doc"`,
+    `<${abs('/llms.txt')}>; rel="describedby"; type="text/plain"`,
+    `<${abs('/.well-known/ai-catalog.json')}>; rel="ai-catalog"; type="application/json"`,
+    `<${abs('/.well-known/api-catalog')}>; rel="api-catalog"; type="application/linkset+json"`,
+    `<${abs('/.well-known/openapi/documentation.yaml')}>; rel="service-desc"; type="application/yaml"`,
+    `<${abs('/docs/getting-started')}>; rel="service-doc"; type="text/html"`,
+    `<${abs('/sitemap.xml')}>; rel="sitemap"; type="application/xml"`,
+    `<${abs('/.well-known/mcp/server-card.json')}>; rel="mcp-server-card"; type="application/json"`,
+    `<${abs('/.well-known/agent-skills/index.json')}>; rel="agent-skills"; type="application/json"`,
   ];
   return links.join(', ');
 }
@@ -889,41 +903,57 @@ export function buildLinkHeaderValue(siteUrl, basePath) {
  */
 export function buildCloudflareHeaders(siteUrl, basePath) {
   const link = buildLinkHeaderValue(siteUrl, basePath);
-  return `/*
-  Content-Type: text/html; charset=utf-8
+  const prefix = normalizeBasePath(basePath);
+  const p = (pathname) => `${prefix}${pathname}`;
+
+  return `# Agent-ready headers for Cloudflare Pages (GitHub Pages ignores this file).
+# Avoid a blanket text/html Content-Type — it breaks robots/sitemap/json MIME types.
+
+${p('/')}
   Link: ${link}
 
-/robots.txt
+${p('/index.html')}
+  Link: ${link}
+
+${p('/robots.txt')}
   Content-Type: text/plain; charset=utf-8
 
-/sitemap.xml
+${p('/sitemap.xml')}
   Content-Type: application/xml; charset=utf-8
 
-/.well-known/api-catalog
-  Content-Type: application/linkset+json; profile="https://www.rfc-editor.org/info/rfc9727"
+${p('/llms.txt')}
+  Content-Type: text/plain; charset=utf-8
 
-/.well-known/health
+${p('/.well-known/api-catalog')}
+  Content-Type: application/linkset+json; profile="https://www.rfc-editor.org/info/rfc9727"
+  Access-Control-Allow-Origin: *
+
+${p('/.well-known/api-catalog.json')}
+  Content-Type: application/linkset+json; profile="https://www.rfc-editor.org/info/rfc9727"
+  Access-Control-Allow-Origin: *
+
+${p('/.well-known/health')}
   Content-Type: application/json; charset=utf-8
 
-/.well-known/openapi/*
+${p('/.well-known/openapi/*')}
   Content-Type: application/yaml; charset=utf-8
 
-/.well-known/openid-configuration
+${p('/.well-known/openid-configuration')}
   Content-Type: application/json; charset=utf-8
 
-/.well-known/oauth-authorization-server
+${p('/.well-known/oauth-authorization-server')}
   Content-Type: application/json; charset=utf-8
 
-/.well-known/jwks.json
+${p('/.well-known/jwks.json')}
   Content-Type: application/json; charset=utf-8
 
-/.well-known/oauth-protected-resource
+${p('/.well-known/oauth-protected-resource')}
   Content-Type: application/json; charset=utf-8
 
-/auth.md
+${p('/auth.md')}
   Content-Type: text/markdown; charset=utf-8
 
-/.well-known/mcp/server-card.json
+${p('/.well-known/mcp/server-card.json')}
   Content-Type: application/json; charset=utf-8
   Access-Control-Allow-Origin: *
   Access-Control-Allow-Methods: GET
@@ -931,21 +961,25 @@ export function buildCloudflareHeaders(siteUrl, basePath) {
   Access-Control-Expose-Headers: ETag
   Cache-Control: public, max-age=3600
 
-/.well-known/agent-skills/index.json
+${p('/.well-known/agent-skills/index.json')}
   Content-Type: application/json; charset=utf-8
   Access-Control-Allow-Origin: *
   Access-Control-Allow-Methods: GET
   Cache-Control: public, max-age=3600
 
-/.well-known/agent-skills/*
+${p('/.well-known/agent-skills/*')}
   Content-Type: text/markdown; charset=utf-8
   Access-Control-Allow-Origin: *
 
-/.well-known/ai-catalog.json
+${p('/.well-known/ai-catalog.json')}
   Content-Type: application/json; charset=utf-8
   Access-Control-Allow-Origin: *
   Access-Control-Allow-Methods: GET
   Cache-Control: public, max-age=3600
+
+${p('/agent/markdown/*')}
+  Content-Type: text/markdown; charset=utf-8
+  Access-Control-Allow-Origin: *
 `;
 }
 
@@ -1056,20 +1090,42 @@ export function estimateMarkdownTokens(markdown) {
  * @param {string} siteUrl
  */
 export function buildDnsAidZoneExample(siteUrl) {
+  const root = siteUrl.replace(/\/$/, '');
   const hostname = new URL(siteUrl).hostname;
-  return `; DNS for AI Discovery (DNS-AID) example for ${hostname}
-; Publish these records in your public DNS zone and sign with DNSSEC.
+  return `; DNS for AI Discovery (DNS-AID) for ${hostname}
+; Publish on a DNSSEC-signed zone you control (custom domain).
+; github.io project sites cannot publish _agents under github.io — use a custom domain.
 ; See: https://datatracker.ietf.org/doc/draft-mozleywilliams-dnsop-dnsaid/
 
-_index._agents.${hostname}. 3600 IN SVCB 1 ${hostname}. \\
-  alpn="h3,h2" port=443 mandatory=alpn,port \\
-  key65328="${siteUrl}/.well-known/api-catalog"
+; Primary discovery index (SVCB ServiceMode)
+_index._agents.${hostname}. 3600 IN SVCB 1 ${hostname}. (
+  alpn="h3,h2"
+  port=443
+  mandatory=alpn,port
+  key65328="${root}/.well-known/api-catalog"
+)
 
-_a2a._agents.${hostname}. 3600 IN SVCB 1 ${hostname}. \\
-  alpn="h3,h2" port=443 mandatory=alpn,port \\
-  key65328="${siteUrl}/llms.txt"
+; HTTPS alternate for HTTPS endpoints
+_index._agents.${hostname}. 3600 IN HTTPS 1 ${hostname}. (
+  alpn="h3,h2"
+  port=443
+  mandatory=alpn,port
+  key65328="${root}/.well-known/api-catalog"
+)
 
-; ARD / AI Catalog discovery (optional DNS pointer)
-_catalog._agents.${hostname}. 3600 IN TXT "url=${siteUrl}/.well-known/ai-catalog.json"
+; Agent-to-agent / content map
+_a2a._agents.${hostname}. 3600 IN SVCB 1 ${hostname}. (
+  alpn="h3,h2"
+  port=443
+  mandatory=alpn,port
+  key65328="${root}/llms.txt"
+)
+
+; ARD / AI Catalog discovery
+_catalog._agents.${hostname}. 3600 IN TXT "url=${root}/.well-known/ai-catalog.json"
+
+; MCP server card
+_mcp._agents.${hostname}. 3600 IN TXT "url=${root}/.well-known/mcp/server-card.json"
 `;
 }
+

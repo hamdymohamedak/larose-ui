@@ -1,7 +1,7 @@
 {
   "name": "@larose-ui/data-vue",
   "version": "0.3.0",
-  "description": "Vue 3 data layer adapter for laRose UI (useQuery, useMutation, DataView, useUndo)",
+  "description": "Vue data fetching with self-healing errors and undo.",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -54,10 +54,15 @@
     "larose",
     "vue",
     "data",
-    "useQuery"
+    "useQuery",
+    "larose-public"
   ],
   "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/data-vue#readme",
   "bugs": {
     "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  },
+  "larose": {
+    "publicApi": true,
+    "layer": "feature"
   }
 }

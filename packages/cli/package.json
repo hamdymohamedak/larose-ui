@@ -1,7 +1,7 @@
 {
   "name": "@larose-ui/cli",
   "version": "0.3.0",
-  "description": "CLI for laRose UI platform — doctor, migrate, generate, contribute",
+  "description": "CLI for quality gates, migration, and code generation.",
   "type": "module",
   "bin": {
     "larose": "./dist/cli.js"
@@ -42,10 +42,15 @@
     "react",
     "ui-platform",
     "design-system",
-    "saas"
+    "saas",
+    "larose-public"
   ],
   "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/cli#readme",
   "bugs": {
     "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  },
+  "larose": {
+    "publicApi": true,
+    "layer": "tooling"
   }
 }

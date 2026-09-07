@@ -1,7 +1,7 @@
 {
   "name": "@larose-ui/observability-react",
   "version": "0.3.0",
-  "description": "React adapter — UX observability platform for laRose UI",
+  "description": "UX observability for React — journeys, funnels, rage clicks.",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -56,10 +56,15 @@
     "react",
     "ui-platform",
     "design-system",
-    "saas"
+    "saas",
+    "larose-public"
   ],
-  "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/observability#readme",
+  "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/observability-react#readme",
   "bugs": {
     "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  },
+  "larose": {
+    "publicApi": true,
+    "layer": "feature"
   }
 }

@@ -69,6 +69,7 @@ describe('agent-ready generated files', () => {
 
   it('writes RFC 9727 api-catalog linkset and supporting well-known files', () => {
     expect(existsSync(join(publicDir, '.well-known', 'api-catalog'))).toBe(true);
+    expect(existsSync(join(publicDir, '.well-known', 'api-catalog.json'))).toBe(true);
     expect(existsSync(join(publicDir, '.well-known', 'health'))).toBe(true);
     expect(existsSync(join(publicDir, '.well-known', 'openid-configuration'))).toBe(true);
     expect(existsSync(join(publicDir, '.well-known', 'oauth-authorization-server'))).toBe(true);
@@ -101,12 +102,14 @@ describe('agent-ready generated files', () => {
     const headers = readFileSync(join(publicDir, '_headers'), 'utf8');
     expect(headers).toContain('Link:');
     expect(headers).toContain('rel="api-catalog"');
-    expect(headers).toContain('/.well-known/ai-catalog.json');
+    expect(headers).toContain('rel="service-desc"');
+    expect(headers).toContain('.well-known/ai-catalog.json');
     expect(headers).toContain('Content-Type: text/plain; charset=utf-8');
     expect(headers).toContain('Content-Type: application/json; charset=utf-8');
     expect(headers).toContain('application/linkset+json');
-    expect(headers).toContain('/.well-known/agent-skills/index.json');
+    expect(headers).toContain('agent-skills/index.json');
     expect(headers).toContain('Access-Control-Allow-Origin: *');
+    expect(headers).not.toContain('Content-Type: text/html; charset=utf-8');
   });
 });
 

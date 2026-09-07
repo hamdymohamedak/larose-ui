@@ -1,7 +1,7 @@
 {
   "name": "@larose-ui/data-react",
   "version": "0.3.0",
-  "description": "React adapter — Backend-aware data layer for laRose UI platform",
+  "description": "React data fetching with self-healing errors and undo.",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -56,10 +56,15 @@
     "react",
     "ui-platform",
     "design-system",
-    "saas"
+    "saas",
+    "larose-public"
   ],
-  "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/data#readme",
+  "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/data-react#readme",
   "bugs": {
     "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  },
+  "larose": {
+    "publicApi": true,
+    "layer": "feature"
   }
 }

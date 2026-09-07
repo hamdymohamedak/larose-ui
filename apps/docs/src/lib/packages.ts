@@ -4,11 +4,16 @@ import type { DocsFramework } from '@/lib/frameworks';
 
 export type PackageLayer = DocsPackageEntry['layer'];
 
+/** App-facing packages only (public product story). */
+export function publicDocsPackages(): DocsPackageEntry[] {
+  return docsPackages.filter((pkg) => pkg.consumerFacing);
+}
+
 export const PACKAGE_LAYERS: { id: PackageLayer; label: string; blurb: string }[] = [
   {
     id: 'foundation',
     label: 'Foundation',
-    blurb: 'Tokens, styles, themes, and shared engines. Almost every app needs tokens + styles.',
+    blurb: 'One stylesheet (`@larose-ui/styles`) bundles design tokens + component CSS. Themes are optional branding.',
   },
   {
     id: 'ui',
@@ -50,61 +55,57 @@ export const INSTALL_STACKS: InstallStack[] = [
     id: 'react-ui',
     title: 'React — UI only',
     framework: 'react',
-    description: 'Components + design tokens. Theme via the UI package provider.',
-    command: 'pnpm add @larose-ui/react @larose-ui/tokens @larose-ui/styles',
+    description: 'Components + bundled styles (tokens included via react/styles.css).',
+    command: 'pnpm add @larose-ui/react',
   },
   {
     id: 'react-runtime',
     title: 'React — full runtime',
     framework: 'react',
     description: 'UI plus LaRoseProvider (toast, network, offline, i18n).',
-    command:
-      'pnpm add @larose-ui/react @larose-ui/runtime-react @larose-ui/tokens @larose-ui/styles',
+    command: 'pnpm add @larose-ui/react @larose-ui/runtime-react',
   },
   {
     id: 'next',
     title: 'Next.js',
     framework: 'react',
     description: 'SSR theme script + React UI + runtime.',
-    command:
-      'pnpm add @larose-ui/next @larose-ui/react @larose-ui/runtime-react @larose-ui/tokens @larose-ui/styles',
+    command: 'pnpm add @larose-ui/next @larose-ui/react @larose-ui/runtime-react',
   },
   {
     id: 'vue-ui',
     title: 'Vue — UI only',
     framework: 'vue',
-    description: 'Vue components + shared tokens/styles.',
-    command: 'pnpm add @larose-ui/vue @larose-ui/tokens @larose-ui/styles',
+    description: 'Vue components + @larose-ui/styles (tokens bundled).',
+    command: 'pnpm add @larose-ui/vue @larose-ui/styles',
   },
   {
     id: 'vue-runtime',
     title: 'Vue — full runtime',
     framework: 'vue',
     description: 'UI plus runtime-vue LaRoseProvider.',
-    command:
-      'pnpm add @larose-ui/vue @larose-ui/runtime-vue @larose-ui/tokens @larose-ui/styles',
+    command: 'pnpm add @larose-ui/vue @larose-ui/runtime-vue @larose-ui/styles',
   },
   {
     id: 'nuxt',
     title: 'Nuxt',
     framework: 'vue',
-    description: 'Nuxt module + Vue UI + runtime.',
-    command: 'pnpm add @larose-ui/nuxt @larose-ui/vue @larose-ui/runtime-vue',
+    description: 'Nuxt module + Vue UI + runtime (module injects styles).',
+    command: 'pnpm add @larose-ui/nuxt @larose-ui/vue @larose-ui/runtime-vue @larose-ui/styles',
   },
   {
     id: 'svelte-ui',
     title: 'Svelte — UI only',
     framework: 'svelte',
-    description: 'Svelte 5 components + shared tokens/styles.',
-    command: 'pnpm add @larose-ui/svelte @larose-ui/tokens @larose-ui/styles',
+    description: 'Svelte 5 components + @larose-ui/styles (tokens bundled).',
+    command: 'pnpm add @larose-ui/svelte @larose-ui/styles',
   },
   {
     id: 'svelte-runtime',
     title: 'Svelte — full runtime',
     framework: 'svelte',
     description: 'UI plus runtime-svelte LaRoseProvider.',
-    command:
-      'pnpm add @larose-ui/svelte @larose-ui/runtime-svelte @larose-ui/tokens @larose-ui/styles',
+    command: 'pnpm add @larose-ui/svelte @larose-ui/runtime-svelte @larose-ui/styles',
   },
   {
     id: 'sveltekit',
@@ -112,7 +113,7 @@ export const INSTALL_STACKS: InstallStack[] = [
     framework: 'svelte',
     description: 'SvelteKit SSR helpers + Svelte UI + runtime.',
     command:
-      'pnpm add @larose-ui/sveltekit @larose-ui/svelte @larose-ui/runtime-svelte @larose-ui/tokens @larose-ui/styles',
+      'pnpm add @larose-ui/sveltekit @larose-ui/svelte @larose-ui/runtime-svelte @larose-ui/styles',
   },
 ];
 

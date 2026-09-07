@@ -1,7 +1,7 @@
 {
   "name": "@larose-ui/observability-vue",
   "version": "0.3.0",
-  "description": "Vue 3 observability adapter for laRose UI",
+  "description": "UX observability for Vue — journeys, funnels, rage clicks.",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -53,10 +53,15 @@
     "larose",
     "vue",
     "observability",
-    "telemetry"
+    "telemetry",
+    "larose-public"
   ],
   "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/observability-vue#readme",
   "bugs": {
     "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  },
+  "larose": {
+    "publicApi": true,
+    "layer": "feature"
   }
 }

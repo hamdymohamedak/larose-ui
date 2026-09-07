@@ -1,8 +1,10 @@
 # @larose-ui/enterprise-react
 
-> Enterprise patterns — audit trails, session guards, schema IaC.
+> Enterprise React patterns — audit, session guard, schema IaC.
 
-Part of **[laRose UI](https://github.com/hamdymohamedak/larose-ui)** — the UI Operating System for modern SaaS applications.
+Part of **[laRose UI](https://github.com/hamdymohamedak/larose-ui)** — start with UI + Runtime packages; feature packs are optional.
+
+**Public API layer:** Features
 
 ## Install
 
@@ -21,36 +23,31 @@ yarn add @larose-ui/enterprise-react
 ## Quick start
 
 ```tsx
-import { SessionGuard, AuditedInput, AuditProvider } from '@larose-ui/enterprise-react';
-
-<SessionGuard loginUrl="/login">
-  <AuditProvider actor="admin@acme.com">
-    <AuditedInput field="salary" label="Salary" resourceId="emp-1" />
-  </AuditProvider>
-</SessionGuard>
+import { SessionGuard, AuditedInput } from '@larose-ui/enterprise-react';
 ```
 
 ## Features
 
-- Audit trails on sensitive fields
-- Session expiry handling
-- Version compatibility checks
-- UI schema renderer (IaC for forms)
+- Audit trails
+- Session expiry
+- UI schema renderer
 
-## Related packages
+## Recommended app stack
 
-| Layer | Packages |
-|-------|----------|
-| Foundation | `@larose-ui/core`, `@larose-ui/tokens`, `@larose-ui/react` |
-| Runtime | `@larose-ui/runtime-react`, `@larose-ui/network`, `@larose-ui/offline` |
-| Intelligence | `@larose-ui/data-react`, `@larose-ui/forms-react`, `@larose-ui/permissions-react` |
-| Platform | `@larose-ui/observability-react`, `@larose-ui/enterprise-react`, `@larose-ui/ai-react` |
+Install these first (example for React):
+
+- `@larose-ui/runtime-react`
+- `@larose-ui/react`
+- `@larose-ui/data-react`
+- `@larose-ui/forms-react`
+- `@larose-ui/permissions-react`
+
+Internal packages (`core`, `tokens`, `*-core`, …) are pulled in automatically — you usually do not need to depend on them directly.
 
 ## Documentation
 
 - [Monorepo README](https://github.com/hamdymohamedak/larose-ui#readme)
-- [Architecture](https://github.com/hamdymohamedak/larose-ui/blob/main/docs/architecture/ARCHITECTURE.md)
-- [Roadmap](https://github.com/hamdymohamedak/larose-ui/blob/main/docs/ROADMAP.md)
+- [Public API surface](https://github.com/hamdymohamedak/larose-ui/blob/main/docs/PUBLIC_API.md)
 - [Report an issue](https://github.com/hamdymohamedak/larose-ui/issues)
 
 ## License

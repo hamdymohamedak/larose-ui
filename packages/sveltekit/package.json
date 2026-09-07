@@ -1,7 +1,7 @@
 {
   "name": "@larose-ui/sveltekit",
   "version": "0.3.0",
-  "description": "SvelteKit integration for laRose UI — SSR CSS, theme bootstrap, app root",
+  "description": "SvelteKit helpers for SSR CSS and theme bootstrap.",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -51,5 +51,21 @@
     "type": "git",
     "url": "git+https://github.com/hamdymohamedak/larose-ui.git",
     "directory": "packages/sveltekit"
-  }
+  },
+  "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/sveltekit#readme",
+  "bugs": {
+    "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  },
+  "larose": {
+    "publicApi": true,
+    "layer": "meta"
+  },
+  "keywords": [
+    "larose",
+    "larose-ui",
+    "ui-platform",
+    "design-system",
+    "saas",
+    "larose-public"
+  ]
 }

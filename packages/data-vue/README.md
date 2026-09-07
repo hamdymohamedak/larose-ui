@@ -1,11 +1,54 @@
 # @larose-ui/data-vue
 
-Vue 3 adapter for `@larose-ui/data-core` — `useQuery`, `useMutation`, and `DataView`.
+> Vue data fetching with self-healing errors and undo.
 
-```ts
-import { useQuery, DataView } from '@larose-ui/data-vue';
+Part of **[laRose UI](https://github.com/hamdymohamedak/larose-ui)** — start with UI + Runtime packages; feature packs are optional.
 
-const { data, status } = useQuery<Employee[]>('/api/employees');
+**Public API layer:** Features
+
+## Install
+
+```bash
+npm install @larose-ui/data-vue
+# or
+pnpm add @larose-ui/data-vue
+# or
+yarn add @larose-ui/data-vue
 ```
 
-Uses the shared query/mutation reducers from `@larose-ui/data-core`. Permission gating is opt-in via `permissionAllowed`.
+
+**Peer dependency:** `vue >=3`
+
+
+## Quick start
+
+```tsx
+import { useQuery, DataView } from '@larose-ui/data-vue';
+```
+
+## Features
+
+- Query / mutation composables
+- DataView + UndoToast
+
+## Recommended app stack
+
+Install these first (example for React):
+
+- `@larose-ui/runtime-react`
+- `@larose-ui/react`
+- `@larose-ui/data-react`
+- `@larose-ui/forms-react`
+- `@larose-ui/permissions-react`
+
+Internal packages (`core`, `tokens`, `*-core`, …) are pulled in automatically — you usually do not need to depend on them directly.
+
+## Documentation
+
+- [Monorepo README](https://github.com/hamdymohamedak/larose-ui#readme)
+- [Public API surface](https://github.com/hamdymohamedak/larose-ui/blob/main/docs/PUBLIC_API.md)
+- [Report an issue](https://github.com/hamdymohamedak/larose-ui/issues)
+
+## License
+
+MIT © [laRose UI](https://github.com/hamdymohamedak/larose-ui)

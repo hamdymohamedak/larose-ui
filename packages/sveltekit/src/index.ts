@@ -25,10 +25,8 @@ export function createLaRoseThemeScriptContent(
   return `(function(){try{var appearance=${JSON.stringify(config.appearance)};var storageKey=${JSON.stringify(config.storageKey)};var themeAttr=${JSON.stringify(config.themeAttribute)};var appearanceAttr=${JSON.stringify(config.appearanceAttribute)};var stored=localStorage.getItem(storageKey);var theme=stored==="dark"||stored==="light"?stored:null;if(!theme&&appearance==="system"&&window.matchMedia){theme=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}theme=theme||"light";document.documentElement.setAttribute(themeAttr,theme);document.documentElement.setAttribute(appearanceAttr,appearance);document.documentElement.style.colorScheme=theme;}catch(e){}})();`;
 }
 
-export const LAROSE_CSS_PATHS = [
-  '@larose-ui/tokens/styles.css',
-  '@larose-ui/styles/styles.css',
-] as const;
+/** Tokens are bundled into `@larose-ui/styles/styles.css`. */
+export const LAROSE_CSS_PATHS = ['@larose-ui/styles/styles.css'] as const;
 
 export interface LaRoseKitOptions {
   css?: boolean;

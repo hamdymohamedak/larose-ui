@@ -1,7 +1,7 @@
 {
   "name": "@larose-ui/tokens",
   "version": "0.3.0",
-  "description": "Runtime design tokens for laRose UI platform",
+  "description": "[Internal] Design-token engine and CSS variables — bundled into @larose-ui/styles; use directly only for advanced JS theming. Prefer @larose-ui/react, @larose-ui/vue, @larose-ui/svelte, or @larose-ui/runtime-* in apps.",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -47,10 +47,15 @@
     "react",
     "ui-platform",
     "design-system",
-    "saas"
+    "saas",
+    "larose-internal"
   ],
   "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/tokens#readme",
   "bugs": {
     "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  },
+  "larose": {
+    "publicApi": false,
+    "layer": "internal"
   }
 }

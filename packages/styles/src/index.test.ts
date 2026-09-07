@@ -6,11 +6,13 @@ import { fileURLToPath } from 'node:url';
 const packageRoot = join(dirname(fileURLToPath(import.meta.url)), '..');
 
 describe('@larose-ui/styles', () => {
-  it('bundles component CSS', () => {
+  it('bundles tokens + component CSS in one stylesheet', () => {
     const cssPath = join(packageRoot, 'dist/styles.css');
     expect(existsSync(cssPath)).toBe(true);
     const css = readFileSync(cssPath, 'utf8');
     expect(css.length).toBeGreaterThan(10_000);
+    expect(css).toContain('@larose-ui/tokens (bundled)');
+    expect(css).toContain('--lr-color-primary');
     expect(css).toContain('.lr-Button-button');
     expect(css).toContain('var(--lr-space-2)');
   });

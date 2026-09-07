@@ -1,12 +1,14 @@
 # laRose
 
-UI platform for modern SaaS applications — React components, runtime providers, and intelligence primitives (data, forms, permissions).
+UI platform for modern SaaS applications — React / Vue / Svelte components, runtime providers, and optional intelligence packs (data, forms, permissions).
+
+The monorepo is split precisely for maintainers. **You only need a small public surface** to build an app. See [Public API surface](docs/PUBLIC_API.md).
 
 ## Table of contents
 
 - [Quick start](#quick-start)
 - [Getting started](#getting-started)
-- [Packages](#packages)
+- [Public packages](#public-packages)
 - [Usage](#usage)
 - [Scripts](#scripts)
 - [Documentation](#documentation)
@@ -28,13 +30,13 @@ pnpm run doctor   # quality gates
 
 ## Getting started
 
-### Install
+### Install (React)
 
 ```bash
-pnpm add @larose-ui/runtime-react @larose-ui/react @larose-ui/tokens
+pnpm add @larose-ui/runtime-react @larose-ui/react
 ```
 
-Add intelligence packages as needed:
+Optional intelligence packs:
 
 ```bash
 pnpm add @larose-ui/data-react @larose-ui/forms-react @larose-ui/permissions-react
@@ -46,7 +48,7 @@ pnpm add @larose-ui/observability-react @larose-ui/enterprise-react @larose-ui/a
 ```tsx
 import { LaRoseProvider } from '@larose-ui/runtime-react';
 import { Button, Card, Input } from '@larose-ui/react';
-import '@larose-ui/tokens/styles.css';
+import '@larose-ui/react/styles.css';
 
 export function App() {
   return (
@@ -63,7 +65,6 @@ export function App() {
 Toasts are available via `@larose-ui/runtime-react/toast`:
 
 ```tsx
-import { LaRoseProvider } from '@larose-ui/runtime-react';
 import { useToast } from '@larose-ui/runtime-react/toast';
 
 function SaveButton() {
@@ -103,33 +104,21 @@ See `apps/playground/stories/EmployeeCRUD.stories.tsx` for a full CRUD example w
 pnpm dev   # http://localhost:6006
 ```
 
-## Packages
+## Public packages
 
-| Package | Description |
-|---------|-------------|
-| `@larose-ui/core` | Types, async state machines, error classification |
-| `@larose-ui/liquid-glass-core` | Shared Liquid Glass optics / displacement engine |
-| `@larose-ui/component-logic` | Shared component utils / HIG helpers (framework-agnostic) |
-| `@larose-ui/forms-core` | Framework-agnostic form schema helpers |
-| `@larose-ui/data-core` | Framework-agnostic `apiFetch` client |
-| `@larose-ui/tokens` | Runtime design tokens with density and theming |
-| `@larose-ui/themes` | Named theme presets and tenant branding |
-| `@larose-ui/react` | React components with production UI states |
-| `@larose-ui/network` | Network condition detection (online/offline/slow) |
-| `@larose-ui/offline` | Offline request queue with sync and conflict handling |
-| `@larose-ui/runtime-react` | Provider tree — theme, i18n, network, offline, responsive |
-| `@larose-ui/permissions-react` | Can, Permission, RBAC/ABAC authorization UI |
-| `@larose-ui/data-react` | useQuery, useMutation, DataView, self-healing errors, undo |
-| `@larose-ui/forms-react` | Schema-driven forms with conditional fields |
-| `@larose-ui/observability-react` | Event tracking, funnel metrics, rage click detection |
-| `@larose-ui/contracts` | UI/API contract validation |
-| `@larose-ui/migration` | Deprecation scanning and migration reports |
-| `@larose-ui/testing-react` | `renderWithLaRose()`, test matrix utilities |
-| `@larose-ui/cli` | `larose doctor`, `migrate`, `generate` |
-| `@larose-ui/devtools-react` | In-app runtime inspector (dev only) |
-| `@larose-ui/enterprise-react` | Audit trails, version compatibility, UI schema IaC |
-| `@larose-ui/ai-react` | SmartTable, SmartForm, pluggable AI adapters |
-| `@larose-ui/accessibility` | Component source a11y scanner |
+Start here. Internal building blocks (`core`, `primitives`, `*-core`, …) stay in the monorepo and on npm for dependencies, but they are **not** the product story.
+
+| Layer | Packages |
+|-------|----------|
+| UI | `@larose-ui/react`, `@larose-ui/vue`, `@larose-ui/svelte` |
+| Runtime | `@larose-ui/runtime-react`, `@larose-ui/runtime-vue`, `@larose-ui/runtime-svelte` |
+| Meta | `@larose-ui/next`, `@larose-ui/nuxt`, `@larose-ui/sveltekit` |
+| Stylesheets | `@larose-ui/styles` (tokens bundled; React: `@larose-ui/react/styles.css`) |
+| Branding | `@larose-ui/themes` |
+| Features | `@larose-ui/data-*`, `forms-*`, `permissions-*`, `observability-*`, `enterprise-*`, `ai-*`, `testing-*`, `devtools-*` |
+| Tooling | `@larose-ui/cli` |
+
+Full policy and golden rule: [`docs/PUBLIC_API.md`](docs/PUBLIC_API.md).
 
 ## Usage
 
@@ -138,7 +127,7 @@ import { LaRoseProvider } from '@larose-ui/runtime-react';
 import { DataView } from '@larose-ui/data-react';
 import { Can } from '@larose-ui/permissions-react';
 import { Button, Card } from '@larose-ui/react';
-import '@larose-ui/tokens/styles.css';
+import '@larose-ui/react/styles.css';
 
 function App() {
   return (
@@ -175,11 +164,15 @@ function App() {
 | `pnpm a11y` | Scan component sources for a11y issues |
 | `pnpm migrate` | Dry-run migration report |
 | `pnpm migrate:apply` | Apply safe codemods |
+| `pnpm sync:publish-metadata` | Sync public/internal npm metadata |
+| `pnpm generate:readmes` | Regenerate package READMEs from public surface |
+| `pnpm verify:publish` | Verify publish readiness + public-surface flags |
 
 ## Documentation
 
 | Topic | Location |
 |-------|----------|
+| Public API surface | [`docs/PUBLIC_API.md`](docs/PUBLIC_API.md) |
 | Architecture | [`docs/architecture/ARCHITECTURE.md`](docs/architecture/ARCHITECTURE.md) |
 | Runtime | [`docs/runtime/RUNTIME_2.md`](docs/runtime/RUNTIME_2.md) |
 | Observability | [`docs/observability/OBSERVABILITY_2.md`](docs/observability/OBSERVABILITY_2.md) |

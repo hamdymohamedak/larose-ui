@@ -39,10 +39,8 @@ export default defineNuxtModule<ModuleOptions>({
     }
 
     if (options.css) {
-      nuxt.options.css.push(
-        '@larose-ui/tokens/styles.css',
-        '@larose-ui/styles/styles.css',
-      );
+      // Tokens are bundled into @larose-ui/styles/styles.css
+      nuxt.options.css.push('@larose-ui/styles/styles.css');
     }
 
     nuxt.options.runtimeConfig.public.laRose = {

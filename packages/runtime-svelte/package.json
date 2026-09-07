@@ -1,7 +1,7 @@
 {
   "name": "@larose-ui/runtime-svelte",
   "version": "1.0.0",
-  "description": "Svelte 5 runtime adapter — LaRoseProvider (theme, toast, accelerator, network, offline, i18n) over runtime-core",
+  "description": "App runtime for Svelte 5 — theme, i18n, network, offline, session.",
   "type": "module",
   "svelte": "./dist/index.js",
   "main": "./dist/index.js",
@@ -67,5 +67,21 @@
     "type": "git",
     "url": "git+https://github.com/hamdymohamedak/larose-ui.git",
     "directory": "packages/runtime-svelte"
-  }
+  },
+  "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/runtime-svelte#readme",
+  "bugs": {
+    "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  },
+  "larose": {
+    "publicApi": true,
+    "layer": "runtime"
+  },
+  "keywords": [
+    "larose",
+    "larose-ui",
+    "ui-platform",
+    "design-system",
+    "saas",
+    "larose-public"
+  ]
 }

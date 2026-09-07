@@ -1,7 +1,7 @@
 {
   "name": "@larose-ui/runtime-react",
   "version": "2.0.0",
-  "description": "React runtime adapter for laRose UI — theme, i18n, network, offline, responsive (logic in runtime-core)",
+  "description": "App runtime for React — theme, i18n, network, offline, session.",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -73,10 +73,15 @@
     "react",
     "ui-platform",
     "design-system",
-    "saas"
+    "saas",
+    "larose-public"
   ],
-  "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/runtime#readme",
+  "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/runtime-react#readme",
   "bugs": {
     "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  },
+  "larose": {
+    "publicApi": true,
+    "layer": "runtime"
   }
 }

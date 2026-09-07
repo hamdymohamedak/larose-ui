@@ -1,8 +1,10 @@
 # @larose-ui/runtime-react
 
-> Unified runtime — theme, i18n, permissions, network, and session.
+> App runtime for React — theme, i18n, network, offline, session.
 
-Part of **[laRose UI](https://github.com/hamdymohamedak/larose-ui)** — the UI Operating System for modern SaaS applications.
+Part of **[laRose UI](https://github.com/hamdymohamedak/larose-ui)** — start with UI + Runtime packages; feature packs are optional.
+
+**Public API layer:** Runtime
 
 ## Install
 
@@ -21,7 +23,7 @@ yarn add @larose-ui/runtime-react
 ## Quick start
 
 ```tsx
-import { LaRoseProvider, useRuntime, Feature } from '@larose-ui/runtime-react';
+import { LaRoseProvider, useRuntime } from '@larose-ui/runtime-react';
 
 <LaRoseProvider theme="light" locale="en" permissions={['app.read']}>
   <App />
@@ -30,26 +32,26 @@ import { LaRoseProvider, useRuntime, Feature } from '@larose-ui/runtime-react';
 
 ## Features
 
-- `LaRoseProvider` composes all runtime contexts
-- `useRuntime()`, `useSession()`, `useTheme()`, `useNetwork()`
-- Feature flags, tenant resolver, AdaptiveTable
+- `LaRoseProvider` composes runtime contexts
+- `useRuntime()`, `useTheme()`, `useNetwork()`, `useOffline()`
 - Toast subpath: `@larose-ui/runtime-react/toast`
 
-## Related packages
+## Recommended app stack
 
-| Layer | Packages |
-|-------|----------|
-| Foundation | `@larose-ui/core`, `@larose-ui/tokens`, `@larose-ui/react` |
-| Runtime | `@larose-ui/runtime-react`, `@larose-ui/network`, `@larose-ui/offline` |
-| Intelligence | `@larose-ui/data-react`, `@larose-ui/forms-react`, `@larose-ui/permissions-react` |
-| Platform | `@larose-ui/observability-react`, `@larose-ui/enterprise-react`, `@larose-ui/ai-react` |
+Install these first (example for React):
+
+- `@larose-ui/runtime-react`
+- `@larose-ui/react`
+- `@larose-ui/data-react`
+- `@larose-ui/forms-react`
+- `@larose-ui/permissions-react`
+
+Internal packages (`core`, `tokens`, `*-core`, …) are pulled in automatically — you usually do not need to depend on them directly.
 
 ## Documentation
 
 - [Monorepo README](https://github.com/hamdymohamedak/larose-ui#readme)
-- [Package docs](https://github.com/hamdymohamedak/larose-ui/blob/main/docs/runtime/RUNTIME_2.md)
-- [Architecture](https://github.com/hamdymohamedak/larose-ui/blob/main/docs/architecture/ARCHITECTURE.md)
-- [Roadmap](https://github.com/hamdymohamedak/larose-ui/blob/main/docs/ROADMAP.md)
+- [Public API surface](https://github.com/hamdymohamedak/larose-ui/blob/main/docs/PUBLIC_API.md)
 - [Report an issue](https://github.com/hamdymohamedak/larose-ui/issues)
 
 ## License

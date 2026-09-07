@@ -1,7 +1,7 @@
 {
   "name": "@larose-ui/data-core",
   "version": "0.3.0",
-  "description": "Framework-agnostic data client helpers for laRose UI",
+  "description": "[Internal] Framework-agnostic data client, query/mutation reducers. Prefer @larose-ui/react, @larose-ui/vue, @larose-ui/svelte, or @larose-ui/runtime-* in apps.",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -43,10 +43,15 @@
   "keywords": [
     "larose",
     "data",
-    "fetch"
+    "fetch",
+    "larose-internal"
   ],
   "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/data-core#readme",
   "bugs": {
     "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  },
+  "larose": {
+    "publicApi": false,
+    "layer": "internal"
   }
 }

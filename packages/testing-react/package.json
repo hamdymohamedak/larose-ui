@@ -1,7 +1,7 @@
 {
   "name": "@larose-ui/testing-react",
   "version": "0.3.0",
-  "description": "React testing adapter for laRose — renderWithLaRose over testing-core matrix",
+  "description": "React test utilities with full laRose runtime context.",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -57,10 +57,15 @@
     "react",
     "ui-platform",
     "design-system",
-    "saas"
+    "saas",
+    "larose-public"
   ],
-  "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/testing#readme",
+  "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/testing-react#readme",
   "bugs": {
     "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  },
+  "larose": {
+    "publicApi": true,
+    "layer": "feature"
   }
 }

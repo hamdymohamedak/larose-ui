@@ -1,7 +1,7 @@
 {
   "name": "@larose-ui/nuxt",
   "version": "0.3.0",
-  "description": "Nuxt module for laRose UI — SSR CSS, theme bootstrap, and Vue provider wiring",
+  "description": "Nuxt module — CSS injection, theme script, and auto-imports.",
   "type": "module",
   "exports": {
     ".": {
@@ -52,10 +52,15 @@
     "nuxt",
     "vue",
     "ui-platform",
-    "ssr"
+    "ssr",
+    "larose-public"
   ],
   "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/nuxt#readme",
   "bugs": {
     "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  },
+  "larose": {
+    "publicApi": true,
+    "layer": "meta"
   }
 }

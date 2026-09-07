@@ -1,8 +1,10 @@
 import { writeFileSync, existsSync, mkdirSync, readdirSync, readFileSync, cpSync } from 'node:fs';
-import { join } from 'node:path';
+import { dirname, join } from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { processModuleCssFile } from './build-css-package.mjs';
+
+const repoRoot = join(dirname(fileURLToPath(import.meta.url)), '..');
 
 /** @param {string} dir @returns {string[]} */
 function findModuleCssFiles(dir, results = []) {
@@ -19,20 +21,46 @@ function findModuleCssFiles(dir, results = []) {
 }
 
 /**
- * Bundle scoped component CSS modules into a single stylesheet.
+ * Resolve design-token CSS to prepend into the styles bundle.
+ * Prefers built tokens dist, falls back to source.
+ */
+export function resolveTokensCssPath() {
+  const distPath = join(repoRoot, 'packages/tokens/dist/styles.css');
+  const srcPath = join(repoRoot, 'packages/tokens/src/styles.css');
+  if (existsSync(distPath)) return distPath;
+  if (existsSync(srcPath)) return srcPath;
+  throw new Error(
+    '[larose] @larose-ui/tokens styles.css is missing. Expected packages/tokens/dist/styles.css or src/styles.css.',
+  );
+}
+
+/**
+ * Bundle design tokens + scoped component CSS into a single stylesheet.
+ * Apps only need: `import '@larose-ui/styles/styles.css'`
+ * (or `@larose-ui/react/styles.css`, which copies this file).
+ *
  * @param {string} packageRoot
  * @param {string} [outputName]
  */
 export function writeStylesBundle(packageRoot, outputName = 'styles.css') {
+  const tokensCss = readFileSync(resolveTokensCssPath(), 'utf8').trimEnd();
   const srcDir = join(packageRoot, 'src/components');
   const files = findModuleCssFiles(srcDir).sort();
-  const css = files
+  const componentsCss = files
     .map((file) => {
       const { scoped } = processModuleCssFile(file);
       const rel = file.slice(srcDir.length + 1);
       return `/* ${rel} */\n${scoped}`;
     })
     .join('\n\n');
+
+  const css = [
+    '/* @larose-ui/tokens (bundled) */',
+    tokensCss,
+    '',
+    '/* @larose-ui/styles components */',
+    componentsCss,
+  ].join('\n');
 
   const distDir = join(packageRoot, 'dist');
   if (!existsSync(distDir)) {

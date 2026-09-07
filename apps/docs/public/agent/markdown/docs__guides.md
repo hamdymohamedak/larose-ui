@@ -13,4 +13,5 @@
 - [DevTools](/docs/guides/devtools)
 - [AI runtime](/docs/guides/ai)
 - [Migration & CLI](/docs/guides/migration)
+- [Agent-ready hosting](/docs/guides/agent-ready)
 - [Roadmap](/docs/guides/roadmap)

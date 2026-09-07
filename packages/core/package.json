@@ -1,7 +1,7 @@
 {
   "name": "@larose-ui/core",
   "version": "0.3.0",
-  "description": "Core types, state machines, and utilities for laRose UI platform",
+  "description": "[Internal] Framework-agnostic types, state machines, and shared contracts. Prefer @larose-ui/react, @larose-ui/vue, @larose-ui/svelte, or @larose-ui/runtime-* in apps.",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -42,10 +42,15 @@
     "react",
     "ui-platform",
     "design-system",
-    "saas"
+    "saas",
+    "larose-internal"
   ],
   "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/core#readme",
   "bugs": {
     "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  },
+  "larose": {
+    "publicApi": false,
+    "layer": "internal"
   }
 }

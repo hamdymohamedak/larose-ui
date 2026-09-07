@@ -1,298 +1,42 @@
 #!/usr/bin/env node
 /**
- * Generate professional README.md files and npm metadata for all publishable packages.
+ * Generate README.md files and npm metadata for all publishable packages,
+ * using the public-surface taxonomy (public products vs internal building blocks).
  */
-import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
+import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
+import {
+  getPackageSurface,
+  LAYER_LABELS,
+  listPackageDirs,
+  PUBLIC_PACKAGES,
+} from './public-surface.mjs';
 
 const REPO = 'https://github.com/hamdymohamedak/larose-ui';
 const REPO_GIT = 'git+https://github.com/hamdymohamedak/larose-ui.git';
 
-/** @type {Record<string, { tagline: string; peer?: string; example: string; features: string[]; docs?: string }>} */
-const PACKAGES = {
-  core: {
-    tagline: 'Framework-agnostic types, state machines, and runtime contracts.',
-    example: `import { createAsyncStateMachine, classifyHttpError } from '@larose-ui/core';
+function preferPublicImports(framework = 'react') {
+  return [
+    `@larose-ui/runtime-${framework}`,
+    `@larose-ui/${framework}`,
+    `@larose-ui/data-${framework}`,
+    `@larose-ui/forms-${framework}`,
+    `@larose-ui/permissions-${framework}`,
+  ];
+}
 
-const machine = createAsyncStateMachine();
-machine.send({ type: 'START' });`,
-    features: [
-      'Shared TypeScript types (`UIState`, `AsyncState`, `Environment`)',
-      'Async state machine factory',
-      'HTTP error classification',
-      'Runtime event bus and session state machine',
-      'Feature flag evaluators',
-    ],
-    docs: `${REPO}/blob/main/docs/runtime/RUNTIME_2.md`,
-  },
-  tokens: {
-    tagline: 'Runtime design tokens as CSS custom properties.',
-    example: `import '@larose-ui/tokens/styles.css';
-import { getTokens, tokensToCSSVariables } from '@larose-ui/tokens';
-
-const vars = tokensToCSSVariables(getTokens('light'));`,
-    features: [
-      'Light and dark color palettes',
-      'Density scaling (compact / comfortable / spacious)',
-      'Runtime CSS variables (`--lr-color-*`, `--lr-space-*`)',
-      'Tenant brand color overrides',
-    ],
-  },
-  themes: {
-    tagline: 'Named theme presets and tenant branding helpers.',
-    example: `import { applyThemePreset, listThemePresets } from '@larose-ui/themes';
-
-applyThemePreset(document.documentElement, 'ocean');`,
-    features: [
-      'Built-in presets: default, ocean, forest, sunset',
-      'Runtime theme application without rebuild',
-      'Tenant branding integration',
-    ],
-  },
-  react: {
-    tagline: 'Production-ready React components with built-in UI states.',
-    peer: 'react >=18',
-    example: `import { Button, Card, Input, Dialog } from '@larose-ui/react';
-import '@larose-ui/tokens/styles.css';
-
-<Card title="Profile">
-  <Input label="Email" />
-  <Button variant="primary">Save</Button>
-</Card>`,
-    features: [
-      'Form controls, overlays, navigation, data display',
-      'Loading, error, empty, and disabled states',
-      'Token-driven styling via CSS variables',
-      'AsyncButton, DataTable, CommandPalette, and more',
-    ],
-  },
-  network: {
-    tagline: 'Network condition detection for adaptive UI.',
-    example: `import { createNetworkMonitor, shouldUseSkeleton } from '@larose-ui/network';
-
-const monitor = createNetworkMonitor();
-monitor.subscribe((state) => console.log(state.condition));`,
-    features: [
-      'Online, offline, slow, and high-latency detection',
-      'Navigator connection API integration',
-      'Skeleton vs spinner recommendations',
-    ],
-  },
-  offline: {
-    tagline: 'Offline request queue with sync and conflict handling.',
-    example: `import { createOfflineQueue } from '@larose-ui/offline';
-
-const queue = createOfflineQueue({ persist: true });
-await queue.enqueue({ url: '/api/items', method: 'POST', body: { name: 'Draft' } });`,
-    features: [
-      'Persistent queue (localStorage)',
-      'Automatic sync when back online',
-      'Retry and conflict detection',
-    ],
-  },
-  runtime: {
-    tagline: 'Unified runtime — theme, i18n, permissions, network, and session.',
-    peer: 'react >=18',
-    example: `import { LaRoseProvider, useRuntime, Feature } from '@larose-ui/runtime-react';
-
-<LaRoseProvider theme="light" locale="en" permissions={['app.read']}>
-  <App />
-</LaRoseProvider>`,
-    features: [
-      '`LaRoseProvider` composes all runtime contexts',
-      '`useRuntime()`, `useSession()`, `useTheme()`, `useNetwork()`',
-      'Feature flags, tenant resolver, AdaptiveTable',
-      'Toast subpath: `@larose-ui/runtime-react/toast`',
-    ],
-    docs: `${REPO}/blob/main/docs/runtime/RUNTIME_2.md`,
-  },
-  permissions: {
-    tagline: 'Authorization-aware UI with RBAC/ABAC patterns.',
-    peer: 'react >=18',
-    example: `import { Can } from '@larose-ui/permissions-react';
-
-<Can permission="employees.delete" fallback="disabled">
-  <DeleteButton />
-</Can>`,
-    features: [
-      '`<Can>` and `<Permission>` components',
-      'Hidden, disabled, forbidden, and readonly fallbacks',
-      '`<Explainable>` — show why an action is blocked',
-    ],
-  },
-  data: {
-    tagline: 'Backend-aware data fetching with self-healing errors.',
-    peer: 'react >=18',
-    example: `import { DataView } from '@larose-ui/data-react';
-
-<DataView url="/api/employees" permission="employees.read">
-  {(rows) => <EmployeeTable data={rows} />}
-</DataView>`,
-    features: [
-      '`useQuery`, `useMutation`, `DataView`',
-      'Self-healing errors with auto-retry on 429/5xx',
-      '`useUndo` for destructive action recovery',
-    ],
-  },
-  forms: {
-    tagline: 'Schema-driven forms with validation and conditional fields.',
-    peer: 'react >=18',
-    example: `import { Form } from '@larose-ui/forms-react';
-
-<Form
-  schema={{ id: 'user', fields: [{ name: 'email', type: 'text', label: 'Email', required: true }] }}
-  onSubmit={async (values) => saveUser(values)}
-/>`,
-    features: [
-      'Declarative field schemas',
-      'Conditional visibility (`showWhen`)',
-      'Observability integration for funnel metrics',
-    ],
-  },
-  observability: {
-    tagline: 'UX observability — journeys, funnels, and rage-click analysis.',
-    peer: 'react >=18',
-    example: `import { useJourneyPage, ObservedForm } from '@larose-ui/observability-react';
-
-function Page() {
-  useJourneyPage('employees');
-  return <ObservedForm name="create-employee">{/* fields */}</ObservedForm>;
-}`,
-    features: [
-      'User journey tracking and correlation',
-      'Form funnel metrics and drop-off signals',
-      'Rage click root-cause linking',
-      'Sentry, webhook, and console adapters',
-    ],
-    docs: `${REPO}/blob/main/docs/observability/OBSERVABILITY_2.md`,
-  },
-  contracts: {
-    tagline: 'Validate UI schemas against API contracts in CI.',
-    example: `import { validateContract } from '@larose-ui/contracts';
-
-const result = validateContract(uiSchema, apiSchema);
-if (!result.valid) console.error(result.mismatches);`,
-    features: [
-      'Field presence and type mismatch detection',
-      'Used by `larose doctor` in CI',
-      'Prevents UI/API drift before release',
-    ],
-  },
-  migration: {
-    tagline: 'Codemods, generators, and release intelligence.',
-    example: `import { applyCodemods, runGenerator } from '@larose-ui/migration';
-
-const code = runGenerator('feature', 'EmployeeList');`,
-    features: [
-      'Safe codemods (tokens, provider imports, toast path)',
-      'Scaffolds for forms, pages, and features',
-      'Monorepo release readiness reports',
-    ],
-    docs: `${REPO}/blob/main/docs/ecosystem/MIGRATION.md`,
-  },
-  testing: {
-    tagline: 'Test utilities with full laRose runtime context.',
-    peer: 'react >=18',
-    example: `import { renderWithLaRose } from '@larose-ui/testing-react';
-
-renderWithLaRose(<EmployeeTable />, {
-  permissions: ['employees.read'],
-  theme: 'dark',
-});`,
-    features: [
-      '`renderWithLaRose()` wraps components in `LaRoseProvider`',
-      'Default test matrix scenarios (RTL, unauthorized, mobile)',
-    ],
-  },
-  cli: {
-    tagline: 'CLI for quality gates, migration, and code generation.',
-    example: `# After global install or npx:
-larose doctor --ci
-larose migrate --to 1.0.0 --apply
-larose generate feature EmployeeList ./EmployeeList.tsx`,
-    features: [
-      '`larose doctor` — a11y, contracts, quality scores',
-      '`larose migrate` — deprecation scan and codemods',
-      '`larose generate` — form, page, and feature scaffolds',
-      '`larose release` — monorepo release intelligence',
-    ],
-    docs: `${REPO}/blob/main/docs/quality/QUALITY_ENGINE.md`,
-  },
-  devtools: {
-    tagline: 'In-app runtime inspector for development.',
-    peer: 'react >=18',
-    example: `import { DevToolsProvider } from '@larose-ui/devtools-react';
-
-<LaRoseProvider>
-  <DevToolsProvider />
-  <App />
-</LaRoseProvider>`,
-    features: [
-      'Runtime context panel (session, tenant, permissions)',
-      'Event timeline from the runtime bus',
-      'Component inspector with React fiber introspection',
-      'Journey tab with rage-click analysis',
-    ],
-    docs: `${REPO}/blob/main/docs/devtools/DEVTOOLS_2.md`,
-  },
-  enterprise: {
-    tagline: 'Enterprise patterns — audit trails, session guards, schema IaC.',
-    peer: 'react >=18',
-    example: `import { SessionGuard, AuditedInput, AuditProvider } from '@larose-ui/enterprise-react';
-
-<SessionGuard loginUrl="/login">
-  <AuditProvider actor="admin@acme.com">
-    <AuditedInput field="salary" label="Salary" resourceId="emp-1" />
-  </AuditProvider>
-</SessionGuard>`,
-    features: [
-      'Audit trails on sensitive fields',
-      'Session expiry handling',
-      'Version compatibility checks',
-      'UI schema renderer (IaC for forms)',
-    ],
-  },
-  ai: {
-    tagline: 'Permission-bound AI for SmartTable and SmartForm.',
-    peer: 'react >=18',
-    example: `import { SmartTable, AIProvider, createHttpAdapter } from '@larose-ui/ai-react';
-
-<AIProvider adapter={createHttpAdapter({ baseUrl: 'https://api.example.com' })}>
-  <SmartTable readPermission="employees.read" data={rows} columns={columns} keyExtractor={(r) => r.id} />
-</AIProvider>`,
-    features: [
-      'Natural-language table filtering',
-      'Natural-language form population',
-      'Every action gated by permissions',
-      'HTTP adapter with mock fallback',
-    ],
-    docs: `${REPO}/blob/main/docs/ai/AI_RUNTIME.md`,
-  },
-  accessibility: {
-    tagline: 'Accessibility utilities and component source scanners.',
-    example: `import { scanComponentSource, formatA11yReport } from '@larose-ui/accessibility';
-
-const result = scanComponentSource(source, 'Button.tsx');
-console.log(formatA11yReport(result));`,
-    features: [
-      'Static a11y heuristics for component source',
-      'Integrated with `larose doctor` and `pnpm a11y`',
-      'Recommended CSP export for laRose apps',
-    ],
-  },
-};
-
-function renderReadme(name, meta) {
+function renderPublicReadme(name, surface) {
   const pkg = `@larose-ui/${name}`;
-  const docsSection = meta.docs
-    ? `- [Package docs](${meta.docs})\n`
-    : '';
+  const docsSection = surface.docs ? `- [Package docs](${surface.docs})\n` : '';
+  const example = surface.example ?? `import {} from '${pkg}';`;
 
   return `# ${pkg}
 
-> ${meta.tagline}
+> ${surface.tagline}
 
-Part of **[laRose UI](${REPO})** — the UI Operating System for modern SaaS applications.
+Part of **[laRose UI](${REPO})** — start with UI + Runtime packages; feature packs are optional.
+
+**Public API layer:** ${LAYER_LABELS[surface.layer] ?? surface.layer}
 
 ## Install
 
@@ -304,32 +48,72 @@ pnpm add ${pkg}
 yarn add ${pkg}
 \`\`\`
 
-${meta.peer ? `\n**Peer dependency:** \`${meta.peer}\`\n` : ''}
+${surface.peer ? `\n**Peer dependency:** \`${surface.peer}\`\n` : ''}
 
 ## Quick start
 
 \`\`\`tsx
-${meta.example}
+${example}
 \`\`\`
 
 ## Features
 
-${meta.features.map((f) => `- ${f}`).join('\n')}
+${(surface.features ?? [surface.tagline]).map((f) => `- ${f}`).join('\n')}
 
-## Related packages
+## Recommended app stack
 
-| Layer | Packages |
-|-------|----------|
-| Foundation | \`@larose-ui/core\`, \`@larose-ui/tokens\`, \`@larose-ui/react\` |
-| Runtime | \`@larose-ui/runtime\`, \`@larose-ui/network\`, \`@larose-ui/offline\` |
-| Intelligence | \`@larose-ui/data\`, \`@larose-ui/forms\`, \`@larose-ui/permissions\` |
-| Platform | \`@larose-ui/observability\`, \`@larose-ui/enterprise\`, \`@larose-ui/ai\` |
+Install these first (example for React):
+
+${preferPublicImports('react').map((p) => `- \`${p}\``).join('\n')}
+
+Internal packages (\`core\`, \`tokens\`, \`*-core\`, …) are pulled in automatically — you usually do not need to depend on them directly.
 
 ## Documentation
 
 - [Monorepo README](${REPO}#readme)
-${docsSection}- [Architecture](${REPO}/blob/main/docs/architecture/ARCHITECTURE.md)
-- [Roadmap](${REPO}/blob/main/docs/ROADMAP.md)
+- [Public API surface](${REPO}/blob/main/docs/PUBLIC_API.md)
+${docsSection}- [Report an issue](${REPO}/issues)
+
+## License
+
+MIT © [laRose UI](${REPO})
+`;
+}
+
+function renderInternalReadme(name, surface) {
+  const pkg = `@larose-ui/${name}`;
+  const prefer = preferPublicImports('react');
+
+  return `# ${pkg}
+
+> **Internal package** — ${surface.tagline}
+
+This package is published so other \`@larose-ui/*\` packages can depend on it.
+**App developers should prefer the public surface** instead of importing this directly.
+
+## Prefer these instead
+
+${prefer.map((p) => `- \`${p}\``).join('\n')}
+
+See [Public API surface](${REPO}/blob/main/docs/PUBLIC_API.md) for the full list.
+
+## When to use this package
+
+- You are extending laRose itself (adapters, CLI, custom bindings)
+- You need a low-level primitive that is not re-exported yet
+
+Golden rule: if your only reason to install this is “another laRose package already uses it”, install the public package instead.
+
+## Install (advanced)
+
+\`\`\`bash
+pnpm add ${pkg}
+\`\`\`
+
+## Documentation
+
+- [Monorepo README](${REPO}#readme)
+- [Public API surface](${REPO}/blob/main/docs/PUBLIC_API.md)
 - [Report an issue](${REPO}/issues)
 
 ## License
@@ -340,15 +124,16 @@ MIT © [laRose UI](${REPO})
 
 const packagesDir = join(process.cwd(), 'packages');
 
-for (const name of readdirSync(packagesDir)) {
-  const meta = PACKAGES[name];
-  if (!meta) continue;
-
+for (const name of listPackageDirs(packagesDir)) {
+  const surface = getPackageSurface(name);
   const dir = join(packagesDir, name);
   const pkgPath = join(dir, 'package.json');
   const pkg = JSON.parse(readFileSync(pkgPath, 'utf-8'));
 
-  writeFileSync(join(dir, 'README.md'), renderReadme(name, meta));
+  const readme = surface.publicApi
+    ? renderPublicReadme(name, surface)
+    : renderInternalReadme(name, surface);
+  writeFileSync(join(dir, 'README.md'), readme);
 
   pkg.license = 'MIT';
   pkg.publishConfig = { access: 'public' };
@@ -359,15 +144,36 @@ for (const name of readdirSync(packagesDir)) {
   };
   pkg.homepage = `${REPO}/blob/main/packages/${name}#readme`;
   pkg.bugs = { url: `${REPO}/issues` };
-  if (!pkg.keywords?.length) {
-    pkg.keywords = ['larose-ui', 'larose', 'react', 'ui-platform', 'design-system', 'saas'];
+  pkg.larose = {
+    ...(pkg.larose && typeof pkg.larose === 'object' ? pkg.larose : {}),
+    publicApi: surface.publicApi,
+    layer: surface.layer,
+  };
+
+  if (surface.publicApi) {
+    pkg.description = surface.tagline;
+    const keywords = new Set(pkg.keywords ?? ['larose', 'larose-ui', 'ui-platform', 'design-system', 'saas']);
+    keywords.add('larose-public');
+    keywords.delete('larose-internal');
+    pkg.keywords = [...keywords];
+  } else {
+    pkg.description = `[Internal] ${surface.tagline} Prefer @larose-ui/react, @larose-ui/vue, @larose-ui/svelte, or @larose-ui/runtime-* in apps.`;
+    const keywords = new Set(pkg.keywords ?? ['larose', 'larose-ui']);
+    keywords.add('larose-internal');
+    keywords.delete('larose-public');
+    pkg.keywords = [...keywords];
   }
+
   const files = new Set(pkg.files ?? ['dist']);
   files.add('README.md');
   pkg.files = [...files];
 
   writeFileSync(pkgPath, `${JSON.stringify(pkg, null, 2)}\n`);
-  console.log(`✓ packages/${name} — README.md + metadata`);
+  const badge = surface.publicApi ? 'public' : 'internal';
+  console.log(`✓ packages/${name} — README.md + metadata (${badge}/${surface.layer})`);
 }
 
-console.log('\nDone. Run pnpm changeset and publish to update npm package pages.');
+const publicCount = Object.keys(PUBLIC_PACKAGES).length;
+const total = listPackageDirs(packagesDir).length;
+console.log(`\nDone. Public surface: ${publicCount} / ${total} publishable packages.`);
+console.log('Run pnpm changeset and publish to update npm package pages.');

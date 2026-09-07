@@ -1,7 +1,7 @@
 {
   "name": "@larose-ui/vue",
   "version": "0.3.0",
-  "description": "Vue 3 components for laRose UI — thin adapter over shared styles and primitives",
+  "description": "Vue 3 components with the same design system as React and Svelte.",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -61,10 +61,15 @@
     "vue",
     "vue3",
     "ui-platform",
-    "design-system"
+    "design-system",
+    "larose-public"
   ],
   "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/vue#readme",
   "bugs": {
     "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  },
+  "larose": {
+    "publicApi": true,
+    "layer": "ui"
   }
 }

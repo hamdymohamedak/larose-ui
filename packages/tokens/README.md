@@ -1,51 +1,37 @@
 # @larose-ui/tokens
 
-> Runtime design tokens as CSS custom properties.
+> **Internal package** — Design-token engine and CSS variables — bundled into @larose-ui/styles; use directly only for advanced JS theming.
 
-Part of **[laRose UI](https://github.com/hamdymohamedak/larose-ui)** — the UI Operating System for modern SaaS applications.
+This package is published so other `@larose-ui/*` packages can depend on it.
+**App developers should prefer the public surface** instead of importing this directly.
 
-## Install
+## Prefer these instead
+
+- `@larose-ui/runtime-react`
+- `@larose-ui/react`
+- `@larose-ui/data-react`
+- `@larose-ui/forms-react`
+- `@larose-ui/permissions-react`
+
+See [Public API surface](https://github.com/hamdymohamedak/larose-ui/blob/main/docs/PUBLIC_API.md) for the full list.
+
+## When to use this package
+
+- You are extending laRose itself (adapters, CLI, custom bindings)
+- You need a low-level primitive that is not re-exported yet
+
+Golden rule: if your only reason to install this is “another laRose package already uses it”, install the public package instead.
+
+## Install (advanced)
 
 ```bash
-npm install @larose-ui/tokens
-# or
 pnpm add @larose-ui/tokens
-# or
-yarn add @larose-ui/tokens
 ```
-
-
-
-## Quick start
-
-```tsx
-import '@larose-ui/tokens/styles.css';
-import { getTokens, tokensToCSSVariables } from '@larose-ui/tokens';
-
-const vars = tokensToCSSVariables(getTokens('light'));
-```
-
-## Features
-
-- Light and dark color palettes
-- Density scaling (compact / comfortable / spacious)
-- Runtime CSS variables (`--lr-color-*`, `--lr-space-*`)
-- Tenant brand color overrides
-
-## Related packages
-
-| Layer | Packages |
-|-------|----------|
-| Foundation | `@larose-ui/core`, `@larose-ui/tokens`, `@larose-ui/react` |
-| Runtime | `@larose-ui/runtime-react`, `@larose-ui/network`, `@larose-ui/offline` |
-| Intelligence | `@larose-ui/data-react`, `@larose-ui/forms-react`, `@larose-ui/permissions-react` |
-| Platform | `@larose-ui/observability-react`, `@larose-ui/enterprise-react`, `@larose-ui/ai-react` |
 
 ## Documentation
 
 - [Monorepo README](https://github.com/hamdymohamedak/larose-ui#readme)
-- [Architecture](https://github.com/hamdymohamedak/larose-ui/blob/main/docs/architecture/ARCHITECTURE.md)
-- [Roadmap](https://github.com/hamdymohamedak/larose-ui/blob/main/docs/ROADMAP.md)
+- [Public API surface](https://github.com/hamdymohamedak/larose-ui/blob/main/docs/PUBLIC_API.md)
 - [Report an issue](https://github.com/hamdymohamedak/larose-ui/issues)
 
 ## License

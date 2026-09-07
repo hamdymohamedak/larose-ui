@@ -56,7 +56,7 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..');
  * }} PackageMeta
  */
 
-const CSS_BASE = '@larose-ui/tokens @larose-ui/styles';
+const CSS_BASE = '@larose-ui/styles';
 
 /** @param {string} pkg @param {string[]} [extra] */
 function installAny(pkg, extra = []) {
@@ -158,35 +158,31 @@ machine.send({ type: 'START' });`,
     transitiveNote: 'Pulled in by most @larose-ui packages.',
   },
   tokens: {
-    tagline: 'Runtime design tokens as CSS custom properties.',
-    role: 'Design tokens (color, space, type, motion) exposed as CSS variables.',
-    whenToInstall: 'Always — import `@larose-ui/tokens/styles.css` in every app.',
+    tagline: 'Design-token engine (bundled into @larose-ui/styles).',
+    role: 'Low-level token JS/CSS — apps usually get tokens via `@larose-ui/styles/styles.css`.',
+    whenToInstall: 'Advanced only — runtime `getTokens` / tenant overrides. Prefer `@larose-ui/styles`.',
     layer: 'foundation',
-    consumerFacing: true,
-    example: `import '@larose-ui/tokens/styles.css';
-import { getTokens, tokensToCSSVariables } from '@larose-ui/tokens';
+    consumerFacing: false,
+    example: `import { getTokens, tokensToCSSVariables } from '@larose-ui/tokens';
 
 const vars = tokensToCSSVariables(getTokens('light'));`,
     features: ['Light and dark palettes', 'Density scaling', 'Runtime CSS variables', 'Tenant brand overrides'],
     install: {
       any: installAny('@larose-ui/tokens'),
-      react: installAny('@larose-ui/react', [CSS_BASE]),
-      vue: installAny('@larose-ui/vue', [CSS_BASE]),
-      svelte: installAny('@larose-ui/svelte', [CSS_BASE]),
     },
-    related: ['styles', 'themes', 'react', 'vue', 'svelte'],
+    related: ['styles', 'themes'],
+    transitiveNote: 'Bundled into @larose-ui/styles/styles.css at build time.',
   },
   styles: {
-    tagline: 'Framework-agnostic component CSS from the design system.',
-    role: 'Shared visual styles consumed by React, Vue, and Svelte adapters.',
-    whenToInstall: 'Always with UI packages — import after tokens.',
+    tagline: 'Design tokens + component CSS in one stylesheet.',
+    role: 'Single CSS entry for apps (tokens and component styles bundled together).',
+    whenToInstall: 'Always with Vue / Svelte. React can use `@larose-ui/react/styles.css` instead.',
     layer: 'foundation',
     consumerFacing: true,
-    example: `import '@larose-ui/tokens/styles.css';
-import '@larose-ui/styles/styles.css';`,
-    features: ['CSS modules consumed by React, Vue, and Svelte', 'Single visual language'],
-    install: { any: installAny('@larose-ui/styles', ['@larose-ui/tokens']) },
-    related: ['tokens', 'react', 'vue', 'svelte'],
+    example: `import '@larose-ui/styles/styles.css';`,
+    features: ['Bundled `--lr-*` tokens', 'CSS modules for React, Vue, and Svelte', 'One import for apps'],
+    install: { any: installAny('@larose-ui/styles') },
+    related: ['react', 'vue', 'svelte', 'themes'],
   },
   themes: {
     tagline: 'Named theme presets and tenant branding helpers.',
@@ -242,13 +238,11 @@ const theme = createTheme({ preset: 'refined', colors: { primary: '#6C5CE7' } })
   react: {
     tagline: 'Production-ready React components with LiquidGlass refraction surfaces.',
     role: 'Primary React UI kit (buttons, forms, overlays, navigation, glass).',
-    whenToInstall: 'Building a React app — start here with tokens + styles.',
+    whenToInstall: 'Building a React app — start here; styles.css includes tokens.',
     layer: 'ui',
     consumerFacing: true,
     peer: 'react >=18',
     example: `import { Button, LiquidGlass, LiquidGlassTabBar } from '@larose-ui/react';
-import '@larose-ui/tokens/styles.css';
-import '@larose-ui/styles/styles.css';
 import '@larose-ui/react/styles.css';`,
     features: [
       'Form controls, overlays, navigation, data display',
@@ -257,44 +251,42 @@ import '@larose-ui/react/styles.css';`,
       'Token-driven styling and customization hooks',
     ],
     install: {
-      react: installAny('@larose-ui/react', [CSS_BASE]),
-      any: installAny('@larose-ui/react', [CSS_BASE]),
+      react: installAny('@larose-ui/react'),
+      any: installAny('@larose-ui/react'),
     },
-    related: ['tokens', 'styles', 'runtime-react', 'liquid-glass-core', 'next'],
+    related: ['styles', 'runtime-react', 'liquid-glass-core', 'next'],
   },
   vue: {
     tagline: 'Vue 3 components — thin adapter over shared styles and primitives.',
     role: 'Vue 3 UI kit with Composition API providers and shared CSS.',
-    whenToInstall: 'Building a Vue 3 app — pair with tokens + styles.',
+    whenToInstall: 'Building a Vue 3 app — pair with `@larose-ui/styles`.',
     layer: 'ui',
     consumerFacing: true,
     peer: 'vue >=3.5',
     example: `import { LaRoseProvider, Button, Input } from '@larose-ui/vue';
-import '@larose-ui/tokens/styles.css';
 import '@larose-ui/styles/styles.css';`,
     features: ['Foundation parity set with React', 'Composition API providers', 'Shared CSS modules', 'LiquidGlass family'],
     install: {
       vue: installAny('@larose-ui/vue', [CSS_BASE]),
       any: installAny('@larose-ui/vue', [CSS_BASE]),
     },
-    related: ['tokens', 'styles', 'runtime-vue', 'nuxt'],
+    related: ['styles', 'runtime-vue', 'nuxt'],
   },
   svelte: {
     tagline: 'Svelte 5 components with runes and shared laRose styles.',
     role: 'Svelte 5 UI kit with runes-based APIs and shared design system.',
-    whenToInstall: 'Building a Svelte 5 app — pair with tokens + styles.',
+    whenToInstall: 'Building a Svelte 5 app — pair with `@larose-ui/styles`.',
     layer: 'ui',
     consumerFacing: true,
     peer: 'svelte >=5',
     example: `import { LaRoseProvider, Button } from '@larose-ui/svelte';
-import '@larose-ui/tokens/styles.css';
 import '@larose-ui/styles/styles.css';`,
     features: ['Svelte 5 runes', 'Shared design tokens', 'Foundation parity components', 'LiquidGlass family'],
     install: {
       svelte: installAny('@larose-ui/svelte', [CSS_BASE]),
       any: installAny('@larose-ui/svelte', [CSS_BASE]),
     },
-    related: ['tokens', 'styles', 'runtime-svelte', 'sveltekit'],
+    related: ['styles', 'runtime-svelte', 'sveltekit'],
   },
 
   // ── Runtime services ──
@@ -479,10 +471,10 @@ renderWithLaRose(<App />, { permissions: ['app.read'] });`
     example: `import { LaRoseRoot, createLaRoseThemeScriptContent } from '@larose-ui/next';`,
     features: ['SSR-safe providers', 'Theme bootstrap script', 'CSS path helpers'],
     install: {
-      react: installAny('@larose-ui/next', ['@larose-ui/react', '@larose-ui/runtime-react', CSS_BASE]),
-      any: installAny('@larose-ui/next', ['@larose-ui/react', '@larose-ui/runtime-react', CSS_BASE]),
+      react: installAny('@larose-ui/next', ['@larose-ui/react', '@larose-ui/runtime-react']),
+      any: installAny('@larose-ui/next', ['@larose-ui/react', '@larose-ui/runtime-react']),
     },
-    related: ['react', 'runtime-react', 'tokens', 'styles'],
+    related: ['react', 'runtime-react', 'styles'],
   },
   nuxt: {
     tagline: 'Nuxt module for CSS injection, theme script, and Vue providers.',
@@ -494,10 +486,10 @@ renderWithLaRose(<App />, { permissions: ['app.read'] });`
     example: `export default defineNuxtConfig({ modules: ['@larose-ui/nuxt'] });`,
     features: ['Auto-imports', 'SSR theme script', 'LaRoseApp shell'],
     install: {
-      vue: installAny('@larose-ui/nuxt', ['@larose-ui/vue', '@larose-ui/runtime-vue']),
-      any: installAny('@larose-ui/nuxt', ['@larose-ui/vue', '@larose-ui/runtime-vue']),
+      vue: installAny('@larose-ui/nuxt', ['@larose-ui/vue', '@larose-ui/runtime-vue', CSS_BASE]),
+      any: installAny('@larose-ui/nuxt', ['@larose-ui/vue', '@larose-ui/runtime-vue', CSS_BASE]),
     },
-    related: ['vue', 'runtime-vue', 'tokens', 'styles'],
+    related: ['vue', 'runtime-vue', 'styles'],
   },
   sveltekit: {
     tagline: 'SvelteKit integration — SSR CSS, theme bootstrap, app root.',
@@ -512,7 +504,7 @@ renderWithLaRose(<App />, { permissions: ['app.read'] });`
       svelte: installAny('@larose-ui/sveltekit', ['@larose-ui/svelte', '@larose-ui/runtime-svelte', CSS_BASE]),
       any: installAny('@larose-ui/sveltekit', ['@larose-ui/svelte', '@larose-ui/runtime-svelte', CSS_BASE]),
     },
-    related: ['svelte', 'runtime-svelte', 'tokens', 'styles'],
+    related: ['svelte', 'runtime-svelte', 'styles'],
   },
 
   // ── Tooling ──
@@ -585,7 +577,12 @@ for (const [id, meta] of Object.entries(PACKAGES)) {
   const [, domain, fw] = m;
   const ui =
     fw === 'react' ? '@larose-ui/react' : fw === 'vue' ? '@larose-ui/vue' : '@larose-ui/svelte';
-  const extras = domain === 'runtime' ? [ui, CSS_BASE] : [ui];
+  const extras =
+    domain === 'runtime'
+      ? fw === 'react'
+        ? [ui]
+        : [ui, CSS_BASE]
+      : [ui];
   meta.install = {
     ...meta.install,
     [fw]: installAny(`@larose-ui/${id}`, extras),
@@ -607,6 +604,7 @@ const GUIDES = [
   { id: 'devtools', title: 'DevTools', file: 'docs/devtools/DEVTOOLS_2.md' },
   { id: 'ai', title: 'AI runtime', file: 'docs/ai/AI_RUNTIME.md' },
   { id: 'migration', title: 'Migration & CLI', file: 'docs/ecosystem/MIGRATION.md' },
+  { id: 'agent-ready', title: 'Agent-ready hosting', file: 'docs/ecosystem/AGENT_READY.md' },
   { id: 'roadmap', title: 'Roadmap', file: 'docs/ROADMAP.md' },
 ];
 
@@ -967,10 +965,9 @@ mkdirSync(agentMarkdownDir, { recursive: true });
 
 writeFileSync(join(publicDir, 'robots.txt'), buildRobotsTxt(siteUrl, basePath));
 writeFileSync(join(publicDir, 'sitemap.xml'), buildSitemapXml(siteUrl, basePath, sitemapEntries));
-writeFileSync(
-  join(wellKnownDir, 'api-catalog'),
-  `${JSON.stringify(buildApiCatalogLinkset(siteUrl, basePath), null, 2)}\n`,
-);
+const apiCatalogBody = `${JSON.stringify(buildApiCatalogLinkset(siteUrl, basePath), null, 2)}\n`;
+writeFileSync(join(wellKnownDir, 'api-catalog'), apiCatalogBody);
+writeFileSync(join(wellKnownDir, 'api-catalog.json'), apiCatalogBody);
 writeFileSync(
   join(wellKnownDir, 'health'),
   `${JSON.stringify(buildHealthCheck(siteUrl), null, 2)}\n`,

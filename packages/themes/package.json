@@ -1,7 +1,7 @@
 {
   "name": "@larose-ui/themes",
   "version": "0.3.0",
-  "description": "Named theme presets and tenant branding helpers for laRose",
+  "description": "Named theme presets and tenant branding helpers.",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -45,10 +45,15 @@
     "react",
     "ui-platform",
     "design-system",
-    "saas"
+    "saas",
+    "larose-public"
   ],
   "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/themes#readme",
   "bugs": {
     "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  },
+  "larose": {
+    "publicApi": true,
+    "layer": "branding"
   }
 }

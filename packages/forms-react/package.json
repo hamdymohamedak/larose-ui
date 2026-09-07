@@ -1,7 +1,7 @@
 {
   "name": "@larose-ui/forms-react",
   "version": "0.3.0",
-  "description": "React adapter — Schema-driven forms for laRose UI platform",
+  "description": "Schema-driven React forms with conditional fields.",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -59,10 +59,15 @@
     "react",
     "ui-platform",
     "design-system",
-    "saas"
+    "saas",
+    "larose-public"
   ],
-  "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/forms#readme",
+  "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/forms-react#readme",
   "bugs": {
     "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  },
+  "larose": {
+    "publicApi": true,
+    "layer": "feature"
   }
 }

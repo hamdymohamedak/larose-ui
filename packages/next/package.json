@@ -1,7 +1,7 @@
 {
   "name": "@larose-ui/next",
   "version": "0.3.0",
-  "description": "Next.js integration helpers for laRose UI — SSR, providers, and theme bootstrap",
+  "description": "Next.js integration — SSR CSS and theme bootstrap without FOUC.",
   "type": "module",
   "main": "./dist/server.js",
   "module": "./dist/server.js",
@@ -61,10 +61,15 @@
     "nextjs",
     "react",
     "ui-platform",
-    "ssr"
+    "ssr",
+    "larose-public"
   ],
   "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/next#readme",
   "bugs": {
     "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  },
+  "larose": {
+    "publicApi": true,
+    "layer": "meta"
   }
 }

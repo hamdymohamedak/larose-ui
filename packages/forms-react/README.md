@@ -1,8 +1,10 @@
 # @larose-ui/forms-react
 
-> Schema-driven forms with validation and conditional fields.
+> Schema-driven React forms with conditional fields.
 
-Part of **[laRose UI](https://github.com/hamdymohamedak/larose-ui)** — the UI Operating System for modern SaaS applications.
+Part of **[laRose UI](https://github.com/hamdymohamedak/larose-ui)** — start with UI + Runtime packages; feature packs are optional.
+
+**Public API layer:** Features
 
 ## Install
 
@@ -22,33 +24,30 @@ yarn add @larose-ui/forms-react
 
 ```tsx
 import { Form } from '@larose-ui/forms-react';
-
-<Form
-  schema={{ id: 'user', fields: [{ name: 'email', type: 'text', label: 'Email', required: true }] }}
-  onSubmit={async (values) => saveUser(values)}
-/>
 ```
 
 ## Features
 
-- Declarative field schemas
-- Conditional visibility (`showWhen`)
-- Observability integration for funnel metrics
+- Declarative schemas
+- Conditional visibility
+- Observability hooks
 
-## Related packages
+## Recommended app stack
 
-| Layer | Packages |
-|-------|----------|
-| Foundation | `@larose-ui/core`, `@larose-ui/tokens`, `@larose-ui/react` |
-| Runtime | `@larose-ui/runtime-react`, `@larose-ui/network`, `@larose-ui/offline` |
-| Intelligence | `@larose-ui/data-react`, `@larose-ui/forms-react`, `@larose-ui/permissions-react` |
-| Platform | `@larose-ui/observability-react`, `@larose-ui/enterprise-react`, `@larose-ui/ai-react` |
+Install these first (example for React):
+
+- `@larose-ui/runtime-react`
+- `@larose-ui/react`
+- `@larose-ui/data-react`
+- `@larose-ui/forms-react`
+- `@larose-ui/permissions-react`
+
+Internal packages (`core`, `tokens`, `*-core`, …) are pulled in automatically — you usually do not need to depend on them directly.
 
 ## Documentation
 
 - [Monorepo README](https://github.com/hamdymohamedak/larose-ui#readme)
-- [Architecture](https://github.com/hamdymohamedak/larose-ui/blob/main/docs/architecture/ARCHITECTURE.md)
-- [Roadmap](https://github.com/hamdymohamedak/larose-ui/blob/main/docs/ROADMAP.md)
+- [Public API surface](https://github.com/hamdymohamedak/larose-ui/blob/main/docs/PUBLIC_API.md)
 - [Report an issue](https://github.com/hamdymohamedak/larose-ui/issues)
 
 ## License

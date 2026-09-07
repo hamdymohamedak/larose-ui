@@ -5,14 +5,12 @@ Install laRose UI packages and wrap your app with `LaRoseProvider`.
 ## Install
 
 ```bash
-pnpm add @larose-ui/react @larose-ui/tokens
+pnpm add @larose-ui/react @larose-ui/runtime-react
 ```
 
-For runtime features (network, offline, toasts, permissions):
+Design tokens ship inside `@larose-ui/react/styles.css` — you do **not** need a separate `@larose-ui/tokens` install for normal apps.
 
-```bash
-pnpm add @larose-ui/runtime-react @larose-ui/permissions-react
-```
+For Vue / Svelte, install `@larose-ui/styles` instead (same tokens + component CSS bundle).
 
 ## Minimal app
 
@@ -21,7 +19,6 @@ Import global styles once, then render components inside the provider:
 ```tsx
 import { LaRoseProvider } from '@larose-ui/runtime-react';
 import { Button, Card, Input } from '@larose-ui/react';
-import '@larose-ui/tokens/styles.css';
 import '@larose-ui/react/styles.css';
 
 export function App() {
@@ -43,7 +40,7 @@ For production SaaS apps, use the full runtime provider:
 ```tsx
 import { LaRoseProvider } from '@larose-ui/runtime-react';
 import { Button, Card } from '@larose-ui/react';
-import '@larose-ui/tokens/styles.css';
+import '@larose-ui/react/styles.css';
 
 <LaRoseProvider
   theme="light"
@@ -59,32 +56,10 @@ import '@larose-ui/tokens/styles.css';
 
 ## Liquid glass (`@larose-ui/react`)
 
-For displacement-mapped refraction surfaces — tab bars, top bars, switches, sliders, and custom shells:
-
-```bash
-pnpm add @larose-ui/react @larose-ui/tokens
-```
-
-```tsx
-import {
-  LiquidGlassTabBar,
-  LiquidGlassButton,
-  LiquidGlassSwitch,
-} from '@larose-ui/react';
-
-<LiquidGlassTabBar
-  items={[
-    { key: 'home', label: 'Home', icon: <HomeIcon /> },
-    { key: 'search', label: 'Search', icon: <SearchIcon /> },
-  ]}
-  defaultActiveKey="home"
-/>
-```
-
-Browse the **Glass** category under [Components](/docs/components) for the full LiquidGlass API.
+For displacement-mapped refraction surfaces — tab bars, top bars, buttons, switches, and more — import the LiquidGlass family from `@larose-ui/react`. Styles are already included in `react/styles.css`.
 
 ## Next steps
 
-- Read the [Customization](/docs/guides/customization) guide for theming
-- Browse [Button](/docs/components/button), [LiquidGlassButton](/docs/components/liquid-glass-button), and [CommandPalette](/docs/components/command-palette) docs
-- Open Storybook locally with `pnpm dev` from the monorepo root
+- Browse [Components](/docs/components) for live previews
+- Open [Packages](/docs/packages) for every starter stack
+- Read the [Public API](https://github.com/hamdymohamedak/larose-ui/blob/main/docs/PUBLIC_API.md) surface guide

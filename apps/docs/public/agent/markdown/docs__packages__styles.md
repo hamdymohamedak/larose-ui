@@ -1,7 +1,8 @@
 # @larose-ui/styles
 
-Framework-agnostic component CSS from the design system.
+Design tokens + component CSS in one stylesheet.
 
 ## Features
-- CSS modules consumed by React, Vue, and Svelte
-- Single visual language
+- Bundled `--lr-*` tokens
+- CSS modules for React, Vue, and Svelte
+- One import for apps

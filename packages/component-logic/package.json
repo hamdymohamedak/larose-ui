@@ -1,7 +1,7 @@
 {
   "name": "@larose-ui/component-logic",
   "version": "0.3.0",
-  "description": "Shared framework-agnostic component logic for laRose UI (utils, domain helpers)",
+  "description": "[Internal] Framework-agnostic component domain helpers (HIG-style rules). Prefer @larose-ui/react, @larose-ui/vue, @larose-ui/svelte, or @larose-ui/runtime-* in apps.",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -266,10 +266,15 @@
     "larose",
     "ui-platform",
     "component-logic",
-    "headless"
+    "headless",
+    "larose-internal"
   ],
   "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/component-logic#readme",
   "bugs": {
     "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  },
+  "larose": {
+    "publicApi": false,
+    "layer": "internal"
   }
 }

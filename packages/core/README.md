@@ -1,53 +1,37 @@
 # @larose-ui/core
 
-> Framework-agnostic types, state machines, and runtime contracts.
+> **Internal package** — Framework-agnostic types, state machines, and shared contracts.
 
-Part of **[laRose UI](https://github.com/hamdymohamedak/larose-ui)** — the UI Operating System for modern SaaS applications.
+This package is published so other `@larose-ui/*` packages can depend on it.
+**App developers should prefer the public surface** instead of importing this directly.
 
-## Install
+## Prefer these instead
+
+- `@larose-ui/runtime-react`
+- `@larose-ui/react`
+- `@larose-ui/data-react`
+- `@larose-ui/forms-react`
+- `@larose-ui/permissions-react`
+
+See [Public API surface](https://github.com/hamdymohamedak/larose-ui/blob/main/docs/PUBLIC_API.md) for the full list.
+
+## When to use this package
+
+- You are extending laRose itself (adapters, CLI, custom bindings)
+- You need a low-level primitive that is not re-exported yet
+
+Golden rule: if your only reason to install this is “another laRose package already uses it”, install the public package instead.
+
+## Install (advanced)
 
 ```bash
-npm install @larose-ui/core
-# or
 pnpm add @larose-ui/core
-# or
-yarn add @larose-ui/core
 ```
-
-
-
-## Quick start
-
-```tsx
-import { createAsyncStateMachine, classifyHttpError } from '@larose-ui/core';
-
-const machine = createAsyncStateMachine();
-machine.send({ type: 'START' });
-```
-
-## Features
-
-- Shared TypeScript types (`UIState`, `AsyncState`, `Environment`)
-- Async state machine factory
-- HTTP error classification
-- Runtime event bus and session state machine
-- Feature flag evaluators
-
-## Related packages
-
-| Layer | Packages |
-|-------|----------|
-| Foundation | `@larose-ui/core`, `@larose-ui/tokens`, `@larose-ui/react` |
-| Runtime | `@larose-ui/runtime-react`, `@larose-ui/network`, `@larose-ui/offline` |
-| Intelligence | `@larose-ui/data-react`, `@larose-ui/forms-react`, `@larose-ui/permissions-react` |
-| Platform | `@larose-ui/observability-react`, `@larose-ui/enterprise-react`, `@larose-ui/ai-react` |
 
 ## Documentation
 
 - [Monorepo README](https://github.com/hamdymohamedak/larose-ui#readme)
-- [Package docs](https://github.com/hamdymohamedak/larose-ui/blob/main/docs/runtime/RUNTIME_2.md)
-- [Architecture](https://github.com/hamdymohamedak/larose-ui/blob/main/docs/architecture/ARCHITECTURE.md)
-- [Roadmap](https://github.com/hamdymohamedak/larose-ui/blob/main/docs/ROADMAP.md)
+- [Public API surface](https://github.com/hamdymohamedak/larose-ui/blob/main/docs/PUBLIC_API.md)
 - [Report an issue](https://github.com/hamdymohamedak/larose-ui/issues)
 
 ## License

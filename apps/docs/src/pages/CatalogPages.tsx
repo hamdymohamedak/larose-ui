@@ -194,7 +194,7 @@ export function PackagePage() {
 }
 
 export function PackagesIndexPage() {
-  const [filter, setFilter] = useState<'all' | 'consumer' | DocsFramework>('all');
+  const [filter, setFilter] = useState<'all' | 'consumer' | DocsFramework>('consumer');
 
   const stacks =
     filter === 'all' || filter === 'consumer'
@@ -204,17 +204,17 @@ export function PackagesIndexPage() {
   const visible = docsPackages.filter((pkg) => {
     if (filter === 'consumer') return pkg.consumerFacing;
     if (filter === 'react') {
-      return pkg.id === 'react' || pkg.id.endsWith('-react') || pkg.id === 'next' || ['tokens', 'styles', 'themes'].includes(pkg.id);
+      return pkg.id === 'react' || pkg.id.endsWith('-react') || pkg.id === 'next' || ['styles', 'themes'].includes(pkg.id);
     }
     if (filter === 'vue') {
-      return pkg.id === 'vue' || pkg.id.endsWith('-vue') || pkg.id === 'nuxt' || ['tokens', 'styles', 'themes'].includes(pkg.id);
+      return pkg.id === 'vue' || pkg.id.endsWith('-vue') || pkg.id === 'nuxt' || ['styles', 'themes'].includes(pkg.id);
     }
     if (filter === 'svelte') {
       return (
         pkg.id === 'svelte' ||
         pkg.id.endsWith('-svelte') ||
         pkg.id === 'sveltekit' ||
-        ['tokens', 'styles', 'themes'].includes(pkg.id)
+        ['styles', 'themes'].includes(pkg.id)
       );
     }
     return true;
@@ -226,9 +226,9 @@ export function PackagesIndexPage() {
         <Badge variant="info">Packages</Badge>
         <h1>Install what you need</h1>
         <p>
-          laRose is modular on purpose — there is no single mega-package. You load{' '}
-          <strong>tokens + styles</strong>, pick a <strong>UI adapter</strong> for your framework, then
-          add <strong>runtime</strong> or <strong>intelligence</strong> packages only when you need them.
+          laRose is modular on purpose — there is no single mega-package. Install a{' '}
+          <strong>UI adapter</strong> (styles include tokens), then add <strong>runtime</strong> or{' '}
+          <strong>intelligence</strong> packages only when you need them.
         </p>
       </header>
 

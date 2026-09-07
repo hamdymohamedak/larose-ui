@@ -1,53 +1,104 @@
 # laRose UI Documentation — https://github.com/hamdymohamedak/larose-ui
+# RFC 9309 robots.txt + AI crawler rules + Content Signals
 
 User-agent: *
 Content-Signal: ai-train=no, search=yes, ai-input=yes
 Allow: /
+Allow: /larose-ui/sitemap.xml
+Allow: /larose-ui/llms.txt
+Allow: /larose-ui/.well-known/
+Allow: /larose-ui/docs/
+Allow: /larose-ui/agent/
 Disallow: /larose-ui/docs/playground
 
 User-agent: GPTBot
 Content-Signal: ai-train=no, search=yes, ai-input=yes
 Allow: /
+Allow: /larose-ui/sitemap.xml
+Allow: /larose-ui/llms.txt
+Allow: /larose-ui/.well-known/
+Allow: /larose-ui/docs/
+Allow: /larose-ui/agent/
 Disallow: /larose-ui/docs/playground
 
 User-agent: OAI-SearchBot
 Content-Signal: ai-train=no, search=yes, ai-input=yes
 Allow: /
+Allow: /larose-ui/sitemap.xml
+Allow: /larose-ui/llms.txt
+Allow: /larose-ui/.well-known/
+Allow: /larose-ui/docs/
+Allow: /larose-ui/agent/
 Disallow: /larose-ui/docs/playground
 
 User-agent: Claude-Web
 Content-Signal: ai-train=no, search=yes, ai-input=yes
 Allow: /
+Allow: /larose-ui/sitemap.xml
+Allow: /larose-ui/llms.txt
+Allow: /larose-ui/.well-known/
+Allow: /larose-ui/docs/
+Allow: /larose-ui/agent/
 Disallow: /larose-ui/docs/playground
 
 User-agent: Google-Extended
 Content-Signal: ai-train=no, search=yes, ai-input=yes
 Allow: /
+Allow: /larose-ui/sitemap.xml
+Allow: /larose-ui/llms.txt
+Allow: /larose-ui/.well-known/
+Allow: /larose-ui/docs/
+Allow: /larose-ui/agent/
 Disallow: /larose-ui/docs/playground
 
 User-agent: Amazonbot
 Content-Signal: ai-train=no, search=yes, ai-input=yes
 Allow: /
+Allow: /larose-ui/sitemap.xml
+Allow: /larose-ui/llms.txt
+Allow: /larose-ui/.well-known/
+Allow: /larose-ui/docs/
+Allow: /larose-ui/agent/
 Disallow: /larose-ui/docs/playground
 
 User-agent: anthropic-ai
 Content-Signal: ai-train=no, search=yes, ai-input=yes
 Allow: /
+Allow: /larose-ui/sitemap.xml
+Allow: /larose-ui/llms.txt
+Allow: /larose-ui/.well-known/
+Allow: /larose-ui/docs/
+Allow: /larose-ui/agent/
 Disallow: /larose-ui/docs/playground
 
 User-agent: Bytespider
 Content-Signal: ai-train=no, search=yes, ai-input=yes
 Allow: /
+Allow: /larose-ui/sitemap.xml
+Allow: /larose-ui/llms.txt
+Allow: /larose-ui/.well-known/
+Allow: /larose-ui/docs/
+Allow: /larose-ui/agent/
 Disallow: /larose-ui/docs/playground
 
 User-agent: CCBot
 Content-Signal: ai-train=no, search=yes, ai-input=yes
 Allow: /
+Allow: /larose-ui/sitemap.xml
+Allow: /larose-ui/llms.txt
+Allow: /larose-ui/.well-known/
+Allow: /larose-ui/docs/
+Allow: /larose-ui/agent/
 Disallow: /larose-ui/docs/playground
 
 User-agent: Applebot-Extended
 Content-Signal: ai-train=no, search=yes, ai-input=yes
 Allow: /
+Allow: /larose-ui/sitemap.xml
+Allow: /larose-ui/llms.txt
+Allow: /larose-ui/.well-known/
+Allow: /larose-ui/docs/
+Allow: /larose-ui/agent/
 Disallow: /larose-ui/docs/playground
 
 Sitemap: https://hamdymohamedak.github.io/larose-ui/sitemap.xml

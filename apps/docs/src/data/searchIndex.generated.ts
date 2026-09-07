@@ -383,8 +383,8 @@ export const docsSearchIndex = [
     "title": "@larose-ui/styles",
     "type": "package",
     "path": "/docs/packages/styles",
-    "keywords": "@larose-ui/styles Framework-agnostic component CSS from the design system. CSS modules consumed by React, Vue, and Svelte Single visual language",
-    "excerpt": "Framework-agnostic component CSS from the design system."
+    "keywords": "@larose-ui/styles Design tokens + component CSS in one stylesheet. Bundled `--lr-*` tokens CSS modules for React, Vue, and Svelte One import for apps",
+    "excerpt": "Design tokens + component CSS in one stylesheet."
   },
   {
     "id": "package:svelte",
@@ -447,8 +447,8 @@ export const docsSearchIndex = [
     "title": "@larose-ui/tokens",
     "type": "package",
     "path": "/docs/packages/tokens",
-    "keywords": "@larose-ui/tokens Runtime design tokens as CSS custom properties. Light and dark palettes Density scaling Runtime CSS variables Tenant brand overrides",
-    "excerpt": "Runtime design tokens as CSS custom properties."
+    "keywords": "@larose-ui/tokens Design-token engine (bundled into @larose-ui/styles). Light and dark palettes Density scaling Runtime CSS variables Tenant brand overrides",
+    "excerpt": "Design-token engine (bundled into @larose-ui/styles)."
   },
   {
     "id": "package:vue",
@@ -11225,6 +11225,14 @@ export const docsSearchIndex = [
     "path": "/docs/guides/migration",
     "keywords": "Migration & CLI # Migration & Ecosystem (Phase 6)\n\nTools for upgrading laRose apps and coordinating monorepo releases.\n\n## Adapter package rename (`*-react`)\n\nPlatform adapters are no longer React-default bare names. Update imports:\n\n| Old | New |\n|-----|-----|\n| `@larose-ui/data` | `@larose-ui/data-react` |\n| `@larose-ui/forms` | `@larose-ui/forms-react` |\n| `@larose-ui/permissions` | `@larose-ui/permissions-react` |\n| `@larose-ui/observability` | `@larose-ui/observability-react` |\n| `@larose-ui/ai` | `@larose-ui/ai-react` |\n| `@larose-ui/enterprise` | `@larose-ui/enterprise-react` |\n| `@larose-ui/testing` | `@larose-ui/testing-react` |\n| `@larose-ui/runtime` | `@larose-ui/runtime-react` |\n| `@larose-ui/devtools` | `@larose-ui/devtools-react` |\n\nVue / Svelte keep `*-vue` / `*-svelte`. Shared logic stays in `*-core`.\n\n## Codemods\n\nSafe automated transforms via `larose migrate --apply`:\n\n| Transform | Description |\n|-----------|-------------|\n| Token rename | `--ui-color-*` → `--lr-color-*` |\n| Provider import | `LaRoseProvider` from `@larose-ui/react` → `@larose-ui/runtime-react` |\n| Toast import | `useToast` from `@larose-ui/runtime-react` → `@larose-ui/runtime-react/toast` |\n\n```bash\npnpm migrate              # dry-run report\npnpm migrate:apply        # apply codemods\n```\n\n## Generators\n\nRuntime 2.0-aware scaffolds:\n\n```bash\nlarose generate form Employee ./EmployeeForm.tsx\nlarose generate page Employees ./EmployeesPage.tsx\nlarose generate feature EmployeeList ./EmployeeListFeature.tsx\n```\n\nGenerated features include `LaRoseProvider`, permissions, journey tracking, DevTools, and SmartTable where appropriate.\n\n## Release intelligence\n\n```bash\npnpm release:report\nlarose release --json\n```\n\nReports version alignment across publishable `@larose-ui/*` packages, publish metadata gaps, and release recommendations.\n\n## Package\n\nAll APIs live in `@larose-ui/migration` and are re-exported through the `larose` CLI.\n",
     "excerpt": "Migration & Ecosystem (Phase 6)\n\nTools for upgrading laRose apps and coordinating monorepo releases.\n\nAdapter package rename (`*-react`)\n\nPlatform adapters are"
+  },
+  {
+    "id": "guide:agent-ready",
+    "title": "Agent-ready hosting",
+    "type": "guide",
+    "path": "/docs/guides/agent-ready",
+    "keywords": "Agent-ready hosting # Agent-ready docs hosting\n\nlaRose docs ship machine-readable discovery files under `apps/docs/public/`:\n\n| Asset | Path |\n|-------|------|\n| robots.txt | `/robots.txt` |\n| sitemap.xml | `/sitemap.xml` |\n| API catalog (RFC 9727) | `/.well-known/api-catalog` |\n| Agent Skills index | `/.well-known/agent-skills/index.json` |\n| MCP Server Card | `/.well-known/mcp/server-card.json` |\n| AI catalog | `/.well-known/ai-catalog.json` |\n| Markdown pages | `/agent/markdown/*.md` |\n| DNS-AID zone example | `/dns-aid.zone.example` |\n\n## Why GitHub Pages project sites fail some checks\n\nRFC 9309 requires `/robots.txt` at the **origin root**. A project site at\n`https://user.github.io/larose-ui/` serves robots at `/larose-ui/robots.txt`, while\nscanners request `https://user.github.io/robots.txt` → **404**.\n\nGitHub Pages also ignores Cloudflare `_headers` and cannot negotiate\n`Accept: text/markdown`.\n\n## Recommended: Cloudflare Pages at site root\n\n1. Deploy with `VITE_BASE_PATH=/` (see `.github/workflows/docs-cloudflare.yml`).\n2. Keep `apps/docs/functions/_middleware.js` in the project (copied into `dist/functions`).\n3. Set `BASE_PATH=/` in the Pages project environment if needed.\n4. Point a custom domain at the Pages project and enable DNSSEC.\n\nThen `/robots.txt`, Link headers, api-catalog MIME type, and Markdown for Agents all work.\n\n## DNS for AI Discovery (DNS-AID)\n\nPublish the records from `/dns-aid.zone.example` (regenerated on docs build) on a\nDNSSEC-signed zone you control — typically your custom docs domain, **not**\n`github.io`.\n\nMinimum records:\n\n- `_index._agents.<domain>` → SVCB/HTTPS pointing at `/.well-known/api-catalog`\n- `_a2a._agents.<domain>` → SVCB pointing at `/llms.txt`\n- `_catalog._agents.<domain>` → TXT `url=https://…/.well-known/ai-catalog.json`\n\n## Validate\n\n```bash\ncurl -sI https://YOUR_DOCS_HOST/robots.txt\ncurl -sI https://YOUR_DOCS_HOST/sitemap.xml\ncurl -sI https://YOUR_DOCS_HOST/.well-known/api-catalog\ncurl -sI -H 'Accept: text/markdown' https://YOUR_DOCS_",
+    "excerpt": "Agent-ready docs hosting\n\nlaRose docs ship machine-readable discovery files under `apps/docs/public/`:\n\n| Asset | Path |\n|-------|------|\n| robots.txt | `/robot"
   },
   {
     "id": "guide:roadmap",

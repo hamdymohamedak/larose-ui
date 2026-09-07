@@ -1,8 +1,10 @@
 # @larose-ui/data-react
 
-> Backend-aware data fetching with self-healing errors.
+> React data fetching with self-healing errors and undo.
 
-Part of **[laRose UI](https://github.com/hamdymohamedak/larose-ui)** — the UI Operating System for modern SaaS applications.
+Part of **[laRose UI](https://github.com/hamdymohamedak/larose-ui)** — start with UI + Runtime packages; feature packs are optional.
+
+**Public API layer:** Features
 
 ## Install
 
@@ -21,33 +23,31 @@ yarn add @larose-ui/data-react
 ## Quick start
 
 ```tsx
-import { DataView } from '@larose-ui/data-react';
-
-<DataView url="/api/employees" permission="employees.read">
-  {(rows) => <EmployeeTable data={rows} />}
-</DataView>
+import { DataView, useQuery } from '@larose-ui/data-react';
 ```
 
 ## Features
 
 - `useQuery`, `useMutation`, `DataView`
-- Self-healing errors with auto-retry on 429/5xx
-- `useUndo` for destructive action recovery
+- Self-healing retries
+- `useUndo`
 
-## Related packages
+## Recommended app stack
 
-| Layer | Packages |
-|-------|----------|
-| Foundation | `@larose-ui/core`, `@larose-ui/tokens`, `@larose-ui/react` |
-| Runtime | `@larose-ui/runtime-react`, `@larose-ui/network`, `@larose-ui/offline` |
-| Intelligence | `@larose-ui/data-react`, `@larose-ui/forms-react`, `@larose-ui/permissions-react` |
-| Platform | `@larose-ui/observability-react`, `@larose-ui/enterprise-react`, `@larose-ui/ai-react` |
+Install these first (example for React):
+
+- `@larose-ui/runtime-react`
+- `@larose-ui/react`
+- `@larose-ui/data-react`
+- `@larose-ui/forms-react`
+- `@larose-ui/permissions-react`
+
+Internal packages (`core`, `tokens`, `*-core`, …) are pulled in automatically — you usually do not need to depend on them directly.
 
 ## Documentation
 
 - [Monorepo README](https://github.com/hamdymohamedak/larose-ui#readme)
-- [Architecture](https://github.com/hamdymohamedak/larose-ui/blob/main/docs/architecture/ARCHITECTURE.md)
-- [Roadmap](https://github.com/hamdymohamedak/larose-ui/blob/main/docs/ROADMAP.md)
+- [Public API surface](https://github.com/hamdymohamedak/larose-ui/blob/main/docs/PUBLIC_API.md)
 - [Report an issue](https://github.com/hamdymohamedak/larose-ui/issues)
 
 ## License

@@ -1,23 +1,20 @@
 #!/usr/bin/env node
 /**
- * Verify all @larose-ui/* packages are ready for npm publish.
+ * Verify all @larose-ui/* packages are ready for npm publish,
+ * including public-surface metadata consistency.
  */
-import { readFileSync, statSync, readdirSync } from 'node:fs';
+import { readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
+import { getPackageSurface, listPackageDirs, PUBLIC_PACKAGES } from './public-surface.mjs';
 
 const packagesDir = join(process.cwd(), 'packages');
 let failed = false;
 
-for (const name of readdirSync(packagesDir)) {
+for (const name of listPackageDirs(packagesDir)) {
   const pkgPath = join(packagesDir, name, 'package.json');
-  let pkg;
-  try {
-    pkg = JSON.parse(readFileSync(pkgPath, 'utf-8'));
-  } catch {
-    continue;
-  }
-
+  const pkg = JSON.parse(readFileSync(pkgPath, 'utf-8'));
   const label = `@larose-ui/${name}`;
+  const surface = getPackageSurface(name);
 
   if (!pkg.license) {
     console.error(`FAIL ${label}: missing license`);
@@ -26,6 +23,35 @@ for (const name of readdirSync(packagesDir)) {
 
   if (!pkg.publishConfig?.access) {
     console.error(`FAIL ${label}: missing publishConfig.access`);
+    failed = true;
+  }
+
+  if (pkg.larose?.publicApi !== surface.publicApi) {
+    console.error(
+      `FAIL ${label}: larose.publicApi=${pkg.larose?.publicApi} (expected ${surface.publicApi}). Run pnpm sync:publish-metadata`,
+    );
+    failed = true;
+  }
+
+  if (pkg.larose?.layer !== surface.layer) {
+    console.error(
+      `FAIL ${label}: larose.layer=${pkg.larose?.layer} (expected ${surface.layer}). Run pnpm sync:publish-metadata`,
+    );
+    failed = true;
+  }
+
+  if (surface.publicApi && !pkg.keywords?.includes('larose-public')) {
+    console.error(`FAIL ${label}: public package missing keyword larose-public`);
+    failed = true;
+  }
+
+  if (!surface.publicApi && !pkg.keywords?.includes('larose-internal')) {
+    console.error(`FAIL ${label}: internal package missing keyword larose-internal`);
+    failed = true;
+  }
+
+  if (!surface.publicApi && !String(pkg.description ?? '').startsWith('[Internal]')) {
+    console.error(`FAIL ${label}: internal package description must start with [Internal]`);
     failed = true;
   }
 
@@ -40,11 +66,20 @@ for (const name of readdirSync(packagesDir)) {
   for (const output of outputs) {
     try {
       statSync(output);
-      console.log(`OK   ${label} v${pkg.version} — ${output}`);
+      console.log(`OK   ${label} v${pkg.version} — ${surface.publicApi ? 'public' : 'internal'}/${surface.layer}`);
     } catch {
       console.error(`FAIL ${label}: missing build output (${output})`);
       failed = true;
     }
+  }
+}
+
+for (const name of Object.keys(PUBLIC_PACKAGES)) {
+  try {
+    readFileSync(join(packagesDir, name, 'package.json'), 'utf-8');
+  } catch {
+    console.error(`FAIL public surface lists missing package: ${name}`);
+    failed = true;
   }
 }
 

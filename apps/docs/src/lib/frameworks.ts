@@ -32,25 +32,36 @@ export function frameworkLanguage(framework: DocsFramework): string {
 
 export type InstallStackMode = 'ui' | 'runtime';
 
+/** Single stylesheet entry — tokens are bundled into styles / react styles. */
+export function getStylesImport(framework: DocsFramework): string {
+  if (framework === 'react') {
+    return "import '@larose-ui/react/styles.css';";
+  }
+  return "import '@larose-ui/styles/styles.css';";
+}
+
+export function getCssImportOrder(framework: DocsFramework): string {
+  return getStylesImport(framework);
+}
+
 export function getInstallCommand(
   framework: DocsFramework,
   _componentName?: string,
   stack: InstallStackMode = 'ui',
 ): string {
-  const base = '@larose-ui/tokens @larose-ui/styles';
   if (framework === 'vue') {
     return stack === 'runtime'
-      ? `pnpm add @larose-ui/vue @larose-ui/runtime-vue ${base}`
-      : `pnpm add @larose-ui/vue ${base}`;
+      ? 'pnpm add @larose-ui/vue @larose-ui/runtime-vue @larose-ui/styles'
+      : 'pnpm add @larose-ui/vue @larose-ui/styles';
   }
   if (framework === 'svelte') {
     return stack === 'runtime'
-      ? `pnpm add @larose-ui/svelte @larose-ui/runtime-svelte ${base}`
-      : `pnpm add @larose-ui/svelte ${base}`;
+      ? 'pnpm add @larose-ui/svelte @larose-ui/runtime-svelte @larose-ui/styles'
+      : 'pnpm add @larose-ui/svelte @larose-ui/styles';
   }
   return stack === 'runtime'
-    ? `pnpm add @larose-ui/react @larose-ui/runtime-react ${base}`
-    : `pnpm add @larose-ui/react ${base}`;
+    ? 'pnpm add @larose-ui/react @larose-ui/runtime-react'
+    : 'pnpm add @larose-ui/react';
 }
 
 export function getImportCode(componentName: string, framework: DocsFramework): string {
@@ -61,12 +72,6 @@ export function getImportCode(componentName: string, framework: DocsFramework): 
     return `import { ${componentName}, LaRoseProvider } from '@larose-ui/svelte';`;
   }
   return `import { ${componentName} } from '@larose-ui/react';`;
-}
-
-export function getStylesImport(framework: DocsFramework): string {
-  void framework;
-  return `import '@larose-ui/tokens/styles.css';
-import '@larose-ui/styles/styles.css';`;
 }
 
 export function getProviderSetup(framework: DocsFramework): string {
@@ -96,7 +101,6 @@ createApp(App).mount('#app');`;
   }
 
   return `${styles}
-import '@larose-ui/react/styles.css';
 
 import { LaRoseProvider } from '@larose-ui/runtime-react';
 
@@ -166,6 +170,7 @@ export function getGettingStartedExample(framework: DocsFramework): string {
   if (framework === 'vue') {
     return `<script setup lang="ts">
 import { LaRoseProvider, Button, Card, Input } from '@larose-ui/vue';
+import '@larose-ui/styles/styles.css';
 </script>
 
 <template>
@@ -181,6 +186,7 @@ import { LaRoseProvider, Button, Card, Input } from '@larose-ui/vue';
   if (framework === 'svelte') {
     return `<script lang="ts">
   import { LaRoseProvider, Button, Card, Input } from '@larose-ui/svelte';
+  import '@larose-ui/styles/styles.css';
 </script>
 
 <LaRoseProvider theme="light">
@@ -195,7 +201,6 @@ import { LaRoseProvider, Button, Card, Input } from '@larose-ui/vue';
 
   return `import { LaRoseProvider } from '@larose-ui/runtime-react';
 import { Button, Card, Input } from '@larose-ui/react';
-import '@larose-ui/tokens/styles.css';
 import '@larose-ui/react/styles.css';
 
 export function App() {
@@ -208,16 +213,4 @@ export function App() {
     </LaRoseProvider>
   );
 }`;
-}
-
-
-export function getCssImportOrder(framework: DocsFramework): string {
-  const lines = [
-    "import '@larose-ui/tokens/styles.css';",
-    "import '@larose-ui/styles/styles.css';",
-  ];
-  if (framework === 'react') {
-    lines.push("import '@larose-ui/react/styles.css';");
-  }
-  return lines.join('\n');
 }

@@ -152,14 +152,16 @@ export function DocsShell({ children }: { children?: ReactNode }) {
               <span className="docs-header-search-short">Search</span>
             </Button>
             <DocsThemeSwitch labelVariant="full" />
-            <Button
-              className="docs-header-action--secondary"
-              variant="outline"
-              size="sm"
-              onClick={() => window.open('http://localhost:6006', '_blank', 'noopener,noreferrer')}
-            >
-              Storybook
-            </Button>
+            {import.meta.env.DEV ? (
+              <Button
+                className="docs-header-action--secondary"
+                variant="outline"
+                size="sm"
+                onClick={() => window.open('http://localhost:6006', '_blank', 'noopener,noreferrer')}
+              >
+                Storybook
+              </Button>
+            ) : null}
             <Button
               className="docs-header-action--secondary"
               size="sm"

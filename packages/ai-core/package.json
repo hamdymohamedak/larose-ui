@@ -1,7 +1,7 @@
 {
   "name": "@larose-ui/ai-core",
   "version": "0.3.0",
-  "description": "Framework-agnostic AI runtime, intents, and adapters for laRose UI",
+  "description": "[Internal] Framework-agnostic AI intent runtime and adapters. Prefer @larose-ui/react, @larose-ui/vue, @larose-ui/svelte, or @larose-ui/runtime-* in apps.",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -42,6 +42,15 @@
   "keywords": [
     "larose",
     "ai",
-    "framework-agnostic"
-  ]
+    "framework-agnostic",
+    "larose-internal"
+  ],
+  "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/ai-core#readme",
+  "bugs": {
+    "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  },
+  "larose": {
+    "publicApi": false,
+    "layer": "internal"
+  }
 }

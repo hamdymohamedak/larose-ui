@@ -1,6 +1,6 @@
 # @larose-ui/tokens
 
-Runtime design tokens as CSS custom properties.
+Design-token engine (bundled into @larose-ui/styles).
 
 ## Features
 - Light and dark palettes

@@ -1,7 +1,7 @@
 {
   "name": "@larose-ui/ai-vue",
   "version": "0.3.0",
-  "description": "Vue 3 AI adapter for laRose UI — AIProvider, SmartTable, SmartForm over ai-core",
+  "description": "Permission-bound AI UI for Vue (SmartTable / SmartForm).",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -51,5 +51,21 @@
     "type": "git",
     "url": "git+https://github.com/hamdymohamedak/larose-ui.git",
     "directory": "packages/ai-vue"
-  }
+  },
+  "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/ai-vue#readme",
+  "bugs": {
+    "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  },
+  "larose": {
+    "publicApi": true,
+    "layer": "feature"
+  },
+  "keywords": [
+    "larose",
+    "larose-ui",
+    "ui-platform",
+    "design-system",
+    "saas",
+    "larose-public"
+  ]
 }

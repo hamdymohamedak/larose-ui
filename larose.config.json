@@ -5,17 +5,28 @@
       "componentsRoot": "packages/react/src",
       "storiesDir": "apps/playground/stories",
       "storySuffix": ".stories.tsx",
-      "componentExtensions": [".tsx"]
+      "componentExtensions": [
+        ".tsx"
+      ]
     },
     {
       "id": "vue",
       "componentsRoot": "packages/vue/src",
-      "componentExtensions": [".vue"]
+      "componentExtensions": [
+        ".vue"
+      ]
     },
     {
       "id": "svelte",
       "componentsRoot": "packages/svelte/src/lib",
-      "componentExtensions": [".svelte"]
+      "componentExtensions": [
+        ".svelte"
+      ]
     }
-  ]
+  ],
+  "publicSurface": {
+    "source": "scripts/public-surface.mjs",
+    "docs": "docs/PUBLIC_API.md",
+    "rule": "If a package has no clear end user and only other @larose-ui packages consume it, keep it out of the public product story."
+  }
 }

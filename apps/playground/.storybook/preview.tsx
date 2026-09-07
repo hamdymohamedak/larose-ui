@@ -1,7 +1,5 @@
 import type { Preview, StoryContext } from '@storybook/react';
 import { memo, type ComponentType } from 'react';
-import '@larose-ui/tokens/styles.css';
-import '@larose-ui/styles/styles.css';
 import '@larose-ui/react/styles.css';
 import './preview.css';
 import {

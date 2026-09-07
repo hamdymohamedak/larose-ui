@@ -1,7 +1,7 @@
 {
   "name": "@larose-ui/observability-svelte",
   "version": "0.3.0",
-  "description": "Svelte 5 observability adapter for laRose UI",
+  "description": "UX observability for Svelte — journeys, funnels, rage clicks.",
   "type": "module",
   "svelte": "./dist/index.js",
   "main": "./dist/index.js",
@@ -55,10 +55,15 @@
     "larose",
     "svelte",
     "observability",
-    "telemetry"
+    "telemetry",
+    "larose-public"
   ],
   "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/observability-svelte#readme",
   "bugs": {
     "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  },
+  "larose": {
+    "publicApi": true,
+    "layer": "feature"
   }
 }

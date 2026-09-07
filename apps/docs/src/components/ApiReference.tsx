@@ -92,20 +92,22 @@ function PropTable({
         <tbody>
           {rows.map((row) => (
             <tr key={row.name}>
-              <td>
+              <td data-label="Prop">
                 <code>{row.name}</code>
               </td>
-              <td>
+              <td data-label="Type">
                 <code>{row.type}</code>
               </td>
               {!compact ? (
-                <td>{row.default ? <code>{row.default}</code> : '—'}</td>
+                <td data-label="Default">{row.default ? <code>{row.default}</code> : '—'}</td>
               ) : null}
               {!compact ? (
-                <td>{row.example && row.example !== '—' ? <code>{row.example}</code> : '—'}</td>
+                <td data-label="Example">
+                  {row.example && row.example !== '—' ? <code>{row.example}</code> : '—'}
+                </td>
               ) : null}
-              <td>{row.required ? 'Yes' : 'No'}</td>
-              {!compact ? <td>{row.description ?? '—'}</td> : null}
+              <td data-label="Required">{row.required ? 'Yes' : 'No'}</td>
+              {!compact ? <td data-label="Description">{row.description ?? '—'}</td> : null}
             </tr>
           ))}
         </tbody>

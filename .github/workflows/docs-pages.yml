@@ -1,5 +1,8 @@
 name: Deploy docs to GitHub Pages
 
+# Note: GitHub project Pages cannot serve origin-root /robots.txt or Link headers.
+# For full isitagentready.com score, also deploy via docs-cloudflare.yml (site root + functions).
+
 on:
   push:
     branches: [main]

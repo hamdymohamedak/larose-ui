@@ -1,7 +1,7 @@
 {
   "name": "@larose-ui/devtools-core",
   "version": "0.3.0",
-  "description": "Framework-agnostic DevTools analytics for laRose UI",
+  "description": "[Internal] Framework-agnostic component performance helpers. Prefer @larose-ui/react, @larose-ui/vue, @larose-ui/svelte, or @larose-ui/runtime-* in apps.",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -43,6 +43,15 @@
   "keywords": [
     "larose",
     "ui-platform",
-    "devtools"
-  ]
+    "devtools",
+    "larose-internal"
+  ],
+  "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/devtools-core#readme",
+  "bugs": {
+    "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  },
+  "larose": {
+    "publicApi": false,
+    "layer": "internal"
+  }
 }

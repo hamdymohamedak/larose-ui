@@ -1,7 +1,7 @@
 {
   "name": "@larose-ui/permissions-react",
   "version": "0.3.0",
-  "description": "React adapter — Authorization-aware UI for laRose platform",
+  "description": "Authorization-aware React UI (RBAC / ABAC).",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -55,10 +55,15 @@
     "react",
     "ui-platform",
     "design-system",
-    "saas"
+    "saas",
+    "larose-public"
   ],
-  "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/permissions#readme",
+  "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/permissions-react#readme",
   "bugs": {
     "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  },
+  "larose": {
+    "publicApi": true,
+    "layer": "feature"
   }
 }

@@ -1,7 +1,7 @@
 {
   "name": "@larose-ui/ai-svelte",
   "version": "0.3.0",
-  "description": "Svelte 5 AI adapter for laRose UI — AIProvider, SmartTable, SmartForm over ai-core",
+  "description": "Permission-bound AI UI for Svelte (SmartTable / SmartForm).",
   "type": "module",
   "svelte": "./dist/index.js",
   "main": "./dist/index.js",
@@ -53,5 +53,21 @@
     "type": "git",
     "url": "git+https://github.com/hamdymohamedak/larose-ui.git",
     "directory": "packages/ai-svelte"
-  }
+  },
+  "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/ai-svelte#readme",
+  "bugs": {
+    "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  },
+  "larose": {
+    "publicApi": true,
+    "layer": "feature"
+  },
+  "keywords": [
+    "larose",
+    "larose-ui",
+    "ui-platform",
+    "design-system",
+    "saas",
+    "larose-public"
+  ]
 }

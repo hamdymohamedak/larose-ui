@@ -1,7 +1,7 @@
 {
   "name": "@larose-ui/forms-vue",
   "version": "0.3.0",
-  "description": "Vue 3 schema-driven forms adapter for laRose UI",
+  "description": "Schema-driven Vue forms with conditional fields.",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -56,10 +56,15 @@
   "keywords": [
     "larose",
     "vue",
-    "forms"
+    "forms",
+    "larose-public"
   ],
   "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/forms-vue#readme",
   "bugs": {
     "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  },
+  "larose": {
+    "publicApi": true,
+    "layer": "feature"
   }
 }

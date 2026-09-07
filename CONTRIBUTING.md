@@ -74,7 +74,7 @@ The command prints created paths, next steps, and a contributor checklist. It re
 
 ### Packages and apps
 
-- **`packages/*`** — publishable libraries (`@larose-ui/react`, `@larose-ui/runtime-react`, etc.)
+- **`packages/*`** — libraries. Prefer the [public API surface](docs/PUBLIC_API.md) when documenting or recommending installs (`react` / `runtime-*` / feature adapters). Internal packages (`core`, `*-core`, `primitives`, …) stay precise for maintainers and may still publish for transitive deps.
 - **`apps/playground`** — Storybook; docs / visual catalog (not multi-framework parity authority)
 - **`apps/sandbox-{react,vue,svelte}`** — kitchen-sink consumer apps for real integration QA
 - **`apps/sandbox-e2e`** — Playwright critical-flow parity (`pnpm test:parity`)

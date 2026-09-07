@@ -4,10 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="laRose UI documentation — React components, theming, and customization." />
-    <link rel="describedby" href="%BASE_URL%llms.txt" />
-    <link rel="ai-catalog" href="%BASE_URL%.well-known/ai-catalog.json" />
-    <link rel="api-catalog" href="%BASE_URL%.well-known/api-catalog" />
+    <link rel="describedby" type="text/plain" href="%BASE_URL%llms.txt" />
+    <link rel="ai-catalog" type="application/json" href="%BASE_URL%.well-known/ai-catalog.json" />
+    <link rel="api-catalog" type="application/linkset+json" href="%BASE_URL%.well-known/api-catalog" />
+    <link rel="service-desc" type="application/yaml" href="%BASE_URL%.well-known/openapi/documentation.yaml" />
+    <link rel="service-doc" type="text/html" href="%BASE_URL%docs/getting-started" />
     <link rel="sitemap" type="application/xml" href="%BASE_URL%sitemap.xml" />
+    <link rel="alternate" type="text/markdown" href="%BASE_URL%agent/markdown/index.md" title="Markdown for Agents" />
+    <link rel="mcp-server-card" type="application/json" href="%BASE_URL%.well-known/mcp/server-card.json" />
+    <link rel="agent-skills" type="application/json" href="%BASE_URL%.well-known/agent-skills/index.json" />
     <title>laRose UI Docs</title>
     <script>
       (function () {

@@ -1,7 +1,7 @@
 {
   "name": "@larose-ui/testing-core",
   "version": "0.3.0",
-  "description": "Framework-agnostic test matrix helpers for laRose UI",
+  "description": "[Internal] Shared test matrix definitions. Prefer @larose-ui/react, @larose-ui/vue, @larose-ui/svelte, or @larose-ui/runtime-* in apps.",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -39,6 +39,15 @@
   "keywords": [
     "larose",
     "testing",
-    "framework-agnostic"
-  ]
+    "framework-agnostic",
+    "larose-internal"
+  ],
+  "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/testing-core#readme",
+  "bugs": {
+    "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  },
+  "larose": {
+    "publicApi": false,
+    "layer": "internal"
+  }
 }

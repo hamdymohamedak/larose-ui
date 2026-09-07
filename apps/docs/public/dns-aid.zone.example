@@ -1,14 +1,34 @@
-; DNS for AI Discovery (DNS-AID) example for hamdymohamedak.github.io
-; Publish these records in your public DNS zone and sign with DNSSEC.
+; DNS for AI Discovery (DNS-AID) for hamdymohamedak.github.io
+; Publish on a DNSSEC-signed zone you control (custom domain).
+; github.io project sites cannot publish _agents under github.io — use a custom domain.
 ; See: https://datatracker.ietf.org/doc/draft-mozleywilliams-dnsop-dnsaid/
 
-_index._agents.hamdymohamedak.github.io. 3600 IN SVCB 1 hamdymohamedak.github.io. \
-  alpn="h3,h2" port=443 mandatory=alpn,port \
+; Primary discovery index (SVCB ServiceMode)
+_index._agents.hamdymohamedak.github.io. 3600 IN SVCB 1 hamdymohamedak.github.io. (
+  alpn="h3,h2"
+  port=443
+  mandatory=alpn,port
   key65328="https://hamdymohamedak.github.io/larose-ui/.well-known/api-catalog"
+)
 
-_a2a._agents.hamdymohamedak.github.io. 3600 IN SVCB 1 hamdymohamedak.github.io. \
-  alpn="h3,h2" port=443 mandatory=alpn,port \
+; HTTPS alternate for HTTPS endpoints
+_index._agents.hamdymohamedak.github.io. 3600 IN HTTPS 1 hamdymohamedak.github.io. (
+  alpn="h3,h2"
+  port=443
+  mandatory=alpn,port
+  key65328="https://hamdymohamedak.github.io/larose-ui/.well-known/api-catalog"
+)
+
+; Agent-to-agent / content map
+_a2a._agents.hamdymohamedak.github.io. 3600 IN SVCB 1 hamdymohamedak.github.io. (
+  alpn="h3,h2"
+  port=443
+  mandatory=alpn,port
   key65328="https://hamdymohamedak.github.io/larose-ui/llms.txt"
+)
 
-; ARD / AI Catalog discovery (optional DNS pointer)
+; ARD / AI Catalog discovery
 _catalog._agents.hamdymohamedak.github.io. 3600 IN TXT "url=https://hamdymohamedak.github.io/larose-ui/.well-known/ai-catalog.json"
+
+; MCP server card
+_mcp._agents.hamdymohamedak.github.io. 3600 IN TXT "url=https://hamdymohamedak.github.io/larose-ui/.well-known/mcp/server-card.json"

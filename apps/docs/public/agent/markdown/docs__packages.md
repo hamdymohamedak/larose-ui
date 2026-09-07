@@ -46,7 +46,7 @@
 - [@larose-ui/runtime-react](/docs/packages/runtime-react): Full LaRoseProvider — theme, toast, accelerators, network, offline, i18n.
 - [@larose-ui/runtime-svelte](/docs/packages/runtime-svelte): Full LaRoseProvider — theme, toast, accelerators, network, offline, i18n.
 - [@larose-ui/runtime-vue](/docs/packages/runtime-vue): Full LaRoseProvider — theme, toast, accelerators, network, offline, i18n.
-- [@larose-ui/styles](/docs/packages/styles): Framework-agnostic component CSS from the design system.
+- [@larose-ui/styles](/docs/packages/styles): Design tokens + component CSS in one stylesheet.
 - [@larose-ui/svelte](/docs/packages/svelte): Svelte 5 components with runes and shared laRose styles.
 - [@larose-ui/sveltekit](/docs/packages/sveltekit): SvelteKit integration — SSR CSS, theme bootstrap, app root.
 - [@larose-ui/testing-core](/docs/packages/testing-core): Framework-agnostic test matrix helpers for laRose UI.
@@ -54,5 +54,5 @@
 - [@larose-ui/testing-svelte](/docs/packages/testing-svelte): Testing utilities with full laRose runtime context.
 - [@larose-ui/testing-vue](/docs/packages/testing-vue): Testing utilities with full laRose runtime context.
 - [@larose-ui/themes](/docs/packages/themes): Named theme presets and tenant branding helpers.
-- [@larose-ui/tokens](/docs/packages/tokens): Runtime design tokens as CSS custom properties.
+- [@larose-ui/tokens](/docs/packages/tokens): Design-token engine (bundled into @larose-ui/styles).
 - [@larose-ui/vue](/docs/packages/vue): Vue 3 components — thin adapter over shared styles and primitives.

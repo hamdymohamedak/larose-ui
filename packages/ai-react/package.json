@@ -1,7 +1,7 @@
 {
   "name": "@larose-ui/ai-react",
   "version": "2.0.0",
-  "description": "React AI UI adapter for laRose — SmartTable/SmartForm over @larose-ui/ai-core",
+  "description": "Permission-bound AI UI for React (SmartTable / SmartForm).",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -59,10 +59,15 @@
     "react",
     "ui-platform",
     "design-system",
-    "saas"
+    "saas",
+    "larose-public"
   ],
-  "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/ai#readme",
+  "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/ai-react#readme",
   "bugs": {
     "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  },
+  "larose": {
+    "publicApi": true,
+    "layer": "feature"
   }
 }

@@ -1,7 +1,6 @@
-import { useState } from 'react';
+import { useState, type FormEvent } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Button, Badge, Card, Input } from '@larose-ui/react';
-import { LaRoseProvider } from '@larose-ui/runtime-react';
+import { Button, Badge, Card, Input, ToastProvider, useToast } from '@larose-ui/react';
 import { FrameworkCodeTabs } from '@/components/FrameworkCodeTabs';
 import { FrameworkSelector } from '@/components/FrameworkSelector';
 import { PreviewFrame } from '@/components/PreviewFrame';
@@ -13,6 +12,119 @@ import {
   type InstallStackMode,
 } from '@/lib/frameworks';
 import { useDocsFramework } from '@/theme/FrameworkProvider';
+
+
+function GettingStartedLiveDemo() {
+  const [name, setName] = useState('');
+  const [submitted, setSubmitted] = useState<string | null>(null);
+
+  return (
+    <ToastProvider>
+      <GettingStartedLiveDemoInner
+        name={name}
+        submitted={submitted}
+        onNameChange={setName}
+        onSubmitted={setSubmitted}
+      />
+    </ToastProvider>
+  );
+}
+
+function GettingStartedLiveDemoInner({
+  name,
+  submitted,
+  onNameChange,
+  onSubmitted,
+}: {
+  name: string;
+  submitted: string | null;
+  onNameChange: (value: string) => void;
+  onSubmitted: (value: string | null) => void;
+}) {
+  const { toast } = useToast();
+
+  const onSubmit = (event: FormEvent) => {
+    event.preventDefault();
+    const trimmed = name.trim();
+    if (!trimmed) {
+      toast({
+        title: 'Name required',
+        message: 'Type a name, then press Continue.',
+        variant: 'warning',
+      });
+      return;
+    }
+    onSubmitted(trimmed);
+    toast({
+      title: 'Saved',
+      message: `Hello, ${trimmed} — this preview is interactive.`,
+      variant: 'success',
+    });
+  };
+
+  return (
+    <Card title="Getting started demo" padding="md" style={{ width: '100%', maxWidth: '28rem' }}>
+      <p
+        style={{
+          margin: '0 0 0.875rem',
+          fontSize: '0.9rem',
+          color: 'var(--lr-color-text-muted)',
+        }}
+      >
+        Type in the field and press Continue — state, validation, and toast all run in the browser.
+      </p>
+      <form onSubmit={onSubmit}>
+        <Input
+          label="Your name"
+          placeholder="Enter your name…"
+          value={name}
+          onChange={(event) => {
+            onNameChange(event.target.value);
+            if (submitted) onSubmitted(null);
+          }}
+          autoComplete="name"
+        />
+        <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.75rem', flexWrap: 'wrap' }}>
+          <Button type="submit">Continue</Button>
+          <Button
+            type="button"
+            variant="secondary"
+            onClick={() => {
+              onNameChange('');
+              onSubmitted(null);
+            }}
+          >
+            Reset
+          </Button>
+        </div>
+      </form>
+      {submitted ? (
+        <p
+          role="status"
+          style={{
+            margin: '0.875rem 0 0',
+            fontSize: '0.9rem',
+            fontWeight: 600,
+            color: 'var(--lr-color-primary)',
+          }}
+        >
+          Hello, {submitted}. Welcome to laRose UI.
+        </p>
+      ) : name.trim() ? (
+        <p
+          style={{
+            margin: '0.875rem 0 0',
+            fontSize: '0.85rem',
+            color: 'var(--lr-color-text-muted)',
+          }}
+        >
+          Live value: <code>{name}</code>
+        </p>
+      ) : null}
+    </Card>
+  );
+}
+
 
 export function GettingStartedPage() {
   const { framework } = useDocsFramework();
@@ -57,8 +169,8 @@ export function GettingStartedPage() {
         <Badge variant="info">Start here</Badge>
         <h1>Getting started</h1>
         <p>
-          laRose ships as focused packages — not one mega-install. Pick your framework, choose a UI-only
-          or full-runtime stack, then add intelligence packages when you need them.
+          Start with a small public surface — UI + optional runtime. Styles include design tokens in one
+          CSS import. Add intelligence packages only when you need them.
         </p>
 
         <div className="docs-gs__fw-bar">
@@ -85,8 +197,9 @@ export function GettingStartedPage() {
             </button>
           </div>
           <p className="docs-pkg-note">
-            UI only installs {uiPkg} with tokens and styles. Full runtime also adds {runtimePkg} for
-            toast, network, offline, and i18n.
+            React needs only {uiPkg} (styles include tokens). Vue / Svelte also add{' '}
+            <code>@larose-ui/styles</code>. Full runtime adds {runtimePkg} for toast, network, offline,
+            and i18n.
           </p>
         </div>
       </div>
@@ -101,8 +214,8 @@ export function GettingStartedPage() {
             <h3>Install the stack</h3>
             <p className="docs-gs__step-hint">
               {stack === 'runtime'
-                ? `Adds ${uiPkg} plus ${runtimePkg} with shared tokens and styles.`
-                : `Adds ${uiPkg} plus shared tokens and styles.`}
+                ? `Adds ${uiPkg} plus ${runtimePkg}. One CSS import covers tokens + component styles.`
+                : `Adds ${uiPkg}. One CSS import covers tokens + component styles.`}
             </p>
             <FrameworkCodeTabs showSelector={false} snippets={snippets.install} title="Terminal" />
           </div>
@@ -116,10 +229,11 @@ export function GettingStartedPage() {
           <div className="docs-gs__step-body">
             <h3>Import CSS, then wrap your app</h3>
             <p className="docs-gs__step-hint">
-              Always import tokens before styles. For full platform features, wrap the root with the
-              runtime provider.
+              One stylesheet is enough — tokens ship inside{' '}
+              <code>@larose-ui/react/styles.css</code> or <code>@larose-ui/styles/styles.css</code>.
+              For full platform features, wrap the root with the runtime provider.
             </p>
-            <FrameworkCodeTabs showSelector={false} snippets={snippets.css} title="CSS order" />
+            <FrameworkCodeTabs showSelector={false} snippets={snippets.css} title="CSS" />
             <FrameworkCodeTabs showSelector={false} snippets={snippets.setup} title="Provider" />
           </div>
         </div>
@@ -136,25 +250,11 @@ export function GettingStartedPage() {
               the Packages hub.
             </p>
             <FrameworkCodeTabs showSelector={false} snippets={snippets.usage} />
+            <p className="docs-gs__step-hint" style={{ marginTop: '0.75rem' }}>
+              Interactive React preview below — try typing and clicking Continue.
+            </p>
             <PreviewFrame title="Live result">
-              <LaRoseProvider theme="light">
-                <Card title="Getting started demo" padding="md">
-                  <p
-                    style={{
-                      margin: '0 0 0.875rem',
-                      fontSize: '0.9rem',
-                      color: 'var(--lr-color-text-muted)',
-                    }}
-                  >
-                    Rendered by laRose UI — modular packages, one design system.
-                  </p>
-                  <Input label="Your name" placeholder="Enter your name…" />
-                  <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.75rem' }}>
-                    <Button>Continue</Button>
-                    <Button variant="secondary">Back</Button>
-                  </div>
-                </Card>
-              </LaRoseProvider>
+              <GettingStartedLiveDemo />
             </PreviewFrame>
           </div>
         </div>

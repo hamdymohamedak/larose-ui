@@ -2,7 +2,9 @@
 
 > Production-ready React components with built-in UI states.
 
-Part of **[laRose UI](https://github.com/hamdymohamedak/larose-ui)** — the UI Operating System for modern SaaS applications.
+Part of **[laRose UI](https://github.com/hamdymohamedak/larose-ui)** — start with UI + Runtime packages; feature packs are optional.
+
+**Public API layer:** UI
 
 ## Install
 
@@ -22,7 +24,7 @@ yarn add @larose-ui/react
 
 ```tsx
 import { Button, Card, Input, Dialog } from '@larose-ui/react';
-import '@larose-ui/tokens/styles.css';
+import '@larose-ui/react/styles.css';
 
 <Card title="Profile">
   <Input label="Email" />
@@ -35,22 +37,24 @@ import '@larose-ui/tokens/styles.css';
 - Form controls, overlays, navigation, data display
 - Loading, error, empty, and disabled states
 - Token-driven styling via CSS variables
-- AsyncButton, DataTable, CommandPalette, and more
+- Styles entry: `@larose-ui/react/styles.css`
 
-## Related packages
+## Recommended app stack
 
-| Layer | Packages |
-|-------|----------|
-| Foundation | `@larose-ui/core`, `@larose-ui/tokens`, `@larose-ui/react` |
-| Runtime | `@larose-ui/runtime-react`, `@larose-ui/network`, `@larose-ui/offline` |
-| Intelligence | `@larose-ui/data-react`, `@larose-ui/forms-react`, `@larose-ui/permissions-react` |
-| Platform | `@larose-ui/observability-react`, `@larose-ui/enterprise-react`, `@larose-ui/ai-react` |
+Install these first (example for React):
+
+- `@larose-ui/runtime-react`
+- `@larose-ui/react`
+- `@larose-ui/data-react`
+- `@larose-ui/forms-react`
+- `@larose-ui/permissions-react`
+
+Internal packages (`core`, `tokens`, `*-core`, …) are pulled in automatically — you usually do not need to depend on them directly.
 
 ## Documentation
 
 - [Monorepo README](https://github.com/hamdymohamedak/larose-ui#readme)
-- [Architecture](https://github.com/hamdymohamedak/larose-ui/blob/main/docs/architecture/ARCHITECTURE.md)
-- [Roadmap](https://github.com/hamdymohamedak/larose-ui/blob/main/docs/ROADMAP.md)
+- [Public API surface](https://github.com/hamdymohamedak/larose-ui/blob/main/docs/PUBLIC_API.md)
 - [Report an issue](https://github.com/hamdymohamedak/larose-ui/issues)
 
 ## License

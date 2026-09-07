@@ -1,8 +1,10 @@
 # @larose-ui/devtools-react
 
-> In-app runtime inspector for development.
+> In-app runtime inspector for React (development only).
 
-Part of **[laRose UI](https://github.com/hamdymohamedak/larose-ui)** — the UI Operating System for modern SaaS applications.
+Part of **[laRose UI](https://github.com/hamdymohamedak/larose-ui)** — start with UI + Runtime packages; feature packs are optional.
+
+**Public API layer:** Features
 
 ## Install
 
@@ -22,35 +24,30 @@ yarn add @larose-ui/devtools-react
 
 ```tsx
 import { DevToolsProvider } from '@larose-ui/devtools-react';
-
-<LaRoseProvider>
-  <DevToolsProvider />
-  <App />
-</LaRoseProvider>
 ```
 
 ## Features
 
-- Runtime context panel (session, tenant, permissions)
-- Event timeline from the runtime bus
-- Component inspector with React fiber introspection
-- Journey tab with rage-click analysis
+- Runtime context panel
+- Event timeline
+- Component inspector
 
-## Related packages
+## Recommended app stack
 
-| Layer | Packages |
-|-------|----------|
-| Foundation | `@larose-ui/core`, `@larose-ui/tokens`, `@larose-ui/react` |
-| Runtime | `@larose-ui/runtime-react`, `@larose-ui/network`, `@larose-ui/offline` |
-| Intelligence | `@larose-ui/data-react`, `@larose-ui/forms-react`, `@larose-ui/permissions-react` |
-| Platform | `@larose-ui/observability-react`, `@larose-ui/enterprise-react`, `@larose-ui/ai-react` |
+Install these first (example for React):
+
+- `@larose-ui/runtime-react`
+- `@larose-ui/react`
+- `@larose-ui/data-react`
+- `@larose-ui/forms-react`
+- `@larose-ui/permissions-react`
+
+Internal packages (`core`, `tokens`, `*-core`, …) are pulled in automatically — you usually do not need to depend on them directly.
 
 ## Documentation
 
 - [Monorepo README](https://github.com/hamdymohamedak/larose-ui#readme)
-- [Package docs](https://github.com/hamdymohamedak/larose-ui/blob/main/docs/devtools/DEVTOOLS_2.md)
-- [Architecture](https://github.com/hamdymohamedak/larose-ui/blob/main/docs/architecture/ARCHITECTURE.md)
-- [Roadmap](https://github.com/hamdymohamedak/larose-ui/blob/main/docs/ROADMAP.md)
+- [Public API surface](https://github.com/hamdymohamedak/larose-ui/blob/main/docs/PUBLIC_API.md)
 - [Report an issue](https://github.com/hamdymohamedak/larose-ui/issues)
 
 ## License

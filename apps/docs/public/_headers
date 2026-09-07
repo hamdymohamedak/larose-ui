@@ -1,38 +1,51 @@
-/*
-  Content-Type: text/html; charset=utf-8
-  Link: </larose-ui/llms.txt>; rel="describedby", </larose-ui/.well-known/ai-catalog.json>; rel="ai-catalog", </larose-ui/.well-known/api-catalog>; rel="api-catalog", </larose-ui/sitemap.xml>; rel="sitemap", </larose-ui/docs/getting-started>; rel="service-doc"
+# Agent-ready headers for Cloudflare Pages (GitHub Pages ignores this file).
+# Avoid a blanket text/html Content-Type — it breaks robots/sitemap/json MIME types.
 
-/robots.txt
+/larose-ui/
+  Link: <https://hamdymohamedak.github.io/larose-ui/llms.txt>; rel="describedby"; type="text/plain", <https://hamdymohamedak.github.io/larose-ui/.well-known/ai-catalog.json>; rel="ai-catalog"; type="application/json", <https://hamdymohamedak.github.io/larose-ui/.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json", <https://hamdymohamedak.github.io/larose-ui/.well-known/openapi/documentation.yaml>; rel="service-desc"; type="application/yaml", <https://hamdymohamedak.github.io/larose-ui/docs/getting-started>; rel="service-doc"; type="text/html", <https://hamdymohamedak.github.io/larose-ui/sitemap.xml>; rel="sitemap"; type="application/xml", <https://hamdymohamedak.github.io/larose-ui/.well-known/mcp/server-card.json>; rel="mcp-server-card"; type="application/json", <https://hamdymohamedak.github.io/larose-ui/.well-known/agent-skills/index.json>; rel="agent-skills"; type="application/json"
+
+/larose-ui/index.html
+  Link: <https://hamdymohamedak.github.io/larose-ui/llms.txt>; rel="describedby"; type="text/plain", <https://hamdymohamedak.github.io/larose-ui/.well-known/ai-catalog.json>; rel="ai-catalog"; type="application/json", <https://hamdymohamedak.github.io/larose-ui/.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json", <https://hamdymohamedak.github.io/larose-ui/.well-known/openapi/documentation.yaml>; rel="service-desc"; type="application/yaml", <https://hamdymohamedak.github.io/larose-ui/docs/getting-started>; rel="service-doc"; type="text/html", <https://hamdymohamedak.github.io/larose-ui/sitemap.xml>; rel="sitemap"; type="application/xml", <https://hamdymohamedak.github.io/larose-ui/.well-known/mcp/server-card.json>; rel="mcp-server-card"; type="application/json", <https://hamdymohamedak.github.io/larose-ui/.well-known/agent-skills/index.json>; rel="agent-skills"; type="application/json"
+
+/larose-ui/robots.txt
   Content-Type: text/plain; charset=utf-8
 
-/sitemap.xml
+/larose-ui/sitemap.xml
   Content-Type: application/xml; charset=utf-8
 
-/.well-known/api-catalog
-  Content-Type: application/linkset+json; profile="https://www.rfc-editor.org/info/rfc9727"
+/larose-ui/llms.txt
+  Content-Type: text/plain; charset=utf-8
 
-/.well-known/health
+/larose-ui/.well-known/api-catalog
+  Content-Type: application/linkset+json; profile="https://www.rfc-editor.org/info/rfc9727"
+  Access-Control-Allow-Origin: *
+
+/larose-ui/.well-known/api-catalog.json
+  Content-Type: application/linkset+json; profile="https://www.rfc-editor.org/info/rfc9727"
+  Access-Control-Allow-Origin: *
+
+/larose-ui/.well-known/health
   Content-Type: application/json; charset=utf-8
 
-/.well-known/openapi/*
+/larose-ui/.well-known/openapi/*
   Content-Type: application/yaml; charset=utf-8
 
-/.well-known/openid-configuration
+/larose-ui/.well-known/openid-configuration
   Content-Type: application/json; charset=utf-8
 
-/.well-known/oauth-authorization-server
+/larose-ui/.well-known/oauth-authorization-server
   Content-Type: application/json; charset=utf-8
 
-/.well-known/jwks.json
+/larose-ui/.well-known/jwks.json
   Content-Type: application/json; charset=utf-8
 
-/.well-known/oauth-protected-resource
+/larose-ui/.well-known/oauth-protected-resource
   Content-Type: application/json; charset=utf-8
 
-/auth.md
+/larose-ui/auth.md
   Content-Type: text/markdown; charset=utf-8
 
-/.well-known/mcp/server-card.json
+/larose-ui/.well-known/mcp/server-card.json
   Content-Type: application/json; charset=utf-8
   Access-Control-Allow-Origin: *
   Access-Control-Allow-Methods: GET
@@ -40,18 +53,22 @@
   Access-Control-Expose-Headers: ETag
   Cache-Control: public, max-age=3600
 
-/.well-known/agent-skills/index.json
+/larose-ui/.well-known/agent-skills/index.json
   Content-Type: application/json; charset=utf-8
   Access-Control-Allow-Origin: *
   Access-Control-Allow-Methods: GET
   Cache-Control: public, max-age=3600
 
-/.well-known/agent-skills/*
+/larose-ui/.well-known/agent-skills/*
   Content-Type: text/markdown; charset=utf-8
   Access-Control-Allow-Origin: *
 
-/.well-known/ai-catalog.json
+/larose-ui/.well-known/ai-catalog.json
   Content-Type: application/json; charset=utf-8
   Access-Control-Allow-Origin: *
   Access-Control-Allow-Methods: GET
   Cache-Control: public, max-age=3600
+
+/larose-ui/agent/markdown/*
+  Content-Type: text/markdown; charset=utf-8
+  Access-Control-Allow-Origin: *

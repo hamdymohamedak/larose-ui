@@ -1,7 +1,7 @@
 {
   "name": "@larose-ui/permissions-vue",
   "version": "0.3.0",
-  "description": "Vue 3 permissions adapter for laRose UI",
+  "description": "Authorization-aware Vue UI (RBAC / ABAC).",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -54,10 +54,15 @@
     "larose",
     "vue",
     "permissions",
-    "authz"
+    "authz",
+    "larose-public"
   ],
   "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/permissions-vue#readme",
   "bugs": {
     "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  },
+  "larose": {
+    "publicApi": true,
+    "layer": "feature"
   }
 }

@@ -1,7 +1,7 @@
 {
   "name": "@larose-ui/react",
   "version": "0.3.0",
-  "description": "React components for laRose UI platform",
+  "description": "Production-ready React components with built-in UI states.",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -63,10 +63,15 @@
     "react",
     "ui-platform",
     "design-system",
-    "saas"
+    "saas",
+    "larose-public"
   ],
   "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/react#readme",
   "bugs": {
     "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  },
+  "larose": {
+    "publicApi": true,
+    "layer": "ui"
   }
 }

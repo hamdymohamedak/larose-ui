@@ -1,7 +1,7 @@
 {
   "name": "@larose-ui/devtools-react",
   "version": "2.0.0",
-  "description": "React adapter — In-app DevTools inspector for laRose UI platform",
+  "description": "In-app runtime inspector for React (development only).",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -60,10 +60,15 @@
     "react",
     "ui-platform",
     "design-system",
-    "saas"
+    "saas",
+    "larose-public"
   ],
-  "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/devtools#readme",
+  "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/devtools-react#readme",
   "bugs": {
     "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  },
+  "larose": {
+    "publicApi": true,
+    "layer": "feature"
   }
 }

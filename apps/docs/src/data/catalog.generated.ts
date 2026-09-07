@@ -753,13 +753,12 @@ export const docsPackages: DocsPackageEntry[] = [
       "CSS path helpers"
     ],
     "install": {
-      "react": "pnpm add @larose-ui/next @larose-ui/react @larose-ui/runtime-react @larose-ui/tokens @larose-ui/styles",
-      "any": "pnpm add @larose-ui/next @larose-ui/react @larose-ui/runtime-react @larose-ui/tokens @larose-ui/styles"
+      "react": "pnpm add @larose-ui/next @larose-ui/react @larose-ui/runtime-react",
+      "any": "pnpm add @larose-ui/next @larose-ui/react @larose-ui/runtime-react"
     },
     "related": [
       "react",
       "runtime-react",
-      "tokens",
       "styles"
     ]
   },
@@ -779,13 +778,12 @@ export const docsPackages: DocsPackageEntry[] = [
       "LaRoseApp shell"
     ],
     "install": {
-      "vue": "pnpm add @larose-ui/nuxt @larose-ui/vue @larose-ui/runtime-vue",
-      "any": "pnpm add @larose-ui/nuxt @larose-ui/vue @larose-ui/runtime-vue"
+      "vue": "pnpm add @larose-ui/nuxt @larose-ui/vue @larose-ui/runtime-vue @larose-ui/styles",
+      "any": "pnpm add @larose-ui/nuxt @larose-ui/vue @larose-ui/runtime-vue @larose-ui/styles"
     },
     "related": [
       "vue",
       "runtime-vue",
-      "tokens",
       "styles"
     ]
   },
@@ -1067,11 +1065,11 @@ export const docsPackages: DocsPackageEntry[] = [
     "name": "@larose-ui/react",
     "tagline": "Production-ready React components with LiquidGlass refraction surfaces.",
     "role": "Primary React UI kit (buttons, forms, overlays, navigation, glass).",
-    "whenToInstall": "Building a React app — start here with tokens + styles.",
+    "whenToInstall": "Building a React app — start here; styles.css includes tokens.",
     "layer": "ui",
     "consumerFacing": true,
     "peer": "react >=18",
-    "example": "import { Button, LiquidGlass, LiquidGlassTabBar } from '@larose-ui/react';\nimport '@larose-ui/tokens/styles.css';\nimport '@larose-ui/styles/styles.css';\nimport '@larose-ui/react/styles.css';",
+    "example": "import { Button, LiquidGlass, LiquidGlassTabBar } from '@larose-ui/react';\nimport '@larose-ui/react/styles.css';",
     "features": [
       "Form controls, overlays, navigation, data display",
       "LiquidGlass TabBar, TopBar, Button, Switch, Range, Checkbox, Progress",
@@ -1079,11 +1077,10 @@ export const docsPackages: DocsPackageEntry[] = [
       "Token-driven styling and customization hooks"
     ],
     "install": {
-      "react": "pnpm add @larose-ui/react @larose-ui/tokens @larose-ui/styles",
-      "any": "pnpm add @larose-ui/react @larose-ui/tokens @larose-ui/styles"
+      "react": "pnpm add @larose-ui/react",
+      "any": "pnpm add @larose-ui/react"
     },
     "related": [
-      "tokens",
       "styles",
       "runtime-react",
       "liquid-glass-core",
@@ -1137,8 +1134,8 @@ export const docsPackages: DocsPackageEntry[] = [
       "i18n / locale"
     ],
     "install": {
-      "react": "pnpm add @larose-ui/runtime-react @larose-ui/react @larose-ui/tokens @larose-ui/styles",
-      "any": "pnpm add @larose-ui/runtime-react @larose-ui/react @larose-ui/tokens @larose-ui/styles"
+      "react": "pnpm add @larose-ui/runtime-react @larose-ui/react",
+      "any": "pnpm add @larose-ui/runtime-react @larose-ui/react"
     },
     "related": [
       "runtime-core",
@@ -1168,8 +1165,8 @@ export const docsPackages: DocsPackageEntry[] = [
       "i18n / locale"
     ],
     "install": {
-      "svelte": "pnpm add @larose-ui/runtime-svelte @larose-ui/svelte @larose-ui/tokens @larose-ui/styles",
-      "any": "pnpm add @larose-ui/runtime-svelte @larose-ui/svelte @larose-ui/tokens @larose-ui/styles"
+      "svelte": "pnpm add @larose-ui/runtime-svelte @larose-ui/svelte @larose-ui/styles",
+      "any": "pnpm add @larose-ui/runtime-svelte @larose-ui/svelte @larose-ui/styles"
     },
     "related": [
       "runtime-core",
@@ -1199,8 +1196,8 @@ export const docsPackages: DocsPackageEntry[] = [
       "i18n / locale"
     ],
     "install": {
-      "vue": "pnpm add @larose-ui/runtime-vue @larose-ui/vue @larose-ui/tokens @larose-ui/styles",
-      "any": "pnpm add @larose-ui/runtime-vue @larose-ui/vue @larose-ui/tokens @larose-ui/styles"
+      "vue": "pnpm add @larose-ui/runtime-vue @larose-ui/vue @larose-ui/styles",
+      "any": "pnpm add @larose-ui/runtime-vue @larose-ui/vue @larose-ui/styles"
     },
     "related": [
       "runtime-core",
@@ -1216,24 +1213,25 @@ export const docsPackages: DocsPackageEntry[] = [
   {
     "id": "styles",
     "name": "@larose-ui/styles",
-    "tagline": "Framework-agnostic component CSS from the design system.",
-    "role": "Shared visual styles consumed by React, Vue, and Svelte adapters.",
-    "whenToInstall": "Always with UI packages — import after tokens.",
+    "tagline": "Design tokens + component CSS in one stylesheet.",
+    "role": "Single CSS entry for apps (tokens and component styles bundled together).",
+    "whenToInstall": "Always with Vue / Svelte. React can use `@larose-ui/react/styles.css` instead.",
     "layer": "foundation",
     "consumerFacing": true,
-    "example": "import '@larose-ui/tokens/styles.css';\nimport '@larose-ui/styles/styles.css';",
+    "example": "import '@larose-ui/styles/styles.css';",
     "features": [
-      "CSS modules consumed by React, Vue, and Svelte",
-      "Single visual language"
+      "Bundled `--lr-*` tokens",
+      "CSS modules for React, Vue, and Svelte",
+      "One import for apps"
     ],
     "install": {
-      "any": "pnpm add @larose-ui/styles @larose-ui/tokens"
+      "any": "pnpm add @larose-ui/styles"
     },
     "related": [
-      "tokens",
       "react",
       "vue",
-      "svelte"
+      "svelte",
+      "themes"
     ]
   },
   {
@@ -1241,11 +1239,11 @@ export const docsPackages: DocsPackageEntry[] = [
     "name": "@larose-ui/svelte",
     "tagline": "Svelte 5 components with runes and shared laRose styles.",
     "role": "Svelte 5 UI kit with runes-based APIs and shared design system.",
-    "whenToInstall": "Building a Svelte 5 app — pair with tokens + styles.",
+    "whenToInstall": "Building a Svelte 5 app — pair with `@larose-ui/styles`.",
     "layer": "ui",
     "consumerFacing": true,
     "peer": "svelte >=5",
-    "example": "import { LaRoseProvider, Button } from '@larose-ui/svelte';\nimport '@larose-ui/tokens/styles.css';\nimport '@larose-ui/styles/styles.css';",
+    "example": "import { LaRoseProvider, Button } from '@larose-ui/svelte';\nimport '@larose-ui/styles/styles.css';",
     "features": [
       "Svelte 5 runes",
       "Shared design tokens",
@@ -1253,11 +1251,10 @@ export const docsPackages: DocsPackageEntry[] = [
       "LiquidGlass family"
     ],
     "install": {
-      "svelte": "pnpm add @larose-ui/svelte @larose-ui/tokens @larose-ui/styles",
-      "any": "pnpm add @larose-ui/svelte @larose-ui/tokens @larose-ui/styles"
+      "svelte": "pnpm add @larose-ui/svelte @larose-ui/styles",
+      "any": "pnpm add @larose-ui/svelte @larose-ui/styles"
     },
     "related": [
-      "tokens",
       "styles",
       "runtime-svelte",
       "sveltekit"
@@ -1279,13 +1276,12 @@ export const docsPackages: DocsPackageEntry[] = [
       "App root helpers"
     ],
     "install": {
-      "svelte": "pnpm add @larose-ui/sveltekit @larose-ui/svelte @larose-ui/runtime-svelte @larose-ui/tokens @larose-ui/styles",
-      "any": "pnpm add @larose-ui/sveltekit @larose-ui/svelte @larose-ui/runtime-svelte @larose-ui/tokens @larose-ui/styles"
+      "svelte": "pnpm add @larose-ui/sveltekit @larose-ui/svelte @larose-ui/runtime-svelte @larose-ui/styles",
+      "any": "pnpm add @larose-ui/sveltekit @larose-ui/svelte @larose-ui/runtime-svelte @larose-ui/styles"
     },
     "related": [
       "svelte",
       "runtime-svelte",
-      "tokens",
       "styles"
     ]
   },
@@ -1411,12 +1407,12 @@ export const docsPackages: DocsPackageEntry[] = [
   {
     "id": "tokens",
     "name": "@larose-ui/tokens",
-    "tagline": "Runtime design tokens as CSS custom properties.",
-    "role": "Design tokens (color, space, type, motion) exposed as CSS variables.",
-    "whenToInstall": "Always — import `@larose-ui/tokens/styles.css` in every app.",
+    "tagline": "Design-token engine (bundled into @larose-ui/styles).",
+    "role": "Low-level token JS/CSS — apps usually get tokens via `@larose-ui/styles/styles.css`.",
+    "whenToInstall": "Advanced only — runtime `getTokens` / tenant overrides. Prefer `@larose-ui/styles`.",
     "layer": "foundation",
-    "consumerFacing": true,
-    "example": "import '@larose-ui/tokens/styles.css';\nimport { getTokens, tokensToCSSVariables } from '@larose-ui/tokens';\n\nconst vars = tokensToCSSVariables(getTokens('light'));",
+    "consumerFacing": false,
+    "example": "import { getTokens, tokensToCSSVariables } from '@larose-ui/tokens';\n\nconst vars = tokensToCSSVariables(getTokens('light'));",
     "features": [
       "Light and dark palettes",
       "Density scaling",
@@ -1424,29 +1420,24 @@ export const docsPackages: DocsPackageEntry[] = [
       "Tenant brand overrides"
     ],
     "install": {
-      "any": "pnpm add @larose-ui/tokens",
-      "react": "pnpm add @larose-ui/react @larose-ui/tokens @larose-ui/styles",
-      "vue": "pnpm add @larose-ui/vue @larose-ui/tokens @larose-ui/styles",
-      "svelte": "pnpm add @larose-ui/svelte @larose-ui/tokens @larose-ui/styles"
+      "any": "pnpm add @larose-ui/tokens"
     },
     "related": [
       "styles",
-      "themes",
-      "react",
-      "vue",
-      "svelte"
-    ]
+      "themes"
+    ],
+    "transitiveNote": "Bundled into @larose-ui/styles/styles.css at build time."
   },
   {
     "id": "vue",
     "name": "@larose-ui/vue",
     "tagline": "Vue 3 components — thin adapter over shared styles and primitives.",
     "role": "Vue 3 UI kit with Composition API providers and shared CSS.",
-    "whenToInstall": "Building a Vue 3 app — pair with tokens + styles.",
+    "whenToInstall": "Building a Vue 3 app — pair with `@larose-ui/styles`.",
     "layer": "ui",
     "consumerFacing": true,
     "peer": "vue >=3.5",
-    "example": "import { LaRoseProvider, Button, Input } from '@larose-ui/vue';\nimport '@larose-ui/tokens/styles.css';\nimport '@larose-ui/styles/styles.css';",
+    "example": "import { LaRoseProvider, Button, Input } from '@larose-ui/vue';\nimport '@larose-ui/styles/styles.css';",
     "features": [
       "Foundation parity set with React",
       "Composition API providers",
@@ -1454,11 +1445,10 @@ export const docsPackages: DocsPackageEntry[] = [
       "LiquidGlass family"
     ],
     "install": {
-      "vue": "pnpm add @larose-ui/vue @larose-ui/tokens @larose-ui/styles",
-      "any": "pnpm add @larose-ui/vue @larose-ui/tokens @larose-ui/styles"
+      "vue": "pnpm add @larose-ui/vue @larose-ui/styles",
+      "any": "pnpm add @larose-ui/vue @larose-ui/styles"
     },
     "related": [
-      "tokens",
       "styles",
       "runtime-vue",
       "nuxt"
@@ -3028,6 +3018,11 @@ export const docsGuides: DocsGuideEntry[] = [
     "id": "migration",
     "title": "Migration & CLI",
     "file": "docs/ecosystem/MIGRATION.md"
+  },
+  {
+    "id": "agent-ready",
+    "title": "Agent-ready hosting",
+    "file": "docs/ecosystem/AGENT_READY.md"
   },
   {
     "id": "roadmap",

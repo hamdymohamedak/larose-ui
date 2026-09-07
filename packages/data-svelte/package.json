@@ -1,7 +1,7 @@
 {
   "name": "@larose-ui/data-svelte",
   "version": "0.3.0",
-  "description": "Svelte 5 data layer adapter for laRose UI (createQuery, createMutation, DataView, createUndo)",
+  "description": "Svelte data controllers with self-healing errors and undo.",
   "type": "module",
   "svelte": "./dist/index.js",
   "main": "./dist/index.js",
@@ -56,10 +56,15 @@
     "larose",
     "svelte",
     "data",
-    "query"
+    "query",
+    "larose-public"
   ],
   "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/data-svelte#readme",
   "bugs": {
     "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  },
+  "larose": {
+    "publicApi": true,
+    "layer": "feature"
   }
 }

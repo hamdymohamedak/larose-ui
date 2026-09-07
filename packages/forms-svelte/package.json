@@ -1,7 +1,7 @@
 {
   "name": "@larose-ui/forms-svelte",
   "version": "0.3.0",
-  "description": "Svelte 5 schema-driven forms adapter for laRose UI",
+  "description": "Schema-driven Svelte forms with conditional fields.",
   "type": "module",
   "svelte": "./dist/index.js",
   "main": "./dist/index.js",
@@ -58,10 +58,15 @@
   "keywords": [
     "larose",
     "svelte",
-    "forms"
+    "forms",
+    "larose-public"
   ],
   "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/forms-svelte#readme",
   "bugs": {
     "url": "https://github.com/hamdymohamedak/larose-ui/issues"
+  },
+  "larose": {
+    "publicApi": true,
+    "layer": "feature"
   }
 }
