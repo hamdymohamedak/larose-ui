@@ -57,6 +57,9 @@
 "@larose-ui/vue": patch
 ---
 
-Clarify public vs internal npm surface: mark building-block packages as [Internal] while keeping the monorepo split for maintainers.
+Clarify the public npm surface and ship the one-CSS install story.
 
-Also bundle design tokens into `@larose-ui/styles/styles.css` (and `@larose-ui/react/styles.css`) so apps need a single CSS import.
+- Mark building-block packages as internal (still published for transitive installs; not product docs).
+- Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.
+- Align package metadata, readmes, and docs install copy with the public vs internal split.
+
