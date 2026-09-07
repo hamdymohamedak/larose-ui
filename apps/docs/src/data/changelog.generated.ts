@@ -45,10 +45,28 @@ export const docsChangelog: DocsChangelogEntry[] = [
     "body": "### Minor Changes\n\n- Remove WebView design tokens."
   },
   {
-    "package": "@larose-ui/vue",
-    "version": "Unreleased",
-    "heading": "Unreleased",
-    "body": "### Minor Changes\n\n- Remove WebView components to match React web-first surface."
+    "package": "@larose-ui/ai-react",
+    "version": "2.0.1",
+    "heading": "2.0.1",
+    "body": "### Patch Changes\n\n- 14c415f: Clarify the public npm surface and ship the one-CSS install story.\n\n  - Mark building-block packages as internal (still published for transitive installs; not product docs).\n  - Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.\n  - Align package metadata, readmes, and docs install copy with the public vs internal split.\n\n- Updated dependencies [14c415f]\n  - @larose-ui/ai-core@0.3.1\n  - @laros"
+  },
+  {
+    "package": "@larose-ui/devtools-react",
+    "version": "2.0.1",
+    "heading": "2.0.1",
+    "body": "### Patch Changes\n\n- 14c415f: Clarify the public npm surface and ship the one-CSS install story.\n\n  - Mark building-block packages as internal (still published for transitive installs; not product docs).\n  - Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.\n  - Align package metadata, readmes, and docs install copy with the public vs internal split.\n\n- Updated dependencies [14c415f]\n  - @larose-ui/core@0.3.1\n  - @larose-u"
+  },
+  {
+    "package": "@larose-ui/runtime-react",
+    "version": "2.0.1",
+    "heading": "2.0.1",
+    "body": "### Patch Changes\n\n- 14c415f: Clarify the public npm surface and ship the one-CSS install story.\n\n  - Mark building-block packages as internal (still published for transitive installs; not product docs).\n  - Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.\n  - Align package metadata, readmes, and docs install copy with the public vs internal split.\n\n- Updated dependencies [14c415f]\n  - @larose-ui/core@0.3.1\n  - @larose-u"
+  },
+  {
+    "package": "@larose-ui/runtime-vue",
+    "version": "2.0.1",
+    "heading": "2.0.1",
+    "body": "### Patch Changes\n\n- 14c415f: Clarify the public npm surface and ship the one-CSS install story.\n\n  - Mark building-block packages as internal (still published for transitive installs; not product docs).\n  - Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.\n  - Align package metadata, readmes, and docs install copy with the public vs internal split.\n\n- Updated dependencies [14c415f]\n- Updated dependencies [5400097]\n  - @l"
   },
   {
     "package": "@larose-ui/ai-react",
@@ -73,6 +91,12 @@ export const docsChangelog: DocsChangelogEntry[] = [
     "version": "2.0.0",
     "heading": "2.0.0",
     "body": "### Patch Changes\n\n- Updated dependencies [5400097]\n  - @larose-ui/vue@0.4.0"
+  },
+  {
+    "package": "@larose-ui/runtime-svelte",
+    "version": "1.0.1",
+    "heading": "1.0.1",
+    "body": "### Patch Changes\n\n- 14c415f: Clarify the public npm surface and ship the one-CSS install story.\n\n  - Mark building-block packages as internal (still published for transitive installs; not product docs).\n  - Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.\n  - Align package metadata, readmes, and docs install copy with the public vs internal split.\n\n- Updated dependencies [14c415f]\n  - @larose-ui/core@0.3.1\n  - @larose-u"
   },
   {
     "package": "@larose-ui/ai-react",
@@ -106,146 +130,122 @@ export const docsChangelog: DocsChangelogEntry[] = [
   },
   {
     "package": "@larose-ui/vue",
+    "version": "0.4.1",
+    "heading": "0.4.1",
+    "body": "### Patch Changes\n\n- 14c415f: Clarify the public npm surface and ship the one-CSS install story.\n\n  - Mark building-block packages as internal (still published for transitive installs; not product docs).\n  - Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.\n  - Align package metadata, readmes, and docs install copy with the public vs internal split.\n\n- 5400097: fix topBar / tabBar Liquid Glass alignment in Vue sandbox dem"
+  },
+  {
+    "package": "@larose-ui/vue",
     "version": "0.4.0",
     "heading": "0.4.0",
     "body": "### Minor Changes\n\n- 5400097: fix topBar %% tabBar"
   },
   {
     "package": "@larose-ui/ai-vue",
-    "version": "0.3.1",
-    "heading": "0.3.1",
-    "body": "### Patch Changes\n\n- Updated dependencies [5400097]\n  - @larose-ui/vue@0.4.0\n  - @larose-ui/forms-vue@0.3.1\n  - @larose-ui/runtime-vue@2.0.0"
+    "version": "0.3.2",
+    "heading": "0.3.2",
+    "body": "### Patch Changes\n\n- 14c415f: Clarify the public npm surface and ship the one-CSS install story.\n\n  - Mark building-block packages as internal (still published for transitive installs; not product docs).\n  - Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.\n  - Align package metadata, readmes, and docs install copy with the public vs internal split.\n\n- Updated dependencies [14c415f]\n- Updated dependencies [5400097]\n  - @l"
   },
   {
     "package": "@larose-ui/devtools-vue",
-    "version": "0.3.1",
-    "heading": "0.3.1",
-    "body": "### Patch Changes\n\n- @larose-ui/runtime-vue@2.0.0"
+    "version": "0.3.2",
+    "heading": "0.3.2",
+    "body": "### Patch Changes\n\n- 14c415f: Clarify the public npm surface and ship the one-CSS install story.\n\n  - Mark building-block packages as internal (still published for transitive installs; not product docs).\n  - Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.\n  - Align package metadata, readmes, and docs install copy with the public vs internal split.\n\n- Updated dependencies [14c415f]\n  - @larose-ui/devtools-core@0.3.1\n  - "
   },
   {
     "package": "@larose-ui/enterprise-vue",
+    "version": "0.3.2",
+    "heading": "0.3.2",
+    "body": "### Patch Changes\n\n- 14c415f: Clarify the public npm surface and ship the one-CSS install story.\n\n  - Mark building-block packages as internal (still published for transitive installs; not product docs).\n  - Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.\n  - Align package metadata, readmes, and docs install copy with the public vs internal split.\n\n- Updated dependencies [14c415f]\n- Updated dependencies [5400097]\n  - @l"
+  },
+  {
+    "package": "@larose-ui/forms-vue",
+    "version": "0.3.2",
+    "heading": "0.3.2",
+    "body": "### Patch Changes\n\n- 14c415f: Clarify the public npm surface and ship the one-CSS install story.\n\n  - Mark building-block packages as internal (still published for transitive installs; not product docs).\n  - Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.\n  - Align package metadata, readmes, and docs install copy with the public vs internal split.\n\n- Updated dependencies [14c415f]\n- Updated dependencies [5400097]\n  - @l"
+  },
+  {
+    "package": "@larose-ui/nuxt",
+    "version": "0.3.2",
+    "heading": "0.3.2",
+    "body": "### Patch Changes\n\n- 14c415f: Clarify the public npm surface and ship the one-CSS install story.\n\n  - Mark building-block packages as internal (still published for transitive installs; not product docs).\n  - Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.\n  - Align package metadata, readmes, and docs install copy with the public vs internal split.\n\n- Updated dependencies [14c415f]\n- Updated dependencies [5400097]\n  - @l"
+  },
+  {
+    "package": "@larose-ui/accessibility",
+    "version": "0.3.1",
+    "heading": "0.3.1",
+    "body": "### Patch Changes\n\n- 14c415f: Clarify the public npm surface and ship the one-CSS install story.\n\n  - Mark building-block packages as internal (still published for transitive installs; not product docs).\n  - Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.\n  - Align package metadata, readmes, and docs install copy with the public vs internal split.\n\n- Updated dependencies [14c415f]\n  - @larose-ui/core@0.3.1"
+  },
+  {
+    "package": "@larose-ui/ai-core",
+    "version": "0.3.1",
+    "heading": "0.3.1",
+    "body": "### Patch Changes\n\n- 14c415f: Clarify the public npm surface and ship the one-CSS install story.\n\n  - Mark building-block packages as internal (still published for transitive installs; not product docs).\n  - Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.\n  - Align package metadata, readmes, and docs install copy with the public vs internal split.\n\n- Updated dependencies [14c415f]\n  - @larose-ui/core@0.3.1"
+  },
+  {
+    "package": "@larose-ui/ai-svelte",
+    "version": "0.3.1",
+    "heading": "0.3.1",
+    "body": "### Patch Changes\n\n- 14c415f: Clarify the public npm surface and ship the one-CSS install story.\n\n  - Mark building-block packages as internal (still published for transitive installs; not product docs).\n  - Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.\n  - Align package metadata, readmes, and docs install copy with the public vs internal split.\n\n- Updated dependencies [14c415f]\n  - @larose-ui/ai-core@0.3.1\n  - @laros"
+  },
+  {
+    "package": "@larose-ui/ai-vue",
     "version": "0.3.1",
     "heading": "0.3.1",
     "body": "### Patch Changes\n\n- Updated dependencies [5400097]\n  - @larose-ui/vue@0.4.0\n  - @larose-ui/forms-vue@0.3.1\n  - @larose-ui/runtime-vue@2.0.0"
   },
   {
-    "package": "@larose-ui/forms-vue",
-    "version": "0.3.1",
-    "heading": "0.3.1",
-    "body": "### Patch Changes\n\n- Updated dependencies [5400097]\n  - @larose-ui/vue@0.4.0"
-  },
-  {
-    "package": "@larose-ui/nuxt",
-    "version": "0.3.1",
-    "heading": "0.3.1",
-    "body": "### Patch Changes\n\n- Updated dependencies [5400097]\n  - @larose-ui/vue@0.4.0\n  - @larose-ui/runtime-vue@2.0.0"
-  },
-  {
-    "package": "@larose-ui/accessibility",
-    "version": "0.3.0",
-    "heading": "0.3.0",
-    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/core@0.3.0"
-  },
-  {
-    "package": "@larose-ui/ai-core",
-    "version": "0.3.0",
-    "heading": "0.3.0",
-    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/core@0.3.0"
-  },
-  {
-    "package": "@larose-ui/ai-svelte",
-    "version": "0.3.0",
-    "heading": "0.3.0",
-    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/ai-core@0.3.0\n  - @larose-ui/forms-core@0.3.0\n  - @larose-ui/forms-svelte@0.3.0\n  - @larose-ui/permissions-svelte@0.3.0\n  - @larose-ui/runtime-svelte@1.0.0\n  - @larose-ui/svelte@0.3.0"
-  },
-  {
-    "package": "@larose-ui/ai-vue",
-    "version": "0.3.0",
-    "heading": "0.3.0",
-    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/ai-core@0.3.0\n  - @larose-ui/forms-core@0.3.0\n  - @larose-ui/forms-vue@0.3.0\n  - @larose-ui/permissions-vue@0.3.0\n  - @larose-ui/runtime-vue@1.0.0\n  - @larose-ui/vue@0.3.0"
-  },
-  {
     "package": "@larose-ui/cli",
-    "version": "0.3.0",
-    "heading": "0.3.0",
-    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/accessibility@0.3.0\n  - @larose-ui/contracts@0.3.0\n  - @larose-ui/migration@0.3.0\n  - @larose-ui/quality-core@0.3.0"
+    "version": "0.3.1",
+    "heading": "0.3.1",
+    "body": "### Patch Changes\n\n- 14c415f: Clarify the public npm surface and ship the one-CSS install story.\n\n  - Mark building-block packages as internal (still published for transitive installs; not product docs).\n  - Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.\n  - Align package metadata, readmes, and docs install copy with the public vs internal split.\n\n- Updated dependencies [14c415f]\n  - @larose-ui/accessibility@0.3.1\n  - "
   },
   {
     "package": "@larose-ui/component-logic",
-    "version": "0.3.0",
-    "heading": "0.3.0",
-    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/core@0.3.0\n  - @larose-ui/primitives@0.3.0\n  - @larose-ui/tokens@0.3.0"
+    "version": "0.3.1",
+    "heading": "0.3.1",
+    "body": "### Patch Changes\n\n- 14c415f: Clarify the public npm surface and ship the one-CSS install story.\n\n  - Mark building-block packages as internal (still published for transitive installs; not product docs).\n  - Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.\n  - Align package metadata, readmes, and docs install copy with the public vs internal split.\n\n- Updated dependencies [14c415f]\n  - @larose-ui/core@0.3.1\n  - @larose-u"
   },
   {
     "package": "@larose-ui/contracts",
-    "version": "0.3.0",
-    "heading": "0.3.0",
-    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/core@0.3.0"
+    "version": "0.3.1",
+    "heading": "0.3.1",
+    "body": "### Patch Changes\n\n- 14c415f: Clarify the public npm surface and ship the one-CSS install story.\n\n  - Mark building-block packages as internal (still published for transitive installs; not product docs).\n  - Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.\n  - Align package metadata, readmes, and docs install copy with the public vs internal split.\n\n- Updated dependencies [14c415f]\n  - @larose-ui/core@0.3.1"
   },
   {
     "package": "@larose-ui/core",
-    "version": "0.3.0",
-    "heading": "0.3.0",
-    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup."
+    "version": "0.3.1",
+    "heading": "0.3.1",
+    "body": "### Patch Changes\n\n- 14c415f: Clarify the public npm surface and ship the one-CSS install story.\n\n  - Mark building-block packages as internal (still published for transitive installs; not product docs).\n  - Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.\n  - Align package metadata, readmes, and docs install copy with the public vs internal split."
   },
   {
     "package": "@larose-ui/data-core",
-    "version": "0.3.0",
-    "heading": "0.3.0",
-    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/core@0.3.0"
+    "version": "0.3.1",
+    "heading": "0.3.1",
+    "body": "### Patch Changes\n\n- 14c415f: Clarify the public npm surface and ship the one-CSS install story.\n\n  - Mark building-block packages as internal (still published for transitive installs; not product docs).\n  - Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.\n  - Align package metadata, readmes, and docs install copy with the public vs internal split.\n\n- Updated dependencies [14c415f]\n  - @larose-ui/core@0.3.1"
   },
   {
     "package": "@larose-ui/data-react",
-    "version": "0.3.0",
-    "heading": "0.3.0",
-    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/core@0.3.0\n  - @larose-ui/data-core@0.3.0\n  - @larose-ui/permissions-react@0.3.0"
+    "version": "0.3.1",
+    "heading": "0.3.1",
+    "body": "### Patch Changes\n\n- 14c415f: Clarify the public npm surface and ship the one-CSS install story.\n\n  - Mark building-block packages as internal (still published for transitive installs; not product docs).\n  - Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.\n  - Align package metadata, readmes, and docs install copy with the public vs internal split.\n\n- Updated dependencies [14c415f]\n  - @larose-ui/core@0.3.1\n  - @larose-u"
   },
   {
     "package": "@larose-ui/data-svelte",
-    "version": "0.3.0",
-    "heading": "0.3.0",
-    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/core@0.3.0\n  - @larose-ui/data-core@0.3.0"
+    "version": "0.3.1",
+    "heading": "0.3.1",
+    "body": "### Patch Changes\n\n- 14c415f: Clarify the public npm surface and ship the one-CSS install story.\n\n  - Mark building-block packages as internal (still published for transitive installs; not product docs).\n  - Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.\n  - Align package metadata, readmes, and docs install copy with the public vs internal split.\n\n- Updated dependencies [14c415f]\n  - @larose-ui/core@0.3.1\n  - @larose-u"
   },
   {
     "package": "@larose-ui/data-vue",
-    "version": "0.3.0",
-    "heading": "0.3.0",
-    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/core@0.3.0\n  - @larose-ui/data-core@0.3.0"
+    "version": "0.3.1",
+    "heading": "0.3.1",
+    "body": "### Patch Changes\n\n- 14c415f: Clarify the public npm surface and ship the one-CSS install story.\n\n  - Mark building-block packages as internal (still published for transitive installs; not product docs).\n  - Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.\n  - Align package metadata, readmes, and docs install copy with the public vs internal split.\n\n- Updated dependencies [14c415f]\n  - @larose-ui/core@0.3.1\n  - @larose-u"
   },
   {
     "package": "@larose-ui/devtools-core",
-    "version": "0.3.0",
-    "heading": "0.3.0",
-    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/observability-core@0.3.0"
-  },
-  {
-    "package": "@larose-ui/devtools-svelte",
-    "version": "0.3.0",
-    "heading": "0.3.0",
-    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/devtools-core@0.3.0\n  - @larose-ui/observability-svelte@0.3.0\n  - @larose-ui/permissions-svelte@0.3.0\n  - @larose-ui/runtime-svelte@1.0.0"
-  },
-  {
-    "package": "@larose-ui/devtools-vue",
-    "version": "0.3.0",
-    "heading": "0.3.0",
-    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/devtools-core@0.3.0\n  - @larose-ui/observability-vue@0.3.0\n  - @larose-ui/permissions-vue@0.3.0\n  - @larose-ui/runtime-vue@1.0.0"
-  },
-  {
-    "package": "@larose-ui/enterprise-core",
-    "version": "0.3.0",
-    "heading": "0.3.0",
-    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/core@0.3.0\n  - @larose-ui/forms-core@0.3.0"
-  },
-  {
-    "package": "@larose-ui/enterprise-react",
-    "version": "0.3.0",
-    "heading": "0.3.0",
-    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/core@0.3.0\n  - @larose-ui/enterprise-core@0.3.0\n  - @larose-ui/forms-react@0.3.0\n  - @larose-ui/observability-react@0.3.0\n  - @larose-ui/permissions-react@0.3.0\n  - @larose-ui/react@0.3.0\n  - @larose-ui/runtime-react@2.0.0"
-  },
-  {
-    "package": "@larose-ui/enterprise-svelte",
-    "version": "0.3.0",
-    "heading": "0.3.0",
-    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/core@0.3.0\n  - @larose-ui/enterprise-core@0.3.0\n  - @larose-ui/forms-svelte@0.3.0\n  - @larose-ui/observability-svelte@0.3.0\n  - @larose-ui/permissions-svelte@0.3.0\n  - @larose-ui/runtime-svelte@1.0.0\n  - @larose-ui/svelte@0.3.0"
+    "version": "0.3.1",
+    "heading": "0.3.1",
+    "body": "### Patch Changes\n\n- 14c415f: Clarify the public npm surface and ship the one-CSS install story.\n\n  - Mark building-block packages as internal (still published for transitive installs; not product docs).\n  - Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.\n  - Align package metadata, readmes, and docs install copy with the public vs internal split.\n\n- Updated dependencies [14c415f]\n  - @larose-ui/observability-core@0.3.1"
   }
 ];

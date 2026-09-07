@@ -23,14 +23,15 @@ laRose is a **UI Operating System** for modern SaaS applications — not a compo
 
 ## Shared styles
 
-Component CSS lives in `@larose-ui/styles` (framework-agnostic). Import tokens first, then shared component styles:
+Component CSS lives in `@larose-ui/styles` (framework-agnostic). Design tokens are **bundled** into that stylesheet — one import is enough:
 
 ```ts
-import '@larose-ui/tokens/styles.css';
 import '@larose-ui/styles/styles.css';
+// React apps can use:
+import '@larose-ui/react/styles.css';
 ```
 
-`@larose-ui/react/styles.css` remains available for backward compatibility.
+You do not need a separate `@larose-ui/tokens` CSS import in apps.
 
 ## Runtime core
 

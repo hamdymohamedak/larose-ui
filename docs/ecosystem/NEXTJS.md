@@ -5,7 +5,7 @@ laRose UI ships as React components with shared CSS. `@larose-ui/next` is a thin
 ## Install
 
 ```bash
-pnpm add @larose-ui/next @larose-ui/react @larose-ui/runtime-react @larose-ui/tokens
+pnpm add @larose-ui/next @larose-ui/react @larose-ui/runtime-react
 ```
 
 ## App Router (recommended)
@@ -14,7 +14,6 @@ pnpm add @larose-ui/next @larose-ui/react @larose-ui/runtime-react @larose-ui/to
 
 ```tsx
 // app/layout.tsx
-import '@larose-ui/tokens/styles.css';
 import '@larose-ui/react/styles.css';
 import { LaRoseThemeScript } from '@larose-ui/next/client';
 import { Providers } from './providers';
@@ -76,7 +75,6 @@ Server Components can render static markup, but interactive laRose components re
 
 ```tsx
 // pages/_app.tsx
-import '@larose-ui/tokens/styles.css';
 import '@larose-ui/react/styles.css';
 import type { AppProps } from 'next/app';
 import { LaRoseRoot } from '@larose-ui/next/client';
@@ -100,13 +98,12 @@ Server-safe constants are exported from `@larose-ui/next`:
 
 ```ts
 import { LAROSE_CSS_IMPORTS_REACT } from '@larose-ui/next';
-// ['@larose-ui/tokens/styles.css', '@larose-ui/react/styles.css']
+// ['@larose-ui/react/styles.css'] — tokens are bundled
 ```
 
-Preferred import order:
+Prefer a single stylesheet:
 
-1. `@larose-ui/tokens/styles.css`
-2. `@larose-ui/styles/styles.css` or `@larose-ui/react/styles.css` (backward compatible bundle)
+1. `@larose-ui/react/styles.css` (React) or `@larose-ui/styles/styles.css` (Vue / Svelte)
 
 ## Custom theme script (SSR frameworks)
 

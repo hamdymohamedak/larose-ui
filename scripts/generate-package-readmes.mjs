@@ -10,69 +10,75 @@ import {
   LAYER_LABELS,
   listPackageDirs,
   PUBLIC_PACKAGES,
+  recommendedStartPackages,
 } from './public-surface.mjs';
 
 const REPO = 'https://github.com/hamdymohamedak/larose-ui';
 const REPO_GIT = 'git+https://github.com/hamdymohamedak/larose-ui.git';
+const DOCS = 'https://hamdymohamedak.github.io/larose-ui/';
 
-function preferPublicImports(framework = 'react') {
-  return [
-    `@larose-ui/runtime-${framework}`,
-    `@larose-ui/${framework}`,
-    `@larose-ui/data-${framework}`,
-    `@larose-ui/forms-${framework}`,
-    `@larose-ui/permissions-${framework}`,
-  ];
+function frameworkFromPackage(name) {
+  if (name === 'react' || name.endsWith('-react') || name === 'next') return 'react';
+  if (name === 'vue' || name.endsWith('-vue') || name === 'nuxt') return 'vue';
+  if (name === 'svelte' || name.endsWith('-svelte') || name === 'sveltekit') return 'svelte';
+  return 'react';
+}
+
+function renderInstallBlock(packages) {
+  const line = packages.join(' ');
+  return `\`\`\`bash
+npm install ${line}
+# or
+pnpm add ${line}
+# or
+yarn add ${line}
+\`\`\``;
 }
 
 function renderPublicReadme(name, surface) {
   const pkg = `@larose-ui/${name}`;
-  const docsSection = surface.docs ? `- [Package docs](${surface.docs})\n` : '';
+  const framework = frameworkFromPackage(name);
+  const start = recommendedStartPackages(framework);
   const example = surface.example ?? `import {} from '${pkg}';`;
+  const isUiOrRuntime =
+    surface.layer === 'ui' || surface.layer === 'runtime' || surface.layer === 'styles';
+  const installPkgs =
+    isUiOrRuntime && (name === framework || name === `runtime-${framework}` || name === 'styles')
+      ? start.install
+      : [pkg];
 
   return `# ${pkg}
 
 > ${surface.tagline}
 
-Part of **[laRose UI](${REPO})** — start with UI + Runtime packages; feature packs are optional.
+**Docs:** [${DOCS.replace(/\/$/, '')}](${DOCS}) · **Source:** [laRose UI](${REPO})
 
 **Public API layer:** ${LAYER_LABELS[surface.layer] ?? surface.layer}
 
 ## Install
 
-\`\`\`bash
-npm install ${pkg}
-# or
-pnpm add ${pkg}
-# or
-yarn add ${pkg}
-\`\`\`
-
+${renderInstallBlock(installPkgs)}
 ${surface.peer ? `\n**Peer dependency:** \`${surface.peer}\`\n` : ''}
-
 ## Quick start
 
 \`\`\`tsx
 ${example}
 \`\`\`
 
+${
+  isUiOrRuntime
+    ? `Styles: \`${start.stylesImport}\` (design tokens are bundled — no separate \`@larose-ui/tokens\` CSS import).\n`
+    : ''
+}
 ## Features
 
 ${(surface.features ?? [surface.tagline]).map((f) => `- ${f}`).join('\n')}
 
-## Recommended app stack
-
-Install these first (example for React):
-
-${preferPublicImports('react').map((p) => `- \`${p}\``).join('\n')}
-
-Internal packages (\`core\`, \`tokens\`, \`*-core\`, …) are pulled in automatically — you usually do not need to depend on them directly.
-
 ## Documentation
 
-- [Monorepo README](${REPO}#readme)
+- [laRose UI Docs](${DOCS}) — getting started, components, guides
 - [Public API surface](${REPO}/blob/main/docs/PUBLIC_API.md)
-${docsSection}- [Report an issue](${REPO}/issues)
+- [Report an issue](${REPO}/issues)
 
 ## License
 
@@ -82,39 +88,31 @@ MIT © [laRose UI](${REPO})
 
 function renderInternalReadme(name, surface) {
   const pkg = `@larose-ui/${name}`;
-  const prefer = preferPublicImports('react');
+  const start = recommendedStartPackages('react');
 
   return `# ${pkg}
 
 > **Internal package** — ${surface.tagline}
 
-This package is published so other \`@larose-ui/*\` packages can depend on it.
-**App developers should prefer the public surface** instead of importing this directly.
+Published only so other \`@larose-ui/*\` packages can depend on it.
+**Do not install this in app code** — start from the public UI + runtime packages instead.
 
-## Prefer these instead
+## Use this instead
 
-${prefer.map((p) => `- \`${p}\``).join('\n')}
+\`\`\`bash
+pnpm add ${start.install.join(' ')}
+\`\`\`
 
-See [Public API surface](${REPO}/blob/main/docs/PUBLIC_API.md) for the full list.
+Then import styles once: \`${start.stylesImport}\`.
 
-## When to use this package
+Full guides: [laRose UI Docs](${DOCS}) · [Public API surface](${REPO}/blob/main/docs/PUBLIC_API.md)
+
+## When this package is appropriate
 
 - You are extending laRose itself (adapters, CLI, custom bindings)
 - You need a low-level primitive that is not re-exported yet
 
-Golden rule: if your only reason to install this is “another laRose package already uses it”, install the public package instead.
-
-## Install (advanced)
-
-\`\`\`bash
-pnpm add ${pkg}
-\`\`\`
-
-## Documentation
-
-- [Monorepo README](${REPO}#readme)
-- [Public API surface](${REPO}/blob/main/docs/PUBLIC_API.md)
-- [Report an issue](${REPO}/issues)
+Golden rule: if another laRose package already depends on this for you, install the public package — not this one.
 
 ## License
 
@@ -142,7 +140,7 @@ for (const name of listPackageDirs(packagesDir)) {
     url: REPO_GIT,
     directory: `packages/${name}`,
   };
-  pkg.homepage = `${REPO}/blob/main/packages/${name}#readme`;
+  pkg.homepage = DOCS;
   pkg.bugs = { url: `${REPO}/issues` };
   pkg.larose = {
     ...(pkg.larose && typeof pkg.larose === 'object' ? pkg.larose : {}),
@@ -176,4 +174,5 @@ for (const name of listPackageDirs(packagesDir)) {
 const publicCount = Object.keys(PUBLIC_PACKAGES).length;
 const total = listPackageDirs(packagesDir).length;
 console.log(`\nDone. Public surface: ${publicCount} / ${total} publishable packages.`);
+console.log('Homepage for all packages →', DOCS);
 console.log('Run pnpm changeset and publish to update npm package pages.');

@@ -24,7 +24,6 @@ pnpm add @larose-ui/react @larose-ui/runtime-react @larose-ui/tokens @larose-ui/
 Import shared styles once in your root route or client entry:
 
 ```tsx
-import '@larose-ui/tokens/styles.css';
 import '@larose-ui/react/styles.css';
 ```
 

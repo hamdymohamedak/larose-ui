@@ -2,7 +2,7 @@
 
 > Nuxt module — CSS injection, theme script, and auto-imports.
 
-Part of **[laRose UI](https://github.com/hamdymohamedak/larose-ui)** — start with UI + Runtime packages; feature packs are optional.
+**Docs:** [https://hamdymohamedak.github.io/larose-ui](https://hamdymohamedak.github.io/larose-ui/) · **Source:** [laRose UI](https://github.com/hamdymohamedak/larose-ui)
 
 **Public API layer:** Meta-framework
 
@@ -16,9 +16,7 @@ pnpm add @larose-ui/nuxt
 yarn add @larose-ui/nuxt
 ```
 
-
 **Peer dependency:** `nuxt >=3`
-
 
 ## Quick start
 
@@ -29,26 +27,15 @@ export default defineNuxtConfig({
 })
 ```
 
+
 ## Features
 
 - Nuxt module with CSS + theme bootstrap
 - Auto-imports from runtime-vue
 
-## Recommended app stack
-
-Install these first (example for React):
-
-- `@larose-ui/runtime-react`
-- `@larose-ui/react`
-- `@larose-ui/data-react`
-- `@larose-ui/forms-react`
-- `@larose-ui/permissions-react`
-
-Internal packages (`core`, `tokens`, `*-core`, …) are pulled in automatically — you usually do not need to depend on them directly.
-
 ## Documentation
 
-- [Monorepo README](https://github.com/hamdymohamedak/larose-ui#readme)
+- [laRose UI Docs](https://hamdymohamedak.github.io/larose-ui/) — getting started, components, guides
 - [Public API surface](https://github.com/hamdymohamedak/larose-ui/blob/main/docs/PUBLIC_API.md)
 - [Report an issue](https://github.com/hamdymohamedak/larose-ui/issues)
 

@@ -68,7 +68,7 @@
     "url": "git+https://github.com/hamdymohamedak/larose-ui.git",
     "directory": "packages/runtime-svelte"
   },
-  "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/runtime-svelte#readme",
+  "homepage": "https://hamdymohamedak.github.io/larose-ui/",
   "bugs": {
     "url": "https://github.com/hamdymohamedak/larose-ui/issues"
   },

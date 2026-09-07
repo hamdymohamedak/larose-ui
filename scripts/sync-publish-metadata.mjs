@@ -8,6 +8,7 @@ import { join } from 'node:path';
 import { getPackageSurface, listPackageDirs } from './public-surface.mjs';
 
 const REPO_URL = process.env.LAROSE_REPO_URL ?? 'https://github.com/hamdymohamedak/larose-ui';
+const DOCS_URL = process.env.LAROSE_DOCS_URL ?? 'https://hamdymohamedak.github.io/larose-ui/';
 const packagesDir = join(process.cwd(), 'packages');
 
 for (const name of listPackageDirs(packagesDir)) {
@@ -17,7 +18,7 @@ for (const name of listPackageDirs(packagesDir)) {
 
   pkg.license = 'MIT';
   pkg.publishConfig = { access: 'public' };
-  pkg.homepage = `${REPO_URL}/blob/main/packages/${name}#readme`;
+  pkg.homepage = DOCS_URL;
   pkg.bugs = { url: `${REPO_URL}/issues` };
   pkg.repository = {
     type: 'git',

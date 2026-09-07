@@ -22,7 +22,7 @@ Components reuse **shared CSS modules** from `@larose-ui/styles`, shared utils f
 ## Install
 
 ```bash
-pnpm add @larose-ui/vue @larose-ui/tokens
+pnpm add @larose-ui/runtime-vue @larose-ui/vue @larose-ui/styles
 ```
 
 ## Setup
@@ -31,7 +31,6 @@ pnpm add @larose-ui/vue @larose-ui/tokens
 // main.ts
 import { createApp } from 'vue';
 import App from './App.vue';
-import '@larose-ui/tokens/styles.css';
 import '@larose-ui/styles/styles.css';
 
 createApp(App).mount('#app');

@@ -8,6 +8,8 @@ laRose keeps a **precise internal monorepo graph**, but the **product story** is
 
 Those packages may still be published on npm (so public packages can depend on them). They are marked `[Internal]` and documented as advanced.
 
+Product docs: [https://hamdymohamedak.github.io/larose-ui/](https://hamdymohamedak.github.io/larose-ui/)
+
 ## Start here (not 56 names)
 
 | Layer | Install these |

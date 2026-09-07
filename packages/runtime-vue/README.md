@@ -2,23 +2,21 @@
 
 > App runtime for Vue 3 — theme, i18n, network, offline, session.
 
-Part of **[laRose UI](https://github.com/hamdymohamedak/larose-ui)** — start with UI + Runtime packages; feature packs are optional.
+**Docs:** [https://hamdymohamedak.github.io/larose-ui](https://hamdymohamedak.github.io/larose-ui/) · **Source:** [laRose UI](https://github.com/hamdymohamedak/larose-ui)
 
 **Public API layer:** Runtime
 
 ## Install
 
 ```bash
-npm install @larose-ui/runtime-vue
+npm install @larose-ui/runtime-vue @larose-ui/vue @larose-ui/styles
 # or
-pnpm add @larose-ui/runtime-vue
+pnpm add @larose-ui/runtime-vue @larose-ui/vue @larose-ui/styles
 # or
-yarn add @larose-ui/runtime-vue
+yarn add @larose-ui/runtime-vue @larose-ui/vue @larose-ui/styles
 ```
 
-
 **Peer dependency:** `vue >=3`
-
 
 ## Quick start
 
@@ -26,26 +24,16 @@ yarn add @larose-ui/runtime-vue
 import { LaRoseProvider } from '@larose-ui/runtime-vue';
 ```
 
+Styles: `@larose-ui/styles/styles.css` (design tokens are bundled — no separate `@larose-ui/tokens` CSS import).
+
 ## Features
 
 - `LaRoseProvider` + provide/inject runtime context
 - Network / offline / toast helpers
 
-## Recommended app stack
-
-Install these first (example for React):
-
-- `@larose-ui/runtime-react`
-- `@larose-ui/react`
-- `@larose-ui/data-react`
-- `@larose-ui/forms-react`
-- `@larose-ui/permissions-react`
-
-Internal packages (`core`, `tokens`, `*-core`, …) are pulled in automatically — you usually do not need to depend on them directly.
-
 ## Documentation
 
-- [Monorepo README](https://github.com/hamdymohamedak/larose-ui#readme)
+- [laRose UI Docs](https://hamdymohamedak.github.io/larose-ui/) — getting started, components, guides
 - [Public API surface](https://github.com/hamdymohamedak/larose-ui/blob/main/docs/PUBLIC_API.md)
 - [Report an issue](https://github.com/hamdymohamedak/larose-ui/issues)
 

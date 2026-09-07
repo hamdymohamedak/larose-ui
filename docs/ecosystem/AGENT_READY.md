@@ -24,7 +24,7 @@ GitHub Pages also ignores Cloudflare `_headers` and cannot negotiate
 
 ## Recommended: Cloudflare Pages at site root
 
-1. Deploy with `VITE_BASE_PATH=/` (see `.github/workflows/docs-cloudflare.yml`).
+1. Deploy with `VITE_BASE_PATH=/` on Cloudflare Pages (or any host at the domain root).
 2. Keep `apps/docs/functions/_middleware.js` in the project (copied into `dist/functions`).
 3. Set `BASE_PATH=/` in the Pages project environment if needed.
 4. Point a custom domain at the Pages project and enable DNSSEC.

@@ -28,7 +28,7 @@ Motion System
 
 ## Motion tokens
 
-Imported via `@larose-ui/tokens/styles.css`:
+Included via `@larose-ui/styles/styles.css` or `@larose-ui/react/styles.css` (tokens are bundled):
 
 | Token | Purpose |
 |-------|---------|

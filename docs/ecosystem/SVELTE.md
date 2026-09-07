@@ -12,14 +12,13 @@
 ## Install
 
 ```bash
-pnpm add @larose-ui/svelte @larose-ui/tokens
+pnpm add @larose-ui/runtime-svelte @larose-ui/svelte @larose-ui/styles
 ```
 
 ## Setup
 
 ```ts
 // main.ts
-import '@larose-ui/tokens/styles.css';
 import '@larose-ui/styles/styles.css';
 import { mount } from 'svelte';
 import App from './App.svelte';

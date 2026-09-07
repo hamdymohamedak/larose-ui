@@ -2,7 +2,10 @@
 
 UI platform for modern SaaS applications — React / Vue / Svelte components, runtime providers, and optional intelligence packs (data, forms, permissions).
 
-The monorepo is split precisely for maintainers. **You only need a small public surface** to build an app. See [Public API surface](docs/PUBLIC_API.md).
+The monorepo is split precisely for maintainers. **You only need a small public surface** to build an app.
+
+- **Docs:** [https://hamdymohamedak.github.io/larose-ui/](https://hamdymohamedak.github.io/larose-ui/)
+- **Public API surface:** [docs/PUBLIC_API.md](docs/PUBLIC_API.md)
 
 ## Table of contents
 
@@ -36,7 +39,9 @@ pnpm run doctor   # quality gates
 pnpm add @larose-ui/runtime-react @larose-ui/react
 ```
 
-Optional intelligence packs:
+Import styles once (`@larose-ui/react/styles.css` — tokens included). That is enough for a working app.
+
+Optional feature packs (only if you need them):
 
 ```bash
 pnpm add @larose-ui/data-react @larose-ui/forms-react @larose-ui/permissions-react
@@ -169,6 +174,8 @@ function App() {
 | `pnpm verify:publish` | Verify publish readiness + public-surface flags |
 
 ## Documentation
+
+- [Web docs](https://hamdymohamedak.github.io/larose-ui/)
 
 | Topic | Location |
 |-------|----------|

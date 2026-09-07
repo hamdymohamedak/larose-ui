@@ -2,23 +2,21 @@
 
 > Vue 3 components with the same design system as React and Svelte.
 
-Part of **[laRose UI](https://github.com/hamdymohamedak/larose-ui)** — start with UI + Runtime packages; feature packs are optional.
+**Docs:** [https://hamdymohamedak.github.io/larose-ui](https://hamdymohamedak.github.io/larose-ui/) · **Source:** [laRose UI](https://github.com/hamdymohamedak/larose-ui)
 
 **Public API layer:** UI
 
 ## Install
 
 ```bash
-npm install @larose-ui/vue
+npm install @larose-ui/runtime-vue @larose-ui/vue @larose-ui/styles
 # or
-pnpm add @larose-ui/vue
+pnpm add @larose-ui/runtime-vue @larose-ui/vue @larose-ui/styles
 # or
-yarn add @larose-ui/vue
+yarn add @larose-ui/runtime-vue @larose-ui/vue @larose-ui/styles
 ```
 
-
 **Peer dependency:** `vue >=3`
-
 
 ## Quick start
 
@@ -27,27 +25,17 @@ import { Button, Card, Input } from '@larose-ui/vue';
 import '@larose-ui/styles/styles.css';
 ```
 
+Styles: `@larose-ui/styles/styles.css` (design tokens are bundled — no separate `@larose-ui/tokens` CSS import).
+
 ## Features
 
 - Parity components with React / Svelte
 - Composables for toast and accelerators
 - One CSS import: `@larose-ui/styles/styles.css` (tokens included)
 
-## Recommended app stack
-
-Install these first (example for React):
-
-- `@larose-ui/runtime-react`
-- `@larose-ui/react`
-- `@larose-ui/data-react`
-- `@larose-ui/forms-react`
-- `@larose-ui/permissions-react`
-
-Internal packages (`core`, `tokens`, `*-core`, …) are pulled in automatically — you usually do not need to depend on them directly.
-
 ## Documentation
 
-- [Monorepo README](https://github.com/hamdymohamedak/larose-ui#readme)
+- [laRose UI Docs](https://hamdymohamedak.github.io/larose-ui/) — getting started, components, guides
 - [Public API surface](https://github.com/hamdymohamedak/larose-ui/blob/main/docs/PUBLIC_API.md)
 - [Report an issue](https://github.com/hamdymohamedak/larose-ui/issues)
 

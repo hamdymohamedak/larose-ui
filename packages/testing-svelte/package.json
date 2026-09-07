@@ -51,7 +51,7 @@
     "url": "git+https://github.com/hamdymohamedak/larose-ui.git",
     "directory": "packages/testing-svelte"
   },
-  "homepage": "https://github.com/hamdymohamedak/larose-ui/blob/main/packages/testing-svelte#readme",
+  "homepage": "https://hamdymohamedak.github.io/larose-ui/",
   "bugs": {
     "url": "https://github.com/hamdymohamedak/larose-ui/issues"
   },

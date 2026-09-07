@@ -2,37 +2,25 @@
 
 > **Internal package** — Static a11y source scanner used by `larose doctor`.
 
-This package is published so other `@larose-ui/*` packages can depend on it.
-**App developers should prefer the public surface** instead of importing this directly.
+Published only so other `@larose-ui/*` packages can depend on it.
+**Do not install this in app code** — start from the public UI + runtime packages instead.
 
-## Prefer these instead
+## Use this instead
 
-- `@larose-ui/runtime-react`
-- `@larose-ui/react`
-- `@larose-ui/data-react`
-- `@larose-ui/forms-react`
-- `@larose-ui/permissions-react`
+```bash
+pnpm add @larose-ui/runtime-react @larose-ui/react
+```
 
-See [Public API surface](https://github.com/hamdymohamedak/larose-ui/blob/main/docs/PUBLIC_API.md) for the full list.
+Then import styles once: `@larose-ui/react/styles.css`.
 
-## When to use this package
+Full guides: [laRose UI Docs](https://hamdymohamedak.github.io/larose-ui/) · [Public API surface](https://github.com/hamdymohamedak/larose-ui/blob/main/docs/PUBLIC_API.md)
+
+## When this package is appropriate
 
 - You are extending laRose itself (adapters, CLI, custom bindings)
 - You need a low-level primitive that is not re-exported yet
 
-Golden rule: if your only reason to install this is “another laRose package already uses it”, install the public package instead.
-
-## Install (advanced)
-
-```bash
-pnpm add @larose-ui/accessibility
-```
-
-## Documentation
-
-- [Monorepo README](https://github.com/hamdymohamedak/larose-ui#readme)
-- [Public API surface](https://github.com/hamdymohamedak/larose-ui/blob/main/docs/PUBLIC_API.md)
-- [Report an issue](https://github.com/hamdymohamedak/larose-ui/issues)
+Golden rule: if another laRose package already depends on this for you, install the public package — not this one.
 
 ## License
 

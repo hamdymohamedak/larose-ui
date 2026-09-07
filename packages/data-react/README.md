@@ -2,7 +2,7 @@
 
 > React data fetching with self-healing errors and undo.
 
-Part of **[laRose UI](https://github.com/hamdymohamedak/larose-ui)** — start with UI + Runtime packages; feature packs are optional.
+**Docs:** [https://hamdymohamedak.github.io/larose-ui](https://hamdymohamedak.github.io/larose-ui/) · **Source:** [laRose UI](https://github.com/hamdymohamedak/larose-ui)
 
 **Public API layer:** Features
 
@@ -16,9 +16,7 @@ pnpm add @larose-ui/data-react
 yarn add @larose-ui/data-react
 ```
 
-
 **Peer dependency:** `react >=18`
-
 
 ## Quick start
 
@@ -26,27 +24,16 @@ yarn add @larose-ui/data-react
 import { DataView, useQuery } from '@larose-ui/data-react';
 ```
 
+
 ## Features
 
 - `useQuery`, `useMutation`, `DataView`
 - Self-healing retries
 - `useUndo`
 
-## Recommended app stack
-
-Install these first (example for React):
-
-- `@larose-ui/runtime-react`
-- `@larose-ui/react`
-- `@larose-ui/data-react`
-- `@larose-ui/forms-react`
-- `@larose-ui/permissions-react`
-
-Internal packages (`core`, `tokens`, `*-core`, …) are pulled in automatically — you usually do not need to depend on them directly.
-
 ## Documentation
 
-- [Monorepo README](https://github.com/hamdymohamedak/larose-ui#readme)
+- [laRose UI Docs](https://hamdymohamedak.github.io/larose-ui/) — getting started, components, guides
 - [Public API surface](https://github.com/hamdymohamedak/larose-ui/blob/main/docs/PUBLIC_API.md)
 - [Report an issue](https://github.com/hamdymohamedak/larose-ui/issues)
 
