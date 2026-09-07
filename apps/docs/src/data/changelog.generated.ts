@@ -9,40 +9,28 @@ export interface DocsChangelogEntry {
 
 export const docsChangelog: DocsChangelogEntry[] = [
   {
-    "package": "@larose-ui/cli",
-    "version": "Unreleased",
-    "heading": "Unreleased",
-    "body": "### Minor Changes\n\n- Contribute CLI no longer lists electron/tauri host packages.\n\n- Add `larose contribute` to scaffold component/module stubs for monorepo contributors (package-aware paths, tests, shared styles, CHANGELOG Unreleased)."
+    "package": "@larose-ui/ai-react",
+    "version": "2.0.2",
+    "heading": "2.0.2",
+    "body": "### Patch Changes\n\n- 63e3d3b: Improve npm package READMEs and point Homepage to the docs site.\n\n  - Remove the confusing \"Recommended app stack\" install list from package READMEs\n  - Set `homepage` to https://hamdymohamedak.github.io/larose-ui/ for all packages\n  - Align docs (architecture / Vue / Svelte / Next / design guides) with the one-CSS install story\n\n- Updated dependencies [63e3d3b]\n  - @larose-ui/ai-core@0.3.2\n  - @larose-ui/forms-react@0.3.2\n  - @larose-ui/permissions-react@0.3.2\n  - "
   },
   {
-    "package": "@larose-ui/migration",
-    "version": "Unreleased",
-    "heading": "Unreleased",
-    "body": "### Minor Changes\n\n- Drop electron/tauri contribute profiles; keep generic module scaffolds.\n\n- Add smart component/module contribution scaffold plans used by `larose contribute`."
+    "package": "@larose-ui/devtools-react",
+    "version": "2.0.2",
+    "heading": "2.0.2",
+    "body": "### Patch Changes\n\n- 63e3d3b: Improve npm package READMEs and point Homepage to the docs site.\n\n  - Remove the confusing \"Recommended app stack\" install list from package READMEs\n  - Set `homepage` to https://hamdymohamedak.github.io/larose-ui/ for all packages\n  - Align docs (architecture / Vue / Svelte / Next / design guides) with the one-CSS install story\n\n- Updated dependencies [63e3d3b]\n  - @larose-ui/core@0.3.2\n  - @larose-ui/devtools-core@0.3.2\n  - @larose-ui/observability-react@0.3.2\n  -"
   },
   {
-    "package": "@larose-ui/react",
-    "version": "Unreleased",
-    "heading": "Unreleased",
-    "body": "### Minor Changes\n\n- Remove WebView components; laRose stays web-first without embedded browser chrome."
+    "package": "@larose-ui/runtime-react",
+    "version": "2.0.2",
+    "heading": "2.0.2",
+    "body": "### Patch Changes\n\n- 63e3d3b: Improve npm package READMEs and point Homepage to the docs site.\n\n  - Remove the confusing \"Recommended app stack\" install list from package READMEs\n  - Set `homepage` to https://hamdymohamedak.github.io/larose-ui/ for all packages\n  - Align docs (architecture / Vue / Svelte / Next / design guides) with the one-CSS install story\n\n- Updated dependencies [63e3d3b]\n  - @larose-ui/core@0.3.2\n  - @larose-ui/network@0.3.2\n  - @larose-ui/observability-react@0.3.2\n  - @laro"
   },
   {
-    "package": "@larose-ui/styles",
-    "version": "Unreleased",
-    "heading": "Unreleased",
-    "body": "### Minor Changes\n\n- Remove WebView CSS modules."
-  },
-  {
-    "package": "@larose-ui/svelte",
-    "version": "Unreleased",
-    "heading": "Unreleased",
-    "body": "### Minor Changes\n\n- Remove WebView components to match React web-first surface."
-  },
-  {
-    "package": "@larose-ui/tokens",
-    "version": "Unreleased",
-    "heading": "Unreleased",
-    "body": "### Minor Changes\n\n- Remove WebView design tokens."
+    "package": "@larose-ui/runtime-vue",
+    "version": "2.0.2",
+    "heading": "2.0.2",
+    "body": "### Patch Changes\n\n- 63e3d3b: Improve npm package READMEs and point Homepage to the docs site.\n\n  - Remove the confusing \"Recommended app stack\" install list from package READMEs\n  - Set `homepage` to https://hamdymohamedak.github.io/larose-ui/ for all packages\n  - Align docs (architecture / Vue / Svelte / Next / design guides) with the one-CSS install story\n\n- Updated dependencies [63e3d3b]\n  - @larose-ui/core@0.3.2\n  - @larose-ui/network@0.3.2\n  - @larose-ui/observability-vue@0.3.2\n  - @larose"
   },
   {
     "package": "@larose-ui/ai-react",
@@ -94,27 +82,15 @@ export const docsChangelog: DocsChangelogEntry[] = [
   },
   {
     "package": "@larose-ui/runtime-svelte",
+    "version": "1.0.2",
+    "heading": "1.0.2",
+    "body": "### Patch Changes\n\n- 63e3d3b: Improve npm package READMEs and point Homepage to the docs site.\n\n  - Remove the confusing \"Recommended app stack\" install list from package READMEs\n  - Set `homepage` to https://hamdymohamedak.github.io/larose-ui/ for all packages\n  - Align docs (architecture / Vue / Svelte / Next / design guides) with the one-CSS install story\n\n- Updated dependencies [63e3d3b]\n  - @larose-ui/core@0.3.2\n  - @larose-ui/network@0.3.2\n  - @larose-ui/observability-svelte@0.3.2\n  - @lar"
+  },
+  {
+    "package": "@larose-ui/runtime-svelte",
     "version": "1.0.1",
     "heading": "1.0.1",
     "body": "### Patch Changes\n\n- 14c415f: Clarify the public npm surface and ship the one-CSS install story.\n\n  - Mark building-block packages as internal (still published for transitive installs; not product docs).\n  - Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.\n  - Align package metadata, readmes, and docs install copy with the public vs internal split.\n\n- Updated dependencies [14c415f]\n  - @larose-ui/core@0.3.1\n  - @larose-u"
-  },
-  {
-    "package": "@larose-ui/ai-react",
-    "version": "1.0.0",
-    "heading": "1.0.0",
-    "body": "### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/react@0.2.0\n  - @larose-ui/runtime@1.0.0\n  - @larose-ui/permissions@0.2.0\n  - @larose-ui/forms@0.1.2"
-  },
-  {
-    "package": "@larose-ui/devtools-react",
-    "version": "1.0.0",
-    "heading": "1.0.0",
-    "body": "### Minor Changes\n\n- e989652: Evolve laRose into a framework-agnostic UI operating system: extract shared styles to `@larose-ui/styles`, add Vue 3 and Svelte 5 parity adapters, Next/Nuxt/Electron/Tauri/desktop-core integrations, runtime-core and contracts packages, cross-framework Storybook parity toolbar, AlertDialog focus-ring fix, docs site redesign with beginner-friendly onboarding, and CI/build fixes.\n\n### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/runtime@1.0.0\n  - @lar"
-  },
-  {
-    "package": "@larose-ui/runtime-react",
-    "version": "1.0.0",
-    "heading": "1.0.0",
-    "body": "### Minor Changes\n\n- e989652: Evolve laRose into a framework-agnostic UI operating system: extract shared styles to `@larose-ui/styles`, add Vue 3 and Svelte 5 parity adapters, Next/Nuxt/Electron/Tauri/desktop-core integrations, runtime-core and contracts packages, cross-framework Storybook parity toolbar, AlertDialog focus-ring fix, docs site redesign with beginner-friendly onboarding, and CI/build fixes.\n\n### Patch Changes\n\n- Updated dependencies [e989652]\n  - @larose-ui/react@0.2.0\n  - @laros"
   },
   {
     "package": "@larose-ui/runtime-svelte",
@@ -123,10 +99,10 @@ export const docsChangelog: DocsChangelogEntry[] = [
     "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/core@0.3.0\n  - @larose-ui/network@0.3.0\n  - @larose-ui/observability-svelte@0.3.0\n  - @larose-ui/offline@0.3.0\n  - @larose-ui/permissions-svelte@0.3.0\n  - @larose-ui/runtime-core@0.3.0\n  - @larose-ui/svelte@0.3.0\n  - @larose-ui/themes@0.3.0\n  - @larose-ui/tokens@0.3.0"
   },
   {
-    "package": "@larose-ui/runtime-vue",
-    "version": "1.0.0",
-    "heading": "1.0.0",
-    "body": "### Minor Changes\n\n- b11853a: Cross-framework LiquidGlass parity, runtime providers, sandboxes, and platform adapter cleanup.\n\n### Patch Changes\n\n- Updated dependencies [b11853a]\n  - @larose-ui/core@0.3.0\n  - @larose-ui/network@0.3.0\n  - @larose-ui/observability-vue@0.3.0\n  - @larose-ui/offline@0.3.0\n  - @larose-ui/permissions-vue@0.3.0\n  - @larose-ui/runtime-core@0.3.0\n  - @larose-ui/themes@0.3.0\n  - @larose-ui/tokens@0.3.0\n  - @larose-ui/vue@0.3.0"
+    "package": "@larose-ui/vue",
+    "version": "0.4.2",
+    "heading": "0.4.2",
+    "body": "### Patch Changes\n\n- 63e3d3b: Improve npm package READMEs and point Homepage to the docs site.\n\n  - Remove the confusing \"Recommended app stack\" install list from package READMEs\n  - Set `homepage` to https://hamdymohamedak.github.io/larose-ui/ for all packages\n  - Align docs (architecture / Vue / Svelte / Next / design guides) with the one-CSS install story\n\n- Updated dependencies [63e3d3b]\n  - @larose-ui/component-logic@0.3.2\n  - @larose-ui/core@0.3.2\n  - @larose-ui/liquid-glass-core@0.3.2\n  -"
   },
   {
     "package": "@larose-ui/vue",
@@ -142,9 +118,117 @@ export const docsChangelog: DocsChangelogEntry[] = [
   },
   {
     "package": "@larose-ui/ai-vue",
+    "version": "0.3.3",
+    "heading": "0.3.3",
+    "body": "### Patch Changes\n\n- 63e3d3b: Improve npm package READMEs and point Homepage to the docs site.\n\n  - Remove the confusing \"Recommended app stack\" install list from package READMEs\n  - Set `homepage` to https://hamdymohamedak.github.io/larose-ui/ for all packages\n  - Align docs (architecture / Vue / Svelte / Next / design guides) with the one-CSS install story\n\n- Updated dependencies [63e3d3b]\n  - @larose-ui/ai-core@0.3.2\n  - @larose-ui/forms-core@0.3.2\n  - @larose-ui/forms-vue@0.3.3\n  - @larose-u"
+  },
+  {
+    "package": "@larose-ui/devtools-vue",
+    "version": "0.3.3",
+    "heading": "0.3.3",
+    "body": "### Patch Changes\n\n- 63e3d3b: Improve npm package READMEs and point Homepage to the docs site.\n\n  - Remove the confusing \"Recommended app stack\" install list from package READMEs\n  - Set `homepage` to https://hamdymohamedak.github.io/larose-ui/ for all packages\n  - Align docs (architecture / Vue / Svelte / Next / design guides) with the one-CSS install story\n\n- Updated dependencies [63e3d3b]\n  - @larose-ui/devtools-core@0.3.2\n  - @larose-ui/observability-vue@0.3.2\n  - @larose-ui/permissions-vue@"
+  },
+  {
+    "package": "@larose-ui/enterprise-vue",
+    "version": "0.3.3",
+    "heading": "0.3.3",
+    "body": "### Patch Changes\n\n- 63e3d3b: Improve npm package READMEs and point Homepage to the docs site.\n\n  - Remove the confusing \"Recommended app stack\" install list from package READMEs\n  - Set `homepage` to https://hamdymohamedak.github.io/larose-ui/ for all packages\n  - Align docs (architecture / Vue / Svelte / Next / design guides) with the one-CSS install story\n\n- Updated dependencies [63e3d3b]\n  - @larose-ui/core@0.3.2\n  - @larose-ui/enterprise-core@0.3.2\n  - @larose-ui/forms-vue@0.3.3\n  - @larose"
+  },
+  {
+    "package": "@larose-ui/forms-vue",
+    "version": "0.3.3",
+    "heading": "0.3.3",
+    "body": "### Patch Changes\n\n- 63e3d3b: Improve npm package READMEs and point Homepage to the docs site.\n\n  - Remove the confusing \"Recommended app stack\" install list from package READMEs\n  - Set `homepage` to https://hamdymohamedak.github.io/larose-ui/ for all packages\n  - Align docs (architecture / Vue / Svelte / Next / design guides) with the one-CSS install story\n\n- Updated dependencies [63e3d3b]\n  - @larose-ui/core@0.3.2\n  - @larose-ui/data-core@0.3.2\n  - @larose-ui/forms-core@0.3.2\n  - @larose-ui/o"
+  },
+  {
+    "package": "@larose-ui/nuxt",
+    "version": "0.3.3",
+    "heading": "0.3.3",
+    "body": "### Patch Changes\n\n- 63e3d3b: Improve npm package READMEs and point Homepage to the docs site.\n\n  - Remove the confusing \"Recommended app stack\" install list from package READMEs\n  - Set `homepage` to https://hamdymohamedak.github.io/larose-ui/ for all packages\n  - Align docs (architecture / Vue / Svelte / Next / design guides) with the one-CSS install story\n\n- Updated dependencies [63e3d3b]\n  - @larose-ui/core@0.3.2\n  - @larose-ui/runtime-vue@2.0.2\n  - @larose-ui/vue@0.4.2"
+  },
+  {
+    "package": "@larose-ui/accessibility",
+    "version": "0.3.2",
+    "heading": "0.3.2",
+    "body": "### Patch Changes\n\n- 63e3d3b: Improve npm package READMEs and point Homepage to the docs site.\n\n  - Remove the confusing \"Recommended app stack\" install list from package READMEs\n  - Set `homepage` to https://hamdymohamedak.github.io/larose-ui/ for all packages\n  - Align docs (architecture / Vue / Svelte / Next / design guides) with the one-CSS install story\n\n- Updated dependencies [63e3d3b]\n  - @larose-ui/core@0.3.2"
+  },
+  {
+    "package": "@larose-ui/ai-core",
+    "version": "0.3.2",
+    "heading": "0.3.2",
+    "body": "### Patch Changes\n\n- 63e3d3b: Improve npm package READMEs and point Homepage to the docs site.\n\n  - Remove the confusing \"Recommended app stack\" install list from package READMEs\n  - Set `homepage` to https://hamdymohamedak.github.io/larose-ui/ for all packages\n  - Align docs (architecture / Vue / Svelte / Next / design guides) with the one-CSS install story\n\n- Updated dependencies [63e3d3b]\n  - @larose-ui/core@0.3.2"
+  },
+  {
+    "package": "@larose-ui/ai-svelte",
+    "version": "0.3.2",
+    "heading": "0.3.2",
+    "body": "### Patch Changes\n\n- 63e3d3b: Improve npm package READMEs and point Homepage to the docs site.\n\n  - Remove the confusing \"Recommended app stack\" install list from package READMEs\n  - Set `homepage` to https://hamdymohamedak.github.io/larose-ui/ for all packages\n  - Align docs (architecture / Vue / Svelte / Next / design guides) with the one-CSS install story\n\n- Updated dependencies [63e3d3b]\n  - @larose-ui/ai-core@0.3.2\n  - @larose-ui/forms-core@0.3.2\n  - @larose-ui/forms-svelte@0.3.2\n  - @laros"
+  },
+  {
+    "package": "@larose-ui/ai-vue",
     "version": "0.3.2",
     "heading": "0.3.2",
     "body": "### Patch Changes\n\n- 14c415f: Clarify the public npm surface and ship the one-CSS install story.\n\n  - Mark building-block packages as internal (still published for transitive installs; not product docs).\n  - Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.\n  - Align package metadata, readmes, and docs install copy with the public vs internal split.\n\n- Updated dependencies [14c415f]\n- Updated dependencies [5400097]\n  - @l"
+  },
+  {
+    "package": "@larose-ui/cli",
+    "version": "0.3.2",
+    "heading": "0.3.2",
+    "body": "### Patch Changes\n\n- 63e3d3b: Improve npm package READMEs and point Homepage to the docs site.\n\n  - Remove the confusing \"Recommended app stack\" install list from package READMEs\n  - Set `homepage` to https://hamdymohamedak.github.io/larose-ui/ for all packages\n  - Align docs (architecture / Vue / Svelte / Next / design guides) with the one-CSS install story\n\n- Updated dependencies [63e3d3b]\n  - @larose-ui/accessibility@0.3.2\n  - @larose-ui/contracts@0.3.2\n  - @larose-ui/migration@0.3.2\n  - @lar"
+  },
+  {
+    "package": "@larose-ui/component-logic",
+    "version": "0.3.2",
+    "heading": "0.3.2",
+    "body": "### Patch Changes\n\n- 63e3d3b: Improve npm package READMEs and point Homepage to the docs site.\n\n  - Remove the confusing \"Recommended app stack\" install list from package READMEs\n  - Set `homepage` to https://hamdymohamedak.github.io/larose-ui/ for all packages\n  - Align docs (architecture / Vue / Svelte / Next / design guides) with the one-CSS install story\n\n- Updated dependencies [63e3d3b]\n  - @larose-ui/core@0.3.2\n  - @larose-ui/primitives@0.3.2\n  - @larose-ui/tokens@0.3.2"
+  },
+  {
+    "package": "@larose-ui/contracts",
+    "version": "0.3.2",
+    "heading": "0.3.2",
+    "body": "### Patch Changes\n\n- 63e3d3b: Improve npm package READMEs and point Homepage to the docs site.\n\n  - Remove the confusing \"Recommended app stack\" install list from package READMEs\n  - Set `homepage` to https://hamdymohamedak.github.io/larose-ui/ for all packages\n  - Align docs (architecture / Vue / Svelte / Next / design guides) with the one-CSS install story\n\n- Updated dependencies [63e3d3b]\n  - @larose-ui/core@0.3.2"
+  },
+  {
+    "package": "@larose-ui/core",
+    "version": "0.3.2",
+    "heading": "0.3.2",
+    "body": "### Patch Changes\n\n- 63e3d3b: Improve npm package READMEs and point Homepage to the docs site.\n\n  - Remove the confusing \"Recommended app stack\" install list from package READMEs\n  - Set `homepage` to https://hamdymohamedak.github.io/larose-ui/ for all packages\n  - Align docs (architecture / Vue / Svelte / Next / design guides) with the one-CSS install story"
+  },
+  {
+    "package": "@larose-ui/data-core",
+    "version": "0.3.2",
+    "heading": "0.3.2",
+    "body": "### Patch Changes\n\n- 63e3d3b: Improve npm package READMEs and point Homepage to the docs site.\n\n  - Remove the confusing \"Recommended app stack\" install list from package READMEs\n  - Set `homepage` to https://hamdymohamedak.github.io/larose-ui/ for all packages\n  - Align docs (architecture / Vue / Svelte / Next / design guides) with the one-CSS install story\n\n- Updated dependencies [63e3d3b]\n  - @larose-ui/core@0.3.2"
+  },
+  {
+    "package": "@larose-ui/data-react",
+    "version": "0.3.2",
+    "heading": "0.3.2",
+    "body": "### Patch Changes\n\n- 63e3d3b: Improve npm package READMEs and point Homepage to the docs site.\n\n  - Remove the confusing \"Recommended app stack\" install list from package READMEs\n  - Set `homepage` to https://hamdymohamedak.github.io/larose-ui/ for all packages\n  - Align docs (architecture / Vue / Svelte / Next / design guides) with the one-CSS install story\n\n- Updated dependencies [63e3d3b]\n  - @larose-ui/core@0.3.2\n  - @larose-ui/data-core@0.3.2\n  - @larose-ui/permissions-react@0.3.2"
+  },
+  {
+    "package": "@larose-ui/data-svelte",
+    "version": "0.3.2",
+    "heading": "0.3.2",
+    "body": "### Patch Changes\n\n- 63e3d3b: Improve npm package READMEs and point Homepage to the docs site.\n\n  - Remove the confusing \"Recommended app stack\" install list from package READMEs\n  - Set `homepage` to https://hamdymohamedak.github.io/larose-ui/ for all packages\n  - Align docs (architecture / Vue / Svelte / Next / design guides) with the one-CSS install story\n\n- Updated dependencies [63e3d3b]\n  - @larose-ui/core@0.3.2\n  - @larose-ui/data-core@0.3.2"
+  },
+  {
+    "package": "@larose-ui/data-vue",
+    "version": "0.3.2",
+    "heading": "0.3.2",
+    "body": "### Patch Changes\n\n- 63e3d3b: Improve npm package READMEs and point Homepage to the docs site.\n\n  - Remove the confusing \"Recommended app stack\" install list from package READMEs\n  - Set `homepage` to https://hamdymohamedak.github.io/larose-ui/ for all packages\n  - Align docs (architecture / Vue / Svelte / Next / design guides) with the one-CSS install story\n\n- Updated dependencies [63e3d3b]\n  - @larose-ui/core@0.3.2\n  - @larose-ui/data-core@0.3.2"
+  },
+  {
+    "package": "@larose-ui/devtools-core",
+    "version": "0.3.2",
+    "heading": "0.3.2",
+    "body": "### Patch Changes\n\n- 63e3d3b: Improve npm package READMEs and point Homepage to the docs site.\n\n  - Remove the confusing \"Recommended app stack\" install list from package READMEs\n  - Set `homepage` to https://hamdymohamedak.github.io/larose-ui/ for all packages\n  - Align docs (architecture / Vue / Svelte / Next / design guides) with the one-CSS install story\n\n- Updated dependencies [63e3d3b]\n  - @larose-ui/observability-core@0.3.2"
+  },
+  {
+    "package": "@larose-ui/devtools-svelte",
+    "version": "0.3.2",
+    "heading": "0.3.2",
+    "body": "### Patch Changes\n\n- 63e3d3b: Improve npm package READMEs and point Homepage to the docs site.\n\n  - Remove the confusing \"Recommended app stack\" install list from package READMEs\n  - Set `homepage` to https://hamdymohamedak.github.io/larose-ui/ for all packages\n  - Align docs (architecture / Vue / Svelte / Next / design guides) with the one-CSS install story\n\n- Updated dependencies [63e3d3b]\n  - @larose-ui/devtools-core@0.3.2\n  - @larose-ui/observability-svelte@0.3.2\n  - @larose-ui/permissions-s"
   },
   {
     "package": "@larose-ui/devtools-vue",
@@ -153,99 +237,15 @@ export const docsChangelog: DocsChangelogEntry[] = [
     "body": "### Patch Changes\n\n- 14c415f: Clarify the public npm surface and ship the one-CSS install story.\n\n  - Mark building-block packages as internal (still published for transitive installs; not product docs).\n  - Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.\n  - Align package metadata, readmes, and docs install copy with the public vs internal split.\n\n- Updated dependencies [14c415f]\n  - @larose-ui/devtools-core@0.3.1\n  - "
   },
   {
-    "package": "@larose-ui/enterprise-vue",
+    "package": "@larose-ui/enterprise-core",
     "version": "0.3.2",
     "heading": "0.3.2",
-    "body": "### Patch Changes\n\n- 14c415f: Clarify the public npm surface and ship the one-CSS install story.\n\n  - Mark building-block packages as internal (still published for transitive installs; not product docs).\n  - Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.\n  - Align package metadata, readmes, and docs install copy with the public vs internal split.\n\n- Updated dependencies [14c415f]\n- Updated dependencies [5400097]\n  - @l"
+    "body": "### Patch Changes\n\n- 63e3d3b: Improve npm package READMEs and point Homepage to the docs site.\n\n  - Remove the confusing \"Recommended app stack\" install list from package READMEs\n  - Set `homepage` to https://hamdymohamedak.github.io/larose-ui/ for all packages\n  - Align docs (architecture / Vue / Svelte / Next / design guides) with the one-CSS install story\n\n- Updated dependencies [63e3d3b]\n  - @larose-ui/core@0.3.2\n  - @larose-ui/forms-core@0.3.2"
   },
   {
-    "package": "@larose-ui/forms-vue",
+    "package": "@larose-ui/enterprise-react",
     "version": "0.3.2",
     "heading": "0.3.2",
-    "body": "### Patch Changes\n\n- 14c415f: Clarify the public npm surface and ship the one-CSS install story.\n\n  - Mark building-block packages as internal (still published for transitive installs; not product docs).\n  - Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.\n  - Align package metadata, readmes, and docs install copy with the public vs internal split.\n\n- Updated dependencies [14c415f]\n- Updated dependencies [5400097]\n  - @l"
-  },
-  {
-    "package": "@larose-ui/nuxt",
-    "version": "0.3.2",
-    "heading": "0.3.2",
-    "body": "### Patch Changes\n\n- 14c415f: Clarify the public npm surface and ship the one-CSS install story.\n\n  - Mark building-block packages as internal (still published for transitive installs; not product docs).\n  - Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.\n  - Align package metadata, readmes, and docs install copy with the public vs internal split.\n\n- Updated dependencies [14c415f]\n- Updated dependencies [5400097]\n  - @l"
-  },
-  {
-    "package": "@larose-ui/accessibility",
-    "version": "0.3.1",
-    "heading": "0.3.1",
-    "body": "### Patch Changes\n\n- 14c415f: Clarify the public npm surface and ship the one-CSS install story.\n\n  - Mark building-block packages as internal (still published for transitive installs; not product docs).\n  - Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.\n  - Align package metadata, readmes, and docs install copy with the public vs internal split.\n\n- Updated dependencies [14c415f]\n  - @larose-ui/core@0.3.1"
-  },
-  {
-    "package": "@larose-ui/ai-core",
-    "version": "0.3.1",
-    "heading": "0.3.1",
-    "body": "### Patch Changes\n\n- 14c415f: Clarify the public npm surface and ship the one-CSS install story.\n\n  - Mark building-block packages as internal (still published for transitive installs; not product docs).\n  - Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.\n  - Align package metadata, readmes, and docs install copy with the public vs internal split.\n\n- Updated dependencies [14c415f]\n  - @larose-ui/core@0.3.1"
-  },
-  {
-    "package": "@larose-ui/ai-svelte",
-    "version": "0.3.1",
-    "heading": "0.3.1",
-    "body": "### Patch Changes\n\n- 14c415f: Clarify the public npm surface and ship the one-CSS install story.\n\n  - Mark building-block packages as internal (still published for transitive installs; not product docs).\n  - Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.\n  - Align package metadata, readmes, and docs install copy with the public vs internal split.\n\n- Updated dependencies [14c415f]\n  - @larose-ui/ai-core@0.3.1\n  - @laros"
-  },
-  {
-    "package": "@larose-ui/ai-vue",
-    "version": "0.3.1",
-    "heading": "0.3.1",
-    "body": "### Patch Changes\n\n- Updated dependencies [5400097]\n  - @larose-ui/vue@0.4.0\n  - @larose-ui/forms-vue@0.3.1\n  - @larose-ui/runtime-vue@2.0.0"
-  },
-  {
-    "package": "@larose-ui/cli",
-    "version": "0.3.1",
-    "heading": "0.3.1",
-    "body": "### Patch Changes\n\n- 14c415f: Clarify the public npm surface and ship the one-CSS install story.\n\n  - Mark building-block packages as internal (still published for transitive installs; not product docs).\n  - Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.\n  - Align package metadata, readmes, and docs install copy with the public vs internal split.\n\n- Updated dependencies [14c415f]\n  - @larose-ui/accessibility@0.3.1\n  - "
-  },
-  {
-    "package": "@larose-ui/component-logic",
-    "version": "0.3.1",
-    "heading": "0.3.1",
-    "body": "### Patch Changes\n\n- 14c415f: Clarify the public npm surface and ship the one-CSS install story.\n\n  - Mark building-block packages as internal (still published for transitive installs; not product docs).\n  - Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.\n  - Align package metadata, readmes, and docs install copy with the public vs internal split.\n\n- Updated dependencies [14c415f]\n  - @larose-ui/core@0.3.1\n  - @larose-u"
-  },
-  {
-    "package": "@larose-ui/contracts",
-    "version": "0.3.1",
-    "heading": "0.3.1",
-    "body": "### Patch Changes\n\n- 14c415f: Clarify the public npm surface and ship the one-CSS install story.\n\n  - Mark building-block packages as internal (still published for transitive installs; not product docs).\n  - Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.\n  - Align package metadata, readmes, and docs install copy with the public vs internal split.\n\n- Updated dependencies [14c415f]\n  - @larose-ui/core@0.3.1"
-  },
-  {
-    "package": "@larose-ui/core",
-    "version": "0.3.1",
-    "heading": "0.3.1",
-    "body": "### Patch Changes\n\n- 14c415f: Clarify the public npm surface and ship the one-CSS install story.\n\n  - Mark building-block packages as internal (still published for transitive installs; not product docs).\n  - Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.\n  - Align package metadata, readmes, and docs install copy with the public vs internal split."
-  },
-  {
-    "package": "@larose-ui/data-core",
-    "version": "0.3.1",
-    "heading": "0.3.1",
-    "body": "### Patch Changes\n\n- 14c415f: Clarify the public npm surface and ship the one-CSS install story.\n\n  - Mark building-block packages as internal (still published for transitive installs; not product docs).\n  - Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.\n  - Align package metadata, readmes, and docs install copy with the public vs internal split.\n\n- Updated dependencies [14c415f]\n  - @larose-ui/core@0.3.1"
-  },
-  {
-    "package": "@larose-ui/data-react",
-    "version": "0.3.1",
-    "heading": "0.3.1",
-    "body": "### Patch Changes\n\n- 14c415f: Clarify the public npm surface and ship the one-CSS install story.\n\n  - Mark building-block packages as internal (still published for transitive installs; not product docs).\n  - Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.\n  - Align package metadata, readmes, and docs install copy with the public vs internal split.\n\n- Updated dependencies [14c415f]\n  - @larose-ui/core@0.3.1\n  - @larose-u"
-  },
-  {
-    "package": "@larose-ui/data-svelte",
-    "version": "0.3.1",
-    "heading": "0.3.1",
-    "body": "### Patch Changes\n\n- 14c415f: Clarify the public npm surface and ship the one-CSS install story.\n\n  - Mark building-block packages as internal (still published for transitive installs; not product docs).\n  - Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.\n  - Align package metadata, readmes, and docs install copy with the public vs internal split.\n\n- Updated dependencies [14c415f]\n  - @larose-ui/core@0.3.1\n  - @larose-u"
-  },
-  {
-    "package": "@larose-ui/data-vue",
-    "version": "0.3.1",
-    "heading": "0.3.1",
-    "body": "### Patch Changes\n\n- 14c415f: Clarify the public npm surface and ship the one-CSS install story.\n\n  - Mark building-block packages as internal (still published for transitive installs; not product docs).\n  - Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.\n  - Align package metadata, readmes, and docs install copy with the public vs internal split.\n\n- Updated dependencies [14c415f]\n  - @larose-ui/core@0.3.1\n  - @larose-u"
-  },
-  {
-    "package": "@larose-ui/devtools-core",
-    "version": "0.3.1",
-    "heading": "0.3.1",
-    "body": "### Patch Changes\n\n- 14c415f: Clarify the public npm surface and ship the one-CSS install story.\n\n  - Mark building-block packages as internal (still published for transitive installs; not product docs).\n  - Bundle design tokens into `@larose-ui/styles/styles.css` and `@larose-ui/react/styles.css` so apps need a single CSS import.\n  - Align package metadata, readmes, and docs install copy with the public vs internal split.\n\n- Updated dependencies [14c415f]\n  - @larose-ui/observability-core@0.3.1"
+    "body": "### Patch Changes\n\n- 63e3d3b: Improve npm package READMEs and point Homepage to the docs site.\n\n  - Remove the confusing \"Recommended app stack\" install list from package READMEs\n  - Set `homepage` to https://hamdymohamedak.github.io/larose-ui/ for all packages\n  - Align docs (architecture / Vue / Svelte / Next / design guides) with the one-CSS install story\n\n- Updated dependencies [63e3d3b]\n  - @larose-ui/core@0.3.2\n  - @larose-ui/enterprise-core@0.3.2\n  - @larose-ui/forms-react@0.3.2\n  - @laro"
   }
 ];

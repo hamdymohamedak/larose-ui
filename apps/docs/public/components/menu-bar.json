@@ -9,7 +9,7 @@
       "type": "string",
       "required": true,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "appSpecificMenus",
@@ -75,7 +75,7 @@
       "type": "MenuBarPlatform",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "revealed",
@@ -99,7 +99,7 @@
       "required": false,
       "description": "Used when `menus` is omitted to build the standard HIG menu set.",
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     }
   ],
   "examples": [

@@ -30,7 +30,7 @@
       "name": "placeholder",
       "type": "string",
       "required": false,
-      "default": "'Drop an image"
+      "default": "'Drop an image, paste, or click to choose'"
     },
     {
       "name": "src",
@@ -48,7 +48,7 @@
     "accept": "'image/*'",
     "disabled": "false",
     "label": "'Image'",
-    "placeholder": "'Drop an image"
+    "placeholder": "'Drop an image, paste, or click to choose'"
   },
   "keyboard": {}
 }

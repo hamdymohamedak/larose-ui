@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref, useId, watch } from 'vue';
+import { computed, onUnmounted, ref, useId, watch } from 'vue';
 import { LONG_PRESS_MS } from '../../ContextMenu/utils';
 import type { QuickActionIconPlacement, QuickActionItem } from '../../QuickActions/types';
 import { estimateQuickActionMenuHeight, prepareQuickActions, resolveQuickActionMenuPosition } from '../../QuickActions/utils';
@@ -38,6 +38,33 @@ function onPointerDown(e: PointerEvent) {
   clear();
   longPressTimer.value = window.setTimeout(openAbove, LONG_PRESS_MS);
 }
+function onKeyDown(event: KeyboardEvent) {
+  if (event.key === 'Escape') close();
+}
+function onPointerDownOutside(event: PointerEvent) {
+  const target = event.target as Node | null;
+  if (!target) return;
+  const surface = document.getElementById(menuId);
+  if (surface?.contains(target)) return;
+  if (iconRef.value?.contains(target)) return;
+  close();
+}
+watch(isOpen, (open) => {
+  if (open) {
+    document.addEventListener('keydown', onKeyDown);
+    window.setTimeout(() => {
+      if (!isOpen.value) return;
+      document.addEventListener('pointerdown', onPointerDownOutside, true);
+    }, 0);
+  } else {
+    document.removeEventListener('keydown', onKeyDown);
+    document.removeEventListener('pointerdown', onPointerDownOutside, true);
+  }
+});
+onUnmounted(() => {
+  document.removeEventListener('keydown', onKeyDown);
+  document.removeEventListener('pointerdown', onPointerDownOutside, true);
+});
 </script>
 
 <template>

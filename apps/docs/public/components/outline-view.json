@@ -9,7 +9,7 @@
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "alternatingRows",
@@ -129,7 +129,7 @@
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "sortable",
@@ -145,7 +145,7 @@
       "required": false,
       "description": "Persist expansion state across sessions (localStorage).",
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "truncate",

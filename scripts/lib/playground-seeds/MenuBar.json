@@ -1,0 +1,5 @@
+{
+  "react": "import { MenuBar } from '@larose-ui/react';\n\nexport default function App() {\n  return (\n    <MenuBar\n      appName=\"Employees\"\n      showAppleMenu={false}\n      menus={[\n        { id: 'file', title: 'File', entries: [{ id: 'new', label: 'New' }] },\n        { id: 'edit', title: 'Edit', entries: [{ id: 'undo', label: 'Undo' }] },\n      ]}\n    />\n  );\n}\n",
+  "vue": "<script setup lang=\"ts\">\nimport { MenuBar } from '@larose-ui/vue';\n\nconst menus = [\n  { id: 'file', title: 'File', entries: [{ id: 'new', label: 'New' }] },\n  { id: 'edit', title: 'Edit', entries: [{ id: 'undo', label: 'Undo' }] },\n];\n</script>\n\n<template>\n  <MenuBar app-name=\"Employees\" :show-apple-menu=\"false\" :menus=\"menus\" />\n</template>\n",
+  "svelte": "<script lang=\"ts\">\n  import { MenuBar } from '@larose-ui/svelte';\n\n  const menus = [\n    { id: 'file', title: 'File', entries: [{ id: 'new', label: 'New' }] },\n    { id: 'edit', title: 'Edit', entries: [{ id: 'undo', label: 'Undo' }] },\n  ];\n</script>\n\n<MenuBar appName=\"Employees\" showAppleMenu={false} {menus} />\n"
+}

@@ -1,0 +1,5 @@
+{
+  "react": "import { Button, EditMenu } from '@larose-ui/react';\n\nexport default function App() {\n  return (\n    <EditMenu context={{ hasSelection: true, canPaste: true, isEditable: true }}>\n      <Button variant=\"outline\">Selected text</Button>\n    </EditMenu>\n  );\n}\n",
+  "vue": "<script setup lang=\"ts\">\nimport { Button, EditMenu } from '@larose-ui/vue';\n\nconst context = { hasSelection: true, canPaste: true, isEditable: true };\n</script>\n\n<template>\n  <EditMenu :context=\"context\">\n    <Button variant=\"outline\">Selected text</Button>\n  </EditMenu>\n</template>\n",
+  "svelte": "<script lang=\"ts\">\n  import { Button, EditMenu } from '@larose-ui/svelte';\n\n  const context = { hasSelection: true, canPaste: true, isEditable: true };\n</script>\n\n<EditMenu {context}>\n  <Button variant=\"outline\">Selected text</Button>\n</EditMenu>\n"
+}

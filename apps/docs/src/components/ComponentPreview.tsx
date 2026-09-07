@@ -33,4 +33,4 @@ export function ComponentPreview({ slug }: { slug: string }) {
   return <SafePreview>{getComponentPreviewBySlug(slug)}</SafePreview>;
 }
 
-export { hasComponentPreview };
+export { hasComponentPreview, SafePreview };

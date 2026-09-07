@@ -104,18 +104,6 @@ export function HomePage() {
               </div>
             ))}
           </div>
-
-          <p className="docs-hero-v3__credit">
-            Built by 
-              <a href="https://github.com/hamdymohamedak/larose-ui" target="_blank" rel="noopener noreferrer">
-                hamdymohamedak
-              </a>
-              . The source code is available on 
-              <a href="https://github.com/hamdymohamedak/larose-ui" target="_blank" rel="noopener noreferrer">
-                GitHub
-              </a>
-              .
-          </p>
         </div>
       </section>
 

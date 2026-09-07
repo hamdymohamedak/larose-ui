@@ -9,21 +9,21 @@
       "type": "string",
       "required": true,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "imageProps",
       "type": "Omit<ImgHTMLAttributes<HTMLImageElement>, 'src' | 'alt'>",
       "required": false,
       "inherited": false,
-      "example": "—"
+      "example": "\"src\""
     },
     {
       "name": "src",
       "type": "string",
       "required": true,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     }
   ],
   "examples": [],

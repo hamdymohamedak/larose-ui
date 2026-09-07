@@ -156,6 +156,7 @@ export function PopUpButton({
         aria-label={label ?? 'Options'}
         surfaceStyle={mergeStyles({ left: position.x, top: position.y }, style)}
         onSurfaceClick={(event) => event.stopPropagation()}
+        anchorRef={triggerRef}
       >
         <ul className={styles.list}>
           {menuEntries.map((entry, index) => {

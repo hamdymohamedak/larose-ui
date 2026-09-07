@@ -31,7 +31,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "AcceleratorPlatform",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -51,7 +51,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "collapsible",
@@ -81,7 +81,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "type",
@@ -89,7 +89,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "== 'single') {",
         "inherited": false,
-        "example": "== 'single') {"
+        "example": "\"single\""
       },
       {
         "name": "value",
@@ -124,14 +124,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -151,7 +151,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "disabled",
@@ -165,14 +165,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "value",
         "type": "string",
         "required": true,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -192,14 +192,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -219,7 +219,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "excludedActivityIds",
@@ -233,7 +233,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "onActivitySelect",
@@ -255,14 +255,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "title",
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [
@@ -298,7 +298,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "excludedActivityIds",
@@ -340,21 +340,21 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "ActivityPresentation",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "title",
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [
@@ -389,7 +389,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "onDismiss",
@@ -403,14 +403,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "title",
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "variant",
@@ -454,7 +454,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "defaultActionId",
@@ -462,14 +462,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "description": "When unset, no button receives default keyboard focus styling.",
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "helpUrl",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "icon",
@@ -483,7 +483,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "onOpenChange",
@@ -504,7 +504,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "AlertDialogPresentation",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "showCautionIcon",
@@ -519,28 +519,28 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "suppression",
         "type": "AlertDialogSuppression",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "textField",
         "type": "AlertDialogTextField",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "title",
         "type": "string",
         "required": true,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [
@@ -637,14 +637,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "variant",
@@ -666,7 +666,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "children",
@@ -680,7 +680,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "padding",
@@ -702,21 +702,21 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "title",
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "titlePosition",
         "type": "BoxTitlePosition",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "variant",
@@ -738,7 +738,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "className",
@@ -746,7 +746,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "{styles.separator",
         "inherited": true,
-        "example": "{styles.separator"
+        "example": "—"
       },
       {
         "name": "items",
@@ -761,7 +761,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "{style",
         "inherited": true,
-        "example": "{style"
+        "example": "—"
       }
     ],
     "events": [],
@@ -784,7 +784,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string | null",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "flexible",
@@ -829,7 +829,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "description": "Alternative label shown while loading (Apple HIG activity indicator pattern).",
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "opensAnotherView",
@@ -852,7 +852,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "description": "Capsule (default), circle (icon-only), or roundedRect (vertical stacks).",
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "size",
@@ -866,7 +866,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "UIState",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "tooltip",
@@ -874,7 +874,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "description": "macOS / visionOS hover tooltip.",
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "variant",
@@ -898,7 +898,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "children",
@@ -912,7 +912,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "fullWidth",
@@ -935,7 +935,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -950,7 +950,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "locale",
@@ -965,14 +965,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "minDate",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "onChange",
@@ -986,14 +986,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "value",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [
@@ -1014,28 +1014,28 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "label",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "subtitle",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "title",
         "type": "string",
         "required": true,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -1056,14 +1056,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "{mergeClassName(styles.footer",
         "inherited": true,
-        "example": "{mergeClassName(styles.footer"
+        "example": "—"
       },
       {
         "name": "description",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "footer",
@@ -1086,14 +1086,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "{style",
         "inherited": true,
-        "example": "{style"
+        "example": "—"
       },
       {
         "name": "title",
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -1107,21 +1107,21 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "description": "High-level summary for assistive technologies (Apple Audio Graphs pattern).",
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "annotation",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "data",
@@ -1187,7 +1187,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "default": "mark === 'line'",
         "description": "Combine line marks with point marks. Default true for line charts.",
         "inherited": false,
-        "example": "mark === 'line'"
+        "example": "true"
       },
       {
         "name": "stacked",
@@ -1212,35 +1212,35 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "subtitle",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "title",
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "xAxis",
         "type": "ChartAxisConfig",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "yAxis",
         "type": "ChartAxisConfig",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "yAxisTrailing",
@@ -1286,14 +1286,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "label",
         "type": "string",
         "required": true,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -1345,7 +1345,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "collaborators",
@@ -1410,7 +1410,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "trigger",
@@ -1459,14 +1459,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "columns",
@@ -1487,7 +1487,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CollectionLayout",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "onSelect",
@@ -1501,14 +1501,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [
@@ -1539,7 +1539,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "data",
@@ -1568,7 +1568,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [
@@ -1591,14 +1591,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "emptyMessage",
@@ -1642,7 +1642,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [
@@ -1673,7 +1673,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "dimBackground",
@@ -1730,14 +1730,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "title",
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [
@@ -1765,14 +1765,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "caption",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "className",
@@ -1780,7 +1780,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "{[styles.wrapper",
         "inherited": true,
-        "example": "{[styles.wrapper"
+        "example": "—"
       },
       {
         "name": "columns",
@@ -1801,14 +1801,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "emptyMessage",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "emptyTitle",
@@ -1855,7 +1855,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "{style",
         "inherited": true,
-        "example": "{style"
+        "example": "—"
       }
     ],
     "events": [],
@@ -1878,7 +1878,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "inputSize",
@@ -1893,7 +1893,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "loading",
@@ -1915,7 +1915,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "UIState",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "value",
@@ -1944,7 +1944,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "disabled",
@@ -1974,14 +1974,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "id",
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "inputSize",
@@ -1996,7 +1996,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "loading",
@@ -2011,14 +2011,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "min",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "onChange",
@@ -2047,14 +2047,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "UIState",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "value",
@@ -2062,7 +2062,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "{ startDate: ''",
         "inherited": false,
-        "example": "{ startDate: ''"
+        "example": "—"
       }
     ],
     "events": [
@@ -2084,14 +2084,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "description": "Compact / wheels / inline / automatic. Use with object `style` when you need both.",
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "disabled",
@@ -2105,14 +2105,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string | null",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "hint",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "inputSize",
@@ -2126,7 +2126,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "loading",
@@ -2140,21 +2140,21 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "maxDate",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "minDate",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "minuteInterval",
@@ -2168,7 +2168,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "DateTimePickerMode",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "onChange",
@@ -2182,7 +2182,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "UIState",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "style",
@@ -2190,7 +2190,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "description": "Appearance string or inline CSS.",
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "use12Hour",
@@ -2205,7 +2205,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "{",
         "inherited": false,
-        "example": "{"
+        "example": "—"
       },
       {
         "name": "yearRange",
@@ -2233,7 +2233,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "children",
@@ -2247,21 +2247,21 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "confirmLabel",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "description",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "loading",
@@ -2296,14 +2296,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "title",
         "type": "string",
         "required": true,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "variant",
@@ -2341,7 +2341,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "children",
@@ -2356,7 +2356,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "defaultExpanded",
@@ -2395,7 +2395,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "description": "Visible label for the adjacent control region.",
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "onExpandedChange",
@@ -2409,7 +2409,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [
@@ -2439,7 +2439,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "defaultExpanded",
@@ -2467,7 +2467,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": true,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "onExpandedChange",
@@ -2481,7 +2481,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [
@@ -2502,7 +2502,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "defaultExpandedIds",
@@ -2523,7 +2523,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -2543,7 +2543,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "defaultExpanded",
@@ -2574,7 +2574,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": true,
         "description": "Describes what is disclosed, e.g. \"Advanced options\".",
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "onExpandedChange",
@@ -2588,7 +2588,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [
@@ -2609,7 +2609,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "children",
@@ -2623,14 +2623,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -2645,14 +2645,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": true,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "closedEntries",
@@ -2725,7 +2725,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [
@@ -2767,7 +2767,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": true,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "background",
@@ -2781,7 +2781,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "onPrimaryAction",
@@ -2802,21 +2802,21 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "secondaryActionLabel",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [
@@ -2851,14 +2851,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "newLabel",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "onNew",
@@ -2886,14 +2886,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "saveLabel",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "showAddButton",
@@ -2907,7 +2907,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [
@@ -2942,7 +2942,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "items",
@@ -2970,7 +2970,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "zoneId",
@@ -3006,14 +3006,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "data",
         "type": "T",
         "required": true,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "disabled",
@@ -3028,14 +3028,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": true,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "label",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "preview",
@@ -3049,21 +3049,21 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": true,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "type",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -3083,7 +3083,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "closeOnOverlay",
@@ -3097,14 +3097,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "motion",
         "type": "ComponentMotionOverride",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "onClose",
@@ -3125,49 +3125,49 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "overlayStyle",
         "type": "CSSProperties",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "panelClassName",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "panelStyle",
         "type": "CSSProperties",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "side",
         "type": "DrawerSide",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "title",
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [
@@ -3211,7 +3211,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "disabled",
@@ -3226,7 +3226,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": true,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "onDrop",
@@ -3248,7 +3248,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "transferring",
@@ -3292,14 +3292,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "context",
         "type": "EditMenuContext",
         "required": true,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "customActions",
@@ -3329,7 +3329,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "EditMenuInputMode",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "longPress",
@@ -3379,7 +3379,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "variant",
@@ -3428,21 +3428,21 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "description",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "icon",
@@ -3463,21 +3463,21 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "UIState",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "title",
         "type": "string",
         "required": true,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [
@@ -3514,7 +3514,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "{styles.syncBadge",
         "inherited": true,
-        "example": "{styles.syncBadge"
+        "example": "—"
       },
       {
         "name": "emptyLabel",
@@ -3564,7 +3564,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "showExtensions",
@@ -3580,7 +3580,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "{style",
         "inherited": true,
-        "example": "{style"
+        "example": "—"
       },
       {
         "name": "toolbar",
@@ -3629,14 +3629,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "closeLabel",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "onClose",
@@ -3650,14 +3650,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "FilePreviewSource",
         "required": true,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [
@@ -3678,7 +3678,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "buttonLabel",
@@ -3693,7 +3693,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "disabled",
@@ -3716,14 +3716,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "label",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "multiple",
@@ -3745,7 +3745,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [
@@ -3773,14 +3773,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -3800,14 +3800,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -3827,14 +3827,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -3854,14 +3854,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -3875,7 +3875,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "description": "Brief phrase explaining what help covers (macOS / visionOS tooltip).",
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -3895,14 +3895,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": true,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "icon",
@@ -3952,7 +3952,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "systemActions",
@@ -3987,21 +3987,21 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": true,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "imageProps",
         "type": "Omit<ImgHTMLAttributes<HTMLImageElement>, 'src' | 'alt'>",
         "required": false,
         "inherited": false,
-        "example": "—"
+        "example": "\"src\""
       },
       {
         "name": "src",
         "type": "string",
         "required": true,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -4027,7 +4027,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": true,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "background",
@@ -4050,14 +4050,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "frameStyle",
         "type": "CSSProperties",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "objectPosition",
@@ -4073,14 +4073,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "description": "Animated image sequence — frames should share dimensions when possible.",
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "src",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -4101,7 +4101,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "disabled",
@@ -4132,21 +4132,21 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "'Drop an image",
         "inherited": false,
-        "example": "'Drop an image"
+        "example": "'Drop an image'"
       },
       {
         "name": "src",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [
@@ -4175,7 +4175,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string | null",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "expansionTooltip",
@@ -4191,21 +4191,21 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "description": "Formats numeric values on blur (currency, percent, number).",
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "formatOptions",
         "type": "FormatFieldOptions",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "hint",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "inputSize",
@@ -4219,7 +4219,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "loading",
@@ -4241,7 +4241,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "UIState",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "validate",
@@ -4249,7 +4249,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "description": "Validates on blur or change and surfaces inline feedback immediately.",
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "validateOn",
@@ -4285,7 +4285,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "importance",
@@ -4293,7 +4293,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "description": "System label color indicating relative importance.",
         "inherited": false,
-        "example": "\"example\""
+        "example": "\"primary\""
       },
       {
         "name": "mono",
@@ -4315,7 +4315,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -4329,7 +4329,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": true,
         "description": "Accessible label (recommended for nav/header).",
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "as",
@@ -4381,7 +4381,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "displacementScale",
@@ -4397,7 +4397,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "number | string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "innerBottomShadow",
@@ -4422,28 +4422,28 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "number | string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "maxWidth",
         "type": "number | string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "minHeight",
         "type": "number | string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "minWidth",
         "type": "number | string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "onDisplacementMapChange",
@@ -4522,7 +4522,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "description": "Inline CSS merged onto the surface. Flex / grid / padding apply to inner content.",
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "tint",
@@ -4547,7 +4547,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "number | string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [
@@ -4570,7 +4570,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": true,
         "description": "Accessible label (recommended for nav/header).",
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "as",
@@ -4614,7 +4614,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "LIQUID_GLASS_PRESETS.button.borderRadius",
         "inherited": false,
-        "example": "LIQUID_GLASS_PRESETS.button.borderRadius"
+        "example": "0"
       },
       {
         "name": "children",
@@ -4628,7 +4628,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "color",
@@ -4697,28 +4697,28 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "number | string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "maxWidth",
         "type": "number | string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "minHeight",
         "type": "number | string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "minWidth",
         "type": "number | string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "onDisplacementMapChange",
@@ -4797,7 +4797,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "description": "Inline CSS merged onto the surface. Flex / grid / padding apply to inner content.",
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "tint",
@@ -4845,7 +4845,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "as",
@@ -4895,7 +4895,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "checked",
@@ -4909,14 +4909,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "defaultChecked",
@@ -4946,7 +4946,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "number | string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "innerBottomShadow",
@@ -4978,35 +4978,35 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "maxHeight",
         "type": "number | string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "maxWidth",
         "type": "number | string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "minHeight",
         "type": "number | string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "minWidth",
         "type": "number | string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "onChange",
@@ -5100,7 +5100,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "description": "Inline CSS merged onto the surface. Flex / grid / padding apply to inner content.",
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "tint",
@@ -5125,7 +5125,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "number | string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [
@@ -5156,7 +5156,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "as",
@@ -5200,14 +5200,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "{borderRadius",
         "inherited": false,
-        "example": "{borderRadius"
+        "example": "0"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "displacementScale",
@@ -5224,7 +5224,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "'rgba(255",
         "inherited": false,
-        "example": "'rgba(255"
+        "example": "'rgba(255'"
       },
       {
         "name": "fillGlow",
@@ -5232,7 +5232,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "'rgba(255",
         "inherited": false,
-        "example": "'rgba(255"
+        "example": "'rgba(255'"
       },
       {
         "name": "height",
@@ -5284,28 +5284,28 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "number | string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "maxWidth",
         "type": "number | string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "minHeight",
         "type": "number | string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "minWidth",
         "type": "number | string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "onDisplacementMapChange",
@@ -5384,7 +5384,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "description": "Inline CSS merged onto the surface. Flex / grid / padding apply to inner content.",
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "tint",
@@ -5443,7 +5443,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "as",
@@ -5487,14 +5487,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "LIQUID_GLASS_PRESETS.slider.borderRadius",
         "inherited": false,
-        "example": "LIQUID_GLASS_PRESETS.slider.borderRadius"
+        "example": "0"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "defaultValue",
@@ -5527,14 +5527,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "'rgba(255",
         "inherited": false,
-        "example": "'rgba(255"
+        "example": "'rgba(255'"
       },
       {
         "name": "height",
         "type": "number | string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "innerBottomShadow",
@@ -5560,21 +5560,21 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "== min) return 0;",
         "inherited": false,
-        "example": "== min) return 0;"
+        "example": "0"
       },
       {
         "name": "maxHeight",
         "type": "number | string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "maxWidth",
         "type": "number | string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "min",
@@ -5589,14 +5589,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "number | string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "minWidth",
         "type": "number | string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "onChange",
@@ -5690,7 +5690,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "description": "Inline CSS merged onto the surface. Flex / grid / padding apply to inner content.",
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "thumbSize",
@@ -5734,7 +5734,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "controlledValue ?? internalValue;",
         "inherited": false,
-        "example": "controlledValue ?? internalValue;"
+        "example": "0"
       },
       {
         "name": "width",
@@ -5773,7 +5773,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "activeTrackTint",
@@ -5781,7 +5781,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "description": "Active track tint when on. Defaults to iOS-style green.\nPass `'glass'` () for liquid glass only, or any CSS color.",
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "as",
@@ -5838,7 +5838,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "defaultChecked",
@@ -5876,7 +5876,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "innerBottomShadow",
@@ -5901,28 +5901,28 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "number | string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "maxWidth",
         "type": "number | string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "minHeight",
         "type": "number | string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "minWidth",
         "type": "number | string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "onChange",
@@ -6016,7 +6016,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "description": "Inline CSS merged onto the surface. Flex / grid / padding apply to inner content.",
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "thumbSize",
@@ -6031,7 +6031,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "tint",
@@ -6097,7 +6097,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "controlledActiveKey ?? internalActiveKey;",
         "inherited": false,
-        "example": "controlledActiveKey ?? internalActiveKey;"
+        "example": "—"
       },
       {
         "name": "aria-label",
@@ -6105,7 +6105,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": true,
         "description": "Accessible label (recommended for nav/header).",
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "as",
@@ -6149,7 +6149,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "LIQUID_GLASS_PRESETS.tabBar.borderRadius",
         "inherited": false,
-        "example": "LIQUID_GLASS_PRESETS.tabBar.borderRadius"
+        "example": "0"
       },
       {
         "name": "bottom",
@@ -6164,14 +6164,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "defaultActiveKey",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "displacementScale",
@@ -6196,7 +6196,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "'rgba(255",
         "inherited": false,
-        "example": "'rgba(255"
+        "example": "'rgba(255'"
       },
       {
         "name": "indicatorBackground",
@@ -6204,7 +6204,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "'rgba(255",
         "inherited": false,
-        "example": "'rgba(255"
+        "example": "'rgba(255'"
       },
       {
         "name": "indicatorBorderColor",
@@ -6212,7 +6212,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "'rgba(255",
         "inherited": false,
-        "example": "'rgba(255"
+        "example": "'rgba(255'"
       },
       {
         "name": "indicatorPadding",
@@ -6252,7 +6252,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "number | string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "maxWidth",
@@ -6267,14 +6267,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "number | string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "minWidth",
         "type": "number | string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "onChange",
@@ -6376,7 +6376,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "description": "Inline CSS merged onto the surface. Flex / grid / padding apply to inner content.",
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "tint",
@@ -6401,7 +6401,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "number | string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [
@@ -6439,7 +6439,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "controlledActiveKey ?? internalActiveKey;",
         "inherited": false,
-        "example": "controlledActiveKey ?? internalActiveKey;"
+        "example": "—"
       },
       {
         "name": "aria-label",
@@ -6447,7 +6447,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": true,
         "description": "Accessible label (recommended for nav/header).",
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "as",
@@ -6491,21 +6491,21 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "borderRadiusProp ?? (isFloating ? LIQUID_GLASS_PRESETS.topBar.borderRadius : 0);",
         "inherited": false,
-        "example": "borderRadiusProp ?? (isFloating ? LIQUID_GLASS_PRESETS.topBar.borderRadius : 0);"
+        "example": "0"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "defaultActiveKey",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "displacementScale",
@@ -6530,7 +6530,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "'rgba(255",
         "inherited": false,
-        "example": "'rgba(255"
+        "example": "'rgba(255'"
       },
       {
         "name": "innerBottomShadow",
@@ -6556,7 +6556,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "insetXProp ?? (isFloating ? 16 : 0);",
         "inherited": false,
-        "example": "insetXProp ?? (isFloating ? 16 : 0);"
+        "example": "0"
       },
       {
         "name": "items",
@@ -6578,28 +6578,28 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "number | string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "maxWidth",
         "type": "number | string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "minHeight",
         "type": "number | string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "minWidth",
         "type": "number | string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "navActiveBackground",
@@ -6608,7 +6608,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "default": "'rgba(255",
         "description": "Active nav pill background.",
         "inherited": false,
-        "example": "'rgba(255"
+        "example": "'rgba(255'"
       },
       {
         "name": "navTrackBackground",
@@ -6617,7 +6617,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "default": "'rgba(255",
         "description": "Background of the segmented nav track.",
         "inherited": false,
-        "example": "'rgba(255"
+        "example": "'rgba(255'"
       },
       {
         "name": "onChange",
@@ -6719,7 +6719,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "description": "Inline CSS merged onto the surface. Flex / grid / padding apply to inner content.",
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "tint",
@@ -6760,7 +6760,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "topProp ?? (isFloating ? 14 : 0);",
         "inherited": false,
-        "example": "topProp ?? (isFloating ? 14 : 0);"
+        "example": "—"
       },
       {
         "name": "trailing",
@@ -6783,7 +6783,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "number | string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [
@@ -6814,7 +6814,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "children",
@@ -6828,14 +6828,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "variant",
@@ -6857,14 +6857,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "ListAccessory",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "disabled",
@@ -6906,21 +6906,21 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "subtitle",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "title",
         "type": "string",
         "required": true,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "truncate",
@@ -6962,28 +6962,28 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "footer",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "header",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -6996,14 +6996,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "axis",
         "type": "LockupAxis",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "children",
@@ -7017,7 +7017,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "focused",
@@ -7066,7 +7066,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [
@@ -7110,14 +7110,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": true,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "title",
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -7130,7 +7130,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "LockupAxis",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "children",
@@ -7144,21 +7144,21 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "itemWidth",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -7178,7 +7178,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "dimBackground",
@@ -7223,7 +7223,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "MenuLayout",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "mnemonicVisible",
@@ -7267,14 +7267,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "title",
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [
@@ -7302,7 +7302,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": true,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "appSpecificMenus",
@@ -7316,7 +7316,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "enableGlobalShortcuts",
@@ -7375,7 +7375,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "MenuBarPlatform",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "revealed",
@@ -7399,14 +7399,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "description": "Used when `menus` is omitted to build the standard HIG menu set.",
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [
@@ -7434,7 +7434,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "enableMnemonics",
@@ -7493,7 +7493,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [
@@ -7521,21 +7521,21 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "label",
         "type": "string",
         "required": true,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "mnemonic",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "showAccessKey",
@@ -7550,7 +7550,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -7570,7 +7570,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "closeOnOverlay",
@@ -7584,28 +7584,28 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "contentStyle",
         "type": "CSSProperties",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "description",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "motion",
         "type": "ComponentMotionOverride",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "onClose",
@@ -7626,28 +7626,28 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "overlayStyle",
         "type": "CSSProperties",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "title",
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [
@@ -7670,21 +7670,21 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "name",
         "type": "string",
         "required": true,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "role",
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -7709,14 +7709,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -7742,7 +7742,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "alignment",
@@ -7764,7 +7764,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "edge",
@@ -7803,7 +7803,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "visibility",
@@ -7826,7 +7826,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "alternatingRows",
@@ -7841,7 +7841,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "columns",
@@ -7953,7 +7953,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "sortable",
@@ -7969,14 +7969,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "description": "Persist expansion state across sessions (localStorage).",
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "truncate",
@@ -8028,14 +8028,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "onSearchChange",
@@ -8049,21 +8049,21 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "searchQuery",
         "type": "string",
         "required": true,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [
@@ -8086,21 +8086,21 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "nextLabel",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "onPageChange",
@@ -8121,7 +8121,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "siblingCount",
@@ -8135,7 +8135,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "totalPages",
@@ -8165,14 +8165,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "editable",
@@ -8215,14 +8215,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "variant",
@@ -8266,7 +8266,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "appearance",
@@ -8274,14 +8274,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "description": "Wheel vs compact appearance. Use with object `style` when you need both.",
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "columns",
@@ -8313,14 +8313,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "default": "defaultFormatValue",
         "description": "Formats the compact trigger label from the current value.",
         "inherited": false,
-        "example": "defaultFormatValue"
+        "example": "—"
       },
       {
         "name": "hint",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "inputSize",
@@ -8334,7 +8334,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "loading",
@@ -8365,7 +8365,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "UIState",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "style",
@@ -8373,14 +8373,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "description": "Appearance string (`wheels` / `compact`) or inline CSS.",
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "value",
         "type": "PickerValue",
         "required": true,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [
@@ -8403,14 +8403,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "content",
@@ -8447,7 +8447,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "description": "Extra class names for the floating panel element.",
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "side",
@@ -8462,7 +8462,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "trigger",
@@ -8493,21 +8493,21 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "customOption",
         "type": "PopUpCustomOption",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "defaultValue",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "disabled",
@@ -8523,14 +8523,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "description": "Optional explanatory text below the control.",
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "id",
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "label",
@@ -8538,7 +8538,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "description": "Introductory label describing the control (Calendar-style).",
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "onValueChange",
@@ -8567,14 +8567,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "value",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [
@@ -8595,21 +8595,21 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": true,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "subtitle",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "title",
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -8622,14 +8622,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "label",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "max",
@@ -8650,14 +8650,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "UIState",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "value",
@@ -8686,14 +8686,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "destructiveConfirmation",
         "type": "PullDownDestructiveConfirmation",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "disabled",
@@ -8723,7 +8723,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "description": "Button label (required unless variant is \"more\").",
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "longPress",
@@ -8740,7 +8740,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "description": "Optional menu title — use only when it adds meaning.",
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "onAction",
@@ -8754,7 +8754,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "variant",
@@ -8801,14 +8801,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "label",
         "type": "string",
         "required": true,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -8836,7 +8836,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "inputSize",
@@ -8851,7 +8851,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "loading",
@@ -8889,7 +8889,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "UIState",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -8905,7 +8905,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "{[styles.group",
         "inherited": true,
-        "example": "{[styles.group"
+        "example": "—"
       },
       {
         "name": "height",
@@ -8929,7 +8929,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "default": "{style",
         "inherited": true,
-        "example": "{style"
+        "example": "—"
       },
       {
         "name": "variant",
@@ -8960,14 +8960,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "label",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "size",
@@ -8981,7 +8981,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -8994,7 +8994,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "children",
@@ -9008,7 +9008,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "compactMode",
@@ -9038,14 +9038,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "toolbar",
@@ -9075,7 +9075,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "children",
@@ -9089,7 +9089,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "collapsible",
@@ -9117,14 +9117,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": true,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "label",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "maxSize",
@@ -9183,14 +9183,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -9220,7 +9220,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -9247,14 +9247,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "label",
         "type": "string",
         "required": true,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "onCheckedChange",
@@ -9268,7 +9268,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "switchSize",
@@ -9299,7 +9299,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "alternatingRows",
@@ -9314,14 +9314,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "columns",
@@ -9350,7 +9350,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "keyExtractor",
@@ -9379,7 +9379,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "selectionMode",
@@ -9394,7 +9394,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [
@@ -9424,7 +9424,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "defaultValue",
@@ -9446,14 +9446,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "value",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [
@@ -9474,7 +9474,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "children",
@@ -9488,14 +9488,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -9517,21 +9517,21 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "value",
         "type": "string",
         "required": true,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -9551,7 +9551,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "disabled",
@@ -9565,14 +9565,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "value",
         "type": "string",
         "required": true,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -9585,7 +9585,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "children",
@@ -9599,7 +9599,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "defaultValue",
@@ -9637,14 +9637,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "value",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "variant",
@@ -9675,7 +9675,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "children",
@@ -9689,14 +9689,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -9718,21 +9718,21 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "value",
         "type": "string",
         "required": true,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -9745,7 +9745,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "disabled",
@@ -9759,21 +9759,21 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": true,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "value",
         "type": "string",
         "required": true,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -9794,7 +9794,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "inputSize",
@@ -9809,7 +9809,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "loading",
@@ -9832,7 +9832,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "UIState",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -9861,7 +9861,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "selectable",
@@ -9904,7 +9904,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "inputSize",
@@ -9919,7 +9919,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "loading",
@@ -9941,7 +9941,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "UIState",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "value",
@@ -9970,14 +9970,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "defaultTokens",
@@ -10013,14 +10013,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "suggestionDelayMs",
@@ -10071,7 +10071,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "children",
@@ -10085,7 +10085,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "hidden",
@@ -10116,14 +10116,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "ToolbarPlatform",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "title",
@@ -10131,7 +10131,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "description": "Concise view title — aim for under 15 characters.",
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -10147,7 +10147,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "required": false,
         "description": "visionOS reveals label on look — optional visible companion text.",
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "disabled",
@@ -10224,7 +10224,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "onAction",
@@ -10264,14 +10264,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -10284,7 +10284,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "collapsible",
@@ -10312,14 +10312,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "label",
         "type": "string",
         "required": true,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "onClick",
@@ -10347,7 +10347,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [
@@ -10368,7 +10368,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "disabled",
@@ -10412,14 +10412,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": true,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "disabled",
@@ -10440,7 +10440,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [
@@ -10461,14 +10461,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "onChange",
@@ -10482,21 +10482,21 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "value",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [
@@ -10526,7 +10526,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "collapsible",
@@ -10548,7 +10548,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -10561,14 +10561,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": true,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "large",
@@ -10582,7 +10582,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -10602,7 +10602,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "content",
@@ -10616,14 +10616,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "TooltipSide",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -10650,7 +10650,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "muted",
@@ -10664,14 +10664,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "TypographyRole",
         "required": false,
         "inherited": true,
-        "example": "\"md\""
+        "example": "\"body\""
       },
       {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -10692,7 +10692,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "edited",
@@ -10706,14 +10706,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "title",
         "type": "string",
         "required": true,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [],
@@ -10726,7 +10726,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "columnFlex",
@@ -10748,14 +10748,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": true,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "label",
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "onChange",
@@ -10776,14 +10776,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "value",
         "type": "string",
         "required": true,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [
@@ -10804,14 +10804,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "className",
         "type": "string",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "columns",
@@ -10858,14 +10858,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "CSSProperties",
         "required": false,
         "inherited": true,
-        "example": "\"example\""
+        "example": "—"
       },
       {
         "name": "value",
         "type": "PickerValue",
         "required": true,
         "inherited": false,
-        "example": "\"example\""
+        "example": "—"
       }
     ],
     "events": [

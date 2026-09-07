@@ -1,4 +1,12 @@
-import { createElement, type ComponentType, useEffect, useRef } from 'react';
+import {
+  Component,
+  createElement,
+  type ComponentType,
+  type ErrorInfo,
+  type ReactNode,
+  useEffect,
+  useRef,
+} from 'react';
 import { createRoot, type Root } from 'react-dom/client';
 import {
   createApp,
@@ -21,9 +29,41 @@ function injectCss(css: string | undefined, host: HTMLElement): () => void {
   };
 }
 
+class PreviewRuntimeBoundary extends Component<
+  { children: ReactNode },
+  { error: Error | null }
+> {
+  state: { error: Error | null } = { error: null };
+
+  static getDerivedStateFromError(error: Error) {
+    return { error };
+  }
+
+  componentDidCatch(error: Error, info: ErrorInfo): void {
+    console.error('Live preview failed to render', error, info);
+  }
+
+  render() {
+    if (this.state.error) {
+      return createElement(
+        'pre',
+        {
+          className: 'docs-live-playground__error',
+          role: 'alert',
+          style: { margin: 0, whiteSpace: 'pre-wrap' },
+        },
+        this.state.error.message,
+      );
+    }
+    return this.props.children;
+  }
+}
+
 function mountReact(target: HTMLElement, component: unknown): MountHandle {
   const root: Root = createRoot(target);
-  root.render(createElement(component as ComponentType));
+  root.render(
+    createElement(PreviewRuntimeBoundary, null, createElement(component as ComponentType)),
+  );
   return {
     dispose: () => {
       root.unmount();

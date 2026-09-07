@@ -87,8 +87,23 @@
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') close();
     };
+    const onPointerDownOutside = (event: PointerEvent) => {
+      const target = event.target as Node | null;
+      if (!target) return;
+      const surface = document.getElementById(menuId);
+      if (surface?.contains(target)) return;
+      if (iconEl?.contains(target)) return;
+      close();
+    };
     document.addEventListener('keydown', onKeyDown);
-    return () => document.removeEventListener('keydown', onKeyDown);
+    const timer = window.setTimeout(() => {
+      document.addEventListener('pointerdown', onPointerDownOutside, true);
+    }, 0);
+    return () => {
+      window.clearTimeout(timer);
+      document.removeEventListener('keydown', onKeyDown);
+      document.removeEventListener('pointerdown', onPointerDownOutside, true);
+    };
   });
 </script>
 

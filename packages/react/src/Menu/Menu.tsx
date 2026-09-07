@@ -416,6 +416,10 @@ export function Menu({
     cloneElement(child, {
       onClick: (event: React.MouseEvent<Element>) => {
         (child.props.onClick as ((event: React.MouseEvent<Element>) => void) | undefined)?.(event);
+        if (isOpen) {
+          close();
+          return;
+        }
         openFromTrigger();
       },
       'aria-haspopup': 'menu',
@@ -436,6 +440,7 @@ export function Menu({
       aria-label="Menu"
       surfaceStyle={mergeStyles({ left: position.x, top: position.y }, style)}
       onSurfaceClick={(event) => event.stopPropagation()}
+      anchorRef={triggerRef}
     >
       <MenuPanel
         menuId={menuId}

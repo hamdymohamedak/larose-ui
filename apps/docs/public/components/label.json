@@ -17,7 +17,7 @@
       "required": false,
       "description": "System label color indicating relative importance.",
       "inherited": false,
-      "example": "\"example\""
+      "example": "\"primary\""
     },
     {
       "name": "mono",

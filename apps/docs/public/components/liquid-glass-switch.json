@@ -9,7 +9,7 @@
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "activeTrackTint",
@@ -17,7 +17,7 @@
       "required": false,
       "description": "Active track tint when on. Defaults to iOS-style green.\nPass `'glass'` () for liquid glass only, or any CSS color.",
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "as",
@@ -74,7 +74,7 @@
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "defaultChecked",
@@ -112,7 +112,7 @@
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "innerBottomShadow",
@@ -137,28 +137,28 @@
       "type": "number | string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "maxWidth",
       "type": "number | string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "minHeight",
       "type": "number | string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "minWidth",
       "type": "number | string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "onDisplacementMapChange",
@@ -245,7 +245,7 @@
       "required": false,
       "description": "Inline CSS merged onto the surface. Flex / grid / padding apply to inner content.",
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "thumbSize",
@@ -260,7 +260,7 @@
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "tint",

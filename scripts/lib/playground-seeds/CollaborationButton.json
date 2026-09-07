@@ -1,0 +1,5 @@
+{
+  "react": "import { CollaborationButton } from '@larose-ui/react';\n\nconst collaborators = [\n  { id: '1', name: 'Ahmed Mohamed' },\n  { id: '2', name: 'Sara Ali' },\n];\n\nexport default function App() {\n  return <CollaborationButton label=\"Collaboration\" collaborators={collaborators} />;\n}\n",
+  "vue": "<script setup lang=\"ts\">\nimport { CollaborationButton } from '@larose-ui/vue';\n\nconst collaborators = [\n  { id: '1', name: 'Ahmed Mohamed' },\n  { id: '2', name: 'Sara Ali' },\n];\n</script>\n\n<template>\n  <CollaborationButton label=\"Collaboration\" :collaborators=\"collaborators\" />\n</template>\n",
+  "svelte": "<script lang=\"ts\">\n  import { CollaborationButton } from '@larose-ui/svelte';\n\n  const collaborators = [\n    { id: '1', name: 'Ahmed Mohamed' },\n    { id: '2', name: 'Sara Ali' },\n  ];\n</script>\n\n<CollaborationButton label=\"Collaboration\" {collaborators} />\n"
+}

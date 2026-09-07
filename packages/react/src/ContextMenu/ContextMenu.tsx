@@ -157,6 +157,7 @@ export function ContextMenu({
   style,
 }: ContextMenuProps) {
   const menuId = useId();
+  const triggerRef = useRef<HTMLSpanElement>(null);
   const [internalOpen, setInternalOpen] = useState(false);
   const [position, setPosition] = useState<ContextMenuPosition>({ x: 0, y: 0, placement: 'below' });
   const longPressTimer = useRef<number | null>(null);
@@ -256,7 +257,7 @@ export function ContextMenu({
 
   return (
     <>
-      <span className={[styles.triggerWrap, className].filter(Boolean).join(' ')} style={style}>
+      <span ref={triggerRef} className={[styles.triggerWrap, className].filter(Boolean).join(' ')} style={style}>
         {bindTrigger(children as ReactElement<Record<string, unknown>>)}
       </span>
       <ContextualMenuPortal
@@ -271,6 +272,7 @@ export function ContextMenu({
         aria-label={title ?? 'Context menu'}
         surfaceStyle={mergeStyles({ left: position.x, top: position.y }, style)}
         onSurfaceClick={(event) => event.stopPropagation()}
+        anchorRef={triggerRef}
       >
         <ContextMenuPanel
           menuId={menuId}

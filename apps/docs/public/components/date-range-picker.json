@@ -32,7 +32,7 @@
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "inputSize",
@@ -47,7 +47,7 @@
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "loading",
@@ -62,14 +62,14 @@
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "min",
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "readOnly",
@@ -91,7 +91,7 @@
       "type": "UIState",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "value",
@@ -99,7 +99,7 @@
       "required": false,
       "default": "{ startDate: ''",
       "inherited": false,
-      "example": "{ startDate: ''"
+      "example": "—"
     }
   ],
   "examples": [],

@@ -9,7 +9,7 @@
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "appearance",
@@ -17,7 +17,7 @@
       "required": false,
       "description": "Wheel vs compact appearance. Use with object `style` when you need both.",
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "columns",
@@ -49,14 +49,14 @@
       "default": "defaultFormatValue",
       "description": "Formats the compact trigger label from the current value.",
       "inherited": false,
-      "example": "defaultFormatValue"
+      "example": "—"
     },
     {
       "name": "hint",
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "inputSize",
@@ -70,7 +70,7 @@
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "loading",
@@ -94,14 +94,14 @@
       "type": "UIState",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "value",
       "type": "PickerValue",
       "required": true,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     }
   ],
   "examples": [

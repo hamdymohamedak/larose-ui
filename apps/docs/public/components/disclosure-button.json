@@ -9,7 +9,7 @@
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "defaultExpanded",
@@ -48,7 +48,7 @@
       "required": false,
       "description": "Visible label for the adjacent control region.",
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "onExpandedChange",

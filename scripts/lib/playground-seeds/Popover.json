@@ -1,0 +1,5 @@
+{
+  "react": "import { Button, Popover, Typography } from '@larose-ui/react';\n\nexport default function App() {\n  return (\n    <Popover\n      trigger={<Button variant=\"outline\">Show info</Button>}\n      content={<Typography muted>Supplementary content anchored to the trigger.</Typography>}\n      defaultOpen\n    />\n  );\n}\n",
+  "vue": "<script setup lang=\"ts\">\nimport { Button, Popover, Typography } from '@larose-ui/vue';\n</script>\n\n<template>\n  <Popover default-open>\n    <template #trigger><Button variant=\"outline\">Show info</Button></template>\n    <template #content><Typography muted>Supplementary content anchored to the trigger.</Typography></template>\n  </Popover>\n</template>\n",
+  "svelte": "<script lang=\"ts\">\n  import { Button, Popover, Typography } from '@larose-ui/svelte';\n</script>\n\n<Popover defaultOpen>\n  {#snippet trigger()}\n    <Button variant=\"outline\">Show info</Button>\n  {/snippet}\n  {#snippet content()}\n    <Typography muted>Supplementary content anchored to the trigger.</Typography>\n  {/snippet}\n</Popover>\n"
+}

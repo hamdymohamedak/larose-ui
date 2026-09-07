@@ -46,9 +46,9 @@ export default defineConfig({
       'svelte',
       'sucrase',
       '@vue/compiler-sfc',
-      '@larose-ui/vue',
-      '@larose-ui/svelte',
     ],
+    // Keep framework packages out of the prebundle so rebuilt dist (lr-* CSS modules) is used.
+    exclude: ['@larose-ui/vue', '@larose-ui/svelte', '@larose-ui/react'],
   },
   define: {
     'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV ?? 'development'),

@@ -10,7 +10,7 @@
       "required": false,
       "description": "Compact / wheels / inline / automatic. Use with object `style` when you need both.",
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "disabled",
@@ -24,14 +24,14 @@
       "type": "string | null",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "hint",
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "inputSize",
@@ -45,7 +45,7 @@
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "loading",
@@ -59,21 +59,21 @@
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "maxDate",
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "minDate",
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "minuteInterval",
@@ -87,14 +87,14 @@
       "type": "DateTimePickerMode",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "state",
       "type": "UIState",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "use12Hour",
@@ -109,7 +109,7 @@
       "required": false,
       "default": "{",
       "inherited": false,
-      "example": "{"
+      "example": "—"
     },
     {
       "name": "yearRange",

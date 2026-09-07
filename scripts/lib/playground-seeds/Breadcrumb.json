@@ -1,0 +1,5 @@
+{
+  "react": "import { Breadcrumb } from '@larose-ui/react';\n\nexport default function App() {\n  return (\n    <Breadcrumb\n      items={[\n        { label: 'Home', href: '#' },\n        { label: 'Employees', href: '#' },\n        { label: 'Ahmed Mohamed', current: true },\n      ]}\n    />\n  );\n}\n",
+  "vue": "<script setup lang=\"ts\">\nimport { Breadcrumb } from '@larose-ui/vue';\n\nconst items = [\n  { label: 'Home', href: '#' },\n  { label: 'Employees', href: '#' },\n  { label: 'Ahmed Mohamed', current: true },\n];\n</script>\n\n<template>\n  <Breadcrumb :items=\"items\" />\n</template>\n",
+  "svelte": "<script lang=\"ts\">\n  import { Breadcrumb } from '@larose-ui/svelte';\n\n  const items = [\n    { label: 'Home', href: '#' },\n    { label: 'Employees', href: '#' },\n    { label: 'Ahmed Mohamed', current: true },\n  ];\n</script>\n\n<Breadcrumb {items} />\n"
+}

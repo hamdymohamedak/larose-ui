@@ -1,0 +1,5 @@
+{
+  "react": "import { TokenField } from '@larose-ui/react';\n\nexport default function App() {\n  return (\n    <TokenField\n      label=\"Tags\"\n      tokens={[{ id: '1', label: 'Engineering' }]}\n      suggestions={['Design', 'Product', 'Sales']}\n    />\n  );\n}\n",
+  "vue": "<script setup lang=\"ts\">\nimport { TokenField } from '@larose-ui/vue';\n\nconst tokens = [{ id: '1', label: 'Engineering' }];\nconst suggestions = ['Design', 'Product', 'Sales'];\n</script>\n\n<template>\n  <TokenField label=\"Tags\" :tokens=\"tokens\" :suggestions=\"suggestions\" />\n</template>\n",
+  "svelte": "<script lang=\"ts\">\n  import { TokenField } from '@larose-ui/svelte';\n\n  const tokens = [{ id: '1', label: 'Engineering' }];\n  const suggestions = ['Design', 'Product', 'Sales'];\n</script>\n\n<TokenField label=\"Tags\" {tokens} {suggestions} />\n"
+}

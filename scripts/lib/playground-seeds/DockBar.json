@@ -1,0 +1,5 @@
+{
+  "react": "import { DockBar, DockMenu } from '@larose-ui/react';\n\nexport default function App() {\n  return (\n    <DockBar>\n      <DockMenu appName=\"Employees\" icon={<span aria-hidden=\"true\">\ud83d\udc65</span>} isRunning />\n      <DockMenu appName=\"Mail\" icon={<span aria-hidden=\"true\">\u2709</span>} />\n    </DockBar>\n  );\n}\n",
+  "vue": "<script setup lang=\"ts\">\nimport { DockBar, DockMenu } from '@larose-ui/vue';\n</script>\n\n<template>\n  <DockBar>\n    <DockMenu app-name=\"Employees\" is-running>\n      <template #icon><span aria-hidden=\"true\">\ud83d\udc65</span></template>\n    </DockMenu>\n    <DockMenu app-name=\"Mail\">\n      <template #icon><span aria-hidden=\"true\">\u2709</span></template>\n    </DockMenu>\n  </DockBar>\n</template>\n",
+  "svelte": "<script lang=\"ts\">\n  import { DockBar, DockMenu } from '@larose-ui/svelte';\n</script>\n\n<DockBar>\n  <DockMenu appName=\"Employees\" icon={'\ud83d\udc65'} isRunning />\n  <DockMenu appName=\"Mail\" icon={'\u2709'} />\n</DockBar>\n"
+}

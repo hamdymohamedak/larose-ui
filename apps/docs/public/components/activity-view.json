@@ -59,7 +59,7 @@
       "type": "ActivityPresentation",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     }
   ],
   "examples": [

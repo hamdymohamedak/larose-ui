@@ -17,7 +17,7 @@
       "type": "string | null",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "expansionTooltip",
@@ -33,21 +33,21 @@
       "required": false,
       "description": "Formats numeric values on blur (currency, percent, number).",
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "formatOptions",
       "type": "FormatFieldOptions",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "hint",
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "inputSize",
@@ -61,7 +61,7 @@
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "loading",
@@ -83,7 +83,7 @@
       "type": "UIState",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "validate",
@@ -91,7 +91,7 @@
       "required": false,
       "description": "Validates on blur or change and surfaces inline feedback immediately.",
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "validateOn",

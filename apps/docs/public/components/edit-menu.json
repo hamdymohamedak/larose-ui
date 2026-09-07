@@ -9,7 +9,7 @@
       "type": "EditMenuContext",
       "required": true,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "customActions",
@@ -39,7 +39,7 @@
       "type": "EditMenuInputMode",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "longPress",

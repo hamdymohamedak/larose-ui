@@ -16,7 +16,7 @@
       "type": "TooltipSide",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     }
   ],
   "examples": [

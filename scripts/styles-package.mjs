@@ -1,5 +1,5 @@
 import { cpSync, existsSync, mkdirSync } from 'node:fs';
-import { join, dirname } from 'node:path';
+import { basename, dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -21,17 +21,38 @@ export function resolveStylesModuleImport(importPath) {
   return null;
 }
 
-/** Copy bundled styles into react dist for backward-compatible `./styles.css` export. */
-export function syncReactStylesCss(reactPackageRoot) {
+/**
+ * Copy bundled `@larose-ui/styles` CSS into a framework package `dist/index.css`
+ * so `./styles.css` exports match the stable `lr-*` class names used in JS.
+ */
+export function syncFrameworkStylesCss(packageRoot) {
   const source = join(repoRoot, 'packages/styles/dist/styles.css');
-  const target = join(reactPackageRoot, 'dist/index.css');
+  const target = join(packageRoot, 'dist/index.css');
 
   if (!existsSync(source)) {
     throw new Error(
-      '[larose] @larose-ui/styles/dist/styles.css is missing. Build @larose-ui/styles before @larose-ui/react.',
+      '[larose] @larose-ui/styles/dist/styles.css is missing. Build @larose-ui/styles before framework packages.',
     );
   }
 
   mkdirSync(dirname(target), { recursive: true });
   cpSync(source, target);
+}
+
+/** @deprecated Prefer syncFrameworkStylesCss */
+export function syncReactStylesCss(reactPackageRoot) {
+  syncFrameworkStylesCss(reactPackageRoot);
+}
+
+/**
+ * Vite CSS modules config — same `lr-Module-class` contract as React / Storybook.
+ * @returns {{ generateScopedName: (name: string, filename: string) => string }}
+ */
+export function laroseCssModules() {
+  return {
+    generateScopedName(name, filename) {
+      const moduleName = basename(filename, '.module.css');
+      return `lr-${moduleName}-${name}`;
+    },
+  };
 }

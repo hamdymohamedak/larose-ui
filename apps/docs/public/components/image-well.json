@@ -41,14 +41,14 @@
       "required": false,
       "default": "'Drop an image",
       "inherited": false,
-      "example": "'Drop an image"
+      "example": "'Drop an image'"
     },
     {
       "name": "src",
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     }
   ],
   "examples": [],

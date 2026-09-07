@@ -47,7 +47,7 @@
       "type": "MenuLayout",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "mnemonicVisible",

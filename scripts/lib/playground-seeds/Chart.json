@@ -1,0 +1,5 @@
+{
+  "react": "import { Chart } from '@larose-ui/react';\n\nexport default function App() {\n  return (\n    <Chart\n      mark=\"bar\"\n      height={220}\n      title=\"Monthly hires\"\n      data={[\n        { x: 'Jan', y: 12 },\n        { x: 'Feb', y: 18 },\n        { x: 'Mar', y: 9 },\n        { x: 'Apr', y: 14 },\n      ]}\n      accessibilitySummary=\"Bar chart of monthly hires\"\n    />\n  );\n}\n",
+  "vue": "<script setup lang=\"ts\">\nimport { Chart } from '@larose-ui/vue';\n\nconst data = [\n  { x: 'Jan', y: 12 },\n  { x: 'Feb', y: 18 },\n  { x: 'Mar', y: 9 },\n  { x: 'Apr', y: 14 },\n];\n</script>\n\n<template>\n  <Chart mark=\"bar\" :height=\"220\" title=\"Monthly hires\" :data=\"data\" accessibility-summary=\"Bar chart of monthly hires\" />\n</template>\n",
+  "svelte": "<script lang=\"ts\">\n  import { Chart } from '@larose-ui/svelte';\n\n  const data = [\n    { x: 'Jan', y: 12 },\n    { x: 'Feb', y: 18 },\n    { x: 'Mar', y: 9 },\n    { x: 'Apr', y: 14 },\n  ];\n</script>\n\n<Chart mark=\"bar\" height={220} title=\"Monthly hires\" {data} accessibilitySummary=\"Bar chart of monthly hires\" />\n"
+}

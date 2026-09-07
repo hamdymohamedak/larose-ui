@@ -10,7 +10,7 @@
       "required": false,
       "description": "visionOS reveals label on look — optional visible companion text.",
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "disabled",

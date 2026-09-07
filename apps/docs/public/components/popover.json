@@ -9,7 +9,7 @@
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "content",
@@ -46,7 +46,7 @@
       "required": false,
       "description": "Extra class names for the floating panel element.",
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "side",

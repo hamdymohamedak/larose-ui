@@ -1,5 +1,5 @@
 import { createPortal } from 'react-dom';
-import type { CSSProperties, ReactNode } from 'react';
+import { useEffect, useRef, type CSSProperties, type ReactNode } from 'react';
 import { getLaRosePortalTarget } from '@larose-ui/core';
 import { usePresence } from './usePresence';
 import motionStyles from '@larose-ui/styles/components/Motion/motion.module.css';
@@ -30,6 +30,8 @@ export interface ContextualMenuPortalProps {
   'aria-label'?: string;
   'data-placement'?: string;
   onSurfaceClick?: (event: React.MouseEvent) => void;
+  /** Clicks inside this node do not dismiss (typically the menu trigger). */
+  anchorRef?: React.RefObject<HTMLElement | null>;
   children: ReactNode;
 }
 
@@ -50,9 +52,43 @@ export function ContextualMenuPortal({
   'aria-label': ariaLabel,
   'data-placement': dataPlacement,
   onSurfaceClick,
+  anchorRef,
   children,
 }: ContextualMenuPortalProps) {
   const { phase, shouldRender, onAnimationEnd } = usePresence({ present: open });
+  const surfaceRef = useRef<HTMLDivElement>(null);
+  const onCloseRef = useRef(onClose);
+  onCloseRef.current = onClose;
+
+  // Dismiss on outside pointer / Escape even when backdrop is missing or clicks miss it.
+  useEffect(() => {
+    if (!open || !onClose) return;
+
+    const onPointerDown = (event: PointerEvent) => {
+      const surface = surfaceRef.current;
+      const target = event.target as Node | null;
+      if (!target) return;
+      if (surface?.contains(target)) return;
+      if (anchorRef?.current?.contains(target)) return;
+      onCloseRef.current?.();
+    };
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') onCloseRef.current?.();
+    };
+
+    // Capture so we win over other handlers; delay a tick so the opening click doesn't close.
+    const timer = window.setTimeout(() => {
+      document.addEventListener('pointerdown', onPointerDown, true);
+      document.addEventListener('keydown', onKeyDown, true);
+    }, 0);
+
+    return () => {
+      window.clearTimeout(timer);
+      document.removeEventListener('pointerdown', onPointerDown, true);
+      document.removeEventListener('keydown', onKeyDown, true);
+    };
+  }, [anchorRef, open, onClose]);
 
   if (!shouldRender) return null;
 
@@ -68,11 +104,16 @@ export function ContextualMenuPortal({
           className={[backdropClassName, backdropClass(phase)].filter(Boolean).join(' ')}
           role="presentation"
           onClick={onClose}
+          onPointerDown={(event) => {
+            // Ensure backdrop presses dismiss even if click is swallowed.
+            if (event.target === event.currentTarget) onClose?.();
+          }}
           data-presence={phase}
           onAnimationEnd={onAnimationEnd}
         />
       )}
       <div
+        ref={surfaceRef}
         id={surfaceId}
         role={surfaceRole}
         aria-label={ariaLabel}

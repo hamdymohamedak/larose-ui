@@ -356,6 +356,7 @@ export function EditMenu({
           },
           style,
         )}
+        anchorRef={triggerRef}
       >
         <EditMenuPointer placement={position.placement} />
         {showCompact ? (
