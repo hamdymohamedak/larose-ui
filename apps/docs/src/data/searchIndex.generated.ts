@@ -579,6 +579,22 @@ export const docsSearchIndex = [
     "excerpt": "Content component from @larose-ui/react"
   },
   {
+    "id": "component:activity",
+    "title": "Activity",
+    "type": "component",
+    "path": "/docs/components/activity",
+    "keywords": "Activity Other Activity.className string",
+    "excerpt": "Other component from @larose-ui/react"
+  },
+  {
+    "id": "example:activity:Default",
+    "title": "Activity — Default",
+    "type": "example",
+    "path": "/docs/components/activity#examples",
+    "keywords": "Activity Default basic {}",
+    "excerpt": "// See Storybook story \"Default\" for full example."
+  },
+  {
     "id": "component:activity-share-button",
     "title": "ActivityShareButton",
     "type": "component",

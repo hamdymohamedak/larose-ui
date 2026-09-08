@@ -35,6 +35,16 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
   "AccordionContent": [],
   "AccordionItem": [],
   "AccordionTrigger": [],
+  "Activity": [
+    {
+      "id": "Default",
+      "title": "Default",
+      "kind": "basic",
+      "props": {},
+      "code": "// See Storybook story \"Default\" for full example.",
+      "composite": true
+    }
+  ],
   "ActivityShareButton": [],
   "ActivityView": [
     {

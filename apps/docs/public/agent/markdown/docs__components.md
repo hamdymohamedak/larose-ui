@@ -5,6 +5,7 @@
 - [AccordionContent](/docs/components/accordion-content) (Content)
 - [AccordionItem](/docs/components/accordion-item) (Content)
 - [AccordionTrigger](/docs/components/accordion-trigger) (Content)
+- [Activity](/docs/components/activity) (Other)
 - [ActivityShareButton](/docs/components/activity-share-button) (Actions)
 - [ActivityView](/docs/components/activity-view) (Sharing)
 - [Alert](/docs/components/alert) (Feedback)

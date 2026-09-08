@@ -205,6 +205,19 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
     "events": [],
     "accessibility": []
   },
+  "Activity": {
+    "props": [
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "inherited": true,
+        "example": "—"
+      }
+    ],
+    "events": [],
+    "accessibility": []
+  },
   "ActivityShareButton": {
     "props": [
       {

@@ -1513,6 +1513,17 @@ export const docsComponents: DocsComponentEntry[] = [
     ]
   },
   {
+    "id": "activity",
+    "name": "Activity",
+    "category": "Other",
+    "package": "react",
+    "frameworks": [
+      "react",
+      "vue",
+      "svelte"
+    ]
+  },
+  {
     "id": "activity-share-button",
     "name": "ActivityShareButton",
     "category": "Actions",

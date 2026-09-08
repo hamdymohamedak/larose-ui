@@ -27,7 +27,7 @@ export function getSupportedFrameworks(componentName: string): DocsFramework[] {
 export function frameworkLanguage(framework: DocsFramework): string {
   if (framework === 'vue') return 'vue';
   if (framework === 'svelte') return 'svelte';
-  return 'tsx';
+  return 'jsx/tsx';
 }
 
 export type InstallStackMode = 'ui' | 'runtime';

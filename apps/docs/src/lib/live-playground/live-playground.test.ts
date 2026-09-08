@@ -33,6 +33,28 @@ describe('compileReact', () => {
     const result = compileReact(seed!);
     expect(result.ok).toBe(true);
   });
+
+  it('compiles plain JSX without TypeScript annotations', () => {
+    const result = compileReact(
+      `import { Button } from '@larose-ui/react';
+export default function App() {
+  return <Button variant="primary">Hello</Button>;
+}`,
+    );
+    expect(result.ok).toBe(true);
+    if (result.ok) expect(typeof result.component).toBe('function');
+  });
+
+  it('compiles TSX with type annotations', () => {
+    const result = compileReact(
+      `import { Button } from '@larose-ui/react';
+export default function App(): JSX.Element {
+  const label: string = 'Typed';
+  return <Button>{label}</Button>;
+}`,
+    );
+    expect(result.ok).toBe(true);
+  });
 });
 
 describe('compileVue', () => {

@@ -16,6 +16,7 @@ import {
 import { frameworkLanguage, type DocsFramework } from '@/lib/frameworks';
 import { useDocsFramework } from '@/theme/FrameworkProvider';
 import { useDocsTheme } from '@/theme/DocsThemeProvider';
+import { useLiveFullscreen } from '@/theme/LiveFullscreenProvider';
 
 const DEBOUNCE_MS = 280;
 
@@ -44,6 +45,12 @@ function resolveFramework(
   return (supported[0] ?? 'react') as LiveFramework;
 }
 
+function sourceFileLabel(framework: LiveFramework): string {
+  if (framework === 'react') return 'App.jsx';
+  if (framework === 'vue') return 'App.vue';
+  return 'App.svelte';
+}
+
 export function LiveFrameworkPlayground({
   componentName,
   supported = ['react', 'vue', 'svelte'],
@@ -51,22 +58,13 @@ export function LiveFrameworkPlayground({
 }: LiveFrameworkPlaygroundProps) {
   const { framework: preferred } = useDocsFramework();
   const { theme } = useDocsTheme();
+  const { open: openFullscreen, getDraft, setDraft, clearDraft } = useLiveFullscreen();
   const framework = resolveFramework(preferred, supported);
 
   const seeds = seedsProp ?? getPlaygroundSeed(componentName) ?? { react: '' };
 
   const defaultCode = seeds[framework] ?? seeds.react ?? '';
-
-  const [codeByFramework, setCodeByFramework] = useState<Partial<Record<LiveFramework, string>>>(
-    {},
-  );
-
-  // Reset per-component draft when navigating between components
-  useEffect(() => {
-    setCodeByFramework({});
-  }, [componentName]);
-
-  const code = codeByFramework[framework] ?? defaultCode;
+  const code = getDraft(componentName, framework) ?? defaultCode;
 
   const [debouncedCode, setDebouncedCode] = useState(code);
   useEffect(() => {
@@ -90,12 +88,7 @@ export function LiveFrameworkPlayground({
         <Button
           variant="ghost"
           size="sm"
-          onClick={() =>
-            setCodeByFramework((current) => ({
-              ...current,
-              [framework]: defaultCode,
-            }))
-          }
+          onClick={() => clearDraft(componentName, framework)}
         >
           Reset
         </Button>
@@ -105,7 +98,7 @@ export function LiveFrameworkPlayground({
         <div className="docs-live-playground__editor">
           <div className="docs-code-toolbar">
             <Typography as="h3" role="title">
-              {framework === 'react' ? 'App.tsx' : framework === 'vue' ? 'App.vue' : 'App.svelte'}
+              {sourceFileLabel(framework)}
             </Typography>
             <span className="docs-code-title">{frameworkLanguage(framework)}</span>
           </div>
@@ -115,12 +108,7 @@ export function LiveFrameworkPlayground({
             theme={theme === 'dark' ? oneDark : undefined}
             extensions={editorExtensions(framework)}
             basicSetup={{ lineNumbers: true, foldGutter: true }}
-            onChange={(value) =>
-              setCodeByFramework((current) => ({
-                ...current,
-                [framework]: value,
-              }))
-            }
+            onChange={(value) => setDraft(componentName, framework, value)}
           />
         </div>
 
@@ -129,7 +117,16 @@ export function LiveFrameworkPlayground({
             <Typography as="h3" role="title">
               Live preview
             </Typography>
-            <span className="docs-code-title">{framework}</span>
+            <div className="docs-live-playground__preview-actions">
+              <span className="docs-code-title">{framework}</span>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => openFullscreen({ componentName })}
+              >
+                Fullscreen
+              </Button>
+            </div>
           </div>
           <div className="docs-live-playground__canvas">
             {error ? (
