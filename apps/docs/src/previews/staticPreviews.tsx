@@ -245,7 +245,14 @@ function renderSplitViewPreview() {
 export const STATIC_PREVIEWS: Record<string, () => ReactNode> = {
   ActivityShareButton: () => (
     <PreviewFrame title="Activity share">
-      <ActivityShareButton aria-label="Share activity" onClick={() => undefined} />
+      <ActivityShareButton
+        label="Share"
+        activities={[
+          { id: 'messages', title: 'Messages', kind: 'share', subtitle: 'Send a link' },
+          { id: 'mail', title: 'Mail', kind: 'share', subtitle: 'Compose email' },
+          { id: 'copy', title: 'Copy', kind: 'action' },
+        ]}
+      />
     </PreviewFrame>
   ),
   ActivityView: () => (
@@ -342,34 +349,58 @@ export const STATIC_PREVIEWS: Record<string, () => ReactNode> = {
   ),
   CollaborationButton: () => (
     <PreviewFrame title="Collaboration">
-      <CollaborationButton label="Share" onClick={() => undefined} />
+      <CollaborationButton
+        label="Share"
+        collaborators={[
+          { id: '1', name: 'Ahmed Mohamed' },
+          { id: '2', name: 'Sara Ali' },
+          { id: '3', name: 'Omar Hassan' },
+        ]}
+        onClick={() => undefined}
+      />
     </PreviewFrame>
   ),
   CollaborationPopover: () => (
     <PreviewFrame title="Collaboration popover">
       <CollaborationPopover
         trigger={<Button variant="outline">Collaborate</Button>}
-        participants={[{ id: '1', name: 'Ahmed' }, { id: '2', name: 'Sara' }]}
+        collaborators={[{ id: '1', name: 'Ahmed' }, { id: '2', name: 'Sara' }]}
+        onManage={() => undefined}
+        onMessage={() => undefined}
       />
     </PreviewFrame>
   ),
   Collection: () => (
     <PreviewFrame layout="block" title="Collection">
-      <Collection aria-label="Shortcuts">
-        <Button variant="secondary">New employee</Button>
-        <Button variant="secondary">Import CSV</Button>
-      </Collection>
+      <Collection
+        ariaLabel="Shortcuts"
+        items={[
+          { id: 'new', label: 'New employee', content: <Button variant="secondary">New</Button> },
+          { id: 'import', label: 'Import CSV', content: <Button variant="secondary">Import</Button> },
+        ]}
+      />
     </PreviewFrame>
   ),
   ColumnView: () => (
     <PreviewFrame layout="block" title="Column view">
       <ColumnView
-        aria-label="Departments"
-        tree={[
-          { id: 'all', label: 'All staff', children: [{ id: 'eng', label: 'Engineering' }] },
+        ariaLabel="Departments"
+        initialPath={['all', 'eng']}
+        data={[
+          {
+            id: 'all',
+            label: 'All staff',
+            children: [
+              {
+                id: 'eng',
+                label: 'Engineering',
+                detail: <Typography muted>Engineering team details</Typography>,
+                meta: { Members: '24', Lead: 'Ahmed' },
+              },
+              { id: 'design', label: 'Design' },
+            ],
+          },
         ]}
-        selectedPath={['all', 'eng']}
-        detail={<Typography muted>Engineering team details</Typography>}
       />
     </PreviewFrame>
   ),
@@ -441,12 +472,14 @@ export const STATIC_PREVIEWS: Record<string, () => ReactNode> = {
     </PreviewFrame>
   ),
   DocumentLauncher: () => (
-    <PreviewFrame title="Document launcher">
+    <PreviewFrame layout="block" title="Document launcher">
       <DocumentLauncher
-        documents={[
-          { id: 'd1', title: 'Employee handbook' },
-          { id: 'd2', title: 'Q1 report' },
-        ]}
+        appTitle="Employees"
+        primaryActionLabel="New document"
+        onPrimaryAction={() => undefined}
+        files={files}
+        selectedId="f1"
+        onSelect={() => undefined}
         onOpen={() => undefined}
       />
     </PreviewFrame>
@@ -496,12 +529,14 @@ export const STATIC_PREVIEWS: Record<string, () => ReactNode> = {
   ),
   EditMenu: () => (
     <PreviewFrame title="Edit menu">
-      <EditMenu trigger={<Button variant="outline">Edit</Button>} context={{ canCopy: true, canPaste: true }} />
+      <EditMenu context={{ hasSelection: true, canPaste: true, isEditable: true }}>
+        <Button variant="outline">Select text</Button>
+      </EditMenu>
     </PreviewFrame>
   ),
   EditMenuSelection: () => (
     <PreviewFrame title="Edit menu selection">
-      <EditMenuSelection label="3 items selected" />
+      <EditMenuSelection selected>3 items selected</EditMenuSelection>
     </PreviewFrame>
   ),
   EmptyState: () => (
@@ -542,6 +577,8 @@ export const STATIC_PREVIEWS: Record<string, () => ReactNode> = {
   HomeScreenQuickActions: () => (
     <PreviewFrame title="Quick actions">
       <HomeScreenQuickActions
+        appName="Employees"
+        icon={<span aria-hidden="true">👥</span>}
         actions={[
           { id: 'new', label: 'New employee', onSelect: () => undefined },
           { id: 'scan', label: 'Scan badge', onSelect: () => undefined },
@@ -618,26 +655,34 @@ export const STATIC_PREVIEWS: Record<string, () => ReactNode> = {
   ),
   Menu: () => (
     <PreviewFrame title="Menu">
-      <Menu
-        entries={menuEntries}
-        open
-        onOpenChange={() => undefined}
-      />
+      <Menu entries={menuEntries}>
+        <Button variant="outline">Actions</Button>
+      </Menu>
     </PreviewFrame>
   ),
   MenuBar: () => (
     <PreviewFrame layout="block" title="Menu bar">
       <MenuBar
+        appName="Employees"
+        showAppleMenu={false}
         menus={[
-          { id: 'file', label: 'File', entries: [{ type: 'item', id: 'new', label: 'New' }] },
-          { id: 'edit', label: 'Edit', entries: [{ type: 'item', id: 'undo', label: 'Undo' }] },
+          { id: 'file', title: 'File', entries: [{ id: 'new', label: 'New' }] },
+          { id: 'edit', title: 'Edit', entries: [{ id: 'undo', label: 'Undo' }] },
         ]}
       />
     </PreviewFrame>
   ),
   MenuBarExtra: () => (
     <PreviewFrame title="Menu bar extra">
-      <MenuBarExtra items={[{ id: 'sync', label: 'Sync now', onSelect: () => undefined }]} />
+      <MenuBarExtra
+        id="sync"
+        label="Sync"
+        icon={<span aria-hidden="true">↻</span>}
+        entries={[{ id: 'sync', label: 'Sync now' }]}
+        isOpen={false}
+        onOpenChange={() => undefined}
+        optionKey={false}
+      />
     </PreviewFrame>
   ),
   MorePullDownButton: () => (
@@ -764,7 +809,22 @@ export const STATIC_PREVIEWS: Record<string, () => ReactNode> = {
   ),
   SplitViewToolbar: () => (
     <PreviewFrame layout="block" title="Split view toolbar">
-      <SplitViewToolbar title="Employees" subtitle="12 records" />
+      <div style={{ height: 220, border: '1px solid var(--lr-color-border)', borderRadius: 12, overflow: 'hidden' }}>
+        <SplitView orientation="horizontal" aria-label="Demo split with toolbar">
+          <SplitViewPane id="sidebar" label="Sidebar" minSize={120} defaultSize={0.32} collapsible>
+            <div style={{ padding: 12 }}>
+              <SplitViewToolbar actions={<Button size="sm" variant="outline">Filter</Button>} />
+              <Typography muted>Navigation pane</Typography>
+            </div>
+          </SplitViewPane>
+          <SplitViewPane id="main" label="Main" minSize={160} defaultSize={0.68}>
+            <div style={{ padding: 12 }}>
+              <Typography role="title">Employees</Typography>
+              <Typography muted>12 records</Typography>
+            </div>
+          </SplitViewPane>
+        </SplitView>
+      </div>
     </PreviewFrame>
   ),
   SquareButton: () => (
@@ -783,8 +843,8 @@ export const STATIC_PREVIEWS: Record<string, () => ReactNode> = {
         data={employees}
         keyExtractor={(row) => row.id}
         columns={[
-          { key: 'name', header: 'Name', accessor: (row) => row.name },
-          { key: 'department', header: 'Department', accessor: (row) => row.department },
+          { key: 'name', header: 'Name', render: (row) => row.name },
+          { key: 'department', header: 'Department', render: (row) => row.department },
         ]}
         aria-label="Employees table"
       />

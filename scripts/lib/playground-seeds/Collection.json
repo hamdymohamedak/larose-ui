@@ -1,0 +1,5 @@
+{
+  "react": "import { Collection } from '@larose-ui/react';\n\nconst items = [\n  { id: '1', label: 'Engineering' },\n  { id: '2', label: 'Design' },\n  { id: '3', label: 'Product' },\n  { id: '4', label: 'Sales' },\n];\n\nexport default function App() {\n  return <Collection ariaLabel=\"Teams\" layout=\"grid\" columns={4} items={items} />;\n}\n",
+  "vue": "<script setup lang=\"ts\">\nimport { Collection } from '@larose-ui/vue';\n\nconst items = [\n  { id: '1', label: 'Engineering' },\n  { id: '2', label: 'Design' },\n  { id: '3', label: 'Product' },\n  { id: '4', label: 'Sales' },\n];\n</script>\n\n<template>\n  <Collection aria-label=\"Teams\" layout=\"grid\" :columns=\"4\" :items=\"items\" />\n</template>\n",
+  "svelte": "<script lang=\"ts\">\n  import { Collection } from '@larose-ui/svelte';\n\n  const items = [\n    { id: '1', label: 'Engineering' },\n    { id: '2', label: 'Design' },\n    { id: '3', label: 'Product' },\n    { id: '4', label: 'Sales' },\n  ];\n</script>\n\n<Collection ariaLabel=\"Teams\" layout=\"grid\" columns={4} {items} />\n"
+}

@@ -39,16 +39,16 @@
       "name": "placeholder",
       "type": "string",
       "required": false,
-      "default": "'Drop an image",
+      "default": "'Drop an image, paste, or click to choose'",
       "inherited": false,
-      "example": "'Drop an image"
+      "example": "'Drop an image, paste, or click to choose'"
     },
     {
       "name": "src",
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     }
   ],
   "examples": [],

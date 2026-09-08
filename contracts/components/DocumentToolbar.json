@@ -6,12 +6,14 @@
     {
       "name": "canSave",
       "type": "boolean",
-      "required": false
+      "required": false,
+      "default": "true"
     },
     {
       "name": "newLabel",
       "type": "string",
-      "required": false
+      "required": false,
+      "default": "'New'"
     },
     {
       "name": "onNew",
@@ -31,17 +33,20 @@
     {
       "name": "openLabel",
       "type": "string",
-      "required": false
+      "required": false,
+      "default": "'Open'"
     },
     {
       "name": "saveLabel",
       "type": "string",
-      "required": false
+      "required": false,
+      "default": "'Save'"
     },
     {
       "name": "showAddButton",
       "type": "boolean",
-      "required": false
+      "required": false,
+      "default": "true"
     }
   ],
   "events": [
@@ -58,5 +63,12 @@
       "payload": "() => void"
     }
   ],
+  "defaults": {
+    "canSave": "true",
+    "newLabel": "'New'",
+    "openLabel": "'Open'",
+    "saveLabel": "'Save'",
+    "showAddButton": "true"
+  },
   "keyboard": {}
 }

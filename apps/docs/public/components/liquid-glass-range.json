@@ -9,7 +9,7 @@
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "as",
@@ -53,14 +53,14 @@
       "required": false,
       "default": "LIQUID_GLASS_PRESETS.slider.borderRadius",
       "inherited": false,
-      "example": "LIQUID_GLASS_PRESETS.slider.borderRadius"
+      "example": "0"
     },
     {
       "name": "className",
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "defaultValue",
@@ -91,16 +91,16 @@
       "name": "fillColor",
       "type": "string",
       "required": false,
-      "default": "'rgba(255",
+      "default": "'rgba(255, 255, 255, 0.35)'",
       "inherited": false,
-      "example": "'rgba(255"
+      "example": "'rgba(255, 255, 255, 0.35)'"
     },
     {
       "name": "height",
       "type": "number | string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "innerBottomShadow",
@@ -124,23 +124,23 @@
       "name": "max",
       "type": "number",
       "required": false,
-      "default": "== min) return 0;",
+      "default": "100",
       "inherited": false,
-      "example": "== min) return 0;"
+      "example": "100"
     },
     {
       "name": "maxHeight",
       "type": "number | string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "maxWidth",
       "type": "number | string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "min",
@@ -155,14 +155,14 @@
       "type": "number | string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "minWidth",
       "type": "number | string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "onDisplacementMapChange",
@@ -249,7 +249,7 @@
       "required": false,
       "description": "Inline CSS merged onto the surface. Flex / grid / padding apply to inner content.",
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "thumbSize",
@@ -291,9 +291,8 @@
       "name": "value",
       "type": "number",
       "required": false,
-      "default": "controlledValue ?? internalValue;",
       "inherited": false,
-      "example": "controlledValue ?? internalValue;"
+      "example": "0"
     },
     {
       "name": "width",

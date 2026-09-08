@@ -17,7 +17,7 @@
       "type": "string | null",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "flexible",
@@ -62,7 +62,7 @@
       "required": false,
       "description": "Alternative label shown while loading (Apple HIG activity indicator pattern).",
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "opensAnotherView",
@@ -85,7 +85,7 @@
       "required": false,
       "description": "Capsule (default), circle (icon-only), or roundedRect (vertical stacks).",
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "size",
@@ -99,7 +99,7 @@
       "type": "UIState",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "tooltip",
@@ -107,7 +107,7 @@
       "required": false,
       "description": "macOS / visionOS hover tooltip.",
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "variant",

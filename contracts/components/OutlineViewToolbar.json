@@ -16,7 +16,8 @@
     {
       "name": "placeholder",
       "type": "string",
-      "required": false
+      "required": false,
+      "default": "'Search'"
     },
     {
       "name": "searchQuery",
@@ -30,6 +31,9 @@
       "payload": "(query: string) => void"
     }
   ],
+  "defaults": {
+    "placeholder": "'Search'"
+  },
   "accessibility": {
     "requirements": [
       "Supports ARIA attributes via standard HTML element props."

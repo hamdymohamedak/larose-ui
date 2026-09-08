@@ -30,13 +30,13 @@
       "name": "fillColor",
       "type": "string",
       "required": false,
-      "default": "'rgba(255"
+      "default": "'rgba(255, 255, 255, 0.35)'"
     },
     {
       "name": "max",
       "type": "number",
       "required": false,
-      "default": "== min) return 0;"
+      "default": "100"
     },
     {
       "name": "min",
@@ -67,8 +67,7 @@
     {
       "name": "value",
       "type": "number",
-      "required": false,
-      "default": "controlledValue ?? internalValue;"
+      "required": false
     },
     {
       "name": "width",
@@ -92,13 +91,12 @@
     "borderRadius": "LIQUID_GLASS_PRESETS.slider.borderRadius",
     "defaultValue": "50",
     "disabled": "false",
-    "fillColor": "'rgba(255",
-    "max": "== min) return 0;",
+    "fillColor": "'rgba(255, 255, 255, 0.35)'",
+    "max": "100",
     "min": "0",
     "step": "1",
     "thumbSize": "28",
     "trackHeight": "8",
-    "value": "controlledValue ?? internalValue;",
     "width": "'100%'"
   },
   "accessibility": {

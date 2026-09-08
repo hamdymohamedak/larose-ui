@@ -15,7 +15,7 @@ import { PreviewFrame } from '@/components/PreviewFrame';
 
 function MdxCode(props: { className?: string; children?: ReactNode }) {
   const text = String(props.children ?? '').replace(/\n$/, '');
-  const match = /language-(\w+)/.exec(props.className ?? '');
+  const match = /language-([\w+#.-]+)/.exec(props.className ?? '');
   if (match) {
     return <CodeBlock code={text} language={match[1]} />;
   }

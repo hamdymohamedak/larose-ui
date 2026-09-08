@@ -11,9 +11,13 @@
     {
       "name": "side",
       "type": "TooltipSide",
-      "required": false
+      "required": false,
+      "default": "'top'"
     }
   ],
   "events": [],
+  "defaults": {
+    "side": "'top'"
+  },
   "keyboard": {}
 }

@@ -8,6 +8,7 @@
       "name": "autosaveEnabled",
       "type": "boolean",
       "required": false,
+      "default": "true",
       "description": "When false, show the unsaved dot (manual save mode).",
       "inherited": false,
       "example": "true"
@@ -16,8 +17,9 @@
       "name": "edited",
       "type": "boolean",
       "required": false,
+      "default": "false",
       "inherited": false,
-      "example": "true"
+      "example": "false"
     }
   ],
   "examples": [],

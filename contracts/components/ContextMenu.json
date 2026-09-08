@@ -6,7 +6,8 @@
     {
       "name": "dimBackground",
       "type": "boolean",
-      "required": false
+      "required": false,
+      "default": "true"
     },
     {
       "name": "entries",
@@ -17,6 +18,7 @@
       "name": "longPress",
       "type": "boolean",
       "required": false,
+      "default": "true",
       "description": "Enable long-press / touch-and-hold in addition to secondary click."
     },
     {
@@ -50,6 +52,10 @@
       "payload": "(open: boolean) => void"
     }
   ],
+  "defaults": {
+    "dimBackground": "true",
+    "longPress": "true"
+  },
   "keyboard": {},
   "controlled": [
     "open"

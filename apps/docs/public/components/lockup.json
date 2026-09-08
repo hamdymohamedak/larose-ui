@@ -9,21 +9,23 @@
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "axis",
       "type": "LockupAxis",
       "required": false,
+      "default": "'horizontal'",
       "inherited": false,
-      "example": "\"example\""
+      "example": "'horizontal'"
     },
     {
       "name": "focused",
       "type": "boolean",
       "required": false,
+      "default": "false",
       "inherited": false,
-      "example": "true"
+      "example": "false"
     },
     {
       "name": "footer",

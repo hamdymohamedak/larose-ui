@@ -3,6 +3,7 @@ import { Typography } from '@larose-ui/react';
 import { StorySection } from '@/components/StoryCanvas';
 import type { DocsExampleEntry } from '@/data/examples.generated';
 import { isGlassDocComponent } from '@/lib/glassComponents';
+import { SafePreview } from '@/components/ComponentPreview';
 import { getComponentPreview } from '@/previews';
 import { renderPlaygroundComponent } from '@/previews/playgroundRegistry';
 import { playgroundControls } from '@/data/playground.generated';
@@ -56,7 +57,7 @@ export function ComponentExamples({ componentName, examples }: ComponentExamples
           <StorySection
             key={example.id}
             title={example.title}
-            preview={renderExamplePreview(componentName, example)}
+            preview={<SafePreview>{renderExamplePreview(componentName, example)}</SafePreview>}
             code={example.code}
             variant={isGlass ? 'glass' : 'default'}
           />

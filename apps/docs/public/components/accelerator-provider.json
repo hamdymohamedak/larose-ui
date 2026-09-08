@@ -9,7 +9,7 @@
       "type": "AcceleratorPlatform",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     }
   ],
   "examples": [],

@@ -23,8 +23,9 @@
       "name": "excludedActivityIds",
       "type": "string[]",
       "required": false,
+      "default": "[]",
       "inherited": false,
-      "example": "—"
+      "example": "[]"
     },
     {
       "name": "footer",
@@ -58,8 +59,9 @@
       "name": "presentation",
       "type": "ActivityPresentation",
       "required": false,
+      "default": "'sheet'",
       "inherited": false,
-      "example": "\"example\""
+      "example": "'sheet'"
     }
   ],
   "examples": [

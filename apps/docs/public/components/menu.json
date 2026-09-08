@@ -8,6 +8,7 @@
       "name": "dimBackground",
       "type": "boolean",
       "required": false,
+      "default": "true",
       "inherited": false,
       "example": "true"
     },
@@ -15,6 +16,7 @@
       "name": "enableMnemonics",
       "type": "boolean",
       "required": false,
+      "default": "true",
       "description": "Enable Alt+key mnemonics while open. Defaults to true.",
       "inherited": false,
       "example": "true"
@@ -23,6 +25,7 @@
       "name": "enableShortcuts",
       "type": "boolean",
       "required": false,
+      "default": "true",
       "description": "When true, keyboard shortcuts activate menu items while open. Defaults to true.",
       "inherited": false,
       "example": "true"
@@ -31,6 +34,7 @@
       "name": "enableTypeAhead",
       "type": "boolean",
       "required": false,
+      "default": "true",
       "description": "Enable type-ahead letter matching while open. Defaults to true.",
       "inherited": false,
       "example": "true"
@@ -46,16 +50,18 @@
       "name": "layout",
       "type": "MenuLayout",
       "required": false,
+      "default": "'large'",
       "inherited": false,
-      "example": "\"example\""
+      "example": "'large'"
     },
     {
       "name": "mnemonicVisible",
       "type": "boolean",
       "required": false,
+      "default": "false",
       "description": "When true, underline mnemonic access keys in labels.",
       "inherited": false,
-      "example": "true"
+      "example": "false"
     },
     {
       "name": "onEntrySelect",

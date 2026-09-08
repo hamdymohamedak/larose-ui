@@ -22,8 +22,9 @@
       "name": "label",
       "type": "string",
       "required": false,
+      "default": "'Share'",
       "inherited": false,
-      "example": "\"example\""
+      "example": "'Share'"
     },
     {
       "name": "onActivitySelect",
@@ -36,9 +37,10 @@
       "name": "presentation",
       "type": "'sheet' | 'popover' | 'auto'",
       "required": false,
+      "default": "'auto'",
       "description": "Uses popover on wide viewports and sheet on compact widths when auto.",
       "inherited": false,
-      "example": "\"sheet\""
+      "example": "'auto'"
     }
   ],
   "examples": [],

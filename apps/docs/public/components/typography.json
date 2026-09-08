@@ -15,8 +15,9 @@
       "name": "muted",
       "type": "boolean",
       "required": false,
+      "default": "false",
       "inherited": false,
-      "example": "true"
+      "example": "false"
     }
   ],
   "examples": [

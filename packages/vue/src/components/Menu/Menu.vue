@@ -112,16 +112,34 @@ function onKeyDown(event: KeyboardEvent) {
   if (event.key === 'Escape') close();
 }
 
+function onPointerDownOutside(event: PointerEvent) {
+  const target = event.target as Node | null;
+  if (!target) return;
+  const surface = document.getElementById(menuId);
+  if (surface?.contains(target)) return;
+  if (triggerRef.value?.contains(target)) return;
+  close();
+}
+
 watch(isOpen, (open) => {
   if (open) {
     if (!hasTrigger.value) centerOnViewport();
     else if (isControlled.value) positionFromTrigger();
     document.addEventListener('keydown', onKeyDown);
+    // Delay so the opening click does not immediately dismiss.
+    window.setTimeout(() => {
+      if (!isOpen.value) return;
+      document.addEventListener('pointerdown', onPointerDownOutside, true);
+    }, 0);
   } else {
     document.removeEventListener('keydown', onKeyDown);
+    document.removeEventListener('pointerdown', onPointerDownOutside, true);
   }
 });
-onUnmounted(() => document.removeEventListener('keydown', onKeyDown));
+onUnmounted(() => {
+  document.removeEventListener('keydown', onKeyDown);
+  document.removeEventListener('pointerdown', onPointerDownOutside, true);
+});
 </script>
 
 <template>

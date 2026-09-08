@@ -9,14 +9,15 @@
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "nextLabel",
       "type": "string",
       "required": false,
+      "default": "'Next page'",
       "inherited": false,
-      "example": "\"example\""
+      "example": "'Next page'"
     },
     {
       "name": "onPageChange",
@@ -36,15 +37,17 @@
       "name": "previousLabel",
       "type": "string",
       "required": false,
+      "default": "'Previous page'",
       "inherited": false,
-      "example": "\"example\""
+      "example": "'Previous page'"
     },
     {
       "name": "siblingCount",
       "type": "number",
       "required": false,
+      "default": "1",
       "inherited": false,
-      "example": "0"
+      "example": "1"
     },
     {
       "name": "totalPages",

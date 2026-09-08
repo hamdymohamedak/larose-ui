@@ -24,7 +24,7 @@
       "name": "type",
       "type": "'single' | 'multiple'",
       "required": false,
-      "default": "== 'single') {"
+      "default": "'single'"
     },
     {
       "name": "value",
@@ -48,7 +48,7 @@
   "defaults": {
     "collapsible": "false",
     "defaultValue": "[]",
-    "type": "== 'single') {"
+    "type": "'single'"
   },
   "keyboard": {},
   "uncontrolled": [

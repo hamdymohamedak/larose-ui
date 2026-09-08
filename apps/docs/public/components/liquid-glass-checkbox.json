@@ -9,7 +9,7 @@
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "as",
@@ -51,6 +51,7 @@
       "name": "borderRadius",
       "type": "number",
       "required": false,
+      "default": "LIQUID_GLASS_PRESETS.checkbox.borderRadius",
       "inherited": false,
       "example": "0"
     },
@@ -58,8 +59,9 @@
       "name": "checkColor",
       "type": "string",
       "required": false,
+      "default": "'#ffffff'",
       "inherited": false,
-      "example": "\"example\""
+      "example": "'#ffffff'"
     },
     {
       "name": "checked",
@@ -72,29 +74,32 @@
       "name": "checkedTint",
       "type": "string",
       "required": false,
+      "default": "'rgba(52, 199, 89, 0.42)'",
       "inherited": false,
-      "example": "\"example\""
+      "example": "'rgba(52, 199, 89, 0.42)'"
     },
     {
       "name": "className",
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "defaultChecked",
       "type": "boolean",
       "required": false,
+      "default": "false",
       "inherited": false,
-      "example": "true"
+      "example": "false"
     },
     {
       "name": "disabled",
       "type": "boolean",
       "required": false,
+      "default": "false",
       "inherited": false,
-      "example": "true"
+      "example": "false"
     },
     {
       "name": "displacementScale",
@@ -110,7 +115,7 @@
       "type": "number | string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "innerBottomShadow",
@@ -141,36 +146,37 @@
       "name": "labelColor",
       "type": "string",
       "required": false,
+      "default": "'#ffffff'",
       "inherited": false,
-      "example": "\"example\""
+      "example": "'#ffffff'"
     },
     {
       "name": "maxHeight",
       "type": "number | string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "maxWidth",
       "type": "number | string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "minHeight",
       "type": "number | string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "minWidth",
       "type": "number | string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "onDisplacementMapChange",
@@ -220,9 +226,10 @@
       "name": "size",
       "type": "number",
       "required": false,
+      "default": "26",
       "description": "Box size in px.",
       "inherited": false,
-      "example": "0"
+      "example": "26"
     },
     {
       "name": "specularAngle",
@@ -257,7 +264,7 @@
       "required": false,
       "description": "Inline CSS merged onto the surface. Flex / grid / padding apply to inner content.",
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "tint",
@@ -282,7 +289,7 @@
       "type": "number | string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     }
   ],
   "examples": [

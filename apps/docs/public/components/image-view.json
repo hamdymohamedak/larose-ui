@@ -9,7 +9,7 @@
       "type": "string",
       "required": true,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "background",
@@ -32,14 +32,14 @@
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "frameStyle",
       "type": "CSSProperties",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "objectPosition",
@@ -55,14 +55,14 @@
       "required": false,
       "description": "Animated image sequence — frames should share dimensions when possible.",
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "src",
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     }
   ],
   "examples": [

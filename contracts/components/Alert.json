@@ -11,7 +11,8 @@
     {
       "name": "variant",
       "type": "AlertVariant",
-      "required": false
+      "required": false,
+      "default": "'info'"
     }
   ],
   "events": [
@@ -20,6 +21,9 @@
       "payload": "() => void"
     }
   ],
+  "defaults": {
+    "variant": "'info'"
+  },
   "accessibility": {
     "requirements": [
       "Supports ARIA attributes via standard HTML element props."

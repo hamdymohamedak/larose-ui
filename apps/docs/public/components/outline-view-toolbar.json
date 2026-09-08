@@ -9,7 +9,7 @@
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "onSearchChange",
@@ -22,15 +22,16 @@
       "name": "placeholder",
       "type": "string",
       "required": false,
+      "default": "'Search'",
       "inherited": false,
-      "example": "\"example\""
+      "example": "'Search'"
     },
     {
       "name": "searchQuery",
       "type": "string",
       "required": true,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     }
   ],
   "examples": [],

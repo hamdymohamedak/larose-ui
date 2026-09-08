@@ -1,0 +1,5 @@
+{
+  "react": "import { PopUpButton } from '@larose-ui/react';\n\nexport default function App() {\n  return (\n    <PopUpButton\n      label=\"Sort by\"\n      options={[\n        { value: 'name', label: 'Name' },\n        { value: 'date', label: 'Date' },\n      ]}\n      defaultValue=\"name\"\n    />\n  );\n}\n",
+  "vue": "<script setup lang=\"ts\">\nimport { PopUpButton } from '@larose-ui/vue';\n\nconst options = [\n  { value: 'name', label: 'Name' },\n  { value: 'date', label: 'Date' },\n];\n</script>\n\n<template>\n  <PopUpButton label=\"Sort by\" :options=\"options\" default-value=\"name\" />\n</template>\n",
+  "svelte": "<script lang=\"ts\">\n  import { PopUpButton } from '@larose-ui/svelte';\n\n  const options = [\n    { value: 'name', label: 'Name' },\n    { value: 'date', label: 'Date' },\n  ];\n</script>\n\n<PopUpButton label=\"Sort by\" {options} defaultValue=\"name\" />\n"
+}

@@ -9,22 +9,23 @@
       "type": "string",
       "required": true,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "mnemonic",
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "showAccessKey",
       "type": "boolean",
       "required": false,
+      "default": "false",
       "description": "When true, underline the access key character.",
       "inherited": false,
-      "example": "true"
+      "example": "false"
     }
   ],
   "examples": [

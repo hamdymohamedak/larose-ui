@@ -9,14 +9,14 @@
       "type": "PopUpCustomOption",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "defaultValue",
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "disabled",
@@ -32,7 +32,7 @@
       "required": false,
       "description": "Optional explanatory text below the control.",
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "label",
@@ -40,7 +40,7 @@
       "required": false,
       "description": "Introductory label describing the control (Calendar-style).",
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "onValueChange",
@@ -69,7 +69,7 @@
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     }
   ],
   "examples": [

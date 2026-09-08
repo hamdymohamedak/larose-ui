@@ -31,12 +31,14 @@
     {
       "name": "primaryActionLabel",
       "type": "string",
-      "required": false
+      "required": false,
+      "default": "'Create Document'"
     },
     {
       "name": "secondaryActionLabel",
       "type": "string",
-      "required": false
+      "required": false,
+      "default": "'Choose Template'"
     }
   ],
   "events": [
@@ -49,5 +51,9 @@
       "payload": "() => void"
     }
   ],
+  "defaults": {
+    "primaryActionLabel": "'Create Document'",
+    "secondaryActionLabel": "'Choose Template'"
+  },
   "keyboard": {}
 }

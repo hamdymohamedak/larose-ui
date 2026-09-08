@@ -16,7 +16,8 @@
     {
       "name": "label",
       "type": "string",
-      "required": false
+      "required": false,
+      "default": "'Share'"
     },
     {
       "name": "onActivitySelect",
@@ -27,6 +28,7 @@
       "name": "presentation",
       "type": "'sheet' | 'popover' | 'auto'",
       "required": false,
+      "default": "'auto'",
       "description": "Uses popover on wide viewports and sheet on compact widths when auto."
     }
   ],
@@ -36,5 +38,9 @@
       "payload": "(activity: ActivityItem) => void"
     }
   ],
+  "defaults": {
+    "label": "'Share'",
+    "presentation": "'auto'"
+  },
   "keyboard": {}
 }

@@ -24,14 +24,14 @@
       "required": false,
       "description": "When unset, no button receives default keyboard focus styling.",
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "helpUrl",
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "icon",
@@ -45,7 +45,7 @@
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "onOpenChange",
@@ -66,7 +66,7 @@
       "type": "AlertDialogPresentation",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "showCautionIcon",
@@ -81,14 +81,14 @@
       "type": "AlertDialogSuppression",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "textField",
       "type": "AlertDialogTextField",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     }
   ],
   "examples": [],

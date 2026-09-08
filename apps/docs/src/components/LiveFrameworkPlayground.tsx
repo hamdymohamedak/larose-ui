@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import CodeMirror from '@uiw/react-codemirror';
 import { javascript } from '@codemirror/lang-javascript';
 import { html } from '@codemirror/lang-html';
+import { vue } from '@codemirror/lang-vue';
 import { oneDark } from '@codemirror/theme-one-dark';
 import { Button, Typography } from '@larose-ui/react';
 import { FrameworkSelector } from '@/components/FrameworkSelector';
@@ -28,7 +29,10 @@ function editorExtensions(framework: LiveFramework) {
   if (framework === 'react') {
     return [javascript({ jsx: true, typescript: true })];
   }
-  // Vue SFC + Svelte are HTML-like for highlighting
+  if (framework === 'vue') {
+    return [vue()];
+  }
+  // Svelte SFCs — HTML/markup highlighting (Prism docs blocks use markup too)
   return [html()];
 }
 

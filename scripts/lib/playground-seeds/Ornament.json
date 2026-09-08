@@ -1,0 +1,5 @@
+{
+  "react": "import { Ornament, Typography } from '@larose-ui/react';\n\nexport default function App() {\n  return (\n    <Ornament label=\"Inspector\">\n      <Typography muted>Accessory panel content</Typography>\n    </Ornament>\n  );\n}\n",
+  "vue": "<script setup lang=\"ts\">\nimport { Ornament, Typography } from '@larose-ui/vue';\n</script>\n\n<template>\n  <Ornament label=\"Inspector\">\n    <Typography muted>Accessory panel content</Typography>\n  </Ornament>\n</template>\n",
+  "svelte": "<script lang=\"ts\">\n  import { Ornament, Typography } from '@larose-ui/svelte';\n</script>\n\n<Ornament label=\"Inspector\">\n  <Typography muted>Accessory panel content</Typography>\n</Ornament>\n"
+}

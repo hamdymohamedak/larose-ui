@@ -330,7 +330,26 @@ function extractDefaults(source, componentName) {
   /** @type {Map<string, string>} */
   const defaults = new Map();
 
+  /**
+   * @param {ts.ObjectBindingPattern} pattern
+   */
+  function collectBindingDefaults(pattern) {
+    for (const element of pattern.elements) {
+      if (!ts.isBindingElement(element) || !element.initializer) continue;
+      const propName = element.name.getText(sourceFile);
+      defaults.set(propName, element.initializer.getText(sourceFile));
+    }
+  }
+
   visit(sourceFile, (node) => {
+    if (ts.isFunctionDeclaration(node) && node.name?.text === componentName) {
+      const param = node.parameters[0];
+      if (param && ts.isObjectBindingPattern(param.name)) {
+        collectBindingDefaults(param.name);
+      }
+      return;
+    }
+
     if (!ts.isVariableStatement(node)) return;
     for (const decl of node.declarationList.declarations) {
       if (!decl.initializer) continue;
@@ -341,39 +360,27 @@ function extractDefaults(source, componentName) {
       if (ts.isArrowFunction(init) || ts.isFunctionExpression(init)) {
         const param = init.parameters[0];
         if (param && ts.isObjectBindingPattern(param.name)) {
-          for (const element of param.name.elements) {
-            const propName = element.name.getText(sourceFile);
-            if (element.initializer) {
-              defaults.set(propName, element.initializer.getText(sourceFile));
-            }
-          }
-        }
-      }
-    }
-
-    if (ts.isFunctionDeclaration(node) && node.name?.text === componentName) {
-      const param = node.parameters[0];
-      if (param && ts.isObjectBindingPattern(param.name)) {
-        for (const element of param.name.elements) {
-          const propName = element.name.getText(sourceFile);
-          if (element.initializer) {
-            defaults.set(propName, element.initializer.getText(sourceFile));
-          }
+          collectBindingDefaults(param.name);
         }
       }
     }
   });
 
-  // forwardRef pattern: const X = forwardRef((props, ref) => { const { a = 1 } = useComponentDefaults(...)
-  const destructuringMatch = source.match(
-    new RegExp(
-      `(?:useComponentDefaults\\('${componentName}',[^)]*\\)|\\(\\s*\\{)([\\s\\S]*?)\\}\\s*[,=)]`,
-    ),
-  );
-  if (destructuringMatch) {
-    const block = destructuringMatch[1];
-    for (const match of block.matchAll(/(\w+)\s*=\s*([^,\n}]+)/g)) {
-      defaults.set(match[1], match[2].trim());
+  // forwardRef / useComponentDefaults fallback when AST did not resolve bindings.
+  if (defaults.size === 0) {
+    const destructuringMatch = source.match(
+      new RegExp(
+        `(?:useComponentDefaults\\('${componentName}',[^)]*\\)|\\(\\s*\\{)([\\s\\S]*?)\\}\\s*[,=)]`,
+      ),
+    );
+    if (destructuringMatch) {
+      const block = destructuringMatch[1];
+      // Prefer quoted literals so commas inside strings are kept intact.
+      for (const match of block.matchAll(
+        /(\w+)\s*=\s*('(?:\\.|[^'\\])*'|"(?:\\.|[^"\\])*"|`(?:\\.|[^`\\])*`|[^,\n}]+)/g,
+      )) {
+        defaults.set(match[1], match[2].trim());
+      }
     }
   }
 

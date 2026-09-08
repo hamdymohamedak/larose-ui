@@ -6,10 +6,14 @@
     {
       "name": "variant",
       "type": "BadgeVariant",
-      "required": false
+      "required": false,
+      "default": "'default'"
     }
   ],
   "events": [],
+  "defaults": {
+    "variant": "'default'"
+  },
   "accessibility": {
     "requirements": [
       "Supports ARIA attributes via standard HTML element props."

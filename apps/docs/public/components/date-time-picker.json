@@ -10,28 +10,30 @@
       "required": false,
       "description": "Compact / wheels / inline / automatic. Use with object `style` when you need both.",
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "disabled",
       "type": "boolean",
       "required": false,
+      "default": "false",
       "inherited": false,
-      "example": "true"
+      "example": "false"
     },
     {
       "name": "error",
       "type": "string | null",
       "required": false,
+      "default": "null",
       "inherited": false,
-      "example": "\"example\""
+      "example": "null"
     },
     {
       "name": "hint",
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "inputSize",
@@ -45,76 +47,82 @@
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "loading",
       "type": "boolean",
       "required": false,
+      "default": "false",
       "inherited": false,
-      "example": "true"
+      "example": "false"
     },
     {
       "name": "locale",
       "type": "string",
       "required": false,
+      "default": "'en'",
       "inherited": false,
-      "example": "\"example\""
+      "example": "'en'"
     },
     {
       "name": "maxDate",
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "minDate",
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "minuteInterval",
       "type": "number",
       "required": false,
+      "default": "1",
       "inherited": false,
-      "example": "0"
+      "example": "1"
     },
     {
       "name": "mode",
       "type": "DateTimePickerMode",
       "required": false,
+      "default": "'date'",
       "inherited": false,
-      "example": "\"example\""
+      "example": "'date'"
     },
     {
       "name": "state",
       "type": "UIState",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "use12Hour",
       "type": "boolean",
       "required": false,
+      "default": "locale.startsWith('en')",
       "inherited": false,
-      "example": "true"
+      "example": "locale.startsWith('en')"
     },
     {
       "name": "value",
       "type": "DateTimeValue",
       "required": false,
-      "default": "{",
+      "default": "{}",
       "inherited": false,
-      "example": "{"
+      "example": "—"
     },
     {
       "name": "yearRange",
       "type": "{ start: number; end: number }",
       "required": false,
+      "default": "{ start: new Date().getFullYear() - 5, end: new Date().getFullYear() + 5 }",
       "inherited": false,
       "example": "—"
     }

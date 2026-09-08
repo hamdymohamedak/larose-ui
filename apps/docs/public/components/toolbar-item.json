@@ -30,7 +30,7 @@
       "type": "string",
       "required": true,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "prominent",

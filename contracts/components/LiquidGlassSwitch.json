@@ -12,12 +12,14 @@
       "name": "activeTrackTint",
       "type": "LiquidGlassSwitchActiveTrackTint",
       "required": false,
+      "default": "LIQUID_GLASS_SWITCH_ACTIVE_GREEN",
       "description": "Active track tint when on. Defaults to iOS-style green.\nPass `'glass'` () for liquid glass only, or any CSS color."
     },
     {
       "name": "borderRadius",
       "type": "number",
-      "required": false
+      "required": false,
+      "default": "LIQUID_GLASS_PRESETS.switch.borderRadius"
     },
     {
       "name": "checked",
@@ -27,17 +29,20 @@
     {
       "name": "defaultChecked",
       "type": "boolean",
-      "required": false
+      "required": false,
+      "default": "false"
     },
     {
       "name": "disabled",
       "type": "boolean",
-      "required": false
+      "required": false,
+      "default": "false"
     },
     {
       "name": "height",
       "type": "number",
       "required": false,
+      "default": "32",
       "description": "Track height in px."
     },
     {
@@ -49,12 +54,14 @@
       "name": "padding",
       "type": "number",
       "required": false,
+      "default": "2",
       "description": "Track padding around thumb."
     },
     {
       "name": "thumbSize",
       "type": "number",
       "required": false,
+      "default": "28",
       "description": "Thumb diameter in px."
     },
     {
@@ -66,6 +73,7 @@
       "name": "width",
       "type": "number",
       "required": false,
+      "default": "52",
       "description": "Track width in px."
     }
   ],
@@ -81,6 +89,16 @@
     "on",
     "disabled"
   ],
+  "defaults": {
+    "activeTrackTint": "LIQUID_GLASS_SWITCH_ACTIVE_GREEN",
+    "borderRadius": "LIQUID_GLASS_PRESETS.switch.borderRadius",
+    "defaultChecked": "false",
+    "disabled": "false",
+    "height": "32",
+    "padding": "2",
+    "thumbSize": "28",
+    "width": "52"
+  },
   "accessibility": {
     "requirements": [
       "Supports ARIA attributes via standard HTML element props."

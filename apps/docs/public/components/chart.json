@@ -10,14 +10,14 @@
       "required": false,
       "description": "High-level summary for assistive technologies (Apple Audio Graphs pattern).",
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "annotation",
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "data",
@@ -83,7 +83,7 @@
       "default": "mark === 'line'",
       "description": "Combine line marks with point marks. Default true for line charts.",
       "inherited": false,
-      "example": "mark === 'line'"
+      "example": "true"
     },
     {
       "name": "stacked",
@@ -108,21 +108,21 @@
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "xAxis",
       "type": "ChartAxisConfig",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "yAxis",
       "type": "ChartAxisConfig",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "yAxisTrailing",

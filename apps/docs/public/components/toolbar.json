@@ -9,7 +9,7 @@
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "largeTitle",
@@ -32,7 +32,7 @@
       "type": "ToolbarPlatform",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     }
   ],
   "examples": [

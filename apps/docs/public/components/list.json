@@ -9,14 +9,15 @@
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "variant",
       "type": "ListVariant",
       "required": false,
+      "default": "'grouped'",
       "inherited": false,
-      "example": "\"md\""
+      "example": "'grouped'"
     }
   ],
   "examples": [

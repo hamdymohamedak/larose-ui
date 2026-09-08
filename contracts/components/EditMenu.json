@@ -12,28 +12,33 @@
       "name": "customActions",
       "type": "EditMenuItemConfig[]",
       "required": false,
+      "default": "[]",
       "description": "Custom commands listed near related system-provided ones."
     },
     {
       "name": "dimBackground",
       "type": "boolean",
-      "required": false
+      "required": false,
+      "default": "true"
     },
     {
       "name": "includeStandardActions",
       "type": "boolean",
       "required": false,
+      "default": "true",
       "description": "Include standard Cut, Copy, Paste, etc. Defaults to true."
     },
     {
       "name": "inputMode",
       "type": "EditMenuInputMode",
-      "required": false
+      "required": false,
+      "default": "'auto'"
     },
     {
       "name": "longPress",
       "type": "boolean",
       "required": false,
+      "default": "true",
       "description": "Touch-and-hold / long-press to reveal compact edit menu."
     },
     {
@@ -59,12 +64,14 @@
     {
       "name": "placement",
       "type": "'above' | 'below' | 'auto'",
-      "required": false
+      "required": false,
+      "default": "'auto'"
     },
     {
       "name": "variant",
       "type": "EditMenuVariant",
-      "required": false
+      "required": false,
+      "default": "'auto'"
     }
   ],
   "events": [
@@ -81,6 +88,15 @@
       "payload": "(actionId: StandardEditActionId) => void"
     }
   ],
+  "defaults": {
+    "customActions": "[]",
+    "dimBackground": "true",
+    "includeStandardActions": "true",
+    "inputMode": "'auto'",
+    "longPress": "true",
+    "placement": "'auto'",
+    "variant": "'auto'"
+  },
   "accessibility": {
     "requirements": [
       "Supports ARIA attributes via standard HTML element props."

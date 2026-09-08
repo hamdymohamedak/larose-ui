@@ -172,6 +172,7 @@ export function DockMenu({
         aria-label={`${appName} Dock menu`}
         surfaceStyle={mergeStyles({ left: position.x, top: position.y }, style)}
         onSurfaceClick={(event) => event.stopPropagation()}
+        anchorRef={iconRef}
       >
         <ul className={styles.list}>
           {preparedEntries.map((entry, index) => {

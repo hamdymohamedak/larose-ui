@@ -12,14 +12,12 @@
     {
       "name": "activeKey",
       "type": "string",
-      "required": false,
-      "default": "controlledActiveKey ?? internalActiveKey;"
+      "required": false
     },
     {
       "name": "borderRadius",
       "type": "number",
-      "required": false,
-      "default": "borderRadiusProp ?? (isFloating ? LIQUID_GLASS_PRESETS.topBar.borderRadius : 0);"
+      "required": false
     },
     {
       "name": "defaultActiveKey",
@@ -36,13 +34,12 @@
       "name": "inactiveColor",
       "type": "string",
       "required": false,
-      "default": "'rgba(255"
+      "default": "'rgba(255, 255, 255, 0.62)'"
     },
     {
       "name": "insetX",
       "type": "number",
-      "required": false,
-      "default": "insetXProp ?? (isFloating ? 16 : 0);"
+      "required": false
     },
     {
       "name": "items",
@@ -59,14 +56,14 @@
       "name": "navActiveBackground",
       "type": "string",
       "required": false,
-      "default": "'rgba(255",
+      "default": "'rgba(255, 255, 255, 0.18)'",
       "description": "Active nav pill background."
     },
     {
       "name": "navTrackBackground",
       "type": "string",
       "required": false,
-      "default": "'rgba(255",
+      "default": "'rgba(255, 255, 255, 0.08)'",
       "description": "Background of the segmented nav track."
     },
     {
@@ -90,8 +87,7 @@
     {
       "name": "top",
       "type": "number | string",
-      "required": false,
-      "default": "topProp ?? (isFloating ? 14 : 0);"
+      "required": false
     },
     {
       "name": "trailing",
@@ -122,18 +118,14 @@
   ],
   "defaults": {
     "activeColor": "'#ffffff'",
-    "activeKey": "controlledActiveKey ?? internalActiveKey;",
-    "borderRadius": "borderRadiusProp ?? (isFloating ? LIQUID_GLASS_PRESETS.topBar.borderRadius : 0);",
     "height": "56",
-    "inactiveColor": "'rgba(255",
-    "insetX": "insetXProp ?? (isFloating ? 16 : 0);",
+    "inactiveColor": "'rgba(255, 255, 255, 0.62)'",
     "items": "[]",
-    "navActiveBackground": "'rgba(255",
-    "navTrackBackground": "'rgba(255",
+    "navActiveBackground": "'rgba(255, 255, 255, 0.18)'",
+    "navTrackBackground": "'rgba(255, 255, 255, 0.08)'",
     "paddingX": "16",
     "position": "'fixed'",
     "titleColor": "'#ffffff'",
-    "top": "topProp ?? (isFloating ? 14 : 0);",
     "variant": "'floating'"
   },
   "accessibility": {

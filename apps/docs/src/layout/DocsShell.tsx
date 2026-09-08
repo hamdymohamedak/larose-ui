@@ -60,7 +60,7 @@ export function DocsShell({ children }: { children?: ReactNode }) {
         <div className="docs-main docs-main--overview">
           <div className="docs-main-scroll docs-main-scroll--overview">
             <div className="docs-page docs-page--home">
-              <DocsErrorBoundary>{children ?? <Outlet />}</DocsErrorBoundary>
+              <DocsErrorBoundary key={location.pathname}>{children ?? <Outlet />}</DocsErrorBoundary>
             </div>
           </div>
         </div>
@@ -176,7 +176,7 @@ export function DocsShell({ children }: { children?: ReactNode }) {
 
         <div className="docs-main-scroll">
           <div className="docs-page">
-            <DocsErrorBoundary>{children ?? <Outlet />}</DocsErrorBoundary>
+            <DocsErrorBoundary key={location.pathname}>{children ?? <Outlet />}</DocsErrorBoundary>
           </div>
         </div>
       </div>

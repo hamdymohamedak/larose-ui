@@ -9,20 +9,22 @@
       "type": "EditMenuContext",
       "required": true,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "customActions",
       "type": "EditMenuItemConfig[]",
       "required": false,
+      "default": "[]",
       "description": "Custom commands listed near related system-provided ones.",
       "inherited": false,
-      "example": "—"
+      "example": "[]"
     },
     {
       "name": "dimBackground",
       "type": "boolean",
       "required": false,
+      "default": "true",
       "inherited": false,
       "example": "true"
     },
@@ -30,6 +32,7 @@
       "name": "includeStandardActions",
       "type": "boolean",
       "required": false,
+      "default": "true",
       "description": "Include standard Cut, Copy, Paste, etc. Defaults to true.",
       "inherited": false,
       "example": "true"
@@ -38,13 +41,15 @@
       "name": "inputMode",
       "type": "EditMenuInputMode",
       "required": false,
+      "default": "'auto'",
       "inherited": false,
-      "example": "\"example\""
+      "example": "'auto'"
     },
     {
       "name": "longPress",
       "type": "boolean",
       "required": false,
+      "default": "true",
       "description": "Touch-and-hold / long-press to reveal compact edit menu.",
       "inherited": false,
       "example": "true"
@@ -81,15 +86,17 @@
       "name": "placement",
       "type": "'above' | 'below' | 'auto'",
       "required": false,
+      "default": "'auto'",
       "inherited": false,
-      "example": "\"above\""
+      "example": "'auto'"
     },
     {
       "name": "variant",
       "type": "EditMenuVariant",
       "required": false,
+      "default": "'auto'",
       "inherited": false,
-      "example": "\"md\""
+      "example": "'auto'"
     }
   ],
   "examples": [

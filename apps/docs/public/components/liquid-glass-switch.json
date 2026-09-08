@@ -9,15 +9,16 @@
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "activeTrackTint",
       "type": "LiquidGlassSwitchActiveTrackTint",
       "required": false,
+      "default": "LIQUID_GLASS_SWITCH_ACTIVE_GREEN",
       "description": "Active track tint when on. Defaults to iOS-style green.\nPass `'glass'` () for liquid glass only, or any CSS color.",
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "as",
@@ -59,6 +60,7 @@
       "name": "borderRadius",
       "type": "number",
       "required": false,
+      "default": "LIQUID_GLASS_PRESETS.switch.borderRadius",
       "inherited": false,
       "example": "0"
     },
@@ -74,21 +76,23 @@
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "defaultChecked",
       "type": "boolean",
       "required": false,
+      "default": "false",
       "inherited": false,
-      "example": "true"
+      "example": "false"
     },
     {
       "name": "disabled",
       "type": "boolean",
       "required": false,
+      "default": "false",
       "inherited": false,
-      "example": "true"
+      "example": "false"
     },
     {
       "name": "displacementScale",
@@ -104,7 +108,8 @@
       "type": "number",
       "required": false,
       "inherited": false,
-      "example": "0",
+      "example": "32",
+      "default": "32",
       "description": "Track height in px."
     },
     {
@@ -112,7 +117,7 @@
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "innerBottomShadow",
@@ -137,28 +142,28 @@
       "type": "number | string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "maxWidth",
       "type": "number | string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "minHeight",
       "type": "number | string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "minWidth",
       "type": "number | string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "onDisplacementMapChange",
@@ -172,9 +177,10 @@
       "name": "padding",
       "type": "number",
       "required": false,
+      "default": "2",
       "description": "Track padding around thumb.",
       "inherited": false,
-      "example": "0"
+      "example": "2"
     },
     {
       "name": "refractionStrength",
@@ -245,22 +251,23 @@
       "required": false,
       "description": "Inline CSS merged onto the surface. Flex / grid / padding apply to inner content.",
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "thumbSize",
       "type": "number",
       "required": false,
+      "default": "28",
       "description": "Thumb diameter in px.",
       "inherited": false,
-      "example": "0"
+      "example": "28"
     },
     {
       "name": "thumbTint",
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "tint",
@@ -285,7 +292,8 @@
       "type": "number",
       "required": false,
       "inherited": false,
-      "example": "0",
+      "example": "52",
+      "default": "52",
       "description": "Track width in px."
     }
   ],

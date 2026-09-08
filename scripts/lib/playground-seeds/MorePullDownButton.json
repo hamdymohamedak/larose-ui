@@ -1,0 +1,5 @@
+{
+  "react": "import { MorePullDownButton } from '@larose-ui/react';\n\nexport default function App() {\n  return (\n    <MorePullDownButton\n      entries={[\n        { id: 'export', label: 'Export' },\n        { id: 'archive', label: 'Archive' },\n      ]}\n    />\n  );\n}\n",
+  "vue": "<script setup lang=\"ts\">\nimport { MorePullDownButton } from '@larose-ui/vue';\n\nconst entries = [\n  { id: 'export', label: 'Export' },\n  { id: 'archive', label: 'Archive' },\n];\n</script>\n\n<template>\n  <MorePullDownButton :entries=\"entries\" />\n</template>\n",
+  "svelte": "<script lang=\"ts\">\n  import { MorePullDownButton } from '@larose-ui/svelte';\n\n  const entries = [\n    { id: 'export', label: 'Export' },\n    { id: 'archive', label: 'Archive' },\n  ];\n</script>\n\n<MorePullDownButton {entries} />\n"
+}

@@ -1,0 +1,5 @@
+{
+  "react": "import { DocumentToolbar } from '@larose-ui/react';\n\nexport default function App() {\n  return (\n    <DocumentToolbar\n      onNew={() => undefined}\n      onOpen={() => undefined}\n      onSave={() => undefined}\n      canSave\n      showAddButton\n    />\n  );\n}\n",
+  "vue": "<script setup lang=\"ts\">\nimport { DocumentToolbar } from '@larose-ui/vue';\n</script>\n\n<template>\n  <DocumentToolbar can-save show-add-button @new=\"() => undefined\" @open=\"() => undefined\" @save=\"() => undefined\" />\n</template>\n",
+  "svelte": "<script lang=\"ts\">\n  import { DocumentToolbar } from '@larose-ui/svelte';\n</script>\n\n<DocumentToolbar\n  onNew={() => undefined}\n  onOpen={() => undefined}\n  onSave={() => undefined}\n  canSave\n  showAddButton\n/>\n"
+}

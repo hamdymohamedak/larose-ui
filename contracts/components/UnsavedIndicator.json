@@ -7,14 +7,20 @@
       "name": "autosaveEnabled",
       "type": "boolean",
       "required": false,
+      "default": "true",
       "description": "When false, show the unsaved dot (manual save mode)."
     },
     {
       "name": "edited",
       "type": "boolean",
-      "required": false
+      "required": false,
+      "default": "false"
     }
   ],
   "events": [],
+  "defaults": {
+    "autosaveEnabled": "true",
+    "edited": "false"
+  },
   "keyboard": {}
 }

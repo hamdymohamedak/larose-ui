@@ -9,7 +9,7 @@
       "type": "T",
       "required": true,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "disabled",
@@ -24,7 +24,7 @@
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "preview",
@@ -38,14 +38,14 @@
       "type": "string",
       "required": true,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "type",
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     }
   ],
   "examples": [],

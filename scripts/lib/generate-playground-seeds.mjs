@@ -7,6 +7,8 @@ import { PLAYGROUND_CONTROLS } from './docs-metadata.mjs';
  * @typedef {{ react: string, vue?: string, svelte?: string }} PlaygroundSeedEntry
  */
 
+const PLACEHOLDER_IMAGE = 'https://placehold.co/160x100/png';
+
 /** Props that are unsafe or useless in a minimal live demo. */
 const SKIP_PROP_NAMES = new Set([
   'className',
@@ -31,27 +33,117 @@ const SKIP_PROP_NAMES = new Set([
   'series',
   'items',
   'options',
+  'entries',
+  'files',
+  'columns',
+  'collaborators',
+  'participants',
+  'menus',
+  'tree',
+  'segments',
+  'tokens',
+  'suggestions',
+  // Controlled state — prefer default* props in demos
+  'expanded',
+  'open',
+  'value',
+  'checked',
+  'selectedId',
+  'selectedKey',
+  'activeKey',
+  'activeTab',
+  // Noise / context-only
+  'disabled',
+  'transferring',
+  'transferringLabel',
+  'showInvalidIndicator',
+  'annotation',
+  'accessibilitySummary',
 ]);
 
 /**
+ * Fix truncated / malformed contract default strings.
+ * @param {unknown} value
+ */
+function sanitizeDefault(value) {
+  if (value == null) return undefined;
+  let raw = String(value).trim();
+  if (!raw) return undefined;
+
+  // Unterminated quotes from truncated contracts (e.g. "'Drop an image")
+  const quote = raw[0];
+  if ((quote === "'" || quote === '"') && raw.length > 1 && !raw.endsWith(quote)) {
+    raw = `${raw}${quote}`;
+  }
+
+  return raw;
+}
+
+/**
+ * @param {string} name
  * @param {string} type
  * @param {string} [fallbackDefault]
  */
-export function exampleValueFromType(type, fallbackDefault) {
-  if (fallbackDefault != null && fallbackDefault !== '') {
-    return { kind: 'raw', value: fallbackDefault };
+export function exampleValueFromType(type, fallbackDefault, name = '') {
+  const cleanedDefault = sanitizeDefault(fallbackDefault);
+  if (cleanedDefault != null && cleanedDefault !== '') {
+    const looksLikeCode =
+      /[=<>]|\?\?|\|\||&&|LIQUID_|PRESETS|default[A-Z]|function|=>|\{/.test(cleanedDefault) &&
+      !/^['"].*['"]$/.test(cleanedDefault) &&
+      !/^(true|false|null|undefined|-?\d+(\.\d+)?)$/.test(cleanedDefault);
+    // Prefer name-based overrides when the contract default is clearly a placeholder / code fragment
+    if (
+      cleanedDefault === "'example'" ||
+      cleanedDefault === '"example"' ||
+      cleanedDefault === 'example' ||
+      looksLikeCode
+    ) {
+      // fall through to heuristics
+    } else {
+      return { kind: 'raw', value: cleanedDefault };
+    }
   }
+
+  const prop = (name || '').replace(/^['"]|['"]$/g, '');
   const t = (type || '').trim();
-  if (!t) return { kind: 'string', value: 'example' };
+
+  if (/^(src|url|href|imageUrl|thumbnailUrl|avatarUrl)$/i.test(prop)) {
+    return { kind: 'string', value: PLACEHOLDER_IMAGE };
+  }
+  if (/alt/i.test(prop)) return { kind: 'string', value: 'Preview image' };
+  if (/^(label|title|appTitle|appName|caption|emptyLabel|emptyMessage|manageLabel)$/i.test(prop)) {
+    return { kind: 'string', value: prop === 'appName' || prop === 'appTitle' ? 'Employees' : 'Example' };
+  }
+  if (/placeholder/i.test(prop)) return { kind: 'string', value: 'Enter a value' };
+  if (/maxHeight|minHeight|maxWidth|minWidth/i.test(prop)) return { kind: 'string', value: '12rem' };
+  if (/importance/i.test(prop)) return { kind: 'string', value: 'primary' };
+  if (/presentation/i.test(prop)) return { kind: 'string', value: 'sheet' };
+  if (/typographyRole|buttonRole|role$/i.test(prop)) return { kind: 'string', value: 'body' };
+  if (/variant/i.test(prop)) return { kind: 'string', value: 'primary' };
+  if (/orientation/i.test(prop)) return { kind: 'string', value: 'horizontal' };
+  if (/size|Size/.test(prop) && /^string$/i.test(t)) return { kind: 'string', value: 'md' };
+  if (/zoneId|sourceId|id$/i.test(prop) && /^string$/i.test(t)) return { kind: 'string', value: 'demo' };
+  if (/type$/i.test(prop) && /^string$/i.test(t)) return { kind: 'string', value: 'item' };
+
+  if (!t) return { kind: 'omit' };
 
   if (/^boolean$/i.test(t)) return { kind: 'boolean', value: true };
-  if (/^number$/i.test(t)) return { kind: 'number', value: 0 };
-  if (/^string$/i.test(t)) return { kind: 'string', value: 'example' };
+  if (/^number$/i.test(t)) {
+    if (/height/i.test(prop)) return { kind: 'number', value: 220 };
+    if (/columns|maxVisible|page|total/i.test(prop)) return { kind: 'number', value: 3 };
+    return { kind: 'number', value: 0 };
+  }
 
   const unionMatch = t.match(/^'([^']+)'/);
   if (unionMatch) return { kind: 'string', value: unionMatch[1] };
 
-  if (/\(\s*.*\)\s*=>/.test(t) || /^React\./.test(t) || /Node|Element|Snippet|VNode/.test(t)) {
+  // Multi-union: 'primary' | 'secondary'
+  const multiUnion = [...t.matchAll(/'([^']+)'/g)].map((m) => m[1]);
+  if (multiUnion.length >= 2 && !/\[\]|Array|Record|=>/.test(t)) {
+    return { kind: 'string', value: multiUnion[0] };
+  }
+
+  if (/\(\s*.*\)\s*=>/.test(t) || /^React\./.test(t) || /Node|Element|Snippet|VNode|ReactNode/.test(t)) {
     return { kind: 'omit' };
   }
 
@@ -59,11 +151,19 @@ export function exampleValueFromType(type, fallbackDefault) {
     return { kind: 'omit' };
   }
 
-  if (/Placement|Size|Variant|Role|Orientation/.test(t)) {
+  if (/LabelImportance/i.test(t)) return { kind: 'string', value: 'primary' };
+  if (/TypographyRole/i.test(t)) return { kind: 'string', value: 'body' };
+  if (/Placement|Size|Variant|Role|Orientation|Mark/.test(t)) {
+    if (/Mark/.test(t)) return { kind: 'string', value: 'bar' };
     return { kind: 'string', value: 'md' };
   }
 
-  return { kind: 'string', value: 'example' };
+  if (/^string$/i.test(t)) {
+    // Avoid littering demos with meaningless "example" strings
+    return { kind: 'omit' };
+  }
+
+  return { kind: 'omit' };
 }
 
 /**
@@ -92,22 +192,27 @@ function formatProp(name, example, framework) {
     // Already looks like a JS expression / quoted string
     if (framework === 'vue') {
       if (/^'.*'$/.test(raw) || /^".*"$/.test(raw)) {
-        return `${safeName}=${raw.includes('"') ? raw : raw.replace(/^'|'$/g, '"')}`;
+        const inner = raw.slice(1, -1).replace(/"/g, '&quot;');
+        return `${safeName}="${inner}"`;
       }
       return `:${safeName}="${raw.replace(/"/g, '')}"`;
     }
-    if (/^'.*'$/.test(raw) || /^".*"$/.test(raw) || /^(true|false|\d)/.test(raw)) {
-      if (/^'.*'$/.test(raw) || /^".*"$/.test(raw)) {
-        const inner = raw.replace(/^['"]|['"]$/g, '');
-        return `${safeName}="${inner}"`;
-      }
+    if (/^'.*'$/.test(raw) || /^".*"$/.test(raw)) {
+      const inner = raw.slice(1, -1);
+      // Prefer double-quoted JSX attrs; escape embedded quotes
+      if (!inner.includes('"')) return `${safeName}="${inner}"`;
+      return `${safeName}={'${inner.replace(/'/g, "\\'")}'}`;
+    }
+    if (/^(true|false|\d)/.test(raw)) {
       return `${safeName}={${raw}}`;
     }
     return `${safeName}={${raw}}`;
   }
 
-  // string
-  return `${safeName}="${example.value}"`;
+  // string — escape embedded quotes
+  const value = String(example.value);
+  if (!value.includes('"')) return `${safeName}="${value}"`;
+  return `${safeName}={'${value.replace(/'/g, "\\'")}'}`;
 }
 
 /**
@@ -135,31 +240,50 @@ function demoPropsFor(root, name, framework) {
   /** @type {string[]} */
   const lines = [];
   const controls = PLAYGROUND_CONTROLS[name];
+  const seen = new Set();
 
   if (controls) {
     for (const [key, control] of Object.entries(controls)) {
-      if (key === 'children') continue;
+      if (key === 'children' || SKIP_PROP_NAMES.has(key)) continue;
       const example =
         control.control === 'boolean'
           ? { kind: 'boolean', value: Boolean(control.default) }
           : control.control === 'number'
             ? { kind: 'number', value: control.default ?? 0 }
             : { kind: 'string', value: String(control.default ?? '') };
-      if (example.kind === 'string' && example.value === '') continue;
+      if (example.kind === 'string' && (example.value === '' || example.value === 'example')) continue;
       const formatted = formatProp(key, example, framework);
-      if (formatted) lines.push(formatted);
+      if (formatted) {
+        lines.push(formatted);
+        seen.add(key);
+      }
     }
     return lines.slice(0, 6);
   }
 
   const contractProps = readContractProps(root, name);
+  const names = new Set(contractProps.map((p) => p?.name).filter(Boolean));
+
   for (const prop of contractProps) {
-    if (!prop?.name || SKIP_PROP_NAMES.has(prop.name.replace(/^['"]|['"]$/g, ''))) continue;
+    const propName = prop?.name?.replace(/^['"]|['"]$/g, '');
+    if (!propName || SKIP_PROP_NAMES.has(propName) || seen.has(propName)) continue;
+
+    // Prefer defaultExpanded / defaultOpen / defaultValue over controlled twins (already skipped)
+    if (propName.startsWith('default') && names.has(propName.replace(/^default/, '').replace(/^./, (c) => c.toLowerCase()))) {
+      // keep default*
+    }
+
     if (prop.required !== true && lines.length >= 4) continue;
-    const example = exampleValueFromType(prop.type, prop.default);
-    if (prop.required !== true && example.kind === 'omit') continue;
-    const formatted = formatProp(prop.name, example, framework);
-    if (formatted) lines.push(formatted);
+    const example = exampleValueFromType(prop.type, prop.default, propName);
+    if (example.kind === 'omit') continue;
+    // Skip default false booleans — noise
+    if (example.kind === 'boolean' && example.value === false && prop.required !== true) continue;
+
+    const formatted = formatProp(propName, example, framework);
+    if (formatted) {
+      lines.push(formatted);
+      seen.add(propName);
+    }
     if (lines.length >= 6) break;
   }
   return lines;
@@ -167,7 +291,9 @@ function demoPropsFor(root, name, framework) {
 
 function childrenLabel(name, controls) {
   if (controls?.children?.default) return String(controls.children.default);
-  if (/Button|Badge|Alert|Typography|Label/.test(name)) return 'Example';
+  if (/Button|Badge|Alert|Typography|Label|Lockup|Ornament|DisclosureGroup|DisclosureButton|DropZone|Card/.test(name)) {
+    return 'Example';
+  }
   return null;
 }
 
@@ -179,6 +305,11 @@ const VOID_LIKE = new Set([
   'LiquidGlassRange',
   'LiquidGlassSwitch',
   'Divider',
+  'ImageWell',
+  'ImageButton',
+  'ImageView',
+  'Chart',
+  'TextView',
 ]);
 
 /**

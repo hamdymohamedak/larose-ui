@@ -8,15 +8,17 @@
       "name": "label",
       "type": "string",
       "required": false,
+      "default": "'Loading'",
       "inherited": false,
-      "example": "\"example\""
+      "example": "'Loading'"
     },
     {
       "name": "size",
       "type": "Size",
       "required": false,
+      "default": "'md'",
       "inherited": false,
-      "example": "\"md\""
+      "example": "'md'"
     }
   ],
   "examples": [],

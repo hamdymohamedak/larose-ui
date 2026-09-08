@@ -1,0 +1,5 @@
+{
+  "react": "import { OutlineViewToolbar } from '@larose-ui/react';\nimport { useState } from 'react';\n\nexport default function App() {\n  const [query, setQuery] = useState('');\n  return (\n    <div style={{ width: '100%', maxWidth: 360 }}>\n      <OutlineViewToolbar searchQuery={query} onSearchChange={setQuery} placeholder=\"Search outline\" />\n    </div>\n  );\n}\n",
+  "vue": "<script setup lang=\"ts\">\nimport { ref } from 'vue';\nimport { OutlineViewToolbar } from '@larose-ui/vue';\n\nconst query = ref('');\n</script>\n\n<template>\n  <div style=\"width: 100%; max-width: 360px\">\n    <OutlineViewToolbar v-model=\"query\" placeholder=\"Search outline\" />\n  </div>\n</template>\n",
+  "svelte": "<script lang=\"ts\">\n  import { OutlineViewToolbar } from '@larose-ui/svelte';\n\n  let query = $state('');\n</script>\n\n<div style=\"width: 100%; max-width: 360px\">\n  <OutlineViewToolbar searchQuery={query} onSearchChange={(next) => (query = next)} placeholder=\"Search outline\" />\n</div>\n"
+}

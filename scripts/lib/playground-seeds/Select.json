@@ -1,0 +1,5 @@
+{
+  "react": "import { Select } from '@larose-ui/react';\n\nexport default function App() {\n  return (\n    <Select\n      label=\"Department\"\n      placeholder=\"Choose department\"\n      options={[\n        { value: 'engineering', label: 'Engineering' },\n        { value: 'design', label: 'Design' },\n        { value: 'sales', label: 'Sales' },\n      ]}\n    />\n  );\n}\n",
+  "vue": "<script setup lang=\"ts\">\nimport { Select } from '@larose-ui/vue';\n\nconst options = [\n  { value: 'engineering', label: 'Engineering' },\n  { value: 'design', label: 'Design' },\n  { value: 'sales', label: 'Sales' },\n];\n</script>\n\n<template>\n  <Select label=\"Department\" placeholder=\"Choose department\" :options=\"options\" />\n</template>\n",
+  "svelte": "<script lang=\"ts\">\n  import { Select } from '@larose-ui/svelte';\n\n  const options = [\n    { value: 'engineering', label: 'Engineering' },\n    { value: 'design', label: 'Design' },\n    { value: 'sales', label: 'Sales' },\n  ];\n</script>\n\n<Select label=\"Department\" placeholder=\"Choose department\" {options} />\n"
+}

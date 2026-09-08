@@ -11,12 +11,14 @@
     {
       "name": "axis",
       "type": "LockupAxis",
-      "required": false
+      "required": false,
+      "default": "'horizontal'"
     },
     {
       "name": "focused",
       "type": "boolean",
-      "required": false
+      "required": false,
+      "default": "false"
     },
     {
       "name": "footer",
@@ -43,6 +45,10 @@
       "payload": "() => void"
     }
   ],
+  "defaults": {
+    "axis": "'horizontal'",
+    "focused": "false"
+  },
   "accessibility": {
     "requirements": [
       "Supports ARIA attributes via standard HTML element props."

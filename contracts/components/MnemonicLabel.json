@@ -17,9 +17,13 @@
       "name": "showAccessKey",
       "type": "boolean",
       "required": false,
+      "default": "false",
       "description": "When true, underline the access key character."
     }
   ],
   "events": [],
+  "defaults": {
+    "showAccessKey": "false"
+  },
   "keyboard": {}
 }

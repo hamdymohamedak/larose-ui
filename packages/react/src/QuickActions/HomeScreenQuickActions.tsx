@@ -141,12 +141,19 @@ export function HomeScreenQuickActions({
 
   useEffect(() => {
     if (!isOpen) return;
+    // Reposition when controlled `open` becomes true without a gesture.
+    const rect = iconRef.current?.getBoundingClientRect();
+    if (rect && position.x === 0 && position.y === 0) {
+      const menuWidth = 260;
+      const menuHeight = estimateQuickActionMenuHeight(preparedActions.length);
+      setPosition(resolveQuickActionMenuPosition(rect, menuWidth, menuHeight));
+    }
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') close();
     };
     document.addEventListener('keydown', onKeyDown);
     return () => document.removeEventListener('keydown', onKeyDown);
-  }, [close, isOpen]);
+  }, [close, isOpen, position.x, position.y, preparedActions.length]);
 
   return (
     <div className={[styles.quickActionsWrap, className].filter(Boolean).join(' ')} style={style}>
@@ -169,6 +176,10 @@ export function HomeScreenQuickActions({
         onPointerLeave={clearLongPress}
         onContextMenu={(event) => {
           event.preventDefault();
+          if (isOpen) {
+            close();
+            return;
+          }
           openAboveIcon();
         }}
       >
@@ -186,6 +197,7 @@ export function HomeScreenQuickActions({
         aria-label={`${appName} quick actions`}
         surfaceStyle={mergeStyles({ left: position.x, top: position.y }, style)}
         onSurfaceClick={(event) => event.stopPropagation()}
+        anchorRef={iconRef}
       >
         <ul className={styles.list}>
           {appActions.map((action) => (

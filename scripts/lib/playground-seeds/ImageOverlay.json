@@ -1,0 +1,5 @@
+{
+  "react": "import { ImageOverlay } from '@larose-ui/react';\n\nexport default function App() {\n  return (\n    <ImageOverlay\n      src=\"https://placehold.co/320x180/png\"\n      alt=\"Team offsite\"\n      overlay={<strong>Engineering offsite</strong>}\n    />\n  );\n}\n",
+  "vue": "<script setup lang=\"ts\">\nimport { ImageOverlay } from '@larose-ui/vue';\n</script>\n\n<template>\n  <ImageOverlay src=\"https://placehold.co/320x180/png\" alt=\"Team offsite\">\n    <template #overlay><strong>Engineering offsite</strong></template>\n  </ImageOverlay>\n</template>\n",
+  "svelte": "<script lang=\"ts\">\n  import { ImageOverlay } from '@larose-ui/svelte';\n</script>\n\n<ImageOverlay src=\"https://placehold.co/320x180/png\" alt=\"Team offsite\">\n  {#snippet overlay()}\n    <strong>Engineering offsite</strong>\n  {/snippet}\n</ImageOverlay>\n"
+}

@@ -12,16 +12,22 @@
       "name": "fullWidth",
       "type": "boolean",
       "required": false,
+      "default": "false",
       "description": "Full-width buttons for watchOS-style primary actions."
     },
     {
       "name": "orientation",
       "type": "'horizontal' | 'vertical'",
       "required": false,
+      "default": "'horizontal'",
       "description": "Horizontal row (default) or vertical stack for visionOS guidance."
     }
   ],
   "events": [],
+  "defaults": {
+    "fullWidth": "false",
+    "orientation": "'horizontal'"
+  },
   "accessibility": {
     "requirements": [
       "Supports ARIA attributes via standard HTML element props."

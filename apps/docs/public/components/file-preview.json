@@ -8,8 +8,9 @@
       "name": "closeLabel",
       "type": "string",
       "required": false,
+      "default": "'Close preview'",
       "inherited": false,
-      "example": "\"example\""
+      "example": "'Close preview'"
     },
     {
       "name": "onClose",
@@ -23,7 +24,7 @@
       "type": "FilePreviewSource",
       "required": true,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     }
   ],
   "examples": [

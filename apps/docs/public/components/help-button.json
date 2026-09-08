@@ -10,7 +10,7 @@
       "required": false,
       "description": "Brief phrase explaining what help covers (macOS / visionOS tooltip).",
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     }
   ],
   "examples": [],

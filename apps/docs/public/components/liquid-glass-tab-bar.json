@@ -16,9 +16,8 @@
       "name": "activeKey",
       "type": "string",
       "required": false,
-      "default": "controlledActiveKey ?? internalActiveKey;",
       "inherited": false,
-      "example": "controlledActiveKey ?? internalActiveKey;"
+      "example": "—"
     },
     {
       "name": "aria-label",
@@ -26,7 +25,7 @@
       "required": true,
       "description": "Accessible label (recommended for nav/header).",
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "as",
@@ -70,7 +69,7 @@
       "required": false,
       "default": "LIQUID_GLASS_PRESETS.tabBar.borderRadius",
       "inherited": false,
-      "example": "LIQUID_GLASS_PRESETS.tabBar.borderRadius"
+      "example": "0"
     },
     {
       "name": "bottom",
@@ -85,14 +84,14 @@
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "defaultActiveKey",
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "displacementScale",
@@ -115,25 +114,25 @@
       "name": "inactiveColor",
       "type": "string",
       "required": false,
-      "default": "'rgba(255",
+      "default": "'rgba(255, 255, 255, 0.55)'",
       "inherited": false,
-      "example": "'rgba(255"
+      "example": "'rgba(255, 255, 255, 0.55)'"
     },
     {
       "name": "indicatorBackground",
       "type": "string",
       "required": false,
-      "default": "'rgba(255",
+      "default": "'rgba(255, 255, 255, 0.16)'",
       "inherited": false,
-      "example": "'rgba(255"
+      "example": "'rgba(255, 255, 255, 0.16)'"
     },
     {
       "name": "indicatorBorderColor",
       "type": "string",
       "required": false,
-      "default": "'rgba(255",
+      "default": "'rgba(255, 255, 255, 0.28)'",
       "inherited": false,
-      "example": "'rgba(255"
+      "example": "'rgba(255, 255, 255, 0.28)'"
     },
     {
       "name": "indicatorPadding",
@@ -173,7 +172,7 @@
       "type": "number | string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "maxWidth",
@@ -188,14 +187,14 @@
       "type": "number | string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "minWidth",
       "type": "number | string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "onDisplacementMapChange",
@@ -290,7 +289,7 @@
       "required": false,
       "description": "Inline CSS merged onto the surface. Flex / grid / padding apply to inner content.",
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "tint",
@@ -315,7 +314,7 @@
       "type": "number | string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     }
   ],
   "examples": [

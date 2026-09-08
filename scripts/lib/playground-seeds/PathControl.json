@@ -1,0 +1,5 @@
+{
+  "react": "import { PathControl } from '@larose-ui/react';\n\nexport default function App() {\n  return (\n    <PathControl\n      segments={[\n        { id: 'home', label: 'Home' },\n        { id: 'employees', label: 'Employees' },\n        { id: 'ahmed', label: 'Ahmed' },\n      ]}\n    />\n  );\n}\n",
+  "vue": "<script setup lang=\"ts\">\nimport { PathControl } from '@larose-ui/vue';\n\nconst segments = [\n  { id: 'home', label: 'Home' },\n  { id: 'employees', label: 'Employees' },\n  { id: 'ahmed', label: 'Ahmed' },\n];\n</script>\n\n<template>\n  <PathControl :segments=\"segments\" />\n</template>\n",
+  "svelte": "<script lang=\"ts\">\n  import { PathControl } from '@larose-ui/svelte';\n\n  const segments = [\n    { id: 'home', label: 'Home' },\n    { id: 'employees', label: 'Employees' },\n    { id: 'ahmed', label: 'Ahmed' },\n  ];\n</script>\n\n<PathControl {segments} />\n"
+}

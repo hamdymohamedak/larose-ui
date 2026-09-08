@@ -6,12 +6,14 @@
     {
       "name": "ariaLabel",
       "type": "string",
-      "required": false
+      "required": false,
+      "default": "'Collection'"
     },
     {
       "name": "columns",
       "type": "number",
-      "required": false
+      "required": false,
+      "default": "4"
     },
     {
       "name": "items",
@@ -21,7 +23,8 @@
     {
       "name": "layout",
       "type": "CollectionLayout",
-      "required": false
+      "required": false,
+      "default": "'grid'"
     },
     {
       "name": "onSelect",
@@ -40,6 +43,11 @@
       "payload": "(item: CollectionItem) => void"
     }
   ],
+  "defaults": {
+    "ariaLabel": "'Collection'",
+    "columns": "4",
+    "layout": "'grid'"
+  },
   "accessibility": {
     "requirements": [
       "Supports ARIA attributes via standard HTML element props."

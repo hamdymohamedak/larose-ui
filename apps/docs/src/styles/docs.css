@@ -4139,8 +4139,12 @@ html[data-docs-theme='dark'] .docs-callout {
 }
 
 .docs-live-playground__canvas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-height: 280px;
-  padding: 1rem;
+  max-height: min(70vh, 520px);
+  padding: 1.25rem;
   border: 1px solid var(--lr-color-border);
   border-radius: var(--lr-radius-lg);
   background:
@@ -4148,14 +4152,29 @@ html[data-docs-theme='dark'] .docs-callout {
     radial-gradient(100% 70% at 90% 20%, rgba(244, 114, 182, 0.16), transparent 50%),
     linear-gradient(160deg, #0f172a 0%, #1e293b 45%, #334155 100%);
   overflow: auto;
+  box-sizing: border-box;
 }
 
 .docs-live-preview-host {
-  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 auto;
+  align-self: stretch;
+  width: 100%;
+  min-height: 220px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.docs-live-preview-host > * {
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .docs-live-playground__error {
-  margin: 0;
+  margin: 0 auto;
+  max-width: min(100%, 36rem);
   padding: 0.75rem 1rem;
   border-radius: var(--lr-radius-md);
   background: rgba(127, 29, 29, 0.85);
@@ -4163,6 +4182,7 @@ html[data-docs-theme='dark'] .docs-callout {
   font-size: 0.8125rem;
   white-space: pre-wrap;
   overflow: auto;
+  align-self: center;
 }
 
 .docs-live-playground .cm-editor {

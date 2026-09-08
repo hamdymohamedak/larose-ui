@@ -1,0 +1,5 @@
+{
+  "react": "import { ImageView } from '@larose-ui/react';\n\nexport default function App() {\n  return <ImageView src=\"https://placehold.co/160x100/png\" alt=\"Team photo\" />;\n}\n",
+  "vue": "<script setup lang=\"ts\">\nimport { ImageView } from '@larose-ui/vue';\n</script>\n\n<template>\n  <ImageView src=\"https://placehold.co/160x100/png\" alt=\"Team photo\" />\n</template>\n",
+  "svelte": "<script lang=\"ts\">\n  import { ImageView } from '@larose-ui/svelte';\n</script>\n\n<ImageView src=\"https://placehold.co/160x100/png\" alt=\"Team photo\" />\n"
+}

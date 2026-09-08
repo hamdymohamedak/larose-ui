@@ -11,10 +11,14 @@
     {
       "name": "variant",
       "type": "ListVariant",
-      "required": false
+      "required": false,
+      "default": "'grouped'"
     }
   ],
   "events": [],
+  "defaults": {
+    "variant": "'grouped'"
+  },
   "accessibility": {
     "requirements": [
       "Supports ARIA attributes via standard HTML element props."

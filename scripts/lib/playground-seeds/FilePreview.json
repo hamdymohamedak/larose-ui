@@ -1,0 +1,5 @@
+{
+  "react": "import { FilePreview } from '@larose-ui/react';\n\nexport default function App() {\n  return (\n    <FilePreview\n      source={{ type: 'text', name: 'Employees.csv', textContent: 'Employee,Role\\nAhmed,Engineer' }}\n    />\n  );\n}\n",
+  "vue": "<script setup lang=\"ts\">\nimport { FilePreview } from '@larose-ui/vue';\n\nconst source = { type: 'text', name: 'Employees.csv', textContent: 'Employee,Role\\nAhmed,Engineer' };\n</script>\n\n<template>\n  <FilePreview :source=\"source\" />\n</template>\n",
+  "svelte": "<script lang=\"ts\">\n  import { FilePreview } from '@larose-ui/svelte';\n\n  const source = { type: 'text', name: 'Employees.csv', textContent: 'Employee,Role\\nAhmed,Engineer' };\n</script>\n\n<FilePreview {source} />\n"
+}

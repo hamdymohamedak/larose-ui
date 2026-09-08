@@ -65,7 +65,7 @@ export function MarkdownContent({ source }: MarkdownContentProps) {
           pre: ({ children }) => <>{children}</>,
           code: ({ className, children, ...props }) => {
             const text = String(children).replace(/\n$/, '');
-            const match = /language-([\w-]+)/.exec(className ?? '');
+            const match = /language-([\w+#.-]+)/.exec(className ?? '');
             if (match) {
               return <CodeBlock code={text} language={match[1]} />;
             }

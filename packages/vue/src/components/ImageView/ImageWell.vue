@@ -24,7 +24,7 @@ function onChange(event: Event) {
 <template>
   <label :class="cn(styles.well, props.class)" :style="props.style" :for="inputId">
     <img v-if="src" :src="src" :alt="alt ?? ''" />
-    <span v-else :class="styles.wellPlaceholder">{{ placeholder ?? 'Drop image' }}</span>
+    <span v-else :class="styles.wellPlaceholder">{{ placeholder ?? 'Drop an image, paste, or click to choose' }}</span>
     <input
       :id="inputId"
       type="file"

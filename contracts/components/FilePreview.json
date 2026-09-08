@@ -6,7 +6,8 @@
     {
       "name": "closeLabel",
       "type": "string",
-      "required": false
+      "required": false,
+      "default": "'Close preview'"
     },
     {
       "name": "onClose",
@@ -25,5 +26,8 @@
       "payload": "() => void"
     }
   ],
+  "defaults": {
+    "closeLabel": "'Close preview'"
+  },
   "keyboard": {}
 }

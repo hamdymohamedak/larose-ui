@@ -9,14 +9,14 @@
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "description",
       "type": "string",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "icon",
@@ -36,8 +36,9 @@
       "name": "state",
       "type": "UIState",
       "required": false,
+      "default": "'empty'",
       "inherited": false,
-      "example": "\"example\""
+      "example": "'empty'"
     }
   ],
   "examples": [

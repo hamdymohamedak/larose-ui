@@ -9,7 +9,7 @@
       "type": "PullDownDestructiveConfirmation",
       "required": false,
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "disabled",
@@ -39,7 +39,7 @@
       "required": false,
       "description": "Button label (required unless variant is \"more\").",
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "longPress",
@@ -56,7 +56,7 @@
       "required": false,
       "description": "Optional menu title — use only when it adds meaning.",
       "inherited": false,
-      "example": "\"example\""
+      "example": "—"
     },
     {
       "name": "onAction",

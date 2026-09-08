@@ -15,8 +15,9 @@
       "name": "side",
       "type": "TooltipSide",
       "required": false,
+      "default": "'top'",
       "inherited": false,
-      "example": "\"example\""
+      "example": "'top'"
     }
   ],
   "examples": [
