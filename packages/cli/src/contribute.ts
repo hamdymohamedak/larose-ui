@@ -1,21 +1,34 @@
-import { access, mkdir, readFile, writeFile } from 'node:fs/promises';
+import { access, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import {
+  ALL_UI_PACKAGE_IDS,
   appendChangelogUnreleased,
+  color,
   formatContributeChecklist,
   formatContributeReport,
+  formatContributeRemoveReport,
+  formatCreatedFilesSection,
+  formatDisplayPathsSection,
+  formatNextStepsSection,
   formatPackageList,
   isSandboxHookTarget,
   planComponentScaffold,
   planContributeExtras,
+  planContributeRemoval,
+  removeScaffoldChangelogBullet,
   resolvePackageIds,
   resolvePackageProfile,
+  shouldScaffoldStory,
+  stripIndexExportLines,
+  stripSandboxHookComment,
+  stripScenarioWiring,
   toPascalCase,
   type ContributeExtrasOptions,
   type ContributeExtrasPlan,
   type SandboxHookTarget,
   type ScaffoldPlan,
 } from '@larose-ui/migration';
+import { resolveSafePath } from './pathSafety.js';
 
 async function pathExists(path: string): Promise<boolean> {
   try {
@@ -35,7 +48,10 @@ export interface ContributeOptions {
   skipStyles?: boolean;
   skipChangelog?: boolean;
   skipIndex?: boolean;
+  /** Force Storybook stub (default already on for react/all) */
   withStory?: boolean;
+  /** Skip the default Storybook stub */
+  skipStory?: boolean;
   /** Existing kitchen-sink scenario id (forms, overlays, …) */
   sandboxHook?: string;
   /** New shared flow scenario id (kebab-case) */
@@ -145,9 +161,14 @@ async function updateChangelog(
   return `packages/${packageId}/CHANGELOG.md`;
 }
 
-function parseExtrasOptions(options: ContributeOptions): ContributeExtrasOptions {
+function parseExtrasOptions(
+  options: ContributeOptions,
+  packageIds: string[],
+): ContributeExtrasOptions {
   const extras: ContributeExtrasOptions = {};
-  if (options.withStory) extras.withStory = true;
+  if (shouldScaffoldStory(packageIds, options)) {
+    extras.withStory = true;
+  }
   if (options.sandboxHook) {
     if (!isSandboxHookTarget(options.sandboxHook)) {
       throw new Error(
@@ -330,34 +351,43 @@ function buildReport(
   plans: ScaffoldPlan[],
   created: string[],
   extrasNotes: string[],
+  storyPath?: string,
 ): string {
   const primary = plans[0]!;
   if (plans.length === 1) {
     return formatContributeReport(primary, created, {
       extrasNotes,
+      storyPath,
       appendix: formatContributeChecklist(),
     });
   }
 
   const header = [
-    `✓ Scaffolded ${primary.name} across ${plans.map((p) => p.packageId).join(', ')} (guided parity)`,
+    color.success(
+      `✓ Scaffolded ${primary.name} across ${plans.map((p) => p.packageId).join(', ')} (guided parity)`,
+    ),
     '',
-    'Created files:',
-    ...created.map((p) => `  - ${p}`),
+    ...formatCreatedFilesSection(created),
     '',
   ];
 
   for (const plan of plans) {
-    header.push(`Package @larose-ui/${plan.packageId}:`);
-    if (plan.displayPaths.component) header.push(`  Component: ${plan.displayPaths.component}`);
-    if (plan.displayPaths.test) header.push(`  Test:      ${plan.displayPaths.test}`);
-    if (plan.displayPaths.styles) header.push(`  Styles:    ${plan.displayPaths.styles}`);
+    header.push(color.heading(`Package @larose-ui/${plan.packageId}:`));
+    header.push(...formatDisplayPathsSection(plan.displayPaths).map((line) => `  ${line}`));
     header.push('');
   }
 
-  header.push('Next steps:', ...primary.nextSteps.map((s) => `  • ${s}`));
+  if (storyPath) {
+    header.push(`${color.cyan('Story:')} ${color.green(storyPath)}`, '');
+  }
+
+  header.push(...formatNextStepsSection(primary.nextSteps));
   if (extrasNotes.length) {
-    header.push('', 'Extras:', ...extrasNotes.map((s) => `  • ${s}`));
+    header.push(
+      '',
+      color.heading(storyPath ? 'Storybook preview:' : 'Extras:'),
+      ...extrasNotes.map((s) => `  ${color.yellow('•')} ${s}`),
+    );
   }
   header.push('', ...formatContributeChecklist());
   return header.join('\n');
@@ -374,7 +404,7 @@ export async function runContributeComponent(
   options: ContributeOptions = {},
 ): Promise<ContributeResult> {
   const packageIds = resolvePackageIds(packageId);
-  const extrasOpts = parseExtrasOptions(options);
+  const extrasOpts = parseExtrasOptions(options, packageIds);
   const extras = planContributeExtras(name, extrasOpts);
 
   const plans: ScaffoldPlan[] = [];
@@ -414,11 +444,11 @@ export async function runContributeComponent(
       created: wouldCreate,
       skipped: [],
       report: [
-        `[dry-run] Would scaffold ${plans[0]!.name} for: ${packageIds.join(', ')}`,
+        color.yellow(`[dry-run] Would scaffold ${plans[0]!.name} for: ${packageIds.join(', ')}`),
         '',
-        ...wouldCreate.map((p) => `  - ${p}`),
+        ...wouldCreate.map((p) => `  - ${color.green(p)}`),
         '',
-        buildReport(plans, wouldCreate, extras.notes),
+        buildReport(plans, wouldCreate, extras.notes, extras.displayPaths.story),
       ].join('\n'),
     };
   }
@@ -447,10 +477,208 @@ export async function runContributeComponent(
     plans,
     created,
     skipped,
-    report: buildReport(plans, created, extras.notes),
+    report: buildReport(plans, created, extras.notes, extras.displayPaths.story),
   };
 }
 
 export function contributeListReport(): string {
   return formatPackageList();
+}
+
+export interface ContributeRemoveOptions {
+  dryRun?: boolean;
+  skipStyles?: boolean;
+  sandboxHook?: string;
+  scenario?: string;
+}
+
+export interface ContributeRemoveResult {
+  deleted: string[];
+  updated: string[];
+  skipped: string[];
+  kept: string[];
+  report: string;
+}
+
+function isStylesPath(rel: string): boolean {
+  return rel.replace(/\\/g, '/').startsWith('packages/styles/');
+}
+
+async function adapterComponentExists(
+  rootDir: string,
+  packageId: string,
+  name: string,
+): Promise<boolean> {
+  const packageJson = await loadPackageJson(rootDir, packageId).catch(() => undefined);
+  const plan = planComponentScaffold(packageId, name, {
+    packageJson,
+    skipStyles: true,
+  });
+  const component = plan.displayPaths.component;
+  return Boolean(component && (await pathExists(join(rootDir, component))));
+}
+
+/**
+ * Undo a contribute scaffold: delete the named unit folders, strip barrel exports and
+ * changelog bullets, and clean optional extras (story / sandbox hook / scenario) if present.
+ */
+export async function runContributeRemove(
+  rootDir: string,
+  packageId: string,
+  name: string,
+  options: ContributeRemoveOptions = {},
+): Promise<ContributeRemoveResult> {
+  const packageIds = resolvePackageIds(packageId);
+  const extrasOpts = parseExtrasOptions(
+    {
+      sandboxHook: options.sandboxHook,
+      scenario: options.scenario,
+      withStory: true,
+    },
+    packageIds,
+  );
+
+  const packageJsonById: Record<string, { name?: string; scripts?: Record<string, string> }> = {};
+  for (const id of packageIds) {
+    const json = await loadPackageJson(rootDir, id).catch(() => undefined);
+    if (json) packageJsonById[id] = json;
+  }
+
+  const plan = planContributeRemoval(packageIds, name, {
+    packageJsonById,
+    skipStyles: options.skipStyles,
+    extras: extrasOpts,
+  });
+
+  const otherAdapters = ALL_UI_PACKAGE_IDS.filter((id) => !packageIds.includes(id));
+  let keepStyles = Boolean(options.skipStyles);
+  if (!keepStyles) {
+    for (const id of otherAdapters) {
+      if (await adapterComponentExists(rootDir, id, plan.name)) {
+        keepStyles = true;
+        break;
+      }
+    }
+  }
+
+  const kept: string[] = [];
+  let directories = plan.directories;
+  let files = [...plan.files, ...plan.optionalFiles];
+  let changelog = plan.changelog;
+  if (keepStyles) {
+    kept.push(...directories.filter(isStylesPath).map((d) => `${d}/`));
+    directories = directories.filter((d) => !isStylesPath(d));
+    files = files.filter((f) => !isStylesPath(f));
+    changelog = changelog.filter((c) => c.packageId !== 'styles');
+  }
+
+  const optional = new Set(plan.optionalFiles);
+  const deleted: string[] = [];
+  const updated: string[] = [];
+  const skipped: string[] = [];
+
+  const existingDirs: string[] = [];
+  for (const dir of directories) {
+    const abs = resolveSafePath(rootDir, dir);
+    if (await pathExists(abs)) existingDirs.push(dir);
+    else skipped.push(`${dir}/`);
+  }
+
+  const existingFiles: string[] = [];
+  for (const file of files) {
+    const normalized = file.replace(/\\/g, '/');
+    if (existingDirs.some((d) => normalized === d || normalized.startsWith(`${d}/`))) {
+      continue;
+    }
+    const abs = resolveSafePath(rootDir, file);
+    if (await pathExists(abs)) existingFiles.push(file);
+    else if (!optional.has(file)) skipped.push(file);
+  }
+
+  for (const update of plan.indexUpdates) {
+    const abs = resolveSafePath(rootDir, update.path);
+    if (!(await pathExists(abs))) {
+      skipped.push(update.path);
+      continue;
+    }
+    const current = await readFile(abs, 'utf-8');
+    const next = stripIndexExportLines(current, update.exportLines);
+    if (next === current) {
+      skipped.push(update.path);
+      continue;
+    }
+    updated.push(update.path);
+    if (!options.dryRun) await writeFile(abs, next);
+  }
+
+  for (const entry of changelog) {
+    const rel = `packages/${entry.packageId}/CHANGELOG.md`;
+    const abs = resolveSafePath(rootDir, rel);
+    if (!(await pathExists(abs))) {
+      skipped.push(rel);
+      continue;
+    }
+    const current = await readFile(abs, 'utf-8');
+    const next = removeScaffoldChangelogBullet(current, plan.name);
+    if (next === current) {
+      skipped.push(rel);
+      continue;
+    }
+    updated.push(rel);
+    if (!options.dryRun) await writeFile(abs, next);
+  }
+
+  for (const hook of plan.hookStrips) {
+    const abs = resolveSafePath(rootDir, hook.path);
+    if (!(await pathExists(abs))) continue;
+    const current = await readFile(abs, 'utf-8');
+    if (!current.includes(hook.comment)) continue;
+    const next = stripSandboxHookComment(current, hook.comment);
+    if (next === current) continue;
+    updated.push(hook.path);
+    if (!options.dryRun) await writeFile(abs, next);
+  }
+
+  for (const wire of plan.scenarioWiring) {
+    const abs = resolveSafePath(rootDir, wire.path);
+    if (!(await pathExists(abs))) continue;
+    const current = await readFile(abs, 'utf-8');
+    const next = stripScenarioWiring(current, wire);
+    if (next === current) continue;
+    updated.push(wire.path);
+    if (!options.dryRun) await writeFile(abs, next);
+  }
+
+  if (!options.dryRun) {
+    for (const file of existingFiles) {
+      await rm(resolveSafePath(rootDir, file));
+    }
+    for (const dir of existingDirs) {
+      await rm(resolveSafePath(rootDir, dir), { recursive: true, force: true });
+    }
+  }
+
+  deleted.push(...existingDirs.map((d) => `${d}/`), ...existingFiles);
+
+  if (deleted.length === 0 && updated.length === 0) {
+    throw new Error(
+      `Nothing to remove for ${plan.name} in ${packageIds.join(', ')}. Run \`make contribute-list\` for targets.`,
+    );
+  }
+
+  return {
+    deleted,
+    updated,
+    skipped,
+    kept,
+    report: formatContributeRemoveReport({
+      name: plan.name,
+      packageIds,
+      deleted,
+      updated,
+      skipped,
+      kept,
+      dryRun: options.dryRun,
+    }),
+  };
 }

@@ -3,6 +3,8 @@
  * Plans stubs only — implementation stays with the contributor.
  */
 
+import { color } from './cliColor.js';
+
 export type ScaffoldKind = 'ui-component' | 'module';
 
 export type FrameworkId =
@@ -100,7 +102,8 @@ export const PACKAGE_PROFILES: Record<string, PackageProfile> = {
       ...UI_TIPS_SHARED,
       'Parity scaffold: make contribute NAME=X PACKAGE=all',
       'Rebuild styles if CSS changed: pnpm --filter @larose-ui/styles build',
-      'Optional: --with-story · Preview: pnpm sandbox:react | pnpm dev',
+      'Storybook preview: pnpm --filter @larose-ui/styles build && pnpm --filter @larose-ui/react build && pnpm dev',
+      'Optional sandbox: --with-sandbox-hook forms · pnpm sandbox:react',
     ],
   },
   vue: {
@@ -499,39 +502,44 @@ export function planComponentScaffold(
 
 export function formatPackageList(profiles: PackageProfile[] = listPackageProfiles()): string {
   const lines = [
-    'laRose contribution targets (guided workflow)',
+    color.success('laRose contribution targets (guided workflow)'),
     '',
-    'Workflow: Core → Styles → Adapters → Vitest → Story → Sandbox (if needed) → Playwright (if critical) → Contracts → Changeset',
+    `${color.heading('Workflow:')} Core → Styles → Adapters → Vitest → Story → Sandbox (if needed) → Playwright (if critical) → Contracts → Changeset`,
     '',
-    'UI component packages (creates adapter + shared CSS + test):',
+    color.heading('UI component packages (creates adapter + shared CSS + test):'),
   ];
   for (const p of profiles.filter((x) => x.kind === 'ui-component')) {
-    lines.push(`  ${p.id.padEnd(12)} ${p.summary}`);
+    lines.push(`  ${color.cyan(p.id.padEnd(12))} ${p.summary}`);
   }
-  lines.push(`  ${'all'.padEnd(12)} React + Vue + Svelte adapters (shared CSS once)`);
+  lines.push(`  ${color.cyan('all'.padEnd(12))} React + Vue + Svelte adapters (shared CSS once)`);
   const modules = profiles.filter((x) => x.kind === 'module');
   if (modules.length > 0) {
-    lines.push('', 'Module packages (creates TS module + test, no CSS):');
+    lines.push('', color.heading('Module packages (creates TS module + test, no CSS):'));
     for (const p of modules) {
-      lines.push(`  ${p.id.padEnd(12)} ${p.summary}`);
+      lines.push(`  ${color.cyan(p.id.padEnd(12))} ${p.summary}`);
     }
   }
   lines.push(
     '',
-    'Any other packages/* id works as a generic module scaffold.',
+    color.dim('Any other packages/* id works as a generic module scaffold.'),
     '',
-    'Usage:',
-    '  make contribute NAME=StatusPill PACKAGE=all',
-    '  make contribute NAME=StatusPill PACKAGE=react WITH_STORY=1',
-    '  make contribute NAME=StatusPill PACKAGE=all SANDBOX_HOOK=forms',
-    '  make contribute NAME=StatusPill PACKAGE=all SCENARIO=my-flow',
-    '  larose contribute component StatusPill --package all --with-story',
-    '  larose contribute list',
+    color.heading('Usage:'),
+    `  ${color.green('make contribute NAME=StatusPill PACKAGE=all')}`,
+    `  ${color.green('make contribute NAME=StatusPill PACKAGE=react')}`,
+    `  ${color.green('make contribute NAME=StatusPill PACKAGE=all SANDBOX_HOOK=forms')}`,
+    `  ${color.green('make contribute NAME=StatusPill PACKAGE=all SCENARIO=my-flow')}`,
+    `  ${color.green('larose contribute component StatusPill --package all')}`,
+    `  ${color.green('make contribute-list')}`,
     '',
-    'Optional flags (never default):',
-    '  --with-story              Storybook stub under apps/playground/stories/',
-    '  --with-sandbox-hook <id>  TODO mount comment in existing scenario (forms|overlays|…)',
-    '  --scenario <flow-id>      New shared kitchen-sink flow (not per-component)',
+    color.heading('Remove a scaffold:'),
+    `  ${color.yellow('make contribute-remove NAME=StatusPill PACKAGE=react')}`,
+    `  ${color.yellow('make contribute-remove NAME=StatusPill PACKAGE=all')}`,
+    `  ${color.yellow('larose contribute remove StatusPill --package react --dry-run')}`,
+    '',
+    color.heading('Optional flags:'),
+    `  ${color.cyan('--skip-story')}              Skip default Storybook stub (react/all create one)`,
+    `  ${color.cyan('--with-sandbox-hook <id>')}  TODO mount comment in existing scenario (forms|overlays|…)`,
+    `  ${color.cyan('--scenario <flow-id>')}      New shared kitchen-sink flow (not per-component)`,
   );
   return lines.join('\n');
 }
@@ -568,33 +576,60 @@ export function appendChangelogUnreleased(existing: string, message: string): st
   return lines.join('\n');
 }
 
+export function formatCreatedFilesSection(created: string[]): string[] {
+  return [color.success('Created files:'), ...created.map((p) => `  - ${color.green(p)}`)];
+}
+
+export function formatDisplayPathsSection(displayPaths: ScaffoldPlan['displayPaths'] & { story?: string }): string[] {
+  const lines: string[] = [];
+  if (displayPaths.component) {
+    lines.push(`${color.cyan('Component:')} ${color.green(displayPaths.component)}`);
+  }
+  if (displayPaths.test) {
+    lines.push(`${color.cyan('Test:')}      ${color.green(displayPaths.test)}`);
+  }
+  if (displayPaths.styles) {
+    lines.push(`${color.cyan('Styles:')}    ${color.green(displayPaths.styles)}`);
+  }
+  if (displayPaths.story) {
+    lines.push(`${color.cyan('Story:')}     ${color.green(displayPaths.story)}`);
+  }
+  return lines;
+}
+
+export function formatNextStepsSection(steps: string[]): string[] {
+  return [color.heading('Next steps:'), ...steps.map((s) => `  ${color.yellow('•')} ${s}`)];
+}
+
 export function formatContributeReport(
   plan: ScaffoldPlan,
   created: string[],
-  options: { extrasNotes?: string[]; appendix?: string[] } = {},
+  options: { extrasNotes?: string[]; appendix?: string[]; storyPath?: string } = {},
 ): string {
   const lines = [
-    `✓ Scaffolded ${plan.name} in ${plan.npmName} (${plan.kind})`,
+    color.success(`✓ Scaffolded ${plan.name} in ${plan.npmName} (${plan.kind})`),
     '',
-    'Created files:',
-    ...created.map((p) => `  - ${p}`),
+    ...formatCreatedFilesSection(created),
     '',
   ];
 
-  if (plan.displayPaths.component) {
-    lines.push(`Component: ${plan.displayPaths.component}`);
-  }
-  if (plan.displayPaths.test) {
-    lines.push(`Test:      ${plan.displayPaths.test}`);
-  }
-  if (plan.displayPaths.styles) {
-    lines.push(`Styles:    ${plan.displayPaths.styles}`);
+  const display = formatDisplayPathsSection({
+    ...plan.displayPaths,
+    story: options.storyPath,
+  });
+  if (display.length) {
+    lines.push(...display, '');
   }
 
-  lines.push('', 'Next steps:', ...plan.nextSteps.map((s) => `  • ${s}`));
+  lines.push(...formatNextStepsSection(plan.nextSteps));
 
   if (options.extrasNotes?.length) {
-    lines.push('', 'Extras:', ...options.extrasNotes.map((s) => `  • ${s}`));
+    const heading = options.storyPath ? 'Storybook preview:' : 'Extras:';
+    lines.push(
+      '',
+      color.heading(heading),
+      ...options.extrasNotes.map((s) => `  ${color.yellow('•')} ${s}`),
+    );
   }
 
   if (options.appendix?.length) {

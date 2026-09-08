@@ -1,0 +1,310 @@
+.island {
+  --island-bg: #000000;
+  --island-fg: #f5f5f7;
+  --island-fg-dim: #8e8e93;
+  --island-radius-idle: 20px;
+  --island-radius-expanded: 28px;
+  --island-height-idle: 37px;
+  --island-height-media: 64px;
+  --island-height-call: 96px;
+  --island-width-idle: 118px;
+  --island-width-media: 300px;
+  --island-width-call: 340px;
+  --accent-green: #32d74b;
+  --accent-red: #ff453a;
+  --accent-purple: #bf5af2;
+  --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --spring-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 0.38s;
+  --duration-med: 0.55s;
+
+  position: relative;
+  background: var(--island-bg);
+  color: var(--island-fg);
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif;
+  border-radius: var(--island-radius-idle);
+  height: var(--island-height-idle);
+  width: var(--island-width-idle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+  will-change: width, height, border-radius;
+  transition:
+    width var(--duration-med) var(--spring),
+    height var(--duration-med) var(--spring),
+    border-radius var(--duration-fast) var(--spring-soft),
+    box-shadow var(--duration-fast) ease;
+  box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.6);
+}
+
+.island,
+.island * {
+  box-sizing: border-box;
+}
+
+.island:hover {
+  box-shadow: 0 10px 26px -6px rgba(0, 0, 0, 0.75);
+}
+
+.island:active {
+  transform: scale(0.97);
+}
+
+.island[data-state='idle'] {
+  width: var(--island-width-idle);
+  height: var(--island-height-idle);
+  border-radius: var(--island-radius-idle);
+}
+
+.island[data-state='media'] {
+  width: var(--island-width-media);
+  height: var(--island-height-media);
+  border-radius: var(--island-radius-expanded);
+}
+
+.island[data-state='call'] {
+  width: var(--island-width-call);
+  height: var(--island-height-call);
+  border-radius: 32px;
+}
+
+.cam {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #2c2c2e, #000 70%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+  flex-shrink: 0;
+  transition: opacity var(--duration-fast) ease;
+}
+
+.island[data-state='idle'] .cam {
+  opacity: 1;
+}
+
+.island[data-state='media'] .cam,
+.island[data-state='call'] .cam {
+  opacity: 0;
+}
+
+.panel {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transform: scale(0.92);
+  pointer-events: none;
+  transition:
+    opacity var(--duration-fast) var(--spring-soft) 0.08s,
+    transform var(--duration-fast) var(--spring-soft) 0.08s;
+}
+
+.island[data-state] .panel[data-panel-for].isActive {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+.panelIdle {
+  justify-content: center;
+  width: 100%;
+  font-size: 12px;
+  color: var(--island-fg-dim);
+  letter-spacing: 0.01em;
+}
+
+.panelMedia {
+  width: 100%;
+  padding: 0 14px;
+  gap: 12px;
+}
+
+.albumArt {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, var(--accent-purple), #5e5ce6 60%, #0a84ff);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+.albumArt::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.35), transparent 55%);
+}
+
+.trackInfo {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.trackTitle {
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.trackArtist {
+  font-size: 11.5px;
+  color: var(--island-fg-dim);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.waveform {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.waveform span {
+  width: 3px;
+  border-radius: 2px;
+  background: var(--accent-green);
+  animation: wave 1.05s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.waveform span:nth-child(1) {
+  animation-delay: -0.9s;
+}
+
+.waveform span:nth-child(2) {
+  animation-delay: -0.6s;
+}
+
+.waveform span:nth-child(3) {
+  animation-delay: -0.3s;
+}
+
+.waveform span:nth-child(4) {
+  animation-delay: 0s;
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    height: 5px;
+  }
+  50% {
+    height: 18px;
+  }
+}
+
+.island[data-state='media'] .waveform span {
+  animation-play-state: running;
+}
+
+.island:not([data-state='media']) .waveform span {
+  animation-play-state: paused;
+}
+
+.panelCall {
+  width: 100%;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 14px 16px;
+  gap: 10px;
+}
+
+.callTop {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.callMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.callName {
+  font-size: 13.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.callSub {
+  font-size: 11.5px;
+  color: var(--island-fg-dim);
+}
+
+.callActions {
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.callBtn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    transform 0.15s var(--spring),
+    filter 0.15s ease;
+}
+
+.callBtn:hover {
+  filter: brightness(1.12);
+}
+
+.callBtn:active {
+  transform: scale(0.88);
+}
+
+.callBtnReject {
+  background: var(--accent-red);
+}
+
+.callBtnAccept {
+  background: var(--accent-green);
+}
+
+.callBtn svg {
+  width: 15px;
+  height: 15px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .island,
+  .panel,
+  .waveform span,
+  .callBtn {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+.island:focus-visible {
+  outline: 2px solid #0a84ff;
+  outline-offset: 3px;
+}

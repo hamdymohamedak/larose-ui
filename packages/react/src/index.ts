@@ -803,3 +803,6 @@ export type {
   LiquidGlassChromeProps,
   ResolvedLiquidGlassOptics,
 } from './LiquidGlass';
+
+export { Activity } from './Activity/Activity';
+export type { ActivityProps } from './Activity/Activity';

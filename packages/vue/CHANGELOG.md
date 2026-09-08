@@ -69,6 +69,8 @@
 
 ### Minor Changes
 
+- Scaffolded Activity component stub for contributor implementation.
+
 - Remove WebView components to match React web-first surface.
 
 ## 0.2.0

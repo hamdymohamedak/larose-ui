@@ -2,7 +2,7 @@ import { mkdtemp, mkdir, readFile, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { assertPackageStructure, runContributeComponent } from './contribute';
+import { assertPackageStructure, runContributeComponent, runContributeRemove } from './contribute';
 import { planComponentScaffold } from '@larose-ui/migration';
 
 async function fakeMonorepo(opts: { withVueSvelte?: boolean; withSandbox?: boolean } = {}): Promise<string> {
@@ -130,6 +130,10 @@ describe('runContributeComponent', () => {
     expect(result.created).toContain(
       'packages/styles/src/components/StatusPill/StatusPill.module.css',
     );
+    expect(result.created).toContain('apps/playground/stories/StatusPill.stories.tsx');
+    expect(result.report).toContain('Storybook preview:');
+    expect(result.report).toContain('pnpm dev');
+    expect(result.report).toContain('Foundation/StatusPill');
     expect(result.report).toContain('Contributor checklist:');
     expect(result.report).toContain('Core → Styles → Adapters');
 
@@ -166,10 +170,9 @@ describe('runContributeComponent', () => {
     expect(result.report).toContain('guided parity');
   });
 
-  it('creates story stub and sandbox hook when requested', async () => {
+  it('creates story stub by default and sandbox hook when requested', async () => {
     const root = await fakeMonorepo({ withSandbox: true });
     const result = await runContributeComponent(root, 'react', 'StatusPill', {
-      withStory: true,
       sandboxHook: 'forms',
     });
 
@@ -179,7 +182,15 @@ describe('runContributeComponent', () => {
       'utf-8',
     );
     expect(forms).toContain('TODO: mount StatusPill');
-    expect(result.report).toContain('Story stub');
+    expect(result.report).toContain('Storybook preview:');
+  });
+
+  it('skips story when --skip-story is set', async () => {
+    const root = await fakeMonorepo();
+    const result = await runContributeComponent(root, 'react', 'StatusPill', {
+      skipStory: true,
+    });
+    expect(result.created).not.toContain('apps/playground/stories/StatusPill.stories.tsx');
   });
 
   it('wires a new shared scenario flow', async () => {
@@ -212,6 +223,111 @@ describe('runContributeComponent', () => {
     await expect(
       readFile(join(root, 'packages/react/src/Ghost/Ghost.tsx'), 'utf-8'),
     ).rejects.toThrow();
+  });
+});
+
+describe('runContributeRemove', () => {
+  it('removes react stubs, styles, Storybook story, index export, and changelog bullet', async () => {
+    const root = await fakeMonorepo();
+    await runContributeComponent(root, 'react', 'StatusPill');
+    const result = await runContributeRemove(root, 'react', 'StatusPill');
+
+    expect(result.deleted.some((p) => p.includes('packages/react/src/StatusPill'))).toBe(true);
+    expect(result.deleted.some((p) => p.includes('packages/styles/src/components/StatusPill'))).toBe(
+      true,
+    );
+    expect(result.deleted).toContain('apps/playground/stories/StatusPill.stories.tsx');
+    expect(result.report).toContain('Deleted Storybook:');
+    await expect(
+      readFile(join(root, 'packages/react/src/StatusPill/StatusPill.tsx'), 'utf-8'),
+    ).rejects.toThrow();
+    await expect(
+      readFile(
+        join(root, 'packages/styles/src/components/StatusPill/StatusPill.module.css'),
+        'utf-8',
+      ),
+    ).rejects.toThrow();
+    await expect(
+      readFile(join(root, 'apps/playground/stories/StatusPill.stories.tsx'), 'utf-8'),
+    ).rejects.toThrow();
+
+    const index = await readFile(join(root, 'packages/react/src/index.ts'), 'utf-8');
+    expect(index).not.toContain('StatusPill');
+
+    const changelog = await readFile(join(root, 'packages/react/CHANGELOG.md'), 'utf-8');
+    expect(changelog).not.toContain('StatusPill');
+  });
+
+  it('removes a hand-written Storybook story for the same component name', async () => {
+    const root = await fakeMonorepo();
+    await runContributeComponent(root, 'react', 'StatusPill', { skipStory: true });
+    await mkdir(join(root, 'apps/playground/stories'), { recursive: true });
+    await writeFile(
+      join(root, 'apps/playground/stories/StatusPill.stories.tsx'),
+      "export default { title: 'Foundation/StatusPill' };\n",
+    );
+
+    const result = await runContributeRemove(root, 'react', 'StatusPill');
+    expect(result.deleted).toContain('apps/playground/stories/StatusPill.stories.tsx');
+    await expect(
+      readFile(join(root, 'apps/playground/stories/StatusPill.stories.tsx'), 'utf-8'),
+    ).rejects.toThrow();
+  });
+
+  it('does not delete ActivityView when removing Activity', async () => {
+    const root = await fakeMonorepo();
+    await mkdir(join(root, 'packages/react/src/Sharing'), { recursive: true });
+    await writeFile(
+      join(root, 'packages/react/src/Sharing/ActivityView.tsx'),
+      'export function ActivityView() { return null; }\n',
+    );
+    const existingIndex = await readFile(join(root, 'packages/react/src/index.ts'), 'utf-8');
+    await writeFile(
+      join(root, 'packages/react/src/index.ts'),
+      `${existingIndex}export { ActivityView } from './Sharing/ActivityView';\n`,
+    );
+    await runContributeComponent(root, 'react', 'Activity');
+    await runContributeRemove(root, 'react', 'Activity');
+
+    const view = await readFile(
+      join(root, 'packages/react/src/Sharing/ActivityView.tsx'),
+      'utf-8',
+    );
+    expect(view).toContain('ActivityView');
+    const index = await readFile(join(root, 'packages/react/src/index.ts'), 'utf-8');
+    expect(index).toContain("export { ActivityView } from './Sharing/ActivityView'");
+    expect(index).not.toContain("export { Activity } from './Activity/Activity'");
+  });
+
+  it('keeps shared styles when another adapter still exists', async () => {
+    const root = await fakeMonorepo({ withVueSvelte: true });
+    await runContributeComponent(root, 'all', 'StatusPill');
+    const result = await runContributeRemove(root, 'react', 'StatusPill');
+
+    expect(result.kept.some((p) => p.includes('packages/styles/src/components/StatusPill'))).toBe(
+      true,
+    );
+    const styles = await readFile(
+      join(root, 'packages/styles/src/components/StatusPill/StatusPill.module.css'),
+      'utf-8',
+    );
+    expect(styles).toContain('.root');
+  });
+
+  it('dry-run does not delete files', async () => {
+    const root = await fakeMonorepo();
+    await runContributeComponent(root, 'react', 'Ghost');
+    const result = await runContributeRemove(root, 'react', 'Ghost', { dryRun: true });
+    expect(result.report).toContain('[dry-run]');
+    const component = await readFile(join(root, 'packages/react/src/Ghost/Ghost.tsx'), 'utf-8');
+    expect(component).toContain('Ghost');
+  });
+
+  it('throws when nothing matches', async () => {
+    const root = await fakeMonorepo();
+    await expect(runContributeRemove(root, 'react', 'MissingThing')).rejects.toThrow(
+      /Nothing to remove/i,
+    );
   });
 });
 

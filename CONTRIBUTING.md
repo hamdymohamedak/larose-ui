@@ -29,6 +29,7 @@ Useful commands during development:
 | `pnpm run doctor` | Quality gates (deprecations, contracts, a11y) |
 | `make contribute-list` | List packages for contribution scaffolds |
 | `make contribute NAME=X PACKAGE=react` | Scaffold new component/module stubs |
+| `make contribute-remove NAME=X PACKAGE=react` | Remove a contribute scaffold (adapter + styles + exports) |
 | `make test-all` | Full CI suite locally |
 
 ## Branch workflow
@@ -56,10 +57,14 @@ make contribute NAME=StatusPill PACKAGE=all
 # Single package
 make contribute NAME=StatusPill PACKAGE=react
 
+# Undo a scaffold (same paths contribute created)
+make contribute-remove NAME=StatusPill PACKAGE=react
+make contribute-remove NAME=StatusPill PACKAGE=all DRY_RUN=1
+
 # Optional extras (never default)
-make contribute NAME=StatusPill PACKAGE=all WITH_STORY=1
 make contribute NAME=StatusPill PACKAGE=all SANDBOX_HOOK=forms
 make contribute NAME=StatusPill PACKAGE=all SCENARIO=my-flow
+make contribute NAME=StatusPill PACKAGE=react SKIP_STORY=1
 
 # Or via the CLI directly
 pnpm --filter @larose-ui/cli build
@@ -70,7 +75,9 @@ node packages/cli/dist/cli.js contribute component StatusPill --package all --dr
 
 **Sandbox rule of thumb:** simple components need Story + Vitest only; integration-critical components hook an existing kitchen-sink scenario (`forms` / `overlays` / …); portal/focus/keyboard/runtime flows may need a shared scenario + Playwright. Do **not** create per-component sandboxes.
 
-The command prints created paths, next steps, and a contributor checklist. It refuses to overwrite existing files and checks that the package source layout exists first.
+The command creates adapter stubs, shared CSS, a Storybook story under `apps/playground/stories/`, and prints preview commands (`pnpm dev` → http://localhost:6006). It refuses to overwrite existing files and checks that the package source layout exists first.
+
+`make contribute-remove NAME=X PACKAGE=react` deletes the matching unit folder, shared CSS folder, Storybook story (`apps/playground/stories/X.stories.tsx`), barrel exports, and Unreleased changelog bullet. It does **not** delete namesakes such as `ActivityView` when removing `Activity`. Shared styles stay if Vue/Svelte adapters for that name still exist.
 
 ### Packages and apps
 

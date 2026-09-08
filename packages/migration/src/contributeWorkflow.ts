@@ -3,6 +3,7 @@
  * Complements componentScaffold — stubs + checklist, not a sandbox-per-component generator.
  */
 
+import { color } from './cliColor.js';
 import { toPascalCase, type ScaffoldFile } from './componentScaffold.js';
 
 /** Kitchen-sink scenario ids safe to hook with `--with-sandbox-hook`. */
@@ -29,7 +30,7 @@ export const CONTRIBUTE_WORKFLOW_ORDER =
 export const CONTRIBUTE_CHECKLIST = [
   'Implement adapters (and shared core logic if behavior is framework-agnostic)',
   'Add/finish Vitest tests for cores + adapters',
-  'Add Storybook story for docs / visual development (or use --with-story)',
+  'Open Storybook (pnpm dev) and finish the story under Foundation/<Name>',
   'If integration-critical: mount in an existing sandbox scenario (or --with-sandbox-hook)',
   'If critical user flow (portal/focus/keyboard/runtime): add Playwright in apps/sandbox-e2e',
   'Update contracts: pnpm generate:contracts',
@@ -44,8 +45,13 @@ export const CONTRIBUTE_SANDBOX_RULES = [
 ] as const;
 
 export interface ContributeExtrasOptions {
-  /** Create apps/playground/stories/{Name}.stories.tsx stub */
+  /**
+   * Create apps/playground/stories/{Name}.stories.tsx stub.
+   * Defaults on for React / `all` scaffolds; use skipStory to opt out.
+   */
   withStory?: boolean;
+  /** Skip the default Storybook stub */
+  skipStory?: boolean;
   /**
    * Append TODO mount comment to an existing kitchen-sink scenario
    * in react/vue/svelte sandboxes (e.g. forms, overlays).
@@ -110,19 +116,80 @@ const meta: Meta<typeof ${name}> = {
   tags: ['autodocs', 'fw-react'],
   parameters: {
     // TODO: add laRose.crossFramework registry key when Vue+Svelte adapters exist
+    layout: 'centered',
   },
 };
 
 export default meta;
 type Story = StoryObj<typeof ${name}>;
 
-/** TODO: replace stub args with real ${name} demos */
+/** Preview ${name} in Storybook — edit props/layout as you implement. */
 export const Default: Story = {
-  args: {
-    children: '${name}',
-  },
+  render: (args) => (
+    <div
+      style={{
+        display: 'grid',
+        placeItems: 'center',
+        minHeight: 280,
+        padding: 24,
+        background: '#1c1c1e',
+        borderRadius: 16,
+      }}
+    >
+      <${name} {...args} />
+    </div>
+  ),
 };
 `;
+}
+
+/** Storybook sidebar title for a contributed UI component. */
+export function storybookSidebarPath(name: string): string {
+  return `Foundation/${toPascalCase(name)}`;
+}
+
+/** Absolute Storybook URL hint (open sidebar if deep-link id differs). */
+export function storybookOpenUrl(name: string): string {
+  const pascal = toPascalCase(name);
+  const slug = pascal
+    .replace(/([a-z0-9])([A-Z])/g, '$1-$2')
+    .replace(/([A-Z])([A-Z][a-z])/g, '$1-$2')
+    .toLowerCase();
+  return `http://localhost:6006/?path=/story/foundation-${slug}--default`;
+}
+
+export function storybookPreviewCommands(): string[] {
+  return [
+    'pnpm --filter @larose-ui/styles build',
+    'pnpm --filter @larose-ui/react build',
+    'pnpm dev',
+  ];
+}
+
+/**
+ * Story stubs are created by default when the scaffold includes React
+ * (`PACKAGE=react` or `PACKAGE=all`). Opt out with skipStory.
+ */
+export function shouldScaffoldStory(
+  packageIds: string[],
+  options: Pick<ContributeExtrasOptions, 'withStory' | 'skipStory'> = {},
+): boolean {
+  if (options.skipStory) return false;
+  if (options.withStory) return true;
+  return packageIds.map((id) => id.toLowerCase()).includes('react');
+}
+
+export function formatStorybookPreviewNotes(name: string, storyPath: string): string[] {
+  const pascal = toPascalCase(name);
+  const sidebar = storybookSidebarPath(pascal);
+  const url = storybookOpenUrl(pascal);
+  return [
+    `Storybook file: ${storyPath}`,
+    `Storybook sidebar: ${sidebar}`,
+    `Preview: ${storybookPreviewCommands().join(' && ')}`,
+    `Open: ${url}`,
+    'If the deep link misses, open http://localhost:6006 and find the story in the sidebar.',
+  ];
 }
 
 function reactScenarioStub(pascal: string, componentName: string): string {
@@ -216,7 +283,8 @@ export function planContributeExtras(
     const storyPath = `apps/playground/stories/${name}.stories.tsx`;
     files.push({ path: storyPath, contents: storyStub(name), role: 'other' });
     displayPaths.story = storyPath;
-    notes.push(`Story stub: ${storyPath} — update quality/visual-baseline.json when ready.`);
+    notes.push(...formatStorybookPreviewNotes(name, storyPath));
+    notes.push('After the story looks right, update quality/visual-baseline.json when needed.');
   }
 
   if (options.sandboxHook) {
@@ -289,13 +357,13 @@ export function planContributeExtras(
 
 export function formatContributeChecklist(): string[] {
   return [
-    'Contributor checklist:',
-    ...CONTRIBUTE_CHECKLIST.map((item) => `  [ ] ${item}`),
+    color.heading('Contributor checklist:'),
+    ...CONTRIBUTE_CHECKLIST.map((item) => `  ${color.yellow('[ ]')} ${item}`),
     '',
-    'Sandbox rule of thumb:',
-    ...CONTRIBUTE_SANDBOX_RULES.map((item) => `  • ${item}`),
+    color.heading('Sandbox rule of thumb:'),
+    ...CONTRIBUTE_SANDBOX_RULES.map((item) => `  ${color.yellow('•')} ${item}`),
     '',
-    `Workflow: ${CONTRIBUTE_WORKFLOW_ORDER}`,
+    `${color.heading('Workflow:')} ${CONTRIBUTE_WORKFLOW_ORDER}`,
   ];
 }
 

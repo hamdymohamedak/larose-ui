@@ -552,3 +552,5 @@ export type {
   LaRoseThemeInput,
   ComponentConfiguration,
 } from '@larose-ui/themes';
+
+export { default as Activity } from './components/Activity/Activity.vue';

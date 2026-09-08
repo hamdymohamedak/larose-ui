@@ -9,8 +9,9 @@ import {
   runRelease,
   runVisualRegressionCheck,
 } from './doctor.js';
-import { contributeListReport, runContributeComponent } from './contribute.js';
+import { contributeListReport, runContributeComponent, runContributeRemove } from './contribute.js';
 import { formatVisualRegressionReport } from '@larose-ui/quality-core';
+import { color } from '@larose-ui/migration';
 import { resolveSafePath } from './pathSafety.js';
 
 const args = process.argv.slice(2);
@@ -43,18 +44,23 @@ Usage:
   larose generate feature Name  Generate full feature scaffold
   larose contribute list                    List contribution package targets
   larose contribute component Name --package react|vue|svelte|all
-       Guided scaffold: adapters + styles + checklist
+       Guided scaffold: adapters + styles + Storybook stub + checklist
        Flags: --dry-run  --skip-styles  --skip-changelog  --skip-index
-              --with-story
+              --skip-story
               --with-sandbox-hook <forms|overlays|...>
               --scenario <flow-id>
+              --with-story (noop; stories are default for react/all)
+  larose contribute remove Name --package react|vue|svelte|all
+       Undo a scaffold: unit folders, styles, barrel exports, changelog
+       Flags: --dry-run  --skip-styles  --with-sandbox-hook  --scenario
   larose release                Monorepo release readiness report
   larose release --json         JSON release report
 
 Makefile shortcuts:
   make contribute NAME=StatusPill PACKAGE=all
-  make contribute NAME=StatusPill PACKAGE=react WITH_STORY=1
+  make contribute NAME=StatusPill PACKAGE=react
   make contribute NAME=X PACKAGE=all SANDBOX_HOOK=forms
+  make contribute-remove NAME=StatusPill PACKAGE=react
   make contribute-list
 `);
 }
@@ -109,12 +115,39 @@ async function main() {
         console.log(contributeListReport());
         break;
       }
+      if (sub === 'remove' || sub === 'rm') {
+        const name = args[2];
+        const packageId = flagValue('--package') ?? flagValue('-p') ?? flagValue('--to');
+        if (!name || !packageId) {
+          console.error(
+            color.red(
+              'Usage: larose contribute remove <Name> --package <react|vue|svelte|all|...>',
+            ),
+          );
+          process.exit(1);
+        }
+        try {
+          const result = await runContributeRemove(rootDir, packageId, name, {
+            dryRun: hasFlag('--dry-run'),
+            skipStyles: hasFlag('--skip-styles'),
+            sandboxHook: flagValue('--with-sandbox-hook'),
+            scenario: flagValue('--scenario'),
+          });
+          console.log(result.report);
+        } catch (err) {
+          console.error(err instanceof Error ? color.red(err.message) : err);
+          process.exit(1);
+        }
+        break;
+      }
       if (sub === 'component' || sub === 'module') {
         const name = args[2];
         const packageId = flagValue('--package') ?? flagValue('-p') ?? flagValue('--to');
         if (!name || !packageId) {
           console.error(
-            'Usage: larose contribute component <Name> --package <react|vue|svelte|all|...>',
+            color.red(
+              'Usage: larose contribute component <Name> --package <react|vue|svelte|all|...>',
+            ),
           );
           process.exit(1);
         }
@@ -125,18 +158,23 @@ async function main() {
             skipChangelog: hasFlag('--skip-changelog'),
             skipIndex: hasFlag('--skip-index'),
             withStory: hasFlag('--with-story'),
+            skipStory: hasFlag('--skip-story'),
             sandboxHook: flagValue('--with-sandbox-hook'),
             scenario: flagValue('--scenario'),
           });
           console.log(result.report);
         } catch (err) {
-          console.error(err instanceof Error ? err.message : err);
+          console.error(err instanceof Error ? color.red(err.message) : err);
           process.exit(1);
         }
         break;
       }
-      console.error(`Unknown contribute subcommand: ${sub}`);
-      console.error('Use: larose contribute list | larose contribute component Name --package react');
+      console.error(color.red(`Unknown contribute subcommand: ${sub}`));
+      console.error(
+        color.yellow(
+          'Use: larose contribute list | larose contribute component Name --package react | larose contribute remove Name --package react',
+        ),
+      );
       process.exit(1);
       break;
     }

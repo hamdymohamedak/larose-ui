@@ -136,10 +136,26 @@ export {
   type GeneratorOptions,
 } from './generators';
 
+export { color, shouldColor } from './cliColor';
+
+export {
+  assertRemovableContributePath,
+  formatContributeRemoveReport,
+  planContributeRemoval,
+  removeScaffoldChangelogBullet,
+  stripIndexExportLines,
+  stripSandboxHookComment,
+  stripScenarioWiring,
+  type ContributeRemovalPlan,
+} from './contributeRemove';
+
 export {
   PACKAGE_PROFILES,
   appendChangelogUnreleased,
   formatContributeReport,
+  formatCreatedFilesSection,
+  formatDisplayPathsSection,
+  formatNextStepsSection,
   formatPackageList,
   listPackageProfiles,
   planComponentScaffold,
@@ -161,12 +177,17 @@ export {
   CONTRIBUTE_WORKFLOW_ORDER,
   SANDBOX_HOOK_TARGETS,
   formatContributeChecklist,
+  formatStorybookPreviewNotes,
   isSandboxHookTarget,
   normalizeScenarioId,
   planContributeExtras,
   resolvePackageIds,
   sandboxHookFilePaths,
   scenarioIdToPascal,
+  shouldScaffoldStory,
+  storybookOpenUrl,
+  storybookPreviewCommands,
+  storybookSidebarPath,
   type ContributeExtrasOptions,
   type ContributeExtrasPlan,
   type SandboxHookTarget,

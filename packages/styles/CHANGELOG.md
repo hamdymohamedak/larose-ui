@@ -41,6 +41,9 @@
 
 ### Minor Changes
 
+- Scaffolded Activity component stub for contributor implementation.
+
+
 - Remove WebView CSS modules.
 
 ## 0.2.0
