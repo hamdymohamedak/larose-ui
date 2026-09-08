@@ -4,4 +4,8 @@
 export const GENERATED_STORY_TITLE_CROSS_FRAMEWORK: Record<string, string> = {
   'Auto/MnemonicLabel': 'mnemonicLabel',
   'Auto/OrnamentButton': 'ornamentButton',
+  // Curated Foundation stories auto-detected via parity-sync:
+  'Foundation/Home Screen Quick Actions': 'homeScreenQuickActions',
+  'Foundation/Menu Bar': 'menuBar',
+  'Foundation/Popover': 'popover',
 };

@@ -583,16 +583,208 @@ export const docsSearchIndex = [
     "title": "Activity",
     "type": "component",
     "path": "/docs/components/activity",
-    "keywords": "Activity Other Activity.className string",
+    "keywords": "Activity Other Activity.actions ActivityAction[] Activity.children ReactNode Activity.className string Activity.defaultExpanded boolean Activity.description string Activity.expandable boolean Activity.expandAfter number Activity.expanded boolean Activity.expandedSize ActivityExpandedSize Activity.hideCollapsedContent boolean Activity.icon ReactNode Activity.leading ReactNode Activity.mode ActivityMode Activity.onExpandedChange (expanded: boolean) => void Activity.priority ActivityPriority Activity.progress number Activity.status ActivityStatus Activity.style CSSProperties Activity.title string Activity.trailing ReactNode",
     "excerpt": "Other component from @larose-ui/react"
   },
   {
+    "id": "prop:activity:actions",
+    "title": "Activity.actions",
+    "type": "prop",
+    "path": "/docs/components/activity#api",
+    "keywords": "Activity actions ActivityAction[] Action buttons for self-closing usage.",
+    "excerpt": "Action buttons for self-closing usage."
+  },
+  {
+    "id": "prop:activity:defaultExpanded",
+    "title": "Activity.defaultExpanded",
+    "type": "prop",
+    "path": "/docs/components/activity#api",
+    "keywords": "Activity defaultExpanded boolean ",
+    "excerpt": "boolean"
+  },
+  {
+    "id": "prop:activity:description",
+    "title": "Activity.description",
+    "type": "prop",
+    "path": "/docs/components/activity#api",
+    "keywords": "Activity description string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:activity:expandable",
+    "title": "Activity.expandable",
+    "type": "prop",
+    "path": "/docs/components/activity#api",
+    "keywords": "Activity expandable boolean Allow click/keyboard to toggle collapsed ↔ expanded.\nDefaults to `true` (Activity is expandable by design). Pass `false` to lock size.",
+    "excerpt": "Allow click/keyboard to toggle collapsed ↔ expanded.\nDefaults to `true` (Activity is expandable by design). Pass `false` to lock size."
+  },
+  {
+    "id": "prop:activity:expandAfter",
+    "title": "Activity.expandAfter",
+    "type": "prop",
+    "path": "/docs/components/activity#api",
+    "keywords": "Activity expandAfter number Auto-expand after this many milliseconds (uncontrolled, or fires `onExpandedChange`).\nUseful for “compress then grow” live-activity timing.",
+    "excerpt": "Auto-expand after this many milliseconds (uncontrolled, or fires `onExpandedChange`).\nUseful for “compress then grow” live-activity timing."
+  },
+  {
+    "id": "prop:activity:expanded",
+    "title": "Activity.expanded",
+    "type": "prop",
+    "path": "/docs/components/activity#api",
+    "keywords": "Activity expanded boolean Controlled expanded state (overrides `mode` between collapsed/expanded).",
+    "excerpt": "Controlled expanded state (overrides `mode` between collapsed/expanded)."
+  },
+  {
+    "id": "prop:activity:expandedSize",
+    "title": "Activity.expandedSize",
+    "type": "prop",
+    "path": "/docs/components/activity#api",
+    "keywords": "Activity expandedSize ActivityExpandedSize Expanded shell size. Default `minHeight` is `9rem`.",
+    "excerpt": "Expanded shell size. Default `minHeight` is `9rem`."
+  },
+  {
+    "id": "prop:activity:hideCollapsedContent",
+    "title": "Activity.hideCollapsedContent",
+    "type": "prop",
+    "path": "/docs/components/activity#api",
+    "keywords": "Activity hideCollapsedContent boolean When true, collapsed state is an empty pill (no icon/title/body).\nContent is revealed only after expand.",
+    "excerpt": "When true, collapsed state is an empty pill (no icon/title/body).\nContent is revealed only after expand."
+  },
+  {
+    "id": "prop:activity:icon",
+    "title": "Activity.icon",
+    "type": "prop",
+    "path": "/docs/components/activity#api",
+    "keywords": "Activity icon ReactNode Leading visual — any icon, emoji, SVG, or image node.",
+    "excerpt": "Leading visual — any icon, emoji, SVG, or image node."
+  },
+  {
+    "id": "prop:activity:leading",
+    "title": "Activity.leading",
+    "type": "prop",
+    "path": "/docs/components/activity#api",
+    "keywords": "Activity leading ReactNode ",
+    "excerpt": "ReactNode"
+  },
+  {
+    "id": "prop:activity:mode",
+    "title": "Activity.mode",
+    "type": "prop",
+    "path": "/docs/components/activity#api",
+    "keywords": "Activity mode ActivityMode Compact pill, detail panel, or always-on persistent strip.",
+    "excerpt": "Compact pill, detail panel, or always-on persistent strip."
+  },
+  {
+    "id": "prop:activity:onExpandedChange",
+    "title": "Activity.onExpandedChange",
+    "type": "prop",
+    "path": "/docs/components/activity#api",
+    "keywords": "Activity onExpandedChange (expanded: boolean) => void ",
+    "excerpt": "(expanded: boolean) => void"
+  },
+  {
+    "id": "prop:activity:priority",
+    "title": "Activity.priority",
+    "type": "prop",
+    "path": "/docs/components/activity#api",
+    "keywords": "Activity priority ActivityPriority ",
+    "excerpt": "ActivityPriority"
+  },
+  {
+    "id": "prop:activity:progress",
+    "title": "Activity.progress",
+    "type": "prop",
+    "path": "/docs/components/activity#api",
+    "keywords": "Activity progress number 0–100; renders a meter when status is `progress` (or whenever value is provided).",
+    "excerpt": "0–100; renders a meter when status is `progress` (or whenever value is provided)."
+  },
+  {
+    "id": "prop:activity:status",
+    "title": "Activity.status",
+    "type": "prop",
+    "path": "/docs/components/activity#api",
+    "keywords": "Activity status ActivityStatus ",
+    "excerpt": "ActivityStatus"
+  },
+  {
+    "id": "prop:activity:trailing",
+    "title": "Activity.trailing",
+    "type": "prop",
+    "path": "/docs/components/activity#api",
+    "keywords": "Activity trailing ReactNode ",
+    "excerpt": "ReactNode"
+  },
+  {
     "id": "example:activity:Default",
-    "title": "Activity — Default",
+    "title": "Activity — Collapsed summary",
     "type": "example",
     "path": "/docs/components/activity#examples",
-    "keywords": "Activity Default basic {}",
-    "excerpt": "// See Storybook story \"Default\" for full example."
+    "keywords": "Activity Collapsed summary basic {\"title\":\"Uploading\",\"description\":\"Project.zip\",\"status\":\"progress\",\"progress\":68}",
+    "excerpt": "import { Activity } from '@larose-ui/react';\n\n<Activity\n  title=\"Uploading\"\n  description=\"Project.zip\"\n  status=\"progre"
+  },
+  {
+    "id": "example:activity:ExpandOnClick",
+    "title": "Activity — Expand on click",
+    "type": "example",
+    "path": "/docs/components/activity#examples",
+    "keywords": "Activity Expand on click advanced {\"title\":\"Uploading\",\"description\":\"Project.zip\",\"status\":\"progress\",\"progress\":80,\"minHeight\":\"9rem\"}",
+    "excerpt": "import { Activity } from '@larose-ui/react';\n\n<Activity\n  title=\"Uploading\"\n  description=\"Project.zip\"\n  status=\"progre"
+  },
+  {
+    "id": "example:activity:HiddenUntilExpand",
+    "title": "Activity — Hidden content until expand",
+    "type": "example",
+    "path": "/docs/components/activity#examples",
+    "keywords": "Activity Hidden content until expand advanced {\"hideCollapsedContent\":true,\"title\":\"Uploading\",\"description\":\"Project.zip\",\"status\":\"progress\",\"progress\":80,\"width\":360,\"minHeight\":\"9rem\",\"height\":\"9rem\"}",
+    "excerpt": "import { Activity } from '@larose-ui/react';\n\n<Activity\n  hideCollapsedContent\n  title=\"Uploading\"\n  description=\"Projec"
+  },
+  {
+    "id": "example:activity:CustomExpandedSize",
+    "title": "Activity — Custom expanded size",
+    "type": "example",
+    "path": "/docs/components/activity#examples",
+    "keywords": "Activity Custom expanded size sizes {\"title\":\"Syncing\",\"description\":\"Library photos\",\"status\":\"progress\",\"progress\":55,\"icon\":\"↻\",\"hideCollapsedContent\":true,\"expandAfter\":900,\"width\":\"28rem\",\"minHeight\":\"12rem\",\"height\":\"12rem\"}",
+    "excerpt": "import { Activity } from '@larose-ui/react';\n\n<Activity\n  title=\"Syncing\"\n  description=\"Library photos\"\n  status=\"progr"
+  },
+  {
+    "id": "example:activity:ExpandAfterDelay",
+    "title": "Activity — Expand after delay",
+    "type": "example",
+    "path": "/docs/components/activity#examples",
+    "keywords": "Activity Expand after delay advanced {\"title\":\"Uploading\",\"description\":\"Project.zip\",\"status\":\"progress\",\"progress\":42,\"expandAfter\":1600,\"label\":\"Cancel\",\"variant\":\"ghost\"}",
+    "excerpt": "import { Activity } from '@larose-ui/react';\n\n<Activity\n  title=\"Uploading\"\n  description=\"Project.zip\"\n  status=\"progre"
+  },
+  {
+    "id": "example:activity:ParentWithBody",
+    "title": "Activity — Parent + centered body",
+    "type": "example",
+    "path": "/docs/components/activity#examples",
+    "keywords": "Activity Parent + centered body advanced {}",
+    "excerpt": "// See Storybook story \"ParentWithBody\" for full example."
+  },
+  {
+    "id": "example:activity:Controlled",
+    "title": "Activity — Controlled expand",
+    "type": "example",
+    "path": "/docs/components/activity#examples",
+    "keywords": "Activity Controlled expand advanced {}",
+    "excerpt": "// See Storybook story \"Controlled\" for full example."
+  },
+  {
+    "id": "example:activity:Persistent",
+    "title": "Activity — Persistent (locked open)",
+    "type": "example",
+    "path": "/docs/components/activity#examples",
+    "keywords": "Activity Persistent (locked open) advanced {}",
+    "excerpt": "// See Storybook story \"Persistent\" for full example."
+  },
+  {
+    "id": "example:activity:SuccessAndError",
+    "title": "Activity — Success / error",
+    "type": "example",
+    "path": "/docs/components/activity#examples",
+    "keywords": "Activity Success / error error {}",
+    "excerpt": "// See Storybook story \"SuccessAndError\" for full example."
   },
   {
     "id": "component:activity-share-button",

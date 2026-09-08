@@ -6,7 +6,8 @@ const meta: Meta<typeof Dialog> = {
   title: 'Foundation/Dialog',
   component: Dialog,
   tags: ['autodocs', 'fw-react', 'fw-vue', 'fw-svelte'],
-  parameters: { layout: 'centered' },
+  parameters: {
+    laRose: { crossFramework: 'dialog' }, layout: 'centered' },
 };
 
 export default meta;

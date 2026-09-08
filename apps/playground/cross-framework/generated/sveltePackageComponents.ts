@@ -6,6 +6,7 @@ export { default as Accordion } from '../../../../packages/svelte/src/lib/compon
 export { default as AccordionContent } from '../../../../packages/svelte/src/lib/components/Accordion/AccordionContent.svelte';
 export { default as AccordionItem } from '../../../../packages/svelte/src/lib/components/Accordion/AccordionItem.svelte';
 export { default as AccordionTrigger } from '../../../../packages/svelte/src/lib/components/Accordion/AccordionTrigger.svelte';
+export { default as Activity } from '../../../../packages/svelte/src/lib/components/Activity/Activity.svelte';
 export { default as ActivityShareButton } from '../../../../packages/svelte/src/lib/components/Sharing/ActivityShareButton.svelte';
 export { default as ActivityView } from '../../../../packages/svelte/src/lib/components/Sharing/ActivityView.svelte';
 export { default as Alert } from '../../../../packages/svelte/src/lib/components/Alert/Alert.svelte';

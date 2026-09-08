@@ -6,7 +6,8 @@ const meta: Meta<typeof Drawer> = {
   title: 'Foundation/Drawer',
   component: Drawer,
   tags: ['autodocs', 'fw-react', 'fw-vue', 'fw-svelte'],
-  parameters: { layout: 'fullscreen' },
+  parameters: {
+    laRose: { crossFramework: 'drawer' }, layout: 'fullscreen' },
 };
 
 export default meta;

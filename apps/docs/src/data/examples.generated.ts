@@ -38,10 +38,108 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
   "Activity": [
     {
       "id": "Default",
-      "title": "Default",
+      "title": "Collapsed summary",
       "kind": "basic",
+      "props": {
+        "title": "Uploading",
+        "description": "Project.zip",
+        "status": "progress",
+        "progress": 68
+      },
+      "code": "import { Activity } from '@larose-ui/react';\n\n<Activity\n  title=\"Uploading\"\n  description=\"Project.zip\"\n  status=\"progress\"\n  progress={68}\n>Example</Activity>"
+    },
+    {
+      "id": "ExpandOnClick",
+      "title": "Expand on click",
+      "kind": "advanced",
+      "props": {
+        "title": "Uploading",
+        "description": "Project.zip",
+        "status": "progress",
+        "progress": 80,
+        "minHeight": "9rem"
+      },
+      "code": "import { Activity } from '@larose-ui/react';\n\n<Activity\n  title=\"Uploading\"\n  description=\"Project.zip\"\n  status=\"progress\"\n  progress={80}\n  minHeight=\"9rem\"\n>Example</Activity>"
+    },
+    {
+      "id": "HiddenUntilExpand",
+      "title": "Hidden content until expand",
+      "kind": "advanced",
+      "props": {
+        "hideCollapsedContent": true,
+        "title": "Uploading",
+        "description": "Project.zip",
+        "status": "progress",
+        "progress": 80,
+        "width": 360,
+        "minHeight": "9rem",
+        "height": "9rem"
+      },
+      "code": "import { Activity } from '@larose-ui/react';\n\n<Activity\n  hideCollapsedContent\n  title=\"Uploading\"\n  description=\"Project.zip\"\n  status=\"progress\"\n  progress={80}\n  width={360}\n  minHeight=\"9rem\"\n  height=\"9rem\"\n>Example</Activity>"
+    },
+    {
+      "id": "CustomExpandedSize",
+      "title": "Custom expanded size",
+      "kind": "sizes",
+      "props": {
+        "title": "Syncing",
+        "description": "Library photos",
+        "status": "progress",
+        "progress": 55,
+        "icon": "↻",
+        "hideCollapsedContent": true,
+        "expandAfter": 900,
+        "width": "28rem",
+        "minHeight": "12rem",
+        "height": "12rem"
+      },
+      "code": "import { Activity } from '@larose-ui/react';\n\n<Activity\n  title=\"Syncing\"\n  description=\"Library photos\"\n  status=\"progress\"\n  progress={55}\n  icon=\"↻\"\n  hideCollapsedContent\n  expandAfter={900}\n  width=\"28rem\"\n  minHeight=\"12rem\"\n  height=\"12rem\"\n>Example</Activity>"
+    },
+    {
+      "id": "ExpandAfterDelay",
+      "title": "Expand after delay",
+      "kind": "advanced",
+      "props": {
+        "title": "Uploading",
+        "description": "Project.zip",
+        "status": "progress",
+        "progress": 42,
+        "expandAfter": 1600,
+        "label": "Cancel",
+        "variant": "ghost"
+      },
+      "code": "import { Activity } from '@larose-ui/react';\n\n<Activity\n  title=\"Uploading\"\n  description=\"Project.zip\"\n  status=\"progress\"\n  progress={42}\n  expandAfter={1600}\n  label=\"Cancel\"\n  variant=\"ghost\"\n>Example</Activity>"
+    },
+    {
+      "id": "ParentWithBody",
+      "title": "Parent + centered body",
+      "kind": "advanced",
       "props": {},
-      "code": "// See Storybook story \"Default\" for full example.",
+      "code": "// See Storybook story \"ParentWithBody\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "Controlled",
+      "title": "Controlled expand",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"Controlled\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "Persistent",
+      "title": "Persistent (locked open)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"Persistent\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "SuccessAndError",
+      "title": "Success / error",
+      "kind": "error",
+      "props": {},
+      "code": "// See Storybook story \"SuccessAndError\" for full example.",
       "composite": true
     }
   ],

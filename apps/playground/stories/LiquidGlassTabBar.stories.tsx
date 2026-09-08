@@ -47,6 +47,7 @@ const meta: Meta<TabBarStoryArgs> = {
   tags: ['fw-react', 'fw-vue', 'fw-svelte'],
   component: ControlledTabBar,
   parameters: {
+    laRose: { crossFramework: 'liquidGlassTabBar' },
     layout: 'fullscreen',
     controls: { expanded: true, sort: 'requiredFirst' },
     docs: {

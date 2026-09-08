@@ -208,14 +208,174 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
   "Activity": {
     "props": [
       {
+        "name": "actions",
+        "type": "ActivityAction[]",
+        "required": false,
+        "description": "Action buttons for self-closing usage.",
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": false,
+        "description": "Detail content shown when expanded.\nCollapsed summary still comes from `icon` / `title` / `description` / `progress`.",
+        "inherited": true,
+        "example": "—"
+      },
+      {
         "name": "className",
+        "type": "string",
+        "required": false,
+        "default": "{mergeClassName(styles.body",
+        "inherited": true,
+        "example": "—"
+      },
+      {
+        "name": "defaultExpanded",
+        "type": "boolean",
+        "required": false,
+        "inherited": false,
+        "example": "true"
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "expandable",
+        "type": "boolean",
+        "required": false,
+        "default": "true",
+        "description": "Allow click/keyboard to toggle collapsed ↔ expanded.\nDefaults to `true` (Activity is expandable by design). Pass `false` to lock size.",
+        "inherited": false,
+        "example": "true"
+      },
+      {
+        "name": "expandAfter",
+        "type": "number",
+        "required": false,
+        "default": "= null || mode === 'persistent') return;",
+        "description": "Auto-expand after this many milliseconds (uncontrolled, or fires `onExpandedChange`).\nUseful for “compress then grow” live-activity timing.",
+        "inherited": false,
+        "example": "0"
+      },
+      {
+        "name": "expanded",
+        "type": "boolean",
+        "required": false,
+        "default": "== 'boolean') {",
+        "description": "Controlled expanded state (overrides `mode` between collapsed/expanded).",
+        "inherited": false,
+        "example": "true"
+      },
+      {
+        "name": "expandedSize",
+        "type": "ActivityExpandedSize",
+        "required": false,
+        "description": "Expanded shell size. Default `minHeight` is `9rem`.",
+        "inherited": false,
+        "example": "\"md\""
+      },
+      {
+        "name": "hideCollapsedContent",
+        "type": "boolean",
+        "required": false,
+        "default": "false",
+        "description": "When true, collapsed state is an empty pill (no icon/title/body).\nContent is revealed only after expand.",
+        "inherited": false,
+        "example": "false"
+      },
+      {
+        "name": "icon",
+        "type": "ReactNode",
+        "required": false,
+        "description": "Leading visual — any icon, emoji, SVG, or image node.",
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "leading",
+        "type": "ReactNode",
+        "required": false,
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "mode",
+        "type": "ActivityMode",
+        "required": false,
+        "default": "== 'expanded'",
+        "description": "Compact pill, detail panel, or always-on persistent strip.",
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "onExpandedChange",
+        "type": "(expanded: boolean) => void",
+        "required": false,
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "priority",
+        "type": "ActivityPriority",
+        "required": false,
+        "default": "'important'",
+        "inherited": false,
+        "example": "'important'"
+      },
+      {
+        "name": "progress",
+        "type": "number",
+        "required": false,
+        "description": "0–100; renders a meter when status is `progress` (or whenever value is provided).",
+        "inherited": false,
+        "example": "0"
+      },
+      {
+        "name": "status",
+        "type": "ActivityStatus",
+        "required": false,
+        "default": "'idle'",
+        "inherited": false,
+        "example": "'idle'"
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties",
+        "required": false,
+        "default": "{style",
+        "inherited": true,
+        "example": "—"
+      },
+      {
+        "name": "title",
         "type": "string",
         "required": false,
         "inherited": true,
         "example": "—"
+      },
+      {
+        "name": "trailing",
+        "type": "ReactNode",
+        "required": false,
+        "inherited": false,
+        "example": "—"
       }
     ],
-    "events": [],
+    "events": [
+      {
+        "name": "onExpandedChange",
+        "type": "(expanded: boolean) => void",
+        "required": false,
+        "inherited": false,
+        "example": "—"
+      }
+    ],
     "accessibility": []
   },
   "ActivityShareButton": {

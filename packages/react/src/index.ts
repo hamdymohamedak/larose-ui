@@ -805,4 +805,13 @@ export type {
 } from './LiquidGlass';
 
 export { Activity } from './Activity/Activity';
-export type { ActivityProps } from './Activity/Activity';
+export type {
+  ActivityProps,
+  ActivityMode,
+  ActivityStatus,
+  ActivityPriority,
+  ActivityAction,
+  ActivityActionVariant,
+  ActivityExpandedSize,
+  ActivitySectionProps,
+} from './Activity/Activity';

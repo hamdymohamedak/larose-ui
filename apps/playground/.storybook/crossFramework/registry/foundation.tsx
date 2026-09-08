@@ -3,6 +3,7 @@
  * Complex demos stay in demos.tsx.
  */
 import {
+  Activity,
   Alert,
   AsyncButton,
   Badge,
@@ -64,7 +65,7 @@ import {
   DisclosureTriangle,
 } from '@larose-ui/react';
 import type { CrossFrameworkComponentDefinition } from '../types';
-import { defineSlotParity, definePropsParity, defineCustomParity, slotFromArgs } from '../defineParity';
+import { defineSlotParity, definePropsParity, defineCustomParity, slotFromArgs, serializableProps } from '../defineParity';
 import {
   DEFAULT_CHART_DATA,
   DEFAULT_COLLABORATORS,
@@ -80,8 +81,64 @@ import {
 } from './defaults';
 
 export const foundationRegistry: Record<string, CrossFrameworkComponentDefinition> = {
+  activity: defineCustomParity({
+    id: 'activity',
+    displayName: 'Activity',
+    argTypes: {
+      title: { control: 'text' },
+      description: { control: 'text' },
+      status: {
+        control: 'select',
+        options: ['idle', 'progress', 'success', 'error', 'interactive'],
+      },
+      progress: { control: { type: 'range', min: 0, max: 100, step: 1 } },
+      mode: {
+        control: 'select',
+        options: ['collapsed', 'expanded', 'persistent'],
+      },
+      expandable: { control: 'boolean' },
+      hideCollapsedContent: { control: 'boolean' },
+    },
+    mapArgs: (args) => {
+      // Strip React-only props: ReactNode slots can't cross framework boundary
+      const { icon: _icon, leading: _leading, trailing: _trailing, children: _children, actions, ...rest } = args as Record<string, unknown>;
+
+      // Normalize actions: strip React onClick; supply both onClick (Vue) and onclick (Svelte) noops
+      const safeActions = (Array.isArray(actions) ? actions : []).map(
+        (action: Record<string, unknown>) => ({
+          id: action['id'],
+          label: action['label'],
+          variant: action['variant'],
+          disabled: action['disabled'],
+          onClick: () => {},  // Vue Activity uses camelCase
+          onclick: () => {},  // Svelte Activity uses lowercase
+        }),
+      );
+
+      return {
+        props: {
+          ...serializableProps(rest),
+          ...(safeActions.length ? { actions: safeActions } : {}),
+        },
+      };
+    },
+    renderReact: (props) => (
+      <Activity
+        mode={props['mode'] as 'collapsed' | 'expanded' | 'persistent' | undefined}
+        status={props['status'] as 'idle' | 'progress' | 'success' | 'error' | 'interactive' | undefined}
+        priority={props['priority'] as 'critical' | 'interactive' | 'long-running' | 'important' | 'transient' | undefined}
+        title={props['title'] as string | undefined}
+        description={props['description'] as string | undefined}
+        progress={typeof props['progress'] === 'number' ? props['progress'] : undefined}
+        expandable={props['expandable'] as boolean | undefined}
+        hideCollapsedContent={props['hideCollapsedContent'] as boolean | undefined}
+        expandedSize={props['expandedSize'] as Record<string, string | number> | undefined}
+        expandDuration={props['expandDuration'] as number | string | undefined}
+      />
+    ),
+  }),
+
   badge: defineSlotParity({
-    id: 'badge',
     displayName: 'Badge',
     defaultSlot: 'Draft',
     propKeys: ['variant'],

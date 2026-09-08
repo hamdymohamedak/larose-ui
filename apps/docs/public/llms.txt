@@ -66,7 +66,7 @@ Apple-inspired by default. Fully customizable by architecture.
 - AccordionContent (Content) — 0 documented props
 - AccordionItem (Content) — 2 documented props
 - AccordionTrigger (Content) — 0 documented props
-- Activity (Other) — 0 documented props
+- Activity (Other) — 16 documented props
 - ActivityShareButton (Actions) — 5 documented props
 - ActivityView (Sharing) — 8 documented props
 - Alert (Feedback) — 2 documented props

@@ -5,7 +5,8 @@ const meta: Meta<typeof Tooltip> = {
   title: 'Foundation/Tooltip',
   component: Tooltip,
   tags: ['autodocs', 'fw-react', 'fw-vue', 'fw-svelte'],
-  parameters: { layout: 'centered' },
+  parameters: {
+    laRose: { crossFramework: 'tooltip' }, layout: 'centered' },
 };
 
 export default meta;

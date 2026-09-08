@@ -4,7 +4,7 @@ import { Button, Popover } from '@larose-ui/react';
 const meta: Meta<typeof Popover> = {
   title: 'Foundation/Popover',
   component: Popover,
-  tags: ['autodocs', 'fw-react'],
+  tags: ['autodocs', 'fw-react', 'fw-vue', 'fw-svelte'],
   parameters: { layout: 'centered' },
   argTypes: {
     side: { control: 'select', options: ['top', 'bottom', 'left', 'right'] },

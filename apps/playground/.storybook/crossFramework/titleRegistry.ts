@@ -11,6 +11,7 @@ import { GENERATED_STORY_TITLE_CROSS_FRAMEWORK } from './titleRegistry.generated
  */
 export const STORY_TITLE_CROSS_FRAMEWORK: Record<string, string> = {
   ...GENERATED_STORY_TITLE_CROSS_FRAMEWORK,
+  'Foundation/Activity': 'activity',
   'Foundation/Badge': 'badge',
   'Foundation/Button': 'button',
   'Foundation/Card': 'card',

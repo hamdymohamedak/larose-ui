@@ -29,6 +29,7 @@ const meta: Meta<ButtonArgs> = {
   tags: ['fw-react', 'fw-vue', 'fw-svelte'],
   component: LiquidGlassButton,
   parameters: {
+    laRose: { crossFramework: 'button' },
     layout: 'fullscreen',
     controls: { expanded: true, sort: 'requiredFirst' },
     docs: {

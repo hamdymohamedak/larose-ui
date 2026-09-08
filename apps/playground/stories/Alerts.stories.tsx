@@ -5,6 +5,7 @@ const meta: Meta = {
   title: 'Foundation/Alert',
   tags: ['fw-react', 'fw-vue', 'fw-svelte'],
   parameters: {
+    laRose: { crossFramework: 'alert' },
     layout: 'fullscreen',
     docs: {
       description: {

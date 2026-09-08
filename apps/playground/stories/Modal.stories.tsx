@@ -6,7 +6,8 @@ const meta: Meta<typeof Modal> = {
   title: 'Foundation/Modal',
   component: Modal,
   tags: ['autodocs', 'fw-react', 'fw-vue', 'fw-svelte'],
-  parameters: { layout: 'centered' },
+  parameters: {
+    laRose: { crossFramework: 'modal' }, layout: 'centered' },
 };
 
 export default meta;

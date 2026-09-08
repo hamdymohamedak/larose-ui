@@ -24,7 +24,7 @@ type CommandPalettePlaygroundArgs = {
 
 const meta: Meta<CommandPalettePlaygroundArgs> = {
   title: 'Foundation/CommandPalette',
-  tags: ['autodocs', 'fw-react'],
+  tags: ['autodocs', 'fw-react', 'fw-vue', 'fw-svelte'],
   parameters: {
     layout: 'fullscreen',
     controls: { expanded: true },

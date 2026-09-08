@@ -3,14 +3,241 @@
   "category": "Other",
   "package": "@larose-ui/react",
   "import": "import { Activity } from '@larose-ui/react';",
-  "props": [],
+  "props": [
+    {
+      "name": "actions",
+      "type": "ActivityAction[]",
+      "required": false,
+      "description": "Action buttons for self-closing usage.",
+      "inherited": false,
+      "example": "—"
+    },
+    {
+      "name": "defaultExpanded",
+      "type": "boolean",
+      "required": false,
+      "inherited": false,
+      "example": "true"
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "required": false,
+      "inherited": false,
+      "example": "—"
+    },
+    {
+      "name": "expandable",
+      "type": "boolean",
+      "required": false,
+      "default": "true",
+      "description": "Allow click/keyboard to toggle collapsed ↔ expanded.\nDefaults to `true` (Activity is expandable by design). Pass `false` to lock size.",
+      "inherited": false,
+      "example": "true"
+    },
+    {
+      "name": "expandAfter",
+      "type": "number",
+      "required": false,
+      "default": "= null || mode === 'persistent') return;",
+      "description": "Auto-expand after this many milliseconds (uncontrolled, or fires `onExpandedChange`).\nUseful for “compress then grow” live-activity timing.",
+      "inherited": false,
+      "example": "0"
+    },
+    {
+      "name": "expanded",
+      "type": "boolean",
+      "required": false,
+      "default": "== 'boolean') {",
+      "description": "Controlled expanded state (overrides `mode` between collapsed/expanded).",
+      "inherited": false,
+      "example": "true"
+    },
+    {
+      "name": "expandedSize",
+      "type": "ActivityExpandedSize",
+      "required": false,
+      "description": "Expanded shell size. Default `minHeight` is `9rem`.",
+      "inherited": false,
+      "example": "\"md\""
+    },
+    {
+      "name": "hideCollapsedContent",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "description": "When true, collapsed state is an empty pill (no icon/title/body).\nContent is revealed only after expand.",
+      "inherited": false,
+      "example": "false"
+    },
+    {
+      "name": "icon",
+      "type": "ReactNode",
+      "required": false,
+      "description": "Leading visual — any icon, emoji, SVG, or image node.",
+      "inherited": false,
+      "example": "—"
+    },
+    {
+      "name": "leading",
+      "type": "ReactNode",
+      "required": false,
+      "inherited": false,
+      "example": "—"
+    },
+    {
+      "name": "mode",
+      "type": "ActivityMode",
+      "required": false,
+      "default": "== 'expanded'",
+      "description": "Compact pill, detail panel, or always-on persistent strip.",
+      "inherited": false,
+      "example": "—"
+    },
+    {
+      "name": "onExpandedChange",
+      "type": "(expanded: boolean) => void",
+      "required": false,
+      "inherited": false,
+      "example": "—"
+    },
+    {
+      "name": "priority",
+      "type": "ActivityPriority",
+      "required": false,
+      "default": "'important'",
+      "inherited": false,
+      "example": "'important'"
+    },
+    {
+      "name": "progress",
+      "type": "number",
+      "required": false,
+      "description": "0–100; renders a meter when status is `progress` (or whenever value is provided).",
+      "inherited": false,
+      "example": "0"
+    },
+    {
+      "name": "status",
+      "type": "ActivityStatus",
+      "required": false,
+      "default": "'idle'",
+      "inherited": false,
+      "example": "'idle'"
+    },
+    {
+      "name": "trailing",
+      "type": "ReactNode",
+      "required": false,
+      "inherited": false,
+      "example": "—"
+    }
+  ],
   "examples": [
     {
       "id": "Default",
-      "title": "Default",
+      "title": "Collapsed summary",
       "kind": "basic",
+      "props": {
+        "title": "Uploading",
+        "description": "Project.zip",
+        "status": "progress",
+        "progress": 68
+      },
+      "code": "import { Activity } from '@larose-ui/react';\n\n<Activity\n  title=\"Uploading\"\n  description=\"Project.zip\"\n  status=\"progress\"\n  progress={68}\n>Example</Activity>"
+    },
+    {
+      "id": "ExpandOnClick",
+      "title": "Expand on click",
+      "kind": "advanced",
+      "props": {
+        "title": "Uploading",
+        "description": "Project.zip",
+        "status": "progress",
+        "progress": 80,
+        "minHeight": "9rem"
+      },
+      "code": "import { Activity } from '@larose-ui/react';\n\n<Activity\n  title=\"Uploading\"\n  description=\"Project.zip\"\n  status=\"progress\"\n  progress={80}\n  minHeight=\"9rem\"\n>Example</Activity>"
+    },
+    {
+      "id": "HiddenUntilExpand",
+      "title": "Hidden content until expand",
+      "kind": "advanced",
+      "props": {
+        "hideCollapsedContent": true,
+        "title": "Uploading",
+        "description": "Project.zip",
+        "status": "progress",
+        "progress": 80,
+        "width": 360,
+        "minHeight": "9rem",
+        "height": "9rem"
+      },
+      "code": "import { Activity } from '@larose-ui/react';\n\n<Activity\n  hideCollapsedContent\n  title=\"Uploading\"\n  description=\"Project.zip\"\n  status=\"progress\"\n  progress={80}\n  width={360}\n  minHeight=\"9rem\"\n  height=\"9rem\"\n>Example</Activity>"
+    },
+    {
+      "id": "CustomExpandedSize",
+      "title": "Custom expanded size",
+      "kind": "sizes",
+      "props": {
+        "title": "Syncing",
+        "description": "Library photos",
+        "status": "progress",
+        "progress": 55,
+        "icon": "↻",
+        "hideCollapsedContent": true,
+        "expandAfter": 900,
+        "width": "28rem",
+        "minHeight": "12rem",
+        "height": "12rem"
+      },
+      "code": "import { Activity } from '@larose-ui/react';\n\n<Activity\n  title=\"Syncing\"\n  description=\"Library photos\"\n  status=\"progress\"\n  progress={55}\n  icon=\"↻\"\n  hideCollapsedContent\n  expandAfter={900}\n  width=\"28rem\"\n  minHeight=\"12rem\"\n  height=\"12rem\"\n>Example</Activity>"
+    },
+    {
+      "id": "ExpandAfterDelay",
+      "title": "Expand after delay",
+      "kind": "advanced",
+      "props": {
+        "title": "Uploading",
+        "description": "Project.zip",
+        "status": "progress",
+        "progress": 42,
+        "expandAfter": 1600,
+        "label": "Cancel",
+        "variant": "ghost"
+      },
+      "code": "import { Activity } from '@larose-ui/react';\n\n<Activity\n  title=\"Uploading\"\n  description=\"Project.zip\"\n  status=\"progress\"\n  progress={42}\n  expandAfter={1600}\n  label=\"Cancel\"\n  variant=\"ghost\"\n>Example</Activity>"
+    },
+    {
+      "id": "ParentWithBody",
+      "title": "Parent + centered body",
+      "kind": "advanced",
       "props": {},
-      "code": "// See Storybook story \"Default\" for full example.",
+      "code": "// See Storybook story \"ParentWithBody\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "Controlled",
+      "title": "Controlled expand",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"Controlled\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "Persistent",
+      "title": "Persistent (locked open)",
+      "kind": "advanced",
+      "props": {},
+      "code": "// See Storybook story \"Persistent\" for full example.",
+      "composite": true
+    },
+    {
+      "id": "SuccessAndError",
+      "title": "Success / error",
+      "kind": "error",
+      "props": {},
+      "code": "// See Storybook story \"SuccessAndError\" for full example.",
       "composite": true
     }
   ],

@@ -35,7 +35,7 @@ function ComposeIcon() {
 
 const meta: Meta = {
   title: 'Foundation/Home Screen Quick Actions',
-  tags: ['autodocs', 'fw-react'],
+  tags: ['autodocs', 'fw-react', 'fw-vue', 'fw-svelte'],
   parameters: { layout: 'padded' },
 };
 

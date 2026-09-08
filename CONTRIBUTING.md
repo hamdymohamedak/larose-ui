@@ -29,6 +29,8 @@ Useful commands during development:
 | `pnpm run doctor` | Quality gates (deprecations, contracts, a11y) |
 | `make contribute-list` | List packages for contribution scaffolds |
 | `make contribute NAME=X PACKAGE=react` | Scaffold new component/module stubs |
+| `make contribute NAME=X PACKAGE=all` | Scaffold stubs for all three packages + auto parity-sync |
+| `make parity-sync` | Re-sync Storybook cross-framework wiring after implementing a component |
 | `make contribute-remove NAME=X PACKAGE=react` | Remove a contribute scaffold (adapter + styles + exports) |
 | `make test-all` | Full CI suite locally |
 
@@ -76,6 +78,41 @@ node packages/cli/dist/cli.js contribute component StatusPill --package all --dr
 **Sandbox rule of thumb:** simple components need Story + Vitest only; integration-critical components hook an existing kitchen-sink scenario (`forms` / `overlays` / …); portal/focus/keyboard/runtime flows may need a shared scenario + Playwright. Do **not** create per-component sandboxes.
 
 The command creates adapter stubs, shared CSS, a Storybook story under `apps/playground/stories/`, and prints preview commands (`pnpm dev` → http://localhost:6006). It refuses to overwrite existing files and checks that the package source layout exists first.
+
+### Storybook Vue/Svelte preview (parity sync)
+
+When you use `PACKAGE=all`, `make contribute` automatically runs **`make parity-sync`** at the end. This is the one command that wires up the Storybook cross-framework preview so your component appears in the Vue 3 and Svelte 5 preview without any manual steps.
+
+**What `parity-sync` does:**
+
+1. Reads `packages/vue/src/index.ts` and `packages/svelte/src/lib/index.ts` to regenerate the component maps (`vuePackageComponents.ts`, `sveltePackageComponents.ts`)
+2. Scans every story file and, for components that now exist in all three packages, patches the story to add `fw-vue` + `fw-svelte` tags and the `crossFramework` parameter
+3. Updates `titleRegistry.generated.ts` so the Framework toolbar can find the registry entry
+4. Prints a summary of what changed
+
+**The full workflow after implementing a component for all packages:**
+
+```bash
+# 1. Scaffold (creates stubs, story, runs parity-sync automatically)
+make contribute NAME=StatusPill PACKAGE=all
+
+# 2. Implement the component in all three packages
+#    — packages/react/src/StatusPill/StatusPill.tsx
+#    — packages/vue/src/components/StatusPill/StatusPill.vue
+#    — packages/svelte/src/lib/components/StatusPill/StatusPill.svelte
+
+# 3. Export from each package index
+#    — packages/vue/src/index.ts:    export { default as StatusPill } from './components/StatusPill/StatusPill.vue';
+#    — packages/svelte/src/lib/index.ts: export { default as StatusPill } from './components/StatusPill/StatusPill.svelte';
+
+# 4. Re-sync Storybook wiring (picks up the new exports)
+make parity-sync
+
+# 5. Preview in Storybook — switch the Framework toolbar to Vue 3 or Svelte 5
+pnpm dev
+```
+
+> **Note:** For complex components whose Vue/Svelte preview needs custom prop mapping or a dedicated demo shell (like Activity, Card, or TabView), you still need to add a hand-written entry to `apps/playground/.storybook/crossFramework/registry/foundation.tsx`. `parity-sync` handles the tags, titleRegistry, and component maps automatically; it cannot infer complex prop transformations.
 
 `make contribute-remove NAME=X PACKAGE=react` deletes the matching unit folder, shared CSS folder, Storybook story (`apps/playground/stories/X.stories.tsx`), barrel exports, and Unreleased changelog bullet. It does **not** delete namesakes such as `ActivityView` when removing `Activity`. Shared styles stay if Vue/Svelte adapters for that name still exist.
 

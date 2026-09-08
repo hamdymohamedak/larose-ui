@@ -6,6 +6,7 @@ export { default as Accordion } from '../../../../packages/vue/src/components/Ac
 export { default as AccordionContent } from '../../../../packages/vue/src/components/Accordion/AccordionContent.vue';
 export { default as AccordionItem } from '../../../../packages/vue/src/components/Accordion/AccordionItem.vue';
 export { default as AccordionTrigger } from '../../../../packages/vue/src/components/Accordion/AccordionTrigger.vue';
+export { default as Activity } from '../../../../packages/vue/src/components/Activity/Activity.vue';
 export { default as ActivityShareButton } from '../../../../packages/vue/src/components/Sharing/ActivityShareButton.vue';
 export { default as ActivityView } from '../../../../packages/vue/src/components/Sharing/ActivityView.vue';
 export { default as Alert } from '../../../../packages/vue/src/components/Alert/Alert.vue';

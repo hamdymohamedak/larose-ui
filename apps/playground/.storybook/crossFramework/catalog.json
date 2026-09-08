@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-09-04T14:20:09.708Z",
-  "sharedCount": 153,
-  "handWrittenCount": 104,
+  "generatedAt": "2026-09-08T12:36:32.593Z",
+  "sharedCount": 154,
+  "handWrittenCount": 105,
   "autoScaffoldCount": 2,
   "uncoveredRootCount": 12,
   "needsDemoCount": 10,
   "exportsByFramework": {
-    "react": 165,
-    "vue": 155,
-    "svelte": 155
+    "react": 166,
+    "vue": 156,
+    "svelte": 156
   },
   "components": [
     {
@@ -52,6 +52,14 @@
       "needsDemo": false
     },
     {
+      "name": "Activity",
+      "id": "activity",
+      "kind": "root",
+      "covered": true,
+      "autoScaffold": false,
+      "needsDemo": false
+    },
+    {
       "name": "ActivityShareButton",
       "id": "activityShareButton",
       "kind": "root",
@@ -62,7 +70,7 @@
     {
       "name": "ActivityView",
       "id": "activityView",
-      "kind": "root",
+      "kind": "compound",
       "covered": true,
       "autoScaffold": false,
       "needsDemo": false
@@ -1435,9 +1443,11 @@
     }
   ],
   "generated": {
-    "vuePackageComponents": 155,
-    "sveltePackageComponents": 163,
+    "vuePackageComponents": 156,
+    "sveltePackageComponents": 164,
     "autoRegistryEntries": 2,
+    "curatedParityPatched": 14,
+    "curatedTitleEntries": 3,
     "scaffolds": [
       {
         "id": "mnemonicLabel",

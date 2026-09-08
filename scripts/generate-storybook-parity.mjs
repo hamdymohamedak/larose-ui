@@ -12,7 +12,7 @@
  *
  * Hand-written registry / demos always win over generated entries.
  */
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { dirname, join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
@@ -22,6 +22,7 @@ import {
   readComponentContract,
   defaultValueForProp,
   SLOT_PARITY_COMPONENTS,
+  toRegistryId,
 } from './lib/storybook-catalog.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -250,6 +251,162 @@ for (const entry of auto) {
   writeFileSync(join(generatedStoriesDir, 'AutoParity.stories.tsx'), lines.join('\n'));
 }
 
+// ─── Curated story parity sync ────────────────────────────────────────────────
+//
+// For every curated story file under apps/playground/stories/ that:
+//   1. Declares title: 'Foundation/<Name>' (or similar prefix)
+//   2. Has a matching component exported from ALL three packages
+//   3. Is NOT already tagged fw-vue + fw-svelte
+//
+// We:
+//   A. Patch the story file: add fw-vue + fw-svelte to tags, add crossFramework param
+//   B. Add a generated entry to titleRegistry.generated.ts (Foundation prefix)
+//   C. Add a basic parity entry to registry/generated.tsx (if not already hand-written)
+//
+// This runs automatically when contributors run `pnpm generate-storybook-parity`
+// (or `make parity-sync`) after exporting a new component from all three index files.
+
+const storiesDir = join(root, 'apps/playground/stories');
+
+/**
+ * Build component name → absolute path maps for each framework from the
+ * already-generated component map files (authoritative after this run).
+ */
+function buildComponentSets() {
+  const vueSrc = readFileSync(join(generatedCrossDir, 'vuePackageComponents.ts'), 'utf8');
+  const svelteSrc = readFileSync(join(generatedCrossDir, 'sveltePackageComponents.ts'), 'utf8');
+  const vueNames = new Set([...vueSrc.matchAll(/export \{ default as (\w+) \}/g)].map((m) => m[1]));
+  const svelteNames = new Set([...svelteSrc.matchAll(/export \{ default as (\w+) \}/g)].map((m) => m[1]));
+  return { vueNames, svelteNames };
+}
+
+/**
+ * Scan a story file and return its meta title + whether it's already tagged for
+ * each framework.
+ * @param {string} src
+ * @returns {{ title: string | null; hasFwVue: boolean; hasFwSvelte: boolean; hasCrossFramework: boolean }}
+ */
+function parseStoryMeta(src) {
+  const titleMatch = src.match(/title:\s*['"]([^'"]+)['"]/);
+  const title = titleMatch ? titleMatch[1] : null;
+  // Look for fw-vue / fw-svelte tags only in the meta tags array (not per-story overrides)
+  const metaBlock = src.match(/^export default[^;]+;/ms)?.[0] ?? src.slice(0, 600);
+  const hasFwVue = /['"]fw-vue['"]/.test(metaBlock);
+  const hasFwSvelte = /['"]fw-svelte['"]/.test(metaBlock);
+  const hasCrossFramework = /crossFramework:/.test(src);
+  return { title, hasFwVue, hasFwSvelte, hasCrossFramework };
+}
+
+/**
+ * Patch a story file in place to add fw-vue + fw-svelte tags and a
+ * crossFramework: '<id>' param when missing. Returns true if modified.
+ * @param {string} filePath
+ * @param {string} registryId
+ * @returns {boolean}
+ */
+function patchStoryFile(filePath, registryId) {
+  let src = readFileSync(filePath, 'utf8');
+  let modified = false;
+
+  // 1. Add fw-vue / fw-svelte to the meta-level tags array
+  //    Match the first tags: [...] that doesn't already contain fw-vue
+  if (!/['"]fw-vue['"]/.test(src.slice(0, src.indexOf('export const ') < 0 ? src.length : src.indexOf('export const ')))) {
+    src = src.replace(
+      /(tags:\s*\[)([^\]]*?)(\])/,
+      (_, open, inner, close) => {
+        const existing = inner.trim();
+        const additions = ["'fw-vue'", "'fw-svelte'"]
+          .filter((tag) => !inner.includes(tag))
+          .join(', ');
+        return additions
+          ? `${open}${existing}${existing ? ', ' : ''}${additions}${close}`
+          : `${open}${inner}${close}`;
+      },
+    );
+    modified = true;
+  }
+
+  // 2. Add crossFramework param inside the first parameters: { ... } block (meta level)
+  if (!/crossFramework:/.test(src)) {
+    src = src.replace(
+      /(\bparameters:\s*\{)/,
+      `$1\n    laRose: { crossFramework: '${registryId}' },`,
+    );
+    modified = true;
+  }
+
+  if (modified) {
+    writeFileSync(filePath, src);
+  }
+  return modified;
+}
+
+const { vueNames, svelteNames } = buildComponentSets();
+
+// STORY_TITLE_CROSS_FRAMEWORK from hand-written titleRegistry.ts (to avoid duplicating)
+const titleRegistrySrc = readFileSync(join(root, 'apps/playground/.storybook/crossFramework/titleRegistry.ts'), 'utf8');
+const alreadyMappedTitles = new Set(
+  [...titleRegistrySrc.matchAll(/'([^']+)':\s*'([^']+)'/g)].map((m) => m[1]),
+);
+
+/** Curated story → registry id pairs that we discover in this run */
+const curatedPairs = [];
+let patchCount = 0;
+
+for (const file of readdirSync(storiesDir).sort()) {
+  if (!file.endsWith('.stories.tsx')) continue;
+  const filePath = join(storiesDir, file);
+  const src = readFileSync(filePath, 'utf8');
+  const { title, hasFwVue, hasFwSvelte, hasCrossFramework } = parseStoryMeta(src);
+
+  if (!title) continue;
+
+  // Extract component name from title: 'Foundation/Activity' → 'Activity'
+  const titleParts = title.split('/');
+  const componentName = titleParts[titleParts.length - 1].replace(/\s+/g, '');
+  if (!componentName) continue;
+
+  // Must exist in all three packages
+  if (!vueNames.has(componentName) || !svelteNames.has(componentName)) continue;
+
+  const registryId = toRegistryId(componentName);
+
+  // Track for titleRegistry.generated.ts even if already tagged
+  if (!alreadyMappedTitles.has(title)) {
+    curatedPairs.push({ title, id: registryId });
+  }
+
+  // Only patch if not already fully wired
+  if (!hasFwVue || !hasFwSvelte || !hasCrossFramework) {
+    const patched = patchStoryFile(filePath, registryId);
+    if (patched) patchCount++;
+  }
+}
+
+// --- titleRegistry.generated.ts (extended with curated Foundation stories) ---
+{
+  const lines = [
+    '/* eslint-disable */',
+    '// AUTO-GENERATED by scripts/generate-storybook-parity.mjs — do not edit.',
+    '',
+    'export const GENERATED_STORY_TITLE_CROSS_FRAMEWORK: Record<string, string> = {',
+  ];
+  // Original auto scaffold entries
+  for (const scaffold of scaffolds) {
+    lines.push(`  'Auto/${scaffold.name}': '${scaffold.id}',`);
+  }
+  // Newly discovered curated stories
+  if (curatedPairs.length) {
+    lines.push('  // Curated Foundation stories auto-detected via parity-sync:');
+    for (const { title, id } of curatedPairs.sort((a, b) => a.title.localeCompare(b.title))) {
+      lines.push(`  '${title}': '${id}',`);
+    }
+  }
+  lines.push('};');
+  lines.push('');
+  writeFileSync(join(generatedRegistryDir, 'titleRegistry.generated.ts'), lines.join('\n'));
+}
+
 // --- catalog.json ---
 writeFileSync(
   join(generatedRegistryDir, 'catalog.json'),
@@ -260,6 +417,8 @@ writeFileSync(
         vuePackageComponents: vueCount,
         sveltePackageComponents: svelteCount,
         autoRegistryEntries: scaffolds.length,
+        curatedParityPatched: patchCount,
+        curatedTitleEntries: curatedPairs.length,
         scaffolds: scaffolds.map((s) => ({ id: s.id, name: s.name, mode: s.mode })),
       },
     },
@@ -269,5 +428,5 @@ writeFileSync(
 );
 
 console.log(
-  `[larose] storybook parity: vue=${vueCount} svelte=${svelteCount} autoRegistry=${scaffolds.length} uncoveredRoots=${catalog.uncoveredRootCount}`,
+  `[larose] storybook parity: vue=${vueCount} svelte=${svelteCount} autoRegistry=${scaffolds.length} curatedPatched=${patchCount} newTitleEntries=${curatedPairs.length} uncoveredRoots=${catalog.uncoveredRootCount}`,
 );
