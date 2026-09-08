@@ -57,9 +57,10 @@ export const docsExamples: Record<string, DocsExampleEntry[]> = {
         "description": "Project.zip",
         "status": "progress",
         "progress": 80,
+        "expandDuration": 780,
         "minHeight": "9rem"
       },
-      "code": "import { Activity } from '@larose-ui/react';\n\n<Activity\n  title=\"Uploading\"\n  description=\"Project.zip\"\n  status=\"progress\"\n  progress={80}\n  minHeight=\"9rem\"\n>Example</Activity>"
+      "code": "import { Activity } from '@larose-ui/react';\n\n<Activity\n  title=\"Uploading\"\n  description=\"Project.zip\"\n  status=\"progress\"\n  progress={80}\n  expandDuration={780}\n  minHeight=\"9rem\"\n>Example</Activity>"
     },
     {
       "id": "HiddenUntilExpand",

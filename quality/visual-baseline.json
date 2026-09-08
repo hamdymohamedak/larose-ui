@@ -6,6 +6,10 @@
       "title": "Foundation/Accelerators"
     },
     {
+      "file": "Activity.stories.tsx",
+      "title": "Foundation/Activity"
+    },
+    {
       "file": "ActivityView.stories.tsx",
       "title": "Foundation/Activity Views"
     },

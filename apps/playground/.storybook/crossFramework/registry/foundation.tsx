@@ -139,6 +139,7 @@ export const foundationRegistry: Record<string, CrossFrameworkComponentDefinitio
   }),
 
   badge: defineSlotParity({
+    id: 'badge',
     displayName: 'Badge',
     defaultSlot: 'Draft',
     propKeys: ['variant'],

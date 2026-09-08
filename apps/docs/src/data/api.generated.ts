@@ -264,6 +264,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "example": "0"
       },
       {
+        "name": "expandDuration",
+        "type": "number | string",
+        "required": false,
+        "description": "Expand/collapse morph duration. Number = milliseconds; string = any CSS time.",
+        "inherited": false,
+        "example": "—"
+      },
+      {
         "name": "expanded",
         "type": "boolean",
         "required": false,

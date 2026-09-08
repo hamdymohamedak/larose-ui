@@ -583,7 +583,7 @@ export const docsSearchIndex = [
     "title": "Activity",
     "type": "component",
     "path": "/docs/components/activity",
-    "keywords": "Activity Other Activity.actions ActivityAction[] Activity.children ReactNode Activity.className string Activity.defaultExpanded boolean Activity.description string Activity.expandable boolean Activity.expandAfter number Activity.expanded boolean Activity.expandedSize ActivityExpandedSize Activity.hideCollapsedContent boolean Activity.icon ReactNode Activity.leading ReactNode Activity.mode ActivityMode Activity.onExpandedChange (expanded: boolean) => void Activity.priority ActivityPriority Activity.progress number Activity.status ActivityStatus Activity.style CSSProperties Activity.title string Activity.trailing ReactNode",
+    "keywords": "Activity Other Activity.actions ActivityAction[] Activity.children ReactNode Activity.className string Activity.defaultExpanded boolean Activity.description string Activity.expandable boolean Activity.expandAfter number Activity.expandDuration number | string Activity.expanded boolean Activity.expandedSize ActivityExpandedSize Activity.hideCollapsedContent boolean Activity.icon ReactNode Activity.leading ReactNode Activity.mode ActivityMode Activity.onExpandedChange (expanded: boolean) => void Activity.priority ActivityPriority Activity.progress number Activity.status ActivityStatus Activity.style CSSProperties Activity.title string Activity.trailing ReactNode",
     "excerpt": "Other component from @larose-ui/react"
   },
   {
@@ -625,6 +625,14 @@ export const docsSearchIndex = [
     "path": "/docs/components/activity#api",
     "keywords": "Activity expandAfter number Auto-expand after this many milliseconds (uncontrolled, or fires `onExpandedChange`).\nUseful for “compress then grow” live-activity timing.",
     "excerpt": "Auto-expand after this many milliseconds (uncontrolled, or fires `onExpandedChange`).\nUseful for “compress then grow” live-activity timing."
+  },
+  {
+    "id": "prop:activity:expandDuration",
+    "title": "Activity.expandDuration",
+    "type": "prop",
+    "path": "/docs/components/activity#api",
+    "keywords": "Activity expandDuration number | string Expand/collapse morph duration. Number = milliseconds; string = any CSS time.",
+    "excerpt": "Expand/collapse morph duration. Number = milliseconds; string = any CSS time."
   },
   {
     "id": "prop:activity:expanded",
@@ -727,7 +735,7 @@ export const docsSearchIndex = [
     "title": "Activity — Expand on click",
     "type": "example",
     "path": "/docs/components/activity#examples",
-    "keywords": "Activity Expand on click advanced {\"title\":\"Uploading\",\"description\":\"Project.zip\",\"status\":\"progress\",\"progress\":80,\"minHeight\":\"9rem\"}",
+    "keywords": "Activity Expand on click advanced {\"title\":\"Uploading\",\"description\":\"Project.zip\",\"status\":\"progress\",\"progress\":80,\"expandDuration\":780,\"minHeight\":\"9rem\"}",
     "excerpt": "import { Activity } from '@larose-ui/react';\n\n<Activity\n  title=\"Uploading\"\n  description=\"Project.zip\"\n  status=\"progre"
   },
   {

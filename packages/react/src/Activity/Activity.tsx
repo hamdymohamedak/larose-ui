@@ -346,7 +346,6 @@ function ActivityRoot({
     const id = window.setTimeout(() => setExpanded(true), expandAfter);
     return () => window.clearTimeout(id);
     // Only schedule once when expandAfter is set / remounted.
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- intentional one-shot timer from expandAfter
   }, [expandAfter, mode]);
 
   const toggleExpanded = () => {

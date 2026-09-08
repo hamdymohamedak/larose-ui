@@ -45,6 +45,14 @@
       "example": "0"
     },
     {
+      "name": "expandDuration",
+      "type": "number | string",
+      "required": false,
+      "description": "Expand/collapse morph duration. Number = milliseconds; string = any CSS time.",
+      "inherited": false,
+      "example": "—"
+    },
+    {
       "name": "expanded",
       "type": "boolean",
       "required": false,
@@ -155,9 +163,10 @@
         "description": "Project.zip",
         "status": "progress",
         "progress": 80,
+        "expandDuration": 780,
         "minHeight": "9rem"
       },
-      "code": "import { Activity } from '@larose-ui/react';\n\n<Activity\n  title=\"Uploading\"\n  description=\"Project.zip\"\n  status=\"progress\"\n  progress={80}\n  minHeight=\"9rem\"\n>Example</Activity>"
+      "code": "import { Activity } from '@larose-ui/react';\n\n<Activity\n  title=\"Uploading\"\n  description=\"Project.zip\"\n  status=\"progress\"\n  progress={80}\n  expandDuration={780}\n  minHeight=\"9rem\"\n>Example</Activity>"
     },
     {
       "id": "HiddenUntilExpand",
