@@ -39,6 +39,13 @@
       "default": "'empty'",
       "inherited": false,
       "example": "'empty'"
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "required": true,
+      "inherited": false,
+      "example": "—"
     }
   ],
   "examples": [

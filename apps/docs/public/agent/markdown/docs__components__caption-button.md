@@ -6,5 +6,6 @@ Category: Other
 - `imageUrl` (string)
 - `label` (string)
 - `subtitle` (string)
+- `title` (string)
 
 Metadata: /components/caption-button.json

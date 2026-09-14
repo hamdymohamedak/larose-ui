@@ -364,7 +364,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "title",
         "type": "string",
         "required": false,
-        "inherited": true,
+        "inherited": false,
         "example": "—"
       },
       {
@@ -444,7 +444,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "title",
         "type": "string",
         "required": false,
-        "inherited": true,
+        "inherited": false,
         "example": "—"
       }
     ],
@@ -538,7 +538,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "title",
         "type": "string",
         "required": false,
-        "inherited": true,
+        "inherited": false,
         "example": "—"
       }
     ],
@@ -594,7 +594,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "title",
         "type": "string",
         "required": false,
-        "inherited": true,
+        "inherited": false,
         "example": "—"
       },
       {
@@ -725,7 +725,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "title",
         "type": "string",
         "required": true,
-        "inherited": true,
+        "inherited": false,
         "example": "—"
       }
     ],
@@ -897,7 +897,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "title",
         "type": "string",
         "required": false,
-        "inherited": true,
+        "inherited": false,
         "example": "—"
       },
       {
@@ -1225,7 +1225,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "title",
         "type": "string",
         "required": true,
-        "inherited": true,
+        "inherited": false,
         "example": "—"
       }
     ],
@@ -1283,7 +1283,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "title",
         "type": "string",
         "required": false,
-        "inherited": true,
+        "inherited": false,
         "example": "—"
       }
     ],
@@ -1416,7 +1416,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "title",
         "type": "string",
         "required": false,
-        "inherited": true,
+        "inherited": false,
         "example": "—"
       },
       {
@@ -1932,7 +1932,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "title",
         "type": "string",
         "required": false,
-        "inherited": true,
+        "inherited": false,
         "example": "—"
       }
     ],
@@ -2496,6 +2496,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "example": "true"
       },
       {
+        "name": "showConfirm",
+        "type": "boolean",
+        "required": false,
+        "description": "When false, hide the confirm button. Default true (matches Vue/Svelte).",
+        "inherited": false,
+        "example": "true"
+      },
+      {
         "name": "style",
         "type": "CSSProperties",
         "required": false,
@@ -2506,7 +2514,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "title",
         "type": "string",
         "required": true,
-        "inherited": true,
+        "inherited": false,
         "example": "—"
       },
       {
@@ -3338,6 +3346,13 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "example": "true"
       },
       {
+        "name": "overlayClass",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "—"
+      },
+      {
         "name": "overlayClassName",
         "type": "string",
         "required": false,
@@ -3347,6 +3362,13 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
       {
         "name": "overlayStyle",
         "type": "CSSProperties",
+        "required": false,
+        "inherited": false,
+        "example": "—"
+      },
+      {
+        "name": "panelClass",
+        "type": "string",
         "required": false,
         "inherited": false,
         "example": "—"
@@ -3383,7 +3405,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "title",
         "type": "string",
         "required": false,
-        "inherited": true,
+        "inherited": false,
         "example": "—"
       }
     ],
@@ -3701,7 +3723,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "title",
         "type": "string",
         "required": true,
-        "inherited": true,
+        "inherited": false,
         "example": "—"
       }
     ],
@@ -4270,6 +4292,13 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "default": "'contain'",
         "inherited": false,
         "example": "'contain'"
+      },
+      {
+        "name": "frameClass",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "—"
       },
       {
         "name": "frameClassName",
@@ -6982,7 +7011,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "title",
         "type": "ReactNode",
         "required": false,
-        "inherited": true,
+        "inherited": false,
         "example": "—"
       },
       {
@@ -7161,7 +7190,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "title",
         "type": "string",
         "required": true,
-        "inherited": true,
+        "inherited": false,
         "example": "—"
       },
       {
@@ -7361,7 +7390,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "title",
         "type": "string",
         "required": false,
-        "inherited": true,
+        "inherited": false,
         "example": "—"
       }
     ],
@@ -7526,7 +7555,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "title",
         "type": "string",
         "required": false,
-        "inherited": true,
+        "inherited": false,
         "example": "—"
       }
     ],
@@ -7834,6 +7863,13 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "example": "true"
       },
       {
+        "name": "contentClass",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "—"
+      },
+      {
         "name": "contentClassName",
         "type": "string",
         "required": false,
@@ -7876,6 +7912,13 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "example": "true"
       },
       {
+        "name": "overlayClass",
+        "type": "string",
+        "required": false,
+        "inherited": false,
+        "example": "—"
+      },
+      {
         "name": "overlayClassName",
         "type": "string",
         "required": false,
@@ -7900,7 +7943,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "title",
         "type": "string",
         "required": false,
-        "inherited": true,
+        "inherited": false,
         "example": "—"
       }
     ],
@@ -8700,6 +8743,14 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "example": "true"
       },
       {
+        "name": "panelClass",
+        "type": "string",
+        "required": false,
+        "description": "Extra class names for the floating panel element.",
+        "inherited": false,
+        "example": "—"
+      },
+      {
         "name": "panelClassName",
         "type": "string",
         "required": false,
@@ -8866,7 +8917,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "title",
         "type": "string",
         "required": false,
-        "inherited": true,
+        "inherited": false,
         "example": "—"
       }
     ],
@@ -10392,7 +10443,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "type": "string",
         "required": false,
         "description": "Concise view title — aim for under 15 characters.",
-        "inherited": true,
+        "inherited": false,
         "example": "—"
       }
     ],
@@ -10979,7 +11030,7 @@ export const docsComponentApi: Record<string, DocsComponentApi> = {
         "name": "title",
         "type": "string",
         "required": true,
-        "inherited": true,
+        "inherited": false,
         "example": "—"
       }
     ],

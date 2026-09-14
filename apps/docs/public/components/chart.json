@@ -111,6 +111,13 @@
       "example": "—"
     },
     {
+      "name": "title",
+      "type": "string",
+      "required": false,
+      "inherited": false,
+      "example": "—"
+    },
+    {
       "name": "xAxis",
       "type": "ChartAxisConfig",
       "required": false,

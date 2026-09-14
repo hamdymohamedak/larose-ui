@@ -6,6 +6,7 @@ Category: Content
 - `alt` (string)
 - `background` (ImageBackground)
 - `fit` (ImageFit)
+- `frameClass` (string)
 - `frameClassName` (string)
 - `frameStyle` (CSSProperties)
 - `objectPosition` (string)

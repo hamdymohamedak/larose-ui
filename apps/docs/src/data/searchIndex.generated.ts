@@ -715,6 +715,14 @@ export const docsSearchIndex = [
     "excerpt": "ActivityStatus"
   },
   {
+    "id": "prop:activity:title",
+    "title": "Activity.title",
+    "type": "prop",
+    "path": "/docs/components/activity#api",
+    "keywords": "Activity title string ",
+    "excerpt": "string"
+  },
+  {
     "id": "prop:activity:trailing",
     "title": "Activity.trailing",
     "type": "prop",
@@ -843,6 +851,14 @@ export const docsSearchIndex = [
     "excerpt": "Uses popover on wide viewports and sheet on compact widths when auto."
   },
   {
+    "id": "prop:activity-share-button:title",
+    "title": "ActivityShareButton.title",
+    "type": "prop",
+    "path": "/docs/components/activity-share-button#api",
+    "keywords": "ActivityShareButton title string ",
+    "excerpt": "string"
+  },
+  {
     "id": "component:activity-view",
     "title": "ActivityView",
     "type": "component",
@@ -915,6 +931,14 @@ export const docsSearchIndex = [
     "excerpt": "ActivityPresentation"
   },
   {
+    "id": "prop:activity-view:title",
+    "title": "ActivityView.title",
+    "type": "prop",
+    "path": "/docs/components/activity-view#api",
+    "keywords": "ActivityView title string ",
+    "excerpt": "string"
+  },
+  {
     "id": "example:activity-view:NotesShareSheet",
     "title": "ActivityView — Notes share sheet",
     "type": "example",
@@ -961,6 +985,14 @@ export const docsSearchIndex = [
     "path": "/docs/components/alert#api",
     "keywords": "Alert onDismiss () => void ",
     "excerpt": "() => void"
+  },
+  {
+    "id": "prop:alert:title",
+    "title": "Alert.title",
+    "type": "prop",
+    "path": "/docs/components/alert#api",
+    "keywords": "Alert title string ",
+    "excerpt": "string"
   },
   {
     "id": "prop:alert:variant",
@@ -1155,6 +1187,14 @@ export const docsSearchIndex = [
     "excerpt": "AlertDialogTextField"
   },
   {
+    "id": "prop:alert-dialog:title",
+    "title": "AlertDialog.title",
+    "type": "prop",
+    "path": "/docs/components/alert-dialog#api",
+    "keywords": "AlertDialog title string ",
+    "excerpt": "string (required)"
+  },
+  {
     "id": "component:async-button",
     "title": "AsyncButton",
     "type": "component",
@@ -1297,6 +1337,14 @@ export const docsSearchIndex = [
     "path": "/docs/components/box#api",
     "keywords": "Box settingsStyle boolean macOS settings panes append a colon to the title.",
     "excerpt": "macOS settings panes append a colon to the title."
+  },
+  {
+    "id": "prop:box:title",
+    "title": "Box.title",
+    "type": "prop",
+    "path": "/docs/components/box#api",
+    "keywords": "Box title string ",
+    "excerpt": "string"
   },
   {
     "id": "prop:box:titlePosition",
@@ -1731,6 +1779,14 @@ export const docsSearchIndex = [
     "excerpt": "string"
   },
   {
+    "id": "prop:caption-button:title",
+    "title": "CaptionButton.title",
+    "type": "prop",
+    "path": "/docs/components/caption-button#api",
+    "keywords": "CaptionButton title string ",
+    "excerpt": "string (required)"
+  },
+  {
     "id": "component:card",
     "title": "Card",
     "type": "component",
@@ -1761,6 +1817,14 @@ export const docsSearchIndex = [
     "path": "/docs/components/card#api",
     "keywords": "Card padding 'none' | 'sm' | 'md' | 'lg' ",
     "excerpt": "'none' | 'sm' | 'md' | 'lg'"
+  },
+  {
+    "id": "prop:card:title",
+    "title": "Card.title",
+    "type": "prop",
+    "path": "/docs/components/card#api",
+    "keywords": "Card title string ",
+    "excerpt": "string"
   },
   {
     "id": "example:card:Default",
@@ -2000,6 +2064,14 @@ export const docsSearchIndex = [
     "type": "prop",
     "path": "/docs/components/chart#api",
     "keywords": "Chart subtitle string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:chart:title",
+    "title": "Chart.title",
+    "type": "prop",
+    "path": "/docs/components/chart#api",
+    "keywords": "Chart title string ",
     "excerpt": "string"
   },
   {
@@ -2555,6 +2627,14 @@ export const docsSearchIndex = [
     "excerpt": "ReactNode"
   },
   {
+    "id": "prop:context-menu:title",
+    "title": "ContextMenu.title",
+    "type": "prop",
+    "path": "/docs/components/context-menu#api",
+    "keywords": "ContextMenu title string ",
+    "excerpt": "string"
+  },
+  {
     "id": "example:context-menu:MailMessage",
     "title": "ContextMenu — Mail message",
     "type": "example",
@@ -3031,7 +3111,7 @@ export const docsSearchIndex = [
     "title": "Dialog",
     "type": "component",
     "path": "/docs/components/dialog",
-    "keywords": "Dialog Overlay Dialog.cancelLabel string Dialog.children ReactNode Dialog.className string Dialog.confirmLabel string Dialog.description string Dialog.loading boolean Dialog.onClose () => void Dialog.onConfirm () => void Dialog.open boolean Dialog.style CSSProperties Dialog.title string Dialog.variant 'default' | 'destructive'",
+    "keywords": "Dialog Overlay Dialog.cancelLabel string Dialog.children ReactNode Dialog.className string Dialog.confirmLabel string Dialog.description string Dialog.loading boolean Dialog.onClose () => void Dialog.onConfirm () => void Dialog.open boolean Dialog.showConfirm boolean Dialog.style CSSProperties Dialog.title string Dialog.variant 'default' | 'destructive'",
     "excerpt": "Overlay component from @larose-ui/react"
   },
   {
@@ -3089,6 +3169,22 @@ export const docsSearchIndex = [
     "path": "/docs/components/dialog#api",
     "keywords": "Dialog open boolean ",
     "excerpt": "boolean (required)"
+  },
+  {
+    "id": "prop:dialog:showConfirm",
+    "title": "Dialog.showConfirm",
+    "type": "prop",
+    "path": "/docs/components/dialog#api",
+    "keywords": "Dialog showConfirm boolean When false, hide the confirm button. Default true (matches Vue/Svelte).",
+    "excerpt": "When false, hide the confirm button. Default true (matches Vue/Svelte)."
+  },
+  {
+    "id": "prop:dialog:title",
+    "title": "Dialog.title",
+    "type": "prop",
+    "path": "/docs/components/dialog#api",
+    "keywords": "Dialog title string ",
+    "excerpt": "string (required)"
   },
   {
     "id": "prop:dialog:variant",
@@ -3703,7 +3799,7 @@ export const docsSearchIndex = [
     "title": "Drawer",
     "type": "component",
     "path": "/docs/components/drawer",
-    "keywords": "Drawer Overlay Drawer.children ReactNode Drawer.className string Drawer.closeOnOverlay boolean Drawer.description string Drawer.motion ComponentMotionOverride Drawer.onClose () => void Drawer.open boolean Drawer.overlayClassName string Drawer.overlayStyle CSSProperties Drawer.panelClassName string Drawer.panelStyle CSSProperties Drawer.side DrawerSide Drawer.style CSSProperties Drawer.title string",
+    "keywords": "Drawer Overlay Drawer.children ReactNode Drawer.className string Drawer.closeOnOverlay boolean Drawer.description string Drawer.motion ComponentMotionOverride Drawer.onClose () => void Drawer.open boolean Drawer.overlayClass string Drawer.overlayClassName string Drawer.overlayStyle CSSProperties Drawer.panelClass string Drawer.panelClassName string Drawer.panelStyle CSSProperties Drawer.side DrawerSide Drawer.style CSSProperties Drawer.title string",
     "excerpt": "Overlay component from @larose-ui/react"
   },
   {
@@ -3747,6 +3843,14 @@ export const docsSearchIndex = [
     "excerpt": "boolean (required)"
   },
   {
+    "id": "prop:drawer:overlayClass",
+    "title": "Drawer.overlayClass",
+    "type": "prop",
+    "path": "/docs/components/drawer#api",
+    "keywords": "Drawer overlayClass string ",
+    "excerpt": "string"
+  },
+  {
     "id": "prop:drawer:overlayClassName",
     "title": "Drawer.overlayClassName",
     "type": "prop",
@@ -3761,6 +3865,14 @@ export const docsSearchIndex = [
     "path": "/docs/components/drawer#api",
     "keywords": "Drawer overlayStyle CSSProperties ",
     "excerpt": "CSSProperties"
+  },
+  {
+    "id": "prop:drawer:panelClass",
+    "title": "Drawer.panelClass",
+    "type": "prop",
+    "path": "/docs/components/drawer#api",
+    "keywords": "Drawer panelClass string ",
+    "excerpt": "string"
   },
   {
     "id": "prop:drawer:panelClassName",
@@ -3785,6 +3897,14 @@ export const docsSearchIndex = [
     "path": "/docs/components/drawer#api",
     "keywords": "Drawer side DrawerSide ",
     "excerpt": "DrawerSide"
+  },
+  {
+    "id": "prop:drawer:title",
+    "title": "Drawer.title",
+    "type": "prop",
+    "path": "/docs/components/drawer#api",
+    "keywords": "Drawer title string ",
+    "excerpt": "string"
   },
   {
     "id": "example:drawer:Right",
@@ -4073,6 +4193,14 @@ export const docsSearchIndex = [
     "path": "/docs/components/empty-state#api",
     "keywords": "EmptyState state UIState ",
     "excerpt": "UIState"
+  },
+  {
+    "id": "prop:empty-state:title",
+    "title": "EmptyState.title",
+    "type": "prop",
+    "path": "/docs/components/empty-state#api",
+    "keywords": "EmptyState title string ",
+    "excerpt": "string (required)"
   },
   {
     "id": "example:empty-state:NoEmployees",
@@ -4559,7 +4687,7 @@ export const docsSearchIndex = [
     "title": "ImageView",
     "type": "component",
     "path": "/docs/components/image-view",
-    "keywords": "ImageView Content ImageView.alt string ImageView.background ImageBackground ImageView.fit ImageFit ImageView.frameClassName string ImageView.frameStyle CSSProperties ImageView.objectPosition string ImageView.sequence ImageFrameSequence ImageView.src string",
+    "keywords": "ImageView Content ImageView.alt string ImageView.background ImageBackground ImageView.fit ImageFit ImageView.frameClass string ImageView.frameClassName string ImageView.frameStyle CSSProperties ImageView.objectPosition string ImageView.sequence ImageFrameSequence ImageView.src string",
     "excerpt": "Content component from @larose-ui/react"
   },
   {
@@ -4585,6 +4713,14 @@ export const docsSearchIndex = [
     "path": "/docs/components/image-view#api",
     "keywords": "ImageView fit ImageFit ",
     "excerpt": "ImageFit"
+  },
+  {
+    "id": "prop:image-view:frameClass",
+    "title": "ImageView.frameClass",
+    "type": "prop",
+    "path": "/docs/components/image-view#api",
+    "keywords": "ImageView frameClass string ",
+    "excerpt": "string"
   },
   {
     "id": "prop:image-view:frameClassName",
@@ -7435,6 +7571,14 @@ export const docsSearchIndex = [
     "excerpt": "Glass fill on non-Chromium fallback."
   },
   {
+    "id": "prop:liquid-glass-top-bar:title",
+    "title": "LiquidGlassTopBar.title",
+    "type": "prop",
+    "path": "/docs/components/liquid-glass-top-bar#api",
+    "keywords": "LiquidGlassTopBar title ReactNode ",
+    "excerpt": "ReactNode"
+  },
+  {
     "id": "prop:liquid-glass-top-bar:titleColor",
     "title": "LiquidGlassTopBar.titleColor",
     "type": "prop",
@@ -7611,6 +7755,14 @@ export const docsSearchIndex = [
     "excerpt": "string"
   },
   {
+    "id": "prop:list-row:title",
+    "title": "ListRow.title",
+    "type": "prop",
+    "path": "/docs/components/list-row#api",
+    "keywords": "ListRow title string ",
+    "excerpt": "string (required)"
+  },
+  {
     "id": "prop:list-row:truncate",
     "title": "ListRow.truncate",
     "type": "prop",
@@ -7739,6 +7891,14 @@ export const docsSearchIndex = [
     "excerpt": "string (required)"
   },
   {
+    "id": "prop:lockup-card:title",
+    "title": "LockupCard.title",
+    "type": "prop",
+    "path": "/docs/components/lockup-card#api",
+    "keywords": "LockupCard title string ",
+    "excerpt": "string"
+  },
+  {
     "id": "component:lockup-row",
     "title": "LockupRow",
     "type": "component",
@@ -7857,6 +8017,14 @@ export const docsSearchIndex = [
     "path": "/docs/components/menu#api",
     "keywords": "Menu optionKey boolean Passed from MenuBar for Option-key alternate accelerators.",
     "excerpt": "Passed from MenuBar for Option-key alternate accelerators."
+  },
+  {
+    "id": "prop:menu:title",
+    "title": "Menu.title",
+    "type": "prop",
+    "path": "/docs/components/menu#api",
+    "keywords": "Menu title string ",
+    "excerpt": "string"
   },
   {
     "id": "example:menu:LargeLayout",
@@ -8151,7 +8319,7 @@ export const docsSearchIndex = [
     "title": "Modal",
     "type": "component",
     "path": "/docs/components/modal",
-    "keywords": "Modal Overlay Modal.children ReactNode Modal.className string Modal.closeOnOverlay boolean Modal.contentClassName string Modal.contentStyle CSSProperties Modal.description string Modal.motion ComponentMotionOverride Modal.onClose () => void Modal.open boolean Modal.overlayClassName string Modal.overlayStyle CSSProperties Modal.style CSSProperties Modal.title string",
+    "keywords": "Modal Overlay Modal.children ReactNode Modal.className string Modal.closeOnOverlay boolean Modal.contentClass string Modal.contentClassName string Modal.contentStyle CSSProperties Modal.description string Modal.motion ComponentMotionOverride Modal.onClose () => void Modal.open boolean Modal.overlayClass string Modal.overlayClassName string Modal.overlayStyle CSSProperties Modal.style CSSProperties Modal.title string",
     "excerpt": "Overlay component from @larose-ui/react"
   },
   {
@@ -8161,6 +8329,14 @@ export const docsSearchIndex = [
     "path": "/docs/components/modal#api",
     "keywords": "Modal closeOnOverlay boolean ",
     "excerpt": "boolean"
+  },
+  {
+    "id": "prop:modal:contentClass",
+    "title": "Modal.contentClass",
+    "type": "prop",
+    "path": "/docs/components/modal#api",
+    "keywords": "Modal contentClass string ",
+    "excerpt": "string"
   },
   {
     "id": "prop:modal:contentClassName",
@@ -8211,6 +8387,14 @@ export const docsSearchIndex = [
     "excerpt": "boolean (required)"
   },
   {
+    "id": "prop:modal:overlayClass",
+    "title": "Modal.overlayClass",
+    "type": "prop",
+    "path": "/docs/components/modal#api",
+    "keywords": "Modal overlayClass string ",
+    "excerpt": "string"
+  },
+  {
     "id": "prop:modal:overlayClassName",
     "title": "Modal.overlayClassName",
     "type": "prop",
@@ -8225,6 +8409,14 @@ export const docsSearchIndex = [
     "path": "/docs/components/modal#api",
     "keywords": "Modal overlayStyle CSSProperties ",
     "excerpt": "CSSProperties"
+  },
+  {
+    "id": "prop:modal:title",
+    "title": "Modal.title",
+    "type": "prop",
+    "path": "/docs/components/modal#api",
+    "keywords": "Modal title string ",
+    "excerpt": "string"
   },
   {
     "id": "example:modal:Default",
@@ -8975,7 +9167,7 @@ export const docsSearchIndex = [
     "title": "Popover",
     "type": "component",
     "path": "/docs/components/popover",
-    "keywords": "Popover Overlay Popover.'aria-label' string Popover.className string Popover.content ReactNode Popover.defaultOpen boolean Popover.onOpenChange (open: boolean) => void Popover.open boolean Popover.panelClassName string Popover.side PopoverSide Popover.style CSSProperties Popover.trigger ReactNode",
+    "keywords": "Popover Overlay Popover.'aria-label' string Popover.className string Popover.content ReactNode Popover.defaultOpen boolean Popover.onOpenChange (open: boolean) => void Popover.open boolean Popover.panelClass string Popover.panelClassName string Popover.side PopoverSide Popover.style CSSProperties Popover.trigger ReactNode",
     "excerpt": "Overlay component from @larose-ui/react"
   },
   {
@@ -9017,6 +9209,14 @@ export const docsSearchIndex = [
     "path": "/docs/components/popover#api",
     "keywords": "Popover open boolean ",
     "excerpt": "boolean"
+  },
+  {
+    "id": "prop:popover:panelClass",
+    "title": "Popover.panelClass",
+    "type": "prop",
+    "path": "/docs/components/popover#api",
+    "keywords": "Popover panelClass string Extra class names for the floating panel element.",
+    "excerpt": "Extra class names for the floating panel element."
   },
   {
     "id": "prop:popover:panelClassName",
@@ -9200,6 +9400,14 @@ export const docsSearchIndex = [
     "type": "prop",
     "path": "/docs/components/poster#api",
     "keywords": "Poster subtitle string ",
+    "excerpt": "string"
+  },
+  {
+    "id": "prop:poster:title",
+    "title": "Poster.title",
+    "type": "prop",
+    "path": "/docs/components/poster#api",
+    "keywords": "Poster title string ",
     "excerpt": "string"
   },
   {
@@ -10795,6 +11003,14 @@ export const docsSearchIndex = [
     "excerpt": "ToolbarPlatform"
   },
   {
+    "id": "prop:toolbar:title",
+    "title": "Toolbar.title",
+    "type": "prop",
+    "path": "/docs/components/toolbar#api",
+    "keywords": "Toolbar title string Concise view title — aim for under 15 characters.",
+    "excerpt": "Concise view title — aim for under 15 characters."
+  },
+  {
     "id": "example:toolbar:MacNotesStyle",
     "title": "Toolbar — macOS Notes (standard + More)",
     "type": "example",
@@ -11233,6 +11449,14 @@ export const docsSearchIndex = [
     "path": "/docs/components/unsaved-indicator#api",
     "keywords": "UnsavedIndicator edited boolean ",
     "excerpt": "boolean"
+  },
+  {
+    "id": "prop:unsaved-indicator:title",
+    "title": "UnsavedIndicator.title",
+    "type": "prop",
+    "path": "/docs/components/unsaved-indicator#api",
+    "keywords": "UnsavedIndicator title string ",
+    "excerpt": "string (required)"
   },
   {
     "id": "component:wheel-column",

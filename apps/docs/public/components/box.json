@@ -29,6 +29,13 @@
       "example": "false"
     },
     {
+      "name": "title",
+      "type": "string",
+      "required": false,
+      "inherited": false,
+      "example": "—"
+    },
+    {
       "name": "titlePosition",
       "type": "BoxTitlePosition",
       "required": false,

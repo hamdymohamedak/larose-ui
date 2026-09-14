@@ -313,7 +313,7 @@
     ],
     "composition": "Use for primary actions on colorful or photographic backgrounds.",
     "slots": [
-      "children"
+      "default"
     ],
     "states": [
       "default",

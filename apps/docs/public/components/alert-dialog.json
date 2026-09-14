@@ -89,6 +89,13 @@
       "required": false,
       "inherited": false,
       "example": "—"
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "required": true,
+      "inherited": false,
+      "example": "—"
     }
   ],
   "examples": [],

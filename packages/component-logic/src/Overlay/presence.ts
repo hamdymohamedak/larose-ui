@@ -17,6 +17,9 @@ function initialPhase(present: boolean, skipMotion: boolean): PresencePhase {
 /**
  * Framework-neutral presence state machine for enter/exit CSS animations.
  * Adapters schedule RAF / microtasks according to their lifecycle; this owns phases only.
+ *
+ * `getSnapshot()` returns a cached object reference until phase/shouldRender change —
+ * required for React `useSyncExternalStore`.
  */
 export function createPresenceController(
   initialPresent = false,
@@ -30,8 +33,23 @@ export function createPresenceController(
   let enterRaf2: number | null = null;
   const listeners = new Set<() => void>();
 
+  let cachedSnapshot: PresenceSnapshot = {
+    phase,
+    shouldRender: present || phase !== 'exited',
+  };
+
   const notify = () => {
     for (const listener of listeners) listener();
+  };
+
+  const commitSnapshot = () => {
+    const shouldRender = present || phase !== 'exited';
+    if (cachedSnapshot.phase === phase && cachedSnapshot.shouldRender === shouldRender) {
+      return false;
+    }
+    cachedSnapshot = { phase, shouldRender };
+    notify();
+    return true;
   };
 
   const cancelEnterFrames = () => {
@@ -45,15 +63,13 @@ export function createPresenceController(
     }
   };
 
-  const snapshot = (): PresenceSnapshot => ({
-    phase,
-    shouldRender: present || phase !== 'exited',
-  });
-
   const setPhase = (next: PresencePhase) => {
-    if (phase === next) return;
+    if (phase === next) {
+      commitSnapshot();
+      return;
+    }
     phase = next;
-    notify();
+    commitSnapshot();
   };
 
   const scheduleEnter = () => {
@@ -72,7 +88,7 @@ export function createPresenceController(
   };
 
   return {
-    getSnapshot: snapshot,
+    getSnapshot: () => cachedSnapshot,
     setPresent(nextPresent, options = {}) {
       if (options.skipMotion !== undefined) skipMotion = options.skipMotion;
       if (options.onExitComplete !== undefined) onExitComplete = options.onExitComplete;
@@ -85,7 +101,7 @@ export function createPresenceController(
           return;
         }
         if (phase === 'entered' || phase === 'entering') {
-          notify();
+          commitSnapshot();
           return;
         }
         setPhase('mounting');
@@ -94,7 +110,7 @@ export function createPresenceController(
       }
 
       if (phase === 'exited') {
-        notify();
+        commitSnapshot();
         return;
       }
       if (skipMotion) {
@@ -111,7 +127,7 @@ export function createPresenceController(
         setPhase('exited');
         queueMicrotask(() => onExitComplete?.());
       }
-      return snapshot();
+      return cachedSnapshot;
     },
     subscribe(listener) {
       listeners.add(listener);

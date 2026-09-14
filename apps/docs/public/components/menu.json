@@ -91,6 +91,13 @@
       "description": "Passed from MenuBar for Option-key alternate accelerators.",
       "inherited": false,
       "example": "true"
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "required": false,
+      "inherited": false,
+      "example": "—"
     }
   ],
   "examples": [

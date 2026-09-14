@@ -17,6 +17,13 @@
       "required": true,
       "inherited": false,
       "example": "—"
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "required": false,
+      "inherited": false,
+      "example": "—"
     }
   ],
   "examples": [],

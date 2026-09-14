@@ -6,6 +6,7 @@ Category: Layout
 - `'aria-label'` (string)
 - `padding` ('sm' | 'md' | 'lg')
 - `settingsStyle` (boolean) — macOS settings panes append a colon to the title.
+- `title` (string)
 - `titlePosition` (BoxTitlePosition)
 - `variant` (BoxVariant)
 

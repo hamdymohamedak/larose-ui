@@ -354,26 +354,24 @@ export interface ComponentAnatomy {
 
 export const componentAnatomy: Record<string, ComponentAnatomy> = {
   "Modal": {
-    "summary": "Modal renders a portal overlay with focus trap and optional title/description.",
+    "summary": "Modal renders a portal overlay with focus trap, enter/exit motion, and optional title/description.",
     "structure": [
       "Modal (root portal)",
       "Overlay",
       "Content",
       "Title",
       "Description",
-      "Body (children)"
+      "Body (default slot)"
     ],
-    "composition": "Control open state externally. Provide title and description for accessible naming.",
+    "composition": "Control open state externally. Provide title and description for accessible naming. Portal + presence motion are required on every framework.",
     "slots": [
-      "children",
-      "overlay",
-      "content"
+      "default"
     ],
     "states": [
       "closed",
       "open",
       "entering",
-      "leaving"
+      "exiting"
     ]
   },
   "Drawer": {
@@ -383,11 +381,11 @@ export const componentAnatomy: Record<string, ComponentAnatomy> = {
       "Overlay",
       "Panel",
       "Header",
-      "Body (children)"
+      "Body (default slot)"
     ],
     "composition": "Pair with Button triggers. Configure side via defaultProps or prop.",
     "slots": [
-      "children"
+      "default"
     ],
     "states": [
       "closed",
@@ -403,9 +401,9 @@ export const componentAnatomy: Record<string, ComponentAnatomy> = {
       "Description",
       "Actions"
     ],
-    "composition": "Use for focused tasks smaller than full Modal layouts.",
+    "composition": "Use for focused tasks smaller than full Modal layouts. Confirm visibility defaults to shown (showConfirm).",
     "slots": [
-      "children"
+      "default"
     ],
     "states": [
       "closed",
@@ -422,7 +420,7 @@ export const componentAnatomy: Record<string, ComponentAnatomy> = {
     "composition": "Keep content concise; prefer Tooltip for single-line hints.",
     "slots": [
       "trigger",
-      "children"
+      "default"
     ],
     "states": [
       "closed",
@@ -439,7 +437,7 @@ export const componentAnatomy: Record<string, ComponentAnatomy> = {
     ],
     "composition": "Use padding tokens or Card defaultProps for density consistency.",
     "slots": [
-      "children",
+      "default",
       "title"
     ],
     "states": [
@@ -509,7 +507,7 @@ export const componentAnatomy: Record<string, ComponentAnatomy> = {
     ],
     "composition": "Use as a layout primitive or compose higher-level LiquidGlass* components.",
     "slots": [
-      "children"
+      "default"
     ],
     "states": [
       "default"
@@ -539,7 +537,7 @@ export const componentAnatomy: Record<string, ComponentAnatomy> = {
     ],
     "composition": "Use for primary actions on colorful or photographic backgrounds.",
     "slots": [
-      "children"
+      "default"
     ],
     "states": [
       "default",
@@ -636,7 +634,7 @@ export const componentAnatomy: Record<string, ComponentAnatomy> = {
     ],
     "composition": "Compose triggers and panels with matching value keys.",
     "slots": [
-      "children"
+      "default"
     ],
     "states": [
       "default",
@@ -653,7 +651,7 @@ export const componentAnatomy: Record<string, ComponentAnatomy> = {
     ],
     "composition": "Use for document-style interfaces with multiple open views.",
     "slots": [
-      "children"
+      "default"
     ],
     "states": [
       "default",
@@ -670,7 +668,7 @@ export const componentAnatomy: Record<string, ComponentAnatomy> = {
     ],
     "composition": "Wrap each section in AccordionItem; use type multiple for FAQ layouts.",
     "slots": [
-      "children"
+      "default"
     ],
     "states": [
       "collapsed",

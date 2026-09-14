@@ -11,5 +11,6 @@ Category: Sharing
 - `onClose` (() => void)
 - `open` (boolean)
 - `presentation` (ActivityPresentation)
+- `title` (string)
 
 Metadata: /components/activity-view.json

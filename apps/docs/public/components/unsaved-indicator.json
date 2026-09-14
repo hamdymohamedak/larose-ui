@@ -20,6 +20,13 @@
       "default": "false",
       "inherited": false,
       "example": "false"
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "required": true,
+      "inherited": false,
+      "example": "—"
     }
   ],
   "examples": [],

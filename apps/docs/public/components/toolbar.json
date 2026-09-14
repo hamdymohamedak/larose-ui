@@ -33,6 +33,14 @@
       "required": false,
       "inherited": false,
       "example": "—"
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "required": false,
+      "description": "Concise view title — aim for under 15 characters.",
+      "inherited": false,
+      "example": "—"
     }
   ],
   "examples": [

@@ -10,6 +10,7 @@ Category: Data
 - `onPress` (() => void)
 - `selected` (boolean)
 - `subtitle` (string)
+- `title` (string)
 - `truncate` ('end' | 'middle')
 
 Metadata: /components/list-row.json

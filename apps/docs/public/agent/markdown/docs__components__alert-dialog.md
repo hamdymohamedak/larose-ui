@@ -15,5 +15,6 @@ Category: Feedback
 - `showCautionIcon` (boolean) — Use sparingly for unexpected data loss.
 - `suppression` (AlertDialogSuppression)
 - `textField` (AlertDialogTextField)
+- `title` (string)
 
 Metadata: /components/alert-dialog.json

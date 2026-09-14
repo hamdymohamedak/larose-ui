@@ -309,6 +309,13 @@
       "example": "rgba(255,255,255,0.14)"
     },
     {
+      "name": "title",
+      "type": "ReactNode",
+      "required": false,
+      "inherited": false,
+      "example": "—"
+    },
+    {
       "name": "titleColor",
       "type": "string",
       "required": false,

@@ -12,6 +12,13 @@
       "example": "true"
     },
     {
+      "name": "contentClass",
+      "type": "string",
+      "required": false,
+      "inherited": false,
+      "example": "—"
+    },
+    {
       "name": "contentClassName",
       "type": "string",
       "required": false,
@@ -54,6 +61,13 @@
       "example": "true"
     },
     {
+      "name": "overlayClass",
+      "type": "string",
+      "required": false,
+      "inherited": false,
+      "example": "—"
+    },
+    {
       "name": "overlayClassName",
       "type": "string",
       "required": false,
@@ -63,6 +77,13 @@
     {
       "name": "overlayStyle",
       "type": "CSSProperties",
+      "required": false,
+      "inherited": false,
+      "example": "—"
+    },
+    {
+      "name": "title",
+      "type": "string",
       "required": false,
       "inherited": false,
       "example": "—"
@@ -98,26 +119,24 @@
     "Focus is managed while open; Escape typically closes the overlay."
   ],
   "anatomy": {
-    "summary": "Modal renders a portal overlay with focus trap and optional title/description.",
+    "summary": "Modal renders a portal overlay with focus trap, enter/exit motion, and optional title/description.",
     "structure": [
       "Modal (root portal)",
       "Overlay",
       "Content",
       "Title",
       "Description",
-      "Body (children)"
+      "Body (default slot)"
     ],
-    "composition": "Control open state externally. Provide title and description for accessible naming.",
+    "composition": "Control open state externally. Provide title and description for accessible naming. Portal + presence motion are required on every framework.",
     "slots": [
-      "children",
-      "overlay",
-      "content"
+      "default"
     ],
     "states": [
       "closed",
       "open",
       "entering",
-      "leaving"
+      "exiting"
     ]
   },
   "playground": null

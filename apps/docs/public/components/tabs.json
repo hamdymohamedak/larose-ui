@@ -49,7 +49,7 @@
     ],
     "composition": "Compose triggers and panels with matching value keys.",
     "slots": [
-      "children"
+      "default"
     ],
     "states": [
       "default",

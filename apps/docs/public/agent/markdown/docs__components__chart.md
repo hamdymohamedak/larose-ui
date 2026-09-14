@@ -16,6 +16,7 @@ Category: Data
 - `stacked` (boolean) — Stack bar marks when multiple series are present.
 - `stackGap` (number) — Gap between stacked bar segments (Apple HIG visual separation).
 - `subtitle` (string)
+- `title` (string)
 - `xAxis` (ChartAxisConfig)
 - `yAxis` (ChartAxisConfig)
 - `yAxisTrailing` (boolean) — Y axis on trailing edge (right in LTR) for layout alignment.

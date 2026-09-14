@@ -3,28 +3,39 @@ import {
   createPresenceController,
   type PresencePhase,
 } from '@larose-ui/component-logic/overlay';
-import { useSkipMotion } from '../Motion/MotionContext';
+import { useSkipMotion } from './MotionContext';
 
+/**
+ * Shared presence wiring for overlays. Snapshot identity is stable until phase changes
+ * (see createPresenceController) so useSyncExternalStore does not loop.
+ */
 export function useSharedPresence(present: boolean) {
   const skipMotion = useSkipMotion();
-  const controllerRef = useRef(createPresenceController(present, { skipMotion }));
+  const controllerRef = useRef<ReturnType<typeof createPresenceController> | null>(null);
+  if (controllerRef.current === null) {
+    controllerRef.current = createPresenceController(present, { skipMotion });
+  }
+  const controller = controllerRef.current;
 
   useLayoutEffect(() => {
-    controllerRef.current.setPresent(present, { skipMotion });
-  }, [present, skipMotion]);
+    controller.setPresent(present, { skipMotion });
+  }, [controller, present, skipMotion]);
 
-  useEffect(() => () => controllerRef.current.dispose(), []);
+  useEffect(() => () => controller.dispose(), [controller]);
 
   const snapshot = useSyncExternalStore(
-    (onStoreChange) => controllerRef.current.subscribe(onStoreChange),
-    () => controllerRef.current.getSnapshot(),
-    () => controllerRef.current.getSnapshot(),
+    (onStoreChange) => controller.subscribe(onStoreChange),
+    () => controller.getSnapshot(),
+    () => controller.getSnapshot(),
   );
 
-  const onAnimationEnd = useCallback((event: React.AnimationEvent) => {
-    if (event.target !== event.currentTarget) return;
-    controllerRef.current.handleAnimationEnd();
-  }, []);
+  const onAnimationEnd = useCallback(
+    (event: React.AnimationEvent) => {
+      if (event.target !== event.currentTarget) return;
+      controller.handleAnimationEnd();
+    },
+    [controller],
+  );
 
   return {
     phase: snapshot.phase as PresencePhase,

@@ -8,5 +8,6 @@ Category: Feedback
 - `icon` (ReactNode)
 - `onAction` (() => void)
 - `state` (UIState)
+- `title` (string)
 
 Metadata: /components/empty-state.json

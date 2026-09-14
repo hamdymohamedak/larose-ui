@@ -40,6 +40,13 @@
       "example": "true"
     },
     {
+      "name": "overlayClass",
+      "type": "string",
+      "required": false,
+      "inherited": false,
+      "example": "—"
+    },
+    {
       "name": "overlayClassName",
       "type": "string",
       "required": false,
@@ -49,6 +56,13 @@
     {
       "name": "overlayStyle",
       "type": "CSSProperties",
+      "required": false,
+      "inherited": false,
+      "example": "—"
+    },
+    {
+      "name": "panelClass",
+      "type": "string",
       "required": false,
       "inherited": false,
       "example": "—"
@@ -70,6 +84,13 @@
     {
       "name": "side",
       "type": "DrawerSide",
+      "required": false,
+      "inherited": false,
+      "example": "—"
+    },
+    {
+      "name": "title",
+      "type": "string",
       "required": false,
       "inherited": false,
       "example": "—"
@@ -103,11 +124,11 @@
       "Overlay",
       "Panel",
       "Header",
-      "Body (children)"
+      "Body (default slot)"
     ],
     "composition": "Pair with Button triggers. Configure side via defaultProps or prop.",
     "slots": [
-      "children"
+      "default"
     ],
     "states": [
       "closed",

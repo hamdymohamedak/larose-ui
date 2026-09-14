@@ -56,6 +56,21 @@
       "example": "true"
     },
     {
+      "name": "showConfirm",
+      "type": "boolean",
+      "required": false,
+      "description": "When false, hide the confirm button. Default true (matches Vue/Svelte).",
+      "inherited": false,
+      "example": "true"
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "required": true,
+      "inherited": false,
+      "example": "—"
+    },
+    {
       "name": "variant",
       "type": "'default' | 'destructive'",
       "required": false,
@@ -95,9 +110,9 @@
       "Description",
       "Actions"
     ],
-    "composition": "Use for focused tasks smaller than full Modal layouts.",
+    "composition": "Use for focused tasks smaller than full Modal layouts. Confirm visibility defaults to shown (showConfirm).",
     "slots": [
-      "children"
+      "default"
     ],
     "states": [
       "closed",

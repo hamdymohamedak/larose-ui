@@ -14,5 +14,6 @@ Category: Navigation
 - `onOpenChange` ((open: boolean) => void)
 - `open` (boolean)
 - `optionKey` (boolean) — Passed from MenuBar for Option-key alternate accelerators.
+- `title` (string)
 
 Metadata: /components/menu.json

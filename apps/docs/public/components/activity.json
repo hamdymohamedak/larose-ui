@@ -134,6 +134,13 @@
       "example": "'idle'"
     },
     {
+      "name": "title",
+      "type": "string",
+      "required": false,
+      "inherited": false,
+      "example": "—"
+    },
+    {
       "name": "trailing",
       "type": "ReactNode",
       "required": false,

@@ -22,6 +22,7 @@ Content is revealed only after expand.
 - `priority` (ActivityPriority)
 - `progress` (number) — 0–100; renders a meter when status is `progress` (or whenever value is provided).
 - `status` (ActivityStatus)
+- `title` (string)
 - `trailing` (ReactNode)
 
 Metadata: /components/activity.json

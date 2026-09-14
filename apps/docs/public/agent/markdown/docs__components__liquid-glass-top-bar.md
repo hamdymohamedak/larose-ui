@@ -40,6 +40,7 @@ Category: Glass
 - `style` (LiquidGlassStyle) — Inline CSS merged onto the surface. Flex / grid / padding apply to inner content.
 - `tint` (string) — Glass fill on Chromium (SVG refraction path).
 - `tintFallback` (string) — Glass fill on non-Chromium fallback.
+- `title` (ReactNode)
 - `titleColor` (string)
 - `top` (number | string)
 - `trailing` (ReactNode)

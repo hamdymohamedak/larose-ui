@@ -57,6 +57,13 @@
       "example": "—"
     },
     {
+      "name": "title",
+      "type": "string",
+      "required": true,
+      "inherited": false,
+      "example": "—"
+    },
+    {
       "name": "truncate",
       "type": "'end' | 'middle'",
       "required": false,

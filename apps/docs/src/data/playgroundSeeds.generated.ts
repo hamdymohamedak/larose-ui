@@ -35,9 +35,9 @@ export const playgroundSeeds: Record<string, PlaygroundSeedEntry> = {
     "svelte": "<script lang=\"ts\">\n  import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@larose-ui/svelte';\n</script>\n\n<Accordion type=\"single\" collapsible defaultValue={['shipping']}>\n  <AccordionItem value=\"shipping\">\n    <AccordionTrigger>Shipping</AccordionTrigger>\n    <AccordionContent>Delivered in 2–4 business days with tracking.</AccordionContent>\n  </AccordionItem>\n  <AccordionItem value=\"returns\">\n    <AccordionTrigger>Returns</AccordionTrigger>\n    <AccordionContent>Free returns within 30 days of delivery.</AccordionContent>\n  </AccordionItem>\n</Accordion>\n"
   },
   "Activity": {
-    "react": "import { Activity } from '@larose-ui/react';\n\nexport default function App() {\n  return <Activity />;\n}\n",
-    "vue": "<script setup lang=\"ts\">\nimport { Activity } from '@larose-ui/vue';\n</script>\n\n<template>\n  <Activity />\n</template>\n",
-    "svelte": "<script lang=\"ts\">\n  import { Activity } from '@larose-ui/svelte';\n</script>\n\n<Activity />\n"
+    "react": "import { Activity } from '@larose-ui/react';\n\nexport default function App() {\n  return <Activity\n  defaultExpanded\n  expandable={true}\n  expandAfter={0}\n  expandedSize=\"md\"\n/>;\n}\n",
+    "vue": "<script setup lang=\"ts\">\nimport { Activity } from '@larose-ui/vue';\n</script>\n\n<template>\n  <Activity\n  defaultExpanded\n  :expandable=\"true\"\n  :expandAfter=\"0\"\n  expandedSize=\"md\"\n/>\n</template>\n",
+    "svelte": "<script lang=\"ts\">\n  import { Activity } from '@larose-ui/svelte';\n</script>\n\n<Activity\n  defaultExpanded\n  expandable={true}\n  expandAfter={0}\n  expandedSize=\"md\"\n/>\n"
   },
   "ActivityShareButton": {
     "react": "import { ActivityShareButton } from '@larose-ui/react';\n\nconst activities = [\n  { id: 'messages', title: 'Messages', kind: 'share', subtitle: 'Send a link' },\n  { id: 'mail', title: 'Mail', kind: 'share', subtitle: 'Compose email' },\n  { id: 'copy', title: 'Copy', kind: 'action' },\n];\n\nexport default function App() {\n  return <ActivityShareButton label=\"Share\" activities={activities} />;\n}\n",
@@ -70,9 +70,9 @@ export const playgroundSeeds: Record<string, PlaygroundSeedEntry> = {
     "svelte": "<script lang=\"ts\">\n  import { Badge } from '@larose-ui/svelte';\n</script>\n\n<Badge\n  variant=\"info\"\n>\n  Beta\n</Badge>\n"
   },
   "Box": {
-    "react": "import { Box } from '@larose-ui/react';\n\nexport default function App() {\n  return <Box\n  padding=\"md\"\n  settingsStyle={false}\n  titlePosition=\"inside\"\n  variant=\"secondary\"\n/>;\n}\n",
-    "vue": "<script setup lang=\"ts\">\nimport { Box } from '@larose-ui/vue';\n</script>\n\n<template>\n  <Box\n  padding=\"md\"\n  :settingsStyle=\"false\"\n  titlePosition=\"inside\"\n  variant=\"secondary\"\n/>\n</template>\n",
-    "svelte": "<script lang=\"ts\">\n  import { Box } from '@larose-ui/svelte';\n</script>\n\n<Box\n  padding=\"md\"\n  settingsStyle={false}\n  titlePosition=\"inside\"\n  variant=\"secondary\"\n/>\n"
+    "react": "import { Box } from '@larose-ui/react';\n\nexport default function App() {\n  return <Box\n  padding=\"md\"\n  settingsStyle={false}\n  title=\"Example\"\n  titlePosition=\"inside\"\n/>;\n}\n",
+    "vue": "<script setup lang=\"ts\">\nimport { Box } from '@larose-ui/vue';\n</script>\n\n<template>\n  <Box\n  padding=\"md\"\n  :settingsStyle=\"false\"\n  title=\"Example\"\n  titlePosition=\"inside\"\n/>\n</template>\n",
+    "svelte": "<script lang=\"ts\">\n  import { Box } from '@larose-ui/svelte';\n</script>\n\n<Box\n  padding=\"md\"\n  settingsStyle={false}\n  title=\"Example\"\n  titlePosition=\"inside\"\n/>\n"
   },
   "Breadcrumb": {
     "react": "import { Breadcrumb } from '@larose-ui/react';\n\nexport default function App() {\n  return (\n    <Breadcrumb\n      items={[\n        { label: 'Home', href: '#' },\n        { label: 'Employees', href: '#' },\n        { label: 'Ahmed Mohamed', current: true },\n      ]}\n    />\n  );\n}\n",
@@ -95,9 +95,9 @@ export const playgroundSeeds: Record<string, PlaygroundSeedEntry> = {
     "svelte": "<script lang=\"ts\">\n  import { CalendarGrid } from '@larose-ui/svelte';\n</script>\n\n<CalendarGrid\n  locale=\"en\"\n/>\n"
   },
   "CaptionButton": {
-    "react": "import { CaptionButton } from '@larose-ui/react';\n\nexport default function App() {\n  return (\n    <CaptionButton\n  imageUrl=\"https://placehold.co/160x100/png\"\n  label=\"Example\"\n>\n      Example\n    </CaptionButton>\n  );\n}\n",
-    "vue": "<script setup lang=\"ts\">\nimport { CaptionButton } from '@larose-ui/vue';\n</script>\n\n<template>\n  <CaptionButton\n  imageUrl=\"https://placehold.co/160x100/png\"\n  label=\"Example\"\n>\n    Example\n  </CaptionButton>\n</template>\n",
-    "svelte": "<script lang=\"ts\">\n  import { CaptionButton } from '@larose-ui/svelte';\n</script>\n\n<CaptionButton\n  imageUrl=\"https://placehold.co/160x100/png\"\n  label=\"Example\"\n>\n  Example\n</CaptionButton>\n"
+    "react": "import { CaptionButton } from '@larose-ui/react';\n\nexport default function App() {\n  return (\n    <CaptionButton\n  imageUrl=\"https://placehold.co/160x100/png\"\n  label=\"Example\"\n  title=\"Example\"\n>\n      Example\n    </CaptionButton>\n  );\n}\n",
+    "vue": "<script setup lang=\"ts\">\nimport { CaptionButton } from '@larose-ui/vue';\n</script>\n\n<template>\n  <CaptionButton\n  imageUrl=\"https://placehold.co/160x100/png\"\n  label=\"Example\"\n  title=\"Example\"\n>\n    Example\n  </CaptionButton>\n</template>\n",
+    "svelte": "<script lang=\"ts\">\n  import { CaptionButton } from '@larose-ui/svelte';\n</script>\n\n<CaptionButton\n  imageUrl=\"https://placehold.co/160x100/png\"\n  label=\"Example\"\n  title=\"Example\"\n>\n  Example\n</CaptionButton>\n"
   },
   "Card": {
     "react": "import { Card } from '@larose-ui/react';\n\nexport default function App() {\n  return (\n    <Card title=\"Employee profile\" description=\"Interactive docs demo\" padding=\"md\">\n      Card body content\n    </Card>\n  );\n}\n",
@@ -220,9 +220,9 @@ export const playgroundSeeds: Record<string, PlaygroundSeedEntry> = {
     "svelte": "<script lang=\"ts\">\n  import { Button, DragDropProvider, Draggable, DropZone } from '@larose-ui/svelte';\n</script>\n\n<DragDropProvider>\n  <div style=\"display: flex; gap: 1rem; align-items: center\">\n    <Draggable id=\"task-1\" sourceId=\"board\" type=\"task\" data={{ title: 'Task' }}>\n      <Button variant=\"outline\">Drag me</Button>\n    </Draggable>\n    <DropZone id=\"board\" accepts={['task']} onDrop={() => undefined}>\n      <div style=\"padding: 1rem; border: 1px dashed var(--lr-color-border); border-radius: 8px\">\n        Drop here\n      </div>\n    </DropZone>\n  </div>\n</DragDropProvider>\n"
   },
   "Drawer": {
-    "react": "import { Drawer } from '@larose-ui/react';\n\nexport default function App() {\n  return <Drawer\n  closeOnOverlay\n/>;\n}\n",
-    "vue": "<script setup lang=\"ts\">\nimport { Drawer } from '@larose-ui/vue';\n</script>\n\n<template>\n  <Drawer\n  closeOnOverlay\n/>\n</template>\n",
-    "svelte": "<script lang=\"ts\">\n  import { Drawer } from '@larose-ui/svelte';\n</script>\n\n<Drawer\n  closeOnOverlay\n/>\n"
+    "react": "import { Drawer } from '@larose-ui/react';\n\nexport default function App() {\n  return <Drawer\n  closeOnOverlay\n  title=\"Example\"\n/>;\n}\n",
+    "vue": "<script setup lang=\"ts\">\nimport { Drawer } from '@larose-ui/vue';\n</script>\n\n<template>\n  <Drawer\n  closeOnOverlay\n  title=\"Example\"\n/>\n</template>\n",
+    "svelte": "<script lang=\"ts\">\n  import { Drawer } from '@larose-ui/svelte';\n</script>\n\n<Drawer\n  closeOnOverlay\n  title=\"Example\"\n/>\n"
   },
   "DropZone": {
     "react": "import { DragDropProvider, DropZone, Typography } from '@larose-ui/react';\n\nexport default function App() {\n  return (\n    <DragDropProvider>\n      <DropZone id=\"inbox\" accepts={['file']} onDrop={() => undefined}>\n        <div style={{ padding: '1.25rem', border: '1px dashed var(--lr-color-border)', borderRadius: 8, textAlign: 'center' }}>\n          <Typography muted>Drop files here</Typography>\n        </div>\n      </DropZone>\n    </DragDropProvider>\n  );\n}\n",
@@ -380,9 +380,9 @@ export const playgroundSeeds: Record<string, PlaygroundSeedEntry> = {
     "svelte": "<script lang=\"ts\">\n  import { Lockup } from '@larose-ui/svelte';\n</script>\n\n<Lockup header=\"Team member\" footer=\"Last active today\">\n  Ahmed Mohamed\n</Lockup>\n"
   },
   "LockupCard": {
-    "react": "import { LockupCard } from '@larose-ui/react';\n\nexport default function App() {\n  return (\n    <LockupCard\n  rating={0}\n>\n      Example\n    </LockupCard>\n  );\n}\n",
-    "vue": "<script setup lang=\"ts\">\nimport { LockupCard } from '@larose-ui/vue';\n</script>\n\n<template>\n  <LockupCard\n  :rating=\"0\"\n>\n    Example\n  </LockupCard>\n</template>\n",
-    "svelte": "<script lang=\"ts\">\n  import { LockupCard } from '@larose-ui/svelte';\n</script>\n\n<LockupCard\n  rating={0}\n>\n  Example\n</LockupCard>\n"
+    "react": "import { LockupCard } from '@larose-ui/react';\n\nexport default function App() {\n  return (\n    <LockupCard\n  rating={0}\n  title=\"Example\"\n>\n      Example\n    </LockupCard>\n  );\n}\n",
+    "vue": "<script setup lang=\"ts\">\nimport { LockupCard } from '@larose-ui/vue';\n</script>\n\n<template>\n  <LockupCard\n  :rating=\"0\"\n  title=\"Example\"\n>\n    Example\n  </LockupCard>\n</template>\n",
+    "svelte": "<script lang=\"ts\">\n  import { LockupCard } from '@larose-ui/svelte';\n</script>\n\n<LockupCard\n  rating={0}\n  title=\"Example\"\n>\n  Example\n</LockupCard>\n"
   },
   "LockupRow": {
     "react": "import { LockupRow } from '@larose-ui/react';\n\nexport default function App() {\n  return (\n    <LockupRow\n  axis=\"horizontal\"\n  itemWidth=\"10rem\"\n>\n      Example\n    </LockupRow>\n  );\n}\n",
@@ -475,9 +475,9 @@ export const playgroundSeeds: Record<string, PlaygroundSeedEntry> = {
     "svelte": "<script lang=\"ts\">\n  import { PopUpButton } from '@larose-ui/svelte';\n\n  const options = [\n    { value: 'name', label: 'Name' },\n    { value: 'date', label: 'Date' },\n  ];\n</script>\n\n<PopUpButton label=\"Sort by\" {options} defaultValue=\"name\" />\n"
   },
   "Poster": {
-    "react": "import { Poster } from '@larose-ui/react';\n\nexport default function App() {\n  return <Poster\n  imageUrl=\"https://placehold.co/160x100/png\"\n/>;\n}\n",
-    "vue": "<script setup lang=\"ts\">\nimport { Poster } from '@larose-ui/vue';\n</script>\n\n<template>\n  <Poster\n  imageUrl=\"https://placehold.co/160x100/png\"\n/>\n</template>\n",
-    "svelte": "<script lang=\"ts\">\n  import { Poster } from '@larose-ui/svelte';\n</script>\n\n<Poster\n  imageUrl=\"https://placehold.co/160x100/png\"\n/>\n"
+    "react": "import { Poster } from '@larose-ui/react';\n\nexport default function App() {\n  return <Poster\n  imageUrl=\"https://placehold.co/160x100/png\"\n  title=\"Example\"\n/>;\n}\n",
+    "vue": "<script setup lang=\"ts\">\nimport { Poster } from '@larose-ui/vue';\n</script>\n\n<template>\n  <Poster\n  imageUrl=\"https://placehold.co/160x100/png\"\n  title=\"Example\"\n/>\n</template>\n",
+    "svelte": "<script lang=\"ts\">\n  import { Poster } from '@larose-ui/svelte';\n</script>\n\n<Poster\n  imageUrl=\"https://placehold.co/160x100/png\"\n  title=\"Example\"\n/>\n"
   },
   "Progress": {
     "react": "import { Progress } from '@larose-ui/react';\n\nexport default function App() {\n  return (\n    <div style={{ width: '100%', maxWidth: 320 }}>\n      <Progress value={62} label=\"Uploading…\" showValue />\n    </div>\n  );\n}\n",

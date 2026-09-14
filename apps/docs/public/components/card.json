@@ -25,6 +25,13 @@
       "default": "'md'",
       "inherited": false,
       "example": "'md'"
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "required": false,
+      "inherited": false,
+      "example": "—"
     }
   ],
   "examples": [
@@ -188,7 +195,7 @@
     ],
     "composition": "Use padding tokens or Card defaultProps for density consistency.",
     "slots": [
-      "children",
+      "default",
       "title"
     ],
     "states": [

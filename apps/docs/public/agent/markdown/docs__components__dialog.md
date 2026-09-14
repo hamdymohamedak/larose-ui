@@ -10,6 +10,8 @@ Category: Overlay
 - `onClose` (() => void)
 - `onConfirm` (() => void)
 - `open` (boolean)
+- `showConfirm` (boolean) — When false, hide the confirm button. Default true (matches Vue/Svelte).
+- `title` (string)
 - `variant` ('default' | 'destructive')
 
 Metadata: /components/dialog.json

@@ -74,7 +74,7 @@
     ],
     "composition": "Wrap each section in AccordionItem; use type multiple for FAQ layouts.",
     "slots": [
-      "children"
+      "default"
     ],
     "states": [
       "collapsed",

@@ -1,9 +1,6 @@
 import {
-  useCallback,
   useEffect,
-  useLayoutEffect,
   useRef,
-  useSyncExternalStore,
   type CSSProperties,
   type HTMLAttributes,
   type MouseEvent,
@@ -16,15 +13,13 @@ import {
   focusFirst,
 } from '@larose-ui/primitives';
 import {
-  createPresenceController,
   presenceMotionClassKey,
   shouldDismissOnOverlayClick,
-  type PresencePhase,
 } from '@larose-ui/component-logic/overlay';
 import { getLaRosePortalTarget } from '@larose-ui/core';
 import { useComponentDefaults } from '../theme/useComponentDefaults';
 import { useComponentMotion } from '../theme/useComponentMotion';
-import { useSkipMotion } from '../Motion/MotionContext';
+import { useSharedPresence } from '../Motion/useSharedPresence';
 import motionStyles from '@larose-ui/styles/components/Motion/motion.module.css';
 import styles from '@larose-ui/styles/components/Drawer/Drawer.module.css';
 
@@ -47,33 +42,6 @@ export interface DrawerProps extends HTMLAttributes<HTMLDivElement> {
   motion?: ComponentMotionOverride;
 }
 
-function useSharedPresence(present: boolean, skipMotion: boolean) {
-  const controllerRef = useRef(createPresenceController(present, { skipMotion }));
-
-  useLayoutEffect(() => {
-    controllerRef.current.setPresent(present, { skipMotion });
-  }, [present, skipMotion]);
-
-  useEffect(() => () => controllerRef.current.dispose(), []);
-
-  const snapshot = useSyncExternalStore(
-    (onStoreChange) => controllerRef.current.subscribe(onStoreChange),
-    () => controllerRef.current.getSnapshot(),
-    () => controllerRef.current.getSnapshot(),
-  );
-
-  const onAnimationEnd = useCallback((event: React.AnimationEvent) => {
-    if (event.target !== event.currentTarget) return;
-    controllerRef.current.handleAnimationEnd();
-  }, []);
-
-  return {
-    phase: snapshot.phase as PresencePhase,
-    shouldRender: snapshot.shouldRender,
-    onAnimationEnd,
-  };
-}
-
 export function Drawer(incomingProps: DrawerProps) {
   const {
     open,
@@ -94,9 +62,9 @@ export function Drawer(incomingProps: DrawerProps) {
   } = useComponentDefaults('Drawer', incomingProps);
 
   const panelRef = useRef<HTMLDivElement>(null);
-  const skipMotion = useSkipMotion();
-  const { phase, shouldRender, onAnimationEnd } = useSharedPresence(open, skipMotion);
+  const { phase, shouldRender, onAnimationEnd } = useSharedPresence(open);
   const { style: motionStyle } = useComponentMotion('Drawer', motion);
+
 
   useEffect(() => {
     if (!open) return;

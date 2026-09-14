@@ -28,6 +28,13 @@
       "example": "'contain'"
     },
     {
+      "name": "frameClass",
+      "type": "string",
+      "required": false,
+      "inherited": false,
+      "example": "—"
+    },
+    {
       "name": "frameClassName",
       "type": "string",
       "required": false,

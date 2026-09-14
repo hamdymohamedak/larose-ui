@@ -112,7 +112,7 @@
     ],
     "composition": "Use for document-style interfaces with multiple open views.",
     "slots": [
-      "children"
+      "default"
     ],
     "states": [
       "default",

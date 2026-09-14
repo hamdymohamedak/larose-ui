@@ -12,6 +12,13 @@
       "example": "—"
     },
     {
+      "name": "title",
+      "type": "string",
+      "required": false,
+      "inherited": false,
+      "example": "—"
+    },
+    {
       "name": "variant",
       "type": "AlertVariant",
       "required": false,

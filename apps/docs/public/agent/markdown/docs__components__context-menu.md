@@ -10,5 +10,6 @@ Category: Overlay
 - `onOpenChange` ((open: boolean) => void)
 - `open` (boolean)
 - `preview` (ReactNode)
+- `title` (string)
 
 Metadata: /components/context-menu.json

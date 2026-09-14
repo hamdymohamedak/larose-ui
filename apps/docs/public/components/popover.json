@@ -41,6 +41,14 @@
       "example": "true"
     },
     {
+      "name": "panelClass",
+      "type": "string",
+      "required": false,
+      "description": "Extra class names for the floating panel element.",
+      "inherited": false,
+      "example": "—"
+    },
+    {
       "name": "panelClassName",
       "type": "string",
       "required": false,
@@ -123,7 +131,7 @@
     "composition": "Keep content concise; prefer Tooltip for single-line hints.",
     "slots": [
       "trigger",
-      "children"
+      "default"
     ],
     "states": [
       "closed",

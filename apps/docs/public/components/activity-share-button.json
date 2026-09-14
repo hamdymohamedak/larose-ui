@@ -41,6 +41,13 @@
       "description": "Uses popover on wide viewports and sheet on compact widths when auto.",
       "inherited": false,
       "example": "'auto'"
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "required": false,
+      "inherited": false,
+      "example": "—"
     }
   ],
   "examples": [],
