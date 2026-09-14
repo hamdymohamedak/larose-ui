@@ -2,6 +2,7 @@
   "name": "TimePicker",
   "version": "1",
   "framework": "neutral",
+  "purpose": "TimePicker component — see composition and states for behavior.",
   "props": [
     {
       "name": "error",
@@ -45,9 +46,14 @@
   ],
   "events": [
     {
-      "name": "onChange",
+      "name": "change",
       "payload": "(value: string) => void"
     }
+  ],
+  "states": [
+    "default",
+    "loading",
+    "error"
   ],
   "defaults": {
     "error": "null",
@@ -55,7 +61,18 @@
     "loading": "false",
     "value": "''"
   },
-  "keyboard": {},
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props.",
+      "Keyboard accessible; disabled and loading states must be announced."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  },
   "controlled": [
     "value"
   ]

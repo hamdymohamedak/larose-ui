@@ -2,6 +2,7 @@
   "name": "ShareButton",
   "version": "1",
   "framework": "neutral",
+  "purpose": "ShareButton component — see composition and states for behavior.",
   "props": [
     {
       "name": "label",
@@ -11,8 +12,22 @@
     }
   ],
   "events": [],
+  "states": [
+    "default"
+  ],
   "defaults": {
     "label": "'Share'"
   },
-  "keyboard": {}
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props.",
+      "Keyboard accessible; disabled and loading states must be announced."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  }
 }

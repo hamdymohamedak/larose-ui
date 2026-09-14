@@ -2,6 +2,7 @@
   "name": "ShareToolbar",
   "version": "1",
   "framework": "neutral",
+  "purpose": "ShareToolbar component — see composition and states for behavior.",
   "props": [
     {
       "name": "collaborating",
@@ -33,26 +34,6 @@
       "required": false
     },
     {
-      "name": "onManageSharedFile",
-      "type": "() => void",
-      "required": false
-    },
-    {
-      "name": "onMessage",
-      "type": "() => void",
-      "required": false
-    },
-    {
-      "name": "onShareSettingsChange",
-      "type": "(settings: ShareSettings) => void",
-      "required": false
-    },
-    {
-      "name": "onVideo",
-      "type": "() => void",
-      "required": false
-    },
-    {
       "name": "permissionOptions",
       "type": "SharePermissionOption[]",
       "required": false
@@ -78,21 +59,24 @@
   ],
   "events": [
     {
-      "name": "onManageSharedFile",
+      "name": "manageSharedFile",
       "payload": "() => void"
     },
     {
-      "name": "onMessage",
+      "name": "message",
       "payload": "() => void"
     },
     {
-      "name": "onShareSettingsChange",
+      "name": "shareSettingsChange",
       "payload": "(settings: ShareSettings) => void"
     },
     {
-      "name": "onVideo",
+      "name": "video",
       "payload": "() => void"
     }
+  ],
+  "states": [
+    "default"
   ],
   "defaults": {
     "collaborating": "false",
@@ -101,5 +85,15 @@
     "shareSettings": "defaultShareSettings",
     "shareTitle": "'Share Document'"
   },
-  "keyboard": {}
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "not-focusable"
+    ]
+  }
 }

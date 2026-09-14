@@ -2,6 +2,7 @@
   "name": "MenuBarExtra",
   "version": "1",
   "framework": "neutral",
+  "purpose": "MenuBarExtra component — see composition and states for behavior.",
   "props": [
     {
       "name": "enableMnemonics",
@@ -27,16 +28,6 @@
       "default": "false"
     },
     {
-      "name": "onAction",
-      "type": "(entry: MenuItemConfig) => void",
-      "required": false
-    },
-    {
-      "name": "onOpenChange",
-      "type": "(open: boolean) => void",
-      "required": true
-    },
-    {
       "name": "optionKey",
       "type": "boolean",
       "required": true
@@ -44,18 +35,28 @@
   ],
   "events": [
     {
-      "name": "onAction",
+      "name": "action",
       "payload": "(entry: MenuItemConfig) => void"
     },
     {
-      "name": "onOpenChange",
+      "name": "openChange",
       "payload": "(open: boolean) => void"
     }
+  ],
+  "states": [
+    "default"
   ],
   "defaults": {
     "enableMnemonics": "true",
     "enableTypeAhead": "true",
     "mnemonicVisible": "false"
+  },
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props.",
+      "Keyboard accessible; disabled and loading states must be announced."
+    ],
+    "aria": []
   },
   "keyboard": {
     "behavior": [

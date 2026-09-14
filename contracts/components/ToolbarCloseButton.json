@@ -2,6 +2,7 @@
   "name": "ToolbarCloseButton",
   "version": "1",
   "framework": "neutral",
+  "purpose": "ToolbarCloseButton component — see composition and states for behavior.",
   "props": [
     {
       "name": "disabled",
@@ -11,9 +12,24 @@
   ],
   "events": [
     {
-      "name": "onClick",
+      "name": "click",
       "payload": "() => void"
     }
   ],
-  "keyboard": {}
+  "states": [
+    "default",
+    "disabled"
+  ],
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props.",
+      "Keyboard accessible; disabled and loading states must be announced."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  }
 }

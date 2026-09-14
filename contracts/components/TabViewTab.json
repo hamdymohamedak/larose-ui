@@ -2,6 +2,7 @@
   "name": "TabViewTab",
   "version": "1",
   "framework": "neutral",
+  "purpose": "TabViewTab component — see composition and states for behavior.",
   "props": [
     {
       "name": "disabled",
@@ -20,5 +21,19 @@
     }
   ],
   "events": [],
-  "keyboard": {}
+  "states": [
+    "default",
+    "disabled"
+  ],
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "not-focusable"
+    ]
+  }
 }

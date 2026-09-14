@@ -2,6 +2,7 @@
   "name": "EmptyState",
   "version": "1",
   "framework": "neutral",
+  "purpose": "EmptyState component — see composition and states for behavior.",
   "props": [
     {
       "name": "actionLabel",
@@ -19,25 +20,38 @@
       "required": false
     },
     {
-      "name": "onAction",
-      "type": "() => void",
-      "required": false
-    },
-    {
       "name": "state",
       "type": "UIState",
       "required": false,
       "default": "'empty'"
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "required": true
     }
   ],
   "events": [
     {
-      "name": "onAction",
+      "name": "action",
       "payload": "() => void"
     }
+  ],
+  "states": [
+    "default"
   ],
   "defaults": {
     "state": "'empty'"
   },
-  "keyboard": {}
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "not-focusable"
+    ]
+  }
 }

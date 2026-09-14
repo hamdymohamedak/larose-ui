@@ -2,17 +2,13 @@
   "name": "FilePreview",
   "version": "1",
   "framework": "neutral",
+  "purpose": "FilePreview component — see composition and states for behavior.",
   "props": [
     {
       "name": "closeLabel",
       "type": "string",
       "required": false,
       "default": "'Close preview'"
-    },
-    {
-      "name": "onClose",
-      "type": "() => void",
-      "required": false
     },
     {
       "name": "source",
@@ -22,12 +18,25 @@
   ],
   "events": [
     {
-      "name": "onClose",
+      "name": "close",
       "payload": "() => void"
     }
+  ],
+  "states": [
+    "default"
   ],
   "defaults": {
     "closeLabel": "'Close preview'"
   },
-  "keyboard": {}
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "not-focusable"
+    ]
+  }
 }

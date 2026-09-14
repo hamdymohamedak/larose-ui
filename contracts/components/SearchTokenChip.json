@@ -2,17 +2,8 @@
   "name": "SearchTokenChip",
   "version": "1",
   "framework": "neutral",
+  "purpose": "SearchTokenChip component — see composition and states for behavior.",
   "props": [
-    {
-      "name": "onRemove",
-      "type": "() => void",
-      "required": false
-    },
-    {
-      "name": "onSelect",
-      "type": "() => void",
-      "required": false
-    },
     {
       "name": "token",
       "type": "SearchToken",
@@ -21,13 +12,26 @@
   ],
   "events": [
     {
-      "name": "onRemove",
+      "name": "remove",
       "payload": "() => void"
     },
     {
-      "name": "onSelect",
+      "name": "select",
       "payload": "() => void"
     }
   ],
-  "keyboard": {}
+  "states": [
+    "default"
+  ],
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "not-focusable"
+    ]
+  }
 }

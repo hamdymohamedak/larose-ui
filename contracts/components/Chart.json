@@ -2,6 +2,7 @@
   "name": "Chart",
   "version": "1",
   "framework": "neutral",
+  "purpose": "Chart component — see composition and states for behavior.",
   "props": [
     {
       "name": "accessibilitySummary",
@@ -42,11 +43,6 @@
       "description": "Chart mark type — bar, line, or point."
     },
     {
-      "name": "onPointFocus",
-      "type": "(point: ChartDataPoint, seriesId: string, index: number) => void",
-      "required": false
-    },
-    {
       "name": "series",
       "type": "ChartSeries[]",
       "required": false,
@@ -84,6 +80,11 @@
       "required": false
     },
     {
+      "name": "title",
+      "type": "string",
+      "required": false
+    },
+    {
       "name": "xAxis",
       "type": "ChartAxisConfig",
       "required": false
@@ -103,9 +104,12 @@
   ],
   "events": [
     {
-      "name": "onPointFocus",
+      "name": "pointFocus",
       "payload": "(point: ChartDataPoint, seriesId: string, index: number) => void"
     }
+  ],
+  "states": [
+    "default"
   ],
   "defaults": {
     "height": "220",
@@ -116,5 +120,15 @@
     "stackGap": "2",
     "yAxisTrailing": "false"
   },
-  "keyboard": {}
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "not-focusable"
+    ]
+  }
 }

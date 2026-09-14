@@ -11,6 +11,10 @@ export type {
   ComponentContractIssue,
   ComponentContractMismatch,
   ComponentContractValidationResult,
+  ParityStatus,
+  ComponentParityBehaviors,
+  ComponentParityMatrixEntry,
+  ComponentParityMatrix,
 } from './types';
 
 export { validateContract, formatContractReport } from './apiContract';

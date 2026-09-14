@@ -2,6 +2,7 @@
   "name": "ListRow",
   "version": "1",
   "framework": "neutral",
+  "purpose": "ListRow component — see composition and states for behavior.",
   "props": [
     {
       "name": "accessory",
@@ -21,16 +22,6 @@
       "required": false
     },
     {
-      "name": "onInfo",
-      "type": "(event: MouseEvent) => void",
-      "required": false
-    },
-    {
-      "name": "onPress",
-      "type": "() => void",
-      "required": false
-    },
-    {
       "name": "selected",
       "type": "boolean",
       "required": false,
@@ -42,6 +33,11 @@
       "required": false
     },
     {
+      "name": "title",
+      "type": "string",
+      "required": true
+    },
+    {
       "name": "truncate",
       "type": "'end' | 'middle'",
       "required": false,
@@ -50,13 +46,17 @@
   ],
   "events": [
     {
-      "name": "onInfo",
+      "name": "info",
       "payload": "(event: MouseEvent) => void"
     },
     {
-      "name": "onPress",
+      "name": "press",
       "payload": "() => void"
     }
+  ],
+  "states": [
+    "default",
+    "disabled"
   ],
   "defaults": {
     "accessory": "'none'",
@@ -64,5 +64,15 @@
     "selected": "false",
     "truncate": "'end'"
   },
-  "keyboard": {}
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "not-focusable"
+    ]
+  }
 }

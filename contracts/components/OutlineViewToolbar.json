@@ -2,16 +2,12 @@
   "name": "OutlineViewToolbar",
   "version": "1",
   "framework": "neutral",
+  "purpose": "OutlineViewToolbar component — see composition and states for behavior.",
   "props": [
     {
       "name": "'aria-label'",
       "type": "string",
       "required": false
-    },
-    {
-      "name": "onSearchChange",
-      "type": "(query: string) => void",
-      "required": true
     },
     {
       "name": "placeholder",
@@ -27,9 +23,12 @@
   ],
   "events": [
     {
-      "name": "onSearchChange",
+      "name": "searchChange",
       "payload": "(query: string) => void"
     }
+  ],
+  "states": [
+    "default"
   ],
   "defaults": {
     "placeholder": "'Search'"

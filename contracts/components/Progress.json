@@ -2,6 +2,7 @@
   "name": "Progress",
   "version": "1",
   "framework": "neutral",
+  "purpose": "Progress component — see composition and states for behavior.",
   "props": [
     {
       "name": "label",
@@ -39,6 +40,9 @@
     }
   ],
   "events": [],
+  "states": [
+    "default"
+  ],
   "defaults": {
     "max": "100",
     "showValue": "false",

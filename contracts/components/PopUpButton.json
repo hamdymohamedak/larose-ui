@@ -2,6 +2,7 @@
   "name": "PopUpButton",
   "version": "1",
   "framework": "neutral",
+  "purpose": "PopUpButton component — see composition and states for behavior.",
   "props": [
     {
       "name": "customOption",
@@ -32,11 +33,6 @@
       "description": "Introductory label describing the control (Calendar-style)."
     },
     {
-      "name": "onValueChange",
-      "type": "(value: string) => void",
-      "required": false
-    },
-    {
       "name": "options",
       "type": "PopUpOption[]",
       "required": true
@@ -55,15 +51,30 @@
   ],
   "events": [
     {
-      "name": "onValueChange",
+      "name": "valueChange",
       "payload": "(value: string) => void"
     }
+  ],
+  "states": [
+    "default",
+    "disabled"
   ],
   "defaults": {
     "disabled": "false",
     "placeholder": "'Select…'"
   },
-  "keyboard": {},
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props.",
+      "Keyboard accessible; disabled and loading states must be announced."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  },
   "uncontrolled": [
     "value"
   ]

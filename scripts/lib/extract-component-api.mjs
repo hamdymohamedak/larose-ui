@@ -34,7 +34,7 @@ const DOM_BASE_PROPS = new Set([
   'aria-modal',
   'aria-haspopup',
   'data-testid',
-  'title',
+  // NOTE: do not treat `title` as DOM-inherited — overlays use it as a first-class prop.
   'lang',
   'dir',
   'hidden',
@@ -100,7 +100,7 @@ export function extractComponentContracts(
   root,
   componentNames,
   anatomy = {},
-  framework = 'react',
+  framework = 'neutral',
   indexPath,
 ) {
   const api = extractComponentApi(root, componentNames, indexPath);
@@ -118,6 +118,58 @@ export function extractComponentContracts(
 
   return contracts;
 }
+
+/**
+ * Sample Props from React + Vue + Svelte and merge into one neutral contract set.
+ * No single framework is privileged; richer prop lists win per component.
+ * @param {string} root
+ * @param {string[]} componentNames
+ * @param {Record<string, { slots?: string[]; states?: string[]; summary?: string; composition?: string; structure?: string[] }>} [anatomy]
+ * @param {(fw: 'react'|'vue'|'svelte') => string} resolveIndex
+ */
+export function extractMergedComponentContracts(root, componentNames, anatomy = {}, resolveIndex) {
+  /** @type {Array<'react'|'vue'|'svelte'>} */
+  const frameworks = ['react', 'vue', 'svelte'];
+  /** @type {Record<string, { props: any[]; events: any[]; accessibility: string[] }>} */
+  const mergedApi = {};
+
+  for (const name of componentNames) {
+    mergedApi[name] = { props: [], events: [], accessibility: [] };
+  }
+
+  for (const fw of frameworks) {
+    const indexPath = resolveIndex(fw);
+    if (!indexPath) continue;
+    const api = extractComponentApi(root, componentNames, indexPath);
+    for (const name of componentNames) {
+      const sample = api[name];
+      if (!sample) continue;
+      const current = mergedApi[name];
+      // Prefer the sample with more non-inherited props
+      const sampleCount = sample.props.filter((p) => !p.inherited).length;
+      const currentCount = current.props.filter((p) => !p.inherited).length;
+      if (sampleCount > currentCount) {
+        mergedApi[name] = {
+          props: sample.props,
+          events: sample.events,
+          accessibility: sample.accessibility?.length
+            ? sample.accessibility
+            : current.accessibility,
+        };
+      } else if (sample.accessibility?.length && !current.accessibility.length) {
+        current.accessibility = sample.accessibility;
+      }
+    }
+  }
+
+  /** @type {Record<string, import('../../packages/contracts/src/types.ts').ComponentContract>} */
+  const contracts = {};
+  for (const name of componentNames) {
+    contracts[name] = toComponentContract(name, mergedApi[name], anatomy, 'neutral');
+  }
+  return contracts;
+}
+
 
 /**
  * @param {string} indexPath

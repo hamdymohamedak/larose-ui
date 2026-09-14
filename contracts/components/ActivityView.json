@@ -2,6 +2,7 @@
   "name": "ActivityView",
   "version": "1",
   "framework": "neutral",
+  "purpose": "ActivityView component — see composition and states for behavior.",
   "props": [
     {
       "name": "activities",
@@ -26,16 +27,6 @@
       "required": false
     },
     {
-      "name": "onActivitySelect",
-      "type": "(activity: ActivityItem) => void",
-      "required": false
-    },
-    {
-      "name": "onClose",
-      "type": "() => void",
-      "required": true
-    },
-    {
       "name": "open",
       "type": "boolean",
       "required": true
@@ -45,21 +36,41 @@
       "type": "ActivityPresentation",
       "required": false,
       "default": "'sheet'"
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "required": false
     }
   ],
   "events": [
     {
-      "name": "onActivitySelect",
+      "name": "activitySelect",
       "payload": "(activity: ActivityItem) => void"
     },
     {
-      "name": "onClose",
+      "name": "close",
       "payload": "() => void"
     }
+  ],
+  "states": [
+    "default",
+    "open",
+    "closed"
   ],
   "defaults": {
     "excludedActivityIds": "[]",
     "presentation": "'sheet'"
   },
-  "keyboard": {}
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "not-focusable"
+    ]
+  }
 }

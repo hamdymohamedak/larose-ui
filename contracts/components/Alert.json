@@ -2,10 +2,11 @@
   "name": "Alert",
   "version": "1",
   "framework": "neutral",
+  "purpose": "Alert component — see composition and states for behavior.",
   "props": [
     {
-      "name": "onDismiss",
-      "type": "() => void",
+      "name": "title",
+      "type": "string",
       "required": false
     },
     {
@@ -17,9 +18,12 @@
   ],
   "events": [
     {
-      "name": "onDismiss",
+      "name": "dismiss",
       "payload": "() => void"
     }
+  ],
+  "states": [
+    "default"
   ],
   "defaults": {
     "variant": "'info'"

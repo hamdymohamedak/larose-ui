@@ -2,6 +2,7 @@
   "name": "Menu",
   "version": "1",
   "framework": "neutral",
+  "purpose": "Menu component — see composition and states for behavior.",
   "props": [
     {
       "name": "dimBackground",
@@ -49,16 +50,6 @@
       "description": "When true, underline mnemonic access keys in labels."
     },
     {
-      "name": "onEntrySelect",
-      "type": "(entry: MenuItemConfig) => boolean | void",
-      "required": false
-    },
-    {
-      "name": "onOpenChange",
-      "type": "(open: boolean) => void",
-      "required": false
-    },
-    {
       "name": "open",
       "type": "boolean",
       "required": false
@@ -68,17 +59,27 @@
       "type": "boolean",
       "required": false,
       "description": "Passed from MenuBar for Option-key alternate accelerators."
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "required": false
     }
   ],
   "events": [
     {
-      "name": "onEntrySelect",
+      "name": "entrySelect",
       "payload": "(entry: MenuItemConfig) => boolean | void"
     },
     {
-      "name": "onOpenChange",
+      "name": "openChange",
       "payload": "(open: boolean) => void"
     }
+  ],
+  "states": [
+    "default",
+    "open",
+    "closed"
   ],
   "defaults": {
     "dimBackground": "true",
@@ -87,6 +88,13 @@
     "enableTypeAhead": "true",
     "layout": "'large'",
     "mnemonicVisible": "false"
+  },
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props.",
+      "Keyboard accessible; disabled and loading states must be announced."
+    ],
+    "aria": []
   },
   "keyboard": {
     "keys": [

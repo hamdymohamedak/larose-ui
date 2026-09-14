@@ -8,49 +8,78 @@
  *      ▼     ▼     ▼
  *   React   Vue   Svelte
  *
- * This script refreshes JSON by sampling Props types from a reference adapter
- * (`--from=react|vue|svelte|auto`). The sample adapter is an authoring aid only —
- * React is not the architectural source of truth.
+ * Props are sampled from all three adapters and merged (richest wins per component),
+ * then neutralized (no onXxx props, className, or children slots).
+ * No framework is the architectural source of truth.
  *
- * Catalog = existing contracts ∪ components exported by all three UI adapters.
+ * Optional `--from=react|vue|svelte` forces a single sample source (debugging only).
  */
-import { mkdirSync, readdirSync, unlinkSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readdirSync, unlinkSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { extractComponentContracts } from './lib/extract-component-api.mjs';
+import {
+  extractComponentContracts,
+  extractMergedComponentContracts,
+} from './lib/extract-component-api.mjs';
 import { isGlassDocComponent } from './lib/glass-components.mjs';
 import { COMPONENT_ANATOMY } from './lib/docs-metadata.mjs';
 import {
   listContractCatalog,
   resolveAdapterIndexPath,
-  resolvePropsSampleAdapter,
+  resolveLiquidGlassIndexPath,
 } from './lib/component-catalog.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 
 const fromArg = process.argv.find((arg) => arg.startsWith('--from='));
-const preferred = /** @type {'react' | 'vue' | 'svelte' | 'auto'} */ (
-  fromArg ? fromArg.slice('--from='.length) : 'auto'
-);
-const sampleAdapter = resolvePropsSampleAdapter(root, preferred);
-const sampleIndexPath = resolveAdapterIndexPath(root, sampleAdapter);
-const liquidGlassIndexPath = join(root, 'packages/react/src/LiquidGlass/index.ts');
+const preferred = fromArg ? fromArg.slice('--from='.length) : 'merge';
 
 const catalog = listContractCatalog(root);
 const glassNames = catalog.filter(isGlassDocComponent);
 const mainNames = catalog.filter((name) => !isGlassDocComponent(name));
 
-const contracts = extractComponentContracts(
-  root,
-  mainNames,
-  COMPONENT_ANATOMY,
-  'neutral',
-  sampleIndexPath,
-);
-Object.assign(
-  contracts,
-  extractComponentContracts(root, glassNames, COMPONENT_ANATOMY, 'neutral', liquidGlassIndexPath),
-);
+/** @type {Record<string, import('../packages/contracts/src/types.ts').ComponentContract>} */
+let contracts;
+
+if (preferred === 'merge' || preferred === 'auto') {
+  contracts = extractMergedComponentContracts(
+    root,
+    mainNames,
+    COMPONENT_ANATOMY,
+    (fw) => {
+      const path = resolveAdapterIndexPath(root, fw);
+      return existsSync(path) ? path : '';
+    },
+  );
+  Object.assign(
+    contracts,
+    extractMergedComponentContracts(root, glassNames, COMPONENT_ANATOMY, (fw) => {
+      const path = resolveLiquidGlassIndexPath(root, fw);
+      return existsSync(path) ? path : '';
+    }),
+  );
+} else {
+  const sampleAdapter = /** @type {'react'|'vue'|'svelte'} */ (preferred);
+  const sampleIndexPath = resolveAdapterIndexPath(root, sampleAdapter);
+  const liquidGlassIndexPath = resolveLiquidGlassIndexPath(root, sampleAdapter);
+  contracts = extractComponentContracts(
+    root,
+    mainNames,
+    COMPONENT_ANATOMY,
+    'neutral',
+    sampleIndexPath,
+  );
+  Object.assign(
+    contracts,
+    extractComponentContracts(
+      root,
+      glassNames,
+      COMPONENT_ANATOMY,
+      'neutral',
+      liquidGlassIndexPath,
+    ),
+  );
+}
 
 const outDir = join(root, 'contracts/components');
 mkdirSync(outDir, { recursive: true });
@@ -73,7 +102,7 @@ for (const file of readdirSync(outDir)) {
 }
 
 console.log(
-  `[larose] wrote ${written} component contracts (canonical JSON; props sampled from ${sampleAdapter})`,
+  `[larose] wrote ${written} component contracts (canonical JSON; sample mode=${preferred}, neutralized)`,
 );
 if (removed > 0) {
   console.log(`[larose] removed ${removed} stale component contracts`);

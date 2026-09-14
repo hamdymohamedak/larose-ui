@@ -2,6 +2,7 @@
   "name": "Lockup",
   "version": "1",
   "framework": "neutral",
+  "purpose": "Lockup component — see composition and states for behavior.",
   "props": [
     {
       "name": "'aria-label'",
@@ -33,17 +34,20 @@
   ],
   "events": [
     {
-      "name": "onBlur",
+      "name": "blur",
       "payload": "() => void"
     },
     {
-      "name": "onClick",
+      "name": "click",
       "payload": "() => void"
     },
     {
-      "name": "onFocus",
+      "name": "focus",
       "payload": "() => void"
     }
+  ],
+  "states": [
+    "default"
   ],
   "defaults": {
     "axis": "'horizontal'",

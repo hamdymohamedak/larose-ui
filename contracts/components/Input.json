@@ -2,6 +2,7 @@
   "name": "Input",
   "version": "1",
   "framework": "neutral",
+  "purpose": "Input component — see composition and states for behavior.",
   "props": [
     {
       "name": "acceptDrop",
@@ -75,6 +76,11 @@
     }
   ],
   "events": [],
+  "states": [
+    "default",
+    "loading",
+    "error"
+  ],
   "accessibility": {
     "requirements": [
       "Uses native or laRose-managed focus rings and disabled states."

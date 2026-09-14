@@ -2,6 +2,7 @@
   "name": "WheelColumn",
   "version": "1",
   "framework": "neutral",
+  "purpose": "WheelColumn component — see composition and states for behavior.",
   "props": [
     {
       "name": "columnFlex",
@@ -32,14 +33,28 @@
   ],
   "events": [
     {
-      "name": "onChange",
+      "name": "change",
       "payload": "(value: string) => void"
     }
+  ],
+  "states": [
+    "default",
+    "disabled"
   ],
   "defaults": {
     "disabled": "false"
   },
-  "keyboard": {},
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "not-focusable"
+    ]
+  },
   "controlled": [
     "value"
   ]

@@ -2,6 +2,14 @@
   "name": "Card",
   "version": "1",
   "framework": "neutral",
+  "purpose": "Card groups related content with optional title and padding tokens.",
+  "composition": "Use padding tokens or Card defaultProps for density consistency.",
+  "interactions": [
+    "Card",
+    "Header/Title",
+    "Body",
+    "Footer actions"
+  ],
   "props": [
     {
       "name": "description",
@@ -18,11 +26,16 @@
       "type": "'none' | 'sm' | 'md' | 'lg'",
       "required": false,
       "default": "'md'"
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "required": false
     }
   ],
   "events": [],
   "slots": [
-    "children",
+    "default",
     "title"
   ],
   "states": [
@@ -31,5 +44,15 @@
   "defaults": {
     "padding": "'md'"
   },
-  "keyboard": {}
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "not-focusable"
+    ]
+  }
 }

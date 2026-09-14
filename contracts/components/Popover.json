@@ -2,6 +2,13 @@
   "name": "Popover",
   "version": "1",
   "framework": "neutral",
+  "purpose": "Popover anchors floating content to a trigger with collision handling.",
+  "composition": "Keep content concise; prefer Tooltip for single-line hints.",
+  "interactions": [
+    "Popover",
+    "Trigger",
+    "Content"
+  ],
   "props": [
     {
       "name": "'aria-label'",
@@ -20,17 +27,12 @@
       "default": "false"
     },
     {
-      "name": "onOpenChange",
-      "type": "(open: boolean) => void",
-      "required": false
-    },
-    {
       "name": "open",
       "type": "boolean",
       "required": false
     },
     {
-      "name": "panelClassName",
+      "name": "panelClass",
       "type": "string",
       "required": false,
       "description": "Extra class names for the floating panel element."
@@ -49,13 +51,13 @@
   ],
   "events": [
     {
-      "name": "onOpenChange",
+      "name": "openChange",
       "payload": "(open: boolean) => void"
     }
   ],
   "slots": [
     "trigger",
-    "children"
+    "default"
   ],
   "states": [
     "closed",

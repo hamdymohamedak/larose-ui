@@ -2,6 +2,7 @@
   "name": "DropZone",
   "version": "1",
   "framework": "neutral",
+  "purpose": "DropZone component — see composition and states for behavior.",
   "props": [
     {
       "name": "accepts",
@@ -18,11 +19,6 @@
       "type": "boolean",
       "required": false,
       "default": "false"
-    },
-    {
-      "name": "onDrop",
-      "type": "(result: DropResult<T>) => void | Promise<void>",
-      "required": true
     },
     {
       "name": "showInvalidIndicator",
@@ -45,9 +41,13 @@
   ],
   "events": [
     {
-      "name": "onDrop",
+      "name": "drop",
       "payload": "(result: DropResult<T>) => void | Promise<void>"
     }
+  ],
+  "states": [
+    "default",
+    "disabled"
   ],
   "defaults": {
     "disabled": "false",
@@ -55,5 +55,15 @@
     "transferring": "false",
     "transferringLabel": "'Transferring…'"
   },
-  "keyboard": {}
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "not-focusable"
+    ]
+  }
 }

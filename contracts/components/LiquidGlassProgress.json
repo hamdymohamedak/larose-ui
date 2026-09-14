@@ -2,6 +2,12 @@
   "name": "LiquidGlassProgress",
   "version": "1",
   "framework": "neutral",
+  "purpose": "Horizontal progress bar with glass track and luminous fill.",
+  "composition": "Set value/max for determinate progress; use indeterminate for loading.",
+  "interactions": [
+    "Glass track",
+    "Fill bar"
+  ],
   "props": [
     {
       "name": "'aria-label'",
@@ -62,7 +68,6 @@
     }
   ],
   "events": [],
-  "slots": [],
   "states": [
     "determinate",
     "indeterminate"

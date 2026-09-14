@@ -2,6 +2,7 @@
   "name": "ToolbarMoreButton",
   "version": "1",
   "framework": "neutral",
+  "purpose": "ToolbarMoreButton component — see composition and states for behavior.",
   "props": [
     {
       "name": "'aria-label'",
@@ -17,18 +18,17 @@
       "name": "entries",
       "type": "MenuEntry[]",
       "required": true
-    },
-    {
-      "name": "onAction",
-      "type": "(entryId: string) => void",
-      "required": false
     }
   ],
   "events": [
     {
-      "name": "onAction",
+      "name": "action",
       "payload": "(entryId: string) => void"
     }
+  ],
+  "states": [
+    "default",
+    "disabled"
   ],
   "accessibility": {
     "requirements": [

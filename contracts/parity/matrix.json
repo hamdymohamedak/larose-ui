@@ -1,0 +1,3736 @@
+{
+  "version": 1,
+  "updatedAt": "2026-09-14T18:05:26.899Z",
+  "behaviors": [
+    "initialState",
+    "openClose",
+    "keyboard",
+    "focus",
+    "accessibility",
+    "controlledState",
+    "uncontrolledState",
+    "events",
+    "motion",
+    "portal",
+    "visual"
+  ],
+  "entries": [
+    {
+      "component": "AcceleratorProvider",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "Accordion",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "AccordionContent",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "AccordionItem",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "AccordionTrigger",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "Activity",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "ActivityShareButton",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "ActivityView",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "Alert",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "AlertDialog",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "partial",
+        "uncontrolledState": "partial",
+        "events": "unverified",
+        "motion": "pass",
+        "portal": "pass",
+        "visual": "unverified"
+      },
+      "sharedLogic": "@larose-ui/component-logic/alert-dialog"
+    },
+    {
+      "component": "AsyncButton",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "BackChevronIcon",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "Badge",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "Box",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "Breadcrumb",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "Button",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "partial",
+        "uncontrolledState": "partial",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": "@larose-ui/component-logic/button"
+    },
+    {
+      "component": "ButtonGroup",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "CalendarGrid",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "CaptionButton",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "Card",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "Chart",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "partial",
+        "uncontrolledState": "partial",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": "@larose-ui/component-logic/chart"
+    },
+    {
+      "component": "Checkbox",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "CloseIcon",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "CollaborationButton",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "CollaborationPopover",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "Collapse",
+      "frameworks": {
+        "react": true,
+        "vue": false,
+        "svelte": false
+      },
+      "behaviors": {
+        "initialState": "n/a",
+        "openClose": "n/a",
+        "keyboard": "n/a",
+        "focus": "n/a",
+        "accessibility": "n/a",
+        "controlledState": "n/a",
+        "uncontrolledState": "n/a",
+        "events": "n/a",
+        "motion": "n/a",
+        "portal": "n/a",
+        "visual": "n/a"
+      },
+      "sharedLogic": null,
+      "notes": [
+        "Intentional adapter asymmetry — not required on every framework."
+      ]
+    },
+    {
+      "component": "Collection",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "ColumnView",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "CommandPalette",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "pass",
+        "keyboard": "pass",
+        "focus": "pass",
+        "accessibility": "pass",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "pass",
+        "portal": "pass",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "ComposeIcon",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "ContextMenu",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "partial",
+        "uncontrolledState": "partial",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": "@larose-ui/component-logic/context-menu"
+    },
+    {
+      "component": "DataTable",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "DatePicker",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "DateRangePicker",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "DateTimePicker",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "Dialog",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "pass",
+        "keyboard": "pass",
+        "focus": "pass",
+        "accessibility": "pass",
+        "controlledState": "partial",
+        "uncontrolledState": "partial",
+        "events": "unverified",
+        "motion": "pass",
+        "portal": "pass",
+        "visual": "unverified"
+      },
+      "sharedLogic": "@larose-ui/component-logic/overlay"
+    },
+    {
+      "component": "DisclosureButton",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "DisclosureGroup",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "DisclosureList",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "DisclosureTriangle",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "DockBar",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "DockMenu",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "partial",
+        "uncontrolledState": "partial",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": "@larose-ui/component-logic/dock-menu"
+    },
+    {
+      "component": "DocumentLauncher",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "DocumentMenuIcon",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "DocumentToolbar",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "DragDropList",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "DragDropProvider",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "Draggable",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "Drawer",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "pass",
+        "portal": "pass",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "DropZone",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "EditMenu",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "partial",
+        "uncontrolledState": "partial",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": "@larose-ui/component-logic/edit-menu"
+    },
+    {
+      "component": "EditMenuSelection",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "EmptyState",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "FieldShell",
+      "frameworks": {
+        "react": false,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "fail",
+        "openClose": "fail",
+        "keyboard": "fail",
+        "focus": "fail",
+        "accessibility": "fail",
+        "controlledState": "fail",
+        "uncontrolledState": "fail",
+        "events": "fail",
+        "motion": "fail",
+        "portal": "fail",
+        "visual": "fail"
+      },
+      "sharedLogic": null,
+      "notes": [
+        "Intentional adapter asymmetry — not required on every framework."
+      ]
+    },
+    {
+      "component": "FileBrowser",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "FilePreview",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "FileUpload",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "FormContinue",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "Header",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "HeaderActions",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "HeaderBrand",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "HeaderTitle",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "HelpButton",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "HomeScreenQuickActions",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "ImageButton",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "ImageOverlay",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "ImageView",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "partial",
+        "uncontrolledState": "partial",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": "@larose-ui/component-logic/image-view"
+    },
+    {
+      "component": "ImageWell",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "Input",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "Label",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "LaRoseProvider",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "LiquidGlass",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "LiquidGlassButton",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "LiquidGlassCheckbox",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "LiquidGlassProgress",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "LiquidGlassRange",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "LiquidGlassSwitch",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "LiquidGlassTabBar",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "LiquidGlassTopBar",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "List",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "ListRow",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "ListSection",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "Lockup",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "partial",
+        "uncontrolledState": "partial",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": "@larose-ui/component-logic/lockup"
+    },
+    {
+      "component": "LockupCard",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "LockupRow",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "Menu",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "partial",
+        "uncontrolledState": "partial",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": "@larose-ui/component-logic/menu"
+    },
+    {
+      "component": "MenuBar",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "partial",
+        "uncontrolledState": "partial",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": "@larose-ui/component-logic/menu-bar"
+    },
+    {
+      "component": "MenuBarExtra",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "MnemonicLabel",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "Modal",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "pass",
+        "keyboard": "pass",
+        "focus": "pass",
+        "accessibility": "pass",
+        "controlledState": "partial",
+        "uncontrolledState": "partial",
+        "events": "unverified",
+        "motion": "pass",
+        "portal": "pass",
+        "visual": "unverified"
+      },
+      "sharedLogic": "@larose-ui/component-logic/overlay",
+      "notes": [
+        "Uses @larose-ui/component-logic/overlay presence + portal on React/Vue/Svelte."
+      ]
+    },
+    {
+      "component": "Monogram",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "MorePullDownButton",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "MotionProvider",
+      "frameworks": {
+        "react": true,
+        "vue": false,
+        "svelte": false
+      },
+      "behaviors": {
+        "initialState": "n/a",
+        "openClose": "n/a",
+        "keyboard": "n/a",
+        "focus": "n/a",
+        "accessibility": "n/a",
+        "controlledState": "n/a",
+        "uncontrolledState": "n/a",
+        "events": "n/a",
+        "motion": "n/a",
+        "portal": "n/a",
+        "visual": "n/a"
+      },
+      "sharedLogic": null,
+      "notes": [
+        "Intentional adapter asymmetry — not required on every framework."
+      ]
+    },
+    {
+      "component": "Ornament",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "partial",
+        "uncontrolledState": "partial",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": "@larose-ui/component-logic/ornament"
+    },
+    {
+      "component": "OrnamentButton",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "OrnamentWindow",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "OutlineView",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "OutlineViewToolbar",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "OverflowIcon",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "Pagination",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "PathControl",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "partial",
+        "uncontrolledState": "partial",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": "@larose-ui/component-logic/path-control"
+    },
+    {
+      "component": "Picker",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "partial",
+        "uncontrolledState": "partial",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": "@larose-ui/component-logic/picker"
+    },
+    {
+      "component": "Popover",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "pass",
+        "portal": "n/a",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "PopUpButton",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "partial",
+        "uncontrolledState": "partial",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": "@larose-ui/component-logic/pop-up-button"
+    },
+    {
+      "component": "Poster",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "Presence",
+      "frameworks": {
+        "react": true,
+        "vue": false,
+        "svelte": false
+      },
+      "behaviors": {
+        "initialState": "n/a",
+        "openClose": "n/a",
+        "keyboard": "n/a",
+        "focus": "n/a",
+        "accessibility": "n/a",
+        "controlledState": "n/a",
+        "uncontrolledState": "n/a",
+        "events": "n/a",
+        "motion": "n/a",
+        "portal": "n/a",
+        "visual": "n/a"
+      },
+      "sharedLogic": "@larose-ui/component-logic/overlay",
+      "notes": [
+        "Intentional adapter asymmetry — not required on every framework."
+      ]
+    },
+    {
+      "component": "Progress",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "PullDownButton",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "partial",
+        "uncontrolledState": "partial",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": "@larose-ui/component-logic/pull-down-button"
+    },
+    {
+      "component": "Radio",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "RuntimeProvider",
+      "frameworks": {
+        "react": false,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "fail",
+        "openClose": "fail",
+        "keyboard": "fail",
+        "focus": "fail",
+        "accessibility": "fail",
+        "controlledState": "fail",
+        "uncontrolledState": "fail",
+        "events": "fail",
+        "motion": "fail",
+        "portal": "fail",
+        "visual": "fail"
+      },
+      "sharedLogic": null,
+      "notes": [
+        "Intentional adapter asymmetry — not required on every framework."
+      ]
+    },
+    {
+      "component": "SearchField",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "partial",
+        "uncontrolledState": "partial",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": "@larose-ui/component-logic/search-field"
+    },
+    {
+      "component": "SearchIcon",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "SearchScopeBar",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "SearchTokenChip",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "SecureField",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "Select",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "ShareButton",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "ShareIcon",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "ShareSheet",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "ShareToolbar",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "Sidebar",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "SidebarDisclosureSection",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "SidebarGroup",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "SidebarHeader",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "SidebarIcon",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "SidebarItem",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "SidebarNav",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "SidebarSearch",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "SidebarToggle",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "Skeleton",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "Spinner",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "SplitView",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "partial",
+        "uncontrolledState": "partial",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": "@larose-ui/component-logic/split-view"
+    },
+    {
+      "component": "SplitViewPane",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "SplitViewToolbar",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "SquareButton",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "Switch",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "Table",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "Tabs",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "TabsList",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "TabsPanel",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "TabsTrigger",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "TabView",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "partial",
+        "uncontrolledState": "partial",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": "@larose-ui/component-logic/tab-view"
+    },
+    {
+      "component": "TabViewList",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "TabViewPanel",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "TabViewTab",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "Textarea",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "TextView",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "ThemeCustomizationContext",
+      "frameworks": {
+        "react": true,
+        "vue": false,
+        "svelte": false
+      },
+      "behaviors": {
+        "initialState": "n/a",
+        "openClose": "n/a",
+        "keyboard": "n/a",
+        "focus": "n/a",
+        "accessibility": "n/a",
+        "controlledState": "n/a",
+        "uncontrolledState": "n/a",
+        "events": "n/a",
+        "motion": "n/a",
+        "portal": "n/a",
+        "visual": "n/a"
+      },
+      "sharedLogic": null,
+      "notes": [
+        "Intentional adapter asymmetry — not required on every framework."
+      ]
+    },
+    {
+      "component": "TimePicker",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "ToastProvider",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "TokenField",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "partial",
+        "uncontrolledState": "partial",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": "@larose-ui/component-logic/token-field"
+    },
+    {
+      "component": "Toolbar",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "partial",
+        "uncontrolledState": "partial",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": "@larose-ui/component-logic/toolbar"
+    },
+    {
+      "component": "ToolbarBackButton",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "ToolbarCloseButton",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "ToolbarDocumentMenu",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "ToolbarFixedSpace",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "ToolbarGroup",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "ToolbarItem",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "ToolbarMoreButton",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "ToolbarProminentButton",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "ToolbarSearch",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "ToolbarSection",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "ToolbarTitle",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "Tooltip",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "Typography",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "UnsavedIndicator",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "WheelColumn",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    },
+    {
+      "component": "WheelPicker",
+      "frameworks": {
+        "react": true,
+        "vue": true,
+        "svelte": true
+      },
+      "behaviors": {
+        "initialState": "unverified",
+        "openClose": "unverified",
+        "keyboard": "unverified",
+        "focus": "unverified",
+        "accessibility": "unverified",
+        "controlledState": "unverified",
+        "uncontrolledState": "unverified",
+        "events": "unverified",
+        "motion": "unverified",
+        "portal": "unverified",
+        "visual": "unverified"
+      },
+      "sharedLogic": null
+    }
+  ]
+}

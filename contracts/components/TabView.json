@@ -2,6 +2,14 @@
   "name": "TabView",
   "version": "1",
   "framework": "neutral",
+  "purpose": "macOS-style tab view with closable tabs and overflow handling.",
+  "composition": "Use for document-style interfaces with multiple open views.",
+  "interactions": [
+    "TabView",
+    "TabViewList",
+    "TabViewTab",
+    "TabViewPanel"
+  ],
   "props": [
     {
       "name": "'aria-label'",
@@ -19,11 +27,6 @@
       "type": "boolean",
       "required": false,
       "default": "true"
-    },
-    {
-      "name": "onValueChange",
-      "type": "(value: string) => void",
-      "required": false
     },
     {
       "name": "showTabs",
@@ -45,12 +48,12 @@
   ],
   "events": [
     {
-      "name": "onValueChange",
+      "name": "valueChange",
       "payload": "(value: string) => void"
     }
   ],
   "slots": [
-    "children"
+    "default"
   ],
   "states": [
     "default",

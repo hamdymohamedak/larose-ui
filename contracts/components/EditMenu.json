@@ -2,6 +2,7 @@
   "name": "EditMenu",
   "version": "1",
   "framework": "neutral",
+  "purpose": "EditMenu component — see composition and states for behavior.",
   "props": [
     {
       "name": "context",
@@ -42,21 +43,6 @@
       "description": "Touch-and-hold / long-press to reveal compact edit menu."
     },
     {
-      "name": "onAction",
-      "type": "(actionId: string) => void",
-      "required": false
-    },
-    {
-      "name": "onOpenChange",
-      "type": "(open: boolean) => void",
-      "required": false
-    },
-    {
-      "name": "onStandardAction",
-      "type": "(actionId: StandardEditActionId) => void",
-      "required": false
-    },
-    {
       "name": "open",
       "type": "boolean",
       "required": false
@@ -76,17 +62,22 @@
   ],
   "events": [
     {
-      "name": "onAction",
+      "name": "action",
       "payload": "(actionId: string) => void"
     },
     {
-      "name": "onOpenChange",
+      "name": "openChange",
       "payload": "(open: boolean) => void"
     },
     {
-      "name": "onStandardAction",
+      "name": "standardAction",
       "payload": "(actionId: StandardEditActionId) => void"
     }
+  ],
+  "states": [
+    "default",
+    "open",
+    "closed"
   ],
   "defaults": {
     "customActions": "[]",

@@ -2,6 +2,7 @@
   "name": "OrnamentWindow",
   "version": "1",
   "framework": "neutral",
+  "purpose": "OrnamentWindow component — see composition and states for behavior.",
   "props": [
     {
       "name": "'aria-label'",
@@ -46,6 +47,9 @@
     }
   ],
   "events": [],
+  "states": [
+    "default"
+  ],
   "defaults": {
     "alignment": "'center'",
     "edge": "'bottom'",

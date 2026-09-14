@@ -2,6 +2,7 @@
   "name": "Button",
   "version": "1",
   "framework": "neutral",
+  "purpose": "Button component — see composition and states for behavior.",
   "props": [
     {
       "name": "buttonRole",
@@ -87,6 +88,11 @@
     }
   ],
   "events": [],
+  "states": [
+    "default",
+    "loading",
+    "error"
+  ],
   "accessibility": {
     "requirements": [
       "Supports ARIA attributes via standard HTML element props.",

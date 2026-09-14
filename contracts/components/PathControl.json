@@ -2,6 +2,7 @@
   "name": "PathControl",
   "version": "1",
   "framework": "neutral",
+  "purpose": "PathControl component — see composition and states for behavior.",
   "props": [
     {
       "name": "'aria-label'",
@@ -13,21 +14,6 @@
       "type": "boolean",
       "required": false,
       "description": "macOS: allow drag-and-drop to select a new path item."
-    },
-    {
-      "name": "onChoose",
-      "type": "() => void",
-      "required": false
-    },
-    {
-      "name": "onDropPath",
-      "type": "(segments: PathSegment[]) => void",
-      "required": false
-    },
-    {
-      "name": "onSegmentSelect",
-      "type": "(segment: PathSegment) => void",
-      "required": false
     },
     {
       "name": "segments",
@@ -47,17 +33,20 @@
   ],
   "events": [
     {
-      "name": "onChoose",
+      "name": "choose",
       "payload": "() => void"
     },
     {
-      "name": "onDropPath",
+      "name": "dropPath",
       "payload": "(segments: PathSegment[]) => void"
     },
     {
-      "name": "onSegmentSelect",
+      "name": "segmentSelect",
       "payload": "(segment: PathSegment) => void"
     }
+  ],
+  "states": [
+    "default"
   ],
   "accessibility": {
     "requirements": [

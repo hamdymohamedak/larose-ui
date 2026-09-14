@@ -2,6 +2,7 @@
   "name": "DateTimePicker",
   "version": "1",
   "framework": "neutral",
+  "purpose": "DateTimePicker component — see composition and states for behavior.",
   "props": [
     {
       "name": "appearance",
@@ -96,9 +97,15 @@
   ],
   "events": [
     {
-      "name": "onChange",
+      "name": "change",
       "payload": "(value: DateTimeValue) => void"
     }
+  ],
+  "states": [
+    "default",
+    "disabled",
+    "loading",
+    "error"
   ],
   "defaults": {
     "disabled": "false",
@@ -111,7 +118,18 @@
     "value": "{}",
     "yearRange": "{ start: new Date().getFullYear() - 5, end: new Date().getFullYear() + 5 }"
   },
-  "keyboard": {},
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props.",
+      "Keyboard accessible; disabled and loading states must be announced."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  },
   "controlled": [
     "value"
   ]

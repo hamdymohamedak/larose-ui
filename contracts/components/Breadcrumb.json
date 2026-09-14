@@ -2,6 +2,7 @@
   "name": "Breadcrumb",
   "version": "1",
   "framework": "neutral",
+  "purpose": "Breadcrumb component — see composition and states for behavior.",
   "props": [
     {
       "name": "'aria-label'",
@@ -15,6 +16,9 @@
     }
   ],
   "events": [],
+  "states": [
+    "default"
+  ],
   "accessibility": {
     "requirements": [
       "Supports ARIA attributes via standard HTML element props."

@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
+  import { resolveDialogConfirmVisibility } from '@larose-ui/component-logic/overlay';
   import styles from '@larose-ui/styles/components/Dialog/Dialog.module.css';
   import Modal from '../Modal/Modal.svelte';
   import Button from '../Button/Button.svelte';
@@ -35,6 +36,13 @@
     class: className,
     style,
   }: Props = $props();
+
+  const confirmVisible = $derived(
+    resolveDialogConfirmVisibility({
+      showConfirm,
+      hasConfirmHandler: typeof onconfirm === 'function',
+    }),
+  );
 </script>
 
 <Modal {open} {title} {description} {onclose} class={className} {style}>
@@ -45,7 +53,7 @@
     <Button buttonRole="cancel" variant="secondary" disabled={loading} onclick={onclose}>
       {cancelLabel}
     </Button>
-    {#if showConfirm}
+    {#if confirmVisible}
       <Button
         variant={variant === 'destructive' ? 'ghost' : 'primary'}
         buttonRole={variant === 'destructive' ? 'destructive' : 'primary'}

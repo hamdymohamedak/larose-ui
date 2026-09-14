@@ -15,7 +15,13 @@
     warnIfAlertTitleTooLong,
   } from '../../AlertDialog/utils';
   import { activateOverlayFocus } from '@larose-ui/primitives';
+  import {
+    createPresenceController,
+    presenceMotionClassKey,
+    type PresencePhase,
+  } from '@larose-ui/component-logic/overlay';
   import styles from '@larose-ui/styles/components/AlertDialog/AlertDialog.module.css';
+  import motionStyles from '@larose-ui/styles/components/Motion/motion.module.css';
   import { cn } from '../../utils/cn';
   import { portal } from '../../utils/portal';
 
@@ -61,6 +67,10 @@
   let internalText = $state(textField?.defaultValue ?? '');
   let suppressed = $state(suppression?.defaultChecked ?? false);
 
+  const controller = createPresenceController(false);
+  let phase = $state<PresencePhase>(controller.getSnapshot().phase);
+  let shouldRender = $state(controller.getSnapshot().shouldRender);
+
   const textValue = $derived(textField?.value ?? internalText);
   const orderedLayout = $derived(orderAlertActions(actions, presentation));
   const resolvedDefaultId = $derived(
@@ -75,6 +85,27 @@
     action.onSelect?.();
     if (action.role !== 'cancel') close();
   }
+
+  function onAnimationEnd(event: AnimationEvent) {
+    if (event.target !== event.currentTarget) return;
+    controller.handleAnimationEnd();
+  }
+
+  $effect(() => {
+    return controller.subscribe(() => {
+      const snap = controller.getSnapshot();
+      phase = snap.phase;
+      shouldRender = snap.shouldRender;
+    });
+  });
+
+  $effect(() => {
+    controller.setPresent(open);
+  });
+
+  $effect(() => {
+    return () => controller.dispose();
+  });
 
   $effect(() => {
     if (!open) return;
@@ -99,20 +130,43 @@
     });
     return () => deactivate?.();
   });
+
+  const overlayClass = $derived.by(() => {
+    const key = presenceMotionClassKey('backdrop', phase);
+    return cn(styles.overlay, key ? motionStyles[key as keyof typeof motionStyles] : undefined);
+  });
+
+  const alertClass = $derived.by(() => {
+    const key = presenceMotionClassKey('modal', phase);
+    return cn(
+      styles.alert,
+      className,
+      key ? motionStyles[key as keyof typeof motionStyles] : undefined,
+    );
+  });
 </script>
 
-{#if open}
-  <div use:portal class={styles.overlay} data-presentation={presentation} role="presentation">
+{#if shouldRender}
+  <div
+    use:portal
+    class={overlayClass}
+    data-presentation={presentation}
+    data-presence={phase}
+    role="presentation"
+    onanimationend={onAnimationEnd}
+  >
     <div
       bind:this={dialogEl}
-      class={cn(styles.alert, className)}
+      class={alertClass}
       {style}
       role="alertdialog"
       aria-modal="true"
       aria-labelledby={titleId}
       aria-describedby={message ? messageId : undefined}
       data-presentation={presentation}
+      data-presence={phase}
       tabindex="-1"
+      onanimationend={onAnimationEnd}
     >
       <div class={styles.body}>
         <div class={styles.header}>

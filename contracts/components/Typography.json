@@ -2,6 +2,7 @@
   "name": "Typography",
   "version": "1",
   "framework": "neutral",
+  "purpose": "Typography component — see composition and states for behavior.",
   "props": [
     {
       "name": "as",
@@ -16,8 +17,21 @@
     }
   ],
   "events": [],
+  "states": [
+    "default"
+  ],
   "defaults": {
     "muted": "false"
   },
-  "keyboard": {}
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "not-focusable"
+    ]
+  }
 }

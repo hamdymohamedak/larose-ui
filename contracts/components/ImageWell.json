@@ -2,6 +2,7 @@
   "name": "ImageWell",
   "version": "1",
   "framework": "neutral",
+  "purpose": "ImageWell component — see composition and states for behavior.",
   "props": [
     {
       "name": "accept",
@@ -22,11 +23,6 @@
       "default": "'Image'"
     },
     {
-      "name": "onImageChange",
-      "type": "(file: File | null, previewUrl: string | null) => void",
-      "required": false
-    },
-    {
       "name": "placeholder",
       "type": "string",
       "required": false,
@@ -40,9 +36,13 @@
   ],
   "events": [
     {
-      "name": "onImageChange",
+      "name": "imageChange",
       "payload": "(file: File | null, previewUrl: string | null) => void"
     }
+  ],
+  "states": [
+    "default",
+    "disabled"
   ],
   "defaults": {
     "accept": "'image/*'",
@@ -50,5 +50,15 @@
     "label": "'Image'",
     "placeholder": "'Drop an image, paste, or click to choose'"
   },
-  "keyboard": {}
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "not-focusable"
+    ]
+  }
 }

@@ -2,6 +2,7 @@
   "name": "Skeleton",
   "version": "1",
   "framework": "neutral",
+  "purpose": "Skeleton component — see composition and states for behavior.",
   "props": [
     {
       "name": "height",
@@ -29,6 +30,9 @@
     }
   ],
   "events": [],
+  "states": [
+    "default"
+  ],
   "defaults": {
     "height": "'1rem'",
     "lines": "1",

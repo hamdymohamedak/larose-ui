@@ -2,6 +2,7 @@
   "name": "OrnamentButton",
   "version": "1",
   "framework": "neutral",
+  "purpose": "OrnamentButton component — see composition and states for behavior.",
   "props": [
     {
       "name": "active",
@@ -10,5 +11,19 @@
     }
   ],
   "events": [],
-  "keyboard": {}
+  "states": [
+    "default"
+  ],
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props.",
+      "Keyboard accessible; disabled and loading states must be announced."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  }
 }

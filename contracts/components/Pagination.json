@@ -2,6 +2,7 @@
   "name": "Pagination",
   "version": "1",
   "framework": "neutral",
+  "purpose": "Pagination component — see composition and states for behavior.",
   "props": [
     {
       "name": "'aria-label'",
@@ -13,11 +14,6 @@
       "type": "string",
       "required": false,
       "default": "'Next page'"
-    },
-    {
-      "name": "onPageChange",
-      "type": "(page: number) => void",
-      "required": true
     },
     {
       "name": "page",
@@ -44,9 +40,12 @@
   ],
   "events": [
     {
-      "name": "onPageChange",
+      "name": "pageChange",
       "payload": "(page: number) => void"
     }
+  ],
+  "states": [
+    "default"
   ],
   "defaults": {
     "nextLabel": "'Next page'",

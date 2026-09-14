@@ -2,6 +2,7 @@
   "name": "DocumentLauncher",
   "version": "1",
   "framework": "neutral",
+  "purpose": "DocumentLauncher component — see composition and states for behavior.",
   "props": [
     {
       "name": "accessories",
@@ -19,16 +20,6 @@
       "required": false
     },
     {
-      "name": "onPrimaryAction",
-      "type": "() => void",
-      "required": false
-    },
-    {
-      "name": "onSecondaryAction",
-      "type": "() => void",
-      "required": false
-    },
-    {
       "name": "primaryActionLabel",
       "type": "string",
       "required": false,
@@ -43,17 +34,30 @@
   ],
   "events": [
     {
-      "name": "onPrimaryAction",
+      "name": "primaryAction",
       "payload": "() => void"
     },
     {
-      "name": "onSecondaryAction",
+      "name": "secondaryAction",
       "payload": "() => void"
     }
+  ],
+  "states": [
+    "default"
   ],
   "defaults": {
     "primaryActionLabel": "'Create Document'",
     "secondaryActionLabel": "'Choose Template'"
   },
-  "keyboard": {}
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "not-focusable"
+    ]
+  }
 }

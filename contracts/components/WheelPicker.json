@@ -2,6 +2,7 @@
   "name": "WheelPicker",
   "version": "1",
   "framework": "neutral",
+  "purpose": "WheelPicker component — see composition and states for behavior.",
   "props": [
     {
       "name": "'aria-label'",
@@ -41,9 +42,13 @@
   ],
   "events": [
     {
-      "name": "onChange",
+      "name": "change",
       "payload": "(value: PickerValue) => void"
     }
+  ],
+  "states": [
+    "default",
+    "disabled"
   ],
   "defaults": {
     "compact": "false",

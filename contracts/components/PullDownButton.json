@@ -2,6 +2,7 @@
   "name": "PullDownButton",
   "version": "1",
   "framework": "neutral",
+  "purpose": "PullDownButton component — see composition and states for behavior.",
   "props": [
     {
       "name": "destructiveConfirmation",
@@ -44,11 +45,6 @@
       "description": "Optional menu title — use only when it adds meaning."
     },
     {
-      "name": "onAction",
-      "type": "(entry: MenuItemConfig) => void",
-      "required": false
-    },
-    {
       "name": "variant",
       "type": "PullDownButtonVariant",
       "required": false,
@@ -57,9 +53,13 @@
   ],
   "events": [
     {
-      "name": "onAction",
+      "name": "action",
       "payload": "(entry: MenuItemConfig) => void"
     }
+  ],
+  "states": [
+    "default",
+    "disabled"
   ],
   "defaults": {
     "disabled": "false",

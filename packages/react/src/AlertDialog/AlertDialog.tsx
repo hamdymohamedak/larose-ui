@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useId, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { activateOverlayFocus } from '@larose-ui/primitives';
-import { usePresence } from '../Motion/usePresence';
+import { presenceMotionClassKey } from '@larose-ui/component-logic/overlay';
+import { useSharedPresence } from '../Motion/useSharedPresence';
 import motionStyles from '@larose-ui/styles/components/Motion/motion.module.css';
 import type { AlertDialogAction, AlertDialogProps } from './types';
 import {
@@ -93,7 +94,7 @@ export function AlertDialog({
     if (open) dialogRef.current?.focus();
   }, [open]);
 
-  const { phase, shouldRender, onAnimationEnd } = usePresence({ present: open });
+  const { phase, shouldRender, onAnimationEnd } = useSharedPresence(open);
 
   if (!shouldRender) return null;
 
@@ -101,12 +102,14 @@ export function AlertDialog({
   const resolvedDefaultId =
     defaultActionId ?? ordered.find((action) => action.role === 'default')?.id;
 
-  return createPortal(<div
+  const backdropKey = presenceMotionClassKey('backdrop', phase);
+  const modalKey = presenceMotionClassKey('modal', phase);
+
+  return createPortal(
+    <div
       className={[
         styles.overlay,
-        phase === 'entering' || phase === 'exiting'
-          ? motionStyles[`backdrop-${phase}` as keyof typeof motionStyles]
-          : undefined,
+        backdropKey ? motionStyles[backdropKey as keyof typeof motionStyles] : undefined,
       ]
         .filter(Boolean)
         .join(' ')}
@@ -120,9 +123,7 @@ export function AlertDialog({
         className={[
           styles.alert,
           className,
-          phase === 'entering' || phase === 'exiting'
-            ? motionStyles[`modal-${phase}` as keyof typeof motionStyles]
-            : undefined,
+          modalKey ? motionStyles[modalKey as keyof typeof motionStyles] : undefined,
         ]
           .filter(Boolean)
           .join(' ')}

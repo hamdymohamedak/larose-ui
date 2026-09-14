@@ -2,6 +2,13 @@
   "name": "LiquidGlassSwitch",
   "version": "1",
   "framework": "neutral",
+  "purpose": "Toggle switch with glass track and sliding glass thumb.",
+  "composition": "Controlled or uncontrolled; always provide aria-label when no visible label.",
+  "interactions": [
+    "Glass track",
+    "Glass thumb",
+    "Switch button semantics"
+  ],
   "props": [
     {
       "name": "'aria-label'",
@@ -79,11 +86,10 @@
   ],
   "events": [
     {
-      "name": "onChange",
+      "name": "change",
       "payload": "(checked: boolean) => void"
     }
   ],
-  "slots": [],
   "states": [
     "off",
     "on",

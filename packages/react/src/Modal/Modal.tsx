@@ -1,6 +1,9 @@
 import {
+  useCallback,
   useEffect,
+  useLayoutEffect,
   useRef,
+  useSyncExternalStore,
   type CSSProperties,
   type HTMLAttributes,
   type MouseEvent,
@@ -8,15 +11,20 @@ import {
 } from 'react';
 import { createPortal } from 'react-dom';
 import type { ComponentMotionOverride } from '@larose-ui/themes';
+import { activateOverlayFocus } from '@larose-ui/primitives';
 import {
-  activateOverlayFocus,
-} from '@larose-ui/primitives';
+  createPresenceController,
+  MODAL_ARIA_IDS,
+  presenceMotionClassKey,
+  shouldDismissOnOverlayClick,
+  type PresencePhase,
+} from '@larose-ui/component-logic/overlay';
+import { getLaRosePortalTarget } from '@larose-ui/core';
 import { useComponentDefaults } from '../theme/useComponentDefaults';
 import { useComponentMotion } from '../theme/useComponentMotion';
-import { usePresence } from '../Motion/usePresence';
+import { useSkipMotion } from '../Motion/MotionContext';
 import motionStyles from '@larose-ui/styles/components/Motion/motion.module.css';
 import styles from '@larose-ui/styles/components/Modal/Modal.module.css';
-import { getLaRosePortalTarget } from '@larose-ui/core';
 
 export interface ModalProps extends HTMLAttributes<HTMLDivElement> {
   open: boolean;
@@ -32,6 +40,33 @@ export interface ModalProps extends HTMLAttributes<HTMLDivElement> {
   overlayStyle?: CSSProperties;
   contentStyle?: CSSProperties;
   motion?: ComponentMotionOverride;
+}
+
+function useSharedPresence(present: boolean, skipMotion: boolean) {
+  const controllerRef = useRef(createPresenceController(present, { skipMotion }));
+
+  useLayoutEffect(() => {
+    controllerRef.current.setPresent(present, { skipMotion });
+  }, [present, skipMotion]);
+
+  useEffect(() => () => controllerRef.current.dispose(), []);
+
+  const snapshot = useSyncExternalStore(
+    (onStoreChange) => controllerRef.current.subscribe(onStoreChange),
+    () => controllerRef.current.getSnapshot(),
+    () => controllerRef.current.getSnapshot(),
+  );
+
+  const onAnimationEnd = useCallback((event: React.AnimationEvent) => {
+    if (event.target !== event.currentTarget) return;
+    controllerRef.current.handleAnimationEnd();
+  }, []);
+
+  return {
+    phase: snapshot.phase as PresencePhase,
+    shouldRender: snapshot.shouldRender,
+    onAnimationEnd,
+  };
 }
 
 export function Modal(incomingProps: ModalProps) {
@@ -53,7 +88,8 @@ export function Modal(incomingProps: ModalProps) {
   } = useComponentDefaults('Modal', incomingProps);
 
   const dialogRef = useRef<HTMLDivElement>(null);
-  const { phase, shouldRender, onAnimationEnd } = usePresence({ present: open });
+  const skipMotion = useSkipMotion();
+  const { phase, shouldRender, onAnimationEnd } = useSharedPresence(open, skipMotion);
   const { style: motionStyle } = useComponentMotion('Modal', motion);
 
   useEffect(() => {
@@ -67,15 +103,24 @@ export function Modal(incomingProps: ModalProps) {
   if (!shouldRender) return null;
 
   const handleOverlayClick = (e: MouseEvent) => {
-    if (closeOnOverlay && e.target === e.currentTarget) onClose();
+    if (
+      shouldDismissOnOverlayClick({
+        closeOnOverlay,
+        eventTarget: e.target,
+        currentTarget: e.currentTarget,
+      })
+    ) {
+      onClose();
+    }
   };
+
+  const backdropKey = presenceMotionClassKey('backdrop', phase);
+  const modalKey = presenceMotionClassKey('modal', phase);
 
   const backdropClass = [
     styles.overlay,
     overlayClassName,
-    phase === 'entering' || phase === 'exiting'
-      ? motionStyles[`backdrop-${phase}` as keyof typeof motionStyles]
-      : undefined,
+    backdropKey ? motionStyles[backdropKey as keyof typeof motionStyles] : undefined,
   ]
     .filter(Boolean)
     .join(' ');
@@ -84,14 +129,13 @@ export function Modal(incomingProps: ModalProps) {
     styles.modal,
     contentClassName,
     className,
-    phase === 'entering' || phase === 'exiting'
-      ? motionStyles[`modal-${phase}` as keyof typeof motionStyles]
-      : undefined,
+    modalKey ? motionStyles[modalKey as keyof typeof motionStyles] : undefined,
   ]
     .filter(Boolean)
     .join(' ');
 
-  return createPortal(<div
+  return createPortal(
+    <div
       className={backdropClass}
       style={{ ...motionStyle, ...overlayStyle, ...style }}
       onClick={handleOverlayClick}
@@ -106,18 +150,18 @@ export function Modal(incomingProps: ModalProps) {
         style={{ ...motionStyle, ...contentStyle }}
         role="dialog"
         aria-modal="true"
-        aria-labelledby={title ? 'lr-modal-title' : undefined}
-        aria-describedby={description ? 'lr-modal-desc' : undefined}
+        aria-labelledby={title ? MODAL_ARIA_IDS.titleId : undefined}
+        aria-describedby={description ? MODAL_ARIA_IDS.descriptionId : undefined}
         data-presence={phase}
         onAnimationEnd={onAnimationEnd}
       >
         {title && (
-          <h2 id="lr-modal-title" className={styles.title}>
+          <h2 id={MODAL_ARIA_IDS.titleId} className={styles.title}>
             {title}
           </h2>
         )}
         {description && (
-          <p id="lr-modal-desc" className={styles.description}>
+          <p id={MODAL_ARIA_IDS.descriptionId} className={styles.description}>
             {description}
           </p>
         )}

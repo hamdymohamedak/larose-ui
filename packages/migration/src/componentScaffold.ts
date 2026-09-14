@@ -124,8 +124,8 @@ export const PACKAGE_PROFILES: Record<string, PackageProfile> = {
     },
     tips: [
       ...UI_TIPS_SHARED,
-      'Match the React contract when porting a parity component.',
-      'Add the name to PARITY_COMPONENTS in apps/docs/src/lib/frameworks.ts when Vue+Svelte+React all exist.',
+      'Match the framework-neutral contract in contracts/components (not the React implementation).',
+      'Add the name to the parity matrix (pnpm generate:parity-matrix) when Vue+Svelte+React all exist.',
     ],
   },
   svelte: {

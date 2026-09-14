@@ -2,6 +2,7 @@
   "name": "Collapse",
   "version": "1",
   "framework": "neutral",
+  "purpose": "Collapse component — see composition and states for behavior.",
   "props": [
     {
       "name": "duration",
@@ -15,5 +16,20 @@
     }
   ],
   "events": [],
-  "keyboard": {}
+  "states": [
+    "default",
+    "open",
+    "closed"
+  ],
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "not-focusable"
+    ]
+  }
 }

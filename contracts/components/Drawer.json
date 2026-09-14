@@ -2,6 +2,15 @@
   "name": "Drawer",
   "version": "1",
   "framework": "neutral",
+  "purpose": "Drawer slides in from the left or right edge with overlay dismissal.",
+  "composition": "Pair with Button triggers. Configure side via defaultProps or prop.",
+  "interactions": [
+    "Drawer (root)",
+    "Overlay",
+    "Panel",
+    "Header",
+    "Body (default slot)"
+  ],
   "props": [
     {
       "name": "closeOnOverlay",
@@ -19,17 +28,12 @@
       "required": false
     },
     {
-      "name": "onClose",
-      "type": "() => void",
-      "required": true
-    },
-    {
       "name": "open",
       "type": "boolean",
       "required": true
     },
     {
-      "name": "overlayClassName",
+      "name": "overlayClass",
       "type": "string",
       "required": false
     },
@@ -39,7 +43,7 @@
       "required": false
     },
     {
-      "name": "panelClassName",
+      "name": "panelClass",
       "type": "string",
       "required": false
     },
@@ -52,16 +56,21 @@
       "name": "side",
       "type": "DrawerSide",
       "required": false
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "required": false
     }
   ],
   "events": [
     {
-      "name": "onClose",
+      "name": "close",
       "payload": "() => void"
     }
   ],
   "slots": [
-    "children"
+    "default"
   ],
   "states": [
     "closed",
@@ -79,7 +88,17 @@
     ],
     "behavior": [
       "escape-close",
-      "focus-trap"
+      "focus-trap",
+      "restore-focus"
     ]
-  }
+  },
+  "focus": [
+    "trap-while-open",
+    "restore-on-close"
+  ],
+  "motion": [
+    "enter",
+    "exit",
+    "reduced-motion"
+  ]
 }

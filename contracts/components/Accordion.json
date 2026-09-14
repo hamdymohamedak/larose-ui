@@ -2,6 +2,14 @@
   "name": "Accordion",
   "version": "1",
   "framework": "neutral",
+  "purpose": "Expandable sections with single or multiple open items.",
+  "composition": "Wrap each section in AccordionItem; use type multiple for FAQ layouts.",
+  "interactions": [
+    "Accordion",
+    "AccordionItem",
+    "AccordionTrigger",
+    "AccordionContent"
+  ],
   "props": [
     {
       "name": "collapsible",
@@ -14,11 +22,6 @@
       "type": "string[]",
       "required": false,
       "default": "[]"
-    },
-    {
-      "name": "onValueChange",
-      "type": "(value: string[]) => void",
-      "required": false
     },
     {
       "name": "type",
@@ -34,12 +37,12 @@
   ],
   "events": [
     {
-      "name": "onValueChange",
+      "name": "valueChange",
       "payload": "(value: string[]) => void"
     }
   ],
   "slots": [
-    "children"
+    "default"
   ],
   "states": [
     "collapsed",
@@ -50,7 +53,26 @@
     "defaultValue": "[]",
     "type": "'single'"
   },
-  "keyboard": {},
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props.",
+      "Keyboard accessible; disabled and loading states must be announced."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "keys": [
+      "Enter",
+      "ArrowUp",
+      "ArrowDown",
+      "ArrowLeft",
+      "ArrowRight"
+    ],
+    "behavior": [
+      "arrow-navigation",
+      "enter-activation"
+    ]
+  },
   "uncontrolled": [
     "value"
   ]

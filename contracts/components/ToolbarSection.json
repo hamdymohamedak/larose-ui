@@ -2,6 +2,7 @@
   "name": "ToolbarSection",
   "version": "1",
   "framework": "neutral",
+  "purpose": "ToolbarSection component — see composition and states for behavior.",
   "props": [
     {
       "name": "collapsible",
@@ -16,5 +17,18 @@
     }
   ],
   "events": [],
-  "keyboard": {}
+  "states": [
+    "default"
+  ],
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "not-focusable"
+    ]
+  }
 }

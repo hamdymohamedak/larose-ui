@@ -7,6 +7,7 @@ import type {
 
 const DOM_INHERITED_PROPS = new Set([
   'className',
+  'class',
   'style',
   'id',
   'role',
@@ -87,7 +88,79 @@ export function validateComponentContractSchema(
           severity: 'error',
         });
       }
+      if (/^on[A-Z]/.test(event.name ?? '')) {
+        mismatches.push({
+          path: `events[${index}].name`,
+          issue: 'invalid_schema',
+          message: `Event "${event.name}" must be framework-neutral (use "${event.name.replace(/^on/, '').replace(/^./, (c) => c.toLowerCase())}" not React onXxx)`,
+          severity: 'error',
+        });
+      }
     }
+  }
+
+  if (!contract.purpose?.trim()) {
+    mismatches.push({
+      path: 'purpose',
+      issue: 'missing_purpose',
+      message: 'Contract must declare a framework-independent purpose',
+      severity: 'error',
+    });
+  }
+
+  if (!contract.states?.length) {
+    mismatches.push({
+      path: 'states',
+      issue: 'missing_state',
+      message: 'Contract must declare at least one state',
+      severity: 'error',
+    });
+  }
+
+  if (!contract.accessibility?.requirements?.length) {
+    mismatches.push({
+      path: 'accessibility',
+      issue: 'missing_accessibility',
+      message: 'Contract must declare accessibility requirements',
+      severity: 'error',
+    });
+  }
+
+  if (!contract.keyboard || (!contract.keyboard.keys?.length && !contract.keyboard.behavior?.length)) {
+    mismatches.push({
+      path: 'keyboard',
+      issue: 'missing_keyboard',
+      message: 'Contract must declare keyboard behavior (or explicit keyboard-accessible)',
+      severity: 'warning',
+    });
+  }
+
+  for (const [index, prop] of contract.props.entries()) {
+    if (prop.name === 'className' || prop.name.endsWith('ClassName')) {
+      mismatches.push({
+        path: `props[${index}].name`,
+        issue: 'invalid_schema',
+        message: `Prop "${prop.name}" is React-biased; use neutral "class" / "*Class"`,
+        severity: 'error',
+      });
+    }
+    if (/^on[A-Z]/.test(prop.name)) {
+      mismatches.push({
+        path: `props[${index}].name`,
+        issue: 'invalid_schema',
+        message: `Prop "${prop.name}" looks like an event callback; move to events as a neutral name`,
+        severity: 'error',
+      });
+    }
+  }
+
+  if (contract.slots?.includes('children')) {
+    mismatches.push({
+      path: 'slots',
+      issue: 'invalid_schema',
+      message: 'Slot "children" is React-biased; use "default"',
+      severity: 'error',
+    });
   }
 
   return {

@@ -2,6 +2,7 @@
   "name": "OutlineView",
   "version": "1",
   "framework": "neutral",
+  "purpose": "OutlineView component — see composition and states for behavior.",
   "props": [
     {
       "name": "'aria-label'",
@@ -54,26 +55,6 @@
       "required": false
     },
     {
-      "name": "onCellEdit",
-      "type": "(nodeId: string, columnKey: string, value: string) => void",
-      "required": false
-    },
-    {
-      "name": "onExpandedChange",
-      "type": "(expandedIds: string[]) => void",
-      "required": false
-    },
-    {
-      "name": "onRowDoubleClick",
-      "type": "(node: OutlineNode) => void",
-      "required": false
-    },
-    {
-      "name": "onSelect",
-      "type": "(node: OutlineNode) => void",
-      "required": false
-    },
-    {
       "name": "primaryColumnHeader",
       "type": "string",
       "required": false,
@@ -117,21 +98,24 @@
   ],
   "events": [
     {
-      "name": "onCellEdit",
+      "name": "cellEdit",
       "payload": "(nodeId: string, columnKey: string, value: string) => void"
     },
     {
-      "name": "onExpandedChange",
+      "name": "expandedChange",
       "payload": "(expandedIds: string[]) => void"
     },
     {
-      "name": "onRowDoubleClick",
+      "name": "rowDoubleClick",
       "payload": "(node: OutlineNode) => void"
     },
     {
-      "name": "onSelect",
+      "name": "select",
       "payload": "(node: OutlineNode) => void"
     }
+  ],
+  "states": [
+    "default"
   ],
   "defaults": {
     "alternatingRows": "true",

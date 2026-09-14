@@ -2,6 +2,14 @@
   "name": "LiquidGlassRange",
   "version": "1",
   "framework": "neutral",
+  "purpose": "Range slider with glass track, fill, and draggable glass thumb.",
+  "composition": "Use for volume, brightness, or any scalar control over a colorful backdrop.",
+  "interactions": [
+    "Glass track",
+    "Fill",
+    "Glass thumb",
+    "Native range input (a11y)"
+  ],
   "props": [
     {
       "name": "'aria-label'",
@@ -78,11 +86,10 @@
   ],
   "events": [
     {
-      "name": "onChange",
+      "name": "change",
       "payload": "(value: number) => void"
     }
   ],
-  "slots": [],
   "states": [
     "default",
     "disabled"

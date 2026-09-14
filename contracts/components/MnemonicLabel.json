@@ -2,6 +2,7 @@
   "name": "MnemonicLabel",
   "version": "1",
   "framework": "neutral",
+  "purpose": "MnemonicLabel component — see composition and states for behavior.",
   "props": [
     {
       "name": "label",
@@ -22,8 +23,21 @@
     }
   ],
   "events": [],
+  "states": [
+    "default"
+  ],
   "defaults": {
     "showAccessKey": "false"
   },
-  "keyboard": {}
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "not-focusable"
+    ]
+  }
 }

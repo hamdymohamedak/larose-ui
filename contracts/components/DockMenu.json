@@ -2,6 +2,7 @@
   "name": "DockMenu",
   "version": "1",
   "framework": "neutral",
+  "purpose": "DockMenu component — see composition and states for behavior.",
   "props": [
     {
       "name": "appName",
@@ -28,21 +29,6 @@
       "description": "Whether the app is currently running (shows window list + running actions)."
     },
     {
-      "name": "onEntrySelect",
-      "type": "(entry: ContextMenuItemConfig) => void",
-      "required": false
-    },
-    {
-      "name": "onOpenChange",
-      "type": "(open: boolean) => void",
-      "required": false
-    },
-    {
-      "name": "onWindowSelect",
-      "type": "(window: DockWindow) => void",
-      "required": false
-    },
-    {
       "name": "open",
       "type": "boolean",
       "required": false
@@ -63,17 +49,22 @@
   ],
   "events": [
     {
-      "name": "onEntrySelect",
+      "name": "entrySelect",
       "payload": "(entry: ContextMenuItemConfig) => void"
     },
     {
-      "name": "onOpenChange",
+      "name": "openChange",
       "payload": "(open: boolean) => void"
     },
     {
-      "name": "onWindowSelect",
+      "name": "windowSelect",
       "payload": "(window: DockWindow) => void"
     }
+  ],
+  "states": [
+    "default",
+    "open",
+    "closed"
   ],
   "defaults": {
     "closedEntries": "[]",
@@ -81,7 +72,18 @@
     "openWindows": "[]",
     "runningEntries": "[]"
   },
-  "keyboard": {},
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props.",
+      "Keyboard accessible; disabled and loading states must be announced."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  },
   "controlled": [
     "open"
   ]

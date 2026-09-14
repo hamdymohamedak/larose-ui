@@ -2,6 +2,14 @@
   "name": "Select",
   "version": "1",
   "framework": "neutral",
+  "purpose": "Select provides a styled native-like picker with validation states.",
+  "composition": "Pass options array; pair with forms and validation messages.",
+  "interactions": [
+    "Select",
+    "Label",
+    "Trigger",
+    "Options list"
+  ],
   "props": [
     {
       "name": "error",

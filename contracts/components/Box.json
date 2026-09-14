@@ -2,6 +2,7 @@
   "name": "Box",
   "version": "1",
   "framework": "neutral",
+  "purpose": "Box component — see composition and states for behavior.",
   "props": [
     {
       "name": "'aria-label'",
@@ -22,6 +23,11 @@
       "description": "macOS settings panes append a colon to the title."
     },
     {
+      "name": "title",
+      "type": "string",
+      "required": false
+    },
+    {
       "name": "titlePosition",
       "type": "BoxTitlePosition",
       "required": false,
@@ -35,6 +41,9 @@
     }
   ],
   "events": [],
+  "states": [
+    "default"
+  ],
   "defaults": {
     "padding": "'md'",
     "settingsStyle": "false",

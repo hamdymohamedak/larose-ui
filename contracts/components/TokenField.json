@@ -2,6 +2,7 @@
   "name": "TokenField",
   "version": "1",
   "framework": "neutral",
+  "purpose": "TokenField component — see composition and states for behavior.",
   "props": [
     {
       "name": "'aria-label'",
@@ -18,16 +19,6 @@
       "type": "string[]",
       "required": false,
       "description": "Keys that convert current text into a token (default: comma)."
-    },
-    {
-      "name": "onContextMenuEntries",
-      "type": "(token: TokenFieldToken) => MenuEntry[]",
-      "required": false
-    },
-    {
-      "name": "onTokensChange",
-      "type": "(tokens: TokenFieldToken[]) => void",
-      "required": false
     },
     {
       "name": "placeholder",
@@ -52,13 +43,16 @@
   ],
   "events": [
     {
-      "name": "onContextMenuEntries",
+      "name": "contextMenuEntries",
       "payload": "(token: TokenFieldToken) => MenuEntry[]"
     },
     {
-      "name": "onTokensChange",
+      "name": "tokensChange",
       "payload": "(tokens: TokenFieldToken[]) => void"
     }
+  ],
+  "states": [
+    "default"
   ],
   "accessibility": {
     "requirements": [

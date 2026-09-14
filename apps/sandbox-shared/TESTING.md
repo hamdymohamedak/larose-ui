@@ -27,6 +27,7 @@ Multi-framework UI OS needs **layered** verification. Sandboxes alone are not en
 | Adapters | **Vitest** (`*-react` / vue / svelte) | Core ↔ framework wiring |
 | Real consumer apps | **Sandboxes** | Portal, fixed, focus, CSS, theme, stacking, runtime |
 | Cross-framework user flows | **Playwright** | Same critical intents on React + Vue + Svelte |
+| Behavioral parity matrix | **contracts/parity/matrix.json** | Per-component checklist (skill §18); `pnpm generate:parity-matrix` / `pnpm check:parity-matrix` |
 | Docs / visual catalog | **Storybook** | Documentation + React-oriented development — **not** parity authority |
 | Architecture | **Doctor / contracts** | Neutrality and API surface |
 
@@ -56,6 +57,9 @@ Covers Command palette, Dialog+focus, Toast, Theme, Accelerators × React/Vue/Sv
 pnpm sandbox:react|vue|svelte   # manual QA
 pnpm test                       # Vitest (cores + adapters)
 pnpm test:parity                # Playwright critical flows
+pnpm generate:parity-matrix     # Refresh contracts/parity/matrix.json
+pnpm check:parity-matrix        # Fail on behavioral fail rows
+pnpm generate:contracts         # Refresh neutralized component contracts
 pnpm dev                        # Storybook docs/catalog
 pnpm doctor:ci                  # architectural checks
 ```

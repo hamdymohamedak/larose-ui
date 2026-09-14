@@ -6,6 +6,7 @@
 export * from './Button';
 export * from './DataEntry';
 export * from './AlertDialog';
+export * from './Overlay';
 export * from './Lockup';
 export * from './TabView';
 export * from './ImageView';

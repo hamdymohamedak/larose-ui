@@ -1,6 +1,13 @@
 <script lang="ts">
   import { activateOverlayFocus } from '@larose-ui/primitives';
+  import {
+    createPresenceController,
+    presenceMotionClassKey,
+    shouldDismissOnOverlayClick,
+    type PresencePhase,
+  } from '@larose-ui/component-logic/overlay';
   import styles from '@larose-ui/styles/components/CommandPalette/CommandPalette.module.css';
+  import motionStyles from '@larose-ui/styles/components/Motion/motion.module.css';
   import { cn } from '../../utils/cn';
   import { portal } from '../../utils/portal';
 
@@ -38,6 +45,10 @@
   let activeIndex = $state(0);
   let inputEl = $state<HTMLInputElement | null>(null);
   let dialogEl = $state<HTMLElement | null>(null);
+
+  const controller = createPresenceController(false);
+  let phase = $state<PresencePhase>(controller.getSnapshot().phase);
+  let shouldRender = $state(controller.getSnapshot().shouldRender);
 
   const filtered = $derived.by(() => {
     const q = query.trim().toLowerCase();
@@ -81,6 +92,27 @@
     close();
   }
 
+  function onAnimationEnd(event: AnimationEvent) {
+    if (event.target !== event.currentTarget) return;
+    controller.handleAnimationEnd();
+  }
+
+  $effect(() => {
+    return controller.subscribe(() => {
+      const snap = controller.getSnapshot();
+      phase = snap.phase;
+      shouldRender = snap.shouldRender;
+    });
+  });
+
+  $effect(() => {
+    controller.setPresent(open);
+  });
+
+  $effect(() => {
+    return () => controller.dispose();
+  });
+
   $effect(() => {
     if (!open) return;
     query = '';
@@ -113,26 +145,52 @@
       if (item) select(item);
     }
   }
+
+  const overlayClass = $derived.by(() => {
+    const key = presenceMotionClassKey('backdrop', phase);
+    return cn(styles.overlay, key ? motionStyles[key as keyof typeof motionStyles] : undefined);
+  });
+
+  const dialogClass = $derived.by(() => {
+    const key = presenceMotionClassKey('modal', phase);
+    return cn(
+      styles.dialog,
+      className,
+      key ? motionStyles[key as keyof typeof motionStyles] : undefined,
+    );
+  });
 </script>
 
-{#if open}
+{#if shouldRender}
   <!-- svelte-ignore a11y_no_static_element_interactions -->
   <div
     use:portal
-    class={styles.overlay}
+    class={overlayClass}
     role="presentation"
+    data-presence={phase}
     onclick={(e) => {
-      if (e.currentTarget === e.target) close();
+      if (
+        shouldDismissOnOverlayClick({
+          closeOnOverlay: true,
+          eventTarget: e.target,
+          currentTarget: e.currentTarget,
+        })
+      ) {
+        close();
+      }
     }}
     onkeydown={onKeyDown}
+    onanimationend={onAnimationEnd}
   >
     <div
       bind:this={dialogEl}
-      class={cn(styles.dialog, className)}
+      class={dialogClass}
       {style}
       role="dialog"
       aria-modal="true"
       aria-label={ariaLabel}
+      data-presence={phase}
+      onanimationend={onAnimationEnd}
     >
       <input
         type="search"

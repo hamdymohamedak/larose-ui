@@ -2,6 +2,7 @@
   "name": "SplitView",
   "version": "1",
   "framework": "neutral",
+  "purpose": "SplitView component — see composition and states for behavior.",
   "props": [
     {
       "name": "'aria-label'",
@@ -13,11 +14,6 @@
       "type": "SplitCompactMode",
       "required": false,
       "default": "'side-by-side'"
-    },
-    {
-      "name": "onSizesChange",
-      "type": "(sizes: number[]) => void",
-      "required": false
     },
     {
       "name": "orientation",
@@ -38,9 +34,12 @@
   ],
   "events": [
     {
-      "name": "onSizesChange",
+      "name": "sizesChange",
       "payload": "(sizes: number[]) => void"
     }
+  ],
+  "states": [
+    "default"
   ],
   "defaults": {
     "compactMode": "'side-by-side'",

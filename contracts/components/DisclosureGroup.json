@@ -2,6 +2,7 @@
   "name": "DisclosureGroup",
   "version": "1",
   "framework": "neutral",
+  "purpose": "DisclosureGroup component — see composition and states for behavior.",
   "props": [
     {
       "name": "defaultExpanded",
@@ -22,18 +23,27 @@
       "name": "label",
       "type": "string",
       "required": true
-    },
-    {
-      "name": "onExpandedChange",
-      "type": "(expanded: boolean) => void",
-      "required": false
     }
   ],
   "events": [
     {
-      "name": "onExpandedChange",
+      "name": "expandedChange",
       "payload": "(expanded: boolean) => void"
     }
   ],
-  "keyboard": {}
+  "states": [
+    "default",
+    "disabled"
+  ],
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "not-focusable"
+    ]
+  }
 }

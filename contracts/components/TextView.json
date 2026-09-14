@@ -2,6 +2,7 @@
   "name": "TextView",
   "version": "1",
   "framework": "neutral",
+  "purpose": "TextView component — see composition and states for behavior.",
   "props": [
     {
       "name": "editable",
@@ -30,10 +31,23 @@
     }
   ],
   "events": [],
+  "states": [
+    "default"
+  ],
   "defaults": {
     "editable": "false",
     "selectable": "true",
     "typographyRole": "'body'"
   },
-  "keyboard": {}
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "not-focusable"
+    ]
+  }
 }

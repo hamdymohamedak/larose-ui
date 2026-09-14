@@ -11,8 +11,14 @@ import {
 import { createPortal } from 'react-dom';
 import { STANDARD_ACCELERATORS, getLaRosePortalTarget } from '@larose-ui/core';
 import { activateOverlayFocus } from '@larose-ui/primitives';
+import {
+  presenceMotionClassKey,
+  shouldDismissOnOverlayClick,
+} from '@larose-ui/component-logic/overlay';
 import { useAccelerator } from '../accelerator';
+import { useSharedPresence } from '../Motion/useSharedPresence';
 import styles from '@larose-ui/styles/components/CommandPalette/CommandPalette.module.css';
+import motionStyles from '@larose-ui/styles/components/Motion/motion.module.css';
 
 export interface CommandPaletteItem {
   id: string;
@@ -64,6 +70,7 @@ export function CommandPalette({
   const [portalTarget, setPortalTarget] = useState<HTMLElement | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
+  const { phase, shouldRender, onAnimationEnd } = useSharedPresence(open);
 
   useLayoutEffect(() => {
     setPortalTarget(getLaRosePortalTarget());
@@ -159,18 +166,36 @@ export function CommandPalette({
     active?.scrollIntoView?.({ block: 'nearest' });
   }, [activeIndex, filtered, open]);
 
-  if (!open || !portalTarget) return null;
+  if (!shouldRender || !portalTarget) return null;
 
   const grouped = groupItems(filtered);
   let itemIndex = -1;
+  const backdropKey = presenceMotionClassKey('backdrop', phase);
+  const modalKey = presenceMotionClassKey('modal', phase);
 
   return createPortal(
     <div
-      className={[styles.overlay, className].filter(Boolean).join(' ')}
+      className={[
+        styles.overlay,
+        className,
+        backdropKey ? motionStyles[backdropKey as keyof typeof motionStyles] : undefined,
+      ]
+        .filter(Boolean)
+        .join(' ')}
       style={style}
       role="presentation"
+      data-presence={phase}
+      onAnimationEnd={onAnimationEnd}
       onClick={(event) => {
-        if (event.target === event.currentTarget) close();
+        if (
+          shouldDismissOnOverlayClick({
+            closeOnOverlay: true,
+            eventTarget: event.target,
+            currentTarget: event.currentTarget,
+          })
+        ) {
+          close();
+        }
       }}
     >
       <div
@@ -178,7 +203,14 @@ export function CommandPalette({
         role="dialog"
         aria-modal="true"
         aria-label={ariaLabel}
-        className={styles.dialog}
+        className={[
+          styles.dialog,
+          modalKey ? motionStyles[modalKey as keyof typeof motionStyles] : undefined,
+        ]
+          .filter(Boolean)
+          .join(' ')}
+        data-presence={phase}
+        onAnimationEnd={onAnimationEnd}
         onClick={(event) => event.stopPropagation()}
       >
         <input

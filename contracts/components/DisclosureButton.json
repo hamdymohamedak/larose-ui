@@ -2,6 +2,7 @@
   "name": "DisclosureButton",
   "version": "1",
   "framework": "neutral",
+  "purpose": "DisclosureButton component — see composition and states for behavior.",
   "props": [
     {
       "name": "'aria-label'",
@@ -36,18 +37,17 @@
       "type": "string",
       "required": false,
       "description": "Visible label for the adjacent control region."
-    },
-    {
-      "name": "onExpandedChange",
-      "type": "(expanded: boolean) => void",
-      "required": false
     }
   ],
   "events": [
     {
-      "name": "onExpandedChange",
+      "name": "expandedChange",
       "payload": "(expanded: boolean) => void"
     }
+  ],
+  "states": [
+    "default",
+    "disabled"
   ],
   "defaults": {
     "defaultExpanded": "false",

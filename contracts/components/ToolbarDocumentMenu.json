@@ -2,6 +2,7 @@
   "name": "ToolbarDocumentMenu",
   "version": "1",
   "framework": "neutral",
+  "purpose": "ToolbarDocumentMenu component — see composition and states for behavior.",
   "props": [
     {
       "name": "disabled",
@@ -17,18 +18,28 @@
       "name": "label",
       "type": "string",
       "required": false
-    },
-    {
-      "name": "onAction",
-      "type": "(entryId: string) => void",
-      "required": false
     }
   ],
   "events": [
     {
-      "name": "onAction",
+      "name": "action",
       "payload": "(entryId: string) => void"
     }
   ],
-  "keyboard": {}
+  "states": [
+    "default",
+    "disabled"
+  ],
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props.",
+      "Keyboard accessible; disabled and loading states must be announced."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  }
 }

@@ -2,6 +2,7 @@
   "name": "ImageView",
   "version": "1",
   "framework": "neutral",
+  "purpose": "ImageView component — see composition and states for behavior.",
   "props": [
     {
       "name": "alt",
@@ -21,7 +22,7 @@
       "default": "'contain'"
     },
     {
-      "name": "frameClassName",
+      "name": "frameClass",
       "type": "string",
       "required": false
     },
@@ -49,10 +50,23 @@
     }
   ],
   "events": [],
+  "states": [
+    "default"
+  ],
   "defaults": {
     "background": "'opaque'",
     "fit": "'contain'",
     "objectPosition": "'center'"
   },
-  "keyboard": {}
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "not-focusable"
+    ]
+  }
 }

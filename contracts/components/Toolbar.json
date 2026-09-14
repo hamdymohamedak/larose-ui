@@ -2,6 +2,7 @@
   "name": "Toolbar",
   "version": "1",
   "framework": "neutral",
+  "purpose": "Toolbar component — see composition and states for behavior.",
   "props": [
     {
       "name": "'aria-label'",
@@ -24,9 +25,18 @@
       "name": "platform",
       "type": "ToolbarPlatform",
       "required": false
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "required": false,
+      "description": "Concise view title — aim for under 15 characters."
     }
   ],
   "events": [],
+  "states": [
+    "default"
+  ],
   "accessibility": {
     "requirements": [
       "Supports ARIA attributes via standard HTML element props."

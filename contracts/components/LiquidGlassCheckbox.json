@@ -2,6 +2,13 @@
   "name": "LiquidGlassCheckbox",
   "version": "1",
   "framework": "neutral",
+  "purpose": "Checkbox with glass box, animated checkmark, and optional label.",
+  "composition": "Use in settings panels on glass or aurora backgrounds.",
+  "interactions": [
+    "Glass box",
+    "Check icon",
+    "Label"
+  ],
   "props": [
     {
       "name": "'aria-label'",
@@ -64,7 +71,7 @@
   ],
   "events": [
     {
-      "name": "onChange",
+      "name": "change",
       "payload": "(checked: boolean) => void"
     }
   ],

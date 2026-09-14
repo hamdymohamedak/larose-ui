@@ -2,6 +2,14 @@
   "name": "LiquidGlassTopBar",
   "version": "1",
   "framework": "neutral",
+  "purpose": "Floating or edge-aligned top navigation with segmented control and trailing actions.",
+  "composition": "Pair title with nav items; use variant floating for iOS-style inset bars.",
+  "interactions": [
+    "LiquidGlass header",
+    "Title",
+    "Segmented nav",
+    "Trailing slot"
+  ],
   "props": [
     {
       "name": "activeColor",
@@ -79,6 +87,11 @@
       "default": "'fixed'"
     },
     {
+      "name": "title",
+      "type": "Node",
+      "required": false
+    },
+    {
       "name": "titleColor",
       "type": "string",
       "required": false,
@@ -104,7 +117,7 @@
   ],
   "events": [
     {
-      "name": "onChange",
+      "name": "change",
       "payload": "(key: string) => void"
     }
   ],

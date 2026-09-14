@@ -1,4 +1,5 @@
 import type { CSSProperties, ReactNode } from 'react';
+import { resolveDialogConfirmVisibility } from '@larose-ui/component-logic/overlay';
 import { Button } from '../Button/Button';
 import { Modal } from '../Modal/Modal';
 import styles from '@larose-ui/styles/components/Dialog/Dialog.module.css';
@@ -12,6 +13,8 @@ export interface DialogProps {
   confirmLabel?: string;
   cancelLabel?: string;
   onConfirm?: () => void;
+  /** When false, hide the confirm button. Default true (matches Vue/Svelte). */
+  showConfirm?: boolean;
   loading?: boolean;
   variant?: 'default' | 'destructive';
   className?: string;
@@ -27,11 +30,17 @@ export function Dialog({
   confirmLabel = 'Confirm',
   cancelLabel = 'Cancel',
   onConfirm,
+  showConfirm,
   loading,
   variant = 'default',
   className,
   style,
 }: DialogProps) {
+  const confirmVisible = resolveDialogConfirmVisibility({
+    showConfirm,
+    hasConfirmHandler: typeof onConfirm === 'function',
+  });
+
   return (
     <Modal
       open={open}
@@ -46,7 +55,7 @@ export function Dialog({
         <Button buttonRole="cancel" variant="secondary" onClick={onClose} disabled={loading}>
           {cancelLabel}
         </Button>
-        {onConfirm && (
+        {confirmVisible && (
           <Button
             variant={variant === 'destructive' ? 'ghost' : 'primary'}
             buttonRole={variant === 'destructive' ? 'destructive' : 'primary'}

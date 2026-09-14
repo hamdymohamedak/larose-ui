@@ -2,6 +2,7 @@
   "name": "DisclosureTriangle",
   "version": "1",
   "framework": "neutral",
+  "purpose": "DisclosureTriangle component — see composition and states for behavior.",
   "props": [
     {
       "name": "defaultExpanded",
@@ -25,22 +26,31 @@
       "type": "string",
       "required": true,
       "description": "Describes what is disclosed, e.g. \"Advanced options\"."
-    },
-    {
-      "name": "onExpandedChange",
-      "type": "(expanded: boolean) => void",
-      "required": false
     }
   ],
   "events": [
     {
-      "name": "onExpandedChange",
+      "name": "expandedChange",
       "payload": "(expanded: boolean) => void"
     }
+  ],
+  "states": [
+    "default",
+    "disabled"
   ],
   "defaults": {
     "defaultExpanded": "false",
     "disabled": "false"
   },
-  "keyboard": {}
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "not-focusable"
+    ]
+  }
 }

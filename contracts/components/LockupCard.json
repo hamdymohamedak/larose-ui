@@ -2,6 +2,7 @@
   "name": "LockupCard",
   "version": "1",
   "framework": "neutral",
+  "purpose": "LockupCard component — see composition and states for behavior.",
   "props": [
     {
       "name": "rating",
@@ -12,8 +13,26 @@
       "name": "review",
       "type": "string",
       "required": true
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "required": false
     }
   ],
   "events": [],
-  "keyboard": {}
+  "states": [
+    "default"
+  ],
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "not-focusable"
+    ]
+  }
 }

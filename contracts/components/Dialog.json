@@ -2,6 +2,15 @@
   "name": "Dialog",
   "version": "1",
   "framework": "neutral",
+  "purpose": "Dialog is a lightweight modal surface for confirmations and forms.",
+  "composition": "Use for focused tasks smaller than full Modal layouts. Confirm visibility defaults to shown (showConfirm).",
+  "interactions": [
+    "Dialog",
+    "Header",
+    "Title",
+    "Description",
+    "Actions"
+  ],
   "props": [
     {
       "name": "cancelLabel",
@@ -26,18 +35,19 @@
       "required": false
     },
     {
-      "name": "onClose",
-      "type": "() => void",
+      "name": "open",
+      "type": "boolean",
       "required": true
     },
     {
-      "name": "onConfirm",
-      "type": "() => void",
-      "required": false
+      "name": "showConfirm",
+      "type": "boolean",
+      "required": false,
+      "description": "When false, hide the confirm button. Default true (matches Vue/Svelte)."
     },
     {
-      "name": "open",
-      "type": "boolean",
+      "name": "title",
+      "type": "string",
       "required": true
     },
     {
@@ -49,16 +59,16 @@
   ],
   "events": [
     {
-      "name": "onClose",
+      "name": "close",
       "payload": "() => void"
     },
     {
-      "name": "onConfirm",
+      "name": "confirm",
       "payload": "() => void"
     }
   ],
   "slots": [
-    "children"
+    "default"
   ],
   "states": [
     "closed",
@@ -85,5 +95,14 @@
       "focus-trap",
       "restore-focus"
     ]
-  }
+  },
+  "focus": [
+    "trap-while-open",
+    "restore-on-close"
+  ],
+  "motion": [
+    "enter",
+    "exit",
+    "reduced-motion"
+  ]
 }

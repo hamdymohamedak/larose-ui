@@ -2,6 +2,7 @@
   "name": "Presence",
   "version": "1",
   "framework": "neutral",
+  "purpose": "Presence component — see composition and states for behavior.",
   "props": [
     {
       "name": "immediate",
@@ -9,11 +10,6 @@
       "required": false,
       "default": "false",
       "description": "When true, skip exit animation and unmount immediately."
-    },
-    {
-      "name": "onExitComplete",
-      "type": "() => void",
-      "required": false
     },
     {
       "name": "placement",
@@ -35,9 +31,12 @@
   ],
   "events": [
     {
-      "name": "onExitComplete",
+      "name": "exitComplete",
       "payload": "() => void"
     }
+  ],
+  "states": [
+    "default"
   ],
   "defaults": {
     "immediate": "false",

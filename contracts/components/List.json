@@ -2,6 +2,7 @@
   "name": "List",
   "version": "1",
   "framework": "neutral",
+  "purpose": "List component — see composition and states for behavior.",
   "props": [
     {
       "name": "'aria-label'",
@@ -16,6 +17,9 @@
     }
   ],
   "events": [],
+  "states": [
+    "default"
+  ],
   "defaults": {
     "variant": "'grouped'"
   },

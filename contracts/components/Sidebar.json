@@ -2,6 +2,7 @@
   "name": "Sidebar",
   "version": "1",
   "framework": "neutral",
+  "purpose": "Sidebar component — see composition and states for behavior.",
   "props": [
     {
       "name": "'aria-label'",
@@ -28,11 +29,6 @@
       "description": "Override `--lr-sidebar-max-height` (default `100dvh`)."
     },
     {
-      "name": "onHiddenChange",
-      "type": "(hidden: boolean) => void",
-      "required": false
-    },
-    {
       "name": "platform",
       "type": "SidebarPlatform",
       "required": false,
@@ -47,9 +43,12 @@
   ],
   "events": [
     {
-      "name": "onHiddenChange",
+      "name": "hiddenChange",
       "payload": "(hidden: boolean) => void"
     }
+  ],
+  "states": [
+    "default"
   ],
   "defaults": {
     "glass": "true",

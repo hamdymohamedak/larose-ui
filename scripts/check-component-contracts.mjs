@@ -1,13 +1,17 @@
 import { readFileSync, readdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { extractComponentContracts } from './lib/extract-component-api.mjs';
+import {
+  extractComponentContracts,
+  extractMergedComponentContracts,
+} from './lib/extract-component-api.mjs';
 import { COMPONENT_ANATOMY } from './lib/docs-metadata.mjs';
 import { isGlassDocComponent } from './lib/glass-components.mjs';
 import {
   INTENTIONAL_ADAPTER_ASYMMETRIES,
   listFrameworkComponentExports,
   resolveAdapterIndexPath,
+  resolveLiquidGlassIndexPath,
   resolvePropsSampleAdapter,
 } from './lib/component-catalog.mjs';
 import {
@@ -15,6 +19,7 @@ import {
   validateComponentContractSchema,
   isComponentContract,
 } from '../packages/contracts/dist/index.js';
+import { existsSync } from 'node:fs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const componentsDir = join(root, 'contracts/components');
@@ -35,26 +40,26 @@ if (canonicalFiles.length === 0) {
   process.exit(0);
 }
 
-const sampleAdapter = resolvePropsSampleAdapter(root, 'auto');
-const sampleIndexPath = resolveAdapterIndexPath(root, sampleAdapter);
 const names = canonicalFiles.map((file) => file.replace(/\.json$/, ''));
-const liveContracts = extractComponentContracts(
-  root,
-  names,
-  COMPONENT_ANATOMY,
-  'neutral',
-  sampleIndexPath,
-);
-
-const liquidGlassIndexPath = join(root, 'packages/react/src/LiquidGlass/index.ts');
 const glassNames = names.filter(isGlassDocComponent);
+const mainNames = names.filter((name) => !isGlassDocComponent(name));
 
-if (glassNames.length > 0) {
-  Object.assign(
-    liveContracts,
-    extractComponentContracts(root, glassNames, COMPONENT_ANATOMY, 'neutral', liquidGlassIndexPath),
-  );
-}
+const liveContracts = extractMergedComponentContracts(
+  root,
+  mainNames,
+  COMPONENT_ANATOMY,
+  (fw) => {
+    const path = resolveAdapterIndexPath(root, fw);
+    return existsSync(path) ? path : '';
+  },
+);
+Object.assign(
+  liveContracts,
+  extractMergedComponentContracts(root, glassNames, COMPONENT_ANATOMY, (fw) => {
+    const path = resolveLiquidGlassIndexPath(root, fw);
+    return existsSync(path) ? path : '';
+  }),
+);
 
 const exportsByFramework = listFrameworkComponentExports(root);
 const exportSets = {
@@ -62,6 +67,8 @@ const exportSets = {
   vue: new Set(exportsByFramework.vue),
   svelte: new Set(exportsByFramework.svelte),
 };
+
+const sampleAdapter = resolvePropsSampleAdapter(root, 'auto');
 
 for (const file of canonicalFiles) {
   const componentName = file.replace(/\.json$/, '');
@@ -95,7 +102,7 @@ for (const file of canonicalFiles) {
   if (!implementation) {
     diagnostics.push({
       severity: 'warning',
-      message: `No live Props sample found for contract "${componentName}" (sampled via ${sampleAdapter})`,
+      message: `No live Props sample found for contract "${componentName}" (merged adapters; fallback sample ${sampleAdapter})`,
       file: join('contracts/components', file),
     });
     continue;

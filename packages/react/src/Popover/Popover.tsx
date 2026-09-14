@@ -8,8 +8,10 @@ import {
   type ReactNode,
 } from 'react';
 import { activateOverlayFocus } from '@larose-ui/primitives';
-import { Presence } from '../Motion/Presence';
+import { presenceMotionClassKey } from '@larose-ui/component-logic/overlay';
+import { useSharedPresence } from '../Motion/useSharedPresence';
 import styles from '@larose-ui/styles/components/Popover/Popover.module.css';
+import motionStyles from '@larose-ui/styles/components/Motion/motion.module.css';
 
 export type PopoverSide = 'top' | 'bottom' | 'left' | 'right';
 
@@ -45,6 +47,7 @@ export function Popover({
   const popoverId = useId();
   const rootRef = useRef<HTMLSpanElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
+  const { phase, shouldRender, onAnimationEnd } = useSharedPresence(Boolean(isOpen));
 
   const setOpen = useCallback(
     (next: boolean) => {
@@ -76,6 +79,8 @@ export function Popover({
     };
   }, [isOpen, setOpen]);
 
+  const popoverKey = presenceMotionClassKey('popover', phase);
+
   return (
     <span ref={rootRef} className={[styles.wrapper, className].filter(Boolean).join(' ')} style={style}>
       <span
@@ -85,18 +90,27 @@ export function Popover({
       >
         {trigger}
       </span>
-      <Presence present={isOpen} variant="popover" placement={side}>
+      {shouldRender ? (
         <div
           ref={panelRef}
           id={popoverId}
           role="dialog"
           aria-label={ariaLabel}
-          className={[styles.popover, panelClassName].filter(Boolean).join(' ')}
+          className={[
+            styles.popover,
+            panelClassName,
+            popoverKey ? motionStyles[popoverKey as keyof typeof motionStyles] : undefined,
+          ]
+            .filter(Boolean)
+            .join(' ')}
           data-side={side}
+          data-placement={side}
+          data-presence={phase}
+          onAnimationEnd={onAnimationEnd}
         >
           {content}
         </div>
-      </Presence>
+      ) : null}
     </span>
   );
 }

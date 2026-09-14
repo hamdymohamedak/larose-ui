@@ -2,6 +2,7 @@
   "name": "Textarea",
   "version": "1",
   "framework": "neutral",
+  "purpose": "Textarea component — see composition and states for behavior.",
   "props": [
     {
       "name": "error",
@@ -44,11 +45,26 @@
     }
   ],
   "events": [],
+  "states": [
+    "default",
+    "loading",
+    "error"
+  ],
   "defaults": {
     "error": "null",
     "inputSize": "'md'",
     "loading": "false",
     "required": "false"
   },
-  "keyboard": {}
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "not-focusable"
+    ]
+  }
 }

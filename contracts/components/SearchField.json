@@ -2,6 +2,7 @@
   "name": "SearchField",
   "version": "1",
   "framework": "neutral",
+  "purpose": "SearchField component — see composition and states for behavior.",
   "props": [
     {
       "name": "'aria-label'",
@@ -23,21 +24,6 @@
       "type": "boolean",
       "required": false,
       "description": "Search while typing (default true)."
-    },
-    {
-      "name": "onSearch",
-      "type": "(value: string) => void",
-      "required": false
-    },
-    {
-      "name": "onTokenRemove",
-      "type": "(tokenId: string) => void",
-      "required": false
-    },
-    {
-      "name": "onTokenSelect",
-      "type": "(tokenId: string) => void",
-      "required": false
     },
     {
       "name": "placeholder",
@@ -87,21 +73,24 @@
   ],
   "events": [
     {
-      "name": "onSearch",
+      "name": "search",
       "payload": "(value: string) => void"
     },
     {
-      "name": "onTokenRemove",
+      "name": "tokenRemove",
       "payload": "(tokenId: string) => void"
     },
     {
-      "name": "onTokenSelect",
+      "name": "tokenSelect",
       "payload": "(tokenId: string) => void"
     },
     {
-      "name": "onChange",
+      "name": "change",
       "payload": "(value: string) => void"
     }
+  ],
+  "states": [
+    "default"
   ],
   "accessibility": {
     "requirements": [

@@ -2,7 +2,21 @@
   "name": "MotionProvider",
   "version": "1",
   "framework": "neutral",
+  "purpose": "MotionProvider component — see composition and states for behavior.",
   "props": [],
   "events": [],
-  "keyboard": {}
+  "states": [
+    "default"
+  ],
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "not-focusable"
+    ]
+  }
 }

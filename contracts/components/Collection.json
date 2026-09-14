@@ -2,6 +2,7 @@
   "name": "Collection",
   "version": "1",
   "framework": "neutral",
+  "purpose": "Collection component — see composition and states for behavior.",
   "props": [
     {
       "name": "ariaLabel",
@@ -27,11 +28,6 @@
       "default": "'grid'"
     },
     {
-      "name": "onSelect",
-      "type": "(item: CollectionItem) => void",
-      "required": false
-    },
-    {
       "name": "selectedId",
       "type": "string",
       "required": false
@@ -39,9 +35,12 @@
   ],
   "events": [
     {
-      "name": "onSelect",
+      "name": "select",
       "payload": "(item: CollectionItem) => void"
     }
+  ],
+  "states": [
+    "default"
   ],
   "defaults": {
     "ariaLabel": "'Collection'",

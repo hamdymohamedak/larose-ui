@@ -2,6 +2,7 @@
   "name": "DocumentToolbar",
   "version": "1",
   "framework": "neutral",
+  "purpose": "DocumentToolbar component — see composition and states for behavior.",
   "props": [
     {
       "name": "canSave",
@@ -14,21 +15,6 @@
       "type": "string",
       "required": false,
       "default": "'New'"
-    },
-    {
-      "name": "onNew",
-      "type": "() => void",
-      "required": false
-    },
-    {
-      "name": "onOpen",
-      "type": "() => void",
-      "required": false
-    },
-    {
-      "name": "onSave",
-      "type": "() => void",
-      "required": false
     },
     {
       "name": "openLabel",
@@ -51,17 +37,20 @@
   ],
   "events": [
     {
-      "name": "onNew",
+      "name": "new",
       "payload": "() => void"
     },
     {
-      "name": "onOpen",
+      "name": "open",
       "payload": "() => void"
     },
     {
-      "name": "onSave",
+      "name": "save",
       "payload": "() => void"
     }
+  ],
+  "states": [
+    "default"
   ],
   "defaults": {
     "canSave": "true",
@@ -70,5 +59,15 @@
     "saveLabel": "'Save'",
     "showAddButton": "true"
   },
-  "keyboard": {}
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "not-focusable"
+    ]
+  }
 }

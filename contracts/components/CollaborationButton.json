@@ -2,6 +2,7 @@
   "name": "CollaborationButton",
   "version": "1",
   "framework": "neutral",
+  "purpose": "CollaborationButton component — see composition and states for behavior.",
   "props": [
     {
       "name": "collaborators",
@@ -22,9 +23,23 @@
     }
   ],
   "events": [],
+  "states": [
+    "default"
+  ],
   "defaults": {
     "label": "'Collaboration'",
     "maxVisible": "3"
   },
-  "keyboard": {}
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props.",
+      "Keyboard accessible; disabled and loading states must be announced."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  }
 }

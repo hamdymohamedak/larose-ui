@@ -2,6 +2,7 @@
   "name": "ContextMenu",
   "version": "1",
   "framework": "neutral",
+  "purpose": "ContextMenu component — see composition and states for behavior.",
   "props": [
     {
       "name": "dimBackground",
@@ -22,16 +23,6 @@
       "description": "Enable long-press / touch-and-hold in addition to secondary click."
     },
     {
-      "name": "onEntrySelect",
-      "type": "(entry: ContextMenuItemConfig) => void",
-      "required": false
-    },
-    {
-      "name": "onOpenChange",
-      "type": "(open: boolean) => void",
-      "required": false
-    },
-    {
       "name": "open",
       "type": "boolean",
       "required": false
@@ -40,23 +31,44 @@
       "name": "preview",
       "type": "Node",
       "required": false
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "required": false
     }
   ],
   "events": [
     {
-      "name": "onEntrySelect",
+      "name": "entrySelect",
       "payload": "(entry: ContextMenuItemConfig) => void"
     },
     {
-      "name": "onOpenChange",
+      "name": "openChange",
       "payload": "(open: boolean) => void"
     }
+  ],
+  "states": [
+    "default",
+    "open",
+    "closed"
   ],
   "defaults": {
     "dimBackground": "true",
     "longPress": "true"
   },
-  "keyboard": {},
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props.",
+      "Keyboard accessible; disabled and loading states must be announced."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  },
   "controlled": [
     "open"
   ]

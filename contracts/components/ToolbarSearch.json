@@ -2,6 +2,7 @@
   "name": "ToolbarSearch",
   "version": "1",
   "framework": "neutral",
+  "purpose": "ToolbarSearch component — see composition and states for behavior.",
   "props": [
     {
       "name": "'aria-label'",
@@ -21,9 +22,12 @@
   ],
   "events": [
     {
-      "name": "onChange",
+      "name": "change",
       "payload": "(value: string) => void"
     }
+  ],
+  "states": [
+    "default"
   ],
   "accessibility": {
     "requirements": [

@@ -2,6 +2,7 @@
   "name": "Spinner",
   "version": "1",
   "framework": "neutral",
+  "purpose": "Spinner component — see composition and states for behavior.",
   "props": [
     {
       "name": "label",
@@ -17,9 +18,22 @@
     }
   ],
   "events": [],
+  "states": [
+    "default"
+  ],
   "defaults": {
     "label": "'Loading'",
     "size": "'md'"
   },
-  "keyboard": {}
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "not-focusable"
+    ]
+  }
 }

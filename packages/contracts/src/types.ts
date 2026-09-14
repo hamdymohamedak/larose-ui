@@ -51,8 +51,14 @@ export interface ComponentContractKeyboard {
 export interface ComponentContract {
   name: string;
   version?: string;
-  /** Canonical contracts are framework-agnostic (`neutral`). Adapters may still tag `react`/`vue`/`svelte`. */
+  /** Canonical contracts are framework-agnostic (`neutral`). */
   framework?: 'react' | 'vue' | 'svelte' | 'neutral';
+  /** What the component does (framework-independent). */
+  purpose?: string;
+  /** Composition / nesting guidance. */
+  composition?: string;
+  /** Structural / interaction outline. */
+  interactions?: string[];
   props: ComponentContractProp[];
   events: ComponentContractEvent[];
   slots?: string[];
@@ -63,6 +69,10 @@ export interface ComponentContract {
   keyboard?: ComponentContractKeyboard;
   controlled?: string[];
   uncontrolled?: string[];
+  /** Focus ownership rules. */
+  focus?: string[];
+  /** Motion semantics to preserve across frameworks. */
+  motion?: string[];
 }
 
 export type ComponentContractIssue =
@@ -76,7 +86,10 @@ export type ComponentContractIssue =
   | 'missing_state'
   | 'accessibility_regression'
   | 'keyboard_divergence'
-  | 'invalid_schema';
+  | 'invalid_schema'
+  | 'missing_purpose'
+  | 'missing_accessibility'
+  | 'missing_keyboard';
 
 export interface ComponentContractMismatch {
   path: string;
@@ -88,4 +101,41 @@ export interface ComponentContractMismatch {
 export interface ComponentContractValidationResult {
   valid: boolean;
   mismatches: ComponentContractMismatch[];
+}
+
+/** Behavioral parity checklist row for one component across frameworks. */
+export type ParityStatus = 'pass' | 'fail' | 'partial' | 'n/a' | 'unverified';
+
+export interface ComponentParityBehaviors {
+  initialState: ParityStatus;
+  openClose: ParityStatus;
+  keyboard: ParityStatus;
+  focus: ParityStatus;
+  accessibility: ParityStatus;
+  controlledState: ParityStatus;
+  uncontrolledState: ParityStatus;
+  events: ParityStatus;
+  motion: ParityStatus;
+  portal: ParityStatus;
+  visual: ParityStatus;
+}
+
+export interface ComponentParityMatrixEntry {
+  component: string;
+  frameworks: {
+    react: boolean;
+    vue: boolean;
+    svelte: boolean;
+  };
+  behaviors: ComponentParityBehaviors;
+  /** Shared component-logic module path when present. */
+  sharedLogic?: string | null;
+  notes?: string[];
+}
+
+export interface ComponentParityMatrix {
+  version: number;
+  updatedAt: string;
+  behaviors: (keyof ComponentParityBehaviors)[];
+  entries: ComponentParityMatrixEntry[];
 }

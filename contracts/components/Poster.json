@@ -2,6 +2,7 @@
   "name": "Poster",
   "version": "1",
   "framework": "neutral",
+  "purpose": "Poster component — see composition and states for behavior.",
   "props": [
     {
       "name": "imageUrl",
@@ -12,8 +13,26 @@
       "name": "subtitle",
       "type": "string",
       "required": false
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "required": false
     }
   ],
   "events": [],
-  "keyboard": {}
+  "states": [
+    "default"
+  ],
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "not-focusable"
+    ]
+  }
 }

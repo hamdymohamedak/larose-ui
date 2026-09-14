@@ -2,6 +2,7 @@
   "name": "DateRangePicker",
   "version": "1",
   "framework": "neutral",
+  "purpose": "DateRangePicker component — see composition and states for behavior.",
   "props": [
     {
       "name": "disabled",
@@ -77,9 +78,15 @@
   ],
   "events": [
     {
-      "name": "onChange",
+      "name": "change",
       "payload": "(value: DateRange) => void"
     }
+  ],
+  "states": [
+    "default",
+    "disabled",
+    "loading",
+    "error"
   ],
   "defaults": {
     "endLabel": "'End date'",
@@ -89,7 +96,18 @@
     "startLabel": "'Start date'",
     "value": "{ startDate: '', endDate: '' }"
   },
-  "keyboard": {},
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props.",
+      "Keyboard accessible; disabled and loading states must be announced."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  },
   "controlled": [
     "value"
   ]

@@ -2,6 +2,7 @@
   "name": "HomeScreenQuickActions",
   "version": "1",
   "framework": "neutral",
+  "purpose": "HomeScreenQuickActions component — see composition and states for behavior.",
   "props": [
     {
       "name": "actions",
@@ -32,16 +33,6 @@
       "default": "true"
     },
     {
-      "name": "onActionSelect",
-      "type": "(action: QuickActionItem) => void",
-      "required": false
-    },
-    {
-      "name": "onOpenChange",
-      "type": "(open: boolean) => void",
-      "required": false
-    },
-    {
       "name": "open",
       "type": "boolean",
       "required": false
@@ -54,19 +45,34 @@
   ],
   "events": [
     {
-      "name": "onActionSelect",
+      "name": "actionSelect",
       "payload": "(action: QuickActionItem) => void"
     },
     {
-      "name": "onOpenChange",
+      "name": "openChange",
       "payload": "(open: boolean) => void"
     }
+  ],
+  "states": [
+    "default",
+    "open",
+    "closed"
   ],
   "defaults": {
     "iconPlacement": "'leading'",
     "includeSystemActions": "true"
   },
-  "keyboard": {},
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "not-focusable"
+    ]
+  },
   "controlled": [
     "open"
   ]

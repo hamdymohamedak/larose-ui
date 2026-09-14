@@ -2,6 +2,7 @@
   "name": "CollaborationPopover",
   "version": "1",
   "framework": "neutral",
+  "purpose": "CollaborationPopover component — see composition and states for behavior.",
   "props": [
     {
       "name": "actions",
@@ -27,26 +28,6 @@
       "default": "'Manage Shared File'"
     },
     {
-      "name": "onManage",
-      "type": "() => void",
-      "required": false
-    },
-    {
-      "name": "onMessage",
-      "type": "() => void",
-      "required": false
-    },
-    {
-      "name": "onOpenChange",
-      "type": "(open: boolean) => void",
-      "required": false
-    },
-    {
-      "name": "onVideo",
-      "type": "() => void",
-      "required": false
-    },
-    {
       "name": "open",
       "type": "boolean",
       "required": false
@@ -59,28 +40,44 @@
   ],
   "events": [
     {
-      "name": "onManage",
+      "name": "manage",
       "payload": "() => void"
     },
     {
-      "name": "onMessage",
+      "name": "message",
       "payload": "() => void"
     },
     {
-      "name": "onOpenChange",
+      "name": "openChange",
       "payload": "(open: boolean) => void"
     },
     {
-      "name": "onVideo",
+      "name": "video",
       "payload": "() => void"
     }
+  ],
+  "states": [
+    "default",
+    "open",
+    "closed"
   ],
   "defaults": {
     "actions": "[]",
     "defaultOpen": "false",
     "manageLabel": "'Manage Shared File'"
   },
-  "keyboard": {},
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props.",
+      "Keyboard accessible; disabled and loading states must be announced."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  },
   "controlled": [
     "open"
   ],

@@ -2,6 +2,7 @@
   "name": "UnsavedIndicator",
   "version": "1",
   "framework": "neutral",
+  "purpose": "UnsavedIndicator component — see composition and states for behavior.",
   "props": [
     {
       "name": "autosaveEnabled",
@@ -15,12 +16,30 @@
       "type": "boolean",
       "required": false,
       "default": "false"
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "required": true
     }
   ],
   "events": [],
+  "states": [
+    "default"
+  ],
   "defaults": {
     "autosaveEnabled": "true",
     "edited": "false"
   },
-  "keyboard": {}
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "not-focusable"
+    ]
+  }
 }

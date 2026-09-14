@@ -2,13 +2,31 @@
   "name": "LiquidGlass",
   "version": "1",
   "framework": "neutral",
+  "purpose": "Base liquid glass surface with SVG displacement refraction on Chromium and frosted blur elsewhere.",
+  "composition": "Use as a layout primitive or compose higher-level LiquidGlass* components.",
+  "interactions": [
+    "LiquidGlass shell",
+    "Specular rim",
+    "Inner highlight",
+    "Content wrapper"
+  ],
   "props": [],
   "events": [],
   "slots": [
-    "children"
+    "default"
   ],
   "states": [
     "default"
   ],
-  "keyboard": {}
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "not-focusable"
+    ]
+  }
 }

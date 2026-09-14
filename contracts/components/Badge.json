@@ -2,6 +2,7 @@
   "name": "Badge",
   "version": "1",
   "framework": "neutral",
+  "purpose": "Badge component — see composition and states for behavior.",
   "props": [
     {
       "name": "variant",
@@ -11,6 +12,9 @@
     }
   ],
   "events": [],
+  "states": [
+    "default"
+  ],
   "defaults": {
     "variant": "'default'"
   },

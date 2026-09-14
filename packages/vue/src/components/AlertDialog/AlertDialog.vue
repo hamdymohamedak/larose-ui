@@ -1,7 +1,12 @@
 <script setup lang="ts">
-import { computed, ref, useId, watch } from 'vue';
+import { computed, nextTick, onBeforeUnmount, ref, shallowRef, useId, watch } from 'vue';
 import type { CSSProperties } from 'vue';
 import { activateOverlayFocus } from '@larose-ui/primitives';
+import {
+  createPresenceController,
+  presenceMotionClassKey,
+  type PresencePhase,
+} from '@larose-ui/component-logic/overlay';
 import type {
   AlertDialogAction,
   AlertDialogPresentation,
@@ -17,6 +22,7 @@ import {
   warnIfAlertTitleTooLong,
 } from '../../AlertDialog/utils';
 import styles from '@larose-ui/styles/components/AlertDialog/AlertDialog.module.css';
+import motionStyles from '@larose-ui/styles/components/Motion/motion.module.css';
 import { cn } from '../../utils/cn';
 
 const props = withDefaults(
@@ -89,47 +95,89 @@ function openHelp() {
   }
 }
 
+const controller = createPresenceController(props.open);
+const phase = shallowRef<PresencePhase>(controller.getSnapshot().phase);
+const shouldRender = shallowRef(controller.getSnapshot().shouldRender);
+
+const unsub = controller.subscribe(() => {
+  const snap = controller.getSnapshot();
+  phase.value = snap.phase;
+  shouldRender.value = snap.shouldRender;
+});
+
+onBeforeUnmount(() => {
+  unsub();
+  controller.dispose();
+});
+
+function onAnimationEnd(event: AnimationEvent) {
+  if (event.target !== event.currentTarget) return;
+  controller.handleAnimationEnd();
+}
+
 watch(
   () => props.open,
-  (open, _prev, onCleanup) => {
+  (open) => controller.setPresent(open),
+  { immediate: true },
+);
+
+watch(
+  () => props.open,
+  async (open, _prev, onCleanup) => {
     if (!open) return;
     validateAlertActions(props.actions);
     warnIfAlertTitleTooLong(props.title);
-    let deactivate: (() => void) | null = null;
-    const frame = requestAnimationFrame(() => {
-      dialogRef.value?.focus();
-      deactivate = activateOverlayFocus({
-        container: dialogRef.value,
-        onEscape: () => {
-          const cancel = resolveCancelAction(props.actions);
-          if (cancel) runAction(cancel);
-          else close();
-        },
-        autoFocus: false,
-      });
+    await nextTick();
+    dialogRef.value?.focus();
+    const deactivate = activateOverlayFocus({
+      container: dialogRef.value,
+      onEscape: () => {
+        const cancel = resolveCancelAction(props.actions);
+        if (cancel) runAction(cancel);
+        else close();
+      },
+      autoFocus: false,
     });
-    onCleanup(() => {
-      cancelAnimationFrame(frame);
-      deactivate?.();
-    });
+    onCleanup(() => deactivate());
   },
-  { immediate: true },
 );
+
+const overlayClass = computed(() => {
+  const key = presenceMotionClassKey('backdrop', phase.value);
+  return cn(styles.overlay, key ? motionStyles[key as keyof typeof motionStyles] : undefined);
+});
+
+const alertClass = computed(() => {
+  const key = presenceMotionClassKey('modal', phase.value);
+  return cn(
+    styles.alert,
+    props.class,
+    key ? motionStyles[key as keyof typeof motionStyles] : undefined,
+  );
+});
 </script>
 
 <template>
-  <Teleport v-if="open" to="[data-lr-portal-root], [data-lr-provider], body">
-    <div :class="styles.overlay" :data-presentation="presentation" role="presentation">
+  <Teleport v-if="shouldRender" to="[data-lr-portal-root], [data-lr-provider], body">
+    <div
+      :class="overlayClass"
+      :data-presentation="presentation"
+      :data-presence="phase"
+      role="presentation"
+      @animationend="onAnimationEnd"
+    >
       <div
         ref="dialogRef"
-        :class="cn(styles.alert, $props.class)"
+        :class="alertClass"
         :style="style"
         role="alertdialog"
         aria-modal="true"
         :aria-labelledby="titleId"
         :aria-describedby="message ? messageId : undefined"
         :data-presentation="presentation"
+        :data-presence="phase"
         tabindex="-1"
+        @animationend="onAnimationEnd"
       >
         <div :class="styles.body">
           <div :class="styles.header">

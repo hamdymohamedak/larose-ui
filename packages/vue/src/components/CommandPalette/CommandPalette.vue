@@ -1,7 +1,14 @@
 <script setup lang="ts">
-import { computed, nextTick, ref, watch, type CSSProperties } from 'vue';
+import { computed, nextTick, onBeforeUnmount, ref, shallowRef, watch, type CSSProperties } from 'vue';
 import { activateOverlayFocus } from '@larose-ui/primitives';
+import {
+  createPresenceController,
+  presenceMotionClassKey,
+  shouldDismissOnOverlayClick,
+  type PresencePhase,
+} from '@larose-ui/component-logic/overlay';
 import styles from '@larose-ui/styles/components/CommandPalette/CommandPalette.module.css';
+import motionStyles from '@larose-ui/styles/components/Motion/motion.module.css';
 import { cn } from '../../utils/cn';
 import { useLaRosePortalTarget } from '../../composables/useLaRosePortalTarget';
 
@@ -36,6 +43,21 @@ const query = ref('');
 const activeIndex = ref(0);
 const inputRef = ref<HTMLInputElement | null>(null);
 const dialogRef = ref<HTMLElement | null>(null);
+
+const controller = createPresenceController(props.open);
+const phase = shallowRef<PresencePhase>(controller.getSnapshot().phase);
+const shouldRender = shallowRef(controller.getSnapshot().shouldRender);
+
+const unsub = controller.subscribe(() => {
+  const snap = controller.getSnapshot();
+  phase.value = snap.phase;
+  shouldRender.value = snap.shouldRender;
+});
+
+onBeforeUnmount(() => {
+  unsub();
+  controller.dispose();
+});
 
 const filtered = computed(() => {
   const q = query.value.trim().toLowerCase();
@@ -77,6 +99,29 @@ function select(item: CommandPaletteItem) {
   close();
 }
 
+function onOverlayClick(event: MouseEvent) {
+  if (
+    shouldDismissOnOverlayClick({
+      closeOnOverlay: true,
+      eventTarget: event.target,
+      currentTarget: event.currentTarget,
+    })
+  ) {
+    close();
+  }
+}
+
+function onAnimationEnd(event: AnimationEvent) {
+  if (event.target !== event.currentTarget) return;
+  controller.handleAnimationEnd();
+}
+
+watch(
+  () => props.open,
+  (open) => controller.setPresent(open),
+  { immediate: true },
+);
+
 watch(
   () => props.open,
   async (open, _prev, onCleanup) => {
@@ -93,6 +138,20 @@ watch(
     onCleanup(() => deactivate());
   },
 );
+
+const overlayClass = computed(() => {
+  const key = presenceMotionClassKey('backdrop', phase.value);
+  return cn(styles.overlay, key ? motionStyles[key as keyof typeof motionStyles] : undefined);
+});
+
+const dialogClass = computed(() => {
+  const key = presenceMotionClassKey('modal', phase.value);
+  return cn(
+    styles.dialog,
+    props.class,
+    key ? motionStyles[key as keyof typeof motionStyles] : undefined,
+  );
+});
 
 function onKeyDown(event: KeyboardEvent) {
   if (event.key === 'Escape') {
@@ -113,15 +172,24 @@ function onKeyDown(event: KeyboardEvent) {
 </script>
 
 <template>
-  <Teleport v-if="open" :to="portalTarget">
-    <div :class="styles.overlay" role="presentation" @click.self="close" @keydown="onKeyDown">
+  <Teleport v-if="shouldRender" :to="portalTarget">
+    <div
+      :class="overlayClass"
+      role="presentation"
+      :data-presence="phase"
+      @click="onOverlayClick"
+      @keydown="onKeyDown"
+      @animationend="onAnimationEnd"
+    >
       <div
         ref="dialogRef"
         role="dialog"
         aria-modal="true"
         :aria-label="ariaLabel"
-        :class="cn(styles.dialog, props.class)"
+        :class="dialogClass"
         :style="props.style"
+        :data-presence="phase"
+        @animationend="onAnimationEnd"
       >
         <input
           ref="inputRef"

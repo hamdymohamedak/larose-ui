@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { computed } from 'vue';
+import { resolveDialogConfirmVisibility } from '@larose-ui/component-logic/overlay';
 import styles from '@larose-ui/styles/components/Dialog/Dialog.module.css';
 import Modal from '../Modal/Modal.vue';
 import Button from '../Button/Button.vue';
@@ -26,6 +28,10 @@ const emit = defineEmits<{
   close: [];
   confirm: [];
 }>();
+
+const confirmVisible = computed(() =>
+  resolveDialogConfirmVisibility({ showConfirm: props.showConfirm, hasConfirmHandler: true }),
+);
 </script>
 
 <template>
@@ -43,7 +49,7 @@ const emit = defineEmits<{
         {{ cancelLabel }}
       </Button>
       <Button
-        v-if="showConfirm"
+        v-if="confirmVisible"
         :variant="variant === 'destructive' ? 'ghost' : 'primary'"
         :button-role="variant === 'destructive' ? 'destructive' : 'primary'"
         :loading="loading"

@@ -2,6 +2,7 @@
   "name": "CaptionButton",
   "version": "1",
   "framework": "neutral",
+  "purpose": "CaptionButton component — see composition and states for behavior.",
   "props": [
     {
       "name": "imageUrl",
@@ -17,8 +18,27 @@
       "name": "subtitle",
       "type": "string",
       "required": false
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "required": true
     }
   ],
   "events": [],
-  "keyboard": {}
+  "states": [
+    "default"
+  ],
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props.",
+      "Keyboard accessible; disabled and loading states must be announced."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  }
 }

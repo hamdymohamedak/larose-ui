@@ -87,6 +87,14 @@
       "types": "./dist/AlertDialog/index.d.ts",
       "import": "./dist/AlertDialog/index.js"
     },
+    "./overlay": {
+      "types": "./dist/Overlay/index.d.ts",
+      "import": "./dist/Overlay/index.js"
+    },
+    "./overlay/utils": {
+      "types": "./dist/Overlay/utils-public.d.ts",
+      "import": "./dist/Overlay/utils-public.js"
+    },
     "./toolbar": {
       "types": "./dist/Toolbar/index.d.ts",
       "import": "./dist/Toolbar/index.js"

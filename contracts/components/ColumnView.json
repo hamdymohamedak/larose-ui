@@ -2,6 +2,7 @@
   "name": "ColumnView",
   "version": "1",
   "framework": "neutral",
+  "purpose": "ColumnView component — see composition and states for behavior.",
   "props": [
     {
       "name": "ariaLabel",
@@ -19,18 +20,16 @@
       "type": "string[]",
       "required": false,
       "default": "[]"
-    },
-    {
-      "name": "onPathChange",
-      "type": "(path: string[]) => void",
-      "required": false
     }
   ],
   "events": [
     {
-      "name": "onPathChange",
+      "name": "pathChange",
       "payload": "(path: string[]) => void"
     }
+  ],
+  "states": [
+    "default"
   ],
   "defaults": {
     "ariaLabel": "'Column view'",

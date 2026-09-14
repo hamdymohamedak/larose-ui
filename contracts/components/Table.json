@@ -2,6 +2,7 @@
   "name": "Table",
   "version": "1",
   "framework": "neutral",
+  "purpose": "Table component — see composition and states for behavior.",
   "props": [
     {
       "name": "'aria-label'",
@@ -46,11 +47,6 @@
       "required": true
     },
     {
-      "name": "onSelectRow",
-      "type": "(row: T) => void",
-      "required": false
-    },
-    {
       "name": "resizableColumns",
       "type": "boolean",
       "required": false,
@@ -70,9 +66,12 @@
   ],
   "events": [
     {
-      "name": "onSelectRow",
+      "name": "selectRow",
       "payload": "(row: T) => void"
     }
+  ],
+  "states": [
+    "default"
   ],
   "defaults": {
     "alternatingRows": "true",

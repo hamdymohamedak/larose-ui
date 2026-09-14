@@ -2,6 +2,13 @@
   "name": "LiquidGlassTabBar",
   "version": "1",
   "framework": "neutral",
+  "purpose": "iOS-style floating tab bar with morphing selection indicator on a shared LiquidGlass track.",
+  "composition": "Pass items with icons and optional labels; control activeKey for routing.",
+  "interactions": [
+    "LiquidGlass nav shell",
+    "Selection indicator",
+    "Tab buttons"
+  ],
   "props": [
     {
       "name": "activeColor",
@@ -87,7 +94,7 @@
   ],
   "events": [
     {
-      "name": "onChange",
+      "name": "change",
       "payload": "(key: string) => void"
     }
   ],
@@ -111,5 +118,15 @@
     "position": "'fixed'",
     "showIndicator": "true"
   },
-  "keyboard": {}
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "not-focusable"
+    ]
+  }
 }

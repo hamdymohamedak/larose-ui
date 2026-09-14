@@ -55,12 +55,12 @@ describe('component contracts', () => {
   const canonical = {
     name: 'Button',
     framework: 'neutral' as const,
+    purpose: 'Pressable control for primary and secondary actions.',
     props: [
       { name: 'variant', type: 'Variant', required: false, default: 'primary' },
       { name: 'disabled', type: 'boolean', required: false },
-      { name: 'onClick', type: '() => void', required: false },
     ],
-    events: [{ name: 'onClick', payload: 'MouseEvent' }],
+    events: [{ name: 'click', payload: 'MouseEvent' }],
     states: ['default', 'disabled', 'loading'],
     accessibility: { requirements: ['focus-visible ring', 'loading label'] },
     keyboard: { behavior: ['enter-activation', 'space-activation'] },
@@ -77,6 +77,12 @@ describe('component contracts', () => {
   it('validates contract schema', () => {
     expect(validateComponentContractSchema(canonical).valid).toBe(true);
     expect(validateComponentContractSchema({ name: '', props: [] }).valid).toBe(false);
+    expect(
+      validateComponentContractSchema({
+        ...canonical,
+        events: [{ name: 'onClick' }],
+      }).valid,
+    ).toBe(false);
   });
 
   it('passes when implementation matches canonical contract', () => {
@@ -87,8 +93,11 @@ describe('component contracts', () => {
   it('detects missing props and keyboard regressions', () => {
     const implementation = {
       name: 'Button',
+      purpose: canonical.purpose,
       props: [{ name: 'variant', type: 'Variant' }],
       events: [],
+      states: canonical.states,
+      accessibility: canonical.accessibility,
       keyboard: { behavior: ['enter-activation'] },
     };
     const result = compareComponentContracts(implementation, canonical);

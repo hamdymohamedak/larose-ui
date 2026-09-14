@@ -2,6 +2,14 @@
   "name": "CommandPalette",
   "version": "1",
   "framework": "neutral",
+  "purpose": "CommandPalette offers searchable command discovery with keyboard navigation.",
+  "composition": "Register commands with labels and onSelect handlers.",
+  "interactions": [
+    "CommandPalette",
+    "Search input",
+    "Results groups",
+    "Items"
+  ],
   "props": [
     {
       "name": "'aria-label'",
@@ -20,11 +28,6 @@
       "required": true
     },
     {
-      "name": "onOpenChange",
-      "type": "(open: boolean) => void",
-      "required": true
-    },
-    {
       "name": "open",
       "type": "boolean",
       "required": true
@@ -38,7 +41,7 @@
   ],
   "events": [
     {
-      "name": "onOpenChange",
+      "name": "openChange",
       "payload": "(open: boolean) => void"
     }
   ],

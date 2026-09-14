@@ -2,6 +2,7 @@
   "name": "FileUpload",
   "version": "1",
   "framework": "neutral",
+  "purpose": "FileUpload component — see composition and states for behavior.",
   "props": [
     {
       "name": "accept",
@@ -41,18 +42,18 @@
       "type": "boolean",
       "required": false,
       "default": "false"
-    },
-    {
-      "name": "onFilesChange",
-      "type": "(files: File[]) => void",
-      "required": false
     }
   ],
   "events": [
     {
-      "name": "onFilesChange",
+      "name": "filesChange",
       "payload": "(files: File[]) => void"
     }
+  ],
+  "states": [
+    "default",
+    "disabled",
+    "error"
   ],
   "defaults": {
     "buttonLabel": "'Choose files or drag here'",
@@ -60,5 +61,15 @@
     "error": "null",
     "multiple": "false"
   },
-  "keyboard": {}
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "not-focusable"
+    ]
+  }
 }

@@ -2,6 +2,7 @@
   "name": "ShareSheet",
   "version": "1",
   "framework": "neutral",
+  "purpose": "ShareSheet component — see composition and states for behavior.",
   "props": [
     {
       "name": "destinations",
@@ -12,16 +13,6 @@
     {
       "name": "footer",
       "type": "Node",
-      "required": false
-    },
-    {
-      "name": "onClose",
-      "type": "() => void",
-      "required": true
-    },
-    {
-      "name": "onSettingsChange",
-      "type": "(settings: ShareSettings) => void",
       "required": false
     },
     {
@@ -39,21 +30,43 @@
       "name": "settings",
       "type": "ShareSettings",
       "required": true
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "required": false,
+      "default": "'Share'"
     }
   ],
   "events": [
     {
-      "name": "onClose",
+      "name": "close",
       "payload": "() => void"
     },
     {
-      "name": "onSettingsChange",
+      "name": "settingsChange",
       "payload": "(settings: ShareSettings) => void"
     }
   ],
+  "states": [
+    "default",
+    "open",
+    "closed"
+  ],
   "defaults": {
     "destinations": "defaultDestinations",
-    "permissionOptions": "defaultPermissionOptions"
+    "permissionOptions": "defaultPermissionOptions",
+    "title": "'Share'"
   },
-  "keyboard": {}
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "not-focusable"
+    ]
+  }
 }

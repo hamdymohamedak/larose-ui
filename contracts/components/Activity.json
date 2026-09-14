@@ -1,0 +1,139 @@
+{
+  "name": "Activity",
+  "version": "1",
+  "framework": "neutral",
+  "purpose": "Activity component — see composition and states for behavior.",
+  "props": [
+    {
+      "name": "actions",
+      "type": "ActivityAction[]",
+      "required": false,
+      "description": "Action buttons for self-closing usage."
+    },
+    {
+      "name": "defaultExpanded",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "expandable",
+      "type": "boolean",
+      "required": false,
+      "default": "true",
+      "description": "Allow click/keyboard to toggle collapsed ↔ expanded.\nDefaults to `true` (Activity is expandable by design). Pass `false` to lock size."
+    },
+    {
+      "name": "expandAfter",
+      "type": "number",
+      "required": false,
+      "default": "= null || mode === 'persistent') return;",
+      "description": "Auto-expand after this many milliseconds (uncontrolled, or fires `onExpandedChange`).\nUseful for “compress then grow” live-activity timing."
+    },
+    {
+      "name": "expandDuration",
+      "type": "number | string",
+      "required": false,
+      "description": "Expand/collapse morph duration. Number = milliseconds; string = any CSS time."
+    },
+    {
+      "name": "expanded",
+      "type": "boolean",
+      "required": false,
+      "default": "== 'boolean') {",
+      "description": "Controlled expanded state (overrides `mode` between collapsed/expanded)."
+    },
+    {
+      "name": "expandedSize",
+      "type": "ActivityExpandedSize",
+      "required": false,
+      "description": "Expanded shell size. Default `minHeight` is `9rem`."
+    },
+    {
+      "name": "hideCollapsedContent",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "description": "When true, collapsed state is an empty pill (no icon/title/body).\nContent is revealed only after expand."
+    },
+    {
+      "name": "icon",
+      "type": "Node",
+      "required": false,
+      "description": "Leading visual — any icon, emoji, SVG, or image node."
+    },
+    {
+      "name": "leading",
+      "type": "Node",
+      "required": false
+    },
+    {
+      "name": "mode",
+      "type": "ActivityMode",
+      "required": false,
+      "default": "== 'expanded'",
+      "description": "Compact pill, detail panel, or always-on persistent strip."
+    },
+    {
+      "name": "priority",
+      "type": "ActivityPriority",
+      "required": false,
+      "default": "'important'"
+    },
+    {
+      "name": "progress",
+      "type": "number",
+      "required": false,
+      "description": "0–100; renders a meter when status is `progress` (or whenever value is provided)."
+    },
+    {
+      "name": "status",
+      "type": "ActivityStatus",
+      "required": false,
+      "default": "'idle'"
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "trailing",
+      "type": "Node",
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "expandedChange",
+      "payload": "(expanded: boolean) => void"
+    }
+  ],
+  "states": [
+    "default"
+  ],
+  "defaults": {
+    "expandable": "true",
+    "expandAfter": "= null || mode === 'persistent') return;",
+    "expanded": "== 'boolean') {",
+    "hideCollapsedContent": "false",
+    "mode": "== 'expanded'",
+    "priority": "'important'",
+    "status": "'idle'"
+  },
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "not-focusable"
+    ]
+  }
+}

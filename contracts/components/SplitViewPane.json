@@ -2,6 +2,7 @@
   "name": "SplitViewPane",
   "version": "1",
   "framework": "neutral",
+  "purpose": "SplitViewPane component — see composition and states for behavior.",
   "props": [
     {
       "name": "'aria-label'",
@@ -39,11 +40,6 @@
       "required": false
     },
     {
-      "name": "onVisibleChange",
-      "type": "(visible: boolean) => void",
-      "required": false
-    },
-    {
       "name": "visible",
       "type": "boolean",
       "required": false
@@ -51,9 +47,12 @@
   ],
   "events": [
     {
-      "name": "onVisibleChange",
+      "name": "visibleChange",
       "payload": "(visible: boolean) => void"
     }
+  ],
+  "states": [
+    "default"
   ],
   "accessibility": {
     "requirements": [

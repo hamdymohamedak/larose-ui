@@ -2,6 +2,16 @@
   "name": "Modal",
   "version": "1",
   "framework": "neutral",
+  "purpose": "Modal renders a portal overlay with focus trap, enter/exit motion, and optional title/description.",
+  "composition": "Control open state externally. Provide title and description for accessible naming. Portal + presence motion are required on every framework.",
+  "interactions": [
+    "Modal (root portal)",
+    "Overlay",
+    "Content",
+    "Title",
+    "Description",
+    "Body (default slot)"
+  ],
   "props": [
     {
       "name": "closeOnOverlay",
@@ -9,7 +19,7 @@
       "required": false
     },
     {
-      "name": "contentClassName",
+      "name": "contentClass",
       "type": "string",
       "required": false
     },
@@ -29,17 +39,12 @@
       "required": false
     },
     {
-      "name": "onClose",
-      "type": "() => void",
-      "required": true
-    },
-    {
       "name": "open",
       "type": "boolean",
       "required": true
     },
     {
-      "name": "overlayClassName",
+      "name": "overlayClass",
       "type": "string",
       "required": false
     },
@@ -47,24 +52,27 @@
       "name": "overlayStyle",
       "type": "Style",
       "required": false
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "required": false
     }
   ],
   "events": [
     {
-      "name": "onClose",
+      "name": "close",
       "payload": "() => void"
     }
   ],
   "slots": [
-    "children",
-    "overlay",
-    "content"
+    "default"
   ],
   "states": [
     "closed",
     "open",
     "entering",
-    "leaving"
+    "exiting"
   ],
   "accessibility": {
     "requirements": [
@@ -81,5 +89,14 @@
       "focus-trap",
       "restore-focus"
     ]
-  }
+  },
+  "focus": [
+    "trap-while-open",
+    "restore-on-close"
+  ],
+  "motion": [
+    "enter",
+    "exit",
+    "reduced-motion"
+  ]
 }

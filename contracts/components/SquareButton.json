@@ -2,6 +2,7 @@
   "name": "SquareButton",
   "version": "1",
   "framework": "neutral",
+  "purpose": "SquareButton component — see composition and states for behavior.",
   "props": [
     {
       "name": "icon",
@@ -23,8 +24,22 @@
     }
   ],
   "events": [],
+  "states": [
+    "default"
+  ],
   "defaults": {
     "pressed": "false"
   },
-  "keyboard": {}
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props.",
+      "Keyboard accessible; disabled and loading states must be announced."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "keyboard-accessible"
+    ]
+  }
 }

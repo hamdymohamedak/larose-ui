@@ -2,6 +2,7 @@
   "name": "SearchScopeBar",
   "version": "1",
   "framework": "neutral",
+  "purpose": "SearchScopeBar component — see composition and states for behavior.",
   "props": [
     {
       "name": "options",
@@ -16,11 +17,24 @@
   ],
   "events": [
     {
-      "name": "onChange",
+      "name": "change",
       "payload": "(scopeId: string) => void"
     }
   ],
-  "keyboard": {},
+  "states": [
+    "default"
+  ],
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "not-focusable"
+    ]
+  },
   "controlled": [
     "value"
   ]

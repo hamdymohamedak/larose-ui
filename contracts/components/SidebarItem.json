@@ -2,6 +2,7 @@
   "name": "SidebarItem",
   "version": "1",
   "framework": "neutral",
+  "purpose": "SidebarItem component — see composition and states for behavior.",
   "props": [
     {
       "name": "accentColor",
@@ -39,13 +40,27 @@
   ],
   "events": [
     {
-      "name": "onClick",
+      "name": "click",
       "payload": "() => void"
     }
+  ],
+  "states": [
+    "default",
+    "disabled"
   ],
   "defaults": {
     "active": "false",
     "disabled": "false"
   },
-  "keyboard": {}
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "not-focusable"
+    ]
+  }
 }

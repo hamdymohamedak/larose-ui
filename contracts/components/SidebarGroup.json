@@ -2,6 +2,7 @@
   "name": "SidebarGroup",
   "version": "1",
   "framework": "neutral",
+  "purpose": "SidebarGroup component — see composition and states for behavior.",
   "props": [
     {
       "name": "label",
@@ -10,5 +11,18 @@
     }
   ],
   "events": [],
-  "keyboard": {}
+  "states": [
+    "default"
+  ],
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "not-focusable"
+    ]
+  }
 }

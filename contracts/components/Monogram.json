@@ -2,6 +2,7 @@
   "name": "Monogram",
   "version": "1",
   "framework": "neutral",
+  "purpose": "Monogram component — see composition and states for behavior.",
   "props": [
     {
       "name": "imageUrl",
@@ -15,5 +16,18 @@
     }
   ],
   "events": [],
-  "keyboard": {}
+  "states": [
+    "default"
+  ],
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "not-focusable"
+    ]
+  }
 }

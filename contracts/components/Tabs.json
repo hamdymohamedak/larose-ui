@@ -2,17 +2,20 @@
   "name": "Tabs",
   "version": "1",
   "framework": "neutral",
+  "purpose": "Accessible tab list with keyboard navigation and optional lazy panels.",
+  "composition": "Compose triggers and panels with matching value keys.",
+  "interactions": [
+    "Tabs",
+    "TabsList",
+    "TabsTrigger",
+    "TabsPanel"
+  ],
   "props": [
     {
       "name": "defaultValue",
       "type": "string",
       "required": false,
       "default": "''"
-    },
-    {
-      "name": "onValueChange",
-      "type": "(value: string) => void",
-      "required": false
     },
     {
       "name": "value",
@@ -22,12 +25,12 @@
   ],
   "events": [
     {
-      "name": "onValueChange",
+      "name": "valueChange",
       "payload": "(value: string) => void"
     }
   ],
   "slots": [
-    "children"
+    "default"
   ],
   "states": [
     "default",
@@ -35,6 +38,13 @@
   ],
   "defaults": {
     "defaultValue": "''"
+  },
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props.",
+      "Keyboard accessible; disabled and loading states must be announced."
+    ],
+    "aria": []
   },
   "keyboard": {
     "keys": [

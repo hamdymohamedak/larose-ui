@@ -2,6 +2,7 @@
   "name": "FileBrowser",
   "version": "1",
   "framework": "neutral",
+  "purpose": "FileBrowser component — see composition and states for behavior.",
   "props": [
     {
       "name": "acceptTypes",
@@ -26,26 +27,6 @@
       "required": true
     },
     {
-      "name": "onOpen",
-      "type": "(file: FileBrowserItem) => void",
-      "required": false
-    },
-    {
-      "name": "onSelect",
-      "type": "(file: FileBrowserItem) => void",
-      "required": false
-    },
-    {
-      "name": "onShowExtensionsChange",
-      "type": "(show: boolean) => void",
-      "required": false
-    },
-    {
-      "name": "onTabChange",
-      "type": "(tab: FileBrowserTab) => void",
-      "required": false
-    },
-    {
       "name": "selectedId",
       "type": "string",
       "required": false
@@ -64,26 +45,39 @@
   ],
   "events": [
     {
-      "name": "onOpen",
+      "name": "open",
       "payload": "(file: FileBrowserItem) => void"
     },
     {
-      "name": "onSelect",
+      "name": "select",
       "payload": "(file: FileBrowserItem) => void"
     },
     {
-      "name": "onShowExtensionsChange",
+      "name": "showExtensionsChange",
       "payload": "(show: boolean) => void"
     },
     {
-      "name": "onTabChange",
+      "name": "tabChange",
       "payload": "(tab: FileBrowserTab) => void"
     }
+  ],
+  "states": [
+    "default"
   ],
   "defaults": {
     "activeTab": "'recents'",
     "emptyLabel": "'No documents in this location.'",
     "showExtensions": "false"
   },
-  "keyboard": {}
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "not-focusable"
+    ]
+  }
 }

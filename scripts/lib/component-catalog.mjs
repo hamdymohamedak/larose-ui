@@ -5,18 +5,11 @@ import { isGlassDocComponent } from './glass-components.mjs';
 
 /**
  * Components that are intentionally framework-specific (not required on every adapter).
- * Fiber DevTools, React-only motion host, and Liquid Glass React entry re-exports live here.
+ * Prefer documenting these in contracts/parity/matrix.json notes — do not grow this set casually.
+ * Liquid Glass and shared overlays must ship on all three adapters.
  */
 export const INTENTIONAL_ADAPTER_ASYMMETRIES = new Set([
   'Collapse',
-  'LiquidGlass',
-  'LiquidGlassButton',
-  'LiquidGlassCheckbox',
-  'LiquidGlassProgress',
-  'LiquidGlassRange',
-  'LiquidGlassSwitch',
-  'LiquidGlassTabBar',
-  'LiquidGlassTopBar',
   'MotionProvider',
   'Presence',
   'ThemeCustomizationContext',
@@ -40,24 +33,37 @@ export function listCanonicalContractNames(root) {
 
 /**
  * @param {string} root
+ * @param {'react' | 'vue' | 'svelte'} framework
+ */
+export function resolveLiquidGlassIndexPath(root, framework) {
+  if (framework === 'react') return join(root, 'packages/react/src/LiquidGlass/index.ts');
+  if (framework === 'vue') return join(root, 'packages/vue/src/LiquidGlass/index.ts');
+  return join(root, 'packages/svelte/src/lib/LiquidGlass/index.ts');
+}
+
+/**
+ * @param {string} root
  */
 export function listFrameworkComponentExports(root) {
   const reactIndex = join(root, 'packages/react/src/index.ts');
   const vueIndex = join(root, 'packages/vue/src/index.ts');
   const svelteIndex = join(root, 'packages/svelte/src/lib/index.ts');
-  const liquidGlassIndex = join(root, 'packages/react/src/LiquidGlass/index.ts');
 
   const react = existsSync(reactIndex) ? parseComponentExportsFromIndex(reactIndex) : [];
   const vue = existsSync(vueIndex) ? parseComponentExportsFromIndex(vueIndex) : [];
   const svelte = existsSync(svelteIndex) ? parseComponentExportsFromIndex(svelteIndex) : [];
-  const glass = existsSync(liquidGlassIndex)
-    ? parseComponentExportsFromIndex(liquidGlassIndex).filter(isGlassDocComponent)
-    : [];
+
+  const mergeGlass = (/** @type {string[]} */ base, /** @type {'react'|'vue'|'svelte'} */ fw) => {
+    const glassIndex = resolveLiquidGlassIndexPath(root, fw);
+    if (!existsSync(glassIndex)) return base;
+    const glass = parseComponentExportsFromIndex(glassIndex).filter(isGlassDocComponent);
+    return [...new Set([...base, ...glass])];
+  };
 
   return {
-    react: [...new Set([...react, ...glass])].sort((a, b) => a.localeCompare(b)),
-    vue: [...vue].sort((a, b) => a.localeCompare(b)),
-    svelte: [...svelte].sort((a, b) => a.localeCompare(b)),
+    react: mergeGlass(react, 'react').sort((a, b) => a.localeCompare(b)),
+    vue: mergeGlass(vue, 'vue').sort((a, b) => a.localeCompare(b)),
+    svelte: mergeGlass(svelte, 'svelte').sort((a, b) => a.localeCompare(b)),
   };
 }
 
@@ -101,22 +107,29 @@ export function resolveAdapterIndexPath(root, framework) {
 }
 
 /**
- * Props-type extraction works best against TypeScript `*Props` exports.
- * React currently ships the richest Props surface; Vue/Svelte often inline props.
- * This is a sampling reference for authoring — not the architectural source of truth.
+ * Choose an adapter only as a Props *sampling* source for authoring contracts.
+ * Contracts are always emitted as framework-neutral JSON — never treat the sample
+ * adapter as the architectural source of truth.
+ *
+ * Preference order for `auto`: first adapter with exported `*Props` types (any framework).
  * @param {string} root
  * @param {'react' | 'vue' | 'svelte' | 'auto'} [preferred]
  * @returns {'react' | 'vue' | 'svelte'}
  */
 export function resolvePropsSampleAdapter(root, preferred = 'auto') {
   if (preferred !== 'auto') return preferred;
-  for (const framework of /** @type {const} */ (['react', 'vue', 'svelte'])) {
+  // Prefer whichever adapter currently exposes the richest typed Props surface.
+  // Order is alphabetical by framework name so React is not privileged by position.
+  for (const framework of /** @type {const} */ (['svelte', 'vue', 'react'])) {
     const indexPath = resolveAdapterIndexPath(root, framework);
     if (!existsSync(indexPath)) continue;
     const source = readFileSync(indexPath, 'utf8');
     if (/export type \{[^}]*Props/.test(source) || /Props['"]?\s*\}/.test(source)) {
       return framework;
     }
+  }
+  for (const framework of /** @type {const} */ (['svelte', 'vue', 'react'])) {
+    if (existsSync(resolveAdapterIndexPath(root, framework))) return framework;
   }
   return 'react';
 }

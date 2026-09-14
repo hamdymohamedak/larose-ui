@@ -172,6 +172,49 @@ async function checkContracts(rootDir: string): Promise<Diagnostic[]> {
   }
 
   diagnostics.push(...(await checkComponentContracts(rootDir)));
+  diagnostics.push(...(await checkParityMatrix(rootDir)));
+
+  return diagnostics;
+}
+
+async function checkParityMatrix(rootDir: string): Promise<Diagnostic[]> {
+  const diagnostics: Diagnostic[] = [];
+  const matrixPath = join(rootDir, 'contracts/parity/matrix.json');
+  try {
+    await readFile(matrixPath, 'utf-8');
+  } catch {
+    diagnostics.push({
+      severity: 'warning',
+      category: 'contract',
+      message: 'Missing contracts/parity/matrix.json behavioral parity matrix',
+      fix: 'Run pnpm generate:parity-matrix',
+    });
+    return diagnostics;
+  }
+
+  try {
+    const { spawnSync } = await import('node:child_process');
+    const scriptPath = join(rootDir, 'scripts/check-parity-matrix.mjs');
+    const result = spawnSync(process.execPath, [scriptPath], {
+      cwd: rootDir,
+      encoding: 'utf-8',
+    });
+    if (result.status !== 0) {
+      diagnostics.push({
+        severity: 'error',
+        category: 'contract',
+        message: `Behavioral parity matrix check failed: ${(result.stderr || result.stdout || '').trim()}`,
+        fix: 'Fix adapter gaps or update contracts/parity/matrix.json via pnpm generate:parity-matrix',
+      });
+    }
+  } catch (error) {
+    diagnostics.push({
+      severity: 'warning',
+      category: 'contract',
+      message: `Could not run parity matrix check: ${error instanceof Error ? error.message : String(error)}`,
+      fix: 'Run pnpm check:parity-matrix',
+    });
+  }
 
   return diagnostics;
 }

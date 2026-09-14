@@ -2,6 +2,7 @@
   "name": "AlertDialog",
   "version": "1",
   "framework": "neutral",
+  "purpose": "AlertDialog component — see composition and states for behavior.",
   "props": [
     {
       "name": "accessory",
@@ -35,11 +36,6 @@
       "required": false
     },
     {
-      "name": "onOpenChange",
-      "type": "(open: boolean) => void",
-      "required": true
-    },
-    {
       "name": "open",
       "type": "boolean",
       "required": true
@@ -64,13 +60,25 @@
       "name": "textField",
       "type": "AlertDialogTextField",
       "required": false
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "required": true
     }
   ],
   "events": [
     {
-      "name": "onOpenChange",
+      "name": "openChange",
       "payload": "(open: boolean) => void"
     }
+  ],
+  "states": [
+    "default",
+    "open",
+    "closed",
+    "entering",
+    "exiting"
   ],
   "accessibility": {
     "requirements": [
@@ -90,5 +98,14 @@
   },
   "controlled": [
     "open"
+  ],
+  "focus": [
+    "trap-while-open",
+    "restore-on-close"
+  ],
+  "motion": [
+    "enter",
+    "exit",
+    "reduced-motion"
   ]
 }

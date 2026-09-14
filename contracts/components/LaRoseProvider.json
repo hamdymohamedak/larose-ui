@@ -2,7 +2,52 @@
   "name": "LaRoseProvider",
   "version": "1",
   "framework": "neutral",
-  "props": [],
+  "purpose": "LaRoseProvider component — see composition and states for behavior.",
+  "props": [
+    {
+      "name": "brandColors",
+      "type": "Partial<ColorTokens>",
+      "required": false
+    },
+    {
+      "name": "components",
+      "type": "ComponentConfiguration",
+      "required": false
+    },
+    {
+      "name": "density",
+      "type": "Density",
+      "required": false
+    },
+    {
+      "name": "tenantId",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "theme",
+      "type": "ThemeMode",
+      "required": false
+    },
+    {
+      "name": "themeConfig",
+      "type": "LaRoseThemeInput | LaRoseTheme",
+      "required": false
+    }
+  ],
   "events": [],
-  "keyboard": {}
+  "states": [
+    "default"
+  ],
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "not-focusable"
+    ]
+  }
 }

@@ -2,6 +2,7 @@
   "name": "Label",
   "version": "1",
   "framework": "neutral",
+  "purpose": "Label component — see composition and states for behavior.",
   "props": [
     {
       "name": "as",
@@ -30,10 +31,23 @@
     }
   ],
   "events": [],
+  "states": [
+    "default"
+  ],
   "defaults": {
     "importance": "'primary'",
     "mono": "false",
     "selectable": "false"
   },
-  "keyboard": {}
+  "accessibility": {
+    "requirements": [
+      "Supports ARIA attributes via standard HTML element props."
+    ],
+    "aria": []
+  },
+  "keyboard": {
+    "behavior": [
+      "not-focusable"
+    ]
+  }
 }
