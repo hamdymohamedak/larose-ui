@@ -1,3 +1,5 @@
+
+
 # laRose
 
 UI platform for modern SaaS applications — React / Vue / Svelte components, runtime providers, and optional intelligence packs (data, forms, permissions).
@@ -164,6 +166,7 @@ function App() {
 | `pnpm webdocs` | laRose UI documentation site (use `pnpm run webdocs`, not `pnpm docs`) |
 | `pnpm build` | Build all packages |
 | `pnpm test` | Run all tests |
+| `pnpm --filter @larose-ui/sandbox-e2e test:e2e` | Playwright critical-flow parity across React / Vue / Svelte sandboxes |
 | `pnpm lint` | ESLint on packages and apps |
 | `pnpm run doctor` | Deprecations, contracts, a11y |
 | `pnpm a11y` | Scan component sources for a11y issues |
