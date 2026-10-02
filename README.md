@@ -41,6 +41,28 @@ pnpm add @larose-ui/runtime-react @larose-ui/react
 
 Import styles once (`@larose-ui/react/styles.css` — tokens included). That is enough for a working app.
 
+> **Vite / monorepos:** If you see `Invalid hook call` or `Cannot read properties of null (reading 'useMemo')` inside `LaRoseProvider`, you almost always have **two copies of React** (for example a parent workspace on React 19 and the app on React 18). Pin one React in the app Vite config:
+>
+> ```ts
+> import path from 'node:path'
+> import { defineConfig } from 'vite'
+>
+> export default defineConfig({
+>   resolve: {
+>     dedupe: ['react', 'react-dom'],
+>     alias: {
+>       react: path.resolve(__dirname, 'node_modules/react'),
+>       'react-dom': path.resolve(__dirname, 'node_modules/react-dom'),
+>     },
+>   },
+>   optimizeDeps: {
+>     include: ['react', 'react-dom', '@larose-ui/react', '@larose-ui/runtime-react'],
+>   },
+> })
+> ```
+>
+> Then delete `node_modules/.vite` and restart the dev server. Styles are **not** auto-imported from the JS entry — always import `@larose-ui/react/styles.css` (or `@larose-ui/styles/styles.css`) yourself.
+
 Optional feature packs (only if you need them):
 
 ```bash

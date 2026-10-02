@@ -17,6 +17,10 @@
     "dist",
     "README.md"
   ],
+  "sideEffects": [
+    "**/*.css",
+    "./dist/index.css"
+  ],
   "scripts": {
     "build": "node ../../scripts/build-css-package.mjs .",
     "dev": "node ../../scripts/build-css-package.mjs . --watch",

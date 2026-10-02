@@ -29,6 +29,11 @@
     "src/components",
     "README.md"
   ],
+  "sideEffects": [
+    "**/*.css",
+    "./dist/styles.css",
+    "./src/components/**/*.css"
+  ],
   "scripts": {
     "build": "node ../../scripts/build-styles-package.mjs .",
     "dev": "node ../../scripts/build-styles-package.mjs . --watch",

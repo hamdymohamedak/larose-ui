@@ -176,6 +176,12 @@ export async function buildCssPackage(packageRoot, options = {}) {
     rmSync(distDir, { recursive: true, force: true });
   }
 
+  // Do NOT inject a CSS import into the JS entry.
+  // Consumers must import styles once via `@larose-ui/react/styles.css`
+  // (or `@larose-ui/styles/styles.css`). Auto-importing CSS here caused:
+  // - double styles when apps followed the docs
+  // - Vite dep-optimizer shared chunks that could embed a second React copy
+  //   → "Invalid hook call" / useMemo on null in monorepos with multiple Reacts
   const buildOptions = {
     entryPoints: [join(packageRoot, 'src/index.ts')],
     outfile: join(distDir, 'index.js'),
@@ -184,8 +190,7 @@ export async function buildCssPackage(packageRoot, options = {}) {
     platform: 'neutral',
     target: 'es2022',
     plugins: [cssModulesPlugin(packageRoot)],
-    external,
-    banner: { js: "import '@larose-ui/styles/styles.css';" },
+    external: [...external, 'react', 'react-dom', 'react/jsx-runtime', 'react/jsx-dev-runtime'],
     logLevel: 'info',
   };
 
