@@ -197,6 +197,8 @@ function App() {
 
 ## Documentation
 
+- **Agents (Cursor / Claude / Copilot):** see [`AGENTS.md`](AGENTS.md) and [`.cursor/skills/larose-ui/SKILL.md`](.cursor/skills/larose-ui/SKILL.md)
+
 - [Web docs](https://hamdymohamedak.github.io/larose-ui/)
 
 | Topic | Location |

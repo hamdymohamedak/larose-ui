@@ -1,3 +1,9 @@
+# Cross-framework engineering (contributors)
+
+Use this file when **implementing or porting components inside the laRose monorepo** (React / Vue / Svelte parity). For app consumption, prefer `SKILL.md`.
+
+---
+
 # laRose UI — Cross-Framework Component Engineering
 
 ## Purpose
